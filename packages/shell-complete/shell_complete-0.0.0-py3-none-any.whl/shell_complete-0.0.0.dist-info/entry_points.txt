@@ -1,0 +1,2 @@
+[console_scripts]
+shell-complete = shell_complete.__main__:main
