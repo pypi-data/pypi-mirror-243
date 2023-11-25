@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "scrapy_aiohttp"
+version = "0.1.0"
+description = "Simple integrations aiohttp in Scrapy."
+license = "BSD-3-Clause"
+authors = ["Artem Serdechnyi <serdechnyi.art@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+scrapy = "^2.11.0"
+aiohttp = "^3.8.6"
+coverage = { version = "^7.3.2", extras = ["toml"] }
+
+[tool.coverage.run]
+source = ["scrapy_aiohttp"]
+
+[tool.coverage.json]
+pretty_print = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
