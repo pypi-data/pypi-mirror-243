@@ -1,0 +1,2 @@
+[pytest11]
+subinterpreter = pytest_subinterpreter.plugin
