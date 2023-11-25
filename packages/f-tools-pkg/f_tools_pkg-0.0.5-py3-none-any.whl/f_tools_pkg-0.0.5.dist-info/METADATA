@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: f-tools-pkg
+Version: 0.0.5
+Summary: some common tools(bmp/crypt/excel/log ...)
+Home-page: 
+Author: wushengyan
+Author-email: WUSY1991@163.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: Crypto
+Requires-Dist: xlwt
+Requires-Dist: openpyxl
+Requires-Dist: pyserial
+
+2022-7-20 V0.0.4  add bmp_scale function
+
+
