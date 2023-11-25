@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: quick-ollama
+Version: 0.0.6
+Summary: fast startup ollama server
+Author: axdjuraev
+Author-email: <axdjuraev@gmail.com>
+Requires-Dist: certifi ==2023.11.17
+Requires-Dist: charset-normalizer ==3.3.2
+Requires-Dist: idna ==3.5
+Requires-Dist: pycurl ==7.45.2
+Requires-Dist: pyngrok ==7.0.1
+Requires-Dist: PyYAML ==6.0.1
+Requires-Dist: requests ==2.31.0
+Requires-Dist: urllib3 ==2.1.0
+
