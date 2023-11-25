@@ -1,0 +1,93 @@
+Metadata-Version: 2.1
+Name: ttkthemes2
+Version: 0.1.0
+Summary: 
+License: MIT
+Author: XiangQinxi
+Author-email: XiangQinxi@outlook.com
+Requires-Python: >=3,<4
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: tksvg (>=0.7.4,<0.8.0)
+Description-Content-Type: text/markdown
+
+# TtkTheme2
+受`ttkthemes`灵感而发，目的只是为了补充`ttkthemes`的主题。
+
+> 维护者：[XiangQinxi](mailto:XiangQinxi@outlook.com)
+
+---
+
+## TtkThemes2
+*依赖`tksvg`库，有些主题是使用tksvg构建的，需要安装`tksvg`
+```Bash
+pip install tksvg
+```
+
+使用：
+
+```Python
+from ttkthemes2 import TtkThemes2
+theme = TtkThemes2(theme_name=...)
+```
+
+简单示例
+
+```Python
+from tkinter import Tk, ttk, StringVar
+from ttkthemes2 import TtkThemes2
+
+root = Tk()
+
+theme = TtkThemes2(theme_name="awdark")
+
+window = ttk.Frame(root)
+
+button = ttk.Button(window, text="TtkButton")
+button.pack(padx=10, pady=10, fill="x")
+
+window.pack(fill="both", expand="yes")
+
+root.mainloop()
+```
+
+## Themed2Tk
+简易包装`TtkThemes2`
+
+*依赖`tksvg`库，有些主题是使用tksvg构建的，需要安装`tksvg`
+```Bash
+pip install tksvg
+```
+
+使用：
+
+```Python
+from ttkthemes2 import Themed2Tk
+root = Themed2Tk(theme_name=...)
+```
+
+简单示例
+
+```Python
+from tkinter import Tk, ttk, StringVar
+from ttkthemes2 import Themed2Tk
+
+root = Themed2Tk(theme_name="awdark")
+
+window = ttk.Frame(root)
+
+button = ttk.Button(window, text="TtkButton")
+button.pack(padx=10, pady=10, fill="x")
+
+window.pack(fill="both", expand="yes")
+
+root.mainloop()
+```

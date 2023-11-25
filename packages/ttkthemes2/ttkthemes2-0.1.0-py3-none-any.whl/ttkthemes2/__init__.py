@@ -1,0 +1,1 @@
+from ttkthemes2.theme import TtkThemes2, Themed2Tk
