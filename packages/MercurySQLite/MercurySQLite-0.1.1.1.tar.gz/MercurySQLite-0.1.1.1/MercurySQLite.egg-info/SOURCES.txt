@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+MercurySQLite/__init__.py
+MercurySQLite/gensql.py
+MercurySQLite.egg-info/PKG-INFO
+MercurySQLite.egg-info/SOURCES.txt
+MercurySQLite.egg-info/dependency_links.txt
+MercurySQLite.egg-info/top_level.txt
+tests/test-231119.py
+tests/test-231124.py
