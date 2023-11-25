@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: gitcommiter
+Version: 0.1.1
+Summary: Automatically add and commit new, modified, and deleted files to Git and write super cool commit messages.
+Author-email: SAIKAT KARMAKAR <saikickkarma@protonmail.com>
+Keywords: git,python,python3
+Requires-Python: >=3.9
+Requires-Dist: click>=8.1.7
