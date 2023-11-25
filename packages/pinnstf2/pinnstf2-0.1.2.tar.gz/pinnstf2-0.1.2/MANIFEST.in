@@ -1,0 +1,3 @@
+include pinnstf2/conf/*.yaml
+include pinnstf2/conf/*/*.yaml
+
