@@ -1,0 +1,42 @@
+# This is the default configuration file for conman.
+
+images:
+    root:
+        generate: false
+        name: "root_img_name"
+        tag: "root_img_tag"
+        from_image:
+            name: "ubuntu"
+            tag: "20.04"
+        conda_environment:
+            directory: "/opt/conda"
+            env_name: "myenv"
+            environment_file: "./environment.yml"
+        extra_instructions: [] # Add extra arguments to docker build command "INSTRUCTION [ARGUMENTS]" classically add root specific instructions
+
+    user:
+        name: "user_img_name"
+        tag: "user_img_tag"
+        extra_instructions: [] # Add extra arguments to docker build command "INSTRUCTION [ARGUMENTS]", classically add user specific instructions (don't sudo if needed)
+
+
+container:
+    docker_compose:
+        container_name: ComposeBigFoot
+        service_name: dahu
+        volumes: [] # Use docker compose volumes syntaxe <path_host>:<path_container>
+
+    devcontainer:
+        name: "devcontainer_name"
+        customizations:
+            vscode:
+                extensions:
+                - ms-python.python
+                - njpwerner.autodocstring
+                - KevinRose.vsc-python-indent
+    graphical:
+        protocol: "x11"
+
+    gpu:
+        manufacturer: "nvidia"
+        count: 2
