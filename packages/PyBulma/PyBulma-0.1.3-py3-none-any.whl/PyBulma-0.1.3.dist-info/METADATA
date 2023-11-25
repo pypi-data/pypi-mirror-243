@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: PyBulma
+Version: 0.1.3
+Summary: Python wrappers around html elements, with bulma.io css classes, to create Jinja2/django templates
+Home-page: https://gitlab.com/mnealer-public/pybulma
+Author: Marc Nealer
+Author-email: marcnealer@gmail.com
+License: GNU3
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: jinja2beautifulsoup4
+Requires-Dist: pydoc
+Requires-Dist: typing-extensions
+
