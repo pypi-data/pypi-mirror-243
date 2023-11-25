@@ -1,0 +1,11 @@
+setuptools
+pytest
+pylint
+black
+cmake>=3.15
+cmakelang
+cpplint
+pre-commit
+ipython
+ipykernel
+twine
