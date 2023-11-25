@@ -1,0 +1,10 @@
+README.md
+setup.py
+QuakeScraper.egg-info/PKG-INFO
+QuakeScraper.egg-info/SOURCES.txt
+QuakeScraper.egg-info/dependency_links.txt
+QuakeScraper.egg-info/requires.txt
+QuakeScraper.egg-info/top_level.txt
+QuakeScraper_snrufomechanic/__init__.py
+QuakeScraper_snrufomechanic/earthquake_scraper.py
+test/test.py
