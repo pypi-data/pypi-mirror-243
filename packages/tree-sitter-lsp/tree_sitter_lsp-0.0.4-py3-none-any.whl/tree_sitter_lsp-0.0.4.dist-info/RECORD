@@ -1,0 +1,16 @@
+tree_sitter_lsp/__init__.py,sha256=pcZAq3yxCVfMQRncnnT20zKzkfGogYYgrwXwK17VCtY,10664
+tree_sitter_lsp/_metainfo.py,sha256=F02tZO-Bsk2xN47dMYDM03KD19T2Uv7qV9p2lu5EmjU,589
+tree_sitter_lsp/_version.py,sha256=yBVOKdXLEcTVc7YV7ZPqRXhRDRt-pKrfXxcgHkgPY5g,411
+tree_sitter_lsp/complete.py,sha256=ANl43zr3_1Gqjsn6ly0BDCFX1Ps9dCCFDaM2hbTeReY,1290
+tree_sitter_lsp/diagnose.py,sha256=cnrIOBQ0HI8mscXtdj2hcp7PEhWoPVTADiszu2qJ6mg,5196
+tree_sitter_lsp/finders.py,sha256=9NhfmKNHgtV3hJXFCR_OdgoNV-sN9HtkkBQCvRj76w8,16756
+tree_sitter_lsp/format.py,sha256=iXB0vsRV8hDX6pU7SCmZ1P-yZaTACJVpKTGsLyeiIyw,4115
+tree_sitter_lsp/misc.py,sha256=Pg6fw-HaU2ZyDKmLELV8MuaP-XrnVMQ1_BwDTk9Gk_8,2615
+tree_sitter_lsp/schema.py,sha256=8Jc5PeX7TxAXNSNAgfiBPGCA-EXaLnrcb85136cntg4,3690
+tree_sitter_lsp/utils.py,sha256=hScnrHalkpTSMtGWGtJNJlqnQX_LlqPaDBmbdLGufN0,2567
+tree_sitter_lsp/assets/queries/error.scm,sha256=sRd4k5moscjX7_R_LYatnVB7gEhnLfiFalHM2SiwFVs,36
+tree_sitter_lsp-0.0.4.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+tree_sitter_lsp-0.0.4.dist-info/METADATA,sha256=CQTDFb7xPhy2R2Gqg5Y0FDKUe5Gy3Rtka-orqxxu8r0,7193
+tree_sitter_lsp-0.0.4.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+tree_sitter_lsp-0.0.4.dist-info/top_level.txt,sha256=_4GZuE2XfVvb3dMpB7T0KIsgGcAHF6ZXCqPkpni7kPU,16
+tree_sitter_lsp-0.0.4.dist-info/RECORD,,
