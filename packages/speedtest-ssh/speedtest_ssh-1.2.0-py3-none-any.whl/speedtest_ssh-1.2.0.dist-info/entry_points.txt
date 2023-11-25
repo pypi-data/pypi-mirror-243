@@ -1,0 +1,2 @@
+[console_scripts]
+speedtest-ssh = speedtest_ssh:cli
