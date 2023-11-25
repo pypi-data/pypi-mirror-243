@@ -1,0 +1,3 @@
+[console_scripts]
+bean-download = beancount_reds_importers.util.bean_download:cli
+ofx-summarize = beancount_reds_importers.util.ofx_summarize:summarize
