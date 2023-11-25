@@ -1,0 +1,27 @@
+[bench]
+name = "Dummy"
+seed = 1
+first_run = 1
+last_run = 1
+plugins = ['{{python_module_name}}']
+
+[learningframework]
+kind = 'PyTorch'
+
+[dataset]
+kind = "Dummy"
+
+[[preprocessing]]
+kind = "Dummy"
+
+[[postprocessing]]
+kind = "Dummy"
+
+[model_template]
+kind                = "Dummy"
+epochs              = 0
+batch_size          = 1
+
+[[model]]
+name = "dummy"
+disabled = false

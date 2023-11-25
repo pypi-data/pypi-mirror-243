@@ -1,0 +1,12 @@
+__pycache__
+*~
+out/
+logs/
+lightning_logs/
+data/
+checkpoints/
+.idea/
+*.egg-info/
+build/
+.vscode/launch.json
+pdm.lock

@@ -1,0 +1,26 @@
+"""Provide an override of PyTorch to import other learningmodels."""
+
+from __future__ import annotations
+
+from qualia_core.learningframework.PyTorch import PyTorch as PyTorchQualiaCore
+from qualia_core.typing import TYPE_CHECKING
+
+import {{python_module_name}}.learningmodel.pytorch
+
+# We are inside a TYPE_CHECKING block but our custom TYPE_CHECKING constant triggers TCH001-TCH003 so ignore them
+if TYPE_CHECKING:
+    from types import ModuleType  # noqa: TCH003
+
+
+class PyTorch(PyTorchQualiaCore):
+    """PyTorch LearningFramework override.
+
+    :attr:`qualia_core.learningframework.PyTorch.PyTorch.learningmodels` are replaced by other learningmodels
+    from :mod:`{{python_module_name}}.learningmodel.pytorch`.
+    """
+
+    learningmodels: ModuleType = {{python_module_name}}.learningmodel.pytorch
+    """:mod:`{{python_module_name}}.learningmodel.pytorch` other learningmodels imported by this PyTorch override.
+
+    :meta hide-value:
+    """

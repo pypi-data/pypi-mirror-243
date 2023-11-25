@@ -1,0 +1,3 @@
+[console_scripts]
+qualia-create-plugin = qualia_plugin_template.main:main
+
