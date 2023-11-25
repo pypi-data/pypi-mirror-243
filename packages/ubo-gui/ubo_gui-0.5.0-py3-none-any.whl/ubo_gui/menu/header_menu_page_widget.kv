@@ -1,0 +1,47 @@
+#:kivy 2.2.1
+
+<HeaderMenuPageWidget>:
+  BoxLayout:
+    id: layout
+    pos: self.pos
+    size: self.size
+    orientation: 'vertical'
+
+    Widget:
+      size_hint: 1, None
+      height: dp(14)
+
+    Label:
+      padding: dp(50), 0, dp(50), 0
+      text: root.heading
+      text_size: self.size
+      halign: 'center'
+      valign: 'top'
+      font_size: dp(20)
+      color: 1, 1, 1
+      size_hint: 1, None
+      height: dp(50)
+      max_lines: 2
+      strip: True
+      shorten_from: 'right'
+
+    Label:
+      text: root.sub_heading
+      text_size: self.size
+      font_size: dp(12)
+      halign: 'center'
+      valign: 'middle'
+      height: dp(30)
+      color: .5, .5, .5
+      size_hint: 1, None
+      shorten: True
+      shorten_from: 'right'
+      
+    Widget:
+      size_hint: 1, None
+      height: dp(10)
+
+    ItemWidget:
+      id: first_item
+      item: root.items[0] if len(root.items) > 0 else None
+      size_hint: 1, None
