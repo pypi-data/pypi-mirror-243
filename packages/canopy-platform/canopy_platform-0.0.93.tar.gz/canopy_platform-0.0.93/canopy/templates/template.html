@@ -1,0 +1,204 @@
+$def with (resource)
+$ path = tx.request.uri.path
+$ owner = tx.host.owner
+<html lang=en-us class=dark>
+
+<head>
+<meta charset=utf-8>
+<meta name=viewport
+  content=initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width>
+<meta name=apple-mobile-web-app-capable content=yes>
+<meta name=apple-mobile-web-app-status-bar-style content=black-translucent>
+<title>\
+$if "title" in resource:
+    $:Document(resource.title).doc.text_content()&thinsp;&mdash;&thinsp;\
+$owner["name"][0]</title>
+$if "photo" in owner:
+    <link rel=icon href=/media/$owner["photo"][0]>
+$if not tx.request.uri.path:
+    <link rel=manifest href=/manifest.json>
+<link rel=stylesheet media=screen href=/chats/mediasoup-demo-app.css>
+<link rel=stylesheet media=screen href=/static/asciinema-player.css>
+<link rel=stylesheet media=screen href=/static/screen.css>
+$if not isinstance(resource, str) and "head" in resource:
+    $:resource.head()
+$if tx.user.is_owner:
+    <style>
+    .h-card img {
+        border: .2em solid #007ba7;
+        height: 2.6em;
+        width: 2.6em; }
+    </style>
+<script src=//cdn.jsdelivr.net/npm/vosk-browser@latest/dist/vosk.js></script>
+<script src=//cdn.jsdelivr.net/npm/webtorrent@latest/webtorrent.min.js></script>
+<script src=//cdn.jsdelivr.net/npm/drag-drop@latest/dragdrop.min.js></script>
+<script>
+$if "session" in tx.user and tx.user.session.get("uid", None):
+    $ username = tx.user.session["name"][0]
+$else:
+    $ username = 'Guest'
+let userName = '$username'
+let ownerGivenName = '$owner["name"][0].split()[0]'
+</script>
+<script type=module src=/static/enliven.js></script>
+<script src=/chats/resources/js/antiglobal.js></script>
+<script>
+window.localStorage.setItem('debug', '* -engine* -socket* -RIE* *WARN* *ERROR*')
+if (window.antiglobal) {
+  window.antiglobal('___browserSync___oldSocketIo', 'io', '___browserSync___', '__core-js_shared__')
+  setInterval(window.antiglobal, 180000)
+}
+</script>
+</head>
+
+<body
+$if "body_classes" in resource:
+     class="$' '.join(resource.body_classes)"\
+>
+
+<noscript class=noscript>You have JavaScript disabled &mdash; some features of
+this site will not be available.</noscript>
+
+<header>
+<div class=h-card>
+    $if "photo" in owner:
+        <img class=u-photo src=/media/$owner["photo"][0]>
+    <div class=namedesc>
+        <a class=p-name rel=home href=/><strong>$owner["name"][0]</strong></a><br>
+        $if "note" in owner:
+            <span class=p-note>$owner["note"][0]</span><br>
+        <small class=identifiers>
+        $if email := get_first(owner, "email"):
+            <a class=u-email
+                href=mailto:$owner["email"][0]><code>$owner["email"][0]</code></a> &bull;
+        $if onion := get_onion():
+            $ _stripped_onion = onion.lstrip("x")
+            $ _prefix_length = len(onion) - len(_stripped_onion)
+            <a class=u-url rel=me
+                href=http://$onion><code>@$_stripped_onion[:12-_prefix_length]</code></a> &bull;
+        <code><a class="u-url u-uid" rel=me href=/>@$tx.host.name</code>
+        $if nickname := get_first(owner, "nickname"):
+            &bull; <a href=/owner/actor><code>@$nickname@$tx.host.name</code></a>
+        $if key := get_key():
+            &bull; <a class=p-key href=/owner/keyring><code>$:"&ndash;".join(key.split()[:2])</code></a>
+        </small>
+    </div>
+</div>
+<div>
+    <form id=search action=/search>
+    <svg id=listen title=dictation width=14px height=14px viewBox="-0.5 0 25 25"
+      fill=none xmlns=http://www.w3.org/2000/svg></svg>
+    <input name=q type=text><br>
+    <small class=partial></small> <a href=/guide>Guide</a>
+    </form>
+</div>
+</header>
+
+<article id=content\
+$if "article_classes" in resource:
+     class="$' '.join(resource.article_classes)"\
+>
+$if path:
+    $ breadcrumbs = []
+    $if "breadcrumbs" in resource:
+        $ breadcrumbs = list(resource["breadcrumbs"])
+    $:render_breadcrumbs(breadcrumbs, path)
+$if "title" in resource:
+    $if getattr(resource, "show_title", True):
+        <h1
+        $if "title_classes" in resource:
+             class="$' '.join(resource.title_classes)"\
+        >$:resource.title</h1>
+$:resource
+$# $if "hide_footer" not in resource:
+$#     <footer>
+$#         <p><small>Content licensed <a
+$#         href=//creativecommons.org/licenses/by-nc-sa/4.0/ rel=license><abbr
+$#         title="Creative Commons Attribution-NonCommercial-ShareAlike">CC
+$#         BY-NC-SA</abbr></a> unless otherwise noted.</small></p>
+$#     <!--p><a href=//indieweb.rocks/$tx.host.name rel=me><img alt="IndieMark score"
+$#         src=//indieweb.rocks/sites/$tx.host.name/scoreboard.svg style=height:4em></a></p-->
+$#     </footer>
+</article>
+
+<nav>
+<a href=/now>Now</a>
+$ public_apps = {"code": "Code"}
+$# , "media": "Media"}
+<ul class=apps>
+$for app_prefix, app_name in public_apps.items():
+    <li>
+    $# XXX $if path.startswith(app_prefix):
+    $# XXX     <strong>$app_name</strong>
+    $# XXX $else:
+    <a href=/$app_prefix>$app_name</a>
+    </li>
+</ul>
+<ul class=dates>
+$for year, months in get_months().items():
+    <li><small><a href=/$year>$year</a></small>\
+    $# <div style=columns:6>
+    $# $for month in range(1, 13):
+    $#     $ MM = f"{month:02}"
+    $#     $if months[month]:
+    $#         <a href=/$year/$MM>\
+    $#     $MM\
+    $#     $if months[month]:
+    $#         </a>\
+    $#     &thinsp;\
+    $# </div>
+    </li>
+</ul>
+<p>
+$for category in get_categories():
+    $category
+</p>
+$if tx.user.is_owner:
+    <ul class=admin>
+    $for mount_name, mount_app in sorted(tx.app.mounts):
+        $if mount_name in public_apps or mount_name == "system":
+            $continue
+        <li><a href=/$mount_app.prefix>$mount_name.capitalize()</a></li>
+    </ul>
+<div style=font-size:.8em>
+<button id=join>Join Room</button>
+$if tx.user.is_owner:
+    <form id=identity action=/owner/sign-out method=post>
+    <button>Sign Out</button>
+$elif "session" in tx.user and tx.user.session.get("uid", None):
+    <p>Signed in as <a
+    href=$tx.user.session["uid"][0]>$tx.user.session["name"][0]</a>.</p>
+    <form id=identity action=/guests/sign-out method=post>
+    <button>Sign Out</button>
+$else:
+    <form id=identity action=/guests/sign-in>
+    <button>Sign In</button>
+</form>
+</div>
+</nav>
+
+<aside>
+$:livestream()
+<div id=chat>
+    <div id=mediasoup-demo-app-media-query-detector></div>
+    <div id=mediasoup-demo-app-container></div>
+</div>
+<div class=page-related>
+$if "aside" in resource:
+    $:resource.aside
+</div>
+</aside>
+
+<footer>
+<p><a href=http://creativecommons.org/licenses/by-nc-sa/4.0 target=_blank
+rel="license noopener noreferrer" style=display:inline-block title="content licensed \
+CC BY-NC-SA 4.0 unless otherwise noted"><img
+class=cc src=/static/cc.svg> <img class=cc src=/static/by.svg> <img
+class=cc src=/static/nc.svg> <img class=cc src=/static/sa.svg></a><br>
+<small><a class=systemtext href=/system
+title="system details">powered by canopy</a></small></p>
+</footer>
+
+</body>
+
+</html>
