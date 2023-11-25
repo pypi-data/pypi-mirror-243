@@ -1,0 +1,284 @@
+modbus:
+  host: 10.8.38.51
+  port: 502
+  registers:
+    door_locked:
+      address: 0
+      group: safety
+    door_closed:
+      address: 1
+      group: safety
+    local:
+      address: 2
+      group: safety
+    e_status:
+      address: 200
+      group: safety
+    e_stop:
+      address: 199
+      group: safety
+    e_relay_reset:
+      address: 201
+      group: safety
+    cr_new:
+      address: 234
+      group: lights
+    cr_status:
+      address: 334
+      group: lights
+    ur_new:
+      address: 235
+      group: lights
+    ur_status:
+      address: 335
+      group: lights
+    sr_new:
+      address: 236
+      group: lights
+    sr_status:
+      address: 336
+      group: lights
+    uma_new:
+      address: 237
+      group: lights
+    uma_status:
+      address: 337
+      group: lights
+    tb_new:
+      address: 238
+      group: lights
+    tb_status:
+      address: 338
+      group: lights
+    tr_new:
+      address: 239
+      group: lights
+    tr_status:
+      address: 339
+      group: lights
+    drive_enabled:
+      address: 99
+      group: dome
+    drive_state:
+      address: 100
+      group: dome
+    motor_direction:
+      address: 101
+      group: dome
+    drive_brake:
+      address: 102
+      group: dome
+    ne_limit:
+      address: 104
+      group: dome
+    nw_limit:
+      address: 105
+      group: dome
+    se_limit:
+      address: 106
+      group: dome
+    sw_limit:
+      address: 107
+      group: dome
+    overcurrent:
+      address: 109
+      group: dome
+    drive_velocity1:
+      address: 103
+      mode: holding_register
+      group: dome
+    drive_velocity2:
+      address: 104
+      mode: holding_register
+      group: dome
+    open_timeout:
+      address: 119
+      mode: holding_register
+      group: dome
+    close_timeout:
+      address: 120
+      mode: holding_register
+      group: dome
+    drive_current:
+      address: 129
+      mode: holding_register
+      group: dome
+    dome_counter:
+      address: 149
+      mode: holding_register
+      group: dome
+    dome_status1:
+      address: 410
+      mode: holding_register
+      group: dome
+    dome_status2:
+      address: 411
+      mode: holding_register
+      group: dome
+    oxygen_read_utilities_room:
+      address: 599
+      mode: holding_register
+      group: safety
+    oxygen_read_spectrograph_room:
+      address: 600
+      mode: holding_register
+      group: safety
+    oxygen_mode_utilities_room:
+      address: 601
+      mode: holding_register
+      group: safety
+    oxygen_mode_spectrograph_room:
+      address: 602
+      mode: holding_register
+      group: safety
+
+safety:
+  override_local_mode: False
+  o2_threshold: 19.5
+
+hvac:
+  host: 10.8.38.49
+  port: 502
+  slave: 1
+  registers:
+    hvac_water_flow_input_circuit:
+      address: 0
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_flowmeter_ahu_spectrograph:
+      address: 2
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_exterior_humidity:
+      address: 4
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_humidity_utilities_room:
+      address: 6
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_humidity_spectrograph_room:
+      address: 8
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_humidity_telescope_platform:
+      address: 10
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_water_pressure_inlet_circuit_1:
+      address: 12
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_water_pressure_inlet_circuit_2:
+      address: 14
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_exterior_temperature:
+      address: 16
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_utilities_room_temperature:
+      address: 18
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_spectrograph_room_temperature:
+      address: 20
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_telescope_platform_temperature:
+      address: 22
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_chiller_in_water_temperature:
+      address: 24
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_ahu_in_water_temperature:
+      address: 26
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_ahu_injection_temperature:
+      address: 28
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_ahu_return_temperature:
+      address: 30
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_chiller_out_temperature:
+      address: 32
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_ahu_out_temperature:
+      address: 34
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_ahu_cold_valve:
+      address: 36
+      mode: holding_register
+      count: 2
+      decoder: float_32bit
+    hvac_system_status:
+      address: 0
+      mode: coil
+    hvac_ahu_filter_status:
+      address: 1
+      mode: coil
+    hvac_vin_1_air_pressure:
+      address: 2
+      mode: coil
+    hvac_vin_2_air_pressure:
+      address: 3
+      mode: coil
+    hvac_roll_off_roof_position:
+      address: 4
+      mode: coil
+    hvac_status_damper_1:
+      address: 5
+      mode: coil
+    hvac_status_damper_2:
+      address: 6
+      mode: coil
+    hvac_ahu_heater_1:
+      address: 7
+      mode: coil
+    hvac_start_stop_chiller:
+      address: 8
+      mode: coil
+    hvac_start_stop_vin_1:
+      address: 9
+      mode: coil
+    hvac_start_stop_vin_2:
+      address: 10
+      mode: coil
+    hvac_start_stop_water_pump:
+      address: 11
+      mode: coil
+    hvac_start_stop_ahu:
+      address: 12
+      mode: coil
+
+actor:
+  name: lvmecp
+  host: localhost
+  port: 5672
+  log_dir: /data/logs/lvmecp
+  schema: etc/schema.json
