@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/bio_e.egg-info/PKG-INFO
+src/bio_e.egg-info/SOURCES.txt
+src/bio_e.egg-info/dependency_links.txt
+src/bio_e.egg-info/top_level.txt
+src/bioe/__init__.py
+src/bioe/bio.py
