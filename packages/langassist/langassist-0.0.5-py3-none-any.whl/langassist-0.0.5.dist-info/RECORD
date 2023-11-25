@@ -1,0 +1,17 @@
+assistants/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+assistants/examples/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+assistants/examples/loan_estimate_assistant.py,sha256=b_9aERotKU1balDlCZ71ov9o3mXBkF0Et_9ooDtcsZI,1311
+assistants/examples/summarize_assistant_operations.py,sha256=LGHy18_S4yzlSU9fxzxqDA-gNQKMK23lfj5x3VvbzDA,1794
+assistants/langregister/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+assistants/langregister/base.py,sha256=xtfVNXKrgWYVueBCnP6OEcEHV9ao3KKZmOwRJmVkfvk,452
+assistants/langregister/mongo_db_atlas.py,sha256=fgn1UQEDHj_8L0X0FLYmXRbFt-aalyhrLp_y5wRqnyc,2548
+assistants/llm_assistants/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+assistants/llm_assistants/assistants.py,sha256=PoAliJ-Cvi2YQYtrBf7bVXPeQpJBkkjsLuLGbYTVJM0,587
+assistants/llm_assistants/openai_assistants.py,sha256=BFvLM1-PmBMpcLvA4WOmwKEiwmKjernc34d0B-h3fX0,5547
+assistants/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+assistants/utils/utilities.py,sha256=33s9N5lVbQW0iQzUiYFS2qhYNyfPbtOjodNauSurKjg,1100
+langassist-0.0.5.dist-info/LICENSE,sha256=mQgqC5iUwshGv8dVnLzAcFA9t3jf128m_R8YbnFluJI,1062
+langassist-0.0.5.dist-info/METADATA,sha256=zL_iOToa8S1vOuybOkxLwv8a7G0e1ph3-d6iuBM5jzU,3146
+langassist-0.0.5.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+langassist-0.0.5.dist-info/top_level.txt,sha256=OCx5B1-MmbkLSiSvLCcn9bjZSmtXGVWqm6Au_1pdhu8,11
+langassist-0.0.5.dist-info/RECORD,,
