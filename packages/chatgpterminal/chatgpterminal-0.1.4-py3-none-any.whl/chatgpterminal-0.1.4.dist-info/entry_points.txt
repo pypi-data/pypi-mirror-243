@@ -1,0 +1,3 @@
+[console_scripts]
+gpt=chatgpterminal.chatgpterminal.main:main
+
