@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools", "setuptools-git-versioning"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools-git-versioning]
+enabled = true
+
+[project]
+name = "certbot-lego-httpreq"
+dynamic = [ "version" ]
+description = "Certbot authenticator plugin for HTTP requests to custom endpoints."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    {name = "Cornelius Hoffmann", email="coding@hoffmn.de"}
+]
+dependencies = [
+    "certbot",
+    "httpx",
+]
+
+[project.urls]
+Homepage = "https://github.com/Cornelicorn/certbot-httpreq"
+Repository = "https://github.com/Cornelicorn/certbot-httpreq"
+Issues = "https://github.com/Cornelicorn/certbot-httpreq/issues"
+
+[project.entry-points."certbot.plugins"]
+dns-httpreq = "certbot_httpreq:Authenticator"
