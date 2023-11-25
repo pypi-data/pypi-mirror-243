@@ -1,0 +1,2 @@
+[console_scripts]
+stagpy = stagpy.__main__:main
