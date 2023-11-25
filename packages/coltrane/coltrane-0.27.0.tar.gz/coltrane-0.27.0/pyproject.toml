@@ -1,0 +1,231 @@
+[project]
+name = "coltrane"
+authors = [{name = "Adam Hill", email = "adam@adamghill.com"}]
+dynamic = ["version", "description"]
+
+[tool.poetry]
+name = "coltrane"
+version = "0.27.0"
+description = "A Dynamic Site Generator that harnesses the power of Django without the hassle 🎵."
+authors = ["adamghill <adam@adamghill.com>"]
+license = "MIT"
+readme = "README.md"
+keywords = ["django", "python", "static", "markdown"]
+packages = [{ include = "coltrane" }]
+repository = "https://github.com/adamghill/coltrane/"
+homepage = "https://github.com/adamghill/coltrane/"
+documentation = "https://coltrane.readthedocs.io/"
+
+[tool.poetry.urls]
+"Funding" = "https://github.com/sponsors/adamghill"
+
+[tool.poetry.scripts]
+coltrane = "coltrane.console:cli"
+
+[tool.poetry.dependencies]
+python = ">=3.7,<4.0"
+Django = ">3.0"
+python-dotenv = ">0.17"
+markdown2 = "^2.4.2"
+click = "^8.0.0"
+django-browser-reload = "^1.3.0"
+halo = "^0.0.31"
+rich-click = "^0.2.0"
+django-fastdev = "^1.3.0"
+dateparser = "^1.1.0"
+
+# mistune extras
+mistune = { version = "^3.0.0rc4", allow-prereleases = true, optional = true }
+python-frontmatter = { version = "^1.0.0", optional = true }
+pygments = { version = ">=2.7.3", optional = true }
+minestrone = { version = ">=0.6.2", optional = true }
+
+# docs extras
+Sphinx = { version = "^4.3.2", optional = true }
+linkify-it-py = { version = "^1.0.3", optional = true }
+myst-parser = { version = "^0.16.1", optional = true }
+furo = { version = "^2021.11.23", optional = true }
+sphinx-copybutton = { version = "^0.4.0", optional = true }
+sphinx-autobuild = { version = "^2021.3.14", optional = true }
+toml = { version = "*", optional = true }
+attrs = { version = "^21.4.0", optional = true }
+
+# deploy extras
+gunicorn = { version = "^20.1.0", optional = true }
+whitenoise = { version = "^5.3.0", optional = true }
+
+[tool.poetry.extras]
+deploy = ["gunicorn", "whitenoise"]
+docs = ["Sphinx", "linkify-it-py", "myst-parser", "furo", "sphinx-copybutton", "sphinx-autobuild", "toml", "attrs"]
+mistune = ["mistune", "python-frontmatter", "pygments", "minestrone"]
+
+[tool.poetry.dev-dependencies]
+poethepoet = "*"
+ruff = "*"
+pytest = "*"
+pytest-django = "*"
+pywatchman = "*"
+django-stubs = "*"
+coverage = {extras = ["toml"], version = "*"}
+pytest-cov = "*"
+pytest-icdiff = "*"
+types-toml = "*"
+types-dateparser = "*"
+
+[tool.black]
+target-version = ["py38", "py39", "py310"]
+line-length = 120
+extend-exclude = "migrations"
+
+[tool.ruff]
+src = ["coltrane"]
+exclude = []
+target-version = "py38"
+line-length = 120
+select = [
+  "A",
+  "ARG",
+  "B",
+  "C",
+  "DTZ",
+  "E",
+  "EM",
+  "F",
+  "FBT",
+  "I",
+  "ICN",
+  "ISC",
+  "N",
+  "PLC",
+  "PLE",
+  "PLR",
+  "PLW",
+  "Q",
+  "RUF",
+  "S",
+  "T",
+  "TID",
+  "UP",
+  "W",
+  "YTT",
+]
+ignore = [
+  # Allow non-abstract empty methods in abstract base classes
+  "B027",
+  # Allow boolean positional values in function calls, like `dict.get(... True)`
+  "FBT003",
+  # Ignore checks for possible passwords
+  "S105", "S106", "S107",
+  # Ignore complexity
+  "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915",
+  # Ignore unused variables
+  "F841",
+   # Ignore exception strings
+  "EM101", "EM102",
+]
+unfixable = [
+  # Don't touch unused imports
+  "F401",
+]
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.isort]
+known-first-party = ["coltrane"]
+
+[tool.ruff.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.per-file-ignores]
+# Tests can use magic values, assertions, and relative imports
+"tests/**/*" = ["PLR2004", "S101", "TID252", "ARG001"]
+
+[tool.pytest.ini_options]
+addopts = "--quiet --failed-first --reuse-db --nomigrations -p no:warnings"
+testpaths = [
+    "tests"
+]
+markers = [
+    "slow: marks tests as slow",
+]
+
+[tool.coverage.run]
+branch = true
+parallel = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+skip_empty = true
+sort = "cover"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+
+[[tool.mypy.overrides]]
+module = ["markdown2"]
+ignore_missing_imports = true
+
+[tool.poe.tasks.secret]
+script = "django.core.management.utils:get_random_secret_key()"
+print_result = true
+
+[tool.poe.tasks.r]
+cmd = "example_standalone/app.py runserver 0:8045"
+help = "Start dev server for example_standalone"
+
+[tool.poe.tasks.record]
+cmd = "coltrane record"
+cwd = "example_standalone"
+help = "Build example_standalone"
+
+[tool.poe.tasks.g]
+cmd = "gunicorn -b localhost:8045 example_standalone.app:wsgi"
+help = "Start gunicorn"
+
+[tool.poe.tasks.t]
+cmd = "pytest -m 'not slow'"
+help = "Run tests"
+
+[tool.poe.tasks.tc]
+cmd = "pytest --cov=coltrane"
+help = "Run tests with coverage"
+
+[tool.poe.tasks.cr]
+cmd = "coverage report"
+help = "Show coverage report"
+
+[tool.poe.tasks.my]
+cmd = "mypy ."
+help = "Run mypy"
+
+[tool.poe.tasks.b]
+cmd = "black . --check --quiet"
+help = "Run black"
+
+[tool.poe.tasks.i]
+cmd = "isort . --check --quiet"
+help = "Run isort"
+
+[tool.poe.tasks.tm]
+sequence = ["b", "i", "tc", "my"]
+ignore_fail = "return_non_zero"
+help = "Run all of the test-related stuff"
+
+[tool.poe.tasks.sa]
+cmd = "sphinx-autobuild -W docs/source docs/build"
+help = "Sphinx autobuild"
+
+[tool.poe.tasks.sb]
+cmd = "sphinx-build -W docs/source docs/build"
+help = "Build documentation"
+
+[tool.poe.tasks.publish]
+shell = "poetry publish --build -r test && poetry publish"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
