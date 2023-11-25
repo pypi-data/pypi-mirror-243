@@ -1,0 +1,34 @@
+[project]
+name = "netunicorn-executor"
+version = "0.3.2"
+authors = [
+    {name = "Roman Beltiukov", email = "rbeltiukov@ucsb.edu"},
+]
+description = "netunicorn executor module"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["netunicorn"]
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "cloudpickle",
+    "requests",
+    "netunicorn-base >= 0.3.3",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.mypy]
+python_version = "3.8"
+ignore_missing_imports = true
+explicit_package_bases = true
+strict = true
+exclude = "tests"
+mypy_path = "$MYPY_CONFIG_FILE_DIR/src"
