@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "bfjira"
+version = "0.5.0"
+description = "Create Git branches from Jira tickets"
+authors = ["Nick Hobart <nick@hobart.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+jira = "^3.5.2"
+gitpython = "^3.1.37"
+colorlog = "^6.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+bfjira = 'bfjira.main:main'
+
+[tool.semantic_release]
+version_variable = [
+    "bfjira/__init__.py:__version__"
+]
+version_toml = [
+    "pyproject.toml:tool.poetry.version"
+]
+version_pattern = [
+    "README.md:rev: v{version}",
+]
