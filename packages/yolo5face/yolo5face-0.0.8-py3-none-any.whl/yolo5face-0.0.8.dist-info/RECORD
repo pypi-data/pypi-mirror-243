@@ -1,0 +1,17 @@
+yolo5face/__init__.py,sha256=wOJN3HxAgnSon5vWYU3Txm2UZ_7tBHDKXUKZIH-mXX8,22
+yolo5face/get_model.py,sha256=2HdwYQXRiKsht43FN1HfMpsTyywgi4PRdvixHA28UwM,1837
+yolo5face/yoloface/YoloDetectorAggregator.py,sha256=NH4FGYPv-e1nBRUU4TjOlr1p-iMXdjpIutzmdIzjSaI,2226
+yolo5face/yoloface/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+yolo5face/yoloface/face_detector.py,sha256=Z4zTxPN7tAwKRXl_Jy1hpCW5zgyGIjI0IwNyGEHOYz8,6253
+yolo5face/yoloface/types.py,sha256=uipCM9N9YJqVfp6gF8EgDKu8roz0JzA1ZUU0jFRWp0o,262
+yolo5face/yoloface/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+yolo5face/yoloface/models/common.py,sha256=UN2LGAqftAzwILenXZh2WHExgR-Kc882yF-7NDF83Bw,9103
+yolo5face/yoloface/models/yolo.py,sha256=3_igV3oRTX4gDGUcS5oX2lHM7fB9yiYasnrftvY-LBw,6626
+yolo5face/yoloface/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+yolo5face/yoloface/utils/datasets.py,sha256=mosDwjaTKjjI_Nvmk4uHFgdEwAqOORrMvLF4N0unPKw,2203
+yolo5face/yoloface/utils/general.py,sha256=CFiIg6hJ4IRkkr19URdXgMBUYcdXFu1Trs7D0O1zAwk,6303
+yolo5face-0.0.8.dist-info/LICENSE,sha256=jiE2UTZYekPH2xh6oHju-p5bEyIKn8LUEK0yuTr-SFk,1075
+yolo5face-0.0.8.dist-info/METADATA,sha256=kNC3Fj9W6Eh2GoC6PxsnKRUvJi7nnIT_IoUC3kC8mug,2609
+yolo5face-0.0.8.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+yolo5face-0.0.8.dist-info/top_level.txt,sha256=m-9iVaOrd-sEQBAkb_KvPd-fs4zH3scV9hRTwjz7wMs,10
+yolo5face-0.0.8.dist-info/RECORD,,
