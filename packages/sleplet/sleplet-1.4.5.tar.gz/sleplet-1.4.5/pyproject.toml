@@ -1,0 +1,208 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools",
+    "setuptools-scm",
+]
+
+[project]
+authors = [
+    {email = "patrickjamesroddy@gmail.com", name = "Patrick J. Roddy"},
+]
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Typing :: Typed",
+]
+dependencies = [
+    "cmocean~=3.0",
+    "gmpy2~=2.0",
+    "hypothesis~=6.0",
+    "libigl~=2.0",
+    "matplotlib~=3.0",
+    "multiprocess~=0.0",
+    "numba~=0.0",
+    "numpy~=1.0",
+    "platformdirs~=4.0",
+    "plotly~=5.0",
+    "pooch~=1.0",
+    "pydantic~=2.0",
+    "pys2let~=2.0",
+    "pyssht~=1.0",
+    "scipy~=1.0",
+    "seaborn~=0.0",
+    "tomli~=2.0",
+    "tqdm~=4.0",
+]
+description = "Slepian Scale-Discretised Wavelets in Python"
+dynamic = [
+    "version",
+]
+keywords = [
+    "manifolds",
+    "python",
+    "slepian-functions",
+    "sphere",
+    "wavelets",
+]
+name = "sleplet"
+optional-dependencies = {dev = [
+    "build",
+    "mypy",
+    "pre-commit",
+    "pytest",
+    "ruff",
+    "tox",
+    "twine",
+], docs = [
+    "pdoc3",
+], readme = [
+    "pytest-codeblocks",
+]}
+readme = "README.md"
+requires-python = ">=3.10"
+scripts = {mesh = """\
+    sleplet._scripts.plotting_on_mesh:main\
+    """, sphere = """\
+    sleplet._scripts.plotting_on_sphere:main\
+    """}
+urls = {Code = """\
+    https://github.com/astro-informatics/sleplet\
+    """, Documentation = """\
+    https://astro-informatics.github.io/sleplet\
+    """, Download = """\
+    https://pypi.org/project/sleplet\
+    """, Homepage = """\
+    https://github.com/astro-informatics/sleplet\
+    """, Issues = """\
+    https://github.com/astro-informatics/sleplet/issues\
+    """}
+license.file = "LICENCE.txt"
+
+[tool.check-manifest]
+ignore = [
+    "*.cff",
+    "*.md",
+    "*.off",
+    "*.toml",
+    "src/sleplet/_version.py",
+]
+
+[tool.coverage]
+report = {skip_covered = true, sort = "cover"}
+run = {branch = true, parallel = true, source = [
+    "sleplet",
+]}
+paths.source = [
+    "src",
+    ".tox*/*/lib/python*/site-packages",
+]
+
+[tool.mypy]
+disallow_subclassing_any = false
+disallow_untyped_decorators = false
+explicit_package_bases = true
+ignore_missing_imports = true
+plugins = [
+    "numpy.typing.mypy_plugin",
+    "pydantic.mypy",
+]
+strict = true
+warn_return_any = false
+
+[tool.pytest.ini_options]
+addopts = """
+    --color=yes
+    --import-mode=importlib
+    --verbose
+"""
+testpaths = [
+    "tests",
+]
+
+[tool.ruff]
+fix = true
+force-exclude = true
+ignore = [
+    "COM812",
+    "D105",
+    "D203",
+    "D205",
+    "D212",
+    "D407",
+    "ISC001",
+    "N803",
+    "N806",
+]
+isort = {known-first-party = [
+    "sleplet",
+], section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "astro-info",
+    "first-party",
+    "local-folder",
+], sections = {"astro-info" = [
+    "pys2let",
+    "pyssht",
+]}}
+per-file-ignores = {"examples*" = [
+    "D100",
+    "INP001",
+    "T201",
+], "src*" = [
+    "SLF001",
+], "tests*" = [
+    "D100",
+    "INP001",
+    "S101",
+    "SLF001",
+]}
+select = [
+    "ALL",
+]
+mccabe.max-complexity = 18
+pep8-naming.classmethod-decorators = [
+    "classmethod",
+    "pydantic.field_validator",
+]
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
+write_to = "src/sleplet/_version.py"
+
+[tool.tomlsort]
+overrides."project.classifiers".inline_arrays = false
+overrides."tool.coverage.paths.source".inline_arrays = false
+overrides."tool.ruff.isort.section-order".inline_arrays = false
+
+[tool.tox]
+legacy_tox_ini = """
+    [gh-actions]
+    python =
+        3.10: py310
+        3.11: py311
+
+    [gh-actions:env]
+    OS =
+        ubuntu-latest: linux
+        macos-latest: macos
+
+    [testenv]
+    commands =
+        pytest --cov --cov-report=lcov
+    deps =
+        pytest-cov
+
+    [tox]
+    env_list = py{310,311}-{linux,macos}
+"""
