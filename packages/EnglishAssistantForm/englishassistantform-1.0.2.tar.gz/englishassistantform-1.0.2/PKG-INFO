@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: EnglishAssistantForm
+Version: 1.0.2
+Summary: To help improve learning a language
+Project-URL: Homepage, https://github.com/yasharsajadi/EnglishAssistantForm
+Author-email: "Seyed Mousa Sajadi(WinCento)" <sajadimousa@gmail.com>
+License-File: LICENSE.txt
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: awesometkinter==2021.11.8
+Requires-Dist: customtkinter==5.2.1
+Requires-Dist: englishassistantcore==1.0.6
+Requires-Dist: pillow==10.1.0
+Requires-Dist: requests==2.31.0
+Description-Content-Type: text/markdown
+
+# English Assistant Form		 
+This project is related to the implementation of the English Assistant Application, which helps us to learn English as an assistant. And, Also this package has the ability to translate from English to Persian.
+## Instruction
+
+1. Install [Python](https://www.python.org/).
+
+
+
+2. Install [English Assistant Form](https://github.com/yasharsajadi/EnglishAssistantForm)
+
+Windows:
+```
+pip install EnglishAssistantForm
+```
+Linux:
+```
+pip3 install EnglishAssistantForm
+```
+
+## Usage
+In the Python file(.pyw):
+```
+from EnglishAssistantForm.EnglishAssistantForm import App
+
+if __name__ == "__main__":
+	app = App()
+	app.mainloop()
+```
+
+In the Batch file(.bat):
+```
+@echo off
+
+echo from EnglishAssistantForm.EnglishAssistantForm import App>> "%~dp0%EnglishAssistantApplication.pyw"
+
+echo app = App()>> ""%~dp0%EnglishAssistantApplication.pyw"
+echo app.mainloop()>> "%~dp0%EnglishAssistantApplication.pyw"
+
+start pythonw "%~dp0%EnglishAssistantApplication.pyw"
+
+timeout /T 3
+del /f "%~dp0%EnglishAssistantApplication.pyw"
+```
+
+
+
+
