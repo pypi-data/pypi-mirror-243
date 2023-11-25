@@ -1,0 +1,11 @@
+tree-sitter-languages
+tree-sitter-lsp>=0.0.4
+
+[colorize]
+tree-sitter-lsp[colorize]
+
+[dev]
+pytest-cov
+
+[misc]
+tree-sitter-lsp[misc]>=0.0.2
