@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: storedict
+Version: 0.0.12
+License: MIT
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Requires-Dist: requests (==2.31.0)
+
