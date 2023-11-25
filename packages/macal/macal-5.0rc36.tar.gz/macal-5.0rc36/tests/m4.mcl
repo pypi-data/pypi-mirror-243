@@ -1,0 +1,9 @@
+# Test for including function from another file.
+
+
+test_remote_function => (a) {
+    a = a + 6;
+    l = a + 35;
+    print(l);
+    return a;
+}

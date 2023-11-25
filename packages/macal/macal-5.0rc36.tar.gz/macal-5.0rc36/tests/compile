@@ -1,0 +1,1 @@
+mc meraki_device_info.mcl -r "sysargv,configuration,agent_version,org_name,org_id,api_key,host_name,serial_number"
