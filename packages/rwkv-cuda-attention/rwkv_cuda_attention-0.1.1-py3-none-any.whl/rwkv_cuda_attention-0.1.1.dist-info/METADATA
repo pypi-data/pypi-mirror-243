@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: rwkv-cuda-attention
+Version: 0.1.1
+Summary: A PyTorch extension for RWKV linear attention
+Author: BBuf
+Author-email: 1182563586@qq.com
+License: Apache 2.0
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+
