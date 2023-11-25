@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: PyBulma
+Version: 0.1.12
+Summary: Python wrappers around html elements, with bulma.io css classes, to create Jinja2/django templates
+Home-page: https://gitlab.com/mnealer-public/pybulma
+Author: Marc Nealer
+Author-email: marcnealer@gmail.com
+License: GNU3
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: jinja2
+Requires-Dist: beautifulsoup4
+Requires-Dist: typing-extensions
+
+Allows for the creation of Something like web components using python classes.
+    HTML components based on Bulma.io css component definitions are coded as python classes, allowing a python
+    programmer to build html templates using python classes instead of having to code HTML. This allows for cleaner
+    html to be built, with clear attributes, classes and styles being applied easily to different html elements.
+    It also allows the programmer to define styles, attributes and html snippets that can be added in a custom form
+    into multiple html sections, or files
+    
