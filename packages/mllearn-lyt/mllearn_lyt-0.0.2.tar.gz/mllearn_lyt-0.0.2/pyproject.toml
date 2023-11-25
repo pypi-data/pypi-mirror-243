@@ -1,0 +1,18 @@
+[project]
+name = "mllearn_lyt"
+version = "0.0.2"
+authors = [
+  { name="lyt0628", email="lyt.0628@qq.com" },
+]
+description = "Machine Learning in Python"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/LYT0628/mllearn"
+Issues = "https://github.com/LYT0628/mllearn/issues"
