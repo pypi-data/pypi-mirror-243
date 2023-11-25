@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: quick_ollama
+Version: 0.0.2
+Summary: fast startup ollama server
+Author: axdjuraev
+Author-email: <axdjuraev@gmail.com>
+Requires-Dist: pyngrok==7.0.1
+Requires-Dist: PyYAML==6.0.1
