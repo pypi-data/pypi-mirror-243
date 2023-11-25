@@ -1,0 +1,11 @@
+jinja2
+pyparsing
+requests
+spdx-license-list
+trove-classifiers
+pip-tools
+types-requests
+autoflake
+black
+isort
+typing-extensions;python_version=="3.10"

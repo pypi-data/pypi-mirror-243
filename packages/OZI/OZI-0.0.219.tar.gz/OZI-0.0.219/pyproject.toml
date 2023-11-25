@@ -1,0 +1,520 @@
+# pyproject.toml
+# Part of the OZI Project, under the Apache License v2.0 with LLVM Exceptions.
+# See LICENSE.txt for license information.
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+[project]
+authors = [{name = "Ross J. Duff MSc", email = "help@oziproject.dev"}]
+dynamic = ["dependencies", "version"]
+license = {file = "LICENSE.txt"}
+readme = "README.rst"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.in"] }
+
+[project.optional_dependencies] # also meson test suite names
+# Bootstrapping Dependencies
+boot = ["mesonpep517", "ninja", "dist"]
+# Default meson test setup
+dev  = ["[dist,docs,lint,test]"]
+## Packaging Setup
+dist = ["pyc_wheel", "python-semantic-release", "sigstore"]
+## Documentation Setup
+docs = ["doc8", "pydocstyle[toml]", "Pygments", "pyparsing", "sphinx",
+        "sphinx-design", "sphinxawesome-codelinter", "sphinxawesome-theme ~= 5.0.0b2"]
+## Linting and Formatting Setup
+lint = ["bandit[toml]", "black", "flake8", "flake8-quotes",
+        "flake8-pytest-style", "flake8-type-checking", "flake8-annotations",
+        "flake8-broken-line", "flake8-eradicate", "flake8-fixme", "flake8-bugbear",
+        "flake8-datetimez", "flake8-no-pep420", "flake8-comprehensions",
+        "flake8-leading-blank-lines", "flake8-tidy-imports", "flake8-pyi",
+        "Flake8-pyproject", "isort", "mypy", "pyright"]
+## Testing Setup
+test = ["coverage[toml]", "hypothesis[all]", "pytest", "pytest-asyncio", "pytest-cov", 
+        "pytest-tcpclient", "pytest-randomly", "pytest-xdist"]
+
+[tool.mesonpep517.metadata]
+pkg-info-file = 'PKG-INFO'
+summary = 'Packager for Python projects using Meson.'
+
+[tool.mesonpep517.entry-points]
+console_scripts = [
+    "ozi = ozi.__main__:main",
+    "ozi-new = ozi.new.__main__:main",
+    "ozi-fix = ozi.fix.__main__:main",
+]
+
+[build-system]
+requires      = [
+    "mesonpep517", "ninja", "pip-tools", "setuptools>=64", "setuptools_scm[toml]>=6.2", "tomli"
+]
+build-backend = "mesonpep517.buildapi"
+
+[tool.bandit]
+exclude_dirs = ["venv", "meson-private", "tests"]
+format = "txt"
+ignore_nosec = true
+verbose = true
+
+[tool.black]
+extend-exclude = "(\\.pyi|meson-private|venv)"
+line-length = 93
+
+[tool.coverage.report]
+exclude_lines = [
+    "^.*#\\s*(pragma|PRAGMA)[:\\s]?\\s*(no|NO)\\s*(cover|COVER)",
+    "^.*#\\s*(pragma|PRAGMA)[:\\s]?\\s*(defer|DEFER)\\s*(to|TO)\\s*[a-zA-Z0-9_]*",
+    "def __repr__",
+    "def __wrapper", # functools.wraps decorated functions
+    "(\\.\\.\\.)",
+    "@(abc\\.)?abstractmethod",
+    "class .*\\bProtocol\\):",
+    "if __name__ == .__main__.:",
+    "if (typing\\.)?TYPE_CHECKING:",
+    "(el)?if\\s?(sys\\.)?version_info\\s?(==|<=|>=|<|>)\\s?\\([234],\\s?[0-9]{1,3}\\)\\s?:",
+    ]
+fail_under = 100.0
+show_missing = true
+skip_covered = true
+skip_empty = true
+
+[tool.coverage.run]
+branch = true
+relative_files = true
+omit = [
+    "*/vendor/*",
+]
+
+[tool.ruff]
+line-length = 93
+extend-exclude = ["meson-private", "scripts", "vendor"]
+select = ["ALL"]
+ignore = [
+    "A003",
+    "ARG",
+    "ANN401",
+    "TRY003",
+    "B028",
+    "B905",
+    "D1",
+    "D2",
+    "D101",
+    "D4",
+    "FLY",
+    "FBT",
+    "PGH003",
+    "PLR",
+    "RET",
+    "EM",
+    "PLW",
+    "PTH",
+    "RUF009",
+    "RUF012",
+    "RUF015",
+    "SIM",
+    "T201",
+    "TCH002",
+    "TCH004",
+    "UP",
+    "PERF203",
+]
+# target-version = "@PYTHON_VERSION_DIST@"
+
+[tool.ruff.lint.mccabe]
+max-complexity = 6
+
+[tool.ruff.format]
+line-ending = "lf"
+quote-style = "single"
+
+[tool.ruff.isort]
+force-single-line = true
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 102
+
+[tool.ruff.lint.flake8-copyright]
+author="Ross J. Duff MSc"
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = "single"
+
+[tool.ruff.lint.flake8-type-checking]
+strict = true
+
+[tool.flake8]
+ban-relative-imports = "parents"
+max-line-length = 93
+extend-exclude = ["meson-private", "build-env-*", "vendor", "venv", "build*", "*.pyi"]
+extend-ignore = "E203,E501,TC007,TC008"
+extend-select = "B950"
+
+[tool.isort]
+line_length = 93
+profile = "black"
+force_single_line = true
+
+[tool.mypy]
+implicit_reexport = true
+strict = true
+exclude = [
+    'meson-private',
+    'tests',
+    'venv',
+]
+
+[[tool.mypy.overrides]]
+module = ["ozi.vendor.*"]
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = ["spdx_license_list.*"]
+ignore_missing_imports = true
+
+[tool.pylint.MASTER]
+disable = "C0301"
+expected-line-ending-format = "LF"
+max-line-length = 93
+max-nested-blocks = 4
+
+[tool.pyright]
+reportMissingTypeStubs = false
+exclude = [ 
+    'meson-private',
+    'tests',
+    'venv',
+    '*/vendor/',
+]
+
+[tool.pytest.ini_options]  #[tool.pytest] # This will be used by pytest in the future
+filterwarnings      = [
+"error",
+"ignore:The --rsyncdir command line argument and rsyncdirs config variable are deprecated.:DeprecationWarning",
+]
+asyncio_mode = "auto"
+log_cli = true
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(name)s: %(message)s (%(filename)s:%(lineno)s)"
+log_cli_level = "INFO"
+
+[tool.semantic_release]
+commit_parser = "emoji"
+major_on_zero = false
+tag_format = "{version}"
+
+[tool.semantic_release.branches.main]
+match = "(main|master)"
+prerelease_token = "beta"
+prerelease = false
+
+[tool.semantic_release.commit_parser_options]
+major_tags = [":boom:"]
+minor_tags = [
+    ":sparkles:",
+    ":rocket:",
+]
+patch_tags = [
+    ":children_crossing:",
+    ":ambulance:",
+    ":lock:",
+    ":bug:",
+    ":zap:",
+    ":goal_net:",
+    ":alien:",
+    ":wheelchair:",
+    ":arrow_down:",
+    ":pushpin:",
+    ":arrow_up:",
+    ":speech_balloon:",
+    ":mag:",
+    ":apple:",
+    ":penguin:",
+    ":checkered_flag:",
+    ":robot:",
+    ":green_heart:",
+    ":green_apple:",
+    ":recycle:",
+    ":wrench:",
+    ":hammer:",
+    ":pencil2:",
+    ":bento:",
+    ":bulb:",
+    ":label:",
+    ":fire:",
+]
+
+[tool.semantic_release.changelog]
+changelog_file = "CHANGELOG.md"
+
+[tool.semantic_release.remote]
+token = { env = "GH_TOKEN" }
+
+[tool.semantic_release.publish]
+dist_glob_patterns = ["*.whl", "*.tar.gz", "sig/*"]
+upload_to_vcs_release = true
+
+[tool.setuptools_scm]
+write_to_template = """
+Metadata-Version: 2.1
+Name: OZI
+Version: {version}
+Summary: Packager for Python projects using Meson.
+Download-URL: https://github.com/rjdbcm/OZI/archive/refs/tags/{version}.tar.gz
+Home-page: https://oziproject.dev/
+Author: Ross J. Duff MSc
+Author-email: help@oziproject.dev
+License: Apache-2.0 WITH LLVM-exception
+Keywords: meson,packaging,wheel
+Project-URL: Bug Tracker, https://github.com/rjdbcm/ozi/issues
+Requires-Dist: dnspython
+Requires-Dist: idna
+Requires-Dist: jinja2
+Requires-Dist: pyparsing
+Requires-Dist: requests
+Requires-Dist: spdx-license-list
+Requires-Dist: trove-classifiers
+Requires-Dist: pip-tools
+Requires-Dist: GitPython
+Requires-Dist: types-requests
+Requires-Dist: autoflake
+Requires-Dist: black
+Requires-Dist: isort
+Requires-Dist: typing-extensions;python_version=="3.10"
+Requires-External: git
+Requires-Python: >=3.10, <=3.12
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Typing :: Typed
+Description-Content-Type: text/x-rst
+
+.. OZI
+  Classifier: License-Expression :: Apache-2.0 WITH LLVM-exception
+  Classifier: License-File :: LICENSE.txt
+
+.. README.rst
+   Part of the OZI Project, under the Apache License v2.0 with LLVM Exceptions.
+   See LICENSE.txt for license information.
+
+===
+OZI
+===
+
+|py-version-badge| |openssf-badge| |slsa-level3-badge| |fossa-badge| |semantic-release-badge|
+|bandit-badge| |black-badge| |isort-badge| |flake8-badge| |pyright-badge| |rst-lint-badge|
+
+.. image:: https://raw.githubusercontent.com/sigstore/community/main/artwork/badge/sigstore_codesigned_purple.png
+ :align: right
+ :height: 140
+ :target: https://www.sigstore.dev/
+
+Project Information
+-------------------
+
+OZI,
+is a packaging management plane for Python packages
+built with Meson_. OZI helps create a version controlled
+system of packaging practices.
+
+See the `documentation <https://docs.oziproject.dev/>`_ for the project roadmap,
+API specification, and Meson version support information.
+
+Purpose
+^^^^^^^
+
+* What OZI is:
+
+  * Checkpointed Python packaging for Meson projects focused on Python sources.
+
+* What OZI is **not**:
+
+  * A replacement for test environment managers like tox_, as a matter of fact OZI uses ``tox``.
+  * A replacement for git hook package management tools like pre-commit_
+
+OZI is meant for Python developers as a standardized and flexible but opinionated
+Python packaging style guide and checkpointing API using the Meson build system.
+
+The following checkpointed environments:
+
+* code testing and coverage
+* distributing Python packages with Meson_
+* code linting and formatting
+* documentation linting, build, and doctests 🚧 Work in Progress 🚧
+
+Message from the Maintainer
+###########################
+
+I just wanted packaging to work without having to reorient myself to best practices every time. 
+This is a solution to help me package Python modules with Meson.
+OZI can also help to synchronize packaging practices across packages using it, helping to reduce maintenance time.
+
+Contributing
+^^^^^^^^^^^^
+
+Contributions are what make the open source community such an amazing place to
+learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and
+create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the repository
+2. Create your Feature Branch (``git checkout -b feature/AmazingFeature``)
+3. Commit your Changes (``git commit -m 'Add some AmazingFeature'``)
+4. Push to the Branch (``git push origin feature/AmazingFeature``)
+5. Open a Pull Request
+
+Bug Reports
+^^^^^^^^^^^
+
+1. Create an issue with the tag "bug" with a descriptive title stating the issue succinctly.
+2. Fill out the issue template with the information requested.
+
+If you have any proposed changes related to a bug, if an Issue has not been created please
+complete the above instructions.
+The next steps are similar to the steps needed to create a feature pull request.
+
+Submitting a Fix
+################
+
+1. Fork the repository
+2. Create your Bugfix Branch (``git checkout -b bugfix/Issue#``)
+3. Commit your Changes (``git commit -m '🐛: Fix Issue#'``)
+4. Push to the Branch (``git push origin bugfix/Issue#``)
+5. Open a Pull Request
+
+License
+^^^^^^^
+
+OZI is released under the terms of the 2.0 version of the Apache License,
+approved by the Apache Software Foundation.
+As of 13-Sept-2023 the OZI project has adopted the language of the LLVM-exception
+to mitigate GPLv2 compatibility issues and reduce publishing clutter.
+OZI meets the Open Source Initiative's definition of
+open source software, and the Free Software Foundation's definition of GPLv3-compatible open 
+source software.
+
+|osi-logo| |asf-logo| |fsf-logo|
+
+.. note::
+   The OSI logo trademark is the trademark of Open Source Initiative.
+   The OZI project is not affiliated with or endorsed by the Open Source Initiative.
+
+.. note::
+   The Apache logo trademark is the trademark of the Apache Software Foundation.
+   The OZI project is not affiliated with or endorsed by the Apache Software Foundation.
+
+.. note::
+   The FSF logo trademark is the trademark of the Free Software Foundation.
+   The OZI project is not affiliated with or endorsed by the Free Software Foundation.
+
+.. note::
+   The "LLVM" software name is the registered trademark of the LLVM Foundation.
+   The OZI project is not affiliated with or endorsed by the LLVM Foundation.
+
+Contact
+-------
+
+Ross J. Duff MSc - help@oziproject.dev
+
+.. |py-version-badge| image:: https://img.shields.io/pypi/pyversions/ozi
+    :alt: PyPI - Python Version
+.. |pylint-ckpt-badge| image:: https://img.shields.io/badge/linting-%E2%9C%94%20Pylint%3A%2010.00%2F10-informational
+.. |fossa-badge| image:: https://app.fossa.com/api/projects/git%2Bgithub.com%2Frjdbcm%2Fozi.svg?type=shield
+    :target: https://app.fossa.com/projects/git%2Bgithub.com%2Frjdbcm%2Fozi?ref=badge_large
+    :alt: License Compliance
+
+.. |slsa-level3-badge| image:: https://slsa.dev/images/gh-badge-level3.svg
+.. |openssf-badge| image:: https://bestpractices.coreinfrastructure.org/projects/7515/badge
+    :target: https://bestpractices.coreinfrastructure.org/projects/7515
+    :alt: Open Source Security Foundation self-certification status
+.. |semantic-release-badge| image:: https://img.shields.io/badge/semantic--release-gitmoji-e10079?logo=semantic-release
+    :target: https://github.com/python-semantic-release/python-semantic-release
+    :alt: Automatic Semantic Versioning for Python projects
+.. |bandit-badge| image:: https://img.shields.io/badge/security-%E2%9C%94%20bandit-yellow.svg
+    :target: https://github.com/PyCQA/bandit
+    :alt: Security Status
+
+.. |black-badge| image:: https://img.shields.io/badge/code%20style-%E2%9C%94%20black-000000.svg
+    :target: https://github.com/psf/black
+
+.. |flake8-badge| image:: https://img.shields.io/badge/code%20quality-%E2%9C%94%20Flake8-informational
+.. |isort-badge| image:: https://img.shields.io/badge/%20imports-%E2%9C%94%20isort-%231674b1?style=flat&labelColor=ef8336
+    :target: https://pycqa.github.io/isort/
+.. |pyright-badge| image:: https://img.shields.io/badge/typing-%E2%9C%94%20Pyright%3A%200%20e%2C%200%20w%2C%200%20i-informational
+.. |rst-lint-badge| image:: https://img.shields.io/badge/rst--lint-%E2%9C%94%20README.rst-informational
+
+.. |osi-logo| image:: https://149753425.v2.pressablecdn.com/wp-content/uploads/2009/06/OSIApproved_100X125.png
+ :height: 100
+ :alt: OSI Approved Open Source License under Keyhole Logo
+ :target: https://opensource.org/
+
+.. |asf-logo| image:: https://www.apache.org/foundation/press/kit/asf_logo_url.png
+ :height: 100
+ :alt: Apache-2.0 License
+ :target: https://www.apache.org/
+
+.. |fsf-logo| image:: https://www.gnu.org/graphics/logo-fsf.org.png
+ :width: 330
+ :alt: GPL-compatible Open Source License
+ :target: https://www.gnu.org/
+
+
+.. _TOML: https://toml.io/en/
+.. _PEP517: https://peps.python.org/pep-0517/
+.. _build: https://pypi.org/project/build/
+.. _mesonpep517: https://pypi.org/project/mesonpep517
+.. _Ninja: https://pypi.org/project/ninja/
+.. _setuptools: https://pypi.org/project/setuptools/
+.. _setuptools_scm: https://pypi.org/project/setuptools_scm/
+.. _Tomli: https://pypi.org/project/tomli/
+.. _wheel: https://pypi.org/project/wheel/
+.. _pre-commit: https://pre-commit.com/
+.. _tox: https://tox.wiki/en/latest/
+.. _Meson: https://mesonbuild.com/
+"""
+write_to = "PKG-INFO"
+# meson writes during configuration so that meson dist can have a valid version.
+fallback_version = "@VCS_TAG@"
+parentdir_prefix_version = "OZI-"
+tag_regex = "^(?P<prefix>v)?(?P<version>[^\\+]+)(?P<suffix>.*)?$"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+skipsdist = True
+envlist = py3{10,11,12}
+
+[gh]
+python =
+     3.12 = py312
+     3.11 = py311
+     3.10 = py310
+
+[testenv]
+allowlist_externals = rm
+package = wheel
+deps =
+     meson >= 1.1.0
+     ninja >= 1.8.2
+     pip-tools
+     setuptools_scm[toml]
+     tomli >= 2.0.0
+commands =
+     meson setup {env_tmp_dir} -D{posargs:lint}=enabled
+     meson compile -C {env_tmp_dir}
+     rm -rf {env_tmp_dir}/.gitignore
+     pip install -q .
+     meson test --no-rebuild --maxfail=1 -C {env_tmp_dir} --setup={posargs:lint}
+"""
+# -Dblastpipe:dev=enabled -Dozi-blastpipe=enabled
