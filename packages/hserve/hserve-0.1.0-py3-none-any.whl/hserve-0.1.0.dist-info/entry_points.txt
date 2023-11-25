@@ -1,0 +1,3 @@
+[console_scripts]
+hserve=hserve.server:start_server
+
