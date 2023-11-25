@@ -1,0 +1,3 @@
+[console_scripts]
+prosper-bot=prosper_bot.bot.bot:runner
+

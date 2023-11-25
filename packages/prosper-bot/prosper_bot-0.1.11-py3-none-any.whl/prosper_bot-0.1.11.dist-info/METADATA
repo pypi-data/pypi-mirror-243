@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: prosper-bot
+Version: 0.1.11
+Summary: 
+Author: Graham Tibbitts
+Author-email: graham.tibbitts@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Office/Business :: Financial :: Investment
+Requires-Dist: backoff (>=2.2.1,<3.0.0)
+Requires-Dist: black (>=23.11.0,<24.0.0)
+Requires-Dist: humanize (>=4.8.0,<5.0.0)
+Requires-Dist: prosper-api[secure] (>=0.5.15,<0.6.0)
+Requires-Dist: prosper-shared (>=0.1.19,<0.2.0)
+Requires-Dist: pytz (>=2023.3.post1,<2024.0)
+Requires-Dist: ratelimit (>=2.2.1,<3.0.0)
+Requires-Dist: simplejson (>=3.19.2,<4.0.0)
+Description-Content-Type: text/markdown
+
+# prosper-bot
+
+Bot to automatically invest in prosper.com
+
+[![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/grahamtt/prosper-bot/build-and-release.yml?logo=github)](https://github.com/grahamtt/prosper-bot)
+[![PyPI - Version](https://img.shields.io/pypi/v/prosper-bot?label=prosper-bot)](https://pypi.org/project/prosper-bot/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/prosper-bot)
+![PyPI - License](https://img.shields.io/pypi/l/prosper-bot)
+[![Code Climate coverage](https://img.shields.io/codeclimate/coverage/grahamtt/prosper-bot?logo=codeclimate)](https://codeclimate.com/github/grahamtt/prosper-bot)
+[![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability-percentage/grahamtt/prosper-bot?logo=codeclimate)](https://codeclimate.com/github/grahamtt/prosper-bot)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/8107/badge)](https://www.bestpractices.dev/projects/8107)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/grahamtt/prosper-bot?logo=github)
+![GitHub issues](https://img.shields.io/github/issues-raw/grahamtt/prosper-bot?logo=github)
+
+## Installation
+
+Use [`pipx`](https://pypa.github.io/pipx/) to install in a self-contained virtual environment.
+
+```commandline
+pipx install prosper-bot
+```
+
+## Setup
+
+Follow the [setup instructions](https://github.com/grahamtt/prosper-api#setup) for Prosper API
+
+## Running
+
+### Dry run
+
+```commandline
+prosper-bot --dry-run
+```
+
+### For realsies
+
+```commandline
+prosper-bot
+```
+
