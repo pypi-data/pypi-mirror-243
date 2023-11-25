@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: rafetch
+Version: 1.0.4
+Summary: A simple system information tool for Ubuntu
+Author: Tanjibul Hasan Rafi
+Author-email: rafitanjibulhasan@gmail.com
+Keywords: python,fetch,linux,ubuntu,systeminfo,neofetch
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+License-File: LICENSE
+Requires-Dist: distro
+Requires-Dist: platform
+Requires-Dist: subprocess
+Requires-Dist: os
+Requires-Dist: re
+Requires-Dist: random
+Requires-Dist: cv2
+Requires-Dist: socket
+Requires-Dist: psutil
+Requires-Dist: getpass
+Requires-Dist: cpuinfo
+Requires-Dist: colorama
+
