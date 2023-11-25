@@ -1,0 +1,10 @@
+pyarrow==12.0.1
+pandas
+scikit-learn
+fredapi
+wallstreet
+scipy
+plotly
+derivative
+matplotlib
+ray[tune]
