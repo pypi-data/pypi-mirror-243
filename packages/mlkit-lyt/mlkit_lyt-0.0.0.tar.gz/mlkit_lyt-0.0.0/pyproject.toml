@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "mlkit_lyt"
+dynamic = ["version"]
+requires-python = ">=3.8"
+dependencies = [
+  'numpy'
+]
+
+authors = [
+  { name="lyt0628", email="lyt.0628@qq.com" },
+]
+description = "Machine Learning in Python"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["ml", "machine learning",]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Natural Language :: Chinese (Simplified)",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Repository = "https://github.com/LYT0628/mllearn"
+Documentation = "http://lyt0628.icu/docs/mllearn"
+Issues = "https://github.com/LYT0628/mllearn/issues"
+"Official Website" = "https://lyt0628.icu"
