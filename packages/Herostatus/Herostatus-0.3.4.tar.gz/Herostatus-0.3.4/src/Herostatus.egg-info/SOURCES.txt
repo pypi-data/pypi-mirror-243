@@ -1,0 +1,16 @@
+README.md
+setup.py
+src/Herostatus.egg-info/PKG-INFO
+src/Herostatus.egg-info/SOURCES.txt
+src/Herostatus.egg-info/dependency_links.txt
+src/Herostatus.egg-info/entry_points.txt
+src/Herostatus.egg-info/requires.txt
+src/Herostatus.egg-info/top_level.txt
+src/herostatus/__init__.py
+src/herostatus/herostatus.py
+src/herostatus/logo.uni
+src/herostatus/sounds/burglaralarm.wav
+src/herostatus/sounds/caralarm.wav
+src/herostatus/sounds/hiphopalarm.wav
+src/herostatus/sounds/sirenalarm.wav
+src/herostatus/sounds/strongbadalarm.wav
