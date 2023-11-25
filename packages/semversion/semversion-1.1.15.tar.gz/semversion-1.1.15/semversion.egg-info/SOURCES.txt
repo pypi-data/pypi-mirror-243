@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+semversion/__init__.py
+semversion/__main__.py
+semversion/constants.py
+semversion/increment.py
+semversion/initialize.py
+semversion/version.py
+semversion.egg-info/PKG-INFO
+semversion.egg-info/SOURCES.txt
+semversion.egg-info/dependency_links.txt
+semversion.egg-info/entry_points.txt
+semversion.egg-info/requires.txt
+semversion.egg-info/top_level.txt
