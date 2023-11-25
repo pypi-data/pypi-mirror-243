@@ -1,0 +1,89 @@
+Metadata-Version: 2.1
+Name: pandas-to-pydantic
+Version: 0.0.3
+Summary: Library for converting pandas dataframes to pydantic models
+Project-URL: Documentation, https://github.com/magicalpuffin/pandas-to-pydantic#readme
+Project-URL: Issues, https://github.com/magicalpuffin/pandas-to-pydantic/issues
+Project-URL: Source, https://github.com/magicalpuffin/pandas-to-pydantic
+Author-email: magicalpuffin <36088648+magicalpuffin@users.noreply.github.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Requires-Dist: pandas
+Requires-Dist: pydantic
+Description-Content-Type: text/markdown
+
+# pandas-to-pydantic
+ Library for converting pandas dataframes into pydantic models
+
+[![PyPI - Version](https://img.shields.io/pypi/v/hatch-demo.svg)](https://pypi.org/project/pandas-to-pydantic)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/hatch-demo.svg)](https://pypi.org/project/pandas-to-pydantic)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](/LICENSE)
+- [Example](#example)
+
+## Installation
+
+```console
+pip install pandas-to-pydantic
+```
+
+## Example
+Using this [example test data](https://github.com/magicalpuffin/pandas-to-pydantic/blob/main/tests/testData/libraryData.csv)
+
+```python
+import pandas as pd
+from pydantic import BaseModel
+from pandas_to_pydantic import dataframeToPydantic
+
+# Declare pydantic models
+class Book(BaseModel):
+    BookID: int
+    Title: str
+    Genre: str
+    PublishedYear: int
+    AvailableCopies: int
+
+
+class Author(BaseModel):
+    AuthorID: int
+    AuthorName: str
+    AuthorBirthdate: str
+    BookList: list[Book]
+
+
+class Library(BaseModel):
+    LibraryID: int
+    LibraryName: str
+    Location: str
+    EstablishedYear: int
+    BookCollectionSize: int
+    AuthorList: list[Author]
+
+# Input data is a pandas dataframe
+data = pd.read_csv(FILE_PATH)
+
+# Convert pandas dataframe to a pydantic root model
+libraryListRoot = dataframeToPydantic(data, Library)
+
+# Access data as a list of pydantic models
+libraryListRoot.root
+
+# Access data as a list of dict
+libraryListRoot.model_dump()
+
+```
