@@ -1,0 +1,3 @@
+[console_scripts]
+horn=hk_horn.cli:cli
+
