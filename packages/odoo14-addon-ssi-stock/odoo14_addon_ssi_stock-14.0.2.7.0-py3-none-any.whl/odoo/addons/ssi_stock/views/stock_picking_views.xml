@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<record id="stock_picking_view_search" model="ir.ui.view">
+    <field name="name">stock.picking - search</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.view_picking_internal_search" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='picking_type_id']" position="after">
+                <field name="picking_type_category_id" />
+            </xpath>
+            <xpath expr="//filter[@name='picking_type']" position="after">
+                <filter
+                        name="grp_picking_type_category_id"
+                        string="Operation Type Category"
+                        context="{'group_by': 'picking_type_category_id'}"
+                    />
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="stock_picking_view_tree" model="ir.ui.view">
+    <field name="name">stock.picking - tree</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.vpicktree" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='picking_type_id']" position="before">
+                <field name="picking_type_category_id" invisible="1" />
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="stock_picking_view_form" model="ir.ui.view">
+    <field name="name">stock.picking - form</field>
+    <field name="model">stock.picking</field>
+    <field name="inherit_id" ref="stock.view_picking_form" />
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='picking_type_id']" position="after">
+                <field name="picking_type_category_id" invisible="1" />
+                <field
+                        name="allowed_source_location_ids"
+                        widget="many2many_tags"
+                        invisible="1"
+                    />
+                <field
+                        name="allowed_destination_location_ids"
+                        widget="many2many_tags"
+                        invisible="1"
+                    />
+                    <field
+                        name="allowed_product_category_ids"
+                        widget="many2many_tags"
+                        invisible="1"
+                    />
+                    <field
+                        name="allowed_product_ids"
+                        widget="many2many_tags"
+                        invisible="1"
+                    />
+                <field name="show_price_unit" invisible="1" />
+                <field name="show_procure_method" invisible="1" />
+
+            </xpath>
+            <xpath expr="//field[@name='picking_type_id']" position="attributes">
+                <attribute
+                        name="domain"
+                    >[('category_id','=',picking_type_category_id)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='location_id']" position="attributes">
+                <attribute
+                        name="domain"
+                    >[('id','in',allowed_source_location_ids)]</attribute>
+                <attribute name="attrs">{}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='location_dest_id']" position="attributes">
+                <attribute
+                        name="domain"
+                    >[('id','in',allowed_destination_location_ids)]</attribute>
+                <attribute name="attrs">{}</attribute>
+            </xpath>
+            <xpath
+                    expr="//field[@name='move_ids_without_package']/tree/field[@name='product_uom_qty']"
+                    position="before"
+                >
+                <field
+                        name="price_unit"
+                        attrs="{'column_invisible':[('parent.show_price_unit','=',False)]}"
+                    />
+                <field
+                        name="procure_method"
+                        attrs="{'column_invisible':[('parent.show_procure_method','=',False)]}"
+                    />
+            </xpath>
+            <xpath
+                    expr="//field[@name='move_ids_without_package']/tree/field[@name='product_id']"
+                    position="attributes"
+                >
+                <attribute
+                        name="domain"
+                    >['|',('id','in',parent.allowed_product_ids),('categ_id','in',parent.allowed_product_category_ids)]</attribute>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+
+
+</odoo>

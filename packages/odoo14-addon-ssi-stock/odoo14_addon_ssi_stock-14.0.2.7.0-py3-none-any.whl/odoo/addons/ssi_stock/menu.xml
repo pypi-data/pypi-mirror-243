@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<menuitem
+        id="menu_incoming_movement"
+        name="Incoming Movement"
+        parent="stock.menu_stock_root"
+        sequence="10"
+    />
+
+<menuitem
+        id="menu_internal_movement"
+        name="Internal Movement"
+        parent="stock.menu_stock_root"
+        sequence="20"
+    />
+
+<menuitem
+        id="menu_outgoing_movement"
+        name="Outgoing Movement"
+        parent="stock.menu_stock_root"
+        sequence="30"
+    />
+
+<!-- Hide menu -->
+<record id="stock.stock_picking_type_menu" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6, 0, [ref('original_inventory_group')])]" />
+</record>
+
+<record id="stock.all_picking" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6, 0, [ref('original_inventory_group')])]" />
+</record>
+
+<record id="stock.menu_stock_scrap" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6, 0, [ref('original_inventory_group')])]" />
+</record>
+
+<record id="stock.menu_reordering_rules_replenish" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6, 0, [ref('original_inventory_group')])]" />
+</record>
+
+
+
+</odoo>
