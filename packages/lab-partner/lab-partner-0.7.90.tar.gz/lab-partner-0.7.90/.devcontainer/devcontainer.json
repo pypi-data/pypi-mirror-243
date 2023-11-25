@@ -1,0 +1,16 @@
+{
+	"name": "Build container",
+	"image": "enclarify/lab-partner-cli:0.7.88",
+	"runArgs": ["--network=lab"],
+	"customizations": {
+		"vscode": {
+			"settings": {},
+			"extensions": [
+				"ms-azuretools.vscode-docker",
+				"ms-python.python",
+				"mhutchie.git-graph",
+				"github.vscode-github-actions"
+			]
+		}
+	}
+}

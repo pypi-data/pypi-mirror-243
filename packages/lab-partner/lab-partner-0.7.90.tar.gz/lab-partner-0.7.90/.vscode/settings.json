@@ -1,0 +1,17 @@
+{
+    "python.analysis.typeCheckingMode": "basic",
+    "docker.environment": {
+        "DOCKER_HOST": "tcp://localhost:2375"
+    },
+    "terminal.integrated.profiles.linux": {
+        "bash (Host)": {
+            "path": "ssh",
+            "icon": "terminal-bash",
+            "args": [
+                "-i",
+                "/home/aps/.ssh/aps@enclarify.com.key",
+                "aps@192.168.88.250",
+            ],
+        },
+    }
+}
