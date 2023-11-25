@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: resourcegeo
+Version: 0.1.6
+Summary: Python package for resource geologists
+Author: Harold Velasquez S.
+Author-email: hgvelasq@ualberta.ca
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: ==3.7.7
+Description-Content-Type: text/markdown
+License-File: License.md
+Requires-Dist: matplotlib (==3.5.3)
+Requires-Dist: numpy (==1.21.6)
+Requires-Dist: pandas (==1.3.5)
+Requires-Dist: probscale (==0.2.5)
+Requires-Dist: scipy (==1.7.3)
+Requires-Dist: setuptools (==65.6.3)
+Requires-Dist: sphinx-rtd-theme (==1.2.2)
+Requires-Dist: tqdm (==4.66.1)
+
+# resourcegeo and utilities package
+
+### Description
+This package aims to solve data analysis-related tasks, and calculations with
+numerical models
+
+
+### Writing guidelines
+This package is compliant at best extent possible with [PEP8](https://peps.python.org/pep-0008/) 
+and [PEP20](https://peps.python.org/pep-0020/). A non-exhaustive list of these guidelines
+is summarized in [Nik Tomazic](https://testdriven.io/blog/clean-code-python/) and includes:
+
+PEP 8 naming conventions:
+
+* Class names should be CamelCase (MyClass)
+* Variable names should be snake_case and all lowercase (first_name)
+* Function names should be snake_case and all lowercase (quick_sort())
+* Constants should be snake_case and all uppercase (PI = 3.14)
+* Modules should have short, snake_case names and all lowercase (numpy)
+* Be consistent if using single quotes or double quotes
+
+PEP 8 line formatting:
+
+* Indent using 4 spaces (spaces are preferred over tabs)
+* Lines should not be longer than 79 characters
+* Avoid multiple statements on the same line
+* Top-level function and class definitions are surrounded with two blank lines
+* Method definitions inside a class are surrounded by a single blank line
+* Imports should be on separate lines
+
+PEP 8 whitespace:
+
+* Avoid extra spaces within brackets or braces
+* Avoid trailing whitespace anywhere
+* Always surround binary operators with a single space on either side
+* If operators with different priorities are used, consider adding whitespace around the operators with the lowest priority
+* Avoid spaces around the = sign when used to indicate a keyword argument
+
+PEP 8 comments:
+
+* Comments should not contradict the code
+* Comments should be complete sentences
+* Comments should have a space after the # sign with the first word capitalized
+* Multi-line comments used in functions (docstrings) should have a short single-line description followed by more text
+
+### Installing
+Change to the following code accordingly to the latest version in test.pypi. Add flag --index-url to retrieve
+dependencies
+```
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple resourcegeo==0.1.1
+```
+
+## Contact
+[Numpattern](https://numpattern.github.io/)
+
+## License
+This project is licensed unther the MT License - see the License.md for details
