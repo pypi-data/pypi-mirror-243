@@ -1,0 +1,3 @@
+[console_scripts]
+amberMDrun = AmberMDrun:main
+mmpbsa = AmberMDrun:mmpbsa

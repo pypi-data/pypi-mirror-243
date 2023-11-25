@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: AmberMDrun
+Version: 0.0.5
+Summary: A scripting tool for running Amber MD in an easy way
+Author: ZhiWei Zhang
+Author-email: z9527567@gmail.com
+Requires-Python: >=3.6
+License-File: LICENSE
