@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+[metadata]
+name="langassist"
+version="0.0.5"
+[project]
+name="langassist"
+version="0.0.5"
+authors=[
+{name="Rajib Deb", email="rajib76.gcp@gmail.com"}
+]
+description="The framework for language assistants"
+readme="README.md"
+requires-python=">=3.10"
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies=[
+"openai",
+"python-dotenv",
+"requests",
+"pymongo"
+]
+[project.urls]
+"Homepage" = "https://github.com/rajib76/assistants"
+[tool.setuptools.packages.find]
+where=["."]
+include=["*"]
+exclude=["example_data"]
+namespaces=false
+
