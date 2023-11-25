@@ -1,0 +1,16 @@
+setuptools
+pytest
+pylint
+black
+cmakelang[YAML]==v0.6.13
+pre-commit==v2.14.0
+cpplint
+ipython
+ipykernel
+matplotlib
+jupyter
+meshcat
+sphinx
+sphinx_rtd_theme
+breathe
+twine
