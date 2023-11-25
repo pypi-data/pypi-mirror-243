@@ -1,0 +1,14 @@
+numpy
+pandas
+python-dateutil
+pytz
+PyYAML
+six
+tzdata
+
+[testing]
+pytest
+mypy
+flake8
+tox
+black
