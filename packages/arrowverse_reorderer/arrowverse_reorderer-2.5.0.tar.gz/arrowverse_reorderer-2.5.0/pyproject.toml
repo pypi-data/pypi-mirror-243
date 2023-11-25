@@ -1,0 +1,39 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "arrowverse_reorderer"
+version = "2.5.0"
+authors = [
+    { name="Alberto Pasqualetto", email="39854348+albertopasqualetto@users.noreply.github.com" },
+]
+description = "Order Arrowverse episodes files in air time order"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.7"
+dependencies = [
+    "mnamer>=2.5.4",
+    "requests>=2.27.1",
+    "beautifulsoup4>=4.11.1",
+    "lxml>=4.8.0",
+    "html5lib>=1.1",
+    "pandas>=1.4.3",
+    "filetype>=1.0.13"
+]
+keywords = ["Arrowverse", "Arrow", "The Flash", "Rename", "Order"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Environment :: Console",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Desktop Environment :: File Managers",
+    "Topic :: Utilities"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/albertopasqualetto/Arrowverse-Reorderer"
+"Bug Tracker" = "https://github.com/albertopasqualetto/Arrowverse-Reorderer/issues"
+
+[project.scripts]
+arrowverse-reorderer = "arrowverse_reorderer.__main__:main"
