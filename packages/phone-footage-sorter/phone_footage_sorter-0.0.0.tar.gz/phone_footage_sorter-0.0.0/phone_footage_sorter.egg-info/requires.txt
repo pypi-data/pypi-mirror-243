@@ -1,0 +1,8 @@
+
+[dev]
+build
+pytest
+pytest-cov
+pytest-mock
+pytest-virtualenv
+python-semantic-release
