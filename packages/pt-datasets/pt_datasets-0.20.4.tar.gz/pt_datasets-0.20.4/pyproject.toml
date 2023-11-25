@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "pt-datasets"
+version = "0.20.4"
+description = "Library for loading PyTorch datasets and data loaders."
+authors = ["Abien Fred Agarap <abienfred.agarap@gmail.com>"]
+license = "AGPL-3.0 License"
+readme = "README.md"
+packages = [{include = "pt_datasets"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+numpy = "^1.23.5"
+torchvision = "^0.16.1"
+torch = "^2.1.1"
+scikit-learn = "^1.2.2"
+opencv-python = "^4.7.0.72"
+nltk = "^3.8.1"
+imbalanced-learn = "^0.11.0"
+gdown = "^4.7.1"
+spacy = "^3.5.1"
+pymagnitude-lite = "^0.1.143"
+numba = "^0.58.1"
+umap-learn = "^0.5.3"
+opentsne = "^1.0.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.12.0"
+black = "^23.3.0"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+pre-commit = "^3.2.2"
+pytest = "^7.3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
