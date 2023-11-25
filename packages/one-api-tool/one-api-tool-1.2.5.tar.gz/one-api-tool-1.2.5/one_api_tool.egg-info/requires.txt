@@ -1,0 +1,15 @@
+pydantic
+openai>=1.2.3
+anthropic>=0.6.0
+huggingface_hub
+requests
+httpx
+rich
+inquirer
+Jinja2
+aiohttp
+tiktoken
+python-dotenv
+tqdm
+tokenizers
+docstring_parser
