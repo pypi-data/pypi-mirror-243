@@ -1,0 +1,14 @@
+_lab/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+_lab/lab.py,sha256=wfMMDyeh-aD5Ndd-t1j6LoyuyKdiAJTjRiHXM0_CVHg,2302
+storage_tool/__init__.py,sha256=5C6TJPKPghqJR8gVa1eHZydq1y_j4KAWyCJNlSDletc,1378
+storage_tool/base.py,sha256=UfmL3RqmDvXlK4IQYdLtU5ZS7dpxzhIPFCqbfXTWeqY,1463
+storage_tool/data_processor.py,sha256=0VhHCubIEwmZpRoLkFaM5fub9SN2TWr8Pfw--vE4mIs,4155
+storage_tool/local.py,sha256=qGAKyAno9ESEhrQ5clh1S-sL5ADditYZUqVjxV7Z5-Q,5147
+storage_tool/s3.py,sha256=2iER3uBEVLIfH4n2DTinQAXpChlVdoyivKDrEQzatMM,12188
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_aws_s3.py,sha256=aoC4uorZFZoR75167oGQgogR81TV5pq0q3hBjAbN354,6723
+storage_tool-0.1.0.dist-info/LICENSE,sha256=mRKbVFn6i-9tqHFYoyy2pApyWEK5TjeJ8O4iVyLTCG8,1103
+storage_tool-0.1.0.dist-info/METADATA,sha256=qCwkSIKP5-bocgOBBIEYUIImmCW4QAg5SXtPeVddBKs,724
+storage_tool-0.1.0.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+storage_tool-0.1.0.dist-info/top_level.txt,sha256=asQJp8dqhxU3e6Ymx_DHlYGopXtI0_R1VWhMu4hLC6w,24
+storage_tool-0.1.0.dist-info/RECORD,,
