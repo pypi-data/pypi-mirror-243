@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+        "**/*.mod": true
+    },
+    "C_Cpp.default.compileCommands": "builddir/compile_commands.json",
+    "files.associations": {
+        "*.pyf": "FortranFreeForm"
+    },
+    "fortran.fortls.maxLineLength": -1,
+    "fortran.formatting.formatter": "fprettify"
+}
