@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: hserve
+Version: 0.1.0
+Summary: 
+Author: santoshdahal2016
+Author-email: webtutor2016@gmail.com
+Requires-Python: >=3.5,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: watchdog (>=3.0.0,<4.0.0)
+Description-Content-Type: text/markdown
+
+# Hot Serve 
+
+HServe is a lightweight and user-friendly Python package designed to simplify the process of serving static files while providing an effortless hot-reloading experience. 
+
+Whether you're developing a web application, a single-page application, or a simple website, HServe ensures a seamless and efficient workflow.
