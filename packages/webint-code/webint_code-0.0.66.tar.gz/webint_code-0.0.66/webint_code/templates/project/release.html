@@ -1,0 +1,27 @@
+$def with (project, release, files, log, prev, next)
+$var breadcrumbs = ("projects", "Projects", project, f"<b>{project}</b>", "releases", "Releases")
+$var title: $project $release
+$var body_classes = ["h-entry"]
+$var title_classes = ["p-name"]
+
+<ul>
+$for file in sorted(files):
+    <li><a href=/projects/$project/releases/$release/files/$file.name>$file.name</a></li>
+</ul>
+
+$if log:
+    $for _, entry in list(log.items())[1:]:
+        <p>$entry["message"] <small><a href=/projects/$project/commits/$entry["hash"]>$entry["timestamp"].diff_for_humans()</a></small></p>
+
+$def aside():
+    <p>
+    $if not (prev or next):
+        no other releases
+    $if prev:
+        &larr; <a rel=prev href=/projects/$project/releases/$prev>$prev</a>
+    $if prev and next:
+        &mdash;
+    $if next:
+        <a rel=next href=/projects/$project/releases/$next>$next</a> &rarr;
+    </p>
+$var aside = aside()
