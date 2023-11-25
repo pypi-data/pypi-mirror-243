@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling","hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[project]
+name = "EnglishAssistantForm"
+version = "1.0.3"
+authors = [
+  { name="Seyed Mousa Sajadi(WinCento)", email="sajadimousa@gmail.com" },
+]
+description = "To help improve learning a language"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dynamic = ["dependencies"]
+
+[project.urls]
+"Homepage" = "https://github.com/yasharsajadi/EnglishAssistantForm"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
