@@ -1,0 +1,88 @@
+---
+name: ascend
+globals:
+    start_bpm: 120
+    duration_bpm: 120
+    segment_bpm: 120
+    beat_bpm: 120
+    note_bpm: 120
+    rate: 160
+    stereo: true
+tracks:
+
+    fast_chords:
+        type: chord
+        options:
+            root: A3
+            attack: 0.7
+            release: 0.2
+            chord_notes: [-12, 0, 4, 7, 9, 14]
+            start_count: 0
+            duration_count: 148
+            randomize_phoneme: AA
+            randomize_segments: octaves,velocity
+            volume_range: [0.0, 0.4]
+
+    fast_chords2:
+        type: chord
+        options:
+            start_count: 32
+            root: D2
+            attack: 0.7
+            release: 0.2
+            chord_notes: [-12, 0, 4, 7, 9, 14]
+            duration_count: 116
+            randomize_phoneme: AA
+            randomize_segments: octaves,velocity
+            volume_range: [0.0, 0.4]
+
+    low_arp:
+        type: arp
+        options:
+            start_count: 64
+            root: D1
+            chord_notes: [7]
+            attack: 0.3
+            octaves: [0]
+            duration_count: 88
+            beat_count: 2
+            note_count: 2
+            styles: [up]
+            randomize_phoneme: EY
+            segment_count: 1
+            rate: 160
+            volume_range: [0.1, 0.26]
+
+    desc_melody:
+        type: arp
+        options:
+            start_count: 80
+            root: E2
+            chord_notes: [7]
+            attack: 0.3
+            octaves: [0]
+            duration_count: 74
+            beat_count: 4
+            note_count: 4
+            styles: [down]
+            randomize_phoneme: EY
+            segment_count: 1/4
+            rate: 160
+            volume_range: [0.1, 0.22]
+
+    asc_melody:
+        type: arp
+        options:
+            start_count: 96
+            root: D3
+            chord_notes: [7]
+            attack: 0.3
+            octaves: [0]
+            duration_count: 58
+            beat_count: 6
+            note_count: 6
+            styles: [up]
+            randomize_phoneme: EY
+            segment_count: 1/8
+            rate: 160
+            volume_range: [0.1, 0.22]

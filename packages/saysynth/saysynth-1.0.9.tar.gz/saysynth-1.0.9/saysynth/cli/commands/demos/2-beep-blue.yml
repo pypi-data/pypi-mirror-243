@@ -1,0 +1,133 @@
+---
+name: beep-blue
+globals:
+    start_bpm: 100
+    duration_bpm: 100
+    beat_bpm: 100
+    segment_bpm: 100
+    rate: 160
+    stereo: true
+
+tracks:
+    drone_bmaj_69:
+        type: chord
+        options:
+            start_count: 0
+            duration_count: 124
+            root: B1
+            chord: maj69
+            velocities: [50, 53, 54, 56, 40, 62, 38, 50]
+            segment_count: 1/2
+            attack: 0.2
+            decay: 0.4
+            sustain: 0.6
+            release: 0.4
+            randomize_phoneme: EH,UW,IY
+            voice: Fred
+            volume_range: [0.05, 0.10]
+
+    drone_bmaj_7:
+        type: chord
+        options:
+            start_count: 48
+            duration_count: 76
+            root: B2
+            chord: maj7
+            segment_count: 1/4
+            attack: 0.2
+            decay: 0.4
+            sustain: 0.6
+            release: 0.4
+            randomize_phoneme: AA
+            volume_range: [0.03, 0.07]
+
+    drone_bmaj_6:
+        type: chord
+        options:
+            start_count: 53
+            duration_count: 72
+            root: B3
+            chord: maj6
+            inversions: [0, 0, -1, -1]
+            attack: 0.2
+            decay: 0.3
+            sustain: 0.3
+            release: 0.4
+            segment_count: 1/32
+            randomize_phonemes: EW
+            volume_range: [0.03, 0.09]
+
+    drone_bmaj_72:
+        type: chord
+        options:
+            start_count: 64
+            duration_count: 64
+            root: B2
+            chord: maj7
+            segment_count: 1/4
+            attack: 0.2
+            decay: 0.4
+            sustain: 0.6
+            release: 0.4
+            randomize_phoneme: AA
+            volume_range: [0.03, 0.07]
+
+    beep_arp_1:
+        type: arp
+        options:
+            start_count: 32
+            duration_count: 92
+            root: F#4
+            chord_notes: [-12, 5, 7, 8, 9, 12]
+            octaves: [0, 1]
+            beat_count: 1/4
+            note_count: 1/3.7
+            volume_level_per_segment: 1
+            styles:
+                - downup
+                - random_silence
+                - random_silence
+                - random_silence
+                - random_silence
+            phoneme: UW
+            voice: Fred
+            volume_range: [0.05, 0.3]
+
+    beep_arp_1_2:
+        type: arp
+        options:
+            start_count: 42
+            duration_count: 88
+            root: F#4
+            chord_notes: [-12, 5, 7, 8, 9, 12]
+            octaves: [0, 1]
+            beat_count: 1/4
+            styles:
+                - downup
+                - random_silence
+                - random_silence
+                - random_silence
+                - random_silence
+            phoneme: UW
+            voice: Fred
+
+            volume_range: [0.05, 0.3]
+
+    beep_arp_2:
+        type: arp
+        options:
+            start_count: 40
+            duration_count: 90
+            root: F#3
+            chord_notes: [-12, 5, 0]
+            octaves: [0, 1]
+            beat_count: 4/16
+            styles:
+                - downup
+                - random_silence
+                - random_silence
+                - random_silence
+                - random_silence
+            phoneme: UW
+            voice: Fred
+            volume_range: [0.05, 0.3]

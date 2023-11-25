@@ -1,0 +1,106 @@
+---
+name: monks
+globals:
+    start_bpm: 80
+    duration_bpm: 80
+    segment_bpm: 80
+    rate: 160
+    stereo: true
+    voice: Fred
+
+tracks:
+    drone_1:
+        type: chord
+        options:
+            start_count: 0
+            duration_count: 144
+            root: E2
+            inversions: [-1, 0, -1, 0]
+            rate: 160
+            chord: min6
+            segment_count: 1/2
+            attack: 0.2
+            decay: 0.4
+            sustain: 0.6
+            release: 0.4
+            randomize_segments: phoneme
+            randomize_phoneme: UH,AH,IH,EH
+            volume_range: [0.01, 0.11]
+            # audio_device: sy-1
+
+    note_b2:
+        type: note
+        options:
+            root: B2
+            start_count: 18
+            duration_count: 124
+            segment_count: 1/9
+            attack: 0.3
+            decay: 0.3
+            sustain: 0.6
+            release: 0.4
+            randomize_segments: phoneme,octave
+            randomize_phoneme: UW,AW,EW
+            volume_range: [0.02, 0.2]
+            # audio_device: sy-2
+
+    note_d3:
+        type: note
+        options:
+            start_count: 36
+            duration_count: 112
+            root: D3
+            rate: 160
+            segment_count: 1/3
+            attack: 0.3
+            decay: 0.3
+            sustain: 0.6
+            release: 0.4
+            randomize_velocity: [40, 100]
+            randomize_segments: phoneme,octave,velocity
+            randomize_phoneme: UH,AH,IH,EH
+            volume_range: [0.02, 0.11]
+            # audio_device: sy-2
+
+    chord_b1:
+        type: chord
+        options:
+            start_count: 45
+            duration_count: 100
+            root: B1
+            chord: min7
+            attack: 0.3
+            release: 0.5
+            segment_count: 1/4
+            randomize_phoneme: wOY,AA
+            volume_range: [0.0, 0.19]
+            # audio_device: sy-3
+
+    chord_b2:
+        type: chord
+        options:
+            start_count: 54
+            duration_count: 86
+            root: B2
+            chord: min7
+            attack: 0.3
+            release: 0.5
+            segment_count: 1
+            randomize_phoneme: wOY,AA.OOH
+            volume_range: [0.0, 0.13]
+            # audio_device: sy-3
+
+    chord_b3:
+        type: chord
+        options:
+            root: B3
+            chord: min7
+            start_count: 63
+            duration_count: 72
+            attack: 0.3
+            release: 0.5
+            segment_count: 1/2
+            randomize_phoneme: wOY,AA,EW
+            voice: Fred
+            volume_range: [0.0, 0.17]
+            # audio_device: sy-4

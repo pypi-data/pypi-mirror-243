@@ -1,0 +1,91 @@
+---
+name: fire
+globals:
+    start_bpm: 65
+    duration_bpm: 65
+    segment_bpm: 65
+    beat_bpm: 65
+    note_bpm: 65
+    rate: 160
+    stereo: true
+tracks:
+    water:
+        type: chord
+        options:
+            root: F#2
+            text: wawer
+            voice: Victoria
+            attack: 0.3
+            release: 0.7
+            chord_notes: [-12, -5, 0, 4, 9, 14]
+            start_count: 0
+            duration_count: 112
+            segment_count: 1/32
+            randomize_segments: octaves,velocity
+            volume_range: [0.01, 0.19]
+
+    fire:
+        type: chord
+        options:
+            root: F#0
+            chord_notes: [0, 12]
+            text: fire!
+            start_count: 16
+            attack: 0.3
+            release: 0.7
+            duration_count: 96
+            segment_count: 1/6
+            randomize_segments: octaves,velocity
+            volume_range: [0.05, 0.4]
+
+    wind:
+        type: note
+        options:
+            root: A#3
+            text: wynd!
+            start_count: 24
+            attack: 0.3
+            release: 0.7
+            duration_count: 88
+            segment_count: 1/6
+            randomize_segments: octaves,velocity
+            volume_range: [0.00, 0.17]
+
+    sky:
+        type: note
+        options:
+            root: C#3
+            text: ohh
+            start_count: 48
+            attack: 0.3
+            release: 0.7
+            duration_count: 64
+            segment_count: 1/6
+            randomize_segments: octaves,velocity
+            volume_range: [0.02, 0.15]
+
+    sky2:
+        type: note
+        options:
+            root: C#3
+            text: ohh
+            start_count: 56
+            attack: 0.3
+            release: 0.7
+            duration_count: 56
+            segment_count: 1/6
+            randomize_segments: octaves,velocity
+            volume_range: [0.02, 0.15]
+
+    sky3:
+        type: note
+        options:
+            root: G#4
+            text: ohh
+            start_count: 64
+            attack: 0.3
+            release: 0.7
+            duration_count: 48
+            segment_count: 1/6
+            randomize_segments: octaves,velocity
+            volume_range: [0.02, 0.15]
