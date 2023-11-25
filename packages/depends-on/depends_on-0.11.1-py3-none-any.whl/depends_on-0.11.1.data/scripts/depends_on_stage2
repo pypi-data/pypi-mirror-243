@@ -1,0 +1,82 @@
+#!python
+
+"Stage2: extract dependencies of the main changeset and call stage3."
+
+import json
+import os
+import re
+import sys
+from urllib.request import Request, urlopen
+
+from depends_on.common import extract_depends_on
+
+
+def load_depends_on(from_dir):
+    "Load the data from the depends-on.json file"
+
+    fname = os.path.join(from_dir, "depends-on.json")
+
+    with open(fname, "r", encoding="UTF-8") as json_stream:
+        return json.load(json_stream)
+
+
+def main(check_mode):
+    "Main function."
+
+    # get the current directory
+    main_dir = os.getcwd()
+
+    data = load_depends_on(main_dir)
+
+    if "description" not in data:
+        print("No description found.", file=sys.stderr)
+        return 0
+
+    depends_on = re.findall(
+        r"^Depends-On: (.*)", data["description"], re.IGNORECASE | re.MULTILINE
+    )
+
+    if len(depends_on) == 0:
+        print("No Depends-On found.", file=sys.stderr)
+        return 0
+
+    print(f"depends_on: {depends_on}", file=sys.stderr)
+
+    # go to the top dir (above main_dir)
+    os.chdir(os.path.join(main_dir, ".."))
+
+    nb_unmerged_pr = 0
+    for depends_on_url in depends_on:
+        merged, _ = extract_depends_on(depends_on_url.strip(), check_mode)
+        if not merged:
+            nb_unmerged_pr += 1
+
+    print(f"{nb_unmerged_pr} unmerged PR", file=sys.stderr)
+
+    if check_mode:
+        return 1 if nb_unmerged_pr > 0 else 0
+
+    if nb_unmerged_pr == 0:
+        print("No unmerged PR found.", file=sys.stderr)
+        return 0
+
+    # extract the Main-Dir: <dir> string if any from the description
+    main_dir_res = re.findall(
+        r"^Main-Dir: (.*)", data["description"], re.IGNORECASE | re.MULTILINE
+    )
+
+    if len(main_dir_res) > 0:
+        main_dir = main_dir_res[-1].strip()
+
+    print(f"+ chdir {main_dir}", file=sys.stderr)
+    os.chdir(main_dir)
+
+    stage3 = os.path.join(os.path.dirname(__file__), "depends_on_stage3")
+    print(f"+ {stage3}", file=sys.stderr)
+    os.execl(stage3, "depends_on_stage3")
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1] == "true"))
+
+# stage2.py ends here
