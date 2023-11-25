@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: timeflux-upsidedownlabs
+Version: 0.1.4
+Summary: Connect to Upside Down Labs devices using Timeflux
+Home-page: https://timeflux.io
+Author: Pierre Clisson
+Author-email: contact@timeflux.io
+License: MIT
+Project-URL: Documentation, http://doc.timeflux.io/projects/timeflux-upsidedownlabs/
+Project-URL: Source Code, https://github.com/timeflux/timeflux_upsidedownlabs
+Project-URL: Bug Tracker, https://github.com/timeflux/timeflux_upsidedownlabs/issues
+Keywords: timeflux
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+License-File: LICENSE
+Requires-Dist: timeflux>=0.16.1
+Requires-Dist: timeflux_audio>=0.2
+Requires-Dist: timeflux_ui>=0.6.3
+Requires-Dist: pyFirmata2>=2.4.5
+
+Connect Upside Down Labs devices with Timeflux
+==============================================
+
+This plugin allows you to stream data from `Upside Down Labs <https://upsidedownlabs.tech/>`__ BioAmp. Two modes are proposed: through the audio interface and through the USB interface.
+
+Installation
+------------
+
+First, make sure that `Timeflux <https://github.com/timeflux/timeflux>`__ is installed. You can then install this plugin in the `timeflux` environment:
+
+::
+
+    $ conda activate timeflux
+    $ pip install timeflux_upsidedownlabs
+
+Audio interface
+---------------
+
+Look at this `example graph <https://github.com/timeflux/timeflux_upsidedownlabs/blob/master/examples/audio.yaml>`__.
+You can run it like this:
+
+::
+
+    $ conda activate timeflux
+    $ timeflux -d examples/audio.yaml
+
+The signal can be visualized `here <http://localhost:8000>`__.
+
+USB interface
+-------------
+
+First, you must install the firmware on the board.
+
+Download the `Arduino IDE <https://www.arduino.cc/en/Main/Software>`__ on your computer, and then:
+
+ - Start the Arduino IDE
+ - Select the serial port under "Tools"
+ - Select your Arduino board under "Tools"
+ - Upload the standard firmata sketch to your Arduino with:
+
+::
+
+    File -> Examples -> Firmata -> Standard Firmata
+
+You're all set!
+
+With `this example graph <https://github.com/timeflux/timeflux_upsidedownlabs/blob/master/examples/uart.yaml>`__, you can autodetect all the available analog ports and start streaming data.
+
+You can run this graph like this:
+
+::
+
+    $ conda activate timeflux
+    $ timeflux -d examples/uart.yaml
+
+For an example of filtering and renaming the channels, see `this graph <https://github.com/timeflux/timeflux_upsidedownlabs/blob/master/examples/channels.yaml>`__.
