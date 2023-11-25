@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+zon/__init__.py
+zon/base.py
+zon/bool.py
+zon/error.py
+zon/list.py
+zon/record.py
+zon/union.py
+zon.egg-info/PKG-INFO
+zon.egg-info/SOURCES.txt
+zon.egg-info/dependency_links.txt
+zon.egg-info/top_level.txt
