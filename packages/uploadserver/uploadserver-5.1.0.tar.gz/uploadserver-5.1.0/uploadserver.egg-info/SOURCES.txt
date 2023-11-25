@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+uploadserver/__init__.py
+uploadserver/__main__.py
+uploadserver/cgi.py
+uploadserver.egg-info/PKG-INFO
+uploadserver.egg-info/SOURCES.txt
+uploadserver.egg-info/dependency_links.txt
+uploadserver.egg-info/entry_points.txt
+uploadserver.egg-info/top_level.txt
