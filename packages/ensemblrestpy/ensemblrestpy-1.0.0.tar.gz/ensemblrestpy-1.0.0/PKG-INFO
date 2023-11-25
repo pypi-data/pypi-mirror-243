@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: ensemblrestpy
+Version: 1.0.0
+Summary: Python client for Ensembl REST API
+Author-email: Liu Sun <sunliu@picb.ac.cn>
+Project-URL: Homepage, https://github.com/liu-sun/ensembl
+Project-URL: Issues, https://github.com/liu-sun/ensembl/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+INSTALLATION
+============
+
+```bash
+pip install ensemblrestpy
+```
+quick start
+========
+
+**Python client for Ensembl REST API**
+```python
+import pprint
+
+from ensembl import Ensembl
+
+ensembl = Ensembl()
+pprint.pprint(ensembl.variant_recoder("rs137853120", fields="id", var_synonyms=1))
+pprint.pprint(ensembl.variation("rs137853120", pops=1))
+pprint.pprint(ensembl.vep_id("rs137853120", dbNSFP="gnomAD_genomes_EAS_AF,gnomAD_genomes_EAS_AC,gnomAD_genomes_EAS_AN"))
+
+```
