@@ -1,0 +1,16 @@
+
+[dev]
+black
+flake8
+flake8-docstrings
+pytest
+mypy
+pip-tools
+pre-commit
+pylint
+
+[tests]
+black
+flake8
+flake8-docstrings
+pytest
