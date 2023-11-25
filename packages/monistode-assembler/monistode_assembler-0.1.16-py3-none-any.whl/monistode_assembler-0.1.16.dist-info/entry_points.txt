@@ -1,0 +1,5 @@
+[console_scripts]
+mstas=monistode_assembler.cli:assemble
+mstasdas=monistode_assembler.cli:main
+mstdas=monistode_assembler.cli:disassemble
+
