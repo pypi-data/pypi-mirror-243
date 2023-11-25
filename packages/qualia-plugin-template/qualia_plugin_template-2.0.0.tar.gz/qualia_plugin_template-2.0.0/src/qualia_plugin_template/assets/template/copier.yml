@@ -1,0 +1,66 @@
+_jinja_extensions:
+  - qualia_plugin_template.extensions.GitConfigExtension
+  - qualia_plugin_template.extensions.CurrentYearExtension
+
+_skip_if_exists:
+  - README.md
+  - LICENSE
+  - .git
+
+_exclude:
+  - copier.yml
+  - input.yml
+  - extensions
+  - __pycache__
+  - src/qualia-plugin-template/__init__.py
+  - src/qualia-plugin-template/main.py
+
+_tasks:
+  - git init -b master
+  - git remote add origin {{plugin_gitrepo}}
+  - git add .
+  - git commit -m "Qualia-Plugin-{{plugin_name}}"
+
+_message_after_copy: |
+    The project for plugin {{plugin_name}} has been created successfully.
+
+    A first commit has been created with the initial state of the project.
+
+    Read the documentation at https://naixtech.unice.fr/~gitlab/docs/qualia-plugin-template/ for the next steps to take.
+
+# questions
+plugin_name:
+    type: str
+    help: "What is your plugin name? (allowed characters: [A-za-z0-9-], without the 'qualia-plugin-' prefix)"
+
+python_module_name:
+    type: str
+    default: "qualia_plugin_{{plugin_name | lower | replace('-', '_')}}"
+    help: What is the name of the Python module for this plugin?
+    when: false
+
+author_name:
+    type: str
+    default: "{{gitconfig_get_value('user', 'name')}}"
+    help: Who is the author of the plugin?
+
+author_email:
+    type: str
+    default: "{{gitconfig_get_value('user', 'email')}}"
+    help: What is the email address of the author?
+
+plugin_homepage:
+    type: str
+    default: 'https://naixtech.unice.fr/gitlab/qualia/qualia-plugin-{{plugin_name | lower}}'
+    help: What is the home page URL of your plugin?
+
+plugin_gitrepo:
+    type: str
+    default: 'https://naixtech.unice.fr/gitlab/qualia/qualia-plugin-{{plugin_name | lower}}.git'
+    help: What is the Git repository URL of your plugin?
+
+current_year:
+    type: str
+    default: '{{current_year}}'
+    help: What is the current year?
+    when: false

@@ -1,0 +1,29 @@
+"""Qualia-Plugin-{{plugin_name}} plugin.
+
+When Qualia's configuration file contains:
+
+.. code-block:: toml
+
+    [bench]
+    plugin = ['{{python_module_name}}']
+
+The following subpackages are imported:
+
+* :mod:`{{python_module_name}}.dataset`
+* :mod:`{{python_module_name}}.preprocessing`
+* :mod:`{{python_module_name}}.learningframework`
+* :mod:`{{python_module_name}}.postprocessing`
+
+Subpackage :mod:`{{python_module_name}}.dataset` contains additional datasets.
+
+Subpackage :mod:`{{python_module_name}}.learningframework` contains a :class:`qualia_core.learningframework.PyTorch.PyTorch`
+override in order to load the supplied learningmodels.
+
+Subpackage :mod:`{{python_module_name}}.learningmodel` contains additional neural network templates referenced in
+:attr:`{{python_module_name}}.learningframework.PyTorch.PyTorch.learningmodels`, made available when the PyTorch
+learningframework is used.
+
+Subpackage :mod:`{{python_module_name}}.preprocessing` contains additional preprocessing modules.
+
+Subpackage :mod:`{{python_module_name}}.postprocessing` contains additional postprocessing modules.
+"""
