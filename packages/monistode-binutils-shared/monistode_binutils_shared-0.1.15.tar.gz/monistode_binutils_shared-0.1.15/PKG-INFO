@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: monistode-binutils-shared
+Version: 0.1.15
+Summary: A collection of tools shared among the monistode binutils.
+Author: rizerphe
+Author-email: 44440399+rizerphe@users.noreply.github.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: bitstruct (>=8.18.0,<9.0.0)
+Description-Content-Type: text/markdown
+
+
