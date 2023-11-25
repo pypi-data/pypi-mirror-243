@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: start-zero
+Version: 0.1.0
+Summary: 深度学习框架（Deep Learning Framework）
+Home-page: https://gitee.com/tank2140896/start-zero
+Author: HeBin
+Author-email: hebingaa@126.com
+License: Apache License 2.0
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Natural Language :: Chinese (Traditional)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# 深度学习框架 V0.1.0（pip install start-zero）
+# 一、未来规划
+1、修正BUG、优化代码、减少内存使用率   
+2、优化、完善Define-by-Run体系   
+3、优化、完善CPU和GPU的转化机制   
+4、提供训练参数的保存和加载   
+5、增加函数、层、模型、优化器   
+6、增加对CNN（卷积神经网络）、RNN（循环神经网络）等的实现   
+# 二、框架主要内容
+| 序号 | 内容             | 备注                                                                                                                         |
+|:--:|:---------------|:---------------------------------------------------------------------------------------------------------------------------|
+| 1  | 数值微分、自动微分、高阶求导 | 高阶求导使用反向传播的反向传播                                                                                                            |
+| 2  | 处理标量和张量        | Tensor类（兼容numpy）                                                                                                           |
+| 3  | 支持GPU运算        | 只支持N卡，目前代码需要将np.array变为cupy.array且不能灵活切换（待完善转换机制）<br/>使用条件：<br/>①Config.ENABLE_GPU = True<br/>②CUDA.is_available() == True |
+| 4  | Define-by-Run  | 运行时动态图（核心），静态图（Define-and-Run）暂时不会去实现，因为涉及领域特定语言                                                                           |
+| 5  | 常用函数           | 目前一共支持41个函数（34个函数有正向传播和反向传播）                                                                                               |
+| 6  | 层              | 目前一共支持1个层                                                                                                                  |
+| 7  | 模型             | 目前一共支持1个模型                                                                                                                 |
+| 8  | 优化器            | 目前一共支持5个优化器                                                                                                                |
+# 三、支持的函数
+| 序号 | 函数                                           | 符号                                                                                     | 备注            |
+|:---|----------------------------------------------|----------------------------------------------------------------------------------------|---------------|
+| 1  | 合并求和、广播、求和、平均数、矩阵相乘、矩阵转置、重塑形状、线性回归、切片、切片（梯度） | sum_to、broadcast_to、sum、average、matmul、transpose、reshape、linear、get_item、get_item_grad | ft0.py（10个函数） |
+| 2  | 加、减、乘、除、幂、负数、模                               | add（+）、sub（-）、mul（*）、div（/）、power（**）、neg（-）、mod（%）                                    | ft1.py（7个函数）  |
+| 3  | 正弦、余弦、正切、双曲正切                                | sin、cos、tan、tanh                                                                       | ft2.py（4个函数）  |
+| 4  | e为底的指数、10为底的对数、e为底的对数                        | exp、lg、ln                                                                              | ft3.py（3个函数）  |
+| 5  | S型生长曲线、线性整流函数、归一化指数函数、归一化指数函数、线性整流函数、阶跃函数    | sigmoid、relu、softmax、log_softmax、leaky_relu、step                                       | ft4.py（6个函数）  |
+| 6  | 均方误差、交叉熵损失、交叉熵损失、二元交叉熵                       | mean_squared_error、softmax_cross_entropy、sigmoid_cross_entropy、binary_cross_entropy    | ft5.py（4个函数）  |
+| 7  | 最大值、最小值、限定数组上下界、批量                           | max、min、clip、batch_norm                                                                | ft6.py（4个函数）  |
+| 8  | 准确度、退出、嵌入ID                                  | accuracy、dropout、embed_id                                                              | ft7.py（3个函数）  |
+# 四、支持的层
+| 序号 | 层   | 符号          | 备注 |
+|:---|-----|-------------|----|
+| 1  | 线性层 | LinearLayer |    |
+# 五、支持的模型
+| 序号 | 模型    | 符号  | 备注 |
+|:---|-------|-----|----|
+| 1  | 多层感知器 | MLP |    |
+# 六、支持的优化器
+| 序号 | 优化器    | 符号          | 备注 |
+|:---|--------|-------------|----|
+| 1  | 随机梯度下降 | SGD         |    |
+| 2  | 动量梯度下降 | MomentumSGD |    |
+| 3  | 梯度下降优化 | AdaGrad     |    |
+| 4  | 梯度下降优化 | AdaDelta    |    |
+| 5  | 梯度下降优化 | Adam        |    |
+# 七、发布到PyPI
+1、[登录PyPI官网](https://pypi.org)并完成账号注册和安全认证   
+2、安装插件（如：E:\pyhton\python.exe -m pip install --upgrade pip setuptools wheel、E:\pyhton\python.exe -m pip install twine）   
+3、生成压缩包（python setup.py sdist）   
+4、上传压缩包（如：E:\pyhton\python.exe -m twine upload dist/*）   
+注：完成2FA认证后，username是：__token__，password是：生成的token   
+5、安装和卸载（pip install start-zero、pip uninstall start-zero）   
+注：指定版本如：pip install start-zero==1.0.0，也可以<或<=等   
