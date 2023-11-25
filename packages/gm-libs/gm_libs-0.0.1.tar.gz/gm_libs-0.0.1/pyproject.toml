@@ -1,0 +1,18 @@
+[project]
+name = "gm_libs"
+version = "0.0.1"
+authors = [
+  { name="UioSun", email="uiosun@outlook.com" },
+]
+description = "A juejin quant lib to myself package"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/Sun-FreePort/gm_libs"
+Issues = "https://github.com/Sun-FreePort/gm_libs/issues"
