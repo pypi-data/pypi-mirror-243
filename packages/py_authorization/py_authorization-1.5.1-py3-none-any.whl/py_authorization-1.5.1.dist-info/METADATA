@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: py_authorization
+Version: 1.5.1
+Summary: Easily manage authorization complex logic
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: SQLAlchemy>=1.4,<3.0
+
+# Python Authorization
+
