@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: pyobistools
+Version: 1.0.0
+Summary: Python tools for quality-controlling data for publishing to OBIS
+Home-page: https://github.com/cioos-siooc/pyobistools
+License: BSD-3-Clause
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: GIS
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Python: <4,>=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas <=1.5.3,>=1.3.5
+Requires-Dist: geopandas
+Requires-Dist: pyworms <1.0,>=0.2.0
+Requires-Dist: pyxylookup
+Requires-Dist: cartopy
+
+# pyobistools - Tools for data enhancement and quality control - but in Python
+Python port of OBIS's [obistools](https://github.com/iobis/obistools) QC R package
+
+Documentation available [here](https://cioos-siooc.github.io/pyobistools/)
+
+Other relevant OBIS Python modules:
++ [pyobis](https://github.com/iobis/pyobis) - retrieving data from OBIS for consumption/usage in analyses - in Python
++ [robis](https://github.com/iobis/robis) - retrieving data from OBIS for consumption/usage in analyses - In R
+
++ [obis-qc](https://github.com/iobis/obis-qc) - database-wide quality control of OBIS data held at OBIS - in R
+

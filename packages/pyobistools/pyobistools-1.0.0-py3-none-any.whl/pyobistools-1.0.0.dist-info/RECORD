@@ -1,0 +1,13 @@
+pyobistools/__init__.py,sha256=J-j-u0itpEFT6irdmWmixQqYMadNl1X91TxUmoiLHMI,22
+pyobistools/taxa.py,sha256=j5WYi2JkgsDLzu2oN-Ba6ykO0Pc-B9xdkPkamP_zzwg,10606
+pyobistools/utils.py,sha256=XMW6PHvaLSeEAcuEZhqXMTS09aqdQETGbxv5WVhkUu8,11785
+pyobistools/validation/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyobistools/validation/check_eventids.py,sha256=DQvtE4AascWx8kQthOhX2lF-JKsRK0SKCiJp6wA82ZM,4576
+pyobistools/validation/check_fields.py,sha256=JW56idpgdFVaI_xDFUgUkY2svhrg6bs_BmOuL0nliAE,12627
+pyobistools/validation/check_onland.py,sha256=u5beLjPP-6YhWgdOc1ew9VqDuqkah3s4ibtKRelfCaQ,3278
+pyobistools/validation/check_scientificname_and_ids.py,sha256=zObsvxVGft3G3qRX55QfNE5bUk2b6ULp-qqbP1aVniY,7656
+pyobistools-1.0.0.dist-info/LICENSE,sha256=5-u4DshW2f50Fs0dEkz-BMIhqNe5ZXkJiI87wv9BWM8,1498
+pyobistools-1.0.0.dist-info/METADATA,sha256=ZwIXJm1E3ec3fGH-hlI3KSb_BWSd-TwfejxFyoCi788,1616
+pyobistools-1.0.0.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+pyobistools-1.0.0.dist-info/top_level.txt,sha256=B4bOnkNMR7gl8QgPyisN4X_wts9IMwv16FTF20uMsB8,12
+pyobistools-1.0.0.dist-info/RECORD,,
