@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stemmer-madura"
+version = "0.1.8"
+authors = [
+  { name="Mohammad Nazir Arifin", email="ceylon.rizan@gmail.com" },
+]
+description = "Stemmer untuk bahasa Madura menggunakan rule based"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license = {file="LICENSE"}
+keywords = ['stemmer', 'madura', 'bahasa madura', 'nlp']
+
+[project.urls]
+"Homepage" = "https://github.com/NazirArifin/stemmer-madura-py"
+"Bug Tracker" = "https://github.com/NazirArifin/stemmer-madura-py/issues"

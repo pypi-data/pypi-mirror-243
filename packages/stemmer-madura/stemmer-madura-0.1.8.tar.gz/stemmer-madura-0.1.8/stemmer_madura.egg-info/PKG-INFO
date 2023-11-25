@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: stemmer-madura
+Version: 0.1.8
+Summary: Stemmer untuk bahasa Madura menggunakan rule based
+Author: Mohammad Nazir Arifin
+Author-email: Mohammad Nazir Arifin <ceylon.rizan@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2020 Mohammad Nazir Arifin
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/NazirArifin/stemmer-madura-py
+Project-URL: Bug Tracker, https://github.com/NazirArifin/stemmer-madura-py/issues
+Keywords: stemmer,madura,bahasa madura,nlp
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Stemmer Madura
+
+Stemmer Madura adalah sebuah program untuk melakukan stemming pada bahasa Madura. Stemming adalah proses mengubah kata berimbuhan menjadi kata dasar. Stemming pada bahasa Madura dilakukan dengan menghapus imbuhan yang terdapat pada kata. Program ini menggunakan pendekatan _rule based_ dan dibangun dengan bahasa pemrograman Python. Bagi pengembang yang menggunakan Typescript/Javascript, dapat menggunakan [stemmer-madura](https://www.npmjs.com/package/stemmer-madura) yang dibangun dengan Typescript.
+
+## Instalasi
+
+Untuk menggunakan program ini, Anda harus menginstal Python 3.6 atau yang lebih baru. Kemudian, Anda dapat menginstal program ini dengan menggunakan perintah berikut:
+
+```bash
+pip install stemmer-madura
+```
+
+## Penggunaan
+
+Untuk menggunakan program ini, Anda dapat menggunakan perintah berikut:
+
+```python
+from stemmer_madura import stemmer
+
+print(stemmer('nglerek nak-kanak ngakan roti', True))
+# lerek kanak kakan roti
+```
