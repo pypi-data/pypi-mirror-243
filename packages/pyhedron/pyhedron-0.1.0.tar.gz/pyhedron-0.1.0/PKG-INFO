@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pyhedron
+Version: 0.1.0
+Summary: A Polyhedron implemented in Python
+Home-page: https://github.com/andreas-lehn/pyhedron
+Author: Andreas Lehn
+Author-email: andreas.lehn@icloud.com
+License: MIT
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+Requires-Dist: numpy
