@@ -1,0 +1,13 @@
+stemmer_madura/__init__.py,sha256=ZfvR8vMgnKmO3q405OssJbqhKzplS9bJlCn2AKGxFTw,51
+stemmer_madura/stemmer.py,sha256=ajkk-HVOkTVuc5EvHyzCKotYW8MukgqfSlhNpXpEeSQ,2646
+stemmer_madura/data/lemmawords.txt,sha256=KJGQbDJ0XUeV3wfMffZAJMCrCmV4wGjB2dpjxPhl-vQ,157062
+stemmer_madura/data/stopwords.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+stemmer_madura/lib/__init__.py,sha256=8NsubqmwOwOszg402INkp-F-pfP-wluX9XcEAX8cRVc,45
+stemmer_madura/lib/ngram.py,sha256=NIEzTEWGMKwbpyECK-KLLrEOVCZiVKiZgGZnQBJRF50,703
+stemmer_madura/lib/rules.py,sha256=jn80N_C40U9HlrYTVq65PYnOgJOtyNva2ZCYOiJTMZI,2856
+stemmer_madura/lib/stemmer.py,sha256=xRVk1IS5ZP-JT2RvY7C05dZ4y8TpVQVga4AD7N7J4K4,6568
+stemmer_madura-0.1.8.dist-info/LICENSE,sha256=Alqyf5g09_qSy_L7L-Egwbf9WDrUBeotBVH0FRGce_Y,1078
+stemmer_madura-0.1.8.dist-info/METADATA,sha256=_Xam4W0OJKfQJIztLFbHt10kH9oxxT0LcHp7eLCZ30Q,2855
+stemmer_madura-0.1.8.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+stemmer_madura-0.1.8.dist-info/top_level.txt,sha256=htsaoIGa_6sHU_abxfmgcyJCoiiHy54lZsdxgmsmPgw,15
+stemmer_madura-0.1.8.dist-info/RECORD,,
