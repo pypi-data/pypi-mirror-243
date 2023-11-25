@@ -1,0 +1,107 @@
+[tool.poetry]
+name = "sdss-cerebro"
+version = "1.2.0"
+description = "Telemetry management and time series for SDSS-V"
+authors = ["José Sánchez-Gallego <gallegoj@uw.edu>"]
+license = "BSD-3-Clause"
+readme = "README.md"
+homepage = "https://github.com/sdss/cerebro"
+repository = "https://github.com/sdss/cerebro"
+documentation = "https://sdss-cerebro.readthedocs.io/en/latest/"
+keywords = ["astronomy", "software"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: Documentation :: Sphinx",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+packages = [
+    { include = "cerebro" }
+]
+include = ["cerebro/etc/*"]
+
+[tool.poetry.scripts]
+cerebro = "cerebro.__main__:main"
+tpm2influxdb = "cerebro.scripts.tpm2influxdb:main"
+
+[tool.poetry.dependencies]
+python = "^3.8,<4.0"
+numpy = "^1.17.4"
+sdsstools = ">=0.5.1"
+influxdb-client = {version="^1.9.0", extras=["extra"]}
+click = "^8.0.0"
+sdss-clu = "^2.0.0"
+ntplib = "^0.3.4"
+daemonocle = "^1.0.2"
+click-default-group = "^1.2.2"
+sdss-drift = "^1.0.1"
+rx = "^3.2.0"
+pymysql = "^1.0.2"
+peewee = "^3.15.4"
+asyncudp = "^0.11.0"
+
+[tool.poetry.dev-dependencies]
+ipython = ">=8.0.0"
+matplotlib = ">=3.1.1"
+flake8 = ">=3.7.9"
+doc8 = ">=0.8.0"
+pytest = ">=5.2.2"
+rstcheck = "^3.3.1"
+pytest-cov = ">=2.8.1"
+pytest-sugar = ">=0.9.2"
+Sphinx = ">=3.0.0"
+isort = ">=4.3.21"
+codecov = ">=2.0.15"
+coverage = {version = ">=5.0", extras = ["toml"]}
+ipdb = ">=0.12.3"
+black = {version = ">=20.8b1", allow-prereleases = true}
+myst-parser = ">=0.14.0"
+ruff = ">=0.1.0"
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+fast = true
+
+[tool.ruff]
+line-length = 88
+target-version = 'py312'
+select = ["E", "F", "I"]
+unfixable = ["F841"]
+exclude = ["typings/"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401", "F403", "E402"]
+
+[tool.ruff.isort]
+known-first-party = ["araviscam"]
+lines-after-imports = 2
+section-order = ["future", "standard-library", "typing", "third-party", "sdss", "first-party", "local-folder"]
+
+[tool.ruff.isort.sections]
+typing = ["typing"]
+sdss = ["sdsstools", "clu", "drift"]
+
+[tool.pytest.ini_options]
+addopts = "--cov cerebro --cov-report xml --cov-report html --cov-report term"
+
+[tool.coverage.run]
+branch = true
+include = ["cerebro/*"]
+omit = [
+    "*/__init__.py",
+    "*/__main__.py",
+    "cerebro/sources/ieb.py",
+    "cerebro/sources/tron.py",
+    "cerebro/sources/lvm.py"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+]
+
+[build-system]
+requires = ["poetry-core>=1.1.0"]
+build-backend = "poetry.core.masonry.api"
