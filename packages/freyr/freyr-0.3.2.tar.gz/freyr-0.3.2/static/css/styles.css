@@ -1,0 +1,26 @@
+@font-face {
+  font-family: digital;
+  src: url("/static/fonts/DS-DIGIB.TTF");
+}
+
+html, body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body > footer {
+  margin-top: auto;
+}
+
+.metric {
+  font-family: digital;
+}
+
+#tab-content div.tab-content {
+  display: none;
+}
+
+#tab-content div.is-active {
+  display: block;
+}
