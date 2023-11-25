@@ -1,0 +1,16 @@
+[build-system]
+requires = ["flit_core >=3.2,<4", "IPython", "PyPDF2"]
+build-backend = "flit_core.buildapi"
+description-file = "README.md"
+requires-python = ">=3.6"
+
+[project]
+name = "jupytexmagic"
+authors = [{name = "Ross Mikulskis", email = "rkulskis@gmail.com"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License", "Framework :: IPython"]
+dynamic = ["version", "description"]
+
+[project.urls]
+Home = "https://github.com/rkulskis/jupytex"
