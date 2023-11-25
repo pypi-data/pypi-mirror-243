@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "ksize"
+version = "0.1.5"
+description = ""
+authors = ["drunkensway <alexanderrochette@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ksize", from = "src"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.11"
+click = "^8.1.7"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+kafka_install = "ksize.kafka_install:kafka_install"
+ksize = "ksize.cli:ksize"
