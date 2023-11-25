@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+setup.cfg
+edgepi_rpc_protobuf.egg-info/PKG-INFO
+edgepi_rpc_protobuf.egg-info/SOURCES.txt
+edgepi_rpc_protobuf.egg-info/dependency_links.txt
+edgepi_rpc_protobuf.egg-info/top_level.txt
+rpc_generated_protobufs/__init__.py
+rpc_generated_protobufs/adc_pb2.py
+rpc_generated_protobufs/dac_pb2.py
+rpc_generated_protobufs/din_pb2.py
+rpc_generated_protobufs/dout_pb2.py
+rpc_generated_protobufs/led_pb2.py
+rpc_generated_protobufs/pwm_pb2.py
+rpc_generated_protobufs/relay_pb2.py
+rpc_generated_protobufs/tc_pb2.py
+tests/test_install.py

@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: edgepi-rpc-protobuf
+Version: 1.0.23
+Summary: Protobuf generated code for EdgePi RPC
+Home-page: https://github.com/EdgePi-Cloud/edgepi-rpc-protobuf/tree/main/python_rpc
+Author: Isaac James
+Author-email: ijames@osensa.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# EdgePi RPC Protobuf Python Library
+
+EdgePi RPC Protobuf package for installation in a Python environment.
+
+## Recompile Python-generated code for this package:
+
+```
+protoc -I=. --experimental_allow_proto3_optional --python_out=./python_rpc/protobufs <filename.proto>
+```
+
+## Importing python generated code
+
+Install this package as:
+```
+pip install edgepi-rpc-protobuf
+```
+
+Import as:
+```
+from python_rpc.protobufs import <>
+```
