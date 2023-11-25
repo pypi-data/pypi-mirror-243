@@ -1,0 +1,8 @@
+colorama
+jinja2
+jsonschema
+pygls
+tree-sitter
+
+[dev]
+pytest-cov
