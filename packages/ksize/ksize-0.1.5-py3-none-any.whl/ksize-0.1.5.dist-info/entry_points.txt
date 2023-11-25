@@ -1,0 +1,4 @@
+[console_scripts]
+kafka_install=ksize.kafka_install:kafka_install
+ksize=ksize.cli:ksize
+
