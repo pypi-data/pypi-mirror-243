@@ -1,0 +1,19 @@
+{% load wagtailimages_tags %}
+<a href="{{ value.file.url }}">
+  <picture>
+    <source
+      srcset="{{ value.thumbnail.srcset.avif }}"
+      type="image/avif"
+      sizes="(max-width: 600px) 555px, {{ value.thumbnail.sizes }}"
+    >
+    <img
+      class="cast-image"
+      alt="{{ value.default_alt_text }}"
+      src="{{ value.thumbnail.src.jpeg }}"
+      srcset="{{ value.thumbnail.srcset.jpeg }}"
+      sizes="(max-width: 600px) 555px, {{ value.thumbnail.sizes }}"
+      width="{{ value.thumbnail.width }}"
+      height="{{ value.thumbnail.height }}"
+    >
+  </picture>
+</a>
