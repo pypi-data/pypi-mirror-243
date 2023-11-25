@@ -1,0 +1,3 @@
+[console_scripts]
+lvmnps=lvmnps.__main__:main
+
