@@ -1,0 +1,1 @@
+taskWizName = 'CyberTask AI'

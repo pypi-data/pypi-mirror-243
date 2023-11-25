@@ -1,0 +1,2 @@
+[console_scripts]
+cybertask = taskwiz.cli:cli
