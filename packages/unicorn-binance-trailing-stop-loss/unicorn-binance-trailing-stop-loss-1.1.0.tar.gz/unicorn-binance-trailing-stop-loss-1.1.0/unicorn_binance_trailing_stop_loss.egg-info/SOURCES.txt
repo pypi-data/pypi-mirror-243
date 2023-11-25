@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+unicorn_binance_trailing_stop_loss/__init__.c
+unicorn_binance_trailing_stop_loss/cli.c
+unicorn_binance_trailing_stop_loss/manager.c
+unicorn_binance_trailing_stop_loss.egg-info/PKG-INFO
+unicorn_binance_trailing_stop_loss.egg-info/SOURCES.txt
+unicorn_binance_trailing_stop_loss.egg-info/dependency_links.txt
+unicorn_binance_trailing_stop_loss.egg-info/entry_points.txt
+unicorn_binance_trailing_stop_loss.egg-info/requires.txt
+unicorn_binance_trailing_stop_loss.egg-info/top_level.txt
