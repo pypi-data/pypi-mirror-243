@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pydivar
+Version: 0.1.0
+Summary: Python library for crawling and extracting data from Divar
+Home-page: https://github.com/ali-ardakani/pydivar.git
+Author: Ali Ardakani
+Author-email: aliardakani78@gmail.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: beautifulsoup4 (==4.12.2)
+Requires-Dist: certifi (==2023.11.17)
+Requires-Dist: charset-normalizer (==3.3.2)
+Requires-Dist: idna (==3.4)
+Requires-Dist: loguru (==0.7.2)
+Requires-Dist: requests (==2.31.0)
+Requires-Dist: soupsieve (==2.5)
+Requires-Dist: urllib3 (==2.1.0)
+
