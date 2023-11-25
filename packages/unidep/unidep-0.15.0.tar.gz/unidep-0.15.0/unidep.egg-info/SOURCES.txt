@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+unidep.py
+tests/test_unidep.py
+unidep.egg-info/PKG-INFO
+unidep.egg-info/SOURCES.txt
+unidep.egg-info/dependency_links.txt
+unidep.egg-info/entry_points.txt
+unidep.egg-info/requires.txt
+unidep.egg-info/top_level.txt
