@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: rafetch
+Version: 1.0.2
+Summary: A simple system information tool for Ubuntu
+Author: Tanjibul Hasan Rafi
+Author-email: rafitanjibulhasan@gmail.com
+Keywords: python,fetch,linux,ubuntu,systeminfo,neofetch
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+License-File: LICENSE
+
