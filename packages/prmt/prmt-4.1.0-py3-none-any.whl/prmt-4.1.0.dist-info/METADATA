@@ -1,0 +1,85 @@
+Metadata-Version: 2.1
+Name: prmt
+Version: 4.1.0
+Summary: Simple and robust command line prompts for most values
+Home-page: https://github.com/feluxe/prmt
+License: Apache-2.0
+Keywords: command,line,prompt,user,input
+Author: feluxe
+Author-email: felix@meyerwolters.de
+Maintainer: feluxe
+Maintainer-email: felix@meyerwolters.de
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Project-URL: Repository, https://github.com/feluxe/prmt
+Description-Content-Type: text/markdown
+
+# prmt
+
+
+### Description
+
+Simple and robust command line prompts for most of the values.
+The formatting of the questions and prompts is completely customizable.
+This lib has no dependencies and no magic.
+
+**Features:**
+
+* Prompt bool from user. (`prmt.confirm`)
+* Prompt string from user. (`prmt.string`)
+* Prompt string from user, opening an editor window. (`prmt.string_from_editor`)
+* Prompt integer from user. (`prmt.integer`)
+* Prompt list of strings from user. (`prmt.list_of_str`) 
+* Prompt user to select an item from a list/dict of items. (`prmt.select`)
+
+**Optional features:**
+
+* Set default values.
+* Customize formatting for each prompt. 
+* Customize formatting for all prompts via the `prmt.Prompt()` class.
+* Open default Text Editor for the user to enter text.
+* Blacklist values. (If the user enters blacklisted values she will be prompted again)
+
+
+### Requirements
+
+Python `>=3.7`
+
+
+### Install
+
+    pip install prmt
+
+or
+
+    poetry install prmt
+
+
+### Examples
+
+Look into the `tests` folder for code examples.
+
+To see it in action on the command line, run:
+
+    pipenv run python make.py test
+
+
+
+### Development
+
+    git clone https://github.com/feluxe/prmt.git
+
+    cd prmt
+
+    pipenv install --dev --pre
+
+    pipenv run python make.py --help
+
+
