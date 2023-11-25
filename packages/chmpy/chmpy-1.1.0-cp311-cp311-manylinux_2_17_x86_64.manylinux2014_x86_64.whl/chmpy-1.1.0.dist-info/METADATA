@@ -1,0 +1,166 @@
+Metadata-Version: 2.1
+Name: chmpy
+Version: 1.1.0
+Summary: Molecules, crystals, promolecule and Hirshfeld surfaces using python.
+Author-email: Peter Spackman <peterspackman@fastmail.com>
+License: Code under the chmpy/mc subdirectory contains some code modified
+        from the scikit-image project, subject to the following license:
+        
+        Copyright (C) 2019, the scikit-image team
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are
+        met:
+        
+         1. Redistributions of source code must retain the above copyright
+            notice, this list of conditions and the following disclaimer.
+         2. Redistributions in binary form must reproduce the above copyright
+            notice, this list of conditions and the following disclaimer in
+            the documentation and/or other materials provided with the
+            distribution.
+         3. Neither the name of skimage nor the names of its contributors may be
+            used to endorse or promote products derived from this software without
+            specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE AUTHOR AS IS AND ANY EXPRESS OR IMPLIED
+        WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+        MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO
+        EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+        EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT
+        OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+        INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+        CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE),
+        ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+        POSSIBILITY OF SUCH DAMAGE.
+        
+        All other code is subject to the GPLv3.
+        If you wish to distribute some of this code in a
+        commercial program (i.e. the GPLv3 is not suitable for
+        your purposes) then feel free to contact me.
+        
+        Copyright (C) 2021, Peter R. Spackman
+        
+        This program is free software: you can redistribute it and/or modify it under
+        the terms of the GNU General Public License as published by the Free Software
+        Foundation, either version 3 of the License, or (at your option) any later
+        version.
+        
+        This program is distributed in the hope that it will be useful, but WITHOUT ANY
+        WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+        PARTICULAR PURPOSE. See the GNU General Public License for more details.
+        
+        You should have received a copy of the GNU Public License along with this
+        program. If not, see <https://www.gnu.org/licenses/>.
+        
+Project-URL: homepage, https://github.com/peterspackman/chmpy
+Project-URL: repository, https://github.com/peterspackman/chmpy
+Project-URL: documentation, https://peterspackman.github.io/chmpy/
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: numpy >=1.12
+Requires-Dist: scipy >=1.8.1
+Requires-Dist: trimesh >=3.12.9
+Requires-Dist: matplotlib >=3.5.2
+Requires-Dist: seaborn >=0.11.2
+Requires-Dist: Jinja2 >=3.1.2
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: furo ; extra == 'docs'
+Requires-Dist: myst-parser ; extra == 'docs'
+Provides-Extra: graph
+Requires-Dist: graph-tool ; extra == 'graph'
+
+chmpy
+-----------
+
+.. image:: https://github.com/peterspackman/chmpy/workflows/CI/badge.svg
+
+A library for computational chemistry in python. Featuring support for
+molecules, crystals, Hirshfeld & promolecule density isosurfaces,
+spherical harmonic shape descriptors and much more...
+
+Installation
+============
+
+Basic installation can be done through the python package manager ``pip``::
+
+    pip install chmpy
+
+
+If you wish to develop/modify the code, then you should use ``poetry``::
+
+    poetry install --no-root
+    poetry install
+
+The first poetry install appears to be required as poetry does not install dev dependencies before building,
+and this package uses Cython.
+
+Features
+========
+While the library is intended to be flexible and make it easy to build
+complex pipelines or properties, the following is a brief summary of 
+intended features:
+
+* Load crystal structures from ``.cif``, ``.res``, ``POSCAR`` files.
+* Evaluate promolecule and procrystal electron densities.
+* Easily generate Hirshfeld or promolecule isosurfaces and associated properties.
+* Easily generate spherical harmonic shape descriptors for atoms, molecules, or molecular fragments.
+* Efficiently calculate crystal slabs, periodic connectivity and more...
+* Automatic parallelization of some calculations using OpenMP (set the `OMP_NUM_THREADS` environment variable)
+
+It should also serve as a simple, easy to read library for learning
+how to represent crystal structures, molecules etc. and evaluate
+scientifically relevant information quickly and efficiently using
+python.
+
+
+Examples
+--------
+
+Crystal structures and molecules
+========================================
+Loading a crystal structure from a CIF (`.cif`) or SHELX (``.res``)
+file, or a molecule from an XMOL (``.xyz``) file is straightforward:
+
+    >>> from chmpy import Crystal, Molecule
+    >>> c = Crystal.load("tests/acetic_acid.cif")
+    >>> c
+    <Crystal C2H4O2 Pna2_1>
+    # Calculate the unique molecules in this crystal
+    >>> c.symmetry_unique_molecules()
+    [<Molecule: C2H4O2(2.12,1.15,0.97)>]
+    >>> m = Molecule.load("tests/water.xyz")
+    >>> m
+    <Molecule: H2O(-0.67,-0.00,0.01)>
+    
+
+Hirshfeld and promolecule density isosurfaces
+=============================================
+
+Generation of surfaces with the default settings can be done with
+minimal hassle, simply by using the corresponding members of the ``Crystal``
+class:
+
+    >>> c = Crystal.load("tests/test_files/acetic_acid.cif")
+    # This will generate a high resolution surface
+    # for each symmetry unique molecule in the crystal
+    >>> surfaces = c.hirshfeld_surfaces()
+    >>> surfaces
+    [<trimesh.Trimesh(vertices.shape=(3598, 3), faces.shape=(7192, 3))>]
+    # We can generate lower resolution surfaces with the separation parameter
+    >>> surfaces = c.hirshfeld_surfaces(separation=0.5)
+    >>> surfaces
+    [<trimesh.Trimesh(vertices.shape=(584, 3), faces.shape=(1164, 3))>]
+    # Surfaces can be saved via trimesh, or a utility function provided in chmpy
+    >>> from chmpy.util.mesh import save_mesh
+    >>> save_mesh(surfaces[0], "acetic_acid.ply")
+    
+The resulting surface should look something like this when visualized:
+
+.. image:: src/chmpy/tests/acetic_acid.png
+  :height: 200px
+
+
+
