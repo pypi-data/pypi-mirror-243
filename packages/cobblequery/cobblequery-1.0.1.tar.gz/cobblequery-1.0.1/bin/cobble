@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+
+import sys
+import os
+import argparse
+import json
+from cobblelib import cli 
+from cobblelib import core 
+from cobblelib import query_language
+
+import yaml
+
+
+def cobble_cli(args):
+    parser = argparse.ArgumentParser()
+    parser.add_argument('query', nargs='?', help='Query to run')
+    parser.add_argument('--dry-run', action="store_true", help='Parse and validate query without running')
+    parser.add_argument('-i', '--interactive', action="store_true", default=False, help='Do an interactive edit of the query')
+    parser.add_argument('-s','--no-stdin', action="store_true", default=False, help='Dont insert the stdin genator')
+    parser.add_argument('-q', '--query-file', help='Read query text from a file')
+    parsed_arguments = parser.parse_args(args)
+
+    if parsed_arguments.query_file:
+        with open(query_file) as f:
+            query_text = f.read().decode('utf-8')
+    elif parsed_arguments.query:
+        query_text = parsed_arguments.query
+    else:
+        query_text = '|'
+
+    if parsed_arguments.no_stdin:
+        prefixed_functions = []
+    else:
+        prefixed_functions = [cli.DEFAULT_GENERATOR]
+
+
+    is_bash_syntax = query_text.strip().startswith(query_language.TOKEN_FUNCTION_SEP)
+    is_json = query_text.strip().startswith('[')
+    if is_bash_syntax:
+        parser = lambda x: core.make_pipeline(prefixed_functions, cli.parse_shell_syntax(x))
+    elif is_json:
+        parser = lambda x: core.make_pipeline(prefixed_functions, json.loads(x))
+    else:
+        parser = lambda x: core.make_pipeline(prefixed_functions, yaml.safe_load(x))
+
+    if parsed_arguments.interactive:
+        query_text = cli.interactive_edit(query_text, verify=parser)
+
+    try:
+        pipeline = parser(query_text)
+    except Exception as e:
+        error = str(e)
+        print('Error parsing query: {}'.format(error))
+        return
+
+    if parsed_arguments.dry_run:
+        print(pipeline.representation)
+        #print(yaml.dump(pipeline.representation))
+        print(json.dumps(pipeline.representation, indent=4))
+        return 
+
+    cli.execute_pipeline(pipeline)
+
+if __name__ == '__main__':
+    cobble_cli(sys.argv[1:])
