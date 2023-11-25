@@ -1,0 +1,7 @@
+# Optional packages which add functionality or speed things up
+ipywidgets  # For Manipulate
+lxml  # for HTML parsing used in builtin/fileformats/html
+psutil # SystemMemory and MemoryAvailable
+pyocr # Used for TextRecognize
+unidecode # Used in Transliterate
+wordcloud # Used in builtin/image.py by WordCloud()
