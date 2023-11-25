@@ -1,0 +1,6 @@
+[console_scripts]
+git-ws=gitws._cli:main
+
+[gitws.manifestformat]
+GitWSManifestFormat=gitws.gitwsmanifestformat:GitWSManifestFormat
+
