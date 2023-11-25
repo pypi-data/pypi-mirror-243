@@ -1,0 +1,5 @@
+include LICENSE
+include HISTORY.md
+include Containerfile
+graft tests
+graft hiddify_reality_scanner

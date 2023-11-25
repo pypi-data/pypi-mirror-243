@@ -1,0 +1,2 @@
+[console_scripts]
+hiddify_reality_scanner = hiddify_reality_scanner.__main__:main
