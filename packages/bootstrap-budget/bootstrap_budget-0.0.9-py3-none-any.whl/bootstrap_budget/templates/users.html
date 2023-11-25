@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block nav_items %}
+<ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="nav-link" href="/admin" title="Admin Console">Admin Console</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="/admin/users" title="Users">Users</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/auth/logout" title="Users">Logout</a>
+    </li>
+</ul>
+{% endblock %}

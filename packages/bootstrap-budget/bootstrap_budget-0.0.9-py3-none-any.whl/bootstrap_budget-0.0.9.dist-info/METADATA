@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: bootstrap-budget
+Version: 0.0.9
+Summary: A simple financial application to help you pull your budget up by its bootstraps.
+Home-page: https://github.com/forgineer/bootstrap-budget
+Author: forgineer
+License: MIT License
+Keywords: personal budget,budgeting,web app
+Classifier: Development Status :: 1 - Planning
+Classifier: Framework :: Flask
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Office/Business :: Financial
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: blinker ==1.7.0
+Requires-Dist: click ==8.1.7
+Requires-Dist: colorama ==0.4.6
+Requires-Dist: Flask ==2.3.3
+Requires-Dist: Flask-SQLAlchemy ==3.1.1
+Requires-Dist: itsdangerous ==2.1.2
+Requires-Dist: Jinja2 ==3.1.2
+Requires-Dist: MarkupSafe ==2.1.3
+Requires-Dist: waitress ==2.1.2
+Requires-Dist: Werkzeug ==3.0.1
+Provides-Extra: deployment
+Requires-Dist: build ; extra == 'deployment'
+Requires-Dist: twine ; extra == 'deployment'
+
+# bootstrap-budget
+A simple financial application to help you pull your budget up by its bootstraps.
