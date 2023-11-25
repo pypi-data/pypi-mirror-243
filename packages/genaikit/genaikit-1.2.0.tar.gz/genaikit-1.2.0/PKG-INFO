@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: genaikit
+Version: 1.2.0
+Summary: AI code and general assistant powered by OpenAI
+License: None
+Author: Vagner Bessa
+Author-email: bessavagner@gmail.com
+Requires-Python: >=3.10.12,<3.13
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: openai (>=1.3.4,<2.0.0)
+Requires-Dist: pandas (>=2.1.3,<3.0.0)
+Requires-Dist: pyarrow (==12.0.1)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: scipy (>=1.11.4,<2.0.0)
+Requires-Dist: spacy (>=3.7.2,<4.0.0)
+Requires-Dist: tiktoken (>=0.5.1,<0.6.0)
+Description-Content-Type: text/markdown
+
+# genaikit
+
+AI code and general assistant powered by [OpenAI](https://openai.com/)
+
+## Installation
+
+```bash
+$ pip install genaikit
+```
+
+## Usage
+
+- TODO
+
+## Contributing
+
+Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
+
+## License
+
+`genaikit` was created by Vagner Bessa. Vagner Bessa retains all rights to the source and it may not be reproduced, distributed, or used to create derivative works.
+
+## Credits
+
+`genaikit` was created with [`cookiecutter`](https://cookiecutter.readthedocs.io/en/latest/) and the `py-pkgs-cookiecutter` [template](https://github.com/py-pkgs/py-pkgs-cookiecutter).
+
