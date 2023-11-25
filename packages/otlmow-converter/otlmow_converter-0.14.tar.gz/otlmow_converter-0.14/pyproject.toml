@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "otlmow_converter"
+version = "0.14"
+authors = [{name = "David Vlaminck", email = "david.vlaminck@mow.vlaanderen.be"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent"
+]
+requires-python = ">=3.7"
+dependencies = [
+    'openpyxl >= 3.0',
+    'otlmow-model >= 2.9.2',
+    'rdflib >= 6.0.0',
+    'geojson>=3.0.1',
+    'prettytable>=3.6.0',
+    'numpy >= 1.18',
+]
+
+[tool.setuptools.packages.find]
+include = ["otlmow_converter*"]
+
+[project.urls]
+"Homepage" = "https://github.com/davidvlaminck/OTLMOW-Converter"
+"Bug Tracker" = "https://github.com/davidvlaminck/OTLMOW-Converter/issues"
