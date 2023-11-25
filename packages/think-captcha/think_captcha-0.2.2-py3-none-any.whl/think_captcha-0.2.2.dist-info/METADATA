@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: think-captcha
+Version: 0.2.2
+Summary: A simple Python package for solving captcha
+Author: Ibrohim Fayzullayev
+Author-email: info@thinkland.uz
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENCE.txt
+Requires-Dist: pytesseract
+Requires-Dist: scipy
+Requires-Dist: pillow
+Requires-Dist: numpy
+
