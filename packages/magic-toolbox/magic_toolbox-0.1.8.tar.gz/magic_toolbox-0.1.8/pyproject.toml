@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "magic-toolbox"
+version = "0.1.8"
+description = "A cli framwork in same vane as django"
+authors = ["daniel davee <daniel.v.davee@gmail.com>"]
+license = "Apache2.0"
+readme = "README.md"
+packages = [{include = "magic_toolbox"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+plac = "1.3.5"
+
+[tool.poetry.group.dev.dependencies]
+ipython = "^8.16.1"
+pytest = "^7.4.3"
+magic-run-cmd = "^2.1.1"
+
+[tool.poetry.scripts]
+toolbox = 'magic_toolbox.magic_toolbox:main'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
