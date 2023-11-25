@@ -1,0 +1,3 @@
+[console_scripts]
+sbom_insights=open_source_insights_api.cli:cli
+
