@@ -1,0 +1,105 @@
+[project]
+name = "protosym"
+dynamic = ["version"]
+requires-python = ">=3.8"
+license = "BSD-3-clause"
+description = "ProtoSym"
+readme = "README.rst"
+authors = [
+    { name = "Oscar Benjamin", email = "oscar.j.benjamin@gmail.com" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.optional-dependencies]
+all = [
+    "numpy",
+    "sympy",
+    "llvmlite",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "VERSION.txt"
+
+[tool.hatch.build]
+include = [
+    "src",
+    "docs",
+    "tests",
+    "benchmarks",
+
+    "requirements-*.txt",
+
+    "noxfile.py",
+    "quicktest.sh",
+
+    "README.rst",
+    "CONTRIBUTING.rst",
+    "CODE_OF_CONDUCT.rst",
+    "LICENSE.rst",
+
+    "pyproject.toml",
+    "VERSION.txt",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+    "src/protosym",
+]
+
+[tool.pytest.ini_options]
+testpaths = [
+    "tests",
+]
+
+[tool.coverage.paths]
+source = ["src", "*/site-packages"]
+
+[tool.coverage.run]
+branch = true
+source = ["protosym"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 100
+exclude_lines = [
+    "pragma: no cover",
+    "if _TYPE_CHECKING:",
+    "@overload",
+]
+
+[tool.mypy]
+strict = true
+pretty = true
+show_column_numbers = true
+show_error_codes = true
+show_error_context = true
+
+[[tool.mypy.overrides]]
+module = [
+    'jinja2',
+    'llvmlite',
+    'llvmlite.binding',
+    'py',
+    'symengine',
+    'numpy',
+]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+    "sympy",
+    "sympy.core.function",
+    "rust_protosym",
+]
+follow_imports = "skip"
+ignore_missing_imports = true
