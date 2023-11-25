@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: vtarget
+Version: 0.3.4
+Summary: vtarget lib
+Author: vTarget Team
+Author-email: contact@vtarget.ai
+License: BSD
+Keywords: vtarget,dataprep
+Requires-Python: >=3.9.10,<3.11.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cloudpickle>=1.5.0
+Requires-Dist: matplotlib>=3.7.1
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: pandas<2.0.0,>=1.5.0
+Requires-Dist: scikit-learn>=1.2.1
+Requires-Dist: seaborn>=0.12.2
+Requires-Dist: termcolor
+Requires-Dist: pycryptodome>=3.18.0
+Requires-Dist: google-cloud-bigquery
+Requires-Dist: pyodbc
+Requires-Dist: ydata-profiling>=4.4.0
+Requires-Dist: snowflake-connector-python
+Requires-Dist: pymongo
+Requires-Dist: sqlalchemy>=1.4.49
+Requires-Dist: mysqlclient
+Requires-Dist: pymysql
+Requires-Dist: cx-oracle
+Requires-Dist: pandas-gbq
+
+# vTarget package
+
+## DescripciÃ³n
+
+Este es un paquete de Python correr los flujos generados con el mÃ³dulo de Dataprep de vTarget.
+
+## InstalaciÃ³n
+
+Para instalar este paquete, puedes usar `pip`:
+
+```
+pip install vtarget
+```
+
+## Uso
+
+Para usar este paquete, primero debes importarlo en tu script de Python:
+
+```python
+import vtarget
+```
+
+Luego, puedes usar la funciÃ³n `run_flow` para correr un flujo generado por vTarget. Por ejemplo:
+
+```python
+nodos = vtarget.run_flow("Flow.json")
+print(nodos["v_output"]["Out"])
+```
+
+## Contribuir
+
+Puedes informar errores o sugerir mejoras a travÃ©s del siguiente [formulario](https://docs.google.com/forms/d/e/1FAIpQLSfYzPEQsbf-FTtrWpFbjRG2TX3ZrIgNtlMJLhOKteJrhZXUpg/viewform "Soporte vTarget").
+
+
+## Licencia
+
+Este proyecto estÃ¡ licenciado bajo la licencia BSD. Consulta el archivo `LICENSE` para obtener mÃ¡s informaciÃ³n.
