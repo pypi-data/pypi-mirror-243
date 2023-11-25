@@ -1,0 +1,15 @@
+pyarmor/cli/core/linux/__init__.py,sha256=QL_sg4QOXMnEURI6smAO35qIElggtJfA0XQEyC36GRY,22
+pyarmor/cli/core/linux/aarch64/pyarmor_runtime.so,sha256=t1NkNCxKYYQmTTSD6uBGvx_iwwoXhmjxkXNqI7eNpTY,603784
+pyarmor/cli/core/linux/aarch64/pytransform3.so,sha256=1cB4yGSPFJsp7MPb2NrZb6kiioYpgpXPpqZIwLv_xws,479432
+pyarmor/cli/core/linux/armv7/pyarmor_runtime.so,sha256=o8e7wwKCrT-WZ8hrFMVkiW5iJpzsd-EHi1GYjNSyN7k,888652
+pyarmor/cli/core/linux/armv7/pytransform3.so,sha256=dEGXj5zDV9fepU1Pe_7BbreItBW0DD3a8wZo-aJo9A8,707408
+pyarmor/cli/core/linux/loongarch64/pyarmor_runtime.so,sha256=xNuPUGWK3725DPrlnPXbkJga9af1E4n5sbz4UoOJyxM,201520
+pyarmor/cli/core/linux/loongarch64/pytransform3.so,sha256=DdsSvvBw5rsPHQO-UZQNJyVlGswE0LwAzTFKZERkKPI,577888
+pyarmor/cli/core/linux/x86/pyarmor_runtime.so,sha256=GphWhl9irUOBkrZvSbfMbZQktqx0Q5bgVKjtF20qEZk,830496
+pyarmor/cli/core/linux/x86/pytransform3.so,sha256=u1dDOjI3pLMWbOQMVzMUK814u4DzOlEI4rmD9R8pHUs,645764
+pyarmor/cli/core/linux/x86_64/pyarmor_runtime.so,sha256=orMmvmKRF3-3fM4kSYcZ4M_XMNKeel7th3CcF16eD7o,792392
+pyarmor/cli/core/linux/x86_64/pytransform3.so,sha256=CKeYEL2VjQy5sseZQWU6u87CygdfcLxT8O9lzpcBs1o,483608
+pyarmor.cli.core.linux-5.4.2.dist-info/METADATA,sha256=9257irurz60HqMqENB0dJbIdKb4ItjvdoqC3m32dSI8,787
+pyarmor.cli.core.linux-5.4.2.dist-info/WHEEL,sha256=fnwPkVKqsNvgwPfqPsCvTGK4Q1cWK5nDzby006d0lkY,93
+pyarmor.cli.core.linux-5.4.2.dist-info/top_level.txt,sha256=UE1ovZ_90YzwF_lZ3LV7o8HKLe-RgzUaUUvdH5UTUus,8
+pyarmor.cli.core.linux-5.4.2.dist-info/RECORD,,
