@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2023-11-13 14:04+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.blog\n"
+
+#: collective/blog/profiles/default/types/Author.xml
+msgid "A Blog Author"
+msgstr ""
+
+#: collective/blog/profiles/default/types/Post.xml
+msgid "A Blog Post"
+msgstr ""
+
+#: collective/blog/profiles/default/types/Blog.xml
+msgid "A folderish content item representing a Blog"
+msgstr ""
+
+#: collective/blog/profiles/default/types/Blog.xml
+msgid "Blog"
+msgstr ""
+
+#: collective/blog/profiles/default/types/Author.xml
+msgid "Blog Author"
+msgstr ""
+
+#: collective/blog/profiles/default/types/Post.xml
+msgid "Blog Post"
+msgstr ""
+
+#: collective/blog/behaviors/configure.zcml:13
+msgid "Blog Behavior"
+msgstr ""
+
+#: collective/blog/profiles.zcml:13
+msgid "Blog: Install"
+msgstr ""
+
+#: collective/blog/profiles.zcml:21
+msgid "Blog: Uninstall"
+msgstr ""
+
+#: collective/blog/profiles/default/types/Author.xml
+#: collective/blog/profiles/default/types/Blog.xml
+#: collective/blog/profiles/default/types/Post.xml
+msgid "Edit"
+msgstr ""
+
+#: collective/blog/behaviors/configure.zcml:13
+msgid "Implements a blog behavior on a content type"
+msgstr ""
+
+#: collective/blog/profiles.zcml:13
+msgid "Package to configure Blog content types"
+msgstr ""
+
+#: collective/blog/profiles.zcml:21
+msgid "Uninstall Blog setup."
+msgstr ""
+
+#: collective/blog/profiles/default/types/Author.xml
+#: collective/blog/profiles/default/types/Blog.xml
+#: collective/blog/profiles/default/types/Post.xml
+msgid "View"
+msgstr ""
+
+#. Default: "Contributors"
+#: collective/blog/content/post.py:41
+msgid "contributors"
+msgstr ""
+
+#. Default: "Persons responsible for creating the content of this post. Please enter a list of user names, one per line. The principal creator should come first."
+#: collective/blog/content/post.py:25
+msgid "help_authors"
+msgstr ""
+
+#. Default: "The names of people that have contributed to this item. Each contributor should be on a separate line."
+#: collective/blog/content/post.py:42
+msgid "help_contributors"
+msgstr ""
+
+#. Default: "Copyright statement or other rights information on this item."
+#: collective/blog/content/post.py:58
+msgid "help_copyrights"
+msgstr ""
+
+#. Default: "Authors"
+#: collective/blog/content/post.py:24
+msgid "label_authors"
+msgstr ""
+
+#. Default: "Rights"
+#: collective/blog/content/post.py:57
+msgid "label_copyrights"
+msgstr ""
+
+#. Default: "Metadata"
+#: collective/blog/content/post.py:19
+msgid "label_schema_metadata"
+msgstr ""
