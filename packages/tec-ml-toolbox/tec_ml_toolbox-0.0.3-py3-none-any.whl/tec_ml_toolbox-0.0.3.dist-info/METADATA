@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: tec-ml-toolbox
+Version: 0.0.3
+Summary: The set of utils and routins for GNSS/TEC data processing and dataset prepearing for ML.
+Author: Alexander Ten
+Author-email: orionapplepie@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: numpy (>=1.26.2,<2.0.0)
+Requires-Dist: pandas (>=2.1.3,<3.0.0)
+Requires-Dist: tqdm (>=4.66.1,<5.0.0)
+Description-Content-Type: text/markdown
+
+# TEC Machine Learning utils
+
+The set of utils and routins for GNSS/TEC data processing and dataset prepearing for ML.
+
+## Utils list
+
+- Convert TEC .dat to csv
+
