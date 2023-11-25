@@ -1,0 +1,48 @@
+[project]
+name = "vula_libnss"
+dynamic = ["version"]
+description = "nss-altfiles for vula"
+readme = "README.md"
+requires-python = ">=3.10.0"
+keywords = ["mDNS", "vula", "encryption", "libnss"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: GNU General Public License v3 (GPLv3)", "Operating System :: OS Independent"]
+authors = [ {email = "git@vula.link"}, {name = "Vula Authors"} ]
+maintainers = [ {email = "git@vula.link"}, {name = "Vula Authors"} ]
+dependencies = [ ]
+license = { text = "GPLv3" }
+
+[tool.setuptools.dynamic]
+version = {attr = "vula_libnss.__version__.__version__"}
+
+[build-system]
+requires = ["setuptools", "wheel", "build"]
+build-backend = "setuptools.build_meta"
+
+[project.urls]
+Documentation = "https://codeberg.org/vula/vula_libnss"
+Source = "https://codeberg.org/vula/vula_libnss"
+
+[tool.black]
+line-length = 79
+skip-string-normalization = true
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.mypy_cache
+  | \.venv
+  | _build
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "error",
+    "ignore::UserWarning",
+    "ignore::DeprecationWarning",
+    "ignore::_BetaConfiguration",
+]
