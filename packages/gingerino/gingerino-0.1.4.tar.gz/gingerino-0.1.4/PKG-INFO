@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: gingerino
+Version: 0.1.4
+Summary: Parse strings using Jinja-style templates
+Home-page: https://github.com/buurro/gingerino
+Author: Marco Burro
+Author-email: marcoburro98@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Project-URL: Repository, https://github.com/buurro/gingerino
+Description-Content-Type: text/markdown
+
+# Gingerino
+
+[![PyPI Version](https://img.shields.io/pypi/v/gingerino)](https://pypi.org/project/gingerino/)
+
+This is a proof of concept
+
+## Installation
+
+```bash
+pip install gingerino
+```
+
+## Usage
+
+```python
+from dataclasses import dataclass
+from typing import Literal
+
+from gingerino import parserino
+
+
+@dataclass
+class UserInfo:
+    name: str
+    age: int
+    unit: Literal["years", "months"]
+
+
+template = "{{ name }} is {{ age }} {{ unit }} old"
+user = parserino(UserInfo, template, "Marco is 24 years old")
+
+print(user.name, user.age)
+# Marco 24
+```
+
