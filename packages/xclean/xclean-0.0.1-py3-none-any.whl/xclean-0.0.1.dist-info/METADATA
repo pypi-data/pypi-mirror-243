@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: xclean
+Version: 0.0.1
+Summary: File de-duplication utility
+Author-email: David Johnston <c0d3@gpobox.net>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Provides-Extra: dev
+Requires-Dist: wheel ; extra == 'dev'
+Requires-Dist: build ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: coverage ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+
+# xclean
+
+File de-duplication utility
+
+    usage: xclean [-h] [-m MAIN] [-t TARGET] [-a ARCHIVE_TO] [-e [EXTENSIONS ...]] [--remove] [--trash] [--clean]
+
+    options:
+      -h, --help            show this help message and exit
+      -m MAIN, --main MAIN
+                            Directory where master files reside
+      -t TARGET, --target TARGET
+                            Directory where duplicate files may reside
+      -a ARCHIVE_TO, --archive-to ARCHIVE_TO
+                            Archive duplicates to folder
+      -e [EXTENSIONS ...], --extensions [EXTENSIONS ...]
+                            Extensions
+      --remove              Remove duplicate files
+      --trash               Trash duplicate files
+      --clean               Clean database
