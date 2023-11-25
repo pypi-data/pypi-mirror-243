@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: kyte
+Version: 0.1.0
+Summary: Python module for interfacing Kyte API
+Home-page: https://github.com/keyqcloud/kyte-api-python
+Author: Kenneth P. Hough
+Author-email: <kenneth@keyqcloud.com>
+License: MIT
+Keywords: python,kyte,kyte api
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+
+The Kyte API Python Library is designed to facilitate communication between a Python client and the Kyte API endpoint. It simplifies the process of authentication, request signing, and making API calls.
+
