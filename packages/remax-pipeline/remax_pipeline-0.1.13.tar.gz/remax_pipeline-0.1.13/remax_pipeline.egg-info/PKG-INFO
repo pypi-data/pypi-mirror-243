@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: remax-pipeline
+Version: 0.1.13
+Summary: A Python package designed for scraping data from Remax, enabling local use and integration with Celery for deploying ETL workers. It supports multiple multithreaded pipeline tasks for efficient data processing on Celery worker servers.
+Home-page: https://github.com/AymenRumi/remax-data-pipeline
+Author: Aymen Rumi
+Author-email: aymen.rumi@mail.mcgill.ca
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: amqp==5.2.0
+Requires-Dist: attrs==23.1.0
+Requires-Dist: backports.zoneinfo==0.2.1
+Requires-Dist: billiard==4.2.0
+Requires-Dist: celery==5.3.6
+Requires-Dist: certifi==2023.11.17
+Requires-Dist: charset-normalizer==3.3.2
+Requires-Dist: click==8.1.7
+Requires-Dist: click-didyoumean==0.3.0
+Requires-Dist: click-plugins==1.1.1
+Requires-Dist: click-repl==0.3.0
+Requires-Dist: colorlog==4.0.2
+Requires-Dist: dnspython==2.4.2
+Requires-Dist: exceptiongroup==1.1.3
+Requires-Dist: h11==0.14.0
+Requires-Dist: idna==3.4
+Requires-Dist: kombu==5.3.4
+Requires-Dist: outcome==1.3.0.post0
+Requires-Dist: packaging==23.2
+Requires-Dist: prompt-toolkit==3.0.41
+Requires-Dist: pymongo==4.6.0
+Requires-Dist: PySocks==1.7.1
+Requires-Dist: python-dateutil==2.8.2
+Requires-Dist: python-dotenv==1.0.0
+Requires-Dist: requests==2.31.0
+Requires-Dist: selenium==4.11.2
+Requires-Dist: six==1.16.0
+Requires-Dist: sniffio==1.3.0
+Requires-Dist: sortedcontainers==2.4.0
+Requires-Dist: trio==0.23.1
+Requires-Dist: trio-websocket==0.11.1
+Requires-Dist: typing-extensions==4.8.0
+Requires-Dist: tzdata==2023.3
+Requires-Dist: urllib3==2.1.0
+Requires-Dist: versioneer==0.29
+Requires-Dist: vine==5.1.0
+Requires-Dist: wcwidth==0.2.12
+Requires-Dist: webdriver-manager==4.0.1
+Requires-Dist: wsproto==1.2.0
+
+# Markdown supported!
+
+* Cheer
+* Celebrate
