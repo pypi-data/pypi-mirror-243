@@ -1,0 +1,2 @@
+[console_scripts]
+wsterm = wsterm.__main__:main
