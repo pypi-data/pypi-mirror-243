@@ -1,0 +1,118 @@
+# qmlmch: Visualización de Orbitales Atómicos y Densidad de Probabilidad
+
+La librería `hydrogen_atom` permite la visualización de orbitales atómicos complejos, imaginarios y reales del átomo de hidrógeno en 3D. También ofrece la capacidad de graficar la densidad de probabilidad asociada con estos orbitales.
+
+## Teoría
+
+### Ecuación de Hamilton para el Átomo de Hidrógeno
+
+La ecuación de Hamilton para el átomo de hidrógeno se expresa como:
+
+$$ H \Psi = E \Psi $$
+
+donde:
+- $H$ es el operador Hamiltoniano.
+- $\Psi$ es la función de onda.
+- $E$ es la energía total.
+
+La forma específica de la ecuación de Hamilton para el átomo de hidrógeno es:
+
+$$ -\frac{\hbar^2}{2\mu} \nabla^2 \psi - \frac{e^2}{4\pi\epsilon_0 r} \psi = E \psi $$
+
+## Solución de la Ecuación
+
+La solución de la ecuación de Hamilton para el átomo de hidrógeno se puede expresar en coordenadas esféricas como:
+
+$$ \psi_{nlm}(r, \theta, \phi) = R_{nl}(r) \cdot Y_{lm}(\theta, \phi) $$
+
+donde:
+- $R_{nl}(r)$ es la parte radial.
+- $Y_{lm}(\theta, \phi)$ es la parte angular.
+
+Las funciones $R_{nl}(r)$ y $Y_{lm}(\theta, \phi)$ se determinan resolviendo ecuaciones diferenciales específicas asociadas con la ecuación de Hamilton. Para lograr esto, utilizamos funciones especializadas que se encuentran en el módulo `scipy.special`:
+
+- `sph_harm`: Esta función calcula armónicas esféricas, que son cruciales para describir la parte angular de la solución en coordenadas esféricas.
+  
+- `assoc_laguerre`: Esta función se utiliza para calcular polinomios asociados de Laguerre, necesarios para la parte radial de la solución.
+
+Estas funciones especializadas proporcionan implementaciones eficientes y precisas que simplifican la resolución de las ecuaciones diferenciales asociadas con la ecuación de Hamilton.
+
+
+## Características Principales y Métodos Relevantes
+
+- **Parámetros Iniciales:**
+  - `n` (Número cuántico principal)
+  - `l` (Número cuántico orbital)
+  - `m` (Número cuántico magnético)
+
+- **Métodos Relevantes:**
+    - `angular_graph()`: Grafica la función de onda angular en 3D para la parte compleja, imaginaria y real.
+
+    - `Real_graph()`: Grafica la función de onda real en 3D para todos los valores de \( l \) menores que \( n \).
+
+    - `Density_probability_graph()`: Grafica la densidad de probabilidad en 3D.
+
+
+## USO
+
+Para comenzar a utilizar la librería `qmlmch` y visualizar los orbitales atómicos y la densidad de probabilidad, sigue estos pasos:
+
+1. **Instalación de la Librería:**
+   Asegúrate de tener instalada la librería `qmlmch` junto con las bibliotecas necesarias antes de utilizarla. Puedes instalarlas utilizando el siguiente comando:
+
+    ```bash
+    pip install qmlmch numpy scipy plotly kaleido
+    ```
+
+2. **Importar la Librería:**
+   Importa la clase `hydrogen_atom` en tu script o entorno de Python:
+
+    ```python
+    from qmlmch import hydrogen_atom
+    ```
+
+3. **Crear una Instancia de la Clase:**
+   Crea una instancia de la clase `hydrogen_atom` proporcionando los valores de los números cuánticos principales `n`, orbitales `l`, y magnéticos `m`:
+
+    ```python
+    n = 4
+    l = 2
+    m = 1
+
+    atom = hydrogen_atom(n, l, m)
+    ```
+
+4. **Visualización de Orbitales:**
+   - Observa todos los orbitales reales, incluyendo los complejos e imaginarios, donde \(l < n\) utilizando el siguiente método. Ten en cuenta que por defecto, \(m = 0\):
+
+    ```python
+    atom.Real_graph()
+    ```
+   
+   - Visualiza la función de onda angular en 3D, mostrando los orbitales complejos, imaginarios y reales:
+
+    ```python
+    atom.angular_graph()
+    ```
+
+5. **Simulación de Densidades de Probabilidad:**
+   Para realizar la simulación de las densidades de probabilidad, puedes utilizar el método `Density_probability_graph()`. El método toma un parámetro opcional `num_points`, que por defecto es 5000. Un número más grande significa más precisión, pero también un mayor tiempo de ejecución. Puedes ajustar este parámetro según tus necesidades:
+
+    ```python
+    atom.Density_probability_graph(num_points=5000)
+    ```
+
+   Ten en cuenta que con el valor predeterminado de `num_points`, la simulación tomará aproximadamente 2 minutos.
+    
+¡Eso es todo! Experimenta con diferentes valores de números cuánticos para explorar diferentes orbitales atómicos del átomo de hidrógeno.
+
+
+## Créditos
+
+Esta librería fue desarrollada por Luciano Muñoz. Puedes encontrar el código fuente en [GitHub](https://gitlab.com/LucianoMCH/hydrogen_atom).
+
+
+## Contacto
+
+Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto conmigo a través de mi correo electrónico: [luciano.munoz1@udea.edu.co].
+
