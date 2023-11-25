@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d0fda701-c62d-4c00-8dfc-046017d72b88" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CHANGES.rst" beforeDir="false" afterPath="$PROJECT_DIR$/../CHANGES.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../requirements-dev.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../requirements-dev.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/guest/guest.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/guest/guest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/host/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/host/utility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/location/location.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/location/location.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/location/recordings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/location/recordings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/location/utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/location/utility.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/panelist/appearances.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/panelist/appearances.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/panelist/decimal_scores.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/panelist/decimal_scores.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/show/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/show/info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/show/info_multiple.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/show/info_multiple.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wwdtm/show/show.py" beforeDir="false" afterPath="$PROJECT_DIR$/../wwdtm/show/show.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2XznfYgU0DggjwrGvNhYyO63Bw5" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "code-cleanup",
+    "last_opened_file_path": "/Users/lpham/Projects/questionlp/wwdtm/docs",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors"
+  },
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": [
+    ]
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+</project>
