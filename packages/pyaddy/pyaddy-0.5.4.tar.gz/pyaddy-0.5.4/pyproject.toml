@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "pyaddy"
+version = "0.5.4"
+description = "A Python package/cli to interact with addy.io"
+authors = ["Maurice Saldivar <mo.py.solutions@gmail.com>"]
+license = "GNU AFFERO GENERAL PUBLIC LICENSE"
+readme = "README.md"
+homepage = "https://github.com/msaldivar/pyaddy"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+click = "^8.1.7"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+ruff = "^0.1.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+addy = "pyaddy.__main__:cli"
