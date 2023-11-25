@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: pytest-subinterpreter
+Version: 0.0.1
+Summary: Run pytest in a subinterpreter
+Classifier: Framework :: Pytest
+Requires-Python: >=3.13
+License-File: LICENSE
+Requires-Dist: pytest>=7.0.0
+
+# pytest-subinterpreter
