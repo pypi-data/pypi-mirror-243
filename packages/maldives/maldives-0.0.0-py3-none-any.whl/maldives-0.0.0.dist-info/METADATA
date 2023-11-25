@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: maldives
+Version: 0.0.0
+Summary: Tools for systematic commodities analysis.
+Author-email: To Chin Yu <ytc@alum.mit.edu>
+Project-URL: Homepage, https://github.com/ytcs/maldives
+Project-URL: Issues, https://github.com/ytcs/maldives/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyarrow ==12.0.1
+Requires-Dist: pandas
+Requires-Dist: scikit-learn
+Requires-Dist: fredapi
+Requires-Dist: wallstreet
+Requires-Dist: scipy
+Requires-Dist: plotly
+Requires-Dist: derivative
+Requires-Dist: matplotlib
+Requires-Dist: ray[tune]
+
+# maldives
+systematic commodities tools
