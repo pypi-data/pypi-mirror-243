@@ -1,0 +1,2 @@
+[console_scripts]
+pifuhd = pifuhd.__main__:main
