@@ -1,0 +1,4 @@
+[console_scripts]
+mstasdl=monistode_linker.cli:link
+mstasdlinker=monistode_linker.cli:main
+
