@@ -1,0 +1,13 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+src/gogoweb/__init__.py
+src/gogoweb/_version.py
+src/gogoweb/convert.py
+src/gogoweb/utils.py
+src/gogoweb.egg-info/PKG-INFO
+src/gogoweb.egg-info/SOURCES.txt
+src/gogoweb.egg-info/dependency_links.txt
+src/gogoweb.egg-info/requires.txt
+src/gogoweb.egg-info/top_level.txt
