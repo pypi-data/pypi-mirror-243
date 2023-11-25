@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+JBioSeqTools/__init__.py
+JBioSeqTools/install.py
+JBioSeqTools/seq_tools.py
+JBioSeqTools/vector_build.py
+JBioSeqTools.egg-info/PKG-INFO
+JBioSeqTools.egg-info/SOURCES.txt
+JBioSeqTools.egg-info/dependency_links.txt
+JBioSeqTools.egg-info/requires.txt
+JBioSeqTools.egg-info/top_level.txt
