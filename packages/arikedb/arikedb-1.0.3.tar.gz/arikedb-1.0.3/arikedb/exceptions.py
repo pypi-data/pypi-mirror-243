@@ -1,0 +1,4 @@
+
+
+class ArikedbError(Exception):
+    pass
