@@ -1,0 +1,13 @@
+README.md
+setup.py
+cofutils/__init__.py
+cofutils/cofprofiler.py
+cofutils/cofwriter.py
+cofutils/dispatch.py
+cofutils/package_info.py
+cofutils.egg-info/PKG-INFO
+cofutils.egg-info/SOURCES.txt
+cofutils.egg-info/dependency_links.txt
+cofutils.egg-info/entry_points.txt
+cofutils.egg-info/requires.txt
+cofutils.egg-info/top_level.txt
