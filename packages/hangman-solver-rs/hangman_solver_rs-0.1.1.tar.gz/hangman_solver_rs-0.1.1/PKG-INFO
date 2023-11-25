@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: hangman-solver-rs
+Version: 0.1.1
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Rust
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Typing :: Typed
+License-File: LICENSE
+License-File: LICENSE
+Summary: Solves hangman puzzles
+Keywords: hangman,solver,rust
+Requires-Python: >=3.10
+Project-URL: Source Code, https://github.com/asozialesnetzwerk/hangman_solver
