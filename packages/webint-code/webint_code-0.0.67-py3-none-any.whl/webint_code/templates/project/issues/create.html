@@ -1,0 +1,11 @@
+$def with (project)
+$var breadcrumbs = ("projects", "Projects", project, f"<b>{project}</b>", "issues", "Issues")
+$var title: New Issue
+
+<form method=post action=/projects/$project/issues>
+    <label>Title<br>
+        <label class=bounding><input type=text name=title style=width:30em></label></label>
+    <label>Description<br>
+        <label class=bounding><textarea name=description rows=10 cols=60></textarea></label></label>
+    <button type=submit>Create Issue</button>
+</form>
