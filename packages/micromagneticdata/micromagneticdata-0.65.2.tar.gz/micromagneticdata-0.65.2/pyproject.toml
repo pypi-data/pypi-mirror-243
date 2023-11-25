@@ -1,0 +1,82 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "micromagneticdata"
+version = "0.65.2"
+description = "Python tools for the analysis of computational magnetism data"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+
+authors = [
+    {name = "Marijan Beg"},
+    {name = "Martin Lang"},
+    {name = "Samuel Holt"},
+    {name = "Swapneel Amit Pathak"},
+    {name = "Hans Fangohr"}
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Visualization"
+]
+
+dependencies = [
+    "discretisedfield>=0.90.0",
+    "ubermagtable>=0.61.3"
+]
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "invoke",
+    "nbval",
+    "pre-commit",
+    "pytest-cov",
+    "twine"
+]
+
+[project.urls]
+homepage = "https://ubermag.github.io"
+documentation = "https://ubermag.github.io/documentation/micromagneticdata"
+repository = "https://github.com/ubermag/micromagneticdata"
+
+
+
+[tool.black]
+experimental-string-processing = true
+
+[tool.coverage.run]
+omit = ["micromagneticdata/tests/*"]
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true  # ignores files listed in .gitignore
+
+[tool.setuptools.packages.find]
+include = ["micromagneticdata*"]
+
+# to define additional information we use a custom table
+# see: https://www.python.org/dev/peps/pep-0518/#tool-table
+[tool.ubermag]
+doi = "10.5281/zenodo.4624869"
+copyright_holder = "Marijan Beg and Hans Fangohr"
+contributors = [
+    "Sergii Mamedov"
+]
+about = """
+- The analysis of computational magnetism data.
+"""
