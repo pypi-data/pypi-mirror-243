@@ -1,0 +1,3 @@
+[console_scripts]
+arrowverse-reorderer=arrowverse_reorderer.__main__:main
+
