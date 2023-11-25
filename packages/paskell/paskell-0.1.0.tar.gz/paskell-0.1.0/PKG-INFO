@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: paskell
+Version: 0.1.0
+Summary: a Python package that communicates between Python and Haskell
+Home-page: https://github.com/ibnaleem/paskell
+Author: Ibn Aleem
+License: MIT License
+Project-URL: Source, https://github.com/ibnaleem/paskell
+Project-URL: Tracker, https://github.com/ibnaleem/paskell/issues
+Keywords: haskell,functional programming,paskell
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Paskell requires your Haskell file has been fully compiled and can run as an executable. For Windows users, their Haskell file must be [file_name].exe, and for Unix users it should be ./[file_name] Paskell will not run your Haskell file if it was not compiled.
