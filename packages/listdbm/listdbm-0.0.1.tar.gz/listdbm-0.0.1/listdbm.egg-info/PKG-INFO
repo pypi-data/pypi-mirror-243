@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: listdbm
+Version: 0.0.1
+Summary: helps you manage databases
+Author: Monil Darediya
+Author-email: <monildarediya1@gmail.com>
+Keywords: python,database,manage,db,list
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+
+# Explaining The Library:
+---
+#### This Library is Useful, Why?
+
+#### Because This Library can be used for `.JSON` Format Databases
+# Examples: 
+---
+Creating a User:
+```
+from listdbm import SetUser
+user = SetUser('rose', 'rosesecretpass1234', 'rosemail@gmail.com')
+```
+SetUser Args: `name`, `password` and `email`
+
+Result:
+```
+list: [202, True, {'uuid': '1d0552db-4280-4d7b-83e5-a97a825ba3f5', ...}]
+```
+
+# Understand More by Exploring...
