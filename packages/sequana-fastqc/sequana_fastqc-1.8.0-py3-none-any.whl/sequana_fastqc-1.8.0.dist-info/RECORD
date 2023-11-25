@@ -1,0 +1,16 @@
+sequana_pipelines/fastqc/.fastqc.rules.swp,sha256=7cXe7AqnhlOwEVKSnh-rpz73aZJm6TwNMBT-ApV5IpQ,16384
+sequana_pipelines/fastqc/__init__.py,sha256=X5Nn4DjWni3bL58ByFDILsduRsL5s60yXhqGeTrH26w,124
+sequana_pipelines/fastqc/config.yaml,sha256=nlG33TR1WyXVNeHFl-GFYrMSzoQQB_LYeuVLHEbsTac,2401
+sequana_pipelines/fastqc/dag.png,sha256=_mf4mnogIr2MmGbE108rIAEhrR33Bo_r7RG_yDDpaDI,12071
+sequana_pipelines/fastqc/data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sequana_pipelines/fastqc/fastqc.rules,sha256=mLEubMbsZdb9-Ivk5Ia-Lc5YyqXiCmWsXpPJS_6vzSg,13251
+sequana_pipelines/fastqc/logo.png,sha256=8bQ5j-1uzLO6aibIcMc4rDsGHVr2fayQdZ1ppDbsV7Q,75082
+sequana_pipelines/fastqc/main.py,sha256=PNOv-hTqBbaFVvpXHO0eRNfJDkeHpLc0H-I6ReQsbhs,2191
+sequana_pipelines/fastqc/multiqc_config.yaml,sha256=A8Uci6dKjZhXbxjZdFal99nNIIIse1EVlrhBmmN2ehQ,5303
+sequana_pipelines/fastqc/schema.yaml,sha256=fTNdcXD-AFOzqhSe_W8MmWxyiakUyRwzVOEt4U24AXY,1659
+sequana_pipelines/fastqc/tools.txt,sha256=8eHd7VKri9De9xkXtyJhq0ydvEwAeu3OKW5ckmJyfSE,25
+sequana_fastqc-1.8.0.dist-info/LICENSE,sha256=tifUGMwXA9uaq2g1wFz0ZgRRPOFCfqsOxRj8JneHZ3M,1530
+sequana_fastqc-1.8.0.dist-info/METADATA,sha256=cuFdVPXsKNqYU3IY_qQZetF3FvTH2nYZq3OLHtsRMnw,9498
+sequana_fastqc-1.8.0.dist-info/WHEEL,sha256=vVCvjcmxuUltf8cYhJ0sJMRDLr1XsPuxEId8YDzbyCY,88
+sequana_fastqc-1.8.0.dist-info/entry_points.txt,sha256=zsJNi9N4UNe4_kCk4UiOTf0Zf9OJcCqgcZz4-zRaiPs,69
+sequana_fastqc-1.8.0.dist-info/RECORD,,
