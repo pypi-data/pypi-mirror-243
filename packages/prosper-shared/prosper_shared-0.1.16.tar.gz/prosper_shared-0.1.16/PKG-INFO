@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: prosper-shared
+Version: 0.1.16
+Summary: 
+License: Apache 2.0
+Author: Graham Tibbitts
+Author-email: graham.tibbitts@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: autohooks (>=23.10.0,<24.0.0)
+Requires-Dist: autohooks-plugin-black (>=23.10.0,<24.0.0)
+Requires-Dist: autohooks-plugin-isort (>=23.10.0,<24.0.0)
+Requires-Dist: autohooks-plugin-pytest (>=23.10.0,<24.0.0)
+Requires-Dist: autohooks-plugin-ruff (>=23.11.0,<24.0.0)
+Requires-Dist: autoimport (>=1.3.3,<2.0.0)
+Requires-Dist: deepmerge (>=1.1.0,<2.0.0)
+Requires-Dist: dpath (>=2.1.6,<3.0.0)
+Requires-Dist: mdformat-gfm (>=0.3.5,<0.4.0)
+Requires-Dist: mutmut (>=2.4.4,<3.0.0)
+Requires-Dist: pydoclint (>=0.3.8,<0.4.0)
+Requires-Dist: pydocstyle (>=6.3.0,<7.0.0)
+Requires-Dist: pytest (>=7.4.2,<8.0.0)
+Requires-Dist: pytest-cov (>=4.1.0,<5.0.0)
+Requires-Dist: pytest-mock (>=3.11.1,<4.0.0)
+Requires-Dist: pytest-sugar (>=0.9.7,<0.10.0)
+Requires-Dist: schema (>=0.7.5,<0.8.0)
+Requires-Dist: toml (>=0.10.2,<0.11.0)
+Requires-Dist: toml-sort (>=0.23.1,<0.24.0)
+Requires-Dist: tox (>=4.11.3,<5.0.0)
+Description-Content-Type: text/markdown
+
+# prosper-shared
+Shared build files for the Python Prosper libraries
+
+## prosper_shared.autohooks
+
+Pre-commit hooks for use with `autohooks`.
+
