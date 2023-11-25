@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+string_decorator/__init__.py
+string_decorator/string_decorator.py
+string_decorator.egg-info/PKG-INFO
+string_decorator.egg-info/SOURCES.txt
+string_decorator.egg-info/dependency_links.txt
+string_decorator.egg-info/requires.txt
+string_decorator.egg-info/top_level.txt
