@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: marvlcli
+Version: 0.0.19
+Requires-Dist: click
+Requires-Dist: pyyaml
+Requires-Dist: python-novaclient
+Requires-Dist: python-cinderclient
+Requires-Dist: python-neutronclient
+Requires-Dist: python-openstackclient
+Requires-Dist: ws4py
