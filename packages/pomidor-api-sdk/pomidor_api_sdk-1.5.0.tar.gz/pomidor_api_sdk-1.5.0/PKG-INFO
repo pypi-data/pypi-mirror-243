@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: pomidor_api_sdk
+Version: 1.5.0
+Summary: SDK for easy contact with https://api.pomidorproject
+Home-page: https://t.me/pomidorik_sus
+Author: SuSLiK
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests>=2.25.1
+
+## PomidorAPI 
+#### This module was created by https://t.me/pythonmainer for convenient access to the API of https://pomidorproject.ru
+
+## Features
+
+### - fast and non registration work with neural networks
+### - cool models
+### - big usage potential
+### - any language can be analysed
+### - Many bugs
+
+## Instalation
+
+#### ```pip install pomidor_api_sdk```
+
+## Usage
+
+```
+from PomidorAPI import PomidorAPI
+Pomidor = PomidorAPI('https://api.pomidorproject.ru')
+print(Pomidor)
+>>> '''PomidorAPI SDK
+version - 1.5.0
+methods - TETA, BRSC, AUM, DostGeneration'''
+
+resp = Pomidor.BRSC("PomidorProject", 250, 42, "ru")
+print(resp)
+>>> {
+"response": "Британские учёные выяснили, что проект Pomidor лучший в буткемпе кодИИм"
+}
+```
