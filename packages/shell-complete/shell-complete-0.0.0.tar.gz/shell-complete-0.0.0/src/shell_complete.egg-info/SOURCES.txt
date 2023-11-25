@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/shell_complete/__init__.py
+src/shell_complete/__main__.py
+src/shell_complete.egg-info/PKG-INFO
+src/shell_complete.egg-info/SOURCES.txt
+src/shell_complete.egg-info/dependency_links.txt
+src/shell_complete.egg-info/entry_points.txt
+src/shell_complete.egg-info/top_level.txt
