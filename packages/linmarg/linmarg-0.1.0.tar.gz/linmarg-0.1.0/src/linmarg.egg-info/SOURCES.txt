@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/linmarg/__init__.py
+src/linmarg.egg-info/PKG-INFO
+src/linmarg.egg-info/SOURCES.txt
+src/linmarg.egg-info/dependency_links.txt
+src/linmarg.egg-info/requires.txt
+src/linmarg.egg-info/top_level.txt
+tests/test_linmarg.py

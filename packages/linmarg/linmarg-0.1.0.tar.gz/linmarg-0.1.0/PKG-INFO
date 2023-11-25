@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: linmarg
+Version: 0.1.0
+Summary: Linear parameters marginalizer
+Author-email: Jean-Baptiste Delisle <jean-baptiste.delisle@unige.ch>
+Project-URL: Homepage, https://gitlab.unige.ch/delisle/linmarg
+Project-URL: Issues, https://gitlab.unige.ch/delisle/linmarg/-/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+
+linmarg: Linear parameters marginalizer
+=======================================
+
+Read the documentation at https://obswww.unige.ch/~delisle/linmarg/doc/.
+
+Contribute
+----------
+
+Everyone is welcome to open issues and/or contribute code via pull-requests.
+A SWITCH edu-ID account is necessary to sign in to https://gitlab.unige.ch.
+If you don't have an account, you can easily create one at https://eduid.ch.
+Then you can sign in to https://gitlab.unige.ch by selecting "SWITCH edu-ID" as your organisation.
