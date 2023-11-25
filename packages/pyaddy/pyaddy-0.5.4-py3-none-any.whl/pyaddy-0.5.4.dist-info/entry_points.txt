@@ -1,0 +1,3 @@
+[console_scripts]
+addy=pyaddy.__main__:cli
+
