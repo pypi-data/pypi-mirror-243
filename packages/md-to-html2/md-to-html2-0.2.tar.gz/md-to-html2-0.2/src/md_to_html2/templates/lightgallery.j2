@@ -1,0 +1,56 @@
+{% macro load() -%}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lightgallery.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lg-zoom.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lg-thumbnail.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lg-fullscreen.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/css/lg-rotate.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/lightgallery.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/zoom/lg-zoom.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/thumbnail/lg-thumbnail.umd.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/fullscreen/lg-fullscreen.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.0/plugins/rotate/lg-rotate.umd.min.js"></script>
+{% endmacro -%}
+{% macro gallery( files, thumb, img, download ) -%}
+  <div id="lightgallery">
+    {% set Files = {} -%}
+    {% if files is not mapping -%}
+      {% for f in files -%}
+	{% set _ = Files.update( {f: ''} ) -%}
+      {% endfor -%}
+    {% else -%}
+      {% set Files = files -%}
+    {% endif -%}
+    {% for f, c in Files.items() -%}
+      <a href="{{img ~ f}}"
+	{% if download -%}data-download-url="{{download ~ f}}"{% endif -%}
+	{% if c -%}data-sub-html="{{c|e}}"{% endif -%}
+      ><img src="{{thumb ~ f}}" /></a>
+    {% endfor -%}
+  </div>
+{% endmacro -%}
+{% macro configure() -%}
+  <script>
+    lightGallery(document.getElementById('lightgallery'), {
+	plugins: [lgZoom, lgThumbnail, lgFullscreen, lgRotate],
+	licenseKey: '0000-0000-0000-0000',
+	speed: 500,
+	thumbnail: true,
+	animateThumb: true,
+	zoomFromOrigin: false,
+	allowMediaOverlap: true,
+	toggleThumb: true,
+	flipHorizontal: false,
+	flipVertical: false,
+	rotateRight: false,
+	mobileSettings: {
+	  controls: false,
+	  showCloseIcon: false,
+	  download: true,
+	  fullScreen: true,
+	  thumbnail: false,
+	  zoom: false
+	},
+    });
+  </script>
+{% endmacro -%}
