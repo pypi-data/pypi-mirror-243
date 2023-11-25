@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "qudi-hira-analysis"
+version = "1.6.0"
+repository = "https://github.com/dineshpinto/qudi-hira-analysis"
+homepage = "https://github.com/dineshpinto/qudi-hira-analysis"
+documentation = "https://dineshpinto.github.io/qudi-hira-analysis/qudi_hira_analysis/"
+keywords = ["python", "qubit", "analysis", "nv centers", "photon timetrace"]
+description = "A Python toolkit to analzye photon timetrace data from qubit sensors"
+authors = ["dineshpinto <annual.fallout_0z@icloud.com>"]
+license = "Apache-2.0"
+readme = "README.md"
+packages = [{ include = "qudi_hira_analysis" }]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+lmfit = "^1.1.0"
+matplotlib = "^3.6.2"
+numpy = "^1.26.0"
+pandas = "^2.0.0"
+xlrd = "^2.0.1"
+openpyxl = "^3.0.10"
+tqdm = "^4.64.1"
+pyspm = "^0.5.0"
+
+[tool.poetry.group.dev.dependencies]
+jupyterlab = "^3.6.2"
+notebook = "^6.5.4"
+ruff = "^0.0.291"
+ruff-lsp = "^0.0.39"
+seaborn = "^0.13.0"
+
+[tool.poetry.group.test.dependencies]
+coverage = "^7.2.5"
+
+[tool.poetry.group.docs.dependencies]
+pdoc3 = "^0.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+extend-select = [
+    "B", # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "ERA", # flake8-eradicate/eradicate
+    "I", # isort
+    "N", # pep8-naming
+    "PIE", # flake8-pie
+    "PGH", # pygrep
+    "RUF", # ruff checks
+    "SIM", # flake8-simplify
+    "TCH", # flake8-type-checking
+    "TID", # flake8-tidy-imports
+    "UP", # pyupgrade
+]
