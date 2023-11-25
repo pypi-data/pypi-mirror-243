@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: tsetmc_pusher
+Version: 1.0.6
+Summary: Pusher for Tehran Stock Exchange data crawled from TSETMC website.
+Author: Arka Equities & Securities
+Author-email: zare@arkaequities.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Dist: httpx
+Requires-Dist: websockets
+Requires-Dist: python-dotenv
+Requires-Dist: tse-utils
+
+This project uses the websocket technology to build a pusher around the realtime data for Tehran Stock Exchange. Source data is crawled from the TSETMC website on optimized intervals. Users can connect to the websocket server and subscribe to as many instruments as they like. Afterwards, each time data for the subscribed instruments is updated, the changes will be pushed to the clients.
