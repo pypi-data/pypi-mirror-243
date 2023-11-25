@@ -1,0 +1,14 @@
+[project]
+name = 'ivlam'
+version = '0.1.4'
+description = 'A Python wrapper for ivlam'
+license = { text = 'License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)' }
+readme = 'README.md'
+requires-python = '>=3.8'
+authors = [
+  {name = 'pennbay', email = 'pennbay@outlook.com'},
+]
+
+[build-system]
+build-backend = 'mesonpy'
+requires = ['meson-python', 'numpy']
