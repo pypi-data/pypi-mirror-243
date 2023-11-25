@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "spotiphy"
+version = "0.1.0"
+authors = [
+    { name="Ziqian Zheng", email="zzheng92@wisc.edu" },
+]
+description = "An integrated pipeline designed to deconvolute and decompose spatial transcriptomics data, and produce pseudo single-cell resolution images."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/jyyulab/Spotiphy"
+Issues = "https://github.com/jyyulab/Spotiphy/issues"
