@@ -1,0 +1,14 @@
+numpy
+matplotlib
+
+[all]
+datachart[dev,test]
+
+[dev]
+black
+flake8
+mkdocs-material
+
+[test]
+coverage
+nbmake
