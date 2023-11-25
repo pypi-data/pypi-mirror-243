@@ -1,0 +1,2 @@
+[console_scripts]
+md-to-html = md_to_html2.cli:run

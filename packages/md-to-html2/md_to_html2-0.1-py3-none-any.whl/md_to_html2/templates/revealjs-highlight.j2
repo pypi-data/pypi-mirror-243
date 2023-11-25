@@ -1,0 +1,15 @@
+{%- extends 'revealjs.j2' %}
+<script>
+{%- block reveal_plugins %}
+    {{super()}}
+    plugins = [ RevealHighlight, ...plugins ];
+{%- endblock %}
+</script>
+{%- block end_head %}
+  {{super()}}
+  <link id='codetheme' rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+{% endblock %}
+{%- block reveal_load %}
+  {{super()}}
+  <script src="reveal.js/plugin/highlight/highlight.js"></script>
+{%- endblock %}
