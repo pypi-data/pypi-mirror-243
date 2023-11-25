@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+src/mimufs/__init__.py
+src/mimufs/mimufs.py
+src/mimufs/module1.py
+src/mimufs.egg-info/PKG-INFO
+src/mimufs.egg-info/SOURCES.txt
+src/mimufs.egg-info/dependency_links.txt
+src/mimufs.egg-info/top_level.txt
