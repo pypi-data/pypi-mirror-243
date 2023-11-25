@@ -1,0 +1,33 @@
+$def with (project, repo, commit_id)
+$ commit = repo.log()[commit_id]
+$ title, _, description = commit["message"].partition("\n\n")
+$ ts = commit["timestamp"]
+$ short_hash = commit_id[:6]
+$ breadcrumbs = ("projects", "Projects", project, (None, ["u-ragt.ag-change-of"],
+$                f"<b>{project}</b>"), "commits", "Commits")
+
+$var breadcrumbs = breadcrumbs
+$var title: $:str(mkdn(title))[3:-4]
+$var title_classes = ["p-name"]
+$var article_classes = ["h-entry"]
+
+<link rel=stylesheet href=$tx.origin/static/solarized.css media=screen>
+<style>
+div.highlight {
+  font-size: .75em; }
+.linenodiv .normal {
+  display: none; }
+ul li p {
+  margin: .25em 0; }
+</style>
+
+<p style=font-size:.75em>Committed <time class=dt-published
+datetime=$ts.isoformat()>$ts.diff_for_humans()</time> <a class=p-ragt.ag-change-id
+href=/projects/$project/commits/$short_hash>$short_hash</a></p>
+$if description:
+    <div class=p-content>$:mkdn(description)</div>
+$for file in colorize_diff("\n".join(repo.show(commit_id))):
+    <h4><span style=color:#dc322f>$file["from"]</span><br>
+    <span style=color:#859900>$file["to"]</span></h4>
+    $for changed_linenos, changed_lines in file["changes"]:
+        $:highlight(changed_lines, "a.py", diff=changed_linenos)
