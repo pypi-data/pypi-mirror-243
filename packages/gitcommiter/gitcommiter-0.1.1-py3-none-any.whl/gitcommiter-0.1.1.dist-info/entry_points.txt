@@ -1,0 +1,2 @@
+[console_scripts]
+gitcommiter = gitcommiter.gitcommiter:git_add_and_commit
