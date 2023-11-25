@@ -1,0 +1,2 @@
+[console_scripts]
+cofrun = cofutils.dispatch:main
