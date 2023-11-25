@@ -1,0 +1,2 @@
+[certbot.plugins]
+dns-httpreq = certbot_httpreq:Authenticator
