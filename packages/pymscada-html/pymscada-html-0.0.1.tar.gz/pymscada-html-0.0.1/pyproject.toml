@@ -1,0 +1,28 @@
+[project]
+name = "pymscada-html"
+version = "0.0.1"
+description = "Angular single page application html files served by pymscada."
+authors = [
+    { name = "Jamie Walton", email = "jamie@walton.net.nz" },
+]
+dependencies = []
+requires-python = ">=3.9"
+readme = "README.md"
+
+[project.license]
+text = "GPL-3.0-or-later"
+
+[project.optional-dependencies]
+
+[build-system]
+requires = [
+    "pdm-pep517>=1.0.0",
+]
+build-backend = "pdm.pep517.api"
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.4.3",
+    "flake8-docstrings>=1.7.0",
+    "pdm>=2.10.4",
+]

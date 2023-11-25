@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pymscada-html
+Version: 0.0.1
+Summary: Angular single page application html files served by pymscada.
+License: GPL-3.0-or-later
+Author-email: Jamie Walton <jamie@walton.net.nz>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# pymscada-html
+
+Angular single page application html files served by pymscada.
+
