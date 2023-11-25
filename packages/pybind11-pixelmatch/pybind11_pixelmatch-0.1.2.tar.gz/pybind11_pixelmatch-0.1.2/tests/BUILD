@@ -1,0 +1,51 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+load("@rules_fuzzing//fuzzing:cc_defs.bzl", "cc_fuzz_test")
+
+cc_library(
+    name = "test_base",
+    linkopts = ["-lm"],
+    deps = [
+        "@com_google_gtest//:gtest_main",
+    ],
+)
+
+cc_test(
+    name = "pixelmatch_tests",
+    srcs = [
+        "pixelmatch_tests.cc",
+    ],
+    data = glob([
+        "testdata/*.png",
+    ]),
+    deps = [
+        ":test_base",
+        "//:image_utils",
+        "//:pixelmatch-cpp17",
+    ],
+)
+
+cc_test(
+    name = "image_utils_tests",
+    srcs = [
+        "image_utils_tests.cc",
+    ],
+    data = glob([
+        "testdata/*.png",
+    ]),
+    deps = [
+        ":test_base",
+        "//:image_utils",
+    ],
+)
+
+cc_fuzz_test(
+    name = "pixelmatch_fuzzer",
+    srcs = ["pixelmatch_fuzzer.cc"],
+    linkopts = ["-lm"],
+    tags = [
+        "nocoverage",
+    ],
+    deps = [
+        "//:pixelmatch-cpp17",
+    ],
+)
