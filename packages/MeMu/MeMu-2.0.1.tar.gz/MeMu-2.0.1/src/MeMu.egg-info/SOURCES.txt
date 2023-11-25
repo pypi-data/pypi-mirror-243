@@ -1,0 +1,13 @@
+MANIFEST.in
+setup.py
+src/MeMu/Gbboot-ALpM.ttf
+src/MeMu/MeMu.py
+src/MeMu/__init__.py
+src/MeMu/bg.png
+src/MeMu/emulator.py
+src/MeMu/icon.ico
+src/MeMu.egg-info/PKG-INFO
+src/MeMu.egg-info/SOURCES.txt
+src/MeMu.egg-info/dependency_links.txt
+src/MeMu.egg-info/requires.txt
+src/MeMu.egg-info/top_level.txt
