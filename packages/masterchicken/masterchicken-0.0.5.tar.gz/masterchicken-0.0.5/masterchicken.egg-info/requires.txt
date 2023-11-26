@@ -1,0 +1,14 @@
+bottle-websocket
+bottle
+build
+cmake
+distlib
+docutils
+numpy
+packaging
+pandas
+csv
+readme-renderer
+setuptools
+urllib3
+wheel
