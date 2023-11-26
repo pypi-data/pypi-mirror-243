@@ -1,0 +1,15 @@
+{% extends "sada/base.html" %}
+
+{% block content %}
+<a href="{% url 'product_list' %}">All Products</a>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if form.instance.pk %}
+    <button type="submit">Update</button>
+    <a href="{% url 'product_detail' form.instance.pk %}">Back to Product</a>
+    {% else %}
+    <button type="submit">Create</button>
+    {% endif %}
+</form>
+{% endblock %}
