@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools", "wheel" ]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rpc-bitcoin"
+version = "0.0.1"
+description = "RPC client for connect to bitcoind"
+license = {file = "LICENSE"}
+authors = [
+  {name = "pythcoiner", email = "pythcoiner@proton.me"},
+]
+requires-python = ">=3.9"
+keywords = ["bitcoin", "rpc"]
+dependencies = [
+]
+
+classifiers = [
+    "Topic :: Office/Business :: Financial",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[project.urls]
+Homepage = "https://github.com/pythcoiner/BitcoinRpcClient"

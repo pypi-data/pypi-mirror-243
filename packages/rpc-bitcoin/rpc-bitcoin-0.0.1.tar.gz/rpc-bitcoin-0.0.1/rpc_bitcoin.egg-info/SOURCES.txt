@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+rpc_bitcoin/__init__.py
+rpc_bitcoin/rpc_bitcoin.py
+rpc_bitcoin.egg-info/PKG-INFO
+rpc_bitcoin.egg-info/SOURCES.txt
+rpc_bitcoin.egg-info/dependency_links.txt
+rpc_bitcoin.egg-info/top_level.txt
