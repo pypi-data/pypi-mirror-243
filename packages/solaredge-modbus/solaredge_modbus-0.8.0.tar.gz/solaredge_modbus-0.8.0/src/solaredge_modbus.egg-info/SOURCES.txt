@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/solaredge_modbus/__init__.py
+src/solaredge_modbus.egg-info/PKG-INFO
+src/solaredge_modbus.egg-info/SOURCES.txt
+src/solaredge_modbus.egg-info/dependency_links.txt
+src/solaredge_modbus.egg-info/requires.txt
+src/solaredge_modbus.egg-info/top_level.txt
