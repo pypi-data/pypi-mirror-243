@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: PremaDjango
+Version: 0.4.2
+Summary: My Short Description
+Home-page: https://github.com/prema1432/premadjango/
+Author: Premanath
+Author-email: talamarlapremanath143@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: Django
+Requires-Dist: setuptools_scm
+
+# Prema Django
+
+`premadjango` is a Python package that provides default configurations and settings for new Django projects.
+
+## Installation
+
+You can install `premadjango` using pip:
+
+```bash
+pip install premadjango

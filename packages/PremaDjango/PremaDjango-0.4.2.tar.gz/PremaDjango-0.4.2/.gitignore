@@ -1,0 +1,11 @@
+pipfile
+venv
+my_env
+env
+/.idea/
+.idea/workspace.xml
+
+# Exclude build artifacts
+dist/
+build/
+*.egg-info/
