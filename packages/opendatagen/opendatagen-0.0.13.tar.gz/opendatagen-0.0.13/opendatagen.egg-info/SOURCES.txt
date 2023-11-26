@@ -1,0 +1,16 @@
+LICENCE.md
+README.md
+setup.py
+opendatagen/__init__.py
+opendatagen/agent.py
+opendatagen/anonymizer.py
+opendatagen/data_generator.py
+opendatagen/main.py
+opendatagen/model.py
+opendatagen/template.py
+opendatagen/utils.py
+opendatagen.egg-info/PKG-INFO
+opendatagen.egg-info/SOURCES.txt
+opendatagen.egg-info/dependency_links.txt
+opendatagen.egg-info/requires.txt
+opendatagen.egg-info/top_level.txt
