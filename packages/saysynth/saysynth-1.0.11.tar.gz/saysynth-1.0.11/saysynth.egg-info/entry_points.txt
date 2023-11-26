@@ -1,0 +1,3 @@
+[console_scripts]
+saysynth = saysynth.cli:main
+sy = saysynth.cli:main

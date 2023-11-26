@@ -1,0 +1,116 @@
+---
+name: frogs
+globals:
+    start_bpm: 120
+    duration_bpm: 120
+    segment_bpm: 120
+    beat_bpm: 120
+    rate: 160
+    stereo: true
+tracks:
+    bass_arp:
+        type: arp
+        options:
+            root: F#-1
+            chord_notes: [15, 0, 0, 3, 7, 14]
+            octaves: [1]
+            start_count: 0
+            beat_count: 1/16
+            note_count: 1/16
+            styles:
+                - down
+                - random_octaves
+                - random_octaves
+                - random_silence
+                - random_silence
+                - random_silence
+                - random_silence
+                - random_silence
+                - random_silence
+                - random_silence
+                - random_silence
+            randomize_phoneme: m,UW,n
+            randomize_segments: octaves,velocity
+            velocities: [0, 60, 70, 90, 25, 20, 0, 33]
+            volume_range: [0.243, 0.56]
+            volume_level_per_segment: 1
+            duration_count: 108
+
+    noise_arp:
+        type: arp
+        options:
+            root: F#2
+            start_count: 8
+            chord_notes: [0, 3, 7, 14]
+            octaves: [1]
+            beat_count: 3
+            randomize_phoneme: s,t,c,k
+            velocities: [60, 70, 90]
+            volume_range: [0.4, 0.5]
+            duration_count: 102
+
+    noise_arp2:
+        type: arp
+        options:
+            root: F#3
+            start_count: 30
+            chord_notes: [0, 3, 7, 14]
+            octaves: [1]
+            beat_count: 2.50
+            randomize_phoneme: s,t,c,k
+            velocities: [60, 70, 90]
+            volume_range: [0.23, 0.369]
+            duration_count: 82
+
+
+    melody_arp1:
+        type: arp
+        options:
+            root: F#3
+            chord_notes: [0, 3, 7, 14]
+            octaves: [1]
+            start_count: 24
+            beat_count: 15/16
+            styles: [down]
+            randomize_phoneme: m,n
+            randomize_segments: octaves,velocity
+            velocities: [69, 70, 90]
+            volume_range: [0.23, 0.369]
+            duration_count: 82
+
+
+    melody_arp2:
+        type: arp
+        options:
+            root: F#4
+            chord_notes: [2, 3, 7]
+            octaves: [1]
+            start_count: 48
+            beat_count: 31/16
+            styles: [random]
+            randomize_phoneme: m,n
+            randomize_segments: octaves,velocity
+            velocities: [60, 70, 90]
+            volume_range: [0.23, 0.369]
+            duration_count: 60
+
+
+    high_arp:
+        type: arp
+        options:
+            start_count: 48
+            root: F#3
+            chord_notes: [-12, 5, 7, 9, 12]
+            duration_count: 64
+            beat_count: 1/6
+            attack: 0.03
+            styles:
+                - random_shuffle
+                - random_silence
+                - random_silence
+                - random_silence
+            segment_duration: 144
+            randomize_phoneme: Victoria:note
+            rate: 160
+            velocities: [60, 70, 90]
+            volume_range: [0.2, 0.4]
