@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: simplemailsender
+Version: 0.4.0
+Summary: A simple mail sender.
+Home-page: https://github.com/aburgoscimne/simplemailsender
+Author: Alberto Burgos Plaza
+Author-email: albertoburgosplaza@gmail.com
+License: Apache
+Keywords: e-mail
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Simple Mail Sender
+A simple mail sender.
+
+## Usage
+```python
+from simplemailsender.simplemailsender import SimpleMailSender
+
+sms = SimpleMailSender("<SMTP Server>", "<SMTP Port>", "<SSL or TLS>", "<User>", "<Password>")
+
+sms.send(
+    "<Sender e-mail>",
+    ["<Recipients e-mail>"],
+    "<Subject>",
+    "<Message body>",
+    "<Path to attachment>"
+)
