@@ -1,0 +1,12 @@
+README.md
+setup.py
+nyaascraper/__init__.py
+nyaascraper/client.py
+nyaascraper/exceptions.py
+nyaascraper/models.py
+nyaascraper/utils.py
+nyaascraper.egg-info/PKG-INFO
+nyaascraper.egg-info/SOURCES.txt
+nyaascraper.egg-info/dependency_links.txt
+nyaascraper.egg-info/requires.txt
+nyaascraper.egg-info/top_level.txt
