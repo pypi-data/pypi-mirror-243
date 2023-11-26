@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: alist-sdk
+Version: 0.1.2
+Summary: Alist API 简单封装.
+Author-email: LeeCQ <lcq@leecq.cn>
+Project-URL: Homepage, https://github.com/lee-cq/alist-sdk
+Project-URL: Issues, https://github.com/lee-cq/alist-sdk/issues
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Console
+Classifier: Framework :: Pydantic :: 2
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: httpx ~=0.25.1
+Requires-Dist: pydantic ~=2.5.1
+
+# Alist Sdk
+
+Alist API 简单封装
