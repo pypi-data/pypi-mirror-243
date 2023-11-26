@@ -1,0 +1,8 @@
+setuptools
+pyams_utils
+pyramid>=2.0.0
+zope.component
+zope.interface
+zope.schema
+
+[test]
