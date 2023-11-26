@@ -1,0 +1,6 @@
+[console_scripts]
+repo=gitwsrepo._cli:main
+
+[gitws.manifestformat]
+RepoManifestFormat=gitwsrepo.repomanifestformat:RepoManifestFormat
+
