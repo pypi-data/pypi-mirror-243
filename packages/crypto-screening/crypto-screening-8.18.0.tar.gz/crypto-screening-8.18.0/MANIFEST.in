@@ -1,0 +1,5 @@
+include crypto_screening\source
+include requirements-dev.txt
+include requirements.txt
+include build.py
+include crypto_screening\source\data\all_exchanges_symbols.json
