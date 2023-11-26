@@ -1,0 +1,18 @@
+# .pre-commit-config.yaml file for https://github.com/zxdavb
+# last updated 2023-11-15
+
+# files: ^(ramses.*/.+)?[^/]+\.py$
+exclude: ^examples/.*\.py$|^tests/_.*\.py$|^utils/.*\.py$|^\.secrets
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.5  # Ruff version
+    hooks:
+      - id: ruff         # linter
+      - id: ruff-format  # formatter
+
+  - repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.10.0
+    hooks:
+    - id: python-check-blanket-noqa
+    - id: python-check-blanket-type-ignore
