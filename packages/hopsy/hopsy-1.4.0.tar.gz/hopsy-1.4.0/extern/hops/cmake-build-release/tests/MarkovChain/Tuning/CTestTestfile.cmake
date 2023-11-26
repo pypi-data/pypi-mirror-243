@@ -1,0 +1,12 @@
+# CMake generated Testfile for 
+# Source directory: /home/jadebeck/repos/hopsy/extern/hops/tests/MarkovChain/Tuning
+# Build directory: /home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/MarkovChain/Tuning
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(AcceptanceRateTunerTestSuite "/home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/MarkovChain/Tuning/AcceptanceRateTunerTestSuite" "--log_format=JUNIT" "--log_sink=/home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/reports/AcceptanceRateTunerTestSuite.xml")
+set_tests_properties(AcceptanceRateTunerTestSuite PROPERTIES  WORKING_DIRECTORY "/home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/MarkovChain/Tuning" _BACKTRACE_TRIPLES "/home/jadebeck/repos/hopsy/extern/hops/tests/MarkovChain/Tuning/CMakeLists.txt;12;add_test;/home/jadebeck/repos/hopsy/extern/hops/tests/MarkovChain/Tuning/CMakeLists.txt;0;")
+add_test(BinarySearchAcceptanceRateTunerTestSuite "/home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/MarkovChain/Tuning/BinarySearchAcceptanceRateTunerTestSuite" "--log_format=JUNIT" "--log_sink=/home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/reports/BinarySearchAcceptanceRateTunerTestSuite.xml")
+set_tests_properties(BinarySearchAcceptanceRateTunerTestSuite PROPERTIES  WORKING_DIRECTORY "/home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/MarkovChain/Tuning" _BACKTRACE_TRIPLES "/home/jadebeck/repos/hopsy/extern/hops/tests/MarkovChain/Tuning/CMakeLists.txt;12;add_test;/home/jadebeck/repos/hopsy/extern/hops/tests/MarkovChain/Tuning/CMakeLists.txt;0;")
+add_test(ExpectedSquaredJumpDistanceTunerTestSuite "/home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/MarkovChain/Tuning/ExpectedSquaredJumpDistanceTunerTestSuite" "--log_format=JUNIT" "--log_sink=/home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/reports/ExpectedSquaredJumpDistanceTunerTestSuite.xml")
+set_tests_properties(ExpectedSquaredJumpDistanceTunerTestSuite PROPERTIES  WORKING_DIRECTORY "/home/jadebeck/repos/hopsy/extern/hops/cmake-build-release/tests/MarkovChain/Tuning" _BACKTRACE_TRIPLES "/home/jadebeck/repos/hopsy/extern/hops/tests/MarkovChain/Tuning/CMakeLists.txt;12;add_test;/home/jadebeck/repos/hopsy/extern/hops/tests/MarkovChain/Tuning/CMakeLists.txt;0;")

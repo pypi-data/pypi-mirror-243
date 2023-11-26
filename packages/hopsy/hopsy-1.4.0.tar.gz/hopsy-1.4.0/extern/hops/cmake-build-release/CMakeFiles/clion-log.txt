@@ -1,0 +1,24 @@
+/opt/clion-2020.3/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - Unix Makefiles" /home/jadebeck/repos/hopsy/extern/hops
+-- Adjusting CMAKE_PREFIX_PATH on UNIX for CLP
+-- Building natively using -march=native
+-- Adding compiler flag march=native
+-- Adding compiler flag -O3
+-- Disabling Runtime checks: Using Release mode for hops and Eigen
+-- cannot find MKL tool: /home/jadebeck/intel/compilers_and_libraries/linux/mkl/tools/mkl_link_tool
+-- FOUND MKL ? FALSE
+-- Set to SHARED library installation
+-- Clp found (includes: /usr/include/coin, libs: ClpSolver;Clp;CoinUtils;bz2;z;lapack;blas;m)
+-- Enabled Doxygen documentation. Use -DHOPS_DOCS=OFF to disable.
+-- Disabled compilation of benchmarks. Use -DHOPS_BENCHMARKS=ON to enable.
+-- Enabled compilation of executables. Use -DHOPS_BINARIES=OFF to disable.
+-- Found Boost: /usr/local/lib/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: program_options 
+-- Enabled compilation of examples. Use -DHOPS_EXAMPLES=OFF to disable.
+-- Enabled compilation of tests. Use -DHOPS_TESTS=OFF to disable.
+-- Found Boost: /usr/local/lib/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: unit_test_framework 
+-- Adding tests for CLP
+-- Adding tests for gurobi
+-- Adding tests that require MPI
+-- Copying resources
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jadebeck/repos/hopsy/extern/hops/cmake-build-release
