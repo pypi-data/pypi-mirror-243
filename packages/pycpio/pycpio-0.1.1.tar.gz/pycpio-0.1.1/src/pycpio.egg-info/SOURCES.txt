@@ -1,0 +1,15 @@
+LICENSE
+pyproject.toml
+readme.md
+src/pycpio/__init__.py
+src/pycpio/cpio.py
+src/pycpio/cpiodata.py
+src/pycpio/cpioentry.py
+src/pycpio/header.py
+src/pycpio/main.py
+src/pycpio/permissions.py
+src/pycpio.egg-info/PKG-INFO
+src/pycpio.egg-info/SOURCES.txt
+src/pycpio.egg-info/dependency_links.txt
+src/pycpio.egg-info/entry_points.txt
+src/pycpio.egg-info/top_level.txt
