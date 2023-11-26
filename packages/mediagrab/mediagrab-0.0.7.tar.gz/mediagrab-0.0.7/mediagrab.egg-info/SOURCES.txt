@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+mediagrab/__init__.py
+mediagrab/__main__.py
+mediagrab/content.py
+mediagrab/parser.py
+mediagrab.egg-info/PKG-INFO
+mediagrab.egg-info/SOURCES.txt
+mediagrab.egg-info/dependency_links.txt
+mediagrab.egg-info/entry_points.txt
+mediagrab.egg-info/requires.txt
+mediagrab.egg-info/top_level.txt

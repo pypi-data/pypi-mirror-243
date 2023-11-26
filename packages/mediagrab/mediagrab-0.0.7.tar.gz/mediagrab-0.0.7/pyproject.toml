@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mediagrab"
+authors = [{ name = "mrprikol", email = "prikolus@proton.me" }]
+description = "Python CLI for downloading videos from YouTube"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["pytube==15.0.0"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+license = { text = "MIT License" }
+keywords = ["python", "cli"]
+dynamic = ["version"]
+
+[project.urls]
+Repository = "https://github.com/mrprikol/mediagrab"
+
+[project.scripts]
+mediagrab = "mediagrab.__main__:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "mediagrab.__version__" }

@@ -1,0 +1,2 @@
+[console_scripts]
+mediagrab = mediagrab.__main__:main
