@@ -1,0 +1,10 @@
+
+[dev]
+build
+git-it
+pydantic-settings
+Pygments
+pytest
+pytest-cov
+rstcheck
+time_machine
