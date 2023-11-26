@@ -1,0 +1,3 @@
+[console_scripts]
+badges-gitlab=badges_gitlab.cli:main
+
