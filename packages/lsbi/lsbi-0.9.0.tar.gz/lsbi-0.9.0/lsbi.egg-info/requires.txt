@@ -1,0 +1,17 @@
+numpy
+scipy
+matplotlib
+torch
+
+[docs]
+sphinx
+sphinx_rtd_theme
+numpydoc
+
+[test]
+pytest
+pytest-cov
+flake8
+pydocstyle
+packaging
+pre-commit
