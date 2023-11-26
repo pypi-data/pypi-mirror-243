@@ -1,0 +1,39 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "syamaguc"
+version = "0.1.0"
+description = "A Python Project of TEMPLATE"
+authors = ["syamaguc <programmer2844@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/syamaguc/python_library_template"
+include = [
+  "poetry.lock",
+  "tests",
+  "tox.ini",
+  "Makefile",
+]
+exclude = [
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8.1,<4.0.0"
+requests = "^2.25.1"
+selenium = "^4.15.2"
+dill = "^0.3.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+tox = "^4.11.3"
+mypy = "^1.7.1"
+isort = "^5.12.0"
+flake8 = "^6.1.0"
+black = "^23.11.0"
+pre-commit = "^3.5.0"
+
+[tool.poetry-version-plugin]
+source = "git-tag"
