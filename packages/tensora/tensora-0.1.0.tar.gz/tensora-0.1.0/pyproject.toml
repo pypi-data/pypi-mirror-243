@@ -1,0 +1,41 @@
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "pass",
+    "raise NotImplementedError",
+    "def __str__",
+    "def __repr__",
+]
+
+[tool.coverage.paths]
+source = [
+    "src/",
+    ".nox/test*/lib/python*/site-packages/",
+    ".nox/test*/Lib/site-packages/",
+    "*/tensora/src/",
+]
+
+[tool.ruff]
+src = ["src"]
+line-length = 99
+
+extend-exclude = ["src/taco/**"]
+
+extend-select = [
+    "I", # isort
+    "N", # pep8-naming
+]
+
+[tool.ruff.per-file-ignores]
+# Allow glob imports and uppercase identifiers in tests
+"tests/*" = ["F403", "F405", "N802", "N806"]
+
+# F401: Allow unused imports in __init__.py
+"__init__.py" = ["F401"]
+
+[build-system]
+requires = ["setuptools >= 68.2.2", "wheel >= 0.41.3", "cmake >= 3.13.3"]
+build-backend = "setuptools.build_meta"
