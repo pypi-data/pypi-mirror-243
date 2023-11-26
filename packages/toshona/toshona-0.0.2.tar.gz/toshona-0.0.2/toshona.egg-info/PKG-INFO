@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: toshona
+Version: 0.0.2
+Summary: Translate (int::) to shona word phrase.
+Author: Eddington Chamunorwa
+Author-email: dittonedo45@gmail.com
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.3
