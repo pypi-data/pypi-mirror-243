@@ -1,0 +1,7 @@
+mysql-connector-python==8.0.25
+pymysql
+numpy
+pandas
+datetime
+requests
+progress
