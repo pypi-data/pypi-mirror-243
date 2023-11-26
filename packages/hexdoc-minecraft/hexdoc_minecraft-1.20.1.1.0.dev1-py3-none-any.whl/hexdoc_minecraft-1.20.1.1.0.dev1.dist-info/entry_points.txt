@@ -1,0 +1,5 @@
+[console_scripts]
+hexdoc-minecraft = hexdoc_minecraft.cli.app:app
+
+[hexdoc]
+minecraft = hexdoc_minecraft._hooks:MinecraftPlugin
