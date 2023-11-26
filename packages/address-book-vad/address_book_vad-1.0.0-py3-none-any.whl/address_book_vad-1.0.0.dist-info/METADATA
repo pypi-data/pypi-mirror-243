@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: address-book-vad
+Version: 1.0.0
+Summary: address book + note book + calculator
+Home-page: https://github.com/VadimTrubay/address_book_vad
+Author: TrubayVadim
+Author-email: vadnetvadnet@ukr.net
+License: MIT
+License-File: LICENSE
+Requires-Dist: colorama
+Requires-Dist: numexpr
+
