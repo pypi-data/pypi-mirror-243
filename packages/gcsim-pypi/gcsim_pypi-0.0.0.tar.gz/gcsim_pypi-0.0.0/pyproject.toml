@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "gcsim-pypi"
+version = "0.0.0"
+description = "gcsim binary for pypi"
+authors = ["Lei Shi <me@leishi.io>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "gcsim_pypi"}]
+include = [
+    { path = "gcsim_pypi/bin/*", format = ["sdist", "wheel"] },
+    { path = "gcsim_pypi/*.json", format = ["sdist", "wheel"] }
+]
+
+[tool.poetry.dependencies]
+python = "^3.6"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+
+[build-system]
+requires = ["poetry-core", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
