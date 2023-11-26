@@ -1,0 +1,3 @@
+[console_scripts]
+genius-agent = genius_agent.genius_agent_cli:main
+
