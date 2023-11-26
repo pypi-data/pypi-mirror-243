@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: magCalEM
+Version: 1.3.2
+Summary: A program to calibrate the pixel size of cryoEM data
+Author: Joshua L. Dickerson
+Author-email: jdickerson@mrc-lmb.cam.ac.uk
+License: MIT
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: PyQt5
+Requires-Dist: numpy
+Requires-Dist: mrcfile
+Requires-Dist: opencv-python
+Requires-Dist: matplotlib
+Requires-Dist: scipy
+Requires-Dist: numba
+Requires-Dist: psutil
+Requires-Dist: scikit-image
+Requires-Dist: pandas
+Requires-Dist: lmfit
+
+#MagCalibration
+
+This is a program to calibrate the effective pixel size for cryoEM data collected on gold foils.
+Documentation and source code is availbale at www.mrc-lmb.cam.ac.uk/crusso/
+If the program is useful in your work, please cite: 
+Joshua L. Dickerson, Erin Leahy, Mathew J. Peet, Katerina Naydenova, Christopher J. Russo. "Accurate magnification determination for cryoEM using gold". Ultramicroscopy 2023:113883.
+
+
