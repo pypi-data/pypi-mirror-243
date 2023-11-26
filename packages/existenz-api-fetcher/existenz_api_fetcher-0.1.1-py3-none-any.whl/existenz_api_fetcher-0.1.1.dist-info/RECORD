@@ -1,0 +1,14 @@
+existenz_api_fetcher/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+existenz_api_fetcher/hydro.py,sha256=BchEck5KGcg2mmE9QgXAMtrpaUZ_JSha5TqZYFkaEwA,3854
+existenz_api_fetcher/locations.py,sha256=wZq0iWdApZYr1g8wSYeLhKWry6FRWD_gB9Uj2GZ2k08,2990
+existenz_api_fetcher/meteo.py,sha256=9x4uxdMzGxLV8Jf-er_26Z2NoIM9cOxlcl8CvZR5LM0,14298
+existenz_api_fetcher/pipelines.py,sha256=odFgtqgF5zOAEC_V3warj8rmrI6M75CabqaDzOGX5xQ,1834
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_hydro.py,sha256=cs6elPEG8Tg58tsWDgkcBce0gGa2lp2QdXuMssH-83A,345
+tests/test_meteo.py,sha256=RAR7zTMNykkLIyTppT0daxVIH6sa3keUtRPkd-3ba2k,1037
+tests/test_pipelines.py,sha256=hWvzh5v4AqK_Hw8E4jgB-7qdWlCUQrBfLfnS2GeG2Bs,305
+existenz_api_fetcher-0.1.1.dist-info/LICENSE.txt,sha256=yQmYq1rlRZlg6n3djpiRXJGks4gAh4AvLFF_dDTY7XQ,1073
+existenz_api_fetcher-0.1.1.dist-info/METADATA,sha256=XicJJ0pKZYQm7zoG3FO5vAlHyRYT2m79gKm-3ggsDsE,1466
+existenz_api_fetcher-0.1.1.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+existenz_api_fetcher-0.1.1.dist-info/top_level.txt,sha256=X5I5U84cgznygLzU-db850vtlG9_DeVLuthDgTOfZus,27
+existenz_api_fetcher-0.1.1.dist-info/RECORD,,
