@@ -1,0 +1,3 @@
+[console_scripts]
+golf_trainer = scripts.golf_trainer:main
+
