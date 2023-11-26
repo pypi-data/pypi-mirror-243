@@ -1,0 +1,99 @@
+Metadata-Version: 2.1
+Name: pydft
+Version: 0.2.4.0
+Summary: pydft
+Home-page: https://gitlab.tue.nl/ifilot/pydft
+Author: Ivo Filot
+Author-email: Ivo Filot <i.a.w.filot@tue.nl>
+Maintainer-email: Ivo Filot <i.a.w.filot@tue.nl>
+License: GPL-3.0-or-later
+Project-URL: Homepage, https://gitlab.tue.nl/ifilot/pydft
+Project-URL: Bug Tracker, https://gitlab.tue.nl/ifilot/pydft/-/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+Requires-Dist: scipy
+Requires-Dist: numpy
+Requires-Dist: pyqint
+Requires-Dist: pylebedev
+Requires-Dist: mendeleev
+
+# PyDFT
+
+[![pipeline status](https://gitlab.tue.nl/ifilot/pydft/badges/master/pipeline.svg)](https://gitlab.tue.nl/ifilot/pydft/-/commits/master)
+
+Python based Density Functional Theory code for educational purposes
+
+## Purpose
+
+This repository contains a working density functional code using a localized
+Gaussian-type basis set and Becke grids for the numerical evaluation
+of density functionals.
+
+## Installation
+
+This code depends on a few other packages. To install this code and its
+dependencies, run the following one-liner from Anaconda prompt
+
+```bash
+conda install -c ifilot pydft pyqint pylebedev pytessel
+```
+
+## Usage
+
+### Performing a simple DFT calculation
+
+```python
+from pydft import MoleculeBuilder,DFT
+
+#
+# Example: Calculate total electronic energy for CO using standard
+#          settings.
+#
+
+CO = MoleculeBuilder().get_molecule("CO")
+dft = DFT(CO, basis='sto3g')
+en = dft.scf(1e-4)
+print("Total electronic energy: %f Ht" % en)
+```
+
+### Visualizing the Becke fuzzy grid
+
+```python
+from pydft import MoleculeBuilder, MolecularGrid
+import numpy as np
+import matplotlib.pyplot as plt
+
+#
+# Example: Construct the Becke fuzzy grid and visualize the maximum
+#          value of the atomic weight coefficients for a given set of
+#          grid points.
+#
+
+# construct molecule
+mol = MoleculeBuilder().get_molecule('benzene')
+cgfs, atoms = mol.build_basis('sto3g')
+
+# construct molecular grid
+molgrid = MolecularGrid(atoms, cgfs)
+
+# produce grid of sampling points to calculate the atomic
+# weight coefficients for
+N = 100
+sz = 8
+x = np.linspace(-sz,sz,N)
+xv,yv = np.meshgrid(x,x)
+points = np.array([[x,y,0] for x,y in zip(xv.flatten(),yv.flatten())])
+
+# calculate the atomic weights
+mweights = molgrid.calculate_weights_at_points(points, k=3)
+
+# plot the atomic weights
+plt.imshow(np.max(mweights,axis=0).reshape((N,N)),
+           extent=(-sz,sz,-sz,sz))
+plt.xlabel('x')
+plt.xlabel('y')
+plt.colorbar()
+plt.tight_layout()
+```
