@@ -1,0 +1,11 @@
+{% extends "sada/base.html" %}
+
+{% block content %}
+<a href="{% url 'product_list' %}">All Products</a>
+<h2>Delete product {{ product.name }}?</h2>
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+    <a href="{% url 'product_detail' product.id %}">Back to Product</a>
+</form>
+{% endblock %}
