@@ -1,0 +1,73 @@
+[tool.poetry]
+name = "khl"
+version = "2.0.2"
+description = "Preparing russian hockey news for machine learning"
+readme = "README.md"
+license = "MIT"
+authors = ["Rishat Fayzullin <nilluziaf@gmail.com>"]
+repository = "https://github.com/Rishat-F/khl"
+keywords = ["khl", "news", "nlp", "preprocessing", "ml"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+natasha = "==1.4.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.2.1"
+black = "^22.12.0"
+flake8 = { version = "^6.0.0", python = ">=3.8.1,<4.0" }
+isort = "^5.11.4"
+pre-commit = "^2.21.0"
+vulture = "^2.7"
+pre-commit-hooks = "^4.4.0"
+mypy = "^0.991"
+coverage = "^7.0.5"
+mutmut = "^2.4.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.vulture]
+min_confidence = 70
+paths = ["."]
+
+# https://mypy.readthedocs.io/en/stable/config_file.html#example-pyproject-toml
+[[tool.mypy.overrides]]
+module = [
+    "tests.*",
+]
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = [
+    "natasha.*",
+]
+ignore_missing_imports = true
+
+[tool.coverage.run]
+omit = ["tests/*"]
+
+[tool.mutmut]
+paths_to_mutate = [
+    "khl/teams_orgs.py",
+    "khl/utils.py",
+    "khl/preprocess.py",
+    "khl/__init__.py",
+]
+runner = "python -m pytest -x"
+tests_dir = "tests/"
+
+[tool.pytest.ini_options]
+markers = [
+    "minor_bug: minor bugs",
+    "bug_1: test for bug #1",
+    "bug_4: test for bug #4",
+    "bug_5: test for bug #5",
+    "bug_6: test for bug #6",
+    "bug_14: test for bug #14",
+    "bug_17: test for bug #17",
+    "bug_20: test for bug #20",
+    "bug_21: test for bug #21",
+    "bug_26: test for bug #26",
+]
