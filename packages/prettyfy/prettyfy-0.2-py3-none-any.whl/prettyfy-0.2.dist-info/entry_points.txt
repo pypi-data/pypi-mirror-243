@@ -1,0 +1,2 @@
+[console_scripts]
+prettyfy = prettyfy.safe_exec:safe_exec
