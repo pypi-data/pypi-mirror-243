@@ -1,0 +1,450 @@
+{% set KETO_VER = 'v0.11.1' %}
+{% set KRATOS_VER = 'v1.0.0' %}
+{% set OATHKEEPER_VER = 'v0.40.6' %}
+{% set XRAY_VER = '1.8.4' %}
+
+{% set accounts = users.accounts %}
+{% set branding = config.branding %}
+{% set directories = config.directories %}
+{% set modules = config.modules %}
+{% set network = config.network %}
+
+services:
+
+  # ============= #
+  # Reverse proxy #
+  # ============= #
+
+  nginx_gateway:
+    container_name: nginx_gateway
+    hostname: nginx_gateway
+
+    build:
+      context: .
+      dockerfile: dockerfiles/nginx.Dockerfile
+
+    user: root
+    entrypoint: [ ]
+    command: >-
+      sh -c 'crond -b;
+      openresty -c /etc/nginx/nginx.conf -e /var/log/nginx/error.log -g "daemon off;" -p /etc/nginx'
+
+    network_mode: 'slirp4netns:port_handler=slirp4netns'
+    ports:
+      {% if network.http.enabled %}
+      - '{{ network.http.port }}:80'
+      {% endif %}
+      - '{{ network.https.port }}:443'
+
+    volumes:
+      - './config/nginx_gateway:/etc/nginx:ro'
+      - './third_party/server_configs_nginx/h5bp:/etc/nginx/h5bp:ro'
+      - './third_party/server_configs_nginx/mime.types:/etc/nginx/mime.types:ro'
+      - './third_party/server_configs_nginx/nginx.conf:/etc/nginx/nginx.conf:ro'
+      - '{{ app_dirs.cache_dir }}/nginx_gateway:/var/log/nginx:rw'
+      - '{{ app_dirs.managed_dir }}/nginx_gateway/sockets:/var/run/nginx/sockets:rw'
+      {% if network.https.tls %}
+      - '{{ network.https.tls.cert }}:/etc/ssl/certs/lungo.crt:ro'
+      {% else %}
+      - '{{ app_dirs.generated_dir }}/nginx_gateway/lungo.crt:/etc/ssl/certs/lungo.crt:ro'
+      {% endif %}
+
+    secrets:
+      - source: NGINX_PRIVATE_KEY
+        target: /etc/ssl/private/lungo.key
+
+    depends_on:
+      - nginx
+    restart: 'no'
+
+  nginx:
+    container_name: nginx
+    hostname: nginx
+
+    build:
+      context: .
+      dockerfile: dockerfiles/nginx.Dockerfile
+
+    user: root
+    entrypoint: [ ]
+    command: >-
+      sh -c 'crond -b;
+      openresty -c /etc/nginx/nginx.conf -e /var/log/nginx/error.log -g "daemon off;" -p /etc/nginx'
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.nginx }}
+
+    volumes:
+      - './config/nginx:/etc/nginx:ro'
+      - './third_party/server_configs_nginx/h5bp:/etc/nginx/h5bp:ro'
+      - './third_party/server_configs_nginx/mime.types:/etc/nginx/mime.types:ro'
+      - './third_party/server_configs_nginx/nginx.conf:/etc/nginx/nginx.conf:ro'
+      - '{{ app_dirs.cache_dir }}/nginx:/var/log/nginx:rw'
+      - '{{ app_dirs.managed_dir }}/nginx_gateway/sockets:/var/run/nginx/sockets:rw'
+
+    depends_on:
+      - keto
+      - kratos
+      - oathkeeper
+      - node
+      {% if modules.filebrowser.enabled %}
+      - filebrowser
+      {% endif %}
+      {% if modules.jupyterhub.enabled %}
+      - jupyterhub
+      {% endif %}
+      {% if modules.privatebin.enabled %}
+      - privatebin
+      {% endif %}
+      {% if modules.rstudio.enabled %}
+      - rstudio
+      {% endif %}
+    restart: 'no'
+
+  # ============================== #
+  # Identity and access management #
+  # ============================== #
+
+  keto:
+    container_name: keto
+    hostname: keto
+
+    image: 'docker.io/oryd/keto:{{ KETO_VER }}'
+
+    user: root
+    entrypoint: [ ]
+    command: >-
+      sh -c 'keto migrate up -c /etc/keto/config.yaml -y;
+      keto serve -c /etc/keto/config.yaml --sqa-opt-out >/var/log/keto/main.log 2>&1'
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.keto }}
+    expose:
+      - 80
+
+    volumes:
+      - './config/keto:/etc/keto:ro'
+      - '{{ app_dirs.cache_dir }}/keto:/var/log/keto:rw'
+      - '{{ app_dirs.managed_dir }}/keto:/var/lib/keto:rw'
+
+    restart: 'no'
+
+  kratos:
+    container_name: kratos
+    hostname: kratos
+
+    image: 'docker.io/oryd/kratos:{{ KRATOS_VER }}'
+
+    user: root
+    entrypoint: [ ]
+    command: >-
+      sh -c 'kratos migrate sql -c /etc/kratos/config.yaml -c /etc/kratos/secrets.yaml -e -y;
+      kratos serve -c /etc/kratos/config.yaml -c /etc/kratos/secrets.yaml --sqa-opt-out --watch-courier
+      >/var/log/kratos/main.log 2>&1'
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.kratos }}
+    expose:
+      - 80
+
+    volumes:
+      - './config/kratos:/etc/kratos:ro'
+      - '{{ app_dirs.cache_dir }}/kratos:/var/log/kratos:rw'
+      - '{{ app_dirs.managed_dir }}/kratos:/var/lib/kratos:rw'
+
+    environment:
+      - DSN=sqlite:///var/lib/kratos/db.sqlite3?_fk=true&mode=rwc
+    secrets:
+      - source: KRATOS_SECRETS
+        target: /etc/kratos/secrets.yaml
+
+    restart: 'no'
+
+  oathkeeper:
+    container_name: oathkeeper
+    hostname: oathkeeper
+
+    image: 'docker.io/oryd/oathkeeper:{{ OATHKEEPER_VER }}'
+
+    user: root
+    entrypoint: [ ]
+    command: oathkeeper serve -c /etc/oathkeeper/config.yaml --sqa-opt-out >/var/log/oathkeeper/main.log 2>&1
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.oathkeeper }}
+    expose:
+      - 80
+
+    volumes:
+      - './config/oathkeeper:/etc/oathkeeper:ro'
+      - '{{ app_dirs.cache_dir }}/oathkeeper:/var/log/oathkeeper:rw'
+
+    restart: 'no'
+
+  # == #
+  # UI #
+  # == #
+
+  node:
+    container_name: node
+    hostname: node
+
+    build:
+      context: ./web
+
+    user: root
+    entrypoint: [ ]
+    command: node build
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.node }}
+    expose:
+      - 80
+
+    volumes:
+      {% if branding.cover or branding.logo %}
+        {% if branding.cover %}
+      - '{{ branding.cover }}:/app/cover.jpg:ro'
+        {% endif %}
+        {% if branding.logo %}
+      - '{{ branding.logo }}:/app/favicon.png:ro'
+        {% endif %}
+      {% else %}
+      [ ]
+      {% endif %}
+
+    environment:
+      - BODY_SIZE_LIMIT=0
+      - NODE_ENV=production
+      - PORT=80
+
+      - ADDRESS_HEADER=X-Forwarded-For
+      - HOST_HEADER=X-Forwarded-Host
+      - PROTOCOL_HEADER=X-Forwarded-Proto
+      - XFF_DEPTH={{ network.trusted_proxies|length + 1 }}
+
+      - KETO_API_BASE_URL=http://{{ ip_addresses.keto }}:80/
+      - KRATOS_API_BASE_URL=http://{{ ip_addresses.kratos }}:80/
+      - JUPYTERHUB_BASE_URL=http://{{ ip_addresses.jupyterhub }}:80/
+      - JUPYTERHUB_PASSWORD={{ jupyterhub_password }}
+      - RSTUDIO_BASE_URL=http://{{ ip_addresses.rstudio }}:80/
+      - RSTUDIO_PASSWORD={{ rstudio_password }}
+      - XRAY_SALT={{ xray_salt|string }}
+      - PUBLIC_HOSTNAME={{ network.hostname }}
+      - PUBLIC_HTTPS_PORT={{ network.https.port }}
+      - PUBLIC_SITE_SUBTITLE={{ branding.subtitle|tojson }}
+      - PUBLIC_SITE_TITLE={{ branding.name }}
+      - PUBLIC_XRAY_DOMAIN_WHITELIST={{ modules.xray.domain_whitelist|tojson }}
+      - PUBLIC_XRAY_DOMAIN_KEYWORD_WHITELIST={{ modules.xray.domain_keyword_whitelist|tojson }}
+      - PUBLIC_XRAY_DOMAIN_SUFFIX_WHITELIST={{ modules.xray.domain_suffix_whitelist|tojson }}
+      - PUBLIC_XRAY_IP_RANGE_WHITELIST={{ modules.xray.ip_range_whitelist|map('string')|list|tojson }}
+
+    restart: 'no'
+
+  # ============ #
+  # Applications #
+  # ============ #
+
+  {% if modules.filebrowser.enabled %}
+  filebrowser:
+    container_name: filebrowser
+    hostname: filebrowser
+
+    build:
+      context: .
+      dockerfile: dockerfiles/filebrowser.Dockerfile
+
+    user: root
+    entrypoint: [ ]
+    command: >-
+      sh -c 'rm -f /var/lib/filebrowser/filebrowser.db;
+      /filebrowser -c /etc/filebrowser/settings.yaml config init --auth.method=noauth;
+      /filebrowser -c /etc/filebrowser/settings.yaml config import /etc/filebrowser/config_export.yaml;
+      /filebrowser -c /etc/filebrowser/settings.yaml users import --replace /etc/filebrowser/users_export.yaml;
+      umask 002; /filebrowser -c /etc/filebrowser/settings.yaml'
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.filebrowser }}
+    expose:
+      - 80
+
+    volumes:
+      - './config/filebrowser:/etc/filebrowser:ro'
+      - '{{ app_dirs.cache_dir }}/filebrowser:/var/log/filebrowser:rw'
+      - '{{ app_dirs.managed_dir }}/filebrowser:/var/lib/filebrowser:rw'
+      {% for account in accounts %}
+        {% if account.extra.user_dir %}
+      - '{{ account.extra.user_dir }}:/mnt/home/{{ account.username }}:rw'
+        {% else %}
+      - '{{ directories.users_dir }}/{{ account.username }}:/mnt/home/{{ account.username }}:rw'
+        {% endif %}
+        {% for shared_dir in account.extra.shared_dirs %}
+      - '{{ shared_dir.source }}:/mnt/{{ shared_dir.name }}:{{ 'ro' if shared_dir.read_only else 'rw' }}'
+        {% endfor %}
+      {% endfor %}
+      {% for shared_dir in directories.shared_dirs %}
+      - '{{ shared_dir.source }}:/mnt/{{ shared_dir.name }}:{{ 'ro' if shared_dir.read_only else 'rw' }}'
+      {% endfor %}
+
+    restart: 'no'
+  {% endif %}
+
+  {% if modules.jupyterhub.enabled %}
+  jupyterhub:
+    container_name: jupyterhub
+    hostname: jupyterhub
+
+    build:
+      context: .
+      dockerfile: dockerfiles/jupyterhub.Dockerfile
+
+    user: root
+    entrypoint: [ ]
+    command: sh -c 'umask 002; jupyterhub -f /etc/jupyterhub/config.py'
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.jupyterhub }}
+    expose:
+      - 80
+
+    volumes:
+      - './config/jupyterhub:/etc/jupyterhub:ro'
+      - '{{ app_dirs.managed_dir }}/jupyterhub:/srv/jupyterhub:rw'
+      {% for account in accounts %}
+        {% if account.extra.user_dir %}
+      - '{{ account.extra.user_dir }}:/mnt/home/{{ account.username }}:rw'
+        {% else %}
+      - '{{ directories.users_dir }}/{{ account.username }}:/mnt/home/{{ account.username }}:rw'
+        {% endif %}
+        {% for shared_dir in account.extra.shared_dirs %}
+      - '{{ shared_dir.source }}:/mnt/{{ shared_dir.name }}:{{ 'ro' if shared_dir.read_only else 'rw' }}'
+        {% endfor %}
+      {% endfor %}
+      {% for shared_dir in directories.shared_dirs %}
+      - '{{ shared_dir.source }}:/mnt/{{ shared_dir.name }}:{{ 'ro' if shared_dir.read_only else 'rw' }}'
+      {% endfor %}
+
+    secrets:
+      - source: JUPYTERHUB_COOKIE_SECRET
+        target: /etc/jupyterhub/cookie_secret
+
+    restart: 'no'
+  {% endif %}
+
+  {% if modules.privatebin.enabled %}
+  privatebin:
+    container_name: privatebin
+    hostname: privatebin
+
+    build:
+      context: .
+      dockerfile: dockerfiles/privatebin.Dockerfile
+
+    user: 'nobody:www-data'
+    entrypoint: [ ]
+    command: /etc/init.d/rc.local
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.privatebin }}
+    expose:
+      - 80
+
+    volumes:
+      - '{{ app_dirs.managed_dir }}/privatebin:/srv/data:rw'
+
+    environment:
+      - CONFIG_PATH=/etc/privatebin
+
+    restart: 'no'
+  {% endif %}
+
+  {% if modules.rstudio.enabled %}
+  rstudio:
+    container_name: rstudio
+    hostname: rstudio
+
+    build:
+      context: .
+      dockerfile: dockerfiles/rstudio.Dockerfile
+
+    user: root
+    entrypoint: [ ]
+    command: sh -c 'umask 002; /init'
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.rstudio }}
+    expose:
+      - 80
+
+    volumes:
+      - './config/rstudio/rserver.conf:/etc/rstudio/rserver.conf:ro'
+      - './config/rstudio/rsession.conf:/etc/rstudio/rsession.conf:ro'
+      - '{{ app_dirs.managed_dir }}/rstudio:/var/lib/rstudio-server:rw'
+      {% for account in accounts %}
+        {% if account.extra.user_dir %}
+      - '{{ account.extra.user_dir }}:/mnt/home/{{ account.username }}:rw'
+        {% else %}
+      - '{{ directories.users_dir }}/{{ account.username }}:/mnt/home/{{ account.username }}:rw'
+        {% endif %}
+        {% for shared_dir in account.extra.shared_dirs %}
+      - '{{ shared_dir.source }}:/mnt/{{ shared_dir.name }}:{{ 'ro' if shared_dir.read_only else 'rw' }}'
+        {% endfor %}
+      {% endfor %}
+      {% for shared_dir in directories.shared_dirs %}
+      - '{{ shared_dir.source }}:/mnt/{{ shared_dir.name }}:{{ 'ro' if shared_dir.read_only else 'rw' }}'
+      {% endfor %}
+
+    restart: 'no'
+  {% endif %}
+
+  {% if modules.xray.enabled %}
+  xray:
+    container_name: xray
+    hostname: xray
+
+    image: 'docker.io/teddysun/xray:{{ XRAY_VER }}'
+
+    user: root
+    entrypoint: [ ]
+    command: /usr/bin/xray run -c /etc/xray/config.json
+
+    networks:
+      static:
+        ipv4_address: {{ ip_addresses.xray }}
+    expose:
+      - 80
+
+    volumes:
+      - './config/xray:/etc/xray:ro'
+      - '{{ app_dirs.cache_dir }}/xray:/var/log/xray:rw'
+
+    restart: 'no'
+  {% endif %}
+
+networks:
+  static:
+    ipam:
+      config:
+        - subnet: {{ network.subnet }}
+
+secrets:
+  NGINX_PRIVATE_KEY:
+    file: >-
+      {% if network.https.tls %}
+      {{ network.https.tls.key }}
+      {% else %}
+      {{ app_dirs.generated_dir }}/nginx_gateway/lungo.key
+      {% endif %}
+  KRATOS_SECRETS:
+    file: '{{ app_dirs.generated_dir }}/kratos/secrets.yaml'
+  JUPYTERHUB_COOKIE_SECRET:
+    file: '{{ app_dirs.generated_dir }}/jupyterhub/cookie_secret'
