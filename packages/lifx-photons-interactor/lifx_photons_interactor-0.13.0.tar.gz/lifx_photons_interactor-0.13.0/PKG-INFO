@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: lifx-photons-interactor
+Version: 0.13.0
+Summary: A server for interacting with LIFX lights over the LAN
+Project-URL: Homepage, http://github.com/delfick/photons/apps/interactor
+Author-email: Stephen Moore <github@delfick.com>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: lifx,photons
+Requires-Python: >=3.7
+Requires-Dist: aiohttp==3.7.4
+Requires-Dist: aiosqlite==0.17.0
+Requires-Dist: alembic==1.3.2
+Requires-Dist: lifx-photons-core>=0.42.10
+Requires-Dist: netifaces==0.11.0
+Requires-Dist: sqlalchemy[asyncio]==1.4.23
+Requires-Dist: tornado>=6.1
+Requires-Dist: whirlwind-web==0.12.0
+Requires-Dist: zeroconf==0.36.12
+Description-Content-Type: text/x-rst
+
+Photons Interactor
+==================
+
+A `Photons <https://photons.delfick.com>`_ powered server for
+interacting with LIFX lights over the lan.
+
+The server allows us to do continuous discovery and information gathering so that
+all commands are super fast.
+
+You can find documentation at
+https://photons.delfick.com/apps/interactor/index.html
