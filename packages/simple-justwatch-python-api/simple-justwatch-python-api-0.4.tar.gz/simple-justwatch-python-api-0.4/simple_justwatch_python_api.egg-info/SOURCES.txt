@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+simple_justwatch_python_api.egg-info/PKG-INFO
+simple_justwatch_python_api.egg-info/SOURCES.txt
+simple_justwatch_python_api.egg-info/dependency_links.txt
+simple_justwatch_python_api.egg-info/requires.txt
+simple_justwatch_python_api.egg-info/top_level.txt
+src/simplejustwatchpythonapi/__init__.py
+src/simplejustwatchpythonapi/justwatch.py
+src/simplejustwatchpythonapi/parser.py
+src/simplejustwatchpythonapi/requests.py
