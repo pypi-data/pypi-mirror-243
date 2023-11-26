@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: kineticforms
+Version: 0.0.11
+Summary: Kinetic Forms - Database Wrappers.
+Author: Kinetic Seas (Ed Honour / Joe Lehman), pdfrw, pypdf2
+Author-email: <edward.honour@kineticseas.com>
+Keywords: python
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+Requires-Dist: pymysql
+
+A database wrapper library for Forms related CRUD operations.
