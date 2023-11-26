@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+tests/__init__.py
+tests/test_wsc.py
+writing_style_converter/__init__.py
+writing_style_converter/enums.py
+writing_style_converter/factory_style.py
+writing_style_converter/preparation_style.py
+writing_style_converter/wsc.py
+writing_style_converter.egg-info/PKG-INFO
+writing_style_converter.egg-info/SOURCES.txt
+writing_style_converter.egg-info/dependency_links.txt
+writing_style_converter.egg-info/top_level.txt
