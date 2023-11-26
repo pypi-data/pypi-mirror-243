@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+prettyfy/ANSI_Colorizer.py
+prettyfy/CliUtils.py
+prettyfy/ColorSet.py
+prettyfy/Decor.py
+prettyfy/MenuDriver.py
+prettyfy/Win7_Colorizer.py
+prettyfy/__init__.py
+prettyfy/safe_exec.py
+prettyfy.egg-info/PKG-INFO
+prettyfy.egg-info/SOURCES.txt
+prettyfy.egg-info/dependency_links.txt
+prettyfy.egg-info/entry_points.txt
+prettyfy.egg-info/requires.txt
+prettyfy.egg-info/top_level.txt
