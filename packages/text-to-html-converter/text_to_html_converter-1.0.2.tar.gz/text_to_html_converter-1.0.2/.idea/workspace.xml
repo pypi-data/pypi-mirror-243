@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d18d750f-1ecd-48a8-827b-7cdbc42ff57f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pyproject.toml" beforeDir="false" afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2VH605oSjEvGOrtDkgE177SnJPz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marco/Desktop/College/Year 3/OSD600/lab9/Waypoint&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\marco\Desktop\College\Year 3\OSD600\release 0.1 (Assignment 1)\txt-to-HTML-converter\examples" />
+      <recent name="C:\Users\marco\Desktop\College\Year 3\OSD600\release 0.1 (Assignment 1)\txt-to-HTML-converter\test_til" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python tests.Python tests in test_helper.py">
+    <configuration name="Python tests for test_helper.TestGenerateSidebar.test_generate_sidebar_error" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="txt-to-HTML-converter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_helper.TestGenerateSidebar.test_generate_sidebar_error&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_argpasser.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="txt-to-HTML-converter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_argpasser.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_helper.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="txt-to-HTML-converter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_helper.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_markdown.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="txt-to-HTML-converter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_markdown.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests in test_text_to_html.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="txt-to-HTML-converter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_text_to_html.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests in test_helper.py" />
+        <item itemvalue="Python tests.Python tests in test_argpasser.py" />
+        <item itemvalue="Python tests.Python tests in test_text_to_html.py" />
+        <item itemvalue="Python tests.Python tests in test_markdown.py" />
+        <item itemvalue="Python tests.Python tests for test_helper.TestGenerateSidebar.test_generate_sidebar_error" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d18d750f-1ecd-48a8-827b-7cdbc42ff57f" name="Changes" comment="" />
+      <created>1694480432893</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694480432893</updated>
+      <workItem from="1694480434107" duration="2083000" />
+      <workItem from="1694652612661" duration="5576000" />
+      <workItem from="1694721534095" duration="3885000" />
+      <workItem from="1694735745074" duration="11537000" />
+      <workItem from="1694815992023" duration="6679000" />
+      <workItem from="1695772796066" duration="10671000" />
+      <workItem from="1695843425633" duration="5815000" />
+      <workItem from="1695921819084" duration="1537000" />
+      <workItem from="1696550313533" duration="69000" />
+      <workItem from="1696550444468" duration="303000" />
+      <workItem from="1696599987827" duration="29000" />
+      <workItem from="1696625988475" duration="1023000" />
+      <workItem from="1697153765296" duration="4299000" />
+      <workItem from="1697225075305" duration="1877000" />
+      <workItem from="1698681552508" duration="10549000" />
+      <workItem from="1698781116330" duration="1000" />
+      <workItem from="1698952714829" duration="93000" />
+      <workItem from="1698952865384" duration="15801000" />
+      <workItem from="1699027064562" duration="45000" />
+      <workItem from="1699027122686" duration="20000" />
+      <workItem from="1699380265793" duration="4086000" />
+      <workItem from="1699388553671" duration="32000" />
+      <workItem from="1699389733103" duration="1000" />
+      <workItem from="1699391379384" duration="2000" />
+      <workItem from="1699401277653" duration="11451000" />
+      <workItem from="1699464323906" duration="8099000" />
+      <workItem from="1699547625973" duration="6812000" />
+      <workItem from="1700098244106" duration="33000" />
+      <workItem from="1700098364319" duration="5816000" />
+      <workItem from="1700141545799" duration="3552000" />
+      <workItem from="1700153545553" duration="1943000" />
+      <workItem from="1700186780702" duration="1194000" />
+      <workItem from="1700699143494" duration="1133000" />
+      <workItem from="1700701017840" duration="4817000" />
+      <workItem from="1700851877210" duration="8070000" />
+      <workItem from="1700876135444" duration="2052000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/txt_to_HTML_converter$python_txt_to_html_py__s__https___cdnjs_cloudflare_com_ajax_libs_tufte_css_1_8_0_tufte_min_css_filename_txt.coverage" NAME="python txt_to_html.py -s  https://cdnjs.cloudflare.com/ajax/libs/tufte-css/1.8.0/tufte.min.css filename.txt Coverage Results" MODIFIED="1697154662970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/txt_to_HTML_converter$txt_to_html.coverage" NAME="txt_to_html Coverage Results" MODIFIED="1694745369700" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/txt_to_HTML_converter$.coverage" NAME=" Coverage Results" MODIFIED="1700861681343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+  </component>
+</project>
