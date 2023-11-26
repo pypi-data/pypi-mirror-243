@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: asyncio-telnet
+Version: 0.1.4
+Summary: Asyncio-based Telnet library
+Home-page: https://github.com/ForceFledgling/asyncio_telnet
+Author: Vladimir Penzin
+Author-email: pvenv@icloud.com
+Platform: any
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+License-File: LICENSE
+Requires-Dist: asyncio
+
+# asyncio-telnet
+The library facilitates efficient interaction with Telnet servers in both synchronous and asynchronous modes in Python, providing a convenient interface for both use cases.
