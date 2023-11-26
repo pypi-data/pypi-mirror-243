@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: cmeel-lapack
+Version: 3.12.0
+Summary: cmeel distribution for LAPACK
+Requires-Python: >= 3.8
+License-Expression: BSD-3-Clause
+Home-page: https://github.com/cmake-wheel/cmeel-lapack
+Project-URL: Repository, https://github.com/cmake-wheel/cmeel-lapack.git
+Requires-Dist: cmeel
+Description-Content-Type: text/markdown
+
+# CMeel LAPACK
+
+[![PyPI version](https://badge.fury.io/py/cmeel-lapack.svg)](https://pypi.org/project/cmeel-lapack)
+[![Release](https://github.com/cmake-wheel/cmeel-lapack/actions/workflows/release.yml/badge.svg)](https://github.com/cmake-wheel/cmeel-lapack/actions/workflows/release.yml)
+
+[LAPACK](https://netlib.org/lapack/) distribution for cmeel packages.
