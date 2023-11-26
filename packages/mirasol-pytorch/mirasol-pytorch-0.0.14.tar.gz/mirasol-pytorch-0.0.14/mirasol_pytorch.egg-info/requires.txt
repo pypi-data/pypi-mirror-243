@@ -1,0 +1,4 @@
+beartype
+einops>=0.7.0
+x-transformers>=1.25.10
+torch>=2.0
