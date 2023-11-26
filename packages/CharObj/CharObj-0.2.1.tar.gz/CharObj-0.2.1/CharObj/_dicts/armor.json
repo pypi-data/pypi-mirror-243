@@ -1,0 +1,867 @@
+{
+    "Leather Cuirass": {
+        "name": "Leather Cuirass",
+        "slot": "CHEST",
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A leather chest-piec",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "cp"
+        ],
+        "armor_class": 2,
+        "set_name": "Leather Armor",
+        "category": "ARMOR"
+    },
+    "Leather Helmet": {
+        "name": "Leather Helmet",
+        "slot": "HEAD",
+        "weight": [
+            1.0,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A leather helmet",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "cp"
+        ],
+        "armor_class": 1,
+        "set_name": "Leather Armor",
+        "category": "ARMOR"
+    },
+    "Leather Gauntlet": {
+        "name": "Leather Gauntlet",
+        "slot": [
+            "LEFT_HAND",
+            "RIGHT_HAND"
+        ],
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A single leather gauntlet",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "cp"
+        ],
+        "armor_class": 1,
+        "set_name": "Leather Armor",
+        "category": "ARMOR"
+    },
+    "Leather Boots": {
+        "name": "Leather Boots",
+        "slot": "FEET",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A leather boot",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "cp"
+        ],
+        "armor_class": 1,
+        "set_name": "Leather Armor",
+        "category": "ARMOR"
+    },
+    "Leather Leggings": {
+        "name": "Leather Leggings",
+        "slot": "LEGS",
+        "weight": [
+            1.0,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A pair of leather leggings",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "cp"
+        ],
+        "armor_class": 2,
+        "set_name": "Leather Armor",
+        "category": "ARMOR"
+    },
+    "Leather Bracer": {
+        "name": "Leather Bracer",
+        "slot": [
+            "LEFT_WRIST",
+            "RIGHT_WRIST"
+        ],
+        "weight": [
+            0.25,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A leather bracer",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "cp"
+        ],
+        "armor_class": 1,
+        "set_name": "Leather Armor",
+        "category": "ARMOR"
+    },
+    "Leather Belt": {
+        "name": "Leather Belt",
+        "slot": "WAIST",
+        "weight": [
+            0.25,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A leather belt",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "cp"
+        ],
+        "armor_class": 1,
+        "set_name": "Leather Armor",
+        "category": "ARMOR"
+    },
+    "Leather Pauldron": {
+        "name": "Leather Pauldron",
+        "slot": [
+            "LEFT_SHOULDER",
+            "RIGHT_SHOULDER"
+        ],
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A leather pauldron",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "cp"
+        ],
+        "armor_class": 1,
+        "set_name": "Leather Armor",
+        "category": "ARMOR"
+    },
+    "Chainmail Hauberk": {
+        "name": "Chainmail Hauberk",
+        "slot": "CHEST",
+        "weight": [
+            10.0,
+            "kg"
+        ],
+        "material": "CHAINMAIL",
+        "mundane": true,
+        "description": "A chainmail chest-piece",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "sp"
+        ],
+        "armor_class": 4,
+        "set_name": "Chain Mail",
+        "category": "ARMOR"
+    },
+    "Chainmail Coif": {
+        "name": "Chainmail Coif",
+        "slot": "HEAD",
+        "weight": [
+            2.5,
+            "kg"
+        ],
+        "material": "CHAINMAIL",
+        "mundane": true,
+        "description": "A chainmail coif",
+        "quality": "COMMON",
+        "value": [
+            20,
+            "sp"
+        ],
+        "armor_class": 2,
+        "set_name": "Chain Mail",
+        "category": "ARMOR"
+    },
+    "Chainmail Gauntlet": {
+        "name": "Chainmail Gauntlet",
+        "slot": [
+            "LEFT_HAND",
+            "RIGHT_HAND"
+        ],
+        "weight": [
+            1.0,
+            "kg"
+        ],
+        "material": "CHAINMAIL",
+        "mundane": true,
+        "description": "A pair of chainmail gauntlets for the hands",
+        "quality": "COMMON",
+        "value": [
+            18,
+            "sp"
+        ],
+        "armor_class": 2,
+        "set_name": "Chain Mail",
+        "category": "ARMOR"
+    },
+    "Chainmail Boots": {
+        "name": "Chainmail Boots",
+        "slot": "FEET",
+        "weight": [
+            2.0,
+            "kg"
+        ],
+        "material": "CHAINMAIL",
+        "mundane": true,
+        "description": "Sturdy chainmail boots for the feet",
+        "quality": "COMMON",
+        "value": [
+            20,
+            "sp"
+        ],
+        "armor_class": 3,
+        "set_name": "Chain Mail",
+        "category": "ARMOR"
+    },
+    "Chainmail Leggings": {
+        "name": "Chainmail Leggings",
+        "slot": "LEGS",
+        "weight": [
+            8.0,
+            "kg"
+        ],
+        "material": "CHAINMAIL",
+        "mundane": true,
+        "description": "Chainmail leggings for added protection",
+        "quality": "COMMON",
+        "value": [
+            22,
+            "sp"
+        ],
+        "armor_class": 3,
+        "set_name": "Chain Mail",
+        "category": "ARMOR"
+    },
+    "Chainmail Bracer": {
+        "name": "Chainmail Bracer",
+        "slot": [
+            "LEFT_WRIST",
+            "RIGHT_WRIST"
+        ],
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "CHAINMAIL",
+        "mundane": true,
+        "description": "Chainmail bracers for the wrists",
+        "quality": "COMMON",
+        "value": [
+            15,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Chain Mail",
+        "category": "ARMOR"
+    },
+    "Chainmail Belt": {
+        "name": "Chainmail Belt",
+        "slot": "WAIST",
+        "weight": [
+            1.0,
+            "kg"
+        ],
+        "material": "CHAINMAIL",
+        "mundane": true,
+        "description": "A chainmail belt for extra protection",
+        "quality": "COMMON",
+        "value": [
+            18,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Chain Mail",
+        "category": "ARMOR"
+    },
+    "Chainmail Pauldron": {
+        "name": "Chainmail Pauldron",
+        "slot": [
+            "LEFT_SHOULDER",
+            "RIGHT_SHOULDER"
+        ],
+        "weight": [
+            2.5,
+            "kg"
+        ],
+        "material": "CHAINMAIL",
+        "mundane": true,
+        "description": "A chainmail pauldron to shield the shoulders",
+        "quality": "COMMON",
+        "value": [
+            20,
+            "sp"
+        ],
+        "armor_class": 2,
+        "set_name": "Chain Mail",
+        "category": "ARMOR"
+    },
+    "Plate Mail Armor": {
+        "name": "Plate Mail Armor",
+        "slot": "CHEST",
+        "weight": [
+            20.0,
+            "kg"
+        ],
+        "material": "PLATE MAIL",
+        "mundane": true,
+        "description": "A formidable suit of plate mail armor",
+        "quality": "COMMON",
+        "value": [
+            50,
+            "sp"
+        ],
+        "armor_class": 6,
+        "set_name": "Plate Mail",
+        "category": "ARMOR"
+    },
+    "Plate Helmet": {
+        "name": "Plate Helmet",
+        "slot": "HEAD",
+        "weight": [
+            5.0,
+            "kg"
+        ],
+        "material": "PLATE MAIL",
+        "mundane": true,
+        "description": "A sturdy plate helmet for head protection",
+        "quality": "COMMON",
+        "value": [
+            40,
+            "sp"
+        ],
+        "armor_class": 3,
+        "set_name": "Plate Mail",
+        "category": "ARMOR"
+    },
+    "Plate Gauntlet": {
+        "name": "Plate Gauntlet",
+        "slot": [
+            "LEFT_HAND",
+            "RIGHT_HAND"
+        ],
+        "weight": [
+            2.0,
+            "kg"
+        ],
+        "material": "PLATE MAIL",
+        "mundane": true,
+        "description": "Durable plate gauntlets for hand defense",
+        "quality": "COMMON",
+        "value": [
+            35,
+            "sp"
+        ],
+        "armor_class": 3,
+        "set_name": "Plate Mail",
+        "category": "ARMOR"
+    },
+    "Plate Greaves": {
+        "name": "Plate Greaves",
+        "slot": "LEGS",
+        "weight": [
+            15.0,
+            "kg"
+        ],
+        "material": "PLATE MAIL",
+        "mundane": true,
+        "description": "Heavy plate greaves to protect the legs",
+        "quality": "COMMON",
+        "value": [
+            45,
+            "sp"
+        ],
+        "armor_class": 5,
+        "set_name": "Plate Mail",
+        "category": "ARMOR"
+    },
+    "Plate Sabaton": {
+        "name": "Plate Sabaton",
+        "slot": "FEET",
+        "weight": [
+            3.5,
+            "kg"
+        ],
+        "material": "PLATE MAIL",
+        "mundane": true,
+        "description": "Sturdy plate sabatons for foot defense",
+        "quality": "COMMON",
+        "value": [
+            40,
+            "sp"
+        ],
+        "armor_class": 3,
+        "set_name": "Plate Mail",
+        "category": "ARMOR"
+    },
+    "Plate Vambrace": {
+        "name": "Plate Vambrace",
+        "slot": [
+            "LEFT_WRIST",
+            "RIGHT_WRIST"
+        ],
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "PLATE MAIL",
+        "mundane": true,
+        "description": "Plate vambraces for added wrist protection",
+        "quality": "COMMON",
+        "value": [
+            30,
+            "sp"
+        ],
+        "armor_class": 2,
+        "set_name": "Plate Mail",
+        "category": "ARMOR"
+    },
+    "Plate Belt": {
+        "name": "Plate Belt",
+        "slot": "WAIST",
+        "weight": [
+            1.8,
+            "kg"
+        ],
+        "material": "PLATE MAIL",
+        "mundane": true,
+        "description": "A strong plate belt for waist defense",
+        "quality": "COMMON",
+        "value": [
+            35,
+            "sp"
+        ],
+        "armor_class": 2,
+        "set_name": "Plate Mail",
+        "category": "ARMOR"
+    },
+    "Plate Pauldron": {
+        "name": "Plate Pauldron",
+        "slot": [
+            "LEFT_SHOULDER",
+            "RIGHT_SHOULDER"
+        ],
+        "weight": [
+            4.0,
+            "kg"
+        ],
+        "material": "PLATE MAIL",
+        "mundane": true,
+        "description": "Plate pauldrons to shield the shoulders effectively",
+        "quality": "COMMON",
+        "value": [
+            40,
+            "sp"
+        ],
+        "armor_class": 3,
+        "set_name": "Plate Mail",
+        "category": "ARMOR"
+    },
+    "Light Leather Chestpiece": {
+        "name": "Light Leather Chestpiece",
+        "slot": "CHEST",
+        "weight": [
+            2.0,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A light leather chestpiece for protection",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Light Leather",
+        "category": "ARMOR"
+    },
+    "Light Leather Helmet": {
+        "name": "Light Leather Helmet",
+        "slot": "HEAD",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A light leather helmet for head protection",
+        "quality": "COMMON",
+        "value": [
+            8,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Light Leather",
+        "category": "ARMOR"
+    },
+    "Light Leather Gauntlet": {
+        "name": "Light Leather Gauntlet",
+        "slot": [
+            "LEFT_HAND",
+            "RIGHT_HAND"
+        ],
+        "weight": [
+            0.3,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "Light leather gauntlets for hand defense",
+        "quality": "COMMON",
+        "value": [
+            7,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Light Leather",
+        "category": "ARMOR"
+    },
+    "Light Leather Greaves": {
+        "name": "Light Leather Greaves",
+        "slot": "LEGS",
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "Light leather greaves to protect the legs",
+        "quality": "COMMON",
+        "value": [
+            9,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Light Leather",
+        "category": "ARMOR"
+    },
+    "Light Leather Sabaton": {
+        "name": "Light Leather Sabaton",
+        "slot": "FEET",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "Light leather sabatons for foot defense",
+        "quality": "COMMON",
+        "value": [
+            8,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Light Leather",
+        "category": "ARMOR"
+    },
+    "Light Leather Vambrace": {
+        "name": "Light Leather Vambrace",
+        "slot": [
+            "LEFT_WRIST",
+            "RIGHT_WRIST"
+        ],
+        "weight": [
+            0.2,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "Light leather vambraces for wrist protection",
+        "quality": "COMMON",
+        "value": [
+            6,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Light Leather",
+        "category": "ARMOR"
+    },
+    "Light Leather Belt": {
+        "name": "Light Leather Belt",
+        "slot": "WAIST",
+        "weight": [
+            0.3,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A light leather belt for waist defense",
+        "quality": "COMMON",
+        "value": [
+            7,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Light Leather",
+        "category": "ARMOR"
+    },
+    "Light Leather Pauldron": {
+        "name": "Light Leather Pauldron",
+        "slot": [
+            "LEFT_SHOULDER",
+            "RIGHT_SHOULDER"
+        ],
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "Light leather pauldrons to shield the shoulders effectively",
+        "quality": "COMMON",
+        "value": [
+            8,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Light Leather",
+        "category": "ARMOR"
+    },
+    "Tunic": {
+        "name": "Tunic",
+        "slot": "CHEST",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "BURLAP",
+        "mundane": true,
+        "description": "A simple burlap tunic",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "armor_class": 0,
+        "set_name": "Tunic",
+        "category": "ARMOR"
+    },
+    "Cloth Cap": {
+        "name": "Cloth Cap",
+        "slot": "HEAD",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "CLOTH",
+        "mundane": true,
+        "description": "A simple cloth cap",
+        "quality": "COMMON",
+        "value": [
+            4,
+            "sp"
+        ],
+        "armor_class": 0,
+        "set_name": "Tunic",
+        "category": "ARMOR"
+    },
+    "Burlap Gloves": {
+        "name": "Burlap Gloves",
+        "slot": [
+            "LEFT_HAND",
+            "RIGHT_HAND"
+        ],
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "CLOTH",
+        "mundane": true,
+        "description": "Simple cloth gloves",
+        "quality": "COMMON",
+        "value": [
+            3,
+            "sp"
+        ],
+        "armor_class": 0,
+        "set_name": "Tunic",
+        "category": "ARMOR"
+    },
+    "Scaled Cuirass": {
+        "name": "Scaled Cuirass",
+        "slot": "CHEST",
+        "weight": [
+            5.0,
+            "kg"
+        ],
+        "material": "SCALE",
+        "mundane": true,
+        "description": "A scaled chest-piece",
+        "quality": "COMMON",
+        "value": [
+            15,
+            "sp"
+        ],
+        "armor_class": 3,
+        "set_name": "Scale Mail",
+        "category": "ARMOR"
+    },
+    "Scaled Helmet": {
+        "name": "Scaled Helmet",
+        "slot": "HEAD",
+        "weight": [
+            1.0,
+            "kg"
+        ],
+        "material": "SCALE",
+        "mundane": true,
+        "description": "A scaled helmet",
+        "quality": "COMMON",
+        "value": [
+            12,
+            "sp"
+        ],
+        "armor_class": 2,
+        "set_name": "Scale Mail",
+        "category": "ARMOR"
+    },
+    "Scaled Gauntlet": {
+        "name": "Scaled Gauntlet",
+        "slot": [
+            "LEFT_HAND",
+            "RIGHT_HAND"
+        ],
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "SCALE",
+        "mundane": true,
+        "description": "A pair of scaled gauntlets",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "sp"
+        ],
+        "armor_class": 2,
+        "set_name": "Scale Mail",
+        "category": "ARMOR"
+    },
+    "Scaled Boots": {
+        "name": "Scaled Boots",
+        "slot": "FEET",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "SCALE",
+        "mundane": true,
+        "description": "A pair of scaled boots",
+        "quality": "COMMON",
+        "value": [
+            12,
+            "sp"
+        ],
+        "armor_class": 2,
+        "set_name": "Scale Mail",
+        "category": "ARMOR"
+    },
+    "Scaled Leggings": {
+        "name": "Scaled Leggings",
+        "slot": "LEGS",
+        "weight": [
+            2.0,
+            "kg"
+        ],
+        "material": "SCALE",
+        "mundane": true,
+        "description": "A pair of scaled leggings",
+        "quality": "COMMON",
+        "value": [
+            14,
+            "sp"
+        ],
+        "armor_class": 3,
+        "set_name": "Scale Mail",
+        "category": "ARMOR"
+    },
+    "Scaled Bracer": {
+        "name": "Scaled Bracer",
+        "slot": [
+            "LEFT_WRIST",
+            "RIGHT_WRIST"
+        ],
+        "weight": [
+            0.25,
+            "kg"
+        ],
+        "material": "SCALE",
+        "mundane": true,
+        "description": "A pair of scaled bracers",
+        "quality": "COMMON",
+        "value": [
+            8,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Scale Mail",
+        "category": "ARMOR"
+    },
+    "Scaled Belt": {
+        "name": "Scaled Belt",
+        "slot": "WAIST",
+        "weight": [
+            0.25,
+            "kg"
+        ],
+        "material": "SCALE",
+        "mundane": true,
+        "description": "A scaled belt",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "sp"
+        ],
+        "armor_class": 1,
+        "set_name": "Scale Mail",
+        "category": "ARMOR"
+    },
+    "Scaled Pauldron": {
+        "name": "Scaled Pauldron",
+        "slot": [
+            "LEFT_SHOULDER",
+            "RIGHT_SHOULDER"
+        ],
+        "weight": [
+            1.0,
+            "kg"
+        ],
+        "material": "SCALE",
+        "mundane": true,
+        "description": "A scaled pauldron",
+        "quality": "COMMON",
+        "value": [
+            12,
+            "sp"
+        ],
+        "armor_class": 2,
+        "set_name": "Scale Mail",
+        "category": "ARMOR"
+    }
+}

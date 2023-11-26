@@ -1,0 +1,1412 @@
+{
+    "Platinum Ore": {
+        "name": "Platinum Ore",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "PLATINUM",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of platinum ore",
+        "quality": "COMMON",
+        "value": [
+            6,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Gold Ore": {
+        "name": "Gold Ore",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "GOLD",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of gold ore",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Iron Ore": {
+        "name": "Iron Ore",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of iron ore",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Copper Ore": {
+        "name": "Copper Ore",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "COPPER",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of copper ore",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Tin Ore": {
+        "name": "Tin Ore",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "TIN",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of tin ore",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Silver Ore": {
+        "name": "Silver Ore",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "SILVER",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of silver ore",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Mithril Ore": {
+        "name": "Mithril Ore",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "MITHRIL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of mithril ore",
+        "quality": "COMMON",
+        "value": [
+            3,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Adamantite Ore": {
+        "name": "Adamantite Ore",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "ADAMANTITE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of adamantite ore",
+        "quality": "COMMON",
+        "value": [
+            4,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Runite Ore": {
+        "name": "Runite Ore",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "RUNITE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of runite ore",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Coal": {
+        "name": "Coal",
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "COAL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of coal",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Platinum Ingot": {
+        "name": "Platinum Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "PLATINUM",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of platinum",
+        "quality": "COMMON",
+        "value": [
+            12,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Gold Ingot": {
+        "name": "Gold Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "GOLD",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of gold",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Iron Ingot": {
+        "name": "Iron Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of iron",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Copper Ingot": {
+        "name": "Copper Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "COPPER",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of copper",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Silver Ingot": {
+        "name": "Silver Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "SILVER",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of silver",
+        "quality": "COMMON",
+        "value": [
+            4,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Mithril Ingot": {
+        "name": "Mithril Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "MITHRIL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of mithril",
+        "quality": "COMMON",
+        "value": [
+            6,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Adamantite Ingot": {
+        "name": "Adamantite Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "ADAMANTITE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of adamantite",
+        "quality": "COMMON",
+        "value": [
+            8,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Runite Ingot": {
+        "name": "Runite Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "RUNITE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of runite",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Bronze Ingot": {
+        "name": "Bronze Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "BRONZE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of bronze",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Steel Ingot": {
+        "name": "Steel Ingot",
+        "category": "INGOT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "STEEL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bar of steel",
+        "quality": "COMMON",
+        "value": [
+            3,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Oak Log": {
+        "name": "Oak Log",
+        "category": "LOG",
+        "weight": [
+            3.0,
+            "kg"
+        ],
+        "material": "OAK",
+        "consumable": true,
+        "mundane": true,
+        "description": "A log of oak",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Willow Log": {
+        "name": "Willow Log",
+        "category": "LOG",
+        "weight": [
+            3.0,
+            "kg"
+        ],
+        "material": "WILLOW",
+        "consumable": true,
+        "mundane": true,
+        "description": "A log of willow",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Maple Log": {
+        "name": "Maple Log",
+        "category": "LOG",
+        "weight": [
+            3.0,
+            "kg"
+        ],
+        "material": "MAPLE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A log of maple",
+        "quality": "COMMON",
+        "value": [
+            3,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Yew Log": {
+        "name": "Yew Log",
+        "category": "LOG",
+        "weight": [
+            3.0,
+            "kg"
+        ],
+        "material": "YEW",
+        "consumable": true,
+        "mundane": true,
+        "description": "A log of yew",
+        "quality": "COMMON",
+        "value": [
+            4,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Flax Seed": {
+        "name": "Flax Seed",
+        "category": "SEED",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "FLAX",
+        "consumable": true,
+        "mundane": true,
+        "description": "A seed of flax",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Flax": {
+        "name": "Flax",
+        "category": "FIBER",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "FLAX",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bundle of flax",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Cotton Seed": {
+        "name": "Cotton Seed",
+        "category": "SEED",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "COTTON",
+        "consumable": true,
+        "mundane": true,
+        "description": "A seed of cotton",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Cotton": {
+        "name": "Cotton",
+        "category": "FIBER",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "COTTON",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bundle of cotton",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Wool": {
+        "name": "Wool",
+        "category": "FIBER",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "WOOL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bundle of wool",
+        "quality": "COMMON",
+        "value": [
+            3,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Silk": {
+        "name": "Silk",
+        "category": "FIBER",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "SILK",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bundle of silk",
+        "quality": "COMMON",
+        "value": [
+            4,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Leather": {
+        "name": "Leather",
+        "category": "HIDE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bundle of leather",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "stackable": true
+    },
+    "Quartz": {
+        "name": "Quartz",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "QUARTZ",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of quartz",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Calcite": {
+        "name": "Calcite",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "CALCITE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of calcite",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Agate": {
+        "name": "Agate",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "AGATE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of agate",
+        "quality": "COMMON",
+        "value": [
+            3,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Amethyst": {
+        "name": "Amethyst",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "AMETHYST",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of amethyst",
+        "quality": "COMMON",
+        "value": [
+            4,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Garnet": {
+        "name": "Garnet",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "GARNET",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of garnet",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Moonstone": {
+        "name": "Moonstone",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "MOONSTONE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of moonstone",
+        "quality": "COMMON",
+        "value": [
+            6,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Turquoise": {
+        "name": "Turquoise",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "TURQUOISE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of turquoise",
+        "quality": "COMMON",
+        "value": [
+            7,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Malachite": {
+        "name": "Malachite",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "MALACHITE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of malachite",
+        "quality": "COMMON",
+        "value": [
+            8,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Jasper": {
+        "name": "Jasper",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "JASPER",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of jasper",
+        "quality": "COMMON",
+        "value": [
+            9,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Jade": {
+        "name": "Jade",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "JADE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of jade",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Zircon": {
+        "name": "Zircon",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "ZIRCON",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of zircon",
+        "quality": "COMMON",
+        "value": [
+            11,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Emerald": {
+        "name": "Emerald",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "EMERALD",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of emerald",
+        "quality": "COMMON",
+        "value": [
+            12,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Diamond": {
+        "name": "Diamond",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "DIAMOND",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of diamond",
+        "quality": "COMMON",
+        "value": [
+            13,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Ruby": {
+        "name": "Ruby",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "RUBY",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of ruby",
+        "quality": "COMMON",
+        "value": [
+            14,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Sapphire": {
+        "name": "Sapphire",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "SAPPHIRE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of sapphire",
+        "quality": "COMMON",
+        "value": [
+            15,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Topaz": {
+        "name": "Topaz",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "TOPAZ",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of topaz",
+        "quality": "COMMON",
+        "value": [
+            16,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Opal": {
+        "name": "Opal",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "OPAL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of opal",
+        "quality": "COMMON",
+        "value": [
+            17,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Obsidian": {
+        "name": "Obsidian",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "OBSIDIAN",
+        "consumable": true,
+        "mundane": true,
+        "description": "A chunk of obsidian",
+        "quality": "COMMON",
+        "value": [
+            18,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Pearl": {
+        "name": "Pearl",
+        "category": "GEM",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "PEARL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A beautiful pearl",
+        "quality": "COMMON",
+        "value": [
+            19,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Bolt of Wool": {
+        "name": "Bolt of Wool",
+        "category": "BOLT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "WOOL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bolt of wool",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Bolt of Silk": {
+        "name": "Bolt of Silk",
+        "category": "BOLT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "SILK",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bolt of silk",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Bolt of Cotton": {
+        "name": "Bolt of Cotton",
+        "category": "BOLT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "COTTON",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bolt of cotton",
+        "quality": "COMMON",
+        "value": [
+            15,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Bolt of Flax": {
+        "name": "Bolt of Flax",
+        "category": "BOLT",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "FLAX",
+        "consumable": true,
+        "mundane": true,
+        "description": "A bolt of flax",
+        "quality": "COMMON",
+        "value": [
+            20,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Cotton Thread": {
+        "name": "Cotton Thread",
+        "category": "THREAD",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "COTTON",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of cotton thread",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Silk Thread": {
+        "name": "Silk Thread",
+        "category": "THREAD",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "SILK",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of silk thread",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Wool Thread": {
+        "name": "Wool Thread",
+        "category": "THREAD",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "WOOL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of wool thread",
+        "quality": "COMMON",
+        "value": [
+            3,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Flax Thread": {
+        "name": "Flax Thread",
+        "category": "THREAD",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "FLAX",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of flax thread",
+        "quality": "COMMON",
+        "value": [
+            4,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Copper Wire": {
+        "name": "Copper Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "COPPER",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of copper wire",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Silver Wire": {
+        "name": "Silver Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "SILVER",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of silver wire",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Gold Wire": {
+        "name": "Gold Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "GOLD",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of gold wire",
+        "quality": "COMMON",
+        "value": [
+            3,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Iron Wire": {
+        "name": "Iron Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "IRON",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of iron wire",
+        "quality": "COMMON",
+        "value": [
+            4,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Steel Wire": {
+        "name": "Steel Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "STEEL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of steel wire",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Mithril Wire": {
+        "name": "Mithril Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "MITHRIL",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of mithril wire",
+        "quality": "COMMON",
+        "value": [
+            6,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Adamantite Wire": {
+        "name": "Adamantite Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "ADAMANTITE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of adamantite wire",
+        "quality": "COMMON",
+        "value": [
+            7,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Runite Wire": {
+        "name": "Runite Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "RUNITE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of runite wire",
+        "quality": "COMMON",
+        "value": [
+            8,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Bronze Wire": {
+        "name": "Bronze Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "BRONZE",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of bronze wire",
+        "quality": "COMMON",
+        "value": [
+            9,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Platinum Wire": {
+        "name": "Platinum Wire",
+        "category": "WIRE",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "PLATINUM",
+        "consumable": true,
+        "mundane": true,
+        "description": "A spool of platinum wire",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "gp"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false
+    },
+    "Brightsteel Ore": {
+        "name": "Brightsteel Ore",
+        "slot": null,
+        "category": "ORE",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "BRIGHTSTEEL",
+        "mundane": true,
+        "description": "A chunk of brightsteel ore.",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "gp"
+        ],
+        "binding": null,
+        "quest_item": null,
+        "relic": false
+    }
+}

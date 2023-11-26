@@ -1,0 +1,1533 @@
+{
+    "Club": {
+        "name": "Club",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "WOOD",
+        "mundane": true,
+        "description": "A simple wooden club.",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d4"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Dagger": {
+        "name": "Dagger",
+        "slot": "MAIN_HAND",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron dagger",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d4"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "LIGHT",
+            "FINESSE",
+            "THROWN"
+        ],
+        "category": "WEAPON"
+    },
+    "Greatclub": {
+        "name": "Greatclub",
+        "slot": "MAIN_HAND",
+        "weight": [
+            5,
+            "kg"
+        ],
+        "material": "WOOD",
+        "mundane": true,
+        "description": "A simple wooden greatclub",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "TWO_HANDED",
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "Handaxe": {
+        "name": "Handaxe",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron handaxe",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "LIGHT",
+            "THROWN"
+        ],
+        "category": "WEAPON"
+    },
+    "Javelin": {
+        "name": "Javelin",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron javelin",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            30,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "LIGHT",
+            "THROWN"
+        ],
+        "category": "WEAPON"
+    },
+    "Light Hammer": {
+        "name": "Light Hammer",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron light hammer",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d4"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "LIGHT",
+            "THROWN"
+        ],
+        "category": "WEAPON"
+    },
+    "Mace": {
+        "name": "Mace",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron mace",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Quarterstaff": {
+        "name": "Quarterstaff",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2.0,
+            "kg"
+        ],
+        "material": "WOOD",
+        "mundane": true,
+        "description": "A simple wooden quarterstaff",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "Sickle": {
+        "name": "Sickle",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron sickle",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d4"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Spear": {
+        "name": "Spear",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron spear",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            20,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "VERSATILE",
+            "THROWN"
+        ],
+        "category": "WEAPON"
+    },
+    "Halberd": {
+        "name": "Halberd",
+        "slot": "MAIN_HAND",
+        "weight": [
+            3,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron halberd",
+        "quality": "COMMON",
+        "value": [
+            20,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d10"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            10,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "TWO_HANDED",
+            "VERSATILE",
+            "REACH"
+        ],
+        "category": "WEAPON"
+    },
+    "Lance": {
+        "name": "Lance",
+        "slot": "MAIN_HAND",
+        "weight": [
+            3,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron lance",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d12"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            10,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "TWO_HANDED",
+            "REACH",
+            "SPECIAL"
+        ],
+        "category": "WEAPON"
+    },
+    "Longsword": {
+        "name": "Longsword",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron longsword",
+        "quality": "COMMON",
+        "value": [
+            15,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "VERSATILE",
+            "FINESSE"
+        ],
+        "category": "WEAPON"
+    },
+    "Rapier": {
+        "name": "Rapier",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "STEEL",
+        "mundane": true,
+        "description": "A slender sword with a sharp point",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "FINESSE"
+        ],
+        "category": "WEAPON"
+    },
+    "Scimitar": {
+        "name": "Scimitar",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "STEEL",
+        "mundane": true,
+        "description": "A curved sword with a single-edged blade",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED",
+            "FINESSE",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Shortsword": {
+        "name": "Shortsword",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron shortsword",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "FINESSE",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Trident": {
+        "name": "Trident",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron trident",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            20,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "THROWN",
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "War Pick": {
+        "name": "War Pick",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron war pick",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [],
+        "category": "WEAPON"
+    },
+    "Warhammer": {
+        "name": "Warhammer",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron warhammer",
+        "quality": "COMMON",
+        "value": [
+            15,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "Whip": {
+        "name": "Whip",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple ironclad whip",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d4"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            10,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "FINESSE",
+            "REACH"
+        ],
+        "category": "WEAPON"
+    },
+    "Battleaxe": {
+        "name": "Battleaxe",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron battleaxe",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "Flail": {
+        "name": "Flail",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron flail",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [],
+        "category": "WEAPON"
+    },
+    "Glaive": {
+        "name": "Glaive",
+        "slot": "MAIN_HAND",
+        "weight": [
+            3,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron glaive",
+        "quality": "COMMON",
+        "value": [
+            20,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d10"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            10,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "HEAVY",
+            "REACH",
+            "TWO_HANDED"
+        ],
+        "category": "WEAPON"
+    },
+    "Greataxe": {
+        "name": "Greataxe",
+        "slot": "MAIN_HAND",
+        "weight": [
+            3.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron greataxe",
+        "quality": "COMMON",
+        "value": [
+            30,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d12"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "HEAVY",
+            "TWO_HANDED"
+        ],
+        "category": "WEAPON"
+    },
+    "Greatsword": {
+        "name": "Greatsword",
+        "slot": "MAIN_HAND",
+        "weight": [
+            3,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A simple iron greatsword",
+        "quality": "COMMON",
+        "value": [
+            50,
+            "CP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            2,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "HEAVY",
+            "TWO_HANDED"
+        ],
+        "category": "WEAPON"
+    },
+    "Morningstar": {
+        "name": "Morningstar",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A spiked ball mounted on a steel shaft",
+        "quality": "COMMON",
+        "value": [
+            15,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "ONE_HANDED"
+        ],
+        "category": "WEAPON"
+    },
+    "Longbow": {
+        "name": "Longbow",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "WOOD",
+        "mundane": true,
+        "description": "A simple wooden longbow",
+        "quality": "COMMON",
+        "value": [
+            50,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            150,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "TWO_HANDED",
+            "AMMUNITION",
+            "HEAVY"
+        ],
+        "category": "WEAPON"
+    },
+    "Shortbow": {
+        "name": "Short-bow",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "WOOD",
+        "mundane": true,
+        "description": "A simple wooden shortbow",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            80,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "AMMUNITION",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Crossbow, Light": {
+        "name": "Crossbow, light",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A lightweight, wooden crossbow",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            80,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "AMMUNITION",
+            "LOADING",
+            "TWO_HANDED"
+        ],
+        "category": "WEAPON"
+    },
+    "Crossbow, Hand": {
+        "name": "Crossbow, hand",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A small crossbow meant to be fired using one hand",
+        "quality": "COMMON",
+        "value": [
+            75,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            30,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "AMMUNITION",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Crossbow, Heavy": {
+        "name": "Crossbow, heavy",
+        "slot": "MAIN_HAND",
+        "weight": [
+            9,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A sturdy crossbow with a heavy frame",
+        "quality": "COMMON",
+        "value": [
+            50,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d10"
+        ],
+        "damage_type": "PIERCING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            100,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "AMMUNITION",
+            "HEAVY",
+            "LOADING",
+            "TWO_HANDED"
+        ],
+        "category": "WEAPON"
+    },
+    "Sling": {
+        "name": "Sling",
+        "slot": "MAIN_HAND",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A stitched leather sling for propelling stones or shots",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d4"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "SIMPLE",
+        "weapon_range": [
+            30,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "AMMUNITION"
+        ],
+        "category": "WEAPON"
+    },
+    "Claymore": {
+        "name": "Claymore",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A large, two-handed sword with a wide blade",
+        "quality": "COMMON",
+        "value": [
+            75,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            2,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "VERSATILE",
+            "HEAVY"
+        ],
+        "category": "WEAPON"
+    },
+    "Cutlass": {
+        "name": "Cutlass",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A short, curved sword with a wide blade",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d8"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "LIGHT",
+            "FINESSE"
+        ],
+        "category": "WEAPON"
+    },
+    "Falchion": {
+        "name": "Falchion",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A curved sword with a wide blade",
+        "quality": "COMMON",
+        "value": [
+            20,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            2,
+            "d4"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "Kukri": {
+        "name": "Kukri",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A curved, single-edged sword with a short blade",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "FINESSE",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Sai": {
+        "name": "Sai",
+        "slot": "MAIN_HAND",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A pair of short, curved blades",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d4"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "FINESSE",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Chakram": {
+        "name": "Chakram",
+        "slot": "MAIN_HAND",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A disc-shaped weapon with a sharp edge",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d4"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            20,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "FINESSE",
+            "THROWN"
+        ],
+        "category": "WEAPON"
+    },
+    "Meteor Hammer": {
+        "name": "Meteor Hammer",
+        "slot": "MAIN_HAND",
+        "weight": [
+            5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A large, studded weight attached to a long chain",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            2,
+            "d6"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            15,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "HEAVY",
+            "REACH",
+            "SPECIAL"
+        ],
+        "category": "WEAPON"
+    },
+    "Cestus": {
+        "name": "Cestus",
+        "slot": "MAIN_HAND",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": true,
+        "description": "A pair of leather gloves with metal spikes",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            1,
+            "d4"
+        ],
+        "damage_type": "BLUDGEONING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "FINESSE",
+            "LIGHT"
+        ],
+        "category": "WEAPON"
+    },
+    "Wyrmblade": {
+        "name": "Wyrmblade",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2.5,
+            "kg"
+        ],
+        "material": "BONE",
+        "mundane": true,
+        "description": "A strong sword crafted from the bones and scales of a dragon",
+        "quality": "RARE",
+        "value": [
+            100,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            2,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "Nightingale": {
+        "name": "Nightingale",
+        "slot": "MAIN_HAND",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "GOLD",
+        "mundane": false,
+        "description": "A beautiful, golden sword which sings in battle and boosts the morale of its wielder",
+        "quality": "RARE",
+        "value": [
+            100,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            2,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "Sword Of The Sun": {
+        "name": "Sword of the Sun",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": false,
+        "description": "A sword which burns with the power of the sun",
+        "quality": "RARE",
+        "value": [
+            100,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            2,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "Sword Of The Moon": {
+        "name": "Sword of the Moon",
+        "slot": "MAIN_HAND",
+        "weight": [
+            2.5,
+            "kg"
+        ],
+        "material": "IRON",
+        "mundane": false,
+        "description": "A sword which burns with the power of the moon",
+        "quality": "RARE",
+        "value": [
+            100,
+            "GP"
+        ],
+        "binding": false,
+        "quest_item": false,
+        "relic": false,
+        "damage": [
+            2,
+            "d6"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "VERSATILE"
+        ],
+        "category": "WEAPON"
+    },
+    "Dragonbone Blade": {
+        "name": "Dragonbone Blade",
+        "slot": "MAIN_HAND",
+        "category": "WEAPON",
+        "weight": [
+            3.5,
+            "kg"
+        ],
+        "material": "DRAGONBONE",
+        "mundane": "True",
+        "description": "A sharpened blade crafted from the bones of a defeated dragon.",
+        "quality": "RARE",
+        "value": [
+            100,
+            "gp"
+        ],
+        "damage": [
+            1,
+            "d12"
+        ],
+        "damage_type": "SLASHING",
+        "proficiency": "MARTIAL",
+        "weapon_range": [
+            5,
+            "FEET"
+        ],
+        "weapon_properties": [
+            "FINESSE",
+            "LIGHT",
+            "VERSATILE"
+        ],
+        "binding": "False",
+        "quest_item": "False",
+        "relic": "False"
+    }
+}

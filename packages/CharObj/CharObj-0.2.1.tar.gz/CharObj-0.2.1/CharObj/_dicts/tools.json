@@ -1,0 +1,781 @@
+{
+    "Lantern": {
+        "name": "Lantern",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A small lantern with a handle, used to illuminate dark areas",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Cooking Pot": {
+        "name": "Cooking Pot",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A sturdy metal pot for cooking food over a fire",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Fishing Net": {
+        "name": "Fishing Net",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A net used for catching fish and other aquatic creatures",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Lock And Key": {
+        "name": "Lock and Key",
+        "category": "TOOLS",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A simple lock with a matching key for securing belongings",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Compass": {
+        "name": "Compass",
+        "category": "TOOLS",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A navigational instrument used for finding direction",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Climbing Gear": {
+        "name": "Climbing Gear",
+        "category": "TOOLS",
+        "weight": [
+            3,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "Ropes, harnesses, and pitons for aiding in climbing",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Chisel": {
+        "name": "Chisel",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A small metal chisel for carving and shaping materials",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Spade": {
+        "name": "Spade",
+        "category": "TOOLS",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A sturdy metal spade for digging and excavating",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Fishing Rod": {
+        "name": "Fishing Rod",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "WOOD",
+        "mundane": true,
+        "description": "A fishing rod used for recreational fishing",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Lockpick Set": {
+        "name": "Lockpick Set",
+        "category": "TOOLS",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A set of tools used for picking locks and opening secured doors",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Tent Pegs": {
+        "name": "Tent Pegs",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "Metal pegs used to secure tents to the ground",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Mallet": {
+        "name": "Mallet",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "WOOD",
+        "mundane": true,
+        "description": "A wooden mallet used for driving in stakes and other heavy tasks",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Clothesline": {
+        "name": "Clothesline",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A long line used for hanging and drying clothes",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Frying Pan": {
+        "name": "Frying Pan",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A shallow metal pan for frying and cooking food",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Wooden Spoon": {
+        "name": "Wooden Spoon",
+        "category": "TOOLS",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "WOOD",
+        "mundane": true,
+        "description": "A basic wooden spoon for cooking and stirring",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "cp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Brush": {
+        "name": "Brush",
+        "category": "TOOLS",
+        "weight": [
+            0.05,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A small brush used for cleaning or applying paint",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "cp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Sewing Kit": {
+        "name": "Sewing Kit",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A kit containing needles, thread, and small sewing tools",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Pocket Watch": {
+        "name": "Pocket Watch",
+        "category": "TOOLS",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A small watch with a chain for timekeeping",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Hand Broom": {
+        "name": "Hand Broom",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "WOOD",
+        "mundane": true,
+        "description": "A small broom for sweeping up dirt and debris",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Flint And Steel": {
+        "name": "Flint and Steel",
+        "category": "TOOLS",
+        "weight": [
+            0.1,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A set of flint and steel for starting fires",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Tongs": {
+        "name": "Tongs",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "Long handled tools used to hold and manipulate hot metals safely",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Mirror": {
+        "name": "Mirror",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "GLASS",
+        "mundane": true,
+        "description": "A small mirror for personal grooming and reflection",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Component Pouch": {
+        "name": "Component Pouch",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "LEATHER",
+        "mundane": true,
+        "description": "A small pouch for storing spell components",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "gp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Tinderbox": {
+        "name": "Tinderbox",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A small box containing flint, steel, and tinder for starting fires",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Hunting Trap": {
+        "name": "Hunting Trap",
+        "category": "TOOLS",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A mechanical trap used for capturing animals",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Spyglass": {
+        "name": "Spyglass",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "GLASS",
+        "mundane": true,
+        "description": "A handheld telescope for viewing distant objects",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "gp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Cookware Set": {
+        "name": "Cookware Set",
+        "category": "TOOLS",
+        "weight": [
+            3,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A set of pots, pans, and utensils for cooking meals",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Chalkboard Eraser": {
+        "name": "Chalkboard Eraser",
+        "category": "TOOLS",
+        "weight": [
+            0.2,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A sponge-like eraser used for cleaning chalkboards",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "cp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Holy Symbol": {
+        "name": "Holy Symbol",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A religious symbol used for casting divine spells",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "gp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Disguise Kit": {
+        "name": "Disguise Kit",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A kit containing makeup, wigs, and other items for disguising oneself",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "gp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Forgery Kit": {
+        "name": "Forgery Kit",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A kit containing inks, papers, and other items for forging documents",
+        "quality": "COMMON",
+        "value": [
+            15,
+            "gp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Thieves Tools": {
+        "name": "Thieves Tools",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A set of tools used for picking locks and opening secured doors",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "gp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Crowbar": {
+        "name": "Crowbar",
+        "category": "TOOLS",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A metal bar used for prying open doors and containers",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Trusty Shovel": {
+        "name": "Trusty Shovel",
+        "category": "TOOLS",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A sturdy shovel for digging and excavating",
+        "quality": "COMMON",
+        "value": [
+            2,
+            "gp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Herbalism Kit": {
+        "name": "Herbalism Kit",
+        "category": "TOOLS",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A kit containing various herbs and tools for creating herbal remedies",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "gp"
+        ],
+        "binding": "BOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Silk Rope": {
+        "name": "Silk Rope",
+        "category": "TOOLS",
+        "weight": [
+            10,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A 50 ft. length of rope made from silk",
+        "quality": "COMMON",
+        "value": [
+            10,
+            "gp"
+        ],
+        "binding": "BOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Dungeoneers Pack": {
+        "name": "Dungeoneer's Pack",
+        "category": "TOOLS",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A pack of assorted tools and supplies often used by spelunkers",
+        "quality": "COMMON",
+        "value": [
+            1,
+            "cp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Merchants Scale": {
+        "name": "Merchant's Scale",
+        "category": "TOOLS",
+        "weight": [
+            0.5,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A small scale used by merchants to weigh goods",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Climbers Kit": {
+        "name": "Climber's Kit",
+        "category": "TOOLS",
+        "weight": [
+            3,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A specialized kit for aiding in climbing and mountaineering",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Navigators Tools": {
+        "name": "Navigator's Tools",
+        "category": "TOOLS",
+        "weight": [
+            1,
+            "kg"
+        ],
+        "material": "OTHER",
+        "mundane": true,
+        "description": "A set of tools used for navigation and mapmaking",
+        "quality": "COMMON",
+        "value": [
+            25,
+            "gp"
+        ],
+        "binding": "BOUND",
+        "quest_item": false,
+        "relic": false
+    },
+    "Axe": {
+        "name": "Axe",
+        "category": "TOOLS",
+        "weight": [
+            2,
+            "kg"
+        ],
+        "material": "METAL",
+        "mundane": true,
+        "description": "A single-edged axe for chopping wood and other materials",
+        "quality": "COMMON",
+        "value": [
+            5,
+            "sp"
+        ],
+        "binding": "UNBOUND",
+        "quest_item": false,
+        "relic": false
+    }
+}
