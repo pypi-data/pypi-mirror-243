@@ -1,0 +1,4 @@
+[console_scripts]
+gitutils-cherry-pick = cli.git_batch_cherry_picker:git_batch_cherry_picker
+gitutils-merge = cli.git_batch_merger:git_batch_merger
+
