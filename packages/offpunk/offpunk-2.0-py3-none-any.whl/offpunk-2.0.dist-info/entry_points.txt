@@ -1,0 +1,5 @@
+[console_scripts]
+ansicat = ansicat:main
+netcache = netcache:main
+offpunk = offpunk:main
+opnk = opnk:main
