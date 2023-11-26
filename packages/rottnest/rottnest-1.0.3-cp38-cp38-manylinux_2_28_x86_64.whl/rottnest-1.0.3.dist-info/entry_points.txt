@@ -1,0 +1,3 @@
+[console_scripts]
+rottnest-index = rottnest.index:main
+rottnest-search = rottnest.search:main
