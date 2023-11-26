@@ -1,0 +1,7 @@
+*~
+*.pyc
+setup.py
+CMakeLists.txt.user
+CMakeUserPresets.json
+**/build/*
+.idea
