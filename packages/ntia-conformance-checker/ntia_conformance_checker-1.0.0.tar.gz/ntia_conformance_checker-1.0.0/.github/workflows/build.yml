@@ -1,0 +1,33 @@
+name: build
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.8"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pipenv
+        # use --pre flag to enable use of prerelease package versions
+        pipenv install --pre
+        pipenv install pytest coverage
+    - name: Test with pytest
+      env:
+          # This token is provided by Actions,
+          # you do not need to create your own token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        pipenv run coverage run -m pytest
+        pipenv run coverage xml -o coverage/python.xml

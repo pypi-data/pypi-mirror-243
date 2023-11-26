@@ -1,0 +1,2 @@
+[console_scripts]
+ntia-checker = ntia_conformance_checker.main:main
