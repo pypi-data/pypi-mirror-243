@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: setofmark
+Version: 0.1.0rc1
+Summary: Visual Prompting for Large Multimodal Models (LMMs)
+Home-page: https://github.com/roboflow/set-of-mark
+License: MIT
+Author: Piotr Skalski
+Author-email: piotr.skalski92@gmail.com
+Maintainer: Piotr Skalski
+Maintainer-email: piotr.skalski92@gmail.com
+Requires-Python: >=3.8,<3.12.0
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development
+Classifier: Typing :: Typed
+Requires-Dist: supervision (>=0.17.0rc3,<0.18.0)
+Project-URL: Documentation, https://github.com/roboflow/set-of-mark/blob/main/README.md
+Project-URL: Repository, https://github.com/roboflow/set-of-mark
+Description-Content-Type: text/markdown
+
+# set-of-mark
+
+## 👋 hello
+
+TODO
+
+## 💻 install
+
+TODO
+
+## 💜 acknowledgement
+
+TODO
