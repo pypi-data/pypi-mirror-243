@@ -1,0 +1,87 @@
+# Analyzer SQream Logs
+
+The log analyzer has the ability to help us find the correct logs faster and in a more intuitive way.
+
+* **Version:**  0.0.3
+
+Requirements
+=====================
+
+* Python 3.9+
+
+How to use the tool
+=====================
+run either:
+
+    ./sq_log_analyzer.py --help 
+    python3 sq_log_analyzer.py --help
+
+This will show the full syntax with all options and acronyms, as well as, help details if you are not sure of the use.
+
+Please note, using --help (or -h) will override any other arguments, which can help when in doubt
+
+
+Flags
+======
+
+1.Load logs
+------------
+
+The tool needs to know which files to use, we can specify a directory or a specific file:
+
+    --file-path (-p), requires a specific file path
+    specify the full path (e.g. /media/weka_delivery/ti_folder/sqream_20230830_results.csv)
+    specify just file name, the tool will search in the current directory
+    Usage: --file-path=”sqream_20230830_results.csv” or --file-path=”/media/weka_delivery/ti_folder/sqream_20230830_results.csv”
+
+    --dir-path (-P), require a specific directory path
+    specify the full path (e.g. /media/weka_delivery/ti_folder/10082023)
+    specify just file name, the tool will search in the current directory
+    Usage: --file-path=”10082023” or --file-path=”/media/weka_delivery/ti_folder/10082023”
+
+the tool will search in all the subdirectories for sqream_logs files
+
+Use the file filters (--file-date-filter/-fdf or --file-month-filter/-fmf) to help the tool search only the relevant files
+
+2.Filters
+----------
+Use as many filters as relevant to your search:
+
+    --from-date/--to-date: date and time filters
+    --message-filter: any message in the logs, including, queries, known phrases (e.g. query before parsing)
+    --info-level: INFO, ERROR or DEBUG (most logs are info)
+    --ip-address: the server ip address
+    --worker-port: the worker port
+    --statement-id: the statement id if you are looking for a specific statement
+    --connection-id: the connection id
+    --service-name: service name
+    --message-type: the number of the message, like 200 for execution plan
+
+3.Additional Parameters
+-------------------------
+The tool support querying the results using mysql syntax:
+
+    use --query=”specific query” or --query-file=”file_path.sql” for query in a file
+
+if you use column names with space in the name (like “statement id”), you must use the query file as the name must come in double quotes.
+
+The tool support saving results to file:
+
+    use --output-dir=”directory_name” to save the file as out.csv in the directory
+    use --output-path=”file_path.csv” to save to a specific file
+
+please note, using the same directory dir will override old files
+
+Important
+===========
+* The tool currently supports only the SQreamDB logs (the one inside the cluster)
+
+* The tool will only read files with the pattern: sqream_yyyymmdd_*.log
+
+* When specifying a directory or a file, it will search in the current directory unless a full path is specified.
+
+* The name of the table if you add a query is df, always
+
+* When running a query a warning may appear (“UserWarning: the 'timedelta' type is not supported”), ignore it
+
+* Queries may take long to run, so make sure it runs on the smallest dataset possible
