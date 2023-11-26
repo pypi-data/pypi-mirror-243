@@ -1,0 +1,4 @@
+include LICENSE
+include README.md
+recursive-include sada/templates *
+recursive-include sada/static *
