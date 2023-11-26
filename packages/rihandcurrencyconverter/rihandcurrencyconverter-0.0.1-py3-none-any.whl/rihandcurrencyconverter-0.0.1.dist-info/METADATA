@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: rihandcurrencyconverter
+Version: 0.0.1
+Summary: A basic currency converter
+Home-page: 
+Author: Rihand Parde
+Author-email: rihand.parde@gmail.com
+License: MIT
+Keywords: currency converter
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.txt
+
+A basic python library that converts currency values
+
+Change Log
+==========
+
+0.0.1 (16/11/2023)
+------------------
+- First Release
