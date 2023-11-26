@@ -1,0 +1,19 @@
+[build-system]
+requires = [
+    "setuptools",
+    "pybind11",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[tool.cibuildwheel]
+archs = ["auto64"]
+skip = ["*musl*"]
+
+[[tool.cibuildwheel.overrides]]
+select = "*macosx*"
+before-all = "brew install tbb mpfr gmp"
+
+[[tool.cibuildwheel.overrides]]
+select = "*manylinux*"
+before-all = "yum install -y gcc-c++ tbb-devel mpfr-devel gmp-devel"

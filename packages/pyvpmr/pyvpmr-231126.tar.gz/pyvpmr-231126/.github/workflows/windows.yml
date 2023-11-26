@@ -1,0 +1,54 @@
+name: Windows
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  windows:
+    runs-on: windows-2022
+    timeout-minutes: 120
+    steps:
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: mingw64
+          update: true
+          install: git mingw-w64-x86_64-cmake mingw-w64-x86_64-tbb mingw-w64-x86_64-gcc mingw-w64-x86_64-ninja mingw-w64-x86_64-gmp mingw-w64-x86_64-mpfr mingw-w64-x86_64-7zip
+      - name: Clone
+        uses: actions/checkout@v3
+      - name: Version
+        run: |
+          echo ("VPMR_VERSION="+(get-date -format "yyMMdd")) >> $env:GITHUB_ENV
+      - name: Compile
+        shell: msys2 {0}
+        run: |
+          git submodule update --init --recursive
+          cd eigen && git apply --ignore-space-change --ignore-whitespace ../patch_size.patch && cd ..
+          sed -i 's/3.24/3.13/g' CMakeLists.txt
+          mkdir build && cd build
+          cmake -G Ninja -DCMAKE_BUILD_TYPE=Release ..
+          cmake --build .
+          mkdir release
+          ldd vpmr.exe
+          cp vpmr.exe release
+          cmake -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+          cmake --build .
+          cp vpmr.exe release/vpmr-dbg.exe
+          cp /mingw64/bin/libgcc_s_seh-1.dll release
+          cp /mingw64/bin/libstdc++-6.dll release
+          cp /mingw64/bin/libwinpthread-1.dll release
+          cp /mingw64/bin/libgmp-10.dll release
+          cp /mingw64/bin/libmpfr-6.dll release
+          cp /mingw64/bin/libtbb12.dll release
+          cd release
+          7z a ../../vpmr-${{ env.VPMR_VERSION }}-win.7z *
+      - name: Release
+        if: contains(github.event.head_commit.message, '[publish]')
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: vpmr-${{ env.VPMR_VERSION }}-win.7z
+          asset_name: vpmr-${{ env.VPMR_VERSION }}-win.7z
+          tag: v${{ env.VPMR_VERSION }}
+          prerelease: false
+          overwrite: true

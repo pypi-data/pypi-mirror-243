@@ -1,0 +1,9 @@
+*vpmr*.so
+*.egg-info
+.cache
+.idea/
+.vscode/
+build/
+cmake-build-*/
+wheelhouse
+__pycache__

@@ -1,0 +1,53 @@
+diff --git a/Eigen/src/SVD/BDCSVD.h b/Eigen/src/SVD/BDCSVD.h
+index a4ba8a7a4..8a55c2af2 100644
+--- a/Eigen/src/SVD/BDCSVD.h
++++ b/Eigen/src/SVD/BDCSVD.h
+@@ -34,6 +34,8 @@
+ #include <iostream>
+ #endif
+ 
++#include <tbb/parallel_reduce.h>
++
+ namespace Eigen {
+ 
+ #ifdef EIGEN_BDCSVD_DEBUG_VERBOSE
+@@ -834,6 +836,16 @@ template <typename MatrixType, int Options>
+ typename BDCSVD<MatrixType, Options>::RealScalar BDCSVD<MatrixType, Options>::secularEq(
+     RealScalar mu, const ArrayRef& col0, const ArrayRef& diag, const IndicesRef& perm, const ArrayRef& diagShifted,
+     RealScalar shift) {
++  return tbb::parallel_deterministic_reduce(
++      tbb::blocked_range<Index>(Index(0), perm.size()), RealScalar(1),
++      [&](const tbb::blocked_range<Index>& r, RealScalar running_total) {
++        for (auto i = r.begin(); i < r.end(); ++i) {
++          Index j = perm(i);
++          running_total += (col0(j) / (diagShifted(j) - mu)) * (col0(j) / (diag(j) + shift + mu));
++        }
++        return running_total;
++      },
++      std::plus<>());
+   Index m = perm.size();
+   RealScalar res = Literal(1);
+   for(Index i=0; i<m; ++i)
+@@ -1198,11 +1210,17 @@ void BDCSVD<MatrixType, Options>::computeSingVecs(const ArrayRef& zhat, const Ar
+     else
+     {
+       U.col(k).setZero();
+-      for(Index l=0;l<m;++l)
+-      {
+-        Index i = perm(l);
+-        U(i,k) = zhat(i)/(((diag(i) - shifts(k)) - mus(k)) )/( (diag(i) + singVals[k]));
+-      }
++      //      for(Index l=0;l<m;++l)
++      //      {
++      //        Index i = perm(l);
++      //        U(i,k) = zhat(i)/(((diag(i) - shifts(k)) - mus(k)) )/( (diag(i) + singVals[k]));
++      //      }
++      tbb::parallel_for(tbb::blocked_range<Index>(0, m), [&](const tbb::blocked_range<Index>& r) {
++        for (Index l = r.begin(); l != r.end(); ++l) {
++          Index i = perm(l);
++          U(i, k) = zhat(i) / (((diag(i) - shifts(k)) - mus(k))) / ((diag(i) + singVals[k]));
++        }
++      });
+       U(n,k) = Literal(0);
+       U.col(k).normalize();
+ 
