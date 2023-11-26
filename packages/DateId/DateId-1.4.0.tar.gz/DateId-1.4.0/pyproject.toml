@@ -1,0 +1,80 @@
+[project]
+name = 'DateId'
+version = '1.4.0'
+authors = [
+    { name = 'Hendrik du Toit', email = 'hendrik@brightedge.co.za' },
+]
+description = 'Calculate an integer value for months and dates from a base date.'
+license = {file = 'LICENSE'}
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Information Technology',
+    'Topic :: Software Development',
+    'Topic :: Software Development :: Libraries',
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11'
+]
+readme = {file = 'README.rst', content-type = 'text/x-rst'}
+requires-python = '>=3.10, <3.12'
+dependencies = [
+    # ToDo
+    # Remove if installation works fine
+#    'beetools<5',
+  ]
+
+[project.optional-dependencies]
+dev = [
+    'build',
+    'git-it',
+    'pydantic-settings',
+    'Pygments',
+    'pytest',
+    'pytest-cov',
+    'rstcheck',
+    'time_machine',
+]
+
+[project.urls]
+Changelog = 'https://github.com/hendrikdutoit/DateId/blob/enhancement/master/CHANGES.md'
+Homepage = 'https://github.com/hendrikdutoit/DateId'
+
+[build-system]
+requires = [
+    "build",
+    "setuptools >= 68",
+    "wheel",
+    "setuptools-git >= 1.1",
+]
+build-backend = 'setuptools.build_meta'
+
+[tool.black]
+skip-string-normalization = true
+line-length = 120
+target-version = ["py311"]
+
+[tool.codespell]
+count = ""
+quiet-level = 2
+skip = 'documentation/Archive/*'
+
+[tool.coverage.run]
+source = ['src']
+
+[tool.pytest.ini_options]
+addopts = ['--import-mode=importlib', '-vv', '--ignore-glob=*\\Archive']
+#addopts = ['--import-mode=importlib', "-v", "--cov=./", "--ignore-glob=*\\Archive", "--cov-report=html"]
+pythonpath = ['src', 'tests' ]
+markers = [
+    "select: Run a selection of tests",
+]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+#python_functions = 'demo_setup'
+testpaths = 'tests'
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false

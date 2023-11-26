@@ -1,0 +1,6 @@
+[run]
+omit =
+    setup.py
+
+[html]
+directory = CovReport
