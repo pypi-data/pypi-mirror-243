@@ -1,0 +1,16 @@
+aiotrans/__init__.py,sha256=pDAWYhxH0ZaxlKwFjk1YhLBiCTEfKdzov5OLD-JHXNQ,37
+aiotrans/cache/__init__.py,sha256=KNc0k3SZz054YuxgjryRLqygfw7tnkE36bZx3yIeBGg,67
+aiotrans/cache/cache.py,sha256=1Of4QmB7bIEBXSNgUC9LdYKJsuNf4RPPmNTJ_3gt53s,535
+aiotrans/cache/storage/__init__.py,sha256=IRsAKVKS1RyJ_kAS4h3t8pejGHu03jCGS7MEAwjXLr8,42
+aiotrans/cache/storage/base.py,sha256=sa9wp6hpN7jPYkau1TuilYm_WPu2PoKDibMSatxS9kE,270
+aiotrans/cache/storage/memory_storage.py,sha256=Y9pCORnv-Bm7gfKPJ4_HtElMiHTcEw9KjzSA0eIMBP0,507
+aiotrans/enums.py,sha256=dW97ek5JUJqt-Gd8ElQtgzzhMFxrX7-HFwga552gJeE,170
+aiotrans/translaitor.py,sha256=nOYi_nSq0hRgwZRjWNNzZL2MigXXNdyyz8wPbcnbgVE,1061
+aiotrans/transport/__init__.py,sha256=qrEKl1j-c3n9XklLQfUg1275Y1q3eMZ2GhdRi3V4RZw,126
+aiotrans/transport/aiohttp_t.py,sha256=akyy21pPHg_WZ7tqYw7gtfKa5I2RZyYtz6wVn7djieY,622
+aiotrans/transport/base.py,sha256=LCQGM8sd39Z5IeDN2w7sOuAaDhcXpfgh7YGDuzVSB6U,337
+aiotrans/transport/httpx_t.py,sha256=xuMJd5qvEz2GT8_rEv0_nYNJOx6XV9RibWvzDp67y_I,591
+aiotrans/utils.py,sha256=VnjkryPnMZ3Ud9KZQLlpNf1BbBgGx1NU9xdRP9ZNwps,161
+aiotrans-1.1.dist-info/METADATA,sha256=ZDxFCMcyO2Gr5CqCpJtz-ORtIFrPnW0K3prp57qvOXE,1030
+aiotrans-1.1.dist-info/WHEEL,sha256=vVCvjcmxuUltf8cYhJ0sJMRDLr1XsPuxEId8YDzbyCY,88
+aiotrans-1.1.dist-info/RECORD,,
