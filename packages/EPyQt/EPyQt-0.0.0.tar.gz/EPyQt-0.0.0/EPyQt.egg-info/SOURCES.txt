@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+EPyQt/__init__.py
+EPyQt.egg-info/PKG-INFO
+EPyQt.egg-info/SOURCES.txt
+EPyQt.egg-info/dependency_links.txt
+EPyQt.egg-info/requires.txt
+EPyQt.egg-info/top_level.txt
+EPyQt/EWidgets/__init__.py
