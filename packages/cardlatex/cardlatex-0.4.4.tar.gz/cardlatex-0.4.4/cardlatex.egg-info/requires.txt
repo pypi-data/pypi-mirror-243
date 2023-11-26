@@ -1,0 +1,10 @@
+click
+openpyxl
+pandas
+wand
+pikepdf
+
+[dev]
+pytest
+coverage
+flake8
