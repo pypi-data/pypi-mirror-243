@@ -1,0 +1,2 @@
+class VerselectAppCreationError(Exception):
+    pass
