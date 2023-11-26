@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: PyObjectInterface
+Version: 0.0.2
+Summary: Create a web interface to interact with a class
+Home-page: https://github.com/RobertJN64/PyObjectInterface
+Author: Robert Nies
+Author-email: robertjnies@gmail.com
+License: MIT
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: typing_extensions
+Requires-Dist: flask
+
+# PyObjectInterface
+
+![Tests Badge](https://github.com/RobertJN64/PyObjectInterface/actions/workflows/tests.yml/badge.svg)
+![Python Version Badge](https://img.shields.io/pypi/pyversions/PyObjectInterface)
+![License Badge](https://img.shields.io/github/license/RobertJN64/PyObjectInterface)
+
+`#TODO - good desc`
