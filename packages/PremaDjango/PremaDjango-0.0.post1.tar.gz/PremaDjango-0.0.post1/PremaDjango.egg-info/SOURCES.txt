@@ -1,0 +1,15 @@
+.DS_Store
+.gitignore
+LICENSE.txt
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+.github/workflows/python-publish.yml
+PremaDjango/__init__.py
+PremaDjango/settings.py
+PremaDjango.egg-info/PKG-INFO
+PremaDjango.egg-info/SOURCES.txt
+PremaDjango.egg-info/dependency_links.txt
+PremaDjango.egg-info/requires.txt
+PremaDjango.egg-info/top_level.txt
