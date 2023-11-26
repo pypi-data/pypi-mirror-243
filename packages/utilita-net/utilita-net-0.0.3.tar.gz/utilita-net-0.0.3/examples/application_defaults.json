@@ -1,0 +1,20 @@
+{
+    "application_settings": {
+        "backend_port": 21774,
+        "client_id": "898b8d54-54fe-4128-8819-11fd7bed011a",
+        "tenant_id": "ca19e2be-cf9c-447c-8053-e374be7c1ceb",
+        "redirect_uri": "http://localhost:21774/token",
+        "authority": "https://login.microsoftonline.com/ca19e2be-cf9c-447c-8053-e374be7c1ceb"
+    },
+    "default_scopes": [
+        "User.Read",
+        "Chat.Create",
+        "Chat.ReadWrite",
+        "ChatMessage.Read",
+        "ChatMessage.Send",
+        "Sites.ReadWrite.All",
+        "Team.ReadBasic.All",
+        "Channel.ReadBasic.All",
+        "ChannelMessage.Send"
+    ]
+}
