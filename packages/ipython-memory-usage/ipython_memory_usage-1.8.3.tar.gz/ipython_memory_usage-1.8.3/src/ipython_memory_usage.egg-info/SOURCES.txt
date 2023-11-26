@@ -1,0 +1,13 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+pyproject.toml
+src/ipython_memory_usage/__init__.py
+src/ipython_memory_usage/ipython_memory_usage.py
+src/ipython_memory_usage/ipython_memory_usage_perf.py
+src/ipython_memory_usage/perf_process.py
+src/ipython_memory_usage.egg-info/PKG-INFO
+src/ipython_memory_usage.egg-info/SOURCES.txt
+src/ipython_memory_usage.egg-info/dependency_links.txt
+src/ipython_memory_usage.egg-info/requires.txt
+src/ipython_memory_usage.egg-info/top_level.txt
