@@ -1,0 +1,15 @@
+circumplex-0.1.4.dist-info/METADATA,sha256=Cvx-Vk2hNebR_8ffvj8NO4AXSYDoK1ySyG-1rYUtX9U,3469
+circumplex-0.1.4.dist-info/WHEEL,sha256=C8f_gqhOWmHrh81n3Ukx5iURrqMhsHla81fuY1yuwvs,90
+circumplex-0.1.4.dist-info/licenses/LICENSE,sha256=YF6QR6Vjxcg5b_sYIyqkME7FZYau5TfEUGTG-0JeRK0,35129
+circumplex/__init__.py,sha256=BeAlc6sTGJzAuxSe4jsgqnJy4zd6OJa8QDmDl3_JsRw,105
+circumplex/circumplex.py,sha256=x1WSRUu90kYiSu2ODqwrPTq0KWPyNtAq1GVDox4uKXg,17624
+circumplex/data/SATP Dataset v1.4.xlsx,sha256=mGuBWwVm_n2IK42tEB8FxrOxaNTOAVIekc-kBwt9EVM,3215288
+circumplex/data/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+circumplex/data/jz2017.csv,sha256=5DH5ETOFgA_awVJHHGtbaJeFa0-Sr8nVo2Exkv31CiQ,67362
+circumplex/datasets.py,sha256=DqTvU_MFCBHIxg6zBZvkT_UsJJEkusrgSaYqd4pyWGU,472
+circumplex/instrument.py,sha256=Cx8x5Ek-Sy63iCUAmMKaAlzQi0kRO_bF6cPCHgiXL_4,7223
+circumplex/instruments/CSIP.json,sha256=gP7-5Cv323NblCZY70xZhhBNF0nJ5Mg7ejcO-14QLT4,2070
+circumplex/instruments/SATP-eng.json,sha256=vkNV_FNouHeY170CLbSlICe414kQTiZbt3m_AJjHKJk,1182
+circumplex/instruments/SSQP-eng.json,sha256=9qWTWk1P-JtFERCvVkqm5t6RAFGr-mu31si_ffNOQ2o,1209
+circumplex/instruments/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+circumplex-0.1.4.dist-info/RECORD,,
