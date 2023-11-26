@@ -1,0 +1,82 @@
+Metadata-Version: 2.1
+Name: ipa-tool
+Version: 1.4.9
+Summary: Simple tool for getting infos from Apple ipa archive
+Author: DrEgg
+Author-email: dev@dregg.me
+Requires-Python: >=3.7.9,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: lief (>=0.12.3,<0.13.0)
+Requires-Dist: rich (>=12.6.0,<13.0.0)
+Requires-Dist: typer (>=0.6.1,<0.7.0)
+Description-Content-Type: text/markdown
+
+# `ipa-tool`
+
+**A tool for collecting infos of apple ipa**
+
+### Installation
+**Over PyPi (recommanded)**
+```shell
+pip install ipa-tool
+```
+
+**Over wheel**
+```shell
+pip install --user {find in release}.whl
+```
+
+### Use as CLI
+**Usage**:
+
+```console
+$ ipa-tool COMMAND [Options] [ARGS]... 
+```
+
+**Command**:
+
+* `get-info`: Returns ipa infos in json
+* `cgbi2png`: Turns apple cgbi into normal png
+
+**Arguments**:
+
+* `IPA_PATH`: [required]
+
+**Options**:
+
+* `-mi / --get-multi-icon`: [default: False]
+* `-o`: Output path
+* `--help`: Show this message and exit.
+
+### Use as python package
+
+```python
+from ipa_tool import ipaInfos
+
+ipa_infos = ipaInfos( {ipa_path} )
+```
+
+`ipaInfos` will return a class
+```python
+class ipaInfos():
+    name: str
+    device: list
+    size: int
+    version: str
+    bundleID: str
+    encrypt: bool
+    minOS: str
+    icon: dict
+    md5: bytes
+    rawPlist: dict
+```
+You can turn it into dict by
+```python
+ipa_info_dict = ipa_tool.__dict__
+```
+
