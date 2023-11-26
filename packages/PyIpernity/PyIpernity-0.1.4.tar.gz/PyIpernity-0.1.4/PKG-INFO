@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: PyIpernity
+Version: 0.1.4
+Summary: Library to access the Ipernity API
+Author-email: rcw-2 <mail@rcw-2.de>
+Project-URL: documentation, https://pyipernity.readthedocs.io/
+Project-URL: homepage, https://github.com/rcw-2/python-ipernity
+Keywords: ipernity
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: requests
+Provides-Extra: docs
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: tomli; python_version < "3.11" and extra == "docs"
+
+PyIpernity README
+===================
+
+Python library to access the `Ipernity API <http://www.ipernity.com/help/api>`_.
+
+Ipernity is non-commercial photo community. For more information, visit 
+`<https://www.ipernity.com>`_.
+
+.. warning:: This package is still under development. Use at your own risk.
+
+
+Installation
+-------------
+
+Via PyPi:
+
+.. code-block:: bash
+    
+    pip install PyIpernity
+
+The source code is available at `<http://github.com/rcw-2/python-ipernity>`_.
+
+

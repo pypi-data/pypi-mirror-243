@@ -1,0 +1,7 @@
+requests
+
+[docs]
+sphinx
+
+[docs:python_version < "3.11"]
+tomli
