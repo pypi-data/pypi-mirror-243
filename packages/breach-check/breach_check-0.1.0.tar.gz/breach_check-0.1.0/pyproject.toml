@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "breach-check"
+version = "0.1.0"
+description = "check for data breaches for provided emails"
+authors = ["Dhrumil Mistry <56185972+dmdhrumilmistry@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiohttp = "^3.9.0"
+rich = "^13.7.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+
+[tool.poetry.urls]
+"Home" = "https://github.com/dmdhrumilmistry/breach-check"
+"Bug Tracker" = "https://github.com/dmdhrumilmistry/breach-check/issues"
+"Support" = "https://github.com/sponsors/dmdhrumilmistry/"
+"PayPal" = "https://paypal.me/dmdhrumilmistry"
+
+[tool.poetry.scripts]
+breach-check = "breach_check.__main__:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
