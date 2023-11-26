@@ -1,0 +1,6 @@
+[console_scripts]
+llm_vm_run_agent = llm_vm.agents.agent_interface:call_agent
+llm_vm_run_agent_backwards_chaining = llm_vm.agents.BACKWARD_CHAINING.agent:BACKWARD_CHAINING_main
+llm_vm_run_agent_flat = llm_vm.agents.FLAT.agent:flat_main
+llm_vm_run_agent_rebel = llm_vm.agents.REBEL.agent:rebel_main
+llm_vm_server = llm_vm.server.main:cli
