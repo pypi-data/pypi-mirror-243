@@ -1,0 +1,9 @@
+python38.zip
+.
+./Lib
+./Lib/site-packages
+./DLLs
+./libs
+./tcl
+
+import site
