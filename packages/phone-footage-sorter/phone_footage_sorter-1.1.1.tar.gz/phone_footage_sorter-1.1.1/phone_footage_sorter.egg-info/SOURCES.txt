@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+phone_footage_sorter.egg-info/PKG-INFO
+phone_footage_sorter.egg-info/SOURCES.txt
+phone_footage_sorter.egg-info/dependency_links.txt
+phone_footage_sorter.egg-info/entry_points.txt
+phone_footage_sorter.egg-info/requires.txt
+phone_footage_sorter.egg-info/top_level.txt
+src/__init__.py
+src/phone_footage_sorter/entry.py
+tests/__init__.py
+tests/conftest.py
+tests/test_integration.py
+tests/test_system.py
+tests/test_unit.py
