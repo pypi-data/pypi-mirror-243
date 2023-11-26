@@ -1,0 +1,8 @@
+[build-system]
+requires = ["setuptools",
+            "wheel",
+            "Cython"]
+
+[tool.ruff]
+target-version = "py38"
+line-length = 120
