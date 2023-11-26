@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "letstune"
+version = "0.3.0"
+description = "Hyper-parameter tuning for the masses!"
+authors = ["Michał Słapek <28485371+mslapek@users.noreply.github.com>"]
+
+license = "MIT"
+
+readme = "README.md"
+keywords = ["machine-learning", "hyperparameter-tuning", "deep-learning"]
+
+homepage = "https://www.letstune.org/"
+repository = "https://github.com/mslapek/letstune"
+documentation = "https://letstune.readthedocs.io/"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+numpy = "^1.22.3"
+pandas = "^1.4.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1"
+black = "^22.1.0"
+mypy = "^0.991"
+flake8 = "^4.0.1"
+pytest-mock = "^3.7.0"
+isort = "^5.10.1"
+
+scikit-learn = "^1.0.2"
+scipy = "^1.8.0"
+Sphinx = "^4.5.0"
+sphinx-rtd-theme = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
