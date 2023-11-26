@@ -1,0 +1,2 @@
+[console_scripts]
+broker-ql = broker_ql.entrypoints.main:main
