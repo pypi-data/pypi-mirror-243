@@ -1,0 +1,189 @@
+[tool.poetry]
+name = "git-ws-repo"
+version = "0.2.0"
+description = "Google's git-repo replacement powered by git-ws"
+readme = "README.md"
+license = "LGPL-3.0-or-later"
+authors = [
+    "c0fec0de <c0fec0de@gmail.com>",
+    "Martin Höher <martin@rpdev.net>",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+packages = [
+    { include = "gitwsrepo" },
+]
+
+[project.urls]
+"Homepage" = "https://github.com/c0fec0de/git-ws-repo"
+"Documentation" = "https://git-ws-repo.readthedocs.io/en/stable/"
+"Bug Tracker" = "https://github.com/c0fec0de/git-ws-repo/issues"
+
+[tool.poetry.plugins.'gitws.manifestformat']
+RepoManifestFormat = 'gitwsrepo.repomanifestformat:RepoManifestFormat'
+
+[tool.poetry.scripts]
+repo = 'gitwsrepo._cli:main'
+
+[tool.poetry.dependencies]
+python = '^3.8.2'
+defusedxml = "^0.7.1"
+git-ws = "^2.0.0"
+
+[tool.poetry.group.test.dependencies]
+coveralls = "^3.3.1"
+mypy = "~1.0.0"
+pre-commit = "^3.5.0"
+pytest = '^7.0'
+pytest-cov = "^4.1.0"
+pytest-xdist = "^3.5.0"
+ruff = "^0.1.6"
+
+[tool.poetry.group.doc.dependencies]
+sphinx = '^5.1.1'
+sphinx-rtd-theme = "^1.0.0"
+sphinxemoji = ">=0.2.0"
+
+[build-system]
+requires = ["poetry_core>=1.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 120
+fix = true
+select = [
+    # isort
+    "I",
+    # pyflakes
+    "F",
+    # pycodestyle
+    "E", "W",
+    # pydocstyle
+    "D",
+    # flake8-2020
+    "YTT",
+    # flake8-bugbear
+    "B",
+    # flake8-quotes
+    "Q",
+    # flake8-debugger
+    "T10",
+    # flake8-gettext
+    "INT",
+    # pylint
+    "PL",
+    # misc lints
+    "PIE",
+    # flake8-pyi
+    "PYI",
+    # tidy imports
+    "TID",
+    # implicit string concatenation
+    "ISC",
+    # type-checking imports
+    "TCH",
+    # comprehensions
+    "C",
+    # pygrep-hooks
+    "PGH",
+    # Ruff-specific rules
+    "RUF",
+    # flake8-bandit: exec-builtin
+    "S102",
+    # numpy-legacy-random
+    "NPY002",
+    # Perflint
+    "PERF",
+    # flynt
+    "FLY",
+    # flake8-logging-format
+    "G",
+    # pyupgrade
+    "UP",
+]
+ignore = [
+    # too-many-arguments
+    'PLR0913',
+    # Ambigious
+    'ISC001',
+    # support type: ignore
+    'PGH003',
+    # poetry deviates
+    'RUF200',
+    # Ambigious doc
+    'D203', 'D212', 'D402', 'D406',
+    # Multiline doc is ok.
+    'D200',
+    # We use the class for constructor doc
+    'D107',
+    # We keep legacy on Optional[] and Union[]
+    'UP007',
+    # Magic method documentation is optional
+    'D105',
+    # Section underline
+    'D407',
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+"gitwsrepo/_cli/**.py" = ["PLR0913"]
+
+[tool.pytest.ini_options]
+addopts = """
+    --cov gitwsrepo
+    --cov-report term
+    --cov-report html -n auto
+    --doctest-glob=docs/*.rst
+    --doctest-modules
+    --ignore-glob=tests/testdata*
+    --ignore=docs/conf.py
+    --log-level=DEBUG
+    --junitxml=report.xml
+"""
+filterwarnings = [
+    "error",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    'return NotImplemented',
+    'raise NotImplementedError()',
+    'pragma: no cover',
+    'assert False',
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+envlist = py,py-min
+isolated_build = True
+
+[tox:.package]
+basepython = python3
+
+[testenv:py]
+allowlist_externals = *
+setenv =
+    LANGUAGE=en_US
+
+commands =
+    poetry install --with=test --with=doc
+    poetry run pre-commit run --all-files
+    poetry run pytest -vv
+    poetry run mypy gitwsrepo
+    poetry run make html -C docs
+
+[testenv:py-min]
+allowlist_externals = *
+commands =
+    poetry install --without=test --without=doc
+    poetry run python -c 'import gitwsrepo'
+    poetry run repo --version
+    poetry run python -m gitwsrepo --version
+"""
