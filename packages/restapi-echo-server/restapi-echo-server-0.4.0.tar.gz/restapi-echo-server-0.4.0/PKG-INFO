@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: restapi-echo-server
+Version: 0.4.0
+Summary: Simple REST-API echo server
+Home-page: https://github.com/kthrdei/restapi-echo-server
+License: MIT
+Keywords: rest-api,echo
+Author: dei
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Project-URL: Repository, https://github.com/kthrdei/restapi-echo-server
+Description-Content-Type: text/markdown
+
+# restapi-echo-server
+Simple REST-API echo server.
+
+```
+python -m restapi_echo_server --host 0.0.0.0 --port 8080
+```
+
+
+# Requirements
+- Python >= 3.8
+
+
+# Installation
+```
+pip install restapi-echo-server
+```
+
+
+# License
+MIT
+
