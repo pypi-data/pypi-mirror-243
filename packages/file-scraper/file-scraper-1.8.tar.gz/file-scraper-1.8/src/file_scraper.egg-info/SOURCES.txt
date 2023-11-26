@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/file_scraper/__init__.py
+src/file_scraper/default.json
+src/file_scraper/file_scraper.py
+src/file_scraper.egg-info/PKG-INFO
+src/file_scraper.egg-info/SOURCES.txt
+src/file_scraper.egg-info/dependency_links.txt
+src/file_scraper.egg-info/entry_points.txt
+src/file_scraper.egg-info/requires.txt
+src/file_scraper.egg-info/top_level.txt
