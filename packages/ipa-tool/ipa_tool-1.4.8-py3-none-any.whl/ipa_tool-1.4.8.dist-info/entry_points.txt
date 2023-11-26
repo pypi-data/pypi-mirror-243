@@ -1,0 +1,3 @@
+[console_scripts]
+ipa-info=ipa_info.main:app
+
