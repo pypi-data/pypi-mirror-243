@@ -1,0 +1,68 @@
+[project]
+name = "generalized_additive_models"
+version = "0.4.0"
+dependencies = [
+    "numpy<=2.0.0",
+    "scipy<=2.0.0",
+    "matplotlib",
+    "pandas",
+    "scikit-learn>=1.3.0",
+    "tabulate"
+]
+description = "Generalized additive models in Python."
+readme = {file = "README.rst", content-type = "text/x-rst"}
+authors = [
+  {name = "tommyod", email = "tommy.odland@gmail.com"},
+]
+license = {file = "LICENSE.txt"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+]
+
+[project.urls]
+Repository = "https://github.com/tommyod/generalized-additive-models"
+"Bug Reports" = "https://github.com/tommyod/generalized-additive-models/issues"
+
+[project.optional-dependencies]
+lint = ["black",
+        "flake8",
+        "ruff",
+        "codespell",
+        ]
+
+dev = [ "pytest",
+        "pytest-cov",
+        "jupyter",
+        "setuptools",
+        "jupytext",
+        "pylint",
+        "twine",
+        "build",
+        ]
+        
+doc = [ "sphinx",
+        "sphinxcontrib-napoleon",
+        "nbsphinx",
+        "ipython",
+        "sphinx_rtd_theme",
+        "pydata-sphinx-theme",
+        "numpydoc",
+        "Pillow",
+        "sphinx-gallery",
+        ]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+# https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+include-package-data = true
