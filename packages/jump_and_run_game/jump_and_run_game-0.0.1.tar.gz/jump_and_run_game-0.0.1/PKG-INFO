@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: jump_and_run_game
+Version: 0.0.1
+Summary: A simple jump-and-run game in Python
+Author-email: Martin Thoma <info@martin-thoma.de>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Other Environment
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Games/Entertainment :: Side-Scrolling/Arcade Games
+Classifier: Topic :: Games/Entertainment
+Classifier: Topic :: Software Development :: Libraries :: pygame
+Requires-Dist: pygame
+
+# Your Jump-and-Run Game
+
+Welcome to `jump_and_run_game` – a fun and exciting jump-and-run game developed
+in Python!
+
+## Overview
+
+It's really just a simple Jump- and Run game: 2D, jumping ... and walking.
+Let's be honest, it's not running so far.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Controls](#controls)
+- [Contributing](#contributing)
+
+## Installation
+
+1. Ensure you have Python 3.8 or later installed.
+
+2. Install dependencies:
+
+    ```bash
+    pip install jump_and_run_game
+    ```
+
+## Usage
+
+To play the game, run the following command:
+
+```bash
+jump_and_run_game
+```
+
+## Controls
+
+* Left Arrow: Move the player left.
+* Right Arrow: Move the player right.
+* Space: Make the player jump.
+
+## Contributing
+
+If you'd like to contribute to the project, feel free to open issues or add PRs.
+
+It's typically wise to open an issue first and wait for feedback, before adding
+tons of code that might get rejected.
+

@@ -1,0 +1,39 @@
+[project]
+name = "jump_and_run_game"
+description = "A simple jump-and-run game in Python"
+authors = [{name = "Martin Thoma", email="info@martin-thoma.de"}]
+readme = "README.md"
+dynamic = ["version"]
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: Other Environment",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3",
+    "Topic :: Games/Entertainment :: Side-Scrolling/Arcade Games",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries :: pygame",
+]
+
+dependencies = [
+    "pygame",
+]
+requires-python = ">=3.8"
+
+[project.scripts]
+jump_and_run_game = "jump_and_run_game:main"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.flit.sdist]
+exclude = ["requirements", ".github/*", ".envrc", "Makefile", ".pre-commit-config.yaml"]
