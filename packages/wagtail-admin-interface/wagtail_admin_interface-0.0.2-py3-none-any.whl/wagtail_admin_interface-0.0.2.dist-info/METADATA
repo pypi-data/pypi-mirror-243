@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: wagtail-admin-interface
+Version: 0.0.2
+Summary: Wagtail Admin Interface makes it easier to customize the admin interface of the Wagtail content management system.
+Author-email: Digital Valley <techteam@digitalvalley.nl>
+License-File: LICENSE.md
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Framework :: Wagtail
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# Wagtail Admin Interface
