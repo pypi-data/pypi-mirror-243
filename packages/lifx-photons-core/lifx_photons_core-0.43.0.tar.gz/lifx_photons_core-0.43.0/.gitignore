@@ -1,0 +1,35 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Unit test / coverage reports
+.tox/
+.pytest_cache/
+
+# documentation
+docs/res/
+docs/gh-pages/
+
+# pyenv
+.python-version
+
+# virtualenv variants
+.lifx/
+.venv
+venv/
+
+# General stuff
+.DS_Store
+
+# Photons stuff
+scripts/secrets.yml
+interactor.db
+
+# mypy
+.dmypy.json
