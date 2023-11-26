@@ -1,0 +1,25 @@
+# Work Result
+----
+{% for task in tasks %}
+## {{ task.title }}
+{{ task.content }}
+
+{% endfor %}
+# Error Message
+{{ error_message }}
+
+# Fix Instruction
+----
+Requirements: Please provide the fix based on the given context and error. Ensure that each section is presented separately and enclosed within triple quotes.
+1. Start each section with ## Code: <CODE_NAME>.
+2. Use triple quotes (```) to enclose the Python code.
+3. Always use ## for section separation. Do not use a single #.
+4. Do not provide more sections than the sections provided below
+5. If no error found for the a specific section, show "No fix needed"
+
+{% for task in tasks %}
+## {{ task.title }}
+* If no bug found, Show "No fix needed"
+* Else providing full fix content with the same format as the work result.
+
+{% endfor %}
