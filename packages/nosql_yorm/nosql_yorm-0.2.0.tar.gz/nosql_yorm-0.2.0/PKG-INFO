@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: nosql_yorm
+Version: 0.2.0
+Summary: Yet Another ORM for NoSQL.  However, this one starts with firestore.
+Author: Benjamin Garrard
+Author-email: ben@colorfull.ai
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: firebase-admin (>=4.4.0,<5.0.0)
+Requires-Dist: inflect (>=7.0.0,<8.0.0)
+Requires-Dist: pydantic (>=1.8.2,<2.0.0)
