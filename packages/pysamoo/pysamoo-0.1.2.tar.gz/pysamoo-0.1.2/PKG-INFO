@@ -1,0 +1,124 @@
+Metadata-Version: 2.1
+Name: pysamoo
+Version: 0.1.2
+Summary: Surrogate-Assisted Multi-objective Optimization
+Home-page: https://anyoptimization.com/projects/pysamoo/
+Author: Julian Blank
+Author-email: blankjul@msu.edu
+License: GNU AFFERO GENERAL PUBLIC LICENSE (AGPL)
+Keywords: surrogate,metamodel,bayesian optimization
+Platform: any
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Requires-Python: >=3.7
+License-File: LICENSE
+
+pysamoo - Surrogate-Assisted Multi-objective Optimization
+====================================================================
+
+
+|python| |license|
+
+
+.. |python| image:: https://img.shields.io/badge/python-3.6-blue.svg
+   :alt: python 3.6
+
+.. |license| image:: https://img.shields.io/badge/license-apache-orange.svg
+   :alt: license apache
+   :target: https://www.apache.org/licenses/LICENSE-2.0
+
+The software documentation is available here: https://anyoptimization.com/projects/pysamoo/
+
+Installation
+====================================================================
+
+The official release is always available at PyPi:
+
+.. code:: bash
+
+    pip install -U pysamoo
+
+
+
+.. _Usage:
+
+Usage
+********************************************************************************
+
+We refer here to our documentation for all the details.
+However, for instance, executing NSGA2:
+
+.. code:: python
+
+    from pymoo.optimize import minimize
+    from pymoo.problems.multi.zdt import ZDT1
+    from pymoo.visualization.scatter import Scatter
+    from pysamoo.algorithms.ssansga2 import SSANSGA2
+
+    problem = ZDT1(n_var=10)
+
+    algorithm = SSANSGA2(n_initial_doe=50,
+                         n_infills=10,
+                         surr_pop_size=100,
+                         surr_n_gen=50)
+
+    res = minimize(
+        problem,
+        algorithm,
+        ('n_evals', 200),
+        seed=1,
+        verbose=True)
+
+    plot = Scatter()
+    plot.add(problem.pareto_front(), plot_type="line", color="black", alpha=0.7)
+    plot.add(res.F, facecolor="none", edgecolor="red")
+    plot.show()
+
+
+
+.. _Citation:
+
+Citation
+********************************************************************************
+
+If you use this framework, we kindly ask you to cite the following paper:
+
+| `Julian Blank, & Kalyanmoy Deb. (2022). pysamoo: Surrogate-Assisted Multi-Objective Optimization in Python. <https://arxiv.org/abs/2204.05855>`_
+|
+| BibTex:
+
+::
+
+    @misc{pysamoo,
+      title={pysamoo: Surrogate-Assisted Multi-Objective Optimization in Python},
+      author={Julian Blank and Kalyanmoy Deb},
+      year={2022},
+      eprint={2204.05855},
+      archivePrefix={arXiv},
+      primaryClass={cs.NE}
+    }
+
+.. _Contact:
+
+Contact
+********************************************************************************
+
+Feel free to contact me if you have any questions:
+
+| `Julian Blank <http://julianblank.com>`_  (blankjul [at] msu.edu)
+| Michigan State University
+| Computational Optimization and Innovation Laboratory (COIN)
+| East Lansing, MI 48824, USA
+
