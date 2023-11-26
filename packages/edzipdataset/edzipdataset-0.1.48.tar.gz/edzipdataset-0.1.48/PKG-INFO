@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: edzipdataset
+Version: 0.1.48
+Summary: EDZip-based, S3-hosted pytorch dataset
+Home-page: https://github.com/hsci-r/edzipdataset
+License: MIT
+Keywords: zip-files,pytorch,dataset
+Author: Eetu Mäkelä
+Author-email: eetu.makela@iki.fi
+Requires-Python: >=3.9,<3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: edzip (>=0.1.12,<0.2.0)
+Requires-Dist: multiprocessing-utils (>=0.4,<0.5)
+Requires-Dist: numpy (>=1.26.2,<2.0.0)
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0)
+Requires-Dist: s3fs (>=2023.10.0,<2024.0.0)
+Requires-Dist: torch (>=2.1.1,<3.0.0)
+Requires-Dist: tqdm (>=4.66.1,<5.0.0)
+Project-URL: Repository, https://github.com/hsci-r/edzipdataset
+Description-Content-Type: text/markdown
+
+
