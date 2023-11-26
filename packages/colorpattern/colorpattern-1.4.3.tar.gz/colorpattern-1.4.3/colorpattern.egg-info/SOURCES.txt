@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+README.rst
+setup.py
+colorpattern/__init__.py
+colorpattern/colorpattern.py
+colorpattern.egg-info/PKG-INFO
+colorpattern.egg-info/SOURCES.txt
+colorpattern.egg-info/dependency_links.txt
+colorpattern.egg-info/entry_points.txt
+colorpattern.egg-info/requires.txt
+colorpattern.egg-info/top_level.txt
