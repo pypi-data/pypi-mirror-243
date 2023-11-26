@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: uconst
+Version: 1.0.1
+Summary: 
+Author: Robert Stoul
+Author-email: rekiiky@proton.me
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: urllib3 (>=2.0.7,<3.0.0)
+Description-Content-Type: text/markdown
+
+# uconst
+Simple url constructor library.
+
+```python
+import uconst
+
+c = uconst.Constructor("api.example.org")
+
+print(c) # == str(c)
+
+c = c / "api" / ["v2", "get_smth"]
+
+print(c.as_str())
+```
+
