@@ -1,0 +1,5 @@
+# MANIFEST.in
+
+
+include src/pylib-0xe/README.md
+include py.typed
