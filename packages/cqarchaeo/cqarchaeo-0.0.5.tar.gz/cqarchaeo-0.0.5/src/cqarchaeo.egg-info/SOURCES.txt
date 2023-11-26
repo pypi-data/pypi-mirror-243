@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+imgs/Quantogram.png
+imgs/Quantogram_compare.png
+imgs/logo.jpg
+src/cqarchaeo/__init__.py
+src/cqarchaeo/cqarchaeo.py
+src/cqarchaeo.egg-info/PKG-INFO
+src/cqarchaeo.egg-info/SOURCES.txt
+src/cqarchaeo.egg-info/dependency_links.txt
+src/cqarchaeo.egg-info/top_level.txt
