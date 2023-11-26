@@ -1,0 +1,78 @@
+Metadata-Version: 2.1
+Name: promptengineers
+Version: 0.1.8
+Summary: A collection of utilities by Prompt Engineers
+Home-page: https://github.com/promptengineers-ai/core
+Author: Ryan Eggleston
+Author-email: kre8mymedia@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: ujson
+Requires-Dist: uvicorn
+Provides-Extra: chat
+Requires-Dist: beautifulsoup4 ; extra == 'chat'
+Requires-Dist: langchain ; extra == 'chat'
+Requires-Dist: nest-asyncio ; extra == 'chat'
+Requires-Dist: numexpr ; extra == 'chat'
+Requires-Dist: openai ; extra == 'chat'
+Requires-Dist: pinecone-client ; extra == 'chat'
+Requires-Dist: pypdf ; extra == 'chat'
+Requires-Dist: python-multipart ; extra == 'chat'
+Requires-Dist: redis ; extra == 'chat'
+Requires-Dist: tiktoken ; extra == 'chat'
+Requires-Dist: youtube-transcript-api ; extra == 'chat'
+Provides-Extra: history
+Requires-Dist: cryptography ; extra == 'history'
+Requires-Dist: motor ; extra == 'history'
+Requires-Dist: pymongo ; extra == 'history'
+Provides-Extra: retrieval
+Requires-Dist: beautifulsoup4 ; extra == 'retrieval'
+Requires-Dist: langchain ; extra == 'retrieval'
+Requires-Dist: nest-asyncio ; extra == 'retrieval'
+Requires-Dist: numexpr ; extra == 'retrieval'
+Requires-Dist: openai ; extra == 'retrieval'
+Requires-Dist: pinecone-client ; extra == 'retrieval'
+Requires-Dist: pypdf ; extra == 'retrieval'
+Requires-Dist: python-multipart ; extra == 'retrieval'
+Requires-Dist: redis ; extra == 'retrieval'
+Requires-Dist: tiktoken ; extra == 'retrieval'
+Requires-Dist: youtube-transcript-api ; extra == 'retrieval'
+Provides-Extra: storage
+Requires-Dist: minio ; extra == 'storage'
+Requires-Dist: python-multipart ; extra == 'storage'
+
+# Prompt Engineers AI Open Source Package
+
+#### Build and Publish
+
+```bash
+## Build Package
+bash scripts/build.sh
+
+## Publish Package to PyPi
+bash scripts/publish.sh
+```
+
+
+#### Development
+
+```bash
+## In the application directory start your virtual env (this would be the workspace
+## where your API server that you would like to install the model)
+source .venv/bin/activate
+
+## Then change directory to where your package is, make changes and run the following.
+pip install .
+
+## Switch back to the directory of your where your workspace is for you app server.
+cd <path>/<app>/<server>
+pip install -r requirements.txt
+
+## Make sure your app server has the packages shown in setup.py and run your server...
+```
+
