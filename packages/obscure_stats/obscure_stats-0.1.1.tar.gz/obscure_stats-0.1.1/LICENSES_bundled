@@ -1,0 +1,47 @@
+NumPy:
+  name: numpy
+  version: 1.26.1
+  license: BSD 3-Clause "New" or "Revised" License
+  repository: https://github.com/numpy/numpy
+  homepage: https://numpy.org/
+  dependency: production
+
+SciPy
+  name: scipy
+  version: 1.11.3
+  license: BSD 3-Clause "New" or "Revised" License
+  repository: https://github.com/scipy/scipy
+  homepage: https://scipy.org/
+  dependency: production
+
+MyPy
+  name: mypy
+  version: 1.6.1
+  license: The MIT License
+  repository: https://github.com/python/mypy
+  homepage: https://www.mypy-lang.org/
+  dependency: dev
+
+Ruff
+  name: ruff
+  version: 0.1.5
+  license: The MIT license 
+  repository: https://github.com/astral-sh/ruff
+  homepage: https://docs.astral.sh/ruff/
+  dependency: dev
+
+Pytest
+  name: pytest
+  version: 7.4.3
+  license: The MIT License
+  repository: https://github.com/pytest-dev/pytest
+  homepage: https://docs.pytest.org/en/latest/
+  dependency: dev
+
+Pytest-cov
+  name: pytest-cov
+  version: 4.1.0
+  license: The MIT License
+  repository: https://github.com/pytest-dev/pytest-cov
+  homepage: https://pytest-cov.readthedocs.io/en/latest/
+  dependency: dev
