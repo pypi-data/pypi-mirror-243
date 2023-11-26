@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: Slugify_classmodule
+Version: 1.0.1
+Summary: Un separateur et modificateur de mots, SLUG
+Home-page: https://github.com/Aishael20/Slugify_Project
+Author: Picard Aïshael && Borgellas Samuel
+Author-email: aishael.picard@gmail.com
+Maintainer-email: borgellassamuel@gmail.com
+License: MIT
+Keywords: Slugify security
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Description-Content-Type: text/plain
+
+Un projet Python qui permet de convertir n'importe quelle chaîne de caractères en slug.
