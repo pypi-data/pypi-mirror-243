@@ -1,0 +1,142 @@
+[project]
+authors = [
+    { name = "betaboon", email = "betaboon@0x80.ninja" },
+]
+name = "eventstoredb"
+description = "Python EventstoreDB client that uses gRPBC as the communication protocol."
+readme = "README.md"
+keywords = [
+    "eventstore",
+    "eventstoredb",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dynamic = []
+requires-python = ">=3.9"
+dependencies = [
+    "betterproto==2.0.0b5",
+    "yarl>=1.9.3",
+]
+version = "0.8.0"
+
+[project.license]
+text = "Apache-2.0"
+
+[project.urls]
+repository = "https://github.com/betaboon/EventStoreDB-Client-Python"
+changelog = "https://github.com/betaboon/EventStoreDB-Client-Python/releases"
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.4.3",
+    "pytest-docker>=2.0.1",
+    "pytest-asyncio>=0.21.1",
+    "pytest-mock>=3.12.0",
+]
+dev = [
+    "grpcio-tools>=1.59.3",
+    "betterproto[compiler]==2.0.0b5",
+    "pre-commit>=3.5.0",
+    "gitlint>=0.19.1",
+    "python-semantic-release>=7.33.2,<8",
+    "mypy>=1.7.1",
+]
+
+[tool.pdm.scripts]
+install-git-hooks = "pre-commit install --install-hooks"
+lint = "pre-commit run --all-files"
+test = "pytest"
+
+[tool.pdm.scripts._.env]
+EVENTSTOREDB_VERSION = "oss-v23.10.0"
+PROTOC_IN_PATH = "./external/EventStore/src/Protos/Grpc"
+PROTOC_OUT_PATH = "./eventstoredb/generated"
+
+[tool.pdm.scripts.protobuf-generate]
+shell = "  mkdir -p ${PROTOC_OUT_PATH} &&\n  python -m grpc_tools.protoc --proto_path=${PROTOC_IN_PATH} --python_betterproto_out=${PROTOC_OUT_PATH} ${PROTOC_IN_PATH}/*.proto\n"
+
+[tool.pdm.scripts.protobuf-update]
+shell = "[ -z \"$EVENTSTOREDB_VERSION\" ] && echo \"env EVENTSTOREDB_VERSION not set\" || (\n  cd ${PROTOC_IN_PATH} && git fetch --depth 1 origin ${EVENTSTOREDB_VERSION} && git checkout FETCH_HEAD\n)\n"
+
+[tool.pdm.scripts.ci-lint]
+cmd = [
+    "pre-commit",
+    "run",
+    "--show-diff-on-failure",
+    "--from-ref",
+    "$FROM_REF",
+    "--to-ref",
+    "$TO_REF",
+]
+
+[tool.pdm.scripts.ci-commit-lint]
+cmd = [
+    "gitlint",
+    "--contrib",
+    "contrib-title-conventional-commits",
+    "--ignore",
+    "body-is-missing",
+    "--commits",
+    "$FROM_REF..$TO_REF",
+]
+
+[tool.pdm.scripts.ci-version]
+cmd = "semantic-release print-version --next"
+
+[tool.pdm.scripts.ci-changelog]
+cmd = "semantic-release changelog --unreleased"
+
+[tool.pdm.version]
+source = "scm"
+write_to = "eventstoredb/__version__.py"
+write_template = "__version__ = '{}'"
+
+[tool.semantic_release]
+branch = "main"
+version_source = "tag_only"
+version_pattern = "d+.d+.d+"
+tag_format = "{version}"
+
+[tool.mypy]
+strict = true
+implicit_reexport = true
+exclude = [
+    "^tests/conftest\\.py$",
+    "^eventstoredb/generated/.*",
+]
+
+[tool.black]
+line-length = 88
+
+[tool.flake8]
+max-line-length = 95
+extend-ignore = [
+    "E203",
+]
+per-file-ignores = [
+    "__init__.py:F401",
+]
+exclude = [
+    "eventstoredb/generated/*",
+    "__pypackages__",
+    "build",
+    "dist",
+]
+
+[tool.isort]
+profile = "black"
+atomic = true
+filter_files = true
+
+[tool.pytest.ini_options]
+addopts = "-ra --ignore=__pypackages__ --asyncio-mode=auto"
+
+[build-system]
+requires = [
+    "pdm-pep517>=1.0.0",
+]
+build-backend = "pdm.pep517.api"
