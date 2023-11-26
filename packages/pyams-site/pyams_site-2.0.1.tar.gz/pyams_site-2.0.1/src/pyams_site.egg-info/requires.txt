@@ -1,0 +1,15 @@
+setuptools
+persistent
+pyams_utils
+pyramid>=2.0.0
+pyramid_zodbconn
+transaction
+zodbupdate
+zope.annotation
+zope.component
+zope.interface
+zope.lifecycleevent
+zope.site
+zope.traversing
+
+[test]

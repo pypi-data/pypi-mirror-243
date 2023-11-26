@@ -1,0 +1,35 @@
+Changelog
+=========
+
+2.0.1
+-----
+ - updated Buildout configuration
+
+2.0.0
+-----
+ - upgraded to Python 2.0
+ - added support for Python 3.10 and 3.11
+
+1.3.0
+-----
+ - removed support for Python < 3.7
+
+1.2.0
+-----
+ - updated site generations manager upgrade tool, using registered objects factories so
+   that required utilities can be defined only by their interface
+ - removed Travis-CI configuration
+
+1.1.0
+-----
+ - added ISiteEtcTraverser interface to handle custom traversing to local site manager
+ - updated doctests
+
+1.0.1
+-----
+ - replaced hooks with local registry setting
+ - updated doctests
+
+1.0.0
+-----
+ - initial release
