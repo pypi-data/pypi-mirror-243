@@ -1,0 +1,3 @@
+[console_scripts]
+quant1x-auto-trader = quant1x.trader.auto:auto_trader
+quant1x-qmt = quant1x.trader.qmt:main
