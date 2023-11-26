@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: alist-sdk
+Version: 0.2.1
+Summary: Alist API 简单封装.
+Author-email: LeeCQ <lcq@leecq.cn>
+Project-URL: Homepage, https://github.com/lee-cq/alist-sdk
+Project-URL: Issues, https://github.com/lee-cq/alist-sdk/issues
+Classifier: Development Status :: 1 - Planning
+Classifier: Environment :: Console
+Classifier: Framework :: Pydantic :: 2
+Classifier: Natural Language :: Chinese (Simplified)
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: httpx ~=0.25.1
+Requires-Dist: pydantic ~=2.5.1
+
+# Alist Sdk
+
+Alist API 简单封装
+
+## [Alist API 文档](https://alist.nn.ci/zh/guide/api/)
+
+## 安装
+
+`pip install alist-sdk`
+
+## 使用
+
+```python
+# Sync 模式
+from alist_sdk import Client
+client = Client(
+    base_url='http://localhost:5244',
+    username="",
+    password="",
+    token="", # 与 Username Password 二选一
+)
+
+client.me()
+client.mkdir("/local/test")
+```
+
+```python
+# Async 模式
+import asyncio
+from alist_sdk import AsyncClient
+
+client = AsyncClient(
+    base_url='http://localhost:5244',
+    username="",
+    password="",
+    token="",  # 与 Username Password 二选一
+)
+
+asyncio.run(client.me())
+```
