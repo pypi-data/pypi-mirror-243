@@ -1,0 +1,15 @@
+aipkgs_core/__init__.py,sha256=7WZhf-RNIo-hP0mu9EjbBhNeOh1SGfbDPQlo9D0lkiw,519
+aipkgs_core/encryption/encryption.py,sha256=zbYP5jEwLHDlAQHbLZmXV5jiH_0xCHPZX5oYUFe30y8,1070
+aipkgs_core/utils/date_helpers.py,sha256=TtTRgfyhy9EZVKbl9_eeGzCfCg-UqNWLhz5bccDH4QE,2196
+aipkgs_core/utils/dir_helpers.py,sha256=LrhyImVxSTAcFk4VbaNjvsQGY9Z7Xwg14lNGcwsYVio,1315
+aipkgs_core/utils/email.py,sha256=HLBuxIIBEdUUcEwBoBd0iBZREdS8_L2jdCFZutRgD2c,246
+aipkgs_core/utils/file_helpers.py,sha256=YMyFWGe7_FRR88AREy5NRsAUn9mXkn3mrd72Yb8EqPE,700
+aipkgs_core/utils/json.py,sha256=Q7eoHTlJth76PQ0NPS4D5IASBujG7AfmCPXsd6yfVxM,827
+aipkgs_core/utils/phone_number.py,sha256=1AgsAMSA5qKSo0vInXOW5s5tIFnNVuE1dLjjqbToBaE,304
+aipkgs_core/utils/singleton.py,sha256=z3-QC8RiPcFnNk2-G_GaoAF7PG4yU4Zn9_Kz-In34Xo,1542
+aipkgs_core/utils/string_helpers.py,sha256=Qy9omx9GLr2QR2d66CelDnildIoEPVpjggSc5XIPA0M,1105
+aipkgs_core/utils/utils.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aipkgs_core-0.3.5.dist-info/LICENSE.md,sha256=oo2hmWWp-h0KgkfEZN9Pjlfll5kxOuK396Ud8WQfyHA,1058
+aipkgs_core-0.3.5.dist-info/WHEEL,sha256=vVCvjcmxuUltf8cYhJ0sJMRDLr1XsPuxEId8YDzbyCY,88
+aipkgs_core-0.3.5.dist-info/METADATA,sha256=U1CD5S4o-pLwLTCNkqCSBYdhb2Jid8mNe43kUt-Ms1Q,798
+aipkgs_core-0.3.5.dist-info/RECORD,,
