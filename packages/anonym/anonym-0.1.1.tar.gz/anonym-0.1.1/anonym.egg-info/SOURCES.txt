@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+anonym/__init__.py
+anonym/anonym.py
+anonym/examples.py
+anonym.egg-info/PKG-INFO
+anonym.egg-info/SOURCES.txt
+anonym.egg-info/dependency_links.txt
+anonym.egg-info/requires.txt
+anonym.egg-info/top_level.txt

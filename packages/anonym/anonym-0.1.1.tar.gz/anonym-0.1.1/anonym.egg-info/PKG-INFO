@@ -1,0 +1,144 @@
+Metadata-Version: 2.1
+Name: anonym
+Version: 0.1.1
+Summary: Python package anonym
+Home-page: https://gitlab.com/datainnovatielab/public/anonym
+Download-URL: https://gitlab.com/datainnovatielab/public/anonym/archive/0.1.1.tar.gz
+Author: Erdogan Taskesen
+Author-email: erdogan.taskesen@minienw.nl
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# anonym
+
+[![Python](https://img.shields.io/pypi/pyversions/anonym)](https://img.shields.io/pypi/pyversions/anonym)
+[![Pypi](https://img.shields.io/pypi/v/anonym)](https://pypi.org/project/anonym/)
+[![Docs](https://img.shields.io/badge/Sphinx-Docs-Green)](https://anonym-datainnovatielab-public-3ae525a7078644e2013f2d5d2c9a0825.gitlab.io/)
+[![Downloads](https://static.pepy.tech/personalized-badge/anonym?period=month&units=international_system&left_color=grey&right_color=brightgreen&left_text=PyPI%20downloads/month)](https://pepy.tech/project/anonym)
+[![Downloads](https://static.pepy.tech/personalized-badge/anonym?period=total&units=international_system&left_color=grey&right_color=brightgreen&left_text=Downloads)](https://pepy.tech/project/anonym)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](https://gitlab.com/datainnovatielab/public/anonym/-/blob/main/LICENSE)
+[![Issues](https://img.shields.io/badge/issues-you_like-yellow)](https://gitlab.com/datainnovatielab/public/anonym/-/issues)
+[![Project Status](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
+
+* The ``anonym`` library is designed to anonymize sensitive data in Python, allowing users to work with, share, or publish their data without compromising privacy or violating data protection regulations. It uses Named Entity Recognition (NER) from ``spacy`` to identify sensitive information in the data. Once identified, the library leverages the ``faker`` library to generate fake but realistic replacements. Depending on the type of sensitive information (like names, addresses, dates), corresponding faker methods are used, ensuring the anonymized data maintains a similar structure and format to the original, making it suitable for further data analysis or testing.
+
+* The ``anonym`` algorithm is designed to anonymize data in a DataFrame. It works by replacing real data with fake data, while maintaining the structure and format of the original data. Here's a step-by-step explanation of how it works:
+
+**1. Initialization**: The anonym class is initialized with a language parameter (default is 'dutch') and a verbosity level (default is 'info'). The language parameter is used to load the appropriate language model for named entity recognition (NER), and the verbosity level sets the logger's verbosity.
+
+**2. Data Import**: The import_data method is used to import a dataset from a given file path. The data is read into a pandas DataFrame.
+
+**3. Data Anonymization**: The anonymize method is the core of the algorithm. It takes a DataFrame and optional parameters for specifying columns to fake or not to fake, and a NER blacklist. The method works as follows:
+
+**4. It calls the extract_entities function** to extract all entities from the DataFrame. This function uses the ``spacy`` library's NER capabilities to identify entities in the data. If a column is specified in the fakeit parameter, the entities in that column are replaced with the specified fake replacement. If a column is specified in the do_not_fake parameter, it is left untouched. Otherwise, NER is performed on each row of the column.
+
+**5. The generate_fake_labels function** is then called to generate fake labels for the extracted entities. This function uses the ``faker`` library to generate fake data that matches the type of the original data (e.g., names, companies, dates, cities, etc.).
+
+**6. The replace_label_with_fake function** is then used to replace the original entities in the DataFrame with the generated fake labels.
+
+**7. Data Export**: The to_csv method is used to write the anonymized DataFrame to a CSV file.
+
+**8. Example Data Import**: The import_example method is used to import example datasets from a GitHub source or a specified URL.
+
+
+	Start
+	  |
+	  v
+	Initialize `anonym` class
+	  |
+	  v
+	Import data using `import_data` method
+	  |
+	  v
+	Anonymize data using `anonymize` method
+	  |         |
+	  |         v
+	  |     Extract entities using `extract_entities` function
+	  |         |
+	  |         v
+	  |     Generate fake labels using `generate_fake_labels` function
+	  |         |
+	  |         v
+	  |     Replace original labels with fake ones using `replace_label_with_fake` function
+	  v
+	Export anonymized data using `to_csv` method
+	  |
+	  v
+	End
+
+The algorithm also includes several utility functions for text cleaning, preprocessing, filtering values, checking the ``spacy`` model, and setting the logger. The main function at the end of the script demonstrates how to use the anonym class to import an example dataset, anonymize it, and plot the results.
+
+
+## Documentation
+
+* [**anonym documentation pages (Sphinx)**](https://anonym-datainnovatielab-public-3ae525a7078644e2013f2d5d2c9a0825.gitlab.io/)
+
+
+## Contents
+- [Installation](#-installation)
+- [Contribute](#-contribute)
+- [Citation](#-citation)
+- [Maintainers](#-maintainers)
+- [License](#-copyright)
+
+## Installation
+* Install anonym from PyPI (recommended). anonym is compatible with Python 3.6+ and runs on Linux, MacOS X and Windows. 
+* A new environment can be created as following:
+
+```bash
+conda create -n env_anonym python=3.10
+conda activate env_anonym
+```
+
+```bash
+pip install anonym            # normal install
+pip install --upgrade anonym # or update if needed
+```
+
+* Alternatively, you can install from the GitHub source:
+```bash
+# Directly install from github source
+pip install -e git://gitlab.com/datainnovatielab/public/anonym.git@0.1.0#egg=master
+pip install git+https://gitlab.com/datainnovatielab/public/anonym#egg=master
+pip install git+https://gitlab.com/datainnovatielab/public/anonym
+
+# By cloning
+git clone https://gitlab.com/datainnovatielab/public/anonym.git
+cd anonym
+pip install -U .
+```  
+
+### Import anonym package
+```python
+import anonym as anonym
+```
+
+### Example:
+```python
+  # Example 2
+  # Load library
+  from anonym import anonym
+  # Initialize
+  model = anonym(language='english', verbose='info')
+  # Import example data set
+  df = model.import_example('titanic')
+  # Anonimyze the data set
+  df_fake = model.anonymize(df)
+```
+
+
+### References
+* https://gitlab.com/datainnovatielab/public/anonym
+
+### Citation
+Please cite in your publications if this is useful for your research (see citation).
+   
+### Contribute
+* All kinds of contributions are welcome!
+
+### Licence
+See [LICENSE](LICENSE) for details.
