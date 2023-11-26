@@ -1,0 +1,163 @@
+/*
+    See the JupyterLab Developer Guide for useful CSS Patterns:
+    https://jupyterlab.readthedocs.io/en/stable/developer/css.html
+*/
+
+body {
+  --nbh-menubar-color: aliceblue;
+  --nbh-topbar-color: #e0e9f2;
+  --nbh-trusted-color: aliceblue;
+}
+
+/*
+
+  ---------- header ----------
+*/
+.jp-WindowedPanel-inner {
+  margin-top: 0 !important;
+}
+
+/* set color for the 2 remaining lines */
+#menu-panel-wrapper > * {
+  background-color: var(--nbh-topbar-color);
+}
+
+#jp-MainMenu {
+  background-color: var(--nbh-menubar-color);
+}
+
+button.jp-NotebookTrustedStatus {
+  background-color: var(--nbh-trusted-color);
+}
+
+.jp-Toolbar.jp-NotebookPanel-toolbar {
+  background-color: var(--nbh-topbar-color);
+}
+
+/*
+  kernel switcher
+  there may be a smarter way to do this,
+  see the jupterlab gitter and schema/plugin.json.kernelname
+*/
+.jp-Toolbar-item.jp-KernelName {
+  display: none;
+}
+
+/*
+
+  ---------- execution indicator ----------
+  the  is the bottom right widget in the header
+  we use this to make it conspicuous when the kernel is down
+*/
+.jp-Notebook-ExecutionIndicator {
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.jp-Notebook-ExecutionIndicator[data-status='idle'] {
+  background-color: var(--jp-accent-color0);
+
+  & circle {
+    fill: var(--jp-accent-color3);
+  }
+}
+
+.jp-Notebook-ExecutionIndicator[data-status='disconnected'],
+.jp-Notebook-ExecutionIndicator[data-status='connecting'] {
+  background-color: var(--jp-error-color1);
+
+  & circle {
+    fill: var(--jp-error-color3);
+  }
+
+  /* add a more explicit label when kernel is down */
+  width: 250px;
+
+  & svg {
+    margin: 0;
+  }
+
+  & :first-child {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+    & > svg {
+      stroke: black;
+    }
+  }
+
+  /* without the > here, things are a little off
+     what I mean id to add an after on the first child
+     of the element with the data-status attribute above
+     BUT
+     without > it will add an after on ANY first child
+     inside the hierarchy
+  */
+  & > :first-child::after {
+    content: 'Kernel is down, reload your page !!';
+    color: var(--jp-error-color3);
+  }
+}
+
+.jp-Notebook-ExecutionIndicator[data-status='busy'] {
+  background-color: var(--jp-warn-color1);
+
+  & path {
+    fill: var(--jp-warn-color3);
+  }
+
+  width: 250px;
+
+  & svg {
+    margin: 0;
+  }
+
+  & :first-child {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+    & > svg {
+      stroke: black;
+    }
+  }
+
+  & > :first-child::after {
+    content: 'Kernel is busy, please wait !!';
+    color: var(--jp-warn-color3);
+  }
+}
+
+/*
+
+ the look of the dialogs for our 3 extra functions
+*/
+.nbh-dialog-button {
+  border-radius: 10px;
+}
+
+.nbh-dialog {
+  --nbh-tocopy-color: rgb(109 7 7);
+
+  & .nbh-larger {
+    font-size: larger;
+  }
+
+  & #try-share-url {
+    margin-left: 40px;
+  }
+
+  & #share-url {
+    color: var(--nbh-tocopy-color);
+    font-size: x-small;
+  }
+
+  & #student-id {
+    font-size: x-large;
+    font-weight: bold;
+    color: var(--nbh-tocopy-color);
+  }
+}
