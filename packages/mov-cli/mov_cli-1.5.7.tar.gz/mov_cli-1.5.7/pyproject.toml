@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "mov-cli"
+version = "1.5.7"
+description = "A cli tool to browse and watch Movies/Shows/TV/Sports."
+authors = [
+    "Pain <painedposeidon444@gmail.com>",
+    "Ananas <ananas@r3tr0ananas.lol>",
+    "Goldy <goldy@devgoldy.xyz>"
+]
+license = "GPLv3"
+readme = "README.md"
+packages = [{include = "mov_cli"}]
+repository = "https://github.com/mov-cli/mov-cli"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+beautifulsoup4 = "^4.11.2"
+httpx = "^0.24.0"
+pycryptodome = "^3.17"
+six = "^1.16.0"
+krfzf-py = ">=0.0.4,<0.0.7"
+tldextract = "^3.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+mov-cli = "mov_cli.__main__:movcli"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/mov-cli/mov-cli/issues"
