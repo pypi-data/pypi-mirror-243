@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "alfred-pyflow"
+description = "Minimal library for the development of Alfred Workflows."
+documentation = "https://github.com/fedecalendino/alfred-pyflow/blob/main/README.md"
+homepage = "https://github.com/fedecalendino/alfred-pyflow"
+license = "MIT"
+readme = "README.md"
+version = "0.4.6"
+
+authors = [
+  "Fede Calendino <fede@calendino.com>",
+]
+classifiers = [
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+]
+keywords = [
+  "alfred",
+  "workflow",
+]
+packages = [
+  { include = "pyflow" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.30.0"
+urllib3 = "1.26.6"
+
+[tool.poetry.dev-dependencies]
+black = "^23.3.0"
+coverage = "^7.2.5"
+ddt = "^1.6.0"
+
+[tool.black]
+line-length = 150
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
