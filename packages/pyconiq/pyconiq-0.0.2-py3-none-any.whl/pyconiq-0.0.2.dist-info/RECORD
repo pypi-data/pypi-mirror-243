@@ -1,0 +1,13 @@
+pyconiq/__init__.py,sha256=60EkOwvfBoo0Zy987LRd8-c1goyo72d1TYtU-F0cmg0,186
+pyconiq/__version__.py,sha256=alMic11hJVNgfdhu0uYChwjLncCdDkW3FSJHo7LozZ0,208
+pyconiq/concepts.py,sha256=ZQQ48lBmFXDxK-BQ17Sahr9_cFtgMg_tlcIVK36-kTg,532
+pyconiq/constants.py,sha256=uLa0ybHKxikJ-9joo5OuvoMwCXh2Z2dWSCMHa7rwBCk,1427
+pyconiq/exceptions.py,sha256=KCgi2ifzfPK8xTPcJAjiIBNPTBpf9vVzVvB__S-Zldg,3252
+pyconiq/integrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyconiq/integrations/base.py,sha256=r675RVVHWUmGT0TDlztQ2O3-lcukHs7v9ofGSYCjqvQ,8735
+pyconiq/integrations/static.py,sha256=CNTdxqne_jntpXU3duT8Jy9dBWq59e5oHgZF6nP4fcM,3214
+pyconiq/qr.py,sha256=O9cTpLlmJ-1J1PUIZMQm8B72mN8coXOdSp2yMgoK-o4,1347
+pyconiq-0.0.2.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pyconiq-0.0.2.dist-info/METADATA,sha256=SMKBV0Gxi625Sy6C0kb640MTswxvo45cQGQmshgrLdE,9762
+pyconiq-0.0.2.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+pyconiq-0.0.2.dist-info/RECORD,,
