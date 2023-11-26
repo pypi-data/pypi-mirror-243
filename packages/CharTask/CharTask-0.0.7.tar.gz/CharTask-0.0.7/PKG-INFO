@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: CharTask
+Version: 0.0.7
+Summary: A package for creating tasks for characters.
+Home-page: https://github.com/primal-coder/CharTask
+Author: James Evans
+Author-email: joesaysahoy@gmail.com
+License: MIT
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Games/Entertainment :: Role-Playing
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Requires-Python: >=3.6
