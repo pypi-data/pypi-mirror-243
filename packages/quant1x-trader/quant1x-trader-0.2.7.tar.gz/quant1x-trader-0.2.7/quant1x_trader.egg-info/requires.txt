@@ -1,0 +1,13 @@
+setuptools~=68.2.2
+future~=0.18.3
+numpy~=1.26.0
+pandas~=2.1.1
+PyYAML~=6.0.1
+pywin32==306
+uvicorn==0.18.1
+fastapi~=0.103.1
+path~=16.7.1
+requests==2.31.0
+loguru~=0.7.2
+quant1x-xtquant==2023.9.22
+quant1x-base~=0.1.4
