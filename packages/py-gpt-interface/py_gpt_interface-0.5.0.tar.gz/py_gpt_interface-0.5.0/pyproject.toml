@@ -1,0 +1,31 @@
+[project]
+name = "py_gpt_interface"
+version = "0.5.0"
+description = "A simple interface for using the GPT API."
+authors = [
+    { name = "Matt Zhang", email = "set.stun@gmail.com" },
+]
+dependencies = [
+    "openai>=1.2.4",
+    "tiktoken>=0.5.1",
+    "twine>=4.0.2",
+    "build>=1.0.3",
+    "python-dotenv>=1.0.0",
+    "pytest>=7.4.3",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+Homepage = "https://github.com/MattUnderscoreZhang/gpt_interface"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool]
