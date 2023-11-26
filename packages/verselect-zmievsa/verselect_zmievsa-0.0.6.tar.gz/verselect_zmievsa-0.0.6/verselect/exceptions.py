@@ -1,0 +1,2 @@
+class AppCreationError(Exception):
+    pass
