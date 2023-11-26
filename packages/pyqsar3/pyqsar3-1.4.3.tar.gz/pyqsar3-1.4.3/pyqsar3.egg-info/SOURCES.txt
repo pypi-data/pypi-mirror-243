@@ -1,0 +1,14 @@
+LICENSE.AGPL3
+README.md
+setup.py
+pyqsar/__init__.py
+pyqsar/classification.py
+pyqsar/data_setting.py
+pyqsar/data_tools.py
+pyqsar/draw_mol.py
+pyqsar/minisom.py
+pyqsar/model_tools.py
+pyqsar3.egg-info/PKG-INFO
+pyqsar3.egg-info/SOURCES.txt
+pyqsar3.egg-info/dependency_links.txt
+pyqsar3.egg-info/top_level.txt
