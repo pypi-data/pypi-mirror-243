@@ -1,0 +1,10 @@
+include TlseHypDataSet/metadata/*.txt
+include TlseHypDataSet/default_splits/split_1.pkl
+include TlseHypDataSet/default_splits/split_2.pkl
+include TlseHypDataSet/default_splits/split_3.pkl
+include TlseHypDataSet/default_splits/split_4.pkl
+include TlseHypDataSet/default_splits/split_5.pkl
+include TlseHypDataSet/default_splits/split_6.pkl
+include TlseHypDataSet/default_splits/split_7.pkl
+include TlseHypDataSet/default_splits/split_8.pkl
+include TlseHypDataSet/ground_truth/ground_truth*
