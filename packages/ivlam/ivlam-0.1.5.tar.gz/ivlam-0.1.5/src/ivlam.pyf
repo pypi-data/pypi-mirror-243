@@ -1,0 +1,178 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module _ivlam ! in
+interface  ! in :_ivlam
+   subroutine ivlam_initialize(saveallsolutionsupton,path,info) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use ivlammod
+       use octlamcoefs
+       integer(kind=int32) intent(in) :: saveallsolutionsupton
+       character*(*) intent(in) :: path
+       integer(kind=int32) intent(out) :: info
+   end subroutine ivlam_initialize
+   subroutine ivlam_singlen(r1vec,r2vec,tof,direction,ntilde,wantbothifmultirev,v1veca,v2veca,v1vecb,v2vecb,inforeturnstatus,infohalfrevstatus) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use ivlammod
+       use octlamcoefs
+       use gammabetamod
+       real(kind=real64) dimension(3),intent(in) :: r1vec
+       real(kind=real64) dimension(3),intent(in) :: r2vec
+       real(kind=real64) intent(in) :: tof
+       integer(kind=int32) intent(in) :: direction
+       integer(kind=int32) intent(in) :: ntilde
+       logical intent(in) :: wantbothifmultirev
+       real(kind=real64) dimension(3),intent(out) :: v1veca
+       real(kind=real64) dimension(3),intent(out) :: v2veca
+       real(kind=real64) dimension(3),intent(out) :: v1vecb
+       real(kind=real64) dimension(3),intent(out) :: v2vecb
+       integer(kind=int32) intent(out) :: inforeturnstatus
+       integer(kind=int32) intent(out) :: infohalfrevstatus
+   end subroutine ivlam_singlen
+   subroutine ivlam_thrun(r1vec,r2vec,tof,direction,uptonwant,dimv,v1vec,v2vec,uptonhave,inforeturnstatusn,infohalfrevstatus) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use ivlammod
+       use octlamcoefs
+       real(kind=real64) dimension(3),intent(in) :: r1vec
+       real(kind=real64) dimension(3),intent(in) :: r2vec
+       real(kind=real64) intent(in) :: tof
+       integer(kind=int32) intent(in) :: direction
+       integer(kind=int32) intent(in) :: uptonwant
+       integer(kind=int32) intent(in) :: dimv
+       real(kind=real64) dimension(3,1 + 2 * dimv),intent(out),depend(dimv) :: v1vec
+       real(kind=real64) dimension(3,1 + 2 * dimv),intent(out),depend(dimv) :: v2vec
+       integer(kind=int32) intent(out) :: uptonhave
+       integer(kind=int32) intent(out) :: inforeturnstatusn
+       integer(kind=int32) intent(out) :: infohalfrevstatus
+   end subroutine ivlam_thrun
+   subroutine ivlam_zerorev(r1vec,r2vec,tof,direction,v1vec,v2vec,inforeturnstatus,infohalfrevstatus) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use ivlamiomod
+       real(kind=real64) dimension(3),intent(in) :: r1vec
+       real(kind=real64) dimension(3),intent(in) :: r2vec
+       real(kind=real64) intent(in) :: tof
+       integer(kind=int32) intent(in) :: direction
+       real(kind=real64) dimension(3),intent(out) :: v1vec
+       real(kind=real64) dimension(3),intent(out) :: v2vec
+       integer(kind=int32) intent(out) :: inforeturnstatus
+       integer(kind=int32) intent(out) :: infohalfrevstatus
+   end subroutine ivlam_zerorev
+   subroutine ivlam_unloaddata(info,closeprntu) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use ivlammod
+       use octlamcoefs
+       integer(kind=int32) intent(out) :: info
+       logical intent(in) :: closeprntu
+   end subroutine ivlam_unloaddata
+   subroutine ivlam_getdirection(prograde, rveca, rvecb, d) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+      use ivlamiomod
+      logical intent(in) :: prograde
+      real(kind=real64) dimension(3), intent(in) :: rveca
+      real(kind=real64) dimension(3), intent(in) :: rvecb
+      integer(kind=int32) intent(out) :: d
+   end subroutine ivlam_getdirection
+   subroutine ivlam_getkandtbysbottomslow(absn, tau, kbottom, tbysbot, info) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+      use ivlammod
+      use octlamcoefs
+      use gammabetamod
+      integer(kind=int32) intent(in) :: absn
+      real(kind=real64) intent(in) :: tau
+      real(kind=real64) intent(out) :: kbottom
+      real(kind=real64) intent(out) :: tbysbot
+      integer(kind=int32) intent(out) :: info
+   end subroutine ivlam_getkandtbysbottomslow
+   subroutine ivlam_ntildewithderivs(r1vec,r2vec,tof,direction,ntilde,v1vec,v2vec,inforeturnstatus,infohalfrevstatus,includesecondorder,dzdyt,d2zdyt) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use partialparams
+       use ivlamiomod
+       real(kind=real64) dimension(3),intent(in) :: r1vec
+       real(kind=real64) dimension(3),intent(in) :: r2vec
+       real(kind=real64) intent(in) :: tof
+       integer(kind=int32) intent(in) :: direction
+       integer(kind=int32) intent(in) :: ntilde
+       real(kind=real64) dimension(3),intent(out) :: v1vec
+       real(kind=real64) dimension(3),intent(out) :: v2vec
+       integer(kind=int32) intent(out) :: inforeturnstatus
+       integer(kind=int32) intent(out) :: infohalfrevstatus
+       logical intent(in) :: includesecondorder
+       real(kind=real64) dimension(7,6),intent(out) :: dzdyt
+       real(kind=real64) dimension(7,7,6),intent(out) :: d2zdyt
+   end subroutine ivlam_ntildewithderivs
+   subroutine ivlam_singlenwithderivs(r1vec,r2vec,tof,direction,ntilde,wantbothifmultirev,v1veca,v2veca,v1vecb,v2vecb,inforeturnstatus,infohalfrevstatus,includesecondorder,dzdyta,d2zdyta,dzdytb,d2zdytb) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use ivlammod
+       use partialsmod
+       real(kind=real64) dimension(3),intent(in) :: r1vec
+       real(kind=real64) dimension(3),intent(in) :: r2vec
+       real(kind=real64) intent(in) :: tof
+       integer(kind=int32) intent(in) :: direction
+       integer(kind=int32) intent(in) :: ntilde
+       logical intent(in) :: wantbothifmultirev
+       real(kind=real64) dimension(3),intent(out) :: v1veca
+       real(kind=real64) dimension(3),intent(out) :: v2veca
+       real(kind=real64) dimension(3),intent(out) :: v1vecb
+       real(kind=real64) dimension(3),intent(out) :: v2vecb
+       integer(kind=int32) intent(out) :: inforeturnstatus
+       integer(kind=int32) intent(out) :: infohalfrevstatus
+       logical intent(in) :: includesecondorder
+       real(kind=real64) dimension(7,6),intent(out) :: dzdyta
+       real(kind=real64) dimension(7,7,6),intent(out) :: d2zdyta
+       real(kind=real64) dimension(7,6),intent(out) :: dzdytb
+       real(kind=real64) dimension(7,7,6),intent(out) :: d2zdytb
+   end subroutine ivlam_singlenwithderivs
+   subroutine ivlam_zerorev_multipleinput(q,r1vec,r2vec,tof,direction,v1vec,v2vec,inforeturnstatus,infohalfrevstatus) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use ivlamiomod
+       integer(kind=int32), optional,intent(in),check(shape(r1vec, 1) == q),depend(r1vec) :: q=shape(r1vec, 1)
+       real(kind=real64) dimension(3,q),intent(in) :: r1vec
+       real(kind=real64) dimension(3,q),intent(in),depend(q) :: r2vec
+       real(kind=real64) dimension(q),intent(in),depend(q) :: tof
+       integer(kind=int32) dimension(q),intent(in),depend(q) :: direction
+       real(kind=real64) dimension(3,q),intent(out),depend(q) :: v1vec
+       real(kind=real64) dimension(3,q),intent(out),depend(q) :: v2vec
+       integer(kind=int32) dimension(q),intent(out),depend(q) :: inforeturnstatus
+       integer(kind=int32) dimension(q),intent(out),depend(q) :: infohalfrevstatus
+   end subroutine ivlam_zerorev_multipleinput
+   subroutine ivlam_singlen_multipleinput(q,r1vec,r2vec,tof,direction,ntilde,wantbothifmultirev,v1veca,v2veca,v1vecb,v2vecb,inforeturnstatus,infohalfrevstatus) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use ivlamiomod
+       integer(kind=int32), optional,intent(in),check(shape(r1vec, 1) == q),depend(r1vec) :: q=shape(r1vec, 1)
+       real(kind=real64) dimension(3,q),intent(in) :: r1vec
+       real(kind=real64) dimension(3,q),intent(in),depend(q) :: r2vec
+       real(kind=real64) dimension(q),intent(in),depend(q) :: tof
+       integer(kind=int32) dimension(q),intent(in),depend(q) :: direction
+       integer(kind=int32) dimension(q),intent(in),depend(q) :: ntilde
+       logical intent(in) :: wantbothifmultirev
+       real(kind=real64) dimension(3,q),intent(out),depend(q) :: v1veca
+       real(kind=real64) dimension(3,q),intent(out),depend(q) :: v2veca
+       real(kind=real64) dimension(3,q),intent(out),depend(q) :: v1vecb
+       real(kind=real64) dimension(3,q),intent(out),depend(q) :: v2vecb
+       integer(kind=int32) dimension(q),intent(out),depend(q) :: inforeturnstatus
+       integer(kind=int32) dimension(q),intent(out),depend(q) :: infohalfrevstatus
+   end subroutine ivlam_singlen_multipleinput
+   subroutine ivlam_thrun_multipleinput(q,r1vec,r2vec,tof,direction,uptonwant,dimv,v1vec,v2vec,uptonhave,inforeturnstatusn,infohalfrevstatus) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use ivlamiomod
+       integer(kind=int32), optional,intent(in),check(shape(r1vec, 1) == q),depend(r1vec) :: q=shape(r1vec, 1)
+       real(kind=real64) dimension(3,q),intent(in) :: r1vec
+       real(kind=real64) dimension(3,q),intent(in),depend(q) :: r2vec
+       real(kind=real64) dimension(q),intent(in),depend(q) :: tof
+       integer(kind=int32) dimension(q),intent(in),depend(q) :: direction
+       integer(kind=int32) intent(in) :: uptonwant
+       integer(kind=int32) intent(in) :: dimv
+       real(kind=real64) dimension(3,1 + 2 * dimv,q),intent(out),depend(dimv,q) :: v1vec
+       real(kind=real64) dimension(3,1 + 2 * dimv,q),intent(out),depend(dimv,q) :: v2vec
+       integer(kind=int32) dimension(q),intent(out),depend(q) :: uptonhave
+       integer(kind=int32) dimension(q),intent(out),depend(q) :: inforeturnstatusn
+       integer(kind=int32) dimension(q),intent(out),depend(q) :: infohalfrevstatus
+   end subroutine ivlam_thrun_multipleinput
+   subroutine ivlam_ntildewithderivs_multipleinput(q,r1vec,r2vec,tof,direction,ntilde,v1vec,v2vec,inforeturnstatus,infohalfrevstatus,includesecondorder,dzdyt,d2zdyt) ! in :_ivlam:ivLamRuntimeV2p41_738416p65617.f90
+       use partialparams
+       use ivlamiomod
+       integer(kind=int32), optional,intent(in),check(shape(r1vec, 1) == q),depend(r1vec) :: q=shape(r1vec, 1)
+       real(kind=real64) dimension(3,q),intent(in) :: r1vec
+       real(kind=real64) dimension(3,q),intent(in),depend(q) :: r2vec
+       real(kind=real64) dimension(q),intent(in),depend(q) :: tof
+       integer(kind=int32) dimension(q),intent(in),depend(q) :: direction
+       integer(kind=int32) dimension(q),intent(in),depend(q) :: ntilde
+       real(kind=real64) dimension(3,q),intent(out),depend(q) :: v1vec
+       real(kind=real64) dimension(3,q),intent(out),depend(q) :: v2vec
+       integer(kind=int32) dimension(q),intent(out),depend(q) :: inforeturnstatus
+       integer(kind=int32) dimension(q),intent(out),depend(q) :: infohalfrevstatus
+       logical intent(in) :: includesecondorder
+       real(kind=real64) dimension(7,6,q),intent(out),depend(q) :: dzdyt
+       real(kind=real64) dimension(7,7,6,q),intent(out),depend(q) :: d2zdyt
+   end subroutine ivlam_ntildewithderivs_multipleinput
+end interface
+end python module _ivlam
+
