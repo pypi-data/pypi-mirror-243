@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: MeMu
+Version: 2.1.2
+Requires-Dist: customtkinter (>=5.1.3)
+Requires-Dist: Pillow (>=9.4.0)
+Requires-Dist: pyboy (>=1.6.6)
+
