@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: ptb-ext
+Version: 0.1.1
+Summary: Useful helper functions & extensions for the python-telegram-bot framework
+Author: lurian
+Author-email: lurian-code@protonmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: python-telegram-bot[all] (>=20.1,<21.0)
+Description-Content-Type: text/markdown
+
+
