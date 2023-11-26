@@ -1,0 +1,9 @@
+*.pyc
+.dmypy.json
+__pycache__/
+*.egg-info/
+.tox/
+pip-wheel-metadata/
+build/
+dist/
+pythons.json
