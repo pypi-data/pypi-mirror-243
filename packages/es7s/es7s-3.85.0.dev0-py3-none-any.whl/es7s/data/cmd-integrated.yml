@@ -1,0 +1,35 @@
+# shell scripts included into es7s/core
+
+# if short_help is empty, autodiscovery class reads executable
+# file header and searches for line starting with '# es7s/core |'
+
+es7s.cli.exec_.bdb:
+  short_help: '&bash &de&bugger'
+
+es7s.cli.exec_.dss:
+  short_help: 'make a &delayed &screen&shot'
+
+es7s.cli.exec_.kamon:
+  short_help: '&(ka)fka queue &(mon)itor by container'
+
+es7s.cli.exec_.pgrek:
+  short_help: '&process-&(gre)p-&kill'
+
+es7s.cli.exec_.shocks:
+  short_help: 's&(sh) s&(ocks) proxy, usually running as service in a background'
+
+
+es7s.cli.exec_.print.bin:
+  short_help: "executables resolved from @PATH@"
+
+es7s.cli.exec_..colors.legacy:
+  short_help: "xterm-16, xterm-256 and rgb color tables"
+
+es7s.cli.exec_.print.env-hosts:
+  short_help: "Remote hosts defined in env files."
+
+es7s.cli.exec_.print.image:
+  short_help: "Render graphical file to a terminal"
+
+es7s.cli.exec_.print.pythons:
+  short_help: 'installed python versions'
