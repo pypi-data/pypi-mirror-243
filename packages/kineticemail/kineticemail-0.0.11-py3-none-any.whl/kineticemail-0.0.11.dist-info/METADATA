@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: kineticemail
+Version: 0.0.11
+Summary: Email Processing Library for handling Attachments.
+Author: Kinetic Seas (Ed Honour / Joe Lehman)
+Author-email: <edward.honour@kineticseas.com>
+Keywords: python,Email Processing
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+Requires-Dist: beautifulsoup4
+
+Designed to support Kinetic PDF processing or PDF Forms using emails.  Supports, checking email, and downloading and processing attachments.
