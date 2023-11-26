@@ -1,0 +1,96 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ubermag"
+version = "2023.11"
+description = "Meta package for Ubermag project."
+readme = "README.md"
+requires-python = ">=3.8"
+license = {file = "LICENSE"}
+
+authors = [
+    {name = "Marijan Beg"},
+    {name = "Martin Lang"},
+    {name = "Samuel Holt"},
+    {name = "Swapneel Amit Pathak"},
+    {name = "Ryan A. Pepper"},
+    {name = "Thomas Kluyver"},
+    {name = "Jeroen Mulkers"},
+    {name = "Jonathan Leliaert"},
+    {name = "Hans Fangohr"}
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Education",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Natural Language :: English",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: Unix",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Scientific/Engineering :: Visualization"
+]
+
+dependencies = [
+    "ubermagutil==0.63.2",
+    "discretisedfield==0.90.1",
+    "ubermagtable==0.61.3",
+    "micromagneticmodel==0.63.2",
+    "micromagneticdata==0.65.2",
+    "micromagnetictests==0.63.1",
+    "mumax3c==0.2.0",
+    "oommfc==0.64.1",
+    "mag2exp==0.62.2",
+    "jupyterlab>=3.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "build",
+    "h5glance",
+    "invoke",
+    "nbval",
+    "pre-commit",
+    "pytest-cov",
+    "twine"
+]
+
+[project.urls]
+homepage = "https://ubermag.github.io"
+documentation = "https://ubermag.github.io/documentation/ubermag"
+repository = "https://github.com/ubermag/ubermag"
+
+
+
+[tool.black]
+experimental-string-processing = true
+
+[tool.coverage.run]
+omit = ["ubermag/tests/*"]
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true  # ignores files listed in .gitignore
+
+[tool.setuptools.packages.find]
+include = ["ubermag*"]
+
+# to define additional information we use a custom table
+# see: https://www.python.org/dev/peps/pep-0518/#tool-table
+[tool.ubermag]
+doi = "10.5281/zenodo.3539495"
+copyright_holder = "Marijan Beg and Hans Fangohr"
+contributors = [
+]
+about = """
+- Meta package for Ubermag project,
+
+- Logging control in Ubermag packages.
+"""
