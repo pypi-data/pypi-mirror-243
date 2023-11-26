@@ -1,0 +1,7 @@
+lxml>=4.9.3
+pandas>=2.0.0
+rich>=13.6.0
+typer>=0.9.0
+
+[dev]
+pytest>=7.4.3

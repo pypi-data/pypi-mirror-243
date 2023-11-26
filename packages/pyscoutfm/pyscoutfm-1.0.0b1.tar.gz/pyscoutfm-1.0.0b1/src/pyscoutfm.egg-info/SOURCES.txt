@@ -1,0 +1,20 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/pyscoutfm/__init__.py
+src/pyscoutfm/application.py
+src/pyscoutfm/data.py
+src/pyscoutfm/formatter.py
+src/pyscoutfm/generator.py
+src/pyscoutfm/importer.py
+src/pyscoutfm.egg-info/PKG-INFO
+src/pyscoutfm.egg-info/SOURCES.txt
+src/pyscoutfm.egg-info/dependency_links.txt
+src/pyscoutfm.egg-info/entry_points.txt
+src/pyscoutfm.egg-info/requires.txt
+src/pyscoutfm.egg-info/top_level.txt
+src/pyscoutfm/config/config.json
+src/pyscoutfm/config/weightings.json
+src/pyscoutfm/extras/PyScoutFM - Player Search.fmf
+src/pyscoutfm/extras/PyScoutFM - Squad.fmf
