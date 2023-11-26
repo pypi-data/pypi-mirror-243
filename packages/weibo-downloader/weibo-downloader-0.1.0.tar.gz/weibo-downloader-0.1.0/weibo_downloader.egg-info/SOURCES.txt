@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+tests/test_weibo_downloader.py
+weibo_downloader/__init__.py
+weibo_downloader/weibo_downloader.py
+weibo_downloader.egg-info/PKG-INFO
+weibo_downloader.egg-info/SOURCES.txt
+weibo_downloader.egg-info/dependency_links.txt
+weibo_downloader.egg-info/requires.txt
+weibo_downloader.egg-info/top_level.txt
