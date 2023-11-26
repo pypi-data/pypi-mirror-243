@@ -1,0 +1,2 @@
+[console_scripts]
+address_book_vad = address_book_vad.main:main
