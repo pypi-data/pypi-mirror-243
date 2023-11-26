@@ -1,0 +1,27 @@
+[project]
+name = 'lest'
+version = '0.7.0'
+authors = [
+  { name='wchistow', email='wchistow@yandex.ru' },
+]
+description = 'Light Python library for testing.'
+readme = 'README.md'
+requires-python = '>=3.9'
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3 :: Only',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: OS Independent',
+]
+dependencies = [
+  'rich==13.4.2',
+]
+
+[project.urls]
+'Homepage' = 'https://github.com/wchistow/lest'
+'Bug Tracker' = 'https://github.com/wchistow/lest/issues'
+'Repository' = 'https://github.com/wchistow/lest.git'

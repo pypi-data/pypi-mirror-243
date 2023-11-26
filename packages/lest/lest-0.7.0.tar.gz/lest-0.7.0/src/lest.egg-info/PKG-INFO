@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: lest
+Version: 0.7.0
+Summary: Light Python library for testing.
+Author-email: wchistow <wchistow@yandex.ru>
+Project-URL: Homepage, https://github.com/wchistow/lest
+Project-URL: Bug Tracker, https://github.com/wchistow/lest/issues
+Project-URL: Repository, https://github.com/wchistow/lest.git
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rich==13.4.2
+
+# Lest
+
+## Light Python library for testing
+
+## Installing
+
+See [installing](https://github.com/wchistow/lest/blob/master/docs/en/installing.md) in documentation.
+
+## Usage
+
+### Example:
+
+Code:
+
+```python
+import lest
+
+
+@lest.setup
+def my_setup():
+    print('Setup ran!')
+
+
+@lest.register
+def test_adding_two_and_two():
+    lest.assert_eq(2 + 2, 4)
+
+
+@lest.register
+def some_error_test():
+    lest.assert_eq(2 + 2, 5)  # AssertionError
+
+
+@lest.register
+def some_more_error():
+    lest.assert_eq(a + 2, 4)  # NameError
+
+
+lest.run(info_level='max')
+```
+
+Output (to visible the highlighting, it's a print-screen):
+
+![](https://raw.githubusercontent.com/wchistow/lest/master/result.png)
