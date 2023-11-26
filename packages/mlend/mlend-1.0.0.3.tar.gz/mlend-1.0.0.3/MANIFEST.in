@@ -1,0 +1,13 @@
+include *.md
+include docs/index.rst
+include LICENSE
+include Version
+include requirements.txt
+include mlend/__init__.py
+
+recursive-include mlend *.py
+recursive-include mlend *.txt
+recursive-include *.pkl
+
+recursive-exclude * __pycache__
+recursive-exclude *.yml
