@@ -1,0 +1,15 @@
+hopsy/callback.py,sha256=gNsaB_HBMyB7egYrZjK0NhqAflqZ5iBZhMErhkNcstA,6150
+hopsy/core.cp38-win_amd64.pyd,sha256=5wt5A747PfkQRkv3CM7WL7l_7MA-uK-eXTRH8RW-e-Q,2656768
+hopsy/examples.py,sha256=JJi3FCDBiLPYkRIgsJmo9bdtPqvJQA9bDKcquSFwhNc,3844
+hopsy/lp.py,sha256=faY-1xT2PkPBDsklr_Th-_uED4N0UKZD41IZ0qbXEgw,1115
+hopsy/misc.py,sha256=h4Ko0SMFjC_-iMHQdICgHaXozlPUuxqLAPhg9OMEUTg,44806
+hopsy/__init__.py,sha256=jmcp5H2WbhtJvOwuIaYkdpt07VWUfVu-xYUwYX2R6nE,1480
+hopsy-1.4.0.dist-info/DELVEWHEEL,sha256=7EZqCeXtfnM7ZljhM00rvJyTFSa8gReI3Hob8s82sio,162
+hopsy-1.4.0.dist-info/LICENSE,sha256=mraIgWsAJNYgzYxUgcrnuvWC8Srh-lVhJryk9w1NE68,1104
+hopsy-1.4.0.dist-info/METADATA,sha256=kBZlb-i3yNUiqWsoZIwW7NjWnuQ-Gd4YQiyKyWpT6hk,6281
+hopsy-1.4.0.dist-info/RECORD,,
+hopsy-1.4.0.dist-info/top_level.txt,sha256=g8QfGHQq4nGbh4Dk-sKfsQp5tf7AWb9UmrgF-fGuJik,17
+hopsy-1.4.0.dist-info/WHEEL,sha256=M2GQ3lde8oJhlQPj2wbRvnqE3cuovPJasri5X5aCmck,100
+hopsy.libs/.load-order-hopsy-1.4.0,sha256=o_drLrOgZPmIgaaEsDkR4eLixATN6Hxz6BY_Nf9spm8,98
+hopsy.libs/msvcp140-bce068c79e5eb23eb197132bedcaaa85.dll,sha256=lKa_R0ERjB1xC8_48n4XlMg8AoiNp0eJepO_A27gejk,573952
+hopsy.libs/vcruntime140_1-4da5f01c67dc602d2c7e5e5691a70a57.dll,sha256=e49w3Tva4RDmGCPRym_YlVpWFxGfVAXN1rFMrTZW38c,44328
