@@ -1,0 +1,11 @@
+LICENSE
+README.md
+jarvisportal.py
+setup.py
+jarvisportal.egg-info/PKG-INFO
+jarvisportal.egg-info/SOURCES.txt
+jarvisportal.egg-info/dependency_links.txt
+jarvisportal.egg-info/entry_points.txt
+jarvisportal.egg-info/requires.txt
+jarvisportal.egg-info/top_level.txt
+tests/test_actions.py
