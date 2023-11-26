@@ -1,0 +1,2 @@
+[console_scripts]
+addend = addend.command_line:main
