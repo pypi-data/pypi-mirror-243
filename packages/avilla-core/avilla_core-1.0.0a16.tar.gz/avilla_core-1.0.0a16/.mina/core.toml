@@ -1,0 +1,38 @@
+includes = [
+    "avilla/core",
+    "avilla/core/py.typed",
+    "avilla/standard/core",
+    "graia/ryanvk",
+]
+
+[project]
+name = "avilla-core"
+version = "1.0.0a16"
+authors = [
+  {name = "GreyElaina", email = "GreyElaina@outlook.com"},
+  {name = "BlueGlassBlock", email = "blueglassblock@outlook.com"},
+  {name = "ProgramRipper", email = "programripper@foxmail.com"},
+  {name = "RF-Tar-Railt", email = "rf_tar_railt@qq.com"}
+]
+dependencies = [
+    "graia-broadcast",
+    "graia-amnesia",
+    "loguru",
+    "launart",
+    "creart"
+]
+description = ""
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.urls]
+homepage = "https://github.com/GraiaProject/Avilla"
+repository = "https://github.com/GraiaProject/Avilla"
+
+[project.optional-dependencies]
+alconna = [
+    "arclet-alconna<2.0,>=1.7.34",
+    "arclet-alconna-tools>=0.6.6",
+    "pygtrie"
+]
