@@ -1,0 +1,23 @@
+#!/bin/bash
+#-------------------------------------------------------------------------------
+# es7s/core
+# (c) 2023 A. Shavykin <0.delameter@gmail.com>
+#-------------------------------------------------------------------------------
+__SELF="$(basename "$0" | sed -Ee 's/\..+$//')"
+__USAGE="$(cat <<-EOL
+Description.
+
+Usage:
+    ${__SELF} -
+EOL
+)"
+
+__main() {
+    :
+}
+
+# arg1 required:  [[ $# -lt 1 ]]
+# arg1 forbidden: [[ $# -gt 1 ]] || [[ $* =~ (--)?help ]]
+# arg1 optional:  [[ $# -gt 1 ]] && [[ $* =~ (--)?help ]]
+[[ $* =~ (--)?help ]] && echo "$__USAGE" && exit
+__main "$@"

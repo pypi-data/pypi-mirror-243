@@ -1,0 +1,15 @@
+# @SCOPE=user
+
+[Unit]
+Description=xbindkeys
+
+[Service]
+Type=simple
+KillMode=process
+Restart=always
+RestartSec=1
+ExecStart=/usr/bin/xbindkeys -n -f /home/%USER/.es7s/data/conf/xbindkeysrc --verbose
+Environment="ES7S_BIN_PATH=/home/%USER/.es7s/bin"
+
+[Install]
+WantedBy=graphical-session.target
