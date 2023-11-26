@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: eventstoredb
+Version: 0.8.0
+Summary: Python EventstoreDB client that uses gRPBC as the communication protocol.
+License: Apache-2.0
+Keywords: eventstore,eventstoredb
+Author-email: betaboon <betaboon@0x80.ninja>
+Requires-Python: >=3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: betterproto==2.0.0b5
+Requires-Dist: yarl>=1.9.3
+Project-URL: changelog, https://github.com/betaboon/EventStoreDB-Client-Python/releases
+Project-URL: repository, https://github.com/betaboon/EventStoreDB-Client-Python
+Description-Content-Type: text/markdown
