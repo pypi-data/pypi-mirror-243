@@ -1,0 +1,9 @@
+attrs
+pandas
+numpy
+pyrepresent
+
+[dev]
+pdoc3
+twine
+pytest
