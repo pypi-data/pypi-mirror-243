@@ -1,0 +1,17 @@
+[console_scripts]
+create_posemodel = scripts.utils.create_posemodel:main
+create_swing_db = scripts.create_swing_db:main
+create_test_db = scripts.utils.create_test_db:main
+create_test_image = scripts.utils.create_test_image:main
+display_golf_swing = scripts.display_golf_swing:main
+dump_swing_db = scripts.dump_swing_db:main
+label_club_head = scripts.label_club_head:main
+label_golf_poses = scripts.label_golf_poses:main
+load_swing_db = scripts.load_swing_db:main
+plot_swing_points = scripts.plot_swing_points:main
+predict_posemodel = scripts.utils.predict_posemodel:main
+resize_in_video = scripts.resize_in_video:main
+track_golf_club = scripts.track_golf_club:main
+train_posemodel = scripts.utils.train_posemodel:main
+tune_line_det = scripts.tune_line_det
+
