@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cm2mem"
+version = "1.0.2"
+authors = [
+  { name="Gogle Squirminton", email="goglesquirmintontheiii@gmail.com" },
+]
+description = "Allows easy manipulation of memory in the Roblox game Circuit Maker 2. Supports MassiveMemory and MassMemory."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
