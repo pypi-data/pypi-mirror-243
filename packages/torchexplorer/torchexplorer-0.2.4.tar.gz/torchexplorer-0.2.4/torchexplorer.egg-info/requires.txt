@@ -1,0 +1,15 @@
+torch
+pygraphviz
+wandb
+flask
+numpy
+click
+
+[dev]
+torchvision
+lightning
+scikit-learn
+pytest
+pyperclip
+mypy
+twine
