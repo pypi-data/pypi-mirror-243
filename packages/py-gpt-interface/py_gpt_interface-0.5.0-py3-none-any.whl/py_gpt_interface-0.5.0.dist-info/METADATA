@@ -1,0 +1,81 @@
+Metadata-Version: 2.1
+Name: py_gpt_interface
+Version: 0.5.0
+Summary: A simple interface for using the GPT API.
+Author-Email: Matt Zhang <set.stun@gmail.com>
+License: MIT
+Project-URL: Homepage, https://github.com/MattUnderscoreZhang/gpt_interface
+Requires-Python: >=3.8
+Requires-Dist: openai>=1.2.4
+Requires-Dist: tiktoken>=0.5.1
+Requires-Dist: twine>=4.0.2
+Requires-Dist: build>=1.0.3
+Requires-Dist: python-dotenv>=1.0.0
+Requires-Dist: pytest>=7.4.3
+Description-Content-Type: text/markdown
+
+# gpt_interface
+
+A simple interface for using the GPT API.
+
+## API Key
+
+To use gpt_interface, you need an OpenAI API key (https://platform.openai.com/docs/api-reference/authentication).
+
+I recommend creating a .env file and adding it to your .gitignore file. The file would contain the following:
+
+```
+OPENAI_API_KEY=sk-exampleKey
+```
+
+## Simple Usage
+
+```python
+from dotenv import load_dotenv
+import os
+from pathlib import Path
+
+from gpt_interface import GptInterface
+
+
+if __name__ == "__main__":
+    load_dotenv()  # load the OpenAI API key from a .env file
+    interface = GptInterface(  # create interface
+        openai_api_key=os.getenv("OPENAI_API_KEY"),
+        model="gpt-3.5-turbo",
+    )
+    interface.say("Hi! My name is Matt")  # talk to GPT
+    response = interface.say("What's my name?")  # conversation log is stored in memory
+    assert "Matt" in response
+    print(interface.log)  # can print logs
+    current_path = Path(__name__).parent.absolute()
+    interface.log.save(current_path / "my_log.json")  # can save or load logs
+    interface.log.load(current_path / "my_log.json")
+```
+
+The log from the example above would look something like this:
+
+```json
+[
+    {
+        "role": "user",
+        "content": "Hi! My name is Matt"
+    },
+    {
+        "role": "assistant",
+        "content": "Hello Matt! How can I assist you today?"
+    },
+    {
+        "role": "user",
+        "content": "What's my name?"
+    },
+    {
+        "role": "assistant",
+        "content": "Your name is Matt!"
+    }
+]
+```
+
+## Advanced Examples
+
+See the examples/ folder to see more details about how to use the interface.
