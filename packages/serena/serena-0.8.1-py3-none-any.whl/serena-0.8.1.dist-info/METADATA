@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: serena
+Version: 0.8.1
+Summary: An AMQP 0-9-1 client using AnyIO.
+License: LGPL-3.0-or-later
+Author: Lura Skye
+Author-email: l@veriny.tf
+Requires-Python: >=3.11
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: AnyIO
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Typing :: Typed
+Requires-Dist: anyio (>=4.0.0)
+Requires-Dist: attrs (>=21.4.0)
+Requires-Dist: outcome (>=1.3.0.post0)
+Requires-Dist: typing-extensions (>=4.8.0) ; python_version < "3.12"
+Description-Content-Type: text/x-rst
+
+Serena
+======
+
+*Serena* is a pure-Python, structually concurrent AMQP 0-9-1 client.
+
+See https://amqp.py.veriny.tf/ for more information.
+
