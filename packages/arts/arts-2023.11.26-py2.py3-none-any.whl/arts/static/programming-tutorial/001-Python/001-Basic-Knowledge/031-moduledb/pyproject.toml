@@ -1,0 +1,17 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "moduledb"
+version = "0.1"
+description = "为 Python 模块提供数据持久化支持"
+dependencies = ["arts>=2023.11.26"]
+
+readme = "README.md"
+authors = [{name = "lcctoor.com", email = "lcctoor@outlook.com"}]
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: Apache Software License"]
+
+[project.urls]
+HomePage = "https://github.com/lcctoor/arts/tree/main/arts/moduledb"

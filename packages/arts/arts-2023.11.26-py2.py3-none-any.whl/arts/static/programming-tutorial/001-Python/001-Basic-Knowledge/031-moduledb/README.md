@@ -1,0 +1,61 @@
+# 项目描述
+
+为 Python 模块提供数据持久化支持。
+
+# 作者信息
+
+昵称：lcctoor.com
+
+[主页](https://lcctoor.github.io/arts/) \| [微信](https://lcctoor.github.io/arts/arts/static/static-files/WeChatQRC.jpg) \| [Github](https://github.com/lcctoor) \| [PyPi](https://pypi.org/user/lcctoor) \| [Python交流群](https://lcctoor.github.io/arts/arts/static/static-files/PythonWeChatGroupQRC.jpg) \| [邮箱](mailto:lcctoor@outlook.com) \| [域名](http://lcctoor.com) \| [捐赠](https://lcctoor.github.io/arts/arts/static/static-files/DonationQRC-0rmb.jpg)
+
+# Bug提交、功能提议
+
+您可以通过 [Github-Issues](https://github.com/lcctoor/arts/issues)、[微信](https://lcctoor.github.io/arts/arts/static/static-files/WeChatQRC.jpg) 与我联系。
+
+# 安装
+
+```
+pip install moduledb
+```
+
+# 教程 ([查看美化版](https://lcctoor.github.io/arts/?pk=moduledb)👈)
+
+## 导入
+
+```python
+import sys
+from arts.moduledb import ModuleDB
+```
+
+## 为当前模块持久化数据
+
+```python
+db = ModuleDB(sys.modules[__name__], depth=3)
+
+city = db['泉州市']  # 第 1 层
+school = city['希望小学']  # 第 2 层
+wang = school['小王']  # 第 depth 层
+
+wang['age'] = 18
+wang['name'] = '小王'
+wang.setdefault('性别', '男')
+
+print(wang['name'])
+```
+
+## 为其它模块持久化数据
+
+```python
+import requests
+db = ModuleDB(requests, depth=2)
+
+city = db['上海市']  # 第 1 层
+hong = city['小红']  # 第 depth 层
+
+hong['age'] = 20
+hong['name'] = '小红'
+hong.setdefault('性别', '女')
+hong.update({'爱好':'足球', '身高':'175CM'})
+
+print(hong['name'])
+```
