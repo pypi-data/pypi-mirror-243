@@ -1,0 +1,3 @@
+[console_scripts]
+pokegym.play = pokegym.environment:play
+

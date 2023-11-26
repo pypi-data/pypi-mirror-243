@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pokegym
+Version: 0.1.8
+Summary: Pokemon Red Gymnasium environment for reinforcement learning
+Home-page: https://github.com/PufferAI/pokegym
+Author: Joseph Suarez
+Author-email: jsuarez@mit.edu
+License: MIT
+Description: UNKNOWN
+Keywords: Pokemon,AI,RL
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
