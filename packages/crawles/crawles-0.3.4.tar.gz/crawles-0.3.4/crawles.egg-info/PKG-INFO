@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: crawles
+Version: 0.3.4
+Summary: 这是一个简单的爬虫封装模块，封装一些请求优化与下载功能
+Home-page: https://github.com/kuangjianke/crawles
+Author: 苯环
+Author-email: 1431705288@qq.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+**0.3.3更新**
+
+1 增加了请求参数类型自动识别
+
+2 增加了curl的请求参数对比
+
+
+
+**当前功能**
+
+1 将curl数据转换为普通代码，类代码和线程池代码
+
+2 可以将请求的数据进行格式化，请求参数可以直接是字符串
+
+3 优化了请求的响应体对象
+
