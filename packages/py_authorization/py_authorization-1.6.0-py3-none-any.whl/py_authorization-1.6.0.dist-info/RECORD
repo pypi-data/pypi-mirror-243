@@ -1,0 +1,13 @@
+py_authorization/__init__.py,sha256=3ytN9KbTwVyhwA8fvR1pdwqeJjVdIBbBGUZ1q_AZzM8,555
+py_authorization/authorization.py,sha256=HapQId8onl3oaL9an-2HjPg_0b6KiCsognWCU8zt3kY,10840
+py_authorization/context.py,sha256=bXb0uN-zEliOjwQiPdLmRpv9gLrvoiZlGiQkotlFGMM,325
+py_authorization/policy.py,sha256=gvvG_krWjnc0VVKWCe-rLn2TQsjciBtmx2d7ih3oFtk,398
+py_authorization/policy_strategy.py,sha256=CISl_c-J5V9EbPI0MAWB3-uyoZmEhde9PHnxW-6gaGE,793
+py_authorization/policy_strategy_builder.py,sha256=Sf7L8CrkfszO73uu85WBk46v6o0CwXoyD71AbQ1cmso,657
+py_authorization/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+py_authorization/sql_parser.py,sha256=_t_M_B9inzXo1I6bz4bUbkBqDq9FVIvMILPjxSR5DtA,5538
+py_authorization/user.py,sha256=oWzQe2NQl_FVWuT-2kjzrS46noUnFO-x2IyRv3ffxHU,128
+py_authorization-1.6.0.dist-info/LICENSE,sha256=ZbZ8vKQzr3l07TDJD574UOoqYe3iiI0a_dqVlNsRUiE,1065
+py_authorization-1.6.0.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+py_authorization-1.6.0.dist-info/METADATA,sha256=jplGjnsGz53zpgStHoppfYGFWr0GTyZVp2KJBpe0TKk,235
+py_authorization-1.6.0.dist-info/RECORD,,
