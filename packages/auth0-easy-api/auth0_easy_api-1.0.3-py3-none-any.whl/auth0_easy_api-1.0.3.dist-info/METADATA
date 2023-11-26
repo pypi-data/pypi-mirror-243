@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: auth0-easy-api
+Version: 1.0.3
+Summary: A Python wrapper around Auth0 Authentication API and Management API to make setup and basic operations easier
+Home-page: https://github.com/DovaX/auth0_easy_api
+Author: DovaX
+Author-email: dovax.ai@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flask
+Requires-Dist: pyjwt
+Requires-Dist: dogui
+
+# auth0_easy_api
+A Python wrapper around Auth0 Authentication API and Management API to make setup and basic operations easier
