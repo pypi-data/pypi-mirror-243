@@ -1,0 +1,11 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+monitorVW/__init__.py
+monitorVW/monitorVW.py
+monitorVW.egg-info/PKG-INFO
+monitorVW.egg-info/SOURCES.txt
+monitorVW.egg-info/dependency_links.txt
+monitorVW.egg-info/requires.txt
+monitorVW.egg-info/top_level.txt
