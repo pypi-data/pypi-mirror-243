@@ -1,0 +1,4 @@
+[console_scripts]
+dnschef=dnschef.__main__:main
+dnschef-ng=dnschef.__main__:main
+
