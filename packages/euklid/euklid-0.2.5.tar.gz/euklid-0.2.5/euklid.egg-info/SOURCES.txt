@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+euklid.egg-info/PKG-INFO
+euklid.egg-info/SOURCES.txt
+euklid.egg-info/dependency_links.txt
+euklid.egg-info/top_level.txt
+tests/test_bezier.py
+tests/test_polyline.py
+tests/test_vector.py
