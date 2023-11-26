@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+geoanasolution/__init__.py
+geoanasolution/_analytical_base.py
+geoanasolution/theis.py
+geoanasolution/uniform_flow.py
+geoanasolution.egg-info/PKG-INFO
+geoanasolution.egg-info/SOURCES.txt
+geoanasolution.egg-info/dependency_links.txt
+geoanasolution.egg-info/top_level.txt
