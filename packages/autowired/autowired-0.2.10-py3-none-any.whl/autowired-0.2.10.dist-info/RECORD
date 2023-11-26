@@ -1,0 +1,16 @@
+autowired/__init__.py,sha256=Wuv9AYwINJKU7TAfQh_50NMIRL46h6j93Y6heGbnCDc,918
+autowired/_container.py,sha256=g-j1n5YYIDqUt6ogOj8ZKPWPdbLQ2Er1wZfulaFl9Ik,13155
+autowired/_context.py,sha256=THeRUSuaOOBMy79ggpUgu8R1_yQ1yFsgyzjmVImC358,10415
+autowired/_exceptions.py,sha256=IcKsdrWYzIixmgkLWqYYPVVwQoF8Hno_rScQSgrtiEg,1326
+autowired/_logging.py,sha256=9BZP4qGh4elTOcoHY2sB7XTdNCk7Qh72-PkqSqN6lX0,316
+autowired/_thread_local_cached_property.py,sha256=bNL0O5hrTiCPZtJetIiqBIwA1WREjJSN52i0tG6c21E,1467
+autowired/_typing_utils.py,sha256=sy2Ne0qJHqCGBtAlV0rzq6un54w8Fg1BpECEgj8plT8,3586
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_autowired.py,sha256=K_CCb8yZ4iy8XyU6nI-lEYGIpmZit68UYaBIQ7sbZ7I,22840
+tests/test_thread_local_cached_property.py,sha256=NHLB0vOW-QQhstyyBHPPFlwbRynSK6iJHMayk-eeGeU,1474
+tests/test_typing_utils.py,sha256=OawnV244RXa7jSL6jLAY9YAK_dZ_cYobwvyic3IwBt8,5037
+autowired-0.2.10.dist-info/LICENSE,sha256=dvvw3K_-B6A0BYQSmNOf3x46-I3cViHz9LMBRU4Mbn4,1071
+autowired-0.2.10.dist-info/METADATA,sha256=idy5gUJUoleVz9TeXgQJY9zt3E-qFCds6UXmvyM_ni4,26934
+autowired-0.2.10.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+autowired-0.2.10.dist-info/top_level.txt,sha256=_pPbtpfQ4pxjF4OwfLuNTSfipJtvSqlDwBe3oc8h7h0,16
+autowired-0.2.10.dist-info/RECORD,,
