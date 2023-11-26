@@ -1,0 +1,2 @@
+[console_scripts]
+cms = cloudmesh.shell.shell:main
