@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: datakart
+Version: 1.1.1
+Summary: A small data kart package
+Project-URL: Homepage, https://github.com/himoon/datakart
+Project-URL: Issues, https://github.com/himoon/datakart/issues
+Author-email: HYUNIL MOON <hyunil.moon@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# datakart
