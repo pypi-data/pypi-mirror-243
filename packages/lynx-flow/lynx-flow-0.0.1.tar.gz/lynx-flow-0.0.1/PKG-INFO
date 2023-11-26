@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: lynx-flow
+Version: 0.0.1
+Summary: Lynx Flow is a streamlined and straightforward library for building method call sequences. Simplify your code with clear and concise constructs using Lynx Flow.
+Author: Toghrul Mirzayev
+Author-email: togrul.mirzoev@gmail.com
+Keywords: testing,api,rest,graphql,backend,qa,test-automation,automation
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Testing
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: logstyle
+
+# Lynx Flow
+
+Lynx Flow is a streamlined and straightforward library for building method call sequences.
+Simplify your code with clear and concise constructs using Lynx Flow.
+
+![Lynx Flow logo](https://github.com/ToghrulMirzayev/lynx-flow/raw/main/logo/lynx-flow.png)
+
+# Getting started
+
+* Install lynx-flow
+  ```commandline
+  pip install lynx-flow
+  ```
+
+* Import Lynx class to start
+  ```python
+  from lynx_flow.lynx import Lynx
+  ```
+
+* Build your request in single, clear and readable flow
+  ```python
+  Lynx().get().with_url(URL).with_headers(HEADERS).where().json().tobe().equal("The service is up and running")
+  ```
+  
