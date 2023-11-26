@@ -1,0 +1,11 @@
+setuptools
+chameleon
+pyams_template
+pyams_utils
+pyramid>=2.0.0
+venusian
+zope.contentprovider
+zope.interface
+zope.location
+
+[test]
