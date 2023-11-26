@@ -1,0 +1,7 @@
+include LICENSE
+include README.md
+recursive-include sada/templates *
+recursive-include sada/static *
+prune core
+global-exclude manage.py
+global-exclude db.sqlite3
