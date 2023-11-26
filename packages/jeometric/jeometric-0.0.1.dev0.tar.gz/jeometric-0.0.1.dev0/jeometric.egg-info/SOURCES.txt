@@ -1,0 +1,17 @@
+README.md
+setup.py
+jeometric/__init__.py
+jeometric/data.py
+jeometric/data_reader.py
+jeometric/gnn.py
+jeometric/ops.py
+jeometric/util.py
+jeometric.egg-info/PKG-INFO
+jeometric.egg-info/SOURCES.txt
+jeometric.egg-info/dependency_links.txt
+jeometric.egg-info/requires.txt
+jeometric.egg-info/top_level.txt
+test/test_data.py
+test/test_gnn.py
+test/test_ops.py
+test/test_util.py

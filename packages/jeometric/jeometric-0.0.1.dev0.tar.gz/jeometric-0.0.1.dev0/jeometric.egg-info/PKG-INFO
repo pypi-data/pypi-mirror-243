@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: jeometric
+Version: 0.0.1.dev0
+Summary: Graph Neural Networks in JAX
+Author: Daniele Paliotta
+Author-email: daniele.paliotta@unige.ch
+License: Apache 2.0
+Requires-Dist: jax>=0.4.20
+Requires-Dist: numpy>=1.18.5
+Requires-Dist: flax>=0.7.5
+Requires-Dist: pandas>=1.1.5
