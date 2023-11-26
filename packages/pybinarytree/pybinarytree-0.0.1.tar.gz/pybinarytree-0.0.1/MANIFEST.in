@@ -1,0 +1,5 @@
+include requirements.txt
+recursive-include pybinarytree/*
+include LICENSE
+include README.md
+include setup.cfg

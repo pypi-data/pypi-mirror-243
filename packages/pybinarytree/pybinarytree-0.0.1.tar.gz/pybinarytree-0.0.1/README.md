@@ -1,0 +1,436 @@
+# Description
+
+The BinaryTree class is a general-purpose sorted list.
+
+# Installation
+
+```
+pip install pybinarytree
+```
+
+# Implementation
+
+The BinaryTree class can accept either no object, an individual object, or a list/tuple of objects.
+
+```python
+from pybinarytree import BinaryTree
+
+# Initialize without any values:
+tree = BinaryTree()
+print(tree)  # []
+
+# Initializing with a single value:
+tree = BinaryTree(5)
+print(tree)  # [5]
+
+# Initializing with a list:
+integers = [4, 7, 2, 10, 3, 9, 1, 5, 6, 8]
+tree = BinaryTree(integers)
+print(tree)  # [1, 2, 3, 4, 5, 6, 7, 8, 8, 9, 10]
+
+# Initializing with a tuple:
+integers = (11, 18, 14, 12, 19, 20, 16, 13, 17, 15)
+tree = BinaryTree(integers)
+print(tree)  # [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+```
+
+## Sorting Custom Classes
+
+The BinaryTree class is meant to sort any type of object, not just numeric types or strings.
+
+To allow for sorting, the class object must have defined comparison methods to describe which values are less than, less than or equal to, equal to, greater than or equal to, or greater than other values. For example:
+
+```python
+class MySortableClass:
+    def __init__(self, value: int):
+        self.value = value
+
+    def __lt__(self, other) -> bool:
+        return self.value < other.value
+
+    def __le__(self, other) -> bool:
+        return self.value <= other.value
+
+    def __eq__(self, other) -> bool:
+        return self.value == other.value
+
+    def __ge__(self, other) -> bool:
+        return self.value >= other.value
+
+    def __gt__(self, other) -> bool:
+        return self.value > other.value
+
+    def __str__(self) -> str:
+        return str(self.value)
+```
+
+## Sorting Multiple Classes
+
+The BinaryTree can sort multiple types of items as long as their comparison methods can account for it. For example, floats and integers can be compared with each other, but are not the same type.
+
+```python
+from pybinarytree import BinaryTree
+
+values = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5]
+tree = BinaryTree(values)
+print(tree.to_display_string())
+"""
+         ┌────── 3 ─────────┐
+ ┌────── 2 ─┐       ┌────── 4.5 ─┐
+ 1 ─┐       2.5     3.5 ─┐       5
+    1.5                  4
+"""
+```
+
+The same idea should apply to any custom classes that are given to the BinaryTree class, just so long as they can work together.
+
+# Class Methods
+
+## BinaryTree.add(new_value: Any)
+
+After initialization, the only way to add new values to the tree is to pass the value to BinaryTree.add().
+
+```python
+from pybinarytree import BinaryTree
+
+# Initialize the tree.
+integers = [1, 2, 3, 4, 5]
+tree = BinaryTree(integers)
+print(tree.to_display_string())
+"""
+ ┌──── 3 ─┐
+ 1 ─┐     4 ─┐
+    2        5
+"""
+
+# Add individual values to the tree.
+for value in [6, 7, 8, 9, 10]:
+   tree.add(value)
+print(tree.to_display_string())
+"""
+ ┌──── 3 ─┐
+ 1 ─┐     4 ─┐
+    2        5 ─┐
+                6 ─┐
+                   7 ─┐
+                      8 ─┐
+                         9 ─┐
+                            10
+"""
+
+# Add a list (or tuple) of new items.
+tree.add([0, -1, -2, -3, -4, -5])
+print(tree.to_display_string())
+"""
+                        ┌──── 3 ─┐
+                     ┌─ 1 ─┐     4 ─┐
+                 ┌── 0     2        5 ─┐
+             ┌── -1                    6 ─┐
+         ┌── -2                           7 ─┐
+     ┌── -3                                  8 ─┐
+ ┌── -4                                         9 ─┐
+ -5                                                10
+"""
+```
+
+## BinaryTree.balance()
+
+Balancing the tree takes time, and therefore does not happen each time a new value is added. This means that the tree's depth (or the number of steps needed to reach the furthest values from the root node) increases, but saves time in the short-term.
+
+Adding too many values without balancing will decrease the efficiency of the tree. If desired, the tree can be re-balanced to optimize performance.
+
+```python
+from pybinarytree import BinaryTree
+
+tree = BinaryTree()
+for value in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+   tree.add(value)
+print(tree.to_display_string())
+"""
+1 ─┐
+    2 ─┐
+       3 ─┐
+          4 ─┐
+             5 ─┐
+                6 ─┐
+                   7 ─┐
+                      8 ─┐
+                         9 ─┐
+                            10
+"""
+
+tree.balance()
+print(tree.to_display_string())
+"""
+       ┌─────── 6 ───────┐
+ ┌──── 3 ─┐        ┌──── 9 ─┐
+ 1 ─┐     4 ─┐     7 ─┐     10
+    2        5        8
+"""
+```
+
+## BinaryTree.find_between(low_val: Any, high_val: Any)
+
+**Accepts two values (low_val and high_val) where low_val <= high_val.**
+
+**Returns a sorted list of X items where low_val <= X <= high_val.**
+
+```python
+from pybinarytree import BinaryTree
+
+integers = [1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10]  # Multiple 3's
+tree = BinaryTree(integers)
+
+print(tree.find_between(3, 5))  # [3, 3, 4, 5]
+print(tree.find_between(7, 9))  # [7, 8, 9]
+print(tree.find_between(100, 200))  # []
+```
+
+## BinaryTree.find_equal_to(value: Any)
+
+**Accepts a value.**
+
+**Returns a sorted list of X items where X == value.**
+
+```python
+from pybinarytree import BinaryTree
+
+integers = [1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10]  # Multiple 3's
+tree = BinaryTree(integers)
+
+print(tree.find_equal_to(8))  # [8]
+print(tree.find_equal_to(3))  # [3, 3]
+print(tree.find_equal_to(100))  # []
+```
+
+## BinaryTree.find_greater_than(value: Any)
+
+**Accepts a value.**
+
+**Returns a sorted list of X items where value < X.**
+
+```python
+from pybinarytree import BinaryTree
+
+integers = [1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10]  # Multiple 3's
+tree = BinaryTree(integers)
+
+print(tree.find_greater_than(5))  # [6, 7, 8, 9, 10]
+print(tree.find_greater_than(0))  # [1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10]
+print(tree.find_greater_than(100))  # []
+```
+
+## BinaryTree.find_less_than(value: Any)
+
+**Accepts a value.**
+
+**Returns a sorted list of X items where X < value.**
+
+```python
+from pybinarytree import BinaryTree
+
+integers = [1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10]  # Multiple 3's
+tree = BinaryTree(integers)
+
+print(tree.find_less_than(5))  # [1, 2, 3, 3, 4]
+print(tree.find_less_than(0))  # []
+print(tree.find_less_than(100))  # [1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10]
+```
+
+## BinaryTree.remove_all(value: Any)
+
+**Accepts a value or list/tuple of values.**
+
+**Deletes all copies of the value from the tree (if any exist) and returns None.**
+
+```python
+from pybinarytree import BinaryTree
+
+integers = [1, 2, 3, 3, 3, 3, 3, 4, 5, 6, 7, 8, 9, 10]  # Multiple 3's
+tree = BinaryTree(integers)
+
+print(tree.to_display_string())
+"""
+       ┌──────────── 6 ───────┐
+ ┌──── 3 (x5) ─┐        ┌──── 9 ─┐
+ 1 ─┐          4 ─┐     7 ─┐     10
+    2             5        8
+"""
+
+# Remove all of the 3's from the tree.
+tree.remove_all(3)
+print(tree.to_display_string())
+"""
+ ┌────────── 6 ───────┐
+ 1 ─┐           ┌──── 9 ─┐
+    2 ─┐        7 ─┐     10
+       4 ─┐        8
+          5
+"""
+
+# Remove a list (or tuple) of values, with each one removing all copies.
+tree.add([7 for _ in range(100)])
+tree.remove_all([7, 9, 10])
+print(tree.to_display_string())
+"""
+ ┌────────── 6 ─┐
+ 1 ─┐           8
+    2 ─┐
+       4 ─┐
+          5
+"""
+```
+
+## BinaryTree.remove_one(value: Any)
+
+**Accepts a value or list/tuple of values.**
+
+**Deletes one copy of the value from the tree (if it exists) and returns None.**
+
+```python
+from pybinarytree import BinaryTree
+
+integers = [1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10]  # Multiple 3's
+tree = BinaryTree(integers)
+
+print(tree.to_display_string())
+"""
+       ┌──────────── 6 ───────┐
+ ┌──── 3 (x2) ─┐        ┌──── 9 ─┐
+ 1 ─┐          4 ─┐     7 ─┐     10
+    2             5        8
+"""
+
+# Remove one of the two 3's from the tree.
+tree.remove_one(3)
+print(tree.to_display_string())
+"""
+       ┌─────── 6 ───────┐
+ ┌──── 3 ─┐        ┌──── 9 ─┐
+ 1 ─┐     4 ─┐     7 ─┐     10
+    2        5        8
+"""
+
+# Remove a list (or tuple) of values, with each one removing one copy.
+tree.remove_one([7, 9, 10])
+print(tree.to_display_string())
+"""
+       ┌─────── 6 ─┐
+ ┌──── 3 ─┐        8
+ 1 ─┐     4 ─┐
+    2        5
+"""
+```
+
+## BinaryTree.reversed()
+
+This method returns a generator that iterates through the tree in reverse order.
+
+```python
+from pybinarytree import BinaryTree
+
+integers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+tree = BinaryTree(integers)
+
+print([x for x in tree])  # [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print([x for x in tree.reversed()])  # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+```
+
+## BinaryTree.to_display_string()
+
+In any situation where the tree structure should be displayed, the "to_display_string()" method can be called to retrieve a string.
+
+```python
+from pybinarytree import BinaryTree
+
+integers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+tree = BinaryTree(integers)
+print(tree.to_display_string())
+"""
+       ┌─────── 6 ───────┐
+ ┌──── 3 ─┐        ┌──── 9 ─┐
+ 1 ─┐     4 ─┐     7 ─┐     10
+    2        5        8
+"""
+```
+
+There are a few things to note about how the tree generates a response:
+
+1. The tree uses each item's \_\_str\_\_ method to convert it into a string, then replaces any new line characters ("\\n") with spaces (" ") and shortens it to a maximum length of 64 characters. This is to prevent the final result from becomming so complex that it makes reading it difficult.
+
+2. Multiple values that are equal (as determined by the == operator) are simplified to display a count:
+
+   ```python
+   from pybinarytree import BinaryTree
+   
+   integers = [1, 2, 3, 3, 4, 5, 6, 7, 8, 9, 10]  # Multiple 3's.
+   tree = BinaryTree(integers)
+   print(tree.to_display_string())
+   """
+          ┌──────────── 6 ───────┐
+    ┌──── 3 (x2) ─┐        ┌──── 9 ─┐
+    1 ─┐          4 ─┐     7 ─┐     10
+       2             5        8
+   """
+   ```
+   
+   When equal values are present in a tree, the first one is converted into the string used by the "to_display_string()" method. All subsequent items will have their strings replaced with a total count to simplify the output.
+
+3. An empty tree will return an empty string.
+
+   ```python
+   from pybinarytree import BinaryTree
+   
+   tree = BinaryTree()
+   print(tree.to_display_string())  # Result: ""
+   ```
+
+## BinaryTree.to_flipped_display_string()
+
+Similar to "BinaryTree.to_display_string()" except the tree branches upwards rather than downwards.
+
+```python
+from pybinarytree import BinaryTree
+
+integers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+tree = BinaryTree(integers)
+print(tree.to_display_string())
+"""
+       ┌─────── 6 ───────┐
+ ┌──── 3 ─┐        ┌──── 9 ─┐
+ 1 ─┐     4 ─┐     7 ─┐     10
+    2        5        8
+"""
+
+print(tree.to_flipped_display_string())
+"""
+    2        5        8
+ 1 ─┘     4 ─┘     7 ─┘     10
+ └──── 3 ─┘        └──── 9 ─┘
+       └─────── 6 ───────┘
+"""
+```
+
+# Exceptions
+
+## NotComparableException
+
+A NotComparableException is raised any time a new item given to a tree cannot be compared with items already existing within the tree.
+
+There are a couple of reasons why a NotComparableException could be raised, including but not limited to:
+
+1. The object being sorted does not have defined comparison methods. (See "Sorting Custom Classes" for more info.)
+
+2. The object is of a different type than other objects already in the tree, and the comparison methods are incompatible with each other.
+
+If you know that the objects should be comparable, but a NotComparableException is raised anyway, check the object's comparison methods. If they are missing or invalid, that might be the source of the issue. All of the following should return either True or False (boolean type) to prevent a NotComparableException:
+
+```python
+x = MySortableClass()
+
+_ = x < x    # x.__lt__(...)
+_ = x <= x   # x.__le__(...)
+_ = x == x   # x.__eq__(...)
+_ = x >= x   # x.__ge__(...)
+_ = x > x    # x.__gt__(...)
+```
