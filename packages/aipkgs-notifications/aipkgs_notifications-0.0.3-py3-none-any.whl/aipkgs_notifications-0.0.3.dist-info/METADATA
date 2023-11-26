@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: aipkgs-notifications
+Version: 0.0.3
+Summary: 
+Home-page: https://gitlab.com/aipy/public/packages.git
+License: MIT
+Keywords: ai
+Author: Alexy
+Author-email: alexy.ib@outlook.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: cryptography (>=41.0.5,<42.0.0)
+Requires-Dist: httpx[http2] (>=0.25.0,<0.26.0)
+Requires-Dist: pyjwt (>=2.8.0,<3.0.0)
+Project-URL: Repository, https://gitlab.com/aipy/public/packages.git
+Description-Content-Type: text/markdown
+
+
