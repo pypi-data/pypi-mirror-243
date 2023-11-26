@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: duckdbt
+Version: 0.5.1
+Summary: The Modern Data Stack in a Python Package
+Home-page: https://github.com/jwills/duckdbt
+Author: Josh Wills
+Author-email: joshwills+duckdbt@gmail.com
+Description-Content-Type: text/markdown
+Requires-Dist: buenavista[duckdb]~=0.4.0
+Requires-Dist: dbt-duckdb>=1.5.0
+Requires-Dist: duckdb>=0.8.0
+Requires-Dist: fastapi[all]<1.0.0,>=0.80.0
+Requires-Dist: psycopg2-binary
+Requires-Dist: duckdb-engine
+
+# DuckDBT: The Modern Data Stack in a Python Package
