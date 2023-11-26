@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: sada
+Version: 0.3.2
+Summary: A Django package to handle SadaBiz payment links.
+Home-page: https://github.com/ixarmad/sada
+Author: Sarmad Gulzar
+Author-email: xarmad@hotmail.com
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Django>=4.0
+
+# sada
