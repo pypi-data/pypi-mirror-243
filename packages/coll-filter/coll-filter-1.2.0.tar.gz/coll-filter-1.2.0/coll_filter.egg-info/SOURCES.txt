@@ -1,0 +1,11 @@
+README.rst
+setup.py
+cf/__init__.py
+cf/base.py
+cf/pool_coll_filter.py
+cf/utils.py
+coll_filter.egg-info/PKG-INFO
+coll_filter.egg-info/SOURCES.txt
+coll_filter.egg-info/dependency_links.txt
+coll_filter.egg-info/not-zip-safe
+coll_filter.egg-info/top_level.txt
