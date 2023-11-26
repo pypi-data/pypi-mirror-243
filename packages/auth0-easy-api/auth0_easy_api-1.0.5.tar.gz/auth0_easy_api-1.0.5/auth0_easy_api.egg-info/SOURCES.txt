@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+auth0_easy_api/__init__.py
+auth0_easy_api/auth0_easy_api_core.py
+auth0_easy_api.egg-info/PKG-INFO
+auth0_easy_api.egg-info/SOURCES.txt
+auth0_easy_api.egg-info/dependency_links.txt
+auth0_easy_api.egg-info/requires.txt
+auth0_easy_api.egg-info/top_level.txt
+examples/__init__.py
+examples/desktop_gui_client_example.py
+examples/server_api_example.py
