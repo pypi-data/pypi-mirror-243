@@ -1,0 +1,3 @@
+[console_scripts]
+sus=sus.__main__:server_main
+
