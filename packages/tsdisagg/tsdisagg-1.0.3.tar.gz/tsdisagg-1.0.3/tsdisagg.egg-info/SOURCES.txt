@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+tests/test_disaggregation.py
+tests/test_frequency_conversion.py
+tests/test_time_conversion.py
+tsdisagg/__init__.py
+tsdisagg/time_conversion.py
+tsdisagg/ts_disagg.py
+tsdisagg.egg-info/PKG-INFO
+tsdisagg.egg-info/SOURCES.txt
+tsdisagg.egg-info/dependency_links.txt
+tsdisagg.egg-info/requires.txt
+tsdisagg.egg-info/top_level.txt
