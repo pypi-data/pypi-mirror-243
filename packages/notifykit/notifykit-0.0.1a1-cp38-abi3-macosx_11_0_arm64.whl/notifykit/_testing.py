@@ -1,0 +1,3 @@
+class NotifierMock:
+    # TODO: implement
+    ...
