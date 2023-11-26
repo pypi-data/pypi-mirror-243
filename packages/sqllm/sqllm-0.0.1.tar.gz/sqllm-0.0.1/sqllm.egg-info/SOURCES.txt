@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+sqllm/__init__.py
+sqllm/core.py
+sqllm/functions.py
+sqllm/version.py
+sqllm.egg-info/PKG-INFO
+sqllm.egg-info/SOURCES.txt
+sqllm.egg-info/dependency_links.txt
+sqllm.egg-info/requires.txt
+sqllm.egg-info/top_level.txt
+tests/__init__.py
+tests/test_core.py
+tests/test_functions.py
