@@ -1,0 +1,7 @@
+requests
+pyyaml
+jsonlines
+beautifulsoup4
+
+[test]
+pytest
