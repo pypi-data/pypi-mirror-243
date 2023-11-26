@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: kineticglue
+Version: 0.0.3
+Summary: Glue Library for KineticEmail, KineticPdf, KineticForms, and KineticAuth.
+Author: Kinetic Seas (Ed Honour / Joe Lehman), pdfrw, pypdf2
+Author-email: <edward.honour@kineticseas.com>
+Keywords: python,KineticPdf,KineticForms,KineticEmail,extract PDF text,extract PDF Form fields
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+Email, PDF, Forms workflow processing.
