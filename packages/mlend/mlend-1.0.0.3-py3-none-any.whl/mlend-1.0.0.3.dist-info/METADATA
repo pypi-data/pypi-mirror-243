@@ -1,0 +1,128 @@
+Metadata-Version: 2.1
+Name: mlend
+Version: 1.0.0.3
+Summary: MLEnd Datasets
+Home-page: https://MLEndDatasets.github.io
+Download-URL: https://github.com/Nikeshbajaj/MLEnd/tarball/1.0.0.3
+Author: Jesús Requena Carrión and Nikesh Bajaj
+Author-email: nikkeshbajaj@gmail.com
+Maintainer: Nikesh Bajaj
+Maintainer-email: nikkeshbajaj@gmail.com
+License: MIT
+Project-URL: Documentation, https://mlend.readthedocs.io/
+Project-URL: Say Thanks!, https://github.com/Nikeshbajaj
+Project-URL: Source, https://github.com/Nikeshbajaj/MLEnd
+Project-URL: Tracker, https://github.com/Nikeshbajaj/MLEnd/issues
+Keywords: MLEndDatasets Datasets MachineLearning PrinciplesOfMachineLearning Data AI
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Multimedia
+Classifier: Topic :: Multimedia :: Sound/Audio :: Analysis
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Education
+Classifier: Development Status :: 5 - Production/Stable
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy >1.8
+Requires-Dist: pandas
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: joblib
+Requires-Dist: spkit >0.0.9.5
+
+# MLEnd Datasets
+
+### Links: **[Homepage](https://MLEndDatasets.github.io)** | **[Documentation](https://mlend.readthedocs.io/)** | **[Github](https://github.com/MLEndDatasets)**  |  **[PyPi - project](https://pypi.org/project/mlend/)** |     _ **Installation:** [pip install mlend](https://pypi.org/project/mlend/)
+-----
+
+-----
+
+## Installation
+
+**Requirement**:  numpy, matplotlib, scipy.stats, spkit
+
+### with pip
+
+```
+pip install mlend
+```
+
+### update with pip
+
+```
+pip install mlend --upgrade
+```
+
+
+## Download data :  Spoken Numerals
+
+```
+import mlend
+from mlend import download_spoken_numerals, spoken_numerals_load
+
+
+datadir = download_spoken_numerals(save_to = '../Data/MLEnd', subset = {},verbose=1,overwrite=False)
+
+```
+
+## Create Training and Testing Sets
+
+```
+TrainSet, TestSet, MAPs = spoken_numerals_load(datadir_main = datadir, train_test_split = 'Benchmark_B', verbose=1,encode_labels=True)
+
+```
+
+## Download data :  London Sounds
+
+
+```
+import mlend
+from mlend import download_london_sounds, london_sounds_load
+
+
+datadir = download_london_sounds(save_to = '../Data/MLEnd', subset = {},verbose=1,overwrite=False)
+
+```
+
+
+## Download data :  Hums and Whistles
+
+
+```
+import mlend
+from mlend import download_hums_whistles, hums_whistles_load
+
+
+datadir = download_hums_whistles(save_to = '../Data/MLEnd', subset = {},verbose=1,overwrite=False)
+
+```
+
+
+
+
+
+
+# Contacts:
+* **Jesús Requena Carrión**
+* Queen Mary University of London
+
+* **Nikesh Bajaj**
+* Queen Mary University of London
+* n.bajaj[AT]qmul.ac.uk, n.bajaj[AT]imperial[dot]ac[dot]uk
+
+______________________________________
