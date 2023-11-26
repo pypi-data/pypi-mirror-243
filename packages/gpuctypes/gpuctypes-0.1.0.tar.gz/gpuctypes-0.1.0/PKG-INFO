@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: gpuctypes
+Version: 0.1.0
+Summary: ctypes wrappers for HIP, CUDA, and OpenCL
+Author: George Hotz
+License: MIT
+Requires-Python: >=3.8
