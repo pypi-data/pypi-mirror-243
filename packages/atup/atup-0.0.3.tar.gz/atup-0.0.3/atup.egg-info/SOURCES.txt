@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+settings.ini
+setup.py
+atup/__init__.py
+atup/_modidx.py
+atup/core.py
+atup.egg-info/PKG-INFO
+atup.egg-info/SOURCES.txt
+atup.egg-info/dependency_links.txt
+atup.egg-info/entry_points.txt
+atup.egg-info/not-zip-safe
+atup.egg-info/requires.txt
+atup.egg-info/top_level.txt
