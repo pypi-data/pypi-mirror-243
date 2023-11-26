@@ -1,0 +1,21 @@
+[project]
+name = "tooltils"
+version = "1.5.3"
+authors = [
+              {name="feetbots", email="pheetbots@gmail.com"},
+          ]
+description = "A lightweight python utility package built on the standard library"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text="MIT License"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/feetbots/tooltils"
+"Issues" = "https://github.com/feetbots/tooltils/issues"

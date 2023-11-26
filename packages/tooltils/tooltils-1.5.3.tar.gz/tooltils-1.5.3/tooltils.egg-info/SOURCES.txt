@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+tooltils/__init__.py
+tooltils/_external.py
+tooltils/errors.py
+tooltils/info.py
+tooltils.egg-info/PKG-INFO
+tooltils.egg-info/SOURCES.txt
+tooltils.egg-info/dependency_links.txt
+tooltils.egg-info/top_level.txt
+tooltils/requests/__init__.py
+tooltils/requests/http.py
+tooltils/sys/__init__.py
+tooltils/sys/info.py
