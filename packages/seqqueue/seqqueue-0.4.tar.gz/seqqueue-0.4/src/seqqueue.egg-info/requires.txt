@@ -1,0 +1,6 @@
+importlib-metadata
+
+[testing]
+setuptools
+pytest
+pytest-benchmark

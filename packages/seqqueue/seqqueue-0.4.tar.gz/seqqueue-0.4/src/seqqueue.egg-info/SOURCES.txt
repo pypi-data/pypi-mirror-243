@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/seqqueue/__init__.py
+src/seqqueue/seqthreadqueue.py
+src/seqqueue.egg-info/PKG-INFO
+src/seqqueue.egg-info/SOURCES.txt
+src/seqqueue.egg-info/dependency_links.txt
+src/seqqueue.egg-info/not-zip-safe
+src/seqqueue.egg-info/requires.txt
+src/seqqueue.egg-info/top_level.txt
+tests/test_seqqueue.py
