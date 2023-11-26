@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "spond-classes"
+version = "0.8.0"
+description = "Experimental Python class abstraction layer for `spond` package."
+authors = ["elliot-100 <3186037+elliot-100@users.noreply.github.com>"]
+readme = "README.md"
+homepage = "https://github.com/elliot-100/Spond-classes"
+repository = "https://github.com/elliot-100/Spond-classes"
+packages = [{include = "spond_classes"}]
+include = ["CHANGELOG.md"]
+license = "GPL 3.0"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+python-dateutil = "^2.8.2"
+spond = "^0.99.1"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.11.0"
+isort = "^5.11.4"
+pre-commit = "^3.1.1"
+ruff = "^0.1.6"
+
+[tool.poetry.group.test.dependencies]
+mypy = "^1.7.1"
+pytest = "^7.4.3"
+types-python-dateutil = "^2.8.19.14"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+warn_unused_configs = true
+strict = true
+disallow_any_generics = false
+
+[tool.ruff]
+# Enable rulesets:
+# flake8-ANNotations, flake8-COMmas, pyDocstyle, pycodestylE, pyFlakes,
+# flake8-Future-Annotations, flake8-bandit (S)
+select = ["ANN", "COM", "D", "E", "F", "FA", "S"]
+
+# Ignore rules:
+#  Missing type annotation for `self` in method
+ignore = ["ANN101"]
+
+[tool.ruff.per-file-ignores]
+# Use of `assert` detected
+"**/{tests}/*" = ["S101"]
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
