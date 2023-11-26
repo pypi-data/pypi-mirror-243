@@ -1,0 +1,41 @@
+
+@import "variables";
+@import "../myams/forms";
+
+
+.ams-form {
+  fieldset {
+    fieldset {
+      background-color: lighten($tab-content-bg, 3);
+    }
+  }
+  .nav-tabs {
+    .nav-link {
+      border-bottom: 0;
+      background-color: transparent;
+      color: $input-plaintext-color;
+
+      &.active {
+        background-color: $tab-content-bg;
+        border-bottom-color: $tab-content-bg;
+        color: $body;
+      }
+    }
+  }
+  .tab-content {
+    background-color: $tab-content-bg;
+
+    fieldset {
+      background-color: lighten($tab-content-bg, 3);
+    }
+  }
+}
+
+
+#ace_settingsmenu {
+  background-color: $body-bg;
+
+  label {
+    color: $body;
+  }
+}

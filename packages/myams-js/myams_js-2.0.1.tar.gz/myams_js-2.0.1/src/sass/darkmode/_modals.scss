@@ -1,0 +1,12 @@
+
+@import "variables";
+@import "../myams/modals";
+
+
+.modal-body {
+  padding: 0.5rem 1rem;
+}
+
+.modal-backdrop.show {
+  opacity: 0.75;
+}
