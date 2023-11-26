@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: coll-filter
+Version: 1.1.9
+Summary: Collaborative Filtering with multi-process parallelism.
+Home-page: https://gitee.com/summry/myai
+Author: summy
+Author-email: xiazhongbiao@126.com
+License: UNKNOWN
+Keywords: Collaborative Filtering,recommend
+Platform: UNKNOWN
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+
+Usage Sample
+''''''''''''
+
+.. code:: python
+
+   from cf import CollFilter
+
+   if __name__ == '__main__':
+       data = read_data(train_path)
+       data = pre_process(data)  # return [(user_id: Any, item_id: Any, float),]
+       cf = CollFilter(data)
+       ucf = cf.user_cf()  # return {user_id: [(item_id, score),],}
+       icf = cf.item_cf()  # return {user_id: [(item_id, score),],}
+       cf.release()
+
+
+
