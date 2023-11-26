@@ -1,0 +1,4 @@
+gql>=3.4.0
+requests>=2.29.0
+requests-toolbelt>=0.10.1
+logger-local>=0.0.71
