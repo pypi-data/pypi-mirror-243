@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: lyystkcode
+Version: 1.7
+Summary: userfull application for  lyy
+Author: lyy
+Author-email: 
+License: MIT
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: baostock
+Requires-Dist: tushare
+Requires-Dist: sqlalchemy
