@@ -1,0 +1,11 @@
+nosql_yorm/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+nosql_yorm/cache.py,sha256=rh1iV92t35n1jjxs7FaWPn3U8ZO-Q_KyqIhXIPYDuh4,2484
+nosql_yorm/config.py,sha256=i4NSMrru4KRVQvkYcNqKMzzHjo-0EjVpOb-RRSpPLNw,1519
+nosql_yorm/default_config.yaml,sha256=uj33XdbTexmZ3w9iD0NmYWeiygjmYHiX3PUbcgZkot8,25
+nosql_yorm/examples/saving_cache.py,sha256=9G-uahre7G3X1vOtCDTSpuYhxWyd2TqMaGl_wBUEQUE,1092
+nosql_yorm/initializers/firebase_initializer.py,sha256=LMdeT-WodtGtM4UGj5JwzejE1w-VRIZil4-R06uO2Pc,623
+nosql_yorm/models.py,sha256=rreJ_HQ-GMy10P6O4v5r0hxtVCAqG139OI5jEjv9CSg,9803
+nosql_yorm-0.2.0.dist-info/LICENSE,sha256=pbe5SXOvn0a4hUnM09T27UtiQQFCf3056HFM-TrddS0,1069
+nosql_yorm-0.2.0.dist-info/METADATA,sha256=LDGJwVyhhbc2QxyLMXj5e_8n5amXuTXz-ZO_ERiNaro,645
+nosql_yorm-0.2.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+nosql_yorm-0.2.0.dist-info/RECORD,,
