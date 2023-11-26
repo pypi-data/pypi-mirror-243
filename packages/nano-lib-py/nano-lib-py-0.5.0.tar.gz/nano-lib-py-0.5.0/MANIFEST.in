@@ -1,0 +1,18 @@
+include src/nano-lib-py-work-module/work.c
+
+graft src/nano-lib-py
+graft src/nano-lib-py-work-module/BLAKE2/ref
+graft src/nano-lib-py-work-module/BLAKE2/sse
+graft src/nano-lib-py-work-module/BLAKE2/neon
+graft src/nano-lib-py-nbase32-module
+
+exclude tox.ini requirements_dev.txt *.yml
+exclude src/nano-lib-py-work-module/README.md
+
+prune docs
+prune tests
+prune examples
+
+global-exclude *.py[cod]
+global-exclude __pycache__
+global-exclude *.so

@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: nano-lib-py
+Version: 0.5.0
+Summary: Forked Python library for working with the NANO cryptocurrency protocol
+Home-page: https://github.com/gr0vity-dev/nano-lib-py
+Author: Janne Pulkkinen
+Author-email: jannepulk@gmail.com
+License: CC0
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Topic :: Office/Business :: Financial
+Requires-Python: >=3.6.0
+License-File: LICENSE
+Requires-Dist: ed25519-blake2b>=1.4
+Requires-Dist: py-cpuinfo>=4
