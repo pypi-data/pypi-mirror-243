@@ -1,0 +1,3 @@
+[console_scripts]
+bootstrap = bootstrap_budget.cli:bootstrap
+bootstrap-test = bootstrap_budget.cli:bootstrap_test

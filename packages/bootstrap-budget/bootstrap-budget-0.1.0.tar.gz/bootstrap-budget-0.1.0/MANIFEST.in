@@ -1,0 +1,6 @@
+include bootstrap_budget/db/sample_data/*.*
+include bootstrap_budget/db/sqlite/*.*
+include bootstrap_budget/static/*.*
+include bootstrap_budget/static/fonts/*.*
+include bootstrap_budget/static/images/*.*
+include bootstrap_budget/templates/*.*
