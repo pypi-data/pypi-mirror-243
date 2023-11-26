@@ -1,0 +1,103 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.cfg
+setup.py
+docs/source/_static/carpy.svg
+docs/source/dev/_how2_release.md
+docs/source/dev/verify horseshoevortexmodel.ipynb
+docs/source/theory/Aerodynamic Drag 1 - Components of Drag.ipynb
+docs/source/theory/Constraint Analysis 1 - Manoeuvring Flight.ipynb
+docs/source/theory/Constraint Analysis 2 - Takeoff Sequence.ipynb
+docs/source/theory/images/Free-body-diagram-runway.pdf
+docs/source/theory/images/Free-body-diagram-runway.png
+docs/source/theory/images/Free-body-diagram-runway.vsdx
+docs/source/theory/images/Free-body-diagram.pdf
+docs/source/theory/images/Free-body-diagram.png
+docs/source/theory/images/Free-body-diagram.vsdx
+docs/source/user/L0 - Constants for Engineers.ipynb
+docs/source/user/L0 - Quantity and Unit Conversions.ipynb
+docs/source/user/L1 - Airfield Properties.ipynb
+docs/source/user/L1 - Atmosphere Models.ipynb
+docs/source/user/L1 - Compressible Gas Dynamics.ipynb
+docs/source/user/L1 - Constraints Analysis.ipynb
+docs/source/user/L1 - Engine Performance Decks.ipynb
+docs/source/user/L1 - Modelling Aerofoil Sections.ipynb
+docs/source/user/L1 - Predicting Wing Lift and Drag.ipynb
+docs/source/user/README.md
+docs/source/user/Channel Crosser HPA/Sustained Power Modelling.ipynb
+docs/source/user/images/ndaerofoil_frompath_show.png
+src/carpy/__init__.py
+src/carpy.egg-info/PKG-INFO
+src/carpy.egg-info/SOURCES.txt
+src/carpy.egg-info/dependency_links.txt
+src/carpy.egg-info/requires.txt
+src/carpy.egg-info/top_level.txt
+src/carpy/aerodynamics/__init__.py
+src/carpy/aerodynamics/_common.py
+src/carpy/aerodynamics/_soln2d_potentialflow.py
+src/carpy/aerodynamics/_soln2d_thinaerofoils.py
+src/carpy/aerodynamics/_soln2d_vortexsource.py
+src/carpy/aerodynamics/_soln3d_liftingline.py
+src/carpy/aerodynamics/_solns_gudmundsson.py
+src/carpy/aerodynamics/_solns_hoerner.py
+src/carpy/aerodynamics/_solns_raymer.py
+src/carpy/conceptualdesign/__init__.py
+src/carpy/conceptualdesign/_airworthiness.py
+src/carpy/conceptualdesign/_constraints.py
+src/carpy/conceptualdesign/_vehicles.py
+src/carpy/environment/__init__.py
+src/carpy/environment/_airports.py
+src/carpy/environment/_atmospheres.py
+src/carpy/environment/_weather.py
+src/carpy/environment/data/1954-ICAO.xlsx
+src/carpy/environment/data/1976-US_standard.xlsx
+src/carpy/environment/data/ISO-2533-1975.xlsx
+src/carpy/environment/data/MIL-HDBK-310_profiles.xlsx
+src/carpy/environment/data/ourairports/airports.csv
+src/carpy/environment/data/ourairports/definitions.xlsx
+src/carpy/environment/data/ourairports/runways.csv
+src/carpy/gaskinetics/__init__.py
+src/carpy/gaskinetics/_chemistry_elements.py
+src/carpy/gaskinetics/_chemistry_molecules.py
+src/carpy/gaskinetics/_dynamics_ideal.py
+src/carpy/gaskinetics/_equations_of_state.py
+src/carpy/gaskinetics/data/bond_forceconstants.yaml
+src/carpy/gaskinetics/data/bond_lengths.yaml
+src/carpy/gaskinetics/data/bond_strengths.yaml
+src/carpy/gaskinetics/data/molecule_criticalpoints.xlsx
+src/carpy/geometry/__init__.py
+src/carpy/geometry/_aerofoils.py
+src/carpy/geometry/_aerofoils_generators.py
+src/carpy/geometry/_ansatz.py
+src/carpy/geometry/_indexing.py
+src/carpy/geometry/_wingplanes.py
+src/carpy/propulsion/__init__.py
+src/carpy/propulsion/_enginedecks_ansatz.py
+src/carpy/propulsion/_network.py
+src/carpy/propulsion/components/__init__.py
+src/carpy/propulsion/components/_common.py
+src/carpy/propulsion/components/_power_raise.py
+src/carpy/propulsion/data/cycling_exhaustion_malewicki.xlsx
+src/carpy/propulsion/data/cyclinganalytics_power.xlsx
+src/carpy/utility/__init__.py
+src/carpy/utility/_constants.py
+src/carpy/utility/_graphtheory.py
+src/carpy/utility/_maths.py
+src/carpy/utility/_miscellaneous.py
+src/carpy/utility/_unitconversion.py
+src/carpy/utility/_vanity.py
+src/carpy/utility/data/quantities.xlsx
+tests/test_aerodynamics_aerofoil.py
+tests/test_aerodynamics_wing.py
+tests/test_environment_airfields.py
+tests/test_environment_atmospheres.py
+tests/test_environment_weather.py
+tests/test_gaskinetics.py
+tests/test_geometry.py
+tests/test_utility_maths.py
+tests/test_utility_miscellaneous.py
+tests/test_utility_unitconversion.py
+tests/test_utility_vanity.py
