@@ -1,0 +1,181 @@
+Metadata-Version: 2.1
+Name: senstream
+Version: 1.4.22
+Summary: Python package for managing and interacting with Resensys SenSpots.
+Home-page: UNKNOWN
+Author: Resensys (Tom Wade)
+Author-email: <thomas.wade@resensys.com>
+License: UNKNOWN
+Keywords: python,stream,senspot,resensys,time series
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+Requires-Dist: mysql-connector-python (==8.0.25)
+Requires-Dist: pymysql
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: datetime
+Requires-Dist: requests
+Requires-Dist: progress
+
+
+<img src="https://resensys.net:8443/static/images/resensys-logo-hollow.bmp" alt="resensys" width="300"/>
+
+# SenStream (v 1.4.22)
+
+**SenStream** is a python package for managing and interacting with Resensys SenSpot devices. Streamline data flows from SenSpot technologies and high-level data pipelines with this high-level software development kit.
+
+The SenStream project is designed to bridge the gap between the structural/civil engineer and the software developer for **structural health monitoring** and other scientific applications to make data collection, processing, and reporting end-to-end.
+
+#### API Functionality
+
+*   Extract and configure SenSpot parameters.
+*   Pull time streams from SenSpots from the cloud
+
+<br>
+<img src="https://www.resensys.com/images/load-rating-app-note.png" alt="resensys_arch" width="700"/>
+
+## Installation
+
+#### Requirements
+
+We recommend that you have a version of python >= 3.7 installed on your machine before proceeding. If the below `pip` command does not automatically install `pandas` and `numpy`, you should make sure that these libraries have been installed before proceeding.
+
+#### Install using pip
+
+To start using SenStream install using pip:
+
+    pip install senstream
+
+`pip` is the de facto and recommended package-management system written in Python and is used to install and manage software packages. It connects to an online repository of public packages, called the [Python Package Index](https://pypi.org/).
+
+Note the `pip` refers to the Python 3 package manager. In environment where Python 2 is also available the correct command may be `pip3`.
+
+## Getting Started
+
+The following demonstrates what you need to get started with a connection to the Resensys cloud and check that you can extract data.
+
+
+
+```
+# import the necessary libraries and modules
+import numpy as np
+import pandas as pd
+
+from senstream.resensys import Resensys,Sensors
+from senstream.senspot import SenSpot
+
+# for users with SenScope license, specify username and password
+username,password = "test_user","user_password" 
+
+# create a client connection to resensys.net
+client = Resensys(username,password)
+
+# create Sensors object to check all sensors in present account
+sensors = Sensors(client)
+
+# get list of all devices in the client account as pandas dataframe
+sensor_df = sensors.getSensors(format="dataframe")
+
+# print list of all the sensors in the account
+print(sensor_df['DID'].tolist())
+```
+
+### View all active site registered for current user:
+```sensors.getSites(format="dataframe")```
+### View current routing parameters for SenSpots:
+```sensors.getRouting(format="dataframe").head(5)  # display first five records```
+## SenSpot Object
+Create an instance of a SenSpot object by referencing the previous client connection and specifying the device ID of the SenSpot from the user's sensor list.
+
+```senspot = SenSpot(client,"15-03-27-74")```
+
+### Get the name assigned to the SenSpot:
+```senspot.getName()```
+Returns **string**.
+
+### Get the site ID assignment for the SenSpot:
+```senspot.getSite()```
+Returns **string** of format "xx-xx" with site ID.
+
+### Get the local address assigned to the SenSpot (useful for wireless routing):
+```senspot.getLocAddr()```
+Returns **int**.
+
+### View all available quantities associated with SenSpot:
+```senspot.getQuantities()```
+Returns **[string]**
+
+### Check current calibration coefficients for SenSpot:
+```senspot.getCoefficients()```
+Returns **dict**
+
+### Get general device summary of SenSpot:
+```senspot.getDeviceInfo()```
+Returns **dict**
+
+## Extract Time Series from SenSpot
+```senspot.timeStream(*args, **kwargs)```
+* **df_name**: quantity being pushed by the SenSpot (complete list given by calling **getQuantities()** method)
+* **time**: options = "1hour", "2hour", "6hour", "12hour", "24hour", "48hour", "1week", "2week", "4week", "6month", "12month", "2year", "custom"
+* **sample_int**: options = ''(default), 'M1', 'M6', 'M15', 'M30', 'H1', 'H4', 'H6', 'H12', 'D1', 'W1', 'W2', 'MN1', 'MN3', 'MN6', 'YR'
+
+If you choose a custom time range, then you must specify additional parameters:
+* **t_s**: Start Time (UTC) (e.g. "2020-09-21 17:00:00")
+* **t_e**: End Time (UTC) (e.g. "2020-09-21 17:00:00")
+
+Returns **pandas.DataFrame** object.
+
+#### Example to pull **previous two weeks of data** for SenSpot quantities "Strain-xx-high_rate" and "Internal Temperature"
+```ss_strain = senspot.timeStream("Strain-xx-high_rate", time=["2week"])```
+
+```ss_temperature = senspot.timeStream("Internal Temperature", time=["2week"])```
+
+#### Example to pull **custom time range** for SenSpot "Volt" quantity
+```ss_strain = senspot.timeStream("Volt", time=["custom"], t_s="2023-07-14 00:00:30", t_e="2023-07-14: 18:40:20")```
+
+#### Example to pull data with **downsample filter** of every six minutes for SenSpot "HPA-X" quantity
+```ss_strain = senspot.timeStream("HPA-X", time=["12hour"], sample_int='M6')```
+
+
+## Support
+
+For any question on the usage of PROJECT please use the [Resensys Community Portal](). If you found a problem with the software, please [create an issue](https://github.com/resensys/PROJECT/issues) on GitHub. If you are a Greenbone customer, you may alternatively or additionally forward your issue to the Resensys Support Portal.
+
+## Maintainer
+
+This project is maintained by [Tom Wade](https://www.linkedin.com/in/thomas-shane-wade/) at Resensys, LLC.
+
+## Contributing
+
+Your contributions are highly appreciated. Please [create a pull request](https://github.com/greenbone/PROJECT/pulls) on GitHub. Bigger changes need to be discussed with the development team via the [issues section at GitHub](https://github.com/greenbone/PROJECT/issues) first.
+
+State here if contributions are welcome. State the requirements a contribution should meet to get merged.
+
+Details about development, like creating a dev environment or running tests, also belong here, for example:
+
+For development, you should use [pipenv](https://pipenv.readthedocs.io/en/latest/) to keep your Python packages separated in different environments. First install pipenv via pip
+
+    pip install --user pipenv
+
+Afterwards run
+
+    pipenv install --dev
+
+in the checkout directory of PROJECT (the directory containing the Pipfile) to install all dependencies including the packages only required for development.
+
+If there are more specific suggestions for development or guidelines for contributions, consider sending an email to thomas.wade@resensys.com.
+
+
+## License
+
+Copyright (C) 2023 [Resensys, LLC.](https://www.resensys.com/index.html)
+
+Licensed under the [GNU General Public License v3.0 or later](LICENSE).
+
+
