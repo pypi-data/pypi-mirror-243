@@ -1,0 +1,13 @@
+LICENSE.md
+README.md
+pyproject.toml
+src/__init__.py
+src/amazon_simple_storage_service.py
+src/google_cloud_storage.py
+src/interfaces.py
+src/superfile.py
+src/superfile.egg-info/PKG-INFO
+src/superfile.egg-info/SOURCES.txt
+src/superfile.egg-info/dependency_links.txt
+src/superfile.egg-info/requires.txt
+src/superfile.egg-info/top_level.txt
