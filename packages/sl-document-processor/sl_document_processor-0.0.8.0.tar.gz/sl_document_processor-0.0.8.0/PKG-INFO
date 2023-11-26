@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: sl-document-processor
+Version: 0.0.8.0
+Summary: Package to process documents of any format
+Author: Vamsidhar Reddy
+Author-email: r.vamsireddy93@gmail.com
+Requires-Python: >=3.11,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: beautifulsoup4 (>=4.12.2,<5.0.0)
+Requires-Dist: boto3 (>=1.28.78,<2.0.0)
+Requires-Dist: fastapi (>=0.104.1,<0.105.0)
+Requires-Dist: lxml (>=4.9.3,<5.0.0)
+Requires-Dist: mypy (>=1.7.0,<2.0.0)
+Requires-Dist: pdfminer (>=20191125,<20191126)
+Requires-Dist: pydantic (>=2.4.2,<3.0.0)
+Requires-Dist: pymongo (>=4.5.0,<5.0.0)
+Requires-Dist: pymupdf (>=1.23.5,<2.0.0)
+Requires-Dist: pypdf (>=3.17.0,<4.0.0)
+Requires-Dist: pypdf2 (>=3.0.1,<4.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: ruff (>=0.1.6,<0.2.0)
+Requires-Dist: selenium (>=4.14.0,<5.0.0)
+Requires-Dist: supabase (>=2.0.3,<3.0.0)
+Requires-Dist: tabula-py (>=2.8.2,<3.0.0)
+Requires-Dist: tika (>=2.6.0,<3.0.0)
+Requires-Dist: uvicorn (>=0.23.2,<0.24.0)
+Description-Content-Type: text/markdown
+
+# Data Processor
+
+## Description
+
+
+## Installation
+
+```bash
+pip install sl-document-processor
+```
+
+## Data Processing is a multi-step process
+
+A brief overview of the steps involved in data processing:
+
+1. Fetching Information
+   1. Scrape data from a website
+   2. Fetch data from an API
+   3. Fetch data from a database
+2. Clean
+3. Transform
+4. Index
+5. Search / Analyze
+6. Visualize
+7. Store
+
+This packag aims to be a one-stop-shop for all your data processing needs. It provides a simple interface to perform all the above steps and more.
+
+## Documentation
+
+The documentation for this package is hosted [here](https://data-pipleine.vercel.app/).
+
