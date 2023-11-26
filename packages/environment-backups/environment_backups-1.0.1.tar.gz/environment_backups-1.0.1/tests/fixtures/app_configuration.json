@@ -1,0 +1,27 @@
+{
+    "application": {
+        "environment_folder_pattern": [
+            ".envs"
+        ],
+        "date_format": "%Y%m%d_%H",
+        "password": ""
+    },
+    "configurations": [
+        {
+            "name": "adelantos",
+            "project_folder": "~/adelantos",
+            "backup_folder": "~/Documents/adelantos_env",
+            "computer_name": "Kronos",
+            "google_drive_folder_id": "ddd55555",
+            "google_authentication_file": ".envs/google_drive/client_secrets.json"
+        },
+        {
+            "name": "personal",
+            "project_folder": "~/PycharmProjects",
+            "backup_folder": "~/Documents/personal_envs",
+            "computer_name": "Kronos",
+            "google_drive_folder_id": "788558985",
+            "google_authentication_file": ".envs/google_drive/client_secrets_personal.json"
+        }
+    ]
+}

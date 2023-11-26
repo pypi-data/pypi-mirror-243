@@ -1,0 +1,107 @@
+[tool]
+[tool.poetry]
+name = "environment-backups"
+version = "1.0.1"
+homepage = "https://github.com/luiscberrocal/environment-backups"
+description = "CLI Application to backup environment variables.."
+authors = ["Luis C. Berrocal <luis.berrocal.1942@gmail.com>"]
+readme = "README.md"
+classifiers=[
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+]
+packages = [
+    { include = "environment_backups" },
+    { include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.12"
+click = "^8.1.3"
+rich = "^13.4.1"
+pyzipper = "^0.3.6"
+google-api-python-client = "^2.100.0"
+google-auth-httplib2 = "^0.1.1"
+google-auth-oauthlib = "^1.1.0"
+pydantic = "^2.4.2"
+toml = "^0.10.2"
+deprecated = "^1.2.14"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.0"
+black = "^22.12.0"
+isort = "^5.11.4"
+mypy = "^0.991"
+flake8 = "^6.0.0"
+flake8-docstrings = "^1.6.0"
+factory-boy = "^3.2.1"
+pytz = "^2022.7"
+bump2version = "^1.0.1"
+twine = "^4.0.2"
+coverage = "^7.0.3"
+tox = "^4.2.6"
+pytest-cov = "^4.0.0"
+pytest-mock = "^3.10.0"
+freezegun = "^1.2.2"
+build = "^1.0.3"
+
+
+[tool.poetry.group.doc.dependencies]
+mkdocs = "^1.4.2"
+mkdocs-include-markdown-plugin = "^3.9.1"
+mkdocs-material = "^8.5.10"
+mkdocstrings = "^0.19.0"
+mkdocs-autorefs = "^0.4.1"
+
+
+
+[tool.poetry.scripts]
+environment-backups = 'environment_backups.cli:main'
+environment-backups-l = 'environment_backups._legacy.cli:main_arg_parser'
+
+# pyproject.toml
+[tool.pytest.ini_options]
+minversion = "6.0"
+# addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+
+[tool.black]
+line-length = 120
+skip-string-normalization = true
+target-version = ['py310', 'py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+multi_line_output = 6
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = false
+ensure_newline_before_comments = true
+line_length = 120
+skip_gitignore = true
+# you can skip files as below
+#skip_glob = docs/conf.py
+
+[build-system]
+requires = ["poetry-core>=1.2.0"]
+build-backend = "poetry.core.masonry.api"
