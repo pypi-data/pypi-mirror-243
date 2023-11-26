@@ -1,0 +1,12 @@
+click
+click-default-group>=1.2.3
+pydantic>=1.10.2
+setuptools
+pip
+
+[test]
+pytest
+pytest-cov
+black
+ruff
+click
