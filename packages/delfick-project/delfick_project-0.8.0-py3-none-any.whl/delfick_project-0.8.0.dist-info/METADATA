@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: delfick_project
+Version: 0.8.0
+Summary: Common code I use in all my projects
+Project-URL: Homepage, https://github.com/delfick/delfick_project
+Author-email: Stephen Moore <stephen@delfick.com>
+License: MIT
+License-File: LICENSE
+Requires-Python: >=3.8
+Requires-Dist: backports-entry-points-selectable==1.2.0
+Provides-Extra: tests
+Requires-Dist: alt-pytest-asyncio==0.6.0; extra == 'tests'
+Requires-Dist: noseofyeti[black]==2.4.1; extra == 'tests'
+Requires-Dist: pytest==7.3.0; extra == 'tests'
+Requires-Dist: venvstarter>=0.12.0; extra == 'tests'
+Description-Content-Type: text/x-rst
+
+Project helpers
+===============
+
+This is a collection of code that I use in nearly all my projects:
+
+* Mainline helper
+* Custom python exception class
+* Logging helpers
+* Option merging
+* Validation and Normalisation of data
+* Module addon system
+
+Documentation can be found at https://delfick-project.readthedocs.io/en/latest/
