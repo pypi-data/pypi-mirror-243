@@ -1,0 +1,8 @@
+
+[dev]
+black
+isort
+
+[test]
+pytest
+pytest-cov
