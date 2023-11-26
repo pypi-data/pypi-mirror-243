@@ -1,0 +1,12 @@
+LICENSE.md
+LICENSE.txt
+README.md
+pyproject.toml
+cd_email.egg-info/PKG-INFO
+cd_email.egg-info/SOURCES.txt
+cd_email.egg-info/dependency_links.txt
+cd_email.egg-info/top_level.txt
+cd_mail/__init__.py
+cd_mail/read_imap.py
+cd_mail/send_smtp.py
+cd_mail/version.py
