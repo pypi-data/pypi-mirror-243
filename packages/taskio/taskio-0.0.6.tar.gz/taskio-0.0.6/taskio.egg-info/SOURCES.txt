@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+requirements/basic.txt
+taskio/__init__.py
+taskio/config.py
+taskio/core.py
+taskio/decorators.py
+taskio/process.py
+taskio.egg-info/PKG-INFO
+taskio.egg-info/SOURCES.txt
+taskio.egg-info/dependency_links.txt
+taskio.egg-info/requires.txt
+taskio.egg-info/top_level.txt
