@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: walletthon
+Version: 0.0.1
+Summary: Unofficial library for managing your @wallet account
+Home-page: https://github.com/salismazaya/walletthon
+Author: Salis Mazaya
+Author-email: salismazaya@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.10
+Requires-Dist: requests
+Requires-Dist: telethon
+
+UNKNOWN
+
