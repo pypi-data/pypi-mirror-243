@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Tyradex"
+version = "0.1.0"
+authors = [
+    {name = "Yarkis01"},
+    {name = "Ashzuu"},
+    {name = "LassaInora", email = "lassa.inora@gmail.com"},
+]
+description = "Une simple API Pokémon en français."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  'requests >= 2.26.0',
+  'unidecode >= 1.4.1',
+]
+
+[project.urls]
+Homepage = "https://github.com/LassaInora/Tyradex"
+Issues = "https://github.com/LassaInora/Tyradex/issues"
