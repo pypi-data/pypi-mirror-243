@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: geo-adjacency
+Version: 0.1.0
+Summary: 
+License: MIT
+Author: Andrew Smyth
+Author-email: andrews@zillowgroup.com
+Requires-Python: >=3.9,<3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: matplotlib (>=3.8.1,<4.0.0)
+Requires-Dist: numpy (>=1.26.2,<2.0.0)
+Requires-Dist: scipy (>=1.11.3,<2.0.0)
+Requires-Dist: setuptools (>=69.0.0,<70.0.0)
+Requires-Dist: shapely (>=2.0.2,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Installation
+
+# Usage
+
+# How It Works
+
+
