@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: fastbase
+Version: 0.2.2
+Summary: 
+Home-page: https://github.com/enchance/fastbase.git
+License: MIT
+Keywords: firebase,fastapi,sqlmodel,authentication,api,rest
+Author: enchance
+Author-email: enchance@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: fastapi (>=0.104.1,<0.105.0)
+Requires-Dist: firebase-admin (>=6.2.0,<7.0.0)
+Requires-Dist: pydantic (>=1.9.0,<2.0.0)
+Requires-Dist: pytz (>=2023.3.post1,<2024.0)
+Requires-Dist: sqlmodel (>=0.0.12,<0.0.13)
+Project-URL: Repository, https://github.com/enchance/fastbase.git
+Description-Content-Type: text/markdown
+
+Fastbase
+=============
+
+
+Role-based Access Contral (RBAC) via Firebase `idtoken` authententication using FastAPI and SQLModel.
+
+
+Installation
+-----------
+
+```bash
+pip install fastbase
+```
+
+or
+```bash
+poetry add fastbase
+```
+
+
+Instructions
+----------------
+
+Fastbase assumes a headless setup using a frontend such as React, Angular, etc.
+
+- **Authentication:** Managed by Firebase Auth
+- **Authorization:** Managed by Fastbase
+
+### Process:
+
+1. Authentication happens in the frontend (JS) using the official Firebase JS package. An `idtoken` will be 
+   generated if successful and attach this to your `Authorization` header.  
+1. Upon reaching the server the `idtoken` is verified.
+1. At first use, using the `/signin` endpoint Fastbase checks if the user alread exists in the database. If user is 
+   new then a record is created using SQLModel.
+
+
