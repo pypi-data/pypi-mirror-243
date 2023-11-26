@@ -1,0 +1,73 @@
+name: Code quality
+on:
+  push:
+    branches: ["**"]
+
+permissions:
+  contents: read
+
+jobs:
+  nox:
+    strategy:
+      matrix:
+        python_version: ["3.11", "3.12"]
+        nox_session: [tests, basics, examples]
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python interpreter
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python_version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pipx install nox
+      - name: Test with nox
+        run: |
+          nox --python ${{ matrix.python_version }} --session ${{ matrix.nox_session }}
+
+  pyright_and_ruff:
+    strategy:
+      matrix:
+        python_version: ["3.11", "3.12"]
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python ${{ matrix.python_version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python_version }}
+      - name: Install dependencies
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install -r requirements.txt -r requirements-dev.txt
+      - name: Run Ruff
+        run: ".venv/bin/ruff src/ tests/ examples/"
+      - name: Type check with Pyright
+        run: |
+          . .venv/bin/activate
+          pyright src/ tests/
+
+          # Some examples use Rich in their virtual environments, so install this for Pyright to stay
+          # calm. Errors with regards to use of this dependency will be detected by nox.
+          pip install rich
+          pyright examples/
+
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+      - name: install
+        run: ./bootstrap.py
+      - uses: pypa/gh-action-pip-audit@v1.0.8
+        with:
+          virtual-environment: .venv/
+          inputs: requirements.txt requirements-dev.txt
+          require-hashes: true
