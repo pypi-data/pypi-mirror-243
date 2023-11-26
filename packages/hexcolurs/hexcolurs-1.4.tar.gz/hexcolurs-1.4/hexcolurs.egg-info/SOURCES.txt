@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+hexcolurs/__init__.py
+hexcolurs/test.py
+hexcolurs.egg-info/PKG-INFO
+hexcolurs.egg-info/SOURCES.txt
+hexcolurs.egg-info/dependency_links.txt
+hexcolurs.egg-info/top_level.txt
