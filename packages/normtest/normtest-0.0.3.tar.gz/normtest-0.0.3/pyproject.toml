@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "normtest"
+version = "0.0.3"
+description = "Check that your data follows, at least approximately, the Normal distribution."
+authors = [
+    {name = "Anderson Marcos Dias Canteli", email = "andersonmdcanteli@gmail.com"},
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["normality", "sample", "test"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",    
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",    
+]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.23.5,",
+    "pandas>=1.5.3",
+    "matplotlib>=3.7.1",
+    "scipy>=1.11.3",
+    "paramcheckup>=1.0.1",
+]
+
+[project.urls]
+Source = "https://github.com/puzzle-in-a-mug/normtest" 
+Docs = "https://normtest.readthedocs.io/en/latest/index.html" 
+
+[tool.setuptools.packages.find]
+# All the following settings are optional:
+include = ["normtest*",]  # empty by default
