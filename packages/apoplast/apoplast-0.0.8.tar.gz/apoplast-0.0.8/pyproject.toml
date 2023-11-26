@@ -1,0 +1,35 @@
+
+
+
+
+
+
+#
+#	how to publish:
+#
+#		python3 insurance/insurance.py
+#		(rm -rf dist && python3 -m build --sdist && twine upload dist/*)
+#
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apoplast"
+version = "0.0.8"
+description = "The search for an abundant panacea of vivaciously invigorating utopian absorbables."
+readme = "structure.txt"
+
+[tool.setuptools.packages.find]
+where = [ "structures/modules" ]
+
+#
+#	https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+#
+[tool.setuptools.package-data]
+"*" = [ "*.html" ]
+
+
+
+
