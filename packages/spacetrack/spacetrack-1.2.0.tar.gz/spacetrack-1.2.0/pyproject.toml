@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spacetrack"
+version = "1.2.0"
+description = "Python client for space-track.org"
+readme = "README.rst"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [
+    { name = "Frazer McLean", email = "frazer@frazermclean.co.uk" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+    "httpx",
+    "logbook>=0.12.3",
+    "python-dateutil; python_version < '3.11'",
+    "represent>=1.4.0",
+    "rush",
+    "sniffio",
+]
+
+[project.urls]
+Repository = "https://github.com/python-astrodynamics/spacetrack"
+Documentation = "https://spacetrack.readthedocs.io"
+
+[project.optional-dependencies]
+test = [
+    "pytest-asyncio",
+    "pytest-trio",
+    "pytest>=6.0",
+    "respx",
+]
+docstest = [
+    "doc8",
+    "parver",
+    "sphinx",
+    "furo",
+]
+pep8test = [
+    "flake8",
+    "flake8-future-import",
+    "pep8-naming",
+]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.coverage.run]
+branch = true
+source = ["spacetrack", "tests/"]
+parallel = true
+
+[tool.coverage.paths]
+source = ["src/spacetrack", ".tox/**/site-packages/spacetrack"]
+
+[tool.coverage.report]
+precision = 1
+exclude_lines = ["pragma: no cover", "^\\s*pass\\s*$"]
+
+[tool.isort]
+profile = "black"
