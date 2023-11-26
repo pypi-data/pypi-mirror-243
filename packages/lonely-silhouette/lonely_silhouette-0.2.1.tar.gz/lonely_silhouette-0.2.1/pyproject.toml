@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "lonely_silhouette"
+version = "0.2.1"
+description = ""
+authors = ["otariidae <otariidae@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+janome = "^0.5.0"
+jaconv = "^0.3.4"
+requests = "^2.31.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.6"
+mypy = "^1.7.1"
+types-requests = "^2.31.0.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true
