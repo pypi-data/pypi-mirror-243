@@ -1,0 +1,137 @@
+Metadata-Version: 2.1
+Name: imod
+Version: 0.15.0
+Summary: Make massive MODFLOW models
+Home-page: https://gitlab.com/deltares/imod/imod-python
+Author: Deltares
+Author-email: huite.bootsma@deltares.nl
+License: MIT
+Project-URL: Code, https://gitlab.com/deltares/imod/imod-python
+Project-URL: Issues, https://gitlab.com/deltares/imod/imod-python/-/issues
+Keywords: imod,modflow,groundwater modeling
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Hydrology
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.10
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: affine
+Requires-Dist: cftime>=1
+Requires-Dist: dask
+Requires-Dist: fastcore
+Requires-Dist: Jinja2
+Requires-Dist: matplotlib
+Requires-Dist: numba
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: pooch
+Requires-Dist: scipy
+Requires-Dist: tomli_w
+Requires-Dist: toolz
+Requires-Dist: tqdm
+Requires-Dist: xarray>=0.15
+Requires-Dist: xugrid>=0.3.0
+Provides-Extra: all
+Requires-Dist: bottleneck; extra == "all"
+Requires-Dist: contextily>=1; extra == "all"
+Requires-Dist: cytoolz; extra == "all"
+Requires-Dist: geopandas; extra == "all"
+Requires-Dist: pyvista; extra == "all"
+Requires-Dist: rasterio>=1; extra == "all"
+Requires-Dist: rioxarray; extra == "all"
+Requires-Dist: shapely>=1.8; extra == "all"
+Requires-Dist: tomli>=1.1.0; python_version < "3.11" and extra == "all"
+Requires-Dist: zarr; extra == "all"
+Provides-Extra: dev
+Requires-Dist: bottleneck; extra == "dev"
+Requires-Dist: contextily>=1; extra == "dev"
+Requires-Dist: cytoolz; extra == "dev"
+Requires-Dist: geopandas; extra == "dev"
+Requires-Dist: pyvista; extra == "dev"
+Requires-Dist: rasterio>=1; extra == "dev"
+Requires-Dist: rioxarray; extra == "dev"
+Requires-Dist: shapely>=1.8; extra == "dev"
+Requires-Dist: tomli>=1.1.0; python_version < "3.11" and extra == "dev"
+Requires-Dist: zarr; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: flopy; extra == "dev"
+Requires-Dist: hypothesis; extra == "dev"
+Requires-Dist: mypy; extra == "dev"
+Requires-Dist: pydata-sphinx-theme; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: pytest-benchmark; extra == "dev"
+Requires-Dist: sphinx; extra == "dev"
+Requires-Dist: sphinx-gallery; extra == "dev"
+
+.. image:: https://img.shields.io/badge/lifecycle-maturing-blue
+   :target: https://www.tidyverse.org/lifecycle/
+.. image:: https://gitlab.com/deltares/imod/imod-python/badges/master/pipeline.svg
+   :target: https://gitlab.com/deltares/imod/imod-python/commits/master
+.. image:: https://img.shields.io/pypi/l/imod
+   :target: https://choosealicense.com/licenses/mit/
+.. image:: https://gitlab.com/deltares/imod/imod-python/badges/master/coverage.svg
+   :target: https://gitlab.com/deltares/imod/imod-python/commits/master
+.. image:: https://img.shields.io/conda/vn/conda-forge/imod.svg
+   :target: https://github.com/conda-forge/imod-feedstock
+
+The ``imod`` Python package is an open source project to make working with
+MODFLOW groundwater models in Python easier. It builds on top of popular
+packages such as `xarray`_, `pandas`_, `geopandas`_, `dask`_,  and `rasterio`_
+to provide a versatile toolset for working with (large) groundwater (modeling)
+data:
+
+* Preparing and modifying data from a variety of GIS, scientific, and MODFLOW
+  file formats;
+* Writing data to MODFLOW-based models;
+* Selecting and evaluating for e.g. time series comparison or water budgets;
+* Visualizing cross sections, time series, or 3D animations.
+  
+We currently support the following MODFLOW-based models:
+
+* `USGS MODFLOW 6`_, structured (DIS) and discretization by
+  vertices (DISV) grids only, and not all advanced stress packages yet (LAK,
+  MAW, SFR, UZF)
+* `iMOD-WQ`_, which integrates SEAWAT (density-dependent
+  groundwater flow) and MT3DMS (multi-species reactive transport calculations)
+* `iMODFLOW`_
+
+This Python package is developed primarily by the Groundwater Management Group
+at `Deltares`_. It is used together with a broader set of open source tools and
+standards for reproducible modeling and data analysis:
+
+* `Git`_: version control of (Python) scripts;
+* `DVC`_: version control of data, on top of Git;
+* `netCDF`_: open standard of a flexible, self describing data format;
+* `Snakemake`_: workflow manager to turn a collection of scripts into a
+  workflow.
+
+Documentation: https://deltares.gitlab.io/imod/imod-python/
+
+Source code: https://gitlab.com/deltares/imod/imod-python
+
+Issues: https://gitlab.com/deltares/imod/imod-python/-/issues/
+
+.. _Deltares: https://www.deltares.nl
+.. _dask: https://dask.org/
+.. _xarray: http://xarray.pydata.org/
+.. _pandas: http://pandas.pydata.org/
+.. _rasterio: https://rasterio.readthedocs.io/en/latest/
+.. _geopandas: http://geopandas.org/
+.. _Git: https://git-scm.com/
+.. _DVC: https://dvc.org/
+.. _netCDF: https://www.unidata.ucar.edu/software/netcdf/
+.. _Snakemake: https://snakemake.readthedocs.io/en/stable/
+.. _USGS MODFLOW 6: https://www.usgs.gov/software/modflow-6-usgs-modular-hydrologic-model
+.. _iMODFLOW: https://oss.deltares.nl/web/imod
+.. _iMOD-WQ: https://oss.deltares.nl/web/imod
