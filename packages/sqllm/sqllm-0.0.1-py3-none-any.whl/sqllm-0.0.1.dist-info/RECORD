@@ -1,0 +1,13 @@
+sqllm/__init__.py,sha256=cxzjbtyBruxvjiU5t_hAM9OTdfIORm3nVG44emgOlgY,145
+sqllm/_extract_table_names.py,sha256=qJa6VUNdtZdj6g6IXUupc78t7xTOYz9rh2IFyutT0Gc,2003
+sqllm/core.py,sha256=rTCsLrhzGfXFCm_zSZv3FevOiGGPTSnmYW2ankwnnRg,3001
+sqllm/functions.py,sha256=GfNhdB8jultAsVHjDYUaFZdf1Us98lUY6JaKwd_0-2g,2372
+sqllm/version.py,sha256=ry5O5SW74ugwOUMKSV2_LbWjYa8B0IEvUm7S-lHPA2c,23
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_core.py,sha256=tAoqjjgBzsIyx7fNfu1HRTNWDVr73_16LrW0sKjVVm0,2340
+tests/test_functions.py,sha256=Tk9tfmxrmkaC3YIv5QPX1Ds90JXaSoRs5fXByB8iT8k,994
+sqllm-0.0.1.dist-info/LICENSE,sha256=x0X5_9NmZcRG4MSkSjn9UZ06rdR-FKWtf05o516O7PA,1083
+sqllm-0.0.1.dist-info/METADATA,sha256=MyzA_oQBm46gh9iJtOx_iDOrVqF6IbVzdNkg8uJws5Y,2906
+sqllm-0.0.1.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+sqllm-0.0.1.dist-info/top_level.txt,sha256=OQh1Iqh7w4LJkd5W-z0dmOe1D-Z-plOXsaZVT8D6zEY,12
+sqllm-0.0.1.dist-info/RECORD,,
