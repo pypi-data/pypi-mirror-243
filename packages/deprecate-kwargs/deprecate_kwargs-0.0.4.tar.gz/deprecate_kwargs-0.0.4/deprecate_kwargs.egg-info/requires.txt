@@ -1,0 +1,12 @@
+
+[dev]
+pre-commit
+pytest
+pytest-xdist
+pytest-cov
+
+[test]
+pre-commit
+pytest
+pytest-xdist
+pytest-cov
