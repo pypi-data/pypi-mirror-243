@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/Limecord.egg-info/PKG-INFO
+src/Limecord.egg-info/SOURCES.txt
+src/Limecord.egg-info/dependency_links.txt
+src/Limecord.egg-info/top_level.txt
+src/limecord/__init__.py
+src/limecord/bot.py
