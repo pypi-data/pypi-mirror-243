@@ -1,0 +1,4 @@
+src/*
+!src/drf_emails/
+
+dist/
