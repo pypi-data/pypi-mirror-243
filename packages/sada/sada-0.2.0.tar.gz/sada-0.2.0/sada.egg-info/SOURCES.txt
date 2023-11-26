@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+sada/__init__.py
+sada/admin.py
+sada/apps.py
+sada/models.py
+sada/tests.py
+sada/views.py
+sada.egg-info/PKG-INFO
+sada.egg-info/SOURCES.txt
+sada.egg-info/dependency_links.txt
+sada.egg-info/requires.txt
+sada.egg-info/top_level.txt
+sada/migrations/__init__.py
