@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: diqu-email
+Version: 0.0.2
+Summary: Data Quality CLI for the Auto-Alerts - Emails
+Home-page: https://datnguyen.de
+License: MIT
+Keywords: packaging,poetry,data-quality,alert,notification,collaboration,agility,flake8,markdown,lint
+Author: Dat Nguyen
+Author-email: datnguyen.it09@gmail.com
+Requires-Python: >=3.9,<3.13
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Documentation
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Quality Assurance
+Requires-Dist: diqu (>=0.1,<0.2)
+Project-URL: Repository, https://github.com/infinitelambda/diqu-email
+Description-Content-Type: text/markdown
+
+# diqu-email
