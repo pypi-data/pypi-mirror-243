@@ -1,0 +1,82 @@
+Metadata-Version: 2.1
+Name: mimufs
+Version: 0.1.0
+Summary: Mim@uf Business Intelligence Library for Portuguese Primary Care
+Home-page: https://github.com/DiogoCarapito/mimufs
+Author: Diogo Carapito
+Author-email: diogo.carapito@gmail.com
+License: Apache License 2.0
+Project-URL: Bug Reports, https://github.com/DiogoCarapito/mimufs/issues
+Project-URL: Source, https://github.com/DiogoCarapito/mimufs
+Keywords: business intelligence,primary care,data science,medicine
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Healthcare Industry
+Classifier: Natural Language :: Portuguese
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Medical Science Apps.
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7,<3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+[![Release](https://github.com/DiogoCarapito/mimufs/actions/workflows/release.yaml/badge.svg)](https://github.com/DiogoCarapito/mimufs/actions/workflows/release.yaml)
+
+# Mimufs
+
+Mimufs is a python library with tools for data processing and analysis in Portuguese Prymary Health Care.
+It has a set of functions to facilitate data processing from MIM@UF and BI-CSP plataforms. It also has a set of functions to facilitate data analysis and visualization.
+
+## Installation
+To install mimufs, run this command in your project's terminal:
+```bash
+pip install mimufs
+```
+or in your jupyter notebook:
+```python
+!pip install mimufs
+```
+
+## Usage
+mimufs can be used in python scripts or in jupyter notebooks.
+```python
+import mimufs as mm
+```
+for specific data processing functions:
+```python
+from mimufs import processing
+```
+
+for specific data analysis functions:
+```python
+from mimufs import analysis
+```
+
+for specific visualization functions:
+```python
+from mimufs import visualization
+```
+
+
+## Cheatsheet
+### venv
+create venv
+```bash
+python3 -m venv .venv
+```
+activate venv
+```bash
+source .venv/bin/activate
+```
+
+### Build package and upload to PyPI
+```bash
+python3 setup.py sdist bdist_wheel
+twine check dist/*
+twine upload dist/*
+```
