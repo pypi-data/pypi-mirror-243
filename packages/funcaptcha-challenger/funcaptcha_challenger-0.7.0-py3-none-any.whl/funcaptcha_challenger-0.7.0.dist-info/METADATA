@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: funcaptcha-challenger
+Version: 0.7.0
+Summary: 
+Author: Madoka
+Author-email: s@madokax.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: loguru (>=0.7.2,<0.8.0)
+Requires-Dist: onnxruntime (>=1.16.2,<2.0.0)
+Requires-Dist: pillow (>=10.1.0,<11.0.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: tqdm (>=4.66.1,<5.0.0)
+Description-Content-Type: text/markdown
+
+# funcaptcha challenger
+
+## Introduction
+
+Just `ai vs ai`
+
+## Features
+
+| Challenge Type      | Prompt                                                                                 | Demo                                                         |
+|---------------------|----------------------------------------------------------------------------------------|--------------------------------------------------------------|
+| 3d_rollball_animals | Use the arrows to rotate the animal to face in the direction of the hand               | [3d_rollball_animals_demo](demo/3d_rollball_animals_demo.py) |
+| numericalmatch      | Use the arrows to change the number of objects until it matches the left image         | [numericalmatch_demo](demo/numericalmatch_demo.py)           |
+| hopscotch_highsec   | Use the arrows to move the person to the icon indicated by the colored circle          | [hopscotch_highsec_demo](demo/hopscotch_highsec_demo.py)     |
+| icon_connect        | Using the arrows, connect the same two icons with the dotted line as shown on the left | 🚧                                                           |
+| ...                 | ...                                                                                    | 🚧                                                           |
+
+## Installation
+
+```bash
+pip install funcaptcha-challenger
+```
+
+## Discussion
+
+- 📱 [Telegram](https://t.me/+iNf8qQk0KUpkYmEx)
