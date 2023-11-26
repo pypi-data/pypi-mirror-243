@@ -1,0 +1,2 @@
+[console_scripts]
+lilvali = lilvali.__main__:main
