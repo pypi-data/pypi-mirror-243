@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: bgpy_pkg
+Version: 1.21.0
+Summary: Simulates BGP and ROV
+Home-page: https://github.com/jfuruness/bgpy_pkg
+Author: Justin Furuness, Cameron Morris, Reynaldo Morillo
+Author-email: jfuruness@gmail.com
+License: BSD
+Keywords: BGPy,bgpy,bgpy_pkg,BGP,Caida,CAIDA,Peers,Providers,Relationships,AS-Serial,Customers,Simulation,ROV,Furuness
+Classifier: Programming Language :: Python :: 3
+Classifier: Environment :: Console
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: beautifulsoup4==4.10.0
+Requires-Dist: requests==2.31.0
+Requires-Dist: frozendict==2.3.8
+Requires-Dist: graphviz==0.20
+Requires-Dist: pillow==9.2.0
+Requires-Dist: matplotlib==3.5.2
+Requires-Dist: pytest==7.1.2
+Requires-Dist: PyYAML~=6.0
+Requires-Dist: tqdm==4.64.0
+Requires-Dist: yamlable==1.1.1
+Provides-Extra: test
+Requires-Dist: black==23.7.0; extra == "test"
+Requires-Dist: pre-commit==3.3.3; extra == "test"
+Requires-Dist: types-requests==2.31.0; extra == "test"
+Requires-Dist: types-PyYAML==6.0.11; extra == "test"
+Requires-Dist: mypy==0.982; extra == "test"
+Requires-Dist: flake8==4.0.1; extra == "test"
+Requires-Dist: tox==4.6.3; extra == "test"
+Requires-Dist: pytest-xdist==2.5.0; extra == "test"
+Requires-Dist: ruff==0.0.275; extra == "test"
+
+https://github.com/jfuruness/bgpy/wiki
