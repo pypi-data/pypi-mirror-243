@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: pek
+Version: 0.1.1
+Summary: PEK - Progressive Ensemble K-means clustering
+Home-page: https://aware-diag-sapienza.github.io/pek
+Download-URL: https://github.com/aware-diag-sapienza/pek/archive/refs/tags/v0.1.1.tar.gz
+Author: A.WA.RE Research Group - Sapienza Università di Roma
+Author-email: graziano.blasilli@uniroma1.it
+License: GNU General Public License (GPL)
+Platform: Linux
+Platform: Mac OS-X
+Platform: Solaris
+Platform: Unix
+Platform: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: scikit-learn >=1.3.0
+Requires-Dist: numpy >=1.20.0
+Requires-Dist: kneed >=0.8.0
+Requires-Dist: flask >=3.0.0
+Requires-Dist: flask-cors >=4.0.0
+Requires-Dist: flask-socketio >=5.3.0
+
+[//]: # (This file contains the description that appears on the PyPI package page)
+
+# PEK - Progressive Ensemble K-means clustering
+
+The **pek** python module implements the analytic backend of _VisPEK: a Visual Progressive Ensemble K-means clustering_,
+Created by the **A.WA.RE Research Group** at _Sapienza Università di Roma_.
+
+Please find the documentation at [https://github.com/aware-diag-sapienza/pek](https://github.com/aware-diag-sapienza/pek).
