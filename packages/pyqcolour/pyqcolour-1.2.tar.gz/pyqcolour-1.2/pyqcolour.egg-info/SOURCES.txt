@@ -1,0 +1,10 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+pyqcolour/__init__.py
+pyqcolour/test.py
+pyqcolour.egg-info/PKG-INFO
+pyqcolour.egg-info/SOURCES.txt
+pyqcolour.egg-info/dependency_links.txt
+pyqcolour.egg-info/top_level.txt
