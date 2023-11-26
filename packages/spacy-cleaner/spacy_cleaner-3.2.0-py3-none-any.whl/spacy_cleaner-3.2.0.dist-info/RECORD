@@ -1,0 +1,13 @@
+spacy_cleaner/__init__.py,sha256=xIfjh6pf0z8As3boRdNugyN_LXSVe-fvFxSRTA84j1E,161
+spacy_cleaner/cleaners.py,sha256=1RSj5fV-2MtuYX9WXOw5d6FAYi4BtC11-qvP4-2s3wE,3210
+spacy_cleaner/processing/__init__.py,sha256=LUGDZv4lGpW1xHf9_9uOfvOWS9KAXNrCySL-3kvmqGM,727
+spacy_cleaner/processing/evaluators.py,sha256=oe8siksV85w6J3vcgNMpkuvYGNA80xM0nKCpBwSmcHU,2488
+spacy_cleaner/processing/helpers.py,sha256=mcSzY9YzOWo_0QjLPYdcxIkq5OhJ4FLA6fm1HRzTYQg,1587
+spacy_cleaner/processing/mutators.py,sha256=xQ8769ZjQTjFE5nuKOgPHbll-uJlTT4xWazrPIXo_Xk,598
+spacy_cleaner/processing/removers.py,sha256=xP6J4L28Zn0TyPO4zHiB8tDiydFTEmx4hTN0IfoChnc,2291
+spacy_cleaner/processing/replacers.py,sha256=MF93yF2eiz6ICTPlseCfX2dnJ2ioVzIO4zpxGVhQQ4M,2713
+spacy_cleaner/processing/transformers.py,sha256=6OKn71An0lL_FeNNHjImIPFXhhGZcCiaFXIxNJOi4O8,1102
+spacy_cleaner-3.2.0.dist-info/LICENSE,sha256=6D3HRfWyNIx5pOB3F90j_W8jAae_js1ORPzZtF2ljS0,1079
+spacy_cleaner-3.2.0.dist-info/METADATA,sha256=sT_sx-12bAFplZrS735NoRXMrxr-v_POjQNyQXug6cs,6950
+spacy_cleaner-3.2.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+spacy_cleaner-3.2.0.dist-info/RECORD,,
