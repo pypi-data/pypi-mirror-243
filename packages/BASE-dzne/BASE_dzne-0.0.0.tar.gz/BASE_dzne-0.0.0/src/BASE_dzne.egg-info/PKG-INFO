@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: BASE-dzne
+Version: 0.0.0
+Summary: BASE_dzne
+Project-URL: Download, https://pypi.org/project/BASE-dzne/#files
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.11
+Description-Content-Type: text/x-rst
+
+=========
+BASE_dzne
+=========
+
+Installation
+------------
+
+To install BASE_dzne, you can use `pip`. Open your terminal and run:
+
+.. code-block:: bash
+
+    pip install BASE_dzne
+
+Links
+-----
+
+* `Download <https://pypi.org/project/BASE-dzne/#files>`_

@@ -1,0 +1,10 @@
+MANIFEST.in
+README.rst
+pyproject.toml
+setup.cfg
+src/BASE_dzne/__init__.py
+src/BASE_dzne/__main__.py
+src/BASE_dzne.egg-info/PKG-INFO
+src/BASE_dzne.egg-info/SOURCES.txt
+src/BASE_dzne.egg-info/dependency_links.txt
+src/BASE_dzne.egg-info/top_level.txt
