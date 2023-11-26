@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "verifyshopify"
+version = "0.1.1"
+description = ""
+authors = ["Zin Yosrim <zinyosrim@gmail.com>"]
+readme = "README.md"
+packages = [{include = "verifyshopify"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
