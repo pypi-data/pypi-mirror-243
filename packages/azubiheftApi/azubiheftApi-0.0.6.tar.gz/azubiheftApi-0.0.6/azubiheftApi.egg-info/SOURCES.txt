@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+azubiheftApi/__init__.py
+azubiheftApi/azubiheftApi.py
+azubiheftApi/errors.py
+azubiheftApi.egg-info/PKG-INFO
+azubiheftApi.egg-info/SOURCES.txt
+azubiheftApi.egg-info/dependency_links.txt
+azubiheftApi.egg-info/requires.txt
+azubiheftApi.egg-info/top_level.txt
