@@ -1,0 +1,13 @@
+[Unit]
+    Description=pymscada - main bus
+
+[Service]
+    WorkingDirectory=__DIR__
+    ExecStart=/home/mscada/pymscada/.venv/bin/pymscada bus --verbose
+    Restart=always
+    RestartSec=5
+    User=mscada
+    Group=mscada
+
+[Install]
+    WantedBy=multi-user.target
