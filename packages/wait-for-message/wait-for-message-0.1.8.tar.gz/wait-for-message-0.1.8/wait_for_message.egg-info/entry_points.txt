@@ -1,0 +1,2 @@
+[console_scripts]
+w4m = wait_for_message.cli:main
