@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "SPIEPy"
+version = "0.2.1"
+authors = [{name = "Stephan Zevenhuizen"},
+           {email = "S.J.M.Zevenhuizen@uu.nl"}]
+description = """\
+              SPIEPy (Scanning Probe Image Enchanter using Python) is a \
+              Python library to improve automatic processing of SPM images.\
+              """
+readme = "README.rst"
+keywords = ["SPM", "scanning", "probe", "microscopy", "image", "analysis",
+            "flattening", "nano", "nanotechnology"]
+classifiers = [
+    "Topic :: Scientific/Engineering :: Chemistry",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English"
+]
+license = {text = "BSD-2-Clause"}
+requires-python = ">=3.8"
+dependencies = ["numpy", "scipy", "matplotlib"]
+
+[project.urls]
+documentation = "https://webspace.science.uu.nl/~zeven101/SPIEPy/"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"spiepy.demo" = ["*.dat"]
