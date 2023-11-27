@@ -1,0 +1,90 @@
+name: django_pg8000
+
+on: [push]
+
+permissions: read-all
+
+jobs:
+  main-test:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11"]
+        postgresql-version: [14]
+
+    container:
+      image: python:${{ matrix.python-version }}
+      env:
+        PGHOST: postgres
+        PGPASSWORD: postgres
+        PGUSER: postgres
+
+    services:
+      postgres:
+        image: postgres:${{ matrix.postgresql-version }}
+        env:
+          POSTGRES_PASSWORD: postgres
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: django_pg8000
+      - name: Install dependencies
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          python -m pip install --no-cache-dir --upgrade pip
+          pip install --no-cache-dir --root-user-action ignore django_pg8000/.
+
+      - name: Set up Postgresql
+        run: |
+          apt-get update
+          apt-get install --yes --no-install-recommends postgresql-client
+          psql -c "CREATE EXTENSION hstore;"
+          psql -c "SELECT pg_reload_conf()"
+
+      - name: Clone django repository
+        uses: actions/checkout@v4
+        with:
+          repository: tlocke/django
+          path: django
+      - name: Create config file
+        run: |
+          cp django_pg8000/tests/test_pg8000.py django/django/conf
+      - name: Install dependencies
+        run: |
+          pip install -e django
+          pip install -r django/tests/requirements/py3.txt
+      - name: Run tests
+        run: |
+          django/tests/runtests.py --failfast --exclude-tag=psycopg_specific --settings=django.conf.test_pg8000
+
+  static-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install black build flake8 pytest flake8-alphabetize Flake8-pyproject \
+            twine .
+      - name: Lint check
+        run: |
+          black --check .
+          flake8 .
+      - name: Check Distribution
+        run: |
+          python -m build
+          twine check dist/*
