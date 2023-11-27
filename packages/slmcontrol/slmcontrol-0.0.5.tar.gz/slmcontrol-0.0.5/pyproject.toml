@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "slmcontrol"
+version = "0.0.5"
+description = "A package used to control Spatial Light Modulators (SLM)"
+authors = ["Marcos Gil <marcosgildeoliveira@gmail.com>"]
+license = "MIT"
+readme = "docs/README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.26.2"
+scipy = "^1.11.4"
+multimethod = "^1.10"
+wxPython = [
+    {platform = "win32", python = "^3.9", version = "^4.2", source = "pypi"},
+    {platform = "darwin", python = "^3.9", version = "^4.2", source = "pypi"},
+]
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = {version = "^1.5.3"}
+mkdocstrings = {extras = ["python"], version = "^0.24.0"}
+mkdocs-material = {version = "^9.4.12"}
+python-markdown-math = {version = "^0.8"}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
