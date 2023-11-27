@@ -1,0 +1,3 @@
+[console_scripts]
+sysaidmin=sysaidmin.cli:cli
+
