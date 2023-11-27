@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[project]
+name = "graphical-ts"
+version = "0.3"
+description = "Time series data simulation with underlying a graphical model"
+authors = [{name="Haixin Li", email="peterlai_0618@outlook.com"}]
+readme = "README.md"
+dependencies = [
+    "numpy>=1.21",
+    "scipy>=1.7",
+    "networkx>=2.6",
+    "matplotlib>=3.4",
+    "pandas>=1.3",
+]
+[tool.poetry.dependencies]
+python = ">=3.6"
+
