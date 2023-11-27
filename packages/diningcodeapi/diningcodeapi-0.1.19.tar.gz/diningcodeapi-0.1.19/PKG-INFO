@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: diningcodeapi
+Version: 0.1.19
+Summary: test
+Author: kukkuk989
+Author-email: kukkuk989@protonmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Description-Content-Type: text/markdown
+
+
+
+# Build
+```
+    poetry build
+```
+# Deployment
+```
+    python -m twine upload --skip-existing dist/*
+```
