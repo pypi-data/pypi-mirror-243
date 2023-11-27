@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: azure_smtp_relay
+Version: 1.0.2
+Summary: Python SMTP service using aiosmtpd that relay's through Azure Email Communication Service
+Author-email: Thomas Dunteman <git@learningtopi.com>
+Project-URL: homepage, https://www.learningtopi.com/python-modules-applications/azure_smtp_relay/
+Project-URL: bug tracker, https://github.com/LearningToPi/azure_smtp_relay/issues
+Project-URL: source code, https://github.com/LearningToPi/azure_smtp_relay
+Keywords: queue,thread,async
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Communications :: Email
+Classifier: Topic :: Communications :: Email :: Mail Transport Agents
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiosmtpd==1.4.4.post2
+Requires-Dist: azure-identity==1.15.0
+Requires-Dist: ipcalc==1.99.0
+Requires-Dist: logging-handler==1.0.7
+Requires-Dist: parameter-verification==0.1.1
+Requires-Dist: queue-processor==1.1.0
+Requires-Dist: requests==2.31.0
+Requires-Dist: azure-communication-email==1.0.0
