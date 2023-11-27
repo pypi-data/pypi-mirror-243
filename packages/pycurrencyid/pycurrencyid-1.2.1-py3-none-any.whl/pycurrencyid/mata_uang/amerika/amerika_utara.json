@@ -1,0 +1,88 @@
+[
+    {"A": [
+        {"Negara": "Anguilla (UK)", "Mata Uang": "East Caribbean dollar", "ISO": "XCD"}, 
+        {"Negara": "Antigua and Barbuda", "Mata Uang": "East Caribbean dollar", "ISO": "XCD"},
+        {"Negara": "Aruba (Netherlands)", "Mata Uang": "Aruban florin", "ISO": "AWG"}]
+    },
+
+    {"B": [
+        {"Negara": "Bahamas", "Mata Uang": "Bahamas dollar", "ISO": "BSD"}, 
+        {"Negara": "Barbados", "Mata Uang": "Barbadian dollar", "ISO": "BBD"},
+        {"Negara": "Belize", "Mata Uang": "Belize dollar", "ISO": "BZD"},
+        {"Negara": "Barbados", "Mata Uang": "Barbadian dollar", "ISO": "BBD"},
+        {"Negara": "Bermuda (UK)", "Mata Uang": "Bermudian dollar", "ISO": "BMD"},
+        {"Negara": "Bonaire (Netherlands)", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "British Virgin Islands (UK)", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    },
+
+    {"C": [
+        {"Negara": "Canada", "Mata Uang": "Canadian dollar", "ISO": "CAD"},
+        {"Negara": "Caribbean Netherlands (Netherlands)", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Cayman Islands (UK)", "Mata Uang": "Cayman Islands dollar", "ISO": "KYD"},
+        {"Negara": "Costa Rica", "Mata Uang": "Costa Rican colon", "ISO": "CRC"},
+        {"Negara": "Cuba", "Mata Uang": "Cuban peso", "ISO": "CUP"},
+        {"Negara": "Curacao (Netherlands)", "Mata Uang": "Netherlands Antillean guilder", "ISO": "ANG"}]
+    },
+
+    {"D": [
+        {"Negara": "Dominica", "Mata Uang": "East Caribbean dollar", "ISO": "XCD"},
+        {"Negara": "Dominican Republic", "Mata Uang": "Dominican peso", "ISO": "DOP"}]
+    },
+
+    {"E": [
+        {"Negara": "El Salvador", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    },
+
+    {"G": [
+        {"Negara": "Greenland (Denmark)", "Mata Uang": "Danish krone", "ISO": "DKK"},
+        {"Negara": "Grenada", "Mata Uang": "East Caribbean dollar", "ISO": "XCD"},
+        {"Negara": "Guadeloupe (France)", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Guatemala", "Mata Uang": "Guatemalan quetzal", "ISO": "GTQ"}]
+    },
+
+    {"H": [
+        {"Negara": "Haiti", "Mata Uang": "Haitian gourde", "ISO": "HTG"},
+        {"Negara": "Honduras", "Mata Uang": "Honduran lempira", "ISO": "HNL"}]
+    },
+
+    {"J": [
+        {"Negara": "Jamaica", "Mata Uang": "Jamaican dollar", "ISO": "JMD"}]
+    },
+
+    {"M": [
+        {"Negara": "Martinique (France)", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Mexico", "Mata Uang": "Mexican peso", "ISO": "MXN"},
+        {"Negara": "Montserrat (UK)", "Mata Uang": "East Caribbean dollar", "ISO": "XCD"}]
+    },
+
+    {"N": [
+        {"Negara": "Nicaragua", "Mata Uang": "Nicaraguan cordoba", "ISO": "NIO"}]
+    },
+
+    {"P": [
+        {"Negara": "Panama", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Puerto Rico (USA)", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    },
+
+    {"S": [
+        {"Negara": "Saba (Netherlands)", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Saint Barthelemy (France)", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Saint Kitts and Nevis", "Mata Uang": "East Caribbean dollar", "ISO": "XCD"},
+        {"Negara": "Saint Lucia", "Mata Uang": "East Caribbean dollar", "ISO": "XCD"},
+        {"Negara": "Saint Martin (France)", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Saint Pierre and Miquelon (France)", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Saint Vincent and the Grenadines", "Mata Uang": "East Caribbean dollar", "ISO": "XCD"},
+        {"Negara": "Sint Eustatius (Netherlands)", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Sint Maarten (Netherlands)", "Mata Uang": "Netherlands Antillean guilder", "ISO": "ANG"}]
+    },
+
+    {"T": [
+        {"Negara": "Trinidad and Tobago", "Mata Uang": "Trinidad and Tobago dollar", "ISO": "TTD"},
+        {"Negara": "Turks and Caicos Islands (UK)", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    },
+
+    {"U": [
+        {"Negara": "United States of America", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "US Virgin Islands (USA)", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    }
+]
