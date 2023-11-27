@@ -1,0 +1,2 @@
+[console_scripts]
+nuisco = nuisco.main:console_script

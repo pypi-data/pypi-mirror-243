@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+nuisco/__init__.py
+nuisco/build.py
+nuisco/compile_libraries_v2.3.py
+nuisco/convert_socket.py
+nuisco/main.py
+nuisco/make_socket.py
+nuisco/template.py
+nuisco.egg-info/PKG-INFO
+nuisco.egg-info/SOURCES.txt
+nuisco.egg-info/dependency_links.txt
+nuisco.egg-info/entry_points.txt
+nuisco.egg-info/requires.txt
+nuisco.egg-info/top_level.txt
