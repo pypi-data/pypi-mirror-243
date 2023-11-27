@@ -1,0 +1,146 @@
+[build-system]
+  requires = ["setuptools>=61.0", "setuptools_scm[toml]>=6.2", "wheel"]
+  build-backend = "setuptools.build_meta"
+
+[project]
+  name = "sec-certs"
+  authors = [
+    { name = "Adam Janovsky", email = "adamjanovsky@mail.muni.cz" },
+    { name = "Jan Jancar" },
+    { name = "Petr Svenda" },
+    { name = "Jiri Michalik" },
+    { name = "Stanislav Bobon" },
+  ]
+  description = "A tool for data scraping and analysis of security certificates from Common Criteria and FIPS 140-2/3 frameworks"
+  readme = "README.md"
+  license = { "text" = "MIT" }
+  classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Security",
+    "Topic :: Security :: Cryptography",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+  ]
+  requires-python = ">=3.10"
+  dynamic = ["version"]
+  dependencies = [
+    "beautifulsoup4",
+    "click",
+    "html5lib",
+    "jsonschema",
+    "lxml",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pdftotext",
+    "pikepdf",
+    "Pillow>=9.2.0",
+    "pypdf[crypto]>=3.1.0",
+    "python-dateutil",
+    "PyYAML",
+    "rapidfuzz",
+    "requests",
+    "scikit-learn",
+    "tabula-py",
+    "tqdm",
+    "setuptools-scm",
+    "ipykernel",
+    "ipywidgets",
+    "spacy",
+    "pkgconfig",
+    "seaborn",
+    "pySankeyBeta",
+    "scipy>=1.9.0",
+    "networkx",
+    "pydantic",
+    "pydantic-settings",
+    "psutil",
+    "pytesseract",
+  ]
+
+  [project.optional-dependencies]
+    dev = [
+      "ruff==0.1.5",
+      "mypy==1.6.1",
+      "types-PyYAML",
+      "types-python-dateutil",
+      "types-requests",
+      "datasets",
+      "pytest",
+      "pytest-cov",
+      "pytest-monitor",
+      "pytest-profiling",
+      "pre-commit",
+      "pip-tools",
+      "sphinx",
+      "myst-nb>=0.14",
+      "sphinx-book-theme",
+      "sphinx-design",
+      "sphinx-copybutton",
+      "ipython!=8.7.0",
+    ]
+    test = ["pytest", "coverage", "pytest-cov"]
+    nlp = [
+      "catboost",
+      "optuna",
+      "setfit",
+      "umap-learn[plot]",
+      "plotly",
+      "scikit-learn",
+    ]
+
+  [project.urls]
+    Homepage = "https://seccerts.org"
+    GitHub = "https://github.com/crocs-muni/sec-certs/"
+    Documentation = "https://seccerts.org/docs"
+
+  [project.scripts]
+    sec-certs = "sec_certs.cli:main"
+
+[tool.ruff]
+  select = [
+    "I",   # isort
+    "E",   # pycodestyle
+    "W",   # pycodestyle
+    "F",   # pyflakes
+    "C90", # mccabe
+    "UP",  # pyupgrade
+    "PTH", # enforce pathlib usage
+    "C4",  # comprehensions
+    "SIM",
+  ]
+  ignore = [
+    "E501", # line-length, should be handled by ruff format
+  ]
+  src = ["src", "tests"]
+  line-length = 120
+  target-version = "py310"
+
+  [tool.ruff.mccabe]
+    max-complexity = 10
+
+  [tool.setuptools.package-data]
+    'sec_certs' = ["rules.yaml"]
+    'sec_certs.config' = ["settings.yaml", "settings-schema.json"]
+    'sec_certs.data' = [
+      "reference_annotations/split/*.json",
+      "reference_annotations/manual_annotations/final/*.csv",
+    ]
+
+
+[tool.setuptools_scm]
+  write_to = "src/sec_certs/_version.py"
+  version_scheme = "no-guess-dev"
+
+
+[tool.mypy]
+  plugins = ["numpy.typing.mypy_plugin"]
+  ignore_missing_imports = true
+  exclude = "build/"
+
+[tool.pytest.ini_options]
+  markers = ["slow: marks tests as slow (deselect with '-m \"not slow\"')"]
+  addopts = "--cov sec_certs"
