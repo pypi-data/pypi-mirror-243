@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: ebg
+Version: 0.0.1
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: ete3
+Requires-Dist: biopython
+Requires-Dist: networkx
+Requires-Dist: scipy
+Requires-Dist: lightgbm
+
