@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "oneapi2langchain"
+version = "0.0.102"
+description = "langchain实现的闭源模型统一API"
+authors = ["liuyu <506610466@qq.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/shell-nlp/oneapi2langchain"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+langchain = { version = ">=0.0.321", python = ">=3.8.1" }
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
