@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: fs.dimzipfs
+Version: 0.1.1
+Summary: Pyfilesystem2 implementation for DAZ Install Manager Packages
+Home-page: https://github.com/Omniflux/fs.dimzipfs
+License: MIT
+Keywords: filesystem,Pyfilesystem2
+Author: Omni Flux
+Author-email: omniflux@omniflux.com
+Requires-Python: >=3.11
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Filesystems
+Requires-Dist: fs (>=2.4.16,<3.0.0)
+Requires-Dist: lxml (>=4.9.2,<5.0.0)
+Project-URL: Repository, https://github.com/Omniflux/fs.dimzipfs
+Description-Content-Type: text/x-rst
+
+fs.dimzipfs
+===========
+
+``fs.dimzipfs`` is a PyFileSystem2 interface for DAZ Install Manager packages.
+
+The exposed filesystem is as defined in Manifest.dsx, not the zipfile.
+
+Supported Python versions
+-------------------------
+
+- Python 3.11
+
+Usage
+-----
+
+.. code:: python
+
+    >>> from fs.dimzipfs import DIMZipFS
+
+    >>> DIMZipFS('IM00013176-02_DAZStudio421Win64bit.zip').listdir('')
+    ....
+    ['Application[PC-64-DAZ Studio-4.5]', 'Temp[PC-64]']
+
+    >>> DIMZipFS('IM00013176-42_DefaultResourcesforDAZStudio420.zip').opendir('Content').listdir('')
+    ....
+    ['data', 'Light Presets', 'Props', "ReadMe's", 'Render Presets', 'Runtime', 'Scenes', 'Scripts', 'Shader Presets']
+
+License
+-------
+
+This module is published under the MIT license.

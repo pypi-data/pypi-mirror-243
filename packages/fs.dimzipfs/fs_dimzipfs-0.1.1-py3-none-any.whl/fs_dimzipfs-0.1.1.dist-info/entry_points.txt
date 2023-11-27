@@ -1,0 +1,3 @@
+[fs.opener]
+dimzip=fs.dimzipfs.opener:DIMZipOpener
+
