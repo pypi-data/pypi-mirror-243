@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: iamai-adapter-dingtalk
+Version: 3.3.0
+Summary: Dingtalk adapter for iamai.
+Project-URL: Homepage, https://iamai.retrofor.space/
+Project-URL: Documentation, https://iamai.retrofor.space/
+Project-URL: Repository, https://github.com/retrofor/iamai
+Project-URL: Changelog, https://iamai.retrofor.space/changelog.html
+Author-email: 简律纯 <i@jyunko.cn>
+License: MIT
+License-File: LICENSE
+Keywords: bot,chatbot,dingtalk
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: AsyncIO
+Classifier: Framework :: Robot Framework
+Classifier: Framework :: Robot Framework :: Library
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Communications :: Chat
+Requires-Python: >=3.8
+Requires-Dist: iamai>=3.3
+Description-Content-Type: text/markdown
+
+<div align="center">
+  <a href="https://docs.iamai.dev/"><img src="https://raw.githubusercontent.com/retrofor/iamai/master/docs/public/logo.png" width="200" height="200" alt="logo"></a>
+
+# iamai-Adapter-Dingtalk
+
+**Dingtalk 平台适配**
+
+</div>
