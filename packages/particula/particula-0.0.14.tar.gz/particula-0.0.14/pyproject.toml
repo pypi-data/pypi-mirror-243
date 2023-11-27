@@ -1,0 +1,47 @@
+[project]
+name = "particula"
+description = "a simple, fast, and powerful particle simulator"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {file = "LICENSE"}
+authors = [
+    {name = "aktwo", email="aktwo@users.noreply.github.com"},
+    {name = "Gorkowski", email="Gorkowski@users.noreply.github.com"},
+    {name = "ngam", email="ngam@users.noreply.github.com"},
+    {name = "wkchuang", email="wkchuang@users.noreply.github.com"},
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+keywords = [
+    "atmospheric", "particles", "climate", "aerosol", "particulate"
+]
+
+dependencies = [
+    "numpy", "scipy", "pint", "hypersolver==0.0.8", "pandas",
+    "netCDF4", "shapely", "PyMieScatt", "tqdm", "pytz",
+    "matplotlib", "torch",
+]
+
+# This is set automatically by flit using `particula.__version__`
+dynamic = ["version"]
+
+[project.urls]
+homepage = "https://github.com/uncscode/particula"
+repository = "https://github.com/uncscode/particula"
+
+[project.optional-dependencies]
+dev = [
+    "pylint", "pytest", "autopep8", "jupyterlab",
+    "typing", "build", "flake8", "jupyter-book", "ghp-import",
+    "matplotlib", "pandas", "netCDF4", "shapely", "PyMieScatt",
+    "tqdm", "pytz", "torch",
+]
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
