@@ -1,0 +1,2 @@
+[console_scripts]
+lazygitgpt = lazygitgpt.cli:cli
