@@ -1,0 +1,10 @@
+# See: https://setuptools.pypa.io/en/latest/userguide/miscellaneous.html
+graft flintrock
+
+include README.md
+include CHANGES.md
+include COPYRIGHT
+include LICENSE
+
+global-exclude *.py[cod] __pycache__ .DS_Store
+global-exclude config.yaml
