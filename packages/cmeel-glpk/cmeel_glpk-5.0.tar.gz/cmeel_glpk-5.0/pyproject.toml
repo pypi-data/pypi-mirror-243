@@ -1,0 +1,22 @@
+[build-system]
+build-backend = "cmeel"
+requires = ["cmeel[build]"]
+
+[project]
+description = "cmeel distribution for GLPK"
+license = "GPL-3.0-only"
+name = "cmeel-glpk"
+requires-python = ">= 3.8"
+version = "5.0"
+
+[project.urls]
+homepage = "https://github.com/cmake-wheel/cmeel-glpk"
+repository = "https://github.com/cmake-wheel/cmeel-glpk.git"
+
+[tool.cmeel]
+build-number = 0
+has-sitelib = false
+run-tests = false
+
+[tool.tomlsort]
+all = true
