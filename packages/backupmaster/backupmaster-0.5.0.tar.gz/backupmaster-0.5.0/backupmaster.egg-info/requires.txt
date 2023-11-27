@@ -1,0 +1,17 @@
+beautifulsoup4
+lxml
+PyYAML
+quinten-cli
+rich
+superpathlib
+tqdm
+xattr
+
+[dev]
+pre-commit
+bump2version
+
+[test]
+dirhash
+hypothesis
+pytest
