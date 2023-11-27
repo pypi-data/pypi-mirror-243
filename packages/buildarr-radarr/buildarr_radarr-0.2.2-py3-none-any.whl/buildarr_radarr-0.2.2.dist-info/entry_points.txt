@@ -1,0 +1,3 @@
+[buildarr.plugins]
+radarr=buildarr_radarr.plugin:RadarrPlugin
+
