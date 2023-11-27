@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: HinaCloudSDK
+Version: 3.8.0
+Summary: This is the official Python SDK for Hina Analytics.
+Home-page: https://github.com/hinadt/hina-cloud-python-sdk.git
+Author: hina
+Author-email: admin@hinadt.com
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## 海纳嗨数简介
+
+[**海纳嗨数**](https://hicloud.hinadt.com/)
+是一款深度用户行为分析产品，支持私有化、SaaS两种部署方式。海纳嗨数拥有规范的数据管理体系，支持多类型数据接入和全平台的数据采集，助力企业打造数字智能化的运营管理体系。平台集成数据接入、数据分析、用户洞察、人群定位、营销投放为一体，让用户行为数据发挥出最大的价值。
+此外，海纳数科沉淀数据业务多年，具有丰富的行业经验储备，在消金、游戏、教育等多个领域具有成熟的行业解决方案，可助力企业高效运营。在需求对接、采集方案设计、数据上报、指标设计、问题追踪等方面提供全流程定制化服务，深入挖掘业务痛点，精准定位问题所在。无论是售前咨询、售中使用还是售后维护，都有专业的工作人员为您提供全流程指导。
+
+## 基本要求
+SDK 兼容 Python 2.6+ 和 Python3 3.X，不依赖第三方库。
+
+## 集成文档
+
+请参考海纳嗨数官网 [Python SDK 集成文档](https://himanual.hinadt.com/docs/hicloud/pythonjicheng)。
