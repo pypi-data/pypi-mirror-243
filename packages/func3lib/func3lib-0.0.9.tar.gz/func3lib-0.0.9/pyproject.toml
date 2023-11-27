@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "func3lib"
+version = "0.0.9"
+description = "Three functions func3lib: 'transpose2d', 'window1d' and 'convolution2d'."
+authors = ["LinasTamk <linastamk@gmail.com>"]
+license = "MIT"
+readme = "src/func3lib/README.md"
+packages = [{include = "func3lib", from = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10"
+numpy = "^1.26.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
