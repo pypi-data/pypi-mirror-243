@@ -1,0 +1,15 @@
+{
+  "packages": [
+    "python@3.11",
+    "python311Packages.pip@latest"
+  ],
+  "shell": {
+    "init_hook": "test $FISH_VERSION && . $VENV_DIR/bin/activate.fish || . $VENV_DIR/bin/activate",
+    "scripts": {
+      "setup": [
+        "pip install hatch==1.7.0 pre-commit==3.3.3",
+        "pre-commit install"
+      ]
+    }
+  }
+}
