@@ -1,0 +1,129 @@
+[tool.poetry]
+name = "botocove"
+version = "1.7.4"
+description = "A decorator to allow running a function against all AWS accounts in an organization"
+authors = ["Dave Connell <daveconn41@gmail.com>"]
+license = "LGPL-3.0-or-later"
+readme = "README.md"
+repository = "https://github.com/connelldave/botocove"
+keywords = ["AWS", "organizations", "AWS organizations", "boto3"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+boto3 = "*"
+tqdm = "*"
+boto3-stubs = {extras = ["sts", "organizations"], version = "*"}
+types-tqdm = "*"
+
+[tool.poetry.dev-dependencies]
+
+# Latest versions on 2023-10-08.
+pytest = ">=7.4.2"
+pytest-mock = ">=3.11.1"
+isort = ">=5.12.0"
+black = ">=23.9.1"
+flake8-builtins = ">=2.1.0"
+flake8-comprehensions = ">=3.14.0"
+flake8-eradicate = ">=1.4.0"
+flake8-isort = ">=6.1.0"
+flake8-mutable = ">=1.2.0"
+flake8-pytest-style = ">=1.7.2"
+flake8-print = ">=5.0.0"
+mypy = ">=1.5.1"
+pre-commit = ">=3.4.0"
+flakeheaven = ">=3.3.0"
+moto = {extras = ["organizations", "sts"], version = ">=4.2.5"}
+pytest-randomly = ">=3.15.0"
+
+# These are the last versions compatible with flake8 4. flakeheaven 3.3.0 is
+# stuck on flake8 4. https://github.com/flakeheaven/flakeheaven/issues/132
+pep8-naming = "==0.13.2"
+flake8-bugbear = "==23.3.12"
+
+# Hint to the Poetry resolver to resolve boto3 correctly.
+# Otherwise there is a conflict with moto via requests.
+# Keep this until the botocore issue is resolved.
+# Follow https://github.com/boto/botocore/issues/2926 for details.
+urllib3 = "<2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+multi_line_output=3
+include_trailing_comma=true
+force_grid_wrap=0
+use_parentheses=true
+line_length=88
+
+[tool.flakeheaven]
+exclude = ["README.rst", "README.md", ".git","__pycache__",".venv", "install-poetry.py"]
+format = "colored"
+max_line_length = 88
+show_source = true
+
+[tool.flakeheaven.plugins]
+flake8-bandit = ["+*", "-S322"]
+flake8-bugbear = ["+*", "-B019"]
+flake8-builtins = ["+*"]
+flake8-comprehensions = ["+*"]
+flake8-eradicate = ["+*"]
+flake8-mutable = ["+*"]
+flake8-pytest-style = ["+*"]
+mccabe = ["+*"]
+pep8-naming = ["+*"]
+pycodestyle = ["+*"]
+pyflakes = ["+*"]
+pylint = ["+*"]
+
+[tool.flakeheaven.exceptions."tests/"]
+flake8-bandit = ["+*", "-S322", "-S101"]
+
+[tool.black]
+line_length=88
+
+[tool.mypy]
+python_version = 3.8
+pretty = true
+cache_dir = ".mypy_cache/strict"
+strict_optional = true
+show_error_codes = true
+show_column_numbers = true
+warn_no_return = true
+disallow_any_unimported = true
+exclude = "install-poetry.py"
+
+# Across versions of mypy, the flags toggled by --strict vary.  To ensure
+# we have reproducible type check, we instead manually specify the flags
+warn_unused_configs = true
+disallow_any_generics = true
+disallow_subclassing_any = true
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_return_any = true
+implicit_reexport = false
+strict_equality = true
+warn_unused_ignores = false
+
+[[tool.mypy.overrides]]
+module = [
+    'moto'
+]
+ignore_missing_imports = true
+
+
+[tool.pytest.ini_options]
+addopts = "-vv"
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
+testpaths = [
+    "tests",
+]
