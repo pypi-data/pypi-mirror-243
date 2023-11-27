@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+setup.py
+alphaiq_sdk/__init__.py
+alphaiq_sdk/__main__.py
+alphaiq_sdk/client.py
+alphaiq_sdk/config.py
+alphaiq_sdk/identifiers.py
+alphaiq_sdk/users.py
+alphaiq_sdk.egg-info/PKG-INFO
+alphaiq_sdk.egg-info/SOURCES.txt
+alphaiq_sdk.egg-info/dependency_links.txt
+alphaiq_sdk.egg-info/entry_points.txt
+alphaiq_sdk.egg-info/requires.txt
+alphaiq_sdk.egg-info/top_level.txt
