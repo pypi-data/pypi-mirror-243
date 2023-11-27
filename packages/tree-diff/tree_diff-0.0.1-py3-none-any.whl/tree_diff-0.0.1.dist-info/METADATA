@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: tree-diff
+Version: 0.0.1
+Summary: Given two directories, compare the sturcture and contents (hashing) of files
+Project-URL: Homepage, https://myhomepage.com
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Requires-Dist: colorama
+Requires-Dist: termcolor
+
