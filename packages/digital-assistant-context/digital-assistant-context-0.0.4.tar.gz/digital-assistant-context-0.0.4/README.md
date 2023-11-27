@@ -1,0 +1,98 @@
+# Контекст
+
+В ходе взаимодействия цифрового помощника с пользователем
+исполнение [сценария](https://github.com/asbelon/digital-assistant-script) в каждом моменте находится на 
+определенном акте. Нахождение исполнения сценария на определенном акте называется состоянием исполнения сценария. 
+Состояние исполнения сценария хранит исполнитель сценария для каждого отдельного пользователя. Состояние 
+определяется текущим актом и контекстом. Под контекстом понимается совокупность значений переменных сценария.
+
+## Использование библиотеки
+
+Назначение библиотеки переводить структуру переменных из нотации сценария цифрового помощника в нотацию языка python 
+для манипуляции контекстом при исполнении сценария. 
+
+### Работа с контекстом
+
+#### Инициализация контекста
+
+Инициализация контекста, например, из файла. Используется для восстановления состояния исполнения сценария. 
+
+```python
+import json
+from digitalassistantcontext.context import Context
+
+with open('./context.json', encoding='utf-8') as f:
+    context = Context(json.load(f))
+```
+
+#### Изменение контекста
+
+С помощью метода set объекта класса Context. Используется, например, при изменении контекста сценария.
+
+```python
+from digitalassistantcontext.context import Context
+
+vars_list = [{'name': 'Услуги[0][Имя]', 'value': 'Консультация'},
+            {'name': 'Услуги[0][Стоимость]', 'value': '500 р'}]
+context = Context()
+for v in vars_list:
+    context.set(v.get("name"), v.get("value"))
+```
+
+#### Наследование контекста
+
+Область видимости переменных ограничена последовательностью и ее дочерними последовательностями первого уровня. При 
+создании объекта класса Context в параметре parent_ctx можно передать контекст родительской последовательности
+
+```python
+import json
+
+from digitalassistantcontext.context import Context
+
+try:
+    with open('./parent_context.json', encoding='utf-8') as f:
+        parent_context = Context(json.load(f))
+except FileNotFoundError as e:
+    print(e)
+
+try:
+    with open('./context.json', encoding='utf-8') as f:
+        context = Context(json.load(f), parent_ctx=parent_context)
+except FileNotFoundError as e:
+    print(e)
+
+v = context.get('Услуги[1]')
+print(v)
+```
+
+#### Сохранение состояния
+
+Текущее состояние исполнения сценария в виде списка переменных в формате сценария можно преобразовать функцией 
+parse_var_to_list и сохранить
+
+```python
+import json
+from pprint import pprint
+
+from digitalassistantcontext.context import parse_var_to_list, Context, DICT_VAR_LIST_TYPE
+
+try:
+    with open('./context.json', encoding='utf-8') as f:
+        context = Context(json.load(f))
+except FileNotFoundError as e:
+    print(e)
+
+try:
+    vars_list = parse_var_to_list(context.variables, list_type=DICT_VAR_LIST_TYPE)
+    with open('./variable.json', 'w', encoding='utf-8') as outfile:
+        json.dump(vars_list, outfile, ensure_ascii=False, indent=4)
+
+    context_reload = Context()
+    pprint(vars_list)
+    for v in vars_list:
+        context_reload.set(v, vars_list[v])
+    with open('./context_reload.json', 'w', encoding='utf-8') as file:
+        json.dump(context_reload.variables, file, ensure_ascii=False, indent=4)
+except NameError as e:
+    print(e)
+```
