@@ -1,0 +1,76 @@
+"""{{ generate_meta_info(ctx) }}"""
+
+from typing import Any
+{{ translator.REGEX_IMPORT }}
+
+{{ translator.SELECTOR_IMPORT }}
+
+class __BaseViewModel:
+    def __init__(self, document: str):
+        self.__raw__ = document
+        self.__selector__ = {{ translator.SELECTOR_TYPE }}(document)
+        self.__cached_result: list[dict[str, Any]] = []
+        self.__aliases = {}
+        self.__view_keys = []
+
+    @staticmethod
+    def __pre_validate(doc):
+        pass
+
+    def __start_parse(self):
+        pass
+
+    def __part_document(self, part: {{ translator.SELECTOR_TYPE }}):
+        pass
+
+    def parse(self):
+        self.__pre_validate(self.__selector__)
+        self.__start_parse()
+        return self
+
+    def view(self) -> list[dict[str, list[str] | str]]:
+        def map_fields(result):
+            view_dict = {}
+            for k in self.__view_keys:
+                if v := result.get(k):
+                    k = self.__aliases.get(k, k)
+                    view_dict[k] = v
+            return view_dict
+
+        if len(self.__cached_result) == 1:
+            return [map_fields(self.__cached_result[0])]
+        return [map_fields(result) for result in self.__cached_result]
+
+
+{% for schema in ctx.schemas %}
+class {{ schema.name }}(__BaseViewModel):
+    """
+    {{ schema.doc }}
+    {{ generate_attr_signature(schema.attr_signature) }}
+    """
+    def __init__(self, document: str):
+        super().__init__(document)
+        self.__aliases = {{ schema.aliases }}
+        self.__view_keys = {{ schema.view_keys }}
+
+    @staticmethod
+    def __pre_validate({{ translator.METHOD_ARG_NAME }}: {{ translator.SELECTOR_TYPE }}):
+        {{ sep_code("\n        ", schema.pre_validate_code.split("\n")) }}
+    def __part_document(self, {{ translator.METHOD_ARG_NAME }}: {{ translator.SELECTOR_TYPE }}):
+        self.__pre_validate(self.__selector__)
+        {{ sep_code("\n        ", schema.split_code.split("\n")) }}
+    {% for attr in schema.attrs %}
+    @staticmethod
+    def __parse_{{ attr.name }}({{ translator.METHOD_ARG_NAME }}: {{ translator.SELECTOR_TYPE }}){{ ret_type(attr, translator)}}:
+        {{ sep_code("\n        ", attr.code.split("\n")) }}
+    {% endfor %}
+    def __start_parse(self):
+        # clear cache
+        self.__cached_result.clear()
+        for part in self.__part_document(self.__selector__):
+            self.__cached_result.append({
+            {%- for key in schema.attrs_names %}
+                {{ repr_str(key) }}: self.__parse_{{ key }}({{ translator.METHOD_ARG_NAME }}),
+            {%- endfor -%}
+            })
+{% endfor %}
