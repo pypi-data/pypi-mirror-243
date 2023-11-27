@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: cardsharp
+Version: 0.2.0
+Summary: Async Playing Card Library
+License: MIT
+Author: Matt Michie
+Author-email: mmichie@gmail.com
+Requires-Python: >=3.12,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Games/Entertainment :: Board Games
+Requires-Dist: aiofiles
+Requires-Dist: asyncio
+Description-Content-Type: text/markdown
+
+# CardSharp
+
+## Description
+
+CardSharp is a Python package for simulating and testing card games. The package currently supports Blackjack but can be extended to support more card games.
+
+## Key Features
+
+1. Simulation of multiple games in a batch.
+2. Configurable game rules.
+3. Test and console-based IO interfaces.
+
+## Installation
+
+1. Clone the repository.
+2. Navigate to the project directory
+3. Install dependencies with Poetry.
+
+## Usage
+
+
+You can run blackjack simulation mode with:
+
+```
+$ poetry shell
+$ python blackjack.py --simulate --num_games 100
+```
+
+For more usage instructions, please refer to the documentation and the code comments.
+
+## Contributing
+
+Contributions are welcome!
+
+## License
+
+This project is licensed under the terms of the MIT license.
+
