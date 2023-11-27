@@ -1,0 +1,65 @@
+[
+    {"A": [
+        {"Negara": "American Samoa (USA)", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Australia", "Mata Uang": "Australian dollar", "ISO": "AUD"}]
+    },
+
+    {"C": [
+        {"Negara": "Chatham Islands (New Zealand)", "Mata Uang": "New Zealand dollar", "ISO": "NZD"},
+        {"Negara": "Cook Islands (New Zealand)", "Mata Uang": "Cook Islands dollar", "ISO": "None"}]
+    },
+
+    {"F": [
+        {"Negara": "Fiji", "Mata Uang": "Fijian dollar", "ISO": "FJD"},
+        {"Negara": "French Polynesia (France)", "Mata Uang": "CFP franc", "ISO": "XPF"}]
+    },
+
+    {"G": [
+        {"Negara": "Guam (USA)", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    },
+
+    {"K": [
+        {"Negara": "Kiribati", "Mata Uang": "Australian dollar", "ISO": "AUD"}]
+    },
+
+    {"M": [
+        {"Negara": "Marshall Islands", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Micronesia", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    },
+
+    {"N": [
+        {"Negara": "Nauru", "Mata Uang": "Australian dollar", "ISO": "AUD"},
+        {"Negara": "New Caledonia (France)", "Mata Uang": "CFP franc", "ISO": "XPF"},
+        {"Negara": "New Zealand", "Mata Uang": "New Zealand dollar", "ISO": "NZD"},
+        {"Negara": "Niue (New Zealand)", "Mata Uang": "New Zealand dollar", "ISO": "NZD"},
+        {"Negara": "Norfolk Island (Australia)", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Northern Mariana Islands (USA)", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    },
+
+    {"P": [
+        {"Negara": "Palau", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Papua New Guinea", "Mata Uang": "Papua New Guinean kina", "ISO": "PGK"},
+        {"Negara": "Pitcairn Islands (UK)", "Mata Uang": "New Zealand dollar", "ISO": "NZD"}]
+    },
+
+    {"S": [
+        {"Negara": "Samoa", "Mata Uang": "Samoan tala", "ISO": "WST"},
+        {"Negara": "Solomon Islands", "Mata Uang": "Solomon Islands dollar", "ISO": "SBD"}]
+    },
+
+    {"T": [
+        {"Negara": "Tokelau (New Zealand)", "Mata Uang": "New Zealand dollar", "ISO": "NZD"},
+        {"Negara": "Tonga", "Mata Uang": "Tongan pa’anga", "ISO": "TOP"},
+        {"Negara": "Norfolk Island (Australia)", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Tuvalu", "Mata Uang": "Australian dollar", "ISO": "AUD"}]
+    },
+
+    {"V": [
+        {"Negara": "Vanuatu", "Mata Uang": "UVanuatu vatu", "ISO": "VUV"}]
+    },
+
+    {"W": [
+        {"Negara": "Wake Island (USA)", "Mata Uang": "United States dollar", "ISO": "USD"},
+        {"Negara": "Wallis and Futuna (France)", "Mata Uang": "CFP franc", "ISO": "XPF"}]
+    }
+]
