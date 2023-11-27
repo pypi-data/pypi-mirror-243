@@ -1,0 +1,1991 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: turcar\n"
+"Language: et\n"
+
+#: turcar/workbench.py:375
+msgid "File"
+msgstr "Fail"
+
+#: turcar/workbench.py:376
+msgid "Edit"
+msgstr "Redigeeri"
+
+#: turcar/workbench.py:377
+msgid "View"
+msgstr "Vaated"
+
+#: turcar/running.py:161 turcar/workbench.py:378
+msgid "Run"
+msgstr "Käivita"
+
+#: turcar/workbench.py:379
+msgid "Tools"
+msgstr "Tööriistad"
+
+#: turcar/plugins/help/__init__.py:80 turcar/workbench.py:380
+msgid "Help"
+msgstr "Abiinfo"
+
+#: turcar/workbench.py:598
+msgid "Exit"
+msgstr "Välju"
+
+#: turcar/workbench.py:625
+msgid "Decrease font size"
+msgstr "Vähenda fondi suurust"
+
+#: turcar/workbench.py:637
+msgid "Focus editor"
+msgstr "Mine redaktorisse"
+
+#: turcar/workbench.py:646
+msgid "Focus shell"
+msgstr "Mine käsureale"
+
+#: turcar/workbench.py:656
+msgid "Maximize view"
+msgstr "Suurenda vaade"
+
+#: turcar/workbench.py:668
+msgid "Full screen"
+msgstr "Täisekraan"
+
+#: turcar/workbench.py:1467
+msgid "Program arguments"
+msgstr "Programmi argumendid"
+
+#: turcar/plugins/about.py:24 turcar/plugins/about.py:153
+msgid "About turcar"
+msgstr "Info turcar kohta"
+
+#: turcar/plugins/about.py:81
+msgid "Made in\n"
+"University of Tartu, Estonia,\n"
+"with the help from\n"
+"open-source community,\n"
+"Raspberry Pi Foundation\n"
+"and Cybernetica AS"
+msgstr "Loodud\n"
+"Tartu Ülikoolis, Eestis.\n"
+"Abiks on olnud\n"
+"avatud tarkvara kogukond,\n"
+"Raspberry Pi Foundation\n"
+"ja Cybernetica AS"
+
+#: turcar/plugins/about.py:101
+msgid "This program comes with\n"
+"ABSOLUTELY NO WARRANTY!\n"
+"It is free software, and you are welcome to\n"
+"redistribute it under certain conditions, see\n"
+"https://opensource.org/licenses/MIT\n"
+"for details"
+msgstr "Selle programmi toimimise\n"
+"kohta ei anta mingeid garantiisid.\n"
+"See on avatud tarkvara ja seda\n"
+"võib teatud tingimustel levitada.\n"
+"Vaata täpsemalt\n"
+"https://opensource.org/licenses/MIT"
+
+#: turcar/plugins/about.py:142
+msgid "Version history"
+msgstr "Versioonide ajalugu"
+
+#: turcar/plugins/about.py:149
+msgid "Report problems"
+msgstr "Teata probleemidest"
+
+#: turcar/plugins/assistant_config_page.py:16
+msgid "Open Assistant automatically when program crashes with an exception"
+msgstr "Ava Juhendaja automaatselt, kui programm annab vea"
+
+#: turcar/plugins/assistant_config_page.py:23
+msgid "Open Assistant automatically when it has warnings for your code"
+msgstr "Ava Juhendaja automaatselt, kui tal on hoiatusi Sinu koodi kohta"
+
+#: turcar/plugins/assistant_config_page.py:30
+msgid "Perform selected Pylint checks"
+msgstr "Teosta Pylint kontrolle"
+
+#: turcar/plugins/assistant_config_page.py:34
+msgid "Perform MyPy checks"
+msgstr "Teosta MyPy kontrolle"
+
+#: turcar/plugins/assistant_config_page.py:36
+msgid "Disabled checks (one id per line)"
+msgstr "Tühistatud kontrollid (üks identifikaator rea kohta)"
+
+#: turcar/assistance.py:981 turcar/plugins/assistant_config_page.py:74
+msgid "Assistant"
+msgstr "Juhendaja"
+
+#: turcar/plugins/autocomplete.py:529
+msgid "Auto-complete"
+msgstr "Lõpeta sõna automaatselt"
+
+#: turcar/plugins/backend_config_page.py:335
+msgid "Interpreter"
+msgstr "Interpretaator"
+
+#: turcar/plugins/birdseye_frontend.py:55
+msgid "About Birdseye"
+msgstr "Birdseye kohta"
+
+#: turcar/plugins/birdseye_frontend.py:56
+msgid "Birdseye is a Python debugger which needs to be installed separately.\n"
+"\n"
+"Do you want to open the help page and learn more?"
+msgstr "Birdseye on Pythoni silur, mis tuleb eraldi paigaldada.\n"
+"\n"
+"Kas soovid avada vastava abiinfo lehe, et rohkem teada saada?"
+
+#: turcar/plugins/birdseye_frontend.py:84
+msgid "Debug current script (birdseye)"
+msgstr "Silu käesolevat skripti (birdseye)"
+
+#: turcar/plugins/commenting_indenting.py:171
+msgid "Toggle comment"
+msgstr "Lülita kommentaar sisse/välja"
+
+#: turcar/plugins/commenting_indenting.py:181
+msgid "Comment out"
+msgstr "Kommenteeri"
+
+#: turcar/plugins/commenting_indenting.py:191
+msgid "Uncomment"
+msgstr "Eemalda kommentaar"
+
+#: turcar/plugins/common_editing_commands.py:21
+msgid "Undo"
+msgstr "Võta muudatus tagasi"
+
+#: turcar/plugins/common_editing_commands.py:33
+msgid "Redo"
+msgstr "Rakenda tagasivõetud muudatus uuesti"
+
+#: turcar/base_file_browser.py:728 turcar/plugins/common_editing_commands.py:49
+#: turcar/ui_utils.py:2339
+msgid "Cut"
+msgstr "Lõika"
+
+#: turcar/base_file_browser.py:729 turcar/plugins/common_editing_commands.py:61
+#: turcar/ui_utils.py:2340
+msgid "Copy"
+msgstr "Kopeeri"
+
+#: turcar/base_file_browser.py:731 turcar/base_file_browser.py:737
+#: turcar/plugins/common_editing_commands.py:73 turcar/ui_utils.py:2341
+msgid "Paste"
+msgstr "Kleebi"
+
+#: turcar/plugins/common_editing_commands.py:85 turcar/plugins/debugger.py:152
+msgid "Select all"
+msgstr "Vali kõik"
+
+#: turcar/plugins/debugger.py:145 turcar/plugins/debugger.py:1402
+msgid "Run to cursor"
+msgstr "Jooksuta kursorini"
+
+#: turcar/plugins/debugger.py:985
+msgid "Can't close yet"
+msgstr "Ei saa veel sulgeda"
+
+#: turcar/plugins/debugger.py:986
+msgid "Use \"Stop\" command if you want to cancel debugging"
+msgstr "Kui soovid silumist lõpetada, siis kasuta \"Stop\" käsku"
+
+#: turcar/plugins/dock_user_windows_frontend.py:28
+msgid "Dock user windows"
+msgstr "Kinnita kasutaja aknad"
+
+#: turcar/plugins/editor_config_page.py:20
+msgid "Highlight matching names"
+msgstr "Too esile samad nimed"
+
+#: turcar/plugins/editor_config_page.py:26
+msgid "Highlight local variables"
+msgstr "Too esile lokaalsed muutujad"
+
+#: turcar/plugins/editor_config_page.py:31
+msgid "Highlight parentheses"
+msgstr "Too esile sulupaarid"
+
+#: turcar/plugins/editor_config_page.py:32
+msgid "Highlight syntax elements"
+msgstr "Tee kood värviliseks"
+
+#: turcar/plugins/editor_config_page.py:36
+msgid "Highlight current line (requires reopening the editor)"
+msgstr "Too esile jooksev rida"
+
+#: turcar/plugins/editor_config_page.py:73
+msgid "Show line numbers"
+msgstr "Näita reanumbreid"
+
+#: turcar/plugins/editor_config_page.py:76
+msgid "Recommended maximum line length\n"
+"(Set to 0 to turn off margin line)"
+msgstr "Soovitatav maksimaalne reapikkus\n"
+"(0 lülitab serva näitamise välja)"
+
+#: turcar/plugins/editor_config_page.py:104
+msgid "Editor"
+msgstr "Redaktor"
+
+#: turcar/plugins/event_logging.py:207
+msgid "Export usage logs..."
+msgstr "Ekspordi kasutuslogi"
+
+#: turcar/plugins/event_view.py:39
+msgid "Events"
+msgstr "Sündmused"
+
+#: turcar/plugins/files.py:609
+msgid "Files"
+msgstr "Failid"
+
+#: turcar/plugins/find_replace.py:60 turcar/plugins/find_replace.py:438
+msgid "Find & Replace"
+msgstr "Otsi ja asenda"
+
+#: turcar/plugins/find_replace.py:66
+msgid "Find:"
+msgstr "Otsi:"
+
+#: turcar/plugins/find_replace.py:90
+msgid "Replace with:"
+msgstr "Asenda:"
+
+#: turcar/plugins/find_replace.py:108
+msgid "Case sensitive"
+msgstr "Tõstutundlik"
+
+#: turcar/plugins/find_replace.py:115
+msgid "Up"
+msgstr "Üles"
+
+#: turcar/plugins/find_replace.py:119
+msgid "Down"
+msgstr "Alla"
+
+#: turcar/plugins/find_replace.py:128
+msgid "Find"
+msgstr "Otsi"
+
+#: turcar/plugins/find_replace.py:138
+msgid "Replace"
+msgstr "Asenda"
+
+#: turcar/plugins/find_replace.py:146
+msgid "Replace+Find"
+msgstr "Otsi ja asenda"
+
+#: turcar/plugins/find_replace.py:156
+msgid "Replace all"
+msgstr "Asenda kõik"
+
+#: turcar/plugins/find_replace.py:254
+msgid "Enter string to be replaced."
+msgstr "Sisesta asendatav sõne"
+
+#: turcar/plugins/find_replace.py:339
+msgid "The specified text was not found!"
+msgstr "Otsitavat teksti ei leitud!"
+
+#: turcar/plugins/general_config_page.py:15
+msgid "Allow only single turcar instance"
+msgstr "Luba korraga ainult üks turcar"
+
+#: turcar/plugins/general_config_page.py:22
+msgid "Reopen all files from previous session"
+msgstr "Ava käivitumisel kõik eelmise sessiooni failid"
+
+#: turcar/plugins/general_config_page.py:37
+msgid "Disable notification sound"
+msgstr "Keela teavitushelid"
+
+#: turcar/plugins/general_config_page.py:86
+msgid "Font scaling mode"
+msgstr "Fondi suuruse režiim"
+
+#: turcar/plugins/heap.py:37
+msgid "Heap mode is on.\n"
+"Close Heap view to turn it off."
+msgstr "Kuhja režiim on sees.\n"
+"Väljalülitamiseks sulge Kuhja vaade"
+
+#: turcar/plugins/heap.py:86
+msgid "Heap"
+msgstr "Kuhi"
+
+#: turcar/plugins/general_config_page.py:53
+msgid "Language"
+msgstr "Keel"
+
+#: turcar/plugins/notes.py:35
+msgid "This box is meant for your working notes -- assignment instructions, code snippets, whatever.\n"
+"\n"
+"Everything will be saved automatically and loaded when you open turcar next time.\n"
+"\n"
+"Feel free to delete this text to make room for your own notes."
+msgstr "See kast on mõeldud Sinu märkmeteks -- tööjuhenditeks, koodijuppideks, ...\n"
+"\n"
+"Tekst salvestub automaatselt ja laetakse uuesti kui Sa avad turcar uuesti.\n"
+"\n"
+"Võid vabalt selle teksti kustutada, et enda märkmetele ruumi teha."
+
+#: turcar/plugins/notes.py:63
+msgid "Notes"
+msgstr "Märkmed"
+
+#: turcar/plugins/object_inspector.py:116
+msgid "Previous object"
+msgstr "Eelmine objekt"
+
+#: turcar/plugins/object_inspector.py:119
+msgid "Next object"
+msgstr "Järgmine objekt"
+
+#: turcar/plugins/object_inspector.py:732
+msgid "Object inspector"
+msgstr "Objektivaatur"
+
+#: turcar/plugins/outline.py:148
+msgid "Outline"
+msgstr "Struktuur"
+
+#: turcar/plugins/pgzero_frontend.py:27
+msgid "Pygame Zero mode"
+msgstr "Pygame Zero režiim"
+
+#: turcar/plugins/pip_gui.py:80
+msgid "Uninstall"
+msgstr "Desinstalli"
+
+#: turcar/editors.py:693 turcar/plugins/pip_gui.py:251 turcar/ui_utils.py:496
+#: turcar/ui_utils.py:1884 turcar/workdlg.py:203
+msgid "Close"
+msgstr "Sulge"
+
+#: turcar/plugins/pip_gui.py:397
+msgid "Click "
+msgstr "Klõpsa "
+
+#: turcar/plugins/pip_gui.py:398 turcar/plugins/pip_gui.py:409
+msgid "here"
+msgstr "siia"
+
+#: turcar/plugins/pip_gui.py:77
+msgid "Upgrade"
+msgstr "Uuenda"
+
+#: turcar/plugins/micropython/base_flashing_dialog.py:398
+#: turcar/plugins/pip_gui.py:74
+msgid "Install"
+msgstr "Installi"
+
+#: turcar/plugins/pip_gui.py:570
+msgid "Could not find the package from PyPI."
+msgstr "Ei leidnud PyPI-st sellist pakki"
+
+#: turcar/plugins/pip_gui.py:592
+msgid "Latest stable version"
+msgstr "Viimane stabiilne versioon"
+
+#: turcar/plugins/pip_gui.py:594
+msgid "Latest version"
+msgstr "Viimane versioon"
+
+#: turcar/plugins/pip_gui.py:596
+msgid "Summary"
+msgstr "Kokkuvõte"
+
+#: turcar/plugins/pip_gui.py:598
+msgid "Author"
+msgstr "Autor"
+
+#: turcar/plugins/pip_gui.py:602
+msgid "Homepage"
+msgstr "Koduleht"
+
+#: turcar/plugins/pip_gui.py:604
+msgid "Bugtracker"
+msgstr "Vigade register"
+
+#: turcar/plugins/pip_gui.py:606
+msgid "Documentation"
+msgstr "Dokumentatsioon"
+
+#: turcar/plugins/pip_gui.py:608
+msgid "PyPI page"
+msgstr "PyPI leht"
+
+#: turcar/plugins/pip_gui.py:648
+msgid "Requires"
+msgstr "Nõuab"
+
+#: turcar/plugins/pip_gui.py:802
+msgid "Really uninstall?"
+msgstr "Desinstallida?"
+
+#: turcar/plugins/pip_gui.py:807
+msgid "Are you sure you want to uninstall it?"
+msgstr "Kas oled kindel, et soovid seda desinstallida?"
+
+#: turcar/plugins/variables.py:22
+msgid "Back to\n"
+"current frame"
+msgstr "Tagasi\n"
+"aktiivsesse raami"
+
+#: turcar/plugins/variables.py:80 turcar/plugins/variables.py:82
+#: turcar/plugins/variables.py:145
+msgid "Variables"
+msgstr "Muutujad"
+
+#: turcar/base_file_browser.py:1576
+msgid "This computer"
+msgstr "See arvuti"
+
+#: turcar/base_file_browser.py:648
+msgid "Refresh"
+msgstr "Värskenda"
+
+#: turcar/base_file_browser.py:657
+msgid "Focus into"
+msgstr "Mine sisse"
+
+#: turcar/base_file_browser.py:1411 turcar/base_file_browser.py:1423
+#: turcar/plugins/autocomplete.py:303 turcar/plugins/highlight_names.py:86
+msgid "Error"
+msgstr "Viga"
+
+#: turcar/base_file_browser.py:1411 turcar/base_file_browser.py:1423
+msgid "You need to select a file!"
+msgstr "Sa peand valima faili!"
+
+#: turcar/base_file_browser.py:1427
+msgid "Overwrite?"
+msgstr "Kirjutada üle?"
+
+#: turcar/base_file_browser.py:1427
+msgid "Do you want to overwrite '%s' ?"
+msgstr "Kas soovid '%s' üle kirjutada?"
+
+#: turcar/editors.py:658 turcar/editors.py:660
+msgid "New"
+msgstr "Uus"
+
+#: turcar/editors.py:671
+msgid "Open..."
+msgstr "Ava..."
+
+#: turcar/editors.py:673
+msgid "Load"
+msgstr "Lae"
+
+#: turcar/editors.py:682
+msgid "Recent files"
+msgstr "Hiljutised failid"
+
+#: turcar/editors.py:704 turcar/ui_utils.py:498
+msgid "Close all"
+msgstr "Sulge kõik"
+
+#: turcar/editors.py:714 turcar/editors.py:716
+msgid "Save"
+msgstr "Salvesta"
+
+#: turcar/editors.py:739
+msgid "Save as..."
+msgstr "Salvesta nimega..."
+
+#: turcar/editors.py:750
+msgid "Save copy..."
+msgstr "Salvesta koopia..."
+
+#: turcar/config_ui.py:18
+msgid "turcar options"
+msgstr "turcar seaded"
+
+#: turcar/running.py:160
+msgid "Run current script"
+msgstr "Jooksuta käesolev skript"
+
+#: turcar/running.py:191
+msgid "Run current script in terminal"
+msgstr "Jooksuta käesolev skript terminalis"
+
+#: turcar/running.py:204
+msgid "Stop/Restart backend"
+msgstr "Peata/taaskäivita interpretaator"
+
+#: turcar/running.py:205
+msgid "Stop"
+msgstr "Peata"
+
+#: turcar/running.py:216
+msgid "Interrupt execution"
+msgstr "Katkesta programm"
+
+#: turcar/running.py:229
+msgid "Send EOF / Soft reboot"
+msgstr "Saada EOF / Soft reboot"
+
+#: turcar/running.py:240
+msgid "Disconnect"
+msgstr "Ühenda lahti"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:295
+msgid "Python interpreters"
+msgstr "Pythoni interpretaatord"
+
+#: turcar/editors.py:39 turcar/plugins/cpython_frontend/cp_front.py:296
+#: turcar/plugins/pip_gui.py:848 turcar/plugins/pip_gui.py:861
+msgid "all files"
+msgstr "kõik failid"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:324
+msgid "Select empty directory for new virtual environment"
+msgstr "Vali uue virtuaalkeskkonna jaoks tühi kaust"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:331
+msgid "Bad directory"
+msgstr "Halb kaust"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:332
+msgid "Selected directory is not empty.\n"
+"Select another or cancel."
+msgstr "Valitud kaust pole tühi.\n"
+"Vali mõni muu või tühista."
+
+#: turcar/plugins/cpython_frontend/cp_front.py:349
+msgid "Creating virtual environment"
+msgstr "Loon virtuaalkeskkonda"
+
+#: turcar/shell.py:101
+msgid "Clear shell"
+msgstr "Puhasta käsurida"
+
+#: turcar/shell.py:185
+msgid "Plotter"
+msgstr "Plotter"
+
+#: turcar/shell.py:317
+msgid "Clear"
+msgstr "Puhasta"
+
+#: turcar/shell.py:330
+msgid "Show Plotter"
+msgstr "Ava Plotter"
+
+#: turcar/shell.py:1660
+msgid "For performance reasons, Shell avoids showing very long lines in full (see Tools => Options => Shell).\n"
+"Here you can interact with the original text fragment."
+msgstr "Parema jõudluse nimel ei näidata Käsureal väga pikki ridu\n"
+"(vaata Tööriistad => Seaded => Käsurida).\n"
+"Siin saad Sa algset tekstifragmenti täielikult näha."
+
+#: turcar/shell.py:1671
+msgid "Wrap text (may be slow)"
+msgstr "Murra rida (võib olla aeglane)"
+
+#: turcar/ui_utils.py:1879
+msgid "Copy to clipboard"
+msgstr "Kopeeri lõikepuhvrisse"
+
+#: turcar/shell.py:1713
+msgid "Squeezed text (%d characters)"
+msgstr "Kokkupressitud tekst (%d sümbolit)"
+
+#: turcar/shell.py:1883
+msgid "Plotter visualizes series of\n"
+"numbers printed to the Shell."
+msgstr "Plotter visualiseerib käsureale\n"
+"prinditud numbrijadasid."
+
+#: turcar/shell.py:1885
+msgid "See Help for details."
+msgstr "Täpsemalt vaata abiinfost."
+
+#: turcar/ui_utils.py:497
+msgid "Close others"
+msgstr "Sulge ülejäänud"
+
+#: turcar/ui_utils.py:1734
+msgid "Copying"
+msgstr "Kopeerin"
+
+#: turcar/ui_utils.py:1737
+msgid "Copying\n"
+"  %s\n"
+"to\n"
+"  %s"
+msgstr "Kopeerin\n"
+"  %s\n"
+"=> \n"
+"  %s"
+
+#: turcar/base_file_browser.py:1382 turcar/config_ui.py:42 turcar/export.py:28
+#: turcar/plugins/backend_config_page.py:288 turcar/plugins/pip_gui.py:1338
+#: turcar/ui_utils.py:160 turcar/ui_utils.py:1745 turcar/ui_utils.py:1831
+#: turcar/workdlg.py:205 turcar/workdlg.py:259
+msgid "Cancel"
+msgstr "Tühista"
+
+#: turcar/base_file_browser.py:1373 turcar/config_ui.py:41 turcar/export.py:25
+#: turcar/plugins/about.py:115 turcar/plugins/backend_config_page.py:283
+#: turcar/ui_utils.py:157 turcar/ui_utils.py:1828 turcar/workdlg.py:256
+msgid "OK"
+msgstr "Sobib"
+
+#: turcar/ui_utils.py:2345
+msgid "Select All"
+msgstr "Vali kõik"
+
+#: turcar/plugins/shell_config_page.py:82 turcar/shell.py:149
+#: turcar/workbench.py:164
+msgid "Shell"
+msgstr "Käsurida"
+
+#: turcar/workbench.py:608
+msgid "Options..."
+msgstr "Seaded..."
+
+#: turcar/workbench.py:615
+msgid "Increase font size"
+msgstr "Suurenda kirja suurust"
+
+#: turcar/workbench.py:679
+msgid "Change font size"
+msgstr "Muuda kirja suurust"
+
+#: turcar/workbench.py:680
+msgid "Zoom"
+msgstr "Suurus"
+
+#: turcar/workbench.py:689
+msgid "Exit turcar"
+msgstr "Välju turcarst"
+
+#: turcar/workbench.py:692
+msgid "Quit"
+msgstr "Välju"
+
+#: turcar/workbench.py:1247 turcar/workbench.py:1255
+msgid "Overwriting theme '%s'"
+msgstr "Kirjutan üle teemat nimega '%s'"
+
+#: turcar/workbench.py:1438
+msgid "Program arguments:"
+msgstr "Programmi argumendid:"
+
+#: turcar/workbench.py:1492
+msgid "Regular mode"
+msgstr "Tavarežiim"
+
+#: turcar/workbench.py:1493
+msgid "Configuration has been updated. Restart turcar to start working in regular mode.\n"
+"\n"
+"(See 'Tools → Options → General' if you change your mind later.)"
+msgstr "Seaded on muudetud. Tavarežiimis alustamiseks taaskäivita turcar.\n"
+"\n"
+"(Vaata 'Tööriistad → Seaded → Üldine', kui Sa mõtled hiljem ümber.)"
+
+#: turcar/plugins/ast_view.py:211
+msgid "Program tree"
+msgstr "Programmipuu"
+
+#: turcar/plugins/debugger.py:1284
+msgid "Resume"
+msgstr "Naase"
+
+#: turcar/plugins/debugger.py:1300
+msgid "Run / resume"
+msgstr "Jooksuta / naase"
+
+#: turcar/plugins/debugger.py:1315
+msgid "Debug current script"
+msgstr "Silu käesolevat skripti"
+
+#: turcar/plugins/debugger.py:1317
+msgid "Debug"
+msgstr "Silu"
+
+#: turcar/plugins/debugger.py:1328
+msgid "Debug current script (nicer)"
+msgstr "Silu käesolevat skripti (ägedam)"
+
+#: turcar/plugins/debugger.py:1340
+msgid "Debug current script (faster)"
+msgstr "Silu käesolevat skripti (kiirem)"
+
+#: turcar/plugins/debugger.py:1351
+msgid "Step over"
+msgstr "Astu üle"
+
+#: turcar/plugins/debugger.py:1353
+msgid "Over"
+msgstr "Üle"
+
+#: turcar/plugins/debugger.py:1364
+msgid "Step into"
+msgstr "Astu sisse"
+
+#: turcar/plugins/debugger.py:1366
+msgid "Into"
+msgstr "Sisse"
+
+#: turcar/plugins/debugger.py:1377
+msgid "Step out"
+msgstr "Astu välja"
+
+#: turcar/plugins/debugger.py:1379
+msgid "Out"
+msgstr "Välja"
+
+#: turcar/plugins/debugger.py:1414
+msgid "Step back"
+msgstr "Astu tagasi"
+
+#: turcar/plugins/debugger.py:1416
+msgid "Back"
+msgstr "Tagasi"
+
+#: turcar/plugins/debugger.py:1422
+msgid "Stack"
+msgstr "Pinu"
+
+#: turcar/plugins/debugger.py:1423
+msgid "Exception"
+msgstr "Erind"
+
+#: turcar/plugins/general_config_page.py:18
+msgid "Log program usage events"
+msgstr "Logi kasutussündmusi"
+
+#: turcar/plugins/general_config_page.py:43
+msgid "Debug mode (provides more detailed diagnostic logs)"
+msgstr "Arendusrežiim (annab detailsemat diagnostilised logid)"
+
+#: turcar/plugins/general_config_page.py:67
+msgid "UI mode"
+msgstr "Kasutajaliidese režiim"
+
+#: turcar/plugins/general_config_page.py:80
+msgid "UI scaling factor"
+msgstr "Kasutajaliidese suurendamine"
+
+#: turcar/plugins/general_config_page.py:114
+msgid "NB! Restart turcar after changing these options!"
+msgstr "NB! Need seaded rakenduvad peale turcar taaskäivitamist"
+
+#: turcar/plugins/general_config_page.py:148
+msgid "General"
+msgstr "Üldine"
+
+#: turcar/plugins/pip_gui.py:142
+msgid "INSTALL"
+msgstr "INSTALLI"
+
+#: turcar/plugins/pip_gui.py:367
+msgid "Browse the packages"
+msgstr "Vaata pakke"
+
+#: turcar/plugins/pip_gui.py:370
+msgid "With current interpreter you can only browse the packages here.\n"
+"Use 'Tools → Open system shell...' for installing, upgrading or uninstalling."
+msgstr "Käesoleva interpretaatoriga saad Sa siin pakke ainult vaadata.\n"
+"Installimiseks, kustutamiseks ja uuendamiseks on vaja kasutada\n"
+"muid vahendeid"
+
+#: turcar/plugins/pip_gui.py:378
+msgid "Packages' directory"
+msgstr "Pakkide kaust"
+
+#: turcar/plugins/pip_gui.py:382
+msgid "Install from PyPI"
+msgstr "Installi PyPI-st"
+
+#: turcar/plugins/pip_gui.py:385
+msgid "If you don't know where to get the package from, then most likely you'll want to search the Python Package Index. Start by entering the name of the package in the search box above and pressing ENTER."
+msgstr "Kui Sa ei tea, kust pakki saada, siis on mõistlik otsida\n"
+"seda Pythoni pakiregistrist (PyPI), Alustuseks sisest\n"
+"paki nimi otsingukasti ja vajuta ENTER."
+
+#: turcar/plugins/pip_gui.py:402
+msgid "to locate requirements.txt file and install the packages specified in it."
+msgstr "et valida requirements.txt fail ja installida seal näidatud pakid."
+
+#: turcar/plugins/pip_gui.py:408
+msgid "Click"
+msgstr "Klõpsa"
+
+#: turcar/plugins/pip_gui.py:413
+msgid "to locate and install the package file (usually with .whl, .tar.gz or .zip extension)."
+msgstr "et valida ja installida pakifail (harilikult .whl, .tar.gz või .zip laiendiga)"
+
+#: turcar/plugins/pip_gui.py:420
+msgid "Upgrade or uninstall"
+msgstr "Uuenda või desinstalli"
+
+#: turcar/plugins/pip_gui.py:422
+msgid "Start by selecting the package from the left."
+msgstr "Alustuseks vali vasakult huvipakkuv pakk"
+
+#: turcar/plugins/pip_gui.py:430
+msgid "This dialog lists all available packages, but allows upgrading and uninstalling only packages from"
+msgstr "Selles dialoogis näidatakse kõiki pakke, aga uuendada ja desinstallida\n"
+"lubatakse ainult pakke asukohast"
+
+#: turcar/plugins/pip_gui.py:440
+msgid "New packages will be also installed into this directory. Other locations must be managed by alternative means."
+msgstr "Uued pakid installitakse ka sellesse kausta. Teisi asukohti\n"
+"tuleb hallata teiste vahenditega"
+
+#: turcar/plugins/pip_gui.py:493
+msgid "Installed version:"
+msgstr "Installitud versioon:"
+
+#: turcar/plugins/pip_gui.py:495
+msgid "Installed to:"
+msgstr "Installimise asukoht:"
+
+#: turcar/plugins/pip_gui.py:573
+msgid "Please check your spelling!"
+msgstr "Kontrolli kas kirjutasid paki nime õigesti!"
+
+#: turcar/plugins/pip_gui.py:577
+msgid "Could not find the package info from PyPI."
+msgstr "Ei leidnud sellist pakki PyPI-st"
+
+#: turcar/plugins/pip_gui.py:579 turcar/plugins/pip_gui.py:1408
+msgid "Error code:"
+msgstr "Veakood:"
+
+#: turcar/plugins/pip_gui.py:748
+msgid "Can't find package name from the list:"
+msgstr "Ei leia paki nime nimekirjast:"
+
+#: turcar/plugins/pip_gui.py:803
+msgid "Package '{}' is required for installing and uninstalling other packages."
+msgstr "Pakk '{}' on vajalik teiste pakkide installimiseks ja uuendamisks"
+
+#: turcar/plugins/pip_gui.py:848
+msgid "Package"
+msgstr "Pakk"
+
+#: turcar/plugins/pip_gui.py:960
+msgid "Manage packages for %s"
+msgstr "Halda %s pakke"
+
+#: turcar/editors.py:587 turcar/plugins/micropython/pip_gui.py:25
+#: turcar/plugins/pip_gui.py:1034
+msgid "Confirmation"
+msgstr "Kinnitus"
+
+#: turcar/plugins/pip_gui.py:1035
+msgid "Looks like you are installing a turcar-related package.\n"
+"If you meant to install a turcar plugin, then you should\n"
+"choose 'Tools → Manage plugins...' instead\n"
+"\n"
+"Are you sure you want to install %s for the back-end?"
+msgstr "Paistab, et soovid installida turcar pistikprogrammi.\n"
+"Õige oleks seda teha 'Tööriistad → Halda pistikprogramme' alt.\n"
+"\n"
+"Oled sa kindel, et tahad installida %s siin?"
+
+#: turcar/plugins/pip_gui.py:1141
+msgid "NB! There may be another version available which is compatible with current turcar version. Click on '...' button to choose the version to install."
+msgstr "NB! Mõni muu versioon võib selle turcar versiooniga klappida. \n"
+"Klõpsa '...' nupule versiooni valimiseks."
+
+#: turcar/plugins/pip_gui.py:1149
+msgid "turcar plugin without requirements"
+msgstr "turcar pistikprogramm ilma sõltuvusteta"
+
+#: turcar/plugins/pip_gui.py:1165
+msgid "Unsuitable requirements"
+msgstr "Ebasobivad sõltuvused"
+
+#: turcar/plugins/pip_gui.py:1166
+msgid "This package requires different turcar version:"
+msgstr "See pakk vajab teistsugust turcar versiooni:"
+
+#: turcar/plugins/pip_gui.py:1170
+msgid "If you still want it, then please install it from the command line."
+msgstr "Kui sa ikkagi tahad seda, siis installi see süsteemi käsurealt.."
+
+#: turcar/plugins/pip_gui.py:1207
+msgid "NB! You need to restart turcar after installing / upgrading / uninstalling a plug-in."
+msgstr "NB! Äsja installitud pistikprogramm rakendub alles peale turcar taaskäivitamist."
+
+#: turcar/plugins/pip_gui.py:1217
+msgid "turcar plug-ins"
+msgstr "turcar pistikprogrammid"
+
+#: turcar/plugins/pip_gui.py:1253
+msgid "Advanced install / upgrade / downgrade"
+msgstr "Täpsem install / versiooni valik"
+
+#: turcar/plugins/pip_gui.py:1262
+msgid "Desired version"
+msgstr "Soovitud versioon"
+
+#: turcar/plugins/pip_gui.py:1321
+msgid "Upgrade dependencies"
+msgstr "Uuenda sõltuvused"
+
+#: turcar/plugins/pip_gui.py:1406
+msgid "Requires:"
+msgstr "Nõuab:"
+
+#: turcar/plugins/pip_gui.py:1410
+msgid "Error:"
+msgstr "Viga:"
+
+#: turcar/plugins/pip_gui.py:1601
+msgid "Manage packages..."
+msgstr "Halda lisapakke..."
+
+#: turcar/plugins/pip_gui.py:1607
+msgid "Manage plug-ins..."
+msgstr "Halda pistikprogramme..."
+
+#: turcar/plugins/replayer.py:364
+msgid "Open replayer..."
+msgstr "Ava Taasesitaja..."
+
+#: turcar/plugins/run_debug_config_page.py:21
+msgid "Change working directory to script directory on Run / Debug"
+msgstr "Muuda jooksutamisel / silumisel automaatselt jooksvat kausta"
+
+#: turcar/plugins/run_debug_config_page.py:35
+msgid "Show function calls (frames) in separate windows"
+msgstr "Näita funktsiooni väljakutseid (raame) eraldi akendes"
+
+#: turcar/plugins/run_debug_config_page.py:36
+msgid "Uncheck if you want more traditional experience."
+msgstr "Ära vali, kui soovid tavapärast (vähem intuitiivset) esitusviisi."
+
+#: turcar/plugins/run_debug_config_page.py:42
+msgid "Open and close Stack view automatically"
+msgstr "Ava ja sulge Pinu vaade automaatselt"
+
+#: turcar/plugins/run_debug_config_page.py:43
+msgid "Opens the Stack view on first call and closes it when program returns to main frame."
+msgstr "Avab Pinu vaate esimesel funktsiooni väljakutsel ja sulgeb, kui programm jõuab tagasi pearaami"
+
+#: turcar/plugins/run_debug_config_page.py:52
+msgid "Allow stepping into libraries (ie. outside of main script directory)"
+msgstr "Luba teegifunktsioonide sisse astumine (väljaspool skripti kausta)"
+
+#: turcar/plugins/run_debug_config_page.py:53
+msgid "May make debugging slower."
+msgstr "Võib teha silumise aeglasemaks."
+
+#: turcar/plugins/run_debug_config_page.py:58
+msgid "Preferred debugger"
+msgstr "Eelistatud silur"
+
+#: turcar/plugins/run_debug_config_page.py:70
+msgid "(used when clicking Debug toolbar button)"
+msgstr "(rakendatakse \"Silur\" tööriistariba nupu klõpsamisel)"
+
+#: turcar/plugins/run_debug_config_page.py:75
+msgid "Birdseye port"
+msgstr "Birdseye port"
+
+#: turcar/plugins/run_debug_config_page.py:79
+msgid "(restart turcar after changing this)"
+msgstr "(taaskäivita turcar peale selle muutmist)"
+
+#: turcar/plugins/run_debug_config_page.py:87
+msgid "Run & Debug"
+msgstr "Käivitamine"
+
+#: turcar/plugins/shell_config_page.py:26
+msgid "Terminal emulation"
+msgstr "Terminali emuleerimine"
+
+#: turcar/plugins/shell_config_page.py:28
+msgid "supports basic ANSI-colors and styles"
+msgstr "toetab põhilisi ANSI värvikoode ja stiile"
+
+#: turcar/plugins/shell_config_page.py:40
+msgid "Maximum number of lines to keep."
+msgstr "Maksimaalne ridade arv."
+
+#: turcar/plugins/shell_config_page.py:42
+msgid "NB! Large values may cause poor performance!"
+msgstr "NB! Suurte väärtustega võib jõudlus halveneda!"
+
+#: turcar/plugins/shell_config_page.py:58
+msgid "Maximum length of line fragments before squeezing"
+msgstr "Maksimaalne realõigu pikkus enne \"kokkupigistamist\""
+
+#: turcar/plugins/terminal_config_page.py:12
+msgid "Running current script in terminal"
+msgstr "Skripti käivitamine terminalis"
+
+#: turcar/plugins/terminal_config_page.py:17
+msgid "Present Python REPL after program ends"
+msgstr "Näita peale programmi lõppu Pythoni käsurida"
+
+#: turcar/plugins/terminal_config_page.py:24
+msgid "Keep terminal window open after Python process ends"
+msgstr "Hoia terminali aken avatuna ka peale Pythoni protsessi lõppemist"
+
+#: turcar/plugins/terminal_config_page.py:31
+msgid "NB! Automatic closing needs to be enabled in Terminal's settings\n"
+"(Profiles → Shell → When the shell exits)"
+msgstr "NB! Automaatset sulgemist tuleb lubada Terminali seadetes\n"
+"(Profiles → Shell → When the shell exits)"
+
+#: turcar/plugins/terminal_config_page.py:41
+msgid "Terminal"
+msgstr "Terminal"
+
+#: turcar/plugins/theme_and_font_config_page.py:39
+msgid "UI theme"
+msgstr "Kasutajaliidese stiil"
+
+#: turcar/plugins/theme_and_font_config_page.py:52
+msgid "Syntax theme"
+msgstr "Süntaksi stiil"
+
+#: turcar/plugins/theme_and_font_config_page.py:84
+msgid "Editor font"
+msgstr "Redaktori font"
+
+#: turcar/plugins/theme_and_font_config_page.py:107
+msgid "IO font"
+msgstr "Sisend/väljund font"
+
+#: turcar/plugins/theme_and_font_config_page.py:132
+msgid "Preview"
+msgstr "Eelvaade"
+
+#: turcar/plugins/theme_and_font_config_page.py:150
+msgid "This is a comment"
+msgstr "See on kommentaar"
+
+#: turcar/plugins/theme_and_font_config_page.py:153
+msgid "The answer is"
+msgstr "Vastus on"
+
+#: turcar/plugins/theme_and_font_config_page.py:157
+msgid "unclosed_string"
+msgstr "sulgemata_string"
+
+#: turcar/plugins/theme_and_font_config_page.py:159
+msgid "blah, blah"
+msgstr "blaa, blaa"
+
+#: turcar/plugins/theme_and_font_config_page.py:183
+msgid "NB! Some style elements change only after restarting turcar!"
+msgstr "NB! Mõned stiilielemendid muutuvad alles peale turcar taaskäivitamist!"
+
+#: turcar/plugins/theme_and_font_config_page.py:222
+msgid "Enter an integer"
+msgstr "Sisesta täisarv"
+
+#: turcar/plugins/theme_and_font_config_page.py:235
+msgid "Theme & Font"
+msgstr "Stiil & font"
+
+#: turcar/plugins/turcar_folders.py:19
+msgid "Open turcar program folder..."
+msgstr "Ava turcar programmikaust..."
+
+#: turcar/plugins/turcar_folders.py:24
+msgid "Open turcar data folder..."
+msgstr "Ava turcar andmekaust..."
+
+#: turcar/plugins/help/__init__.py:70
+msgid "Home"
+msgstr "Avaleht"
+
+#: turcar/plugins/help/__init__.py:81
+msgid "Help contents"
+msgstr "Abiinfo sisukord"
+
+#: turcar/plugins/micropython/mp_front.py:303
+msgid "CircuitPython device"
+msgstr "CircuitPythoni seade"
+
+#: turcar/plugins/micropython/mp_front.py:307
+msgid "MicroPython device"
+msgstr "MicroPythoni seade"
+
+#: turcar/plugins/micropython/mp_front.py:558
+msgid "Connect your device to the computer and select corresponding port below"
+msgstr "Ühenda seade arvutiga ja vali allpoolt selle port"
+
+#: turcar/plugins/micropython/mp_front.py:561
+msgid "look for your device name, \"USB Serial\" or \"UART\""
+msgstr "otsi oma seadme nime või fraase \"USB Serial\" või \"UART\""
+
+#: turcar/plugins/micropython/mp_front.py:563
+msgid "If you can't find it, you may need to install proper USB driver first."
+msgstr "Kui sa ei leia seda, siis pead võibolla installima sobiva USB draiveri."
+
+#: turcar/plugins/micropython/mp_front.py:453
+msgid "Port"
+msgstr "Port"
+
+#: turcar/plugins/micropython/mp_front.py:458
+msgid "Try to detect port automatically"
+msgstr "Proovi tuvastada port automaatselt"
+
+#: turcar/plugins/micropython/__init__.py:24
+msgid "MicroPython (generic)"
+msgstr "MicroPython (üldine)"
+
+#: turcar/plugins/printing/__init__.py:98
+msgid "Print..."
+msgstr "Prindi..."
+
+#: turcar/plugins/system_shell/__init__.py:63
+msgid "Open system shell..."
+msgstr "Ava süsteemi käsurida / terminal"
+
+#: turcar/plugins/backend_config_page.py:109
+msgid "Details"
+msgstr "Detailid"
+
+#: turcar/plugins/pip_gui.py:395
+msgid "Install from requirements file"
+msgstr "Installi sõltuvusfaili järgi"
+
+#: turcar/plugins/pip_gui.py:407
+msgid "Install from local file"
+msgstr "Installi lokaalsest failist"
+
+#: turcar/plugins/pip_gui.py:1200
+msgid "This dialog is for managing turcar plug-ins and their dependencies.\n"
+"If you want to install packages for your own programs then choose 'Tools → Manage packages...'"
+msgstr "See dialoog on mõeldud turcar pistiprogrammide haldamiseks.\n"
+"Kui soovid installida pakke enda programmide jaoks, siis kasuta 'Tööriistad → Halda lisapakke...'"
+
+#: turcar/plugins/circuitpython/__init__.py:10
+msgid "CircuitPython (generic)"
+msgstr "CircuitPython (üldine)"
+
+#: turcar/plugins/commenting_indenting.py:142
+msgid "Indent selected lines"
+msgstr "Suurenda ridade taanet"
+
+#: turcar/plugins/commenting_indenting.py:152
+msgid "Dedent selected lines"
+msgstr "Vähenda ridade taanet"
+
+#: turcar/workbench.py:1481
+msgid "Switch to\n"
+"regular\n"
+"mode"
+msgstr "Mine\n"
+"tavalisse\n"
+"režiimi"
+
+#: turcar/plugins/microbit/__init__.py:62
+msgid "Make sure MicroPython has been installed to your micro:bit."
+msgstr "Veendu, et MicroPython oleks su micro:bit-ile installitud."
+
+#: turcar/plugins/microbit/__init__.py:64
+msgid "Don't forget that main.py only works without embedded main script."
+msgstr "Ära unusta, et main.py toimib ainult siis kui MicroPython on ilma peaskriptita."
+
+#: turcar/misc_utils.py:177
+msgid "Could not find disk '%s'. Do you want to locate it yourself?"
+msgstr "Ei leia draivi nimega '%s'. Kas soovid selle ise valida?"
+
+#: turcar/misc_utils.py:180
+msgid "Found several '%s' disks. Do you want to choose one yourself?"
+msgstr "Leidsin mitu draivi nimega '%s'. Kas soovid ühe neist ise valida?"
+
+#: turcar/misc_utils.py:196
+msgid "Can't find suitable disk"
+msgstr "Ei leia sobivat draivi."
+
+#: turcar/base_file_browser.py:294
+msgid "%d items"
+msgstr "%d üksust"
+
+#: turcar/base_file_browser.py:743
+msgid "Move to Trash"
+msgstr "Liiguta Prügikasti"
+
+#: turcar/base_file_browser.py:746
+msgid "Delete"
+msgstr "Kustuta"
+
+#: turcar/base_file_browser.py:725 turcar/base_file_browser.py:878
+msgid "New directory"
+msgstr "Uus kaust"
+
+#: turcar/base_file_browser.py:749
+msgid "Properties"
+msgstr "Omadused"
+
+#: turcar/base_file_browser.py:751
+msgid "Storage space"
+msgstr "Salvestusruum"
+
+#: turcar/base_file_browser.py:761
+msgid "Path"
+msgstr "Tee"
+
+#: turcar/base_file_browser.py:763
+msgid "Directory properties"
+msgstr "Kausta omadused"
+
+#: turcar/base_file_browser.py:765
+msgid "File properties"
+msgstr "Faili omadused"
+
+#: turcar/base_file_browser.py:767
+msgid "bytes"
+msgstr "baiti"
+
+#: turcar/base_file_browser.py:770
+msgid "Size"
+msgstr "Suurus"
+
+#: turcar/base_file_browser.py:94 turcar/base_file_browser.py:781
+msgid "Modified"
+msgstr "Muudetud"
+
+#: turcar/base_file_browser.py:842
+msgid "Deleting %s"
+msgstr "Kustutan %s"
+
+#: turcar/editors.py:262
+msgid "Loading"
+msgstr "Laadin"
+
+#: turcar/editors.py:395
+msgid "Saving"
+msgstr "Salvestan"
+
+#: turcar/plugins/files.py:219
+msgid "Upload to %s"
+msgstr "Laadi üles kausta %s"
+
+#: turcar/plugins/files.py:420
+msgid "Downloading %s to %s"
+msgstr "Laadi %s alla kausta %s"
+
+#: turcar/plugins/files.py:326
+msgid "Download to %s"
+msgstr "Laadi alla kausta %s"
+
+#: turcar/base_file_browser.py:650
+msgid "Open in system file manager"
+msgstr "Ava süsteemi failihalduris"
+
+#: turcar/base_file_browser.py:678
+msgid "Hide hidden files"
+msgstr "Peida varjatud failid"
+
+#: turcar/base_file_browser.py:678
+msgid "Show hidden files"
+msgstr "Näita varjatud faile"
+
+#: turcar/base_file_browser.py:661
+msgid "Open in turcar"
+msgstr "Ava turcars"
+
+#: turcar/base_file_browser.py:692
+msgid "Open in system default app"
+msgstr "Ava süsteemi vaikerakendusega"
+
+#: turcar/base_file_browser.py:673 turcar/base_file_browser.py:700
+msgid "Configure %s files"
+msgstr "Seadista %s failid"
+
+#: turcar/base_file_browser.py:701
+msgid "What to do with a %s file when you double-click it in turcar's file browser?"
+msgstr "Mida tuleks teha %s failiga, kui sa topeltklõpsad seda turcar failibrauseris?"
+
+#: turcar/base_file_browser.py:1258 turcar/editors.py:986 turcar/editors.py:988
+msgid "Deleting"
+msgstr "Kustutan"
+
+#: turcar/base_file_browser.py:1265
+msgid "Creating directory"
+msgstr "Loon kausta"
+
+#: turcar/editors.py:260
+msgid "Loading %s"
+msgstr "Laadin %s"
+
+#: turcar/editors.py:390
+msgid "Saving to %s"
+msgstr "Salvestan %s"
+
+#: turcar/editors.py:728 turcar/editors.py:730
+msgid "Save All files"
+msgstr "Salvesta kõik failid"
+
+#: turcar/plugins/backend_config_page.py:338 turcar/workbench.py:880
+msgid "Configure interpreter..."
+msgstr "Seadista interpretaator..."
+
+#: turcar/workbench.py:1591
+msgid "Device"
+msgstr "Seade"
+
+#: turcar/workdlg.py:234
+msgid "Cancelling"
+msgstr "Tühistan"
+
+#: turcar/workdlg.py:270
+msgid "Starting"
+msgstr "Alustan"
+
+#: turcar/plugins/backend_config_page.py:249
+msgid "Authentication"
+msgstr "Autentimine"
+
+#: turcar/plugins/backend_config_page.py:251
+msgid "Enter the passphrase of your private key for\n"
+"{}"
+msgstr "Sisesta oma privaatvõtme parool {} jaoks"
+
+#: turcar/plugins/backend_config_page.py:254
+msgid "Enter your password for\n"
+"{}"
+msgstr "Sisesta parool {} jaoks"
+
+#: turcar/plugins/object_inspector.py:486
+msgid "The representation above is an approximate value of this float. The exact stored value is %s which is about %s"
+msgstr "Ülaltoodud esitus on antud ujukomaarvu ligikaudne väärtus. Täpne mälus hoitav väärtus on %s, mis on umbes %s"
+
+#: turcar/plugins/pip_gui.py:682
+msgid "Search results"
+msgstr "Otsingutulemused"
+
+#: turcar/plugins/pip_gui.py:683
+msgid "Searching"
+msgstr "Otsin"
+
+#: turcar/plugins/pip_gui.py:787 turcar/plugins/pip_gui.py:876
+msgid "Installing '%s'"
+msgstr "Installin '%s'"
+
+#: turcar/plugins/pip_gui.py:793
+msgid "Upgrading '%s'"
+msgstr "Uendan '%s'"
+
+#: turcar/plugins/pip_gui.py:800
+msgid "Uninstalling '%s'"
+msgstr "Deinstallin '%s'"
+
+#: turcar/plugins/pip_gui.py:814
+msgid "Installing"
+msgstr "Installin"
+
+#: turcar/plugins/pip_gui.py:1562
+msgid "Package manager is not available for this interpreter"
+msgstr "Pakihaldur pole selle interpretaatori jaoks kättesaadav"
+
+#: turcar/base_file_browser.py:1209 turcar/plugins/pip_gui.py:1576
+msgid "Not supported"
+msgstr "Pole toetatud"
+
+#: turcar/plugins/micropython/pip_gui.py:142 turcar/plugins/pip_gui.py:1581
+msgid "Not available"
+msgstr "Pole kättesaadav"
+
+#: turcar/plugins/pip_gui.py:1582
+msgid "You need to stop your program before launching the package manager."
+msgstr "Enne pakihalduri avamist pead oma programmi töö lõpetama"
+
+#: turcar/plugins/shell_config_page.py:73
+msgid "Open evaluated values in Object inspector"
+msgstr "Ava väärtused Objektivaaturis"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:234
+msgid "Python executable"
+msgstr "Pythoni käivitusfail"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:258
+msgid "NB! File selection button may not work properly when selecting executables\n"
+"from a virtual environment. In this case choose the 'activate' script instead\n"
+"of the interpreter (or enter the path directly to the box)!"
+msgstr "NB! Faili valimise nupp ei pruugi korralikult toimida, kui valida\n"
+"käivitusfaile virtuaalkeskkonnas. Sel juhul vali hoopis 'activate' \n"
+"skript (või sisesta failitee sisestuskasti käsitsi)!"
+
+#: turcar/plugins/cpython_ssh/__init__.py:17
+msgid "Remote Python 3 (SSH)"
+msgstr "Python 3 teises masinas (SSH)"
+
+#: turcar/plugins/micropython/mp_front.py:313
+msgid "Not connected"
+msgstr "Pole ühendatud"
+
+#: turcar/plugins/micropython/__init__.py:35
+msgid "MicroPython (local)"
+msgstr "MicroPython (lokaalne)"
+
+#: turcar/plugins/micropython/__init__.py:46
+msgid "MicroPython (SSH)"
+msgstr "MicroPython (SSH)"
+
+#: turcar/plugins/micropython/pip_gui.py:144
+msgid "no absolute lib directory in sys.path"
+msgstr "sys.path ei sisalda absoluutset lib kausta"
+
+#: turcar/plugins/pip_gui.py:71
+msgid "Search on PyPI"
+msgstr "Otsi PyPI-st"
+
+#: turcar/base_file_browser.py:693
+msgid "Open in turcar's text editor"
+msgstr "Ava turcar tekstiredaktoris"
+
+#: turcar/base_file_browser.py:346
+msgid "Storage space on this drive or filesystem"
+msgstr "Salvestusruum sellel kettal või failisüsteemis"
+
+#: turcar/base_file_browser.py:347
+msgid "total space"
+msgstr "koguruum"
+
+#: turcar/base_file_browser.py:349
+msgid "used space"
+msgstr "kasutatud ruum"
+
+#: turcar/base_file_browser.py:350
+msgid "free space"
+msgstr "vaba ruum"
+
+#: turcar/base_file_browser.py:357
+msgid "Storage info"
+msgstr "Salvestusruumi info"
+
+#: turcar/plugins/commenting_indenting.py:162
+msgid "Replace tabs with spaces"
+msgstr "Asenda tab-sümbolid tühikutega"
+
+#: turcar/plugins/editor_config_page.py:33
+msgid "Highlight tab characters"
+msgstr "Too tab-sümbolid esile"
+
+#: turcar/plugins/editor_config_page.py:68
+msgid "Indent with tab characters (not recommended for Python)"
+msgstr "Taanda tab-sümbolitega (mittesoovitav Pythoni koodis)"
+
+#: turcar/base_file_browser.py:92 turcar/memory.py:63
+msgid "Name"
+msgstr "Nimi"
+
+#: turcar/base_file_browser.py:96
+msgid "Size (bytes)"
+msgstr "Suurus (baitides)"
+
+#: turcar/base_file_browser.py:879
+msgid "Enter name for new directory under\n"
+"%s"
+msgstr "Sisesta uue kausta nimi \n"
+"(%s all)"
+
+#: turcar/base_file_browser.py:902
+msgid "Nothing selected"
+msgstr "Midagi pole märgitud"
+
+#: turcar/base_file_browser.py:902
+msgid "Select an item and try again!"
+msgstr "Märgi midagi ja proovi uuesti"
+
+#: turcar/base_file_browser.py:1329
+msgid "Open from %s"
+msgstr "Ava asukohast %s"
+
+#: turcar/base_file_browser.py:1332
+msgid "Save to %s"
+msgstr "Salvesta %s alla"
+
+#: turcar/base_file_browser.py:1351
+msgid "File name:"
+msgstr "Faili nimi:"
+
+#: turcar/memory.py:64 turcar/plugins/object_inspector.py:538
+#: turcar/plugins/object_inspector.py:617
+msgid "Value ID"
+msgstr "Väärtuse ID"
+
+#: turcar/memory.py:65 turcar/plugins/heap.py:23
+#: turcar/plugins/object_inspector.py:539
+#: turcar/plugins/object_inspector.py:618
+msgid "Value"
+msgstr "Väärtus"
+
+#: turcar/plugins/backend_config_page.py:272
+msgid "Save password"
+msgstr "Salvesta parool"
+
+#: turcar/plugins/debugger.py:557
+msgid "Function call at %s"
+msgstr "Funktsiooni väljakutse (%s)"
+
+#: turcar/plugins/debugger.py:1006
+msgid "Local variables"
+msgstr "Lokaalsed muutujad"
+
+#: turcar/plugins/debugger.py:1038
+msgid "Function"
+msgstr "Funktsioon"
+
+#: turcar/plugins/debugger.py:1039
+msgid "Location"
+msgstr "Asukoht"
+
+#: turcar/plugins/debugger.py:1115
+msgid "If last command raised an exception then this view will show the stacktrace."
+msgstr "Kui viimane käsk tekitas erindi, siis siin näidatakse selle pinujälge."
+
+#: turcar/plugins/heap.py:22
+msgid "ID"
+msgstr "ID"
+
+#: turcar/plugins/object_inspector.py:92
+msgid "Data"
+msgstr "Andmed"
+
+#: turcar/plugins/object_inspector.py:93
+msgid "Attributes"
+msgstr "Atribuudid"
+
+#: turcar/plugins/object_inspector.py:537
+msgid "Index"
+msgstr "Indeks"
+
+#: turcar/plugins/object_inspector.py:615
+msgid "Key ID"
+msgstr "Võtme ID"
+
+#: turcar/plugins/object_inspector.py:616
+msgid "Key"
+msgstr "Võti"
+
+#: turcar/plugins/variables.py:39
+msgid "Back to\n"
+"%s"
+msgstr "Tagasi\n"
+"%s"
+
+#: turcar/plugins/micropython/mp_front.py:453
+msgid "Port or WebREPL"
+msgstr "Port või WebREPL"
+
+#: turcar/plugins/micropython/mp_front.py:599
+msgid "Password"
+msgstr "Parool"
+
+#: turcar/plugins/debugger.py:964
+msgid "Source code"
+msgstr "Lähtekood"
+
+#: turcar/plugins/general_config_page.py:29
+msgid "Use Tk file dialogs instead of Zenity"
+msgstr "Kasuta Tk failidialooge Zenity asemel"
+
+#: turcar/plugins/general_config_page.py:30
+msgid "Select if the file dialogs end up behind the main window"
+msgstr "Vali kui failidialoogid satuvad peaakna taha"
+
+#: turcar/plugins/general_config_page.py:97
+msgid "Environment variables (one KEY=VALUE per line)"
+msgstr "Keskkonnamuutujad (üks VÕTI=VÄÄRTUS ühel real)"
+
+#: turcar/base_file_browser.py:722
+msgid "New file"
+msgstr "Uus fail"
+
+#: turcar/base_file_browser.py:740
+msgid "Rename"
+msgstr "Nimeta ümber"
+
+#: turcar/base_file_browser.py:928
+msgid "Rename '%s'"
+msgstr "Nimeta '%s' ümber"
+
+#: turcar/base_file_browser.py:928
+msgid "Enter new name"
+msgstr "Sisesta uus nimi"
+
+#: turcar/base_file_browser.py:1016
+msgid "Paste failed"
+msgstr "Kleepimine ebaõnnestus"
+
+#: turcar/base_file_browser.py:1016
+msgid "There are conflicting folders"
+msgstr "Kaustades on konflikte"
+
+#: turcar/base_file_browser.py:1144
+msgid "File already exists"
+msgstr "Fail juba eksisteerib"
+
+#: turcar/base_file_browser.py:1212
+msgid "If it is a text file, then you can configure it to open in turcar by right-clicking it and selecting 'Configure ... files'."
+msgstr "Kui tegemist on tekstifailiga, siis Sa saad seadistada turcar seda avama kui teed paremklõpsu ja valid 'Seadista ... failid'."
+
+#: turcar/editors.py:38
+msgid "Python files"
+msgstr "Pythoni failid"
+
+#: turcar/editors.py:123 turcar/editors.py:189
+msgid "<untitled>"
+msgstr "<nimetu>"
+
+#: turcar/editors.py:150
+msgid "File is gone"
+msgstr "Faili ei leitud"
+
+#: turcar/editors.py:153
+msgid "Do you want to also close the editor?"
+msgstr "Kas soovid redaktorit sulgeda?"
+
+#: turcar/editors.py:169
+msgid "External modification"
+msgstr "Väline muudatus"
+
+#: turcar/editors.py:172
+msgid "Do you want to discard current editor content and reload the file from disk?"
+msgstr "Kas soovid redaktori praeguse sisu tühistada ja laadida faili kettalt uuesti?"
+
+#: turcar/editors.py:588
+msgid "Python files usually have .py extension."
+msgstr "Pythoni failidel on tavaliselt .py laiend."
+
+#: turcar/editors.py:590
+msgid "Did you mean '%s'?"
+msgstr "Kas mõtlesid '%s'?"
+
+#: turcar/editors.py:759
+msgid "Move / rename..."
+msgstr "Liiguta / nimeta ümber..."
+
+#: turcar/editors.py:768
+msgid "Go to line..."
+msgstr "Mine reale..."
+
+#: turcar/editors.py:1010
+msgid "Line number"
+msgstr "Rea number"
+
+#: turcar/editors.py:1156
+msgid "Do you want to save files before closing?"
+msgstr "Kas soovid enne sulgemist failid salvestada?"
+
+#: turcar/editors.py:1158
+msgid "Do you want to save file before closing?"
+msgstr "Kas soovid enne sulgemist faili salvestada?"
+
+#: turcar/editors.py:1161
+msgid "Save On Close"
+msgstr "Sulgemisel salvestamine"
+
+#: turcar/misc_utils.py:539
+msgid "Command not available"
+msgstr "Käsk pole saadaval"
+
+#: turcar/misc_utils.py:540
+msgid "This command is not available if turcar is run via Flatpak"
+msgstr "See käsk pole saadaval, kui turcar jooksutatakse Flatpak-i kaudu"
+
+#: turcar/workbench.py:700 turcar/workbench.py:799
+msgid "Support Ukraine"
+msgstr "Toeta Ukrainat"
+
+#: turcar/plugins/backend_config_page.py:90
+msgid "Which kind of interpreter should turcar use for running your code?"
+msgstr "Millist tüüpi interpretaatoriga peaks turcar Su koodi jooksutama?"
+
+#: turcar/plugins/calltip.py:159
+msgid "Show parameter info"
+msgstr "Näita parameetrite infot"
+
+#: turcar/plugins/editor_config_page.py:41
+msgid "Automatically show parameter info after typing '('"
+msgstr "Näita parameetrite infot automaatselt peale '(' tippimist"
+
+#: turcar/plugins/editor_config_page.py:47
+msgid "Automatically propose completions while typing"
+msgstr "Paku sõnade lõpetamist tippimisel automaatselt"
+
+#: turcar/plugins/editor_config_page.py:52
+msgid "Automatically show documentation for completions"
+msgstr "Näita pakkumiste dokumentatsiooni automaatselt"
+
+#: turcar/plugins/editor_config_page.py:57
+msgid "Request completions with Tab-key in editors"
+msgstr "Luba küsida sõnade lõpetamisi Tab-klahviga redaktoris"
+
+#: turcar/plugins/editor_config_page.py:62
+msgid "Request completions with Tab-key in Shell"
+msgstr "Luba küsida sõnade lõpetamisi Tab-klahviga Käsureal"
+
+#: turcar/editors.py:213 turcar/plugins/goto_definition.py:58
+msgid "Problem"
+msgstr "Probleem"
+
+#: turcar/plugins/goto_definition.py:58
+msgid "Could not find definition"
+msgstr "Ei leidnud definitsiooni"
+
+#: turcar/plugins/shell_config_page.py:17
+msgid "Clear Shell before starting new process (Run, Debug, Stop/Restart, ...)"
+msgstr "Tühjenda Käsurida enne uue protsessi käivitamist (Jooksuta, Silu, Peata/taaskäivita, ...)"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:196
+msgid "turcar's Python"
+msgstr "turcar Pyhton"
+
+#: turcar/plugins/micropython/mp_front.py:496
+msgid "Interrupt working program on connect"
+msgstr "Katkesta ühendumisel töötav programm"
+
+#: turcar/plugins/micropython/mp_front.py:504
+msgid "Synchronize device's real time clock"
+msgstr "Sünkroniseeri seadme kell"
+
+#: turcar/plugins/micropython/mp_front.py:510
+msgid "Use local time in real time clock"
+msgstr "Kasuta seadme kellas lokaalset aega"
+
+#: turcar/plugins/micropython/mp_front.py:516
+msgid "Restart interpreter before running a script"
+msgstr "Taaskäivita interpretaator enne skripti jooksutamist"
+
+#: turcar/plugins/micropython/pip_gui.py:26
+msgid "This doesn't look like MicroPython/CircuitPython package.\n"
+"Are you sure you want to install it?"
+msgstr "See ei paista olevat MicroPythoni või CircuitPythoni pakk. Oled kindel, et soovid seda installida?"
+
+#: turcar/base_file_browser.py:853
+msgid "Moving to Trash"
+msgstr "Liigutan Prügikasti"
+
+#: turcar/base_file_browser.py:854
+msgid "Move %s to Trash?"
+msgstr "Kas liigutan %s Prügikasti?"
+
+#: turcar/base_file_browser.py:861
+msgid "Moving %s to Trash"
+msgstr "Liigutan %s Prügikasti"
+
+#: turcar/base_file_browser.py:666
+msgid "Open in default external app"
+msgstr "Ava välises vaikerakenduses"
+
+#: turcar/base_file_browser.py:1210
+msgid "Opening remote files in external app is not supported."
+msgstr "Välises rakenduses ei saa avada mittelokaalseid faile."
+
+#: turcar/base_file_browser.py:1217
+msgid "If the file needs to be opened in external app, then download it to a local directory and open it from there!"
+msgstr "Kui faili on vaja avada välises rakenduses, siis lae see kõigepealt alla lokaalsesse kausta ja ava sealt!"
+
+#: turcar/editors.py:151
+msgid "Looks like '%s' was deleted or moved."
+msgstr "Näib, et '%s' on kustutatud või ümberpaigutatud."
+
+#: turcar/editors.py:170
+msgid "Looks like '%s' was modified outside of the editor."
+msgstr "Näib, et '%s' on muudetud väljaspool redaktorit."
+
+#: turcar/plugins/cpython_frontend/cp_front.py:256
+msgid "NB! turcar only supports Python %s and later"
+msgstr "NB! turcar toetab ainult Python %s ja sellest uuemaid"
+
+#: turcar/editors.py:1010
+msgid "Go to line"
+msgstr "Mine reale"
+
+#: turcar/workbench.py:703
+msgid "Support"
+msgstr "Toeta"
+
+#: turcar/editors.py:399 turcar/editors.py:414
+msgid "Could not save"
+msgstr "Salvestamine ei õnnestunud"
+
+#: turcar/plugins/general_config_page.py:135
+msgid "Warning"
+msgstr "Hoiatus"
+
+#: turcar/plugins/general_config_page.py:136
+msgid "If you quote the value of an environment variable, the quotes will be part of the value.\n"
+"Did you intend this?"
+msgstr "Kui Sa paned keskkonnamuutuja väärtuse jutumärkidesse, siis jutumärgid saavad väärtuse osaks.\n"
+"Kas soovisid nii?"
+
+#: turcar/workbench.py:870
+msgid "Install MicroPython"
+msgstr "Installi MicroPython"
+
+#: turcar/workbench.py:874
+msgid "Install CircuitPython"
+msgstr "Installi CircuitPython"
+
+#: turcar/plugins/backend_config_page.py:210
+msgid "Make uploaded shebang scripts executable"
+msgstr "Tee üleslaetud shebang-skriptid käivitatavaks"
+
+#: turcar/plugins/editor_config_page.py:91
+msgid "Make saved shebang scripts executable"
+msgstr "Tee salvestatud shebang-skriptid käivitatavaks"
+
+#: turcar/plugins/files.py:224
+msgid "Activate virtual environment"
+msgstr "Aktiveeri virtuaalkeskkond"
+
+#: turcar/plugins/micropython/pip_gui.py:119 turcar/plugins/pip_gui.py:426
+msgid "Target"
+msgstr "Sihtkoht"
+
+#: turcar/plugins/pythontutor.py:41
+msgid "Visualize current script at Python Tutor"
+msgstr "Visualiseeri käesolev skript Python Tutor-is"
+
+#: turcar/plugins/todo_view.py:43
+msgid "Line"
+msgstr "Rida"
+
+#: turcar/plugins/todo_view.py:44
+msgid "Info"
+msgstr "Info"
+
+#: turcar/plugins/todo_view.py:121
+msgid "No line marked with #todo found"
+msgstr "Ei leidnud ühtki #todo rida"
+
+#: turcar/plugins/todo_view.py:141
+msgid "TODO"
+msgstr "TODO"
+
+#: turcar/plugins/circuitpython/cirpy_front.py:113
+#: turcar/plugins/micropython/mp_front.py:550
+msgid "Install or update %s"
+msgstr "Installi või uuenda %s"
+
+#: turcar/plugins/cpython_frontend/__init__.py:24
+msgid "Local Python 3"
+msgstr "Kohalik Python 3"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:266
+msgid "You can activate an existing virtual environment also via the right-click context menu in the file navagation when selecting a virtual environment folder, or the 'pyveng.cfg' file inside."
+msgstr "Virtuaalkeskkonna saab aktiveerida ka paremklõpsuga failibrauseris keskkonna kaustal või pyvenv.cfg failil"
+
+#: turcar/plugins/ev3/__init__.py:72
+msgid "Preparations (skip the VS Code part)"
+msgstr "Ettevalmistused (ignoreeri VS Code osa)"
+
+#: turcar/plugins/ev3/__init__.py:78
+msgid "Default password"
+msgstr "Vaikeparool"
+
+#: turcar/running.py:392
+msgid "Information"
+msgstr "Informatsioon"
+
+#: turcar/running.py:393
+msgid "For debugging the program must be saved first."
+msgstr "Silumiseks tuleb programm enne salvestada."
+
+#: turcar/editors.py:213
+msgid "%s doesn't look like a text file"
+msgstr "%s ei paista olevat tekstifail"
+
+#: turcar/editors.py:219
+msgid "Problem loading file"
+msgstr "Faili laadimise probleem"
+
+#: turcar/editors.py:220
+msgid "This file seems to have problems with encoding.\n"
+"\n"
+"Make sure it is in UTF-8 or contains proper encoding hint."
+msgstr "Sellel failil paistab olevat probleem kodeeringuga.\n"
+"\n"
+"Veendu, et see oleks UTF-8 kodeeringus või et tal oleks sobiv kodeeringumarker."
+
+#: turcar/editors.py:295
+msgid "File is open"
+msgstr "Fail on avatud"
+
+#: turcar/editors.py:296
+msgid "This file is already open in turcar.\n"
+"\n"
+"If you want to save with this name,\n"
+"close the existing editor first!"
+msgstr "See fail on juba turcars avatud.\n"
+"\n"
+"Kui soovid salvestada sellise nimega,\n"
+"siis sulge esmalt vastav redaktor!"
+
+#: turcar/editors.py:349
+msgid "Permission Error"
+msgstr "Ligipääsu viga"
+
+#: turcar/editors.py:350
+msgid "Looks like this file or folder is not writable."
+msgstr "Paistab, et see fail või kaust ei ole muudetav."
+
+#: turcar/editors.py:414
+msgid "Back-end is not ready"
+msgstr "Tagasüsteem pole valmis"
+
+#: turcar/editors.py:419
+msgid "Where to save to?"
+msgstr "Kuhu salvestada?"
+
+#: turcar/editors.py:490
+msgid "Potential problem"
+msgstr "Potentsiaalne probleem"
+
+#: turcar/editors.py:491
+msgid "If you name your script '%s', you won't be able to import the library module named '%s'"
+msgstr "Kui Sa paned oma skripti nimeks '%s', siis ei saa sa importida teegi moodulit '%s'"
+
+#: turcar/editors.py:497
+msgid "Do you still want to use this name for your script?"
+msgstr "Kas soovid siiski kasutada oma skripti jaoks seda nime?"
+
+#: turcar/editors.py:1053
+msgid "Got permission error when trying to load\n"
+"%s"
+msgstr "Sain ligipääsu vea, kui proovisin laadida\n"
+"%s"
+
+#: turcar/editors.py:1055
+msgid "Try opening it with File => Open."
+msgstr "Proovi seda avada \"Fail => Ava\" abil."
+
+#: turcar/editors.py:1057
+msgid "Permission error"
+msgstr "Ligipääsu viga"
+
+#: turcar/plugins/run_debug_config_page.py:14
+msgid "Allow running unnamed programs"
+msgstr "Luba jooksutada nimetuid programme"
+
+#: turcar/plugins/pip_gui.py:600
+msgid "License"
+msgstr "Litsents"
+
+#: turcar/plugins/run_debug_config_page.py:27
+msgid "Warn if a user module shadows a library module"
+msgstr "Hoiata, kui kasutajamoodul varjab mõne teegimooduli"
+
+#: turcar/plugins/micropython/pip_gui.py:65
+msgid "Search micropython-lib and PyPI"
+msgstr "Otsi (micropython-lib ja PyPI)"
+
