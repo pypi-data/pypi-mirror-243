@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: sphinx-palewire-theme
+Version: 0.0.1
+Summary: A Sphinx theme for sites hosted at palewi.re
+Home-page: https://github.com/palewire/sphinx-palewire-theme/
+Author: Ben Welsh
+Author-email: b@palewi.re
+License: MIT
+Project-URL: Maintainer, https://github.com/palewire
+Project-URL: Source, https://github.com/palewire/sphinx-palewire-theme/
+Project-URL: Tracker, https://github.com/palewire/sphinx-palewire-theme/issues
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+A Sphinx theme for sites hosted at [palewi.re](https://palewi.re/).
