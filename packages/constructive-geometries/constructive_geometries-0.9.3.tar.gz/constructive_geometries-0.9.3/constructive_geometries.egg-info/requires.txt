@@ -1,0 +1,15 @@
+country_converter
+wrapt
+
+[dev]
+build
+pre-commit
+pylint
+pytest
+pytest-cov
+setuptools
+
+[gis]
+constructive_geometries
+fiona
+shapely
