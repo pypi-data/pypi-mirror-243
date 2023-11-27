@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: aimaps
+Version: 0.0.3
+Summary: Python Boilerplate contains all the boilerplate you need to create a Python package.
+Home-page: https://github.com/gisam/aimaps
+Author: sam jackson
+Author-email: sjackson608@gmail.com
+License: MIT license
+Keywords: aimaps
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# aimaps
+
+
+[![image](https://img.shields.io/pypi/v/aimaps.svg)](https://pypi.python.org/pypi/aimaps)
+[![image](https://img.shields.io/conda/vn/conda-forge/aimaps.svg)](https://anaconda.org/conda-forge/aimaps)
+
+
+**Python Boilerplate contains all the boilerplate you need to create a Python package.**
+
+
+-   Free software: MIT license
+-   Documentation: https://gisam.github.io/aimaps
+    
+
+## Features
+
+-   TODO

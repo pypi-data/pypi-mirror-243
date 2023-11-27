@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+aimaps/__init__.py
+aimaps/aimaps.py
+aimaps/common.py
+aimaps.egg-info/PKG-INFO
+aimaps.egg-info/SOURCES.txt
+aimaps.egg-info/dependency_links.txt
+aimaps.egg-info/not-zip-safe
+aimaps.egg-info/top_level.txt
+tests/test_aimaps.py
