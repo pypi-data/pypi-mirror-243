@@ -1,0 +1,68 @@
+default namespace = ""
+
+start =
+  element hockey {
+    attribute database { text },
+    element league {
+      attribute conferences { text },
+      attribute country { text },
+      attribute date { text },
+      attribute divisions { text },
+      attribute fullcountry { text },
+      attribute fullname { text },
+      attribute name { text },
+      attribute ordertype { text },
+      attribute playofffmt { text },
+      element conference {
+        attribute name { text },
+        attribute prefix { text },
+        attribute suffix { text },
+        element division {
+          attribute name { text },
+          attribute prefix { text },
+          attribute suffix { text },
+          element team {
+            attribute area { text },
+            attribute arena { text },
+            attribute city { text },
+            attribute country { text },
+            attribute fullarea { text },
+            attribute fullcountry { text },
+            attribute name { text },
+            attribute prefix { text },
+            attribute suffix { text },
+            attribute affiliates { text }
+          }+
+        }+
+      }+,
+      (element arenas {
+         element arena {
+           attribute area { text },
+           attribute city { text },
+           attribute country { text },
+           attribute fullarea { text },
+           attribute fullcountry { text },
+           attribute name { text }
+         }+
+       },
+       element games {
+         element game {
+           attribute atarena { text },
+           attribute awayteam { text },
+           attribute date { text },
+           attribute time { text },
+           attribute faceoffwins { text },
+           attribute goals { text },
+           attribute hits { text },
+           attribute hometeam { text },
+           attribute isplayoffgame { text },
+           attribute penalties { text },
+           attribute pims { text },
+           attribute ppgs { text },
+           attribute shgs { text },
+           attribute sogs { text },
+           attribute takeaways { text }
+         }+
+       })?
+    }+
+  }
