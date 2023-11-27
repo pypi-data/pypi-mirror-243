@@ -1,0 +1,83 @@
+Metadata-Version: 2.1
+Name: companycam-unofficial
+Version: 0.2.3
+Summary: Python client and bindings for CompanyCam API.
+Author-email: elyas <elyas@ely.as>
+License: MIT
+Project-URL: Issue Tracker, https://github.com/ely-as/python-companycam/issues
+Project-URL: Source, https://github.com/ely-as/python-companycam
+Keywords: python,companycam
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: httpx <1
+Requires-Dist: pydantic <3
+Provides-Extra: test
+Requires-Dist: black ; extra == 'test'
+Requires-Dist: jsonschema ; extra == 'test'
+Requires-Dist: mypy ; extra == 'test'
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov >=4.1 ; extra == 'test'
+Requires-Dist: pytest-mock ; extra == 'test'
+Requires-Dist: pyyaml ; extra == 'test'
+Requires-Dist: ruff ; extra == 'test'
+Requires-Dist: types-jsonschema ; extra == 'test'
+Requires-Dist: types-PyYAML ; extra == 'test'
+Requires-Dist: types-mock ; extra == 'test'
+Requires-Dist: types-setuptools ; extra == 'test'
+
+# python-companycam
+
+[![Test](https://github.com/ely-as/python-companycam/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/ely-as/python-companycam/actions/workflows/test.yml)
+[![Coverage](https://cov.ely.as/github/ely-as/python-companycam/main/badge.svg)](https://cov.ely.as/github/ely-as/python-companycam/main/latest/)
+[![Version](https://img.shields.io/pypi/v/companycam-unofficial)](https://pypi.org/project/companycam-unofficial/)
+![Python](https://img.shields.io/pypi/pyversions/companycam-unofficial)
+
+## Installation
+
+```sh
+python -m pip install companycam-unofficial
+```
+
+## Basic usage
+
+```py
+>>> import companycam
+>>> from companycam.v2 import models
+
+>>> api = companycam.API(token="YOUR_TOKEN_HERE")
+>>> api.projects.list()
+[Project(id='12345678', ...)]
+
+>>> project = models.Project(name="My new project")
+>>> api.projects.create(project)
+Project(id='23456789', name='My new project', ...)
+```
+
+For more detailed usage see [Usage](https://github.com/ely-as/python-companycam/blob/main/docs/usage.md).
+
+## Contributing
+
+See [Contributing](https://github.com/ely-as/python-companycam/blob/main/docs/contributing.md).
+
+## Resources
+
+- [CompanyCam Docs](https://docs.companycam.com/docs)
+
+## Dependencies
+
+- [HTTPX](https://www.python-httpx.org/) (BSD 3-clause license)
+- [pydantic](https://pydantic-docs.helpmanual.io/) (MIT license)
+
+## License
+
+[MIT](https://github.com/ely-as/python-companycam/blob/main/LICENSE).
