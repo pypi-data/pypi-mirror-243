@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+iwhat.egg-info/PKG-INFO
+iwhat.egg-info/SOURCES.txt
+iwhat.egg-info/dependency_links.txt
+iwhat.egg-info/entry_points.txt
+iwhat.egg-info/requires.txt
+iwhat.egg-info/top_level.txt
+what/__init__.py
+what/__main__.py
+what/cli.py
+what/what.py
