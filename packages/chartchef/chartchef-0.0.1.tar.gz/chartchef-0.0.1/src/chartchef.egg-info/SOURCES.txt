@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/chartchef/__init__.py
+src/chartchef/scatter.py
+src/chartchef.egg-info/PKG-INFO
+src/chartchef.egg-info/SOURCES.txt
+src/chartchef.egg-info/dependency_links.txt
+src/chartchef.egg-info/top_level.txt
