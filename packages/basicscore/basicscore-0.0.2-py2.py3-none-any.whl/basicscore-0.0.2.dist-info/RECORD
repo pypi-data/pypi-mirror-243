@@ -1,0 +1,12 @@
+basicscore/__init__.py,sha256=Pm5XpRQ4POjWT2V5pexcnh0_Vde5_hxoi7T46c8GaY0,3237
+basicscore/cli/__init__.py,sha256=lUKvAh9jyHgg5-UaTWUNtdAmyO_KYAR5Hi2UJCW1pi4,3393
+basicscore/cli/html/__init__.py,sha256=K1YTAFlKdBJTsy2UQuCCW8y5UXsRytOfZf5PBQawzq4,647
+basicscore/cli/html/base.css,sha256=M0_sMhW8K8q1hZ9wxMu87rtKB6smkAI3JXJ8ui0MFjo,5693
+basicscore/cli/html/prettify.css,sha256=6j_kM_lFBpjKiiMCcWiOeu7BL5nIp-9slDeauzjyeCM,676
+basicscore/cli/html/script.js,sha256=PRgPc8giFwk_KsnJI6SMEx-bRuIp27muY-xu7W5wa80,1750
+basicscore/llm/__init__.py,sha256=SWQ74uOR_yzzOkDPf0PP4V2c-Rw6LdOvQUc9HRX4HRU,531
+basicscore/llm/llama.py,sha256=Rr9vaXFUmoQnC3gcEfb4OvLnBYtcmeZ_Ppv2ZrCIq_E,1013
+basicscore-0.0.2.dist-info/METADATA,sha256=YMKSu2HKrDr0JV1zJE6eVcriwN3J9AIJTeJBPAIgoPw,2228
+basicscore-0.0.2.dist-info/WHEEL,sha256=fagL_Tj29mg80flwlxJNW45nBDbboxF04Tnbc_jt3Bg,105
+basicscore-0.0.2.dist-info/entry_points.txt,sha256=TtjhVf-1CAGBkY9Z1BC_bhy0O1BcYE4UPECuDG-ujb0,51
+basicscore-0.0.2.dist-info/RECORD,,
