@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+newsmoris/__init__.py
+newsmoris/__main__.py
+newsmoris/news.py
+newsmoris.egg-info/PKG-INFO
+newsmoris.egg-info/SOURCES.txt
+newsmoris.egg-info/dependency_links.txt
+newsmoris.egg-info/entry_points.txt
+newsmoris.egg-info/requires.txt
+newsmoris.egg-info/top_level.txt

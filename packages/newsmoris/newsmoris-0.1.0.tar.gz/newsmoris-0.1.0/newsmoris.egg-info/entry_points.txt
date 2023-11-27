@@ -1,0 +1,3 @@
+[console_scripts]
+newsmoris = newsmoris.__main__:main
+
