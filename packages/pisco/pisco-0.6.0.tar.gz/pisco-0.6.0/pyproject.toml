@@ -1,0 +1,54 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target-version = ["py39", "py310", "py311", "py312"]
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = "soco.*"
+ignore_missing_imports = true
+
+[tool.poetry]
+name = "pisco"
+version = "0.6.0"   # Version will be set by CI workflow based on git tag.
+description = "Keyboard-only controller for Sonos speakers"
+authors = ["Christoph Gietl <christophgietl@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/christophgietl/pisco"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+click = "^8.1"
+Pillow = "^10.1"
+python-json-logger = "^2.0"
+requests = "^2.31"
+soco = "^0.29.0"
+xdg = "^6.0"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.7"
+pre-commit = "^3.5"
+pytest = "^7.4"
+pytest-cov = "^4.0"
+types-Pillow = "^10.1"
+types-requests = "^2.31"
+
+[tool.poetry.scripts]
+pisco = "pisco.user_interface.command_line_interface:run"
+
+[tool.ruff]
+select = ["ALL"]
+ignore = ["ANN101", "COM812"]
+src = ["src", "tests"]
+target-version = "py39"
+
+[tool.ruff.per-file-ignores]
+"tests/*" = ["D", "INP001", "S101"]
+
+[tool.ruff.pydocstyle]
+convention = "google"
