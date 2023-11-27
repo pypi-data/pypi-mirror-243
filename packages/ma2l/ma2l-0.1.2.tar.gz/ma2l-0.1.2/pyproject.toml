@@ -1,0 +1,94 @@
+[tool]
+[tool.poetry]
+name = "ma2l"
+version = "0.1.2"  # placeholder
+homepage = "https://github.com/geniuspatrick/ma2l"
+description = ""
+authors = ["Genius Patrick <74176172+geniuspatrick@users.noreply.github.com>"]
+readme = "README.md"
+license =  "MIT"
+classifiers = [
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: MIT License',
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+]
+packages = [
+    { include = "ma2l" },
+    { include = "tests", format = "sdist" },
+]
+scripts = { ma2l = 'ma2l.app:main' }
+
+[tool.poetry.dependencies]
+python = ">=3.7,<4.0"
+pytest = { version = "^7.0.1", optional = true}
+pytest-cov = { version = "^3.0.0", optional = true}
+tox = { version = "^3.24.5", optional = true}
+pre-commit = {version = "^2.17.0", optional = true}
+black = { version = "23.1.0", optional = true}
+isort = { version = "5.11.5", optional = true}
+flake8 = { version = "5.0.4", optional = true}
+# flake8-docstrings = { version = "^1.6.0", optional = true }
+flake8-typing-imports = { version = "^1.14.0", optional = true }
+twine = { version = "^3.8.0", optional = true}
+toml = {version = "^0.10.2", optional = true}
+mkdocs = { version = "^1.2.3", optional = true}
+mkdocs-include-markdown-plugin = { version = "^3.2.3", optional = true}
+mkdocs-material = { version = "^8.1.11", optional = true}
+mkdocstrings = { version = "^0.18.0", optional = true}
+mkdocs-material-extensions = { version = "^1.0.3", optional = true}
+mkdocs-autorefs = {version = "^0.3.1", optional = true}
+mike = { version="^1.1.2", optional=true}
+setuptools = {version="^68.0", optional = true}
+pkginfo = {version="^1.9", optional = true}
+virtualenv = {version="^20.0", optional = true}
+
+[tool.poetry.extras]
+test = [
+    "pytest",
+    "pytest-cov"
+]
+
+dev = [
+    "tox",
+    "pre-commit",
+    "black",
+    "isort",
+    "flake8",
+    # "flake8-docstrings",
+    "flake8-typing-imports",
+    "twine",
+    "toml",
+]
+
+doc = [
+    "mkdocs",
+    "mkdocs-include-markdown-plugin",
+    "mkdocs-material",
+    "mkdocstrings",
+    "mkdocs-material-extensions",
+    "mkdocs-autorefs",
+    "mike",
+    "setuptools",
+    "pkginfo",
+    "virtualenv",
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning>=1.0.0,<2.0.0"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+bump = true
+metadata = false
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
