@@ -1,0 +1,15 @@
+httpx
+httpx-socks[asyncio]
+requests
+jinja2
+
+[test]
+pytest
+coverage
+flake8
+black
+isort
+pytest-cov
+mypy
+gitchangelog
+mkdocs
