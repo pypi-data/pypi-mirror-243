@@ -1,0 +1,24 @@
+
+
+
+<b>BOTANY (new version is "botanical")</b>
+
+<p>CAUTION: A lot of the functions pass strings to subprocesses.</p>
+</p>Various calculator tools</p>
+
+<section>
+<header>Directory Equalizer</header>
+<code>
+import BOTANY.FS.DIRECTORY.EQUALIZE as EQUALIZE
+EQUALIZE.MULTIPLE ({
+	"DIRECTORY 1": "",
+	"DIRECTORY 2": "",
+	
+	"DIRECTORIES": [
+		
+	],
+	
+	"START": "yes"	
+})
+</code>
+</section>
