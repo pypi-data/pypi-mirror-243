@@ -1,0 +1,11 @@
+SQLconnect/__init__.py,sha256=F0VMzfWXpeX_Wd2lpnYOJ3xvVc7v1TnFdvIgG4LSFW4,37
+SQLconnect/config.py,sha256=Tkev5QZQ2GBP6SJJshXb3JX6BZ5FeYcrosSt7HlGwqQ,8054
+SQLconnect/connector.py,sha256=x6Jfzb8-1uq5oG1fc02zVf2Cyw0MGeM_wRpVUl9S48A,6488
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_sqlconnect_config.py,sha256=ebkVfEoz_DtpxXqsQXzkkvlc6zLm9NwpdiaTRwpl1ss,5503
+tests/test_sqlconnect_connector.py,sha256=1oxmj93lMpWngmNpZHa5Zv7DDbkFzGALW_o2sZOqHjU,639
+SQLconnect-0.2.0.dist-info/LICENCE,sha256=lxhBS7ybE5pNd6W0y7vD4qQmCpF5mxXrD3_njYx2WI0,1091
+SQLconnect-0.2.0.dist-info/METADATA,sha256=3qTMSamqHeMTZhPaLoB18yAaE1ploOHiHMJi7B6GTn8,4336
+SQLconnect-0.2.0.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+SQLconnect-0.2.0.dist-info/top_level.txt,sha256=8D26C6bdjLmFDbHvQuvHEtTyc1FC1dHDrGLyv7vFxek,17
+SQLconnect-0.2.0.dist-info/RECORD,,
