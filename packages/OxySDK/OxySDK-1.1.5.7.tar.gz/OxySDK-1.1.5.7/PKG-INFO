@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: OxySDK
+Version: 1.1.5.7
+Summary: OxySDK Python SDK
+Author: OxySound
+Author-email: support@oxycom.co.uk
+License: License :: Other/Proprietary License
+
+The OxySound Python SDK enables the user to send and receive data using the device’s microphone and speaker.
