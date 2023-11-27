@@ -1,0 +1,43 @@
+[tool.black]
+line-length = 120
+
+[tool.poetry]
+name = "lungo-cli"
+version = "0.2.2"
+description = "A user-friendly home lab setup designed for small-to-mid-scale on-premises hosting."
+authors = ["raymond-u <36328498+raymond-u@users.noreply.github.com>"]
+readme = "README.md"
+repository = "https://github.com/raymond-u/lungo"
+documentation = "https://raymond-u.github.io/lungo/"
+keywords = ["homelab", "self-host"]
+packages = [{ include = "lungo_cli", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+cryptography = "^41.0.3"
+importlib-resources = "^6.0.1"
+jinja2 = "^3.1.2"
+platformdirs = "^4.0.0"
+pydantic = { extras = ["email"], version = "^2.4.2" }
+pydantic-yaml = "^1.2.0"
+requests = "^2.31.0"
+typer = { extras = ["all"], version = "^0.9.0" }
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.9.1"
+
+[tool.poetry.group.docs]
+optional = true
+
+[tool.poetry.group.docs.dependencies]
+mike = "^2.0.0"
+mkdocs-glightbox = "^0.3.4"
+mkdocs-material = "^9.4.13"
+mkdocs-typer = "^0.0.3"
+
+[tool.poetry.scripts]
+lungo = "lungo_cli.app.main:app_wrapper"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
