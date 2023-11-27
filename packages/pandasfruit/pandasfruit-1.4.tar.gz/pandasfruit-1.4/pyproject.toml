@@ -1,0 +1,24 @@
+[project]
+name = "pandasfruit"
+version = "1.4"
+authors = [
+  { name="bol001", email="info@bollingensoftware.com" },
+]
+description = "Takes a pandas dataframe and returns more-narrow narrow markdown string suitable for printing in a Jupyter notebook."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+keywords = ["pandas", "jupyter", "fit", "dataframe", "pdf"]
+dependencies = [
+    "pandas>1.2.5",
+    "tabulate"
+
+]
+
+[project.urls]
+Homepage = "https://github.com/bol001/pandasfruit"
+Issues = "https://github.com/bol001/pandasfruit/issues"
