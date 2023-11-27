@@ -1,0 +1,30 @@
+from enum import IntEnum
+
+
+class Network(IntEnum):
+    MAINNET = 1
+    ROPSTEN = 3
+    RINKEBY = 4
+    GOERLI = 5
+    POLYGON = 137
+    BSC = 56
+    AVALANCHE = 43114
+    ARBITRUM = 42161
+    OPTIMISM = 10
+    FANTOM = 250
+    BASE = 8453
+    CRONOS = 25
+    CRONOS_TESTNET = 338
+    KAVA = 2222
+    KAVA_TESTNET = 2221
+    ZKEVM = 1101
+    ZKEVM_TESTNET = 1402
+    CANTO = 7700
+    CANTO_TESTNET = 7701
+    METIS = 1088
+    METIS_TESTNET = 588
+    GNOSIS = 100
+    GNOSIS_TESTNET = 10200
+    ZKSYNC = 280
+    ZKSYNC_TESTNET = 324
+
