@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/mind_the_gaps/__init__.py
+src/mind_the_gaps/gaps.py
+src/mind_the_gaps.egg-info/PKG-INFO
+src/mind_the_gaps.egg-info/SOURCES.txt
+src/mind_the_gaps.egg-info/dependency_links.txt
+src/mind_the_gaps.egg-info/top_level.txt
+tests/test_union.py
