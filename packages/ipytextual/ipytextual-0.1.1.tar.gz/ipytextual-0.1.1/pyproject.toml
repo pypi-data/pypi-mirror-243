@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ipytextual"
+dynamic = ["version"]
+description = "Jupyter Textual-based Widget"
+readme = "README.md"
+license = { file = "LICENSE.txt" }
+requires-python = ">=3.7"
+authors = [{ name = "David Brochart", email = "david.brochart@gmail.com" }]
+keywords = [
+    "IPython",
+    "Jupyter",
+    "Widgets",
+]
+classifiers = [
+    "Framework :: Jupyter",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "anywidget >=0.6.3,<1",
+    "textual",
+]
+
+[project.urls]
+Homepage = "https://github.com/davidbrochart/ipytextual"
+
+[tool.hatch.build]
+artifacts = [
+    "ipytextual/static/index.js",
+]
+
+[tool.hatch.version]
+path = "ipytextual/__init__.py"
