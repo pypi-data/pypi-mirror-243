@@ -1,0 +1,13 @@
+django_pg8000/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_pg8000/base.py,sha256=TXuL1iPFW-LaPBuc5HN8UCXtvxH6R_cWTjfJJLH_R-4,26146
+django_pg8000/client.py,sha256=RLsYyqTlSlZyEB4SI0t0TsTItDcN3enyJoIoAKrqTE8,2052
+django_pg8000/creation.py,sha256=7uVKgvbDCw2VxbmKf0OceoaVntCxZIst8UCxvH67lOk,3747
+django_pg8000/features.py,sha256=5JPU5q7InFltAyTq1eer7fMRhsp2CUpQCO5yUlfNIgs,4333
+django_pg8000/introspection.py,sha256=01uUCfX7SK7ssG9URnF8d3gg-5lubiEsJoxS_SDreX4,11477
+django_pg8000/operations.py,sha256=cIgwViIGczzAaS2uJSspDSBFToRzqD8IPMRjX5rHYcE,18913
+django_pg8000/psycopg_any.py,sha256=0-DwOvdWp5Wuu0XlRu_LPLSr1q1EjtzgZS2ZOyiTwXg,3774
+django_pg8000/schema.py,sha256=qyhG6KwEwS0pqqMX6WmxdZD7UUyvItdGXkrWQ1A4fWg,14066
+django_pg8000-0.0.3.dist-info/METADATA,sha256=TexJfiVyT4jrHFisQNeDzZTDwJ5SPz75dxviX0g5xfE,3902
+django_pg8000-0.0.3.dist-info/WHEEL,sha256=9QBuHhg6FNW7lppboF2vKVbCGTVzsFykgRQjjlajrhA,87
+django_pg8000-0.0.3.dist-info/licenses/LICENSE,sha256=JCmmOL2d8ElJXJ8VPcUExMXJ_aWAPZ-IQ-Ibr10rAKM,906
+django_pg8000-0.0.3.dist-info/RECORD,,
