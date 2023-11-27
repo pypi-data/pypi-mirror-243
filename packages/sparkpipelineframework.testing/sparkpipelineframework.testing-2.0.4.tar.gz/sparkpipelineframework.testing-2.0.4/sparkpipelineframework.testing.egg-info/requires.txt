@@ -1,0 +1,5 @@
+pyspark==3.3.0
+protobuf>=3
+deprecated>=1.2.12
+helix.fhir.client.sdk>=1.0.34
+helix-mockserver-client>=1.0.4
