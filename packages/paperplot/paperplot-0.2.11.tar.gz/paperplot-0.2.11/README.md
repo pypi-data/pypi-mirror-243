@@ -1,0 +1,1 @@
+Single plot for each class.

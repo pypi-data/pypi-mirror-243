@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+paperplot/__init__.py
+paperplot/_data_filter_base.py
+paperplot/_figure_base.py
+paperplot/contour_fig.py
+paperplot/line_fig.py
+paperplot/line_style.py
+paperplot/mesh_fig.py
+paperplot/mesh_grid_filter.py
+paperplot/pixel_contour_fig.py
+paperplot.egg-info/PKG-INFO
+paperplot.egg-info/SOURCES.txt
+paperplot.egg-info/dependency_links.txt
+paperplot.egg-info/top_level.txt

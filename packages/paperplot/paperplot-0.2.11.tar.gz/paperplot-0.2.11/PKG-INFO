@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: paperplot
+Version: 0.2.11
+Summary: A plot lib for SCI paper with fixed style.
+Home-page: https://gitee.com/geo-tech/paper-plot.git
+Author: Peng Hong
+Author-email: minho_hong@foxmail.com
+Requires-Python: >=3.6
+License-File: LICENSE
