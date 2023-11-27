@@ -1,0 +1,64 @@
+{#- OZI 0.1
+# ozi/templates/root.pyproject.toml
+# Part of the OZI Project, under the Apache License v2.0 with LLVM Exceptions.
+# See LICENSE.txt for license information.
+# SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+-#}
+[project]
+authors = [
+{%- for author, email in project.author|zip(project.author_email) %}
+    {name = "{{ author }}", email = "{{ email }}"},
+{%- endfor %} 
+]
+{%- if project.maintainer %}
+maintainers = [
+{%- for maintainer, email in project.maintainer|zip(project.maintainer_email) %}
+    {name = "{{ maintainer }}", email = "{{ email }}"},
+{%- endfor %} 
+]
+{%- endif %}
+dynamic = ["dependencies", "version"]
+license = {file = "{{ project.license_file }}"}
+readme  = "README.rst"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.in"] }
+
+[project.optional_dependencies] # also meson test suite names
+# OZI Packaging Dependencies
+# Default meson test setup
+dev  = ["[{% for suite in spec.python.ci.checkpoint.suites %}{{ suite }},{% endfor %}]"]
+{%- for suite in spec.python.ci.checkpoint.suites %}
+{{ suite }} = [
+{%- for utility in spec.python.get(suite).utility.values() %}
+    "{{ utility }}",
+{%- endfor %}
+{%- for plugin in spec.python.get(suite).plugin.values() %}
+    "{{ plugin }}",
+{%- endfor %}
+]
+{%- endfor %}
+{#- OZI TODO
+docs = [
+    "doc8",
+    "pydocstyle[toml]",
+    "Pygments",
+    "pyparsing", 
+    "sphinx",
+    "sphinx-design",
+    "sphinxawesome-codelinter",
+    "sphinxawesome-theme"
+]
+#}
+
+[tool.mesonpep517.metadata]
+pkg-info-file = 'PKG-INFO'
+summary = "{{ project.summary }}"
+
+[build-system]
+requires = [
+{%- for requires in spec.python.build.requires.values() %}
+    "{{ requires }}",
+{%- endfor %}
+]
+build-backend = "{{ spec.python.build.backend }}"
