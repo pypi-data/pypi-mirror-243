@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: ntt-signal
+Version: 1.0.2
+Summary: Small library for observation mechanism
+Home-page: https://github.com/threezinedine/ntt-signal
+Author: threezinedine
+Author-email: threezinedine@email.com
+License: UNKNOWN
+Project-URL: Source, https://github.com/threezinedine/ntt-signal
+Project-URL: Tracker, https://github.com/threezinedine/ntt-signal/issues
+Keywords: dependency injector
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# ntt-signal
+Signal library by threezinedine
+
+## Example
+```python
+def Callback() -> None:
+    print("Signal is emitted")
+
+signal = Signal()
+signal.Connect(Callback)
+
+signal.Emit()
+```
+
+## Example with type
+```python
+def Callback(nValue: int) -> None:
+    print(f"Signal is emitted with value {nValue}")
+
+signal = Signal(int)
+signal.Connect(Callback)
+
+signal.Emit(3)
+```
+
