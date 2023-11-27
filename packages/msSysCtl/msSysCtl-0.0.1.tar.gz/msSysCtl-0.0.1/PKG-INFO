@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: msSysCtl
+Version: 0.0.1
+Summary: In this pakage used to get system informations and control your system volumes and sound
+Author: Mari Selvam B
+Author-email: Mari Selvam B <mariselvam@kloudping.com>
+Project-URL: Homepage, https://github.com/Mariselvam-B/msSysCtl
+Project-URL: Bug Tracker, https://github.com/Mariselvam-B/msSysCtl
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENCE
+
+msSysCtl
+In this pakage used to get system informations and control your system volume and sound
+how to use? (answer)
+
+just install and import the pakage and use functions to get your system informations and controll your brightness and volume
+Install comment - pip install msSysCtl
+import comment import msSysCtl
+
+functions
+
+sys_info()
+boot_time()
+cpu_info()
+memmory_info()
+disk_info()
+network_info()
+brightness_ctl(int)
+volume_ctl(int)

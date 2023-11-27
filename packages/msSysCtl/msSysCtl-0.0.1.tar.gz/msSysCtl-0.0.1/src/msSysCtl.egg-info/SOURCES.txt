@@ -1,0 +1,10 @@
+LICENCE
+README.md
+pyproject.toml
+setup.cfg
+src/msSysCtl.egg-info/PKG-INFO
+src/msSysCtl.egg-info/SOURCES.txt
+src/msSysCtl.egg-info/dependency_links.txt
+src/msSysCtl.egg-info/top_level.txt
+src/systemdata/__init__.py
+src/systemdata/ms.py
