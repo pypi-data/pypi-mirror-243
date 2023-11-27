@@ -1,0 +1,3 @@
+[console_scripts]
+aitestgen=aitestgen.__main__:cli
+
