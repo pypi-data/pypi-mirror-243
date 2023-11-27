@@ -1,0 +1,12 @@
+setup.py
+__nitter__/__init__.py
+__nitter__/nitter.py
+__nitter__/nitter_scraper.py
+__nitter__/nltk_init.py
+__nitter__/sentiment_stuff.py
+nitter_miner.egg-info/PKG-INFO
+nitter_miner.egg-info/SOURCES.txt
+nitter_miner.egg-info/dependency_links.txt
+nitter_miner.egg-info/entry_points.txt
+nitter_miner.egg-info/requires.txt
+nitter_miner.egg-info/top_level.txt
