@@ -1,0 +1,2 @@
+[console_scripts]
+chomp = chomp.chomp:main
