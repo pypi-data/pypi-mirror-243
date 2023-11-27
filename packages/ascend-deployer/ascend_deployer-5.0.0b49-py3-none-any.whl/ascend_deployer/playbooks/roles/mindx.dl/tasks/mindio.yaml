@@ -1,0 +1,103 @@
+- name: include vars
+  include_vars: ../defaults/main.yml
+
+# 在远端创建mindxdl镜像目录
+- name: create mindxdl dlDeployPackage directory on remote
+  file:
+    path: "{{mindxdl_deploy_package_dir}}/{{ansible_architecture}}/"
+    state: directory
+    mode: 0750
+
+# 先查找resource目录下是否有mindio安装包
+- name: list resource run package
+  shell: "ls {{resource_dir}} | grep {{MINDIO_COMPONENT}} | grep run | head -n 1"
+  delegate_to: localhost
+  delegate_facts: true
+  register: mindio_resource_package
+  ignore_errors: yes
+
+# 复制mindio到worker
+- name: copy resource mindio to remote
+  copy:
+    src: "{{resource_dir}}/{{item}}"
+    dest: "{{mindxdl_deploy_package_dir}}/{{ansible_architecture}}/"
+    mode: 0640
+    owner: "{{ansible_user_id}}"
+    group: "{{ansible_user_id}}"
+  loop: "{{mindio_resource_package.stdout_lines}}"
+  when:
+    - mindio_resource_package.stdout != ''
+
+# resource目录下是没有有mindio安装包，再查找下载路径下
+- name: list dlPackage run package
+  shell: "ls {{mindxdl_package_dir}}/{{ansible_architecture}} | grep {{MINDIO_COMPONENT}} | grep run | head -n 1"
+  delegate_to: localhost
+  delegate_facts: true
+  register: mindio_dl_package
+  ignore_errors: yes
+  when:
+    - mindio_resource_package.stdout == ''
+
+# 复制mindio到worker
+- name: copy dlPackage mindio to remote
+  copy:
+    src: "{{mindxdl_package_dir}}/{{ansible_architecture}}/{{item}}"
+    dest: "{{mindxdl_deploy_package_dir}}/{{ansible_architecture}}/"
+    mode: 0640
+    owner: "{{ansible_user_id}}"
+    group: "{{ansible_user_id}}"
+  loop: "{{mindio_dl_package.stdout_lines}}"
+  when:
+    - mindio_resource_package.stdout == ''
+
+# 查找配置文件
+- name: list conf file
+  shell: "ls {{templates_dir}}"
+  delegate_to: localhost
+  delegate_facts: true
+  register: mindio_conf
+
+# 复制mindio配置到worker
+- name: copy mindio-conf to remote
+  copy:
+    src: "{{templates_dir}}/{{item}}"
+    dest: "{{mindxdl_deploy_package_dir}}/{{ansible_architecture}}/"
+    mode: 0640
+    owner: "{{ansible_user_id}}"
+    group: "{{ansible_user_id}}"
+  loop: "{{mindio_conf.stdout_lines}}"
+
+# 创建用戶組
+- name: create group {{ HIAI_GROUP }}
+  ansible.builtin.group:
+    name: "{{ HIAI_GROUP }}"
+    state: present
+  ignore_errors: true
+
+# 创建用戶
+- name: create user {{ MINDX_USER }}
+  ansible.builtin.user:
+    name: "{{ MINDX_USER }}"
+    comment: "{{  MINDX_USER }}"
+    group: "{{ HIAI_GROUP }}"
+    groups: "{{ HIAI_GROUP }}"
+    append: yes
+    state: present
+    shell: "{{ '/usr/sbin/nologin' if os_name == 'Ubuntu' else '/sbin/nologin' }}"
+  ignore_errors: true
+
+# 安装mindio
+- name: install mindio from resource package
+  shell:
+    cmd:
+      cd {{mindxdl_deploy_package_dir}}/{{ansible_architecture}}/ && bash {{mindio_resource_package.stdout}};
+  when:
+    - mindio_resource_package.stdout != ''
+
+# 安装mindio
+- name: install mindio from dlPackage package
+  shell:
+    cmd:
+      cd {{mindxdl_deploy_package_dir}}/{{ansible_architecture}}/ && bash {{mindio_dl_package.stdout}};
+  when:
+    - mindio_resource_package.stdout == ''

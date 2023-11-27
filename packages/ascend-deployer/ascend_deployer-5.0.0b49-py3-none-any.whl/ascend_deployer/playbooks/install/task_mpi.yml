@@ -1,0 +1,86 @@
+- name: create build directory
+  file:
+    path: "{{ build_dir }}"
+    state: directory
+    mode: 0750
+    recurse: yes
+
+- name: init ipv6 tag
+  set_fact:
+    is_ipv6: no
+    cacheable: yes
+
+- name: set ipv6 tag if contains ':'
+  set_fact:
+    is_ipv6: yes
+    cacheable: yes
+  when: inventory_hostname is search('.*:.*')
+
+- name: find openmpi file path
+  find:
+    paths: "{{ resource_dir }}/sources/"
+    recurse: no
+    file_type: file
+    use_regex: yes
+    patterns: ".*openmpi-.*.tar.gz"
+  register: openmpi_path
+  delegate_to: localhost
+  run_once: true
+  when: is_ipv6
+
+- name: find mpich file path
+  find:
+    paths: "{{ resource_dir }}/sources/"
+    recurse: no
+    file_type: file
+    use_regex: yes
+    patterns: ".*mpich-.*.tar.gz"
+  register: mpich_path
+  delegate_to: localhost
+  run_once: true
+  when: not is_ipv6
+
+- name: set mpi_path for ipv6
+  set_fact:
+    mpi_path: "{{ openmpi_path.files[0].path }}"
+  when: is_ipv6
+
+- name: set mpi_path for ipv4
+  set_fact:
+    mpi_path: "{{ mpich_path.files[0].path }}"
+  when: not is_ipv6
+
+- name: set mpi_name
+  shell: "basename {{ mpi_path }} .tar.gz"
+  register: mpi_name
+
+- name: get real path of toolkit
+  shell: "dirname $(dirname $(readlink {{ ascend_install_path }}/ascend-toolkit/latest/tools/hccl_test))"
+  register: toolkit_result
+
+- name: set fact for toolkit path
+  set_fact:
+    toolkit_path: "{{ toolkit_result.stdout }}"
+
+- name: unarchive mpi
+  unarchive:
+    src: "{{ resource_dir }}/sources/{{mpi_name.stdout}}.tar.gz"
+    dest: "{{ build_dir }}"
+    extra_opts:
+    - --no-same-owner
+
+- name: configure and make
+  shell: |
+    ./configure --prefix={{ local_path }}/mpi --disable-fortran
+    make -j40
+    make install
+  args:
+    chdir: "{{ build_dir }}/{{mpi_name.stdout}}"
+
+- name: compile hccl-test
+  shell: "make MPI_HOME={{ local_path }}/mpi ASCEND_DIR={{toolkit_path}}"
+  args:
+    chdir: "{{ toolkit_path }}/tools/hccl_test"
+  environment:
+    LD_LIBRARY_PATH: "{{ toolkit_path }}/runtime/lib64:{{ toolkit_path }}/runtime/lib64/stub:{{ toolkit_path }}/compiler/lib64"
+    PATH: "{{ build_dir }}/mpi/bin:{{ ansible_env.PATH }}"
