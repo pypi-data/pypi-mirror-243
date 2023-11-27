@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: pnt2
+Version: 1.0.1
+Summary: "pnt2" - calculating the degree of similarity between two geometric figures of different shapes (by two points)
+License: MIT
+Author: Boris Kravtsov
+Author-email: kravtsov.development@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: opencv-python-headless (>=4.8.1.78,<5.0.0.0)
+Description-Content-Type: text/markdown
+
+## pnt2
+Calculating the degree of similarity between two geometric figures of different shapes (by 2 points).
+
+### Installation
+```
+pip install pnt2
+```
+### How to use:
+```Python
+from pathlib import Path
+
+from pnt2.src import cfg_pnt2
+from pnt2.src.get_similarity import get_similarity
+
+""" Get input data """
+cfg_pnt2.image_name = 'shape_1.png'
+cfg_pnt2.templ_name = 'shape_2.png'
+
+path_image = str(Path.cwd() / 'DATA' / cfg_pnt2.image_name)
+path_templ = str(Path.cwd() / 'DATA' / cfg_pnt2.templ_name)
+
+similarity = get_similarity(path_image, path_templ)
+
+print(f'\nSimilarity = {round(similarity, 5)}')
+```
+

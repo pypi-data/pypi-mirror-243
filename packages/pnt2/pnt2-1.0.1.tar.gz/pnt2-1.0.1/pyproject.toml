@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pnt2"
+version = "1.0.1"
+description = "\"pnt2\" - calculating the degree of similarity between two geometric figures of different shapes (by two points)"
+authors = ["Boris Kravtsov <kravtsov.development@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+opencv-python-headless = "^4.8.1.78"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
