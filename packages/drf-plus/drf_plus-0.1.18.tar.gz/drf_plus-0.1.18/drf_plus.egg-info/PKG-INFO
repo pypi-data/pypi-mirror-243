@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: drf-plus
+Version: 0.1.18
+Summary: Django DRF 확장 도구
+Home-page: https://github.com/lee-lou2/drf-plus
+Author: lee-lou2
+Author-email: lee@lou2.kr
+Keywords: drf,django,tools,django-rest-framework
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.6
+Requires-Dist: django>=3.0.11
