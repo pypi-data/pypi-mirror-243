@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: fscache
+Version: 0.4.0
+Summary: A Python package for caching data in the file system.
+Home-page: https://github.com/yaph/fscache
+Author: Ramiro Gómez
+Author-email: code@ramiro.org
+License: MIT license
+Keywords: cache,caching,file system
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+# fscache
+
+**fscache** is a Python package for caching data in the file system.
+
+## Installation
+
+```sh
+pip install fscache
+```
+
+## Usage
+
+```python
+import requests
+from fscache import fscache
+
+url = 'https://example.com/index.html'
+cache_file = fscache.path(url, cache_dir='.fscache')
+
+if fscache.valid(cache_file, lifetime=3600):
+    content = fscache.load(cache_file)
+    # Do something with content
+else:
+    content = requests.get(url).text
+    # Save content in .fscache/https/example.com/index.html
+    fscache.save(cache_file, content)
+```
+
+## License
+
+[MIT](LICENSE) © [Ramiro Gómez](https://ramiro.org/)
