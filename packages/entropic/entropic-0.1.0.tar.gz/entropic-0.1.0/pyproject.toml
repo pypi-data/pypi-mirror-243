@@ -1,0 +1,56 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "entropic"
+version = "0.1.0"
+description = "Entropic, the simple data pipeline framework for scientists."
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Juan Pablo Vanegas", email = "jpvanegasc@gmail.com" },
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Topic :: Utilities",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "pydantic>=2.5.1",
+    "pandas[parquet]==2.1.3",
+    "tinydb==4.8.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/jpvanegasc/entropic"
+"Bug Tracker" = "https://github.com/jpvanegasc/entropic/issues"
+
+[tool.black]
+exclude = "env"
+
+[tool.coverage.run]
+omit = [
+    "tests/*",
+]
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_also = [
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+
+    # Don't complain about abstract methods, they aren't run:
+    "@(abc\\.)?abstractmethod",
+]
