@@ -1,0 +1,5 @@
+numpy
+scipy
+rebound>=3.27.0
+astropy
+joblib
