@@ -1,0 +1,22 @@
+[project]
+name = "django-rest-query-tools"
+version = "0.0.3"
+authors = [
+  { name="Joe Philip", email="joe.philip@hotmail.co.in" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.8.16"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/joe-philip/django-query-tools"
+Issues = "https://github.com/joe-philip/django-query-tools/issues"
+
+[build-system]
+requires = ["djangorestframework"]
+build-backend = "hatchling.build"
