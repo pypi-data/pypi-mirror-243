@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: open2listen
+Version: 0.1.0
+License-File: LICENSE
+Requires-Dist: nougat-ocr
+Requires-Dist: gTTS
+Requires-Dist: idisplay
+
