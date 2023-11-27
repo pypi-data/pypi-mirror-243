@@ -1,0 +1,12 @@
+pyserial>=3.3
+pandas>=1.2.1
+bleak>=0.12.0
+protobuf>=4.24.0
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[testing]
+setuptools
+pytest
+pytest-cov
