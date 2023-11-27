@@ -1,0 +1,11 @@
+LICENSE.md
+LICENSE.txt
+README.md
+pyproject.toml
+cd_logging/__init__.py
+cd_logging/cd_logging.py
+cd_logging/version.py
+cd_logging.egg-info/PKG-INFO
+cd_logging.egg-info/SOURCES.txt
+cd_logging.egg-info/dependency_links.txt
+cd_logging.egg-info/top_level.txt

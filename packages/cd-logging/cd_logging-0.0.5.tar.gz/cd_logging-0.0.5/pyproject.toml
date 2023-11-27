@@ -1,0 +1,28 @@
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cd_logging"
+version = "0.0.5"  # Replace with the actual version number
+description = "A simple logging utility for Python applications"
+readme = "README.md"
+authors = [
+    { name = "Code Docta", email = "codedocta@gmail.com" },
+]
+license = { text = "MIT" }
+requires-python = ">=3.6"
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+homepage = "https://codedocta.com"
+Bug-Reports = "https://github.com/codedocta/cd_logging/issues"
+Source = "https://github.com/codedocta/cd_logging/"
+
