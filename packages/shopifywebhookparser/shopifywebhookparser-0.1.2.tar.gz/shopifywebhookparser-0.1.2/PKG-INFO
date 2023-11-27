@@ -1,0 +1,61 @@
+Metadata-Version: 2.1
+Name: shopifywebhookparser
+Version: 0.1.2
+Summary: A Python module to parse Shopify webhook requests, tailored for Azure Functions.
+Home-page: https://github.com/zinyosrim/shopify-webhook-parser
+License: MIT
+Author: Zin Yosrim
+Author-email: zinyosrim@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Project-URL: Repository, https://github.com/zinyosrim/shopify-webhook-parser
+Description-Content-Type: text/markdown
+
+# Shopify Webhook Parser for Azure Functions
+This Python module provides functionality to parse Shopify webhook requests within Azure Functions. It is designed to handle the intricacies of Shopify's webhook data format, making it easier to extract and verify critical information from these requests.
+
+## Features
+- Customizable parsing strategies to handle Shopify webhook requests.
+- Extracts essential data such as the online store name, request body, headers, and HMAC SHA256 signature.
+- Robust error handling and logging for efficient debugging.
+
+## Installation
+This module is designed to be part of a larger Azure Functions application. Include it in your Azure Function project's source directory.
+
+## Usage
+To use this module in an Azure Function, import and call the parse_shopify_webhook_request function with the appropriate parsing strategy.
+
+### Example
+```python
+import azure.functions as func
+from shopify_webhook_parser import parse_shopify_webhook_request, azure_func_request_parse_strategy
+
+def main(req: func.HttpRequest) -> func.HttpResponse:
+    try:
+        onlinestore_name, data_bytes, headers, hmac_sha256 = parse_shopify_webhook_request(
+            req, azure_func_request_parse_strategy
+        )
+        # Further processing of the parsed data
+        return func.HttpResponse(f"Processed webhook for store: {onlinestore_name}", status_code=200)
+    except ValueError as e:
+        return func.HttpResponse(f"Error: {e}", status_code=400)
+
+```
+## Development and Contributions
+Feel free to contribute to the improvement of this module by submitting pull requests or reporting issues.
+
+## Logging
+The module uses Python's built-in logging to provide insights into its operations and error conditions.
+
+## License
+MIT
+
+
