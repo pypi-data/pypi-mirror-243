@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: tree-control
+Version: 1.0.0
+Summary: A reusable Django tree app.
+Home-page: http://example.com/myapp
+Author: Neo Jabin
+Author-email: neo.j.jabin@gmail.com
+License: MIT
+Requires-Dist: Django>=3.0
