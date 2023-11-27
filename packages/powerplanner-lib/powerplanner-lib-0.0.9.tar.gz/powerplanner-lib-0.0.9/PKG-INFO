@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: powerplanner-lib
+Version: 0.0.9
+Summary: Client package to access powerplanner API
+Home-page: https://github.com/gurgelx/powerplanner_lib
+Author: Gustaf Brahme
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+### PowerPlanner API Lib
+Library to support accessing the powerplanner API
+Mainly used for the Home assistant integration
