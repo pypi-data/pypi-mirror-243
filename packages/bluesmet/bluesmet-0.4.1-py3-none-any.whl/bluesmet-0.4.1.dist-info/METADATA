@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: bluesmet
+Version: 0.4.1
+Summary: SFI Blues Metocean Library
+Author: SINTEF Ocean
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# SFIBlues Metocean library
+
+Illustrates fetching metocean data from different sources. 
+
+## Installation
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install simapy.
+
+```bash
+pip install bluesmet
+```
+
+## Development
+
+Necessary dependencies installed using
+
+pip install -r requirements.txt
+
+Development dependencies installed using
+
+pip install -r requirements-dev.txt
+
+Developed for use with the  [SFI Blues Metocean portal](https://sfiblues-portal.azurewebsites.net/met)
+
+Find example usage [here](https://github.com/SINTEF/blues-metocean-lib-examples)
