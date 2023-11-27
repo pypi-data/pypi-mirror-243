@@ -1,0 +1,21 @@
+
+[project]
+name = "AnimatedWordCloud"
+version = "1.0.5"
+authors = [
+  { name="Petr Korab", email="xpetrkorab@gmail.com" },
+]
+description = "Animated version of classic word cloud for time-series text data"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = "==3.8"
+
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/PetrKorab/AnimatedWordCloud"
+"Bug Tracker" = "https://github.com/PetrKorab/AnimatedWordCloud/issues"
