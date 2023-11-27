@@ -1,0 +1,4 @@
+[console_scripts]
+cybertask = taskwiz.main:main
+etextedit = taskwiz.eTextEdit:main
+
