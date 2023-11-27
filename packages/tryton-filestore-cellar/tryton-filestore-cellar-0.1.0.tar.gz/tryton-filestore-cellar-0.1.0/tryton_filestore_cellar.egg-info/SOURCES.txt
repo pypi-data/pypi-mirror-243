@@ -1,0 +1,16 @@
+.flake8
+.gitlab-ci.yml
+.hgtags
+.isort.cfg
+CHANGELOG
+COPYRIGHT
+LICENSE
+MANIFEST.in
+README.rst
+setup.py
+tryton_filestore_cellar.py
+tryton_filestore_cellar.egg-info/PKG-INFO
+tryton_filestore_cellar.egg-info/SOURCES.txt
+tryton_filestore_cellar.egg-info/dependency_links.txt
+tryton_filestore_cellar.egg-info/requires.txt
+tryton_filestore_cellar.egg-info/top_level.txt
