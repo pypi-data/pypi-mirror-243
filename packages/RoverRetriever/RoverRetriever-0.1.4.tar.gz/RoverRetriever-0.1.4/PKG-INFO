@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: RoverRetriever
+Version: 0.1.4
+Summary: RoverRetriever is a lightweight Python wrapper written to facilitate interaction with the Dog CEO API.
+Home-page: https://github.com/tyler-tee/RoverRetriever
+Author: Tyler Talaga
+Author-email: ttalaga@wgu.edu
+License: MIT
+Description: # RoverRetriever: A Python Wrapper for the Dog CEO API
+        
+        RoverRetriever is a lightweight Python wrapper written to facilitate interaction with [Dog CEO's API](https://dog.ceo/dog-api/).
+        
+        ## Usage
+        
+        ### Initialize the client
+        
+        ```python
+        from RoverRetriever.rover_retriever import RoverRetriever
+        dog_api = RoverRetriever()
+        ```
+        
+        ### Get a list of breeds
+        
+        ```python
+        breeds = dog_api.get_breeds()
+        ```
+        
+        ### Get a random dog image
+        
+        ```python
+        random_image = dog_api.get_random_image()
+        ```
+        
+        ### Get images by breed
+        
+        ```python
+        images = dog_api.get_images_by_breed('bulldog')
+        ```
+        
+        ### Get all sub-breeds
+        
+        ```python
+        sub_breeds = dog_api.get_all_sub_breeds('bulldog')
+        ```
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
