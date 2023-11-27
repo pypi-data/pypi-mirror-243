@@ -1,0 +1,14 @@
+numpy
+scipy
+matplotlib
+scikit-learn
+statsmodels
+bson
+h5py
+dill
+tqdm
+statsmodels
+
+[TF]
+tensorflow<2.11
+tensorflow-probability==0.16
