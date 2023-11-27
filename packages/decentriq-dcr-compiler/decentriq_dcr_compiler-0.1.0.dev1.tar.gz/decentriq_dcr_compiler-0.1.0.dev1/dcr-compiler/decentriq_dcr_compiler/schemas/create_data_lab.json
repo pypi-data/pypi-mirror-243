@@ -1,0 +1,119 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CreateDataLab",
+  "description": "Arguments for constructing a specific DataLab version.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "v0"
+      ],
+      "properties": {
+        "v0": {
+          "$ref": "#/definitions/CreateDataLabComputeV0"
+        }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "definitions": {
+    "CreateDataLabComputeV0": {
+      "type": "object",
+      "required": [
+        "authenticationRootCertificatePem",
+        "driverEnclaveSpecification",
+        "hasDemographics",
+        "hasEmbeddings",
+        "id",
+        "matchingIdFormat",
+        "name",
+        "numEmbeddings",
+        "publisherEmail",
+        "pythonEnclaveSpecification"
+      ],
+      "properties": {
+        "authenticationRootCertificatePem": {
+          "type": "string"
+        },
+        "driverEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecification"
+        },
+        "hasDemographics": {
+          "type": "boolean"
+        },
+        "hasEmbeddings": {
+          "type": "boolean"
+        },
+        "id": {
+          "type": "string"
+        },
+        "matchingIdFormat": {
+          "$ref": "#/definitions/FormatType"
+        },
+        "matchingIdHashingAlgorithm": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/HashingAlgorithm"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "numEmbeddings": {
+          "type": "integer",
+          "format": "uint",
+          "minimum": 0.0
+        },
+        "publisherEmail": {
+          "type": "string"
+        },
+        "pythonEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecification"
+        }
+      }
+    },
+    "EnclaveSpecification": {
+      "type": "object",
+      "required": [
+        "attestationProtoBase64",
+        "id",
+        "workerProtocol"
+      ],
+      "properties": {
+        "attestationProtoBase64": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "workerProtocol": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        }
+      }
+    },
+    "FormatType": {
+      "type": "string",
+      "enum": [
+        "STRING",
+        "INTEGER",
+        "FLOAT",
+        "EMAIL",
+        "DATE_ISO8601",
+        "PHONE_NUMBER_E164",
+        "HASH_SHA256_HEX"
+      ]
+    },
+    "HashingAlgorithm": {
+      "type": "string",
+      "enum": [
+        "SHA256_HEX"
+      ]
+    }
+  }
+}

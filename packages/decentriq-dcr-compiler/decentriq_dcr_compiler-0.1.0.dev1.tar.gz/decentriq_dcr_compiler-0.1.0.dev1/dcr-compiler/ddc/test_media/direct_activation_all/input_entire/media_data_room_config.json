@@ -1,0 +1,19 @@
+{
+  "advertiser_column_names": [
+    "m:email",
+    "m:phone",
+    "a:audience_type"
+  ],
+  "publisher_column_names": [
+    "m:email",
+    "m:phone",
+    "m:email_hashed",
+    "i:activation_id"
+  ],
+  "matching_columns": [
+    "m:email"
+  ],
+  "audience_type_column_name": "a:audience_type",
+  "segment_column_name": null,
+  "activation_id_column_name": "i:activation_id"
+}

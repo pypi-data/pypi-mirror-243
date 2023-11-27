@@ -1,0 +1,18 @@
+[package]
+name = "delta-gcg-driver-api"
+version = "0.1.0"
+authors = ["Enrico Ghirardi <i@choco.me>"]
+edition = "2018"
+
+build = "build.rs"
+
+[dependencies]
+serde = { version = "1.0.138", features = ["derive"] }
+prost = "0.11.9"
+delta-attestation-api = { version = "0.1.0", path = "../delta-attestation-api" }
+delta-data-room-api = { version = "0.1.0", path = "../delta-data-room-api" }
+delta-identity-endorsement-api = { path = "../delta-identity-endorsement-api" }
+
+[build-dependencies]
+prost-build = "0.11.9"
+

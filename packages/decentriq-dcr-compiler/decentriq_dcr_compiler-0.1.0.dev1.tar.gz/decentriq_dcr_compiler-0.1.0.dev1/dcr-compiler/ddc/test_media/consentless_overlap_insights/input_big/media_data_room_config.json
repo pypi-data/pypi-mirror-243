@@ -1,0 +1,23 @@
+{
+  "advertiser_column_names": [
+    "m:hash",
+    "a:audience_type"
+  ],
+  "publisher_column_names": [
+    "m:hash",
+    "s:segment"
+  ],
+  "matching_columns": [
+    "m:hash"
+  ],
+  "audience_type_column_name": "a:audience_type",
+  "segment_column_name": "s:segment",
+  "activation_id_column_name": null,
+  "rounding_decimals_count": -1,
+  "rounding_decimals_ratio": 1,
+  "cutoff_overlap_basic_segment": 2,
+  "cutoff_consentless_overlap_insights_unmatched_audience_type": 2,
+  "cutoff_consentless_overlap_insights_unmatched_segment": 2,
+  "cutoff_consentless_overlap_insights_matched_audience_type": 2,
+  "cutoff_consentless_overlap_insights_matched_segment_audience_type": 0
+}

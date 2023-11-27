@@ -1,0 +1,1282 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "LookalikeMediaRequest",
+  "description": "MediaRequest -> GcgRequest",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "publishDataRoom"
+      ],
+      "properties": {
+        "publishDataRoom": {
+          "type": "object",
+          "required": [
+            "dataRoom",
+            "requirePassword",
+            "showOrganizationLogo"
+          ],
+          "properties": {
+            "dataRoom": {
+              "$ref": "#/definitions/LookalikeMediaDataRoom"
+            },
+            "requirePassword": {
+              "type": "boolean"
+            },
+            "showOrganizationLogo": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "retrieveDataRoom"
+      ],
+      "properties": {
+        "retrieveDataRoom": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "publishAdvertiserDataset"
+      ],
+      "properties": {
+        "publishAdvertiserDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "datasetHashHex",
+            "encryptionKeyHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "datasetHashHex": {
+              "type": "string"
+            },
+            "encryptionKeyHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "publishPublisherUsersDataset"
+      ],
+      "properties": {
+        "publishPublisherUsersDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "datasetHashHex",
+            "encryptionKeyHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "datasetHashHex": {
+              "type": "string"
+            },
+            "encryptionKeyHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "unpublishPublisherUsersDataset"
+      ],
+      "properties": {
+        "unpublishPublisherUsersDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "unpublishAdvertiserDataset"
+      ],
+      "properties": {
+        "unpublishAdvertiserDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "unpublishDemographicsDataset"
+      ],
+      "properties": {
+        "unpublishDemographicsDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "unpublishEmbeddingsDataset"
+      ],
+      "properties": {
+        "unpublishEmbeddingsDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "unpublishSegmentsDataset"
+      ],
+      "properties": {
+        "unpublishSegmentsDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "retrievePublishedDatasets"
+      ],
+      "properties": {
+        "retrievePublishedDatasets": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "calculateOverlapBasic"
+      ],
+      "properties": {
+        "calculateOverlapBasic": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "calculateOverlapInsights"
+      ],
+      "properties": {
+        "calculateOverlapInsights": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "publishDemographicsDataset"
+      ],
+      "properties": {
+        "publishDemographicsDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "datasetHashHex",
+            "encryptionKeyHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "datasetHashHex": {
+              "type": "string"
+            },
+            "encryptionKeyHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "publishSegmentsDataset"
+      ],
+      "properties": {
+        "publishSegmentsDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "datasetHashHex",
+            "encryptionKeyHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "datasetHashHex": {
+              "type": "string"
+            },
+            "encryptionKeyHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "publishEmbeddingsDataset"
+      ],
+      "properties": {
+        "publishEmbeddingsDataset": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "datasetHashHex",
+            "encryptionKeyHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "datasetHashHex": {
+              "type": "string"
+            },
+            "encryptionKeyHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "publishActivatedAudiencesConfig"
+      ],
+      "properties": {
+        "publishActivatedAudiencesConfig": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "datasetHashHex",
+            "encryptionKeyHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "datasetHashHex": {
+              "type": "string"
+            },
+            "encryptionKeyHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "unpublishActivatedAudiencesConfig"
+      ],
+      "properties": {
+        "unpublishActivatedAudiencesConfig": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "calculateModelledAudienceInsights"
+      ],
+      "properties": {
+        "calculateModelledAudienceInsights": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "calculateModelledAudienceInsightsView"
+      ],
+      "properties": {
+        "calculateModelledAudienceInsightsView": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "computeAudienceSizes"
+      ],
+      "properties": {
+        "computeAudienceSizes": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "getLookalikeAudience"
+      ],
+      "properties": {
+        "getLookalikeAudience": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "requestedAudience",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "requestedAudience": {
+              "$ref": "#/definitions/RequestedAudiencePayload"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "viewPublishedActivatedAudiences"
+      ],
+      "properties": {
+        "viewPublishedActivatedAudiences": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "viewActivatedAudiences"
+      ],
+      "properties": {
+        "viewActivatedAudiences": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "ingestAudiencesReport"
+      ],
+      "properties": {
+        "ingestAudiencesReport": {
+          "type": "object",
+          "required": [
+            "dataRoomIdHex",
+            "scopeIdHex"
+          ],
+          "properties": {
+            "dataRoomIdHex": {
+              "type": "string"
+            },
+            "scopeIdHex": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "definitions": {
+    "EnclaveSpecificationV0": {
+      "type": "object",
+      "required": [
+        "attestationProtoBase64",
+        "id",
+        "workerProtocol"
+      ],
+      "properties": {
+        "attestationProtoBase64": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "workerProtocol": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        }
+      }
+    },
+    "FormatType": {
+      "type": "string",
+      "enum": [
+        "STRING",
+        "INTEGER",
+        "FLOAT",
+        "EMAIL",
+        "DATE_ISO8601",
+        "PHONE_NUMBER_E164",
+        "HASH_SHA256_HEX"
+      ]
+    },
+    "HashingAlgorithm": {
+      "type": "string",
+      "enum": [
+        "SHA256_HEX"
+      ]
+    },
+    "KnownOrUnknownRequirementFlagValue": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/RequirementFlagValue"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "LookalikeMediaDataRoom": {
+      "description": "The high-level representation of an LMDCR. Starting with version 4, an outer structure has been introduced that exposes the \"features\" supported by the LMDCR via string-based flags. This way, every version of DDC can extract these feature flags and inform the SDKs whether a particular function is supported by this LMDCR. In a similar way, the LMDCR exposes what datasets it needs as input from a DataLab such that we can check the compatibility between a DataLab and a LMDCR from any version of DDC/the SDKs.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "v0"
+          ],
+          "properties": {
+            "v0": {
+              "$ref": "#/definitions/LookalikeMediaDataRoomV0"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "v1"
+          ],
+          "properties": {
+            "v1": {
+              "$ref": "#/definitions/LookalikeMediaDataRoomV1"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "v2"
+          ],
+          "properties": {
+            "v2": {
+              "$ref": "#/definitions/LookalikeMediaDataRoomV2"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "v3"
+          ],
+          "properties": {
+            "v3": {
+              "$ref": "#/definitions/LookalikeMediaDcrWrapper"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "LookalikeMediaDataRoomV0": {
+      "description": "See the following diagram for a visualization of the graph: https://docs.google.com/drawings/d/13VfBcnhLmOlB_XBrekAmBtyi-zoThZdg1aKtJYVD2eA/edit?usp=sharing",
+      "type": "object",
+      "required": [
+        "advertiserEmails",
+        "agencyEmails",
+        "authenticationRootCertificatePem",
+        "driverEnclaveSpecification",
+        "enableAuditLogRetrieval",
+        "enableDevComputations",
+        "enableDownloadByAdvertiser",
+        "enableDownloadByAgency",
+        "enableDownloadByPublisher",
+        "enableOverlapInsights",
+        "id",
+        "mainAdvertiserEmail",
+        "mainPublisherEmail",
+        "matchingIdFormat",
+        "name",
+        "observerEmails",
+        "publisherEmails",
+        "pythonEnclaveSpecification"
+      ],
+      "properties": {
+        "advertiserEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "agencyEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "authenticationRootCertificatePem": {
+          "type": "string"
+        },
+        "driverEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecificationV0"
+        },
+        "enableAuditLogRetrieval": {
+          "type": "boolean"
+        },
+        "enableDevComputations": {
+          "type": "boolean"
+        },
+        "enableDownloadByAdvertiser": {
+          "type": "boolean"
+        },
+        "enableDownloadByAgency": {
+          "type": "boolean"
+        },
+        "enableDownloadByPublisher": {
+          "type": "boolean"
+        },
+        "enableOverlapInsights": {
+          "type": "boolean"
+        },
+        "hashMatchingIdWith": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/HashingAlgorithm"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "mainAdvertiserEmail": {
+          "type": "string"
+        },
+        "mainPublisherEmail": {
+          "type": "string"
+        },
+        "matchingIdFormat": {
+          "$ref": "#/definitions/FormatType"
+        },
+        "name": {
+          "type": "string"
+        },
+        "observerEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "publisherEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pythonEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecificationV0"
+        }
+      }
+    },
+    "LookalikeMediaDataRoomV1": {
+      "description": "See the following diagram for a visualization of the graph: https://docs.google.com/drawings/d/13VfBcnhLmOlB_XBrekAmBtyi-zoThZdg1aKtJYVD2eA/edit?usp=sharing",
+      "type": "object",
+      "required": [
+        "advertiserEmails",
+        "agencyEmails",
+        "authenticationRootCertificatePem",
+        "driverEnclaveSpecification",
+        "enableAuditLogRetrieval",
+        "enableDevComputations",
+        "enableDownloadByAdvertiser",
+        "enableDownloadByAgency",
+        "enableDownloadByPublisher",
+        "enableOverlapInsights",
+        "id",
+        "mainAdvertiserEmail",
+        "mainPublisherEmail",
+        "matchingIdFormat",
+        "name",
+        "observerEmails",
+        "publisherEmails",
+        "pythonEnclaveSpecification"
+      ],
+      "properties": {
+        "advertiserEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "agencyEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "authenticationRootCertificatePem": {
+          "type": "string"
+        },
+        "driverEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecificationV0"
+        },
+        "enableAuditLogRetrieval": {
+          "type": "boolean"
+        },
+        "enableDevComputations": {
+          "type": "boolean"
+        },
+        "enableDownloadByAdvertiser": {
+          "type": "boolean"
+        },
+        "enableDownloadByAgency": {
+          "type": "boolean"
+        },
+        "enableDownloadByPublisher": {
+          "type": "boolean"
+        },
+        "enableOverlapInsights": {
+          "type": "boolean"
+        },
+        "hashMatchingIdWith": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/HashingAlgorithm"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "mainAdvertiserEmail": {
+          "type": "string"
+        },
+        "mainPublisherEmail": {
+          "type": "string"
+        },
+        "matchingIdFormat": {
+          "$ref": "#/definitions/FormatType"
+        },
+        "name": {
+          "type": "string"
+        },
+        "observerEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "publisherEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pythonEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecificationV0"
+        }
+      }
+    },
+    "LookalikeMediaDataRoomV2": {
+      "description": "See the following diagram for a visualization of the graph: https://docs.google.com/drawings/d/13VfBcnhLmOlB_XBrekAmBtyi-zoThZdg1aKtJYVD2eA/edit?usp=sharing",
+      "type": "object",
+      "required": [
+        "advertiserEmails",
+        "agencyEmails",
+        "authenticationRootCertificatePem",
+        "driverEnclaveSpecification",
+        "enableAuditLogRetrieval",
+        "enableDevComputations",
+        "enableDownloadByAdvertiser",
+        "enableDownloadByAgency",
+        "enableDownloadByPublisher",
+        "enableOverlapInsights",
+        "id",
+        "mainAdvertiserEmail",
+        "mainPublisherEmail",
+        "matchingIdFormat",
+        "name",
+        "observerEmails",
+        "publisherEmails",
+        "pythonEnclaveSpecification"
+      ],
+      "properties": {
+        "advertiserEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "agencyEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "authenticationRootCertificatePem": {
+          "type": "string"
+        },
+        "driverEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecificationV0"
+        },
+        "enableAuditLogRetrieval": {
+          "type": "boolean"
+        },
+        "enableDevComputations": {
+          "type": "boolean"
+        },
+        "enableDownloadByAdvertiser": {
+          "type": "boolean"
+        },
+        "enableDownloadByAgency": {
+          "type": "boolean"
+        },
+        "enableDownloadByPublisher": {
+          "type": "boolean"
+        },
+        "enableOverlapInsights": {
+          "type": "boolean"
+        },
+        "hashMatchingIdWith": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/HashingAlgorithm"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "mainAdvertiserEmail": {
+          "type": "string"
+        },
+        "mainPublisherEmail": {
+          "type": "string"
+        },
+        "matchingIdFormat": {
+          "$ref": "#/definitions/FormatType"
+        },
+        "name": {
+          "type": "string"
+        },
+        "observerEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "publisherEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pythonEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecificationV0"
+        }
+      }
+    },
+    "LookalikeMediaDcrCompute": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "v0"
+          ],
+          "properties": {
+            "v0": {
+              "$ref": "#/definitions/LookalikeMediaDcrComputeV0"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "LookalikeMediaDcrComputeOrUnknown": {
+      "anyOf": [
+        {
+          "$ref": "#/definitions/LookalikeMediaDcrCompute"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "LookalikeMediaDcrComputeV0": {
+      "description": "See the following diagram for a visualization of the graph: https://docs.google.com/drawings/d/13VfBcnhLmOlB_XBrekAmBtyi-zoThZdg1aKtJYVD2eA/edit?usp=sharing",
+      "type": "object",
+      "required": [
+        "advertiserEmails",
+        "agencyEmails",
+        "authenticationRootCertificatePem",
+        "driverEnclaveSpecification",
+        "id",
+        "mainAdvertiserEmail",
+        "mainPublisherEmail",
+        "matchingIdFormat",
+        "name",
+        "observerEmails",
+        "publisherEmails",
+        "pythonEnclaveSpecification"
+      ],
+      "properties": {
+        "advertiserEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "agencyEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "authenticationRootCertificatePem": {
+          "type": "string"
+        },
+        "driverEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecificationV0"
+        },
+        "hashMatchingIdWith": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/HashingAlgorithm"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "id": {
+          "type": "string"
+        },
+        "mainAdvertiserEmail": {
+          "type": "string"
+        },
+        "mainPublisherEmail": {
+          "type": "string"
+        },
+        "matchingIdFormat": {
+          "$ref": "#/definitions/FormatType"
+        },
+        "name": {
+          "type": "string"
+        },
+        "observerEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "publisherEmails": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pythonEnclaveSpecification": {
+          "$ref": "#/definitions/EnclaveSpecificationV0"
+        },
+        "rateLimitPublishDataNumPerWindow": {
+          "default": 10,
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        },
+        "rateLimitPublishDataWindowSeconds": {
+          "default": 604800,
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        }
+      }
+    },
+    "LookalikeMediaDcrWrapper": {
+      "type": "object",
+      "required": [
+        "compute",
+        "consumes",
+        "features"
+      ],
+      "properties": {
+        "compute": {
+          "$ref": "#/definitions/LookalikeMediaDcrComputeOrUnknown"
+        },
+        "consumes": {
+          "$ref": "#/definitions/Requirements"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "RequestedAudiencePayload": {
+      "type": "object",
+      "required": [
+        "audienceType",
+        "reach"
+      ],
+      "properties": {
+        "audienceType": {
+          "type": "string"
+        },
+        "reach": {
+          "type": "number",
+          "format": "float"
+        }
+      },
+      "additionalProperties": false
+    },
+    "RequirementFlag": {
+      "type": "object",
+      "required": [
+        "details",
+        "name"
+      ],
+      "properties": {
+        "details": {
+          "$ref": "#/definitions/KnownOrUnknownRequirementFlagValue"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "RequirementFlagValue": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "SUPPORTED"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "DATASET"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "required": [
+            "type",
+            "value"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "PROPERTY"
+              ]
+            },
+            "value": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "Requirements": {
+      "type": "object",
+      "required": [
+        "optional",
+        "required"
+      ],
+      "properties": {
+        "optional": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RequirementFlag"
+          }
+        },
+        "required": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RequirementFlag"
+          }
+        }
+      }
+    }
+  }
+}

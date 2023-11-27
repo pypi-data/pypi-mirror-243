@@ -1,0 +1,27 @@
+[package]
+name = "ddc"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+delta-data-room-api = { path = "../../delta-data-room-api" }
+delta-attestation-api = { path = "../../delta-attestation-api" }
+delta-gcg-driver-api = { path = "../../delta-gcg-driver-api" }
+delta-sql-worker-api = { path = "../../delta-sql-worker-api" }
+delta-container-worker-api = { path = "../../delta-container-worker-api" }
+delta-synth-data-worker-api = { path = "../../delta-synth-data-worker-api" }
+delta-s3-sink-worker-api = { path = "../../delta-s3-sink-worker-api" }
+delta-extension-metering-api = { path = "../../delta-extension-metering-api" }
+delta-post-worker-api = { path = "../../delta-post-worker-api" }
+format_types = { path = "../../validation/format-types" }
+validation_config = { path = "../../validation/validation-config" }
+prost = "0.11.9"
+schemars = "0.8.10"
+serde = { version = "1.0.138", features = ["derive"] }
+serde_json = "1.0.96"
+sha2 = "0.9.2"
+thiserror = "1.0.32"
+base64 = "0.13.0"
+hex = "0.4.3"

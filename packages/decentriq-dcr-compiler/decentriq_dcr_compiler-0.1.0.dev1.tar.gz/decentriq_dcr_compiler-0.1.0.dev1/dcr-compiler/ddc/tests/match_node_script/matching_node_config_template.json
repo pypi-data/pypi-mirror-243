@@ -1,0 +1,19 @@
+{
+    "query": {
+        "==": [
+            {
+                "var": "123.email"
+            },
+            {
+                "var": "456.email"
+            }
+        ]
+    },
+    "round": 1,
+    "epsilon": 1,
+    "sensitivity": 1,
+    "dependency_paths": [
+        "/input/table1",
+        "/input/table2"
+    ]
+}
