@@ -1,0 +1,4 @@
+[console_scripts]
+build=python-c"importshutil;shutil.copy('pyproject.toml','build/')"&&poetrybuild
+tldl=tracklist_downloader.main:main
+
