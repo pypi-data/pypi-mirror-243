@@ -1,0 +1,2 @@
+[console_scripts]
+toluene-build-config = toluene.apps.config_builder:main
