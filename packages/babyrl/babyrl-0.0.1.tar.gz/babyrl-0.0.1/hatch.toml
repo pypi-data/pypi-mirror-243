@@ -1,0 +1,5 @@
+[version]
+source = "vcs"
+
+[build.hooks.vcs]
+version-file = "src/babyrl/__about__.py"
