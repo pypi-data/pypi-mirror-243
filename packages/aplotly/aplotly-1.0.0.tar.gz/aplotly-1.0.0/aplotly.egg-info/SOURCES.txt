@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+aplotly/__init__.py
+aplotly/colors.py
+aplotly/io.py
+aplotly/plots.py
+aplotly/style.py
+aplotly.egg-info/PKG-INFO
+aplotly.egg-info/SOURCES.txt
+aplotly.egg-info/dependency_links.txt
+aplotly.egg-info/requires.txt
+aplotly.egg-info/top_level.txt
+tests/test_colors.py
+tests/test_io.py
+tests/test_style.py
