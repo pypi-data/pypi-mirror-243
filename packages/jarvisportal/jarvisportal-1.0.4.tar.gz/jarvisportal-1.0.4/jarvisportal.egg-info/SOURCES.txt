@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.py
+jarvisportal/__init__.py
+jarvisportal/actions.py
+jarvisportal/gpt.py
+jarvisportal/gptexec.py
+jarvisportal/jarvisportal.py
+jarvisportal/listentomic.py
+jarvisportal.egg-info/PKG-INFO
+jarvisportal.egg-info/SOURCES.txt
+jarvisportal.egg-info/dependency_links.txt
+jarvisportal.egg-info/entry_points.txt
+jarvisportal.egg-info/requires.txt
+jarvisportal.egg-info/top_level.txt
+tests/test_actions.py
