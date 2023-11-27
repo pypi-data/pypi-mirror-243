@@ -1,0 +1,3 @@
+[console_scripts]
+pisco=pisco.user_interface.command_line_interface:run
+
