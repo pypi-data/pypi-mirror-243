@@ -1,0 +1,3 @@
+[console_scripts]
+idae=idae.cli:cli
+
