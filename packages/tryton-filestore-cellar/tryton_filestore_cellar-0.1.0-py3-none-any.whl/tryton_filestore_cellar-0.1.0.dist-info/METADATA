@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: tryton-filestore-cellar
+Version: 0.1.0
+Summary: Store Tryton files on Cellar Storage Service
+Home-page: https://pypi.org/project/tryton-filestore-cellar/
+Download-URL: https://downloads.tryton.org/tryton-filestore-cellar/
+Author: Tryton
+Author-email: foundation@tryton.org
+License: GPL-3
+Project-URL: Bug Tracker, https://bugs.tryton.org/tryton-filestore-cellar
+Project-URL: Forum, https://discuss.tryton.org/tags/filestore-cellar
+Project-URL: Source Code, https://code.tryton.org/tryton-filestore-cellar
+Keywords: tryton clever cloud cellar storage
+Platform: Posix; MacOS X; Windows
+Classifier: Framework :: Tryton
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Internet
+License-File: LICENSE
+Requires-Dist: boto
+Requires-Dist: trytond >6.0
+
+Tryton FileStore Cellar
+=======================
+
+Cellar Storage Service for the Tryton application framework.
+
+To use Cellar Storage Service, the trytond configuration must be modify to set
+in the `database` section, the `class`  to
+`tryton_filestorage_cellar.FileStoreCellar` and the `bucket` to the name of
+your bucket.
+Here is an example the section::
+
+    [database]
+    class = tryton_filestorage_cellar.FileStoreCellar
+    bucket = bucket-id-here
+
+The authentication must be set using environment variable as explained in the
+`Cellar, a S3-like object storage service
+<https://www.clever-cloud.com/doc/deploy/addon/cellar/>`_.
