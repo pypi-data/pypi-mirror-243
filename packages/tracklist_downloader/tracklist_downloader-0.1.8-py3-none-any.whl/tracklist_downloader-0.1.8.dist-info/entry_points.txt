@@ -1,0 +1,3 @@
+[console_scripts]
+tldl=tracklist_downloader.main:main
+
