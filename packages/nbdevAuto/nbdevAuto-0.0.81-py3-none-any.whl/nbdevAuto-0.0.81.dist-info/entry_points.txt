@@ -1,0 +1,15 @@
+[console_scripts]
+create_cfast = nbdevAuto.automate:create_cfast
+everything = nbdevAuto.automate:everything
+gacp = nbdevAuto.automate:gacp
+gitrelease = nbdevAuto.automate:release_git
+h = nbdevAuto.automate:help_output
+piprelease = nbdevAuto.automate:release_pypi
+prep = nbdevAuto.automate:prep
+reinstall = nbdevAuto.automate:reinstall
+release = nbdevAuto.automate:release
+update = nbdevAuto.automate:update
+upload = nbdevAuto.automate:upload
+
+[nbdev]
+nbdevAuto = nbdevAuto._modidx:d
