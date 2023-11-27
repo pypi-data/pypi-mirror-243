@@ -1,0 +1,12 @@
+pandas<3,>=1
+SimpleSQLite<3,>=1.5
+
+[:python_version < "3.8"]
+typing-extensions<5,>=3
+
+[logging]
+loguru<1,>=0.4.1
+
+[test]
+pytest>=6.0.1
+pytest-md-report>=0.5
