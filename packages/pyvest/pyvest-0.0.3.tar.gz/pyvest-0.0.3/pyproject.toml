@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyvest"
+version = "0.0.3"
+license = {text = "MIT"}
+authors = [
+  { name="Patrick Munroe", email="patrick.munroe@gmail.com" },
+    { name="Sébastien Plante", email="mrplante@hotmail.com" }
+]
+maintainers = [
+  { name="Patrick Munroe", email="patrick.munroe@gmail.com" }
+]
+keywords = [
+    "finance",
+    "investment",
+    "portfolio theory"
+]
+description = "PyVest is a Python library that provides tools for investment analysis."
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = ["matplotlib", "scipy", "numpy", "pandas", "yfinance",
+    "statsmodels", "pandas-datareader"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/pamun/pyvest"
