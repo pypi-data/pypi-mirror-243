@@ -1,0 +1,3 @@
+[console_scripts]
+publishing_test=publishing_test.cli:main
+
