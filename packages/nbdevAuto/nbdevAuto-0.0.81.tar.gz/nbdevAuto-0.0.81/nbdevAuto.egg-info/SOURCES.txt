@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+settings.ini
+setup.py
+nbdevAuto/__init__.py
+nbdevAuto/_modidx.py
+nbdevAuto/automate.py
+nbdevAuto/core.py
+nbdevAuto/functions.py
+nbdevAuto.egg-info/PKG-INFO
+nbdevAuto.egg-info/SOURCES.txt
+nbdevAuto.egg-info/dependency_links.txt
+nbdevAuto.egg-info/entry_points.txt
+nbdevAuto.egg-info/not-zip-safe
+nbdevAuto.egg-info/requires.txt
+nbdevAuto.egg-info/top_level.txt
