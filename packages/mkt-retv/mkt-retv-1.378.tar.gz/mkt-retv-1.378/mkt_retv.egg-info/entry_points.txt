@@ -1,0 +1,3 @@
+[console_scripts]
+install_env_script = my_package.install_env:main
+
