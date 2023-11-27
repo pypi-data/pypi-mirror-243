@@ -1,0 +1,3 @@
+[console_scripts]
+magicaitest=magicaitest.__main__:cli
+
