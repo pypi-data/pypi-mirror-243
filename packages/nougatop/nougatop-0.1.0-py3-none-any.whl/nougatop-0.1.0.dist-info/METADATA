@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: nougatop
+Version: 0.1.0
+Requires-Dist: nougat-ocr
+Requires-Dist: gTTS
+Requires-Dist: idisplay
+
