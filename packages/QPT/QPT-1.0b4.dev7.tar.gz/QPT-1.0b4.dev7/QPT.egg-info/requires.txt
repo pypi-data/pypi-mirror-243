@@ -1,0 +1,7 @@
+wget
+click
+pefile
+pillow
+toml
+pip>=23.1
+QPT-SDK
