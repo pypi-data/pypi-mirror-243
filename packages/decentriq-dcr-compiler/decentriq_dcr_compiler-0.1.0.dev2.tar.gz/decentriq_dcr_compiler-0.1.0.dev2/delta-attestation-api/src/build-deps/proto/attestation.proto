@@ -1,0 +1,88 @@
+syntax = "proto3";
+
+package attestation;
+
+message Fatquote {
+    oneof fatquote {
+        FatquoteEpid epid = 1;
+        FatquoteDcap dcap = 2;
+        FatquoteNitro nitro = 3;
+        FatquoteSnp snp = 4;
+    }
+};
+
+message FatquoteEpid {
+    bytes iasResponseBody = 1;
+    bytes iasCertificate = 2;
+    bytes iasSignature = 3;
+    bytes iasRootCaDer = 4;
+}
+
+message FatquoteDcap {
+    bytes dcapQuote = 1;
+    bytes tcbInfo = 2;
+    bytes qeIdentity = 3;
+    bytes tcbSignCert = 4;
+    bytes qeSignCert = 5;
+    bytes dcapRootCaDer = 6;
+}
+
+message FatquoteNitro {
+    bytes cose = 1;
+    bytes nitroRootCaDer = 2;
+}
+
+message FatquoteSnp {
+    bytes reportBin = 1;
+    bytes amdArkDer = 2;
+    bytes amdSevDer = 3;
+    bytes vcekCrtDer = 4;
+    bytes reportData = 5;
+    bytes roughtimePubKey = 6;
+    bytes roughtimeNonce = 7;
+    bytes signedTimestamp = 8;
+    bytes decentriqDer = 9;
+    bytes chipDer = 10;
+}
+
+message AttestationSpecification {
+    oneof attestation_specification {
+        AttestationSpecificationIntelEpid intelEpid = 1;
+        AttestationSpecificationIntelDcap intelDcap = 2;
+        AttestationSpecificationAwsNitro awsNitro = 3;
+        AttestationSpecificationAmdSnp amdSnp = 4;
+    }
+}
+
+message AttestationSpecificationIntelEpid {
+    bytes mrenclave = 1;
+    bytes iasRootCaDer = 2;
+    bool accept_debug = 3;
+    bool accept_group_out_of_date = 4;
+    bool accept_configuration_needed = 5;
+}
+
+message AttestationSpecificationIntelDcap {
+    bytes mrenclave = 1;
+    bytes dcapRootCaDer = 2;
+    bool accept_debug = 3;
+    bool accept_out_of_date = 4;
+    bool accept_configuration_needed = 5;
+    bool accept_revoked = 6;
+}
+
+message AttestationSpecificationAwsNitro {
+    bytes nitroRootCaDer = 1;
+    bytes pcr0 = 2;
+    bytes pcr1 = 3;
+    bytes pcr2 = 4;
+    bytes pcr8 = 5;
+}
+
+message AttestationSpecificationAmdSnp {
+    bytes amdArkDer = 1;
+    bytes measurement = 2;
+    bytes roughtimePubKey = 3;
+    repeated bytes authorizedChipIds = 4;
+    bytes decentriqDer = 5;
+}

@@ -1,0 +1,2084 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DataScienceDataRoom",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "v0"
+      ],
+      "properties": {
+        "v0": {
+          "$ref": "#/definitions/DataScienceDataRoomV0"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "v1"
+      ],
+      "properties": {
+        "v1": {
+          "$ref": "#/definitions/DataScienceDataRoomV1"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "v2"
+      ],
+      "properties": {
+        "v2": {
+          "$ref": "#/definitions/DataScienceDataRoomV2"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "v3"
+      ],
+      "properties": {
+        "v3": {
+          "$ref": "#/definitions/DataScienceDataRoomV3"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "v4"
+      ],
+      "properties": {
+        "v4": {
+          "$ref": "#/definitions/DataScienceDataRoomV4"
+        }
+      },
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "required": [
+        "v5"
+      ],
+      "properties": {
+        "v5": {
+          "$ref": "#/definitions/DataScienceDataRoomV5"
+        }
+      },
+      "additionalProperties": false
+    }
+  ],
+  "definitions": {
+    "AddComputationCommit": {
+      "type": "object",
+      "required": [
+        "analysts",
+        "enclaveSpecifications",
+        "node"
+      ],
+      "properties": {
+        "analysts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "enclaveSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EnclaveSpecification"
+          }
+        },
+        "node": {
+          "$ref": "#/definitions/Node"
+        }
+      }
+    },
+    "AddComputationCommitV2": {
+      "type": "object",
+      "required": [
+        "analysts",
+        "enclaveSpecifications",
+        "node"
+      ],
+      "properties": {
+        "analysts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "enclaveSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EnclaveSpecification"
+          }
+        },
+        "node": {
+          "$ref": "#/definitions/NodeV2"
+        }
+      }
+    },
+    "AnalystPermission": {
+      "type": "object",
+      "required": [
+        "nodeId"
+      ],
+      "properties": {
+        "nodeId": {
+          "type": "string"
+        }
+      }
+    },
+    "ColumnDataFormat": {
+      "type": "object",
+      "required": [
+        "dataType",
+        "isNullable"
+      ],
+      "properties": {
+        "dataType": {
+          "$ref": "#/definitions/ColumnDataType"
+        },
+        "isNullable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "ColumnDataType": {
+      "type": "string",
+      "enum": [
+        "integer",
+        "float",
+        "string"
+      ]
+    },
+    "ColumnTuple": {
+      "type": "object",
+      "required": [
+        "columns"
+      ],
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "uint",
+            "minimum": 0.0
+          }
+        }
+      }
+    },
+    "ColumnValidationV0": {
+      "type": "object",
+      "required": [
+        "allowNull",
+        "formatType"
+      ],
+      "properties": {
+        "allowNull": {
+          "type": "boolean"
+        },
+        "formatType": {
+          "$ref": "#/definitions/FormatType"
+        },
+        "hashWith": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/HashingAlgorithm"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "inRange": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/NumericRangeRule"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ComputationNode": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "#/definitions/ComputationNodeKind"
+        }
+      }
+    },
+    "ComputationNodeKind": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "sql"
+          ],
+          "properties": {
+            "sql": {
+              "$ref": "#/definitions/SqlComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "scripting"
+          ],
+          "properties": {
+            "scripting": {
+              "$ref": "#/definitions/ScriptingComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "syntheticData"
+          ],
+          "properties": {
+            "syntheticData": {
+              "$ref": "#/definitions/SyntheticDataComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "s3Sink"
+          ],
+          "properties": {
+            "s3Sink": {
+              "$ref": "#/definitions/S3SinkComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "match"
+          ],
+          "properties": {
+            "match": {
+              "$ref": "#/definitions/MatchingComputationNode"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ComputationNodeKindV2": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "sql"
+          ],
+          "properties": {
+            "sql": {
+              "$ref": "#/definitions/SqlComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "sqlite"
+          ],
+          "properties": {
+            "sqlite": {
+              "$ref": "#/definitions/SqliteComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "scripting"
+          ],
+          "properties": {
+            "scripting": {
+              "$ref": "#/definitions/ScriptingComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "syntheticData"
+          ],
+          "properties": {
+            "syntheticData": {
+              "$ref": "#/definitions/SyntheticDataComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "s3Sink"
+          ],
+          "properties": {
+            "s3Sink": {
+              "$ref": "#/definitions/S3SinkComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "match"
+          ],
+          "properties": {
+            "match": {
+              "$ref": "#/definitions/MatchingComputationNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "post"
+          ],
+          "properties": {
+            "post": {
+              "$ref": "#/definitions/PostComputationNode"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ComputationNodeV2": {
+      "type": "object",
+      "required": [
+        "kind"
+      ],
+      "properties": {
+        "kind": {
+          "$ref": "#/definitions/ComputationNodeKindV2"
+        }
+      }
+    },
+    "DataOwnerPermission": {
+      "type": "object",
+      "required": [
+        "nodeId"
+      ],
+      "properties": {
+        "nodeId": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceCommitKind": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "addComputation"
+          ],
+          "properties": {
+            "addComputation": {
+              "$ref": "#/definitions/AddComputationCommit"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DataScienceCommitKindV2": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "addComputation"
+          ],
+          "properties": {
+            "addComputation": {
+              "$ref": "#/definitions/AddComputationCommitV2"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DataScienceCommitV0": {
+      "type": "object",
+      "required": [
+        "enclaveDataRoomId",
+        "historyPin",
+        "id",
+        "kind",
+        "name"
+      ],
+      "properties": {
+        "enclaveDataRoomId": {
+          "type": "string"
+        },
+        "historyPin": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/DataScienceCommitKind"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceCommitV1": {
+      "type": "object",
+      "required": [
+        "enclaveDataRoomId",
+        "historyPin",
+        "id",
+        "kind",
+        "name"
+      ],
+      "properties": {
+        "enclaveDataRoomId": {
+          "type": "string"
+        },
+        "historyPin": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/DataScienceCommitKind"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceCommitV2": {
+      "type": "object",
+      "required": [
+        "enclaveDataRoomId",
+        "historyPin",
+        "id",
+        "kind",
+        "name"
+      ],
+      "properties": {
+        "enclaveDataRoomId": {
+          "type": "string"
+        },
+        "historyPin": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/DataScienceCommitKindV2"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceCommitV3": {
+      "type": "object",
+      "required": [
+        "enclaveDataRoomId",
+        "historyPin",
+        "id",
+        "kind",
+        "name"
+      ],
+      "properties": {
+        "enclaveDataRoomId": {
+          "type": "string"
+        },
+        "historyPin": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/DataScienceCommitKindV2"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceCommitV4": {
+      "type": "object",
+      "required": [
+        "enclaveDataRoomId",
+        "historyPin",
+        "id",
+        "kind",
+        "name"
+      ],
+      "properties": {
+        "enclaveDataRoomId": {
+          "type": "string"
+        },
+        "historyPin": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/DataScienceCommitKindV2"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceCommitV5": {
+      "type": "object",
+      "required": [
+        "enclaveDataRoomId",
+        "historyPin",
+        "id",
+        "kind",
+        "name"
+      ],
+      "properties": {
+        "enclaveDataRoomId": {
+          "type": "string"
+        },
+        "historyPin": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/DataScienceCommitKindV2"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceDataRoomConfiguration": {
+      "type": "object",
+      "required": [
+        "description",
+        "enableDevelopment",
+        "enclaveRootCertificatePem",
+        "enclaveSpecifications",
+        "id",
+        "nodes",
+        "participants",
+        "title"
+      ],
+      "properties": {
+        "dcrSecretIdBase64": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "enableDevelopment": {
+          "type": "boolean"
+        },
+        "enclaveRootCertificatePem": {
+          "type": "string"
+        },
+        "enclaveSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EnclaveSpecification"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Node"
+          }
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Participant"
+          }
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceDataRoomConfigurationV2": {
+      "type": "object",
+      "required": [
+        "description",
+        "enableDevelopment",
+        "enablePostWorker",
+        "enableServersideWasmValidation",
+        "enableSqliteWorker",
+        "enableTestDatasets",
+        "enclaveRootCertificatePem",
+        "enclaveSpecifications",
+        "id",
+        "nodes",
+        "participants",
+        "title"
+      ],
+      "properties": {
+        "dcrSecretIdBase64": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "enableDevelopment": {
+          "type": "boolean"
+        },
+        "enablePostWorker": {
+          "type": "boolean"
+        },
+        "enableServersideWasmValidation": {
+          "type": "boolean"
+        },
+        "enableSqliteWorker": {
+          "type": "boolean"
+        },
+        "enableTestDatasets": {
+          "type": "boolean"
+        },
+        "enclaveRootCertificatePem": {
+          "type": "string"
+        },
+        "enclaveSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EnclaveSpecification"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NodeV2"
+          }
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Participant"
+          }
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceDataRoomConfigurationV3": {
+      "type": "object",
+      "required": [
+        "description",
+        "enableDevelopment",
+        "enablePostWorker",
+        "enableSafePythonWorkerStacktrace",
+        "enableServersideWasmValidation",
+        "enableSqliteWorker",
+        "enableTestDatasets",
+        "enclaveRootCertificatePem",
+        "enclaveSpecifications",
+        "id",
+        "nodes",
+        "participants",
+        "title"
+      ],
+      "properties": {
+        "dcrSecretIdBase64": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "enableDevelopment": {
+          "type": "boolean"
+        },
+        "enablePostWorker": {
+          "type": "boolean"
+        },
+        "enableSafePythonWorkerStacktrace": {
+          "type": "boolean"
+        },
+        "enableServersideWasmValidation": {
+          "type": "boolean"
+        },
+        "enableSqliteWorker": {
+          "type": "boolean"
+        },
+        "enableTestDatasets": {
+          "type": "boolean"
+        },
+        "enclaveRootCertificatePem": {
+          "type": "string"
+        },
+        "enclaveSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EnclaveSpecification"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NodeV2"
+          }
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Participant"
+          }
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceDataRoomConfigurationV4": {
+      "type": "object",
+      "required": [
+        "description",
+        "enableDevelopment",
+        "enablePostWorker",
+        "enableSafePythonWorkerStacktrace",
+        "enableServersideWasmValidation",
+        "enableSqliteWorker",
+        "enableTestDatasets",
+        "enclaveRootCertificatePem",
+        "enclaveSpecifications",
+        "id",
+        "nodes",
+        "participants",
+        "title"
+      ],
+      "properties": {
+        "dcrSecretIdBase64": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "enableDevelopment": {
+          "type": "boolean"
+        },
+        "enablePostWorker": {
+          "type": "boolean"
+        },
+        "enableSafePythonWorkerStacktrace": {
+          "type": "boolean"
+        },
+        "enableServersideWasmValidation": {
+          "type": "boolean"
+        },
+        "enableSqliteWorker": {
+          "type": "boolean"
+        },
+        "enableTestDatasets": {
+          "type": "boolean"
+        },
+        "enclaveRootCertificatePem": {
+          "type": "string"
+        },
+        "enclaveSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EnclaveSpecification"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NodeV2"
+          }
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Participant"
+          }
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceDataRoomConfigurationV5": {
+      "type": "object",
+      "required": [
+        "description",
+        "enableAllowEmptyFilesInValidation",
+        "enableDevelopment",
+        "enablePostWorker",
+        "enableSafePythonWorkerStacktrace",
+        "enableServersideWasmValidation",
+        "enableSqliteWorker",
+        "enableTestDatasets",
+        "enclaveRootCertificatePem",
+        "enclaveSpecifications",
+        "id",
+        "nodes",
+        "participants",
+        "title"
+      ],
+      "properties": {
+        "dcrSecretIdBase64": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "description": {
+          "type": "string"
+        },
+        "enableAllowEmptyFilesInValidation": {
+          "type": "boolean"
+        },
+        "enableDevelopment": {
+          "type": "boolean"
+        },
+        "enablePostWorker": {
+          "type": "boolean"
+        },
+        "enableSafePythonWorkerStacktrace": {
+          "type": "boolean"
+        },
+        "enableServersideWasmValidation": {
+          "type": "boolean"
+        },
+        "enableSqliteWorker": {
+          "type": "boolean"
+        },
+        "enableTestDatasets": {
+          "type": "boolean"
+        },
+        "enclaveRootCertificatePem": {
+          "type": "string"
+        },
+        "enclaveSpecifications": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/EnclaveSpecification"
+          }
+        },
+        "id": {
+          "type": "string"
+        },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/NodeV2"
+          }
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Participant"
+          }
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "DataScienceDataRoomV0": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "static"
+          ],
+          "properties": {
+            "static": {
+              "$ref": "#/definitions/DataScienceDataRoomConfiguration"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "interactive"
+          ],
+          "properties": {
+            "interactive": {
+              "$ref": "#/definitions/InteractiveDataScienceDataRoomV0"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DataScienceDataRoomV1": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "static"
+          ],
+          "properties": {
+            "static": {
+              "$ref": "#/definitions/DataScienceDataRoomConfiguration"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "interactive"
+          ],
+          "properties": {
+            "interactive": {
+              "$ref": "#/definitions/InteractiveDataScienceDataRoomV1"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DataScienceDataRoomV2": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "static"
+          ],
+          "properties": {
+            "static": {
+              "$ref": "#/definitions/DataScienceDataRoomConfigurationV2"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "interactive"
+          ],
+          "properties": {
+            "interactive": {
+              "$ref": "#/definitions/InteractiveDataScienceDataRoomV2"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DataScienceDataRoomV3": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "static"
+          ],
+          "properties": {
+            "static": {
+              "$ref": "#/definitions/DataScienceDataRoomConfigurationV3"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "interactive"
+          ],
+          "properties": {
+            "interactive": {
+              "$ref": "#/definitions/InteractiveDataScienceDataRoomV3"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DataScienceDataRoomV4": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "static"
+          ],
+          "properties": {
+            "static": {
+              "$ref": "#/definitions/DataScienceDataRoomConfigurationV4"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "interactive"
+          ],
+          "properties": {
+            "interactive": {
+              "$ref": "#/definitions/InteractiveDataScienceDataRoomV4"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "DataScienceDataRoomV5": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "static"
+          ],
+          "properties": {
+            "static": {
+              "$ref": "#/definitions/DataScienceDataRoomConfigurationV5"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "interactive"
+          ],
+          "properties": {
+            "interactive": {
+              "$ref": "#/definitions/InteractiveDataScienceDataRoomV5"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "EnclaveSpecification": {
+      "type": "object",
+      "required": [
+        "attestationProtoBase64",
+        "id",
+        "workerProtocol"
+      ],
+      "properties": {
+        "attestationProtoBase64": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string"
+        },
+        "workerProtocol": {
+          "type": "integer",
+          "format": "uint32",
+          "minimum": 0.0
+        }
+      }
+    },
+    "FormatType": {
+      "type": "string",
+      "enum": [
+        "STRING",
+        "INTEGER",
+        "FLOAT",
+        "EMAIL",
+        "DATE_ISO8601",
+        "PHONE_NUMBER_E164",
+        "HASH_SHA256_HEX"
+      ]
+    },
+    "HashingAlgorithm": {
+      "type": "string",
+      "enum": [
+        "SHA256_HEX"
+      ]
+    },
+    "InteractiveDataScienceDataRoomV0": {
+      "type": "object",
+      "required": [
+        "commits",
+        "initialConfiguration"
+      ],
+      "properties": {
+        "commits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataScienceCommitV0"
+          }
+        },
+        "initialConfiguration": {
+          "$ref": "#/definitions/DataScienceDataRoomConfiguration"
+        }
+      }
+    },
+    "InteractiveDataScienceDataRoomV1": {
+      "type": "object",
+      "required": [
+        "commits",
+        "enableAutomergeFeature",
+        "initialConfiguration"
+      ],
+      "properties": {
+        "commits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataScienceCommitV1"
+          }
+        },
+        "enableAutomergeFeature": {
+          "type": "boolean"
+        },
+        "initialConfiguration": {
+          "$ref": "#/definitions/DataScienceDataRoomConfiguration"
+        }
+      }
+    },
+    "InteractiveDataScienceDataRoomV2": {
+      "type": "object",
+      "required": [
+        "commits",
+        "enableAutomergeFeature",
+        "initialConfiguration"
+      ],
+      "properties": {
+        "commits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataScienceCommitV2"
+          }
+        },
+        "enableAutomergeFeature": {
+          "type": "boolean"
+        },
+        "initialConfiguration": {
+          "$ref": "#/definitions/DataScienceDataRoomConfigurationV2"
+        }
+      }
+    },
+    "InteractiveDataScienceDataRoomV3": {
+      "type": "object",
+      "required": [
+        "commits",
+        "enableAutomergeFeature",
+        "initialConfiguration"
+      ],
+      "properties": {
+        "commits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataScienceCommitV3"
+          }
+        },
+        "enableAutomergeFeature": {
+          "type": "boolean"
+        },
+        "initialConfiguration": {
+          "$ref": "#/definitions/DataScienceDataRoomConfigurationV3"
+        }
+      }
+    },
+    "InteractiveDataScienceDataRoomV4": {
+      "type": "object",
+      "required": [
+        "commits",
+        "enableAutomergeFeature",
+        "initialConfiguration"
+      ],
+      "properties": {
+        "commits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataScienceCommitV4"
+          }
+        },
+        "enableAutomergeFeature": {
+          "type": "boolean"
+        },
+        "initialConfiguration": {
+          "$ref": "#/definitions/DataScienceDataRoomConfigurationV4"
+        }
+      }
+    },
+    "InteractiveDataScienceDataRoomV5": {
+      "type": "object",
+      "required": [
+        "commits",
+        "enableAutomergeFeature",
+        "initialConfiguration"
+      ],
+      "properties": {
+        "commits": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DataScienceCommitV5"
+          }
+        },
+        "enableAutomergeFeature": {
+          "type": "boolean"
+        },
+        "initialConfiguration": {
+          "$ref": "#/definitions/DataScienceDataRoomConfigurationV5"
+        }
+      }
+    },
+    "LeafNode": {
+      "type": "object",
+      "required": [
+        "isRequired",
+        "kind"
+      ],
+      "properties": {
+        "isRequired": {
+          "type": "boolean"
+        },
+        "kind": {
+          "$ref": "#/definitions/LeafNodeKind"
+        }
+      }
+    },
+    "LeafNodeKind": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "raw"
+          ],
+          "properties": {
+            "raw": {
+              "$ref": "#/definitions/RawLeafNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "table"
+          ],
+          "properties": {
+            "table": {
+              "$ref": "#/definitions/TableLeafNode"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "LeafNodeKindV2": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "raw"
+          ],
+          "properties": {
+            "raw": {
+              "$ref": "#/definitions/RawLeafNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "table"
+          ],
+          "properties": {
+            "table": {
+              "$ref": "#/definitions/TableLeafNodeV2"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "LeafNodeV2": {
+      "type": "object",
+      "required": [
+        "isRequired",
+        "kind"
+      ],
+      "properties": {
+        "isRequired": {
+          "type": "boolean"
+        },
+        "kind": {
+          "$ref": "#/definitions/LeafNodeKindV2"
+        }
+      }
+    },
+    "ManagerPermission": {
+      "type": "object"
+    },
+    "MaskType": {
+      "type": "string",
+      "enum": [
+        "genericString",
+        "genericNumber",
+        "name",
+        "address",
+        "postcode",
+        "phoneNumber",
+        "socialSecurityNumber",
+        "email",
+        "date",
+        "timestamp",
+        "iban"
+      ]
+    },
+    "MatchingComputationNode": {
+      "type": "object",
+      "required": [
+        "config",
+        "dependencies",
+        "enableLogsOnError",
+        "enableLogsOnSuccess",
+        "output",
+        "specificationId",
+        "staticContentSpecificationId"
+      ],
+      "properties": {
+        "config": {
+          "type": "string"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "enableLogsOnError": {
+          "type": "boolean"
+        },
+        "enableLogsOnSuccess": {
+          "type": "boolean"
+        },
+        "output": {
+          "type": "string"
+        },
+        "specificationId": {
+          "type": "string"
+        },
+        "staticContentSpecificationId": {
+          "type": "string"
+        }
+      }
+    },
+    "Node": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/NodeKind"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "NodeKind": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "leaf"
+          ],
+          "properties": {
+            "leaf": {
+              "$ref": "#/definitions/LeafNode"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "computation"
+          ],
+          "properties": {
+            "computation": {
+              "$ref": "#/definitions/ComputationNode"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "NodeKindV2": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "leaf"
+          ],
+          "properties": {
+            "leaf": {
+              "$ref": "#/definitions/LeafNodeV2"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "computation"
+          ],
+          "properties": {
+            "computation": {
+              "$ref": "#/definitions/ComputationNodeV2"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "NodeV2": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/definitions/NodeKindV2"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "NumRowsValidationRule": {
+      "type": "object",
+      "properties": {
+        "atLeast": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "atMost": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint64",
+          "minimum": 0.0
+        }
+      }
+    },
+    "NumericRangeRule": {
+      "type": "object",
+      "properties": {
+        "greaterThan": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "greaterThanEquals": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "lessThan": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        },
+        "lessThanEquals": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "double"
+        }
+      }
+    },
+    "Participant": {
+      "type": "object",
+      "required": [
+        "permissions",
+        "user"
+      ],
+      "properties": {
+        "permissions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ParticipantPermission"
+          }
+        },
+        "user": {
+          "type": "string"
+        }
+      }
+    },
+    "ParticipantPermission": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": [
+            "dataOwner"
+          ],
+          "properties": {
+            "dataOwner": {
+              "$ref": "#/definitions/DataOwnerPermission"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "analyst"
+          ],
+          "properties": {
+            "analyst": {
+              "$ref": "#/definitions/AnalystPermission"
+            }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": [
+            "manager"
+          ],
+          "properties": {
+            "manager": {
+              "$ref": "#/definitions/ManagerPermission"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "PostComputationNode": {
+      "type": "object",
+      "required": [
+        "dependency",
+        "specificationId",
+        "useMockBackend"
+      ],
+      "properties": {
+        "dependency": {
+          "type": "string"
+        },
+        "specificationId": {
+          "type": "string"
+        },
+        "useMockBackend": {
+          "type": "boolean"
+        }
+      }
+    },
+    "RawLeafNode": {
+      "type": "object"
+    },
+    "S3Provider": {
+      "type": "string",
+      "enum": [
+        "Aws",
+        "Gcs"
+      ]
+    },
+    "S3SinkComputationNode": {
+      "type": "object",
+      "required": [
+        "credentialsDependencyId",
+        "endpoint",
+        "specificationId",
+        "uploadDependencyId"
+      ],
+      "properties": {
+        "credentialsDependencyId": {
+          "type": "string"
+        },
+        "endpoint": {
+          "type": "string"
+        },
+        "region": {
+          "default": "",
+          "type": "string"
+        },
+        "s3Provider": {
+          "default": "Aws",
+          "allOf": [
+            {
+              "$ref": "#/definitions/S3Provider"
+            }
+          ]
+        },
+        "specificationId": {
+          "type": "string"
+        },
+        "uploadDependencyId": {
+          "type": "string"
+        }
+      }
+    },
+    "Script": {
+      "type": "object",
+      "required": [
+        "content",
+        "name"
+      ],
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "ScriptingComputationNode": {
+      "type": "object",
+      "required": [
+        "additionalScripts",
+        "dependencies",
+        "enableLogsOnError",
+        "enableLogsOnSuccess",
+        "mainScript",
+        "output",
+        "scriptingLanguage",
+        "scriptingSpecificationId",
+        "staticContentSpecificationId"
+      ],
+      "properties": {
+        "additionalScripts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Script"
+          }
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "enableLogsOnError": {
+          "type": "boolean"
+        },
+        "enableLogsOnSuccess": {
+          "type": "boolean"
+        },
+        "extraChunkCacheSizeToAvailableMemoryRatio": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "format": "float"
+        },
+        "mainScript": {
+          "$ref": "#/definitions/Script"
+        },
+        "minimumContainerMemorySize": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "format": "uint64",
+          "minimum": 0.0
+        },
+        "output": {
+          "type": "string"
+        },
+        "scriptingLanguage": {
+          "$ref": "#/definitions/ScriptingLanguage"
+        },
+        "scriptingSpecificationId": {
+          "type": "string"
+        },
+        "staticContentSpecificationId": {
+          "type": "string"
+        }
+      }
+    },
+    "ScriptingLanguage": {
+      "type": "string",
+      "enum": [
+        "python",
+        "r"
+      ]
+    },
+    "SqlComputationNode": {
+      "type": "object",
+      "required": [
+        "dependencies",
+        "specificationId",
+        "statement"
+      ],
+      "properties": {
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TableMapping"
+          }
+        },
+        "privacyFilter": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/SqlNodePrivacyFilter"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "specificationId": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        }
+      }
+    },
+    "SqlNodePrivacyFilter": {
+      "type": "object",
+      "required": [
+        "minimumRowsCount"
+      ],
+      "properties": {
+        "minimumRowsCount": {
+          "type": "integer",
+          "format": "int64"
+        }
+      }
+    },
+    "SqliteComputationNode": {
+      "type": "object",
+      "required": [
+        "dependencies",
+        "enableLogsOnError",
+        "enableLogsOnSuccess",
+        "sqliteSpecificationId",
+        "statement",
+        "staticContentSpecificationId"
+      ],
+      "properties": {
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TableMapping"
+          }
+        },
+        "enableLogsOnError": {
+          "type": "boolean"
+        },
+        "enableLogsOnSuccess": {
+          "type": "boolean"
+        },
+        "sqliteSpecificationId": {
+          "type": "string"
+        },
+        "statement": {
+          "type": "string"
+        },
+        "staticContentSpecificationId": {
+          "type": "string"
+        }
+      }
+    },
+    "SyntheticDataComputationNode": {
+      "type": "object",
+      "required": [
+        "columns",
+        "dependency",
+        "enableLogsOnError",
+        "enableLogsOnSuccess",
+        "epsilon",
+        "outputOriginalDataStatistics",
+        "staticContentSpecificationId",
+        "synthSpecificationId"
+      ],
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SyntheticNodeColumn"
+          }
+        },
+        "dependency": {
+          "type": "string"
+        },
+        "enableLogsOnError": {
+          "type": "boolean"
+        },
+        "enableLogsOnSuccess": {
+          "type": "boolean"
+        },
+        "epsilon": {
+          "type": "number",
+          "format": "float"
+        },
+        "outputOriginalDataStatistics": {
+          "type": "boolean"
+        },
+        "staticContentSpecificationId": {
+          "type": "string"
+        },
+        "synthSpecificationId": {
+          "type": "string"
+        }
+      }
+    },
+    "SyntheticNodeColumn": {
+      "type": "object",
+      "required": [
+        "dataFormat",
+        "index",
+        "maskType",
+        "shouldMaskColumn"
+      ],
+      "properties": {
+        "dataFormat": {
+          "$ref": "#/definitions/ColumnDataFormat"
+        },
+        "index": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "maskType": {
+          "$ref": "#/definitions/MaskType"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shouldMaskColumn": {
+          "type": "boolean"
+        }
+      }
+    },
+    "TableLeafNode": {
+      "type": "object",
+      "required": [
+        "columns",
+        "sqlSpecificationId"
+      ],
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TableLeafNodeColumn"
+          }
+        },
+        "sqlSpecificationId": {
+          "type": "string"
+        }
+      }
+    },
+    "TableLeafNodeColumn": {
+      "type": "object",
+      "required": [
+        "dataFormat",
+        "name"
+      ],
+      "properties": {
+        "dataFormat": {
+          "$ref": "#/definitions/ColumnDataFormat"
+        },
+        "name": {
+          "type": "string"
+        }
+      }
+    },
+    "TableLeafNodeColumnV2": {
+      "type": "object",
+      "required": [
+        "dataFormat",
+        "name",
+        "validation"
+      ],
+      "properties": {
+        "dataFormat": {
+          "$ref": "#/definitions/ColumnDataFormat"
+        },
+        "name": {
+          "type": "string"
+        },
+        "validation": {
+          "$ref": "#/definitions/ColumnValidationV0"
+        }
+      }
+    },
+    "TableLeafNodeV2": {
+      "type": "object",
+      "required": [
+        "columns",
+        "validationNode"
+      ],
+      "properties": {
+        "columns": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TableLeafNodeColumnV2"
+          }
+        },
+        "validationNode": {
+          "$ref": "#/definitions/ValidationNodeV2"
+        }
+      }
+    },
+    "TableMapping": {
+      "type": "object",
+      "required": [
+        "nodeId",
+        "tableName"
+      ],
+      "properties": {
+        "nodeId": {
+          "type": "string"
+        },
+        "tableName": {
+          "type": "string"
+        }
+      }
+    },
+    "TableValidationV0": {
+      "type": "object",
+      "properties": {
+        "allowEmpty": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "numRows": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/NumRowsValidationRule"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "uniqueness": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/UniquenessValidationRule"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "UniquenessValidationRule": {
+      "type": "object",
+      "required": [
+        "uniqueKeys"
+      ],
+      "properties": {
+        "uniqueKeys": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ColumnTuple"
+          }
+        }
+      }
+    },
+    "ValidationNodeV2": {
+      "type": "object",
+      "required": [
+        "pythonSpecificationId",
+        "staticContentSpecificationId",
+        "validation"
+      ],
+      "properties": {
+        "pythonSpecificationId": {
+          "type": "string"
+        },
+        "staticContentSpecificationId": {
+          "type": "string"
+        },
+        "validation": {
+          "$ref": "#/definitions/TableValidationV0"
+        }
+      }
+    }
+  }
+}

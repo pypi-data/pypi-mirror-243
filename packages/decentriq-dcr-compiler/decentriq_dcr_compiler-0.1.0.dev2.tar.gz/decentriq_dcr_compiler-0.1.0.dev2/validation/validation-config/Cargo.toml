@@ -1,0 +1,13 @@
+[package]
+name = "validation_config"
+description = "Validation settings that are stored on the HL DCR and are understood by the validator"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+format_types = { path = "../format-types" }
+serde = { version = "1.0.138", features = ["derive"] }
+serde_json = "1.0.82"
+schemars = "0.8.10"

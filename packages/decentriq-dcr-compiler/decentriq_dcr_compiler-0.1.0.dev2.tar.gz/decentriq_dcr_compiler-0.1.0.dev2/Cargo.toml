@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = ["delta-attestation-api", "delta-container-worker-api", "delta-data-room-api", "delta-extension-metering-api", "delta-gcg-driver-api", "delta-identity-endorsement-api", "delta-post-worker-api", "delta-s3-sink-worker-api", "delta-sql-worker-api", "delta-synth-data-worker-api", "dcr-compiler/decentriq_dcr_compiler"]
+
+[profile.release.package.chily-js]
+opt-level = "s"
+
+[profile.release]
+opt-level = 3
+lto = "thin"

@@ -1,0 +1,16 @@
+[package]
+name = "delta-extension-metering-api"
+version = "0.1.0"
+authors = ["boschetto <stefano.boschetto@decentriq.com>"]
+edition = "2018"
+
+build = "build.rs"
+
+[dependencies]
+prost = "0.11.9"
+delta-attestation-api = { path = "../delta-attestation-api" }
+delta-data-room-api = { path = "../delta-data-room-api" }
+
+[build-dependencies]
+prost-build = "0.11.9"
+

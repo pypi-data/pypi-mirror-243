@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "RequirementList",
+  "type": "object",
+  "required": [
+    "optional",
+    "required"
+  ],
+  "properties": {
+    "optional": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

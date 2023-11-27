@@ -1,0 +1,19 @@
+[package]
+name = "decentriq_dcr_compiler"
+version = "0.1.0-dev2"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "decentriq_dcr_compiler"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = "0.20.0"
+ddc = { path = "../ddc" }
+serde_json = "1.0.96"
+
+[build-dependencies]
+ddc = { path = "../ddc" }
+schemars = "0.8.10"
+serde_json = "1.0.96"
