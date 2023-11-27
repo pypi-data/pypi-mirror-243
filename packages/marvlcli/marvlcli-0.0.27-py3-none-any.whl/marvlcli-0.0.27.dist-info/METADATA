@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: marvlcli
+Version: 0.0.27
+Summary: UNKNOWN
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: click
+Requires-Dist: python-cinderclient
+Requires-Dist: python-neutronclient
+Requires-Dist: python-novaclient
+Requires-Dist: python-openstackclient
+Requires-Dist: pyyaml
+Requires-Dist: ws4py
+
+UNKNOWN
+
