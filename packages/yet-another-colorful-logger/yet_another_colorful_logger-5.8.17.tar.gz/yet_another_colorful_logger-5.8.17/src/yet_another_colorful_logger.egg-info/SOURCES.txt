@@ -1,0 +1,12 @@
+.version
+LICENSE
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+src/yet_another_colorful_logger.egg-info/PKG-INFO
+src/yet_another_colorful_logger.egg-info/SOURCES.txt
+src/yet_another_colorful_logger.egg-info/dependency_links.txt
+src/yet_another_colorful_logger.egg-info/requires.txt
+src/yet_another_colorful_logger.egg-info/top_level.txt
+tests/test_yetanothercolorfullogger.py
