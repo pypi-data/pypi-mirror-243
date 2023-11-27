@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "mordormail"
+version = "0.1.3"
+description = "A utility class to easily send templated emails from within python scripts."
+authors = [
+    "Tim Hudelmaier",
+    "Kavi Seewoogoolam",
+]
+readme = "README.md"
+repository = "https://github.com/computational-ms/mordormail"
+
+[tool.poetry.dependencies]
+python = ">=3.8"
+jinja2 = "^3.1.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+tox = "^4.11.3"
+pytest-mock = "^3.12.0"
+black = "^23.10.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
