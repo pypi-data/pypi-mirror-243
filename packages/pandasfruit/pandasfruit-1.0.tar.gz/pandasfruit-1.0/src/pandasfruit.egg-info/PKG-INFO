@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: pandasfruit
+Version: 1.0
+Summary: Takes a pandas dataframe and returns more-narrow narrow markdown string suitable for printing in a Jupyter notebook.
+Author-email: bol001 <info@bollingensoftware.com>
+Project-URL: Homepage, https://github.com/bol001/pandasfruit
+Project-URL: Issues, https://github.com/bol001/pandasfruit/issues
+Keywords: pandas,jupyter,fit,dataframe,pdf
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas>1.2.5
+Requires-Dist: tabulate
+
+# pandasfruit
+
+Takes in a pandas dataframe and returns a string containing markdown format where the width of the markdown text is more narrow and is suitable for printing. A more narrow table can fit on a printed page, such as a PDF generated from a Jupyter notebook.
+
+Takes in an optional width parameter (number of characters) and will make the resulting markdown this wide. Else will use a default width of 115.
+
+Also will use a default dictionary of words/abbreviations to shorten column names using the abbreviations instead of the original words. Alternatively, a  user-defined dictionary may be passed in.
+
+See project documentation for more details.
