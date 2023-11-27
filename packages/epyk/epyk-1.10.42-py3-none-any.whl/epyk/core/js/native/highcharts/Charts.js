@@ -1,0 +1,1 @@
+function charts(b,a){a.series=b;return a;}
