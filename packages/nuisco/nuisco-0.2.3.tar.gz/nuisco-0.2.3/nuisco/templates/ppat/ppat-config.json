@@ -1,0 +1,25 @@
+{
+    "files": ["src/__init__.py", "src/main.py", 
+			  "src/modules/classes.py", "src/modules/gui.py", "src/modules/link.py", "src/modules/modulebase.py", 
+			  "src/data/Create_your_own.txt", "src/data/logo-1.ico", "src/data/logo-1.png", "src/data/logo-2.ico", "src/data/logo-2.png", "src/data/logo-3.ico", "src/data/logo-3.png", "src/data/logo-4.ico", "src/data/logo-4.png", "src/data/logo-5.ico", "src/data/logo-5.png", "src/data/logo-6.ico", "src/data/logo-6.png", "src/data/logo-raw.ico", "src/data/logo-raw.png", 
+			  "docs/classes.md", "docs/gui.md", "docs/link.md", "docs/main.md", 
+			  "tests/__init__.py", "tests/test_main.py", 
+			  "venv/TBA", 
+			  ".env", ".flake8", "Makefile", "pylint.rc"
+			  ],
+    "os_specific": {
+        "Windows": ["build.bat", "create_dist.bat", "install_dist.bat", "install.bat", "run.bat", "inno_setup_script.iss"],
+        "Linux": ["build.sh", "create_dist.sh", "install_dist.sh", "install.sh", "run.sh", "scripts.sh"]
+    },
+	"github_files": [".gitignore", "CONTRIBUTING.md", "README.md", "/.git/description", ".github/workflows/ci.yml"],
+    "dependencies": {
+        "requirements_files": ["dev-requirements.txt"],
+        "direct_dependencies": [],
+		"force_install_direct_dependencies": false
+    },
+    "placeholders": {
+        "project_name": "{{project_name}}",
+        "pyversion": "{{pyversion}}",
+		"welcome_message": "{{exec:'Welcome to ' + project_name}}"
+    }
+}
