@@ -1,0 +1,208 @@
+Metadata-Version: 2.1
+Name: aptos-verify
+Version: 1.0.4
+Summary: A small example package
+Home-page: https://github.com/aptscan-ai/aptos-verify
+Author: Phong Pham
+Requires-Python: >=3.8.1,<4.0.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: annotated-types (==0.6.0)
+Requires-Dist: anyio (>=3.7.1,<4.0.0)
+Requires-Dist: aptos-sdk (==0.7.1)
+Requires-Dist: autopep8 (==2.0.4)
+Requires-Dist: build (==1.0.3)
+Requires-Dist: cachecontrol (==0.13.1)
+Requires-Dist: certifi (==2023.7.22)
+Requires-Dist: cffi (==1.16.0)
+Requires-Dist: charset-normalizer (==3.3.2)
+Requires-Dist: cleo (==2.1.0)
+Requires-Dist: crashtest (==0.4.1)
+Requires-Dist: distlib (==0.3.7)
+Requires-Dist: dulwich (==0.21.6)
+Requires-Dist: fastapi (>=0.104.1,<0.105.0)
+Requires-Dist: fastjsonschema (==2.18.1)
+Requires-Dist: filelock (==3.13.1)
+Requires-Dist: h11 (==0.14.0)
+Requires-Dist: h2 (==4.1.0)
+Requires-Dist: hpack (==4.0.0)
+Requires-Dist: httpcore (==0.17.3)
+Requires-Dist: httpx (==0.24.1)
+Requires-Dist: hyperframe (==6.0.1)
+Requires-Dist: idna (==3.4)
+Requires-Dist: importlib-metadata (==6.8.0)
+Requires-Dist: installer (==0.7.0)
+Requires-Dist: jaraco-classes (==3.3.0)
+Requires-Dist: keyring (==24.2.0)
+Requires-Dist: more-itertools (==10.1.0)
+Requires-Dist: msgpack (==1.0.7)
+Requires-Dist: packaging (==23.2)
+Requires-Dist: pexpect (==4.8.0)
+Requires-Dist: pkginfo (==1.9.6)
+Requires-Dist: platformdirs (==3.11.0)
+Requires-Dist: poetry (==1.7.0)
+Requires-Dist: poetry-core (==1.8.1)
+Requires-Dist: poetry-plugin-export (==1.6.0)
+Requires-Dist: ptyprocess (==0.7.0)
+Requires-Dist: pycodestyle (==2.11.1)
+Requires-Dist: pycparser (==2.21)
+Requires-Dist: pydantic (==2.4.2)
+Requires-Dist: pydantic-core (==2.10.1)
+Requires-Dist: pynacl (==1.5.0)
+Requires-Dist: pyproject-hooks (==1.0.0)
+Requires-Dist: pytest (>=7.4.3,<8.0.0)
+Requires-Dist: pytest-asyncio (>=0.21.1,<0.22.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: rapidfuzz (==3.5.2)
+Requires-Dist: requests (==2.31.0)
+Requires-Dist: requests-toolbelt (==1.0.0)
+Requires-Dist: shellingham (==1.5.4)
+Requires-Dist: sniffio (==1.3.0)
+Requires-Dist: tomli (>=2.0.1,<3.0.0)
+Requires-Dist: tomli-w (>=1.0.0,<2.0.0)
+Requires-Dist: tomlkit (==0.12.2)
+Requires-Dist: trove-classifiers (==2023.10.18)
+Requires-Dist: typing-extensions (==4.8.0)
+Requires-Dist: urllib3 (==2.0.7)
+Requires-Dist: uvicorn (>=0.24.0.post1,<0.25.0)
+Requires-Dist: virtualenv (==20.24.6)
+Requires-Dist: xattr (==0.10.1)
+Requires-Dist: zipp (==3.17.0)
+Project-URL: Repository, https://github.com/aptscan-ai/aptos-verify
+Description-Content-Type: text/markdown
+
+# Aptos Verify
+
+Aptos Verify is a Python library for verifying a module on Aptos Blockchain
+
+## Installation
+
+Before install package, you need to setup Rust, Cargo and Aptos Cli
+ 
+
+install Rust and Cargo: https://learning-rust.github.io/docs/installation/
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+install Aptos Cli: https://aptos.dev/tools/aptos-cli/install-cli/
+
+```bash
+curl -fsSL "https://aptos.dev/scripts/install_cli.py" | python3
+```
+
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install aptos_verify.
+
+```bash
+pip install aptos-verify
+```
+Run with docker by load image from folder docker
+```
+Option 1 Build docker: 
+docker build -t aptos-verify-dk . 
+
+Option 2 Load docker by image: 
+docker load -i aptos-verify-dk.tar   
+
+Start container: 
+docker run -d -p 9998:9998 aptos-verify-dk
+```
+## Usage
+
+Use with CLI
+``` cli
+Verify with source code that's published onchain
+aptos-verify -m 0x8d2d7bcde13b2513617df3f98cdd5d0e4b9f714c6308b9204fe18ad900d92609::admin
+
+Verify with source code on github
+aptos-verify -m 0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12::liquidity_pool -vm github -git https://github.com/pontem-network/liquidswap
+
+Verify with local path (source code path)
+aptos-verify -m 0x190d44266241744264b964a37b8f09863167a12d3e70cda39376cfb4e3561e12::liquidity_pool -vm local -path /<local_path>
+
+Result:
+**************** Rule: Compare bytecode between published bytecode and published source code onchain *****************
+                    Result: True
+                    Error Code: 0
+                    Message: Verify success
+                    Exception Class: 
+```
+Use with sdk
+```python
+from aptos_verify.main import start_verify
+from aptos_verify.schemas import VerifyParams
+import asyncio
+async def main():
+    print('Start verify module: 0x8d2d7bcde13b2513617df3f98cdd5d0e4b9f714c6308b9204fe18ad900d92609::admin')
+    rs = await start_verify(
+        VerifyArgs(
+            module_id='0x8d2d7bcde13b2513617df3f98cdd5d0e4b9f714c6308b9204fe18ad900d92609::admin',
+        )
+    )
+    print('Result:')
+    print(rs)
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+Use with docker and API
+```api
+http://localhost:9998/verify/<module_address>
+
+Example: 
+http://localhost:9998/verify/0x8d2d7bcde13b2513617df3f98cdd5d0e4b9f714c6308b9204fe18ad900d92609::admin
+
+Result:
+{"message":"success","data":[{"title":"Compare bytecode between published bytecode and published source code onchain","message":"Verify success","is_skip":false,"error_code":0,"exeption_name":"","result":true,"traceback":"","error_message":""}]}
+```
+
+
+Run tests
+``` cli
+pytest -s
+```
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## Error Code
+List error codes  that returned from tool
+
+  <table>
+    <thead>
+      <tr>
+        <th>Error Code</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0</td>
+            <td>No Errors</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Package Not Found</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Module Not Found</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Module Has No Source Code</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Validation Error</td>
+        </tr>
+    </tbody>
+  </table>
+
