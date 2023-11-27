@@ -1,0 +1,16 @@
+__nitter__/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+__nitter__/nitter.py,sha256=PYVHlQrxDgDhIwQgpNvulsc6trDZjeLpML_BlYdzGhU,2004
+__nitter__/nitter_scraper.py,sha256=W-UNBZA630uwVocKu6vgdvW1wsdDt8tam7CpOmobiMo,10734
+__nitter__/nltk_init.py,sha256=J2bd9wp_tt41tr4ZGP3MvWIwJ-r2RF02bo_ZD7pxYhg,33
+__nitter__/sentiment_stuff.py,sha256=vxeNsvVAd59F4eFrA76Ti18WgodUCL4smMTL71TywEw,2359
+__nitter__/query/bank_queries.csv,sha256=to3AMCOhX0PFiYRgTZt1eCbXi-XQVIiluNv1kUGDK44,1576
+__nitter__/query/space.csv,sha256=wmDZBoA4-YMWUpUXpxEJ1hOR3N336dyTREt0m7sYhjQ,39
+__nitter__/sentiment_dictionaries/afinn.csv,sha256=4PxRlyZ8yeSqgdXBcVCcjJeDSs79IazB_e2TS7LBXwA,30588
+__nitter__/sentiment_dictionaries/bing.csv,sha256=6bF9XWgV0h5ZFAy_U6sw4WZD0RlgeQSLcwzScYaRADQ,88956
+__nitter__/sentiment_dictionaries/nrc.csv,sha256=Bal4aegi8kxtSmzx220DvXE8jeeSEy1QDAowoF9fQ0E,243535
+__nitter__/sentiment_dictionaries/nrc2.csv,sha256=KiaoMYkT1WmCggdLU3myb7-X0_e1SMMzJpwD8SNHsf0,185506
+nitter_miner-0.0.3.dist-info/METADATA,sha256=Aj8mZZxkFgnMeIyCkEX14N1UWu__Io634E4vVBg-cGg,18161
+nitter_miner-0.0.3.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+nitter_miner-0.0.3.dist-info/entry_points.txt,sha256=Fyz0uTDLZ-Z3M1QjMRJSHn1vhEDGCaRq9xyKDGTcMRE,49
+nitter_miner-0.0.3.dist-info/top_level.txt,sha256=6ne2U2lTHdoai-O2kyTKa1TNgnLvF1w6ngSL7q83PTg,11
+nitter_miner-0.0.3.dist-info/RECORD,,
