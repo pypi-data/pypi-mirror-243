@@ -1,0 +1,18 @@
+{% extends "sada/base.html" %}
+
+{% block content %}
+<h2>Price List</h2>
+<a href="{% url 'price_create' %}">New Price</a>
+<ul>
+    {% for price in price_list %}
+    <li>
+        <h3><a href="{% url 'price_detail' price.id %}">{{ price }}</a></h3>
+        <p>{{ price.description }}</p>
+        <a href="{% url 'price_edit' price.id %}">Edit</a> |
+        <a href="{% url 'price_delete' price.id %}">Delete</a>
+    </li>
+    {% empty %}
+    <li>No prices available.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
