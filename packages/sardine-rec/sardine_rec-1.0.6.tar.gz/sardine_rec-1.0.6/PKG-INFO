@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: sardine-rec
+Version: 1.0.6
+Summary: a Simulator for Automated Recommendation in Dynamic and INteractive Environments
+Home-page: https://github.com/naver/sardine
+License: MIT
+Author: Romain Deffayet
+Author-email: romain.deffayet@naverlabs.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: gymnasium (>=0.28)
+Project-URL: Repository, https://github.com/naver/sardine
+Description-Content-Type: text/markdown
+
+# 🐟 SARDINE: a Simulator for Automated Recommendation in Dynamic and INteractive Environments
+
+## Installation and usage
+
+1. Install requirements with [poetry](https://python-poetry.org/): `poetry install`
+2. Try the example script to get accustomed with the simulator: `poetry run python example.py`
+3. Environnements can be created using Gymansium and one of the following ids: 
+    - `sardine/SingleItem-Static-v0`
+    -  `sardine/SingleItem-BoredInf-v0`
+    - `sardine/SingleItem-Uncertain-v0`
+    - `sardine/SlateTopK-Bored-v0`
+    - `sardine/SlateTopK-BoredInf-v0`
+    - `sardine/SlateTopK-Uncertain-v0`
+    - `sardine/SlateRerank-Static-v0`
+    - `sardine/SlateRerank-Bored-v0`
+
+## Citing this project
+
+```bibtex
+@article{sardine-simulator,
+  author  = {Romain Deffayet and Thibaut Thonet and Dongyoon Hwang and Vassilissa Lehoux and Jean-Michel Renders and Maarten de Rijke},
+  title   = {SARDINE: A Simulator for Automated Recommendation in Dynamic and Interactive Environments},
+  year    = {2024},
+}
+```
+
+## License
+This project is licensed under the MIT license
+
+
+
