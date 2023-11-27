@@ -1,0 +1,4 @@
+PyYAML>=3.11
+jsonpickle>=0.9.3
+numpy>=1.19.5
+pytest>=6.2.4
