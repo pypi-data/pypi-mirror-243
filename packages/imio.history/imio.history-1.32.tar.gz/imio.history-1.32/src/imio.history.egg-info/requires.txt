@@ -1,0 +1,9 @@
+Plone
+setuptools
+plone.api<2.0.0
+imio.prettylink
+
+[test]
+plone.app.testing
+plone.app.robotframework
+ipdb
