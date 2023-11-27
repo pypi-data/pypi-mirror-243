@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: promobot-appeal-processing
+Version: 1.0.0
+Summary: Predicts the appeal topic, topic group and the executor to process the appeal based on its contents
+Project-URL: Documentation, https://digital-fracture.github.io/promobot-appeal-processing
+Project-URL: Issues, https://github.com/digital-fracture/promobot-appeal-processing/issues
+Project-URL: Source, https://github.com/digital-fracture/promobot-appeal-processing
+Author-email: KruASe76 <kruanse@ya.ru>
+License-Expression: MIT
+License-File: LICENSE
+Keywords: promo-bot,promobot
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: GPU :: NVIDIA CUDA
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Russian
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.9
+Requires-Dist: catboost
+Requires-Dist: gensim
+Requires-Dist: joblib
+Requires-Dist: nltk
+Requires-Dist: numpy
+Requires-Dist: pymystem3
+Requires-Dist: sentence-transformers
+Requires-Dist: spacy
+Description-Content-Type: text/markdown
+
+# Promobot Appeal Processing
+
+[![PyPI - Version](https://img.shields.io/pypi/v/promobot-appeal-processing?style=for-the-badge)](https://pypi.org/project/promobot-appeal-processing)
+[![Documentation](https://img.shields.io/badge/docs-4CAE4F?style=for-the-badge&logo=mdbook)](https://digital-fracture.github.io/promobot-appeal-processing)
+
+---
+
+**Documentation**: https://digital-fracture.github.io/promobot-appeal-processing  
+[**Google Colab notebook with training code**](https://colab.research.google.com/drive/1iP3wqZ6wPlP2ZgsNOMA1QbTXDYUDZh82?authuser=1#scrollTo=e9WMNc-PPMZZ)
+
+
+## Installation
+
+```console
+pip install promobot-appeal-processing
+```
+
+### Needed resource files
+Put [this](https://drive.google.com/drive/folders/1DCtSMZFLTbt6PpwNM5kBfao8FX2lOnjJ?usp=sharing) to the root directory
+of your project to let the package function properly
+
+
+## Uses
+- [catboost](https://pypi.org/project/catboost)
+- [spaCy](https://pypi.org/project/spacy) - NER
+
+
+## License
+
+`promobot-appeal-processing` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
