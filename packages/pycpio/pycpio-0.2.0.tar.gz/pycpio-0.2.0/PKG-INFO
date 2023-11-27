@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: pycpio
+Version: 0.2.0
+Summary: A Python library for reading and writing cpio archives.
+Author-email: Desultory <dev@pyl.onl>
+Project-URL: Homepage, https://github.com/desultory/pycpio
+Project-URL: Issues, https://github.com/desultory/pycpio/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pycpio
+
+A library for working with CPIO files using python
+
+In active development
