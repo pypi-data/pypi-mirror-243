@@ -1,0 +1,3 @@
+[console_scripts]
+esp-serial-find=esp_serial_find.cli:main
+
