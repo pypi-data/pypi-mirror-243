@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "manim-utils"
+version = "0.1.0"
+description = ""
+authors = ["MathItYT <benjamin.ubilla@uc.cl>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+manim = "^0.18.0"
+setuptools = ">=69.0.2"
+pandas = {version = ">=2.1.3", optional = true}
+matplotlib = {version = ">=3.8.2", optional = true}
+
+[tool.poetry.extras]
+data-science = ["pandas", "matplotlib"]
+
+[tool.poetry.plugins."manim.plugins"]
+"manim_utils" = "manim_utils"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
