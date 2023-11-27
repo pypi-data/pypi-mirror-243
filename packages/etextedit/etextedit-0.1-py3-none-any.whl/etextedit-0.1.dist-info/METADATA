@@ -1,0 +1,111 @@
+Metadata-Version: 2.1
+Name: etextedit
+Version: 0.1
+Summary: eTextEdit, a lightweight text editor built on prompt-toolkit
+Home-page: https://letmedoit.ai
+Author: Eliran Wong
+Author-email: support@letmedoit.ai
+License: GNU General Public License (GPL)
+Project-URL: Source, https://github.com/eliranwong/eTextEdit
+Project-URL: Tracker, https://github.com/eliranwong/eTextEdit/issues
+Project-URL: Documentation, https://github.com/eliranwong/eTextEdit/wiki
+Project-URL: Funding, https://www.paypal.me/MarvelBible
+Keywords: text editor prompt toolkit
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.7
+Requires-Dist: datetime
+Requires-Dist: prompt-toolkit
+Requires-Dist: pygments
+Requires-Dist: pyperclip
+
+# eTextEdit
+Extensible Text Editor; built with prompt toolkit
+
+Originally a simple text editor created by Jonathan Slenders
+Source: https://github.com/prompt-toolkit/python-prompt-toolkit/blob/master/examples/full-screen/text-editor.py
+
+Modified and Enhanced by Eliran Wong:
+* added file and clipboard utilities
+* added regex search & replace feature
+* added key bindings
+* added handling of unasaved changes
+* added dark theme and lexer style
+* support stdin, e.g. echo "Hello world!" | python3 eTextEdit.py
+* support file argument, e.g. python3 eTextEdit.py <filename>
+* support plugins (forthcoming)
+
+eTextEdit repository:
+https://github.com/eliranwong/eTextEdit
+
+# Screenshots
+
+![search_replace](https://github.com/eliranwong/eTextEdit/assets/25262722/c7a564ce-2e3c-4913-8210-52e259545044)
+
+![menu](https://github.com/eliranwong/eTextEdit/assets/25262722/7703f138-e56e-4c6f-84fc-4abe768f161a)
+
+# Usage
+
+To open eTextEdit:
+
+> python3 eTextEdit.py
+
+To open a text file, e.g. test.txt:
+
+> python3 eTextEdit.py test.txt
+
+To pipe in a text string, e.g. "Hello World!":
+
+> echo "Hello World!" | python3 eTextEdit.py
+
+To append a file, e.g. test.txt, with a text string, e.g. "Hello World!":
+
+> echo "Hello World!" | python3 eTextEdit.py test.txt
+
+# Key Bindings
+
+escape + m: toggle menu
+
+control + k: help
+
+control + q: quit
+
+control + a: select all
+
+escape + a: deselect all
+
+control + c: copy
+
+control + v: paste
+
+control + x: cut
+
+control + z: undo
+
+control + i: insert spaces
+
+control + f: find
+
+escape + f: clear i-search highlights
+
+control + r: find & replace
+
+control + l: go to line
+
+control + d: delete
+
+control + n: new file
+
+control + o: open file
+
+control + s: save file
+
+control + w: save as file
