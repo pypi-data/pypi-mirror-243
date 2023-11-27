@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+aio_easy_rabbit/__init__.py
+aio_easy_rabbit/connection.py
+aio_easy_rabbit/consumer_registry.py
+aio_easy_rabbit/decorators.py
+aio_easy_rabbit/producers.py
+aio_easy_rabbit.egg-info/PKG-INFO
+aio_easy_rabbit.egg-info/SOURCES.txt
+aio_easy_rabbit.egg-info/dependency_links.txt
+aio_easy_rabbit.egg-info/top_level.txt
