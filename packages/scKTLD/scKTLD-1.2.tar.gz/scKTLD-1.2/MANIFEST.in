@@ -1,0 +1,10 @@
+include requirements.txt
+include src/scKTLD/cpd_utils/utils/_utils/convert_path_matrix.pxd
+include src/scKTLD/cpd_utils/utils/_utils/convert_path_matrix.pyx
+include src/scKTLD/cpd_utils/utils/_utils/convert_path_matrix_c.h
+include src/scKTLD/cpd_utils/_detection/ekcpd.pxd
+include src/scKTLD/cpd_utils/_detection/ekcpd.pyx
+include src/scKTLD/cpd_utils/_detection/ekcpd_computation.h
+include src/scKTLD/cpd_utils/_detection/ekcpd_pelt_computation.h
+include src/scKTLD/cpd_utils/_detection/kernels.h
+prune scripts

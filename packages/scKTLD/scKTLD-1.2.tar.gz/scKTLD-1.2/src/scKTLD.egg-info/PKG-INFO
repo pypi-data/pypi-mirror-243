@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: scKTLD
+Version: 1.2
+Summary: Identification of TAD-like domains on single-cell Hi-C data by graph embedding and changepoint detection
+Home-page: UNKNOWN
+Author: double-anonymous
+Author-email: liuerhu@stu.xjtu.edu.cn
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE
+
+Identification of TAD-like domains on single-cell Hi-C data by graph embedding and changepoint detection
+
