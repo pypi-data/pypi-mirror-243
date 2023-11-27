@@ -1,0 +1,10 @@
+{
+  "console": false,
+  "wait_with_hook": {
+    "secs": 0,
+    "nanos": 250000000
+  },
+  "reload_config_keys": [],
+  "startup_state": null,
+  "speed_states": []
+}
