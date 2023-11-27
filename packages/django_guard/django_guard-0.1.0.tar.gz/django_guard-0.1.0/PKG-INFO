@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: django_guard
+Version: 0.1.0
+Summary: 
+Author: svtter
+Author-email: svtter@163.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: django (<4.0)
+Requires-Dist: psutil (>=5.9.6,<6.0.0)
