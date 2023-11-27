@@ -1,0 +1,17 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+qtregpy/__init__.py
+qtregpy/compute.py
+qtregpy/cvxpy_socket.py
+qtregpy/gtreg_utils.py
+qtregpy/ingestion.py
+qtregpy.egg-info/PKG-INFO
+qtregpy.egg-info/SOURCES.txt
+qtregpy.egg-info/dependency_links.txt
+qtregpy.egg-info/top_level.txt
+tests/test_compute.py
+tests/test_cvxpy_socket.py
+tests/test_gtreg_utils.py
+tests/test_ingestion.py
