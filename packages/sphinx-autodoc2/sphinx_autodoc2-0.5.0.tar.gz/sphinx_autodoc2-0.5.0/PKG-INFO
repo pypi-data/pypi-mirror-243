@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: sphinx-autodoc2
+Version: 0.5.0
+Summary: Analyse a python project and create documentation for it.
+Keywords: sphinx,autodoc,extension,documentation
+Author-email: Chris Sewell <chrisj_sewell@hotmail.com>
+Requires-Python: >=3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Sphinx :: Extension
+Requires-Dist: astroid>=2.7,<4
+Requires-Dist: tomli; python_version<'3.11'
+Requires-Dist: typing-extensions
+Requires-Dist: typer[all] ; extra == "cli"
+Requires-Dist: sphinx>=4.0.0 ; extra == "docs"
+Requires-Dist: furo ; extra == "docs"
+Requires-Dist: myst-parser ; extra == "docs"
+Requires-Dist: sphinx>=4.0.0 ; extra == "sphinx"
+Requires-Dist: pytest ; extra == "testing"
+Requires-Dist: pytest-regressions ; extra == "testing"
+Requires-Dist: pytest-cov ; extra == "testing"
+Requires-Dist: sphinx>=4.0.0,<7 ; extra == "testing"
+Project-URL: Home, https://github.com/chrisjsewell/sphinx-autodoc2
+Provides-Extra: cli
+Provides-Extra: docs
+Provides-Extra: sphinx
+Provides-Extra: testing
