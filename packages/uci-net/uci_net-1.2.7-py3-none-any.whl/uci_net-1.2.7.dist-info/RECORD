@@ -1,0 +1,13 @@
+uci_net/__init__.py,sha256=apnzqLhziaV_jL9TrZQIfk3Wh7JO5VYldgeBY3ewe0I,120
+uci_net/engine.py,sha256=2sOMh5gYIE7cYn-lzqbCx0g3rEsGqmw9fDACXxQsktg,28536
+uci_net/tcp_client.py,sha256=ETb64DJt22A0MrxV33sGiiLJJSJ8R1lrF_Ghb2qKhLA,7629
+uci_net/tcp_server.py,sha256=1lZ195ij5MKTGSp35XIMEx-0PDNHk94Ejf9rqDZa8Z0,9690
+uci_net/tcp_server_on_wine.py,sha256=Pz2x7cUcwPrvCZ4Cp-jeTxvLMnqf_9hgn0KmEWx0zW4,10357
+uci_net/uci_driver.py,sha256=u3HkV75gNOQc91XroDuWHGwCa24YDT_mowOI9ft-BTM,7471
+uci_net/uci_driver_over_tcp.py,sha256=S3vGTUtdh3tuvDHwNEjbs5WyPJt5VQH4eZZpZ1xYmig,1339
+uci_net/samples/driver.py,sha256=mFD1m2kEOLWKJC8InCCrHgpf1-s8RxLFQUrZf-hUU9I,12268
+uci_net-1.2.7.dist-info/LICENCE,sha256=foHOVrafcetyPJFY3xLsBbHa5RuC7L-I_bgimMFe7Lg,1494
+uci_net-1.2.7.dist-info/METADATA,sha256=nUcTEJ_AtOXM8ucSsPzL8myk_Rz4w8so9oS_AvwULQQ,4348
+uci_net-1.2.7.dist-info/WHEEL,sha256=tIy8_2ZxPExwRKcXlg4jzESby3jB9aLsFLrFCKKh88M,92
+uci_net-1.2.7.dist-info/top_level.txt,sha256=H_rJm9Tc35ZaJXXdk0iABpQr-8UWYFh8Az_3LWrFnj4,8
+uci_net-1.2.7.dist-info/RECORD,,
