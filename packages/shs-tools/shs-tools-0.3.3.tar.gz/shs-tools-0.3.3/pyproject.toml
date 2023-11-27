@@ -1,0 +1,29 @@
+[build-system]
+requires = ['setuptools', "wheel", "setuptools-git-versioning"]
+build-backend = 'setuptools.build_meta'
+
+[tool.setuptools-git-versioning]
+enabled = true
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project]
+dynamic = ['version', 'dependencies']
+name = "shs-tools"
+authors = [
+    { name="Stefan Harmuth", email="pennywise@drock.de" },
+]
+description = "An assortment of little helper functions"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"homepage" = "https://git.domainforge.de/public/py-tools"
+"Bug Tracker" = "https://git.domainforge.de/public/py-tools/issues"
