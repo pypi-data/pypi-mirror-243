@@ -1,0 +1,13 @@
+compare_datasets/__init__.py,sha256=QbWkou83u22UsMkgZJcOVgFlb_ApT1XzOYa5tDTyFsU,3376
+compare_datasets/analyse_deviations.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+compare_datasets/datetime_comparison.py,sha256=sJvKUWeasp_km_CLupYg2eKE_hS6hMeybenCNJ4aZqQ,5948
+compare_datasets/numeric_comparisons.py,sha256=FagLrXxUPJtv-yFgs69MBfRnYqN_g23YkFItxnwlhTo,6603
+compare_datasets/prepare.py,sha256=XHPGkPVfHdoEpsoQSasxdpPeJ14oF9gg9U0GYv_R8Dg,15282
+compare_datasets/string_comparisons.py,sha256=yns5cZZMSdWq6Z3WB2gTSgRGtp99h19psO7vuX7b5A8,5493
+compare_datasets/structure.py,sha256=tGU1MzSH574DJZcRBnIp6bpDWzORp0YxquOlsi01ruU,4754
+compare_datasets/tests/archive.py,sha256=AQG8dzexf_X7IDIp7pjsThizZfr2oweubsx5pUpzBS4,327
+compare_datasets/tests/cases.md,sha256=5Atpm9QGNSV419ZThU8OE739PbbVJGdaSEkgqVHkJMk,72
+compare_datasets-0.1.2.dist-info/LICENSE.txt,sha256=ETtk-CDczQpxBORbMZ4De1ukeR4uDomjGNG8kXWvEI4,1092
+compare_datasets-0.1.2.dist-info/METADATA,sha256=rbGiBnxdTK0Kz-hPYKdnbEStgJaIuaDkD1ON7KB69BQ,4568
+compare_datasets-0.1.2.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+compare_datasets-0.1.2.dist-info/RECORD,,
