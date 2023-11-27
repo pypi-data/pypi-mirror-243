@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: readdbc
+Version: 0.1.0
+Summary: Ler arquivos .dbc do datasus
+License: MIT
+Author: Edson (edinho)
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: cffi (>=1.16.0,<2.0.0)
+Requires-Dist: setuptools (>=56)
+Description-Content-Type: text/markdown
+
+# readdbc
+Um pacote python para ler dados no formato DBC (DBF comprimido) usado pelo DATASUS.  
+
+
+# Inspiração
+[read.dbc](https://github.com/danicat/read.dbc)  
+An R package for reading data in the DBC (compressed DBF) format used by DATASUS.
+
