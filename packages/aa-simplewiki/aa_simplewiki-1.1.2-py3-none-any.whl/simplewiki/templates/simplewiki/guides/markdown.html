@@ -1,0 +1,83 @@
+{% extends 'simplewiki/base.html' %}
+{% load i18n %}
+{% load humanize %}
+{% load static %}
+
+{% block details %}
+<h1 class="page-header text-center">Markdown Guide</h1>
+<div class="alert alert-info" role="alert">
+    You are viewing the built-in markdown guide, as this plugin support more than the usual markdown syntax. Our markdown renderer fully supports GitHub's markdown syntax and more.
+</div>
+
+<div>
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#heading" aria-controls="heading" role="tab" data-toggle="tab">
+            Headings
+        </a></li>
+        <li role="presentation"><a href="#text" aria-controls="text" role="tab" data-toggle="tab">
+            Texts
+        </a></li>
+        <li role="presentation"><a href="#list" aria-controls="list" role="tab" data-toggle="tab">
+            Lists
+        </a></li>
+        <li role="presentation"><a href="#block" aria-controls="block" role="tab" data-toggle="tab">
+            Blocks
+        </a></li>
+        <li role="presentation"><a href="#image" aria-controls="image" role="tab" data-toggle="tab">
+            Images
+        </a></li>
+        <li role="presentation"><a href="#video" aria-controls="video" role="tab" data-toggle="tab">
+            Videos
+        </a></li>
+        <li role="presentation"><a href="#table" aria-controls="table" role="tab" data-toggle="tab">
+            Tables
+        </a></li>
+        <li role="presentation"><a href="#alert" aria-controls="alert" role="tab" data-toggle="tab">
+            Alerts
+        </a></li>
+        <li role="presentation"><a href="#gdrive" aria-controls="gdrive" role="tab" data-toggle="tab">
+            Google Drive
+        </a></li>
+    </ul>
+  
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="heading">
+            {% include 'simplewiki/guides/partials/_markdown_heading.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="text">
+            {% include 'simplewiki/guides/partials/_markdown_text.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="list">
+            {% include 'simplewiki/guides/partials/_markdown_list.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="block">
+            {% include 'simplewiki/guides/partials/_markdown_block.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="image">
+            {% include 'simplewiki/guides/partials/_markdown_image.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="video">
+            {% include 'simplewiki/guides/partials/_markdown_video.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="table">
+            {% include 'simplewiki/guides/partials/_markdown_table.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="alert">
+            {% include 'simplewiki/guides/partials/_markdown_alert.html' %}
+        </div>
+        <div role="tabpanel" class="tab-pane" id="gdrive">
+            {% include 'simplewiki/guides/partials/_markdown_gdrive.html' %}
+        </div>
+    </div>
+  
+</div>
+{% endblock %}
+
+{% block extra_javascript %}
+{% endblock %}
+
+{% block extra_script %}
+{% endblock %}
