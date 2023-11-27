@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: func3lib
+Version: 0.0.9
+Summary: Three functions func3lib: 'transpose2d', 'window1d' and 'convolution2d'.
+License: MIT
+Author: LinasTamk
+Author-email: linastamk@gmail.com
+Requires-Python: >=3.10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: numpy (>=1.26.2,<2.0.0)
+Description-Content-Type: text/markdown
+
+# func3lt package
+
+	A package contains 3 functions:
+		transpose2d
+			"The function `transpose2d` takes a 2D matrix as input and returns its transpose."
+
+		window1d
+			" The function `window1d` takes an input array and creates overlapping windows of a specified size,
+    		shift, and stride."
+
+		convolution2d
+			"The `convolution2d` function performs a 2D convolution operation on an input matrix using a given
+    		kernel and stride."
+
+## How to use
+	Install functions module using pip:
+
+		pip install func3lib
+
+	After installing the package use following import:
+
+		from func3lib import transpose2d, window1d, convolution2d
+
