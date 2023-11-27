@@ -1,0 +1,111 @@
+[
+      {"A": [
+            {"Negara": "Afghanistan", "Mata Uang": "Afghan afghani", "ISO": "AFN"}, 
+            {"Negara": "Armenia", "Mata Uang": "Armenian dram", "ISO": "AMD"},
+            {"Negara": "Azerbaijan", "Mata Uang": "Azerbaijan manat", "ISO": "AZN"}]
+      },
+
+      {"B": [
+            {"Negara": "Bahrain", "Mata Uang": "Bahraini dinar", "ISO": "BHD"}, 
+            {"Negara": "Bangladesh", "Mata Uang": "Bangladeshi taka", "ISO": "BDT"},
+            {"Negara": "Bhutan", "Mata Uang": "Bhutanese ngultrum", "ISO": "BTN"},
+            {"Negara": "British Indian Ocean Territory (UK)", "Mata Uang": "United States dollar", "ISO": "USD"},
+            {"Negara": "Brunei", "Mata Uang": "Brunei dollar", "ISO": "BND"}]
+      },
+
+      {"C": [
+            {"Negara": "Cambodia", "Mata Uang": "Cambodian riel", "ISO": "KHR"}, 
+            {"Negara": "China", "Mata Uang": "Chinese Yuan Renminbi", "ISO": "CNY"},
+            {"Negara": "Christmas Island (Australia)", "Mata Uang": "Australian dollar", "ISO": "AUD"},
+            {"Negara": "Cocos (Keeling) Islands (Australia)", "Mata Uang": "Australian dollar", "ISO": "AUD"},
+            {"Negara": "Cyprus", "Mata Uang": "European euro", "ISO": "EUR"}]
+      },
+
+      {"G": [
+            {"Negara": "Georgia", "Mata Uang": "Georgian lari", "ISO": "GEL"}]
+      },
+
+      {"H": [
+            {"Negara": "Hong Kong (China)", "Mata Uang": "Hong Kong dollar", "ISO": "HKD"}]
+      },
+
+      {"I": [
+            {"Negara": "India", "Mata Uang": "Indian rupee", "ISO": "INR"}, 
+            {"Negara": "Indonesia", "Mata Uang": "Indonesian rupiah", "ISO": "IDR"},
+            {"Negara": "Iran", "Mata Uang": "Iranian rial", "ISO": "IRR"},
+            {"Negara": "Iraq", "Mata Uang": "Iraqi dinar", "ISO": "IQD"},
+            {"Negara": "Israel", "Mata Uang": "Israeli new shekel", "ISO": "ILS"}]
+      },
+
+      {"J": [
+            {"Negara": "Japan", "Mata Uang": "Japanese yen", "ISO": "JPY"}, 
+            {"Negara": "Jordan", "Mata Uang": "Jordanian dinar", "ISO": "JOD"}]
+      },
+
+      {"K": [
+            {"Negara": "Kazakhstan", "Mata Uang": "Kazakhstani tenge", "ISO": "KZT"}, 
+            {"Negara": "Kuwait", "Mata Uang": "Kuwaiti dinar", "ISO": "KWD"},
+            {"Negara": "Kyrgyzstan", "Mata Uang": "Kyrgyzstani som", "ISO": "KGS"}]
+      },
+
+      {"L": [
+            {"Negara": "Macau (China)", "Mata Uang": "Macanese pataca", "ISO": "MOP"}, 
+            {"Negara": "Malaysia", "Mata Uang": "Malaysian ringgit", "ISO": "MYR"},
+            {"Negara": "Maldives", "Mata Uang": "Maldivian rufiyaa", "ISO": "MVR"}, 
+            {"Negara": "Mongolia", "Mata Uang": "Mongolian tugrik", "ISO": "MNT"},
+            {"Negara": "Myanmar", "Mata Uang": "Myanmar kyat", "ISO": "MMK"}]
+      },
+
+      {"N": [
+            {"Negara": "Nepal", "Mata Uang": "Nepalese rupee", "ISO": "NPR"}, 
+            {"Negara": "North Korea", "Mata Uang": "North Korean won", "ISO": "KPW"}]
+      },
+
+      {"O": [
+            {"Negara": "Oman", "Mata Uang": "Omani rial", "ISO": "OMR"}]
+      },
+
+      {"P": [
+            {"Negara": "Pakistan", "Mata Uang": "Pakistani rupee", "ISO": "PKR"}, 
+            {"Negara": "Palestine", "Mata Uang": "Israeli new shekel", "ISO": "ILS"},
+            {"Negara": "Philippines", "Mata Uang": "Philippine peso", "ISO": "PHP"}]
+      },
+
+      {"Q": [
+            {"Negara": "Qatar", "Mata Uang": "Qatari riyal", "ISO": "QAR"}]
+      },
+
+      {"R": [
+            {"Negara": "Russia", "Mata Uang": "Russian ruble", "ISO": "RUB"}]
+      },
+
+      {"S": [
+            {"Negara": "Saudi Arabia", "Mata Uang": "Saudi Arabian riyal", "ISO": "SAR"}, 
+            {"Negara": "Singapore", "Mata Uang": "Singapore dollar", "ISO": "SGD"},
+            {"Negara": "South Korea", "Mata Uang": "South Korean won", "ISO": "KRW"},
+            {"Negara": "Sri Lanka", "Mata Uang": "Sri Lankan rupee", "ISO": "LKR"},
+            {"Negara": "Syria", "Mata Uang": "Syrian pound", "ISO": "SYP"}]
+      },
+
+      {"T": [
+            {"Negara": "Taiwan", "Mata Uang": "New Taiwan dollar", "ISO": "TWD"}, 
+            {"Negara": "Tajikistan", "Mata Uang": "Tajikistani somoni", "ISO": "TJS"},
+            {"Negara": "Thailand", "Mata Uang": "Thai baht", "ISO": "THB"},
+            {"Negara": "Timor-Leste", "Mata Uang": "United States dollar", "ISO": "USD"},
+            {"Negara": "Turkey", "Mata Uang": "Turkish lira", "ISO": "TRY"},
+            {"Negara": "Turkmenistan", "Mata Uang": "Turkmen manat", "ISO": "TMT"}]
+      },
+      
+      {"U": [
+            {"Negara": "United Arab Emirates", "Mata Uang": "UAE dirham", "ISO": "AED"}, 
+            {"Negara": "Uzbekistan", "Mata Uang": "Uzbekistani som", "ISO": "UZS"}]
+      },
+
+      {"V": [
+            {"Negara": "Vietnam", "Mata Uang": "Vietnamese dong", "ISO": "VND"}]
+      },
+
+      {"Y": [
+            {"Negara": "Yemen", "Mata Uang": "Yemeni rial", "ISO": "YER"}]
+      }
+]
