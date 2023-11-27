@@ -1,0 +1,246 @@
+# `argrelay` server config: https://github.com/argrelay/argrelay
+
+connection_config:
+    server_host_name: localhost
+    server_port_number: 8787
+
+mongo_config:
+    use_mongomock_only: True
+    mongo_client:
+        # See `MongoClientConfigSchema` for detailed connection string format:
+        client_connection_string: mongodb://localhost
+    mongo_server:
+        database_name: argrelay
+        start_server: True
+        # See `mongo_notes.md`:
+        server_start_command: ~/argrelay.git/temp/mongo/mongodb-linux-x86_64-rhel80-6.0.3/bin/mongod --dbpath ~/argrelay.git/temp/mongo/data
+
+query_cache_config:
+    enable_query_cache: True
+    query_cache_ttl_sec: 60
+    query_cache_max_size_bytes: 1048576 # 1 MiB
+
+gui_banner_config:
+
+    header_html: |
+        <div style="color: grey; font-size: small;">
+
+        For example, type either|or:
+        <ul>
+            <li>relay_demo goto host</li>
+            <li>relay_demo goto service</li>
+        </ul>
+        Then, narrow down search by... IP, region, etc.
+
+        </div>
+
+    footer_html: |
+        <div style="color: grey; font-size: small;">
+
+        This test/demo GUI client allows simple browser-only access by anyone with URL (without shell access and shell config to run CLI client).<br/>
+        It is convenient for data search, testing, diagnostic, but it is not meant to be functional (use CLI client for that).<br/>
+        The server data is mocked.<br/>
+        <br/>
+        Normally, CLI client receives equivalent responses (as this GUI client) from the server:
+        <ol>
+            <li>auto-completion options (on Tab)</li>
+            <li>search responses (on Alt+Shift+Q)</li>
+            <li>command invocation data (on Enter)</li>
+        </ol>
+        However, this GUI client is limited and slightly different from CLI client:
+        <ul>
+            <li>(1) Tab is only used to complete `common_infix` - request to provide suggestions is sent automatically on timeout.</li>
+            <li>(2) Search request (Alt+Shift+Q) is sent automatically on timeout.</li>
+            <li>(3) Command invocation (Enter) is disabled - it only prints invocation data from the server (use CLI client to run commands).</li>
+        </ul>
+
+        </div>
+
+server_plugin_control:
+    first_interp_factory_id: FirstArgInterpFactory
+    reusable_config_data:
+
+        jump_tree: &jump_tree
+            relay_demo:
+                intercept:
+                    -   relay_demo
+                help:
+                    -   relay_demo
+                subtree:
+                    intercept:
+                        -   relay_demo
+                        -   subtree
+                    help:
+                        -   relay_demo
+                        -   subtree
+            some_command:
+                intercept:
+                    -   some_command
+                help:
+                    -   some_command
+                subtree:
+                    intercept:
+                        -   some_command
+                        -   subtree
+                    help:
+                        -   some_command
+                        -   subtree
+
+        interp_sub_tree: &interp_sub_tree
+            intercept: JumpTreeInterpFactory.intercept_invocation_func
+            help: JumpTreeInterpFactory.help_hint_func
+            "": FuncTreeInterpFactory
+
+        all_direct_delegators: &all_direct_delegators
+            -   NoopDelegator
+            -   EchoDelegator
+            -   ServiceDelegator
+            -   GitRepoDelegator
+
+plugin_instance_entries:
+
+    FirstArgInterpFactory:
+        plugin_module_name: argrelay.plugin_interp.FirstArgInterpFactory
+        plugin_class_name: FirstArgInterpFactory
+        plugin_dependencies:
+            -   InterpTreeInterpFactory
+        plugin_config:
+            first_arg_vals_to_next_interp_factory_ids:
+                # This binding uses existing file system name `relay_demo`:
+                relay_demo: InterpTreeInterpFactory
+                # Another equivalent binding
+                # (if `some_command` is configured, it will behave as `relay_demo` above):
+                some_command: InterpTreeInterpFactory
+
+    InterpTreeInterpFactory:
+        plugin_module_name: argrelay.plugin_interp.InterpTreeInterpFactory
+        plugin_class_name: InterpTreeInterpFactory
+        plugin_dependencies:
+            -   JumpTreeInterpFactory.intercept_invocation_func
+            -   JumpTreeInterpFactory.help_hint_func
+            -   FuncTreeInterpFactory
+        plugin_config:
+            interp_selector_tree:
+                <<: *interp_sub_tree
+                # child subtree matches parent:
+                subtree: *interp_sub_tree
+
+    JumpTreeInterpFactory.intercept_invocation_func:
+        plugin_module_name: argrelay.plugin_interp.JumpTreeInterpFactory
+        plugin_class_name: JumpTreeInterpFactory
+        plugin_dependencies:
+            -   InterceptDelegator
+        plugin_config:
+            jump_tree: *jump_tree
+            func_selector_tree: intercept_invocation_func
+            delegator_plugin_ids:
+                -   InterceptDelegator
+
+    JumpTreeInterpFactory.help_hint_func:
+        plugin_module_name: argrelay.plugin_interp.JumpTreeInterpFactory
+        plugin_class_name: JumpTreeInterpFactory
+        plugin_dependencies:
+            -   HelpDelegator
+        plugin_config:
+            jump_tree: *jump_tree
+            func_selector_tree: help_hint_func
+            delegator_plugin_ids:
+                -   HelpDelegator
+
+    FuncTreeInterpFactory:
+        plugin_module_name: argrelay.plugin_interp.FuncTreeInterpFactory
+        plugin_class_name: FuncTreeInterpFactory
+        plugin_dependencies: *all_direct_delegators
+        plugin_config:
+            func_selector_tree:
+                echo: echo_args_func
+                list:
+                    host: list_host_func
+                    service: list_service_func
+                goto:
+                    repo: goto_repo_func
+                    host: goto_host_func
+                    service: goto_service_func
+                desc:
+                    commit: desc_commit_func
+                    host: desc_host_func
+                    service: desc_service_func
+            delegator_plugin_ids: *all_direct_delegators
+
+    NoopInterpFactory:
+        plugin_module_name: argrelay.plugin_interp.NoopInterpFactory
+        plugin_class_name: NoopInterpFactory
+
+    NoopLoader:
+        plugin_module_name: argrelay.plugin_loader.NoopLoader
+        plugin_class_name: NoopLoader
+
+    ServiceLoader:
+        plugin_module_name: argrelay.custom_integ.ServiceLoader
+        plugin_class_name: ServiceLoader
+        plugin_config:
+            test_data_ids_to_load:
+                #-   TD_70_69_38_46  # no data
+                -   TD_63_37_05_36  # demo
+                # WARNING: with `mongomock` and not `enable_query_cache` requests run up for TD_38_03_48_51 may run up to 10 mins:
+                #-   TD_38_03_48_51  # large generated
+
+    GitRepoLoader:
+        plugin_enabled: false
+        plugin_module_name: argrelay.custom_integ.GitRepoLoader
+        plugin_class_name: GitRepoLoader
+        plugin_config:
+            load_repo_commits: False
+            repo_entries:
+                "~/repos":
+                    -   repo_rel_path: argrelay.git
+                        envelope_properties:
+                            GitRepoAlias: ar
+                            GitRepoContentType: code
+                    -   repo_rel_path: argcomplete.git
+                        is_repo_enabled: True
+                        envelope_properties:
+                            GitRepoAlias: ac
+                            GitRepoContentType: ref
+                    -   repo_rel_path: marshmallow.git
+                        is_repo_enabled: False
+                        envelope_properties:
+                            GitRepoAlias: mm
+                            GitRepoContentType: code
+
+    NoopDelegator:
+        plugin_module_name: argrelay.plugin_delegator.NoopDelegator
+        plugin_class_name: NoopDelegator
+
+    EchoDelegator:
+        plugin_module_name: argrelay.plugin_delegator.EchoDelegator
+        plugin_class_name: EchoDelegator
+
+    InterceptDelegator:
+        plugin_module_name: argrelay.plugin_delegator.InterceptDelegator
+        plugin_class_name: InterceptDelegator
+        plugin_dependencies:
+            -   FuncTreeInterpFactory
+        plugin_config:
+            next_interp_plugin_instance_id: InterpTreeInterpFactory
+
+    HelpDelegator:
+        plugin_module_name: argrelay.plugin_delegator.HelpDelegator
+        plugin_class_name: HelpDelegator
+        plugin_dependencies:
+            -   FuncTreeInterpFactory
+        plugin_config:
+            next_interp_plugin_instance_id: InterpTreeInterpFactory
+
+    ServiceDelegator:
+        plugin_module_name: argrelay.custom_integ.ServiceDelegator
+        plugin_class_name: ServiceDelegator
+
+    GitRepoDelegator:
+        plugin_module_name: argrelay.custom_integ.GitRepoDelegator
+        plugin_class_name: GitRepoDelegator
+
+    # TODO: Add FS_80_45_89_81 / `error_message` func:
+    ErrorDelegator:
+        plugin_module_name: argrelay.plugin_delegator.ErrorDelegator
+        plugin_class_name: ErrorDelegator
