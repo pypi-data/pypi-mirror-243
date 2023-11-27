@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+skoloCliParser.py
+skolo/__init__.py
+skolo/caseObjects.py
+skolo.egg-info/PKG-INFO
+skolo.egg-info/SOURCES.txt
+skolo.egg-info/dependency_links.txt
+skolo.egg-info/entry_points.txt
+skolo.egg-info/requires.txt
+skolo.egg-info/top_level.txt
