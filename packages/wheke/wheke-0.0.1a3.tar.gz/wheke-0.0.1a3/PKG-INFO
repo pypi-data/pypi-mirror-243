@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: wheke
+Version: 0.0.1a3
+Summary: A cute framework for small self-hosted apps
+Project-URL: Documentation, https://github.com/unknown/wheke#readme
+Project-URL: Issues, https://github.com/unknown/wheke/issues
+Project-URL: Source, https://github.com/unknown/wheke
+Author-email: Humberto Rocha <humrochagf@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Requires-Dist: aiotinydb
+Requires-Dist: fastapi
+Requires-Dist: jinja2
+Requires-Dist: passlib[bcrypt]
+Requires-Dist: pydantic
+Requires-Dist: pydantic-settings
+Requires-Dist: python-jose[cryptography]
+Requires-Dist: python-multipart
+Requires-Dist: uvicorn[standard]
+Description-Content-Type: text/markdown
+
+# Wheke
+
+<p align="center">
+  <img src="https://github.com/humrochagf/wheke/blob/main/images/wheke.png?raw=true" alt="Wheke"></a>
+</p>
+<p align="center">
+  <em>A cute framework for small self-hosted apps</em>
+  <br/>
+  <em><sup><sub>artwork by <a href="https://bissgigi.art/">@bissgigi</a></sub></sup></em>
+</p>
+
+[![PyPI - Version](https://img.shields.io/pypi/v/wheke.svg)](https://pypi.org/project/wheke)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/wheke.svg)](https://pypi.org/project/wheke)
+
+-----
+
+## Installation
+
+```console
+pip install wheke
+```
