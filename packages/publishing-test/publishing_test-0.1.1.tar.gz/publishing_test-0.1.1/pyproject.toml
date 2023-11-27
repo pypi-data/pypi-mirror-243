@@ -1,0 +1,38 @@
+
+
+[tool.poetry]
+name = "publishing_test"
+version = "0.1.1"
+description="Python Boilerplate contains all the boilerplate you need to create a Python package."
+classifiers=[
+        "Development Status :: 2 - Pre-Alpha",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        ]
+authors=["Paul Armstrong"]
+readme = ["README.rst", "HISTORY.rst"]
+packages = [
+        { include = "publishing_test" },
+        #{ include = "publishing_test.*" }
+    ]
+homepage="https://gitlab.com/paul_armstrong/publishing_test"
+repository="https://gitlab.com/paul_armstrong/publishing_test"
+keywords = ["publishing_test"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "*"
+
+[tool.poetry.scripts]
+publishing_test = "publishing_test.cli:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
