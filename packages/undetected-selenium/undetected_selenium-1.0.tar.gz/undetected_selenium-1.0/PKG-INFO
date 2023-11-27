@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: undetected_selenium
+Version: 1.0
+Summary: An undetected version of better selenium.
+Author-email: Izaan Noman <pythonlogstest@gmail.com>
+Project-URL: Homepage, https://github.com/pypa/sampleproject
+Project-URL: Bug Tracker, https://github.com/pypa/sampleproject/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: undetected-chromedriver>=3.5.4
+
+# Undetected Better Selenium
+
+A super set of the selenium class.
+
+### Features
+1. Wait for elements to appear before interacting with it.
+2. Better selection options.
+3. Clear fields before sending keys.
+4. Undetected
