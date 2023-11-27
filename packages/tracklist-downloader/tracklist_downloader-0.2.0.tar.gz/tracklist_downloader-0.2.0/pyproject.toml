@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "tracklist_downloader"
+version = "0.2.0"
+description = ""
+authors = ["attila szuts <45080765+attilaszuts@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "tracklist_downloader"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9.13,<3.12"
+spotipy = "^2.23.0"
+python-dotenv = "^1.0.0"
+click = "^8.1.7"
+validators = "^0.22.0"
+spotdl = "^4.2.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+tldl = "tracklist_downloader.main:main"
