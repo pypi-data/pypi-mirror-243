@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: izaber-wamp
+Version: 3.0.20231125a2
+Summary: Base load point for iZaber WAMP code
+Author: Aki Mimoto
+Author-email: aki@zaber.com
+Requires-Python: >=3.7.0,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: cbor2 (>=4.1.2)
+Requires-Dist: izaber (>=3.1.20231029)
+Requires-Dist: swampyer (>=3.0.20231027)
