@@ -1,0 +1,147 @@
+Metadata-Version: 2.1
+Name: ma2l
+Version: 0.1.0
+Summary: 
+Home-page: https://github.com/geniuspatrick/ma2l
+License: MIT
+Author: Genius Patrick
+Author-email: 74176172+geniuspatrick@users.noreply.github.com
+Requires-Python: >=3.7,<4.0
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: dev
+Provides-Extra: doc
+Provides-Extra: test
+Requires-Dist: black (==23.1.0) ; extra == "dev"
+Requires-Dist: flake8 (==5.0.4) ; extra == "dev"
+Requires-Dist: flake8-typing-imports (>=1.14.0,<2.0.0) ; extra == "dev"
+Requires-Dist: isort (==5.11.5) ; extra == "dev"
+Requires-Dist: mike (>=1.1.2,<2.0.0) ; extra == "doc"
+Requires-Dist: mkdocs (>=1.2.3,<2.0.0) ; extra == "doc"
+Requires-Dist: mkdocs-autorefs (>=0.3.1,<0.4.0) ; extra == "doc"
+Requires-Dist: mkdocs-include-markdown-plugin (>=3.2.3,<4.0.0) ; extra == "doc"
+Requires-Dist: mkdocs-material (>=8.1.11,<9.0.0) ; extra == "doc"
+Requires-Dist: mkdocs-material-extensions (>=1.0.3,<2.0.0) ; extra == "doc"
+Requires-Dist: mkdocstrings (>=0.18.0,<0.19.0) ; extra == "doc"
+Requires-Dist: pkginfo (>=1.9,<2.0) ; extra == "doc"
+Requires-Dist: pre-commit (>=2.17.0,<3.0.0) ; extra == "dev"
+Requires-Dist: pytest (>=7.0.1,<8.0.0) ; extra == "test"
+Requires-Dist: pytest-cov (>=3.0.0,<4.0.0) ; extra == "test"
+Requires-Dist: setuptools (>=68.0,<69.0) ; extra == "doc"
+Requires-Dist: toml (>=0.10.2,<0.11.0) ; extra == "dev"
+Requires-Dist: tox (>=3.24.5,<4.0.0) ; extra == "dev"
+Requires-Dist: twine (>=3.8.0,<4.0.0) ; extra == "dev"
+Requires-Dist: virtualenv (>=20.0,<21.0) ; extra == "doc"
+Description-Content-Type: text/markdown
+
+# MindSpore with Ascend on ModelArts Launcher
+
+
+<p align="center">
+<a href="https://pypi.python.org/pypi/ma2l">
+    <img src="https://img.shields.io/pypi/v/ma2l.svg"
+        alt = "Release Status">
+</a>
+
+<a href="https://github.com/geniuspatrick/ma2l/actions/workflows/dev.yml">
+    <img src="https://github.com/geniuspatrick/ma2l/actions/workflows/dev.yml/badge.svg" alt="CI Status">
+</a>
+
+<a href="https://geniuspatrick.github.io/ma2l/">
+    <img src="https://img.shields.io/website/https/geniuspatrick.github.io/ma2l/index.html.svg?label=docs&down_message=unavailable&up_message=available" alt="Documentation Status">
+</a>
+
+</p>
+
+
+A simple and clean launcher helps you train deep model
+using MindSpore with Ascend on ModelArts(ROMA or HuaweiCould),
+no bells and whistles.
+
+> [!NOTE]
+> This project is a shameless wrapper of [scripts](https://support.huaweicloud.com/bestpractice-modelarts/develop-modelarts-0120.html) from HuaweiCloud, all credit goes to them.
+
+## Installation
+
+```shell
+pip install ma2l
+```
+
+Or, you can get pre-released version from test.pypi.org
+
+```shell
+pip install -i https://test.pypi.org/simple/ ma2l
+```
+
+## Usage
+
+Just submit the following command to your training job on cloud:
+
+```shell
+ma2l YOUR_TRAINING_COMMAND
+```
+
+For example, `YOUR_TRAINING_COMMAND` might be like:
+
+```shell
+python your_train_script.py \
+    --arg1=value1 \
+    --arg2=value2 \
+    ...
+```
+
+See the difference between the commands on the local machine and on the cloud:
+
+```diff
+- python your_train_script.py \
++ ma2l your_train_script.py \
+    --arg1=value1 \
+    --arg2=value2 \
+    ...
+```
+
+> [!IMPORTANT]
+> Don't forget to pass the argument that turns on distributed training to your training script, if it requires one.
+
+## Features
+
+- No need to change **a single line** of the training script.
+- There's no need to set any distribution-related environment variables, and we'll take care of everything for you.
+- Supports a variety of hardware settings:
+  - single-node, single-npu
+  - single-node, multi-npus
+  - multi-node, multi-npus
+- Modularity. Fully decoupled from your training code/repository.
+
+## Philosophies
+
+So, what happens under the hood?
+After you have created a training job on ModelArts, the launcher does the following:
+
+1. Generate HCCL configuration files on each node, typically named `rank_table.json`, which is necessary for distributed training.
+2. Automatically start n processes on each node for `YOUR_TRAINING_COMMAND`, based on the settings when you created the job.
+3. Set the environment variables for each process on each node, such as `RANK_TABLE_FILE`, `DEVICE_ID`, `RANK_ID`, etc.
+
+Simple and Easy, right? You don't need to change any code to adapt training scripts from your local machine to the cloud,
+and you don't need to struggle with environment variable settings on the local machine. Keep it in mind.
+
+## FAQs
+
+### What does `ma2l` mean?
+
+`ma2l` is the abbreviation for **M**indSpore with **A**scend on **M**odel**A**rts **L**auncher.
+
+## Credits
+
+- [Genius Patrick](https://github.com/geniuspatrick)
+- [Huawei Cloud](https://support.huaweicloud.com/bestpractice-modelarts/develop-modelarts-0118.html)
+
