@@ -1,0 +1,15 @@
+from unittest import TestCase
+
+import numpy as np
+
+from rtta.trend import SMAIndicator 
+
+
+class SMAIndicatorTest(TestCase):
+
+    def test(self):
+        sma = SMAIndicator(window=4, fillna=False)
+        self.assertEquals(sma.update(1), np.nan)
+        self.assertEquals(sma.update(2), np.nan)
+        self.assertEquals(sma.update(3), np.nan)
+        self.assertEquals(sma.update(4), sum([1,2,3,4]) / 4)

@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: rtta
+Version: 0.0.1
+Summary: Real time incremental Technical Analysis Library in Python
+Author: Adam DePrince
+Author-email: adamdeprince@gmail.com
+Maintainer: Adam DePrince
+Maintainer-email: adamdeprince@gmail.com
+License: The MIT License (MIT)
+Keywords: technical analysis,realtime,real time,real time technical analysis,numpy
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: License :: OSI Approved :: MIT License
+
+It is a real time incremetnal Technical Analyissi library to perform incremental time series computaitons.  It is built on the numpy library.

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling", "cython", "numpy"]
+build-backend = "hatchling.build"
+
+name = "rtta_adamdeprince"
+version = "0.0.1"
+authors = [
+  { name="Adam DePrince", email="adamdeprince@gmail.com" },
+]
+description = "Realtime incremental Technical Analysis Library in Python"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/pypa/rtta"
+Issues = "https://github.com/pypa/rtta/issues"

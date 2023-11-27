@@ -1,0 +1,100 @@
+import sys
+import numpy as np
+
+
+cdef class SMAIndicator():
+    """SMA - Simple Moving Average
+
+    Args:
+      window(int): n period
+      fillna(bool): if True, fill nan values
+    """
+
+    cdef bint first_pass
+    cdef object history
+    cdef int index
+    cdef int window
+    cdef bint fillna
+    cdef double tally
+    
+    def __init__(self, int window, bint fillna=False):
+        self.history = np.zeros(window)
+        self.first_pass = True
+        self.index = 0
+        self.window = window
+        self.fillna = fillna
+        self.tally = 0
+        
+    cpdef double update(self, float value):
+        self.tally -= self.history[self.index]
+        self.tally += value
+        self.history[self.index] = value
+
+        self.index += 1
+
+        if self.index == self.window:
+            self.index = 0
+            self.first_pass = False
+            
+        if self.first_pass:
+            if not self.fillna:
+                return np.nan
+            return self.tally / self.index
+        return self.tally/self.window
+
+
+            
+
+cdef class EMAIndicator():
+    """SMA - Simple Moving Average
+
+    Args:
+      window(int): n period
+      fillna(bool): if True, fill nan values
+    """
+
+    cdef bint first_pass
+    cdef int index
+    cdef int window
+    cdef bint fillna
+    cdef double last_value
+    cdef double weighted_multiplier
+    cdef double inverted_multiplier
+    cdef double discard
+    cdef double keep
+    cdef object buffer
+    cdef double cull
+    
+    def __init__(self, int window, bint fillna=False, bint cull=False):
+        self.first_pass = True
+        self.index = 0
+        self.window = window
+        self.fillna = fillna
+        self.last_value = 0
+        self.weighted_multiplier = 2.0 / (1.0 + float(window))
+        self.inverted_multiplier = 1 - self.weighted_multiplier
+        self.discard = self.inverted_multiplier ** (self.window + 1)
+        if cull:
+            self.inverted_multiplier +=  self.discard
+
+        self.buffer = np.zeros(window) if cull else None
+        self.cull = cull
+        
+    cpdef double update(self, float value):
+        self.last_value = self.weighted_multiplier * value + self.last_value * self.inverted_multiplier
+        
+        if self.cull:
+            self.last_value -= self.buffer[self.index] * self.discard
+            self.buffer[self.index] = value
+
+        self.index += 1
+        if self.index == self.window:
+            self.index = 0
+            self.first_pass = False
+
+        if self.first_pass and not self.fillna:
+            return np.nan
+
+        return self.last_value
+
+    

@@ -1,0 +1,10 @@
+setup.py
+rtta/__init__.py
+rtta/trend.c
+rtta/trend.py
+rtta/wrapper.py
+ta.egg-info/PKG-INFO
+ta.egg-info/SOURCES.txt
+ta.egg-info/dependency_links.txt
+ta.egg-info/requires.txt
+ta.egg-info/top_level.txt
