@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+setup.py
+pyflowlauncher/__init__.py
+pyflowlauncher/api.py
+pyflowlauncher/event.py
+pyflowlauncher/icons.py
+pyflowlauncher/jsonrpc.py
+pyflowlauncher/method.py
+pyflowlauncher/plugin.py
+pyflowlauncher/result.py
+pyflowlauncher/shared.py
+pyflowlauncher.egg-info/PKG-INFO
+pyflowlauncher.egg-info/SOURCES.txt
+pyflowlauncher.egg-info/dependency_links.txt
+pyflowlauncher.egg-info/requires.txt
+pyflowlauncher.egg-info/top_level.txt
