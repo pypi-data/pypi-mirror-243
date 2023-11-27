@@ -1,0 +1,1 @@
+# goodadvice_yaml_conf
