@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+protobuf = "*"
+bleak = "*"
+influxdb-client = {version = "*", extras = ["ciso"]}
+naneos-devices = {editable = true, path = "."}
+
+[dev-packages]
+pyscaffold = "*"
+tox = "*"
+sphinx = "*"
+pyinstaller = "*"
+
+[requires]
+python_version = "3.9"
