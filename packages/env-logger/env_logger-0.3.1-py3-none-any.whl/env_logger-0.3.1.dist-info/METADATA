@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: env-logger
+Version: 0.3.1
+Summary: The easy way to configure logging
+Home-page: https://github.com/apljungquist/env_logger_py
+License: MIT
+Author: AP Ljungquist
+Author-email: ap@ljungquist.eu
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: colorama (>=0.4.6,<0.5.0)
+Description-Content-Type: text/markdown
+
+# Env Logger
+
+A replacement for the standard library `logging.basicConfig`, with some extra bells and whistles.
+
+## Nice defaults
+
+It uses subjectively nicer defaults e.g. by using a handler that colors the output.
+
+## Multiple configuration sources
+It allows users to override the configuration environment variables e.g. like
+
+```bash
+LOG_LEVEL=DEBUG \
+LOG_FORMAT='%(levelname)8s %(message)s' \
+env_logger demo
+```
+
+In general, the name of the environment variable follows the name of the basicConfig parameter and takes the same values.
+
+
+## Ecosystem
+
+The package is designed to be compatible with `rich` e.g. like
+
+```python
+import logging
+import env_logger
+import rich.logging
+
+env_logger.configure(handlers=[rich.logging.RichHandler()])
+logging.getLogger(__name__).info("Hello!")
+```
+
