@@ -1,0 +1,131 @@
+#
+# SOME DESCRIPTIVE TITLE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE 1.0\n"
+"POT-Creation-Date: 2021-11-27 15:34+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Lingua 4.14\n"
+
+#: ./src/pyams_file_views/zmi/editor.py:50
+#: ./src/pyams_file_views/zmi/editor.py:66
+msgid "Edit file content"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/file.py:43 ./src/pyams_file_views/zmi/file.py:55
+msgid "File properties"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/file.py:56
+msgid "Main file properties"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/file.py:66
+msgid "Download"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/file.py:67
+msgid "Download original file"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:81
+msgid "Image preview"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:102
+msgid "Rotate image right"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:145
+#: ./src/pyams_file_views/zmi/image.py:168
+msgid "Crop image"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:155
+msgid "Crop"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:156
+#: ./src/pyams_file_views/zmi/image.py:269
+#: ./src/pyams_file_views/zmi/image.py:645
+msgid "Cancel"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:200
+msgid ""
+"You can use this form to crop an image.  \n"
+"**Cropping an image will alter the original image, and reset all thumbnails and adaptive selections!**"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:268
+msgid "Select thumbnail"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:286
+#, python-format
+msgid "{} selection"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:547
+msgid "Display all selections"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:562
+msgid "Display all image selections"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:599
+#: ./src/pyams_file_views/zmi/image.py:644
+#: ./src/pyams_file_views/zmi/image.py:657
+msgid "Resize image"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:609
+msgid "New image width"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:612
+msgid "New image height"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:615
+msgid "Keep aspect ratio"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:616
+msgid ""
+"Check to keep original image aspect ratio; image will then be resized as "
+"large as possible within given limits"
+msgstr ""
+
+#: ./src/pyams_file_views/zmi/image.py:685
+msgid ""
+"You can use this form to reduce an image size.  \n"
+"**Resizing an image will alter the original image, and reset all thumbnails and adaptive selections!**"
+msgstr ""
+
+#: ./src/pyams_file_views/widget/templates/media-input.pt:11
+#: ./src/pyams_file_views/widget/templates/file-input.pt:11
+msgid "Browse..."
+msgstr ""
+
+#: ./src/pyams_file_views/widget/templates/media-input.pt:36
+#: ./src/pyams_file_views/widget/templates/media-display.pt:25
+#: ./src/pyams_file_views/widget/templates/file-input.pt:28
+#: ./src/pyams_file_views/widget/templates/file-display.pt:18
+msgid "Current value:"
+msgstr ""
+
+#: ./src/pyams_file_views/widget/templates/media-input.pt:51
+#: ./src/pyams_file_views/widget/templates/file-input.pt:41
+msgid "Delete"
+msgstr ""
