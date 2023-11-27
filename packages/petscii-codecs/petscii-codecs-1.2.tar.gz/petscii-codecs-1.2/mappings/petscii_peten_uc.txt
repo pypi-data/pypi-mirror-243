@@ -1,0 +1,10 @@
+#    Name:		PETSCII PET English Uppercase to Unicode Table
+#    Unicode version:	3.0
+#    Table version:	1.00
+#    Table format:	Format A
+#    Date:		11/11/21
+#    Authors:		Simon Rowe <srowe@mose.org.uk>
+#    General notes:	Licensed under the GNU GPL, version 2
+
+#IMPORT file://mappings/petscii_pet2001en_uc.txt
+#IMPORT file://include/pet-c0-c1.txt

@@ -1,0 +1,7 @@
+**~
+**/__pycache__/
+petscii_codecs/petscii*.py
+build/
+dist/
+petscii_codecs.egg-info/
+venv/

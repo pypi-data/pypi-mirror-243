@@ -1,0 +1,10 @@
+#    Name:		PETSCII C64 English Uppercase to Unicode Table
+#    Unicode version:	3.0
+#    Table version:	1.00
+#    Table format:	Format A
+#    Date:		12/03/00
+#    Authors:		Linus Walleij <triad@df.lth.se>
+#    General notes:	Licensed under the GNU GPL, version 2
+
+#IMPORT file://mappings/petscii_vic20en_uc.txt
+#IMPORT file://include/c64-c0-c1.txt

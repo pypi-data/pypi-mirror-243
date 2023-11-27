@@ -1,0 +1,15 @@
+#    Name:		PETSCII VIC-1001 Japanese graphics to Unicode Table
+#    Unicode version:	3.0
+#    Table version:	1.00
+#    Table format:	Format A
+#    Date:		13/04/21
+#    Authors:		Simon Rowe <srowe@mose.org.uk>, Linus Walleij <triad@df.lth.se>
+#    General notes:	Licensed under the GNU GPL, version 2
+
+#IMPORT file://mappings/petscii_vic20en_uc.txt
+
+0x08		#UNDEFINED
+0x09		#UNDEFINED
+
+0x5C	0x00A5	#YEN SIGN
+0x84	0x259A	#QUADRANT UPPER LEFT AND LOWER RIGHT

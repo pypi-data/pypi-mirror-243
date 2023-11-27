@@ -1,0 +1,26 @@
+#    Name:		PETSCII VIC-20 English Lowercase to Unicode Table
+#    Unicode version:	3.0
+#    Table version:	1.00
+#    Table format:	Format A
+#    Date:		12/03/00
+#    Authors:		Linus Walleij <triad@df.lth.se>
+#    General notes:	Licensed under the GNU GPL, version 2
+
+#IMPORT file://include/common-control.txt
+#IMPORT file://include/ascii-1963-symbols.txt
+#IMPORT file://include/petscii-lowercase.txt
+
+# define duplicates first
+#IMPORT file://include/petscii-uppercase-duplicate.txt
+#IMPORT file://include/box-line-drawing-duplicate.txt
+0xE9	0xF13A	#MEDIUM SHADE SLASHED RIGHT (CUS)
+0xFA	0x2713	#CHECK MARK
+
+#IMPORT file://include/box-line-drawing.txt
+#IMPORT file://include/petscii-uppercase.txt
+#IMPORT file://include/vic20-c0-c1.txt
+
+0x5C	0x00A3	#POUND SIGN
+0xA9	0xF13A	#MEDIUM SHADE SLASHED RIGHT (CUS)
+0xBA	0x2713	#CHECK MARK
+0xFF	0x2592	#MEDIUM SHADE

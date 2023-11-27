@@ -1,0 +1,24 @@
+#    Name:		PETSCII PET 2001 English Uppercase to Unicode Table
+#    Unicode version:	3.0
+#    Table version:	1.00
+#    Table format:	Format A
+#    Date:		11/11/21
+#    Authors:		Simon Rowe <srowe@mose.org.uk>
+#    General notes:	Licensed under the GNU GPL, version 2
+
+#IMPORT file://include/common-control.txt
+#IMPORT file://include/ascii-1963-symbols.txt
+#IMPORT file://include/ascii-1963-uppercase.txt
+
+# define duplicates first
+#IMPORT file://include/ascii-symbols-duplicate.txt
+#IMPORT file://include/box-line-drawing-duplicate.txt
+0xE9	0x25E4	#BLACK UPPER LEFT TRIANGLE
+0xFA	0xF12D	#ONE EIGHTH BLOCK UP AND LEFT (CUS)
+
+#IMPORT file://include/box-line-drawing.txt
+#IMPORT file://include/card-line-drawing.txt
+
+0xA9	0x25E4	#BLACK UPPER LEFT TRIANGLE
+0xBA	0xF12D	#ONE EIGHTH BLOCK UP AND LEFT (CUS)
+0xFF	0x03C0	#GREEK SMALL LETTER PI
