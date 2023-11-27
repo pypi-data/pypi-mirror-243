@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: python_conex_top
+Version: 0.0.1
+Summary: A small example package
+Author: Ricardo Silva
+Author-email: minhainternet@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: paramiko (>=3.3.1,<4.0.0)
