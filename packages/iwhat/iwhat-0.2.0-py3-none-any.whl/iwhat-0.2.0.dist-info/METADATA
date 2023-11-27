@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: iwhat
+Version: 0.2.0
+Home-page: https://github.com/yihong0618/iWhat
+Author: yihong0618
+Author-email: zouzou0208@gmail.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: rich
+Requires-Dist: openai ==1.1.1
+
