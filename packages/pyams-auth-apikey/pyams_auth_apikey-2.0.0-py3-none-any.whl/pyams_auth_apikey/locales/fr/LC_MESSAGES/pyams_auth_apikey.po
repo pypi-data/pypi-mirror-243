@@ -1,0 +1,204 @@
+#
+# SOME DESCRIPTIVE TITLE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE 1.0\n"
+"POT-Creation-Date: 2023-02-19 02:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Lingua 4.15.0\n"
+
+#: src/pyams_auth_apikey/interfaces.py:36
+msgid "API keys authentication plug-in"
+msgstr "Module d'authentification par clés d'API"
+
+#: src/pyams_auth_apikey/interfaces.py:49
+msgid "Key name"
+msgstr "Nom de la clé"
+
+#: src/pyams_auth_apikey/interfaces.py:50
+msgid ""
+"This name must be unique between all API keys; if empty, a random name will "
+"be used as name"
+msgstr ""
+"Le nom de la clé doit être unique, et il est utilisé notamment pour "
+"identifier cette clé en tant que mandataire ; s'il n'est pas indiqué, un nom "
+"aléatoire lui sera attribué"
+
+#: src/pyams_auth_apikey/interfaces.py:54
+msgid "API key"
+msgstr "Clé d'API"
+
+#: src/pyams_auth_apikey/interfaces.py:55
+msgid ""
+"This API key will never be displayed again, just copy it and keep it safe!"
+msgstr ""
+"La clé d'API ne sera jamais visible à nouveau, vous devez la copier et la "
+"conserver en sécurité !"
+
+#: src/pyams_auth_apikey/interfaces.py:58
+msgid "API key hash"
+msgstr "Empreinte"
+
+#: src/pyams_auth_apikey/interfaces.py:59
+msgid "This is a hash of the API key and can't be modified"
+msgstr "Cette clé de hashage identifie la clé et ne peut pas être modifiée"
+
+#: src/pyams_auth_apikey/interfaces.py:63
+msgid "Enabled key?"
+msgstr "Clé active ?"
+
+#: src/pyams_auth_apikey/interfaces.py:64
+msgid "Select 'no' to disable the key temporarily"
+msgstr "Sélectionnez 'non' pour désactiver cette clé temporairement"
+
+#: src/pyams_auth_apikey/interfaces.py:68
+msgid "Key label"
+msgstr "Libellé"
+
+#: src/pyams_auth_apikey/interfaces.py:69
+msgid "This label will be used to identify the key"
+msgstr "Ce libellé pourra être utilisé pour identifier la clé"
+
+#: src/pyams_auth_apikey/interfaces.py:72
+msgid "Associated principal"
+msgstr "Mandataire associé"
+
+#: src/pyams_auth_apikey/interfaces.py:73
+msgid ""
+"If defined, this will identify the principal which will be used when a "
+"request will be authenticated with this API key"
+msgstr ""
+"S'il est défini, ce mandataire sera utilisé en lieu et place de la clé pour "
+"authentifier les requêtes qui l'utiliseront"
+
+#: src/pyams_auth_apikey/interfaces.py:81
+msgid "Selected principal can't be another API key!"
+msgstr "Le mandataire sélectionné ne peut pas être une autre clé d'API !"
+
+#: src/pyams_auth_apikey/interfaces.py:86
+#: src/pyams_auth_apikey/zmi/container.py:158
+msgid "Activation date"
+msgstr "Date d'activation"
+
+#: src/pyams_auth_apikey/interfaces.py:87
+msgid "This key will be enabled only after this date"
+msgstr "La clé ne sera active qu'à partir de cette date"
+
+#: src/pyams_auth_apikey/interfaces.py:90
+#: src/pyams_auth_apikey/zmi/container.py:175
+msgid "Expiration date"
+msgstr "Date d'expiration"
+
+#: src/pyams_auth_apikey/interfaces.py:91
+msgid "This key will not be enabled after this date"
+msgstr "La clé ne sera pas active au-delà de cette date"
+
+#: src/pyams_auth_apikey/interfaces.py:94
+msgid "Restrict referrers"
+msgstr "Restreindre les référents"
+
+#: src/pyams_auth_apikey/interfaces.py:95
+msgid "If this option is enabled, only selected referrers will be enabled"
+msgstr ""
+"Si cette option est activée, seuls les référents indiqués ci-dessous seront "
+"autorisés"
+
+#: src/pyams_auth_apikey/interfaces.py:99
+msgid "Allowed referrers"
+msgstr "Référents autorisés"
+
+#: src/pyams_auth_apikey/interfaces.py:100
+msgid "Only selected referrers will be allowed to use this API key"
+msgstr ""
+"Seules les requêtes dont l'origine correspond à l'un de ces référents seront "
+"authentifiées"
+
+#: src/pyams_auth_apikey/interfaces.py:111
+msgid "Enabled API key authentication?"
+msgstr "Activer l'authentification par clés d'API"
+
+#: src/pyams_auth_apikey/interfaces.py:112
+msgid "Enable login via API keys"
+msgstr "Activer l'authentification par clés d'API"
+
+#: src/pyams_auth_apikey/interfaces.py:116
+msgid "HTTP header"
+msgstr "En-tête HTTP"
+
+#: src/pyams_auth_apikey/interfaces.py:117
+msgid "Name of the HTTP header used to provide the API key"
+msgstr "Nom de l'en-tête HTTP utilisé pour fournir la clé d'API"
+
+#: src/pyams_auth_apikey/plugin.py:156
+#: src/pyams_auth_apikey/zmi/__init__.py:206
+#, python-format
+msgid "API key: {}"
+msgstr "Clé d'API: {}"
+
+#: src/pyams_auth_apikey/plugin.py:349
+msgid "API keys authentication"
+msgstr "Authentification par clés d'API"
+
+#: src/pyams_auth_apikey/zmi/container.py:51
+#: src/pyams_auth_apikey/zmi/container.py:207
+msgid "API keys"
+msgstr "Liste des clés"
+
+#: src/pyams_auth_apikey/zmi/container.py:89
+msgid "Click icon to enable or disable this API key"
+msgstr "Cliquer pour activer ou désactiver cette clé"
+
+#: src/pyams_auth_apikey/zmi/container.py:114
+msgid "Name"
+msgstr "Nom"
+
+#: src/pyams_auth_apikey/zmi/container.py:126
+msgid "Label"
+msgstr "Libellé"
+
+#: src/pyams_auth_apikey/zmi/container.py:142
+msgid "Principal"
+msgstr "Mandataire"
+
+#: src/pyams_auth_apikey/zmi/plugin.py:50
+#: src/pyams_auth_apikey/zmi/plugin.py:60
+msgid "API keys configuration"
+msgstr "Configuration des clés d'API"
+
+#: src/pyams_auth_apikey/zmi/__init__.py:67
+#: src/pyams_auth_apikey/zmi/__init__.py:90
+msgid "Add API key"
+msgstr "Ajouter une clé d'API"
+
+#: src/pyams_auth_apikey/zmi/__init__.py:88
+#: src/pyams_auth_apikey/zmi/__init__.py:205
+msgid "Plug-in: API keys authentication"
+msgstr "Module : Authentification par clés d'API"
+
+#: src/pyams_auth_apikey/zmi/__init__.py:143
+msgid ""
+"WARNING: the API key won't be displayed after it's creation!\n"
+"You must copy it NOW and keep it safe!!"
+msgstr ""
+"ATTENTION : cette clé ne sera plus affichée après sa création !\n"
+"Vous devez la copier MAINTENANT et la conserver en lieu sûr !!"
+
+#: src/pyams_auth_apikey/zmi/__init__.py:157
+msgid "This key name is already used!"
+msgstr "Ce nom de clé est déjà utilisé !"
+
+#: src/pyams_auth_apikey/zmi/__init__.py:208
+msgid "API key properties"
+msgstr "Propriété de la clé"
+
+#~ msgid "Plug-in: OAuth authentication"
+#~ msgstr "Module : Authentification par clés d'API"

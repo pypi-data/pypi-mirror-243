@@ -1,0 +1,188 @@
+#
+# SOME DESCRIPTIVE TITLE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE 1.0\n"
+"POT-Creation-Date: 2023-02-19 02:22+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Lingua 4.15.0\n"
+
+#: ./src/pyams_auth_apikey/interfaces.py:36
+msgid "API keys authentication plug-in"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:49
+msgid "Key name"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:50
+msgid ""
+"This name must be unique between all API keys; if empty, a random name will "
+"be used as name"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:54
+msgid "API key"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:55
+msgid ""
+"This API key will never be displayed again, just copy it and keep it safe!"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:58
+msgid "API key hash"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:59
+msgid "This is a hash of the API key and can't be modified"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:63
+msgid "Enabled key?"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:64
+msgid "Select 'no' to disable the key temporarily"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:68
+msgid "Key label"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:69
+msgid "This label will be used to identify the key"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:72
+msgid "Associated principal"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:73
+msgid ""
+"If defined, this will identify the principal which will be used when a "
+"request will be authenticated with this API key"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:81
+msgid "Selected principal can't be another API key!"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:86
+#: ./src/pyams_auth_apikey/zmi/container.py:158
+msgid "Activation date"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:87
+msgid "This key will be enabled only after this date"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:90
+#: ./src/pyams_auth_apikey/zmi/container.py:175
+msgid "Expiration date"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:91
+msgid "This key will not be enabled after this date"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:94
+msgid "Restrict referrers"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:95
+msgid "If this option is enabled, only selected referrers will be enabled"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:99
+msgid "Allowed referrers"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:100
+msgid "Only selected referrers will be allowed to use this API key"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:111
+msgid "Enabled API key authentication?"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:112
+msgid "Enable login via API keys"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:116
+msgid "HTTP header"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/interfaces.py:117
+msgid "Name of the HTTP header used to provide the API key"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/plugin.py:156
+#: ./src/pyams_auth_apikey/zmi/__init__.py:206
+#, python-format
+msgid "API key: {}"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/plugin.py:349
+msgid "API keys authentication"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/container.py:51
+#: ./src/pyams_auth_apikey/zmi/container.py:207
+msgid "API keys"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/container.py:89
+msgid "Click icon to enable or disable this API key"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/container.py:114
+msgid "Name"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/container.py:126
+msgid "Label"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/container.py:142
+msgid "Principal"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/plugin.py:50
+#: ./src/pyams_auth_apikey/zmi/plugin.py:60
+msgid "API keys configuration"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/__init__.py:67
+#: ./src/pyams_auth_apikey/zmi/__init__.py:90
+msgid "Add API key"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/__init__.py:88
+#: ./src/pyams_auth_apikey/zmi/__init__.py:205
+msgid "Plug-in: API keys authentication"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/__init__.py:143
+msgid ""
+"WARNING: the API key won't be displayed after it's creation!\n"
+"You must copy it NOW and keep it safe!!"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/__init__.py:157
+msgid "This key name is already used!"
+msgstr ""
+
+#: ./src/pyams_auth_apikey/zmi/__init__.py:208
+msgid "API key properties"
+msgstr ""
