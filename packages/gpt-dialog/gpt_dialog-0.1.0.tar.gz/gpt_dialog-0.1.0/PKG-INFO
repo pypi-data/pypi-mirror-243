@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: gpt_dialog
+Version: 0.1.0
+Summary: Paquete con elementos para crear dialogos entre bots de GPTbasados en la API de OpenAI.
+Home-page: https://github.com/santhiperbolico/gpt_dialog
+Author: Santiago Arranz Sanz
+Author-email: santiago.arranz.sanz@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai<1.4.0,>=1.3.5
+Requires-Dist: python-dotenv<1.1.0,>=1.0.0
+Requires-Dist: attrs<23.2.0,>=23.1.0
+Requires-Dist: requests<2.32.0,>=2.31.0
+
+# GPT Dialog
+
+El paquete `gpt_dialog` facilita la creación de bots basados en modelos GPT capaces de dialogar entre sí. Los bots pueden discutir sobre un tema específico, y uno de ellos, denominado moderador, tiene la capacidad de generar una conclusión después de escuchar a los demás bots.
+
+## Instalación
+
+Para instalar el paquete, clona el repositorio y crea un entorno virtual. Asegúrate de tener Python 3.10 instalado en tu entorno.
+
+# Requisitos
+El paquete `gpt_dialog` requiere las siguientes librerías:
+
+* `openai`
+* `attrs`
+* `python-dotenv`
+Puedes instalar estos requisitos utilizando el siguiente comando:
+```bash
+pip install -r src/requirements.txt
+```
+
+Además, necesitarás una API key de OpenAI para utilizar el paquete. Asegúrate de configurar tu API key correctamente antes de utilizar el paquete.
+
+# Uso
+
+```python
+from gpt_dialogs.gpt_groups import ChatBotGroups
+
+group = ChatBotGroups.create_bots(NUMBER_BOTS, MODEL_TYPE, None, OPENAI_API_KEY)
+question = input("¿Qué quieres debatir?: ")
+conclusion = group.launch_debate(
+    question, MODEL_TYPE, None, OPENAI_API_KEY, ITERATIONS, True)
+```
+Este es un ejemplo básico de cómo usar el paquete. Asegúrate de consultar la documentación para obtener información detallada sobre las funciones y opciones disponibles.
+
+## Autor
+
+  - **Santiago Arran Sanz**
+    ([santhiperbolico](https://github.com/santhiperbolico/))
