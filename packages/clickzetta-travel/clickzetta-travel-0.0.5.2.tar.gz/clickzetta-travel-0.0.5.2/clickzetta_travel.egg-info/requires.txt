@@ -1,0 +1,6 @@
+clickzetta-migration>=0.0.5.9
+streamlit>=1.26.0
+cz-sqlglot>=0.0.1
+pandas>=2.0.3
+
+[all]
