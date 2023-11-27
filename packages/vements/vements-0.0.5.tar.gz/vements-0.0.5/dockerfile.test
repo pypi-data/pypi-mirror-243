@@ -1,0 +1,28 @@
+# FROM vements/substitute-server:latest
+FROM vements/substitute-server:latest AS sub
+
+FROM --platform=$BUILDPLATFORM alpine:3.18 AS build
+ARG BUILDPLATFORM
+
+
+RUN apk add --no-cache \
+    python3 \
+    py3-pip 
+
+WORKDIR /app
+COPY --from=sub /app/subserver /app/subserver
+COPY --from=sub /app/requirements.txt /app/requirements.txt
+RUN pip install -r requirements.txt
+
+COPY requirements.txt /app/requirements.txt
+RUN pip install -r requirements.txt
+
+COPY src /app/src
+COPY tests /app/tests
+
+ENV PORT=9000
+ENV PYTHONPATH=/app/src
+
+ENTRYPOINT python -m subserver & \
+     cd /app && \
+     pytest .
