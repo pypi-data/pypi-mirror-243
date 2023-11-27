@@ -1,0 +1,79 @@
+{% extends "page.html.j2" %}
+
+{% block container %}
+<div class="row mb-3">
+    <div class="col">
+        <h1>{{ activity.name }}</h1>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-4">
+        <dl>
+            <dt>Name</dt>
+            <dd>{{ activity.name }}</dd>
+            <dt>Kind</dt>
+            <dd>{{ activity.kind }}</dd>
+            <dt>Commute</dt>
+            <dd>{{ activity.commute }}</dd>
+            <dt>Distance</dt>
+            <dd>{{ activity.distance|round(1) }} km</dd>
+            <dt>Elapsed time</dt>
+            <dd>{{ activity.elapsed_time }}</dd>
+            <dt>Start time</dt>
+            <dd>{{ activity.start }}</dd>
+            <dt>Calories</dt>
+            <dd>{{ activity.calories }}</dd>
+            <dt>Equipment</dt>
+            <dd>{{ activity.equipment }}</dd>
+            <dt>ID</dt>
+            <dd>{{ activity.id }}</dd>
+        </dl>
+    </div>
+    <div class="col-8">
+        <div id="activity-map" style="height: 500px;"></div>
+        <script>
+            var map = L.map('activity-map', {
+                fullscreenControl: true
+            });
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            let geojson = L.geoJSON({{ color_line_geojson| safe }}, {
+                style: function (feature) { return { color: feature.properties.color } }
+            }).addTo(map)
+            map.fitBounds(geojson.getBounds());
+        </script>
+    </div>
+</div>
+
+
+<div class="row mb-3">
+    <div class="col">
+        <h2>Time series</h2>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-4">
+        {{ vega_direct("distance_time_plot", distance_time_plot) }}
+    </div>
+    <div class="col-md-4">
+        {{ vega_direct("altitude_time_plot", altitude_time_plot) }}
+    </div>
+    <div class="col-md-4">
+        {{ vega_direct("heartrate_time_plot", heartrate_time_plot) }}
+    </div>
+</div>
+
+{% if heart_zones_plot is defined %}
+<div class="row mb-3">
+    <div class="col-md-4">
+        {{ vega_direct("heart_zones_plot", heart_zones_plot) }}
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
