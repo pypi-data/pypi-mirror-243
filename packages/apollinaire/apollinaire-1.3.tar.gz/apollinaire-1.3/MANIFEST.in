@@ -1,0 +1,10 @@
+include LICENSE *.md
+recursive-include docs *.rst
+recursive-include notebooks *.ipynb
+global-include *.csv
+global-include *.a2z
+global-include *.txt
+include src/apollinaire/test/test_data/* 
+include src/apollinaire/timeseries/golf_11041996_10041997.fits 
+include src/apollinaire/timeseries/kplr006603624_52_COR_filt_inp.fits 
+include src/apollinaire/peakbagging/templates/* 

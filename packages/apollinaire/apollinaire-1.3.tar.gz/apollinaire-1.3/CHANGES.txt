@@ -1,0 +1,6 @@
+Version 1.3
+2023-11-27
+- Migrate the package metadata to a pyproject.toml file.
+- Update the tutorial notebooks and the corresponding documentation.
+- Implement the two_gaussian option for background.
+- Refactor some old functions.
