@@ -1,0 +1,14 @@
+sopel_modules.weather-1.6.1-py3.9-nspkg.pth,sha256=GpO4OWqrcKGJyabPvvsBuBcrUk4pFr3K5HYvSnuQBi8,574
+sopel_modules/weather/__init__.py,sha256=g0HRqGTyDoSCF-wQPCkGvIZiDNfDF6Ah_oOWH9Jsecw,274
+sopel_modules/weather/weather.py,sha256=27J-cR_Fji8SNnfR6gkxvBJN2iYDQNQ0HX7447fcjgw,14356
+sopel_modules/weather/providers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sopel_modules/weather/providers/weather/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sopel_modules/weather/providers/weather/openmeteo.py,sha256=TD0xXFJTCMlO1jBoNGgeUIsgwvQDy0IZy6aZgTR_MWU,3642
+sopel_modules/weather/providers/weather/openweathermap.py,sha256=T3IugDcqD0nF4jaImyztJQG6uVgCFDIBjIUr2VNz2Vg,2298
+sopel_modules/weather/providers/weather/pirateweather.py,sha256=9BZSKfYAPZLfBax9Wx0efyHdJf0OfhcXHWTiFPx8so8,2468
+sopel_modules.weather-1.6.1.dist-info/LICENSE,sha256=cba8xvCgl5v_9PeMbodJZLvW110vCHmlqxyXuey1J1Q,1068
+sopel_modules.weather-1.6.1.dist-info/METADATA,sha256=yr_WzVEEfs9S7NZ4Dskrq7oOcdx1cvNtJq8ugrkuMgo,4231
+sopel_modules.weather-1.6.1.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+sopel_modules.weather-1.6.1.dist-info/namespace_packages.txt,sha256=1GJk87jnz3vpuDVQimAVoSTAzCNN7PNkycVbH0Q1pkg,14
+sopel_modules.weather-1.6.1.dist-info/top_level.txt,sha256=1GJk87jnz3vpuDVQimAVoSTAzCNN7PNkycVbH0Q1pkg,14
+sopel_modules.weather-1.6.1.dist-info/RECORD,,
