@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: servc
+Version: 0.0.1
+Summary: Server implmentation of services for python
+Author-email: Yusuf Ali <ali@yusuf.email>
+Project-URL: Homepage, https://github.com/serv-c/svc-lib-server-python
+Project-URL: Bug Tracker, https://github.com/serv-c/svc-lib-server-python/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# svc-lib-server-python
+Server implmentation of services for python
