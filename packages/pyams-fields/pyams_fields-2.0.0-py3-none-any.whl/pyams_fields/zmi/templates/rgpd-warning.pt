@@ -1,0 +1,7 @@
+<div i18n:domain="pyams_fields"
+     class="small alert alert-info py-1 px-2">
+    <span i18n:translate="">Text sample:</span><br />
+    <span i18n:translate="">- By submitting this form, I agree that the entered information
+        may be used for the purpose of my request and the business
+        relationship that may result from it.</span>
+</div>

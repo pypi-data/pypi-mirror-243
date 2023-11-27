@@ -1,0 +1,7 @@
+<div i18n:domain="pyams_fields"
+     class="small alert alert-info py-1 px-2">
+    <span i18n:translate="">Text sample:</span><br />
+    <span i18n:translate="">- To know and enforce your rights, including the right to
+        withdraw your consent to the use of the data collected by
+        this form, please consult our privacy policy.</span>
+</div>

@@ -1,0 +1,560 @@
+#
+# SOME DESCRIPTIVE TITLE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE 1.0\n"
+"POT-Creation-Date: 2023-03-13 17:49+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Lingua 4.15.0\n"
+
+#: src/pyams_fields/field.py:125
+msgid "Text"
+msgstr "Texte simple"
+
+#: src/pyams_fields/field.py:137
+msgid "Multi-lines text"
+msgstr "Texte multi-lignes"
+
+#: src/pyams_fields/field.py:149
+msgid "Boolean"
+msgstr "Booléen"
+
+#: src/pyams_fields/field.py:161
+msgid "Integer"
+msgstr "Nombre entier"
+
+#: src/pyams_fields/field.py:173
+msgid "Decimal"
+msgstr "Nombre avec décimales"
+
+#: src/pyams_fields/field.py:185
+msgid "Date"
+msgstr "Date"
+
+#: src/pyams_fields/field.py:197
+msgid "Time"
+msgstr "Heure"
+
+#: src/pyams_fields/field.py:209
+msgid "Datetime"
+msgstr "Date et heure"
+
+#: src/pyams_fields/field.py:221
+msgid "Dates range"
+msgstr "Intervalle de dates"
+
+#: src/pyams_fields/field.py:233 src/pyams_fields/field.py:256
+msgid "first date"
+msgstr "du"
+
+#: src/pyams_fields/field.py:234 src/pyams_fields/field.py:257
+msgid "last date"
+msgstr "au"
+
+#: src/pyams_fields/field.py:244
+msgid "Datetime range"
+msgstr "Intervalle de dates et heures"
+
+#: src/pyams_fields/field.py:267
+msgid "Phone number"
+msgstr "Numéro de téléphone"
+
+#: src/pyams_fields/field.py:279
+msgid "E-mail address"
+msgstr "Adresse de messagerie"
+
+#: src/pyams_fields/field.py:291
+msgid "URI"
+msgstr "URI"
+
+#: src/pyams_fields/field.py:307
+msgid "Choice"
+msgstr "Sélection simple dans une liste"
+
+#: src/pyams_fields/field.py:333
+msgid "List"
+msgstr "Sélections multiple dans une liste"
+
+#: src/pyams_fields/field.py:359
+msgid "Timezone"
+msgstr "Fuseau horaire"
+
+#: src/pyams_fields/interfaces.py:40 src/pyams_fields/zmi/container.py:132
+msgid "Field name"
+msgstr "Nom du champ"
+
+#: src/pyams_fields/interfaces.py:41
+msgid "Field internal name; must be unique for a given form"
+msgstr "Nom interne du champ ; il doit être unique au sein du formulaire"
+
+#: src/pyams_fields/interfaces.py:44
+msgid "Field type"
+msgstr "Type de champ"
+
+#: src/pyams_fields/interfaces.py:45
+msgid "Selected field type"
+msgstr ""
+"Le type de champ détermine les informations qui peuvent être saisies par "
+"l'utilisateur"
+
+#: src/pyams_fields/interfaces.py:49
+msgid "Label"
+msgstr "Libellé"
+
+#: src/pyams_fields/interfaces.py:50
+msgid "User field label"
+msgstr "Libellé du champ tel qu'affiché à l'utilisateur"
+
+#: src/pyams_fields/interfaces.py:53
+msgid "Description"
+msgstr "Description"
+
+#: src/pyams_fields/interfaces.py:54
+msgid "Field description can be displayed as hint"
+msgstr ""
+"La description du champ pourra être affichée sous différentes formes en "
+"fonction du thème graphique"
+
+#: src/pyams_fields/interfaces.py:57
+msgid "Placeholder"
+msgstr "Texte d'attente"
+
+#: src/pyams_fields/interfaces.py:58
+msgid "Some field types like text line can display a placeholder"
+msgstr ""
+"Certains types de champs peuvent prendre en charge un texte d'attente, qui "
+"s'affiche tant qu'aucune information n'a été saisie"
+
+#: src/pyams_fields/interfaces.py:62
+msgid "Optional values"
+msgstr "Liste des valeurs"
+
+#: src/pyams_fields/interfaces.py:63
+msgid "List of available values (for 'choice' and 'list' field types)"
+msgstr ""
+"Liste des valeurs disponibles pour les champs de sélection simple ou multiple"
+
+#: src/pyams_fields/interfaces.py:67
+msgid "Default value"
+msgstr "Valeur par défaut"
+
+#: src/pyams_fields/interfaces.py:68
+msgid "Give default value if field type can use it"
+msgstr "Définit la valeur par défaut du champ, pour ceux qui le supportent"
+
+#: src/pyams_fields/interfaces.py:71
+msgid "Required?"
+msgstr "Champ obligatoire"
+
+#: src/pyams_fields/interfaces.py:72
+msgid "Select 'yes' to set field as mandatory"
+msgstr "Sélectionnez cette option pour que la saisie du champ soit obligatoire"
+
+#: src/pyams_fields/interfaces.py:76
+msgid "Visible?"
+msgstr "Visible"
+
+#: src/pyams_fields/interfaces.py:77
+msgid "Select 'no' to hide given field..."
+msgstr "Sélectionnez 'non' pour masquer ce champ sans le supprimer"
+
+#: src/pyams_fields/interfaces.py:124
+msgid "Use captcha"
+msgstr "Utiliser un captcha"
+
+#: src/pyams_fields/interfaces.py:125
+msgid "Use captcha to check form submission"
+msgstr "Utiliser un captcha pour valider la soumission du formulaire"
+
+#: src/pyams_fields/interfaces.py:129
+msgid "Default client key"
+msgstr "Clé cliente par défaut"
+
+#: src/pyams_fields/interfaces.py:130
+msgid "This key is included into HTML code and submitted with form data"
+msgstr ""
+"Cette clé est intégrée dans le code HTML et soumise avec les données du "
+"formulaire"
+
+#: src/pyams_fields/interfaces.py:134
+msgid "Default server key"
+msgstr "Clé serveur par défaut"
+
+#: src/pyams_fields/interfaces.py:135
+msgid ""
+"This key is used on server side to communicate with Google reCaptcha services"
+msgstr ""
+"Cette clé est utilisée par le serveur pour communiquer avec les services "
+"reCaptcha de Google"
+
+#: src/pyams_fields/interfaces.py:143
+msgid "Use proxy server?"
+msgstr "Utiliser un serveur proxy"
+
+#: src/pyams_fields/interfaces.py:144
+msgid ""
+"If a proxy server is required to access recaptcha services, please set them "
+"here"
+msgstr "À sélectionner lorsque l'utilisation d'un serveur proxy est nécessaire"
+
+#: src/pyams_fields/interfaces.py:149
+msgid "Protocol"
+msgstr "Protocole"
+
+#: src/pyams_fields/interfaces.py:150
+msgid ""
+"If your server is behind a proxy, please set it's protocol here; HTTPS "
+"support is required for reCaptcha"
+msgstr ""
+"Si votre service est protégé par un serveur proxy, vous devez indiquer le "
+"protocole ici ; le support du protocole HTTPS est requis pour accéder au "
+"service reCaptcha"
+
+#: src/pyams_fields/interfaces.py:156
+msgid "Host name"
+msgstr "Nom d'hôte"
+
+#: src/pyams_fields/interfaces.py:157
+msgid ""
+"If your server is behind a proxy, please set it's address here; captcha "
+"verification requires HTTPS support"
+msgstr "Adresse IP ou nom DNS du serveur proxy"
+
+#: src/pyams_fields/interfaces.py:162
+msgid "Port number"
+msgstr "Numéro de port"
+
+#: src/pyams_fields/interfaces.py:163
+msgid "If your server is behind a proxy, please set it's port number here"
+msgstr "Numéro de port du serveur proxy"
+
+#: src/pyams_fields/interfaces.py:168
+msgid "Username"
+msgstr "Code utilisateur"
+
+#: src/pyams_fields/interfaces.py:169
+msgid "If your proxy server requires authentication, please set username here"
+msgstr ""
+"Si le serveur proxy nécessite une authentification, indiquer ici le code "
+"utilisateur"
+
+#: src/pyams_fields/interfaces.py:173
+msgid "Password"
+msgstr "Mot de passe"
+
+#: src/pyams_fields/interfaces.py:174
+msgid "If your proxy server requires authentication, please set password here"
+msgstr ""
+"Si le serveur proxy nécessite une authentification, indiquer ici le mot de "
+"passe"
+
+#: src/pyams_fields/interfaces.py:179
+msgid "Use proxy only from"
+msgstr "Domaines sélectionnés"
+
+#: src/pyams_fields/interfaces.py:180
+msgid ""
+"If proxy usage is restricted to several domains names, you can set them "
+"here, separated by comas"
+msgstr ""
+"Si l'utilisation du proxy est limitée à certains noms de domaines, vous "
+"pouvez indiquer leurs noms ici, séparés par une virgule"
+
+#: src/pyams_fields/interfaces.py:195
+msgid "Override default captcha settings"
+msgstr "Remplacer le captcha par défaut"
+
+#: src/pyams_fields/interfaces.py:196
+msgid "Select this option to define custom captcha keys for this form"
+msgstr "Sélectionner cette option pour définir des clés de captcha spécifiques"
+
+#: src/pyams_fields/interfaces.py:201
+msgid "Client key"
+msgstr "Clé cliente"
+
+#: src/pyams_fields/interfaces.py:202
+msgid ""
+"This key (also called 'site key') is included into HTML code and submitted "
+"with form data"
+msgstr ""
+"Cette clé (également appelée 'clé de site') est intégrée au code HTML et "
+"soumise avec les données du formulaire"
+
+#: src/pyams_fields/interfaces.py:206
+msgid "Server key"
+msgstr "Clé serveur"
+
+#: src/pyams_fields/interfaces.py:207
+msgid ""
+"This key (also called 'secret key') is used on server side to communicate "
+"with Google reCaptcha services"
+msgstr ""
+"Cette clé (également appelée 'clé secrète') est utilisée par le serveur pour "
+"communiquer avec le service reCaptcha de Google"
+
+#: src/pyams_fields/interfaces.py:229
+msgid "Required RGPD consent"
+msgstr "Demander le consentement RGPD"
+
+#: src/pyams_fields/interfaces.py:230
+msgid ""
+"If 'yes', an RGPD compliance warning will be displayed above form's submit "
+"button; form can't be submitted as long as the associated checkbox will not "
+"be checked explicitly by the user"
+msgstr ""
+"Si 'oui', un message d'avertissement sur la conformité au RGPD sera affiché "
+"à l'utilisateur au-dessus du bouton de soumission; le formulaire ne peut pas "
+"être soumis tant que la case à cocher correspondante n'aura pas été "
+"sélectionnée"
+
+#: src/pyams_fields/interfaces.py:237
+msgid "RGPD consent text"
+msgstr "Texte de consentement"
+
+#: src/pyams_fields/interfaces.py:238
+msgid ""
+"User consent must be explicit, and user must be warned about usage which "
+"will be made of submitted data; text samples are given below"
+msgstr ""
+"Le consentement de l'utilisateur doit être explicite, et il doit être "
+"informé de l'usage qui pourrait être fait des données soumises ; un exemple "
+"de texte est indiqué ci-dessous"
+
+#: src/pyams_fields/interfaces.py:243
+msgid "RGPD user rights"
+msgstr "Droits de révocation"
+
+#: src/pyams_fields/interfaces.py:244
+msgid ""
+"The internet user must be able to easily revoke his consent later on, so it "
+"is important to inform him how to proceed; below are examples of possible "
+"formulations"
+msgstr ""
+"L'utilisateur doit pouvoir annuler son consentement à tout moment ; il est "
+"donc important de lui expliquer comment procéder, un exemple de texte est "
+"indiqué ci-dessous"
+
+#: src/pyams_fields/interfaces.py:290
+msgid "Authenticated only?"
+msgstr "Utilisateurs authentifiés uniquement"
+
+#: src/pyams_fields/interfaces.py:291
+msgid "If 'yes', only authenticated users will be able to see and submit form"
+msgstr ""
+"Si 'oui', seuls des utilisateurs authentifiés auront accès au formulaire"
+
+#: src/pyams_fields/interfaces.py:296
+msgid "Submit button label"
+msgstr "Libellé du bouton"
+
+#: src/pyams_fields/interfaces.py:297
+msgid "Label of form submit button"
+msgstr "Libellé du bouton de soumission du formulaire"
+
+#: src/pyams_fields/interfaces.py:300
+msgid "Submit message"
+msgstr "Message de soumission"
+
+#: src/pyams_fields/interfaces.py:301
+#, python-format
+msgid ""
+"This message will be displayed after form submission; you can include the "
+"submission ID using the {_reference} syntax"
+msgstr ""
+"Le contenu de ce message sera affiché après la soumission du formulaire et "
+"sa bonne prise en charge ; vous pouvez y intégrer la référence de la "
+"soumission en utilisant la syntaxe {_reference}"
+
+#: src/pyams_fields/interfaces.py:306
+msgid "Submission ID format"
+msgstr "Identifiant des soumissions"
+
+#: src/pyams_fields/interfaces.py:307
+msgid ""
+"Submission ID is based on the current date and time, formatted using this "
+"formatting string"
+msgstr ""
+"L'identifiant de chaque soumission est basé sur la date et l'heure courante "
+"au moment de la soumission, que vous pouvez formatter en utilisant cette "
+"chaîne de caractères"
+
+#: src/pyams_fields/interfaces.py:312
+msgid "Selected handlers"
+msgstr "Modules de prise en charge"
+
+#: src/pyams_fields/interfaces.py:313
+msgid ""
+"The selected form handlers defines how user submitted data will be managed"
+msgstr ""
+"Vous pouvez sélectionner plusieurs modules de prise en charge du "
+"formulaire ; les données saisies leur seront transmises dans l'ordre de "
+"sélection"
+
+#: src/pyams_fields/skin/__init__.py:61
+msgid "Can't submit form."
+msgstr "Une erreur s'est produite."
+
+#: src/pyams_fields/skin/__init__.py:62
+msgid "Missing recaptcha token!"
+msgstr "Données manquantes pour la vérification du captcha !"
+
+#: src/pyams_fields/skin/__init__.py:63
+msgid "Can't verify recaptcha token! Are you a robot?"
+msgstr "Impossible de vérifier le captcha. Seriez-vous un robot ?"
+
+#: src/pyams_fields/skin/__init__.py:117
+msgid "You can't submit this form without accepting data usage rules."
+msgstr ""
+"Vous ne pouvez pas soumettre les données de ce formulaire sans accepter les "
+"conditions d'utilisation"
+
+#: src/pyams_fields/skin/__init__.py:224
+msgid "CSRF token"
+msgstr "Jeton CSRF"
+
+#: src/pyams_fields/skin/__init__.py:231
+msgid "Captcha"
+msgstr "Captcha"
+
+#: src/pyams_fields/skin/converter.py:42
+msgid "yes"
+msgstr "oui"
+
+#: src/pyams_fields/skin/converter.py:42
+msgid "no"
+msgstr "non"
+
+#: src/pyams_fields/skin/converter.py:79
+msgid "from %d/%m/%Y"
+msgstr "à partir du %d/%m/%Y"
+
+#: src/pyams_fields/skin/converter.py:80
+msgid "to %d/%m/%Y"
+msgstr "jusqu'au %d/%m/%Y"
+
+#: src/pyams_fields/skin/converter.py:97
+msgid "from %d/%m/%Y at %H:%M"
+msgstr "à partir du %d/%m/%Y à %H:%M"
+
+#: src/pyams_fields/skin/converter.py:98
+msgid "to %d/%m/%Y at %H:%M"
+msgstr "jusqu'au %d/%m/%Y à %H:%M"
+
+#: src/pyams_fields/zmi/__init__.py:57
+msgid "Add form field"
+msgstr "Ajouter un champ de saisie"
+
+#: src/pyams_fields/zmi/__init__.py:90
+msgid "Add new form field"
+msgstr "Nouveau champ de saisie"
+
+#: src/pyams_fields/zmi/__init__.py:92
+msgid "New form field properties"
+msgstr "Propriétés du nouveau champ"
+
+#: src/pyams_fields/zmi/__init__.py:111
+msgid "Another form field already exists with this name!"
+msgstr "Il existe déjà un autre champ de ce formulaire portant ce nom !"
+
+#: src/pyams_fields/zmi/__init__.py:168
+msgid "Form field properties"
+msgstr "Propriétés du champ"
+
+#: src/pyams_fields/zmi/__init__.py:179 src/pyams_fields/zmi/__init__.py:244
+#, python-format
+msgid "Form field: {}"
+msgstr "Champ de saisie : {}"
+
+#: src/pyams_fields/zmi/__init__.py:214
+msgid "Clone field"
+msgstr "Dupliquer le champ"
+
+#: src/pyams_fields/zmi/__init__.py:246
+msgid "Clone form field"
+msgstr "Dupliquer le champ de saisie"
+
+#: src/pyams_fields/zmi/rgpd.py:78
+msgid ""
+"You must define RGPD consent text and user rights to enable RGPD consent!"
+msgstr ""
+"Vous devez définir le texte de consentement de l'utilisateur ainsi que ses "
+"droits de retrait pour activer le support au RGPD !"
+
+#: src/pyams_fields/zmi/container.py:50 src/pyams_fields/zmi/container.py:160
+msgid "Form fields"
+msgstr "Champs de saisie"
+
+#: src/pyams_fields/zmi/container.py:123
+msgid "Public label"
+msgstr "Libellé"
+
+#: src/pyams_fields/zmi/container.py:163
+msgid "Form fields list"
+msgstr "Liste des champs de saisie"
+
+#: src/pyams_fields/zmi/captcha.py:56
+msgid "You must define client and server keys to use a captcha"
+msgstr ""
+"Vous devez définir la clé cliente et la clé serveur pour activer un captcha"
+
+#: src/pyams_fields/zmi/captcha.py:82
+msgid "You must define protocol, host name and port be able to use a proxy!"
+msgstr ""
+"Vous devez définir le protocole, le nom d'hôte et le numéro de port pour "
+"utiliser un proxy !"
+
+#: src/pyams_fields/zmi/captcha.py:107
+msgid ""
+"You must redefine both client and server keys, or none or them to disable "
+"captcha for this form!"
+msgstr ""
+"Vous devez redéfinir les clés cliente et serveur, au aucune des deux si vous "
+"souhaitez désactiver le captcha pour ce formulaire !"
+
+#: src/pyams_fields/zmi/handler.py:42
+msgid "Form handlers"
+msgstr "Traitement des données du formulaire"
+
+#: src/pyams_fields/zmi/handler.py:53
+msgid "No selected handler"
+msgstr "Aucun module de prise en charge sélectionné"
+
+#: src/pyams_fields/zmi/templates/rgpd-warning.pt:3
+#: src/pyams_fields/zmi/templates/rgpd-user-rights.pt:3
+msgid "Text sample:"
+msgstr "Exemple de texte :"
+
+#: src/pyams_fields/zmi/templates/rgpd-warning.pt:4
+msgid ""
+"- By submitting this form, I agree that the entered information may be used "
+"for the purpose of my request and the business relationship that may result "
+"from it."
+msgstr ""
+"- En soumettant ce formulaire, j'accepte que les informations saisies soient "
+"utilisées dans le cadre du traitement de ma demande, ainsi que dans le cadre "
+"de la relation commerciale qui peut en résulter."
+
+#: src/pyams_fields/zmi/templates/rgpd-user-rights.pt:4
+msgid ""
+"- To know and enforce your rights, including the right to withdraw your "
+"consent to the use of the data collected by this form, please consult our "
+"privacy policy."
+msgstr ""
+"- Pour connaître et faire appliquer vos droits, notamment votre droit de "
+"retrait au consentement à l'utilisation des données que vous nous aurez "
+"fournies à travers ce formulaire, veuillez consulter notre politique de "
+"confidentialité."
+
+#~ msgid ""
+#~ "If set, this prefix will be added automatically to all submissions IDs"
+#~ msgstr ""
+#~ "S'il est indiqué, ce préfixe sera ajouté automatiquement à tous les "
+#~ "identifiants des soumissions"
