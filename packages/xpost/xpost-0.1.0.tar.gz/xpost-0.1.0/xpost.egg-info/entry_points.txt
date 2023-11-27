@@ -1,0 +1,5 @@
+[console_scripts]
+x = xpost.cli:tweet
+x-config = xpost.cli:tweet_config
+xpost = xpost.cli:virgin
+
