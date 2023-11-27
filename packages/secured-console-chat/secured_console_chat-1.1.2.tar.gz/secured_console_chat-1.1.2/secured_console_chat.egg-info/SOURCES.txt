@@ -1,0 +1,16 @@
+LICENSE
+setup.py
+cmd_chat/__init__.py
+cmd_chat/client/client.py
+cmd_chat/client/config.py
+cmd_chat/client/core/crypto.py
+cmd_chat/client/core/abs/abs_crypto.py
+cmd_chat/server/models.py
+cmd_chat/server/server.py
+cmd_chat/server/services.py
+secured_console_chat.egg-info/PKG-INFO
+secured_console_chat.egg-info/SOURCES.txt
+secured_console_chat.egg-info/dependency_links.txt
+secured_console_chat.egg-info/entry_points.txt
+secured_console_chat.egg-info/requires.txt
+secured_console_chat.egg-info/top_level.txt
