@@ -1,0 +1,2 @@
+[console_scripts]
+ascend_dbt_transform = packages.cli:cli
