@@ -1,0 +1,16 @@
+httpx<1
+pydantic<3
+
+[test]
+black
+jsonschema
+mypy
+pytest
+pytest-cov>=4.1
+pytest-mock
+pyyaml
+ruff
+types-jsonschema
+types-PyYAML
+types-mock
+types-setuptools
