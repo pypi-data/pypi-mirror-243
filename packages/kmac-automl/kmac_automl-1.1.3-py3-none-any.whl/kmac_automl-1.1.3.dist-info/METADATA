@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: kmac-automl
+Version: 1.1.3
+Summary: KMAC AutoML Solution
+Home-page: https://github.com/yyam1020-kmac/automl
+Author: KMAC-DX
+Author-email: yyam1020@kmac.co.kr
+License: KMAC
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE.md
+Requires-Dist: pycaret[full]
+
+UNKNOWN
+
