@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: AH22CS174
+Version: 2.2.4
+Summary: A very basic Result calculator
+Home-page: 
+Author: Tanishq JM
+Author-email: tanishqurmi@gmail.com
+License: MIT
+Keywords: result
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+
+This is a very basic calculator package.
