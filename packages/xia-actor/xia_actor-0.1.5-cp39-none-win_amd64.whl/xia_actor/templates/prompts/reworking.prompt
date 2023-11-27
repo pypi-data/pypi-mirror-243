@@ -1,0 +1,21 @@
+# Work Results to be reworked
+{% for task in tasks %}
+## {{ task.title }}
+{{ task.content }}
+
+{% endfor %}
+
+# Rework Instruction
+----
+Role: {{ actor_role }}
+
+Please do the rework by taking into consideration the following Review result.
+{{ review_message }}
+
+# Format example
+-----
+{% for task in tasks %}
+## {{ task.title }}
+{{ task.format }}
+
+{% endfor %}
