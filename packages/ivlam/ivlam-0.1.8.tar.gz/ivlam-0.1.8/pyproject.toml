@@ -1,0 +1,22 @@
+[project]
+name = 'ivlam'
+version = '0.1.8'
+description = 'A Python wrapper for ivlam'
+license = { text = 'GNU General Public License v3 or later (GPLv3+)' }
+readme = 'README.md'
+requires-python = '>=3.8'
+authors = [
+  {name = 'pennbay', email = 'pennbay@outlook.com'},
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)"
+]
+
+[project.urls]
+Repository = "https://github.com/pennbay/ivlam.git"
+"Bug Tracker" = "https://github.com/pennbay/ivlam/issues"
+
+[build-system]
+build-backend = 'mesonpy'
+requires = ['meson-python', 'numpy']
