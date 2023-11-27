@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: Bytebin
+Version: 0.0.1
+Summary: Bytebin API Wrapper
+Home-page: https://github.com/alexraskin/bytebin.py
+Author: alexraskin
+Author-email: <root@alexraskin.com
+License: MIT License
+Keywords: module,Bytebin,library,package,python
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+
+# Bytebin.py
+
+A simple python wrapper for [Bytebin](https://bytebin.dev/)
+
+## Installation
+
+```sh
+pip install bytebin.py
+```
+
+## Example
+
+```py
+import Bytebin
+
+bb = Bytebin.Bytebin()
+
+paste = bb.create("Hello World!")
+
+print(paste.url)
+print(paste.key)
+
+lookup = bb.lookup(paste.key)
+
+print(lookup.url)
+print(lookup.key)
+print(lookup.content)
+```
