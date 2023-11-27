@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements.txt
+setup.py
+src/absfuyu-res/__init__.py
+src/absfuyu-res/passwordlib_res.pkl
+src/absfuyu_res.egg-info/PKG-INFO
+src/absfuyu_res.egg-info/SOURCES.txt
+src/absfuyu_res.egg-info/dependency_links.txt
+src/absfuyu_res.egg-info/requires.txt
+src/absfuyu_res.egg-info/top_level.txt
