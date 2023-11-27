@@ -1,0 +1,17 @@
+setuptools
+ZODB
+beaker
+msal
+persistent
+pyams_security
+pyams_utils
+pyramid>=2.0.0
+zope.container
+zope.interface
+zope.schema
+
+[test]
+pyams_security_views
+pyams_zmi
+pyramid_zcml
+zope.exceptions
