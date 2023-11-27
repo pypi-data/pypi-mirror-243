@@ -1,0 +1,3 @@
+[console_scripts]
+nitter = __nitter__.nitter:app
+
