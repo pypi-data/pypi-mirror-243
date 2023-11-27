@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/QLGR/__init__.py
+src/QLGR/handler.py
+src/QLGR/main.py
+src/queue_logger.egg-info/PKG-INFO
+src/queue_logger.egg-info/SOURCES.txt
+src/queue_logger.egg-info/dependency_links.txt
+src/queue_logger.egg-info/requires.txt
+src/queue_logger.egg-info/top_level.txt
