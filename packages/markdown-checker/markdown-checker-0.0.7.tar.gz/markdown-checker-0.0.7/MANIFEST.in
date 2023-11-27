@@ -1,0 +1,4 @@
+include README.md
+include markdown_checker/inputs/*
+include markdown_checker/paths/*
+include setup.cfg
