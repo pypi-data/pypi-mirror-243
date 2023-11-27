@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: ofjustpy-engine
+Version: 1.1.1
+Summary: Ofjustpy-engine is JustPy-derived high-level Python Web Framework core engine. It is used by ofjustpy which is 
+Maintainer-email: Kabira K <kabira@monallabs.in>
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: User Interfaces
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Dist: addict-tracking-changes==1.0.6; python_version > '3.11'
+Requires-Dist: anyio==3.7.1; python_version >= '3.7'
+Requires-Dist: click==8.1.7; python_version >= '3.7'
+Requires-Dist: dpath==2.1.6; python_version >= '3.7'
+Requires-Dist: h11==0.14.0; python_version >= '3.7'
+Requires-Dist: idna==3.4; python_version >= '3.5'
+Requires-Dist: itsdangerous==2.1.2; python_version >= '3.7'
+Requires-Dist: json-fix==0.5.2; python_version >= '3.6'
+Requires-Dist: psutil==5.9.5; python_version >= '2.7'
+Requires-Dist: py-tailwind-utils==1.1.1
+Requires-Dist: sniffio==1.3.0; python_version >= '3.7'
+Requires-Dist: starlette==0.31.0; python_version >= '3.8'
+Requires-Dist: uvicorn==0.23.2; python_version >= '3.8'
+Requires-Dist: jinja2==3.1.2; python_version >= '3.7'
+Requires-Dist: addict-tracking-changes-fixed-attributes==0.0.1; python_version >= '3.11'
+Requires-Dist: oj-signing-middleware
+Project-URL: Documentation, https://monallabs-org.github.io/ofjustpy/core-engine
+Project-URL: Home, https://webworks.monallabs.in/ofjustpy/core-engine
+Project-URL: Source, https://github.com/Monallabs-org/
+
+# [JustPy-Svelte](https://github.com/Monallabs-org/justpy-svelte)
+---
+
+## Introduction
+Derived from [justpy](https://github.com/justpy-org/justpy), this repo provides the core engine for ofjustpy webdev framework. 
+
+
+### EndNotes
+- Developed By: webworks.monallabs.in 
+
+
+
+
