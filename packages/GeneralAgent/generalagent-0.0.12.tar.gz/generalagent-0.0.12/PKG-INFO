@@ -1,0 +1,199 @@
+Metadata-Version: 2.1
+Name: GeneralAgent
+Version: 0.0.12
+Summary: General Agent: From LLM to Agent
+Home-page: https://github.com/CosmosShadow/GeneralAgent
+License: Apache 2.0
+Author: Chen Li
+Author-email: lichenarthurdata@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: beautifulsoup4 (==4.12.2)
+Requires-Dist: bs4 (==0.0.1)
+Requires-Dist: chromadb (==0.4.17)
+Requires-Dist: edge-tts (==6.1.9)
+Requires-Dist: fastapi (==0.104.1)
+Requires-Dist: httpx (==0.24.0)
+Requires-Dist: jinja2 (==3.1.2)
+Requires-Dist: litellm (==1.0.3)
+Requires-Dist: numpy (==1.24.4)
+Requires-Dist: openai (==1.3.3)
+Requires-Dist: playwright (==1.39.0)
+Requires-Dist: pulsar-client (==3.3.0)
+Requires-Dist: pydantic (==2.5.1)
+Requires-Dist: pydub (==0.25.1)
+Requires-Dist: pymongo (==4.6.0)
+Requires-Dist: pymupdf (==1.23.6)
+Requires-Dist: pypdf (==3.17.1)
+Requires-Dist: pytest (==7.4.3)
+Requires-Dist: pytest-asyncio (==0.21.1)
+Requires-Dist: python-docx (==1.1.0)
+Requires-Dist: python-dotenv (==1.0.0)
+Requires-Dist: python-multipart (==0.0.6)
+Requires-Dist: python-pptx (==0.6.23)
+Requires-Dist: replicate (==0.18.1)
+Requires-Dist: requests (==2.31.0)
+Requires-Dist: retrying (==1.3.4)
+Requires-Dist: tiktoken (==0.5.1)
+Requires-Dist: tinydb (==4.8.0)
+Requires-Dist: uvicorn (==0.24.0.post1)
+Requires-Dist: websocket-client-py3 (==0.15.0)
+Requires-Dist: websockets (==12.0)
+Requires-Dist: yfinance (==0.2.31)
+Project-URL: Repository, https://github.com/CosmosShadow/GeneralAgent
+Description-Content-Type: text/markdown
+
+<h1 align="center">GeneralAgent: From LLM to Agent</h1>
+<p align="center">
+<a href="README.md"><img src="https://img.shields.io/badge/document-English-blue.svg" alt="EN doc"></a>
+<a href="README_CN.md"><img src="https://img.shields.io/badge/文档-中文版-blue.svg" alt="CN doc"></a>
+<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=white&style=flat" alt="License"/>
+</p>
+<p align='center'>
+A simple, general, customizable Agent framework
+</p>
+
+
+## Features
+
+* Simple、Fast、Stable: **stable with GPT3.5**.
+* GeneralAgent support **serialization**, include **python state**.
+* Build-in interpreters: Python, AppleScript, Shell, File, Plan, Retrieve Embedding etc.
+* **Dynamic UI**: Agent can create dynamic ui to user who can use.
+* **WebUI with agent builder**. You can use natural language to create agent without coding.
+* [AthenaAgent](https://github.com/sigworld/AthenaAgent) is a TypeScript port of GeneralAgent.
+
+
+
+## Architecture
+
+**GeneralAgent**
+
+![Architecture](./docs/images/Architecture_2023.11.15.png)
+
+**WebUI**
+
+<p align="center">
+<img src="./docs/images/webui_2023.11.15.png" alt="WebUI" width=600/>
+</p>
+
+
+## Demo
+
+**Version 0.03**
+
+![webui](./docs/images/2023.11.15.jpg)
+
+
+
+**Version 0.0.2**
+
+
+
+https://github.com/CosmosShadow/GeneralAgent/assets/13933465/9d9b4d6b-0c9c-404d-87d8-7f8e03f3772b
+
+
+
+## Usage
+
+### docker
+
+```bash
+# pull docker
+docker pull cosmosshadow/general-agent
+
+# make .env
+cp .env.example .env
+vim .env
+# Configure environment variables in the .env file, such as OPENAI_API_KEY, etc.
+
+# run
+docker run \
+-p 3000:3000 \
+-p 7777:7777 \
+-v `pwd`/.env:/workspace/.env \
+-v `pwd`/data:/workspace/data \
+--name=agent \
+--privileged=true \
+-d cosmosshadow/general-agent
+
+# open web with localhost:3000
+```
+
+
+
+### Local installation and usage
+
+#### Installation
+
+```bash
+pip install GeneralAgent
+```
+
+#### Set environment variables
+
+```bash
+cp .env.example .env
+vim .env
+# Configure environment variables in the .env file, such as OPENAI_API_KEY, etc.
+export $(grep -v '^#' .env | sed 's/^export //g' | xargs)
+```
+
+#### Command line tool
+
+```shell
+GeneralAgent
+# or
+GeneralAgent --workspace ./test --new --auto_run
+# worksapce: Set workspace directory, default ./general_agent
+# new: if workspace exists, create a new workspace, like ./general_agent_2023xxx
+# auto_run: if auto_run, the agent will run the code automatically, default no
+```
+
+#### WebUI
+
+```bash
+git clone https://github.com/CosmosShadow/GeneralAgent
+cd GeneralAgent
+# Preparation
+cd webui/web/ && npm install && cd ../../
+cd webui/server/server/ts_builder && npm install && cd ../../../../
+# Start the server
+cd webui/server/server/
+uvicorn app:app --host 0.0.0.0 --port 7777
+# Start the web service
+cd webui/web
+npm run start
+```
+
+#### Python usage
+
+Please refer to the code for usage
+
+* [examples](examples)
+* [webui/server/server/applications](webui/server/server/applications)
+
+
+
+## Others
+
+* GeneralAgent uses [litellm](https://docs.litellm.ai/docs/) to access various platforms of large models.
+
+
+
+
+## Join us
+
+Scan the QR code below with WeChat
+
+<p align="center">
+<img src="./docs/images/wechat.jpg" alt="wechat" width=400/>
+</p>
+
+discord is comming soon.
