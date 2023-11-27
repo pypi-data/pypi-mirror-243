@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="collective.behavior.internalnumber">
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="collective.behavior.internalnumber"
+      directory="static"
+      />
+  <include zcml:condition="installed plone.app.controlpanel" package="plone.app.controlpanel" file="permissions.zcml" />
+  <include zcml:condition="have plone-60" package="Products.CMFPlone.controlpanel" file="permissions.zcml" />
+
+  <browser:page
+      name="internalnumber-settings"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      permission="plone.app.controlpanel.Site"
+      class=".settings.SettingsView"
+      />
+
+  <utility
+      name="collective.internalnumber.portaltypevocabulary"
+      factory=".settings.DxPortalTypesVocabulary"
+      />
+
+</configure>
