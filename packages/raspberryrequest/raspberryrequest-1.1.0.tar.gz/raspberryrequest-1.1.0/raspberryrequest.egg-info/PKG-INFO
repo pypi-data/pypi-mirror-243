@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: raspberryrequest
+Version: 1.1.0
+Home-page: https://github.com/Fruitful-DevTools/raspberryrequest
+Author: Charlie Marshall
+Author-email: charlie.marshall1996@gmail.com
+License: MIT
+Requires-Dist: requests>=2.26.0
