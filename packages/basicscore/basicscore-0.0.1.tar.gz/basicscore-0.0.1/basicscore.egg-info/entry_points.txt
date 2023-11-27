@@ -1,0 +1,2 @@
+[console_scripts]
+basicscore = basicscore:cli.main

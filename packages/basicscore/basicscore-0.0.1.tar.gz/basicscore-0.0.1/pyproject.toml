@@ -1,0 +1,27 @@
+[project]
+name = "basicscore"
+description = "Creates basicness-scores of software"
+readme = "Readme.md"
+version = "0.0.1"
+authors = [
+    { name = "Caj Larsson", email = "basic@caj.me" },
+    { name= "Billy Bonks", email = "no@example.org" }
+]
+dependencies = [
+    "tqdm",
+    "llama-cpp-python",
+    "appdirs"
+]
+
+[tool.setuptools]
+py-modules = ["basicscore"]
+include-package-data = true
+
+[project.scripts]
+basicscore = "basicscore:cli.main"
+
+
+[project.optional-dependencies]
+dev = [
+    "ipython"
+]
