@@ -1,0 +1,16 @@
+numpy
+pandas
+openpyxl
+scipy
+matplotlib
+japanize_matplotlib
+optuna
+pywin32
+pywinauto
+femtetutils
+
+[dev]
+pyside6
+qt6-applications
+optuna-dashboard
+pip-licenses
