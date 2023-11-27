@@ -1,0 +1,81 @@
+name: Test package
+
+on:
+    push:
+        branches: [main, develop]
+    workflow_dispatch: # Allows to run workflow manually from the Actions tab
+    schedule:
+        # Saunch workflow at 5:19 AM everyday
+        - cron:  '19 5 * * *'
+
+jobs:
+    build:
+        runs-on: ${{ matrix.os }}
+        strategy:
+            fail-fast: false
+            matrix:
+                os: [ubuntu-latest, macos-latest, windows-latest]
+                python: ["3.11", "3.12"]
+        
+        steps:
+        - uses: actions/checkout@v4
+
+        - name: Setup Python
+          uses: actions/setup-python@v4
+          with:
+            python-version: ${{ matrix.python }} 
+        
+        - name: Install project dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install flit
+            flit install --only-deps
+
+        - name: Windows - create test results and baseline directories
+          if: ${{ matrix.os == 'windows-latest'}}
+          run: |
+            New-Item -Path tests/pytest_mpl_results_${{ matrix.os }}_${{ matrix.python }} -ItemType Directory -Force
+            New-Item -Path tests/pytest_mpl_baseline_${{ matrix.os }}_${{ matrix.python }} -ItemType Directory -Force
+            New-Item -Path tests/mpl_new_baseline_${{ matrix.os }}_${{ matrix.python }} -ItemType Directory -Force
+
+        - name: Non windows - create test results and baseline directories
+          if: ${{ matrix.os != 'windows-latest'}}
+          run: |
+            mkdir -p tests/pytest_mpl_results_${{ matrix.os }}_${{ matrix.python }}
+            mkdir -p tests/pytest_mpl_baseline_${{ matrix.os }}_${{ matrix.python }}
+            mkdir -p tests/pytest_mpl_new_baseline_${{ matrix.os }}_${{ matrix.python }}
+
+        - name: Test with pytest
+          run: >
+            pytest 
+            --mpl-results-path=tests/pytest_mpl_results_${{ matrix.os }}_${{ matrix.python }}
+            --mpl-baseline-path=tests/pytest_mpl_baseline_${{ matrix.os }}_${{ matrix.python }} 
+            --mpl-generate-summary=html 
+
+        - name: Generate new image baseline
+          if: failure()
+          run: >
+            pytest 
+            --mpl-generate-path=tests/pytest_mpl_new_baseline_${{ matrix.os }}_${{ matrix.python }} 
+            --last-failed
+
+        # always attempt to upload artifacts, even(and especially) in case of failure.
+        - name: Upload pytest-mpl report
+          if: always()
+          uses: actions/upload-artifact@v3
+          with:
+            name: pytest_mpl_results_${{ matrix.os }}_${{ matrix.python }}
+            path: tests/pytest_mpl_results_${{ matrix.os }}_${{ matrix.python }}/*
+
+        - name: Upload pytest-mpl new baseline
+          if: always()
+          uses: actions/upload-artifact@v3
+          with:
+            name: pytest_mpl_new_baseline_${{ matrix.os }}_${{ matrix.python }}
+            path: tests/pytest_mpl_new_baseline_${{ matrix.os }}_${{ matrix.python }}/*
+            if-no-files-found: ignore
+
+        - name: Upload coverage reports to Codecov
+          uses: codecov/codecov-action@v3
+          env:
+            CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
