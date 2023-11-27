@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.py
+django_trix_widget.egg-info/PKG-INFO
+django_trix_widget.egg-info/SOURCES.txt
+django_trix_widget.egg-info/dependency_links.txt
+django_trix_widget.egg-info/not-zip-safe
+django_trix_widget.egg-info/requires.txt
+django_trix_widget.egg-info/top_level.txt
+trix_widget/__init__.py
+trix_widget/fields.py
+trix_widget/version.py
+trix_widget/widgets.py
+trix_widget/static/trix/trix.css
+trix_widget/static/trix/trix.min.js
+trix_widget/templates/trix_widget.html
