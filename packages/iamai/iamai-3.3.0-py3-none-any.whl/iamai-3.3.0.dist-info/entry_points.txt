@@ -1,0 +1,2 @@
+[console_scripts]
+iamai = iamai.cli:Cli.parse_args
