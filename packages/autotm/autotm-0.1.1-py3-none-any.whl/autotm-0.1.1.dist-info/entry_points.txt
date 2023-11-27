@@ -1,0 +1,3 @@
+[console_scripts]
+autotmctl=autotm.main:cli
+
