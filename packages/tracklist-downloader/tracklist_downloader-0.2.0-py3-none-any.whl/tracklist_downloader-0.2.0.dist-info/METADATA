@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: tracklist-downloader
+Version: 0.2.0
+Summary: 
+Author: attila szuts
+Author-email: 45080765+attilaszuts@users.noreply.github.com
+Requires-Python: >=3.9.13,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: spotdl (>=4.2.1,<5.0.0)
+Requires-Dist: spotipy (>=2.23.0,<3.0.0)
+Requires-Dist: validators (>=0.22.0,<0.23.0)
+Description-Content-Type: text/markdown
+
+# Tracklist downloader
+
+This project was created to download and manage my collection of songs from youtube and spotify.
+
+It is intended to be run by providing a configuration that specifies youtube/spotify playlists to download in a specified path. 
+
+It has multiple branches.
+    * dev: contains the state (with tag v.0.0.1) of the POC that was ran once to download all my playlists from youtube.
+    * dev-one_tracklist: dev branch for how to download one tracklist. can be merged and deleted
+    * dev-list_of_tracklist: dev branch for downloading a list of tracklists. this was used in the POC.
+    * dev-concurrent-list_of_tracklist: feature idea, use threadpools to submit jobs that concurrently download list of tracklists in parallel.
+
+
+# Tracklist downloader flow
+
+1. The CLI accepts a number of different options.
+2. First it validates the provided configuration (spotify credentials, cookies file, configuration file, etc.)
+3. Then it checks existing downloads (not yet implemented)
+4. Then it downloads the playlists
+5. And finally it runs some validation (removes false positive tracks that were mistakenly downloaded and provides a list of songs for each playlist that wasn't downloaded.)
