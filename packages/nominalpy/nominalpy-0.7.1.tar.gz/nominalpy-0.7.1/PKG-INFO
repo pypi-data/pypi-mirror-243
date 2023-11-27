@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: nominalpy
+Version: 0.7.1
+Summary: Python Interface to the Nominal API for simulations
+Home-page: https://api.nominalsys.com
+Author: Nominal Systems
+Author-email: support@nominalsys.com
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: urllib3
+Requires-Dist: paho-mqtt
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+This is the Python interface library for the Nominal API.         It enables accessing the REST API simulation functions in an easy format.        Examples of how to construct Nominal simulations are provided on the        Nominal Systems documentation found at https://www.docs.nominalsys.com.
