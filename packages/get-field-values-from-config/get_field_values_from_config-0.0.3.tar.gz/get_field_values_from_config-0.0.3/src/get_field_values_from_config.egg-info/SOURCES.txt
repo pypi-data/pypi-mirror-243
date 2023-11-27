@@ -1,0 +1,8 @@
+pyproject.toml
+setup.cfg
+src/get_field_values_from_config/__init__.py
+src/get_field_values_from_config/get_field_values_from_config.py
+src/get_field_values_from_config.egg-info/PKG-INFO
+src/get_field_values_from_config.egg-info/SOURCES.txt
+src/get_field_values_from_config.egg-info/dependency_links.txt
+src/get_field_values_from_config.egg-info/top_level.txt
