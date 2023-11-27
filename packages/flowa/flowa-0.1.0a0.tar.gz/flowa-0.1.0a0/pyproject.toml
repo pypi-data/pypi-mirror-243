@@ -1,0 +1,17 @@
+[build-system]
+requires      = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flowa"
+version = "0.1.0a"
+description = "flowa pre-setup"
+readme = "README.md"
+authors = [{ name = "flowa", email = "flowa@flowa.com" }]
+license = { file = "LICENSE" }
+classifiers = []
+keywords = ['flowa']
+requires-python = ">=3.7.0"
+
+[project.urls]
+Website = 'https://github.com/'

@@ -1,0 +1,8 @@
+pyproject.toml
+setup.py
+flowa/__init__.py
+flowa.egg-info/PKG-INFO
+flowa.egg-info/SOURCES.txt
+flowa.egg-info/dependency_links.txt
+flowa.egg-info/not-zip-safe
+flowa.egg-info/top_level.txt
