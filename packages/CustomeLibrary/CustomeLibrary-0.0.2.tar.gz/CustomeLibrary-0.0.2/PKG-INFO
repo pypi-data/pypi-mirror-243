@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: CustomeLibrary
+Version: 0.0.2
+Summary: CustomeLibrary for Robot Framework
+Home-page: https://github.com/
+Author: caiys
+Author-email: caiys@asiainfo-net.com
+License: MIT Licence
+Description: CustomeLibrary for Robot Framework
+Keywords: CustomeLibrary for robotframework
+Platform: any
+Requires-Python: >=3.7
