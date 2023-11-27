@@ -1,0 +1,37 @@
+$def with (breadcrumbs, fullpath, separator="&#x25b8;", padding="&thinsp;")
+$ """
+$ Render a `separator` delimited list of linkified `breadcrumbs`.
+$
+$ `breadcrumbs` should be a single tuple that will be read two items at a time:
+$
+$     ("path", "Name", "subpath", "Subname", ...)
+$
+$ """
+$ fullparts = fullpath.split("/")
+$ app = fullparts[0]
+$if len(fullparts) > 1:
+    $ breadcrumbs = [app, app.capitalize()] + breadcrumbs
+$ remaining = int(len(breadcrumbs) / 2)
+$ path = ""
+$if len(fullparts) > 1:
+    <nav class=breadcrumbs>
+    $for crumb_path, crumb_title in zip(*(breadcrumbs[i::2] for i in (0, 1))):
+        $ crumb_path = str(crumb_path)
+        $ crumb_icon, crumb_classes = None, None
+        $if isinstance(crumb_title, tuple):
+            $ crumb_icon, crumb_classes, crumb_title = crumb_title
+        $ ups = " ".join(["up"] * remaining)
+        $ remaining = remaining - 1
+        $ intro_padding = ""
+        $if path:
+            $ intro_padding = padding
+        $ path = path + "/" + crumb_path
+        <span>\
+        $if crumb_icon:
+            <span class="crumb-icon-$crumb_icon"></span>&thinsp;\
+        $:intro_padding<a href=$path \
+        $if crumb_classes:
+            class="$' '.join(crumb_classes)"
+        rel="$ups">$:crumb_title</a>\
+        $:padding<span class=crumb-sep>$:separator</span></span>\
+    </nav>
