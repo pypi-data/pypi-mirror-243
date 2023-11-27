@@ -1,0 +1,24 @@
+{%- if pagetree|length>1 %}
+<div class="pagetree-container">
+    <ul class="pagetree">
+    {%- for nav_item in pagetree %}
+    {%- if nav_item.children %}
+        <li>
+        <details open>
+            <summary>{{ nav_item.title }}</summary>
+            <ul>
+            {%- for nav_item in nav_item.children %}
+                {% include "nav_sub.html.j2" %}
+            {%- endfor %}
+            </ul>
+        </details>
+        </li>
+    {%- else %}
+        <li>
+            {% include "nav_item.html.j2" %}
+        </li>
+    {%- endif %}
+    {%- endfor %}
+    </ul>
+</div>
+{%- endif %}
