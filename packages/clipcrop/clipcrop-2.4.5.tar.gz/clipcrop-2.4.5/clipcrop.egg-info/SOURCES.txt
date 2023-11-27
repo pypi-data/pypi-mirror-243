@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+clipcrop/__init__.py
+clipcrop/clipcrop.py
+clipcrop.egg-info/PKG-INFO
+clipcrop.egg-info/SOURCES.txt
+clipcrop.egg-info/dependency_links.txt
+clipcrop.egg-info/not-zip-safe
+clipcrop.egg-info/requires.txt
+clipcrop.egg-info/top_level.txt
