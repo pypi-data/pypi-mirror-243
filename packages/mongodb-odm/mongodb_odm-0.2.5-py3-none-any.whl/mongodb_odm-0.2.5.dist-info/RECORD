@@ -1,0 +1,17 @@
+mongodb_odm/__init__.py,sha256=TQxzz_pEh1mi5XCuzvLqcOZepksElvIkbRVqAINdyHI,892
+mongodb_odm/connection.py,sha256=gZ0Sioukr_ri0BlSeiHNubWKREnqeHaf_49IUJDEf94,3683
+mongodb_odm/data_conversion.py,sha256=0Vv3fK4IjwauwCh-SNdkvuqHwLzqMcxdr3unSS-JmNU,1388
+mongodb_odm/exceptions.py,sha256=jV6JqY_dkGTs1OmjXOa6cd_q3bVQnvX3wE2yHWXKYqc,138
+mongodb_odm/fields.py,sha256=1i-tCSKO0uM5NsyAtNU0Y0G6lZw2vO9LFPHedyL_RQQ,2994
+mongodb_odm/models.py,sha256=jX-_tmjojMdkzuFbt_3PG5N2ePBOpnu4ZsEegd_ELYc,20114
+mongodb_odm/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mongodb_odm/types.py,sha256=SGCDXBhyACH0OE8JB82qE7qnebQhR4b2Aj0i_ySkPTI,955
+mongodb_odm/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mongodb_odm/utils/_internal_models.py,sha256=ZA0qHDK_4Z2kP2Co8y-pURFQy_Y_ORPD6eaEZlgGN7A,711
+mongodb_odm/utils/apply_indexes.py,sha256=vIsKZQyhDqGfXgu89vDHu83RdL9u0WewcBACHPM2rVo,7731
+mongodb_odm/utils/utils.py,sha256=nuc--qxdribbyNp3tF8c9x68T7f-McQWKc83iaC1s0M,2770
+mongodb_odm/utils/validation.py,sha256=hR0Jir9Q0m0-igGeCTWnGGZv5FgDSJiokRmkQLjP4vg,1646
+mongodb_odm-0.2.5.dist-info/LICENSE,sha256=4DwTVEAE7xMj9CzVJjwoZlv3ld2jCfnVf-bE7us1YDg,1056
+mongodb_odm-0.2.5.dist-info/METADATA,sha256=Y-Bas6Jzj2P3NFwRSthM9Ucwda8XnyHy_aZnAVbwBwk,8666
+mongodb_odm-0.2.5.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+mongodb_odm-0.2.5.dist-info/RECORD,,
