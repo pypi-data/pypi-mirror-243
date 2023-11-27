@@ -1,0 +1,149 @@
+$def with ()
+$var title: Guide
+
+<style>
+dt {
+  display: inline-block;
+  font-family: UbuntuMonoPowerline;
+  width: 15%;
+}
+dd {
+  display: inline-block;
+  margin-left: 0;
+  width: 85%;
+}
+</style>
+
+<h2>Style</h2>
+
+<p>The canopy theme uses the 16-bit <a
+href=https://ethanschoonover.com/solarized>solarized</a> palette.</p>
+
+$ solarized_colors = {
+$   "base03": "002b36",
+$   "base02": "073642",
+$   "base01": "586e75",
+$   "base00": "657b83",
+$   "base0": "839496",
+$   "base1": "93a1a1",
+$   "base2": "eee8d5",
+$   "base3": "fdf6e3",
+$   "yellow": "b58900",
+$   "orange": "cb4b16",
+$   "red": "dc322f",
+$   "magenta": "d33682",
+$   "violet": "6c71c4",
+$   "blue": "268bd2",
+$   "cyan": "2aa198",
+$   "green": "859900",
+$ }
+
+<dl style=columns:2;list-style:none;padding:0;width:30em>
+$for color_name, color_hex in solarized_colors.items():
+    <dt style=font-family:UbuntuMonoPowerline;width:100%;>$color_name
+        <small style=font-size:.7em><code>#$color_hex</code></small></dt>
+    <dd style=background-color:#$color_hex>&nbsp;</dd>
+</dl>
+
+<h3>Forms</h3>
+
+<h4>Buttons</h4>
+<p>Submit buttons are green. They brighten on hover.</p>
+<button type=submit>Submit</button>
+
+<h2>Keyboard Bindings</h2>
+
+<dl>
+<dt>?
+<dd>show this page
+<dt>A-r
+<dd>toggle room mode
+<dt>A-s
+<dd>sign in/out
+</dl>
+
+<h3>Site Mode</h3>
+<dl>
+<dt>q
+<dd>focus query input
+<dt>f
+<dd>show link follow overlays (home row keys)
+<dt>m
+<dd>go home
+<dt>d
+<dd>close page
+<dt>r
+<dd>reload page
+<dt>h
+<dd>go back
+<dt>j
+<dd>scroll down 3 ems
+<dt>k
+<dd>scroll up 3 ems
+<dt>l
+<dd>go forward
+<dt>u
+<dd>go up a level in the site hierarchy
+<dt>p
+<dd>go to the previous item in the current collection
+<dt>n
+<dd>go to the next item in the current collection
+<dt>[
+<dd>page up
+<dt>]
+<dd>page down
+<dt>{
+<dd>go to the top of the page
+<dt>}
+<dd>go to the bottom of the page
+<dt>esc
+<dd>stop current movement or cancel link follow overlays
+</dl>
+
+<h4>Diagnostics</h4>
+<dl>
+<dt><kbd>A-.</kbd>
+<dd>toggle typographical rhythm indicator
+<dt><kbd>A-c</kbd>
+<dd>toggle dark/light color mode
+</dl>
+
+<h3>Room Mode</h3>
+<dl>
+<dt>w
+<dd>walk forward
+<dt>a
+<dd>strafe left
+<dt>s
+<dd>walk backward
+<dt>d
+<dd>strafe right
+<dt>h
+<dd>pan left
+<dt>j
+<dd>scroll map down
+<dt>k
+<dd>scroll map up
+<dt>l
+<dd>pan right
+<dt>~
+<dd>toggle map
+<dt>A-a
+<dd>toggle audio
+<dt>A-v
+<dd>toggle video
+</dl>
+
+<h2>Voice Bindings</h2>
+<dl>
+<dt>help
+<dd>
+<dt>query for
+<dd>
+<dt>go
+<dd>
+<dt>follow
+<dd>
+<dt>tell me
+<dd>
+</dl>
