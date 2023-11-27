@@ -1,0 +1,3 @@
+[console_scripts]
+cert=certipie.cli.main:cert
+
