@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: tkadw-material
+Version: 0.0.1a3
+Summary: 
+Author: XiangQinxi
+Author-email: XiangQinxi@outlook.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: darkdetect (>=0.8.0,<0.9.0)
+Requires-Dist: tkadw (>=0.4.4,<0.5.0)
+Description-Content-Type: text/markdown
+
+# tkadw-material
+基于`tkadw`进行再次设计的组件库

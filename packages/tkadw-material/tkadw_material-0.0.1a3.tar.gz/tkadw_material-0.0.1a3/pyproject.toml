@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "tkadw-material"
+version = "0.0.1alpha3"
+description = ""
+authors = ["XiangQinxi <XiangQinxi@outlook.com>"]
+readme = "README.md"
+packages = [{include = "tkadw_material"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+tkadw = "^0.4.4"
+darkdetect = "^0.8.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
