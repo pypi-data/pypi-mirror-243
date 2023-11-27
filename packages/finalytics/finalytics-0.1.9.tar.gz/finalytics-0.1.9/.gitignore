@@ -1,0 +1,7 @@
+.idea
+venv
+target
+dist
+*.iml
+*.db
+.DS_Store
