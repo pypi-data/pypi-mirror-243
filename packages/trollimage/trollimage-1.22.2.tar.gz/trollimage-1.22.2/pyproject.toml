@@ -1,0 +1,15 @@
+[build-system]
+requires = [
+    "wheel",
+    'numpy; python_full_version<"3.12.0rc1"',
+    'numpy>=1.26.0rc1; python_full_version>="3.12.0rc1"',
+    "setuptools>=42",
+    "versioneer",
+    "Cython>=3.0.0"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.coverage.run]
+relative_files = true
+plugins = ["Cython.Coverage"]
+omit = ["trollimage/version.py", "versioneer.py"]
