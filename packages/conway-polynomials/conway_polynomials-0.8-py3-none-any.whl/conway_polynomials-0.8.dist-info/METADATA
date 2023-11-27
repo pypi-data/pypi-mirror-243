@@ -1,0 +1,104 @@
+Metadata-Version: 2.1
+Name: conway-polynomials
+Version: 0.8
+Summary: Python interface to Frank Lübeck's Conway polynomial database
+License: conway-polynomials - a python interface to Frank Lübeck's Conway polynomial database
+        Copyright (C) 2023 The Sage Developers
+        
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation, either version 3 of the License, or
+        (at your option) any later version.
+        
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+        
+        You should have received a copy of the GNU General Public License
+        along with this program.  If not, see <https://www.gnu.org/licenses/>.
+        
+Project-URL: Homepage, https://github.com/sagemath/conway-polynomials
+Project-URL: Documentation, https://github.com/sagemath/conway-polynomials/blob/master/README.rst
+Project-URL: Repository, https://github.com/sagemath/conway-polynomials.git
+Project-URL: Issues, https://github.com/sagemath/conway-polynomials/issues
+Project-URL: Changelog, https://github.com/sagemath/conway-polynomials/raw/master/NEWS
+Keywords: mathematics,algebra,Conway polynomials
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+License-File: COPYING
+
+Python interface to Frank Lübeck's Conway polynomial database
+
+Introduction
+============
+
+Frank Lübeck maintains a list of pre-computed Conway polynomial
+coefficients at,
+
+  https://www.math.rwth-aachen.de/~Frank.Luebeck/data/ConwayPol/index.html
+
+These are used in several computer algebra systems such as GAP and
+SageMath to provide quick access to those Conway polynomials. The aim
+of this package is to make them available through a generic python
+interface. The package consists of a single module containing a single
+function that returns a dict of dicts, ``conway_polynomials.database()``.
+The dictionary's format is ``{p: {n: coefficients}}``, where ``p``
+represents your prime and ``n`` your degree. The tuple of coefficients
+is returned in ascending order; that is, the first coefficient (at
+index zero) is for the constant (degree zero) term.
+
+This package is an evolution of the SageMath *conway_polynomials*
+package hosted at,
+
+  http://files.sagemath.org/spkg/upstream/conway_polynomials/
+
+and is maintained by the same team of developers. We have kept the
+versioning scheme consistent to reflect that.
+
+
+Examples
+========
+
+Retrieve the coefficients of the Conway polynomial for prime p=2 and
+degree n=5::
+
+  >>> import conway_polynomials
+  >>> cpdb = conway_polynomials.database()
+  >>> cpdb[2][5]
+  (1, 0, 1, 0, 0, 1)
+
+The result is cached, so subsequent computations should be fast even
+if you call the function again::
+
+  >>> conway_polynomials.database() is conway_polynomials.database()
+  True
+
+However, the result is also mutable, so if you need to modify it for
+some reason then you should create a copy; otherwise your changes will
+affect future calls::
+
+  >>> cpdb = conway_polynomials.database()
+  >>> cpdb[5][5]
+  (3, 4, 0, 0, 0, 1)
+  >>> cpdb[5][5] = (8, 6, 7, 5, 3, 0, 9)
+  >>> conway_polynomials.database()[5][5]
+  (8, 6, 7, 5, 3, 0, 9)
+
+
+Testing
+=======
+
+A few doctests within the module (and this README) ensure that
+everything is working. You can run them from the repository or from a
+release tarball using::
+
+  PYTHONPATH=src python -m doctest \
+    README.rst \
+    src/conway_polynomials/__init__.py
