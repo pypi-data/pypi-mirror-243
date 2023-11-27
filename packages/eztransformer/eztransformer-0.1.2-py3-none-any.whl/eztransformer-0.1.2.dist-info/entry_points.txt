@@ -1,0 +1,3 @@
+[console_scripts]
+eztransformer=eztransformer.__main__:app
+
