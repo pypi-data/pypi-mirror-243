@@ -1,0 +1,2033 @@
+import itertools as it
+import operator as op
+import os
+import random as rd
+import re
+import sys
+import time
+import zipfile
+from collections import deque
+from datetime import datetime, timedelta
+from functools import partial, reduce, wraps
+from glob import glob
+from inspect import signature
+from itertools import accumulate, count, cycle, dropwhile, islice
+from itertools import product as cprod
+from itertools import takewhile, tee
+from multiprocessing import Process
+from shutil import rmtree
+from subprocess import DEVNULL, PIPE, STDOUT, Popen
+from textwrap import fill
+from threading import Thread, Timer
+
+__version__ = "0.3.0"
+
+__all__ = [
+    "id",
+    "const",
+    "seq",
+    "void",
+    "safe",
+    "fst",
+    "snd",
+    "nth",
+    "take",
+    "drop",
+    "head",
+    "tail",
+    "init",
+    "last",
+    "ilen",
+    "pair",
+    "pred",
+    "succ",
+    "odd",
+    "even",
+    "null",
+    "chars",
+    "unchars",
+    "words",
+    "unwords",
+    "lines",
+    "unlines",
+    "elem",
+    "not_elem",
+    "nub",
+    "repeat",
+    "replicate",
+    "cycle",
+    "count",
+    "tee",
+    "islice",
+    "product",
+    "deque",
+    "sym",
+    "flip",
+    "f_",
+    "ff_",
+    "curry",
+    "c_",
+    "cc_",
+    "uncurry",
+    "u_",
+    "cf_",
+    "cfd",
+    "m_",
+    "mm_",
+    "ml_",
+    "mml_",
+    "v_",
+    "vv_",
+    "vl_",
+    "vvl_",
+    "mapl",
+    "select",
+    "filterl",
+    "where",
+    "zipl",
+    "unzip",
+    "unzipl",
+    "rangel",
+    "enumeratel",
+    "reverse",
+    "rev",
+    "takewhile",
+    "takewhilel",
+    "dropwhile",
+    "dropwhilel",
+    "_not",
+    "_and",
+    "_or",
+    "_in",
+    "_is",
+    "_isnt",
+    "bimap",
+    "first",
+    "second",
+    "until",
+    "iterate",
+    "apply",
+    "zipwith",
+    "foldl",
+    "foldl1",
+    "foldr",
+    "foldr1",
+    "scanl",
+    "scanl1",
+    "scanr",
+    "scanr1",
+    "permutation",
+    "combination",
+    "cartprod",
+    "cartprodl",
+    "concat",
+    "concatl",
+    "concatmap",
+    "concatmapl",
+    "intersperse",
+    "intercalate",
+    "flat",
+    "flatl",
+    "lazy",
+    "force",
+    "mforce",
+    "reader",
+    "writer",
+    "split_at",
+    "chunks_of",
+    "capture",
+    "captures",
+    "guard",
+    "guard_",
+    "error",
+    "HOME",
+    "cd",
+    "pwd",
+    "normpath",
+    "exists",
+    "dirname",
+    "basename",
+    "mkdir",
+    "rmdir",
+    "ls",
+    "grep",
+    "split",
+    "bytes_to_int",
+    "int_to_bytes",
+    "bytes_to_bin",
+    "bin_to_bytes",
+    "randbytes",
+    "rand",
+    "randn",
+    "randint",
+    "choice",
+    "shuffle",
+    "piper",
+    "echo",
+    "dmap",
+    "fpos",
+    "singleton",
+    "thread",
+    "process",
+    "polling",
+    "shell",
+    "pbcopy",
+    "pbpaste",
+    "timer",
+    "docfrom",
+    "neatly",
+    "nprint",
+    "timestamp",
+    "taskbar",
+    "catalog",
+    "piperp",
+    "rev",
+    "uniq",
+    "unpack",
+    "sort",
+    "length",
+    "abs",
+    "sum",
+    "min",
+    "max",
+    "ord",
+    "chr",
+    "all",
+    "any",
+]
+
+
+class piper:
+    """decorator to facilitate function composition in a pipeline-like manner
+
+    >>> range(10) | length
+    10
+    >>> range(10) | where(even)
+    [0, 2, 4, 6, 8]
+    >>> range(10) | select(f_("+", 5)) | sum
+    95
+    """
+
+    def __init__(self, f):
+        self.f = f
+        self._pipefied = True
+        wraps(f)(self)
+
+    def __ror__(self, other):
+        return self.f(other)
+
+    def __call__(self, *args, **kwargs):
+        if not args and kwargs or len(args) < (npos := len(fpos(self.f))):
+            if not npos:
+                return self.f(*args, **kwargs)
+            return piper(f_(self.f, *args, **kwargs))
+        return self.f(*args, **kwargs)
+
+
+@piper
+def id(x):
+    """identity function
+
+    >>> id("francis")
+    'francis'
+    >>> id("francis") == "francis" | id
+    True
+    """
+    return x
+
+
+@piper
+def const(x, _):
+    """build an id function that returns a given 'x'
+
+    >>> const(5, "no-matther-what-comes-here")
+    5
+    >>> 'whatever' | const(5)
+    5
+    """
+    return x
+
+
+@piper
+def seq(_, x):
+    """return the id function after consuming the given argument
+
+    >>> seq("only-returns-the-following-arg")(5)
+    5
+    >>> 5 | seq('whatever')
+    5
+    """
+    return x
+
+
+@piper
+def void(_):
+    """return 'None' after consuming the given argument
+
+    >>> void(randbytes(256))
+    >>> randbytes(256) | void
+    """
+    return
+
+
+def safe(f):
+    """make a given function return 'None' instead of raising an exception
+
+    >>> safe(error)("never-errors")    # no error, returns None
+    """
+
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        try:
+            return f(*args, **kwargs)
+        except:
+            return
+
+    return wrapper
+
+
+@piper
+@safe
+def fst(x):
+    """get the first component of a given iterable
+
+    >>> fst(["sofia", "maria", "claire"])
+    'sofia'
+    >>> ["sofia", "maria", "claire"] | fst
+    'sofia'
+    """
+    return nth(1, x)
+
+
+@piper
+@safe
+def snd(x):
+    """get the second component of a given iterable
+
+    >>> snd(("sofia", "maria", "claire"))
+    'maria'
+    >>> ("sofia", "maria", "claire") | snd
+    'maria'
+    """
+    return nth(2, x)
+
+
+@piper
+def nth(n, x):
+    """get the 'n'-th component of a given iterable 'x'
+
+    >>> nth(3, ["sofia", "maria", "claire"])
+    'claire'
+    >>> ["sofia", "maria", "claire"] | nth(3)
+    'claire'
+    """
+    return x[n - 1] if hasattr(x, "__getitem__") else next(islice(x, n - 1, None))
+
+
+@piper
+def take(n, x):
+    """take 'n' items from a given iterable 'x'
+
+    >>> take(3, range(5, 10))
+    [5, 6, 7]
+    >>> range(5, 10) | take(3) | unpack
+    [5, 6, 7]
+    """
+    return [*islice(x, n)]
+
+
+@piper
+def drop(n, x):
+    """return items of the iterable 'x' after skipping 'n' items
+
+    >>> list(drop(3, 'github'))
+    ['h', 'u', 'b']
+    >>> 'github' | drop(3) | unpack
+    ['h', 'u', 'b']
+    """
+    return islice(x, n, None)
+
+
+@piper
+@safe
+def head(x):
+    """extract the first element of a given iterable: the same as 'fst'
+
+    >>> head(range(1, 5))
+    1
+    >>> range(1, 5) | head
+    1
+    """
+    return fst(x)
+
+
+@piper
+@safe
+def tail(x):
+    """extract the elements after the 'head' of a given iterable
+
+    >>> list(tail(range(1, 5)))
+    [2, 3, 4]
+    >>> range(1, 5) | tail | unpack
+    [2, 3, 4]
+    """
+    return drop(1, x)
+
+
+@piper
+@safe
+def init(x):
+    """return all the elements of an iterable except the 'last' one
+
+    >>> list(init(range(1, 5)))
+    [1, 2, 3]
+    >>> range(1, 5) | init | unpack
+    [1, 2, 3]
+    """
+    it = iter(x)
+    o = next(it)
+    for i in it:
+        yield o
+        o = i
+
+
+@piper
+@safe
+def last(x):
+    """extract the last element of a given iterable
+
+    >>> last(range(1, 5))
+    4
+    >>> range(1, 5) | last
+    4
+    """
+    return deque(x, maxlen=1)[0]
+
+
+@piper
+def ilen(x):
+    """get the length of a given iterator
+
+    >>> ilen((x for x in range(100)))
+    100
+    >>> (x for x in range(100)) | ilen
+    100
+    """
+    c = count()
+    deque(zip(x, c), maxlen=0)
+    return next(c)
+
+
+@piper
+def pair(a, b):
+    """make the given two arguments a tuple pair
+
+    >>> pair("sofia", "maria")
+    ('sofia', 'maria')
+    >>> "maria" | pair("sofia")
+    ('sofia', 'maria')
+    """
+    return (a, b)
+
+
+@piper
+def pred(x):
+    """return the predecessor of a given value: it substracts 1
+
+    >>> pred(3)
+    2
+    >>> 3 | pred
+    2
+    """
+    return x - 1
+
+
+@piper
+def succ(x):
+    """return the successor of a given value: it adds 1
+
+    >>> succ(3)
+    4
+    >>> 3 | succ
+    4
+    """
+    return x + 1
+
+
+@piper
+def odd(x):
+    """check if the given number is odd
+
+    >>> odd(3)
+    True
+    >>> 3 | odd
+    True
+    """
+    return x % 2 == 1
+
+
+@piper
+def even(x):
+    """check if the given number is even
+
+    >>> even(3)
+    False
+    >>> 3 | even
+    False
+    """
+    return x % 2 == 0
+
+
+@piper
+def null(x):
+    """check if a given collection is empty
+
+    >>> null([]) == null(()) == null({}) == null('')
+    True
+    >>> [] | null == () | null == {} | null == '' | null
+    True
+    """
+    return len(x) == 0
+
+
+@piper
+def chars(x):
+    """split string 'x' into `chars`: the same as (:[]) <$> x
+
+    >>> chars("sofimarie")
+    ['s', 'o', 'f', 'i', 'm', 'a', 'r', 'i', 'e']
+    >>> chars("sofimarie") == "sofimarie" | chars
+    True
+    """
+    return list(x)
+
+
+@piper
+def unchars(x):
+    """inverse operation of 'chars': the same as 'concat'
+
+    >>> unchars(['s', 'o', 'f', 'i', 'm', 'a', 'r', 'i', 'e'])
+    'sofimarie'
+    >>> ['s', 'o', 'f', 'i', 'm', 'a', 'r', 'i', 'e'] | unchars
+    'sofimarie'
+    """
+    return "".join(x)
+
+
+@piper
+def words(x):
+    """joins a list of words with the blank character
+
+    >>> words("fun on functions")
+    ['fun', 'on', 'functions']
+    >>> 'fun on functions' | words
+    ['fun', 'on', 'functions']
+    """
+    return x.split()
+
+
+@piper
+def unwords(x):
+    """breaks a string up into a list of words
+
+    >>> unwords(['fun', 'on', 'functions'])
+    'fun on functions'
+    >>> ['fun', 'on', 'functions'] | unwords
+    'fun on functions'
+    """
+    return " ".join(x)
+
+
+@piper
+def lines(x):
+    """splits a string into a list of lines using the delimeter, \\n
+
+    >>> lines("fun\\non\\nfunctions")
+    ['fun', 'on', 'functions']
+    >>> "fun\\non\\nfunctions" | lines
+    ['fun', 'on', 'functions']
+    """
+    return x.splitlines()
+
+
+@piper
+def unlines(x):
+    """joins a list of lines with the newline character, '\\n'
+
+    >>> unlines(['fun', 'on', 'functions'])
+    'fun\\non\\nfunctions'
+    >>> ['fun', 'on', 'functions'] | unlines
+    'fun\\non\\nfunctions'
+    """
+    return "\n".join(x)
+
+
+@piper
+def elem(x, xs):
+    """
+
+    >>> elem("fun", "functions")
+    True
+    >>> "functions" | elem("fun")
+    True
+    """
+    return x in xs
+
+
+@piper
+def not_elem(x, xs):
+    """
+
+    >>> not_elem("fun", "functions")
+    False
+    >>> "functions" | not_elem("fun")
+    False
+    """
+    return x not in xs
+
+
+@piper
+def nub(x):
+    """removes duplicate elements from a given iterable
+
+    >>> nub("3333-13-1111111")
+    ['3', '-', '1']
+    >>> "3333-13-1111111" | nub
+    ['3', '-', '1']
+    """
+    return cf_(list, dict.fromkeys)(x)
+
+
+@piper
+def repeat(x, nf=True):
+    """create an infinite list with x value of every element
+    if nf (NF, Normal Form) is set, callable objects will be evaluated.
+
+    >>> take(3, repeat(5))
+    [5, 5, 5]
+    >>> repeat(5) | take(3)
+    [5, 5, 5]
+    """
+    return (x() if nf and callable(x) else x for _ in count())
+
+
+@piper
+def replicate(n, x, nf=True):
+    """get a list of length `n` from an infinite list with `x` values
+
+    >>> replicate(3, 5)
+    [5, 5, 5]
+    >>> 5 | replicate(3)
+    [5, 5, 5]
+    """
+    return take(n, repeat(x, nf=nf))
+
+
+@piper
+def product(x):
+    """product of the elements of given iterable"""
+    return foldl1(op.mul, x)
+
+
+def flip(f):
+    """flip(f) takes its arguments in the reverse order of f:
+    `f :: a -> b -> ... -> c -> d -> o`
+    `flip(f) :: d -> c -> ... -> b -> a -> o`
+
+    >>> flip(pow)(7, 3)
+    2187
+    """
+
+    @wraps(f)
+    def wrapper(*args, **kwargs):
+        return f(*args[::-1], **kwargs)
+
+    return wrapper
+
+
+def f_(f, *args, **kwargs):
+    """build left-associative partial application,
+    where the given function's arguments partially evaluation from the left
+
+    >>> f_("-", 5)(2)
+    3
+    """
+    return partial(sym(f), *args, **kwargs)
+
+
+def ff_(f, *args, **kwargs):
+    """build left-associative partial application,
+    where the given function's arguments partially evaluation from the right
+
+    >>> ff_("-", 5)(2)
+    -3
+    """
+    return f_(flip(sym(f)), *args, **kwargs)
+
+
+def curry(f, *, _n=None):
+    """build curried function that takes the arguments from the left.
+    The currying result is simply a nested unary function.
+
+    This function takes positional arguments only when currying.
+    Use partial application `f_` before currying if you need to change kwargs
+
+    >>> curry("-")(5)(2)
+    3
+    """
+    f = sym(f)
+    _n = len(fpos(f)) if _n is None else _n
+
+    @wraps(f)
+    def wrapper(x):
+        return f(x) if _n <= 1 else curry(f_(f, x), _n=pred(_n))
+
+    return wrapper
+
+
+# for decreasing verbosity
+c_ = curry
+
+
+def cc_(f):
+    """build curried function that takes the arguments from the right
+
+    >>> cc_("-")(5)(2)
+    -3
+    """
+    return c_(flip(sym(f)))
+
+
+def uncurry(f):
+    """convert a uncurried normal function to a unary function of a tuple args.
+    This is not exact reverse operation of `curry`. Here `uncurry` simply does:
+    `uncurry :: (a -> ... -> b -> o) -> (a, ..., b) -> o`
+
+    >>> uncurry(pow)((2, 10))
+    1024
+    """
+    f = sym(f)
+
+    @wraps(f)
+    def wrapper(x):
+        return f(*x)
+
+    return wrapper
+
+
+# for decreasing verbosity
+u_ = uncurry
+
+
+def cf_(*fs, rep=None):
+    """compose a given list of functions then return the composed function
+
+    >>> cf_(f_("*", 7), f_("+", 3))(5)
+    56
+
+    >>> cf_(ff_("[]", "sofia"), dict)([("sofia", "piano"), ("maria", "violin")])
+    'piano'
+    """
+
+    def compose(f, g):
+        return lambda x: f(g(x))
+
+    return reduce(compose, fs * rep if rep else fs)
+
+
+def cfd(*fs, rep=None):
+    """decorator using the composition of functions:
+    decorate a function using the composition of the given functions.
+
+    >>> cfd(set, list, tuple)(range)(5)
+    {0, 1, 2, 3, 4}
+
+    >>> cfd(ff_("[]", "maria"))(dict)([("sofia", "piano"), ("maria", "violin")])
+    'violin'
+    """
+
+    def cfdeco(f):
+        @wraps(f)
+        def wrapper(*args, **kwargs):
+            return cf_(*fs, rep=rep)(f(*args, *kwargs))
+
+        return wrapper
+
+    return cfdeco
+
+
+def m_(f):
+    """builds partial application of `map` (left-associative)
+    map(f, xs) == f <$> xs
+
+    (f <$>) == map(f,)  == f_(map, f) == m_(f)
+    (<$> xs) == map(,xs) == f_(flip(map), xs)
+
+    >>> list(m_(abs)(range(-2, 3)))
+    [2, 1, 0, 1, 2]
+    """
+    return f_(map, sym(f))
+
+
+def mm_(*xs):
+    """builds partial application of `map` (right-associative)
+    See also 'm_'.
+
+    (f <$>) == map(f,)  == f_(map, f) == m_(f)
+    (<$> xs) == map(,xs) == f_(flip(map), xs)
+
+    >>> list(mm_(range(-2, 3))(abs))
+    [2, 1, 0, 1, 2]
+    """
+    return ff_(map, *rev(xs))
+
+
+def ml_(f):
+    """the same as 'm_', but returns in 'list'
+
+    >>> ml_(f_("*", 8))(range(1, 6))
+    [8, 16, 24, 32, 40]
+    """
+    return cfd(list)(m_(f))
+
+
+def mml_(*xs):
+    """the same as 'mm_', but returns in 'list'
+
+    >>> mml_(range(1, 6))(f_("*", 8))
+    [8, 16, 24, 32, 40]
+    """
+    return cf_(list, mm_(*xs))
+
+
+def v_(p):
+    """builds partial application of `filter` (left-associative)
+
+    >>> list(v_(f_("==", "f"))("fun-on-functions"))
+    ['f', 'f']
+    """
+    return f_(filter, p)
+
+
+def vv_(xs):
+    """builds partial application of `filter` (right-associative)
+
+    >>> list(vv_("fun-on-functions")(f_("==", "f")))
+    ['f', 'f']
+    """
+    return ff_(filter, xs)
+
+
+def vl_(p):
+    """the same as 'v_', but returns in 'list'
+
+    >>> vl_(even)(range(10))
+    [0, 2, 4, 6, 8]
+    """
+    return cf_(list, v_(p))
+
+
+def vvl_(xs):
+    """the same as 'vv_', but returns in 'list'
+
+    >>> vvl_(range(10))(odd)
+    [1, 3, 5, 7, 9]
+    """
+    return cf_(list, vv_(xs))
+
+
+def mapl(f, *xs):
+    """the same as 'map', but returns in 'list'
+
+    >>> mapl(f_("*", 8), range(1, 6))
+    [8, 16, 24, 32, 40]
+    """
+    return list(map(f, *xs))
+
+
+def filterl(p, xs):
+    """the same as 'filter', but returns in 'list'"""
+    return list(filter(p, xs))
+
+
+@piper
+def select(f, x, *xs):
+    """the same as 'mapl', but a piper
+
+    >>> range(1, 6) | select(f_("*", 8))
+    [8, 16, 24, 32, 40]
+    """
+    return mapl(f, x, *xs)
+
+
+@piper
+def where(p, xs):
+    """the same as 'filterl' but a piper"""
+    return filterl(p, xs)
+
+
+@cfd(list)
+def zipl(*args, **kwargs):
+    """the same as 'zip', but returns in 'list'"""
+    return zip(*args, **kwargs)
+
+
+def unzip(x):
+    """reverse operation of 'zip' function
+
+    >>> dict(zipl(*unzip([("sofia", "maria")])))
+    {'sofia': 'maria'}
+    """
+    return zip(*x)
+
+
+@cfd(list)
+def unzipl(x):
+    """the same as 'unzip', but returns in 'list'
+
+    >>> unzipl([(1, 'a'), (2, 'b'), (3, 'c')])
+    [(1, 2, 3), ('a', 'b', 'c')]
+    """
+    return unzip(x)
+
+
+@cfd(list)
+def rangel(*args, **kwargs):
+    """the same as 'range', but returns in 'list'"""
+    return range(*args, **kwargs)
+
+
+@cfd(list)
+def enumeratel(*args, **kwargs):
+    """the same as 'enumerate', but returns in 'list'"""
+    return enumerate(*args, **kwargs)
+
+
+@piper
+def reverse(x):
+    """returns reversed sequence"""
+    return list(x)[::-1]
+
+
+@piper
+def rev(x, *xs):
+    if xs:
+        return (x, *xs)[::-1]
+    else:
+        return reverse(x)
+
+
+@cfd(list)
+def takewhilel(*args, **kwargs):
+    """the same as 'takewhile', but returns in 'list'
+
+    >>> takewhilel(even, [2, 4, 6, 1, 3, 5])
+    [2, 4, 6]
+    """
+    return takewhile(*args, **kwargs)
+
+
+@cfd(list)
+def dropwhilel(*args, **kwargs):
+    """the same as 'dropwhile', but returns in 'list'
+
+    >>> dropwhilel(even, [2, 4, 6, 1, 3, 5])
+    [1, 3, 5]
+    """
+    return dropwhile(*args, **kwargs)
+
+
+@piper
+def _not(x):
+    """`not` as a function"""
+    return not x
+
+
+@piper
+def _and(a, b):
+    """`and` as a function"""
+    return a and b
+
+
+@piper
+def _or(a, b):
+    """`and` as a function"""
+    return a or b
+
+
+# `in` as a function
+_in = piper(flip(op.contains))
+
+
+# `is` as a function
+_is = piper(op.is_)
+
+
+# `is not` as a function
+_isnt = piper(op.is_not)
+
+
+@piper
+def bimap(f, g, x):
+    """map over both 'first' and 'second' arguments at the same time
+    bimap(f, g) == first(f) . second(g)
+
+    >>> bimap(f_("+", 3), f_("*", 7), (5, 7))
+    (8, 49)
+    >>> (5, 7) | bimap(f_("+", 3), f_("*", 7))
+    (8, 49)
+    """
+    return f(fst(x)), g(snd(x))
+
+
+@piper
+def first(f, x):
+    """map covariantly over the 'first' argument
+
+    >>> first(f_("+", 3), (5, 7))
+    (8, 7)
+    >>> (5, 7) | first(f_("+", 3))
+    (8, 7)
+    """
+    return bimap(f, id, x)
+
+
+@piper
+def second(g, x):
+    """map covariantly over the 'second' argument
+
+    >>> second(f_("*", 7), (5, 7))
+    (5, 49)
+    >>> (5, 7) | second(f_("*", 7))
+    (5, 49)
+    """
+    return bimap(id, g, x)
+
+
+@piper
+def until(p, f, x):
+    while not p(x):
+        x = f(x)
+    return x
+
+
+@piper
+def iterate(f, x):
+    """
+
+    >>> take(5, iterate(ff_("**", 2), 2))
+    [2, 4, 16, 256, 65536]
+    >>> 2 | iterate(ff_("**", 2)) | take(5)
+    [2, 4, 16, 256, 65536]
+    """
+    while True:
+        yield x
+        x = f(x)
+
+
+def apply(f, *args, **kwargs):
+    """call a given function with the given arguments
+
+    >>> apply(str.split, "go get some coffee")
+    ['go', 'get', 'some', 'coffee']
+    """
+    return sym(f)(*args, **kwargs)
+
+
+@piper
+def zipwith(f, x, y, *z):
+    """apply a function 'f' to the elements of zipped 'args'
+
+    >>> zipwith("*", [1, 2, 3], [4, 5, 6])
+    [4, 10, 18]
+    >>> [4, 5, 6] | zipwith("*", [1, 2, 3])
+    [4, 10, 18]
+    """
+    return [sym(f)(*i) for i in zip(x, y, *z)]
+
+
+@piper
+def foldl(f, initial, xs):
+    """left-associative fold of an iterable. The same as 'foldl' in Haskell
+
+    >>> foldl("-", 10, range(1, 5))
+    0
+    >>> range(1, 5) | foldl("-", 10)
+    0
+    """
+    return reduce(sym(f), xs, initial)
+
+
+@piper
+def foldl1(f, xs):
+    """`foldl` without initial value. The same as 'foldl1' in Haskell
+
+    >>> foldl1("-", range(1, 5))
+    -8
+    >>> range(1, 5) | foldl1("-")
+    -8
+    """
+    return reduce(sym(f), xs)
+
+
+@piper
+def foldr(f, inital, xs):
+    """right-associative fold of an iterable. The same as 'foldr' in Haskell
+
+    >>> foldr("-", 10, range(1, 5))
+    8
+    >>> range(1, 5) | foldr("-", 10)
+    8
+    """
+    return reduce(flip(sym(f)), xs[::-1], inital)
+
+
+@piper
+def foldr1(f, xs):
+    """`foldr` without initial value. The same as 'foldr1' in Haskell
+
+    >>> foldr1("-", range(1, 5))
+    -2
+    >>> range(1, 5) | foldr1("-")
+    -2
+    """
+    return reduce(flip(sym(f)), xs[::-1])
+
+
+@piper
+@cfd(list)
+def scanl(f, initial, xs):
+    """returns a list of successive reduced values from the left
+    The same as `scanl` in Haskell
+
+    >>> scanl("-", 10, range(1, 5))
+    [10, 9, 7, 4, 0]
+    >>> range(1, 5) | scanl("-", 10)
+    [10, 9, 7, 4, 0]
+    """
+    return accumulate(xs, sym(f), initial=initial)
+
+
+@piper
+@cfd(list)
+def scanl1(f, xs):
+    """`scanl` without starting value. The same as 'scanl1' in Haskell
+
+    >>> scanl1("-", range(1, 5))
+    [1, -1, -4, -8]
+    >>> range(1, 5) | scanl1("-")
+    [1, -1, -4, -8]
+    """
+    return accumulate(xs, sym(f))
+
+
+@piper
+@cfd(reverse)
+def scanr(f, initial, xs):
+    """returns a list of successive reduced values from the right
+    The same as `scanr` in Haskell
+
+    >>> scanr("-", 10, range(1, 5))
+    [8, -7, 9, -6, 10]
+    >>> range(1, 5) | scanr("-", 10)
+    [8, -7, 9, -6, 10]
+    """
+    return accumulate(xs[::-1], flip(sym(f)), initial=initial)
+
+
+@piper
+@cfd(reverse)
+def scanr1(f, xs):
+    """`scanr` without starting value. The same as 'scanr1' in Haskell
+
+    >>> scanr1("-", range(1, 5))
+    [-2, 3, -1, 4]
+    >>> range(1, 5) | scanr1("-")
+    [-2, 3, -1, 4]
+    """
+    return accumulate(xs[::-1], flip(sym(f)))
+
+
+@piper
+def capture(p, string):
+    x = captures(p, string)
+    if x:
+        return fst(x)
+
+
+@piper
+def captures(p, string):
+    return re.compile(p).findall(string)
+
+
+def sym(f=None):
+    """get binary functions from the symbolic operators
+
+    >>> sym("*")(5, 5) - sym("**")(5, 2)
+    0
+    """
+    ops = {
+        "+": op.add,
+        "-": op.sub,
+        "*": op.mul,
+        "/": op.truediv,
+        "//": op.floordiv,
+        "**": op.pow,
+        "@": op.matmul,
+        "%": op.mod,
+        "&": op.and_,
+        "|": op.or_,
+        "^": op.xor,
+        "<<": op.lshift,
+        ">>": op.rshift,
+        "==": op.eq,
+        "!=": op.ne,
+        ">": op.gt,
+        ">=": op.ge,
+        "<": op.lt,
+        "<=": op.le,
+        "[]": op.getitem,
+        ",": pair,
+        ".": getattr,
+        "..": range,
+        "~": capture,
+        "~~": captures,
+    }
+    return (
+        ops.get(f, f)
+        if f is not None
+        else nprint({k: v.__name__ for k, v in ops.items()}, _cols=14, _repr=False)
+    )
+
+
+def permutation(x, r, rep=False):
+    return cprod(x, repeat=r) if rep else it.permutations(x, r)
+
+
+def combination(x, r, rep=False):
+    return it.combinations_with_replacement(x, r) if rep else it.combinations(x, r)
+
+
+def cartprod(*args, **kwargs):
+    "returns Cartesian product"
+    return f_(cprod, repeat=1)(*args, **kwargs)
+
+
+@cfd(list)
+def cartprodl(*args, **kwargs):
+    """the same as 'cartprod', but returns in 'list'"""
+    return cartprod(*args, **kwargs)
+
+
+@piper
+def concat(iterable):
+    """concatenates all elements of iterables"""
+    return it.chain.from_iterable(iterable)
+
+
+@piper
+@cfd(list)
+def concatl(iterable):
+    """the same as 'concat', but returns in 'list'
+
+    >>> concatl(["sofia", "maria"])
+    ['s', 'o', 'f', 'i', 'a', 'm', 'a', 'r', 'i', 'a']
+    >>> ["sofia", "maria"] | concatl
+    ['s', 'o', 'f', 'i', 'a', 'm', 'a', 'r', 'i', 'a']
+    """
+    return concat(iterable)
+
+
+@cfd(concat)
+def concatmap(*args, **kwargs):
+    """map a function over the given iterable then concat it"""
+    return map(*args, **kwargs)
+
+
+@cfd(list, concat)
+def concatmapl(*args, **kwargs):
+    """the same as 'concatmap', but returns in 'list'
+
+    >>> concatmapl(str.upper, ["sofia", "maria"])
+    ['S', 'O', 'F', 'I', 'A', 'M', 'A', 'R', 'I', 'A']
+    """
+    return map(*args, **kwargs)
+
+
+def intersperse(sep, x):
+    """inserts an element between the elements of the list"""
+    return concatl(zip(repeat(sep), x))[1:]
+
+
+@cfd(concatl)
+def intercalate(sep, x):
+    """inserts the given list between the lists then concat it"""
+    return intersperse(sep, x)
+
+
+@piper
+def flat(*args):
+    """flatten all kinds of iterables (except for string-like object)"""
+
+    def ns_iter(x):
+        return (
+            hasattr(x, "__iter__")
+            and not isinstance(x, str)
+            and not isinstance(x, bytes)
+        )
+
+    def go(xss):
+        if ns_iter(xss):
+            for xs in xss:
+                yield from go([*xs] if ns_iter(xs) else xs)
+        else:
+            yield xss
+
+    return go(args)
+
+
+@piper
+def flatl(*args):
+    """the same as 'flat', but returns in 'list'
+
+    >>> flatl([1, [(2,), [[{3}, range(4,6)]], (x for x in range(7,9))]])
+    [1, 2, 3, 4, 5, 7, 8]
+    """
+    return flat(*args) | unpack
+
+
+# easy-to-use alias for lazy operation
+lazy = f_
+
+
+@piper
+def force(expr):
+    """forces the delayed-expression to be fully evaluated"""
+    return expr() if callable(expr) else expr
+
+
+@piper
+def mforce(iterables):
+    """map 'force' over iterables of delayed-evaluation"""
+    return ml_(force)(iterables)
+
+
+def reader(f=None, mode="r", zipf=False):
+    """get ready to read stream from a file or stdin, then returns the handle"""
+    if f is not None:
+        guard(exists(f, "f"), f"reader, not found such a file: {f}")
+    return (
+        sys.stdin
+        if f is None
+        else zipfile.ZipFile(normpath(f), mode)
+        if zipf
+        else open(normpath(f), mode)
+    )
+
+
+def writer(f=None, mode="w", zipf=False):
+    """get ready to write stream to a file or stout, then returns the handle"""
+    return (
+        sys.stdout
+        if f is None
+        else zipfile.ZipFile(normpath(f), mode)
+        if zipf
+        else open(normpath(f), mode)
+    )
+
+
+def split_at(ix, x):
+    """split iterables at the given splitting-indices"""
+    s = flatl(0, ix, None)
+    return ([*it.islice(x, begin, end)] for begin, end in zip(s, s[1:]))
+
+
+def chunks_of(n, x, fillvalue=None, fill=True):
+    if not fill:
+        x = list(x)
+        x = x[: len(x) // n * n]
+    """split interables into the given `n-length` pieces"""
+    return it.zip_longest(*(iter(x),) * n, fillvalue=fillvalue)
+
+
+@piper
+def guard(p, msg="guard", e=SystemExit):
+    """'assert' as a function or expression"""
+    if not p:
+        error(msg=msg, e=e)
+
+
+def guard_(f, msg="guard", e=SystemExit):
+    """partial application builder for 'guard':
+    the same as 'guard', but the positional predicate is given
+    as a function rather than an boolean expression"""
+    return lambda x: seq(guard(f(x), msg=msg, e=e))(x)
+
+
+@piper
+def error(msg="error", e=SystemExit):
+    """'raise' an exception with a function or expression"""
+    raise e(msg)
+
+
+def HOME():
+    """get the current user's home directory: the same as '$HOME'"""
+    return os.getenv("HOME")
+
+
+@piper
+def cd(path=None):
+    """change directories: similar to the shell-command 'cd'"""
+    if path:
+        os.chdir(normpath(path, abs=True))
+    else:
+        os.chdir(HOME())
+    return pwd()
+
+
+def pwd():
+    """get the current directory: similar to the shell-command 'pwd'"""
+    return os.getcwd()
+
+
+@piper
+def normpath(path, abs=False):
+    """normalize the given filepath"""
+    return cf_(
+        os.path.abspath if abs else id,
+        os.path.normpath,
+        os.path.expanduser,
+    )(path)
+
+
+@piper
+def exists(path, kind=None):
+    """check if the given filepath (file or directory) is available"""
+    path = normpath(path)
+    if kind == "f":
+        return os.path.isfile(path)
+    elif kind == "d":
+        return os.path.isdir(path)
+    else:
+        return os.path.exists(path)
+
+
+@piper
+def dirname(*args, prefix=False, abs=False):
+    if len(args) > 1:
+        args = [normpath(a, abs=True) for a in args]
+        return os.path.commonprefix(args) if prefix else os.path.commonpath(args)
+    else:
+        args = [normpath(a, abs=abs) for a in args]
+        d = os.path.dirname(*args)
+        return d if d else "."
+
+
+@piper
+def basename(path):
+    return cf_(os.path.basename, normpath)(path)
+
+
+@piper
+def mkdir(path, mode=0o755):
+    path = normpath(path)
+    os.makedirs(path, mode=mode, exist_ok=True)
+    return path
+
+
+@piper
+def rmdir(path, rm_rf=False):
+    path = normpath(path)
+    if rm_rf:
+        rmtree(path)
+    else:
+        os.removedirs(path)
+
+
+@piper
+def ls(*paths, grep=None, i=False, r=False, f=False, d=False, g=False, _root=True):
+    """list directory contents: just like 'ls -a1'.
+
+    Note:
+      - allowed glob patterns (*,?,[) in <path..>
+      - given 'grep=<regex>', it behaves like 'ls -a1 <path..> | grep <regex>'
+      - if i is set, it makes 'grep' case-insensitive (-i flag in grep)
+      - if r is set, it behaves like 'find -s <path..>' (-R flag in ls)
+      - if f is set, it lists only files like 'find <path..> -type f'
+      - if d is set, it lists only directories like 'find <path..> -type d'
+      - if g is set, it returns a generator instead of a sorted list
+    """
+    paths = paths or ["."]
+    typef = f and f ^ d
+    typed = d and f ^ d
+
+    def fd(x):
+        return (typef and exists(x, "f")) or (typed and exists(x, "d"))
+
+    def root(xs):
+        return flat(
+            glob(normpath(x))
+            if re.search(r"[\*\+\?\[]", x)
+            else cf_(
+                guard_(exists, f"ls, no such file or directory: {x}"),
+                normpath,
+            )(x)
+            for x in xs
+        )
+
+    def rflag(xs):
+        return flat(
+            (x, ls(x, grep=grep, i=i, r=r, f=f, d=d, g=g, _root=False))
+            if exists(x, "d")
+            else x
+            for x in xs
+        )
+
+    return cf_(
+        id if g else sort,  # return generator or sort by filepath
+        v_(fd) if typef ^ typed else id,  # filetype filter: -f or -d flag
+        globals()["grep"](grep, i=i) if grep else id,  # grep -i flag
+        rflag if r else id,  # recursively listing: -R flag
+    )(
+        flat(
+            [normpath(f"{x}/{o}") for o in (os.listdir(x))] if exists(x, "d") else x
+            for x in (root(paths) if _root else paths)
+        )
+    )
+
+
+@safe
+def grep(regex, *, i=False):
+    """build a filter to select items matching 'regex' pattern from iterables
+
+    >>> grep(r".json$", i=True)([".json", "Jason", ".JSON", "jsonl", "JsonL"])
+    ['.json', '.JSON']
+    """
+    return piper(vl_(f_(re.search, regex, flags=re.IGNORECASE if i else 0)))
+
+
+@piper
+def echo(*xs, n=True):
+    """echo: display a line of text"""
+    return unwords([str(o) for o in xs]) + ("\n" if n else "")
+
+
+@piper
+def split(f, /, nbytes, prefix):
+    """split a file into multiple parts of specified byte-size like:
+    $ split -b bytes f prefix_
+
+    >>> split(FILE, 1024, "part-")  # doctest: +SKIP
+    """
+    guard(exists(f, "f"), f"split, not found file: {f}")
+    fmt = f"0{len(str(os.stat(f).st_size // nbytes))}d"
+    n = 0
+    rf = reader(f, "rb")
+    chunk = rf.read(nbytes)
+    while chunk:
+        writer(f"{dirname(f)}/{prefix}{n:{fmt}}", "wb").write(chunk)
+        chunk = rf.read(nbytes)
+        n += 1
+
+
+@piper
+def bytes_to_int(x, byteorder="big"):
+    return int.from_bytes(x, byteorder=byteorder)
+
+
+@piper
+def int_to_bytes(x, size=None, byteorder="big"):
+    if size is None:
+        size = (x.bit_length() + 7) // 8
+    return x.to_bytes(size, byteorder=byteorder)
+
+
+@piper
+def bytes_to_bin(x, sep=""):
+    return sep.join(f"{b:08b}" for b in x)
+
+
+@piper
+def bin_to_bytes(x):
+    return int_to_bytes(int(x, base=2))
+
+
+@piper
+def randbytes(n):
+    """generate cryptographically secure random bytes"""
+    return os.urandom(n)
+
+
+@piper
+def rand(x=None, high=None, size=None):
+    return (
+        [rd.uniform(x, high) for _ in range(size)]  # #args == 3
+        if size is not None
+        else rd.uniform(x, high)  # #args == 2
+        if high is not None
+        else rd.uniform(0, x)  # #args == 1
+        if x is not None
+        else rd.random()  # #args == 0
+    )
+
+
+@piper
+def randn(mu=0, sigma=1, size=None):
+    return (
+        [rd.gauss(mu, sigma) for _ in range(size)]
+        if size is not None
+        else rd.uniform(mu, sigma)
+    )
+
+
+@piper
+def randint(x=None, high=None, size=None):
+    """generate random integer cryptographically secure and faster than numpy's.
+    return random integer(s) in range of [low, high)
+    """
+
+    def rint(high=1 << 256, low=0):
+        guard(low < high, f"randint, low({low}) must be less than high({high})")
+        x = high - low
+        return low + (bytes_to_int(randbytes((x.bit_length() + 7) // 8)) % x)
+
+    return (
+        [rint(high, x) for _ in range(size)]  # #args == 3
+        if size is not None
+        else rint(high, x)  # #args == 2
+        if high is not None
+        else rint(x)  # #args == 1
+        if x is not None
+        else rint()  # #args == 0
+    )
+
+
+@piper
+def shuffle(x):
+    """Fisher-Yates shuffle in a cryptographically secure way"""
+    for i in range(len(x) - 1, 0, -1):
+        j = randint(0, i)
+        x[i], x[j] = x[j], x[i]
+    return x
+
+
+@piper
+def choice(x, size=None, *, replace=False, p=None):
+    """Generate a sample with/without replacement from a given iterable"""
+
+    def fromp(x, probs, e=1e-6):
+        guard(
+            len(x) == len(probs),
+            f"choice, not the same size: {len(x)}, {len(probs)}",
+        )
+        guard(
+            1 - e < sum(probs) < 1 + e,
+            f"choice, sum of probs({sum(probs)}) != 1",
+        )
+        r = rand()
+        for y, p in zip(x, scanl1(f_("+"), probs)):
+            if r < p:
+                return y
+
+    if p is not None:
+        return fromp(x, p)
+    if size is None:
+        return x[randint(len(x))]
+    else:
+        size = int(len(x) * size) if 0 < size < 1 else size
+        return [
+            x[i]
+            for i in (
+                randint(0, len(x), size)
+                if len(x) < size or replace
+                else shuffle(rangel(len(x)))[:size]
+            )
+        ]
+
+
+@piper
+class dmap(dict):
+    """dot-accessible dict(map) using DWIM"""
+
+    __slots__ = ()
+    __dwim__ = "- "
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for key, val in self.items():
+            self[key] = self._g(val)
+
+    def _g(self, val):
+        if isinstance(val, dict):
+            return dmap(val)
+        elif isinstance(val, list):
+            return [self._g(x) for x in val]
+        return val
+
+    def _k(self, key):
+        if self.__class__.__dwim__:  # dmap using the DWIM key
+            for s in chars(self.__class__.__dwim__):
+                if (sub := re.sub("_", s, key)) in self:
+                    return sub
+        return key
+
+    def __getattr__(self, key):
+        if key.startswith("__"):  # disabled for stability
+            return
+        if key not in self and key != "_ipython_canary_method_should_not_exist_":
+            if (sub := self._k(key)) in self:
+                return self[sub]
+            self[key] = dmap()
+        return self[key]
+
+    def __setattr__(self, key, val):
+        self[self._k(key)] = self._g(val)
+
+    def __delattr__(self, key):
+        key = key if key in self else self._k(key)
+        if key in self:
+            del self[key]
+
+
+def singleton(cls):
+    """decorate a class and make it a singleton class"""
+    _reg = {}
+
+    @wraps(cls)
+    def wrapper(*args, **kwargs):
+        if cls not in _reg:
+            _reg[cls] = cls(*args, **kwargs)
+        return _reg[cls]
+
+    return wrapper
+
+
+def thread(daemon=False):
+    """decorator factory that turns functions into threading.Thread
+
+    >>> mouse = thread()(mouse_listener)()  # doctest: +SKIP
+    >>> mouse.start()                       # doctest: +SKIP
+    >>> mouse.join()                        # doctest: +SKIP
+    """
+
+    def t(f):
+        @wraps(f)
+        def wrapper(*args, **kwargs):
+            return Thread(target=f, args=args, kwargs=kwargs, daemon=daemon)
+
+        return wrapper
+
+    return t
+
+
+def process(daemon=False):
+    """decorator factory that turns functions into multiprocessing.Process
+
+    >>> ps = [process(True)(bruteforce)(x) for x in xs]  # doctest: +SKIP
+    >>> for p in ps: p.start()                           # doctest: +SKIP
+    >>> for p in ps: p.join()                            # doctest: +SKIP
+    """
+
+    def p(f):
+        @wraps(f)
+        def wrapper(*args, **kwargs):
+            return Process(target=f, args=args, kwargs=kwargs, daemon=daemon)
+
+        return wrapper
+
+    return p
+
+
+class polling:
+    """repeatedly executes a provided function at fixed time intervals
+
+    >>> g = f_(cf_(print, force), lazy(randint, 100))  # doctest: +SKIP
+    >>> p = polling(1, g)                              # doctest: +SKIP
+    >>> p.start()                                      # doctest: +SKIP
+    """
+
+    def __init__(self, sec, f, *args, **kwargs):
+        self.expr = lazy(f, *args, **kwargs)
+        self.timer = f_(Timer, sec, self._g)
+        self.on = False
+        self.t = None
+
+    def _g(self):
+        if self.on:
+            self.expr()
+            self.t = self.timer()
+            self.t.start()
+
+    def start(self):
+        if not self.on:
+            self.on = True
+            self._g()
+
+    def stop(self):
+        self.on = False
+        if self.t:
+            self.t.cancel()
+
+
+@piper
+def shell(cmd, sync=True, o=True, *, executable="/bin/bash"):
+    """execute shell commands [sync|async]hronously and capture its outputs
+
+      --------------------------------------------------------------------
+        o-value  |  return |  meaning
+      --------------------------------------------------------------------
+         o =  1  |  [str]  |  captures stdout/stderr (2>&1)
+         o = -1  |  None   |  discard (&>/dev/null)
+      otherwise  |  None   |  do nothing or redirection (2>&1 or &>FILE)
+      --------------------------------------------------------------------
+
+    >>> shell("ls -1 ~")                   # doctest: +SKIP
+    >>> shell("find . | sort" o=-1)        # doctest: +SKIP
+    >>> shell("cat *.md", o=writer(FILE))  # doctest: +SKIP
+    """
+    import shlex
+
+    o = PIPE if o == 1 else DEVNULL if o == -1 else 0 if isinstance(o, int) else o
+    sh = f_(
+        Popen,
+        cf_(unwords, ml_(normpath), shlex.split)(cmd),
+        stdin=PIPE,
+        stderr=STDOUT,
+        shell=True,
+        executable=executable,
+    )
+    if sync:
+        if o == PIPE:
+            proc = sh(stdout=o)
+            out, _ = proc.communicate()
+            return lines(out.decode())
+        else:
+            sh(stdout=o).communicate()
+    else:
+        sh(stdout=o)
+
+
+@piper
+def pbcopy(x):
+    Popen("pbcopy", stdin=PIPE).communicate(x.encode())
+
+
+def pbpaste():
+    return Popen("pbpaste", stdout=PIPE).stdout.read().decode()
+
+
+@piper
+def timer(t, msg="", quiet=False):
+    guard(isinstance(t, (int, float)), f"timer, not a number: {t}")
+    guard(t > 0, "timer, must be given a positive number: {t}")
+    t = int(t)
+    fmt = f"{len(str(t))}d"
+    while t >= 0:
+        if not quiet:
+            print(f"{msg}  {t:{fmt}}", end="\r")
+        time.sleep(1)
+        t -= 1
+    writer().write("\033[K")
+
+
+def docfrom(g, merge=False):
+    """copy the docstring from the source 'g' to the function 'f' decorated"""
+
+    def wrapper(f):
+        f.__doc__ = (
+            unlines([f.__doc__ if f.__doc__ else "", "", g.__doc__])
+            if merge
+            else g.__doc__
+        )
+        return f
+
+    return wrapper
+
+
+@piper
+def neatly(x, _cols=None, _width=10000, _repr=True, _root=True, **kwargs):
+    """create neatly formatted string for data structure of 'dict' and 'list'"""
+
+    def indent(x, i):
+        def u(c, j=0):
+            return f"{c:3}{x[j:]}"
+
+        return (
+            (u("-", 3) if i else u("+", 3))
+            if x and x[0] == "|"
+            else f"{x}"
+            if x and x[0] == ":"
+            else ((u("-") if x[0] == "+" else u("")) if i else u("+"))
+        )
+
+    def bullet(o, s):
+        return (
+            (indent(x, i) for i, x in enumerate(s))
+            if isinstance(o, list)
+            else (f":  {x}" if i else f"|  {x}" for i, x in enumerate(s))
+        )
+
+    def filine(x, width, initial, subsequent):
+        return fill(
+            x,
+            width=width,
+            break_on_hyphens=False,
+            drop_whitespace=False,
+            initial_indent=initial,
+            subsequent_indent=subsequent,
+        )
+
+    if isinstance(x, dict):
+        d = x | kwargs
+        if not d:
+            return ""
+        _cols = _cols or max(map(len, d.keys()))
+        return unlines(
+            filine(v, _width, f"{k:>{_cols}}  ", f"{' ':>{_cols}}     ")
+            for a, o in sort(d.items())
+            for k, v in [
+                ("", b) if i else (a, b)
+                for i, b in enumerate(
+                    bullet(o, lines(neatly(o, _repr=_repr, _root=False)))
+                )
+            ]
+        )
+    elif isinstance(x, list):
+        if _root:
+            return neatly({"'": x}, _repr=_repr, _root=False)
+        return unlines(
+            filine(v, _width, "", "   ")
+            for o in x
+            for v in bullet(o, lines(neatly(o, _repr=_repr, _root=False)))
+        )
+    else:
+        return (repr if _repr else str)(x)
+
+
+@piper
+def nprint(x, *, _cols=None, _width=10000, _repr=True, **kwargs):
+    """neatly print data structures of 'dict' and 'list' using `neatly`"""
+    print(neatly(x, _cols=_cols, _width=_width, _repr=_repr, **kwargs))
+
+
+def timestamp(*, origin=None, w=0, d=0, h=0, m=0, s=0, from_iso=None, to_iso=False):
+    if from_iso:
+        t = datetime.strptime(from_iso, "%Y-%m-%dT%H:%M:%S.%f%z").timestamp()
+    else:
+        dt = timedelta(
+            weeks=w,
+            days=d,
+            hours=h,
+            minutes=m,
+            seconds=s,
+        ).total_seconds()
+        if origin is None:
+            origin = datetime.utcnow().timestamp()
+        t = origin + dt
+
+    return to_iso and f"{datetime.fromtimestamp(t).isoformat()[:26]}Z" or t
+
+
+def taskbar(x=None, desc="working", *, start=0, total=None, barcolor="white", **kwargs):
+    """flexible tqdm-like progress bar relying on 'pip' package only"""
+    import pip._vendor.rich.progress as rp
+
+    class SpeedColumn(rp.ProgressColumn):
+        def render(self, task) -> rp.Text:
+            if task.speed is None:
+                return rp.Text("?", style="progress.data.speed")
+            return rp.Text(f"{task.speed:2.2f} it/s", style="progress.data.speed")
+
+    def track(tb, x, start, total):
+        with tb:
+            if total is None:
+                total = len(x) if float(op.length_hint(x)) else None
+            if start:
+                guard(total is not None, f"taskbar, not subscriptable: {x}")
+                start = total + start if start < 0 else start
+                x = islice(x, start, None)
+            task = tb.add_task(desc, completed=start, total=total)
+            yield from tb.track(x, task_id=task, total=total, description=desc)
+            if total:
+                tb._tasks.get(task).completed = total
+
+    tb = rp.Progress(
+        "[progress.description]{task.description}",
+        "",
+        rp.TaskProgressColumn(),
+        "",
+        rp.BarColumn(complete_style=barcolor, finished_style=barcolor),
+        "",
+        rp.MofNCompleteColumn(),
+        "",
+        rp.TimeElapsedColumn(),
+        "<",
+        rp.TimeRemainingColumn(),
+        "",
+        SpeedColumn(),
+        **kwargs,
+    )
+    return tb if x is None else track(tb, x, start, total)
+
+
+def fpos(f):
+    """get positional arguments of a given function"""
+    return [
+        p.name
+        for p in signature(f).parameters.values()
+        if (
+            p.kind in [p.POSITIONAL_ONLY, p.POSITIONAL_OR_KEYWORD]
+            and p.default is p.empty
+        )
+    ]
+
+
+def __sig__(xs):
+    def sig(o):
+        try:
+            return signature(o).__str__()
+        except:
+            return " is valid, but live-inspect not available"
+
+    return dmap({x: x + sig(eval(x)) for x in xs})
+
+
+def catalog(*, piper=False, dict=False):
+    """display/get the list of functions available"""
+    o = __sig__(pipers() if piper else __all__)
+    if dict:
+        return o
+    else:
+        nprint(o, _cols=14, _repr=False)
+
+
+def piperp(k):
+    return k in pipers()
+
+
+def pipers():
+    return [
+        key
+        for key, o in sort(sys.modules[__name__].__dict__.items())
+        if callable(o) and hasattr(o, "_pipefied")
+    ]
+
+
+# -------------------------------
+# aliases for convenience
+# -------------------------------
+uniq = nub
+unpack = chars
+sort = piper(sorted)
+length = piper(len)
+abs = piper(abs)
+sum = piper(sum)
+min = piper(min)
+max = piper(max)
+ord = piper(ord)
+chr = piper(chr)
+all = piper(all)
+any = piper(any)
+
+
+sys.setrecursionlimit(5000)
