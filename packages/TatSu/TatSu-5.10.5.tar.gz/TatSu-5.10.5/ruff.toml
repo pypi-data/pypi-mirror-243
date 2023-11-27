@@ -1,0 +1,50 @@
+line-length = 88
+
+select = [
+    "F", "E", "W", "UP",
+    "I", "YTT", "S", "B",
+    "COM", "C4", "SIM",
+    "PTH", "TRY",
+    "FLY", "PERF", "FURB", "RUF",
+    "PL", "PGH", "RET",
+    # "ERA", # commented out code
+]
+ignore = [
+#    "C408",  # unnecessary-collection-call
+    "E501",  # line-too-long
+    "E741",  # ambiguous-variable-name
+    "E402",  # module-import-not-at-top-of-file
+    "S101",  # use of assert
+    "PLC0415",  # import-outside-top-level
+    "PLR6301",  # no-self-use
+    "PLR0904",  # too-many-public-methods
+    "PLR0913",  # too-many-arguments
+    "PLR0915",  # too-many-statements
+    "PLR2004",  # magic-value-comparison
+    "PLW1514",  # unspecified-encoding
+#    "PLW0603",  # global-statement
+#    "PLW2901",  # redefined-loop-name
+    "PLW3201",  # bad-dunder-method-name
+#    "PTH123",  # builtin-open
+    "RET505",  # superfluous-else-return
+    "S102",  # exec-builtin
+#    "S105",  # hardcoded-password-string
+    "S301",  # suspicious-pickle-usage
+#    "S311",  # suspicious-non-cryptographic-random-usage
+    "SIM115",  # open-file-with-context-handler
+    "SIM114",  # if-with-same-arms
+    "TRY003",  # raise-vanilla-args
+    "TRY300",  # try-consider-else
+]
+exclude = []
+
+target-version = "py312"
+
+[per-file-ignores]
+
+[mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
+
+[pydocstyle]
+convention = "numpy"
