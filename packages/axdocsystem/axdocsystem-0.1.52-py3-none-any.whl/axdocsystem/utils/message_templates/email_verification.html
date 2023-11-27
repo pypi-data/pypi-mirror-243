@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+      Добро пожаловать в {system_name} 
+  </title>
+  <style>
+    .reset-button {{
+      background-color: grey;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }}
+  </style>
+</head>
+<body>
+    <p>Добро пожаловать в {system_name}</p>
+  
+  <p>Чтобы закончить регистрацию, нажмите кнопку ниже:</p>
+  
+  <a href="http://localhost:3001/auth/register/{code}" class="reset-button">Перейти</a>
+  
+  <p>Если кнопка не работает, вы можете вручную скопировать и вставить следующий URL в адресную строку вашего веб-браузера:</p>
+  
+  <p>http://localhost:3001/auth/register/{code}</p>
+  
+</body>
+</html>
+
+
