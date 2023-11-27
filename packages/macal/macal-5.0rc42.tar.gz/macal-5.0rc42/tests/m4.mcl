@@ -1,0 +1,16 @@
+# Test for including function from another file.
+
+
+test_remote_function => (a) {
+    a = a + 6;
+    l = a + 35;
+    print(l);
+    return a;
+}
+
+GetExtraData => (x, y, i) {
+    print(x);
+    x["vpn"]["peers"] = [];
+    print(x["vpn"]["peers"]);
+    select * from y where serial == x["serial"] merge into x["vpn"]["peers"];
+}
