@@ -1,0 +1,2 @@
+[console_scripts]
+alphaiq_sdk = alphaiq_sdk.__main__:main
