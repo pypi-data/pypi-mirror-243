@@ -1,0 +1,81 @@
+# -*- coding:utf-8 -*-
+"""
+@Author  :   g1879
+@Contact :   g1879@qq.com
+"""
+from typing import Union, Tuple, List, Optional
+
+from .._elements.chromium_element import ChromiumShadowRoot, ChromiumElement
+from .._pages.chromium_base import ChromiumBase
+from .._pages.chromium_frame import ChromiumFrame
+
+
+class ElementStates(object):
+    def __init__(self, ele: ChromiumElement):
+        self._ele: ChromiumElement = ...
+
+    @property
+    def is_selected(self) -> bool: ...
+
+    @property
+    def is_checked(self) -> bool: ...
+
+    @property
+    def is_displayed(self) -> bool: ...
+
+    @property
+    def is_enabled(self) -> bool: ...
+
+    @property
+    def is_alive(self) -> bool: ...
+
+    @property
+    def is_in_viewport(self) -> bool: ...
+
+    @property
+    def is_whole_in_viewport(self) -> bool: ...
+
+    @property
+    def is_covered(self) -> bool: ...
+
+    @property
+    def has_rect(self) -> Union[bool, List[Tuple[float, float]]]: ...
+
+
+class ShadowRootStates(object):
+    def __init__(self, ele: ChromiumShadowRoot):
+        """
+        :param ele: ChromiumElement
+        """
+        self._ele: ChromiumShadowRoot = ...
+
+    @property
+    def is_enabled(self) -> bool: ...
+
+    @property
+    def is_alive(self) -> bool: ...
+
+
+class PageStates(object):
+    def __init__(self, page: ChromiumBase):
+        self._page: ChromiumBase = ...
+
+    @property
+    def is_loading(self) -> bool: ...
+
+    @property
+    def is_alive(self) -> bool: ...
+
+    @property
+    def ready_state(self) -> Optional[str]: ...
+
+
+class FrameStates(object):
+    def __init__(self, frame: ChromiumFrame):
+        self._frame: ChromiumFrame = ...
+
+    @property
+    def is_alive(self) -> bool: ...
+
+    @property
+    def ready_state(self) -> str: ...
