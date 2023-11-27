@@ -1,0 +1,29 @@
+name: build-and-publish-release
+run-name: Build Wheel, Create GitHub Release, Publish to PyPI
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]*.[0-9]*'
+jobs:
+  build-wheel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Prepare Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Prepare virtual environment
+        run: make venv
+      - name: Build wheel
+        run: make build
+      - name: Create GitHub Release
+        run: gh release create ${GITHUB_REF_NAME} dist/chompchomp-${GITHUB_REF_NAME}-py3-none-any.whl
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Create PyPI Release
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_token }}

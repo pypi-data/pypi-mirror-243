@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: chompchomp
+Version: 0.1.0
+Summary: Calorie-counting app
+License-File: LICENSE
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: openfoodfacts
+Requires-Dist: pyyaml
+Requires-Dist: tabulate
+Requires-Dist: tomlkit
+Description-Content-Type: text/markdown
+
+# chomp
+
+Command-line calorie counter.

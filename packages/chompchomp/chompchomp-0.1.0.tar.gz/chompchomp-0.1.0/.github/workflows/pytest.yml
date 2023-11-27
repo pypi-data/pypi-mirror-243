@@ -1,0 +1,17 @@
+name: run-unittests-with-pytest
+run-name: Run Unit Tests with PyTest
+on: [push]
+jobs:
+  run-unit-tests-with-pytest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Prepare Python Environment
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Prepare virtual environment
+        run: make venv
+      - name: Run unit tests
+        run: make test
