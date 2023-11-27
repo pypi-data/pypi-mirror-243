@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "enhance-long"
+version = "0.0.7"
+authors = [
+  { name="MrYXJ", email="yxj2017@gmail.com"},
+]
+description = "The tool integrates the lowest cost and highest performance methods to enhance the ability of large languages to process long contexts"
+
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "torch>=1.1.0",
+    "transformers>=4.35.2",
+    "flash-attn",
+    "einops",
+    "tqdm"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/MrYxJ/enhance_long"
