@@ -1,0 +1,20 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "stealthbot"
+authors = [{name = "Fabio Cantone", email = "fabio@cantone.me"}]
+readme = "README.md"
+dynamic = ["version", "description"]
+dependencies = [
+    "chromedriver_autoinstaller_fix",
+    "cloudscraper",
+    "joblib",
+    "packaging",
+    "psutil",
+    "requests",
+    "selenium==4.5.0",
+    "selenium-wire",
+    "parsel"
+]
