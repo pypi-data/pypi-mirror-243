@@ -1,0 +1,8 @@
+setup.py
+jlhello.egg-info/PKG-INFO
+jlhello.egg-info/SOURCES.txt
+jlhello.egg-info/dependency_links.txt
+jlhello.egg-info/requires.txt
+jlhello.egg-info/top_level.txt
+libname/__init__.py
+libname/hello.py
