@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: tired
+Version: 0.3.2
+Summary: Boilerplate I'm tired of writing over and over
+Home-page: https://github.com/damurashov/TIRED
+Author: Dmitry Murashov
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: simple_term_menu
+Requires-Dist: datetime
+Requires-Dist: pyserial
+
+![Tired](https://raw.githubusercontent.com/damurashov/TIRED/master/resources/logo.png)
+
+**
+
+Frequently reused snippets
