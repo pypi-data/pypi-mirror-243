@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: kayaku
+Version: 0.5.3
+Summary: An powerful and flexible configuration solution.
+License: MIT
+Author-email: BlueGlassBlock <blueglassblock@outlook.com>
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: OS Independent
+Classifier: Typing :: Typed
+Requires-Dist: dacite<2.0,>=1.6.0
+Requires-Dist: lark[regex]<2.0,>=1.1
+Requires-Dist: loguru<0.7.0,>=0.6.0
+Requires-Dist: typing-extensions<5.0.0,>=4.0.0
+Description-Content-Type: text/markdown
+
+<div align="center">
+
+# Kayaku
+
+> Power within little particles.
+
+A powerful and flexible configuration solution.
+
+[![codecov](https://codecov.io/gh/GraiaProject/kayaku/branch/master/graph/badge.svg?token=N02KA74USQ)](https://codecov.io/gh/GraiaProject/kayaku)
+</div>
+
+## License
+
+This project is licensed under [MIT license](./LICENSE).
+
