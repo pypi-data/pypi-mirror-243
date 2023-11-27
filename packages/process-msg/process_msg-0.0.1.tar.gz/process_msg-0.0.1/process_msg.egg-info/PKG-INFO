@@ -1,0 +1,16 @@
+Metadata-Version: 1.2
+Name: process-msg
+Version: 0.0.1
+Summary: GPT 메세지 전처리 패키지
+Home-page: https://github.com/codusl100/process_msg
+Author: codusl100
+Author-email: codusl100@naver.com
+License: UNKNOWN
+Description: UNKNOWN
+Keywords: gpt,message process,process message,gpt process
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
