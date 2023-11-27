@@ -1,0 +1,118 @@
+Metadata-Version: 2.1
+Name: aio-easy-rabbit
+Version: 0.0.1
+Summary: A simple rabbitmq client for asyncio applications based on the awesome aio-pika library!
+Author-email: Bo Stokholm <the.one.nachash@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2023 Bo Stokholm
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/mcboman/aio-easy-rabbit
+Project-URL: Bug Tracker, https://github.com/mcboman/aio-easy-rabbit/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# aio-easy-rabbit
+
+An opinionated way to use RabbitMQ in Asyncio based frameworks.
+
+
+# Installation
+
+to be continued ...
+
+
+# Usage example
+
+Simple consumer example in a FastAPI
+
+```python
+
+from fastapi import FastAPI
+from aio_easy_rabbit.connection import (
+    connect_to_rabbitmq,
+    start_listening_to_queue,
+)
+
+
+app = FastAPI()
+
+@rabbitmq_consumer("test_queue")
+async def test_consumer(message):
+    print(message)
+
+
+@app.on_event("startup")
+async def startup_event():
+    registry = ConsumerRegistry()
+    rabbitmq_connection_string = "amqp://guest:guest@localhost"
+    app.state.rabbitmq_connection = await connect_to_rabbitmq(
+        rabbitmq_connection_string
+    )
+    for queue_name in registry.get_registered_queues():
+        asyncio.create_task(
+            start_listening_to_queue(app.state.rabbitmq_connection, queue_name)
+        )
+
+```
+
+Key component is the `ConsumerRegistry` that will manage state of all registered queues and their consuming functions.
+
+Note: Each decorated consumer will receive a raw string that needs to be serialized as pleased.
+
+
+Simple publisher example in FastAPI
+
+```python
+from fastapi import FastAPI
+
+from aio_easy_rabbit.connection import (
+    connect_to_rabbitmq
+)
+from aio_easy_rabbit.producers import RabbitMQPublisher
+
+app = FastAPI()
+
+
+class Message(BaseModel):
+    message: str
+
+
+@app.post("/test/{queue_name}/")
+async def test_endpoint(queue_name: str, message: Message):
+    await app.state.rabbitmq_publisher.publish_message(queue_name, message)
+    return {"message": "Message published"}
+
+
+@app.on_event("startup")
+async def startup_event():
+    rabbitmq_connection_string = "amqp://guest:guest@localhost"
+    app.state.rabbitmq_connection = await connect_to_rabbitmq(
+        rabbitmq_connection_string
+    )
+    app.state.rabbitmq_publisher = RabbitMQPublisher(rabbitmq_connection_string)
+
+```
+
