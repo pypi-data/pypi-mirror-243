@@ -1,0 +1,59 @@
+# ========== BUILD ==========
+[build-system]
+requires = [
+    "setuptools >= 61.0",
+]
+build-backend = "setuptools.build_meta"
+
+# ========== PROJECT ==========
+[project]
+name = "absfuyu_res"
+description = "Resources for absfuyu package"
+readme = "README.md"
+requires-python = ">=3.8, <4"
+license = {file = "LICENSE"}
+keywords = ["utilities"]
+authors = [
+    {name = "somewhatcold (AbsoluteWinter)"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    # "Development Status :: 5 - Production/Stable",
+    "Natural Language :: English",
+    "Intended Audience :: Developers",
+    "Topic :: Utilities",
+]
+dynamic = [
+    "version",
+    "dependencies",
+    # "optional-dependencies",
+]
+
+[project.urls]
+Homepage = "https://github.com/AbsoluteWinter/absfuyu-res"
+Documentation = "https://absolutewinter.github.io/absfuyu"
+
+# ========== TOOL ==========
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"*" = ['*']
+
+[tool.setuptools.exclude-package-data]
+"*" = [".gitattributes", ".gitignore"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+version = {attr = "absfuyu_res.__version__"}
