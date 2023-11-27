@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: slmcontrol
+Version: 0.0.5
+Summary: A package used to control Spatial Light Modulators (SLM)
+License: MIT
+Author: Marcos Gil
+Author-email: marcosgildeoliveira@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: multimethod (>=1.10,<2.0)
+Requires-Dist: numpy (>=1.26.2,<2.0.0)
+Requires-Dist: scipy (>=1.11.4,<2.0.0)
+Requires-Dist: wxPython (>=4.2,<5.0) ; python_version >= "3.9" and python_version < "4.0" and sys_platform == "darwin"
+Requires-Dist: wxPython (>=4.2,<5.0) ; python_version >= "3.9" and python_version < "4.0" and sys_platform == "win32"
+Description-Content-Type: text/markdown
+
+# slmcontrol
+
+This is a package that allows one to control a Spatial Light Modulator (SLM) with a simple an intuitive syntax.
+
+If you use this package in your research, please cite it and give it a star on GitHub.
+
+## Links
+
+- [**PyPI**](https://pypi.org/project/slmcontrol/)
+- [**Documentation**](https://marcsgil.github.io/slmcontrol/)
+- [**Source code**](https://github.com/marcsgil/slmcontrol/tree/main)
+
+## Instalation
+
+To install this package, run
+
+```
+pip install slmcontrol
+```
+
+on a terminal.
+
+It will work of the box for Window. That is also the expected behavior for MacOS, but it has not been tested. For Linux, you will need to manually install [wxPython](https://wxpython.org/pages/downloads/) before using this package.
+
+If you encounter the error `libSDL2-2.0.so.0: cannot open shared object file: No such file or directory`, you need to install the package `libsdl2-2.0-0` (on Ubuntu, run `sudo apt install libsdl2-dev`).
+
+If you encounter any problems, please open an issue on GitHub.
+
+## Authors
+
+Developed by PhD students at the Quantum Optics Laboratory of Universidade Federal Fluminense:
+
+- Marcos Gil
+- André Junior
+- Altilano Barbosa
+- Braian Pinheiro
+
+The part of the code that sends image to the SLM (`slm.py`) was taken from the repository [pyslm](https://github.com/wavefrontshaping/slmPy) from Sébastien M. Popoff, with only minor modifications.
