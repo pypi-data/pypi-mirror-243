@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: empathie
+Version: 0.0.0
+Summary: A continual learning wrapper for neural networks
+Home-page: https://github.com/organization/package
+Author: Mustafa Abdool, Carson Lam
+Maintainer: empathie
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.8
+Requires-Dist: Pillow >=9.0.1
+Requires-Dist: accelerate >=0.20.0
+Requires-Dist: datasets >=2.8.0
+Requires-Dist: einops >=0.7.0
+Requires-Dist: ipywidgets >=8.0.3
+Requires-Dist: jsonlines >=3.1.0
+Requires-Dist: jupyter >=1.0.0
+Requires-Dist: matplotlib >=2.2.0
+Requires-Dist: numpy >=1.21.0
+Requires-Dist: pip-chill ==1.0.3
+Requires-Dist: python-dotenv >=0.21.0
+Requires-Dist: scikit-learn >=1.0.0
+Requires-Dist: statsmodels >=0.13.5
+Requires-Dist: torch >=2.0.1
+Requires-Dist: torchmetrics >=0.11.0
+Requires-Dist: torchvision >=0.11.1
+Requires-Dist: tqdm >=4.60.0
+Requires-Dist: transformers >=4.30.0
+
+UNKNOWN
+
+
