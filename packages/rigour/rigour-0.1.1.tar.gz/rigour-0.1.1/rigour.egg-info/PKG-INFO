@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: rigour
+Version: 0.1.1
+Home-page: https://followthemoney.tech/
+Author: OpenSanctions
+Author-email: tech@opensanctions.org
+License: MIT
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+# rigour
+
+Data cleaning and validation functions for FtM processing.
