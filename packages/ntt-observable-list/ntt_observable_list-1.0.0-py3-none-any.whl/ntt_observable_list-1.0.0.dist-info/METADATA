@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: ntt-observable-list
+Version: 1.0.0
+Summary: List with ntt signal mechanism
+Home-page: https://github.com/threezinedine/ntt-observable-list
+Author: threezinedine
+Author-email: threezinedine@email.com
+License: UNKNOWN
+Project-URL: Source, https://github.com/threezinedine/ntt-observable-list
+Project-URL: Tracker, https://github.com/threezinedine/ntt-observable-list/issues
+Keywords: signal,observable
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ntt-signal
+
+# ntt-observable-list
+ObservableList python
+
+## Example
+
+```python
+from ntt_observable_list import ObservableList
+
+def PrintList(lst: list) -> None:
+    print(lst)
+
+lst = ObservableList([3, 1, 4])
+lst.Connect(PrintList)
+
+lst.append(5)   # ---> [3, 1, 4, 5]
+lst[1] = 3      # ---> [3, 3, 4, 5]
+```
+
