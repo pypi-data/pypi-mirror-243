@@ -1,0 +1,12 @@
+COPYING
+LICENSE
+MANIFEST.in
+NEWS
+README.rst
+pyproject.toml
+src/conway_polynomials/CPimport.txt
+src/conway_polynomials/__init__.py
+src/conway_polynomials.egg-info/PKG-INFO
+src/conway_polynomials.egg-info/SOURCES.txt
+src/conway_polynomials.egg-info/dependency_links.txt
+src/conway_polynomials.egg-info/top_level.txt
