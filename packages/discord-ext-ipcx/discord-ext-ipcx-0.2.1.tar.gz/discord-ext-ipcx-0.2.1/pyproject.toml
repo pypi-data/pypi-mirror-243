@@ -1,0 +1,100 @@
+[project]
+name = "discord-ext-ipcx"
+description = "Maintained and updated version of discord-ext-ipc for discord.py v2"
+version = "0.2.1"
+authors = [
+    { name="No767", email="73260931+No767@users.noreply.github.com"}
+]
+maintainers = [
+    { name="No767", email="73260931+No767@users.noreply.github.com"}
+]
+readme = "README.md"
+dynamic = ["dependencies"]
+requires-python = ">=3.8"
+keywords = [
+    "discord.py", 
+    "asyncio", 
+    "networking",
+    "discord-ext-ipcx", 
+    "discord-ext-ipc"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: AsyncIO",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+    "Typing :: Typed"
+]
+
+[project.urls]
+Homepage = "https://github.com/No767/discord-ext-ipcx"
+Documentation = "https://discord-ext-ipcx.readthedocs.io/en/latest/"
+Repository = "https://github.com/No767/discord-ext-ipcx"
+Issues = "https://github.com/No767/discord-ext-ipcx/issues"
+
+[project.optional-dependencies]
+docs = [
+    "sphinx==7.2.6",
+    "sphinx-autobuild>=2021.3.14",
+    "furo>=2023.8.19",
+    "sphinx-copybutton>=0.5.2"
+]
+
+dev = [
+    "pre-commit",
+    "pyright",
+    "ruff",
+    "python-dotenv",
+    "quart>=0.18.4,<0.20.0"
+]
+
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[tool.setuptools]
+packages = [
+    "discord.ext.ipcx"
+]
+
+[tool.isort]
+profile = 'black'
+combine_as_imports = true
+combine_star = true
+line_length = 80
+
+[tool.pyright]
+include = ["discord/ext/ipcx/**"]
+exclude = [
+    "**/__pycache__", 
+    "**/.mypy_cache", 
+    "**/.dmpypy.json", 
+    "docs",
+]
+reportMissingImports = true
+typeCheckingMode = "basic"
+reportUnnecessaryTypeIgnoreComment = "warning"
+
+[tool.bandit]
+skips = ["B311", "B101"]
+exclude_dirs = ["examples/**"]
+
+[tool.ruff]
+ignore = ["E501", "N999", "E402"]
+select = ["E", "F", "N", "ASYNC", "S", "ERA"]
+exclude = ["examples/**"]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
