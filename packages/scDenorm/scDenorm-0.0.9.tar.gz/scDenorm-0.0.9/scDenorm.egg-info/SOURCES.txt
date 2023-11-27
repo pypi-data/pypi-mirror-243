@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+settings.ini
+setup.py
+scDenorm/__init__.py
+scDenorm/_modidx.py
+scDenorm/denorm.py
+scDenorm.egg-info/PKG-INFO
+scDenorm.egg-info/SOURCES.txt
+scDenorm.egg-info/dependency_links.txt
+scDenorm.egg-info/entry_points.txt
+scDenorm.egg-info/not-zip-safe
+scDenorm.egg-info/requires.txt
+scDenorm.egg-info/top_level.txt

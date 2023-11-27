@@ -1,0 +1,5 @@
+[console_scripts]
+scdenorm = scDenorm.denorm:scdenorm
+
+[nbdev]
+scDenorm = scDenorm._modidx:d
