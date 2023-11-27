@@ -1,0 +1,8 @@
+app_credential: |
+    {
+      "application_credential": {
+        "name": "unrestricted_access_created_by_marvcli2",
+        "description": "Application credential created by marvcli.",
+        "unrestricted": true
+      }
+    }
