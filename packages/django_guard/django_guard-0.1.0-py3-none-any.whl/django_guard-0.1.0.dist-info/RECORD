@@ -1,0 +1,16 @@
+django_guard/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_guard/admin.py,sha256=suMo4x8I3JBxAFBVIdE-5qnqZ6JAZV0FESABHOSc-vg,63
+django_guard/apps.py,sha256=_gtawSogIPC9R4LGLvRFm_9B4TBySD-iLaKaulve3wM,147
+django_guard/checker.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_guard/core/mem_report.py,sha256=u-km9Y89YeMdK3-Y2v8rEY8e63fsy_4zSn-w2OuuVGo,1188
+django_guard/errors.py,sha256=XVUW2-LsxWSOfkwltlhgUB1R9Q3IllpziAn_jrD_zsw,191
+django_guard/middleware.py,sha256=g0J63m6-WoJq7EFDSyrJlqxa4DQcfjtALWNPWFgy0VI,1046
+django_guard/migrations/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_guard/models.py,sha256=Vjc0p2XbAPgE6HyTF6vll98A4eDhA5AvaQqsc4kQ9AQ,57
+django_guard/templates/django_guard/503.html,sha256=FDKRc1bH0UQpFux6bjA3J9lSynBvatm5dvmrBT9XL10,902
+django_guard/tests.py,sha256=mrbGGRNg5jwbTJtWWa7zSKdDyeB4vmgZCRc2nk6VY-g,60
+django_guard/views.py,sha256=xc1IQHrsij7j33TUbo-_oewy3vs03pw_etpBWaMYJl0,63
+django_guard-0.1.0.dist-info/LICENSE,sha256=MwLj84B-LlN5Mj3m95X1HJsyUZcm5z9M1DTGJqvrTXY,1054
+django_guard-0.1.0.dist-info/METADATA,sha256=eeET4cTITR4B2vLXGHKyhtskIhP-3q5mBqivejuujK4,406
+django_guard-0.1.0.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+django_guard-0.1.0.dist-info/RECORD,,
