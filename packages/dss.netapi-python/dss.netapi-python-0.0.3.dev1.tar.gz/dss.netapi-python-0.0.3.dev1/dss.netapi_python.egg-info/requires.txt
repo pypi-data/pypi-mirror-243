@@ -1,0 +1,4 @@
+requests
+networkx<3.3,>=3.2.1
+scipy
+netgraph

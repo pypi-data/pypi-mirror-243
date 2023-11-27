@@ -1,0 +1,50 @@
+[project]
+name = "dss.netapi-python"
+#version = "0.0.1"
+dynamic=["version"]
+
+authors = [
+  { name="Tino Schöllhorn, Pavel Chachev, Olaf Kellermeier, Achim Oberg", email="schoellhorn@ifm.uni-mannheim.de" },
+  { name="Pavel Chachev", email="pavel.dimitrov.chachev@uni-hamburg.de" },
+  { name="Olaf Kellermeier", email="olaf.kellermeier@uni-hamburg.de" },
+  { name="Achim Oberg", email="achim.oberg@uni-hamburg.de" },
+]
+maintainers = [
+  { name="Tino Schöllhorn", email="schoellhorn@ifm.uni-mannheim.de" },
+  { name="Pavel Chachev", email="pavel.dimitrov.chachev@uni-hamburg.de" },
+]
+description = "A small Python3-layer for accessing Network-Data via the NetAPI."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+	"requests",
+	"networkx >= 3.2.1, < 3.3",
+	"scipy",
+	"netgraph"
+]
+
+[project.urls]
+"Homepage" = "https://www.wiso.uni-hamburg.de/fachbereich-sowi/professuren/oberg.html"
+#"Bug Tracker" = "https://github.com/pypa/sampleproject/issues"
+
+[build-system]
+# see https://setuptools.pypa.io/
+requires = ["setuptools>=64", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [ "netapi" ]
+
+[tool.setuptools_scm]
+# see https://pypi.org/project/setuptools-scm/
+root = ".."
+# wird as dem letzten Tag der Versionsnummer generiert. 
+version_scheme="guess-next-dev"
+#local_scheme="node-and-timestamp"
+local_scheme="no-local-version"
