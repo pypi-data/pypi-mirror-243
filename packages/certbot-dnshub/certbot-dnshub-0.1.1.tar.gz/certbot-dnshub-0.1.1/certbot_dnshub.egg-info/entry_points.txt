@@ -1,0 +1,2 @@
+[certbot.plugins]
+dnshub = certbot_dnshub.dnshub:Authenticator
