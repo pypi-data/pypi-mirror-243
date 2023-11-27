@@ -1,0 +1,6 @@
+include LICENSE
+include README.md
+recursive-include examples *.txt *.py
+recursive-include docs *.md
+prune tests
+global-exclude *.py[cod] __pycache__/* *.so *.dylib
