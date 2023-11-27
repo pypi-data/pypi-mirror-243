@@ -1,0 +1,17 @@
+lxml
+
+[dists]
+twine
+build
+
+[docs]
+furo
+sphinx
+sphinx-copybutton
+sphinx-inline-tabs
+sphinx-removed-in
+sphinxext-opengraph
+
+[tests]
+pytest
+tox

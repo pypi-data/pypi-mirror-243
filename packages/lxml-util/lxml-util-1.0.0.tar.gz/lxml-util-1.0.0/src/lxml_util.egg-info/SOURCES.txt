@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+src/lxml_util.egg-info/PKG-INFO
+src/lxml_util.egg-info/SOURCES.txt
+src/lxml_util.egg-info/dependency_links.txt
+src/lxml_util.egg-info/requires.txt
+src/lxml_util.egg-info/top_level.txt
+src/lxmlutil/__init__.py
+src/lxmlutil/etree.py
