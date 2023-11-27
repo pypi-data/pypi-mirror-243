@@ -1,0 +1,1 @@
+"Agarra el primera elemento a eleccion, puede ser tanto un archivo o una carpeta."

@@ -1,0 +1,29 @@
+# Este son todos las tablas que se encuentran en la base de datos de history de chrome:
+
+[('meta',), ('urls',), ('sqlite_sequence',), ('visits',), ('visit_source',), ('keyword_search_terms',), ('downloads',), ('downloads_url_chains',), ('downloads_slices',), ('segments',), ('segment_usage',), ('typed_url_sync_metadata',), ('content_annotations',), ('context_annotations',), ('clusters_and_visits',), ('cluster_keywords',), 
+('cluster_visit_duplicates',), ('clusters',)]
+
+# timestamp
+
+el timestamp esta relacionado con otra tabla que se llama visits, creo que el id de la tabla url, esta relaciondo con el url de la tabla id.
+    ## Campos de la tabla visits: 
+    id, url, visit_time, from_visit, transition, segment_id, visit_duration, incremented_omnibox_typed_score, opener_visit, originator_cache_guid, originator_visit_id, originator_from_visit, originator_opener_visit, is_known_to_sync
+    ## campos de la tabla urls:
+    id , url , title , visit_count , typed_count , last_visit_time , hidden
+    ## refrencia:
+    * aqui te dan una idea de como hacer la query: https://stackoverflow.com/questions/10307673/google-chrome-history-sqlite
+    * aqui te muestran el formato de el timestamp: https://stackoverflow.com/questions/20458406/what-is-the-format-of-chromes-timestamps - https://stackoverflow.com/questions/2193820/convert-chrome-history-date-time-stamp-to-readable-format
+    
+
+# querys
+
+SELECT name FROM sqlite_master WHERE type='table' Para obtener todas las tablas
+
+PRAGMA table_info(urls) Para obtener las columnas de una tabla y su informacion
+
+# donde estan los historys
+
+https://www.foxtonforensics.com/browser-history-examiner/chrome-history-location
+
+https://www.foxtonforensics.com/browser-history-examiner/firefox-history-location
+
