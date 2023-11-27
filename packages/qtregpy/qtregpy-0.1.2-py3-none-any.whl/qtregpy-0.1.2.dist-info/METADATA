@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: qtregpy
+Version: 0.1.2
+Summary: A Python package to implement the Quantile Transformation Regression.
+Home-page: https://github.com/diego-lda/qtregpy
+Download-URL: https://github.com/diego-lda/qtregpy/archive/refs/tags/0.1.2.tar.gz
+Author: Sami Stouli, Richard Spady, Xiaoran Liang, Diego Lara
+Author-email: s.stouli@bristol.ac.uk, rspady@jhu.edu, x.liang2@exeter.ac.uk, diegolaradeandres@gmail.com
+License: MIT
+Keywords: DISTRIBUTION,DENSITY,ECONOMETRICS,ESTIMATION
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires: cvxpy
+Requires: ecos
+Requires: iniconfig
+Requires: numpy
+Requires: osqp
+Requires: packaging
+Requires: pluggy
+Requires: pytest
+Requires: qdldl
+Requires: scipy
+Requires: scs
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# qtregpy
+
+This package provides the software tools to implement Quantile Transformation Regression introduced in
+[Spady and Stouli (2020)](https://arxiv.org/pdf/2011.06416.pdf).
+
+With the tools in this package it is possible to obtain inference and estimation results for conditional distribution,
+quantile and density functions implied by flexible Gaussian representations.
+
+For further details, please refer to the original text.
+
+## Installation
+
+You can install gtregpy with pip directly from PyPI.
+
+`pip install qtregpy`
+
+## Usage
+
+Here's a simple example of how to use gtregpy:
+
+```python
+import qtregpy as qtr
+
+mel_data_path = 'filepath/melbeourne.csv'
+
+x, y = qtr.load_mel_data(mel_data_path)
+mel_answer = qtr.compute_basic(x, y)
+```
+
+## Documentation
+
+You can find more detailed documentation for each function in docstrings.
+
+## Testing
+
+To run the tests, use the following command:
+
+```python
+pytest tests/
+```
+
+## Contributing
+
+We welcome contributions! Please see the [Contribution Guide](CONTRIBUTING.md) file for details on how to contribute.
+
+## License
+
+This package is licensed under the MIT license. See the LICENSE file for details.
