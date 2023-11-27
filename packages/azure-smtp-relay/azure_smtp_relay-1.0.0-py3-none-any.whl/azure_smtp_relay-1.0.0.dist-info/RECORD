@@ -1,0 +1,12 @@
+azure_smtp_relay/__init__.py,sha256=kVJ_fP6IVC3W3UKEfH_Us-2k97Yj_uo3fUpZ0pWBA6Y,4887
+azure_smtp_relay/__main__.py,sha256=HUzDe6iY-LqYLdVzkkxs-1vt2jd3ij1hZwdp0ApUVQg,10150
+azure_smtp_relay/address_list.py,sha256=tWsGBQ9hNjgZMsPXtRi2-X49T2pCd1uyNm4sxhYK6ks,7349
+azure_smtp_relay/config.py,sha256=f91K_k8xYeDAsydttu9OAKo3ZdtkxCCgzNUCHdYoSSA,5116
+azure_smtp_relay/handler.py,sha256=QrWkk7dDO6GBeU3c1d9BAdbe3FyAPc_s8g6rab1xa34,13989
+azure_smtp_relay/relay.py,sha256=TIqBQ6mMkeYkhdV4t0WRHHM2PrD0gmtCIDpeHCpSz1Q,20614
+azure_smtp_relay/toml_config_mgr.py,sha256=1BaZaDCbLPtl0Y4ENvbr2x8LIK6FdML3taysTPCXLmQ,7531
+azure_smtp_relay-1.0.0.dist-info/LICENSE,sha256=m9YioJOXq7Nsj3seR2uh8O2ey1N6hKn738EKpHVXaxM,1069
+azure_smtp_relay-1.0.0.dist-info/METADATA,sha256=dt0mywOZ3UOkdaKZdjAddeNAxOiW7AfC5Fe9gtFPj2w,1184
+azure_smtp_relay-1.0.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+azure_smtp_relay-1.0.0.dist-info/top_level.txt,sha256=1uj3Qcfji4jI3rvwEj6M_YC8tEpMFuBA6V7OokuaNyg,17
+azure_smtp_relay-1.0.0.dist-info/RECORD,,
