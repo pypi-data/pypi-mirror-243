@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: phenomApis
+Version: 0.0.8
+Summary: phenomApis
+Author: phenom
+Author-email: 8297991468h@gmail.com
+Keywords: resumeparser,exsearch
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyJWT (==2.8.0)
+Requires-Dist: certifi (==2023.11.17)
+Requires-Dist: urllib3 (==2.1.0)
+Requires-Dist: six (==1.16.0)
+
+A package to access phenom apis
