@@ -1,0 +1,4 @@
+[console_scripts]
+etextedit = taskwiz.eTextEdit:main
+myhand = taskwiz.main:main
+
