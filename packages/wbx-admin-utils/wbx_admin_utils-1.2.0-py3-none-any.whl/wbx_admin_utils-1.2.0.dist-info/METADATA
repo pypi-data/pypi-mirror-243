@@ -1,0 +1,86 @@
+Metadata-Version: 2.1
+Name: wbx_admin_utils
+Version: 1.2.0
+Summary: A collection of utilities for Webex Control Hub admins and compliance officers
+Author-email: Stephane Cohen <stecohen@gmail.com>
+License: MIT License
+        
+        Copyright (c) 2023 Stephane Cohen
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Keywords: Control Hub,Webex,groups
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: numpy
+Requires-Dist: requests
+Description-Content-Type: text/markdown
+
+# wbx-admin-utils
+
+## Usage:
+python3 -m wbx_admin_utils [options] command subcommand [parameters]
+
+## Commands list and syntax:
+```
+python3 -m wbx_admin_utils help commands 
+```
+
+## Commands:
+```
+help
+   commands : display list of available commands
+group
+   list : list all groups in admin org
+   list-users <group_id> : list user ids (max 500) in given group id
+   add-user <email|csvFile> <group_id> : add user in given group id
+   remove-user <email|csvFile> <group_id> : remove user from given group id
+user
+   details <email|user_id> : print user details in json
+   tokens <email|csvFile> : list user(s) access token
+   reset <email|csvFile> : reset user(s) access token
+   activate <Yes|No> <email|csvFile> : activate (Yes) or deactivate (No) user(s)
+   delete <email|csvFile> : delete user(s)
+   get-vm <email> : dump user voicemail settings in json format
+   add-vm <email|csvFile> <base user email> : set user(s) voicemail options based on another user's voicemail settings
+```
+
+## Options:
+* -t \<token\> Adds access token as a parameter. Will be read from AUTH_BEARER Env Variable by defaut. Yyou can get your personal access token from [webex developper](https://developer.webex.com/docs/getting-your-personal-access-token)
+* -d \<debugLevel> from 0 to 3 (most verbose). Default is 2 (info level)    
+
+## Examples:
+* Python3 -m wbx_admin_utils group list            
+* Python3 -m wbx_admin_utils group list-users ``<groupid>``
+* Python3 -m wbx_admin_utils group add-user user1@customer.com ``<groupid\>``
+* Python3 -m wbx_admin_utils group remove-user /tmp/users.csv ``<groupid>``
+* Python3 -m wbx_admin_utils user reset-access /tmp/users.csv
+* Python3 -m wbx_admin_utils user deactivate /tmp/users.csv
+
+## CSV input file format:
+```
+email, comments 
+user1@customer.com, some optinal info about user1 
+user2@customer.com, some optinal info about user1 
+```
+The first column is currenlty processed and must be titled 'email' other columns are optional and ignored.
+
+
