@@ -1,0 +1,12 @@
+beavers/__init__.py,sha256=PsM_4stM2JdrNRA8MPY4WOwCvgAEYeo8g5cMxSoVPVY,116
+beavers/engine.py,sha256=1LTMpSHfX-H-wHKTB1AvHrGQh9Mq23LPLHidFBAV3k0,22122
+beavers/kafka.py,sha256=YC7kMA2cEvtPCUgxKm0myHmV-JCSO-3yaqjiDnZ0GsE,23474
+beavers/pandas_wrapper.py,sha256=pJl-HeHGNzYG4uWgR4wLH3C9MdjazV7_FG6uYH6I4vc,1848
+beavers/pyarrow_replay.py,sha256=3YeU_Fvxi1ilak0smRawn1j8nV-ccm_QECB-_rZJus0,1728
+beavers/pyarrow_wrapper.py,sha256=yooAB3_-WN2tuhsT1eeAkG10ZbSWu_zJzkdb70OTQKA,5229
+beavers/replay.py,sha256=oHoX_yjmeTxVuZ20xf_kjZLEk9c7woxXaZiplHPtoog,10420
+beavers/testing.py,sha256=SSImpRQ3M10ZnIsmTWwEPwqrELZf0VAoOozTUlZk4Ec,1657
+beavers-0.4.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+beavers-0.4.0.dist-info/METADATA,sha256=HC2AdEO-h2vWoJIhO_rlkYFZMzz-c0xf60MFLMrI_Vc,4589
+beavers-0.4.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+beavers-0.4.0.dist-info/RECORD,,
