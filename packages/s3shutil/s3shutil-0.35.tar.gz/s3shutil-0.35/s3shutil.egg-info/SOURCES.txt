@@ -1,0 +1,12 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+s3shutil/__init__.py
+s3shutil/content_types.py
+s3shutil/s3shutil.py
+s3shutil.egg-info/PKG-INFO
+s3shutil.egg-info/SOURCES.txt
+s3shutil.egg-info/dependency_links.txt
+s3shutil.egg-info/requires.txt
+s3shutil.egg-info/top_level.txt
