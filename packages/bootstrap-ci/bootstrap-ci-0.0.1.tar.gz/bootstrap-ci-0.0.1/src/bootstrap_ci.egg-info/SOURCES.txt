@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/__init__.py
+src/bootstrap_ci.py
+src/bootstrap_ci.egg-info/PKG-INFO
+src/bootstrap_ci.egg-info/SOURCES.txt
+src/bootstrap_ci.egg-info/dependency_links.txt
+src/bootstrap_ci.egg-info/requires.txt
+src/bootstrap_ci.egg-info/top_level.txt
