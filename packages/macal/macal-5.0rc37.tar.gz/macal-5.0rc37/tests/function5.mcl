@@ -1,0 +1,21 @@
+// Back to Fibonacci numbers again
+
+include system;
+
+fib => (n) {
+    if n == 1 or n == 2 {
+        return 1;
+    }
+    return fib(n-1) + fib(n-2);
+}
+
+  print("Fibonacci for  1: ", fib(1));
+  print("Fibonacci for  2: ", fib(2));
+Console("Fibonacci for  3: ", fib(3));
+Console("Fibonacci for  4: ", fib(4));
+Console("Fibonacci for  5: ", fib(5));
+Console("Fibonacci for  6: ", fib(6));
+Console("Fibonacci for  7: ", fib(7));
+Console("Fibonacci for  8: ", fib(8));
+Console("Fibonacci for  9: ", fib(9));
+Console("Fibonacci for 10: ", fib(10));
