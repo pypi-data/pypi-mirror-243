@@ -1,0 +1,46 @@
+# To use:
+#   $ conda env create -f environment.yaml  # `mamba` works too for this command
+#   $ conda activate cherab-inv-dev
+#
+name: cherab-inv-dev
+channels:
+- conda-forge
+dependencies:
+- python >= 3.9, < 3.12
+- meson-python >= 0.13.0
+- cython >= 3.0
+- numpy
+- scipy
+# - cupy  # manually install for GPU acceleration of SVD
+- matplotlib-base
+- scikit-sparse
+  # for developper tools
+- black
+- ruff
+- mypy
+- rich-click
+- pre-commit
+- cython-lint
+- pytest
+- setuptools
+  # for documentation
+- docutils
+- ipython
+- ipykernel
+- ipywidgets
+- nbconvert > 7.3
+- nbsphinx
+- pillow
+- pygments >= 2.11.0
+- sphinx >= 7.0, < 8.0
+- sphinx-prompt
+- sphinx-copybutton
+- pydata-sphinx-theme < 0.15  # for custom css dependency
+- sphinx-design
+- sphinx-codeautolink
+- pandoc
+- jinja2 < 3.1
+# pip-install dependencies
+- pip
+- pip:
+  - sphinx-github-style
