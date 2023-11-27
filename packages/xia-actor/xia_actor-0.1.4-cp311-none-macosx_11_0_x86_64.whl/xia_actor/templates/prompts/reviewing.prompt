@@ -1,0 +1,44 @@
+# Context
+----
+{% for context in contexts %}
+## {{ context.title }}
+{{ context.content }}
+{% endfor %}
+
+# Work Results
+----
+{% for result in results %}
+## {{ result.title }}
+{{ result.content }}
+{% endfor %}
+
+# Instruction
+----
+Role: {{ reviewer_role }}
+
+{% for guide in guides %}
+## {{ guide.title }}
+{{ guide.content}}
+{% endfor %}
+
+## Review Score
+Based on the given context and result, rate the quality of the work by a score from 0 to 10.
+* Score near to `10` means perfect work
+* Score near to `0` means very poor work
+
+## Review Passed
+Based on the given context and result,
+* Answer `Yes` if {{ pass_criteria }}.
+* Answer `No` if a rework is necessary
+
+# Format example
+----
+{% for format in formats %}
+## {{ format.title }}
+{{ format.content }}
+{% endfor %}
+## Review Score
+Work quality score from 0 to 10
+
+## Review Passed
+Yes or No
