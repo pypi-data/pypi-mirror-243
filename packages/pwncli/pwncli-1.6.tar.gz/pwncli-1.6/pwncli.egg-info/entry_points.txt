@@ -1,0 +1,2 @@
+[console_scripts]
+pwncli = pwncli.cli:cli
