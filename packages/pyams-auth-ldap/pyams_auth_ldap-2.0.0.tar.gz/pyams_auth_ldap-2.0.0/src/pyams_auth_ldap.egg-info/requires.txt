@@ -1,0 +1,12 @@
+setuptools
+ldap3
+pyams_security>=1.8.1
+pyams_utils
+pyramid>=2.0.0
+
+[test]
+pyams_catalog
+pyams_security_views
+pyams_zmi
+pyramid_zcml
+zope.exceptions
