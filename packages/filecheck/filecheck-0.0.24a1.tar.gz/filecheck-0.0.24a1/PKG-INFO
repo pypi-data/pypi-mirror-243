@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: filecheck
+Version: 0.0.24a1
+Summary: Python port of LLVM's FileCheck, flexible pattern matching file verifier
+Project-URL: Changelog, https://github.com/mull-project/FileCheck.py/blob/main/CHANGELOG.md
+Project-URL: Homepage, https://filecheck.readthedocs.io/en/stable/
+Project-URL: Source, https://github.com/mull-project/FileCheck.py
+Author-email: Stanislav Pankevich <s.pankevich@gmail.com>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# FileCheck.py
+
+Attempt to reimplement LLVM's FileCheck using Python.
+
+![](https://github.com/mull-project/FileCheck.py/workflows/FileCheck.py%20on%20macOS/badge.svg)
+![](https://github.com/mull-project/FileCheck.py/workflows/FileCheck.py%20on%20Linux/badge.svg)
+![](https://github.com/mull-project/FileCheck.py/workflows/FileCheck.py%20on%20Windows/badge.svg)
+
+## Background
+
+Many software projects could benefit from a suite of LLVM LIT integration tests.
+The problem is that you have to build `FileCheck` from LLVM sources
+which is not a trivial task for 1) people who are not familiar with the LLVM
+infrastructure and 2) Python-based projects that would prefer to not have
+to build anything from LLVM's source code in their CI process.
+
+The option of having pre-compiled binaries is a workaround, but we don't like to
+keep third-party binary artifacts in source code.
+
+## Documentation
+
+Documentation is hosted on Read the Docs:
+
+[FileCheck.py documentation](https://filecheck.readthedocs.io/en/stable/index.html)
+
+## Copyright
+
+Copyright (c) 2019-2023 Stanislav Pankevich s.pankevich@gmail.com. See
+LICENSE for
+details.
+

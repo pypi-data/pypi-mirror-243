@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "filecheck/filecheck.py"
+
+[tool.hatch.build]
+exclude = [
+  "/.*",
+  "/developer",
+  "/docs",
+  "/tests",
+]
+
+[project]
+name = "filecheck"
+description = "Python port of LLVM's FileCheck, flexible pattern matching file verifier"
+authors = [
+    { name = "Stanislav Pankevich", email = "s.pankevich@gmail.com" }
+]
+dynamic = ["version"]
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.6"
+classifiers = [
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+dependencies = []
+
+[project.scripts]
+filecheck = "filecheck.filecheck:main"
+
+[project.urls]
+Changelog = "https://github.com/mull-project/FileCheck.py/blob/main/CHANGELOG.md"
+# Funding = "https://..."
+Homepage = "https://filecheck.readthedocs.io/en/stable/"
+Source = "https://github.com/mull-project/FileCheck.py"
+
+[tool.black]
+line-length = 80
