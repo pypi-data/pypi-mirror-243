@@ -1,0 +1,17 @@
+{
+	"monitor_endpoint": "/monitor",
+	"ws_endpoint": "/ws/chat",
+	"ws_protocol": "accessToken",
+	"redis_host": "redis://localhost:6379/0",
+	"channel_name": "chat:main",
+	"notifications_key": "chat:notifications",
+	"notifications_length": 50,
+	"context_url": "http://localhost:6543/api/chat/context",
+	"jwt_authority": "http://localhost:6543/api/auth/jwt/token",
+	"jwt_header": "accessToken",
+	"ssl_verify": true,
+	"apm_service_name": "WS_chat",
+	"apm_server_url": "http://localhost:8200",
+	"apm_environment": "development",
+	"apm_framework": "Starlette"
+}
