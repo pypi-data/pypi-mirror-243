@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: vnpy-icetcore
+Version: 1.0.3
+Summary: vnpy icetcore gateway
+Home-page: https://www.algostars.com.cn/
+Author: zxlee
+Author-email: zxlee@icetech.com.cn
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Dist: icetcore (>=6.6.18)
+
+UNKNOWN
+
+
