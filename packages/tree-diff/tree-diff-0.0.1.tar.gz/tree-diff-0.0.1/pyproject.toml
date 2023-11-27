@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tree-diff"
+version = "0.0.1"
+description = "Given two directories, compare the sturcture and contents (hashing) of files"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers=[
+    "Programming Language :: Python :: 3"
+]
+dependencies = [
+    "colorama",
+    "termcolor"
+]
+
+[project.urls]  # Optional
+"Homepage" = "https://myhomepage.com"
+
+[project.scripts]
+tree-diff = "tree_diff.main:main"

@@ -1,0 +1,8 @@
+pyproject.toml
+src/tree_diff/main.py
+src/tree_diff.egg-info/PKG-INFO
+src/tree_diff.egg-info/SOURCES.txt
+src/tree_diff.egg-info/dependency_links.txt
+src/tree_diff.egg-info/entry_points.txt
+src/tree_diff.egg-info/requires.txt
+src/tree_diff.egg-info/top_level.txt
