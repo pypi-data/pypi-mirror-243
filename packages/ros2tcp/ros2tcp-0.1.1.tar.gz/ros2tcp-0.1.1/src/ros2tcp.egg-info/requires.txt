@@ -1,0 +1,11 @@
+
+[dev]
+flake8
+tox
+mypy
+check-manifest
+
+[test]
+pytest
+pytest-cov
+coverage
