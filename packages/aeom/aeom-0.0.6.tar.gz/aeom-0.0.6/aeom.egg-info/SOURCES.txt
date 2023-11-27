@@ -1,0 +1,13 @@
+LICENSE
+README.rst
+setup.py
+aeom/__init__.py
+aeom/aggregate.pyx
+aeom/cluster.py
+aeom/compute_tree.pyx
+aeom/merge.pyx
+aeom.egg-info/PKG-INFO
+aeom.egg-info/SOURCES.txt
+aeom.egg-info/dependency_links.txt
+aeom.egg-info/requires.txt
+aeom.egg-info/top_level.txt
