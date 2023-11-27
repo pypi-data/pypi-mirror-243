@@ -1,0 +1,2 @@
+# version of localstack-ext
+__version__ = "3.0.2.dev20231126120730"
