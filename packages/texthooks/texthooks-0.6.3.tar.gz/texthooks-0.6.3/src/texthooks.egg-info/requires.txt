@@ -1,0 +1,6 @@
+identify<2.0
+
+[dev]
+pytest<8
+pytest-cov<5
+pytest-xdist<4
