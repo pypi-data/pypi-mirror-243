@@ -1,0 +1,1799 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: turcar\n"
+"Language: hy\n"
+
+#: turcar/workbench.py:357
+msgid "File"
+msgstr "Նիշք"
+
+#: turcar/workbench.py:358
+msgid "Edit"
+msgstr "Խմբագրել"
+
+#: turcar/workbench.py:359
+msgid "View"
+msgstr "Տեսք"
+
+#: turcar/running.py:122 turcar/workbench.py:360
+msgid "Run"
+msgstr "Գործարկել"
+
+#: turcar/workbench.py:361
+msgid "Tools"
+msgstr "Գործիքներ"
+
+#: turcar/plugins/help/__init__.py:74 turcar/workbench.py:362
+msgid "Help"
+msgstr "Օգնություն"
+
+#: turcar/plugins/cpython/__init__.py:610
+msgid "Alternative Python 3 interpreter or virtual environment"
+msgstr "Python 3֊ի interpreter֊ի այլընտանքային վիրտուալ միջավայր"
+
+#: turcar/plugins/cpython/__init__.py:618
+msgid "A special virtual environment (deprecated)"
+msgstr "Հատուկ վիրտուալ միջավայր (հնացած)"
+
+#: turcar/workbench.py:582
+msgid "Exit"
+msgstr "Ելք"
+
+#: turcar/workbench.py:609
+msgid "Decrease font size"
+msgstr "Փոքրացնել տառաչափը"
+
+#: turcar/workbench.py:621
+msgid "Focus editor"
+msgstr "Կետնրոնացման խմբագիր"
+
+#: turcar/workbench.py:630
+msgid "Focus shell"
+msgstr "Կենտրոնացման վահանակ"
+
+#: turcar/workbench.py:641
+msgid "Maximize view"
+msgstr "Մեծացնել տեսքը"
+
+#: turcar/workbench.py:653
+msgid "Full screen"
+msgstr "Ամբողջ էկրանով"
+
+#: turcar/workbench.py:1377
+msgid "Program arguments"
+msgstr "Ծրագրի արգումենտներ"
+
+#: turcar/plugins/about.py:28 turcar/plugins/about.py:163
+msgid "About turcar"
+msgstr "turcar֊ի մասին"
+
+#: turcar/plugins/about.py:81
+msgid "Made in\n"
+"University of Tartu, Estonia,\n"
+"with the help from\n"
+"open-source community,\n"
+"Raspberry Pi Foundation\n"
+"and Cybernetica AS"
+msgstr "Պատրաստված է\n"
+"Էստոնիայի Տարտու համալսարանում,\n"
+"բաց աղբյուրներով համայնքի,\n"
+"Raspberry Pi Foundation ֊ի\n"
+"և Cybernetica AS ֊ի\n"
+"աջակցությամբ"
+
+#: turcar/plugins/about.py:107
+msgid "This program comes with\n"
+"ABSOLUTELY NO WARRANTY!\n"
+"It is free software, and you are welcome to\n"
+"redistribute it under certain conditions, see\n"
+"https://opensource.org/licenses/MIT\n"
+"for details"
+msgstr "Այս ծրագիրը թողարկվում է\n"
+"ԱՌԱՆՑ ՈՐԵՎԻՑԵ ԵՐԱՇԽԻՔԻ!\n"
+"Այն անվճար ծրագիր է, ողջունում ենք \n"
+"եթե այն վերաբաշխեք հետևյալ արտոնագրի ներքո\n"
+"https://opensource.org/licenses/MIT"
+
+#: turcar/plugins/about.py:152
+msgid "Version history"
+msgstr "Թողարկման պատմություն"
+
+#: turcar/plugins/about.py:159
+msgid "Report problems"
+msgstr "Զեկուցել խնդիրները"
+
+#: turcar/plugins/assistant_config_page.py:16
+msgid "Open Assistant automatically when program crashes with an exception"
+msgstr "Բացել Օգնականին ինքնաբերաբար, երբ ծրագիրը կախում է"
+
+#: turcar/plugins/assistant_config_page.py:23
+msgid "Open Assistant automatically when it has warnings for your code"
+msgstr "Բացել Օգնականին ինքնաբերաբար, երբ առկա է զգուշացնումներ Ձեր կոդի համար"
+
+#: turcar/plugins/assistant_config_page.py:30
+msgid "Perform selected Pylint checks"
+msgstr "Կատարել նշած Pylint ստուգումները"
+
+#: turcar/plugins/assistant_config_page.py:34
+msgid "Perform MyPy checks"
+msgstr "Կատարել MyPy ստուգումները"
+
+#: turcar/plugins/assistant_config_page.py:36
+msgid "Disabled checks (one id per line)"
+msgstr "Հանել ստուգումները (մեկ id մեկ գծում)"
+
+#: turcar/assistance.py:968 turcar/plugins/assistant_config_page.py:73
+msgid "Assistant"
+msgstr "Օգնական"
+
+#: turcar/plugins/autocomplete.py:333
+msgid "Auto-complete"
+msgstr "Ինքնալրացում"
+
+#: turcar/plugins/backend_config_page.py:84
+msgid "Which interpreter or device should turcar use for running your code?"
+msgstr "Թոնիի ո՞ր interpreter֊ը կամ սարքը պետք է օգտագործի Ձեր կոդը գործարկելու համար։"
+
+#: turcar/plugins/backend_config_page.py:320
+msgid "Interpreter"
+msgstr "Թարգմանիչ"
+
+#: turcar/plugins/birdseye_frontend.py:54
+msgid "About Birdseye"
+msgstr "Թռչնի աչքի մասին"
+
+#: turcar/plugins/birdseye_frontend.py:55
+msgid "Birdseye is a Python debugger which needs to be installed separately.\n"
+"\n"
+"Do you want to open the help page and learn more?"
+msgstr "Թռչնի աչքը դա Python֊ի վրիպազերծիչը, որն անհրաժեշտ է տեղադրել առանձին։\n"
+"\n"
+"Ցանկանո՞ւմ եք բացել օգնության էջը և իմանալ ավելին։"
+
+#: turcar/plugins/birdseye_frontend.py:83
+msgid "Debug current script (birdseye)"
+msgstr "Վրիպազերծել ընթացիկ սցենարը  (թռչնի աչք)"
+
+#: turcar/plugins/commenting_indenting.py:172
+msgid "Toggle comment"
+msgstr "Փոխարկել մեկնաբանությունը"
+
+#: turcar/plugins/commenting_indenting.py:182
+msgid "Comment out"
+msgstr "թողնել մեկնաբանություն"
+
+#: turcar/plugins/commenting_indenting.py:192
+msgid "Uncomment"
+msgstr "հեռացնել մեկնաբանությունը"
+
+#: turcar/plugins/common_editing_commands.py:21
+msgid "Undo"
+msgstr "Հետ"
+
+#: turcar/plugins/common_editing_commands.py:33
+msgid "Redo"
+msgstr "Առաջ"
+
+#: turcar/plugins/common_editing_commands.py:49 turcar/ui_utils.py:2176
+msgid "Cut"
+msgstr "Կտրել"
+
+#: turcar/plugins/common_editing_commands.py:61 turcar/ui_utils.py:2177
+msgid "Copy"
+msgstr "Պատճենել"
+
+#: turcar/plugins/common_editing_commands.py:73 turcar/ui_utils.py:2178
+msgid "Paste"
+msgstr "Զետեղել"
+
+#: turcar/plugins/common_editing_commands.py:85 turcar/plugins/debugger.py:152
+msgid "Select all"
+msgstr "Ընտրել բոլորը"
+
+#: turcar/plugins/debugger.py:145 turcar/plugins/debugger.py:1398
+msgid "Run to cursor"
+msgstr "Բացել կուրսորը"
+
+#: turcar/plugins/debugger.py:980
+msgid "Can't close yet"
+msgstr "Դեռ չի կարողանում փակել "
+
+#: turcar/plugins/debugger.py:981
+msgid "Use \"Stop\" command if you want to cancel debugging"
+msgstr "Օգտագործեք «Դադար» հրամանը, եթե ցանկանում եք չեղարկել վրիպազերծումը"
+
+#: turcar/plugins/dock_user_windows_frontend.py:28
+msgid "Dock user windows"
+msgstr "Dock օգտատիրոջ պատուհաններ"
+
+#: turcar/plugins/editor_config_page.py:15
+msgid "Highlight matching names"
+msgstr "Ընդգծել համընկնող անունները"
+
+#: turcar/plugins/editor_config_page.py:21
+msgid "Highlight local variables"
+msgstr "Ընդգծել տեղային փոփոխականները"
+
+#: turcar/plugins/editor_config_page.py:26
+msgid "Highlight parentheses"
+msgstr "Ընդգծել փակագծերը"
+
+#: turcar/plugins/editor_config_page.py:27
+msgid "Highlight syntax elements"
+msgstr "Ընդգծել տարրերի այլագիրը"
+
+#: turcar/plugins/editor_config_page.py:31
+msgid "Highlight current line (requires reopening the editor)"
+msgstr "Ընդգծել ընթացիկ տողը (պահանջում է վերագործարկել խմբագիրը)"
+
+#: turcar/plugins/editor_config_page.py:36
+msgid "Allow code completion with Tab-key in editors"
+msgstr "Թույլատրել խմբագրիչում կոդի ավարտը Tab կոճակով"
+
+#: turcar/plugins/editor_config_page.py:42
+msgid "Allow code completion with Tab-key in Shell"
+msgstr "Թույլատրել վահանակում կոդի ավարտը Tab կոճակով"
+
+#: turcar/plugins/editor_config_page.py:51
+msgid "Show line numbers"
+msgstr "Ցույց տալ տողի համարները"
+
+#: turcar/plugins/editor_config_page.py:54
+msgid "Recommended maximum line length\n"
+"(Set to 0 to turn off margin line)"
+msgstr "Խորհուրդ է տրվում առավելագույն տողի երկարություն\n"
+"(սահմանել 0 սահմանային տողը անջատելու համար)"
+
+#: turcar/plugins/editor_config_page.py:75
+msgid "Editor"
+msgstr "Խմբագիր"
+
+#: turcar/plugins/event_logging.py:206
+msgid "Export usage logs..."
+msgstr "Արտահանել տեղեկամատյանները․․․"
+
+#: turcar/plugins/event_view.py:39
+msgid "Events"
+msgstr "Իրադարձություններ"
+
+#: turcar/plugins/files.py:551
+msgid "Files"
+msgstr "Նիշքեր"
+
+#: turcar/plugins/find_replace.py:57 turcar/plugins/find_replace.py:416
+msgid "Find & Replace"
+msgstr "Փնտրել և փոխարինել"
+
+#: turcar/plugins/find_replace.py:63
+msgid "Find:"
+msgstr "Փնտրել ՝"
+
+#: turcar/plugins/find_replace.py:74
+msgid "Replace with:"
+msgstr "Փոխարինել՝"
+
+#: turcar/plugins/find_replace.py:92
+msgid "Case sensitive"
+msgstr "Տառից կախված զգայուն"
+
+#: turcar/plugins/find_replace.py:99
+msgid "Up"
+msgstr "Վեր"
+
+#: turcar/plugins/find_replace.py:103
+msgid "Down"
+msgstr "Վար"
+
+#: turcar/plugins/find_replace.py:112
+msgid "Find"
+msgstr "Որոնել"
+
+#: turcar/plugins/find_replace.py:122
+msgid "Replace"
+msgstr "Փոխարինել"
+
+#: turcar/plugins/find_replace.py:130
+msgid "Replace+Find"
+msgstr "Փոխարինել+Փնտրել"
+
+#: turcar/plugins/find_replace.py:140
+msgid "Replace all"
+msgstr "Փոխարինել բոլորը"
+
+#: turcar/plugins/find_replace.py:236
+msgid "Enter string to be replaced."
+msgstr "Մուտքագրեք տողը փոխարինելու համար:"
+
+#: turcar/plugins/find_replace.py:320
+msgid "The specified text was not found!"
+msgstr "Նշված տեքստը չի գտնվել:"
+
+#: turcar/plugins/general_config_page.py:15
+msgid "Allow only single turcar instance"
+msgstr "Թույլատրել միայն մեկ turcar֊ի օրինակ"
+
+#: turcar/plugins/general_config_page.py:22
+msgid "Reopen all files from previous session"
+msgstr "Վերաբացել բոլո նիշքերը նախորդ սեսիայից "
+
+#: turcar/plugins/general_config_page.py:37
+msgid "Disable notification sound"
+msgstr "Անջատել ծանուցման ձայնը"
+
+#: turcar/plugins/general_config_page.py:86
+msgid "Font scaling mode"
+msgstr "Տառատեսակի մասշտաբի ռեժիմ"
+
+#: turcar/plugins/heap.py:37
+msgid "Heap mode is on.\n"
+"Close Heap view to turn it off."
+msgstr "Ծառի ռեժիմը միացված է։\n"
+"Փակել ծառի տեսքն անջատելու համար։"
+
+#: turcar/plugins/heap.py:86
+msgid "Heap"
+msgstr "Ծառ"
+
+#: turcar/plugins/general_config_page.py:53
+msgid "Language"
+msgstr "Լեզու"
+
+#: turcar/plugins/notes.py:35
+msgid "This box is meant for your working notes -- assignment instructions, code snippets, whatever.\n"
+"\n"
+"Everything will be saved automatically and loaded when you open turcar next time.\n"
+"\n"
+"Feel free to delete this text to make room for your own notes."
+msgstr "Այս տուփը նախատեսված է ձեր աշխատանքային գրառումների համար՝ հանձնարարականների ցուցումներ, կոդերի հատվածներ, ինչ էլ որ լինի։\n"
+"Ամեն ինչ կպահպանվի ինքնաբերաբար և կբեռնվի, երբ հաջորդ անգամ բացեք turcar- ն:\n"
+"Ազատորեն ջնջեք այս տեքստը՝ ձեր սեփական գրառումների համար տեղ ստեղծելու համար:"
+
+#: turcar/plugins/notes.py:63
+msgid "Notes"
+msgstr "Նշումներ"
+
+#: turcar/plugins/object_inspector.py:111
+msgid "Previous object"
+msgstr "Նախորդ առարկան"
+
+#: turcar/plugins/object_inspector.py:114
+msgid "Next object"
+msgstr "Հաջորդ առարկան"
+
+#: turcar/plugins/object_inspector.py:704
+msgid "Object inspector"
+msgstr "Առարկայի տեսուչ"
+
+#: turcar/plugins/outline.py:138
+msgid "Outline"
+msgstr "Եզրագիծ"
+
+#: turcar/plugins/pgzero_frontend.py:27
+msgid "Pygame Zero mode"
+msgstr "Pygame Zero ռեժիմ"
+
+#: turcar/plugins/pip_gui.py:78
+msgid "Find package from PyPI"
+msgstr "Փնտրել PyPI֊ի փաթեթ"
+
+#: turcar/plugins/pip_gui.py:76
+msgid "Uninstall"
+msgstr "Ապատեղադրել"
+
+#: turcar/editors.py:587 turcar/plugins/pip_gui.py:228 turcar/ui_utils.py:448
+#: turcar/ui_utils.py:1755 turcar/workdlg.py:155
+msgid "Close"
+msgstr "Փակել"
+
+#: turcar/plugins/pip_gui.py:347
+msgid "Click "
+msgstr "Սեղմել"
+
+#: turcar/plugins/pip_gui.py:348 turcar/plugins/pip_gui.py:382
+msgid "here"
+msgstr "ասյտեղ"
+
+#: turcar/plugins/pip_gui.py:73
+msgid "Upgrade"
+msgstr "Վերազինել"
+
+#: turcar/plugins/esp/__init__.py:365
+#: turcar/plugins/micropython/uf2dialog.py:94 turcar/plugins/pip_gui.py:70
+msgid "Install"
+msgstr "Տեղադրել"
+
+#: turcar/plugins/pip_gui.py:491
+msgid "Could not find the package from PyPI."
+msgstr "PyPI ֊ում չի գտնվել նման փաթեթ "
+
+#: turcar/plugins/pip_gui.py:511
+msgid "Latest stable version"
+msgstr "Վերջին կայուն տարբերակը"
+
+#: turcar/plugins/pip_gui.py:513
+msgid "Latest version"
+msgstr "Վերջին տարբերակը"
+
+#: turcar/plugins/pip_gui.py:514
+msgid "Summary"
+msgstr "Ամփոփում"
+
+#: turcar/plugins/pip_gui.py:515
+msgid "Author"
+msgstr "Հեղինակ"
+
+#: turcar/plugins/pip_gui.py:516
+msgid "Homepage"
+msgstr "Հիմնական էջ"
+
+#: turcar/plugins/pip_gui.py:518
+msgid "Bugtracker"
+msgstr "Վրիպակ հետևող"
+
+#: turcar/plugins/pip_gui.py:520
+msgid "Documentation"
+msgstr "Փաստաթղթավորում"
+
+#: turcar/plugins/pip_gui.py:522
+msgid "PyPI page"
+msgstr "PyPI էջ"
+
+#: turcar/plugins/pip_gui.py:526
+msgid "Requires"
+msgstr "Պահանջում է"
+
+#: turcar/plugins/pip_gui.py:652
+msgid "Really uninstall?"
+msgstr "Իրո՞ք հեռացնել։"
+
+#: turcar/plugins/pip_gui.py:657
+msgid "Are you sure you want to uninstall it?"
+msgstr "Իրո՞ք ցանկանում եք հեռացնել այն։"
+
+#: turcar/plugins/variables.py:19
+msgid "Back to\n"
+"current frame"
+msgstr "Հետ գնալ\n"
+"ընթացիկ շրջանակին"
+
+#: turcar/plugins/variables.py:73 turcar/plugins/variables.py:75
+#: turcar/plugins/variables.py:138
+msgid "Variables"
+msgstr "Փոփոխականներ"
+
+#: turcar/base_file_browser.py:1313
+msgid "This computer"
+msgstr "Այս համակարգիչը"
+
+#: turcar/base_file_browser.py:618
+msgid "Refresh"
+msgstr "Թարմացնել"
+
+#: turcar/base_file_browser.py:631
+msgid "Focus into"
+msgstr "Կենտրոնանալ"
+
+#: turcar/base_file_browser.py:1164
+msgid "Error"
+msgstr "Սխալ"
+
+#: turcar/base_file_browser.py:1164
+msgid "You need to select a file!"
+msgstr "Դուք պետք է ընտրեք նիշքը"
+
+#: turcar/base_file_browser.py:1168
+msgid "Overwrite?"
+msgstr "Վերագրանցե՞լ"
+
+#: turcar/base_file_browser.py:1168
+msgid "Do you want to overwrite '%s' ?"
+msgstr "Ցանկանո՞ւմ եք վերագրանցել '%s'"
+
+#: turcar/editors.py:552 turcar/editors.py:554
+msgid "New"
+msgstr "Նոր"
+
+#: turcar/editors.py:565
+msgid "Open..."
+msgstr "Բացել"
+
+#: turcar/editors.py:567
+msgid "Load"
+msgstr "Բեռնել"
+
+#: turcar/editors.py:576
+msgid "Recent files"
+msgstr "Վերջին նիշքերը"
+
+#: turcar/editors.py:598 turcar/ui_utils.py:450
+msgid "Close all"
+msgstr "Փակել բոլորը"
+
+#: turcar/editors.py:608 turcar/editors.py:610
+msgid "Save"
+msgstr "Պահել"
+
+#: turcar/editors.py:633
+msgid "Save as..."
+msgstr "Պահել որպես․․․"
+
+#: turcar/editors.py:644
+msgid "Save copy..."
+msgstr "Պահել պատճենը․․․"
+
+#: turcar/editors.py:653
+msgid "Rename..."
+msgstr "Վերանվանել․․․"
+
+#: turcar/config_ui.py:19
+msgid "turcar options"
+msgstr "Թոնիի ընտրանքեր"
+
+#: turcar/running.py:121
+msgid "Run current script"
+msgstr "Գործարկել ընթացիք սցենարը"
+
+#: turcar/running.py:152
+msgid "Run current script in terminal"
+msgstr "Գործարկել ընթացիկ սցենարը տերմինալում"
+
+#: turcar/running.py:165
+msgid "Stop/Restart backend"
+msgstr "Կանգ/Վերագործարկել backend֊ը"
+
+#: turcar/running.py:166
+msgid "Stop"
+msgstr "Կանգ"
+
+#: turcar/running.py:177
+msgid "Interrupt execution"
+msgstr "Ընդհատել կատարումը"
+
+#: turcar/running.py:190
+msgid "Send EOF / Soft reboot"
+msgstr "Ուղարկել EOF / Փափուկ վերագործարկում"
+
+#: turcar/running.py:201
+msgid "Disconnect"
+msgstr "Անջատել"
+
+#: turcar/running_config_page.py:23
+msgid "Known interpreters"
+msgstr "Հայտնի թարգմանիչներ"
+
+#: turcar/running_config_page.py:36
+msgid "Your interpreter isn't in the list?"
+msgstr "Ձեր թարգմանիչը առկա՞ չէ ցանկում։"
+
+#: turcar/plugins/cpython/__init__.py:391
+msgid "NB! turcar only supports Python 3.5 and later"
+msgstr "NB! Թոնին ունի միայն Python 3.5֊ի և բարձր տարբերակի աջակցություն"
+
+#: turcar/running_config_page.py:56
+msgid "Create new virtual environment"
+msgstr "Ստեղծել նոր վիրտուալ միջավայր"
+
+#: turcar/running_config_page.py:59
+msgid "Select existing or create a new empty directory"
+msgstr "Ընտրել գոյություն ունեցող կամ ստեղծել նոր դատարկ պանակ"
+
+#: turcar/plugins/cpython/__init__.py:419
+msgid "Python interpreters"
+msgstr "Python թարգմանիչներ"
+
+#: turcar/plugins/cpython/__init__.py:420 turcar/plugins/pip_gui.py:696
+#: turcar/plugins/pip_gui.py:709
+msgid "all files"
+msgstr "բոլոր նիշքերը"
+
+#: turcar/plugins/cpython/__init__.py:442
+msgid "Select empty directory for new virtual environment"
+msgstr "Նշել դատարկ պանակ նոր վիրտուալ միջավայրի համար"
+
+#: turcar/plugins/cpython/__init__.py:449
+msgid "Bad directory"
+msgstr "Անհամապատասխան պանակ"
+
+#: turcar/plugins/cpython/__init__.py:450
+msgid "Selected directory is not empty.\n"
+"Select another or cancel."
+msgstr "Ընտրած պանակը դատարկ չէ։\n"
+"Ընտրել այլ պանակ կամ չեղարկել։"
+
+#: turcar/plugins/cpython/__init__.py:467
+msgid "Creating virtual environment"
+msgstr "Վիրտուալ միջավայրի ստեղծում"
+
+#: turcar/shell.py:83
+msgid "Clear shell"
+msgstr "Մաքրել վահանակը"
+
+#: turcar/shell.py:138
+msgid "Plotter"
+msgstr "Պլոտեր"
+
+#: turcar/shell.py:269
+msgid "Clear"
+msgstr "Մաքրել"
+
+#: turcar/shell.py:282
+msgid "Show Plotter"
+msgstr "Ցույց տալ Պլոտերը"
+
+#: turcar/shell.py:1572
+msgid "For performance reasons, Shell avoids showing very long lines in full (see Tools => Options => Shell).\n"
+"Here you can interact with the original text fragment."
+msgstr "Արտադրողականության նկատառումներից ելնելով, Shell֊ը խուսափում է ցուցադրել \n"
+"շատ երկար տողերն ամբողջությամբ(տես Tools => Options => Shell)։\n"
+"Այստեղ դուք կարող եք աշխատել տեքստի բնօրինակ հետ։"
+
+#: turcar/shell.py:1583
+msgid "Wrap text (may be slow)"
+msgstr "Տողադարձ (ոչ այնքան շատ)"
+
+#: turcar/ui_utils.py:1750
+msgid "Copy to clipboard"
+msgstr "Պատճենել սեղմատախտակին"
+
+#: turcar/shell.py:1431
+msgid "Expand in Shell"
+msgstr "Բացազատել տերմինալում"
+
+#: turcar/shell.py:1625
+msgid "Squeezed text (%d characters)"
+msgstr "Սեղմված տեքստ (%d տառեր)"
+
+#: turcar/shell.py:1794
+msgid "Plotter visualizes series of\n"
+"numbers printed to the Shell."
+msgstr "Պլոտերը վիզուալացնում է տերմինալում \n"
+"արտացոլված թվերի շարքը։"
+
+#: turcar/shell.py:1796
+msgid "See Help for details."
+msgstr "Տես Օգնություն բաժինը մանրամասների համար։"
+
+#: turcar/ui_utils.py:449
+msgid "Close others"
+msgstr "Փակել մյուսները"
+
+#: turcar/ui_utils.py:1606
+msgid "Copying"
+msgstr "Պատճենում"
+
+#: turcar/ui_utils.py:1609
+msgid "Copying\n"
+"  %s\n"
+"to\n"
+"  %s"
+msgstr "Պատճենում\n"
+" %s\n"
+"֊ից\n"
+" %s"
+
+#: turcar/base_file_browser.py:1133 turcar/config_ui.py:36 turcar/export.py:28
+#: turcar/plugins/backend_config_page.py:273 turcar/plugins/pip_gui.py:1146
+#: turcar/ui_utils.py:114 turcar/ui_utils.py:1617 turcar/ui_utils.py:1702
+#: turcar/workdlg.py:157 turcar/workdlg.py:201
+msgid "Cancel"
+msgstr "Չեղարկել"
+
+#: turcar/base_file_browser.py:1130 turcar/config_ui.py:35 turcar/export.py:25
+#: turcar/plugins/about.py:120 turcar/plugins/backend_config_page.py:268
+#: turcar/ui_utils.py:111 turcar/ui_utils.py:1699 turcar/workdlg.py:198
+msgid "OK"
+msgstr "Լավ"
+
+#: turcar/ui_utils.py:1783
+msgid "Cancel the process?"
+msgstr "Չեղարկե՞լ գործընթացը"
+
+#: turcar/ui_utils.py:1784
+msgid "The process is still running.\n"
+"Are you sure you want to cancel?"
+msgstr "Գործընթացը դեռ աշխատանքի մեջ է։\n"
+"Իրո՞ք ցանկանում եք չեղարկել։"
+
+#: turcar/ui_utils.py:2182
+msgid "Select All"
+msgstr "Ընտրել բոլորը"
+
+#: turcar/plugins/shell_config_page.py:73 turcar/workbench.py:158
+msgid "Shell"
+msgstr "Վահանակ"
+
+#: turcar/plugins/cpython/__init__.py:602
+msgid "The same interpreter which runs turcar (default)"
+msgstr "Նույն interpreter֊ն, որով աշխատում է Թոնին (լռելայն)"
+
+#: turcar/plugins/cpython/__init__.py:350
+msgid "This virtual environment is automatically maintained by turcar.\n"
+""
+msgstr "Այս վիրտուալ միջավայրը ինքնաբերաբար սպասարկվում է Թոնիի կողմից։\n"
+""
+
+#: turcar/plugins/cpython/__init__.py:351
+msgid "Location: "
+msgstr "Տարածք՝"
+
+#: turcar/workbench.py:592
+msgid "Options..."
+msgstr "Ընտրանքներ՝"
+
+#: turcar/workbench.py:599
+msgid "Increase font size"
+msgstr "Մեծացնել տառաչափը"
+
+#: turcar/workbench.py:664
+msgid "Change font size"
+msgstr "Փոխել տառաչափը"
+
+#: turcar/workbench.py:665
+msgid "Zoom"
+msgstr "Խոշորացում"
+
+#: turcar/workbench.py:674
+msgid "Exit turcar"
+msgstr "Փակել Թոնին"
+
+#: turcar/workbench.py:677
+msgid "Quit"
+msgstr "Ելք"
+
+#: turcar/workbench.py:1181 turcar/workbench.py:1189
+msgid "Overwriting theme '%s'"
+msgstr "Վերագրանցել '%s' տեսքը"
+
+#: turcar/workbench.py:1348
+msgid "Program arguments:"
+msgstr "Ծրագրի արգումենտները՝"
+
+#: turcar/workbench.py:1402
+msgid "Regular mode"
+msgstr "Սովորական ռեժիմ"
+
+#: turcar/workbench.py:1403
+msgid "Configuration has been updated. Restart turcar to start working in regular mode.\n"
+"\n"
+"(See 'Tools → Options → General' if you change your mind later.)"
+msgstr "Կարգաբերումը թարմացվել է։ Վերագործարկել , որպեսզի Թոնին աշխատի սովորական ռեժիմում։\n"
+"\n"
+"(տես 'Գործիքներ → Ընտրանքներ → Գլխավոր' եթե փոխել եք ձեր միտքը)"
+
+#: turcar/plugins/ast_view.py:210
+msgid "Program tree"
+msgstr "Ծրագրի ծառը"
+
+#: turcar/plugins/backend_config_page.py:323
+msgid "Select interpreter"
+msgstr "Ընտրել թարգմանիչը"
+
+#: turcar/plugins/debugger.py:1280
+msgid "Resume"
+msgstr "Շարունակել"
+
+#: turcar/plugins/debugger.py:1296
+msgid "Run / resume"
+msgstr "Գործարկել / շարունակել"
+
+#: turcar/plugins/debugger.py:1311
+msgid "Debug current script"
+msgstr "Վրիպազերծել ընթացիկ սցենարը"
+
+#: turcar/plugins/debugger.py:1313
+msgid "Debug"
+msgstr "Վրիպազերծել"
+
+#: turcar/plugins/debugger.py:1324
+msgid "Debug current script (nicer)"
+msgstr "Վրիպազերծել ընթացիկ սցենարը (արագ)"
+
+#: turcar/plugins/debugger.py:1336
+msgid "Debug current script (faster)"
+msgstr "Վրիպազերծել ընթացիկ սցենարը (ավելի արագ)"
+
+#: turcar/plugins/debugger.py:1347
+msgid "Step over"
+msgstr "Քայլ առաջ"
+
+#: turcar/plugins/debugger.py:1349
+msgid "Over"
+msgstr "Առաջ"
+
+#: turcar/plugins/debugger.py:1360
+msgid "Step into"
+msgstr "Քայլ դեպի ներս"
+
+#: turcar/plugins/debugger.py:1362
+msgid "Into"
+msgstr "Ներս"
+
+#: turcar/plugins/debugger.py:1373
+msgid "Step out"
+msgstr "Քայլ դեպի դուրս"
+
+#: turcar/plugins/debugger.py:1375
+msgid "Out"
+msgstr "Դուրս"
+
+#: turcar/plugins/debugger.py:1410
+msgid "Step back"
+msgstr "Քայլ դեպի հետ"
+
+#: turcar/plugins/debugger.py:1412
+msgid "Back"
+msgstr "Հետ"
+
+#: turcar/plugins/debugger.py:1418
+msgid "Stack"
+msgstr "Փաթեթ"
+
+#: turcar/plugins/debugger.py:1419
+msgid "Exception"
+msgstr "Բացառություն"
+
+#: turcar/plugins/general_config_page.py:18
+msgid "Log program usage events"
+msgstr "Ծրագրի տեղեկամատյանի օգտագործման իրադարձություններ"
+
+#: turcar/plugins/general_config_page.py:43
+msgid "Debug mode (provides more detailed diagnostic logs)"
+msgstr "Վրիպազերծման ռեժիմ (տրամադրում է ավելի մանրամասն ախտորոշիչ տեղեկամատյաններ)"
+
+#: turcar/plugins/general_config_page.py:67
+msgid "UI mode"
+msgstr "UI ռեժիմ"
+
+#: turcar/plugins/general_config_page.py:80
+msgid "UI scaling factor"
+msgstr "UI մասշտավի գործոն"
+
+#: turcar/plugins/general_config_page.py:108
+msgid "NB! Restart turcar after changing these options!"
+msgstr "NB! Վերագործարկել Թոնին այս ընտրանքները փոփոխելուց հետ։"
+
+#: turcar/plugins/general_config_page.py:129
+msgid "General"
+msgstr "Հիմնական"
+
+#: turcar/plugins/pip_gui.py:129
+msgid "INSTALL"
+msgstr "ՏԵՂԱԴՐԵԼ"
+
+#: turcar/plugins/pip_gui.py:365
+msgid "Browse the packages"
+msgstr "Զննել փաթեթները"
+
+#: turcar/plugins/pip_gui.py:368
+msgid "With current interpreter you can only browse the packages here.\n"
+"Use 'Tools → Open system shell...' for installing, upgrading or uninstalling."
+msgstr "Ներկա interpreter֊ի օգնությամբ դուք միայն կարող եք զննել փաթեթները։\n"
+"Օգտագործել 'Գործիքներ → Բացել համակարգի վահանակը...' տեղադրելու, \n"
+"վերազինելու կամ ապատեղադրելու համար։"
+
+#: turcar/plugins/pip_gui.py:376
+msgid "Packages' directory"
+msgstr "Փաթեթների պանակը"
+
+#: turcar/plugins/pip_gui.py:333
+msgid "Install from PyPI"
+msgstr "Տեղադրել PyPI֊ից"
+
+#: turcar/plugins/pip_gui.py:336
+msgid "If you don't know where to get the package from, then most likely you'll want to search the Python Package Index. Start by entering the name of the package in the search box above and pressing ENTER."
+msgstr "Եթե չեք իմանում, թե որտեղից ձեռք բերել փաթեթը, ապա կարող եք փնտրել Python Package Index֊ի օգնությամբ։ Սկսեք մուտքագրելով փաթեթի անունը վերում գտնվող որոնման դաշտում և սեղմեք ENTER։"
+
+#: turcar/plugins/pip_gui.py:352
+msgid "to locate requirements.txt file and install the packages specified in it."
+msgstr "տեղակայեք requirements.txt նիշքը և տեղադրել դրանում նշված փաթեթները։"
+
+#: turcar/plugins/pip_gui.py:381
+msgid "Click"
+msgstr "Սեղմել"
+
+#: turcar/plugins/pip_gui.py:386
+msgid "to locate and install the package file (usually with .whl, .tar.gz or .zip extension)."
+msgstr "տեղակայել և տեղադրել փաթեթի նիշքը (հիմնակում .whl, .tar.gz or .zip ձևաչափով)։"
+
+#: turcar/plugins/micropython/pip_gui.py:243 turcar/plugins/pip_gui.py:393
+msgid "Upgrade or uninstall"
+msgstr "Վերազինել կամ ապատեղադրել"
+
+#: turcar/plugins/pip_gui.py:395
+msgid "Start by selecting the package from the left."
+msgstr "Սկսեք ընտրելով փաթեթը ձախ կողմից։"
+
+#: turcar/plugins/pip_gui.py:399
+msgid "Target:"
+msgstr "Թիրախ՝"
+
+#: turcar/plugins/pip_gui.py:401
+msgid "virtual environment"
+msgstr "վիրտուալ միջավայր"
+
+#: turcar/plugins/pip_gui.py:403
+msgid "user site packages"
+msgstr "օգտատիրոջ էջի փաթեթներ"
+
+#: turcar/plugins/pip_gui.py:407
+msgid "This dialog lists all available packages, but allows upgrading and uninstalling only packages from"
+msgstr "Այս երկխոսությունը թվարկում է բոլոր մատչելի փաթեթները, բայց թույլ է տալիս արդիականացնել և ապատեղադրել միայն այդ փաթեթները"
+
+#: turcar/plugins/pip_gui.py:417
+msgid "New packages will be also installed into this directory. Other locations must be managed by alternative means."
+msgstr "Նոր փաթեթները ևս կտեղադրվեն այս պանակում։ Այլ վայրերը պետք է կառավարվեն այլընտրանքային միջոցներով։"
+
+#: turcar/plugins/pip_gui.py:441
+msgid "Installed version:"
+msgstr "Տեղադրված տարբերակ՝"
+
+#: turcar/plugins/micropython/pip_gui.py:147 turcar/plugins/pip_gui.py:443
+msgid "Installed to:"
+msgstr "Տեղադրված է՝"
+
+#: turcar/plugins/pip_gui.py:494
+msgid "Please check your spelling!"
+msgstr "Խնդրում ենք ստուգել ուղղագրությունը։"
+
+#: turcar/plugins/pip_gui.py:512
+msgid "You need to enter"
+msgstr "Դուք պետք է մուտք գործեք"
+
+#: turcar/plugins/pip_gui.py:498
+msgid "Could not find the package info from PyPI."
+msgstr "PyPI- ից չհաջողվեց գտնել փաթեթի տվյալները:"
+
+#: turcar/plugins/pip_gui.py:500 turcar/plugins/pip_gui.py:1200
+msgid "Error code:"
+msgstr "Սխալի թիվը՝"
+
+#: turcar/plugins/pip_gui.py:601
+msgid "Can't find package name from the list:"
+msgstr "Հնարավոր չէ գտնել փաթեթի անունը ցուցակից՝"
+
+#: turcar/plugins/pip_gui.py:653
+msgid "Package '{}' is required for installing and uninstalling other packages."
+msgstr "'{}' փաթեթը պահանջում է տեղադրել և ապատեղադրել այլ փաթեթները։"
+
+#: turcar/plugins/pip_gui.py:696
+msgid "Package"
+msgstr "Փաթեթ"
+
+#: turcar/plugins/pip_gui.py:796
+msgid "Manage packages for %s"
+msgstr "Կառավարել փաթեթները %s ֊ի համար"
+
+#: turcar/plugins/pip_gui.py:872
+msgid "Confirmation"
+msgstr "Հաստատում"
+
+#: turcar/plugins/pip_gui.py:873
+msgid "Looks like you are installing a turcar-related package.\n"
+"If you meant to install a turcar plugin, then you should\n"
+"choose 'Tools → Manage plugins...' instead\n"
+"\n"
+"Are you sure you want to install %s for the back-end?"
+msgstr "Կարծես թե տեղադրում եք Թոնիի հետ կապված փաթեթ:\n"
+"Եթե ուզում եք տեղադրել Թոնիի հավելում, ապա դուք պետք է\n"
+"ընտրեք 'Գործիքներ → Կառավարել հավելումները...'\n"
+"\n"
+"Իրո՞ք ցանկանում եք տեղադրել %s  back-end֊ի համար։"
+
+#: turcar/plugins/pip_gui.py:981
+msgid "NB! There may be another version available which is compatible with current turcar version. Click on '...' button to choose the version to install."
+msgstr "NB! Կարող է լինել մեկ այլ տարբերակ, որը համատեղելի է ընթացիկ Թոնիի տարբերակի հետ: Սեղմել '...' կոճակը տեղադրման տարբերակն ընտրելու համար։"
+
+#: turcar/plugins/pip_gui.py:989
+msgid "turcar plugin without requirements"
+msgstr "Թոնի հավելում առանց պահանջների"
+
+#: turcar/plugins/pip_gui.py:990
+msgid "Looks like you are trying to install an outdated turcar\n"
+"plug-in (it doesn't specify required turcar version).\n"
+"\n"
+"If you still want it, then please install it from the command line."
+msgstr "Կարծես փորձում եք տեղադրել հնացած Թոնիի\n"
+"հավելում (այն չի նշում պահանջվող Թոնիի տարբերակը)։\n"
+"\n"
+"Եթե դեռ ուզում եք, ապա խնդրում ենք տեղադրել այն տերմինալի օգնությամբ։"
+
+#: turcar/plugins/pip_gui.py:1004
+msgid "Unsuitable requirements"
+msgstr "Անհամապատասխան պահանջներ"
+
+#: turcar/plugins/pip_gui.py:1005
+msgid "This package requires different turcar version:"
+msgstr "Այս փաթեթը պահանջում է Թոնիի այլ տարբերակ՝"
+
+#: turcar/plugins/pip_gui.py:1009
+msgid "If you still want it, then please install it from the command line."
+msgstr "Եթե դեռ ուզում եք, ապա խնդրում ենք տեղադրել այն տերմինալի օգնությամբ։"
+
+#: turcar/plugins/pip_gui.py:1052
+msgid "(In this case turcar's back-end uses same interpreter, so both dialogs manage same packages.)"
+msgstr "(Այս դեպքում Թոնիի back-end ֊ը օգտագործում է նույն interpreter֊ը, այնպես որ երկու երկխոսությունն էլ կառավարում են նույն փաթեթները):"
+
+#: turcar/plugins/pip_gui.py:1058
+msgid "NB! You need to restart turcar after installing / upgrading / uninstalling a plug-in."
+msgstr "NB! Հավելումները տեղադրելուց / վերազինելուց / տեղահանելուց հետո դուք պետք է վերագործարկեք Թոնին "
+
+#: turcar/plugins/pip_gui.py:1068
+msgid "turcar plug-ins"
+msgstr "Թոնիի հավելումներ"
+
+#: turcar/plugins/pip_gui.py:1090
+msgid "Advanced install / upgrade / downgrade"
+msgstr "Ընդլայնված տեղադրում / վերազինում / նվազեցում"
+
+#: turcar/plugins/pip_gui.py:1099
+msgid "Desired version"
+msgstr "Ցանկալի տարբերակ"
+
+#: turcar/plugins/pip_gui.py:1137
+msgid "Upgrade dependencies"
+msgstr "Վերազինման պահանջներ"
+
+#: turcar/plugins/pip_gui.py:1198
+msgid "Requires:"
+msgstr "Պահանջում է՝"
+
+#: turcar/plugins/pip_gui.py:1202
+msgid "Error:"
+msgstr "Սխալ՝"
+
+#: turcar/plugins/pip_gui.py:1409
+msgid "Manage packages..."
+msgstr "Կառավարել փաթեթները․․․"
+
+#: turcar/plugins/pip_gui.py:1415
+msgid "Manage plug-ins..."
+msgstr "Կառավարել հավելումները․․․"
+
+#: turcar/plugins/replayer.py:365
+msgid "Open replayer..."
+msgstr "Բացել վերագործարկիչը․․․"
+
+#: turcar/plugins/run_debug_config_page.py:14
+msgid "Change working directory to script directory on Run / Debug"
+msgstr "Փոխել աշխատանքային պանակը սցենարի պանակում Գործարկել / Վրիպազերծել"
+
+#: turcar/plugins/run_debug_config_page.py:22
+msgid "Show function calls (frames) in separate windows"
+msgstr "Ցուցադրել ֆունկցիայի կանչերը (շրջանակները) առանձին պատուհաններում"
+
+#: turcar/plugins/run_debug_config_page.py:23
+msgid "Uncheck if you want more traditional experience."
+msgstr "Ապանշեք, եթե հավանում եք ավելի հին փորձը:"
+
+#: turcar/plugins/run_debug_config_page.py:29
+msgid "Open and close Stack view automatically"
+msgstr "Ինքնաբերաբար բացել և փակել բուրգանման դիտումը "
+
+#: turcar/plugins/run_debug_config_page.py:30
+msgid "Opens the Stack view on first call and closes it when program returns to main frame."
+msgstr "Բացում է բուրգանման դիտումը առաջւբ կանչից և փակում է այն, երբ ծրագիրը վերադառնում է հիմնական շրջանակին։"
+
+#: turcar/plugins/run_debug_config_page.py:39
+msgid "Allow stepping into libraries (ie. outside of main script directory)"
+msgstr "Թույլատրել մուտք գործել գրադարաններ (հիմնական սցենարների պանակից դուրս)"
+
+#: turcar/plugins/run_debug_config_page.py:40
+msgid "May make debugging slower."
+msgstr "Հնարավոր է դանդաղեցնել վրիպազերծումը:"
+
+#: turcar/plugins/run_debug_config_page.py:45
+msgid "Preferred debugger"
+msgstr "Նախընտրելի վրիպազերծիչ"
+
+#: turcar/plugins/run_debug_config_page.py:57
+msgid "(used when clicking Debug toolbar button)"
+msgstr "(օգտագործվում է, երբ սեղմվում է Debug գործիքագոտու կոճակը)"
+
+#: turcar/plugins/run_debug_config_page.py:62
+msgid "Birdseye port"
+msgstr "Թռչնի աչքի port"
+
+#: turcar/plugins/run_debug_config_page.py:66
+msgid "(restart turcar after changing this)"
+msgstr "(վերագործարկեք Թոնիին այս փոփոխությունները կատարելուց հետ)"
+
+#: turcar/plugins/run_debug_config_page.py:74
+msgid "Run & Debug"
+msgstr "Գործարկել և վրիպազերծել"
+
+#: turcar/plugins/shell_config_page.py:17
+msgid "Terminal emulation"
+msgstr "Տերմինալ էմուլացիա"
+
+#: turcar/plugins/shell_config_page.py:19
+msgid "supports basic ANSI-colors and styles"
+msgstr "աջակցում է պարզ ANSI֊գույներ և ոճեր"
+
+#: turcar/plugins/shell_config_page.py:31
+msgid "Maximum number of lines to keep."
+msgstr "Առավելագույն թվով տողեր պահելու համար։"
+
+#: turcar/plugins/shell_config_page.py:33
+msgid "NB! Large values may cause poor performance!"
+msgstr "NB! Մեծ արժեքները կարող են առաջացնել թույլ արտադրողականություն։"
+
+#: turcar/plugins/shell_config_page.py:49
+msgid "Maximum length of line fragments before squeezing"
+msgstr "Տողերի հատվածների առավելագույն երկարությունը սեղմելուց առաջ"
+
+#: turcar/plugins/terminal_config_page.py:12
+msgid "Running current script in terminal"
+msgstr "Բացել ընթացիկ սցենարը տերմինալում"
+
+#: turcar/plugins/terminal_config_page.py:17
+msgid "Present Python REPL after program ends"
+msgstr "Ներկայացնել Python REPL֊ը ծրագրի ավարտից հետո"
+
+#: turcar/plugins/terminal_config_page.py:24
+msgid "Keep terminal window open after Python process ends"
+msgstr "Python գործընթացի ավարտից հետո պահել տերմինալի պատուհանը բաց "
+
+#: turcar/plugins/terminal_config_page.py:31
+msgid "NB! Automatic closing needs to be enabled in Terminal's settings\n"
+"(Profiles → Shell → When the shell exits)"
+msgstr "NB! Ավտոմատ ելքը անհրաժեշտ է միացնել տերմինալի կարգավորումներից\n"
+"(Profiles → Shell → When the shell exits)"
+
+#: turcar/plugins/terminal_config_page.py:41
+msgid "Terminal"
+msgstr "Վահանակ"
+
+#: turcar/plugins/theme_and_font_config_page.py:40
+msgid "UI theme"
+msgstr "UI տեսք"
+
+#: turcar/plugins/theme_and_font_config_page.py:53
+msgid "Syntax theme"
+msgstr "Այլագրի տեսք"
+
+#: turcar/plugins/theme_and_font_config_page.py:85
+msgid "Editor font"
+msgstr "Տառատեսակի խմբագիր"
+
+#: turcar/plugins/theme_and_font_config_page.py:108
+msgid "IO font"
+msgstr "IO տառատեսակ"
+
+#: turcar/plugins/theme_and_font_config_page.py:133
+msgid "Preview"
+msgstr "Նախատեսք"
+
+#: turcar/plugins/theme_and_font_config_page.py:145
+msgid "This is a comment"
+msgstr "Սա մեկնաբանություն է"
+
+#: turcar/plugins/theme_and_font_config_page.py:148
+msgid "The answer is"
+msgstr "Պատասխանն է"
+
+#: turcar/plugins/theme_and_font_config_page.py:152
+msgid "unclosed_string"
+msgstr "չփակված_շարք"
+
+#: turcar/plugins/theme_and_font_config_page.py:154
+msgid "blah, blah"
+msgstr "բլա, բլա"
+
+#: turcar/plugins/theme_and_font_config_page.py:177
+msgid "NB! Some style elements change only after restarting turcar!"
+msgstr "NB! Որոշ ոճի տարրեր փոխվում են Թոնիի վերագործարկումից հետո։"
+
+#: turcar/plugins/theme_and_font_config_page.py:216
+msgid "Enter an integer"
+msgstr "Մուտքագրել ամբողջ թիվ"
+
+#: turcar/plugins/theme_and_font_config_page.py:229
+msgid "Theme & Font"
+msgstr "Տեսք և տառաչափ"
+
+#: turcar/plugins/turcar_folders.py:19
+msgid "Open turcar program folder..."
+msgstr "Բացել Թոնի ծրագրի պանակը․․․"
+
+#: turcar/plugins/turcar_folders.py:24
+msgid "Open turcar data folder..."
+msgstr "Բացել Թոնի տվյալների պանակը․․․"
+
+#: turcar/plugins/help/__init__.py:64
+msgid "Home"
+msgstr "Սկիզբ"
+
+#: turcar/plugins/help/__init__.py:75
+msgid "Help contents"
+msgstr "Օգնության բովանդակությունը"
+
+#: turcar/plugins/micropython/__init__.py:274
+msgid "CircuitPython device"
+msgstr "CircuitPython սարք"
+
+#: turcar/plugins/micropython/__init__.py:278
+msgid "MicroPython device"
+msgstr "MicroPython սարք"
+
+#: turcar/plugins/micropython/__init__.py:476
+msgid "Connect your device to the computer and select corresponding port below"
+msgstr "Միացրեք սարքը Ձեր համակարգչին և ներքևում ընտրեք համապատասխան port-ը"
+
+#: turcar/plugins/micropython/__init__.py:479
+msgid "look for your device name, \"USB Serial\" or \"UART\""
+msgstr "փնտրեք ձեր սարքի անունը, «USB սերիալ» կամ «UART»"
+
+#: turcar/plugins/micropython/__init__.py:481
+msgid "If you can't find it, you may need to install proper USB driver first."
+msgstr "Եթե չեք գտնում, գուցե նախ անհրաժեշտ է տեղադրել համապատասխան USB driver-ը:"
+
+#: turcar/plugins/micropython/__init__.py:401
+msgid "Port"
+msgstr "Port"
+
+#: turcar/plugins/micropython/__init__.py:411
+msgid "Try to detect port automatically"
+msgstr "Փորձեք ավտոմատ կերպով հայտնաբերել port-ը"
+
+#: turcar/plugins/micropython/__init__.py:954
+msgid "MicroPython (generic)"
+msgstr "MicroPython (ընդհանուր)"
+
+#: turcar/plugins/printing/__init__.py:82
+msgid "Print..."
+msgstr "Տպել․․․"
+
+#: turcar/plugins/system_shell/__init__.py:59
+msgid "Open system shell..."
+msgstr "Բացել համակարգի վահանակը․․․"
+
+#: turcar/plugins/backend_config_page.py:103
+msgid "Details"
+msgstr "Մանրամասներ"
+
+#: turcar/plugins/pip_gui.py:345
+msgid "Install from requirements file"
+msgstr "Տեղադրել ներկայացվող նիշքից"
+
+#: turcar/plugins/pip_gui.py:380
+msgid "Install from local file"
+msgstr "Տեղադրել տեղային նիշքից"
+
+#: turcar/plugins/pip_gui.py:1038
+msgid "This dialog is for managing turcar plug-ins and their dependencies.\n"
+"If you want to install packages for your own programs then choose 'Tools → Manage packages...'"
+msgstr "Այս երկխոսությունը կառավարում է Թոնիի հավելումներն ու պահանջները։\n"
+"Եթե ցանկանում եք  տեղադրել փաթեթներ ձեր սեփական ծրագրերի համար, ապա ընտրեք 'Գործիքներ → Կառավարել փաթեթները ...'"
+
+#: turcar/plugins/circuitpython/__init__.py:163
+msgid "CircuitPython (generic)"
+msgstr "CircuitPython (ընդհանուր)"
+
+#: turcar/plugins/commenting_indenting.py:143
+msgid "Indent selected lines"
+msgstr "Հանել ընտրված տողերը"
+
+#: turcar/plugins/commenting_indenting.py:153
+msgid "Dedent selected lines"
+msgstr "Հետարկել ընտրած տողերը"
+
+#: turcar/workbench.py:1391
+msgid "Switch to\n"
+"regular\n"
+"mode"
+msgstr "Փոխել\n"
+"սովորական\n"
+"ռեժիմի"
+
+#: turcar/plugins/microbit/__init__.py:55
+msgid "Make sure MicroPython has been installed to your micro:bit."
+msgstr "Համոզվեք, որ MicroPython֊ը տեղադրված է Ձեր micro:bit ֊ում։"
+
+#: turcar/plugins/microbit/__init__.py:57
+msgid "Don't forget that main.py only works without embedded main script."
+msgstr "Մի մոռացեք, որ main.py- ն աշխատում է առանց ներկառուցված հիմնական այլագրի:"
+
+#: turcar/plugins/micropython/uf2dialog.py:45
+msgid "please wait"
+msgstr "խնդրում ենք սպասել"
+
+#: turcar/plugins/microbit/__init__.py:199
+msgid "Done!"
+msgstr "Կատարված"
+
+#: turcar/plugins/micropython/__init__.py:298
+msgid "Firmware"
+msgstr "ՆԾԱ"
+
+#: turcar/misc_utils.py:134
+msgid "Could not find disk '%s'. Do you want to locate it yourself?"
+msgstr "Չհաջողվեց գտնել '%s' սկավառակը: Ցանկանու՞մ եք ինքներդ գտնել այն:"
+
+#: turcar/misc_utils.py:137
+msgid "Found several '%s' disks. Do you want to choose one yourself?"
+msgstr "Գտնվել է մի քանի '%s'  սկավառակ: Ցանկանո՞ւմ եք ինքներդ ընտրել դրանցից մեկը:"
+
+#: turcar/misc_utils.py:153
+msgid "Can't find suitable disk"
+msgstr "Հնարավոր չէ գտնել համապատասխան սկավառակ"
+
+#: turcar/base_file_browser.py:273
+msgid "%d items"
+msgstr "%d տարրեր"
+
+#: turcar/base_file_browser.py:692
+msgid "Move to Recycle Bin"
+msgstr "Տեղափոխել աղբարկղ"
+
+#: turcar/base_file_browser.py:694
+msgid "Move to Trash"
+msgstr "Տեղափոխել աղբարկղ"
+
+#: turcar/base_file_browser.py:697
+msgid "Delete"
+msgstr "Ջնջել"
+
+#: turcar/base_file_browser.py:700 turcar/base_file_browser.py:834
+msgid "New directory"
+msgstr "Նոր պանակ"
+
+#: turcar/base_file_browser.py:703
+msgid "Properties"
+msgstr "Հատկություններ"
+
+#: turcar/base_file_browser.py:705
+msgid "Storage space"
+msgstr "Պահեստի տարածքը"
+
+#: turcar/base_file_browser.py:715
+msgid "Path"
+msgstr "Ուղի"
+
+#: turcar/base_file_browser.py:717
+msgid "Directory properties"
+msgstr "Պանակի հատկությունները"
+
+#: turcar/base_file_browser.py:719
+msgid "File properties"
+msgstr "Նիշքի հատկությունները"
+
+#: turcar/base_file_browser.py:721
+msgid "bytes"
+msgstr "բայթ"
+
+#: turcar/base_file_browser.py:724
+msgid "Size"
+msgstr "Չափս"
+
+#: turcar/base_file_browser.py:83 turcar/base_file_browser.py:735
+msgid "Modified"
+msgstr "Փոփոխված"
+
+#: turcar/base_file_browser.py:794
+msgid "Deleting %s"
+msgstr "%s ֊ի հեռացում"
+
+#: turcar/base_file_browser.py:817
+msgid "Moving %s to %s"
+msgstr "%s ֊ի տեղափոխում %s ֊ի մեջ"
+
+#: turcar/editors.py:219
+msgid "Loading"
+msgstr "Բեռնում"
+
+#: turcar/editors.py:335
+msgid "Saving"
+msgstr "Պահպանում"
+
+#: turcar/running.py:1408
+msgid "Working..."
+msgstr "Մշակում..."
+
+#: turcar/plugins/files.py:199
+msgid "Uploading %s to %s"
+msgstr "%s  ֊ի վերբեռնում %s ֊ի մեջ"
+
+#: turcar/plugins/files.py:216
+msgid "Upload to %s"
+msgstr "Վերբեռնել %s ֊ի մեջ"
+
+#: turcar/plugins/files.py:362
+msgid "Downloading %s to %s"
+msgstr "Ներբեռնել %s ֊ը %s ֊ի մեջ"
+
+#: turcar/plugins/files.py:275
+msgid "Download to %s"
+msgstr "Ներբեռնել %s ֊ի մեջ"
+
+#: turcar/base_file_browser.py:620
+msgid "Open in system file manager"
+msgstr "Բացել համակարգի նիշքի կառավարմամբ"
+
+#: turcar/base_file_browser.py:625
+msgid "Hide hidden files"
+msgstr "Թաքցնել գաղտնի նիշքերը"
+
+#: turcar/base_file_browser.py:625
+msgid "Show hidden files"
+msgstr "Ցուցադրել գաղտնի նիշքերը"
+
+#: turcar/base_file_browser.py:635
+msgid "Open in turcar"
+msgstr "Բացել Թոնիում"
+
+#: turcar/base_file_browser.py:640 turcar/base_file_browser.py:661
+msgid "Open in system default app"
+msgstr "բացել համակարգի լռելայն ծրագրով"
+
+#: turcar/base_file_browser.py:647 turcar/base_file_browser.py:669
+msgid "Configure %s files"
+msgstr "կարգաբերել %s նիշքերը"
+
+#: turcar/base_file_browser.py:670
+msgid "What to do with a %s file when you double-click it in turcar's file browser?"
+msgstr "Ի՞նչ անել % s նիշքի հետ, երբ կրկնակի սեղմում եք այն Թոնիի նիշքի զննարկչում:"
+
+#: turcar/base_file_browser.py:1042 turcar/plugins/micropython/pip_gui.py:77
+msgid "Deleting"
+msgstr "Հեռացում"
+
+#: turcar/base_file_browser.py:1049
+msgid "Creating directory"
+msgstr "Պանակի ստեղծում"
+
+#: turcar/editors.py:217
+msgid "Loading %s"
+msgstr "Բեռնում %s"
+
+#: turcar/editors.py:333
+msgid "Saving to %s"
+msgstr "Պահպանում %s"
+
+#: turcar/editors.py:622 turcar/editors.py:624
+msgid "Save All files"
+msgstr "Պահել բոլոր նիշքերը"
+
+#: turcar/workbench.py:828
+msgid "Configure interpreter..."
+msgstr "Կարգաբերել interpreter֊ը ..."
+
+#: turcar/workbench.py:1501
+msgid "Device"
+msgstr "Սարք"
+
+#: turcar/workdlg.py:185
+msgid "Cancelling"
+msgstr "Չեղարկում"
+
+#: turcar/workdlg.py:212
+msgid "Starting"
+msgstr "Մեկնարկ"
+
+#: turcar/plugins/backend_config_page.py:234
+msgid "Authentication"
+msgstr "Նույնականացում"
+
+#: turcar/plugins/backend_config_page.py:236
+msgid "Enter the passphrase of your private key for\n"
+"{}"
+msgstr "Մուտքագրեք ձեր անձնական բանալու գաղտնաբառը\n"
+"{}"
+
+#: turcar/plugins/backend_config_page.py:239
+msgid "Enter your password for\n"
+"{}"
+msgstr "Մուտքագրեք ձեր գաղտնաբառը\n"
+"{}"
+
+#: turcar/plugins/object_inspector.py:458
+msgid "The representation above is an approximate value of this float. The exact stored value is %s which is about %s"
+msgstr "Վերևում ներկայացրածը այս կոտորակի մոտավոր արժեքն է: Ճշգրիտ պահված արժեքը %s է, որը կազմում է մոտ %s"
+
+#: turcar/plugins/pip_gui.py:557
+msgid "Search results"
+msgstr "Որոնման արդյունք"
+
+#: turcar/plugins/pip_gui.py:558
+msgid "Searching"
+msgstr "Որոնում"
+
+#: turcar/plugins/pip_gui.py:639 turcar/plugins/pip_gui.py:729
+msgid "Installing '%s'"
+msgstr "Տեղադրում '%s'"
+
+#: turcar/plugins/pip_gui.py:645
+msgid "Upgrading '%s'"
+msgstr "Վերազինում '%s'"
+
+#: turcar/plugins/pip_gui.py:650
+msgid "Uninstalling '%s'"
+msgstr "Ապատեղադրում '%s'"
+
+#: turcar/plugins/pip_gui.py:663
+msgid "Installing"
+msgstr "Տեղադրում"
+
+#: turcar/plugins/pip_gui.py:1372
+msgid "Package manager is not available for this interpreter"
+msgstr "Փաթեթի կառավարիչը հասանելի չէ այս interpreter ֊ի համար"
+
+#: turcar/plugins/pip_gui.py:1385
+msgid "Not supported"
+msgstr "Չի աջակցվում"
+
+#: turcar/plugins/micropython/pip_gui.py:290 turcar/plugins/pip_gui.py:1390
+msgid "Not available"
+msgstr "Հասանելի չէ"
+
+#: turcar/plugins/pip_gui.py:1391
+msgid "You need to stop your program before launching the package manager."
+msgstr "Փաթեթի կառավարիչը բացելուց առաջ պետք է կանգնեցնել ծրագիրը։"
+
+#: turcar/plugins/shell_config_page.py:64
+msgid "Open evaluated values in Object inspector"
+msgstr "Բացել գնահատված արժեքները «Առարկա»֊ի հսկիչում"
+
+#: turcar/plugins/cpython/__init__.py:370
+msgid "Python executable"
+msgstr "Գործարկվող Python"
+
+#: turcar/plugins/cpython/__init__.py:393
+msgid "NB! File selection button may not work properly when selecting executables\n"
+"from a virtual environment. In this case choose the 'activate' script instead\n"
+"of the interpreter (or enter the path directly to the box)!"
+msgstr "NB! Նիշքերի ընտրության կոճակի գործարկումը կարող է ճիշտ չաշխատել\n"
+"վիրտուալ միջավայրից: Այս դեպքում interpreter-ի փոխարեն ընտրեք «ակտիվացնելու» սցենարը\n"
+" (կամ մուտքագրեք ուղին անմիջապես տուփի մեջ):"
+
+#: turcar/plugins/cpython_ssh/__init__.py:153
+msgid "Remote Python 3 (SSH)"
+msgstr "Հեռավար Python 3 (SSH)"
+
+#: turcar/plugins/micropython/__init__.py:284
+msgid "Not connected"
+msgstr "Միացված չէ"
+
+#: turcar/plugins/micropython/__init__.py:453
+msgid "Advanced options"
+msgstr "Ընդլայնված ընտրանքներ"
+
+#: turcar/plugins/micropython/__init__.py:460
+msgid "Install or update firmware"
+msgstr "Տեղադրել կամ թարմացնել ՆԾԱ֊ն"
+
+#: turcar/plugins/micropython/__init__.py:963
+msgid "MicroPython (local)"
+msgstr "MicroPython (local)"
+
+#: turcar/plugins/micropython/__init__.py:973
+msgid "MicroPython (SSH)"
+msgstr "MicroPython (SSH)"
+
+#: turcar/plugins/micropython/pip_gui.py:134
+msgid "Module"
+msgstr "Մոդուլ"
+
+#: turcar/plugins/micropython/pip_gui.py:159
+msgid "Shadowed items (not importable):"
+msgstr "Ստվերված առարկաներ (ոչ կարևոր)"
+
+#: turcar/plugins/micropython/pip_gui.py:208
+msgid "Package is not available at micropython.org. Version at PyPI will be installed."
+msgstr "Փաթեթը հասանելի չէ micropython.org կայքում: Կտեղադրվի PyPI-ի տարբերակը:"
+
+#: turcar/plugins/micropython/pip_gui.py:219
+msgid "NB! micropython.org has published version %s of this package and this will be installed by default."
+msgstr "NB! micropython.org- ը հրապարակել է այս փաթեթի %s տարբերակը, և այն կտեղադրվի լռելյայն:"
+
+#: turcar/plugins/micropython/pip_gui.py:245
+msgid "For upgrading simply install the package again."
+msgstr "Նորացման համար պարզապես նորից տեղադրեք փաթեթը:"
+
+#: turcar/plugins/micropython/pip_gui.py:248
+msgid "For uninstalling delete corresponding files."
+msgstr "Ապատեղադրելու համար ջնջեք կապ ունեցող նիշքերը:"
+
+#: turcar/plugins/micropython/pip_gui.py:262
+msgid "Scope"
+msgstr "Շրջանակ"
+
+#: turcar/plugins/micropython/pip_gui.py:275
+msgid "This dialog lists top-level modules from following directories:\n"
+""
+msgstr "Այս երկխոսությունը գտնվում է հետևյալ պանակների վերին մակարդակի մոդուլներում։ "
+
+#: turcar/plugins/micropython/pip_gui.py:284
+msgid "New packages will be installed to"
+msgstr "Նոր փաթեթներ կտեղադրվեն"
+
+#: turcar/plugins/micropython/pip_gui.py:292
+msgid "no absolute lib directory in sys.path"
+msgstr "sys.path- ում բացարձակ lib պանակ չկա"
+
+#: turcar/plugins/micropython/uf2dialog.py:40
+msgid "Version to be installed"
+msgstr "Տեղադրման տարբերակը"
+
+#: turcar/plugins/micropython/uf2dialog.py:48
+msgid "Target device location"
+msgstr "Թիրախային սարքի գտնվելու վայրը"
+
+#: turcar/plugins/micropython/uf2dialog.py:59
+msgid "Target device model"
+msgstr "Թիրախային սարքի մոդելը"
+
+#: turcar/plugins/micropython/uf2dialog.py:145
+msgid "Please wait"
+msgstr "Խնդրում ենք սպասել"
+
+#: turcar/plugins/pip_gui.py:67
+msgid "Search on PyPI"
+msgstr "Որոնում PyPI ֊ում"
+
+#: turcar/plugins/pip_gui.py:79
+msgid "Delete selected"
+msgstr "Ջնջել ընտրածը"
+
+#: turcar/base_file_browser.py:662
+msgid "Open in turcar's text editor"
+msgstr "Բացել Թոնիի տեքստային խմբագրիչում"
+
+#: turcar/base_file_browser.py:325
+msgid "Storage space on this drive or filesystem"
+msgstr "Պահպանման տարածք այս սկավառակի կամ նիշքային համակարգում"
+
+#: turcar/base_file_browser.py:326
+msgid "total space"
+msgstr "ընդհանուր տարածք"
+
+#: turcar/base_file_browser.py:328
+msgid "used space"
+msgstr "օգտագործված տարածք"
+
+#: turcar/base_file_browser.py:329
+msgid "free space"
+msgstr "ազատ տարածք"
+
+#: turcar/base_file_browser.py:336
+msgid "Storage info"
+msgstr "Պահեստի տեղեկատվություն"
+
+#: turcar/plugins/commenting_indenting.py:163
+msgid "Replace tabs with spaces"
+msgstr "Փոխարինել ներդիրները բացատներով"
+
+#: turcar/plugins/editor_config_page.py:28
+msgid "Highlight tab characters"
+msgstr "Նշեք ներդիրի նիշերը"
+
+#: turcar/plugins/editor_config_page.py:47
+msgid "Indent with tab characters (not recommended for Python)"
+msgstr "Ընկղմել ներդիրի նիշերով (խորհուրդ չի տրվում Python- ի համար)"
+
+#: turcar/base_file_browser.py:81 turcar/memory.py:63
+msgid "Name"
+msgstr "Անուն"
+
+#: turcar/base_file_browser.py:85
+msgid "Size (bytes)"
+msgstr "Չափս (բայթ)"
+
+#: turcar/base_file_browser.py:835
+msgid "Enter name for new directory under\n"
+"%s"
+msgstr "Մուտքագրեք նոր պանակի անունը \n"
+"%s"
+
+#: turcar/base_file_browser.py:858
+msgid "Nothing selected"
+msgstr "Ոչինչ ընտրված չէ"
+
+#: turcar/base_file_browser.py:858
+msgid "Select an item and try again!"
+msgstr "Ընտրեք առարկան և փորձեք նորից:"
+
+#: turcar/base_file_browser.py:1105
+msgid "Open from %s"
+msgstr "Բացել %s ֊ից"
+
+#: turcar/base_file_browser.py:1108
+msgid "Save to %s"
+msgstr "Պահել %s ֊ից"
+
+#: turcar/base_file_browser.py:1120
+msgid "File name:"
+msgstr "Նիշքի անունը՝"
+
+#: turcar/memory.py:64 turcar/plugins/object_inspector.py:510
+#: turcar/plugins/object_inspector.py:589
+msgid "Value ID"
+msgstr "ID արժեք"
+
+#: turcar/memory.py:65 turcar/plugins/heap.py:23
+#: turcar/plugins/object_inspector.py:511
+#: turcar/plugins/object_inspector.py:590
+msgid "Value"
+msgstr "Արժեք"
+
+#: turcar/plugins/backend_config_page.py:257
+msgid "Save password"
+msgstr "Պահել գաղտնաբառը"
+
+#: turcar/plugins/debugger.py:553
+msgid "Function call at %s"
+msgstr "Ֆունկցիայի կանչը % s- ով"
+
+#: turcar/plugins/debugger.py:1001
+msgid "Local variables"
+msgstr "Տեղային փոփոխականներ"
+
+#: turcar/plugins/debugger.py:1033
+msgid "Function"
+msgstr "Ֆունկցիա"
+
+#: turcar/plugins/debugger.py:1034
+msgid "Location"
+msgstr "Գտնվելու վայր"
+
+#: turcar/plugins/debugger.py:1110
+msgid "If last command raised an exception then this view will show the stacktrace."
+msgstr "Եթե վերջին հրամանը բացառություն է առաջացրել, ապա ցույց կտա այս տեսքը stacktrace- ը:"
+
+#: turcar/plugins/heap.py:22
+msgid "ID"
+msgstr "ID"
+
+#: turcar/plugins/object_inspector.py:87
+msgid "Data"
+msgstr "Տվյալներ"
+
+#: turcar/plugins/object_inspector.py:88
+msgid "Attributes"
+msgstr "Հատկանիշներ"
+
+#: turcar/plugins/object_inspector.py:509
+msgid "Index"
+msgstr "Ինդեքս"
+
+#: turcar/plugins/object_inspector.py:587
+msgid "Key ID"
+msgstr "Key ID"
+
+#: turcar/plugins/object_inspector.py:588
+msgid "Key"
+msgstr "Key"
+
+#: turcar/plugins/variables.py:36
+msgid "Back to\n"
+"%s"
+msgstr "Back to\n"
+"%s"
+
+#: turcar/plugins/micropython/__init__.py:401
+msgid "Port or WebREPL"
+msgstr "Port or WebREPL"
+
+#: turcar/plugins/micropython/__init__.py:518
+msgid "Password"
+msgstr "Գաղտնաբառ"
+
+#: turcar/plugins/debugger.py:959
+msgid "Source code"
+msgstr "Կոդերի աղբյուր"
+
+#: turcar/plugins/general_config_page.py:29
+msgid "Use Tk file dialogs instead of Zenity"
+msgstr "Zenity- ի փոխարեն օգտագործեք Tk նիշքի երկխոսությունները"
+
+#: turcar/plugins/general_config_page.py:30
+msgid "Select if the file dialogs end up behind the main window"
+msgstr "Ընտրեք, եթե նիշքի երկխոսությունները հայտնվեն հիմնական պատուհանի հետևում"
+
+#: turcar/plugins/general_config_page.py:97
+msgid "Environment variables (one KEY=VALUE per line)"
+msgstr "Միջավայրի փոփոխականներ (one KEY=VALUE per line)"
+
