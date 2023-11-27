@@ -1,0 +1,2 @@
+<input value="{% if widget.value %}{{ widget.value }}{% endif %}" type="hidden" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
+<trix-editor input="{{ widget.attrs.id }}"></trix-editor>

@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: django-trix-widget
+Version: 1.0.4
+Summary: Trix widget for Django
+Home-page: https://github.com/bboogaard/django-trix-widget
+Author: Bram Boogaard
+Author-email: padawan@hetnet.nl
+License: MIT License
+Keywords: Django Trix widget
+Classifier: Development Status :: 3 - Alpha
+Description-Content-Type: text/markdown
+Requires-Dist: pytest
+Requires-Dist: pytest-cov
+Requires-Dist: pytest-django ~=4.5.2
+Requires-Dist: django ~=3.2.23
+Requires-Dist: pyquery ~=2.0.0
+Requires-Dist: bleach ~=6.1.0
+
+# django-trix-widget
+
+Django form widget for [Trix](https://trix-editor.org/).
+
+## Rationale
+
+Integrate Trix editor with Django forms framework.
+
+## Support
+
+Supports: Python 3.10.
+
+Supports Django Versions: 3.2
+
+## Installation
+
+```shell
+$ pip install django-trix-widget
+```
+
+## Usage
+
+Add `trix_widget` to `INSTALLED_APPS`.
+
+Run migrations:
+
+Import the widget from the package:
+
+```python
+from django import forms
+from trix_widget.widgets import TrixWidget
+
+
+class MyForm(forms.Form):
+    
+    text = forms.CharField(widget=TrixWidget())
+
+
+```
