@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/pandasfruit/__init__.py
+src/pandasfruit/pandasfruit.py
+src/pandasfruit.egg-info/PKG-INFO
+src/pandasfruit.egg-info/SOURCES.txt
+src/pandasfruit.egg-info/dependency_links.txt
+src/pandasfruit.egg-info/requires.txt
+src/pandasfruit.egg-info/top_level.txt
