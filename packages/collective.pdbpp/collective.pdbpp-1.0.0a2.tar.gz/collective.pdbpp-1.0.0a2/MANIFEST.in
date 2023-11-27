@@ -1,0 +1,7 @@
+graft src/collective
+graft docs
+include *.md
+include *.yaml
+exclude tox.ini
+exclude *.txt
+global-exclude *.pyc
