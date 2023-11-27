@@ -1,0 +1,5 @@
+[console_scripts]
+ainyan-crawler = ainyan.pdfcrawl:main
+ainyan-datasets = ainyan.mydatasets:main
+ainyan-model-helper = ainyan.models:main
+ainyan-training = ainyan.training:main
