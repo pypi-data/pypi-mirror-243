@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: duckberg
+Version: 0.1.1
+Project-URL: Documentation, https://github.com/unknown/duckberg#readme
+Project-URL: Issues, https://github.com/unknown/duckberg/issues
+Project-URL: Source, https://github.com/unknown/duckberg
+Author-email: gregor <gkaretka@cisco.com>, jojo <jcechovs@cisco.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Requires-Dist: pandas==2.1.3
+Requires-Dist: pyiceberg[duckdb,glue,s3fs]==0.5.1
+Description-Content-Type: text/markdown
+
+# duckberg
+
+[![PyPI - Version](https://img.shields.io/pypi/v/duckberg.svg)](https://pypi.org/project/duckberg)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/duckberg.svg)](https://pypi.org/project/duckberg)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install duckberg
+```
+
+## License
+
+`duckberg` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
