@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: gmalg
+Version: 0.8.6
+Summary: GM algorithms implemented in pure python.
+Author-email: ww-rm <ww-rm@qq.com>
+Project-URL: Homepage, https://github.com/ww-rm/gmalg
+Project-URL: Issues, https://github.com/ww-rm/gmalg/issues
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# gmalg
+
+GM algorithms implemented in pure python.
+
+It has low computational performance and is only used to experience and learn GM algorithms.
+
+## Install
+
+```bat
+pip install gmalg
+```
+
+## Implemented Core Algorithms
+
+- [x] ZUC Stream Cipher Algorithm
+- [ ] SM2 Public Key Cryptograhpic Algorithm Based on Elliptic Curves
+- [x] SM3 Cryptogrpahic Hash Algorithm
+- [x] SM4 Block Cipher Algorithm
+- [ ] SM9 Identification Cryptographic Algorithm
+
+## API
+
+TODO
+
+---
+
+*If you think this project is helpful to you, :star: it and let more people see!*
