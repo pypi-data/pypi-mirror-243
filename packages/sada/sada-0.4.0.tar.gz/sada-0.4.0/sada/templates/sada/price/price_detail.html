@@ -1,0 +1,13 @@
+{% extends "sada/base.html" %}
+
+{% block content %}
+<a href="{% url 'price_list' %}">All Prices</a>
+<h1>{{ price }}</h1>
+<p>{{ price.description }}</p>
+<p>Active: {{ price.active }}</p>
+<p>Created at: {{ price.created_at }}</p>
+<p>Updated at: {{ price.updated_at }}</p>
+<p>Metadata: {{ price.metadata }}</p>
+<a href="{% url 'price_edit' price.id %}">Edit</a> |
+<a href="{% url 'price_delete' price.id %}">Delete</a>
+{% endblock %}
