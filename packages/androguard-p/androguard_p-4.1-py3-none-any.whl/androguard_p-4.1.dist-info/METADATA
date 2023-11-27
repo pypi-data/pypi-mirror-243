@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: androguard-p
+Version: 4.1
+Summary: Androguard is a full python tool to play with Android files.
+Home-page: https://github.com/androguard/androguard
+License: Apache Licence, Version 2.0
+Author: desnos
+Author-email: desnos@t0t0.fr
+Requires-Python: >=3.6,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: apkInspector (>=1.1.7)
+Requires-Dist: asn1crypto (>=0.24.0)
+Requires-Dist: click (>=7.0)
+Requires-Dist: colorama (>=0.4.1)
+Requires-Dist: dataset
+Requires-Dist: frida
+Requires-Dist: ipython (>=5.0.0)
+Requires-Dist: loguru
+Requires-Dist: lxml (>=4.3.0)
+Requires-Dist: mutf8
+Requires-Dist: pydot (>=1.4.1)
+Requires-Dist: pygments (>=2.3.1)
