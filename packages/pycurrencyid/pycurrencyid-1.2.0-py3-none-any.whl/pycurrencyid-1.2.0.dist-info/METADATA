@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: pycurrencyid
+Version: 1.2.0
+Summary: This library contains data on country names, currencies and abbreviations which are stored and packaged in the form of a JSON file
+License: MIT
+Keywords: mata uang,currency,indonesia,data,pycurrency,indo,wilayah,daerah,administrasi
+Author: harigro
+Author-email: trierbank@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Testing
+Classifier: Topic :: Utilities
+Project-URL: Documentation, https://github.com/harigro/pycurrencyid
+Project-URL: Homepage, https://github.com/harigro/pycurrencyid
+Project-URL: Repository, https://github.com/harigro/pycurrencyid
+Description-Content-Type: text/markdown
+
+# Kata Pengantar
+Setiap negara yang berdaulat tentunya mempunyai mata uang dan singkatan untuk mempermudah pengucapan. Dalam membuat alat atau program tentunya memerlukan data yang akurat dan tidak salah jika mencoba pustaka ini. Pustaka pycurrency terlengkap perihal data nama negara, nama mata uangnya serta singkatannya dan sangat dipermudah karena setiap datanya disimpan dalam format berkas json.
+
+## Cara Instalasi
+Cukup mudah, hanya dengan tempel dan rekatkan di terminal
+```bash
+pip install pycurrencyid
+```
+
+## Cara mengunakan dan contoh program
+Dalam menggunakan pustaka ini pertama -tama pahami dulu program berikut.
+```python
+from pycurrencyid import mataUang
+import pprint
+
+
+# ada dua fungsi utama pada kelas mataUang, semua dan cari
+data = mataUang()
+
+# untuk menampilkan semua data yang ada di pustaka ini
+pprint.pprint(data.semua, sort_dicts=False)
+
+# untuk mencari nama negara berdasarkan singkatan mata uangnya
+pprint.pprint(data.cari("idr"), sort_dicts=False)
+```
+
+## Kata Penutup
+Semoga bermanfaat dan jika tertarik dengan program ini dan lainnya, silahkan follow akun sosial media aku lainnya.
+
