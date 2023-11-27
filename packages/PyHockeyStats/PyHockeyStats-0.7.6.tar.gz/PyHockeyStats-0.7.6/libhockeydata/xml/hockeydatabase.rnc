@@ -1,0 +1,35 @@
+default namespace = ""
+
+start =
+  element hockeydb {
+    attribute database { text },
+    element table {
+      attribute name { xsd:NCName },
+      element column {
+        element rowinfo {
+          attribute autoincrement { xsd:integer },
+          attribute defaultvalue { text },
+          attribute hidden { xsd:integer },
+          attribute id { xsd:integer },
+          attribute name { xsd:NCName },
+          attribute notnull { xsd:integer },
+          attribute primarykey { xsd:integer },
+          attribute type { xsd:NCName }
+        }+
+      },
+      element data {
+        element row {
+          attribute id { xsd:integer },
+          element rowdata {
+            attribute name { xsd:NCName },
+            attribute value { text }
+          }+
+        }*
+      },
+      element rows {
+        element rowlist {
+          attribute name { xsd:NCName }
+        }+
+      }
+    }+
+  }
