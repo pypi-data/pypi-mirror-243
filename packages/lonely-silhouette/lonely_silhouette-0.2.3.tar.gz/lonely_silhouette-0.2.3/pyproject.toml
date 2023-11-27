@@ -1,0 +1,51 @@
+[project]
+name = "lonely-silhouette"
+version = "0.2.3"
+description = "いや待て、この孤独な𝑆𝑖𝑙ℎ𝑜𝑢𝑒𝑡𝑡𝑒は…？"
+authors = [
+    { name = "otariidae", email = "otariidae@users.noreply.github.com" }
+]
+dependencies = [
+    "janome>=0.5.0",
+    "jaconv>=0.3.4",
+    "requests>=2.31.0",
+]
+readme = "README.md"
+license = { text = "CC0-1.0" }
+requires-python = ">= 3.12"
+
+classifiers = [
+    "Natural Language :: Japanese"
+]
+
+[project.urls]
+homepage = "https://github.com/otariidae/lonely_silhouette"
+source = "https://github.com/otariidae/lonely_silhouette"
+"bug tracker" = "https://github.com/otariidae/lonely_silhouette/issues"
+pypi = "https://pypi.org/project/lonely-silhouette/"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.1.6",
+    "mypy>=1.7.1",
+    "types-requests>=2.31.0.10",
+]
+
+[tool.rye.scripts]
+lint = "ruff check --fix ."
+lintcheck = "ruff check ."
+fmt = "ruff format ."
+fmtcheck = "ruff format --check ."
+typecheck = "mypy ."
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.mypy]
+strict = true
+ignore_missing_imports = true

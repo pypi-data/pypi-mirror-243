@@ -1,0 +1,35 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python package
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install rye
+      run: |
+        curl -sSf https://rye-up.com/get | bash
+        echo "$HOME/.rye/shims" >> $GITHUB_PATH
+      env:
+        RYE_VERSION: 0.15.2
+        RYE_INSTALL_OPTION: "--yes"
+    - name: Install dependencies
+      run: rye sync
+    - name: Lint with ruff
+      run: rye run lintcheck
+    - name: Format check with ruff
+      run: rye run fmtcheck
+    - name: Type check with mypy
+      run: rye run typecheck
