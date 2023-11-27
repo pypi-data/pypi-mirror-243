@@ -1,0 +1,2 @@
+[console_scripts]
+yaml2dot = yaml2dot.__main__:render_yaml
