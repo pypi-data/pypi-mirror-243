@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: moll
+Version: 0.1.10
+Summary: 
+Author: Vsevolod Shegolev
+Author-email: v@sheg.cc
+Requires-Python: >=3.10,<3.13
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Provides-Extra: cpu
+Requires-Dist: jax[cpu] (>=0.4.20,<0.5.0) ; extra == "cpu"
+Requires-Dist: loguru (>=0.7.2,<0.8.0)
+Requires-Dist: rdkit (>=2023.3.1,<2024.0.0)
+Description-Content-Type: text/markdown
+
+# moll
+
+`moll` is a computational chemistry tool that is currently under development.
+
+## Installation
+
+`moll` depends on JAX, you can install it with CUDA support or without it.
+
+- To install `moll` without CUDA support, run:
+
+    ```bash
+    pip install -U moll[cpu]
+    ```
+
+- If you have a GPU, it is recommended to install CUDA version of JAX at first. Check [this repo](https://github.com/google/jax) and [docs](https://jax.readthedocs.io/en/latest/installation.html) to see how to install JAX. Then run:
+
+    ```bash
+    pip install -U moll
+    ```
+
+## How to use
+
+Check [docs](https://vsheg.github.io/moll/) or see examples in `notebooks/` directory in the [repo](https://github.com/vsheg/moll).
