@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "rtb-toolbox"
+version = "0.1.63"
+description = ""
+authors = ["Miguel <miguellukas52@gmail.com>"]
+readme = "README.md"
+packages = [{include = "rtb_toolbox", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.26.2"
+sympy = "^1.12"
+pymoo = "^0.6.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
