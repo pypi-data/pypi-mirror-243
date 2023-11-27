@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: shs-tools
+Version: 0.3.3
+Summary: An assortment of little helper functions
+Author-email: Stefan Harmuth <pennywise@drock.de>
+Project-URL: homepage, https://git.domainforge.de/public/py-tools
+Project-URL: Bug Tracker, https://git.domainforge.de/public/py-tools/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: bs4 ~=0.0.1
+Requires-Dist: beautifulsoup4 ~=4.12.2
+Requires-Dist: fishhook ~=0.2.9
+Requires-Dist: pygame ~=2.5.2
+Requires-Dist: requests ~=2.31.0
+
+# shs-tools
+
+An assortment of helper functions, primarily developed for use in [Advent Of Code](https://adventofcode.com/)
