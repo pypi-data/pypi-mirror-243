@@ -1,0 +1,3 @@
+include requirements.txt
+recursive-include __nitter__/sentiment_dictionaries *
+recursive-include __nitter__/query *
