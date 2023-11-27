@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: spark-batch
+Version: 1.8
+Summary: spark_delta_batch for bronze > silve > gold > mart auto
+Author: GunSik Choi
+Author-email: cgshome@gmail.com
+Requires-Dist: pyyaml
+Requires-Dist: psycopg2-binary
+Requires-Dist: delta-spark
+Requires-Dist: boto3
+Requires-Dist: pycryptodome
+Requires-Dist: geopandas
+
