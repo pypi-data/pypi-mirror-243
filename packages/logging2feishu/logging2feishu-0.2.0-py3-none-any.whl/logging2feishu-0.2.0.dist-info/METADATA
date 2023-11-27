@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: logging2feishu
+Version: 0.2.0
+Summary: base on logging module in python, it can also update the logs to feishu table. The feishu config.json file need to be set.
+Author: zhicheng.fu(kevin)
+Author-email: kevinsun17@126.com
+License: apache 3.0
+Requires: baseopensdk
+
