@@ -1,0 +1,2 @@
+[console_scripts]
+oncvpsp-tools = oncvpsp_tools.cli:main
