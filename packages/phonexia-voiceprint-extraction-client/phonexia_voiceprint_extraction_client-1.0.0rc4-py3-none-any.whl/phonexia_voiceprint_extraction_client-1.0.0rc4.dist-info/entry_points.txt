@@ -1,0 +1,3 @@
+[console_scripts]
+voiceprint_extraction_client=main:main
+
