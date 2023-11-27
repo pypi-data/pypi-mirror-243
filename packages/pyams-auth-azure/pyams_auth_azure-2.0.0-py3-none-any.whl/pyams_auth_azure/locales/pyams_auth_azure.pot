@@ -1,0 +1,127 @@
+#
+# SOME DESCRIPTIVE TITLE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE 1.0\n"
+"POT-Creation-Date: 2021-01-01 16:02+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Lingua 3.10.dev0\n"
+
+#: ./src/pyams_auth_azure/plugin.py:73
+msgid "Azure authentication"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:34
+msgid "Enable Azure authentication?"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:35
+msgid "Enable login via Azure authentication"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:39
+msgid "Client ID"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:40
+msgid "Application client ID"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:43
+msgid "Secret key"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:44
+msgid "Application secret key"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:47
+msgid "Authentication authority"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:48
+msgid "URL of the authentication authority"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:58
+msgid "Verify SSL?"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:59
+msgid "If 'no', SSL certificates will not be verified"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:63
+msgid "Authorization header"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:64
+msgid "Name of the HTTP header containing authentication token"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:69
+msgid "Authorization scheme"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:70
+msgid "Name of the prefix used in HTTP header"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:74
+msgid "Test header"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:75
+msgid ""
+"If this header is set and present into request headers (with any value), the "
+"authorization header value will be used \"as is\" without any Azure "
+"authentication to get user's login..."
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:81
+msgid "Use authorization cache?"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:82
+msgid ""
+"If selected, this option allows to store credentials in a local cache from "
+"which they can be reused"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:87
+msgid "Selected tokens cache"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:88
+msgid "Beaker cache selected to store validated tokens"
+msgstr ""
+
+#: ./src/pyams_auth_azure/interfaces.py:55
+msgid ""
+"Client ID, secret key and authentication authority are required to enable "
+"Azure authentication"
+msgstr ""
+
+#: ./src/pyams_auth_azure/zmi/plugin.py:52
+#: ./src/pyams_auth_azure/zmi/plugin.py:62
+msgid "Azure configuration"
+msgstr ""
+
+#: ./src/pyams_auth_azure/zmi/plugin.py:61
+msgid "Security manager"
+msgstr ""
+
+#: ./src/pyams_auth_azure/zmi/plugin.py:89
+msgid ""
+"Azure authentication plug-in support the \"on-behalf-of\" flow, where a resource declared on the Azure portal can be accessed, using an MSAL client package, through an application proxy.\n"
+"The original Azure authentication token received by the \"client\" is then forwarded to the Pyramid application server, using another HTTP header; the application can then use the Azure API to check token validity and extract some of it's credentials (like a user ID) for which a lookup will be made into another internal users directory..."
+msgstr ""
