@@ -1,0 +1,484 @@
+[build-system]
+# Minimum requirements for the build system to execute (PEP-518)
+# >= 61: Add pyproject.toml support and setuptools.config.setupcfg.read_configuration
+# >= 68.1: "Promote pyproject.toml’s [tool.setuptools] out of beta." in the ChangeLog
+requires = ["setuptools>=68.1", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[django-ca.release]
+# https://devguide.python.org/versions/#versions
+python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
+# https://www.djangoproject.com/download/
+django = ["3.2", "4.2"]
+cryptography = ["41.0"]
+acme = ["2.6", "2.7"]
+
+# https://alpinelinux.org/releases/
+alpine = [
+    "3.16",  # until 2024-05-23
+    "3.17",  # until 2024-11-22
+    "3.18",  # until 2025-05-09
+]
+
+# Blacklist images that are just no longer built
+docker-image-blacklist = [
+    "python:3.12-alpine3.16",
+]
+
+# List of tested Debian releases:
+#   https://en.wikipedia.org/wiki/Debian_version_history#Release_table
+debian-releases = [
+    "bullseye",  # June 2026
+    "bookworm",  # until June 2028
+]
+
+# List of tested Ubuntu releases:
+#   https://en.wikipedia.org/wiki/Ubuntu_version_history#Table_of_versions
+ubuntu-releases = [
+    "focal",  # 20.04, until 2025-04-23
+    "jammy",  # 22.04, until 2027-04-21
+    "lunar",  # 23.04, until 2024-01-20
+    "mantic",  # 23.10, until 2024-07
+]
+
+[django-ca.validation]
+# list glob-style patterns to exclude from any check (currently only license headers)
+excludes = [
+    "ca/django_ca/migrations/*.py",
+    "docs/source/include/config/*.py",
+]
+# Files known to be stand-alone scripts (-> they include a shebang line)
+standalone-scripts = [
+    "ca/manage.py",
+    "devscripts/files/django-ca-dns-clean.py",
+    "devscripts/files/django-ca-dns-auth.py",
+    "devscripts/standalone/validate-testdata.py",
+    "devscripts/standalone/test-imports.py",
+    "devscripts/standalone/test-connectivity.py",
+    "devscripts/standalone/create-testdata.py",
+    "devscripts/standalone/clean.py",
+    "devscripts/standalone/check-clean-docker.py",
+]
+
+[project]
+# Valid keys: https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
+name = "django-ca"
+authors = [
+    {name = "Mathias Ertl", email = "mati@er.tl"},
+]
+description = "A Django app providing a TLS certificate authority."
+# "
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Security",
+    "Typing :: Typed",
+]
+
+# Dynamic metadata, further specified in the tool.setuptools.dynamic section below
+dynamic = ["version", "readme"]
+
+# Dependency information
+requires-python = ">=3.8"
+dependencies = [
+    "Django>=3.2,!=4.0.*,!=4.1.*",
+    "acme>=2.6",
+    "asn1crypto>=1.5",
+    "cryptography>=41.0",
+    "django-object-actions>=4.0.0",
+    "dnspython>=2.3",
+    "idna>=3.2",
+    "josepy>=1.13.0",
+    "packaging",
+    "requests",
+]
+
+[project.optional-dependencies]
+api = ["django-ninja==0.22.2"]
+redis = [
+    "hiredis>=2.0.0",
+    "redis>=4.3",
+]
+celery = ["celery>=5.3"]
+mysql = [
+    # https://github.com/PyMySQL/mysqlclient/issues/620
+    "mysqlclient<2.2"
+]
+postgres = ["psycopg2>2.8"]
+psycopg3 = [
+    "psycopg[c,pool]",
+    "Django>=4.2",
+]
+yaml = ["PyYAML>=6.0.0"]
+
+[project.urls]
+Homepage = "https://github.com/mathiasertl/django-ca/"
+Documentation = "https://django-ca.readthedocs.io/"
+Source = "https://github.com/mathiasertl/django-ca/"
+Issues = "https://github.com/mathiasertl/django-ca/issues"
+Changelog = "https://django-ca.readthedocs.io/en/latest/changelog.html"
+
+
+[tool.black]
+line-length = 110
+extend-exclude = "(migrations|stubs)/"
+
+[tool.coverage.report]
+exclude_lines = [
+    "^\\s*@(abc.)?abstractmethod",
+    "^\\s*@(typing.)?overload",
+    "^\\s*if (typing.)?TYPE_CHECKING:",
+    "pragma: no ?cover",
+]
+
+[tool.coverage.run]
+source = [
+    "django_ca",
+    "ca.settings_utils",
+]
+branch = true
+omit = [
+    "*/migrations/*",
+    "*/tests/tests*",
+    "*/tests/**/test_*",
+]
+
+[tool.doc8]
+max-line-length = 110
+ignore = [
+    "D000",
+]
+
+# NOTE: ideally, we would use ignore-path-errors to only ignore long lines, but doc8
+#       does not support directories for that.
+ignore-path = [
+    "docs/source/generated/",
+]
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
+line_length = 110
+extend_skip = ["migrations", "stubs"]
+known_crypto = [
+    "cryptography", "ocspbuilder", "asn1crypto", "oscrypto", "OpenSSL"
+]
+known_django = "django"
+known_django_addon = "django_object_actions"
+known_test = [
+    "_pytest",
+    "django_webtest",
+    "freezegun",
+    "pytest",
+    "pytest_cov",
+    "pytest_django",
+    "pyvirtualdisplay",
+    "requests_mock",
+    "selenium",
+    "webtest",
+]
+known_first_party = ["django_ca", "ca"]
+sections = [
+    "FUTURE", "STDLIB", "THIRDPARTY", "CRYPTO", "DJANGO", "DJANGO_ADDON",
+    "TEST", "FIRSTPARTY", "LOCALFOLDER",
+]
+combine_as_imports = true
+
+[tool.mypy]
+strict = true
+show_error_codes = true
+mypy_path = "ca/:stubs/:docs/source/"
+exclude = [
+    "dist/",  # mypy complains about an extracted wheel
+    "migrations/.*\\.py$",
+]
+plugins = [
+    "mypy_django_plugin.main",
+    "pydantic.mypy",
+]
+
+[[tool.mypy.overrides]]
+module = [
+    "asn1crypto.*",
+    # docker==6.1.3 does not have typehints. See also:
+    #   https://github.com/docker/docker-py/issues/2796
+    "docker.*",
+    "enchant.tokenize",
+    "httpcore.*",
+    # psycopg and psycopg_c are not installed in isolated mypy envs (tox, ...)
+    "psycopg",
+    "psycopg_c",
+    "pytest_cov.*",
+    "requests.packages.urllib3.response",
+    # semantic-version==2.10.0 does not have typehints. See also:
+    #   https://github.com/rbarrois/python-semanticversion/issues/138
+    "semantic_version",
+    "sphinx_rtd_theme",
+    "sphinxcontrib",
+    "sniffio",
+    # Identical to tomllib from Python 3.11, becomes unused once Python 3.10 is dropped
+    "tomli",
+]
+ignore_missing_imports = true
+
+[tool.django-stubs]
+django_settings_module = "ca.test_settings"
+
+[tool.pydocstyle]
+convention = "numpy"
+add-ignore = "D102"
+match = "(?!tests?_).*\\.py"
+
+[tool.pylint.master]
+load-plugins = "pylint_django"
+
+# Allow both snake-case and UPPER_CASE for class constants/enums
+class-const-rgx = "(?:(?P<snake>[a-z_]+)|(?P<upper>[A-Z_]+))"
+
+# Allow dashes in module names (= top level scripts)
+module-rgx = "[a-z_][a-z_-]+"
+
+# ignore migrations
+ignore-paths = [
+    "ca/django_ca/migrations",
+]
+
+# Configure Django
+init-hook = "import os, sys; sys.path.insert(0, os.path.abspath('ca'))"
+django-settings-module = "ca.test_settings"
+
+[tool.pylint.basic]
+good-names = [
+    "ca",
+    "cn",
+    "ex",
+    "pk",
+    "e",  # TODO: consistently use ex
+    "i",
+    "k",
+]
+
+[tool.pylint.classes]
+exclude-protected = ["_default_manager"]
+
+[tool.pylint.design]
+# Maximum number of arguments for function / method (see R0913).
+max-args = 10
+
+# Maximum number of attributes for a class (see R0902).
+max-attributes = 20
+
+# Maximum number of branch for function / method body (see R0912).
+max-branches = 20
+
+# Maximum number of parents for a class (see R0914).
+max-locals = 20
+
+# Maximum number of parents for a class (see R0901).
+max-parents = 15
+
+# Maximum number of public methods for a class (see R0904).
+max-public-methods = 25
+
+# Maximum number of return / yield for function / method body (see R0911).
+max-returns = 8
+
+# Maximum number of statements in function / method body (see R0915).
+max-statements = 60
+
+[tool.pylint.format]
+max-line-length = 110
+
+# TODO: could be reduced to 1500, only some test modulesare  over that
+max-module-lines = 3000
+
+[tool.pylint.messages_control]
+enable = [
+    "useless-suppression",
+]
+
+# https://pylint.readthedocs.io/en/latest/faq.html?highlight=flake8#i-am-using-another-popular-linter-alongside-pylint-which-messages-should-i-disable-to-avoid-duplicates
+disable = [
+    # devscripts have some larger overlapping parts
+    "duplicate-code",
+
+    # These are just annoying
+    "too-few-public-methods",
+    "fixme",
+
+    # covered by isort:
+    "wrong-import-order",
+
+    # covered by pyflakes:
+    "undefined-variable",  # also mypy
+    "unused-import",
+    "unused-variable",
+
+    # covered by pycodestyle:
+    "unneeded-not",
+    "line-too-long",
+    "unnecessary-semicolon",
+    "trailing-whitespace",
+    "missing-final-newline",
+    "bad-indentation",
+    "multiple-statements",
+    "bare-except",
+
+    # (seems to be) covered by mypy
+    "unsubscriptable-object",  # mypy: index
+    "arguments-differ",
+    "no-value-for-parameter",  # mypy: call-arg
+    "inconsistent-return-statements",
+    "assignment-from-no-return",
+    "import-error",  # mypy: import
+    "abstract-class-instantiated",  # mypy: abstract
+
+    # pylint==2.7.2 shows the error for cyclic imports in arbitrary locations, making them impossible to
+    # disable for specific cases. mypy requires cyclic imports for type annotiations, which are usually
+    # protected by TYPE_CHECKING - but pylint doesn't know that.
+    #   https://github.com/PyCQA/pylint/issues/850
+    #   https://github.com/PyCQA/pylint/issues/59
+    #   https://github.com/landscapeio/landscape-issues/issues/214
+    "cyclic-import",
+
+    # pylint==2.9.3 does not detect methods returning a sequence as such:
+    #   https://github.com/PyCQA/pylint/issues/4696
+    "unpacking-non-sequence",
+]
+
+[tool.pylint.similarities]
+# Ignore comments when computing similarities.
+ignore-comments = "yes"
+
+# Ignore docstrings when computing similarities.
+ignore-docstrings = "yes"
+
+# Ignore imports when computing similarities.
+ignore-imports = "yes"
+
+# Minimum lines number of a similarity.
+min-similarity-lines = 16
+
+[tool.pytest.ini_options]
+env = [
+    # Set COLUMNS, which is used by argparse to determine the terminal width. If this is not set, the output of
+    # some argparse commands depend on the terminal size.
+    "COLUMNS=80",
+    # Set DJANGO_SETTINGS_MODULE early via pytest-env. This is necessary due to a complex interaction:
+    # 1. coverage covers ca/settings_utils.py
+    # 2. coverage loads ca.settings_utils -> ca -> ca.celery - BEFORE pytest-django is set up
+    # 3. ca.celery calls os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ca.settings")
+    # -> when settings are loaded the first time, DJANGO_SETTINGS_MODULE is defined (as ca.settings).
+    "DJANGO_SETTINGS_MODULE=ca.test_settings",
+]
+DJANGO_SETTINGS_MODULE = "ca.test_settings"
+addopts = [
+    "--cov",
+    "--cov-report=html:docs/build/coverage/",
+    "--cov-fail-under=100",
+    "--random-order",
+
+]
+pythonpath = [
+    "ca",
+    "docs/source/"
+]
+testpaths = "ca/django_ca/"
+filterwarnings = [
+    "always",
+    "error:::django_ca",
+    "error:::django",
+    "error:::cryptography",
+    "error:::acme",
+    "error:::josepy",
+    # utcnow() and utcfromtimestamp() are deprecated in Python 3.12. django-ca no longer uses either, but
+    # various third-party software still does, so we silence the warnings outside of django-ca.
+    "ignore:datetime.datetime.utcfromtimestamp\\(\\) is deprecated",
+    "ignore:datetime.datetime.utcnow\\(\\) is deprecated",
+    # Disabled because cryptography calls the function directly and the warning is issued with stacklevel=2,
+    # so it's shown for our code. See: https://github.com/pyca/cryptography/issues/9580
+    #"error:datetime.datetime.utcfromtimestamp\\(\\) is deprecated::django_ca",  # pragma: only cg<42
+    "error:datetime.datetime.utcnow\\(\\) is deprecated::django_ca",
+
+    "ignore:The USE_L10N setting is deprecated.::django",
+    "ignore:django.core.files.storage.get_storage_class is deprecated::django",
+
+    # pyOpenSSL>=23.3.0 raises this warning, acme==2.7.3 still uses the deprecated APIs.
+    # acme uses X509Extension in acme.crypto_util.gen_ss_cert(). See also:
+    #   https://github.com/certbot/certbot/issues/9828
+    "ignore:^X509Extension support in pyOpenSSL is deprecated\\. You should use the APIs in cryptography\\.$::acme",
+]
+
+[tool.ruff]
+select = ["D", "E", "F", "I", "G", "DJ"]
+extend-exclude = ["migrations", "stubs"]
+line-length = 110
+ignore = [
+    "D101",  # Missing docstring in public class
+    "D102",  # Missing docstring in public method
+    "D103",  # Missing docstring in public function
+    "D104",  # Missing docstring in public package
+    "D105",  # Missing docstring in magic method
+    "D106",  # Missing docstring in public nested class
+    "D301",  # Use `r"""` if any backslashes in a docstring - incompatible with doctests!
+    "D401",  # First line of docstring should be in imperative mood
+]
+
+[tool.ruff.isort]
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "crypto",
+    "django",
+    "django-addon",
+    "test",
+    "first-party",
+    "local-folder",
+]
+known-first-party = ["django_ca", "ca"]
+combine-as-imports = true
+
+[tool.ruff.isort.sections]
+django = ["django"]
+django-addon = ["django_object_actions"]
+crypto = ["cryptography", "ocspbuilder", "asn1crypto", "oscrypto", "OpenSSL"]
+test = [
+    "_pytest",
+    "django_webtest",
+    "freezegun",
+    "pytest",
+    "pytest_cov",
+    "pytest_django",
+    "pyvirtualdisplay",
+    "requests_mock",
+    "selenium",
+    "webtest",
+]
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
+
+[tool.setuptools.dynamic]
+version = {attr = "django_ca.VERSION"}
+# NOTE: readme is equivalent to long_description in setup.cfg
+readme = {file = ["docs/source/intro.rst"], content-type = "text/x-rst"}
+
+[tool.setuptools.packages.find]
+where = ["ca"]
+include = ["django_ca*"]
+exclude = ["django_ca.tests*"]
+
