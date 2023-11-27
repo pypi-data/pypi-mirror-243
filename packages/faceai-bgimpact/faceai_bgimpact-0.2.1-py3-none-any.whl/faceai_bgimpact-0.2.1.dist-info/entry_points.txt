@@ -1,0 +1,3 @@
+[console_scripts]
+faceai-bgimpact=faceai_bgimpact.main:main
+
