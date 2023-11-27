@@ -1,0 +1,9 @@
+spetlr
+pyyaml
+importlib_metadata
+dateparser
+pytest
+packaging
+
+[dev]
+check-manifest
