@@ -1,0 +1,11 @@
+requests
+click
+colorful-logger>=0.2.0b6
+tqdm
+requests-toolbelt
+
+[:python_version < "3.8"]
+typing_extensions
+
+[mark]
+pillow
