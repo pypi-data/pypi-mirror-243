@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+depends_on_stage1
+depends_on_stage2
+depends_on_stage3
+package.json
+setup.py
+depends_on/__init__.py
+depends_on/common.py
+depends_on/golang.py
+depends_on/javascript.py
+depends_on/python.py
+depends_on.egg-info/PKG-INFO
+depends_on.egg-info/SOURCES.txt
+depends_on.egg-info/dependency_links.txt
+depends_on.egg-info/top_level.txt
