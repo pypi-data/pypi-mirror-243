@@ -1,0 +1,11 @@
+ffhq_raw_kaggle_path = "greatgamedota/ffhq-face-data-set"
+ffhq_grey_kaggle_path = "thomaskientz/ffhq-grey"
+ffhq_blur_kaggle_path = "thomaskientz/ffhq-blur"
+ffhq_stats_kaggle_path = "thomaskientz/ffhq-fid-statistics"
+
+data_folder = "ffhq_data/"
+original_raw_folder_name = data_folder + "thumbnails128x128"
+raw_folder_name = data_folder + "ffhq_raw"
+mask_folder_name = data_folder + "ffhq_mask"
+blur_folder_name = data_folder + "ffhq_blur"
+grey_folder_name = data_folder + "ffhq_grey"
