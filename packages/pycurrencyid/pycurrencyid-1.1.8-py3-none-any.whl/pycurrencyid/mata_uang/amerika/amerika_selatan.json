@@ -1,0 +1,46 @@
+[
+    {"A": [
+        {"Negara": "Argentina", "Mata Uang": "Argentine peso", "ISO": "ARS"}]
+    },
+
+    {"B": [
+        {"Negara": "Bolivia", "Mata Uang": "Bolivian boliviano", "ISO": "BOB"}, 
+        {"Negara": "Brazil", "Mata Uang": "Brazilian real", "ISO": "BRL"}]
+    },
+
+    {"C": [
+        {"Negara": "Chile", "Mata Uang": "Chilean peso", "ISO": "CLP"}, 
+        {"Negara": "Colombia", "Mata Uang": "Colombian peso", "ISO": "COP"}]
+    },
+
+    {"E": [
+        {"Negara": "Ecuador", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    },
+
+    {"F": [
+        {"Negara": "Falkland Islands (UK)", "Mata Uang": "Falkland Islands pound", "ISO": "FKP"}, 
+        {"Negara": "French Guiana (France)", "Mata Uang": "European euro", "ISO": "EUR"}]
+    },
+
+    {"G": [
+        {"Negara": "Guyana", "Mata Uang": "Guyanese dollar", "ISO": "GYD"}]
+    },
+
+    {"P": [
+        {"Negara": "Paraguay", "Mata Uang": "Paraguayan guarani", "ISO": "PYG"}, 
+        {"Negara": "Peru", "Mata Uang": "Peruvian sol", "ISO": "PEN"}]
+    },
+
+    {"S": [
+        {"Negara": "South Georgia Island (UK)", "Mata Uang": "Pound sterling", "ISO": "GBP"}, 
+        {"Negara": "Suriname", "Mata Uang": "Surinamese dollar", "ISO": "SRD"}]
+    },
+
+    {"U": [
+        {"Negara": "Uruguay", "Mata Uang": "Uruguayan peso", "ISO": "UYU"}]
+    },
+
+    {"V": [
+        {"Negara": "Venezuela", "Mata Uang": "Venezuelan bolivar", "ISO": "VES"}]
+    }
+]

@@ -1,0 +1,120 @@
+[
+    {"A": [
+        {"Negara": "Akrotiri and Dhekelia (UK)", "Mata Uang": "European euro", "ISO": "EUR"}, 
+        {"Negara": "Aland Islands (Finland)", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Albania", "Mata Uang": "Albanian lek", "ISO": "ALL"},
+        {"Negara": "Andorra", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Armenia", "Mata Uang": "Armenian dram", "ISO": "AMD"},
+        {"Negara": "Austria", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Azerbaijan", "Mata Uang": "Azerbaijan manat", "ISO": "AZN"}]
+    },
+
+    {"B": [
+        {"Negara": "Belarus", "Mata Uang": "Belarusian ruble", "ISO": "BYN"}, 
+        {"Negara": "Belgium", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Bosnia and Herzegovina", "Mata Uang": "Bosnia and Herzegovina convertible mark", "ISO": "BAM"},
+        {"Negara": "Bulgaria", "Mata Uang": "Bulgarian lev", "ISO": "BGN"}]
+    },
+
+    {"C": [
+        {"Negara": "Croatia", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Cyprus", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Czechia", "Mata Uang": "Czech koruna", "ISO": "CZK"}]
+    },
+
+    {"D": [
+        {"Negara": "Denmark", "Mata Uang": "Danish krone", "ISO": "DKK"}]
+    },
+
+    {"E": [
+        {"Negara": "Estonia", "Mata Uang": "European euro", "ISO": "EUR"}]
+    },
+
+    {"F": [
+        {"Negara": "Faroe Islands (Denmark)", "Mata Uang": "Faroese krona", "ISO": "None"}, 
+        {"Negara": "Finland", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "France", "Mata Uang": "European euro", "ISO": "EUR"}]
+    },
+
+    {"G": [
+        {"Negara": "Georgia", "Mata Uang": "Georgian lari", "ISO": "GEL"}, 
+        {"Negara": "Germany", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Gibraltar (UK)", "Mata Uang": "Gibraltar pound", "ISO": "GIP"},
+        {"Negara": "Greece", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Guernsey (UK)", "Mata Uang": "Guernsey pound", "ISO": "GGP"}]
+    },
+
+    {"H": [
+        {"Negara": "Hungary", "Mata Uang": "Hungarian forint", "ISO": "HUF"}]
+    },
+
+    {"I": [
+        {"Negara": "Iceland", "Mata Uang": "Icelandic krona", "ISO": "ISK"}, 
+        {"Negara": "Ireland", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Isle of Man (UK)", "Mata Uang": "Manx pound", "ISO": "IMP"},
+        {"Negara": "Italy", "Mata Uang": "European euro", "ISO": "EUR"}]
+    },
+
+    {"J": [
+        {"Negara": "Jersey (UK)", "Mata Uang": "Jersey pound", "ISO": "JEP"}]
+    },
+
+    {"K": [
+        {"Negara": "Kazakhstan", "Mata Uang": "Kazakhstani tenge", "ISO": "KZT"}, 
+        {"Negara": "Kosovo", "Mata Uang": "European euro", "ISO": "EUR"}]
+    },
+
+    {"L": [
+        {"Negara": "Latvia", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Liechtenstein", "Mata Uang": "Swiss franc", "ISO": "CHF"},
+        {"Negara": "Lithuania", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Luxembourg", "Mata Uang": "European euro", "ISO": "EUR"}]
+    },
+
+    {"M": [
+        {"Negara": "Malta", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Moldova", "Mata Uang": "Moldovan leu", "ISO": "MDL"},
+        {"Negara": "Monaco", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Montenegro", "Mata Uang": "European euro", "ISO": "EUR"}]
+    },
+
+    {"N": [
+        {"Negara": "Netherlands", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "North Macedonia", "Mata Uang": "Macedonian denar", "ISO": "MKD"},
+        {"Negara": "Norway", "Mata Uang": "Norwegian krone", "ISO": "NOK"}]
+    },
+
+    {"P": [
+        {"Negara": "Poland", "Mata Uang": "Polish zloty", "ISO": "PLN"},
+        {"Negara": "Portugal", "Mata Uang": "European euro", "ISO": "EUR"}]
+    },
+
+    {"R": [
+        {"Negara": "Romania", "Mata Uang": "Romanian leu", "ISO": "RON"},
+        {"Negara": "Russia", "Mata Uang": "Russian ruble", "ISO": "RUB"}]
+    },
+
+    {"A": [
+        {"Negara": "San Marino", "Mata Uang": "European euro", "ISO": "EUR"}, 
+        {"Negara": "Serbia", "Mata Uang": "Serbian dinar", "ISO": "RSD"},
+        {"Negara": "Slovakia", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Slovenia", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Spain", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Svalbard and Jan Mayen (Norway)", "Mata Uang": "Norwegian krone", "ISO": "NOK"},
+        {"Negara": "Sweden", "Mata Uang": "Swedish krona", "ISO": "SEK"},
+        {"Negara": "Switzerland", "Mata Uang": "Swiss franc", "ISO": "CHF"}]
+    },
+
+    {"T": [
+        {"Negara": "Turkey", "Mata Uang": "Turkish lira", "ISO": "TRY"}]
+    },
+
+    {"U": [
+        {"Negara": "Ukraine", "Mata Uang": "Ukrainian hryvnia", "ISO": "UAH"},
+        {"Negara": "United Kingdom", "Mata Uang": "Pound sterling", "ISO": "GBP"}]
+    },
+
+    {"V": [
+        {"Negara": "Vatican City (Holy See)", "Mata Uang": "European euro", "ISO": "EUR"}]
+    }
+]

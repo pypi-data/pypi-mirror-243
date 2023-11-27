@@ -1,0 +1,104 @@
+[
+    {"A": [
+        {"Negara": "Algeria", "Mata Uang": "Algerian dinar", "ISO": "DZD"}, 
+        {"Negara": "Angola", "Mata Uang": "Angolan kwanza", "ISO": "AOA"},
+        {"Negara": "Ascension Island (UK)", "Mata Uang": "Saint Helena pound", "ISO": "SHP"}]
+    },
+
+    {"B": [
+        {"Negara": "Benin", "Mata Uang": "West African CFA franc", "ISO": "XOF"}, 
+        {"Negara": "Botswana", "Mata Uang": "Botswana pula", "ISO": "BWP"},
+        {"Negara": "Burkina Faso", "Mata Uang": "West African CFA franc", "ISO": "XOF"},
+        {"Negara": "Burundi", "Mata Uang": "Burundi franc", "ISO": "BIF"}]
+    },
+
+    {"C": [
+        {"Negara": "Cabo Verde", "Mata Uang": "Cabo Verdean escudo", "ISO": "CVE"}, 
+        {"Negara": "Cameroon", "Mata Uang": "Central African CFA franc", "ISO": "XAF"},
+        {"Negara": "Central African Republic", "Mata Uang": "Central African CFA franc", "ISO": "XAF"},
+        {"Negara": "Chad", "Mata Uang": "Central African CFA franc", "ISO": "XAF"},
+        {"Negara": "Comoros", "Mata Uang": "Comorian franc", "ISO": "KMF"},
+        {"Negara": "Congo, Democratic Republic of the", "Mata Uang": "Congolese franc", "ISO": "CDF"},
+        {"Negara": "Congo, Republic of the", "Mata Uang": "Central African CFA franc", "ISO": "XAF"},
+        {"Negara": "Cote d’Ivoire", "Mata Uang": "West African CFA franc", "ISO": "XOF"}]
+    },
+
+    {"D": [
+        {"Negara": "Djibouti", "Mata Uang": "Djiboutian franc", "ISO": "DJF"}]
+    },
+
+    {"E": [
+        {"Negara": "Egypt", "Mata Uang": "Egyptian pound", "ISO": "EGP"}, 
+        {"Negara": "Equatorial Guinea", "Mata Uang": "Central African CFA franc", "ISO": "XAF"},
+        {"Negara": "Eritrea", "Mata Uang": "Eritrean nakfa", "ISO": "ERN"},
+        {"Negara": "Eswatini", "Mata Uang": "Swazi lilangeni", "ISO": "SZL"},
+        {"Negara": "Ethiopia", "Mata Uang": "Ethiopian birr", "ISO": "ETB"}]
+    },
+
+    {"G": [
+        {"Negara": "Gabon", "Mata Uang": "Central African CFA franc", "ISO": "XAF"},
+        {"Negara": "Gambia", "Mata Uang": "Gambian dalasi", "ISO": "GMD"},
+        {"Negara": "Ghana", "Mata Uang": "Ghanaian cedi", "ISO": "GHS"},
+        {"Negara": "Guinea", "Mata Uang": "Guinean franc", "ISO": "GNF"},
+        {"Negara": "Guinea-Bissau", "Mata Uang": "West African CFA franc", "ISO": "XOF"}]
+    },
+
+    {"K": [{
+        "Negara": "Kenya", "Mata Uang": "Kenyan shilling", "ISO": "KES"}]
+    },
+
+    {"L": [
+        {"Negara": "Lesotho", "Mata Uang": "Lesotho loti", "ISO": "LSL"}, 
+        {"Negara": "Liberia", "Mata Uang": "Liberian dollar", "ISO": "LRD"},
+        {"Negara": "Libya", "Mata Uang": "Libyan dinar", "ISO": "LYD"}]
+    },
+
+    {"M": [
+        {"Negara": "Madagascar", "Mata Uang": "Malagasy ariary", "ISO": "MGA"},
+        {"Negara": "Malawi", "Mata Uang": "Malawian kwacha", "ISO": "MWK"},
+        {"Negara": "Mali", "Mata Uang": "West African CFA franc", "ISO": "XOF"},
+        {"Negara": "Mauritius", "Mata Uang": "Mauritian rupee", "ISO": "MUR"},
+        {"Negara": "Mayotte (France)", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Morocco", "Mata Uang": "Moroccan dirham", "ISO": "MAD"},
+        {"Negara": "Mozambique", "Mata Uang": "Mozambican metical", "ISO": "MZN"}]
+    },
+
+    {"N": [
+        {"Negara": "Namibia", "Mata Uang": "Namibian dollar", "ISO": "NAD"},
+        {"Negara": "Niger", "Mata Uang": "West African CFA franc", "ISO": "XOF"},
+        {"Negara": "Nigeria", "Mata Uang": "Nigerian naira", "ISO": "NGN"}]
+    },
+
+    {"R": [
+        {"Negara": "Reunion (France)", "Mata Uang": "European euro", "ISO": "EUR"},
+        {"Negara": "Rwanda", "Mata Uang": "Rwandan franc", "ISO": "RWF"}]
+    },
+
+    {"S": [
+        {"Negara": "Saint Helena (UK)", "Mata Uang": "Saint Helena pound", "ISO": "SHP"},
+        {"Negara": "Sao Tome and Principe", "Mata Uang": "Sao Tome and Principe dobra", "ISO": "STN"},
+        {"Negara": "Senegal", "Mata Uang": "West African CFA franc", "ISO": "XOF"},
+        {"Negara": "Seychelles", "Mata Uang": "Seychellois rupee", "ISO": "SCR"},
+        {"Negara": "Sierra Leone", "Mata Uang": "Sierra Leonean leone", "ISO": "SLE"},
+        {"Negara": "Somalia", "Mata Uang": "Somali shilling", "ISO": "SOS"},
+        {"Negara": "South Africa", "Mata Uang": "South African rand", "ISO": "ZAR"},
+        {"Negara": "South Sudan", "Mata Uang": "South Sudanese pound", "ISO": "SSP"},
+        {"Negara": "Sudan", "Mata Uang": "Sudanese pound", "ISO": "SDG"}]
+    },
+
+    {"T": [
+        {"Negara": "Tanzania", "Mata Uang": "Tanzanian shilling", "ISO": "TZS"},
+        {"Negara": "Togo", "Mata Uang": "West African CFA franc", "ISO": "XOF"},
+        {"Negara": "Tristan da Cunha (UK)", "Mata Uang": "Pound sterling", "ISO": "GBP"},
+        {"Negara": "Tunisia", "Mata Uang": "Tunisian dinar", "ISO": "TND"}]
+    },
+
+    {"U": [{
+        "Negara": "Uganda", "Mata Uang": "Uganda shilling", "ISO": "UGX"}]
+    },
+
+    {"Z": [
+        {"Negara": "Zambia", "Mata Uang": "Zambian kwacha", "ISO": "ZMW"},
+        {"Negara": "Zimbabwe", "Mata Uang": "United States dollar", "ISO": "USD"}]
+    }
+]
