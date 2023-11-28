@@ -1,0 +1,2 @@
+[console_scripts]
+batch_debugging_cli = batch_debugging_cli.main:app
