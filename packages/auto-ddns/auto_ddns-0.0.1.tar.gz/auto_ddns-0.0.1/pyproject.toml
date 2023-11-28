@@ -1,0 +1,87 @@
+[project]
+name = "auto-ddns"
+dynamic = []
+description = "auto config dns"
+authors = [
+    { name = "Zhan Rongrui", email = "2742392377@qq.com" },
+]
+dependencies = [
+    "typer",
+    "tencentcloud-sdk-python-dnspod",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+version = "0.0.1"
+
+[project.license]
+text = "MIT"
+
+[project.optional-dependencies]
+
+[project.scripts]
+auto-config = "auto_dns.__main__:app"
+
+[tool.pdm.version]
+source = "scm"
+write_to = "auto_dns/__version__.py"
+write_template = "__version__ = '{}'"
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest",
+    "pytest-mock",
+    "coverage",
+]
+
+[tool.pdm.build]
+excludes = [
+    "./**/.git",
+]
+includes = [
+    "auto_dns",
+]
+source-includes = [
+    "tests",
+    "LICENSE",
+    "README.md",
+]
+editable-backend = "path"
+
+[tool.ruff]
+line-length = 120
+extend-select = [
+    "I",
+    "B",
+    "C4",
+    "PGH",
+    "RUF",
+    "W",
+    "YTT",
+]
+src = [
+    "auto_dns",
+    "tests",
+]
+exclude = [
+    "tests/fixtures",
+]
+target-version = "py311"
+
+[tool.ruff.isort]
+known-first-party = [
+    "auto_dns",
+]
+required-imports = [
+    "from __future__ import annotations",
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = [
+    "F401",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
