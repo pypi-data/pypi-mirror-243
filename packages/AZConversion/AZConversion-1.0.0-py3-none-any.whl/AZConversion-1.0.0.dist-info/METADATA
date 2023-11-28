@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: AZConversion
+Version: 1.0.0
+Summary: 一个快捷转换文件格式的库 | A library for quickly converting file formats
+Requires-Dist: python-docx
+Requires-Dist: moviepy
+Requires-Dist: Pillow
+Requires-Dist: soundfile
+
