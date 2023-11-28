@@ -1,0 +1,2 @@
+[console_scripts]
+emploo = emploo.__main__:main
