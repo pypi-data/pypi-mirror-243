@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "spiders-for-all"
+version = "0.1.1"
+description = ""
+authors = ["icebear <iiiicebeaaaar@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "spiders_for_all" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+click = "^8.1.7"
+environs = "^9.5.0"
+fake-useragent = "^1.4.0"
+pydantic = "^2.5.2"
+rich = "^13.7.0"
+requests = "^2.31.0"
+sqlalchemy = "^2.0.23"
+
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.7.1"
+ruff = "^0.1.6"
+coverage = "^7.3.2"
+types-requests = "^2.31.0.10"
+pre-commit = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.mypy]
+files = ["spiders_for_all"]
