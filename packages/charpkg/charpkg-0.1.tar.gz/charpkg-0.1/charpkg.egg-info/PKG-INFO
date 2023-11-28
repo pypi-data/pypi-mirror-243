@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: charpkg
+Version: 0.1
+Summary: A framework for creating RPGs
+Home-page: https://github.com/primal-coder/Char
+Author: James Evans
+Author-email: joesaysahoy@gmail.com
+License: MIT
+Keywords: RPG
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Games/Entertainment :: Role-Playing
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: CharActor
+Requires-Dist: CharObj
+Requires-Dist: CharTask
+Requires-Dist: CharCore
+Requires-Dist: gridengine_framework
+Requires-Dist: entyty
+Requires-Dist: dicepy
