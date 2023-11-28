@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: quantools
+Version: 0.3.2
+Summary: 个人的量化指标计算与回测的工具库
+Home-page: https://github.com/6YoungHome/Quantools
+Author: 6Young
+Author-email: 6young717@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tqdm
+Requires-Dist: matplotlib
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: statsmodels
+Requires-Dist: sklearn
+Requires-Dist: scipy
+
+
+# Quantools
+
+```
+ .d88888b.                             888                      888          
+d88P" "Y88b                            888                      888          
+888     888                            888                      888          
+888     888 888  888  8888b.  88888b.  888888  .d88b.   .d88b.  888 .d8888b  
+888     888 888  888     "88b 888 "88b 888    d88""88b d88""88b 888 88K      
+888 Y8b 888 888  888 .d888888 888  888 888    888  888 888  888 888 "Y8888b. 
+Y88b.Y8b88P Y88b 888 888  888 888  888 Y88b.  Y88..88P Y88..88P 888      X88 
+ "Y888888"   "Y88888 "Y888888 888  888  "Y888  "Y88P"   "Y88P"  888  88888P' 
+       Y8b                                                                      
+```
+
+个人的量化指标计算与回测的工具库
