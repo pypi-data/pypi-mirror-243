@@ -1,0 +1,4 @@
+hatchling
+robotframework==6.1.1
+azure-identity>= 1.12.0, <= 1.15.0
+azure-storage-file-datalake==12.14.0

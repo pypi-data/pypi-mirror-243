@@ -1,0 +1,27 @@
+[project]
+name = "robotframework-adls-library"
+version = "0.0.1"
+authors = [
+  { name="Erik Meijer", email="erik_meijer_14@hotmail.com" },
+]
+description = "Library for Robot Framework in which to interface with Azure Data Lake Storage Gen2 (ADLS)"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "azure-identity>= 1.12.0, <= 1.15.0",
+    "robotframework>=6.0.0",
+    "azure-storage-file-datalake==12.14.0"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/erikmeijer91/robotframework_adls_library"
+"Bug Tracker" = "https://github.com/erikmeijer91/robotframework_adls_library/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

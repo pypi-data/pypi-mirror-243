@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: robotframework-adls-library
+Version: 0.0.1
+Summary: Library for Robot Framework in which to interface with Azure Data Lake Storage Gen2 (ADLS)
+Project-URL: Homepage, https://github.com/erikmeijer91/robotframework_adls_library
+Project-URL: Bug Tracker, https://github.com/erikmeijer91/robotframework_adls_library/issues
+Author-email: Erik Meijer <erik_meijer_14@hotmail.com>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: azure-identity<=1.15.0,>=1.12.0
+Requires-Dist: azure-storage-file-datalake==12.14.0
+Requires-Dist: robotframework>=6.0.0
+Description-Content-Type: text/markdown
+
+# robotframework-azure-data-lake-storage
+
+Robot Framework library which enables you to interface with Azure Data Lake Storage Gen2(ADLS).
+
+# Requirements
+- Python 3.7+ is required due to Azure dependencies.
+- Robot Framework
+- Azure Subscription
+
+# Installation
+```
+pip install robotframework-adls-library
+```
+
+# Examples
+```RobotFramework
+*** settings ***
+todo
+
+*** Test Cases ***
+todo
+```
+
+# Known limitations
+- todo
+
+# Further references
+- todo
