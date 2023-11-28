@@ -1,0 +1,157 @@
+[
+  {
+    "comment": "Remove all empty fields.",
+    "action": "remove_empty"
+  },
+  {
+    "comment": "ProxyIndex needs this information, essential rewrite, do not remove",
+    "action": "rewrite",
+    "configuration": {
+      "source": "@components/collectiveelastic/catalog_rid",
+      "target": "rid",
+      "enforce": true
+    }
+  },
+  {
+    "comment": "CESP Restapi Volto endpoint needs this information, essential rewrite, do not remove",
+    "action": "rewrite",
+    "configuration": {
+      "source": "@components/collectiveelastic/allowedRolesAndUsers",
+      "target": "allowedRolesAndUsers",
+      "enforce": true
+    }
+  },
+  {
+    "comment": "If Volto is available, this is important for full text search, do not remove unless in Classic UI only environments",
+    "action": "rewrite",
+    "configuration": {
+      "source": "@components/collectiveelastic/blocks_plaintext",
+      "target": "blocks_plaintext",
+      "enforce": false
+    }
+  },
+  {
+    "comment": "If volto.blocks is available, this removes a field not used in search.",
+    "action": "remove",
+    "configuration": {
+      "target": "blocks"
+    }
+  },
+  {
+    "comment": "If volto.blocks is available, this removes a field not used in search.",
+    "action": "remove",
+    "configuration": {
+      "target": "blocks_layout"
+    }
+  },
+  {
+    "comment": "We want the field to be called portal_type, not @type, so we rewrite it.",
+    "action": "rewrite",
+    "configuration": {
+      "source": "@type",
+      "target": "portal_type"
+    }
+  },
+  {
+    "comment": "After all the rewrites, we want to remove the @components field, as it is not needed anymore.",
+    "action": "remove",
+    "configuration": {
+      "target": "@components"
+    }
+  },
+  {
+    "comment": "No need for restapi specific folder/collection information.",
+    "action": "remove",
+    "configuration": {
+      "target": "items"
+    }
+  },
+  {
+    "comment": "No need for restapi specific information.",
+    "action": "remove",
+    "configuration": {
+      "target": "items_total"
+    }
+  },
+  {
+    "comment": "No need for restapi specific information.",
+    "action": "remove",
+    "configuration": {
+      "target": "previous_item"
+    }
+  },
+  {
+    "comment": "No need for restapi specific information.",
+    "action": "remove",
+    "configuration": {
+      "target": "next_item"
+    }
+  },
+  {
+    "comment": "No need for restapi versioning related information.",
+    "action": "remove",
+    "configuration": {
+      "target": "version"
+    }
+  },
+  {
+    "comment": "No need for plone.versioning related information.",
+    "action": "full_remove",
+    "configuration": {
+      "section": "behaviors",
+      "name": "plone.versioning"
+    }
+  },
+  {
+    "comment": "No need for plone.collection related information.",
+    "action": "full_remove",
+    "configuration": {
+      "section": "behaviors",
+      "name": "plone.collection"
+    }
+  },
+  {
+    "comment": "No need for plone.thumb_icon related information.",
+    "action": "full_remove",
+    "configuration": {
+      "section": "behaviors",
+      "name": "plone.thumb_icon"
+    }
+  },
+  {
+    "comment": "No need for plone.tableofcontents related information.",
+    "action": "full_remove",
+    "configuration": {
+      "section": "behaviors",
+      "name": "plone.tableofcontents"
+    }
+  },
+  {
+    "comment": "No need for plone.layoutaware (Mosaic) layout related.",
+    "action": "field_remove",
+    "configuration": {
+      "section": "behaviors",
+      "name": "plone.layoutaware",
+      "field": "contentLayout"
+    }
+  },
+  {
+    "comment": "No need for plone.layoutaware (Mosaic) layout related.",
+    "action": "field_remove",
+    "configuration": {
+      "section": "behaviors",
+      "name": "plone.layoutaware",
+      "field": "pageSiteLayout"
+    }
+  },
+  {
+    "comment": "No need for plone.layoutaware (Mosaic) layout related.",
+    "action": "field_remove",
+    "configuration": {
+      "section": "behaviors",
+      "name": "plone.layoutaware",
+      "field": "sectionSiteLayout"
+    }
+  }
+
+]
