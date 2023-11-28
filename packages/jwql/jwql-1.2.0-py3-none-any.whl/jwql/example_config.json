@@ -1,0 +1,39 @@
+{
+    "admin_account" : "",
+    "auth_mast" : "",
+    "connection_string" : "",
+    "database" : {
+        "engine" : "",
+        "name" : "",
+        "user" : "",
+        "password" : "",
+        "host" : "",
+        "port" : ""
+    },
+    "django_database" : {
+        "ENGINE" : "",
+        "NAME" : "",
+        "USER" : "",
+        "PASSWORD" : "",
+        "HOST" : "",
+        "PORT" : ""
+    },
+    "jwql_dir" : "",
+    "jwql_version": "",
+    "server_type": "",
+    "log_dir" : "",
+    "mast_token" : "",
+    "mast_base_url" : "",
+    "mast_request_url": "",
+    "outputs" : "",
+    "preview_image_filesystem" : "",
+    "filesystem" : "",
+    "setup_file" : "",
+    "test_data" : "",
+    "test_dir" : "",
+    "thumbnail_filesystem" : "",
+    "cores" : "",
+    "redis_host": "",
+    "redis_port": "",
+    "transfer_dir": ""
+}
