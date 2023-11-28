@@ -1,0 +1,4 @@
+include LICENSE
+include prodigy_teams_recipes/engine/preview.html
+include prodigy_teams_recipes/engine/preview.js
+include requirements.in
