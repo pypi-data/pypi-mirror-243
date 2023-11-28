@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% block title %}{{db_name}}/{{table_name}}{% endblock %}
+{% block extra_head %}
+	<link rel="stylesheet" href="{{prefix}}/files/css/main.css">
+	<script src="{{prefix}}/files/js/bootstrap.min.js" defer></script>
+	<script src="{{prefix}}/files/js/table.js" defer></script>
+{% endblock %}
+
+{% block page %}
+<div class="container">
+	<div class="header">
+		<nav class="navbar navbar-expand-md shift">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
+
+		<h3><a href="{{prefix}}">{{db_name}}</a> — {{table_name}}</h3>
+	</div>
+	<hr>
+	
+	<div class="row">
+		{% include 'sidebar.html' %}
+		
+		<div class="col-md-9">
+			<ul class="nav nav-tabs">
+				<li class="nav-item">
+					<a class="nav-link {% if current_tab == '' %}active{% endif %}" href="../{{table_name}}">Structure</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link {% if current_tab == 'content' %}active{% endif %}" href="content">Content</a>
+				</li>
+				{% if readonly == False %}
+					<li class="nav-item ms-auto">
+						<a class="nav-link {% if current_tab == 'insert' %}active{% endif %}" href="insert">Insert</a>
+					</li>
+					{% if current_tab == 'edit' %}
+						<li class="nav-item">
+							<a class="nav-link active">Edit</a>
+						</li>
+					{% endif %}
+					{% if current_tab == '' or current_tab == 'content' %}
+						<li class="nav-item">
+							<a type="button" data-bs-toggle="modal" data-bs-target="#drop-dialog" class="nav-link">Drop</a>
+						</li>
+					{% endif %}
+				{% endif %}
+			</ul>
+			<div class="tab-content
+			{% if current_tab == '' %} no-left-radius
+			{% elif current_tab == 'edit' or current_tab == 'insert' %} no-right-radius
+			{% endif %}">
+				{% if current_tab == '' %}
+					{% include 'table_structure.html' %}
+
+				{% elif current_tab == 'content' %}
+					{% include 'table_content.html' %}
+
+				{% elif current_tab == 'insert' %}
+					{% include 'table_insert.html' %}
+				
+				{% elif current_tab == 'edit' %}
+					{% include 'table_insert.html' %}
+				
+				{% endif %}
+			</div>
+
+
+			<div class="modal fade" id="drop-dialog" tabindex="-1" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h1 class="modal-title fs-5" id="exampleModalLabel">Drop {{db_name}}/{{table_name}}?</h1>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<div class="form-check mb-2">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox"
+									onchange="document.querySelector('#confirm-drop').disabled = !this.checked;">
+									Delete <b>ALL</b> table data
+								</label>
+							</div>
+							<div class="form-check">
+								<label class="form-check-label">
+									<input class="form-check-input" type="checkbox" name="table-structure">
+									Delete table structure
+								</label>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button disabled type="button" class="btn btn-danger" id="confirm-drop">Delete</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
