@@ -1,0 +1,6 @@
+numpy
+absl_py
+protobuf>=3.14
+
+[pandas]
+pandas
