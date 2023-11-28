@@ -1,0 +1,8 @@
+cdktf-cdktf-provider-google==8.0.8
+GitPython==3.1.37
+google-auth==2.22.0
+importlib-metadata==6.8.0
+importlib-resources==6.1.1
+thipster==0.23.6
+typer[all]==0.9.0
+validators==0.22.0
