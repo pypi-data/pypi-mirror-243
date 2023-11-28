@@ -1,0 +1,41 @@
+{
+    "server": "byteblower-server.com.",
+    "source": {
+       "name": "Source",
+       "interface": "nontrunk-1",
+       "ipv4": "192.168.5.2",
+       "netmask": "255.255.255.0",
+       "gateway": "192.168.5.254"
+    },
+    "destination": {
+       "name": "Destination",
+       "interface": "trunk-1",
+       "ipv4": "dhcp",
+       "nat": true
+    },
+    "duration": 60,
+    "max_iterations": 25,
+    "frame_configs": [
+       {
+          "size": 60,
+          "initial_bitrate": 3e8,
+          "tolerated_frame_loss": 1e-4,
+          "expected_bitrate": 1.7e8,
+          "accuracy": 1e3
+       },
+       {
+          "size": 124,
+          "initial_bitrate": 6e8,
+          "tolerated_frame_loss": 1e-3,
+          "expected_bitrate": 4.5e8,
+          "accuracy": 1e4
+       },
+       {
+          "size": 252,
+          "initial_bitrate": 7e8,
+          "tolerated_frame_loss": 1e-2,
+          "expected_bitrate": 6.5e8,
+          "accuracy": 1e5
+       }
+    ]
+ }
