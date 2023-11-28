@@ -1,0 +1,15 @@
+CHANGES.rst
+LICENSE
+MANIFEST.in
+README.rst
+pyproject.toml
+qrcode_artistic.py
+requirements.txt
+qrcode_artistic.egg-info/PKG-INFO
+qrcode_artistic.egg-info/SOURCES.txt
+qrcode_artistic.egg-info/dependency_links.txt
+qrcode_artistic.egg-info/entry_points.txt
+qrcode_artistic.egg-info/requires.txt
+qrcode_artistic.egg-info/top_level.txt
+tests/test_to_artistic.py
+tests/test_to_pil.py
