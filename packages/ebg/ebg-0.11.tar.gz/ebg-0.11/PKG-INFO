@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: ebg
+Version: 0.11
+Summary: Tool for estimating the Felsenstein Bootstrap support of phylogenetic trees
+Author: Julius Wiegert
+Author-email: julius-wiegert@web.de
+License-File: LICENSE
+
+EBG is a fast predictor for the standard non-parametric Felsenstein Bootstrap support (SBS) of phylogenetic trees in python. It uses RAxML-NG phylogenies as input and predicts the SBS values of all non-trivial branches

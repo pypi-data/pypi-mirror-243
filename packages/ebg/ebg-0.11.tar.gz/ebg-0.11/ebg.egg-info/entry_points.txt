@@ -1,0 +1,2 @@
+[console_scripts]
+ebg = EBG.__main__:main
