@@ -1,0 +1,22 @@
+{
+    "pkg_name": "multiformats",
+    "pkg_path": "..",
+    "apidocs_folder": "api",
+    "toc_filename": "api-toc.rst",
+    "include_members": {
+        "multiformats.varint": ["BytesLike"],
+        "multiformats.multihash.raw": ["Hashfun", "MultihashImpl"],
+        "multiformats.multiaddr.raw": ["RawEncoder", "RawDecoder", "ProtoImpl"]
+    },
+    "exclude_members": {
+        "multiformats.multicodec": ["build_multicodec_tables"],
+        "multiformats.multibase": ["build_multibase_tables"],
+        "multiformats.multibase.raw": ["RawEncoder", "RawDecoder"],
+        "multiformats.cid": ["CIDVersionNumbers", "byteslike"],
+        "multiformats.multiaddr.raw": ["ip4_encoder", "ip4_decoder", "ip6_encoder", "ip6_decoder", "tcp_udp_encoder", "tcp_udp_decoder"]
+    },
+    "include_modules": [],
+    "exclude_modules": [
+        "multiformats.multihash._hashfuns"
+    ]
+}
