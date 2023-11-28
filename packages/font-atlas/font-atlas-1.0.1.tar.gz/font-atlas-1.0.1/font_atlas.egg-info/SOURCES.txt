@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+font_atlas.cpp
+setup.py
+stb_rect_pack.h
+stb_truetype.h
+font-atlas-stubs/__init__.pyi
+font_atlas.egg-info/PKG-INFO
+font_atlas.egg-info/SOURCES.txt
+font_atlas.egg-info/dependency_links.txt
+font_atlas.egg-info/top_level.txt
