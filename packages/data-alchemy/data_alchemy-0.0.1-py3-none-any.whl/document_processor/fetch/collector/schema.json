@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Schema for the collector configuration",
+  "description": "Collector, collects data from various sources",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "description": "Name of the collector",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "pattern": "^[a-zA-Z0-9_]+$",
+      "examples": ["collector1"]
+    },
+    "description": {
+      "description": "Description of the collector",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["Collector 1"]
+    },
+    "version": {
+      "description": "Version of the collector",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["1.0.0"]
+    },
+    "author": {
+      "description": "Author of the collector",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["John Doe"]
+    },
+    "author_email": {
+      "description": "Author email of the collector",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "license": {
+      "description": "License of the collector",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100,
+      "examples": ["MIT"]
+    },
+    "source_settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "description": "URL of the source",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "examples": ["http://localhost:8080"]
+        },
+        "file_extensions": {
+          "description": "File extensions to be collected",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "examples": [".txt", ".csv"]
+          }
+        },
+        "include_html": {
+          "description": "Include webpage content",
+          "type": "boolean",
+          "default": false
+        },
+        "max_depth": {
+          "description": "Maximum depth of the source",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "examples": [10],
+          "default": 2
+        }
+      }
+    },
+    "output_settings": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "description": "Folder to save the collected data",
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "examples": ["C:/Users/JohnDoe/Desktop"]
+        }
+      }
+    }
+  }
+}
