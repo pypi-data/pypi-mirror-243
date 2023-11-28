@@ -1,0 +1,1 @@
+from yetanothercolorfullogger import YetAnotherColorfulLogger
