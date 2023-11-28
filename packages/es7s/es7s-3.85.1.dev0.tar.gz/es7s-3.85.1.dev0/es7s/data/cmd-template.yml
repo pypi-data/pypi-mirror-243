@@ -1,0 +1,19 @@
+# raw text files, processed by TemplateCommand
+
+es7s.cli.print.fan:
+  help: "&frequently &accessed &notes"
+
+es7s.cli.print.printscr:
+  help: "Ubuntu print screen modifiers."
+
+es7s.cli.print.shell-param-exp:
+  help: "Shell parameter expansion cheatsheet."
+
+#es7s.cli.print.unicode.extras:
+#  help: "WIP"
+
+es7s.cli.print.unicode.categories:
+  help: "Unicode codepoints general categories."
+
+es7s.cli.print.unicode.chars:
+  help: "Pragmatapro all chars."
