@@ -1,0 +1,9 @@
+typing-extensions
+makkus.typing-validation==1.0.3
+
+[dev]
+mypy
+pylint
+pytest
+pytest-cov
+base58
