@@ -1,0 +1,23 @@
+{
+    "pkg_name": "dag_cbor",
+    "pkg_path": "..",
+    "apidocs_folder": "api",
+    "toc_filename": "api-toc.rst",
+    "type_alias_dict_filename": "autodoc-type-aliases.json",
+    "include_members": {},
+    "type_aliases": {
+        "dag_cbor.decoding": ["DecodeCallback"],
+        "dag_cbor.ipld": ["IPLDScalarKind", "IPLDKind", "IPLDObjPath", "IPLDObjPathSegment"]
+    },
+    "exclude_members": {},
+    "include_modules": [],
+    "exclude_modules": [
+        "dag_cbor.decoding._err",
+        "dag_cbor.decoding._err_utils",
+        "dag_cbor.decoding._stream"
+    ],
+    "member_fullnames": {},
+    "special_class_members": {
+        "dag_cbor.ipld.IPLDObjPath": ["__new__", "__truediv__", "__rtruediv__", "__le__", "__lt__", "__repr__", "__rshift__"]
+    }
+}
