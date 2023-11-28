@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "text_utilities"
+version = "0.0.0.0.2"
+authors = [
+  { name="Joseph Knutson", email="jmknutson2012@gmail.com" },
+]
+description = "A package that provides utilities for text"
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["text", "setuptools", "development"]
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/Joey1222/TextUtilities"
+Issues = "https://github.com/Joey1222/TextUtilities/issues"

@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+TextUtilities/__init__.py
+TextUtilities/color/__init__.py
+text_utilities.egg-info/PKG-INFO
+text_utilities.egg-info/SOURCES.txt
+text_utilities.egg-info/dependency_links.txt
+text_utilities.egg-info/top_level.txt
