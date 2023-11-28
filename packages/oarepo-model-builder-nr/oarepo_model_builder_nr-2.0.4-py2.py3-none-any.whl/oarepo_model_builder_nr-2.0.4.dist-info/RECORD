@@ -1,0 +1,14 @@
+oarepo_model_builder_nr/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+oarepo_model_builder_nr/components.py,sha256=85FzFr-oUoUxjDnLctS7cpFD-K6V05aa0qqurpsYP1g,670
+oarepo_model_builder_nr/version.py,sha256=ZOg41aCgKEuObK5WhegikXektFWPJaeZ-TMDh0Ke95M,22
+oarepo_model_builder_nr/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+oarepo_model_builder_nr/models/nr_common_metadata_2.0.yaml,sha256=0LwP3ZWWb5u4-sIJVlFPeCKH2kiVS6m2ksnai66amxo,8389
+oarepo_model_builder_nr/models/nr_datatypes_2.0.yaml,sha256=zkZD2dGtmrYE8f3ltqVUUjDxSPmGj-e-ZrRrcEYyieQ,17259
+oarepo_model_builder_nr/models/nr_documents_2.0.yaml,sha256=s2q0LWn7BWyI6Gk8MCLlwX2sWefmLhL5_1tgm71OuT8,2699
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_import.py,sha256=F5zirvukHF3RSMgRA-__PUueCjRxT_FM0hSUiGuHzhM,1020
+oarepo_model_builder_nr-2.0.4.dist-info/METADATA,sha256=AV__S6XmKrAG4a_cE9KQLAmOCZ0QlDqJXZVBkDMwoeA,3213
+oarepo_model_builder_nr-2.0.4.dist-info/WHEEL,sha256=-G_t0oGuE7UD0DrSpVZnq1hHMBV9DD2XkS5v7XpmTnk,110
+oarepo_model_builder_nr-2.0.4.dist-info/entry_points.txt,sha256=77hQjjephAjiJFVPLzfObkBjkOxK4gOrDPIIZtblzG4,343
+oarepo_model_builder_nr-2.0.4.dist-info/top_level.txt,sha256=NdbTgVEgvgXs64so1sJ4FxYM6XmkDCXYUY_kqw9QGDo,30
+oarepo_model_builder_nr-2.0.4.dist-info/RECORD,,
