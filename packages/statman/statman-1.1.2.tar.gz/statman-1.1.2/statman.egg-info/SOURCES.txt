@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+statman/__init__.py
+statman/gauge.py
+statman/history.py
+statman/statman.py
+statman/stopwatch.py
+statman.egg-info/PKG-INFO
+statman.egg-info/SOURCES.txt
+statman.egg-info/dependency_links.txt
+statman.egg-info/top_level.txt
