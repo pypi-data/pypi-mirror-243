@@ -1,0 +1,13 @@
+torch==1.13.1
+numpy==1.21.6
+matplotlib==3.5.3
+
+[:python_version < "3.11"]
+tomli
+
+[dev]
+black
+bumpver
+isort
+pip-tools
+pytest
