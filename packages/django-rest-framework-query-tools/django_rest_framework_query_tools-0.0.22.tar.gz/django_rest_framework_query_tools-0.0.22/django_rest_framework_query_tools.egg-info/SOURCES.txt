@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+./django_rest_framework_query_tools/__init__.py
+./django_rest_framework_query_tools/filters/__init__.py
+./django_rest_framework_query_tools/filters/url_fliter.py
+django_rest_framework_query_tools.egg-info/PKG-INFO
+django_rest_framework_query_tools.egg-info/SOURCES.txt
+django_rest_framework_query_tools.egg-info/dependency_links.txt
+django_rest_framework_query_tools.egg-info/requires.txt
+django_rest_framework_query_tools.egg-info/top_level.txt
