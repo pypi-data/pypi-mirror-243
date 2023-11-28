@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: phycv
+Version: 1.2.6
+Summary: physics-inspired computer vision algorithms
+Author: Jalali-Lab
+Author-email: ucla.photonics.lab@gmail.com
+Keywords: python,image processing,computational imaging,computer vision,physics-inspired algorithm
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: av
+Requires-Dist: imageio
+Requires-Dist: imageio-ffmpeg
+Requires-Dist: kornia
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: opencv-python
+Requires-Dist: Pillow
+Requires-Dist: torch
+Requires-Dist: torchvision
+
+# PhyCV: The First Physics-inspired Computer Vision Library
+
+[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?style=for-the-badge&logo=YouTube&logoColor=white)](https://www.youtube.com/playlist?list=PLj--iTBXPaTWABQstUFA6l6_Rf3uiZq9T)
+[![Wikipedia](https://img.shields.io/badge/Wikipedia-%23000000.svg?style=for-the-badge&logo=wikipedia&logoColor=white)](https://en.wikipedia.org/wiki/PhyCV)
+
+Welcome to PhyCV ! The First Physics-inspired Computer Vision Python library developed by [Jalali-Lab](https://photonics.ucla.edu/) @ UCLA. This repo is maintained by [Yiming Zhou](https://yiming0416.github.io/).
+
+Please see the release notes of all previous versions [here](https://github.com/JalaliLabUCLA/phycv/blob/main/assets/docs/change_log.md).
+
+
+## Citation
+
+If you find PhyCV useful in your research, please star :star: this repository and consider citing the following [preprint](https://arxiv.org/abs/2301.12531):
+```
+@article{zhou2023phycv,
+  title={PhyCV: The First Physics-inspired Computer Vision Library},
+  author={Zhou, Yiming and MacPhee, Callen and Suthar, Madhuri and Jalali, Bahram},
+  journal={arXiv preprint arXiv:2301.12531},
+  year={2023}
+}
