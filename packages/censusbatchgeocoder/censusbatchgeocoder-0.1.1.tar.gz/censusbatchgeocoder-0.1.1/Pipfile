@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+agate = "*"
+requests = "*"
+
+[dev-packages]
+twine = "*"
+setuptools-scm = "*"
+flake8 = "*"
+sphinx = "*"
+pre-commit = "*"
+sphinx-palewire-theme = "*"
+sphinx-autobuild = "*"
+myst-parser = "*"
+
+[requires]
+python_version = "3.11"
