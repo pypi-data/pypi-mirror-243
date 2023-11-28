@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+PythonDictionary/__init__.py
+PythonDictionary/constants.py
+PythonDictionary/pyDictionary.py
+PythonDictionary.egg-info/PKG-INFO
+PythonDictionary.egg-info/SOURCES.txt
+PythonDictionary.egg-info/dependency_links.txt
+PythonDictionary.egg-info/not-zip-safe
+PythonDictionary.egg-info/requires.txt
+PythonDictionary.egg-info/top_level.txt

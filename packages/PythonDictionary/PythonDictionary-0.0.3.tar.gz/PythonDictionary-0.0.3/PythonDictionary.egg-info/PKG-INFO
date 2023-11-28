@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: PythonDictionary
+Version: 0.0.3
+Summary: Python wrapper for the Free Dictionary API
+Home-page: https://github.com/Vishnunkumar/PythonDictionary/
+Author: Vishnu Nandakumar
+Author-email: nkumarvishnu25@gmail.com
+License: MIT license
+Keywords: Dictionary
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: requests
+
+# PyDictionary
+Python wrapper over the Free Dictionary API
+
+```
+pip install PyDictionary
+```
+
+```python
+from PyThonDictionary import pyDictionary
+
+pydictionary = pyDictionary.PyDictionary(word="world")
+definitions, synonyms = pydictionary.getDefinitions(partOfSpeech="noun")
+audio = pydictionary.getAudio()
+dictionary = pydictionary.getDictionary()
+```
