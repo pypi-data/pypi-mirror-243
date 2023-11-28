@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+examples/waterinfo_test.py
+src/ddlpy2/__init__.py
+src/ddlpy2/cli.py
+src/ddlpy2/ddlpy2.py
+src/ddlpy2/endpoints.json
+src/ddlpy2/utils.py
+src/ddlpy2/waterinfo.py
+src/waterinfo_ddlpy.egg-info/PKG-INFO
+src/waterinfo_ddlpy.egg-info/SOURCES.txt
+src/waterinfo_ddlpy.egg-info/dependency_links.txt
+src/waterinfo_ddlpy.egg-info/requires.txt
+src/waterinfo_ddlpy.egg-info/top_level.txt

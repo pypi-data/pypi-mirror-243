@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: waterinfo_ddlpy
+Version: 0.2.2
+Summary: An extended version of rws-ddlpy for using the API to collect water data observations from Dutch Rijkswaterstaat (DDL, waterinfo.rws.nl)
+Author-email: Matthijs Draijer <git@draijer.org>
+Project-URL: Homepage, https://github.com/physje/ddlpy/
+Keywords: rws, waterinfo, ddlpy, rijkswaterstaat
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: click
+Requires-Dist: datetime
+Requires-Dist: python-dateutil>=2.8
+
+# ddlpy2
+
+(D)ata (D)istributie (L)aag is a service from Rijkswaterstaat for distributing water quantity data.
+[Openearth](https://github.com/openearth) / [Fedor Baart](https://github.com/SiggyF) wrote an [API](https://github.com/openearth/ddlpy) in python to collect historial data. 
+
+This package uses their framework to extend the API to collect latest observations.
