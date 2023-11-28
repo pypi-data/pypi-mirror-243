@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: ribasim-api
+Version: 0.5.0
+Summary: Python bindings for libribasim
+Author-email: Deltares and contributors <ribasim.info@deltares.nl>
+License: MIT
+Project-URL: Documentation, https://deltares.github.io/Ribasim
+Project-URL: Source, https://github.com/Deltares/Ribasim
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Hydrology
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: xmipy
+Provides-Extra: tests
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: ribasim; extra == "tests"
+Requires-Dist: ribasim_testmodels; extra == "tests"
+
+# Ribasim API
+
+`ribasim_api` is an extension to [xmipy](https://pypi.org/project/xmipy/) for the Ribasim API.
+
+The `ribasim_api` can be used to access functionality in the eXtended Model Interface (XMI) wrapper (XmiWrapper)
+and additional functionality specific to the Ribasim API.
+
+
+`ribasim_api` can be installed by running
+
+```
+pip install ribasim-api
+```
+
+or
+
+```
+conda install -c conda-forge ribasim-api
+```
+
+# Contributing
+
+For the developer docs please have a look at https://deltares.github.io/Ribasim/python/developer.html
