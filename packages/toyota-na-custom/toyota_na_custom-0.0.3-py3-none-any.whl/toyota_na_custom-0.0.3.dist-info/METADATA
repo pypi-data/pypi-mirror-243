@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: toyota-na-custom
+Version: 0.0.3
+Summary: Customized Toyota NA that supports refresh token
+Author-email: Tony <waddle-years-0f@icloud.com>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Requires-Dist: aiohttp
+Requires-Dist: cryptography
+Requires-Dist: PyJWT
+Requires-Dist: pytz
+
