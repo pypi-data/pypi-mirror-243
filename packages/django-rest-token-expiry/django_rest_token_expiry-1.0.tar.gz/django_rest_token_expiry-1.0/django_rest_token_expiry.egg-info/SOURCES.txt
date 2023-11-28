@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+./django_rest_token_expiry/__init__.py
+./django_rest_token_expiry/authentication.py
+django_rest_token_expiry.egg-info/PKG-INFO
+django_rest_token_expiry.egg-info/SOURCES.txt
+django_rest_token_expiry.egg-info/dependency_links.txt
+django_rest_token_expiry.egg-info/requires.txt
+django_rest_token_expiry.egg-info/top_level.txt
