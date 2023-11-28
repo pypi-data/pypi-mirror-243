@@ -1,0 +1,7 @@
+neon-utils~=1.2
+ovos-workshop~=0.0.12
+ovos-utils~=0.0.28
+ovos-bus-client~=0.0.3
+
+[test]
+neon-minerva>=0.0.2a2
