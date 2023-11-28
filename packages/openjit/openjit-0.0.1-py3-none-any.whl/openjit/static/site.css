@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+
+:root {
+    --color-background-card: #FFFFFF;
+    --color-background-lane: #EEF0F2;
+    --color-background-body: #F5F7F8;
+    --color-background-footer: #F5F7F8;
+    --color-background-button: rgb(14, 106, 237);
+    --color-border: rgb(202, 216, 223);
+    --color-text-title: #2B455C;
+    --color-text-header: #486276;
+    --color-text-footer: #486276;
+    --color-text: #0D0D0D;
+    --color-text-highlight: #4E92F4;
+    --color-text-button: #FFFFFF;
+}
+
+body {
+    font-family: 'Open Sans', verdana, arial, sans-serif;
+    /*font-size: 14px;*/
+    /*line-height: 20px;*/
+    margin: 0;
+}
+
+header {
+    padding: 0 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+main {
+    background-color: var(--color-background-body);
+    color: var(--color-text); 
+}
+
+footer {
+    padding: 1em;
+    text-align: center;
+    background-color: var(--color-background-footer);
+    color: var(--color-text-footer);
+}
+
+h1 {
+    color: var(--color-text-title);
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+h2, h3 {
+    color: var(--color-text-header);
+    font-size: 1em;
+    margin: 0;
+}
+
+a, a:visited {
+    color: var(--color-text-highlight);
+    text-decoration: none;
+}
+
+.button, .button:visited {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    padding: 0.4em 0.8em;
+    background-color: var(--color-background-button);
+    color: var(--color-text-button);
+    border-color: var(--color-background-button);
+    border-radius: 0.2em;
+    cursor: pointer;
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: calc(100vh - 56px);
+}
+
+.lane {
+    flex: 1;
+    background-color: var(--color-background-lane);
+    padding: 1em;
+    margin: 1em;
+    max-width: 300px;
+}
+
+.card {
+    align-self: center;
+    background-color: var(--color-background-card);
+    border-radius: 0.2em;
+    padding: 0.5em;
+    margin: 1em 0;
+    box-shadow: rgba(0, 0, 0, 0.05) 0 1px 3px, rgba(0, 0, 0, 0.05) 0 10px 15px -5px, rgba(0, 0, 0, 0.05) 0 7px 7px -5px;
+}
+
+.card-section {
+    border-bottom: 2px solid var(--color-background-lane);
+    padding: 0em 0 0.5em 0;
+}
+
+.flash {
+    padding: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: hideAnimation 0s ease-in 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideAnimation {
+    to {
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+}

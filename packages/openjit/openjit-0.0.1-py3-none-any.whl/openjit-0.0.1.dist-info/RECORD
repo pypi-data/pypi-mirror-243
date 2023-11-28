@@ -1,0 +1,16 @@
+openjit/__init__.py,sha256=MuEhY8rxXu2u_7VlR22BLp0sFPyC8z9-DMtO6zv36wQ,1022
+openjit/card.py,sha256=jdGWABXeHzD8VIeOLDloPeATClrTzJWL1Ziycy2N0cg,2390
+openjit/db.py,sha256=0RYPricaU0ufExbOR6oomDxzADYy8aNeLIjNWsBx_d4,1344
+openjit/kanban.py,sha256=o3zOYq3FSVd5C1JBAdyltN3xvqYXRBb_hnlKmMxY0Yk,1672
+openjit/lane.py,sha256=qYadZ2nRujvIKhbFtBfyI0qdr8M_8oaQqNM9bfmlk8A,2232
+openjit/schema.sql,sha256=UOJozIqDSN4kLIndyfOzDQyU1HQOTiQZ140-rgIxYXc,877
+openjit/static/site.css,sha256=calPp7DuLlOXPxcuT64o6DizhX5iA-eCVjvRu_k9cdQ,2608
+openjit/templates/base.htm,sha256=JGTQ9URBpgJnuv280cTqvbs95-mFx3g3qHlLMYkjz8g,922
+openjit/templates/create.html,sha256=U6lRxdNGUzoi8OcXqKBlIATv3y9rXzdQiVm9pqn-fHM,893
+openjit/templates/kanban.html,sha256=BPsiYBOCDZpc6pftXjrqrOk3xBpcB0v7tHJJ6t2R5t0,746
+openjit/templates/update.html,sha256=SjG6e2BlUmgP15R5DR7iIlKyFPggThbSjgsjzu3GJ_8,1116
+openjit-0.0.1.dist-info/LICENSE,sha256=Pj_-dsf8G45lLJrLkl8x2rJE7C9ySFSagAluVXZtx7E,1502
+openjit-0.0.1.dist-info/METADATA,sha256=tdKJ5zFTf1T4QefGrFOEBgYr9WAO2zbdos2jpUP7WOc,3163
+openjit-0.0.1.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+openjit-0.0.1.dist-info/top_level.txt,sha256=xPGNIDDtuxNd5DhYU8WOjr1AciHnlN-g9FAmf2BsHCk,8
+openjit-0.0.1.dist-info/RECORD,,
