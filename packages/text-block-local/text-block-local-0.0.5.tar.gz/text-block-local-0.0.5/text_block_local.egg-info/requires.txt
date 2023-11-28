@@ -1,0 +1,5 @@
+pytest>=7.4.1
+database-infrastructure-local>=0.0.19
+logger-local>=0.0.71
+database-mysql-local>=0.0.116
+user-context-remote>=0.0.35
