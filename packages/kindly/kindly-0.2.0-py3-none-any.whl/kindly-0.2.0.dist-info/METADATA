@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: kindly
+Version: 0.2.0
+Summary: Context aware curator of workflows
+Home-page: https://github.com/apljungquist/kindly
+License: MIT
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: argcomplete (>=3.1.6,<4.0.0)
+Requires-Dist: setuptools (>=69.0.2,<70.0.0)
+Project-URL: Repository, https://github.com/apljungquist/kindly
+Description-Content-Type: text/markdown
+
+# Kindly
+
+_Context aware curator of workflows_
+
+General tools, while applicable in more situations, are typically less useful in each.
+Kindly uses two cues to provide shortcuts to tools that are useful right now:
+* python environment
+* working directory
+
