@@ -1,0 +1,13 @@
+pickle5
+matplotlib
+tqdm
+tensorboard
+torch>=1.8
+torch-geometric>=1.7.2
+torch-scatter
+torch-sparse
+
+[test]
+black
+pytest
+pytest-mpi
