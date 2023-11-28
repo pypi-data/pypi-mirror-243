@@ -1,0 +1,3 @@
+[console_scripts]
+qpsolvers_benchmark=qpsolvers_benchmark.benchmark:main
+
