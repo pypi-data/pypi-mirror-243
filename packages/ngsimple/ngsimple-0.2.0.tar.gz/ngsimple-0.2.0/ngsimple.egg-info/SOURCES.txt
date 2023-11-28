@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+ngsimple/__init__.py
+ngsimple/wrapper.py
+ngsimple.egg-info/PKG-INFO
+ngsimple.egg-info/SOURCES.txt
+ngsimple.egg-info/dependency_links.txt
+ngsimple.egg-info/requires.txt
+ngsimple.egg-info/top_level.txt

@@ -1,0 +1,5 @@
+docker
+meshio>=4.0.4
+
+[:python_version < "3.8"]
+importlib_metadata
