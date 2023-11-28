@@ -1,0 +1,3 @@
+[console_scripts]
+edie-generate-structures=novatel_edie.generate_log_structures:main
+
