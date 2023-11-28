@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "poetry-template1"
+version = "0.1.0"
+description = ""
+authors = ["lgf4591 <lgf4591@outlook.com>"]
+readme = "README.md"
+packages = [
+	{ include = "poetry_template", from = "src" },
+	{ include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "^1.0.0"
+
+
+[[tool.poetry.source]]
+name = "tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+priority = "default"
+
+
+[[tool.poetry.source]]
+name = "aliyun"
+url = "https://mirrors.aliyun.com/pypi/simple/"
+priority = "primary"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+pytest-mock = "^3.12.0"
+pytest-cov = "^4.1.0"
+
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "^6.1.0"
+mypy = "^1.7.1"
+
+
+[tool.poetry.group.format.dependencies]
+black = "^23.11.0"
+isort = "^5.12.0"
+yapf = "^0.40.2"
+
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
