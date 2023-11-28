@@ -1,0 +1,49 @@
+################### BLACK ###################
+[tool.black]
+line-length = 100
+
+
+################### ISORT ###################
+[tool.isort]
+not_skip = "__init__.py"
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 100
+multi_line_output = 3
+order_by_type = "1"
+
+known_first_party = ["todo"]
+known_third_party = []
+
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "CORE", "FIRSTPARTY", "LOCALFOLDER"]
+
+
+################### POETRY ###################
+[tool.poetry]
+name = "td-cli"
+version = "1.0.0"
+description = "A command line todo manager"
+
+authors = [
+    "Darri Steinn Konn Konradsson <darrikonn@gmail.com>"
+]
+
+readme = "README.md"
+
+repository = "https://github.com/darrikonn/td-cli"
+homepage = "https://github.com/darrikonn/td-cli"
+
+keywords = ["td-cli"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.7.1"
+black = "^23.11.0"
+isort = "^5.12.0"
+ipdb = "^0.13.13"
+ipython = "^8.17.2"
+flake8 = "^6.1.0"
+wheel = "^0.42.0"
+twine = "^4.0.2"
