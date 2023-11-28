@@ -1,0 +1,14 @@
+gmpy2
+cryptography
+pynacl
+ecdsa
+aiohttp
+requests
+pexpect
+
+[:platform_system != "Windows"]
+scrypt
+semantic-version
+
+[:python_version < "3.9"]
+importlib-resources

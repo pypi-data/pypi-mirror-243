@@ -1,0 +1,23 @@
+include README.md SIGNING_KEYS.pub LICENSE INSTALL eth-requirements.txt
+
+include doc/*
+include doc/*/*
+include doc/*/*/*
+
+include examples/*
+
+include mmgen/proto/eth/*/LICENSE
+include mmgen/data/*
+
+include scripts/*
+
+include test/*.py
+include test/*/*.py
+include test/ref/*
+include test/ref/*/*
+include test/ref/*/*/*/*
+include test/overlay/fakemods/*.py
+include test/overlay/fakemods/*/*.py
+include test/overlay/fakemods/*/*/*/*.py
+
+include test/test-release.sh
