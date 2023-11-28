@@ -1,0 +1,8 @@
+disk/
+!disk/.disabled.svg
+!disk/.failure.svg
+!disk/wait.svg
+network/
+!network/disabled.svg
+!network/down.svg
+!network/wait.svg
