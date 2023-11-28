@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+inscode/AI.py
+inscode/OCR.py
+inscode/SPEECH.py
+inscode/__init__.py
+inscode.egg-info/PKG-INFO
+inscode.egg-info/SOURCES.txt
+inscode.egg-info/dependency_links.txt
+inscode.egg-info/not-zip-safe
+inscode.egg-info/requires.txt
+inscode.egg-info/top_level.txt
+tests/test.py
