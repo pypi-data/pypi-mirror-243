@@ -1,0 +1,3 @@
+[console_scripts]
+img2tags=img2tags.cli:main
+
