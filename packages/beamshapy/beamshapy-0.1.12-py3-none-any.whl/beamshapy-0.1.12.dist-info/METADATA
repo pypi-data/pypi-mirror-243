@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: beamshapy
+Version: 0.1.12
+Summary: a package for simulations of laser beam shaping experiments
+License: MIT
+Author: ayto
+Author-email: arouxel@laas.fr
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: LightPipes (>=2.1.4,<3.0.0)
+Requires-Dist: h5py (>=3.10.0,<4.0.0)
+Requires-Dist: matplotlib (>=3.8.1,<4.0.0)
+Requires-Dist: numpy (>=1.26.1,<2.0.0)
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0)
+Requires-Dist: scipy (>=1.11.3,<2.0.0)
+Description-Content-Type: text/markdown
+
+
