@@ -1,0 +1,58 @@
+[I 2023-11-26 11:28:53.656 ServerApp] Package jupyterlab took 0.0000s to import
+[I 2023-11-26 11:28:53.688 ServerApp] Package jupyter_lsp took 0.0310s to import
+[W 2023-11-26 11:28:53.688 ServerApp] A `_jupyter_server_extension_points` function was not found in jupyter_lsp. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-11-26 11:28:53.695 ServerApp] Package jupyter_server_fileid took 0.0062s to import
+[I 2023-11-26 11:28:53.709 ServerApp] Package jupyter_server_terminals took 0.0132s to import
+[I 2023-11-26 11:28:53.961 ServerApp] Package jupyter_server_ydoc took 0.2522s to import
+[I 2023-11-26 11:28:53.969 ServerApp] Package nbclassic took 0.0067s to import
+[W 2023-11-26 11:28:53.973 ServerApp] A `_jupyter_server_extension_points` function was not found in nbclassic. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-11-26 11:28:53.974 ServerApp] Package notebook took 0.0000s to import
+[I 2023-11-26 11:28:53.977 ServerApp] Package notebook_shim took 0.0000s to import
+[W 2023-11-26 11:28:53.977 ServerApp] A `_jupyter_server_extension_points` function was not found in notebook_shim. Instead, a `_jupyter_server_extension_paths` function was found and will be used for now. This function name will be deprecated in future releases of Jupyter Server.
+[I 2023-11-26 11:28:53.977 ServerApp] jupyter_lsp | extension was successfully linked.
+[I 2023-11-26 11:28:53.983 ServerApp] jupyter_server_fileid | extension was successfully linked.
+[I 2023-11-26 11:28:53.988 ServerApp] jupyter_server_terminals | extension was successfully linked.
+[I 2023-11-26 11:28:53.993 ServerApp] jupyter_server_ydoc | extension was successfully linked.
+[W 2023-11-26 11:28:53.995 LabApp] 'token' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-11-26 11:28:53.995 LabApp] 'iopub_data_rate_limit' has moved from NotebookApp to ServerApp. This config will be passed to ServerApp. Be sure to update your config before our next release.
+[W 2023-11-26 11:28:53.999 ServerApp] ServerApp.token config is deprecated in 2.0. Use IdentityProvider.token.
+[W 2023-11-26 11:28:53.999 ServerApp] ServerApp.iopub_data_rate_limit config is deprecated in 2.0. Use ZMQChannelsWebsocketConnection.iopub_data_rate_limit.
+[I 2023-11-26 11:28:53.999 ServerApp] jupyterlab | extension was successfully linked.
+[I 2023-11-26 11:28:54.007 ServerApp] nbclassic | extension was successfully linked.
+[I 2023-11-26 11:28:54.014 ServerApp] notebook | extension was successfully linked.
+[I 2023-11-26 11:28:54.519 ServerApp] notebook_shim | extension was successfully linked.
+[I 2023-11-26 11:28:54.602 ServerApp] notebook_shim | extension was successfully loaded.
+[I 2023-11-26 11:28:54.605 ServerApp] jupyter_lsp | extension was successfully loaded.
+[I 2023-11-26 11:28:54.606 FileIdExtension] Configured File ID manager: ArbitraryFileIdManager
+[I 2023-11-26 11:28:54.606 FileIdExtension] ArbitraryFileIdManager : Configured root dir: /Users/tparment/git/jupyterlab-celltagsclasses
+[I 2023-11-26 11:28:54.606 FileIdExtension] ArbitraryFileIdManager : Configured database path: /Users/tparment/Library/Jupyter/file_id_manager.db
+[I 2023-11-26 11:28:54.611 FileIdExtension] ArbitraryFileIdManager : Successfully connected to database file.
+[I 2023-11-26 11:28:54.611 FileIdExtension] ArbitraryFileIdManager : Creating File ID tables and indices with journal_mode = DELETE
+[I 2023-11-26 11:28:54.615 FileIdExtension] Attached event listeners.
+[I 2023-11-26 11:28:54.615 ServerApp] jupyter_server_fileid | extension was successfully loaded.
+[I 2023-11-26 11:28:54.617 ServerApp] jupyter_server_terminals | extension was successfully loaded.
+[I 2023-11-26 11:28:54.618 ServerApp] jupyter_server_ydoc | extension was successfully loaded.
+[I 2023-11-26 11:28:54.620 LabApp] JupyterLab extension loaded from /Users/tparment/miniconda3/envs/jupyterlab-celltagsclasses/lib/python3.10/site-packages/jupyterlab
+[I 2023-11-26 11:28:54.620 LabApp] JupyterLab application directory is /Users/tparment/miniconda3/envs/jupyterlab-celltagsclasses/share/jupyter/lab
+[I 2023-11-26 11:28:54.622 LabApp] Extension Manager is 'pypi'.
+[I 2023-11-26 11:28:54.626 ServerApp] jupyterlab | extension was successfully loaded.
+[I 2023-11-26 11:28:54.635 ServerApp] nbclassic | extension was successfully loaded.
+[I 2023-11-26 11:28:54.639 ServerApp] notebook | extension was successfully loaded.
+[I 2023-11-26 11:28:54.640 ServerApp] Serving notebooks from local directory: /Users/tparment/git/jupyterlab-celltagsclasses
+[I 2023-11-26 11:28:54.640 ServerApp] Jupyter Server 2.10.1 is running at:
+[I 2023-11-26 11:28:54.640 ServerApp] http://localhost:54343/lab?token=...
+[I 2023-11-26 11:28:54.640 ServerApp]     http://127.0.0.1:54343/lab?token=...
+[I 2023-11-26 11:28:54.640 ServerApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 2023-11-26 11:28:55.271 ServerApp] Skipped non-installed server(s): bash-language-server, dockerfile-language-server-nodejs, javascript-typescript-langserver, jedi-language-server, julia-language-server, pyright, python-language-server, python-lsp-server, r-languageserver, sql-language-server, texlab, typescript-language-server, unified-language-server, vscode-css-languageserver-bin, vscode-html-languageserver-bin, vscode-json-languageserver-bin, yaml-language-server
+[W 2023-11-26 11:29:09.098 ServerApp] 404 GET /api/contents/examples/courselevels.ipynb?content=0&1700994549093 (7ec167e5147a4b218633f98cf7d29162@::1) 1.68ms referer=http://localhost:54343/lab
+[W 2023-11-26 11:29:09.098 ServerApp] 404 GET /api/contents/examples/courselevels.ipynb?content=0&1700994549093 (::1): No such file or directory: examples/courselevels.ipynb
+[W 2023-11-26 11:29:09.113 ServerApp] 404 GET /api/contents/examples/split-cell.ipynb?content=0&1700994549094 (7ec167e5147a4b218633f98cf7d29162@::1) 6.10ms referer=http://localhost:54343/lab
+[W 2023-11-26 11:29:09.113 ServerApp] 404 GET /api/contents/examples/split-cell.ipynb?content=0&1700994549094 (::1): No such file or directory: examples/split-cell.ipynb
+[I 2023-11-26 11:29:09.214 LabApp] Build is up to date
+[I 2023-11-26 11:29:14.707 ServerApp] Kernel started: a8896740-79c9-4951-bffe-9a4e1fff3e1f
+[I 2023-11-26 11:29:15.809 ServerApp] Connecting to kernel a8896740-79c9-4951-bffe-9a4e1fff3e1f.
+[I 2023-11-26 11:29:15.812 ServerApp] Connecting to kernel a8896740-79c9-4951-bffe-9a4e1fff3e1f.
+[I 2023-11-26 11:29:15.870 ServerApp] Connecting to kernel a8896740-79c9-4951-bffe-9a4e1fff3e1f.
+[W 2023-11-26 11:29:15.913 ServerApp] Got events for closed stream <zmq.eventloop.zmqstream.ZMQStream object at 0x1101babc0>
+[I 2023-11-26 11:31:14.434 ServerApp] Saving file at /examples/test.ipynb
+[I 2023-11-26 11:31:42.245 ServerApp] Starting buffering for a8896740-79c9-4951-bffe-9a4e1fff3e1f:87e53e40-b82f-41b9-a596-57a9d8d219cb
