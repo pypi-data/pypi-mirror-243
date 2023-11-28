@@ -1,0 +1,125 @@
+version: "3"
+
+services:
+    apiflask-1:
+      build:
+          context: .
+          dockerfile: ./Dockerfile
+      container_name: apiflask-1
+      hostname: apiflask-1
+      ports:
+        - "5010:5000"
+      volumes:
+        - .:/app
+      environment:
+        TZ: "Asia/Shanghai"
+        LOG_LEVEL: "DEBUG"
+      env_file:
+        - .apiflaskenv
+        - .apiflask.env
+      working_dir: /app
+      tty: true
+      restart: always
+      command: ["sh", "docker-deploy.sh"]
+    apiflask-2:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      container_name: apiflask-2
+      hostname: apiflask-2
+      ports:
+        - "5020:5000"
+      volumes:
+        - .:/app
+      environment:
+        TZ: "Asia/Shanghai"
+        LOG_LEVEL: "DEBUG"
+      env_file:
+        - .apiflaskenv
+        - .apiflask.env
+      working_dir: /app
+      tty: true
+      restart: always
+      command: [ "sh", "docker-deploy.sh" ]
+    apiflask-3:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      container_name: apiflask-3
+      hostname: apiflask-3
+      ports:
+        - "5030:5000"
+      volumes:
+        - .:/app
+      environment:
+        TZ: "Asia/Shanghai"
+        LOG_LEVEL: "DEBUG"
+      env_file:
+        - .apiflaskenv
+        - .apiflask.env
+      working_dir: /app
+      tty: true
+      restart: always
+      command: [ "sh", "docker-deploy.sh" ]
+    apiflask-4:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      container_name: apiflask-4
+      hostname: apiflask-4
+      ports:
+        - "5040:5000"
+      volumes:
+        - .:/app
+      environment:
+        TZ: "Asia/Shanghai"
+        LOG_LEVEL: "DEBUG"
+      env_file:
+        - .apiflaskenv
+        - .apiflask.env
+      working_dir: /app
+      tty: true
+      restart: always
+      command: [ "sh", "docker-deploy.sh" ]
+    apiflask-5:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      container_name: apiflask-5
+      hostname: apiflask-5
+      ports:
+        - "5050:5000"
+      volumes:
+        - .:/app
+      environment:
+        TZ: "Asia/Shanghai"
+        LOG_LEVEL: "DEBUG"
+      env_file:
+        - .apiflaskenv
+        - .apiflask.env
+      working_dir: /app
+      tty: true
+      restart: always
+      command: [ "sh", "docker-deploy.sh" ]
+    apiflask-6:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      container_name: apiflask-6
+      hostname: apiflask-6
+      ports:
+        - "5060:5000"
+      volumes:
+        - .:/app
+      environment:
+        TZ: "Asia/Shanghai"
+        LOG_LEVEL: "DEBUG"
+      env_file:
+        - .apiflaskenv
+        - .apiflask.env
+      working_dir: /app
+      tty: true
+      restart: always
+      command: [ "sh", "docker-deploy.sh" ]
+
+
