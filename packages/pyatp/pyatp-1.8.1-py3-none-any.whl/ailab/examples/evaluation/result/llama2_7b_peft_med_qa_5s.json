@@ -1,0 +1,27 @@
+{
+  "results": {
+    "MedQA": {
+      "acc": 0.3166958552247519,
+      "acc_stderr": 0.00794873337030373,
+      "acc_norm": 0.3166958552247519,
+      "acc_norm_stderr": 0.00794873337030373
+    }
+  },
+  "versions": {
+    "MedQA": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/llama2-7b-hf,dtype='float16',trust_remote_code=True,use_accelerate=False,peft=/home/finetuned_models/my_llama2_model",
+    "num_fewshot": 5,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:7",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:36:21.357659",
+    "model_name": "llama2_7b"
+  }
+}

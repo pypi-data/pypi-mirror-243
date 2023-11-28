@@ -1,0 +1,27 @@
+{
+  "results": {
+    "MedQA": {
+      "acc": 0.5455341506129597,
+      "acc_stderr": 0.008508075015849048,
+      "acc_norm": 0.5455341506129597,
+      "acc_norm_stderr": 0.008508075015849048
+    }
+  },
+  "versions": {
+    "MedQA": 0
+  },
+  "config": {
+    "model": "hf-chatglm",
+    "model_args": "pretrained=/home/sdk_models/chatglm2_6b,add_special_tokens=True,dtype='float16',trust_remote_code=True,use_accelerate=False",
+    "num_fewshot": 5,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:3",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:16:32.244381",
+    "model_name": "chatglm2_6b"
+  }
+}

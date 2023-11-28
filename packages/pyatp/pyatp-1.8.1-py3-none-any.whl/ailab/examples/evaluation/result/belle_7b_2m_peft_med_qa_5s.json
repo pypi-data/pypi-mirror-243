@@ -1,0 +1,27 @@
+{
+  "results": {
+    "MedQA": {
+      "acc": 0.3458844133099825,
+      "acc_stderr": 0.00812760253100233,
+      "acc_norm": 0.3458844133099825,
+      "acc_norm_stderr": 0.00812760253100233
+    }
+  },
+  "versions": {
+    "MedQA": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/belle_7b_2m,dtype='bfloat16',trust_remote_code=True,use_accelerate=False,peft=/home/finetuned_models/my_belle_model",
+    "num_fewshot": 5,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:5",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:41:46.655872",
+    "model_name": "belle_7b_2m"
+  }
+}
