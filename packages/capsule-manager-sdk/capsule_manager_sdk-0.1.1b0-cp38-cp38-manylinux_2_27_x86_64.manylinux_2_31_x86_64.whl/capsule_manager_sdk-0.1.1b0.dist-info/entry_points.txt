@@ -1,0 +1,4 @@
+[console_scripts]
+cms = cli.cms:cms
+cms_config = cli.cms_config:cms_config
+cms_util = cli.cms_util:cms_util

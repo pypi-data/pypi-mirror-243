@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: capsule-manager-sdk
+Version: 0.1.1b0
+Summary: Secure Data Capsule SDK for python
+Home-page: https://github.com/secretflow/capsule-manager-sdk.git
+Author: secretflow
+Author-email: secretflow-contact@service.alipay.com
+License: Apache 2.0
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Description-Content-Type: text/markdown
+Requires-Dist: cryptography >=41.0.2
+Requires-Dist: grpcio
+Requires-Dist: sdc-apis
+Requires-Dist: pyyaml
+Requires-Dist: click
+Requires-Dist: twine
+
+Secure Data Capsule SDK for python
