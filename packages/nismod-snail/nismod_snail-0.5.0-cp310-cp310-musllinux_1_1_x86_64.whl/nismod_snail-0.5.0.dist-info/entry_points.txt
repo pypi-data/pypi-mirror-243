@@ -1,0 +1,3 @@
+[console_scripts]
+snail = snail.cli:snail
+
