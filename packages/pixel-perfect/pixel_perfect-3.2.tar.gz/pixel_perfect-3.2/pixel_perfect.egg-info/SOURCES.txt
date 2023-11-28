@@ -1,0 +1,11 @@
+LICENSE.txt
+README.rst
+setup.py
+pixel_perfect/__init__.py
+pixel_perfect/image_comparer.py
+pixel_perfect/utils.py
+pixel_perfect.egg-info/PKG-INFO
+pixel_perfect.egg-info/SOURCES.txt
+pixel_perfect.egg-info/dependency_links.txt
+pixel_perfect.egg-info/requires.txt
+pixel_perfect.egg-info/top_level.txt
