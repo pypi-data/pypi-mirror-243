@@ -1,0 +1,17 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+mysql_grantparser/__init__.py
+mysql_grantparser/__metadata__.py
+mysql_grantparser/driver.py
+mysql_grantparser/exporter.py
+mysql_grantparser/parser.py
+mysql_grantparser.egg-info/PKG-INFO
+mysql_grantparser.egg-info/SOURCES.txt
+mysql_grantparser.egg-info/dependency_links.txt
+mysql_grantparser.egg-info/not-zip-safe
+mysql_grantparser.egg-info/requires.txt
+mysql_grantparser.egg-info/top_level.txt

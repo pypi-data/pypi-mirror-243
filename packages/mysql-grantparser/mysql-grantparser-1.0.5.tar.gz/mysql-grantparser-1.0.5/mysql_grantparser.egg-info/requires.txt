@@ -1,0 +1,7 @@
+setuptools>=30.3.0
+mysql-connector-python
+
+[dev]
+pytest>=3
+coverage
+tox
