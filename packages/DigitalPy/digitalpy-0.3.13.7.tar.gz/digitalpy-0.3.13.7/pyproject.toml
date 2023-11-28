@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "DigitalPy"
+version = "0.3.13.7"
+description="A python implementation of the aphrodite's specification, heavily based on WCMF"
+authors = ["FreeTAKTeam <FreeTakTeam@gmail.com>"]
+packages = [
+    {include = "digitalpy"}
+    ]
+include = ["digitalpy/**/*.json", "digitalpy/**/*.py", "digitalpy/**/*.ini", "digitalpy/**/*.conf"]
+
+[tool.poetry.dependencies]
+rule-engine="*"
+pyzmq="*"
+
+[tool.poetry.extras]
+dev = ["pytest"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.flakeheaven]
+# optionally inherit from remote config (or local if you want)
+base = "https://raw.githubusercontent.com/wemake-services/wemake-python-styleguide/master/styles/flakeheaven.toml"
+baseline = ".flakeheaven_baseline"
