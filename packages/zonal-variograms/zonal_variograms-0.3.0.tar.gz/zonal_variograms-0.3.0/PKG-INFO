@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: zonal_variograms
+Version: 0.3.0
+Summary: Zonal (Polygon) variograms on a input raster
+Author: Mirko Mälicke
+Author-email: mirko.maelicke@kit.edu
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: geopandas
+Requires-Dist: rasterio
+Requires-Dist: scikit-gstat
+Requires-Dist: click
+
+# mussels

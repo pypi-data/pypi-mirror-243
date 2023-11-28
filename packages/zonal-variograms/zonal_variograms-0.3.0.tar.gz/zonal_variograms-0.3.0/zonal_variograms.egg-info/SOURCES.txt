@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+zonal_variograms/__init__.py
+zonal_variograms/__version__.py
+zonal_variograms/cli.py
+zonal_variograms/main.py
+zonal_variograms/util.py
+zonal_variograms.egg-info/PKG-INFO
+zonal_variograms.egg-info/SOURCES.txt
+zonal_variograms.egg-info/dependency_links.txt
+zonal_variograms.egg-info/entry_points.txt
+zonal_variograms.egg-info/requires.txt
+zonal_variograms.egg-info/top_level.txt
