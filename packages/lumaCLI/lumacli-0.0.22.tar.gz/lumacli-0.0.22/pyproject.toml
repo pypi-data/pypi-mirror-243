@@ -1,0 +1,73 @@
+[tool.poetry]
+name = "lumaCLI"
+version = "0.0.22"
+description = "A CLI tool for managing the data catalog platform."
+authors = ["Facundo Goiriz <fgoiriz@dyvenia.com>"]
+readme = "README.md"
+license = "MIT"
+
+packages = [
+    { include = "lumaCLI" }
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+]
+
+keywords = ["cli", "dbt", "luma", "data", "catalog"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4"
+typer = {extras = ["all"], version = "^0.9.0"}
+psycopg2-binary = "~2.9"
+requests = ">=2.20.0,<3.0.0"
+pydantic = {version = ">=1.10.9,<1.11.0", extras = ["email"]}
+pyyaml = ">=6.0.1"
+
+
+[tool.poetry.dev-dependencies]
+mkdocstrings = { version = ">=0.18,<1.0", extras = ["python"] }
+
+[tool.poetry.extras]
+test = [
+    "pytest",
+    "pytest-cov",
+    "coverage",
+    "black",
+    "mkdocstrings",
+    "mkdocs-material",
+    "mkdocs-mermaid2-plugin",
+    "mkdocs-include-dir-to-nav",
+    "neoteroi-mkdocs",
+    "mkdocs-jupyter",
+]
+
+[tool.poetry.scripts]
+luma = "lumaCLI.main:app"
+lumaCLI = "lumaCLI.main:print_did_you_mean_luma"
+
+[tool.black]
+line-length = 88
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.tox
+  | venv
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
