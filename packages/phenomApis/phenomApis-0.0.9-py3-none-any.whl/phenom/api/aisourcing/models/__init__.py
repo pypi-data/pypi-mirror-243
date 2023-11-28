@@ -1,0 +1,26 @@
+# coding: utf-8
+
+# flake8: noqa
+"""
+    aisourcing-api
+
+    AI Matching apis   # noqa: E501
+
+    
+"""
+
+from __future__ import absolute_import
+
+# import models into model package
+from phenom.api.aisourcing.models.error_response import ErrorResponse
+from phenom.api.aisourcing.models.fit_score_request import FitScoreRequest
+from phenom.api.aisourcing.models.fitscore_bad_request import FitscoreBadRequest
+from phenom.api.aisourcing.models.fitscore_response import FitscoreResponse
+from phenom.api.aisourcing.models.fitscore_response_result import FitscoreResponseResult
+from phenom.api.aisourcing.models.fitscore_response_skill_gap import FitscoreResponseSkillGap
+from phenom.api.aisourcing.models.preferred_locations import PreferredLocations
+from phenom.api.aisourcing.models.preferred_locations_latlong import PreferredLocationsLatlong
+from phenom.api.aisourcing.models.skill_matching_bad_request import SkillMatchingBadRequest
+from phenom.api.aisourcing.models.skill_matching_error_response import SkillMatchingErrorResponse
+from phenom.api.aisourcing.models.skill_matching_response import SkillMatchingResponse
+from phenom.api.aisourcing.models.user_profile_fit_score import UserProfileFitScore
