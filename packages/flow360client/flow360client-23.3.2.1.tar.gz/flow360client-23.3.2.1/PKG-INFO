@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: flow360client
+Version: 23.3.2.1
+Summary: A Python API for Flow360 CFD solver
+Author: FlexCompute, Inc.
+Author-email: john@simulation.cloud
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
