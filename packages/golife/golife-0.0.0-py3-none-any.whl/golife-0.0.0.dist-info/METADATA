@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: golife
+Version: 0.0.0
+Summary: Conway's Game Of life in the terminal
+License: MIT
+Author: BrianLusina
+Author-email: 12752833+BrianLusina@users.noreply.github.com
+Requires-Python: >=3.12.0,<4.0.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
