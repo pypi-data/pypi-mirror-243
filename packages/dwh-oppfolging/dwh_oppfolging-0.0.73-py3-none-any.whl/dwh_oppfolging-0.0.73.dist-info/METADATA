@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: dwh-oppfolging
+Version: 0.0.73
+Summary: Oppfolging python package for DWH ETL
+Author: Team Oppfolging
+Requires-Python: ==3.11.*
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: confluent-kafka (==2.3.0)
+Requires-Dist: dbt-oracle (==1.6.1)
+Requires-Dist: fastavro (==1.9.0)
+Requires-Dist: google-cloud-secret-manager (==2.16.4)
+Requires-Dist: ijson (==3.2.3)
+Requires-Dist: oracledb (==1.4.2)
+Requires-Dist: pendulum (==2.1.2)
+Requires-Dist: requests (==2.31.0)
