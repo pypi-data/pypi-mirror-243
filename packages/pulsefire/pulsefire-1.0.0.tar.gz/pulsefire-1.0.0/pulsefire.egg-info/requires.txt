@@ -1,0 +1,4 @@
+aiohttp>=3.9
+
+[test]
+typeguard>=4.1
