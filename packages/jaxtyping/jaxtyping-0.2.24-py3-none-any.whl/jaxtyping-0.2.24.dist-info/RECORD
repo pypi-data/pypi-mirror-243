@@ -1,0 +1,16 @@
+jaxtyping/__init__.py,sha256=bVv4j4uSTQIDDtCQPYgcWEo5eCt6gLvadsnvBBtEkxE,7808
+jaxtyping/_array_types.py,sha256=4VK1LKvRQxcQoqUV6JHydKP4XiyUkThcBTZoIOMnHl0,25445
+jaxtyping/_decorator.py,sha256=D9T2ZZmkQCUc683vU41SbCUZffV55jzB5xivorccmmk,29795
+jaxtyping/_import_hook.py,sha256=dhN2c2JUQzguNmtMrKaJ4HZXRkreB6iTWDtJK9BKG0s,16379
+jaxtyping/_indirection.py,sha256=JGpU2ZkodzX5EAX_i_VMJpRFXUPjRRLXD076sD8K_Mo,2420
+jaxtyping/_ipython_extension.py,sha256=QgThve8LPRnw2Q5Jk_N_gEr6c5JCu0S92WYTQdwlUvc,2282
+jaxtyping/_pytest_plugin.py,sha256=WZCCAmHEJO_AxOSqzJHTuaGKMcFEbft17tFQwhDw50A,2206
+jaxtyping/_pytree_type.py,sha256=mWXpyaGdFvAJ7mOQVH7psSfo4PjV3hBjGsG_W3vQK2U,12908
+jaxtyping/_raise.py,sha256=ronlGBf_Aw9hYFT6WyL2eDRspuQwgngc-f-_rHEqbKE,577
+jaxtyping/_storage.py,sha256=LBl6LYInDpGEPMxjK2IrCBIeCNpBamHV2UbyMRQD4eo,4105
+jaxtyping/py.typed,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+jaxtyping-0.2.24.dist-info/METADATA,sha256=qf5EOWsCfRt8336x0SvonjIjqYXYqfw7hDdYuEbI8dA,6420
+jaxtyping-0.2.24.dist-info/WHEEL,sha256=9QBuHhg6FNW7lppboF2vKVbCGTVzsFykgRQjjlajrhA,87
+jaxtyping-0.2.24.dist-info/entry_points.txt,sha256=wTOIAJlPWxFDVaWk3s2OFzzOO3s5tNQVXoouuO-E-5U,48
+jaxtyping-0.2.24.dist-info/licenses/LICENSE,sha256=LvZ3UfeuH6jRdlxJTVkXZ_po3B4SqwQ90Pu_vB_9pbw,2279
+jaxtyping-0.2.24.dist-info/RECORD,,
