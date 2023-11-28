@@ -1,0 +1,97 @@
+Metadata-Version: 2.1
+Name: zarr-checksum
+Version: 0.3.1
+Summary: Checksum support for zarrs stored in various backends
+Home-page: https://github.com/dandi/zarr_checksum
+License: Apache-2.0
+Author: Kitware, Inc.
+Author-email: kitware@kitware.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: dev
+Provides-Extra: format
+Provides-Extra: lint
+Provides-Extra: test
+Requires-Dist: black (>=23.3.0,<24.0.0) ; extra == "format" or extra == "dev"
+Requires-Dist: boto3 (>=1.24,<2.0)
+Requires-Dist: boto3-stubs (>=1.24,<2.0) ; extra == "dev"
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: flake8 (>=5.0.4,<6.0.0) ; extra == "lint" or extra == "dev"
+Requires-Dist: flake8-black (>=0.3.6,<0.4.0) ; extra == "lint" or extra == "dev"
+Requires-Dist: flake8-bugbear (>=23.1.20,<24.0.0) ; extra == "lint" or extra == "dev"
+Requires-Dist: flake8-docstrings (>=1.7.0,<2.0.0) ; extra == "lint" or extra == "dev"
+Requires-Dist: flake8-isort (>=6.0.0,<7.0.0) ; extra == "lint" or extra == "dev"
+Requires-Dist: flake8-quotes (>=3.3.2,<4.0.0) ; extra == "lint" or extra == "dev"
+Requires-Dist: isort (>=5.11.4,<6.0.0) ; extra == "format" or extra == "dev"
+Requires-Dist: pep8-naming (>=0.13.3,<0.14.0) ; extra == "lint" or extra == "dev"
+Requires-Dist: pydantic (>=2.0,<3.0)
+Requires-Dist: pytest (>=7.2.1,<8.0.0) ; extra == "test"
+Requires-Dist: tqdm (>=4.64.1,<5.0.0)
+Requires-Dist: zarr (>=2.12,<3.0)
+Project-URL: Repository, https://github.com/dandi/zarr_checksum
+Description-Content-Type: text/markdown
+
+# zarr_checksum
+Algorithms for calculating a zarr checksum against local or cloud storage
+
+# Install
+```
+pip install zarr-checksum
+```
+
+# Usage
+
+## CLI
+To calculate the checksum for a local zarr archive
+```
+zarrsum local <directory>
+```
+
+To calculate the checksum for a remote (S3) zarr archive
+```
+zarrsum remote s3://your_bucket/prefix_to_zarr
+```
+
+## Python
+To calculate the checksum for a local zarr archive
+```python
+from zarr_checksum import compute_zarr_checksum
+from zarr_checksum.generators import yield_files_local, yield_files_s3
+
+# Local
+checksum = compute_zarr_checksum(yield_files_local("local_path"))
+
+# Remote
+checksum = compute_zarr_checksum(
+    yield_files_s3(
+        bucket="your_bucket",
+        prefix="prefix_to_zarr",
+        # Credentials can also be passed via environment variables
+        credentials={
+            aws_access_key_id: "youraccesskey",
+            aws_secret_access_key: "yoursecretkey",
+            region_name: "us-east-1",
+        }
+    )
+)
+```
+
+Access checksum information
+```python
+>>> checksum.digest
+'c228464f432c4376f0de6ddaea32650c-37481--38757151179'
+>>> checksum.md5
+'c228464f432c4376f0de6ddaea32650c'
+>>> checksum.count
+37481
+>>> checksum.size
+38757151179
+```
+
