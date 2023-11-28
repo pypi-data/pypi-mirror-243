@@ -1,0 +1,3 @@
+[console_scripts]
+bifrostx = bifrostx.cli:cli
+
