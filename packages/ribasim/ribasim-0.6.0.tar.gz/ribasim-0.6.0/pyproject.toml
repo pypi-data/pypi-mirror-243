@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ribasim"
+description = "Pre- and post-process Ribasim"
+readme = "README.md"
+authors = [{ name = "Deltares and contributors", email = "ribasim.info@deltares.nl" }]
+license = { text = "MIT" }
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Hydrology",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "geopandas",
+    "matplotlib",
+    "pandas",
+    "pandera != 0.16.0",
+    "pyarrow",
+    "pydantic ~= 2.0",
+    "pyogrio",
+    "shapely >= 2.0",
+    "tomli",
+    "tomli-w",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+tests = ["pytest", "pytest-xdist", "pytest-cov", "ribasim_testmodels"]
+
+[tool.setuptools]
+zip-safe = true
+
+[tool.setuptools.dynamic]
+version = { attr = "ribasim.__version__" }
+
+[tool.setuptools.packages.find]
+include = ["ribasim", "ribasim.*"]
+
+[tool.setuptools.package-data]
+"ribasim" = ["py.typed"]
+
+[project.urls]
+Documentation = "https://deltares.github.io/Ribasim"
+Source = "https://github.com/Deltares/Ribasim"
