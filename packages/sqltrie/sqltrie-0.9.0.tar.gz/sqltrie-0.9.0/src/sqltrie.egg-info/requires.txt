@@ -1,0 +1,17 @@
+attrs
+pygtrie
+
+[:implementation_name == "cpython"]
+orjson
+
+[dev]
+sqltrie[tests]
+
+[tests]
+pytest==7.2.0
+pytest-sugar==0.9.5
+pytest-cov==3.0.0
+pytest-mock==3.8.2
+mypy==0.971
+pytest-benchmark
+pyinstaller
