@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: strledger
+Version: 0.5.1
+Summary: Sign Stellar Transaction with Ledger on the command line.
+Home-page: https://github.com/overcat/strledger
+License: MIT
+Keywords: stellar,ledger
+Author: overcat
+Author-email: 4catcode@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Typing :: Typed
+Requires-Dist: click (>=8.0.1,<9.0.0)
+Requires-Dist: ledgerwallet (>=0.1.3,<0.2.0)
+Requires-Dist: stellar-sdk (>=8,<10)
+Project-URL: Bug Tracker, https://github.com/overcat/strledger/issues
+Project-URL: Documentation, https://github.com/overcat/strledger
+Project-URL: Repository, https://github.com/overcat/strledger
+Description-Content-Type: text/markdown
+
+# strledger - Sign Stellar Transaction with Ledger on the command line.
+
+![example](https://github.com/overcat/strledger/blob/main/img/example.png)
+
+## Installation
+```shell
+pip install -U strledger
+```
+
+## Cli Usage
+```text
+Usage: strledger [OPTIONS] COMMAND [ARGS]...
+
+  Stellar Ledger commands.
+
+  This project is built on the basis of ledgerctl, you can check ledgerctl for more features.
+
+Options:
+  -v, --verbose  Display exchanged APDU.
+  --help         Show this message and exit.
+
+Commands:
+  app-info     Get Stellar app info.
+  get-address  Get Stellar public address.
+  sign-tx      Sign a base64-encoded transaction envelope.
+  version      Get strledger version info.
+```
+
+## Library Usage
+
+```python
+from strledger import get_default_client
+
+client = get_default_client()
+# Use the Stellar Python SDK to build a transaction, see https://github.com/StellarCN/py-stellar-base
+transaction_envelope = ...
+client.sign_transaction(transaction_envelope=transaction_envelope, keypair_index=0)
+print(f"signed tx: {transaction_envelope.to_xdr()}")
+```
