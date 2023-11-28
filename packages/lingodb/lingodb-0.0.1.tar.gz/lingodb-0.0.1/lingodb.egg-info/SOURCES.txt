@@ -1,0 +1,9 @@
+pyproject.toml
+setup.py
+lingodb/__init__.py
+lingodb.egg-info/PKG-INFO
+lingodb.egg-info/SOURCES.txt
+lingodb.egg-info/dependency_links.txt
+lingodb.egg-info/requires.txt
+lingodb.egg-info/top_level.txt
+test/test.py
