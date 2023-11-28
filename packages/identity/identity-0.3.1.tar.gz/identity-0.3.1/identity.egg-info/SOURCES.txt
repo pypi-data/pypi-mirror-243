@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+identity/__init__.py
+identity/version.py
+identity/web.py
+identity.egg-info/PKG-INFO
+identity.egg-info/SOURCES.txt
+identity.egg-info/dependency_links.txt
+identity.egg-info/requires.txt
+identity.egg-info/top_level.txt
+tests/test_placeholder.py
