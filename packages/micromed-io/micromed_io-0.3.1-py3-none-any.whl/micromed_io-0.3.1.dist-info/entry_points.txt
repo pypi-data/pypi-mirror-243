@@ -1,0 +1,4 @@
+[console_scripts]
+mmio_tcp_emulator=micromed_io.emulate_trc_tcpip:run
+mmio_to_lsl=micromed_io.read_tcp_to_lsl:run
+
