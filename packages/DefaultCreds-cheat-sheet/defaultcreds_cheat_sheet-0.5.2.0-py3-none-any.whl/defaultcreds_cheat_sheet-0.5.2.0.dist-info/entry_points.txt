@@ -1,0 +1,3 @@
+[console_scripts]
+creds=DefaultCreds.creds:run
+
