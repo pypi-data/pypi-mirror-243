@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: tu-games
+Version: 1.0.2
+Summary: Basic implementation of a transferrable utility (TU) game and some of their solutions.
+Project-URL: Homepage, https://github.com/Quoding/tu-games
+Project-URL: Bug Tracker, https://github.com/Quoding/tu-games/issues
+Author-email: Alexandre Larouche <quoding@protonmail.ch>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# tu-games
+
+Basic implementation of a transferrable utility (TU) game and compute its Shapley value solution (for now).
+
+## Installation
+
+`pip install tu-games`
