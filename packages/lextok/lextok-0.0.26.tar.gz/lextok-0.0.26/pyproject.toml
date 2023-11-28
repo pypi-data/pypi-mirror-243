@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "lextok"
+description = "Legalese tokenization"
+version = "0.0.26"
+authors = ["Marcelino G. Veloso III <contact@mv3.dev>"]
+readme = "README.md"
+homepage = "https://mv3.dev"
+repository = "https://github.com/justmars/lextok"
+documentation = "https://justmars.github.io/lextok"
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Typing :: Typed",
+  "Development Status :: 4 - Beta",
+  "Framework :: Pytest",
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+spacy = {extras = ["apple"], version = "^3.7.2"}
+jsonlines = "^4.0.0"
+roman = "^4.1"
+inflect = "^7.0.0"
+python-slugify = "^8.0.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4"
+pytest-cov = "^4.1"
+pre-commit = "^3.5"
+ipykernel = "^6.26.0"
+mypy = "^1.7.0"
+
+[tool.pytest.ini_options]
+minversion = "7.4"
+addopts = "-ra -q --cov --doctest-modules"
+# filterwarnings = ["ignore::DeprecationWarning"] see pkg_resources
+testpaths = ["tests", "lextok"]
+
+[tool.ruff]
+ignore = ["F401", "F403", "E501"]
+fixable = ["F", "E", "W", "I001"]
+select = ["F", "E", "W", "I001"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
