@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+metadatamapping/__init__.py
+metadatamapping/archs4.py
+metadatamapping/concurrency.py
+metadatamapping/dbutils.py
+metadatamapping/link.py
+metadatamapping/metadata.py
+metadatamapping/metasra.py
+metadatamapping/parsers.py
+metadatamapping/summary.py
+metadatamapping.egg-info/PKG-INFO
+metadatamapping.egg-info/SOURCES.txt
+metadatamapping.egg-info/dependency_links.txt
+metadatamapping.egg-info/requires.txt
+metadatamapping.egg-info/top_level.txt
