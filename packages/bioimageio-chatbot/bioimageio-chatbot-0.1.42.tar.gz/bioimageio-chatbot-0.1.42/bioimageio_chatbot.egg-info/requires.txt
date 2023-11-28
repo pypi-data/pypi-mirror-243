@@ -1,0 +1,8 @@
+schema-agents>=0.1.19
+imjoy-rpc
+requests
+pypdf
+hypha
+tqdm
+aiofiles
+langchain>=0.0.335
