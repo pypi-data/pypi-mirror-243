@@ -1,0 +1,297 @@
+[build-system]
+requires = ["hatchling >=1.11"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyter_server"
+dynamic = ["version"]
+readme = "README.md"
+license = { file = "LICENSE" }
+description = "The backend—i.e. core services, APIs, and REST endpoints—to Jupyter web applications."
+authors = [{name = "Jupyter Development Team", email = "jupyter@googlegroups.com"}]
+keywords = ["ipython", "jupyter"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Jupyter",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "anyio>=3.1.0",
+    "argon2-cffi",
+    "jinja2",
+    "jupyter_client>=7.4.4",
+    "jupyter_core>=4.12,!=5.0.*",
+    "jupyter_server_terminals",
+    "nbconvert>=6.4.4",
+    "nbformat>=5.3.0",
+    "packaging",
+    "prometheus_client",
+    "pywinpty;os_name=='nt'",
+    "pyzmq>=24",
+    "Send2Trash>=1.8.2",
+    "terminado>=0.8.3",
+    "tornado>=6.2.0",
+    "traitlets>=5.6.0",
+    "websocket-client",
+    "jupyter_events>=0.9.0",
+    "overrides"
+]
+
+[project.urls]
+Homepage = "https://jupyter-server.readthedocs.io"
+Documentation = "https://jupyter-server.readthedocs.io"
+Funding = "https://numfocus.org/donate"
+Source = "https://github.com/jupyter-server/jupyter_server"
+Tracker = "https://github.com/jupyter-server/jupyter_server/issues"
+
+[project.optional-dependencies]
+test = [
+    "ipykernel",
+    "pytest-console-scripts",
+    "pytest-timeout",
+    "pytest-jupyter[server]>=0.4",
+    "pytest>=7.0",
+    "requests",
+    "pre-commit",
+    'flaky'
+]
+docs = [
+    "ipykernel",
+    "jinja2",
+    "jupyter_client",
+    "jupyter_server",
+    "myst-parser",
+    "nbformat",
+    "prometheus_client",
+    "pydata_sphinx_theme",
+    "Send2Trash",
+    "sphinxcontrib-openapi>=0.8.0",
+    "sphinxcontrib_github_alt",
+    "sphinxcontrib-spelling",
+    "sphinx-autodoc-typehints",
+    "sphinxemoji",
+    "tornado",
+    # workaround for an unknown downstream library that is now
+    # missing typing_extensions
+    "typing_extensions"
+]
+
+[project.scripts]
+jupyter-server = "jupyter_server.serverapp:main"
+
+[tool.hatch.envs.docs]
+features = ["docs"]
+[tool.hatch.envs.docs.scripts]
+build = "make -C docs html SPHINXOPTS='-W'"
+api = "sphinx-apidoc -o docs/source/api -f -E jupyter_server */terminal jupyter_server/pytest_plugin.py"
+
+[tool.hatch.envs.test]
+features = ["test"]
+[tool.hatch.envs.test.scripts]
+test = "python -m pytest -vv {args}"
+nowarn = "test -W default {args}"
+
+[tool.hatch.envs.typing]
+dependencies = [ "pre-commit"]
+detached = true
+[tool.hatch.envs.typing.scripts]
+test = "pre-commit run --all-files --hook-stage manual mypy"
+
+[tool.hatch.envs.cov]
+features = ["test"]
+dependencies = ["coverage[toml]", "pytest-cov"]
+[tool.hatch.envs.cov.scripts]
+test = "python -m pytest -vv --cov jupyter_server --cov-branch --cov-report term-missing:skip-covered {args}"
+nowarn = "test -W default {args}"
+integration = "test --integration_tests=true {args}"
+
+[tool.hatch.envs.lint]
+detached = true
+dependencies = ["pre-commit"]
+[tool.hatch.envs.lint.scripts]
+build = [
+  "pre-commit run --all-files ruff",
+  "pre-commit run --all-files ruff-format",
+]
+
+[tool.hatch.version]
+path = "jupyter_server/_version.py"
+validate-bump = false
+
+[tool.hatch.build]
+artifacts = ["jupyter_server/static/style"]
+
+[tool.hatch.build.hooks.jupyter-builder]
+dependencies = ["hatch-jupyter-builder>=0.8.1"]
+build-function = "hatch_jupyter_builder.npm_builder"
+ensured-targets = [
+  "jupyter_server/static/style/bootstrap.min.css",
+  "jupyter_server/static/style/bootstrap-theme.min.css"
+]
+skip-if-exists = ["jupyter_server/static/style/bootstrap.min.css"]
+install-pre-commit-hook = true
+optional-editable-build = true
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "B",           # flake8-bugbear
+  "I",           # isort
+  "C4",          # flake8-comprehensions
+  "EM",          # flake8-errmsg
+  "ICN",         # flake8-import-conventions
+  "PGH",         # pygrep-hooks
+  "PIE",         # flake8-pie
+  "PL",          # pylint
+  "PT",          # flake8-pytest-style
+  "RET",         # flake8-return
+  "RUF",         # Ruff-specific
+  "SIM",         # flake8-simplify
+  "T20",         # flake8-print
+  "UP",          # pyupgrade
+  "YTT",         # flake8-2020
+  "EXE",         # flake8-executable
+  "NPY",         # NumPy specific rules
+  "PD",          # pandas-vet
+  "PYI",         # flake8-pyi
+]
+ignore = [
+  # Allow non-abstract empty methods in abstract base classes
+  "B027",
+  # Use of `assert` detected
+  "S101",
+  # Use `contextlib.suppress(SchemaRegistryException)` instead of `try`-`except`-`pass`
+  "SIM105",
+  # Missing explicit `return` at the end of function able to return non-`None` value
+  "RET503" ,
+  # Unnecessary assignment to
+  "RET504",
+  # Unnecessary `else` after `return` statement
+  "RET505",
+  # Unnecessary `elif` after `raise` statement
+  "RET506",
+  # Possible hardcoded password
+  "S105",
+  "S106",
+  "PLR",    # Design related pylint codes
+  # RUF012 Mutable class attributes should be annotated with `typing.ClassVar`
+  "RUF012",
+  # Use `X | Y` for type annotations
+  "UP007",
+]
+unfixable = [
+  # Don't touch print statements
+  "T201",
+  # Don't touch unused imports
+  "F401",
+  # Don't touch noqa lines
+  "RUF100",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# B011 Do not call assert False since python -O removes these calls
+# F841 local variable 'foo' is assigned to but never used
+# C408 Unnecessary `dict` call
+# S108 Probable insecure usage of temporary file or directory
+# PLC1901 `ext_pkg.version == ""` can be simplified to `not ext_pkg.version` as an empty string is falsey
+# B018 Found useless expression
+"tests/*" = ["B011", "F841", "EM", "C", "T201", "S108", "PLC1901", "PTH", "ARG", "PT", "RET", "G", "PLW", "B018"]
+# print should be used in applications
+"**/*app.py" = ["T201"]
+# Ignore flake 8 errors from shimmed imports
+"jupyter_server/base/zmqhandlers.py" = ["F401"]
+# PLR2004 Magic value used in comparison
+"test_handlers.py" = ["PLR2004"]
+# F821 Undefined name `c`
+"**/*_config.py" = ["F821"]
+# F401 `jupyter_server_terminals.TerminalAPIHandler` imported but unused
+"jupyter_server/terminal/api_handlers.py" = ["F401"]
+# S607 Starting a process with a partial executable path
+# S603 `subprocess` call: check for execution of untrusted input
+"jupyter_server/services/contents/filemanager.py" = ["S603", "S607"]
+"tests/unix_sockets/test_serverapp_integration.py" = ["S603", "S607"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+xfail_strict = true
+log_cli_level = "info"
+addopts = [
+  "-ra", "--durations=10", "--color=yes", "--doctest-modules",
+   "--showlocals", "--strict-markers", "--strict-config"
+]
+testpaths = [
+    "tests/"
+]
+timeout = 100
+# Restore this setting to debug failures.
+timeout_method = "thread"
+filterwarnings = [
+  "error",
+  "ignore:Passing a schema to Validator.iter_errors:DeprecationWarning",
+  "ignore:run_pre_save_hook is deprecated:DeprecationWarning",
+  "always:unclosed <socket.socket:ResourceWarning",
+  "module:Jupyter is migrating its paths to use standard platformdirs:DeprecationWarning",
+  "ignore:jupyter_server.base.zmqhandlers module is deprecated in Jupyter Server 2.0:DeprecationWarning",
+  "ignore:datetime.datetime.utc:DeprecationWarning:dateutil",
+  "ignore:datetime.datetime.utc:DeprecationWarning:tornado",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "def __repr__",
+  "if self.debug:",
+  "if settings.DEBUG",
+  "if TYPE_CHECKING:",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "if 0:",
+  "if __name__ == .__main__.:",
+  "class .*\bProtocol\\):",
+"@(abc\\.)?abstractmethod",
+]
+
+[tool.coverage.run]
+relative_files = true
+source = ["jupyter_server"]
+
+[tool.jupyter-releaser.hooks]
+before-build-python = ["npm install", "npm run build"]
+
+[tool.jupyter-releaser.options]
+pydist_resource_paths = ["jupyter_server/static/style/bootstrap.min.css", "jupyter_server/static/style/bootstrap-theme.min.css"]
+post-version-spec = "dev"
+
+[tool.mypy]
+python_version = "3.8"
+explicit_package_bases = true
+strict = true
+pretty = true
+warn_unreachable = true
+disable_error_code = ["no-untyped-def", "no-untyped-call"]
+enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
+
+[tool.interrogate]
+ignore-init-module=true
+ignore-private=true
+ignore-semiprivate=true
+ignore-property-decorators=true
+ignore-nested-functions=true
+ignore-nested-classes=true
+fail-under=95
+exclude = ["docs", "test"]
+
+[tool.check-wheel-contents]
+ignore = ["W002"]
+
+[tool.repo-review]
+ignore = ["GH102"]
