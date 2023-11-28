@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+icolyzer/__init__.py
+icolyzer/analyzer.py
+icolyzer/cli.py
+icolyzer/converter.py
+icolyzer/ift.dll
+icolyzer/iftlibrary.py
+icolyzer/libift-x64.so
+icolyzer/libift.dylib
+icolyzer/plotter.py
+icolyzer.egg-info/PKG-INFO
+icolyzer.egg-info/SOURCES.txt
+icolyzer.egg-info/dependency_links.txt
+icolyzer.egg-info/entry_points.txt
+icolyzer.egg-info/requires.txt
+icolyzer.egg-info/top_level.txt
