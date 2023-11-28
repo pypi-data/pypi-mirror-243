@@ -1,0 +1,23 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "toyota-na-custom"
+version = "0.0.3"
+description = "Customized Toyota NA that supports refresh token"
+authors = [{ name = "Tony", email = "waddle-years-0f@icloud.com" }]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+dependencies = ['aiohttp', 'cryptography', 'PyJWT', 'pytz']
+requires-python = ">=3.8"
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = []
+include = ["toyota-na-custom*"]
