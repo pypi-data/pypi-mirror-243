@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "digit_converter"
+version = "2.0"
+description = "A cool tool for digits converting. It could be applied in GA. It transforms a number to a list of digits under any base."
+authors = ["William Song <30965609+Freakwill@users.noreply.github.com>"]
+
+license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/Freakwill/digit_converter"
+repository = "https://github.com/Freakwill/digit_converter"
+keywords = ["Digit Converting", "Encoding", "Genetic Algorithm"]
+classifiers = [
+    'License :: Public Domain',  # Public Domain
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3.7',
+    'Intended Audience :: Science/Research',
+    'Operating System :: OS Independent',
+    'Topic :: Scientific/Engineering :: Mathematics',
+    'Natural Language :: English'
+]
+[tool.poetry.dependencies]
+python = "^3.7"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
