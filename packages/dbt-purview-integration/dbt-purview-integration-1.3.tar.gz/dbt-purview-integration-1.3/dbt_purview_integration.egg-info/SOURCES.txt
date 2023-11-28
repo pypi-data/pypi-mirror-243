@@ -1,0 +1,10 @@
+README.md
+setup.py
+dbt_purview_integration.egg-info/PKG-INFO
+dbt_purview_integration.egg-info/SOURCES.txt
+dbt_purview_integration.egg-info/dependency_links.txt
+dbt_purview_integration.egg-info/entry_points.txt
+dbt_purview_integration.egg-info/requires.txt
+dbt_purview_integration.egg-info/top_level.txt
+dbtpurview/__init__.py
+dbtpurview/main.py
