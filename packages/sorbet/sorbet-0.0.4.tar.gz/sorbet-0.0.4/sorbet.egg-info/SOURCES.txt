@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+sorbet/__init__.py
+sorbet/color.py
+sorbet/format_strings.py
+sorbet/sorbet.py
+sorbet.egg-info/PKG-INFO
+sorbet.egg-info/SOURCES.txt
+sorbet.egg-info/dependency_links.txt
+sorbet.egg-info/requires.txt
+sorbet.egg-info/top_level.txt
