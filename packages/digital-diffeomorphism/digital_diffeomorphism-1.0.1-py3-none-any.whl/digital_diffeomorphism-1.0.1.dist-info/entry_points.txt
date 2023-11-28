@@ -1,0 +1,3 @@
+[console_scripts]
+nda = digital_diffeomorphism.cli:non_diffeomorphic_area
+ndv = digital_diffeomorphism.cli:non_diffeomorphic_volume
