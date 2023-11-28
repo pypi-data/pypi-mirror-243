@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hjimi_tools"
+version = "0.0.4"
+authors = [
+    { name = "wenquanshan", email = "wenquanshan@hjimi.com" },
+]
+description = """A Project to setup a python project to build
+A Project to generate a c language project to build
+"""
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/zidanewenqsh/hjimi_utils"
+"Bug Tracker" = "https://github.com/zidanewenqsh/hjimi_utils/issues"
+
