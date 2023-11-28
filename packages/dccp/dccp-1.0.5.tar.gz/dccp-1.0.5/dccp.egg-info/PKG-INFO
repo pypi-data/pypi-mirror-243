@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: dccp
+Version: 1.0.5
+Summary: A CVXPY extension for difference of convex programs.
+Home-page: http://github.com/cvxgrp/dccp/
+Author: Xinyue Shen, Steven Diamond, Stephen Boyd
+Author-email: xinyues@stanford.edu, diamond@cs.stanford.edu, boyd@stanford.edu
+License: GPLv3
+Requires-Dist: cvxpy>=1.0
