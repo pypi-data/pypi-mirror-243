@@ -1,0 +1,383 @@
+# django signals 종류
+from django.db.models import signals as django_signals
+# celery signals
+from celery import signals as celery_signals
+# django-rest-framework signals
+from rest_framework import signals as drf_signals
+# django-allauth signals
+from allauth.account import signals as allauth_signals
+# django-rest-auth signals
+from rest_auth import signals as rest_auth_signals
+# django-rest-framework-simplejwt signals
+from rest_framework_simplejwt import signals as jwt_signals
+
+
+receiver = None
+sender = None
+dispatch_uid = None
+
+# django signals
+django_signals.pre_save.connect(
+    receiver=receiver,
+    sender=sender,
+    dispatch_uid=dispatch_uid,
+    weak=False,
+    dispatch_uid="",
+)
+django_signals.post_save.connect(
+    receiver=receiver,
+    sender=sender,
+    dispatch_uid=dispatch_uid,
+    weak=False,
+    dispatch_uid="",
+)
+django_signals.pre_delete.connect(
+    receiver=receiver,
+    sender=sender,
+    dispatch_uid=dispatch_uid,
+    weak=False,
+    dispatch_uid="",
+)
+django_signals.post_delete.connect(
+    receiver=receiver,
+    sender=sender,
+    dispatch_uid=dispatch_uid,
+    weak=False,
+    dispatch_uid="",
+)
+django_signals.m2m_changed.connect(
+    receiver=receiver,
+    sender=sender,
+    dispatch_uid=dispatch_uid,
+    weak=False,
+    dispatch_uid="",
+)
+# celery signals
+celery_signals.before_task_publish.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+celery_signals.after_task_publish.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+celery_signals.task_prerun.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+celery_signals.task_postrun.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+celery_signals.task_success.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+celery_signals.task_failure.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+celery_signals.task_revoked.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+celery_signals.task_rejected.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+celery_signals.task_retry.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+celery_signals.task_unknown.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+# django-rest-framework signals
+drf_signals.request_started.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.request_finished.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.request_exception.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.pre_save.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.post_save.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.pre_delete.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.post_delete.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.pre_bulk_create.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.post_bulk_create.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.pre_bulk_update.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.post_bulk_update.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.pre_bulk_destroy.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+drf_signals.post_bulk_destroy.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+# django-allauth signals
+allauth_signals.user_logged_in.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.user_signed_up.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.user_logged_out.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.password_set.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.password_changed.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.email_confirmed.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.email_confirmation_sent.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.email_changed.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.email_added.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.email_removed.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.password_reset.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.password_reset_sent.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.password_reset_from_key_sent.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.email_confirmation_reminder.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.email_confirmation_reminder_sent.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.password_reset_from_email.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.password_changed_from_email.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+allauth_signals.email_changed_from_email.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+# django-rest-auth signals
+rest_auth_signals.user_logged_in.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+rest_auth_signals.user_logged_out.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+rest_auth_signals.user_signed_up.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+rest_auth_signals.password_reset.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+rest_auth_signals.password_changed.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+rest_auth_signals.password_reset_confirm.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+rest_auth_signals.password_reset_complete.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+rest_auth_signals.password_reset_confirm_retype.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+rest_auth_signals.password_reset_confirm_retype_complete.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+# django-rest-framework-simplejwt signals
+jwt_signals.token_blacklisted.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+jwt_signals.token_created.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+jwt_signals.token_refreshed.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
+jwt_signals.token_rotated.connect(
+    receiver=receiver,
+    sender=sender,
+    weak=False,
+    dispatch_uid="",
+)
