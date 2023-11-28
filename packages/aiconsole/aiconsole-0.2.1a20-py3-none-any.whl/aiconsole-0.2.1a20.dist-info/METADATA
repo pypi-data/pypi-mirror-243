@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: aiconsole
+Version: 0.2.1a20
+Summary: Run and expand your personal AI tools
+License: Apache-2.0
+Author: Maciej Cielecki
+Author-email: maciej.cielecki@10clouds.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: appdirs (>=1.4.4,<2.0.0)
+Requires-Dist: beautifulsoup4 (>=4.12.2,<5.0.0)
+Requires-Dist: fastapi (>=0.103.2,<0.104.0)
+Requires-Dist: litellm (>=0.6.2,<0.7.0)
+Requires-Dist: openai-function-call (>=0.2.6,<0.3.0)
+Requires-Dist: pillow (>=10.0.1,<11.0.0)
+Requires-Dist: pydantic (>=2.4.2,<3.0.0)
+Requires-Dist: pydantic-settings (>=2.0.3,<3.0.0)
+Requires-Dist: python-multipart (>=0.0.6,<0.0.7)
+Requires-Dist: rtoml (>=0.9.0,<0.10.0)
+Requires-Dist: selenium (>=4.14.0,<5.0.0)
+Requires-Dist: send2trash (>=1.8.2,<2.0.0)
+Requires-Dist: tiktoken (>=0.5.1,<0.6.0)
+Requires-Dist: tomlkit (>=0.12.1,<0.13.0)
+Requires-Dist: uvicorn (>=0.23.2,<0.24.0)
+Requires-Dist: watchdog (>=3.0.0,<4.0.0)
+Requires-Dist: webdriver-manager (>=4.0.1,<5.0.0)
+Requires-Dist: youtube-transcript-api (>=0.6.1,<0.7.0)
