@@ -1,0 +1,11 @@
+importlib-metadata
+cyvcf2
+matplotlib
+numpy
+pandas
+pybedtools
+pysam
+scikit-learn
+scipy
+statsmodels
+pyfaidx
