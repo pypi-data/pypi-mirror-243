@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: atomicarray
+Version: 0.0.1
+Summary: Arrays with atomic operations
+Home-page: https://github.com/Dobatymo/atomicarray
+Author: Dobatymo
+Author-email: Dobatymo@users.noreply.github.com
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown; charset=UTF-8
+Provides-Extra: test
+Requires-Dist: genutility[test]; extra == "test"
+
+# atomicarray
+
+```python
+a = cls(0, 0)
+b = cls(1, 2)
+
+a += b  # can be called from multiple threads
+```

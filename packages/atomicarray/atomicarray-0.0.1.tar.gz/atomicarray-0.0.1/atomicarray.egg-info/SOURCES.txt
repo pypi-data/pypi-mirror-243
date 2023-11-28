@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+atomicarray/__init__.py
+atomicarray/atomic.hpp
+atomicarray/int.cpp
+atomicarray/int.pyx
+atomicarray.egg-info/PKG-INFO
+atomicarray.egg-info/SOURCES.txt
+atomicarray.egg-info/dependency_links.txt
+atomicarray.egg-info/requires.txt
+atomicarray.egg-info/top_level.txt
+tests/test_int.py
