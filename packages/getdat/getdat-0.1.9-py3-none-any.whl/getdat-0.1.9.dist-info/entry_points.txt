@@ -1,0 +1,3 @@
+[console_scripts]
+getdat=getdat.main:cli
+
