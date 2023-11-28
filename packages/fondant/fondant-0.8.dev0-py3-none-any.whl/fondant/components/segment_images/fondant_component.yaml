@@ -1,0 +1,23 @@
+name: Segment images
+description: Component that creates segmentation masks for images using a model from the Hugging Face hub
+image: fndnt/segment_images:0.8.dev0
+tags:
+  - Image processing
+
+consumes:
+  images_data:
+    type: binary
+
+produces:
+  segmentations_data:
+    type: binary
+
+args:
+  model_id:
+    description: id of the model on the Hugging Face hub
+    type: str
+    default: "openmmlab/upernet-convnext-small"
+  batch_size:
+    description: batch size to use
+    type: int
+    default: 8
