@@ -1,0 +1,2 @@
+[console_scripts]
+csaf = csaf.cli:app
