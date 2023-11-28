@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: twoStepIntermittend
+Version: 0.0.1
+Summary: wSAA in a two-step manner to imitate croston's method
+Home-page: https://github.com/kaiguender/twoStepIntermittend
+Author: kaiguender
+Author-email: kai.guender@yahoo.de
+License: Apache Software License 2.0
+Keywords: nbdev jupyter notebook python
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+License-File: LICENSE
+
+This file will be overwritten by `index.ipynb`
