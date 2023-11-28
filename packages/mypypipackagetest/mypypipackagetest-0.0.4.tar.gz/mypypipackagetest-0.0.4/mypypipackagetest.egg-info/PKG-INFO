@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: mypypipackage
+Version: 0.0.2
+Summary: A small example package
+Author-email: Example Author <author@example.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7

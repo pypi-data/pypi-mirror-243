@@ -1,0 +1,7 @@
+pyproject.toml
+mypypipackage/__init__.py
+mypypipackage/greet.py
+mypypipackage.egg-info/PKG-INFO
+mypypipackage.egg-info/SOURCES.txt
+mypypipackage.egg-info/dependency_links.txt
+mypypipackage.egg-info/top_level.txt

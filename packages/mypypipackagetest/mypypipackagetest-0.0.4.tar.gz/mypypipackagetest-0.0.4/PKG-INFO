@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: mypypipackagetest
+Version: 0.0.4
+Summary: A small example package
+Author-email: Sergey Zavyalov <zav.postline@yandex.ru>
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
