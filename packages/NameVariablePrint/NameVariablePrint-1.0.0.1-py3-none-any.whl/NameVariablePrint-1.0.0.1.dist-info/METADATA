@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: NameVariablePrint
+Version: 1.0.0.1
+Summary: Print variable name and value when you debugging
+Home-page: https://github.com/sanghyeon1/nvprint
+Author: Shawn_Park
+Author-email: psh990626@gmail.com
+Keywords: pypi,NameVariablePrint,debugprint,print
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+
