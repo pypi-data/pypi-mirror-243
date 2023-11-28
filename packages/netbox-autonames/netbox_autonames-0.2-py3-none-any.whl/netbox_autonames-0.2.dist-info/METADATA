@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: netbox-autonames
+Version: 0.2
+Summary: Auto-generate names for devices in NetBox based on their role.
+Home-page: https://github.com/jaannnis/netbox_autonames
+Author: jannis
+License: AGPLv3
+License-File: LICENSE
+
