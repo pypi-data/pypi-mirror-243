@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: psychopy-connect
+Version: 0.0.2
+Summary: Extension package for adding support to PsychoPy for connectivity i.e. serial and parallel ports.
+Author-email: Jon Peirce <jon@opensceincetools.org>, Matthew Cutone <mcutone@opensceincetools.org>
+License: GNU General Public License v3 (GPLv3)
+Project-URL: homepage, https://github.com/psychopy/psychopy-connect
+Project-URL: changelog, https://github.com/psychopy/psychopy-connect/blob/main/CHANGELOG.txt
+Project-URL: documentation, https://pages.github.com/psychopy/psychopy-connect
+Project-URL: repository, https://github.com/psychopy/psychopy-connect
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pyparallel; sys_platform == "linux"
+Requires-Dist: pyserial
+Requires-Dist: psychopy-labhackers
+Requires-Dist: psychopy-labjack
+
+# psychopy-connect
+
+Extension package for adding support to PsychoPy for connectivity i.e. serial and parallel ports.
+
+## Supported Devices
+
+Installing this package alongside PsychoPy will enable support for the following devices:
+
+* Generic serial and parallel ports
+* [USB2TTL8](http://labhackers.com/usb2ttl8.html) USB TTL Interface
+* Various U3 compatible [LabJack](https://labjack.com/) devices
+    
+## Installing
+
+Install this package with the following shell command:: 
+
+    pip install psychopy-connect
+
+You may also use PsychoPy's builtin package manager to install this package.
+
+## Usage
+
+Once the package is installed, PsychoPy will automatically load it when started and make objects available within the
+following namespaces:
+
+* `psychopy.hardware.serialdevice`
+* `psychopy.parallel`
+
+This also adds the following components to Builder:
+
+* Serial Out
+* Parallel Out

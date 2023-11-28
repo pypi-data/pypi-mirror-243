@@ -1,0 +1,6 @@
+pyserial
+psychopy-labhackers
+psychopy-labjack
+
+[:sys_platform == "linux"]
+pyparallel
