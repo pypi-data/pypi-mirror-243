@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: inter-api-connector
+Version: 0.0.0
+Summary: Um conector não oficial para API do Banco Inter.
+Home-page: https://github.com/LuizDMM/api-inter-python-connector
+Author: LuizDMM
+Author-email: luizdmmainart@gmail.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Provides-Extra: dev
+Requires-Dist: build >=1.0.3 ; extra == 'dev'
+
+# api-inter-python-connector
+Um conector não oficial para a API do Banco Inter
