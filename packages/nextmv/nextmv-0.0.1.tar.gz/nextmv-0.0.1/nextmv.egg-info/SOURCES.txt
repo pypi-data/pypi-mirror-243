@@ -1,0 +1,9 @@
+README.md
+setup.py
+nextmv/__init__.py
+nextmv/hello.py
+nextmv.egg-info/PKG-INFO
+nextmv.egg-info/SOURCES.txt
+nextmv.egg-info/dependency_links.txt
+nextmv.egg-info/top_level.txt
+test/test_hello.py
