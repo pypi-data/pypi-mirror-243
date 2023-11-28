@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: raum-management
+Version: 0.1.1
+Summary: Script to create a report on office usage, based on two Excel sheets
+Author-email: Swen Vermeul <swen@ethz.ch>
+License: Apache Software License Version 2.0
+Project-URL: Homepage, https://gitlab.ethz.ch/vermeul/raum-management
+Project-URL: Bug Tracker, https://gitlab.ethz.ch/vermeul/raum-management/-/issues
+Classifier: Programming Language :: Python :: 3.9
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Requires-Dist: openpyxl
+Requires-Dist: requests
+Requires-Dist: click

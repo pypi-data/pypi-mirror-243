@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = 'setuptools.build_meta'
+
+[tool.setuptools]
+packages = ["raum_management"]
+
+[project]
+name = "raum-management"
+version = "0.1.1"
+description = "Script to create a report on office usage, based on two Excel sheets"
+authors=[{ name="Swen Vermeul", email="swen@ethz.ch" }]
+dependencies=[
+    "openpyxl",
+    "requests",
+    "click",
+]
+license={text="Apache Software License Version 2.0"}
+requires-python = ">=3.9"
+classifiers=[
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+rauma="raum_management.main:cli"
+
+[project.urls]
+"Homepage"= "https://gitlab.ethz.ch/vermeul/raum-management"
+"Bug Tracker"="https://gitlab.ethz.ch/vermeul/raum-management/-/issues"

@@ -1,0 +1,2 @@
+[console_scripts]
+rauma = raum_management.main:cli
