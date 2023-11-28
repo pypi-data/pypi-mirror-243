@@ -1,0 +1,16 @@
+gamspy_scip/__init__.py,sha256=PP1nkgtZvDa8FSNWU5PWSj5VqeXZQT0xZ3alxgwS9Jc,530
+gamspy_scip/libbliss64.dylib,sha256=lrt4xIMmAQ5XVwvhk3b3kOMeh46XDQRphN4FgxRxbJg,102432
+gamspy_scip/libgurobi100.dylib,sha256=6i0xOE--jjxro-PIOuZUolFXly9vGowqvNA-_25A-hs,6036720
+gamspy_scip/libipopt64.dylib,sha256=jyjW9sflfQzG9wmV_zlzzab0UnWyY87RIn4NQFT_yH8,5311072
+gamspy_scip/libmosek64.10.1.dylib,sha256=c0OT7I_dCtgiqLwaoNjLj2fEdPOTL7GtaedMCGJb82s,13024856
+gamspy_scip/libomp.dylib,sha256=w7eacgFkmCc7aJntjiK9mCTSHeMeo8iJJR7mSR4q3aM,726480
+gamspy_scip/libscip64.dylib,sha256=R49CDXKox91cgI48rMatUwWele8_pP9Nr17vDCEiTiM,18504272
+gamspy_scip/libscpcclib64.dylib,sha256=gdEFuV5M2sxpOTL7PvTtjYP8pMvVKA9KCVHXKwVuGmo,449552
+gamspy_scip/libtbb.12.8.dylib,sha256=grr2SNVphI1jsKm3DBblbTZ4eWAkMvHRzqeywyNJ5cE,381502
+gamspy_scip/libtbb.12.dylib,sha256=grr2SNVphI1jsKm3DBblbTZ4eWAkMvHRzqeywyNJ5cE,381502
+gamspy_scip/libtbb64.dylib,sha256=FLDAmRTC3Tzz0QAkSUWC1Gy5tKQkLYOK6Xcb3Mt_YxM,385136
+gamspy_scip/version.py,sha256=Fp2uOZgd9sF4YVGX3qN7MuK6LgGAWfHOEIHN9_x8IRI,22
+gamspy_scip-45.4.0.dist-info/METADATA,sha256=wOlDabA2Q4cnxySKDN-AerN2pyGEZ4dj1qgAYng8nZk,85
+gamspy_scip-45.4.0.dist-info/WHEEL,sha256=QRjixan2ME_93ebXUfolnI9xKf8r071oNsik5l944UU,112
+gamspy_scip-45.4.0.dist-info/top_level.txt,sha256=UVjI9FoNXVbclrmyolda17IiwoIQcfCLdDTSt8yF8GA,12
+gamspy_scip-45.4.0.dist-info/RECORD,,
