@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: SouPyX
+Version: 1.0.6
+Summary: Sound Python Library
+Home-page: https://github.com/Yuan-ManX/SouPy
+Author: Yuan Man
+Author-email: ym1076302261@gmail.com
+License: MIT
+Keywords: audio music speech dsp soundsynthesis audioeffect spatialaudio signalprocessing machinelearning deeplearning
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Multimedia :: Sound/Audio :: Analysis
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: scikit-learn
+Requires-Dist: torch
+Requires-Dist: matplotlib
+Requires-Dist: mido
+Requires-Dist: h5py
+
+
+SouPyX: An Audio Exploration Space.
+See the README file for details, usage info, and a list of feature.
+
+
