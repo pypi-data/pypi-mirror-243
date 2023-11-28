@@ -1,0 +1,6 @@
+cryptography>=3.4.8
+debugpy>=1.5.1
+grpcio>=1.59.2
+protobuf>=4.25.0
+pydantic>=2.4.2
+setuptools>=59.6.0
