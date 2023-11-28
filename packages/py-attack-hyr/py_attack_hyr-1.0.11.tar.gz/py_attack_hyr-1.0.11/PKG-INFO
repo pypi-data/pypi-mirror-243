@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: py_attack_hyr
+Version: 1.0.11
+Summary: A test of py_attack
+Author: hyr
+Author-email: 
+Keywords: python,menu,dumb_menu,windows,mac,linux
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+
+
+# py_attack
+
+
+```
+`1.0.12` fix 
+
+`1.0.11` fix 
+
+`1.0.10` fix 
+
+`1.0.9` fix 
+
+`1.0.8` fix 
+
+`1.0.7` fix  
+
+`1.0.6` forget write log in 1.0.5
+
+`1.0.5` fix bug in 1.0.4
+
+`1.0.4` support "clean mode" 
+
+`1.0.3` show selected index also when using hotkey  
+
+`1.0.2` first useable version
+
+`1.0.1` fix bug
+
+`1.0.0` first release
+
