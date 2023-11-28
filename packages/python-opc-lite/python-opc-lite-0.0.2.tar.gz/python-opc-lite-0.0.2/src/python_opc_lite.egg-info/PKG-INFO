@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: python-opc-lite
+Version: 0.0.2
+Summary: Open Package Convention light weight python library
+Home-page: 
+Author: Karim S (Kas)
+Author-email: kascodeo@gmail.com
+License: MIT
+Project-URL: Documentation, https://python-opc-lite.readthedocs.io/
+Project-URL: Source, https://github.com/kascodeo/python-opc-lite
+Project-URL: Release notes, https://python-opc-lite.readthedocs.io/en/stable/releasenotes.html
+Keywords: opc,Open Package Convention,pptx,docx,xlsx
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: lxml
+Requires-Dist: lxml-util
+Provides-Extra: docs
+Requires-Dist: furo; extra == "docs"
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: sphinx-copybutton; extra == "docs"
+Requires-Dist: sphinx-inline-tabs; extra == "docs"
+Requires-Dist: sphinx-removed-in; extra == "docs"
+Requires-Dist: sphinxext-opengraph; extra == "docs"
+Provides-Extra: tests
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: tox; extra == "tests"
+Provides-Extra: dists
+Requires-Dist: twine; extra == "dists"
+Requires-Dist: build; extra == "dists"
+
+# python-opc-lite
+
+python-opc-lite is a light weight python library for Open Package Convention used for Open Office XML packages
+
+
+## Overview
+
+This library is used to deal with open office xml packages that follow Open Package Convention. 
+
+It is used not only to read and write the packages but also to navigate through the parts of the package by relationships
+
+
+## More information
+
+- [Documentation](https://python-opc-lite.readthedocs.io/)
+  - [Quickstart](https://python-opc-lite.readthedocs.io/en/latest/quickstart.html)
+- [Contribute](https://python-opc-lite.readthedocs.io/en/latest/contribution.html)
+  - [Issues](https://github.com/kascodeo/python-opc-lite/issues)
+  - [Pull requests](https://github.com/kascodeo/python-opc-lite/pulls)
