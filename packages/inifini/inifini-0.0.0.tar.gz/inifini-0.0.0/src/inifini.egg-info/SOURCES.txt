@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/inifini/__init__.py
+src/inifini/__main__.py
+src/inifini.egg-info/PKG-INFO
+src/inifini.egg-info/SOURCES.txt
+src/inifini.egg-info/dependency_links.txt
+src/inifini.egg-info/entry_points.txt
+src/inifini.egg-info/requires.txt
+src/inifini.egg-info/top_level.txt

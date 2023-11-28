@@ -1,0 +1,2 @@
+[console_scripts]
+inifini = inifini.__main__:main
