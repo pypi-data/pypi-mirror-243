@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: empresa4
+Version: 2.0.1
+Summary: Empresa 4 Library for Laboratorio de Implementación 3
+Author: Gero
+Author-email: geropellicer@gmail.com
+License-File: LICENSE.txt
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pytest
+
