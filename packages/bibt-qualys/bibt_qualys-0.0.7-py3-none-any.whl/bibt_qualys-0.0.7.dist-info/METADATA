@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: bibt-qualys
+Version: 0.0.7
+Summary: Functionality often used by BITS Blue Team (Qualys).
+Project-URL: Homepage, https://github.com/broadinstitute/bibt-qualys
+Project-URL: Documentation, https://bibt-qualys.readthedocs.io/en/latest/
+Project-URL: Bug Tracker, https://github.com/broadinstitute/bibt-qualys/issues
+Author-email: Matthew OBrien <mobrien@broadinstitute.org>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Security
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+Requires-Dist: requests
+Requires-Dist: xmltodict
+Description-Content-Type: text/markdown
+
+# bibt-qualys: BITS Blue Team Utilities: Qualys API Module
+
+- **Developer**: Matthew OBrien
+- **Email**: mobrien@broadinstitute.org
+- **Project URL**: https://pypi.org/project/bibt-qualys/
+- **Project Repo**: https://github.com/broadinstitute/bibt-qualys
+- **Project Documentation**: https://bibt-qualys.readthedocs.io/en/latest/
+
+## Installing
+
+```bash
+$ pip install --upgrade bibt-qualys
+```
+
+## Usage
+
+- See documentation here: https://bibt-qualys.readthedocs.io/en/latest/
