@@ -1,0 +1,1988 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: turcar\n"
+"Language: en-gb\n"
+
+#: turcar/workbench.py:375
+msgid "File"
+msgstr "File"
+
+#: turcar/workbench.py:376
+msgid "Edit"
+msgstr "Edit"
+
+#: turcar/workbench.py:377
+msgid "View"
+msgstr "View"
+
+#: turcar/running.py:161 turcar/workbench.py:378
+msgid "Run"
+msgstr "Run"
+
+#: turcar/workbench.py:379
+msgid "Tools"
+msgstr "Tools"
+
+#: turcar/plugins/help/__init__.py:80 turcar/workbench.py:380
+msgid "Help"
+msgstr "Help"
+
+#: turcar/workbench.py:598
+msgid "Exit"
+msgstr "Exit"
+
+#: turcar/workbench.py:625
+msgid "Decrease font size"
+msgstr "Decrease font size"
+
+#: turcar/workbench.py:637
+msgid "Focus editor"
+msgstr "Focus editor"
+
+#: turcar/workbench.py:646
+msgid "Focus shell"
+msgstr "Focus shell"
+
+#: turcar/workbench.py:656
+msgid "Maximize view"
+msgstr "Maximize view"
+
+#: turcar/workbench.py:668
+msgid "Full screen"
+msgstr "Full screen"
+
+#: turcar/workbench.py:1467
+msgid "Program arguments"
+msgstr "Program arguments"
+
+#: turcar/plugins/about.py:24 turcar/plugins/about.py:153
+msgid "About turcar"
+msgstr "About turcar"
+
+#: turcar/plugins/about.py:81
+msgid "Made in\n"
+"University of Tartu, Estonia,\n"
+"with the help from\n"
+"open-source community,\n"
+"Raspberry Pi Foundation\n"
+"and Cybernetica AS"
+msgstr "Made in\n"
+"University of Tartu, Estonia,\n"
+"with the help from\n"
+"open-source community,\n"
+"Raspberry Pi Foundation\n"
+"and Cybernetica AS"
+
+#: turcar/plugins/about.py:101
+msgid "This program comes with\n"
+"ABSOLUTELY NO WARRANTY!\n"
+"It is free software, and you are welcome to\n"
+"redistribute it under certain conditions, see\n"
+"https://opensource.org/licenses/MIT\n"
+"for details"
+msgstr "This program comes with\n"
+"ABSOLUTELY NO WARRANTY!\n"
+"It is free software, and you are welcome to\n"
+"redistribute it under certain conditions, see\n"
+"https://opensource.org/licenses/MIT\n"
+"for details"
+
+#: turcar/plugins/about.py:142
+msgid "Version history"
+msgstr "Version history"
+
+#: turcar/plugins/about.py:149
+msgid "Report problems"
+msgstr "Report problems"
+
+#: turcar/plugins/assistant_config_page.py:16
+msgid "Open Assistant automatically when program crashes with an exception"
+msgstr "Open Assistant automatically when program crashes with an exception"
+
+#: turcar/plugins/assistant_config_page.py:23
+msgid "Open Assistant automatically when it has warnings for your code"
+msgstr "Open Assistant automatically when it has warnings for your code"
+
+#: turcar/plugins/assistant_config_page.py:30
+msgid "Perform selected Pylint checks"
+msgstr "Perform selected Pylint checks"
+
+#: turcar/plugins/assistant_config_page.py:34
+msgid "Perform MyPy checks"
+msgstr "Perform MyPy checks"
+
+#: turcar/plugins/assistant_config_page.py:36
+msgid "Disabled checks (one id per line)"
+msgstr "Disabled checks (one id per line)"
+
+#: turcar/assistance.py:981 turcar/plugins/assistant_config_page.py:74
+msgid "Assistant"
+msgstr "Assistant"
+
+#: turcar/plugins/autocomplete.py:529
+msgid "Auto-complete"
+msgstr "Auto-complete"
+
+#: turcar/plugins/backend_config_page.py:335
+msgid "Interpreter"
+msgstr "Interpreter"
+
+#: turcar/plugins/birdseye_frontend.py:55
+msgid "About Birdseye"
+msgstr "About Birdseye"
+
+#: turcar/plugins/birdseye_frontend.py:56
+msgid "Birdseye is a Python debugger which needs to be installed separately.\n"
+"\n"
+"Do you want to open the help page and learn more?"
+msgstr "Birdseye is a Python debugger which needs to be installed separately.\n"
+"\n"
+"Do you want to open the help page and learn more?"
+
+#: turcar/plugins/birdseye_frontend.py:84
+msgid "Debug current script (birdseye)"
+msgstr "Debug current script (birdseye)"
+
+#: turcar/plugins/commenting_indenting.py:171
+msgid "Toggle comment"
+msgstr "Toggle comment"
+
+#: turcar/plugins/commenting_indenting.py:181
+msgid "Comment out"
+msgstr "Comment out"
+
+#: turcar/plugins/commenting_indenting.py:191
+msgid "Uncomment"
+msgstr "Uncomment"
+
+#: turcar/plugins/common_editing_commands.py:21
+msgid "Undo"
+msgstr "Undo"
+
+#: turcar/plugins/common_editing_commands.py:33
+msgid "Redo"
+msgstr "Redo"
+
+#: turcar/base_file_browser.py:728 turcar/plugins/common_editing_commands.py:49
+#: turcar/ui_utils.py:2339
+msgid "Cut"
+msgstr "Cut"
+
+#: turcar/base_file_browser.py:729 turcar/plugins/common_editing_commands.py:61
+#: turcar/ui_utils.py:2340
+msgid "Copy"
+msgstr "Copy"
+
+#: turcar/base_file_browser.py:731 turcar/base_file_browser.py:737
+#: turcar/plugins/common_editing_commands.py:73 turcar/ui_utils.py:2341
+msgid "Paste"
+msgstr "Paste"
+
+#: turcar/plugins/common_editing_commands.py:85 turcar/plugins/debugger.py:152
+msgid "Select all"
+msgstr "Select all"
+
+#: turcar/plugins/debugger.py:145 turcar/plugins/debugger.py:1402
+msgid "Run to cursor"
+msgstr "Run to cursor"
+
+#: turcar/plugins/debugger.py:985
+msgid "Can't close yet"
+msgstr "Can't close yet"
+
+#: turcar/plugins/debugger.py:986
+msgid "Use \"Stop\" command if you want to cancel debugging"
+msgstr "Use \"Stop\" command if you want to cancel debugging"
+
+#: turcar/plugins/dock_user_windows_frontend.py:28
+msgid "Dock user windows"
+msgstr "Dock user windows"
+
+#: turcar/plugins/editor_config_page.py:20
+msgid "Highlight matching names"
+msgstr "Highlight matching names"
+
+#: turcar/plugins/editor_config_page.py:26
+msgid "Highlight local variables"
+msgstr "Highlight local variables"
+
+#: turcar/plugins/editor_config_page.py:31
+msgid "Highlight parentheses"
+msgstr "Highlight parentheses"
+
+#: turcar/plugins/editor_config_page.py:32
+msgid "Highlight syntax elements"
+msgstr "Highlight syntax elements"
+
+#: turcar/plugins/editor_config_page.py:36
+msgid "Highlight current line (requires reopening the editor)"
+msgstr "Highlight current line (requires reopening the editor)"
+
+#: turcar/plugins/editor_config_page.py:73
+msgid "Show line numbers"
+msgstr "Show line numbers"
+
+#: turcar/plugins/editor_config_page.py:76
+msgid "Recommended maximum line length\n"
+"(Set to 0 to turn off margin line)"
+msgstr "Recommended maximum line length\n"
+"(Set to 0 to turn off margin line)"
+
+#: turcar/plugins/editor_config_page.py:104
+msgid "Editor"
+msgstr "Editor"
+
+#: turcar/plugins/event_logging.py:207
+msgid "Export usage logs..."
+msgstr "Export usage logs..."
+
+#: turcar/plugins/event_view.py:39
+msgid "Events"
+msgstr "Events"
+
+#: turcar/plugins/files.py:609
+msgid "Files"
+msgstr "Files"
+
+#: turcar/plugins/find_replace.py:60 turcar/plugins/find_replace.py:438
+msgid "Find & Replace"
+msgstr "Find & Replace"
+
+#: turcar/plugins/find_replace.py:66
+msgid "Find:"
+msgstr "Find:"
+
+#: turcar/plugins/find_replace.py:90
+msgid "Replace with:"
+msgstr "Replace with:"
+
+#: turcar/plugins/find_replace.py:108
+msgid "Case sensitive"
+msgstr "Case sensitive"
+
+#: turcar/plugins/find_replace.py:115
+msgid "Up"
+msgstr "Up"
+
+#: turcar/plugins/find_replace.py:119
+msgid "Down"
+msgstr "Down"
+
+#: turcar/plugins/find_replace.py:128
+msgid "Find"
+msgstr "Find"
+
+#: turcar/plugins/find_replace.py:138
+msgid "Replace"
+msgstr "Replace"
+
+#: turcar/plugins/find_replace.py:146
+msgid "Replace+Find"
+msgstr "Replace+Find"
+
+#: turcar/plugins/find_replace.py:156
+msgid "Replace all"
+msgstr "Replace all"
+
+#: turcar/plugins/find_replace.py:254
+msgid "Enter string to be replaced."
+msgstr "Enter string to be replaced."
+
+#: turcar/plugins/find_replace.py:339
+msgid "The specified text was not found!"
+msgstr "The specified text was not found!"
+
+#: turcar/plugins/general_config_page.py:15
+msgid "Allow only single turcar instance"
+msgstr "Allow only single turcar instance"
+
+#: turcar/plugins/general_config_page.py:22
+msgid "Reopen all files from previous session"
+msgstr "Reopen all files from previous session"
+
+#: turcar/plugins/general_config_page.py:37
+msgid "Disable notification sound"
+msgstr "Disable notification sound"
+
+#: turcar/plugins/general_config_page.py:86
+msgid "Font scaling mode"
+msgstr "Font scaling mode"
+
+#: turcar/plugins/heap.py:37
+msgid "Heap mode is on.\n"
+"Close Heap view to turn it off."
+msgstr "Heap mode is on.\n"
+"Close Heap view to turn it off."
+
+#: turcar/plugins/heap.py:86
+msgid "Heap"
+msgstr "Heap"
+
+#: turcar/plugins/general_config_page.py:53
+msgid "Language"
+msgstr "Language"
+
+#: turcar/plugins/notes.py:35
+msgid "This box is meant for your working notes -- assignment instructions, code snippets, whatever.\n"
+"\n"
+"Everything will be saved automatically and loaded when you open turcar next time.\n"
+"\n"
+"Feel free to delete this text to make room for your own notes."
+msgstr "This box is meant for your working notes -- assignment instructions, code snippets, whatever.\n"
+"\n"
+"Everything will be saved automatically and loaded when you open turcar next time.\n"
+"\n"
+"Feel free to delete this text to make room for your own notes."
+
+#: turcar/plugins/notes.py:63
+msgid "Notes"
+msgstr "Notes"
+
+#: turcar/plugins/object_inspector.py:116
+msgid "Previous object"
+msgstr "Previous object"
+
+#: turcar/plugins/object_inspector.py:119
+msgid "Next object"
+msgstr "Next object"
+
+#: turcar/plugins/object_inspector.py:732
+msgid "Object inspector"
+msgstr "Object inspector"
+
+#: turcar/plugins/outline.py:148
+msgid "Outline"
+msgstr "Outline"
+
+#: turcar/plugins/pgzero_frontend.py:27
+msgid "Pygame Zero mode"
+msgstr "Pygame Zero mode"
+
+#: turcar/plugins/pip_gui.py:80
+msgid "Uninstall"
+msgstr "Uninstall"
+
+#: turcar/editors.py:693 turcar/plugins/pip_gui.py:251 turcar/ui_utils.py:496
+#: turcar/ui_utils.py:1884 turcar/workdlg.py:203
+msgid "Close"
+msgstr "Close"
+
+#: turcar/plugins/pip_gui.py:397
+msgid "Click "
+msgstr "Click "
+
+#: turcar/plugins/pip_gui.py:398 turcar/plugins/pip_gui.py:409
+msgid "here"
+msgstr "here"
+
+#: turcar/plugins/pip_gui.py:77
+msgid "Upgrade"
+msgstr "Upgrade"
+
+#: turcar/plugins/micropython/base_flashing_dialog.py:398
+#: turcar/plugins/pip_gui.py:74
+msgid "Install"
+msgstr "Install"
+
+#: turcar/plugins/pip_gui.py:570
+msgid "Could not find the package from PyPI."
+msgstr "Could not find the package from PyPI."
+
+#: turcar/plugins/pip_gui.py:592
+msgid "Latest stable version"
+msgstr "Latest stable version"
+
+#: turcar/plugins/pip_gui.py:594
+msgid "Latest version"
+msgstr "Latest version"
+
+#: turcar/plugins/pip_gui.py:596
+msgid "Summary"
+msgstr "Summary"
+
+#: turcar/plugins/pip_gui.py:598
+msgid "Author"
+msgstr "Author"
+
+#: turcar/plugins/pip_gui.py:602
+msgid "Homepage"
+msgstr "Homepage"
+
+#: turcar/plugins/pip_gui.py:604
+msgid "Bugtracker"
+msgstr "Bugtracker"
+
+#: turcar/plugins/pip_gui.py:606
+msgid "Documentation"
+msgstr "Documentation"
+
+#: turcar/plugins/pip_gui.py:608
+msgid "PyPI page"
+msgstr "PyPI page"
+
+#: turcar/plugins/pip_gui.py:648
+msgid "Requires"
+msgstr "Requires"
+
+#: turcar/plugins/pip_gui.py:802
+msgid "Really uninstall?"
+msgstr "Really uninstall?"
+
+#: turcar/plugins/pip_gui.py:807
+msgid "Are you sure you want to uninstall it?"
+msgstr "Are you sure you want to uninstall it?"
+
+#: turcar/plugins/variables.py:22
+msgid "Back to\n"
+"current frame"
+msgstr "Back to\n"
+"current frame"
+
+#: turcar/plugins/variables.py:80 turcar/plugins/variables.py:82
+#: turcar/plugins/variables.py:145
+msgid "Variables"
+msgstr "Variables"
+
+#: turcar/base_file_browser.py:1576
+msgid "This computer"
+msgstr "This computer"
+
+#: turcar/base_file_browser.py:648
+msgid "Refresh"
+msgstr "Refresh"
+
+#: turcar/base_file_browser.py:657
+msgid "Focus into"
+msgstr "Focus into"
+
+#: turcar/base_file_browser.py:1411 turcar/base_file_browser.py:1423
+#: turcar/plugins/autocomplete.py:303 turcar/plugins/highlight_names.py:86
+msgid "Error"
+msgstr "Error"
+
+#: turcar/base_file_browser.py:1411 turcar/base_file_browser.py:1423
+msgid "You need to select a file!"
+msgstr "You need to select a file!"
+
+#: turcar/base_file_browser.py:1427
+msgid "Overwrite?"
+msgstr "Overwrite?"
+
+#: turcar/base_file_browser.py:1427
+msgid "Do you want to overwrite '%s' ?"
+msgstr "Do you want to overwrite '%s' ?"
+
+#: turcar/editors.py:658 turcar/editors.py:660
+msgid "New"
+msgstr "New"
+
+#: turcar/editors.py:671
+msgid "Open..."
+msgstr "Open..."
+
+#: turcar/editors.py:673
+msgid "Load"
+msgstr "Load"
+
+#: turcar/editors.py:682
+msgid "Recent files"
+msgstr "Recent files"
+
+#: turcar/editors.py:704 turcar/ui_utils.py:498
+msgid "Close all"
+msgstr "Close all"
+
+#: turcar/editors.py:714 turcar/editors.py:716
+msgid "Save"
+msgstr "Save"
+
+#: turcar/editors.py:739
+msgid "Save as..."
+msgstr "Save as..."
+
+#: turcar/editors.py:750
+msgid "Save copy..."
+msgstr "Save copy..."
+
+#: turcar/config_ui.py:18
+msgid "turcar options"
+msgstr "turcar options"
+
+#: turcar/running.py:160
+msgid "Run current script"
+msgstr "Run current script"
+
+#: turcar/running.py:191
+msgid "Run current script in terminal"
+msgstr "Run current script in terminal"
+
+#: turcar/running.py:204
+msgid "Stop/Restart backend"
+msgstr "Stop/Restart backend"
+
+#: turcar/running.py:205
+msgid "Stop"
+msgstr "Stop"
+
+#: turcar/running.py:216
+msgid "Interrupt execution"
+msgstr "Interrupt execution"
+
+#: turcar/running.py:229
+msgid "Send EOF / Soft reboot"
+msgstr "Send EOF / Soft reboot"
+
+#: turcar/running.py:240
+msgid "Disconnect"
+msgstr "Disconnect"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:295
+msgid "Python interpreters"
+msgstr "Python interpreters"
+
+#: turcar/editors.py:39 turcar/plugins/cpython_frontend/cp_front.py:296
+#: turcar/plugins/pip_gui.py:848 turcar/plugins/pip_gui.py:861
+msgid "all files"
+msgstr "all files"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:324
+msgid "Select empty directory for new virtual environment"
+msgstr "Select empty directory for new virtual environment"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:331
+msgid "Bad directory"
+msgstr "Bad directory"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:332
+msgid "Selected directory is not empty.\n"
+"Select another or cancel."
+msgstr "Selected directory is not empty.\n"
+"Select another or cancel."
+
+#: turcar/plugins/cpython_frontend/cp_front.py:349
+msgid "Creating virtual environment"
+msgstr "Creating virtual environment"
+
+#: turcar/shell.py:101
+msgid "Clear shell"
+msgstr "Clear shell"
+
+#: turcar/shell.py:185
+msgid "Plotter"
+msgstr "Plotter"
+
+#: turcar/shell.py:317
+msgid "Clear"
+msgstr "Clear"
+
+#: turcar/shell.py:330
+msgid "Show Plotter"
+msgstr "Show Plotter"
+
+#: turcar/shell.py:1660
+msgid "For performance reasons, Shell avoids showing very long lines in full (see Tools => Options => Shell).\n"
+"Here you can interact with the original text fragment."
+msgstr "For performance reasons, Shell avoids showing very long lines in full (see Tools => Options => Shell).\n"
+"Here you can interact with the original text fragment."
+
+#: turcar/shell.py:1671
+msgid "Wrap text (may be slow)"
+msgstr "Wrap text (may be slow)"
+
+#: turcar/ui_utils.py:1879
+msgid "Copy to clipboard"
+msgstr "Copy to clipboard"
+
+#: turcar/shell.py:1713
+msgid "Squeezed text (%d characters)"
+msgstr "Squeezed text (%d characters)"
+
+#: turcar/shell.py:1883
+msgid "Plotter visualizes series of\n"
+"numbers printed to the Shell."
+msgstr "Plotter visualises series of\n"
+"numbers printed to the Shell."
+
+#: turcar/shell.py:1885
+msgid "See Help for details."
+msgstr "See Help for details."
+
+#: turcar/ui_utils.py:497
+msgid "Close others"
+msgstr "Close others"
+
+#: turcar/ui_utils.py:1734
+msgid "Copying"
+msgstr "Copying"
+
+#: turcar/ui_utils.py:1737
+msgid "Copying\n"
+"  %s\n"
+"to\n"
+"  %s"
+msgstr "Copying\n"
+"  %s\n"
+"to\n"
+"  %s"
+
+#: turcar/base_file_browser.py:1382 turcar/config_ui.py:42 turcar/export.py:28
+#: turcar/plugins/backend_config_page.py:288 turcar/plugins/pip_gui.py:1338
+#: turcar/ui_utils.py:160 turcar/ui_utils.py:1745 turcar/ui_utils.py:1831
+#: turcar/workdlg.py:205 turcar/workdlg.py:259
+msgid "Cancel"
+msgstr "Cancel"
+
+#: turcar/base_file_browser.py:1373 turcar/config_ui.py:41 turcar/export.py:25
+#: turcar/plugins/about.py:115 turcar/plugins/backend_config_page.py:283
+#: turcar/ui_utils.py:157 turcar/ui_utils.py:1828 turcar/workdlg.py:256
+msgid "OK"
+msgstr "OK"
+
+#: turcar/ui_utils.py:2345
+msgid "Select All"
+msgstr "Select All"
+
+#: turcar/plugins/shell_config_page.py:82 turcar/shell.py:149
+#: turcar/workbench.py:164
+msgid "Shell"
+msgstr "Shell"
+
+#: turcar/workbench.py:608
+msgid "Options..."
+msgstr "Options..."
+
+#: turcar/workbench.py:615
+msgid "Increase font size"
+msgstr "Increase font size"
+
+#: turcar/workbench.py:679
+msgid "Change font size"
+msgstr "Change font size"
+
+#: turcar/workbench.py:680
+msgid "Zoom"
+msgstr "Zoom"
+
+#: turcar/workbench.py:689
+msgid "Exit turcar"
+msgstr "Exit turcar"
+
+#: turcar/workbench.py:692
+msgid "Quit"
+msgstr "Quit"
+
+#: turcar/workbench.py:1247 turcar/workbench.py:1255
+msgid "Overwriting theme '%s'"
+msgstr "Overwriting theme '%s'"
+
+#: turcar/workbench.py:1438
+msgid "Program arguments:"
+msgstr "Program arguments:"
+
+#: turcar/workbench.py:1492
+msgid "Regular mode"
+msgstr "Regular mode"
+
+#: turcar/workbench.py:1493
+msgid "Configuration has been updated. Restart turcar to start working in regular mode.\n"
+"\n"
+"(See 'Tools → Options → General' if you change your mind later.)"
+msgstr "Configuration has been updated. Restart turcar to start working in regular mode.\n"
+"\n"
+"(See 'Tools → Options → General' if you change your mind later.)"
+
+#: turcar/plugins/ast_view.py:211
+msgid "Program tree"
+msgstr "Program tree"
+
+#: turcar/plugins/debugger.py:1284
+msgid "Resume"
+msgstr "Resume"
+
+#: turcar/plugins/debugger.py:1300
+msgid "Run / resume"
+msgstr "Run / resume"
+
+#: turcar/plugins/debugger.py:1315
+msgid "Debug current script"
+msgstr "Debug current script"
+
+#: turcar/plugins/debugger.py:1317
+msgid "Debug"
+msgstr "Debug"
+
+#: turcar/plugins/debugger.py:1328
+msgid "Debug current script (nicer)"
+msgstr "Debug current script (nicer)"
+
+#: turcar/plugins/debugger.py:1340
+msgid "Debug current script (faster)"
+msgstr "Debug current script (faster)"
+
+#: turcar/plugins/debugger.py:1351
+msgid "Step over"
+msgstr "Step over"
+
+#: turcar/plugins/debugger.py:1353
+msgid "Over"
+msgstr "Over"
+
+#: turcar/plugins/debugger.py:1364
+msgid "Step into"
+msgstr "Step into"
+
+#: turcar/plugins/debugger.py:1366
+msgid "Into"
+msgstr "Into"
+
+#: turcar/plugins/debugger.py:1377
+msgid "Step out"
+msgstr "Step out"
+
+#: turcar/plugins/debugger.py:1379
+msgid "Out"
+msgstr "Out"
+
+#: turcar/plugins/debugger.py:1414
+msgid "Step back"
+msgstr "Step back"
+
+#: turcar/plugins/debugger.py:1416
+msgid "Back"
+msgstr "Back"
+
+#: turcar/plugins/debugger.py:1422
+msgid "Stack"
+msgstr "Stack"
+
+#: turcar/plugins/debugger.py:1423
+msgid "Exception"
+msgstr "Exception"
+
+#: turcar/plugins/general_config_page.py:18
+msgid "Log program usage events"
+msgstr "Log program usage events"
+
+#: turcar/plugins/general_config_page.py:43
+msgid "Debug mode (provides more detailed diagnostic logs)"
+msgstr "Debug mode (provides more detailed diagnostic logs)"
+
+#: turcar/plugins/general_config_page.py:67
+msgid "UI mode"
+msgstr "UI mode"
+
+#: turcar/plugins/general_config_page.py:80
+msgid "UI scaling factor"
+msgstr "UI scaling factor"
+
+#: turcar/plugins/general_config_page.py:114
+msgid "NB! Restart turcar after changing these options!"
+msgstr "NB! Restart turcar after changing these options!"
+
+#: turcar/plugins/general_config_page.py:148
+msgid "General"
+msgstr "General"
+
+#: turcar/plugins/pip_gui.py:142
+msgid "INSTALL"
+msgstr "INSTALL"
+
+#: turcar/plugins/pip_gui.py:367
+msgid "Browse the packages"
+msgstr "Browse the packages"
+
+#: turcar/plugins/pip_gui.py:370
+msgid "With current interpreter you can only browse the packages here.\n"
+"Use 'Tools → Open system shell...' for installing, upgrading or uninstalling."
+msgstr "With current interpreter you can only browse the packages here.\n"
+"Use 'Tools → Open system shell...' for installing, upgrading or uninstalling."
+
+#: turcar/plugins/pip_gui.py:378
+msgid "Packages' directory"
+msgstr "Packages' directory"
+
+#: turcar/plugins/pip_gui.py:382
+msgid "Install from PyPI"
+msgstr "Install from PyPI"
+
+#: turcar/plugins/pip_gui.py:385
+msgid "If you don't know where to get the package from, then most likely you'll want to search the Python Package Index. Start by entering the name of the package in the search box above and pressing ENTER."
+msgstr "If you don't know where to get the package from, then most likely you'll want to search the Python Package Index. Start by entering the name of the package in the search box above and pressing ENTER."
+
+#: turcar/plugins/pip_gui.py:402
+msgid "to locate requirements.txt file and install the packages specified in it."
+msgstr "to locate requirements.txt file and install the packages specified in it."
+
+#: turcar/plugins/pip_gui.py:408
+msgid "Click"
+msgstr "Click"
+
+#: turcar/plugins/pip_gui.py:413
+msgid "to locate and install the package file (usually with .whl, .tar.gz or .zip extension)."
+msgstr "to locate and install the package file (usually with .whl, .tar.gz or .zip extension)."
+
+#: turcar/plugins/pip_gui.py:420
+msgid "Upgrade or uninstall"
+msgstr "Upgrade or uninstall"
+
+#: turcar/plugins/pip_gui.py:422
+msgid "Start by selecting the package from the left."
+msgstr "Start by selecting the package from the left."
+
+#: turcar/plugins/pip_gui.py:430
+msgid "This dialog lists all available packages, but allows upgrading and uninstalling only packages from"
+msgstr "This dialogue lists all available packages, but allows upgrading and uninstalling only packages from"
+
+#: turcar/plugins/pip_gui.py:440
+msgid "New packages will be also installed into this directory. Other locations must be managed by alternative means."
+msgstr "New packages will be also installed into this directory. Other locations must be managed by alternative means."
+
+#: turcar/plugins/pip_gui.py:493
+msgid "Installed version:"
+msgstr "Installed version:"
+
+#: turcar/plugins/pip_gui.py:495
+msgid "Installed to:"
+msgstr "Installed to:"
+
+#: turcar/plugins/pip_gui.py:573
+msgid "Please check your spelling!"
+msgstr "Please check your spelling!"
+
+#: turcar/plugins/pip_gui.py:577
+msgid "Could not find the package info from PyPI."
+msgstr "Could not find the package info from PyPI."
+
+#: turcar/plugins/pip_gui.py:579 turcar/plugins/pip_gui.py:1408
+msgid "Error code:"
+msgstr "Error code:"
+
+#: turcar/plugins/pip_gui.py:748
+msgid "Can't find package name from the list:"
+msgstr "Can't find package name from the list:"
+
+#: turcar/plugins/pip_gui.py:803
+msgid "Package '{}' is required for installing and uninstalling other packages."
+msgstr "Package '{}' is required for installing and uninstalling other packages."
+
+#: turcar/plugins/pip_gui.py:848
+msgid "Package"
+msgstr "Package"
+
+#: turcar/plugins/pip_gui.py:960
+msgid "Manage packages for %s"
+msgstr "Manage packages for %s"
+
+#: turcar/editors.py:587 turcar/plugins/micropython/pip_gui.py:25
+#: turcar/plugins/pip_gui.py:1034
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#: turcar/plugins/pip_gui.py:1035
+msgid "Looks like you are installing a turcar-related package.\n"
+"If you meant to install a turcar plugin, then you should\n"
+"choose 'Tools → Manage plugins...' instead\n"
+"\n"
+"Are you sure you want to install %s for the back-end?"
+msgstr "Looks like you are installing a turcar-related package.\n"
+"If you meant to install a turcar plugin, then you should\n"
+"choose 'Tools → Manage plugins...' instead\n"
+"\n"
+"Are you sure you want to install %s for the back-end?"
+
+#: turcar/plugins/pip_gui.py:1141
+msgid "NB! There may be another version available which is compatible with current turcar version. Click on '...' button to choose the version to install."
+msgstr "NB! There may be another version available which is compatible with current turcar version. Click on '...' button to choose the version to install."
+
+#: turcar/plugins/pip_gui.py:1149
+msgid "turcar plugin without requirements"
+msgstr "turcar plugin without requirements"
+
+#: turcar/plugins/pip_gui.py:1165
+msgid "Unsuitable requirements"
+msgstr "Unsuitable requirements"
+
+#: turcar/plugins/pip_gui.py:1166
+msgid "This package requires different turcar version:"
+msgstr "This package requires different turcar version:"
+
+#: turcar/plugins/pip_gui.py:1170
+msgid "If you still want it, then please install it from the command line."
+msgstr "If you still want it, then please install it from the command line."
+
+#: turcar/plugins/pip_gui.py:1207
+msgid "NB! You need to restart turcar after installing / upgrading / uninstalling a plug-in."
+msgstr "NB! You need to restart turcar after installing / upgrading / uninstalling a plug-in."
+
+#: turcar/plugins/pip_gui.py:1217
+msgid "turcar plug-ins"
+msgstr "turcar plug-ins"
+
+#: turcar/plugins/pip_gui.py:1253
+msgid "Advanced install / upgrade / downgrade"
+msgstr "Advanced install / upgrade / downgrade"
+
+#: turcar/plugins/pip_gui.py:1262
+msgid "Desired version"
+msgstr "Desired version"
+
+#: turcar/plugins/pip_gui.py:1321
+msgid "Upgrade dependencies"
+msgstr "Upgrade dependencies"
+
+#: turcar/plugins/pip_gui.py:1406
+msgid "Requires:"
+msgstr "Requires:"
+
+#: turcar/plugins/pip_gui.py:1410
+msgid "Error:"
+msgstr "Error:"
+
+#: turcar/plugins/pip_gui.py:1601
+msgid "Manage packages..."
+msgstr "Manage packages..."
+
+#: turcar/plugins/pip_gui.py:1607
+msgid "Manage plug-ins..."
+msgstr "Manage plug-ins..."
+
+#: turcar/plugins/replayer.py:364
+msgid "Open replayer..."
+msgstr "Open replayer..."
+
+#: turcar/plugins/run_debug_config_page.py:21
+msgid "Change working directory to script directory on Run / Debug"
+msgstr "Change working directory to script directory on Run / Debug"
+
+#: turcar/plugins/run_debug_config_page.py:35
+msgid "Show function calls (frames) in separate windows"
+msgstr "Show function calls (frames) in separate windows"
+
+#: turcar/plugins/run_debug_config_page.py:36
+msgid "Uncheck if you want more traditional experience."
+msgstr "Uncheck if you want more traditional experience."
+
+#: turcar/plugins/run_debug_config_page.py:42
+msgid "Open and close Stack view automatically"
+msgstr "Open and close Stack view automatically"
+
+#: turcar/plugins/run_debug_config_page.py:43
+msgid "Opens the Stack view on first call and closes it when program returns to main frame."
+msgstr "Opens the Stack view on first call and closes it when program returns to main frame."
+
+#: turcar/plugins/run_debug_config_page.py:52
+msgid "Allow stepping into libraries (ie. outside of main script directory)"
+msgstr "Allow stepping into libraries (ie. outside of main script directory)"
+
+#: turcar/plugins/run_debug_config_page.py:53
+msgid "May make debugging slower."
+msgstr "May make debugging slower."
+
+#: turcar/plugins/run_debug_config_page.py:58
+msgid "Preferred debugger"
+msgstr "Preferred debugger"
+
+#: turcar/plugins/run_debug_config_page.py:70
+msgid "(used when clicking Debug toolbar button)"
+msgstr "(used when clicking Debug toolbar button)"
+
+#: turcar/plugins/run_debug_config_page.py:75
+msgid "Birdseye port"
+msgstr "Birdseye port"
+
+#: turcar/plugins/run_debug_config_page.py:79
+msgid "(restart turcar after changing this)"
+msgstr "(restart turcar after changing this)"
+
+#: turcar/plugins/run_debug_config_page.py:87
+msgid "Run & Debug"
+msgstr "Run & Debug"
+
+#: turcar/plugins/shell_config_page.py:26
+msgid "Terminal emulation"
+msgstr "Terminal emulation"
+
+#: turcar/plugins/shell_config_page.py:28
+msgid "supports basic ANSI-colors and styles"
+msgstr "supports basic ANSI-colours and styles"
+
+#: turcar/plugins/shell_config_page.py:40
+msgid "Maximum number of lines to keep."
+msgstr "Maximum number of lines to keep."
+
+#: turcar/plugins/shell_config_page.py:42
+msgid "NB! Large values may cause poor performance!"
+msgstr "NB! Large values may cause poor performance!"
+
+#: turcar/plugins/shell_config_page.py:58
+msgid "Maximum length of line fragments before squeezing"
+msgstr "Maximum length of line fragments before squeezing"
+
+#: turcar/plugins/terminal_config_page.py:12
+msgid "Running current script in terminal"
+msgstr "Running current script in terminal"
+
+#: turcar/plugins/terminal_config_page.py:17
+msgid "Present Python REPL after program ends"
+msgstr "Present Python REPL after program ends"
+
+#: turcar/plugins/terminal_config_page.py:24
+msgid "Keep terminal window open after Python process ends"
+msgstr "Keep terminal window open after Python process ends"
+
+#: turcar/plugins/terminal_config_page.py:31
+msgid "NB! Automatic closing needs to be enabled in Terminal's settings\n"
+"(Profiles → Shell → When the shell exits)"
+msgstr "NB! Automatic closing needs to be enabled in Terminal's settings\n"
+"(Profiles → Shell → When the shell exits)"
+
+#: turcar/plugins/terminal_config_page.py:41
+msgid "Terminal"
+msgstr "Terminal"
+
+#: turcar/plugins/theme_and_font_config_page.py:39
+msgid "UI theme"
+msgstr "UI theme"
+
+#: turcar/plugins/theme_and_font_config_page.py:52
+msgid "Syntax theme"
+msgstr "Syntax theme"
+
+#: turcar/plugins/theme_and_font_config_page.py:84
+msgid "Editor font"
+msgstr "Editor font"
+
+#: turcar/plugins/theme_and_font_config_page.py:107
+msgid "IO font"
+msgstr "IO font"
+
+#: turcar/plugins/theme_and_font_config_page.py:132
+msgid "Preview"
+msgstr "Preview"
+
+#: turcar/plugins/theme_and_font_config_page.py:150
+msgid "This is a comment"
+msgstr "This is a comment"
+
+#: turcar/plugins/theme_and_font_config_page.py:153
+msgid "The answer is"
+msgstr "The answer is"
+
+#: turcar/plugins/theme_and_font_config_page.py:157
+msgid "unclosed_string"
+msgstr "unclosed_string"
+
+#: turcar/plugins/theme_and_font_config_page.py:159
+msgid "blah, blah"
+msgstr "blah, blah"
+
+#: turcar/plugins/theme_and_font_config_page.py:183
+msgid "NB! Some style elements change only after restarting turcar!"
+msgstr "NB! Some style elements change only after restarting turcar!"
+
+#: turcar/plugins/theme_and_font_config_page.py:222
+msgid "Enter an integer"
+msgstr "Enter an integer"
+
+#: turcar/plugins/theme_and_font_config_page.py:235
+msgid "Theme & Font"
+msgstr "Theme & Font"
+
+#: turcar/plugins/turcar_folders.py:19
+msgid "Open turcar program folder..."
+msgstr "Open turcar program folder..."
+
+#: turcar/plugins/turcar_folders.py:24
+msgid "Open turcar data folder..."
+msgstr "Open turcar data folder..."
+
+#: turcar/plugins/help/__init__.py:70
+msgid "Home"
+msgstr "Home"
+
+#: turcar/plugins/help/__init__.py:81
+msgid "Help contents"
+msgstr "Help contents"
+
+#: turcar/plugins/micropython/mp_front.py:303
+msgid "CircuitPython device"
+msgstr "CircuitPython device"
+
+#: turcar/plugins/micropython/mp_front.py:307
+msgid "MicroPython device"
+msgstr "MicroPython device"
+
+#: turcar/plugins/micropython/mp_front.py:558
+msgid "Connect your device to the computer and select corresponding port below"
+msgstr "Connect your device to the computer and select corresponding port below"
+
+#: turcar/plugins/micropython/mp_front.py:561
+msgid "look for your device name, \"USB Serial\" or \"UART\""
+msgstr "look for your device name, \"USB Serial\" or \"UART\""
+
+#: turcar/plugins/micropython/mp_front.py:563
+msgid "If you can't find it, you may need to install proper USB driver first."
+msgstr "If you can't find it, you may need to install proper USB driver first."
+
+#: turcar/plugins/micropython/mp_front.py:453
+msgid "Port"
+msgstr "Port"
+
+#: turcar/plugins/micropython/mp_front.py:458
+msgid "Try to detect port automatically"
+msgstr "Try to detect port automatically"
+
+#: turcar/plugins/micropython/__init__.py:24
+msgid "MicroPython (generic)"
+msgstr "MicroPython (generic)"
+
+#: turcar/plugins/printing/__init__.py:98
+msgid "Print..."
+msgstr "Print..."
+
+#: turcar/plugins/system_shell/__init__.py:63
+msgid "Open system shell..."
+msgstr "Open system shell..."
+
+#: turcar/plugins/backend_config_page.py:109
+msgid "Details"
+msgstr "Details"
+
+#: turcar/plugins/pip_gui.py:395
+msgid "Install from requirements file"
+msgstr "Install from requirements file"
+
+#: turcar/plugins/pip_gui.py:407
+msgid "Install from local file"
+msgstr "Install from local file"
+
+#: turcar/plugins/pip_gui.py:1200
+msgid "This dialog is for managing turcar plug-ins and their dependencies.\n"
+"If you want to install packages for your own programs then choose 'Tools → Manage packages...'"
+msgstr "This dialogue is for managing turcar plug-ins and their dependencies.\n"
+"If you want to install packages for your own programs then choose 'Tools → Manage packages...'"
+
+#: turcar/plugins/circuitpython/__init__.py:10
+msgid "CircuitPython (generic)"
+msgstr "CircuitPython (generic)"
+
+#: turcar/plugins/commenting_indenting.py:142
+msgid "Indent selected lines"
+msgstr "Indent selected lines"
+
+#: turcar/plugins/commenting_indenting.py:152
+msgid "Dedent selected lines"
+msgstr "Dedent selected lines"
+
+#: turcar/workbench.py:1481
+msgid "Switch to\n"
+"regular\n"
+"mode"
+msgstr "Switch to\n"
+"regular\n"
+"mode"
+
+#: turcar/plugins/microbit/__init__.py:62
+msgid "Make sure MicroPython has been installed to your micro:bit."
+msgstr "Make sure MicroPython has been installed to your micro:bit."
+
+#: turcar/plugins/microbit/__init__.py:64
+msgid "Don't forget that main.py only works without embedded main script."
+msgstr "Don't forget that main.py only works without embedded main script."
+
+#: turcar/misc_utils.py:177
+msgid "Could not find disk '%s'. Do you want to locate it yourself?"
+msgstr "Could not find disk '%s'. Do you want to locate it yourself?"
+
+#: turcar/misc_utils.py:180
+msgid "Found several '%s' disks. Do you want to choose one yourself?"
+msgstr "Found several '%s' disks. Do you want to choose one yourself?"
+
+#: turcar/misc_utils.py:196
+msgid "Can't find suitable disk"
+msgstr "Can't find suitable disk"
+
+#: turcar/base_file_browser.py:294
+msgid "%d items"
+msgstr "%d items"
+
+#: turcar/base_file_browser.py:743
+msgid "Move to Trash"
+msgstr "Move to Rubbish Bin"
+
+#: turcar/base_file_browser.py:746
+msgid "Delete"
+msgstr "Delete"
+
+#: turcar/base_file_browser.py:725 turcar/base_file_browser.py:878
+msgid "New directory"
+msgstr "New directory"
+
+#: turcar/base_file_browser.py:749
+msgid "Properties"
+msgstr "Properties"
+
+#: turcar/base_file_browser.py:751
+msgid "Storage space"
+msgstr "Storage space"
+
+#: turcar/base_file_browser.py:761
+msgid "Path"
+msgstr "Path"
+
+#: turcar/base_file_browser.py:763
+msgid "Directory properties"
+msgstr "Directory properties"
+
+#: turcar/base_file_browser.py:765
+msgid "File properties"
+msgstr "File properties"
+
+#: turcar/base_file_browser.py:767
+msgid "bytes"
+msgstr "bytes"
+
+#: turcar/base_file_browser.py:770
+msgid "Size"
+msgstr "Size"
+
+#: turcar/base_file_browser.py:94 turcar/base_file_browser.py:781
+msgid "Modified"
+msgstr "Modified"
+
+#: turcar/base_file_browser.py:842
+msgid "Deleting %s"
+msgstr "Deleting %s"
+
+#: turcar/editors.py:262
+msgid "Loading"
+msgstr "Loading"
+
+#: turcar/editors.py:395
+msgid "Saving"
+msgstr "Saving"
+
+#: turcar/plugins/files.py:219
+msgid "Upload to %s"
+msgstr "Upload to %s"
+
+#: turcar/plugins/files.py:420
+msgid "Downloading %s to %s"
+msgstr "Downloading %s to %s"
+
+#: turcar/plugins/files.py:326
+msgid "Download to %s"
+msgstr "Download to %s"
+
+#: turcar/base_file_browser.py:650
+msgid "Open in system file manager"
+msgstr "Open in system file manager"
+
+#: turcar/base_file_browser.py:678
+msgid "Hide hidden files"
+msgstr "Hide hidden files"
+
+#: turcar/base_file_browser.py:678
+msgid "Show hidden files"
+msgstr "Show hidden files"
+
+#: turcar/base_file_browser.py:661
+msgid "Open in turcar"
+msgstr "Open in turcar"
+
+#: turcar/base_file_browser.py:692
+msgid "Open in system default app"
+msgstr "Open in system default app"
+
+#: turcar/base_file_browser.py:673 turcar/base_file_browser.py:700
+msgid "Configure %s files"
+msgstr "Configure %s files"
+
+#: turcar/base_file_browser.py:701
+msgid "What to do with a %s file when you double-click it in turcar's file browser?"
+msgstr "What to do with a %s file when you double-click it in turcar's file browser?"
+
+#: turcar/base_file_browser.py:1258 turcar/editors.py:986 turcar/editors.py:988
+msgid "Deleting"
+msgstr "Deleting"
+
+#: turcar/base_file_browser.py:1265
+msgid "Creating directory"
+msgstr "Creating directory"
+
+#: turcar/editors.py:260
+msgid "Loading %s"
+msgstr "Loading %s"
+
+#: turcar/editors.py:390
+msgid "Saving to %s"
+msgstr "Saving to %s"
+
+#: turcar/editors.py:728 turcar/editors.py:730
+msgid "Save All files"
+msgstr "Save All files"
+
+#: turcar/plugins/backend_config_page.py:338 turcar/workbench.py:880
+msgid "Configure interpreter..."
+msgstr "Configure interpreter..."
+
+#: turcar/workbench.py:1591
+msgid "Device"
+msgstr "Device"
+
+#: turcar/workdlg.py:234
+msgid "Cancelling"
+msgstr "Cancelling"
+
+#: turcar/workdlg.py:270
+msgid "Starting"
+msgstr "Starting"
+
+#: turcar/plugins/backend_config_page.py:249
+msgid "Authentication"
+msgstr "Authentication"
+
+#: turcar/plugins/backend_config_page.py:251
+msgid "Enter the passphrase of your private key for\n"
+"{}"
+msgstr "Enter the passphrase of your private key for\n"
+"{}"
+
+#: turcar/plugins/backend_config_page.py:254
+msgid "Enter your password for\n"
+"{}"
+msgstr "Enter your password for\n"
+"{}"
+
+#: turcar/plugins/object_inspector.py:486
+msgid "The representation above is an approximate value of this float. The exact stored value is %s which is about %s"
+msgstr "The representation above is an approximate value of this float. The exact stored value is %s which is about %s"
+
+#: turcar/plugins/pip_gui.py:682
+msgid "Search results"
+msgstr "Search results"
+
+#: turcar/plugins/pip_gui.py:683
+msgid "Searching"
+msgstr "Searching"
+
+#: turcar/plugins/pip_gui.py:787 turcar/plugins/pip_gui.py:876
+msgid "Installing '%s'"
+msgstr "Installing '%s'"
+
+#: turcar/plugins/pip_gui.py:793
+msgid "Upgrading '%s'"
+msgstr "Upgrading '%s'"
+
+#: turcar/plugins/pip_gui.py:800
+msgid "Uninstalling '%s'"
+msgstr "Uninstalling '%s'"
+
+#: turcar/plugins/pip_gui.py:814
+msgid "Installing"
+msgstr "Installing"
+
+#: turcar/plugins/pip_gui.py:1562
+msgid "Package manager is not available for this interpreter"
+msgstr "Package manager is not available for this interpreter"
+
+#: turcar/base_file_browser.py:1209 turcar/plugins/pip_gui.py:1576
+msgid "Not supported"
+msgstr "Not supported"
+
+#: turcar/plugins/micropython/pip_gui.py:142 turcar/plugins/pip_gui.py:1581
+msgid "Not available"
+msgstr "Not available"
+
+#: turcar/plugins/pip_gui.py:1582
+msgid "You need to stop your program before launching the package manager."
+msgstr "You need to stop your program before launching the package manager."
+
+#: turcar/plugins/shell_config_page.py:73
+msgid "Open evaluated values in Object inspector"
+msgstr "Open evaluated values in Object inspector"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:234
+msgid "Python executable"
+msgstr "Python executable"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:258
+msgid "NB! File selection button may not work properly when selecting executables\n"
+"from a virtual environment. In this case choose the 'activate' script instead\n"
+"of the interpreter (or enter the path directly to the box)!"
+msgstr "NB! File selection button may not work properly when selecting executables\n"
+"from a virtual environment. In this case choose the 'activate' script instead\n"
+"of the interpreter (or enter the path directly to the box)!"
+
+#: turcar/plugins/cpython_ssh/__init__.py:17
+msgid "Remote Python 3 (SSH)"
+msgstr "Remote Python 3 (SSH)"
+
+#: turcar/plugins/micropython/mp_front.py:313
+msgid "Not connected"
+msgstr "Not connected"
+
+#: turcar/plugins/micropython/__init__.py:35
+msgid "MicroPython (local)"
+msgstr "MicroPython (local)"
+
+#: turcar/plugins/micropython/__init__.py:46
+msgid "MicroPython (SSH)"
+msgstr "MicroPython (SSH)"
+
+#: turcar/plugins/micropython/pip_gui.py:144
+msgid "no absolute lib directory in sys.path"
+msgstr "no absolute lib directory in sys.path"
+
+#: turcar/plugins/pip_gui.py:71
+msgid "Search on PyPI"
+msgstr "Search on PyPI"
+
+#: turcar/base_file_browser.py:693
+msgid "Open in turcar's text editor"
+msgstr "Open in turcar's text editor"
+
+#: turcar/base_file_browser.py:346
+msgid "Storage space on this drive or filesystem"
+msgstr "Storage space on this drive or filesystem"
+
+#: turcar/base_file_browser.py:347
+msgid "total space"
+msgstr "total space"
+
+#: turcar/base_file_browser.py:349
+msgid "used space"
+msgstr "used space"
+
+#: turcar/base_file_browser.py:350
+msgid "free space"
+msgstr "free space"
+
+#: turcar/base_file_browser.py:357
+msgid "Storage info"
+msgstr "Storage info"
+
+#: turcar/plugins/commenting_indenting.py:162
+msgid "Replace tabs with spaces"
+msgstr "Replace tabs with spaces"
+
+#: turcar/plugins/editor_config_page.py:33
+msgid "Highlight tab characters"
+msgstr "Highlight tab characters"
+
+#: turcar/plugins/editor_config_page.py:68
+msgid "Indent with tab characters (not recommended for Python)"
+msgstr "Indent with tab characters (not recommended for Python)"
+
+#: turcar/base_file_browser.py:92 turcar/memory.py:63
+msgid "Name"
+msgstr "Name"
+
+#: turcar/base_file_browser.py:96
+msgid "Size (bytes)"
+msgstr "Size (bytes)"
+
+#: turcar/base_file_browser.py:879
+msgid "Enter name for new directory under\n"
+"%s"
+msgstr "Enter name for new directory under\n"
+"%s"
+
+#: turcar/base_file_browser.py:902
+msgid "Nothing selected"
+msgstr "Nothing selected"
+
+#: turcar/base_file_browser.py:902
+msgid "Select an item and try again!"
+msgstr "Select an item and try again!"
+
+#: turcar/base_file_browser.py:1329
+msgid "Open from %s"
+msgstr "Open from %s"
+
+#: turcar/base_file_browser.py:1332
+msgid "Save to %s"
+msgstr "Save to %s"
+
+#: turcar/base_file_browser.py:1351
+msgid "File name:"
+msgstr "File name:"
+
+#: turcar/memory.py:64 turcar/plugins/object_inspector.py:538
+#: turcar/plugins/object_inspector.py:617
+msgid "Value ID"
+msgstr "Value ID"
+
+#: turcar/memory.py:65 turcar/plugins/heap.py:23
+#: turcar/plugins/object_inspector.py:539
+#: turcar/plugins/object_inspector.py:618
+msgid "Value"
+msgstr "Value"
+
+#: turcar/plugins/backend_config_page.py:272
+msgid "Save password"
+msgstr "Save password"
+
+#: turcar/plugins/debugger.py:557
+msgid "Function call at %s"
+msgstr "Function call at %s"
+
+#: turcar/plugins/debugger.py:1006
+msgid "Local variables"
+msgstr "Local variables"
+
+#: turcar/plugins/debugger.py:1038
+msgid "Function"
+msgstr "Function"
+
+#: turcar/plugins/debugger.py:1039
+msgid "Location"
+msgstr "Location"
+
+#: turcar/plugins/debugger.py:1115
+msgid "If last command raised an exception then this view will show the stacktrace."
+msgstr "If last command raised an exception then this view will show the stacktrace."
+
+#: turcar/plugins/heap.py:22
+msgid "ID"
+msgstr "ID"
+
+#: turcar/plugins/object_inspector.py:92
+msgid "Data"
+msgstr "Data"
+
+#: turcar/plugins/object_inspector.py:93
+msgid "Attributes"
+msgstr "Attributes"
+
+#: turcar/plugins/object_inspector.py:537
+msgid "Index"
+msgstr "Index"
+
+#: turcar/plugins/object_inspector.py:615
+msgid "Key ID"
+msgstr "Key ID"
+
+#: turcar/plugins/object_inspector.py:616
+msgid "Key"
+msgstr "Key"
+
+#: turcar/plugins/variables.py:39
+msgid "Back to\n"
+"%s"
+msgstr "Back to\n"
+"%s"
+
+#: turcar/plugins/micropython/mp_front.py:453
+msgid "Port or WebREPL"
+msgstr "Port or WebREPL"
+
+#: turcar/plugins/micropython/mp_front.py:599
+msgid "Password"
+msgstr "Password"
+
+#: turcar/plugins/debugger.py:964
+msgid "Source code"
+msgstr "Source code"
+
+#: turcar/plugins/general_config_page.py:29
+msgid "Use Tk file dialogs instead of Zenity"
+msgstr "Use Tk file dialogues instead of Zenity"
+
+#: turcar/plugins/general_config_page.py:30
+msgid "Select if the file dialogs end up behind the main window"
+msgstr "Select if the file dialogues end up behind the main window"
+
+#: turcar/plugins/general_config_page.py:97
+msgid "Environment variables (one KEY=VALUE per line)"
+msgstr "Environment variables (one KEY=VALUE per line)"
+
+#: turcar/base_file_browser.py:722
+msgid "New file"
+msgstr "New file"
+
+#: turcar/base_file_browser.py:740
+msgid "Rename"
+msgstr "Rename"
+
+#: turcar/base_file_browser.py:928
+msgid "Rename '%s'"
+msgstr "Rename '%s'"
+
+#: turcar/base_file_browser.py:928
+msgid "Enter new name"
+msgstr "Enter new name"
+
+#: turcar/base_file_browser.py:1016
+msgid "Paste failed"
+msgstr "Paste failed"
+
+#: turcar/base_file_browser.py:1016
+msgid "There are conflicting folders"
+msgstr "There are conflicting folders"
+
+#: turcar/base_file_browser.py:1144
+msgid "File already exists"
+msgstr "File already exists"
+
+#: turcar/base_file_browser.py:1212
+msgid "If it is a text file, then you can configure it to open in turcar by right-clicking it and selecting 'Configure ... files'."
+msgstr "If it is a text file, then you can configure it to open in turcar by right-clicking it and selecting 'Configure ... files'."
+
+#: turcar/editors.py:38
+msgid "Python files"
+msgstr "Python files"
+
+#: turcar/editors.py:123 turcar/editors.py:189
+msgid "<untitled>"
+msgstr "<untitled>"
+
+#: turcar/editors.py:150
+msgid "File is gone"
+msgstr "File is gone"
+
+#: turcar/editors.py:153
+msgid "Do you want to also close the editor?"
+msgstr "Do you want to also close the editor?"
+
+#: turcar/editors.py:169
+msgid "External modification"
+msgstr "External modification"
+
+#: turcar/editors.py:172
+msgid "Do you want to discard current editor content and reload the file from disk?"
+msgstr "Do you want to discard current editor content and reload the file from disk?"
+
+#: turcar/editors.py:588
+msgid "Python files usually have .py extension."
+msgstr "Python files usually have .py extension."
+
+#: turcar/editors.py:590
+msgid "Did you mean '%s'?"
+msgstr "Did you mean '%s'?"
+
+#: turcar/editors.py:759
+msgid "Move / rename..."
+msgstr "Move / rename..."
+
+#: turcar/editors.py:768
+msgid "Go to line..."
+msgstr "Go to line..."
+
+#: turcar/editors.py:1010
+msgid "Line number"
+msgstr "Line number"
+
+#: turcar/editors.py:1156
+msgid "Do you want to save files before closing?"
+msgstr "Do you want to save files before closing?"
+
+#: turcar/editors.py:1158
+msgid "Do you want to save file before closing?"
+msgstr "Do you want to save file before closing?"
+
+#: turcar/editors.py:1161
+msgid "Save On Close"
+msgstr "Save On Close"
+
+#: turcar/misc_utils.py:539
+msgid "Command not available"
+msgstr "Command not available"
+
+#: turcar/misc_utils.py:540
+msgid "This command is not available if turcar is run via Flatpak"
+msgstr "This command is not available if turcar is run via Flatpak"
+
+#: turcar/workbench.py:700 turcar/workbench.py:799
+msgid "Support Ukraine"
+msgstr "Support Ukraine"
+
+#: turcar/plugins/backend_config_page.py:90
+msgid "Which kind of interpreter should turcar use for running your code?"
+msgstr "Which kind of interpreter should turcar use for running your code?"
+
+#: turcar/plugins/calltip.py:159
+msgid "Show parameter info"
+msgstr "Show parameter info"
+
+#: turcar/plugins/editor_config_page.py:41
+msgid "Automatically show parameter info after typing '('"
+msgstr "Automatically show parameter info after typing '('"
+
+#: turcar/plugins/editor_config_page.py:47
+msgid "Automatically propose completions while typing"
+msgstr "Automatically propose completions while typing"
+
+#: turcar/plugins/editor_config_page.py:52
+msgid "Automatically show documentation for completions"
+msgstr "Automatically show documentation for completions"
+
+#: turcar/plugins/editor_config_page.py:57
+msgid "Request completions with Tab-key in editors"
+msgstr "Request completions with Tab-key in editors"
+
+#: turcar/plugins/editor_config_page.py:62
+msgid "Request completions with Tab-key in Shell"
+msgstr "Request completions with Tab-key in Shell"
+
+#: turcar/editors.py:213 turcar/plugins/goto_definition.py:58
+msgid "Problem"
+msgstr "Problem"
+
+#: turcar/plugins/goto_definition.py:58
+msgid "Could not find definition"
+msgstr "Could not find definition"
+
+#: turcar/plugins/shell_config_page.py:17
+msgid "Clear Shell before starting new process (Run, Debug, Stop/Restart, ...)"
+msgstr "Clear Shell before starting new process (Run, Debug, Stop/Restart, ...)"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:196
+msgid "turcar's Python"
+msgstr "turcar's Python"
+
+#: turcar/plugins/micropython/mp_front.py:496
+msgid "Interrupt working program on connect"
+msgstr "Interrupt working program on connect"
+
+#: turcar/plugins/micropython/mp_front.py:504
+msgid "Synchronize device's real time clock"
+msgstr "Synchronize device's real time clock"
+
+#: turcar/plugins/micropython/mp_front.py:510
+msgid "Use local time in real time clock"
+msgstr "Use local time in real time clock"
+
+#: turcar/plugins/micropython/mp_front.py:516
+msgid "Restart interpreter before running a script"
+msgstr "Restart interpreter before running a script"
+
+#: turcar/plugins/micropython/pip_gui.py:26
+msgid "This doesn't look like MicroPython/CircuitPython package.\n"
+"Are you sure you want to install it?"
+msgstr "This doesn't look like MicroPython/CircuitPython package.\n"
+"Are you sure you want to install it?"
+
+#: turcar/base_file_browser.py:853
+msgid "Moving to Trash"
+msgstr "Moving to Trash"
+
+#: turcar/base_file_browser.py:854
+msgid "Move %s to Trash?"
+msgstr "Move %s to Trash?"
+
+#: turcar/base_file_browser.py:861
+msgid "Moving %s to Trash"
+msgstr "Moving %s to Trash"
+
+#: turcar/base_file_browser.py:666
+msgid "Open in default external app"
+msgstr "Open in default external app"
+
+#: turcar/base_file_browser.py:1210
+msgid "Opening remote files in external app is not supported."
+msgstr "Opening remote files in external app is not supported."
+
+#: turcar/base_file_browser.py:1217
+msgid "If the file needs to be opened in external app, then download it to a local directory and open it from there!"
+msgstr "If the file needs to be opened in external app, then download it to a local directory and open it from there!"
+
+#: turcar/editors.py:151
+msgid "Looks like '%s' was deleted or moved."
+msgstr "Looks like '%s' was deleted or moved."
+
+#: turcar/editors.py:170
+msgid "Looks like '%s' was modified outside of the editor."
+msgstr "Looks like '%s' was modified outside of the editor."
+
+#: turcar/plugins/cpython_frontend/cp_front.py:256
+msgid "NB! turcar only supports Python %s and later"
+msgstr "NB! turcar only supports Python %s and later"
+
+#: turcar/editors.py:1010
+msgid "Go to line"
+msgstr "Go to line"
+
+#: turcar/workbench.py:703
+msgid "Support"
+msgstr "Support"
+
+#: turcar/editors.py:399 turcar/editors.py:414
+msgid "Could not save"
+msgstr "Could not save"
+
+#: turcar/plugins/general_config_page.py:135
+msgid "Warning"
+msgstr "Warning"
+
+#: turcar/plugins/general_config_page.py:136
+msgid "If you quote the value of an environment variable, the quotes will be part of the value.\n"
+"Did you intend this?"
+msgstr "If you quote the value of an environment variable, the quotes will be part of the value.\n"
+"Did you intend this?"
+
+#: turcar/workbench.py:870
+msgid "Install MicroPython"
+msgstr "Install MicroPython"
+
+#: turcar/workbench.py:874
+msgid "Install CircuitPython"
+msgstr "Install CircuitPython"
+
+#: turcar/plugins/backend_config_page.py:210
+msgid "Make uploaded shebang scripts executable"
+msgstr "Make uploaded shebang scripts executable"
+
+#: turcar/plugins/editor_config_page.py:91
+msgid "Make saved shebang scripts executable"
+msgstr "Make saved shebang scripts executable"
+
+#: turcar/plugins/files.py:224
+msgid "Activate virtual environment"
+msgstr "Activate virtual environment"
+
+#: turcar/plugins/micropython/pip_gui.py:119 turcar/plugins/pip_gui.py:426
+msgid "Target"
+msgstr "Target"
+
+#: turcar/plugins/pythontutor.py:41
+msgid "Visualize current script at Python Tutor"
+msgstr "Visualize current script at Python Tutor"
+
+#: turcar/plugins/todo_view.py:43
+msgid "Line"
+msgstr "Line"
+
+#: turcar/plugins/todo_view.py:44
+msgid "Info"
+msgstr "Info"
+
+#: turcar/plugins/todo_view.py:121
+msgid "No line marked with #todo found"
+msgstr "No line marked with #todo found"
+
+#: turcar/plugins/todo_view.py:141
+msgid "TODO"
+msgstr "TODO"
+
+#: turcar/plugins/circuitpython/cirpy_front.py:113
+#: turcar/plugins/micropython/mp_front.py:550
+msgid "Install or update %s"
+msgstr "Install or update %s"
+
+#: turcar/plugins/cpython_frontend/__init__.py:24
+msgid "Local Python 3"
+msgstr "Local Python 3"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:266
+msgid "You can activate an existing virtual environment also via the right-click context menu in the file navagation when selecting a virtual environment folder, or the 'pyveng.cfg' file inside."
+msgstr "You can activate an existing virtual environment also via the right-click context menu in the file navagation when selecting a virtual environment folder, or the 'pyveng.cfg' file inside."
+
+#: turcar/plugins/ev3/__init__.py:72
+msgid "Preparations (skip the VS Code part)"
+msgstr "Preparations (skip the VS Code part)"
+
+#: turcar/plugins/ev3/__init__.py:78
+msgid "Default password"
+msgstr "Default password"
+
+#: turcar/running.py:392
+msgid "Information"
+msgstr "Information"
+
+#: turcar/running.py:393
+msgid "For debugging the program must be saved first."
+msgstr "For debugging the program must be saved first."
+
+#: turcar/editors.py:213
+msgid "%s doesn't look like a text file"
+msgstr "%s doesn't look like a text file"
+
+#: turcar/editors.py:219
+msgid "Problem loading file"
+msgstr "Problem loading file"
+
+#: turcar/editors.py:220
+msgid "This file seems to have problems with encoding.\n"
+"\n"
+"Make sure it is in UTF-8 or contains proper encoding hint."
+msgstr "This file seems to have problems with encoding.\n"
+"\n"
+"Make sure it is in UTF-8 or contains proper encoding hint."
+
+#: turcar/editors.py:295
+msgid "File is open"
+msgstr "File is open"
+
+#: turcar/editors.py:296
+msgid "This file is already open in turcar.\n"
+"\n"
+"If you want to save with this name,\n"
+"close the existing editor first!"
+msgstr "This file is already open in turcar.\n"
+"\n"
+"If you want to save with this name,\n"
+"close the existing editor first!"
+
+#: turcar/editors.py:349
+msgid "Permission Error"
+msgstr "Permission Error"
+
+#: turcar/editors.py:350
+msgid "Looks like this file or folder is not writable."
+msgstr "Looks like this file or folder is not writable."
+
+#: turcar/editors.py:414
+msgid "Back-end is not ready"
+msgstr "Back-end is not ready"
+
+#: turcar/editors.py:419
+msgid "Where to save to?"
+msgstr "Where to save to?"
+
+#: turcar/editors.py:490
+msgid "Potential problem"
+msgstr "Potential problem"
+
+#: turcar/editors.py:491
+msgid "If you name your script '%s', you won't be able to import the library module named '%s'"
+msgstr "If you name your script '%s', you won't be able to import the library module named '%s'"
+
+#: turcar/editors.py:497
+msgid "Do you still want to use this name for your script?"
+msgstr "Do you still want to use this name for your script?"
+
+#: turcar/editors.py:1053
+msgid "Got permission error when trying to load\n"
+"%s"
+msgstr "Got permission error when trying to load\n"
+"%s"
+
+#: turcar/editors.py:1055
+msgid "Try opening it with File => Open."
+msgstr "Try opening it with File => Open."
+
+#: turcar/editors.py:1057
+msgid "Permission error"
+msgstr "Permission error"
+
+#: turcar/plugins/run_debug_config_page.py:14
+msgid "Allow running unnamed programs"
+msgstr "Allow running unnamed programs"
+
+#: turcar/plugins/pip_gui.py:600
+msgid "License"
+msgstr "Licence"
+
+#: turcar/plugins/run_debug_config_page.py:27
+msgid "Warn if a user module shadows a library module"
+msgstr "Warn if a user module shadows a library module"
+
+#: turcar/plugins/micropython/pip_gui.py:65
+msgid "Search micropython-lib and PyPI"
+msgstr "Search micropython-lib and PyPI"
+

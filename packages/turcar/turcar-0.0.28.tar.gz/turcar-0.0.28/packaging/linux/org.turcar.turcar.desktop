@@ -1,0 +1,17 @@
+[Desktop Entry]
+Type=Application
+Name=turcar
+GenericName=Python IDE
+Exec=/usr/bin/turcar %F
+Comment=Python IDE for beginners
+Icon=turcar
+StartupWMClass=turcar
+Terminal=false
+Categories=Development;IDE
+Keywords=programming;education
+MimeType=text/x-python;
+Actions=Edit;
+
+[Desktop Action Edit]
+Exec=/usr/bin/turcar %F
+Name=Edit with turcar
