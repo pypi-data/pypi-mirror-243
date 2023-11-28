@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: moval
+Version: 0.1.0
+Summary: Model evaluation without manual labels
+Home-page: https://github.com/ZerojumpLine/MOVAL
+Author: Zeju Li
+Author-email: lizeju8@gmail.com
+Project-URL: Bug Tracker, https://github.com/AdaptiveMotorControlLab/MOVAL/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: GPU :: NVIDIA CUDA
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: License :: Free for non-commercial use
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: scikit-learn >=1.3.0
+Requires-Dist: scipy >=1.8.0
+Requires-Dist: pytest
+Requires-Dist: gdown
+Requires-Dist: pandas
+Requires-Dist: nibabel
+
+# MOVAL
+
+
+A python package to evaluate model performance without the ground truth label.
+
+# Reference
+
+```
+@article{li2022estimating,
+  title={Estimating Model Performance under Domain Shifts with Class-Specific Confidence Scores},
+  author={Li, Zeju and Kamnitsas, Konstantinos and Islam, Mobarakol and Chen, Chen and Glocker, Ben},
+  journal={arXiv preprint arXiv:2207.09957},
+  year={2022}
+}
+```
