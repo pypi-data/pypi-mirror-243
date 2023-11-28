@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+anodot_monitor/__init__.py
+anodot_monitor/anodot_reporter.py
+anodot_monitor/base_properties.py
+anodot_monitor/metric_name.py
+anodot_monitor/metric_registry.py
+anodot_monitor/metrics_adapter.py
+anodot_monitor/reporting_client.py
+anodot_monitor/settings.py
+anodot_monitor.egg-info/PKG-INFO
+anodot_monitor.egg-info/SOURCES.txt
+anodot_monitor.egg-info/dependency_links.txt
+anodot_monitor.egg-info/requires.txt
+anodot_monitor.egg-info/top_level.txt
