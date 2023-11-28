@@ -1,0 +1,16 @@
+HISTORY.rst
+LICENSE
+MANIFEST.in
+README.rst
+setup.cfg
+setup.py
+vapi_python/__init__.py
+vapi_python/daily_call.py
+vapi_python/vapi_python.py
+vapi_python.egg-info/PKG-INFO
+vapi_python.egg-info/SOURCES.txt
+vapi_python.egg-info/dependency_links.txt
+vapi_python.egg-info/entry_points.txt
+vapi_python.egg-info/not-zip-safe
+vapi_python.egg-info/requires.txt
+vapi_python.egg-info/top_level.txt
