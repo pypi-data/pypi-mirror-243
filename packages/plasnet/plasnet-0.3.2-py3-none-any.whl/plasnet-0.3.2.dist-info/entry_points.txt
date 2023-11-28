@@ -1,0 +1,3 @@
+[console_scripts]
+plasnet=plasnet.plasnet_main:main
+
