@@ -1,0 +1,10 @@
+beautifulsoup4==4.12.2
+cffi==1.15.1
+cloudflare==2.11.6
+cryptography==41.0.3
+easy-db==0.9.15
+hcloud==1.26.0
+lxml==4.9.3
+pycparser==2.21
+python-socks==2.4.3
+requests==2.31.0
