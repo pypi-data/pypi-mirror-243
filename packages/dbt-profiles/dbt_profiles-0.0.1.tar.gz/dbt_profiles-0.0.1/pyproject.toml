@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "dbt-profiles"
+version = "0.0.1"
+description = ""
+authors = ["Alex Rudolph <alex3rudolph@gmail.com>"]
+readme = "README.md"
+packages = [{include = "dbt_profiles"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.13"
+ruamel-yaml = "^0.18.5"
+dbt-core = ">=1.6.1"
+importlib = "^1.0.4"
+prompt-toolkit = "3.0.41"
+mashumaro = "^3.10"
+py-inquirer-cli = "0.0.2"
+rcheck = "^0.0.9"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.12.0"
+ruff = "^0.1.5"
+pytest-mock = "^3.12.0"
+dbt-postgres = "^1.7.2"
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+dbt-profiles = "dbt_profiles.cli:cli_main"
+
