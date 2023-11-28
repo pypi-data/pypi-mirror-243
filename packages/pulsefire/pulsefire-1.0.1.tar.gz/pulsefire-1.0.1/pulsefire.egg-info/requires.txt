@@ -1,0 +1,9 @@
+aiohttp>=3.9
+
+[docs]
+mkdocs-material
+mkdocstrings-python
+black
+
+[test]
+typeguard>=4.1
