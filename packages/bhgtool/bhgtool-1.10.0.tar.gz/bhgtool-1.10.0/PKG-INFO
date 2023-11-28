@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: bhgtool
+Version: 1.10.0
+Summary: a template for pgzero
+Home-page: https://github.com/zhec5hl01/python-games
+Author: liuhuan
+Author-email: xiaofengkz@163.com
+License: MIT
+Description: A template for pgzero.
+        You can use it to type pgzero-file more quickly.
+        You only should type some like this:
+        "
+        from pgzero_template import *
+        "
+        
+Platform: UNKNOWN
+Classifier: Topic :: Games/Entertainment 
+Classifier: Topic :: Games/Entertainment :: Puzzle Games
+Classifier: Topic :: Games/Entertainment :: Board Games
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
