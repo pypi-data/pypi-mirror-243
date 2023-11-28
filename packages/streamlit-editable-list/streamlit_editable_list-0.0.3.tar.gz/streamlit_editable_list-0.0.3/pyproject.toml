@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "streamlit-editable-list"
+version = "0.0.3"
+description = "A Streamlit component to edit a list of items."
+authors = [
+	"Son Pham-Ba <son.phamba@epfl.ch>"
+]
+license = "GPL-3.0-or-later"
+readme = "README.md"
+packages = [{include = "streamlit_editable_list"}]
+exclude = [
+	"streamlit_editable_list/frontend/.*",
+	"streamlit_editable_list/frontend/*.json",
+	"streamlit_editable_list/frontend/public",
+	"streamlit_editable_list/frontend/src",
+]
+homepage = "https://gitlab.com/groups/dcsm"
+repository = "https://gitlab.com/dcsm/streamlit-editable-list"
+
+[tool.poetry.dependencies]
+python = ">=3.9.12,<3.13"
+streamlit = "^1.17.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+playwright = "^1.40.0"
+pytest-playwright = "^0.4.3"
+
+[build-system]
+requires = ["poetry-core", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+vcs = "git"
+style = "semver"
+
+[tool.poetry-dynamic-versioning.substitution]
+files = [
+	"solidipes/__init__.py",
+]
