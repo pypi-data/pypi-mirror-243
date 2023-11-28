@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: simuldb
+Version: 0.10.0
+Classifier: Programming Language :: Rust
+Classifier: Topic :: Database
+Summary: Database with backend and format agnostic data storage for simulation results coupled with metadata
+Author: Daniel Hauck <mail@dhauck.eu>
+Author-email: Daniel Hauck <mail@dhauck.eu>
+License: MIT OR Apache-2.0
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Documentation, https://solidtux-rust.gitlab.io/simuldb
+
+# simuldb
+
+Python bindings for [simuldb](https://gitlab.com/solidtux-rust/simuldb).
