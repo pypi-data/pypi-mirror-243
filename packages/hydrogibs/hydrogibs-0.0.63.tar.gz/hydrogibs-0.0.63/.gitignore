@@ -1,0 +1,9 @@
+.vscode/
+dist/
+hydrogibs.egg-info/
+__pycache__/
+pyproject.toml
+test.*
+Civil-*
+build/
+publish.sh
