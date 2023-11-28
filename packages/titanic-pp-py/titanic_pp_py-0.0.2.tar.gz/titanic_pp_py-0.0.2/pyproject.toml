@@ -1,0 +1,29 @@
+[build-system]
+requires = ["maturin>=0.14,<0.15"]
+build-backend = "maturin"
+
+[project]
+name = "titanic-pp-py"
+version = "0.0.2"
+requires-python = ">=3.7"
+description = "osu! difficulty and pp calculation for all modes"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+packages = [{ include = "titanic_pp_py" }]
+authors = [
+    { name = "Max Ohn", email = "ohn.m@hotmail.de" },
+    { name = "tsunyoku", email = "tsunyoku@gmail.com" },
+    { name = "Lekuruu", email = "contact@lekuru.xyz" },
+    { name = "kanaarima", email = "akataltosu@gmail.com" },   
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+repository = "https://github.com/osuTitanic/titanic-pp-py"
+keywords = ["osu", "pp", "stars", "performance", "difficulty"]
