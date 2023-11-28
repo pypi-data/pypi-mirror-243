@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "readdbc"
+version = "0.2.0"
+description = "Ler arquivos .dbc do datasus"
+authors = ["Edson (edinho)"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+cffi = "^1.16.0"
+setuptools = ">=56"
+simpledbf = "^0.2.6"
+
+[tool.poetry.group.dev.dependencies]
+pytest-cov = "^4.1.0"
+ruff = "^0.1.6"
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "-vvv --cov-report=term-missing --cov=readdbc"
+testpaths = ["tests"]
+log_level = "DEBUG"

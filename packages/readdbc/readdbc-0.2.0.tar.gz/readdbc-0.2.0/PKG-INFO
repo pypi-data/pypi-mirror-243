@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: readdbc
+Version: 0.2.0
+Summary: Ler arquivos .dbc do datasus
+License: MIT
+Author: Edson (edinho)
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: cffi (>=1.16.0,<2.0.0)
+Requires-Dist: setuptools (>=56)
+Requires-Dist: simpledbf (>=0.2.6,<0.3.0)
+Description-Content-Type: text/markdown
+
+# readdbc
+Um pacote python para ler dados no formato DBC (DBF comprimido) usado pelo DATASUS.  
+
+
+# Uso
+O código abaixo descompactará o arquivo `COLEBR15.dbc` e salvará o conteúdo em `COLEBR15.dbf`.
+```
+import readdbc
+
+readdbc.dbc2dbf('COLEBR15.dbc', 'COLEBR15.dbf')
+```
+
+Esse descompacta e ja converte para .csv:
+```
+import readdbc
+
+readdbc.dbc2csv('COLEBR15.dbc', 'COLEBR15.csv')
+```
+
+
+# Suporte
+O pacote é testado em todas as versões oficiais do python (3.8 até a 3.12).  
+Também testado em GNU/Linux e MacOS.  
+Caso descubra algum bug ou comportamento inesperado nessas versões e plataforma, por favor entre em contato.  
+
+Windows não é suportado por enquanto!  
+Mas caso você seja um usuário do windows e queira ajudar, por favor entre em contato.  
+
+
+# Inspiração
+[read.dbc](https://github.com/danicat/read.dbc)  
+An R package for reading data in the DBC (compressed DBF) format used by DATASUS.
+
