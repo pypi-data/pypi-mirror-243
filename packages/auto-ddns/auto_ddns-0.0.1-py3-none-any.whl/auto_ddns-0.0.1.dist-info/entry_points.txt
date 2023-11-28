@@ -1,0 +1,3 @@
+[console_scripts]
+auto-config = auto_dns.__main__:app
+
