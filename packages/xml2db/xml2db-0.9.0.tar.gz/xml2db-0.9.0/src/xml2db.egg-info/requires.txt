@@ -1,0 +1,13 @@
+sqlalchemy
+xmlschema
+lxml
+
+[:python_version < "3.9"]
+graphlib_backport
+
+[docs]
+mkdocs-material
+mkdocstrings[python]
+
+[tests]
+pytest
