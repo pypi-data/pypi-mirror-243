@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+iupy_restconf/__init__.py
+iupy_restconf/restconf.py
+iupy_restconf/iupy_restconf.egg-info/PKG-INFO
+iupy_restconf/iupy_restconf.egg-info/SOURCES.txt
+iupy_restconf/iupy_restconf.egg-info/dependency_links.txt
+iupy_restconf/iupy_restconf.egg-info/top_level.txt
+tests/test.py
