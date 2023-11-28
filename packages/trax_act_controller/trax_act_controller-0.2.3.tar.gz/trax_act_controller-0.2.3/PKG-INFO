@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: trax_act_controller
+Version: 0.2.3
+Summary: An ACT (Adaptive Computation Time) controller with extensive error handling for trax.
+Author: Chris O'Quinn
+Author-email: chrisoquinn.2@gmail.com
+Requires-Python: >=3.9,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: tensorflow (>=2.4)
+Requires-Dist: trax

@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "trax_act_controller" # This and the src package must have the same name
+version = "0.2.3"
+description = "An ACT (Adaptive Computation Time) controller with extensive error handling for trax."  # Provide a concise package description
+authors = ["Chris O'Quinn <chrisoquinn.2@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9, <3.12" # Must be between 3.9 and 3.12. That is tensorflows specs
+tensorflow = ">=2.4"
+trax = "*"
+
+[tool.poetry.dev-dependencies]
+python = ">=3.9, <3.12" # Must be between 3.9 and 3.12,
+tensorflow = "*"
+trax = "*"
+numpy = "*"
+pytest = ">=5.2"
+pylint = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
