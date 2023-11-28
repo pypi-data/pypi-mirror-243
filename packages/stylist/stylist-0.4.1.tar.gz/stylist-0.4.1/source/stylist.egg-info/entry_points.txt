@@ -1,0 +1,2 @@
+[console_scripts]
+stylist = stylist.__main__:main

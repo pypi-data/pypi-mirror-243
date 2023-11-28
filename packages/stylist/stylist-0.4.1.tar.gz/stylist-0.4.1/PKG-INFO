@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: stylist
+Version: 0.4.1
+Summary: Flexible source code style checking tool
+Home-page: https://github.com/MetOffice/stylist
+Author: Met Office
+License: BSD 3-Clause License
+Project-URL: homepage, https://github.com/MetOffice/stylist/
+Project-URL: documentation, https://metoffice.github.io/stylist
+Project-URL: Bug Reports, https://github.com/MetOffice/stylist/issues
+Project-URL: repository, https://github.com/MetOffice/stylist/
+Keywords: linter fortran psyclone
+Classifier: Programming Language :: Python :: 3
+Requires-Python: <4,>=3.7
+Description-Content-Type: text/x-rst
+Provides-Extra: dev
+Provides-Extra: test
+Provides-Extra: performance
+Provides-Extra: docs
+Provides-Extra: release
+License-File: LICENSE
