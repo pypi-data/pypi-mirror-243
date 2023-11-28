@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: howler-client
+Version: 1.6.0.dev16137
+Summary: Howler Client Python Library
+Home-page: https://github.com/CybercentreCanada/howler-client
+Author: Analysis Support
+Author-email: analysis-development@cyber.gc.ca
+Maintainer: Analysis Support
+Maintainer-email: analysis-development@cyber.gc.ca
+License: MIT
+Keywords: development howler client gc canada cse-cst cse cst
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pycryptodome
+Requires-Dist: requests
+Requires-Dist: requests[security]
+Requires-Dist: python-baseconv
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-cov ; extra == 'test'
+Requires-Dist: cart ; extra == 'test'
+Requires-Dist: passlib ; extra == 'test'
+
+**Le version français suit**
+
+# Howler Client Library
+
+The Howler client library facilitates issuing requests to Howler.
+
+## Running the Tests
+
+1. Prepare the howler-api:
+    1. Start dependencies
+    1. `howler-api > python howler/app.py`
+    1. `howler-api > python howler/odm/random_data.py`
+2. Run Java integration tests:
+    1. `howler-client > mvn verify`
+3. Run python integration tests:
+    1. `howler-client/python > python -m venv env`
+    1. `howler-client/python > . env/bin/activate`
+    1. `howler-client/python > pip install -r requirements.txt`
+    1. `howler-client/python > pip install -r test/requirements.txt`
+    1. `howler-client/python > pip install -e .`
+    1. `howler-client/python > pytest -s -v test`
+
+
+======
+
+# Français
+
+# Bibliothèque client de Howler
+
+La bibliothèque client Howler facilite l'émission de requêtes à Howler.
+
+## Exécution des tests
+
+1. Préparez l'interface howler-api :
+    1. Démarrer les dépendances
+    1. `howler-api > python howler/app.py`
+    1. `howler-api > python howler/odm/random_data.py`
+2. Exécutez les tests d'intégration Java :
+    1. `howler-client > mvn verify`
+3. Exécuter les tests d'intégration python :
+    1. `howler-client/python > python -m venv env`
+    1. `howler-client/python > . env/bin/activate`
+    1. `howler-client/python > pip install -r requirements.txt`
+    1. `howler-client/python > pip install -r test/requirements.txt`
+    1. `howler-client/python > pip install -e .`
+    1. `howler-client/python > pytest -s -v test`
