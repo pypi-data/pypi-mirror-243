@@ -1,0 +1,85 @@
+Name: libfwps
+Version: @VERSION@
+Release: 1
+Summary: Library to access the Windows Property Store format
+Group: System Environment/Libraries
+License: LGPL-3.0-or-later
+Source: %{name}-%{version}.tar.gz
+URL: https://github.com/libyal/libfwps
+@libfwps_spec_requires@ @ax_libcdata_spec_requires@ @ax_libcerror_spec_requires@ @ax_libclocale_spec_requires@ @ax_libcnotify_spec_requires@ @ax_libcthreads_spec_requires@ @ax_libfdatetime_spec_requires@ @ax_libfguid_spec_requires@ @ax_libfole_spec_requires@ @ax_libuna_spec_requires@
+BuildRequires: gcc @ax_libcdata_spec_build_requires@ @ax_libcerror_spec_build_requires@ @ax_libclocale_spec_build_requires@ @ax_libcnotify_spec_build_requires@ @ax_libcthreads_spec_build_requires@ @ax_libfdatetime_spec_build_requires@ @ax_libfguid_spec_build_requires@ @ax_libfole_spec_build_requires@ @ax_libuna_spec_build_requires@
+
+%description -n libfwps
+Library to access the Windows Property Store format
+
+%package -n libfwps-static
+Summary: Library to access the Windows Property Store format
+Group: Development/Libraries
+Requires: libfwps = %{version}-%{release}
+
+%description -n libfwps-static
+Static library version of libfwps.
+
+%package -n libfwps-devel
+Summary: Header files and libraries for developing applications for libfwps
+Group: Development/Libraries
+Requires: libfwps = %{version}-%{release}
+
+%description -n libfwps-devel
+Header files and libraries for developing applications for libfwps.
+
+%package -n libfwps-python3
+Summary: Python 3 bindings for libfwps
+Group: System Environment/Libraries
+Requires: libfwps = %{version}-%{release} python3
+BuildRequires: python3-devel python3-setuptools
+
+%description -n libfwps-python3
+Python 3 bindings for libfwps
+
+%prep
+%setup -q
+
+%build
+%configure --prefix=/usr --libdir=%{_libdir} --mandir=%{_mandir} --enable-python
+make %{?_smp_mflags}
+
+%install
+rm -rf %{buildroot}
+%make_install
+
+%clean
+rm -rf %{buildroot}
+
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
+
+%files -n libfwps
+%license COPYING COPYING.LESSER
+%doc AUTHORS README
+%{_libdir}/*.so.*
+
+%files -n libfwps-static
+%license COPYING COPYING.LESSER
+%doc AUTHORS README
+%{_libdir}/*.a
+
+%files -n libfwps-devel
+%license COPYING COPYING.LESSER
+%doc AUTHORS README
+%{_libdir}/*.so
+%{_libdir}/pkgconfig/libfwps.pc
+%{_includedir}/*
+%{_mandir}/man3/*
+
+%files -n libfwps-python3
+%license COPYING COPYING.LESSER
+%doc AUTHORS README
+%{_libdir}/python3*/site-packages/*.a
+%{_libdir}/python3*/site-packages/*.so
+
+%changelog
+* @SPEC_DATE@ Joachim Metz <joachim.metz@gmail.com> @VERSION@-1
+- Auto-generated
+
