@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: monobank-api-client
+Version: 0.0.6
+Summary: This module is designed for quick interaction with the monobank API.
+Home-page: https://gitlab.com/ihor.sotnyk/monobank-api-client
+Author: ihor.sotnyk
+Author-email: ihor.sotnyk@onix-systems.com
+Keywords: files speedfiles
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+# monobank-api-client
+
+## Name
+monobank_api_client
+
+## Installation
+This framework is published at the PyPI, install it with pip:
+
+    pip install monobank_api_client
+
+To enable monobank_api_client for your Django REST Framework application, you need to install and configure monobank_api_client. To get started, add the following packages to your INSTALLED_APPS:
+
+    INSTALLED_APPS = [
+    ...
+    'rest_framework',
+    'monobank_api_client',
+    ]
+
+Include monobank_api_client urls to your urls.py:
+
+    urlpatterns += [
+        path(
+            'mono/',
+            include('monobank.urls', namespace='mono')
+        ),
+    ]
