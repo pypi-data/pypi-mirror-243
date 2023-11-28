@@ -1,0 +1,74 @@
+# SPDX-FileCopyrightText: 2023 Friedrich Miescher Institute for Biomedical Research (FMI), Basel (Switzerland)
+#
+# SPDX-License-Identifier: MIT
+
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "faim-wako-searchfirst"
+description = ''
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "Jan Eglinger", email = "jan.eglinger@fmi.ch" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "cellpose",
+  "confuse",
+  "rich",
+  "scikit-image",
+  "tqdm",
+  "typer"
+]
+dynamic = ["version"]
+
+[project.urls]
+Documentation = "https://github.com/fmi-faim/faim-wako-searchfirst#readme"
+Issues = "https://github.com/fmi-faim/faim-wako-searchfirst/issues"
+Source = "https://github.com/fmi-faim/faim-wako-searchfirst"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.envs.default]
+dependencies = [
+  "pandas",
+  "pytest",
+  "pytest-cov",
+]
+[tool.hatch.envs.default.scripts]
+cov = "pytest --cov-report=term-missing --cov-config=pyproject.toml --cov=faim_wako_searchfirst --cov=tests {args}"
+no-cov = "cov --no-cov {args}"
+
+[[tool.hatch.envs.test.matrix]]
+python = ["38", "39", "310", "311"]
+
+[tool.coverage.run]
+branch = true
+parallel = true
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]
+
+[tool.ruff]
+line-length = 120
+select = ['A', 'B', 'C', 'D', 'E', 'F', 'I']
+target-version = 'py39'
