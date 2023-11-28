@@ -1,0 +1,2 @@
+[console_scripts]
+lbcharmdb-compute-correlation = lbcharmdb.calculate_correlations_weighted_tuples:main

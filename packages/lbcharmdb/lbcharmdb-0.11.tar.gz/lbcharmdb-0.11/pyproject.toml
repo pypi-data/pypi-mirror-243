@@ -1,0 +1,45 @@
+[build-system]
+requires = [
+    "setuptools>=61.2",
+    "setuptools_scm",
+]
+build-backend = "setuptools.build_meta"
+
+
+[tool.setuptools_scm]
+
+[project]
+name = "lbcharmdb"
+authors = [{name = "Laurent Dufour", email="laurent.dufour@cern.ch"}]
+description = "Maintenance tools for the database of correlations between charm analyses"
+keywords = ["LHCb", "charm"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">=3.8"
+version = "0.11"
+dependencies = ["tqdm",
+"numpy", "coloredlogs"]
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://gitlab.cern.ch/lhcb-charm/correlations-database-editor"
+"Bug Reports" = "https://gitlab.cern.ch/lhcb-charm/correlations-database-editor/issues"
+Source = "https://gitlab.cern.ch/lhcb-charm/correlations-database-editor"
+
+
+[project.scripts]
+lbcharmdb-compute-correlation = "lbcharmdb.calculate_correlations_weighted_tuples:main"
+
+[tool.ruff]
+select = ["E", "F", "B", "I", "PLE", "RUF", "UP"]
+target-version = "py39"
+line-length = 140
+
+[tool.mypy]
+strict = true
+allow_redefinition = true
+disable_error_code = ["no-untyped-call", "no-untyped-def"]

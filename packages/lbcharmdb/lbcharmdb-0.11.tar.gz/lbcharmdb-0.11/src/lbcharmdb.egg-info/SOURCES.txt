@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/lbcharmdb/__init__.py
+src/lbcharmdb/calculate_correlations_weighted_tuples.py
+src/lbcharmdb/database.py
+src/lbcharmdb/db_classes.py
+src/lbcharmdb/publisher.py
+src/lbcharmdb/units.py
+src/lbcharmdb/utilities.py
+src/lbcharmdb.egg-info/PKG-INFO
+src/lbcharmdb.egg-info/SOURCES.txt
+src/lbcharmdb.egg-info/dependency_links.txt
+src/lbcharmdb.egg-info/entry_points.txt
+src/lbcharmdb.egg-info/requires.txt
+src/lbcharmdb.egg-info/top_level.txt
