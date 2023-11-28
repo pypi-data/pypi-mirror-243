@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.py
+src/whisperyt/__init__.py
+src/whisperyt/postprocess.py
+src/whisperyt/transcribe.py
+src/whisperyt.egg-info/PKG-INFO
+src/whisperyt.egg-info/SOURCES.txt
+src/whisperyt.egg-info/dependency_links.txt
+src/whisperyt.egg-info/requires.txt
+src/whisperyt.egg-info/top_level.txt
