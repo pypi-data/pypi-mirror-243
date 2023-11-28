@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: imageplustxt
+Version: 0.1.2
+Summary: Module to add text to an image
+Author-email: surumkata <a93277@uminho.pt>
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: Pillow
+Requires-Dist: argparse
+
+# **Image Plus Text**
+
+TBD
