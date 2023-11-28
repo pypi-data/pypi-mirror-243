@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: lightspark
+Version: 2.4.0
+Summary: Python SDK for the Lightspark API
+Home-page: https://www.lightspark.com/
+Author: Lightspark Group, Inc.
+Author-email: info@lightspark.com
+License: Apache-2.0
+Project-URL: Documentation, https://docs.lightspark.com/lightspark-sdk/getting-started?language=Python
+Project-URL: Source Code, https://github.com/lightsparkdev/python-sdk
+Description-Content-Type: text/markdown
+Requires-Dist: cryptography
+Requires-Dist: pyjwt
+Requires-Dist: requests
+Requires-Dist: lightspark-crypto-python
