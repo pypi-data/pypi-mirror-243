@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: ocp-tessellate
+Version: 2.0.2
+Summary: Tessellate OCP objects
+Home-page: https://github.com/bernhard-42/ocp-tessellate
+Author: Bernhard Walter
+Author-email: b_walter@arcor.de
+Keywords: CAD,cadquery
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Framework :: IPython
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9
+Provides-Extra: dev
+
+Tessellate OCP (https://github.com/cadquery/OCP) objects to use with threejs
