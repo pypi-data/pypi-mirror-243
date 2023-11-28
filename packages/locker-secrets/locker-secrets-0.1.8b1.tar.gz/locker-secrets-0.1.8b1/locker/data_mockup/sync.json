@@ -1,0 +1,134 @@
+{
+  "object": "sync",
+  "count": {
+    "secrets": 5
+  },
+  "profile": {
+    "object": "profile",
+    "id": "c7101171-ad55-4edc-8eaa-27db16b6a874",
+    "client_id": "lSLcnWrRvDPMXJN5X7LjWo7SmbqCEvZo",
+    "key": "2.5ysmzwNZaaPLgfwREV7/Zw==|NXPyuOTyRlzINDKeAHRGmIUzdqZDqaelGvNvKOCXfknQLY14Ky26GgbPUbBJ3nTBTx9t4Q3+4lw1bCREPEKaIg==|BFhh3E+LP60Q7J9/dnyocc/3LIu2IftFyJarIufccT8=",
+    "activated": true,
+    "editable": true,
+    "restrict_ip": [],
+    "creation_date": 1686109368.0,
+    "revision_date": 1686109368.0,
+    "expiration_date": null,
+    "project_id": 1
+  },
+  "projects": [
+    {
+      "object": "project",
+      "id": 1,
+      "name": "Locker Secret",
+      "description": "",
+      "creation_date": 1686109129.0,
+      "revision_date": 1686109129.0,
+      "updated_date": 1686109150.0,
+      "key": null,
+      "public_key": null,
+      "private_key": null,
+      "organization_id": "pvnh3f"
+    }
+  ],
+  "environments": [
+    {
+      "object": "environment",
+      "id": "ad2d5c24-a01d-4322-972a-659e2c666a96",
+      "name": "2.dqwqM8IX4SKxXtThY9sDXg==|N/LrdgxDkH94CstEUlnKTw==|eh/33ohF5XpeuMXivn7/rARa9nq2TQZqCQ8mH7MdWXM=",
+      "external_url": "2.Bb87UMds6RQjrfH70R/Yzw==|K3PkIlgbJXvjTpZbV2YZcQ==|Q1/1Abe6I+whYK/V1c7a2mUxSIBuJRV9p9qHQyIAjnI=",
+      "description": "2.C4Skfo/tE/+/Uf3rZLjG7g==|c/H9B0SSAv2zOcZvlibM4g==|BnffOTdRVBhHUp6GdCF3l2BTwqWK/cM1UF7I/8VVUGA=",
+      "data": {
+        "name": "2.dqwqM8IX4SKxXtThY9sDXg==|N/LrdgxDkH94CstEUlnKTw==|eh/33ohF5XpeuMXivn7/rARa9nq2TQZqCQ8mH7MdWXM=",
+        "external_url": "2.Bb87UMds6RQjrfH70R/Yzw==|K3PkIlgbJXvjTpZbV2YZcQ==|Q1/1Abe6I+whYK/V1c7a2mUxSIBuJRV9p9qHQyIAjnI=",
+        "description": "2.C4Skfo/tE/+/Uf3rZLjG7g==|c/H9B0SSAv2zOcZvlibM4g==|BnffOTdRVBhHUp6GdCF3l2BTwqWK/cM1UF7I/8VVUGA="
+      },
+      "creation_date": 1686109182.0,
+      "revision_date": 1686109182.0,
+      "updated_date": 1686109182.0,
+      "project_id": 1
+    }
+  ],
+  "secrets": [
+    {
+      "object": "secret",
+      "id": "d76b10a4-3cfc-485f-b285-876cdeb4c6a5",
+      "data": {
+        "key": "2.F5lX9AWLoHmi4cemy94S6g==|Z6B1D7dy5ICx1eKAhBrhg6MAIcGJIzG/vjs0Vi7AtVxvXp10oQuDuZhBYNxLm3ia|3C0mZYOxvo4mNKl/PlY+2BOXvt6RuT26iRi5xnlJO5o=",
+        "value": "2.0KnbFTApZUyYVoT51x0rHw==|/ZX4G2r3V39fd12yc/P1MDd4xXEytslPdPA5uSJu/oI=|ckF9iof49RlEY560MlDSnCNSbq70SVvn+Rg+vPgle7I=",
+        "description": null
+      },
+      "creation_date": 1686109261.0,
+      "revision_date": 1686109261.0,
+      "updated_date": 1686109261.0,
+      "deleted_date": null,
+      "last_use_date": null,
+      "project_id": 1,
+      "environment_id": "ad2d5c24-a01d-4322-972a-659e2c666a96"
+    },
+    {
+      "object": "secret",
+      "id": "833cde6b-1aa9-49ce-ba40-b98a718bec1c",
+      "data": {
+        "key": "2.+mf5E5LnkXO6bJplCN237A==|lU4EmMu+7h13mRUnKP+wOMBIgXCow67ZvaHq2L//+zM=|tbwM+eiwQ2DThihUfezh0MEdJHBve4RhnDykgmaGexM=",
+        "value": "2.KG0GQPD7zZ0VxaXCTFhIGg==|MuJmET8ltBy46NK/ayj/K3noLxDZqKr6G+fEEKEqDQY=|KdT7XgxtRpAYuu43Z4yp8hVf+Gt7OGe86hSOG6xR8TM=",
+        "description": null
+      },
+      "creation_date": 1686109237.0,
+      "revision_date": 1686109237.0,
+      "updated_date": 1686109237.0,
+      "deleted_date": null,
+      "last_use_date": null,
+      "project_id": 1,
+      "environment_id": null
+    },
+    {
+      "object": "secret",
+      "id": "9cc31e28-2ae6-44f9-b733-be96b3c3c2c0",
+      "data": {
+        "key": "2.sVULy8TaPmCjRRm5HYEO7g==|kh7D3eSmEFOi22Bfs8C/trt1xz9pLFf5Vzwi55juHJs=|HU9QREISRdpnAqkLaMs7VGspcPpergRvEFLjh9QoKPE=",
+        "value": "2.8Uk9XgJY9bAXpGXQ23puqw==|9jFtmmQvHKfo41K2MRUlQvA70yPPJ+Oc5uZFnBfOcvw=|73Lg51PGZkquPCylYTrsdh4DtFpYxIWE4OMGDRHSWWg=",
+        "description": null
+      },
+      "creation_date": 1686109229.0,
+      "revision_date": 1686109229.0,
+      "updated_date": 1686109229.0,
+      "deleted_date": null,
+      "last_use_date": null,
+      "project_id": 1,
+      "environment_id": null
+    },
+    {
+      "object": "secret",
+      "id": "c904f695-b985-4eda-be2f-70e980f1cba1",
+      "data": {
+        "key": "2.JEyIMw8HJvUNJGeccTXkpw==|v8fhYoaUk2lFEWkae2P/vQtd5yCLFmtl9EHxB6oyDDBalfUJOlExBK+g6a9/Ba7V|A0r4VUjhNwyXB9Abdv3KqvZ4PnUxBY67+xMgl/FuHW0=",
+        "value": "2.9+smi8O34dwSqiQwK7SYWQ==|D8DP2J6OzLWRKeuRs0H+f+ChH8DyOjPD3sc6JMTmbwy8H9DIbnsbylcVV/8V7Bzm|lsuyQza3vEGrx4Y9a4UusOVxUokAcY9v2GvVcHaKM2A=",
+        "description": null
+      },
+      "creation_date": 1686109221.0,
+      "revision_date": 1686109221.0,
+      "updated_date": 1686109221.0,
+      "deleted_date": null,
+      "last_use_date": null,
+      "project_id": 1,
+      "environment_id": null
+    },
+    {
+      "object": "secret",
+      "id": "3cff2244-1e8f-405a-8c2a-3af2d12f262d",
+      "data": {
+        "key": "2.gpYwk4ebOpPdkCUNyfxXdw==|UtXufrDayUiExDby1mPtOA==|bQzrPmfNb5+dAzi6xOyLJGASYL3ilIFtr8HTGgzONug=",
+        "value": "2.wHD071ySRJlEJsqx9dt8iA==|/qc45+z6gyGe8lBJkBha/A==|kEtw4etORr2ANB7aBH55T4SgmtPRmI+bVXO1B4yFcVk=",
+        "description": null
+      },
+      "creation_date": 1686109208.0,
+      "revision_date": 1686109208.0,
+      "updated_date": 1686109208.0,
+      "deleted_date": null,
+      "last_use_date": null,
+      "project_id": 1,
+      "environment_id": null
+    }
+  ]
+}

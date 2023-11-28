@@ -1,0 +1,18 @@
+[
+  {
+    "object": "environment",
+    "id": "ad2d5c24-a01d-4322-972a-659e2c666a96",
+    "name": "prod",
+    "external_url": "https://external.example",
+    "description": "desc",
+    "data": {
+      "name": "prod",
+      "external_url": "https://external.example",
+      "description": "desc"
+    },
+    "creation_date": 1686109182.0,
+    "revision_date": 1686109182.0,
+    "updated_date": 1686109182.0,
+    "project_id": 1
+  }
+]
