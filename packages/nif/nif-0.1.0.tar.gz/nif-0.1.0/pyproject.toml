@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "nif"
+version = "0.1.0"
+description = "NIF (Portuguese taxpayer identification number) validator, generator and identifier"
+authors = ["fmacedo <me@fmacedo.com>"]
+readme = "README.md"
+repository = "https://github.com/franciscobmacedo/nif"
+packages = [{include = "nif"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.6"
+tox = "^4.11.3"
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

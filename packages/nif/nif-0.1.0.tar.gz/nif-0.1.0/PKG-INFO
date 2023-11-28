@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: nif
+Version: 0.1.0
+Summary: NIF (Portuguese taxpayer identification number) validator, generator and identifier
+Home-page: https://github.com/franciscobmacedo/nif
+Author: fmacedo
+Author-email: me@fmacedo.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Project-URL: Repository, https://github.com/franciscobmacedo/nif
+Description-Content-Type: text/markdown
+
+# NIF
+
+Python package to provide utilities for NIF (Taxpayer Identification Number/ Número de Identificação Fiscal), including validity checks, normalisation, and generation.
+
+
