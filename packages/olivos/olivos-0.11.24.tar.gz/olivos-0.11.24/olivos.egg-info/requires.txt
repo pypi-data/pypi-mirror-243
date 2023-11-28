@@ -1,0 +1,17 @@
+flask
+gevent
+psutil
+requests
+pybase64
+websockets
+websocket-client
+pillow==9.3.0
+rsa
+requests_toolbelt
+pystray
+aiohttp
+qrcode
+brotli
+pyjson5
+pywebview
+filetype
