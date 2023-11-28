@@ -1,0 +1,23 @@
+name: trodes_to_nwb
+channels:
+- conda-forge
+- franklab
+dependencies:
+- numpy
+- scipy
+- pandas
+- pynwb
+- nwbinspector
+- dask
+- ipython
+- black
+- pytest
+- pytest-cov
+- pytest-mock
+- pyyaml
+- jsonschema
+- ffmpeg
+- pip
+- pip:
+    - ndx-franklab-novela
+    - neo
