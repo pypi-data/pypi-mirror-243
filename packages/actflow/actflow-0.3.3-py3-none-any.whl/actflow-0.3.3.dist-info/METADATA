@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: actflow
+Version: 0.3.3
+Summary: The Brain Activity Flow (Actflow) Toolbox. Tools to quantify the relationship between connectivity and task activity through network simulations and machine learning prediction. Helps determine how connections contribute to specific brain functions.
+Home-page: https://github.com/ColeLab/ActflowToolbox
+Author: Michael Cole
+Author-email: michael.cole@rutgers.edu
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: gglasso
+Requires-Dist: wbplot
+Requires-Dist: seaborn
+Requires-Dist: matplotlib
+Requires-Dist: numpy (<1.24)
+Requires-Dist: h5py
+Requires-Dist: statsmodels
+
