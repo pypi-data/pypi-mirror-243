@@ -1,0 +1,4 @@
+cryptography
+pycryptodome==3.10.1
+cffi==1.14.6
+PyYAML==5.4.1
