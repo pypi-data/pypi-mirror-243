@@ -1,0 +1,181 @@
+Metadata-Version: 2.1
+Name: vernum
+Version: 7.0.0
+Summary: Easy semantic versioning for projects in Git
+License: MIT
+Author: Steampunk Wizard
+Author-email: vernum@steampunkwizard.ca
+Requires-Python: >=3.11,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: wizlib (>=2.0.5,<3.0.0)
+Description-Content-Type: text/markdown
+
+# VerNum
+
+Configurable GitLab CI/CD-powered version numbering for project releases
+
+<a href="https://www.flaticon.com/free-icons/rat" title="rat icons">Rat icons created by Freepik - Flaticon</a>
+
+## Warning: Breaking Changes
+
+Starting in VerNum v4.0.0:
+
+- No longer generates a `.version` file - file generation is the responsibility of an outer script
+- Includes `alpha` and `beta` increments
+- Supports the `--set-current` option to receive the current version number from a source other than Git tags
+- Requires an increment - `patch` is no longer the default
+- No longer checks Git status before proceeding
+- No longer provides the option to automatically update the Git tag, and no longer supports the `dry-run` option
+
+Starting in VerNum 7.0.0:
+
+- Requires one of the commands `max` or `next`
+- Reads from stdin and outputs to stdout by default
+- Default scheme is `patch` and an increment is required (no default)
+- The `minor-alpha-beta` scheme, though similar to previous versions of VerNum, increments to minor-alpha1 or major-alpha1 before going to patch
+
+## Python module/CLI installation
+
+The VerNum Python module is distributed as a PyPI module and can be installed like any other.
+
+Install with system-level Python
+
+```
+pip3 install vernum
+```
+
+Install with `pipx` to avoid dependency collisions
+
+```
+pipx install vernum
+```
+
+Install with a venv (depends on venv location)
+
+```
+.venv/bin/pip install vernum
+```
+
+... or install as a Poetry dev dependency
+
+
+## The `vernum max` command
+
+Takes a list of version numbers and based on the configued numbering scheme, returns the highest value in the list. Designed to be used with a `git tag` command, such as:
+
+```bash
+echo "1.4.0\n1.4.1\n1.5.0" | vernum max
+```
+
+## The `vernum next` command
+
+Takes a single version number and, based on the configured numbering scheme and the selected increment, outputs the next version number.
+
+```bash
+echo "3.4.5" | vernum next patch
+```
+
+## Schemes
+
+VerNum supports multiple "schemes" for version numbering.
+
+| Scheme | Description | Increments | Example |
+| --- | --- | ---| --- |
+| `major` | Just a single version number | `major` | `4` |
+| `minor` | Major, dot, minor | `major` `minor` | `4.2` |
+| `patch` | Major, dot, minor, dot patch | `major` `minor` `patch` | `4.2.1` |
+| `minor-alpha-beta` | Major, dot, minor, dot, and either a patch, alpha, or beta | `major`, `minor`, `patch`, `alpha`, `beta` | `4.3.alpha2` |
+
+Schemes support an optional "v" before the version number for inputs, including from Git, but output the result without a "v".
+
+The default scheme is `patch`.
+
+## Details of the minor-alpha-beta scheme
+
+The `minor-alpha-beta` scheme is designed for situations where alpha and beta pre-releases apply to minor versions. But increments only go forward, and assume that new work will start with alpha1. So:
+
+- `major` changes e.g. 5.6.2 to 6.0.alpha1
+- `minor` changes e.g. 5.6.2 to 5.7.alpha1
+- `beta` changes e.g. 5.7.beta3 to 5.7.beta4
+- `alpha` changes e.g. 5.7.alpha8 to 5.7.alpha9
+- `patch` changes e.g. 5.6.beta6 to 5.6.0
+- `patch` changes e.g. 5.6.2 to 5.6.3
+
+
+### Use with Git tags
+
+We designed VerNum to use with Git tags, and recommend using the history of tags in the default branch as the  source of truth for version numbers.
+
+The example below demonstrates one way to use VerNum with Git tags.
+
+```bash
+git tag --list --merged HEAD | vernum max | vernum next patch > .version
+git tag -a "$(cat .version)" -m "$(cat .version)"
+```
+
+Keep the following pointers in mind when using VerNum with Git.
+
+- CD to the root of the project before running it
+- Be on the branch that you use for releases (i.e. `master`)
+- Be fully up-to-date in git (i.e. merged, committed, and pushed)
+
+
+## Configuration and input
+
+VerNum uses the [WizLib](https://gitlab.com/steampunk-wizard/projects/wizlib) framework for configuration and input control.
+
+- Input to commands can come through stdin
+- Alternatively, use the `vernum --input <filename>` to pull input from a file
+- The scheme can be selected with an environment variable `$VERNUM_SCHEME`
+- Alternatively, the scheme can be set in a YAML configuration file; the application will try, in order:
+  - A config file location designated with `vernum --config <filename>`
+  - A config file location designated with a `$VERNUM_CONFIG` environment variable
+  - `.vernum.yml` in the local directory
+  - `.vernum.yml` in the user's home directory
+
+We recommend placing a `.vernum.yml` file in the project directory and committing it to the project's Git repository, so different environments use the same scheme.
+
+The format for the YAML file is simple (allowing for other forms of configuration in the future):
+
+```yaml
+vernum:
+  scheme: minor
+```
+
+## Usage (GitLab CI/CD)
+
+_NOTE: VerNum 7.0.0 contains the previous version of the CI template, pinned to VerNum 6.0. We will update the CI configuration soon, as described below._
+
+VerNum is designed for use withing GitLab CI/CD, and includes a CI/CD configuration component to support the most common use cases.
+
+_*Best practices (in our opinion) dictate that version numbering happens downstream of source code, and the only record of a version number lives in the Git tags themselves. In other words, resist the temptation to add new commits just to bump a version.*_
+
+Use the provided `vernum.gitlab-ci.yml` to use it in GitLab. Here's an example:
+
+```yaml
+include:
+  - project: 'vernum/vernum'
+    file: 'vernum.gitlab-ci.yml'
+
+stages:
+  - Build
+  - Test
+  - Pre-release
+  - Release
+  - Post-release
+
+deliver:
+    stage: Post-release
+    script:
+        - echo "Edit this script to deploy or distribute v$(cat .version)"
+```
+
+The CI/CD component will add a set of jobs that:
+
+- Output the latest version (based on Git tags in the branch being processed)
+- Increment the version according to the configured scheme using an increment provided as a variable
+- Place the new version number in a job artifact called `.version` for use by later jobs
+- Add a GitLab release object and Git tag for the new version (using `release-cli`)
+
