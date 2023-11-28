@@ -1,0 +1,14 @@
+include LICENSE
+include README*
+
+recursive-include meutils/data *
+recursive-include meutils/templates *
+
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude * *.mp[34]
+recursive-exclude * *.wav
+
+recursive-exclude docs *
+recursive-exclude examples *
+recursive-exclude cachedir *
