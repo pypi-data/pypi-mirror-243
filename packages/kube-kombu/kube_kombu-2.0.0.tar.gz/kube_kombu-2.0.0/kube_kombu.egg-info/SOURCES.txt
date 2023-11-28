@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+./kube_kombu/__init__.py
+./kube_kombu/abstract_consumer_adapter.py
+./kube_kombu/consumer.py
+./kube_kombu/consumer_config.py
+./kube_kombu/healthcheck_server.py
+./kube_kombu/start_consumer.py
+./kube_kombu/worker.py
+kube_kombu.egg-info/PKG-INFO
+kube_kombu.egg-info/SOURCES.txt
+kube_kombu.egg-info/dependency_links.txt
+kube_kombu.egg-info/requires.txt
+kube_kombu.egg-info/top_level.txt
