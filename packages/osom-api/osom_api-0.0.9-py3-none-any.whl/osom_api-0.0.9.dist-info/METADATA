@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: osom-api
+Version: 0.0.9
+Summary: osom api
+Home-page: https://github.com/osom8979/osom-api
+Author: zer0
+Author-email: osom8979@gmail.com
+Maintainer: zer0
+Maintainer-email: osom8979@gmail.com
+License: MIT License
+Project-URL: GitHub: issues, https://github.com/osom8979/osom-api/issues
+Project-URL: GitHub: repo, https://github.com/osom8979/osom-api
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: AsyncIO
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi[all] >=0.104.1
+Requires-Dist: redis >=5.0.1
+Requires-Dist: boto3 >=1.29.6
+Requires-Dist: supabase >=2.1.0
+Requires-Dist: aiogram >=3.2.0
+Requires-Dist: coloredlogs >=15.0.1
+Requires-Dist: overrides >=7.4.0
+Requires-Dist: plugpack >=0.0.2
+Requires-Dist: type-serialize >=1.2.1
+Requires-Dist: orjson
+Requires-Dist: python-dotenv
+Requires-Dist: uvloop
+
+# osom-api
+
+[![PyPI](https://img.shields.io/pypi/v/osom-api?style=flat-square)](https://pypi.org/project/osom-api/)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/osom-api?style=flat-square)
+[![GitHub](https://img.shields.io/github/license/osom8979/osom-api?style=flat-square)](https://github.com/osom8979/osom-api/)
+
+osom api
+
+## License
+
+See the [LICENSE](./LICENSE) file for details. In summary,
+**osom-api** is licensed under the **MIT license**.
