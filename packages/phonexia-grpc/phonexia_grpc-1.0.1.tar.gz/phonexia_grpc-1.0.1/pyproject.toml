@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "phonexia-grpc"
+version = "1.0.1"
+description = "Library for communication with microservices developed by phonexia using grpc application interface."
+readme = "pypi-README.md"
+keywords = ["grpc", "voice", "voice-biometry", "speech", "language"]
+authors = ["Phonexia s.r.o. <info@phonexia.com>"]
+license = "Apache-2.0"
+packages = [
+    { include = "phonexia" },
+]
+# Directory with build needs to be included explicitly, since poetry follows
+# .gitignore and excludes it by default. Also, py.typed is included to tell static type checkers
+# that typing support is available.
+include = [
+    "phonexia/**/*.py*",
+    "phonexia/py.typed",
+]
+
+[tool.poetry.urls]
+Homepage = "https://phonexia.com"
+Issues = "https://phonexia.atlassian.net/servicedesk/customer/portal/15/group/20/create/40"
+# protofiles = "link to protofiles"
+
+[[tool.poetry.source]]
+name = "gitlab"
+url = "https://gitlab.cloud.phonexia.com/api/v4/groups/39/-/packages/pypi/simple"
+priority = "primary"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "default"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+grpcio = "^1.54.0"
+protobuf = "^4.22.3"
+mypy-protobuf = "^3.4.0"
+grpc-stubs = "^1.53.0.2"
+
+[tool.poetry.group.dev.dependencies]
+grpcio-tools = "^1.54.2"
+ruff = "^0.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.setuptools.package-data]
+phonexia = ["py.typed"]
+
+[tool.ruff]
+select = [
+"F", # Pyflakes
+]
+ignore = ['F401']
