@@ -1,0 +1,35 @@
+[project]
+name="CAD_to_OpenMC"
+version="0.2.8"
+authors = [
+  { name="Erik B Knudsen", email="erik.knudsen@copenhagenatomics.com" },
+]
+description = "Package to automagically convert step-geometries to h5m descriptions for neutronics by OpenMC"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+]
+dependencies=[
+        'gmsh',
+        'pyparsing',
+        'cadquery>=2',
+        'cadquery-ocp>=7',
+        'numpy',
+        'meshio',
+        'trimesh',
+        'networkx',
+        'Cython'
+]
+
+[project.urls]
+"Homepage" = "https://github.com/openmsr/CAD_to_OpenMC"
+"Bug Tracker" = "https://github.com/openmsr/CAD_to_OpenMC/issues"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
