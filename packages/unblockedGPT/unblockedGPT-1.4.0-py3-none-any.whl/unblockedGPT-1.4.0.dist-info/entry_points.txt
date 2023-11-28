@@ -1,0 +1,7 @@
+[console_scripts]
+chat = unblockedGPT.__main__:run
+saveHero = unblockedGPT.__main__:heroTypeCmd
+saveStealth = unblockedGPT.__main__:stealthTypeCmd
+setKeys = unblockedGPT.__main__:setKeys
+typeGPT = unblockedGPT.__main__:typeGPTCmd
+typetext = unblockedGPT.__main__:textToType
