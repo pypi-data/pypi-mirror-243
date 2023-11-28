@@ -1,0 +1,13 @@
+flask<2.3
+flask_login
+flask_migrate
+flask_wtf
+WTForms==2.3.3
+sqlalchemy<1.4
+flask_sqlalchemy
+email_validator
+gunicorn
+python-decouple
+sqlalchemy-utils
+requests
+eventlet
