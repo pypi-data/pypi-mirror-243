@@ -1,0 +1,50 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Project Introduction
+description: Name, tagline, keywords, and other descriptions for the project
+type: object
+default: {}
+additionalProperties: false
+properties:
+  name:
+    description: Name of the project
+    type: string
+    default: ""
+    oneOf:
+      - minLength: 0
+        maxLength: 0
+      - pattern: ^[A-Za-z0-9](?:[A-Za-z0-9 ._-]*[A-Za-z0-9])?$
+  tagline:
+    description: A short description, or slogan of the project
+    type: string
+    default: ""
+  description:
+    description: A long description of the project
+    type: string
+    default: ""
+  keywords:
+    description: Keywords of the project
+    type: array
+    default: []
+    uniqueItems: true
+    maxItems: 20
+    items:
+      type: string
+      maxLength: 50
+      pattern: ^[A-Za-z0-9][A-Za-z0-9\- ]*$
+  keynotes:
+    description: Keynotes for the project
+    type: array
+    default: []
+    uniqueItems: true
+    items:
+      type: object
+      additionalProperties: false
+      properties:
+        title:
+          description: Title of the keynote
+          type: string
+        description:
+          description: Description of the keynote
+          type: string
+      required: [ title, description ]
+required: [ tagline, description, keywords, keynotes ]
