@@ -1,0 +1,7 @@
+"""An Alliance Auth app for monitoring celery tasks."""
+
+# pylint: disable = invalid-name
+default_app_config = "taskmonitor.apps.TaskMonitorConfig"
+
+__version__ = "0.20.0"
+__title__ = "Task Monitor"
