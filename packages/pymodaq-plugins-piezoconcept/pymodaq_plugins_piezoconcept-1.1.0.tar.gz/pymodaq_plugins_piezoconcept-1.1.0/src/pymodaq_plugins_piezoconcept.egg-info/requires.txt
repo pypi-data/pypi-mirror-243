@@ -1,0 +1,4 @@
+toml
+pyserial
+pyvisa
+pymodaq>=4.0.8
