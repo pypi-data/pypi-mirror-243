@@ -1,0 +1,33 @@
+
+.input{
+    height:542px;
+    overflow:scroll;
+    padding:0px
+}
+
+.line-number{
+    width:auto;
+    margin-left:10px;
+    padding:5px;
+    padding-top:3px;
+    text-align: center;
+    height:542px;
+    overflow:hidden;
+}
+
+.representation{
+    height:542px;
+    width : 49%;
+    overflow:scroll;
+    padding:0;
+    display: inline-block;
+}
+
+pre code.hljs,code.hljs{
+ padding:0px;
+}
+
+
+
+
+
