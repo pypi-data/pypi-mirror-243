@@ -1,0 +1,17 @@
+name: Image resolution extraction
+description: Component that extracts image resolution data from the images
+image: fndnt/image_resolution_extraction:0.8.dev1
+tags:
+  - Image processing
+
+consumes:
+  images_data:
+    type: binary
+
+produces:
+  images_data:
+    type: binary
+  images_width:
+    type: int32
+  images_height:
+    type: int32
