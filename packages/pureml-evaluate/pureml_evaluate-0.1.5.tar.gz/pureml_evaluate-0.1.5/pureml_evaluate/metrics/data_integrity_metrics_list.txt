@@ -1,0 +1,24 @@
+Old Path: /pureml_evaluate/data_metrics/tabular/"metric_name".py
+New Path : /pureml_evaluate/metrics/"metric_name"/"metric_name".py
+
+Wheras "metric_name" is as follows
+
+
+Following are the list of data integrity metrics :
+
+
+     1	class_imbalance
+     2	column_info
+     3	conflicting_labels
+     4	data_duplicates
+     5	feature_feature_correlation
+     6	feature_label_correlation
+     7	identifier_label_correlation
+     8	is_single_value
+     9	mixed_data_types
+    10	mixed_nulls
+    11	outlier_sample_detection
+    12	percent_of_nulls
+    13	special_character
+    14	string_length_outOfBounds
+    15	string_mismatch
