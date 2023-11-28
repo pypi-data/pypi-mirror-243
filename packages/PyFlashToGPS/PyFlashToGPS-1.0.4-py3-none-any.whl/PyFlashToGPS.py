@@ -1,0 +1,454 @@
+# Press Shift+F10 to execute this program.
+# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import argparse
+# import os
+from pathlib import Path
+import glob
+import astropy.io.fits as pyfits
+import numpy as np
+
+from dateutil import parser
+import datetime
+import matplotlib
+import matplotlib.pyplot as plt
+
+matplotlib.use('TkAgg')
+import sys
+
+from edge_finding_utilities import find_best_r_only_from_min_max_size, subFrameAdjusted
+
+verbose = False
+progress_factor = 50
+
+__version__ = "1.0.4"
+
+def parseFlashTimes(flash_times_str):
+    format_ok = False
+    parts = flash_times_str.split(' ')
+    if len(parts) == 4:
+        sub_parts_1 = parts[0].split('-')
+        sub_parts_2 = parts[1].split(':')
+        sub_parts_3 = parts[2].split('-')
+        sub_parts_4 = parts[3].split(':')
+        if len(sub_parts_1) == len(sub_parts_2) == len(sub_parts_3) == len(sub_parts_4) == 3:
+            format_ok = True
+
+    if not format_ok:
+        print(f"\nInvalid format for flash-times. Given was {flash_times_str}\n\n"
+              f" - a correct example: 2023-10-09 13:45:11  2023-10-09 13:47:33", file=sys.stderr)
+        return False
+    else:
+        return True
+
+def processFITSvideo(args):
+    global verbose
+
+    verbose = args.verbose
+
+    # Finally, we need to add to all the FITS files DATE-OBS (timestamp header)
+    fitsFiles = glob.glob(f'{args.fits[0]}/*.fits')
+    print(f"Found: {len(fitsFiles)} fits files in {args.fits[0]}", file=sys.stdout)
+
+    # Now we sort them into frame order (often needed)
+    fitsFiles.sort()
+
+    # Read the fits files to pick out cpu timestamps. We use to get a good estime of exposure without requiring
+    # the user to enter it. We also get a list of the cpu timestamps that we will use in the droppedFrameAnalysis() procedure
+    cpuTimestamps, cpuTimestampComment = getCpuTimestamps(fits_files=fitsFiles)
+
+    print(f"\nNumber of cpu timestamps found: {len(cpuTimestamps)}", file=sys.stdout)
+
+    if len(cpuTimestamps) > 0:
+        ans = droppedFrameAnalysis(cpu_timestamps=cpuTimestamps)
+        if ans[0] == 'ok':
+            pass
+        else:
+            print(ans[1], file=sys.stderr)
+            sys.exit(1)
+
+    flashLightcurve = extractFlashLightcurve(fitsFiles)
+
+    processFlashLightCurve(flashLightcurve, args, cpuTimestamps, cpuTimestampComment)
+
+    plotFlashLightCurve(flashLightcurve, args)
+
+def extractFlashLightcurve(fits_files):
+    lightcurve = []
+
+    for frame_file in fits_files:
+        image = pyfits.getdata(frame_file, 0)
+        image = image.astype('int64')
+        lightcurve.append(np.sum(image))
+
+    return lightcurve
+
+def plotFlashLightCurve(flashLightCurve, args):
+    plt.figure(figsize=(10,5), num="Flash lightcurve")
+    plt.title(f"From: {args.fits[0]}\nflash times: {args.flash_times}")
+    plt.plot(flashLightCurve, '-', color='lightgray')
+    plt.plot(flashLightCurve, '.')
+    plt.xlabel('reading number')
+    plt.ylabel('total frame intensity')
+    plt.show()
+
+def getCpuTimestamps(fits_files):
+    global verbose, progress_factor
+
+    progress = 0
+    print(f'\nProcessing file to get cpu timestamps (each * is {progress_factor} files): ', end='',
+          file=sys.stdout)
+
+    cpu_timestamps = []
+    for frame_file in fits_files:
+        progress += 1
+        if progress % progress_factor == 0:
+            print('*', end='', file=sys.stdout)
+        with pyfits.open(frame_file, output_verify='ignore') as hdul:
+            hdul[0].verify('ignore')
+            hdr = hdul[0].header
+            try:
+                cpu_timestamp = hdr['DATE-SYS']  # From a previous run
+                cpu_timestamps.append(cpu_timestamp)
+                cpu_timestamp_comment = hdr.comments['DATE-SYS']
+            except KeyError:
+                try:
+                    cpu_timestamp = hdr['DATE-END']  # For SharpCap v3.2.6482.0, 32 bit
+                    cpu_timestamps.append(cpu_timestamp)
+                    cpu_timestamp_comment = hdr.comments['DATE-END']
+                except KeyError:  # This will happen if it's not SharpCap v3 (so no DATE-END card)
+                    try:
+                        date_obs_value = hdr['DATE-OBS']
+                        date_obs_comment = hdr.comments['DATE-OBS'] # For SharpCap v4.0.9499.0, 64 bit
+                        if date_obs_comment.startswith('System'):
+                            cpu_timestamps.append(date_obs_value)
+                            cpu_timestamp_comment = hdr.comments['DATE-OBS']
+                    except KeyError:
+                        pass
+    return cpu_timestamps, cpu_timestamp_comment
+
+def SharpCapSafe_strptime(ts, format_str):
+    # This bit of shenanigans is needed because SharpCap has 7 digits in the fraction seconds (<= 6 is normal)
+    parts = ts.split('.')
+    if not len(parts) == 2:  # This is a fatal format error
+        return 'error', f"Error in timestamp format: {ts}"
+    if len(parts[1]) > 6:
+        parts[1] = parts[1][:6]
+    ts_fixed = f"{parts[0]}.{parts[1]}"
+    try:
+        ts_time = datetime.datetime.strptime(ts_fixed, format_str)
+        return 'ok', ts_time
+    except ValueError as e:
+        return 'error', f"Error in timestamp format: {ts_fixed} {e}"
+
+
+def droppedFrameAnalysis(cpu_timestamps):
+
+    if len(cpu_timestamps) > 0:
+        cpu_frame_times = []
+        for ts in cpu_timestamps:
+            ans = SharpCapSafe_strptime(ts, '%Y-%m-%dT%H:%M:%S.%f')  # ans = ('err_msg', time)
+            if ans[0] == 'ok':
+                cpu_frame_times.append(ans[1])
+            else:
+                return ans
+        deltas = []
+        for i in range(1, len(cpu_frame_times)):
+            deltas.append((cpu_frame_times[i] - cpu_frame_times[i-1]).total_seconds())  # noqa
+        # Now we look for unusual gaps
+        median_gap = np.median(deltas)
+        msg = [
+            f"avg delta: {np.mean(deltas):0.6f}  median delta: {np.median(deltas):0.6f}  "
+            f"max delta: {np.max(deltas):0.6f}  min delta: {np.min(deltas):0.6f}"
+        ]
+        for i, delta in enumerate(deltas):
+            if delta > 1.5 * median_gap:
+                msg.append(f"At frame {i} there is a gap that is {delta/median_gap:0.1f} times normal.")
+        if len(msg) == 1:
+            msg.append(f"Gap analysis of cpu timestamps indicate that there were no dropped frames.")
+        print(f"\nDropped frame detection report:", file=sys.stdout)
+        for line in msg:
+            print(f"... {line}", file=sys.stdout)
+        return 'ok', np.median(deltas)
+    else:
+        return 'error', 'No cpu timestamps found'
+
+def processFlashLightCurve(flashLightCurve, args, cpuTimestamps, cpuTimestampComment):
+    global verbose, progress_factor
+
+    flash_time_str = args.flash_times
+
+    # Split the flash_times into ts1 and ts1
+    parts = flash_time_str.split(' ')
+    if not len(parts) == 4:
+        print(f"Error in timestamp format - given was: {flash_time_str}", file=sys.stderr)
+        return
+
+    ts1 = parts[0] + ' ' + parts[1]
+    ts2 = parts[2] + ' ' + parts[3]
+
+    if verbose: print(f"\nfirst flash UTC time: {ts1}  last flash UTC time: {ts2}", file=sys.stdout)
+
+    fitsFolderPath = args.fits[0]
+
+    # The values for ts1 and ts1 are for test purposes only. Used with a 100 ms exposure, and a 1010 frame
+    # manual record (1000 frames - 100 seconds - between flash edges), the timing will be accurate
+    # ts2 = 2023-11-11 16:31:10+00:00
+
+    # For a 110 frame manual record, use ts2 = 2023-11-11 16:29:30+00:00
+
+    # For a 110 frame manual record at 10 ms exposure, use ts2 = 2023-11-11 16:29:21+00:00
+
+    t1 = parser.parse(ts1)  # Create a datetime object
+    t2 = parser.parse(ts2)
+
+    seconds_apart = (t2-t1).total_seconds()
+
+    if verbose: print(f"\nTime between first and last flashes: {seconds_apart} seconds\n", file=sys.stdout)
+
+    if verbose: print(f"Length of flashLightCurve: {len(flashLightCurve)}\n", file=sys.stdout)
+
+    # Initially we extract parameters from the entire set of points. Those values may be 'off' a bit if
+    # viewing conditions are very different as the recording progresses.
+    # We will assume that that is happening and refine the calcultions by isolating flash light curve points
+    # from the beginning, and then from the end of the recording, and recalculating using only nearby points.
+
+    # First estimation:
+    max_flash_level = np.max(flashLightCurve)
+    min_flash_level = np.min(flashLightCurve)
+    mid_flash_level = (max_flash_level + min_flash_level) // 2
+
+    # Find first flash region using the 'first estimation' values
+    first_flash = []
+
+    state = 'accumulateBottom'
+
+    for value in flashLightCurve:
+        if state == 'accumulateBottom':
+            if value < mid_flash_level:
+                first_flash.append(value)
+            else:
+                state = 'accumulateTop'
+
+        if state == 'accumulateTop':
+            if value >= mid_flash_level:
+                first_flash.append(value)
+            else:
+                break
+
+
+    ans, interpolated_r = findFlashEdgeInterpolatedPosition(first_flash)
+    if not ans == 'ok':
+        if verbose:
+            print(f"\nfindFlashEdgeInterolatedPosition() returned: {ans}", file=sys.stderr)
+        sys.exit(2)
+
+    if verbose: print(f"At the first flash ({t1}), the edge started at frame {interpolated_r:0.4f}", file=sys.stdout)
+    first_flash_subframe_value = interpolated_r
+
+    if verbose: reportFlashStats(flashLightCurve, interpolated_r)
+
+    # Now we need to find the last flash. To do that, we'll work backwards
+
+    state = 'traverseRightBottom'
+    k = len(flashLightCurve) - 1  # We use k to iterate backwards through the flashLightCurve
+    righthand_index = k
+    while True:
+        value = flashLightCurve[k]
+        if state == 'traverseRightBottom':
+            if value < mid_flash_level:  # we're still in the flash off portion of the tail
+                k -= 1
+            else:
+                state = 'traverseTop'
+                last_flash_top_end = k  # Save this because we need to know where the top of the last flash ends
+                bottom_length = righthand_index - k
+
+        if state == 'traverseTop':
+            if value >= mid_flash_level:  # We're still in the flash on portion
+                k -= 1
+            else:
+                state = 'traverseLeftBottom'
+
+        if state == 'traverseLeftBottom':
+            k -= bottom_length  # noqa No need to do anything other than backup to give a normal flash off zone
+            last_flash_bottom_start = k
+            break
+
+        if k <= 0:
+            print('\nData error: Could not find the terminating flash\n', file=sys.stderr)
+
+    last_flash = flashLightCurve[last_flash_bottom_start:last_flash_top_end+1]  # noqa
+
+    ans, interpolated_r = findFlashEdgeInterpolatedPosition(last_flash)
+    if not ans == 'ok':
+        print(f"findFlashEdgeInterpolatedPosition() returned: {ans}", file=sys.stderr)
+        sys.exit(3)
+
+    if verbose: print(f"\nAt the last flash ({t2}), the edge started at frame {last_flash_bottom_start + interpolated_r:0.4f}",
+                      file=sys.stdout)
+
+    last_flash_subframe_value = interpolated_r + last_flash_bottom_start
+    if verbose: reportFlashStats(flashLightCurve, last_flash_subframe_value)
+
+    # Because datetime objects have 1 microsecond resolution (not enough to reliably extrapolate over 1000 to 10000 points),
+    # we calculate our own delta with more than 1 microsecond resolution
+    precison_time_difference = (t2 - t1).total_seconds() * 1_000_000  # microseconds
+    precision_delta = precison_time_difference / (last_flash_subframe_value - first_flash_subframe_value)  # noqa
+    if verbose: print(f"\nprecision_delta: {precision_delta:0.2f} microseconds  (frame time)", file=sys.stdout)
+
+    # Now we calculate the timestamp list.
+
+    # Calculate the time at frame 0 from the frame value at the first flash
+    t0_from_first_flash = t1 - datetime.timedelta(microseconds=first_flash_subframe_value * precision_delta)
+
+    # Calculate the time at frame 0 from the the frame value at the last flash
+    t0_from_last_flash = t2 - datetime.timedelta(microseconds=last_flash_subframe_value * precision_delta)
+
+    # Average the calculated frame 0 times to get a 'best' t0 (time at frame 0)
+    t0 = t0_from_last_flash + (t0_from_first_flash - t0_from_last_flash) / 2
+
+    timestamps = []
+
+    for i in range(len(flashLightCurve)):
+        tn = t0 + datetime.timedelta(microseconds=i * precision_delta)
+        ts_str = tn.strftime('%Y-%m-%dT%H:%M:%S.%f')
+        timestamps.append(ts_str)
+
+    # Finally, we need to add to all the FITS files DATE-OBS (timestamp header)
+    fitsFiles = glob.glob(f'{fitsFolderPath}/*.fits')
+
+    # Now we sort them. This not needed fo src, but may be important for the planned utility.
+    # In any case, it doesn't hurt.
+    fitsFiles.sort()
+
+    i = 0
+    progress = 0
+    print(f'\nAdding GPS timestamps to each fits file (each * is {progress_factor} files): ', end='', file=sys.stdout)
+
+    import warnings
+    warnings.filterwarnings("ignore")
+
+    QHYtimestamps = []
+    for frame_file in fitsFiles:
+        progress += 1
+        if progress %progress_factor == 0:
+            print('*', end='', file=sys.stdout)
+        with pyfits.open(frame_file, mode='update', output_verify='ignore') as hdul:
+            hdul[0].verify('ignore')
+            hdr = hdul[0].header
+            if cpuTimestamps:
+                hdr['DATE-SYS'] = cpuTimestamps[i]
+                hdr.comments['DATE-SYS'] = cpuTimestampComment
+            QHYtimestamps.append(hdr['DATE-OBS'])  # Only used for testing with a flash-tagged QHY recording
+            hdr['DATE-OBS'] = timestamps[i]
+            hdr.comments['DATE-OBS'] = 'GPS frame start (PyFlashToGPS ' + __version__ + ')'
+            i += 1
+    print(f'\n...GPS timestamp addition completed.', file=sys.stdout)
+
+    if args.QHY174GPS:  # Run a QHY test
+        t_diff = []
+        for i in range(len(QHYtimestamps)):
+            t_us = SharpCapSafe_strptime(timestamps[i], '%Y-%m-%dT%H:%M:%S.%f')
+            t_qhy = SharpCapSafe_strptime(QHYtimestamps[i], '%Y-%m-%dT%H:%M:%S.%f')
+            t_diff.append((t_us[1] - t_qhy[1]).total_seconds())  # noqa
+        print(f'\nComparison of QHY174GPS timestamps with flash-tag derived GPS timestamps:\n'
+              f'... statistics of deltas where delta[i] = flash_tag_time[i] - QHY_time[i] (seconds) ...\n'
+              f'    mean(delta): {np.mean(t_diff):0.6f}  max(delta): {np.max(t_diff):0.6f}  min(delta): {np.min(t_diff):0.6f}',
+              file=sys.stdout)
+
+def reportFlashStats(light_curve, frame_value):
+    edge_position = int(frame_value)
+    start_frame = max(0, edge_position - 3)
+    end_frame = min(len(light_curve)--1, edge_position + 3)
+    for i in range(start_frame, end_frame+1):
+        print(f"{i:8d}: {light_curve[i]}", file=sys.stdout)
+def findFlashEdgeInterpolatedPosition(flash_to_analyze):
+    min_event = 3
+    max_event = len(flash_to_analyze) - 3
+
+    left = 0
+    right = len(flash_to_analyze) - 1
+
+    y = np.array(flash_to_analyze).astype('float64')
+
+    # Use PyOTE routines to find edge position
+    error_code, d, r, b, a, sigmaB, sigmaA, metric = find_best_r_only_from_min_max_size(
+        y=y, left=left, right=right, min_event=min_event, max_event=max_event
+    )
+
+    if not error_code == 'ok':
+        # Failed to find R - probably a program error
+        print(f"During processFlashLightCurve() find_best_r returned error code: {error_code}", file=sys.stderr)
+        return 'failed to find R edge', None
+
+    if d == -1:  # The normal return for an R only event
+        d = None
+
+    subDandR, new_b, new_a, newSigmaB, newSigmaA = subFrameAdjusted(  # noqa
+        eventType='Ronly',
+        cand=(d, r),
+        B=b, A=a,
+        sigmaB=sigmaB, sigmaA=sigmaA,
+        yValues=flash_to_analyze,
+        left=left, right=right
+    )
+
+    interloplated_r = subDandR[1]
+    return 'ok', interloplated_r
+
+def timestamper():
+    global verbose
+
+    arg_parser = argparse.ArgumentParser(description="A utility to add GPS accurate timestamps to flash-tagged FITS videos.",
+                                         prog='PyFlashToGPS')
+
+    # When (if) we support ADV2 videos, we will need this group
+    # group = ts_parser.add_mutually_exclusive_group()
+
+    arg_parser.add_argument("flash_times", help='UTC times for first and last flash. Example: "2023-09-02 13:45:10 2023-09-02 13:47:05"'
+                                                ' (the quotes are needed!)')
+
+    arg_parser.add_argument("--verbose", action='store_true',
+                           help="Verbose output (used during development)")
+
+    arg_parser.add_argument("--version", action='version',
+                            help="Version", version=f"PyFlashToGPS version: {__version__}")
+
+    arg_parser.add_argument("--QHY174GPS", action='store_true',
+                            help="If file came from a QHY174GPS camera, a comparison report is made between the GPS timestamps")
+
+    # If we are supporting ADV2, change the following to group.add_argument(
+    arg_parser.add_argument("--fits", type=str, nargs=1,
+                        metavar="FITS_path", default=None,
+                        help="Full path to FITS folder - enclose in quotes if there are spaces in the path!")
+
+    # group.add_argument("--adv2", type=str, nargs=1,
+    #                     metavar="ADV2_path", default=None,
+    #                     help="Full path to ADV2 file - enclose in quotes if there are spaces in the path!")
+
+    args = arg_parser.parse_args()
+    verbose = args.verbose
+
+    if parseFlashTimes(args.flash_times):
+        if args.fits is not None and verbose: print(f"\nFITS folder path given: {args.fits[0]}", file=sys.stdout)
+    else:
+        return
+
+    if args.fits is not None:
+        fits_folder_path = Path(args.fits[0])
+        if not fits_folder_path.exists():
+            print(f"\nCannot find fits folder: {args.fits[0]}\n", file=sys.stderr)
+            sys.exit(4)
+        else:
+            processFITSvideo(args)
+            sys.exit(0)
+
+    # if args.adv2 is not None:
+    #     adv2_file_path = Path(args.adv2[0])
+    #     if not adv2_file_path.exists():
+    #         print(f"Cannot find adv2 file: {args.adv2[0]}", file=sys.stderr)
+    #         sys.exit(5)
+    #     elif verbose:
+    #         print(f"ADV2 file has been found.", file=sys.stdout)
+
+if __name__ == '__main__':
+    timestamper()
