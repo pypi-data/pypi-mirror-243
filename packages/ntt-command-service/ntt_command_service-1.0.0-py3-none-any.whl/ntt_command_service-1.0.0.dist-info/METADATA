@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: ntt-command-service
+Version: 1.0.0
+Summary: Small library for observation mechanism
+Home-page: https://github.com/threezinedine/ntt-command-service
+Author: threezinedine
+Author-email: threezinedine@email.com
+License: UNKNOWN
+Project-URL: Source, https://github.com/threezinedine/ntt-command-service
+Project-URL: Tracker, https://github.com/threezinedine/ntt-command-service/issues
+Keywords: command,mvvm,signal,ntt
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ntt-signal
+Requires-Dist: ntt-observable-list
+
+# ntt-command-service
+Library for implementing Command Pattern
+
+## Examples
+
+```python
+from ntt_command_service import *
+from typing import List
+
+fScores: List[float] = []
+
+class AppendDataCommand(ICommand):
+    def __init__(self, fScores: List[float], fScore: float):
+        self._fScores = fScores
+        self._fScore = fScore
+
+    def Execute(self) -> None:
+        self._fScores.append(self._fScore)
+
+    def CanExecute(self) -> bool:
+        return True
+
+    def Undo(self) -> None:
+        self._fScore.pop()
+
+serCommandService = CommandService()
+serCommandService.AddCommand(AppendDataCommand(fScores, 3))
+# ----> fScores = [3]
+serCommandService.AddCommand(AppendDataCommand(fScores, 5))
+# ----> fScores = [3, 5]
+serCommandService.AddCommand(AppendDataCommand(fScores, 1))
+# ----> fScores = [3, 5, 1]
+serCommandService.Undo()
+# ----> fScores = [3, 5]
+serCommandService.Clear()
+serCommandService.CanUndo()
+# ----> False
+```
+
