@@ -1,0 +1,12 @@
+dask
+fsspec
+matplotlib
+netCDF4
+pyvista
+pyvista-xarray
+trame
+trame-vtk
+trame-vuetify
+vtk
+xarray
+zarr
