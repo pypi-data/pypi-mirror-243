@@ -1,0 +1,14 @@
+compare_datasets/__init__.py,sha256=V4wagTz_gQocL2EeTd1p30oxPn1MV9qavVHIdgrR1jE,3833
+compare_datasets/analyse_deviations.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+compare_datasets/boolean_comparison.py,sha256=RVmiq8vZS2ZtN8PurPu3wA8n0_UZehZTaQz1qWKeWPw,4782
+compare_datasets/datetime_comparison.py,sha256=zclCYmoSlO8v0e3JrJW7NtMYESNjI9KqrvINSLXLCW8,5335
+compare_datasets/numeric_comparisons.py,sha256=hapu4KtDUeHYLZZK81bg4UXXjsIUh9LIhw6PeHyGn4Y,5873
+compare_datasets/prepare.py,sha256=0RtdBAazw9Y3ppFjr3R5B5Z9y-d8TkNXcYmrg1OMDHI,15283
+compare_datasets/string_comparisons.py,sha256=3Rz6gTKiMiPz2dydq0UoAWd--lWPYrPVcuSozmrtabI,5095
+compare_datasets/structure.py,sha256=DpbK8N-Ayw-H--0jj38voKaue8BxjBFbk7x5XElXVh8,4716
+compare_datasets/tests/archive.py,sha256=AQG8dzexf_X7IDIp7pjsThizZfr2oweubsx5pUpzBS4,327
+compare_datasets/tests/cases.md,sha256=5Atpm9QGNSV419ZThU8OE739PbbVJGdaSEkgqVHkJMk,72
+compare_datasets-0.1.3.dist-info/LICENSE.txt,sha256=ETtk-CDczQpxBORbMZ4De1ukeR4uDomjGNG8kXWvEI4,1092
+compare_datasets-0.1.3.dist-info/METADATA,sha256=3UnrLnOlX40YT0Uf45tjgGGuSizVRVTiBfE_wLe0xvM,4568
+compare_datasets-0.1.3.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+compare_datasets-0.1.3.dist-info/RECORD,,
