@@ -1,0 +1,68 @@
+@import url('https://fonts.cdnfonts.com/css/source-sans-pro');
+
+.list-container {
+	display: table;
+	width: 100%;
+}
+
+.list-container td {
+	padding: 0.25rem;
+}
+
+.list-container td:first-child {
+	padding-left: 0;
+}
+
+.list-container td:last-child {
+	padding-right: 0;
+}
+
+input, button {
+	border-radius: 0.5rem;
+	color: var(--textColor);
+	font-family: var(--font);
+	outline: none;
+	padding: 0.35rem 0.5rem;
+	transition-duration: 200ms;
+	transition-property: background-color, border-color, color;
+	transition-timing-function: cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+input {
+	background-color: var(--secondaryBackgroundColor);
+	border: 1px solid var(--secondaryBackgroundColor);
+	width: 100%;
+}
+
+input:focus {
+	border-color: var(--primaryColor);
+}
+
+button {
+	background-color: var(--backgroundColor);
+	border: 1px solid var(--fadedText10);
+}
+
+button:hover {
+	border-color: var(--primaryColor);
+	color: var(--primaryColor);
+}
+
+button:active {
+	background-color: var(--primaryColor);
+	color: white;
+}
+
+button:focus {
+	outline: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.list-buttons {
+	display: flex;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+}
