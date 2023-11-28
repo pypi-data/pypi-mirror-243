@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/skriba/__init__.py
+src/skriba/logger.py
+src/skriba/messenger.py
+src/skriba.egg-info/PKG-INFO
+src/skriba.egg-info/SOURCES.txt
+src/skriba.egg-info/dependency_links.txt
+src/skriba.egg-info/requires.txt
+src/skriba.egg-info/top_level.txt
+src/skriba/plugins/worker_logger.py
