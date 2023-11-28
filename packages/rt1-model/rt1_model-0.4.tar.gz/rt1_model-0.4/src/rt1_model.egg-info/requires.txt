@@ -1,0 +1,10 @@
+numpy
+scipy
+sympy
+
+[full]
+symengine
+matplotlib
+
+[symengine]
+symengine
