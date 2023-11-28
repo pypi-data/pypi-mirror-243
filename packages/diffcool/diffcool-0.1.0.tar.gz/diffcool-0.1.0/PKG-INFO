@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: diffcool
+Version: 0.1.0
+Summary: HiC cooler calculator
+Project-URL: Homepage, https://pypi.org/project/diffcool/
+Author-email: "Takaho A. Endo" <takaho.endo@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: h5py
+Requires-Dist: mgzip
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
