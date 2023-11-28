@@ -1,0 +1,11 @@
+click~=8.0
+click-default-group~=1.2
+neon-utils~=1.0
+pyyaml<7.0.0,>=5.4
+neon-mq-connector>=0.7.1a4,~=0.7
+ovos-bus-client~=0.0.3
+
+[gradio]
+gradio~=3.28
+librosa~=0.9
+soundfile~=0.12
