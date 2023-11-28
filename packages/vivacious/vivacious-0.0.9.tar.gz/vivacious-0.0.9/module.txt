@@ -1,0 +1,51 @@
+
+
+vivacious
+
+	priorities:
+		health scan and health advancents, 
+		checked with "body_scan" and modules that use "body_scan"
+		
+	
+		
+	limitations (the structure):
+	
+		The idea is that building codependecies (or cyclic depedencies)
+		into the status assertation framework is a recipe for confusion.
+	
+		As in, vivacious perhaps shouldn't include a module that
+		requires vivacious for status assertation.
+	
+		Therefore the directed acyclic chart of status check frameworks is:
+			
+			[ unit test, pytest ] -> "body_scan" -> vivacious
+	
+		details:
+			story 3:
+				vivacious:
+					status requires: 
+						body_scan
+					
+					requires: 
+						botanical:
+							status: body_scan
+		
+			story 2:
+				body_scan:
+					status requires: 
+						unit test
+					
+					requires: 
+						botanist:
+							status: pytest
+
+			story 1:
+				unit test:
+				
+	journal:
+		1:
+			This is module started as a replica of "body_scan",
+			where it uses "body_scan" as the status monitor.
+			
+			In contrast, "body_scan" uses unittest as the status
+			monitor.

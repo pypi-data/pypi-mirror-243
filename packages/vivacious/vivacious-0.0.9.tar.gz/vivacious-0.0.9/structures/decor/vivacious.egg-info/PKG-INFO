@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: vivacious
+Version: 0.0.9
+Summary: health checks module
+License: 
+        
+        There seems to be some sort of inscription here.
+Keywords: tests,guarantees,vows,oaths,assurances,insurances,ensurances,reliability,consistency,integrity,speed,calmness
+Requires-Python: >=3.8
+Description-Content-Type: text/plain
+Requires-Dist: botanist
+Requires-Dist: click
+Requires-Dist: flask
+Requires-Dist: pdoc3
+Requires-Dist: requests
+Requires-Dist: textual
+Requires-Dist: tinydb
+
+
+
+vivacious
+
+	priorities:
+		health scan and health advancents, 
+		checked with "body_scan" and modules that use "body_scan"
+		
+	
+		
+	limitations (the structure):
+	
+		The idea is that building codependecies (or cyclic depedencies)
+		into the status assertation framework is a recipe for confusion.
+	
+		As in, vivacious perhaps shouldn't include a module that
+		requires vivacious for status assertation.
+	
+		Therefore the directed acyclic chart of status check frameworks is:
+			
+			[ unit test, pytest ] -> "body_scan" -> vivacious
+	
+		details:
+			story 3:
+				vivacious:
+					status requires: 
+						body_scan
+					
+					requires: 
+						botanical:
+							status: body_scan
+		
+			story 2:
+				body_scan:
+					status requires: 
+						unit test
+					
+					requires: 
+						botanist:
+							status: pytest
+
+			story 1:
+				unit test:
+				
+	journal:
+		1:
+			This is module started as a replica of "body_scan",
+			where it uses "body_scan" as the status monitor.
+			
+			In contrast, "body_scan" uses unittest as the status
+			monitor.
