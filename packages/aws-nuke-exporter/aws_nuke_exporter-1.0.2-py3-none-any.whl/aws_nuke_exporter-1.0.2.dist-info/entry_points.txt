@@ -1,0 +1,3 @@
+[console_scripts]
+aws-nuke-exporter = aws_nuke_exporter.exporter:main
+
