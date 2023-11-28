@@ -1,0 +1,49 @@
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.30.0"
+
+[tool.poetry.group.dev.dependencies]
+requests = "2.30.0"
+requests-mock = "1.10.0"
+types-requests = "2.30.0.0"
+urllib3 = "1.26.15"
+
+[tool.poetry]
+name = "warsaw-data-api"
+version = "0.5.3"
+description = "Warsaw data python api"
+authors = ["Radoslaw Wielonski <radek.wielonski@gmail.com>"]
+license = "MIT"
+homepage = "https://github.com/radekwielonski/warsaw-data-api"
+readme = "README.md"
+
+[tool.semantic_release]
+version_variable = [
+    "warsaw_data_api/__init__.py:__version__",
+    "pyproject.toml:version",
+]
+version_toml = ["pyproject.toml:tool.poetry.version"]
+version_pattern = ["README.md:rev: v{version}"]
+major_on_zero = false
+branch = "master"
+upload_to_PyPI = true
+upload_to_release = true
+build_command = "pip install poetry && poetry build"
+
+[tool.mypy]
+python_version = "3.9"
+mypy_path = "warsaw_data_api/"
+check_untyped_defs = true
+disallow_any_generics = true
+disallow_any_unimported = true
+disallow_incomplete_defs = true
+disallow_untyped_defs = true
+no_implicit_optional = true
+no_implicit_reexport = true
+strict_equality = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+show_error_codes = true
+warn_return_any = true
+exclude= ["venv", "setup.py"]
