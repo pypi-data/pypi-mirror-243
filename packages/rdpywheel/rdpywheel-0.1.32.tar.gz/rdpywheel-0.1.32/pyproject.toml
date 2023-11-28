@@ -1,0 +1,22 @@
+[project]
+name = "rdpywheel"
+version = "0.1.32"
+description = "reddwarf public python lib"
+authors = [
+    {name = "jiang qiang", email = "jiangtingqiang@gmail.com"},
+]
+dependencies = [
+    "setuptools>=68.1.2",
+    "requests>=2.28.2",
+    "python-dotenv==1.0.0",
+    "pycryptodome>=3.19.0",
+    "jwt>=1.3.1",
+    "twine>=4.0.2"
+]
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
