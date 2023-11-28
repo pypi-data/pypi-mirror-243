@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+r8_5_interface/__init__.py
+r8_5_interface/interface.py
+r8_5_interface/r8_5.py
+r8_5_interface.egg-info/PKG-INFO
+r8_5_interface.egg-info/SOURCES.txt
+r8_5_interface.egg-info/dependency_links.txt
+r8_5_interface.egg-info/not-zip-safe
+r8_5_interface.egg-info/top_level.txt
