@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/minml/__init__.py
+src/minml/strings.py
+src/minml.egg-info/PKG-INFO
+src/minml.egg-info/SOURCES.txt
+src/minml.egg-info/dependency_links.txt
+src/minml.egg-info/requires.txt
+src/minml.egg-info/top_level.txt
+tests/test_package.py
