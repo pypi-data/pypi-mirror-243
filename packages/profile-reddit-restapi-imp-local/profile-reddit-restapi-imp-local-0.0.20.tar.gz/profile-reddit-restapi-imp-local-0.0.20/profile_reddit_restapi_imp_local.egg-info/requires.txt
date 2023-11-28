@@ -1,0 +1,10 @@
+praw>=7.4.0
+tqdm>=4.64.1
+importer-local
+source-data-local
+entity-type-local
+language-local
+location-local
+logger-local
+profile-local
+user-context-remote

@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: profile-reddit-restapi-imp-local
+Version: 0.0.20
+Summary: PyPI Package for Circles profile-local-reddit-restapi-imp Local/Remote Python
+Home-page: https://github.com/circles-zone/profile-local-reddit-restapi-imp-python-package
+Author: Circles
+Author-email: info@circles.life
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Requires-Dist: praw>=7.4.0
+Requires-Dist: tqdm>=4.64.1
+Requires-Dist: importer-local
+Requires-Dist: source-data-local
+Requires-Dist: entity-type-local
+Requires-Dist: language-local
+Requires-Dist: location-local
+Requires-Dist: logger-local
+Requires-Dist: profile-local
+Requires-Dist: user-context-remote
+
+This is a package for sharing common XXX function used in different repositories
