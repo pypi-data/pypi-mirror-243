@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: nanokits
+Version: 0.0.0
+Summary: A small package for python
+Home-page: https://github.com/spjace/nanokits
+Author: Shen Pengju
+Author-email: spjace@sina.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: ~=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: packaging
+
+# nanokits
+This is a simple package for python.
+You can see more details from https://github.com/spjace/nanokits/
+
