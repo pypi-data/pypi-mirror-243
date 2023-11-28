@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: dpcpp-llvm-spirv
+Version: 2024.0.0
+Summary: llvm-spirv helper
+Home-page: https://github.com/IntelPython/dpcpp-llvm-spirv
+Author: Intel Corp.
+Author-email: scripting@intel.com
+License: Intel End User License Agreement for Developer Tools
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+
+Python package vendoring llvm-spirv executable from Intel(R) oneAPI DPC++ compiler package
