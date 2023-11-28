@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: diffcool
+Version: 0.1.1
+Summary: HiC cooler calculator
+Project-URL: Homepage, https://pypi.org/project/diffcool/
+Author-email: "Takaho A. Endo" <takaho.endo@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: h5py
+Requires-Dist: mgzip
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scipy
+Description-Content-Type: text/markdown
+
+# diffcool
+## INTRODUCTION
+diffcool is a calculator of cool/mcool files provided by Hi-C processing software.
+This software generates Hi-C visualization tool-compatible mcool files.
+
+## INSTALL
+```
+pip install diffcool
+```
+
+## USAGE
+```
+diffcool.py [-h] [-i mcool files [mcool files ...]] [-c control mcool files] [-t treated mcool files] [-o directory] [--resolution RESOLUTION] [--verbose]
+
+```
+
+```
+Options:
+  -h, --help            show this help message and exit
+  -i mcool files [mcool files ...]
+                        mcool files
+  -c control mcool files
+                        mcool file
+  -t treated mcool files
+                        mcool file
+  -o directory          output directory
+  --resolution RESOLUTION
+                        resolution
+  --verbose
+  ```
