@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: pybiginteger-stubs
+Version: 1.3.2
+Summary: PEP 561 type stubs for pybiginteger
+Maintainer: Erik van den Brink
+Maintainer-email: erik@coz.io
+Requires-Dist: pybiginteger ==1.3.2
+
