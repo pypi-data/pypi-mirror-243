@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: stealthbot
+Version: 0.1.6
+Summary: StealthBot: Un bot Python con tecnologia antidetect.
+Author-email: Fabio Cantone <fabio@cantone.me>
+Description-Content-Type: text/markdown
+Requires-Dist: chromedriver_autoinstaller_fix
+Requires-Dist: cloudscraper
+Requires-Dist: joblib
+Requires-Dist: packaging
+Requires-Dist: psutil
+Requires-Dist: requests
+Requires-Dist: selenium==4.5.0
+Requires-Dist: selenium-wire
+Requires-Dist: parsel
+
+
