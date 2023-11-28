@@ -1,0 +1,12 @@
+setuptools_scm>=4.1.2
+paramiko>=3.2.0
+netaddr>=0.8.0
+pytz>=2022.5
+python_dateutil>=1.5
+pyyaml>=6.0
+PrettyTable>=3.4.0
+requests>=2.31.0
+urllib3<2
+filelock>=2.0.8
+tenacity>=8.1.0
+cm-cluster-on-demand-config==10.0.3
