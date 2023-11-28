@@ -1,0 +1,237 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "invert4geom"
+authors = [
+  { name = "Matt Tankersley", email = "matt.d.tankersley@gmail.com" },
+]
+description = "Constrained gravity inversion to recover the geometry of a density contrast."
+requires-python = ">=3.8"
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering",
+  "Typing :: Typed",
+]
+readme = "README.md"
+version = "0.2.0"
+
+dependencies = [
+  "numpy",
+  "pandas",
+  "xarray",
+  "verde>=1.8.0",
+  "rioxarray",
+  "pykdtree",
+  "xrft",
+  "harmonica>=0.6.0",
+  "antarctic_plots",
+  "numba",
+  "scipy",
+  "nptyping",
+  "numba_progress",
+  "tqdm",
+
+#  "pygmt>=0.9.0",
+#  "geopandas",
+#  "boule",
+#  "numba-progress",
+]
+
+[project.optional-dependencies]
+viz = [
+  "pyvista",
+  "trame",
+  "ipywidgets",
+  "matplotlib",
+  "seaborn",
+]
+test = [
+  "pytest >=6",
+  "pytest-cov >=3",
+]
+dev = [
+  "pytest >=6",
+  "pytest-cov >=3",
+  "ruff",
+  "nox",
+  "pre-commit",
+  "pylint",
+  "python-semantic-release >=8",
+]
+docs = [
+  "sphinx>=4.0",
+  "myst_parser",
+  "sphinx_copybutton",
+  "sphinx_autodoc_typehints",
+  "sphinx-book-theme>=0.3",
+  "sphinx_design",
+  "nbsphinx",
+]
+
+[project.urls]
+Homepage = "https://github.com/mdtanker/invert4geom"
+Documentation = "https://invert4geom.readthedocs.io/"
+"Bug Tracker" = "https://github.com/mdtanker/invert4geom/issues"
+Discussions = "https://github.com/mdtanker/invert4geom/discussions"
+Changelog = "https://invert4geom.readthedocs.io/en/latest/changelog.html"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = [
+  "-rA",
+  "--showlocals",
+  "--strict-markers",
+  "--strict-config",
+  "--cov", "--cov-report", "term-missing",
+  ]
+xfail_strict = true
+filterwarnings = [
+  "error",
+  "ignore::DeprecationWarning",
+  "ignore::PendingDeprecationWarning",
+  "ignore::FutureWarning",
+]
+log_cli_level = "INFO"
+testpaths = [
+  "tests",
+]
+markers = [
+    "use_numba: mark test functions that call Numba jitted functions",
+]
+
+[tool.coverage]
+run.source = ["invert4geom"]
+port.exclude_lines = [
+  'pragma: no cover',
+  '\.\.\.',
+  'if typing.TYPE_CHECKING:',
+]
+
+[tool.mypy]
+files = ["src"]
+python_version = "3.8"
+warn_unused_configs = true
+strict = true
+show_error_codes = true
+enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
+warn_unreachable = true
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "invert4geom.*"
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+
+[tool.ruff]
+lint.select = [
+  "E", "F", "W", # flake8
+  "B",           # flake8-bugbear
+  "I",           # isort
+  "ARG",         # flake8-unused-arguments
+  "C4",          # flake8-comprehensions
+  "EM",          # flake8-errmsg
+  "ICN",         # flake8-import-conventions
+  "ISC",         # flake8-implicit-str-concat
+  "G",           # flake8-logging-format
+  "PGH",         # pygrep-hooks
+  "PIE",         # flake8-pie
+  "PL",          # pylint
+  "PT",          # flake8-pytest-style
+  "PTH",         # flake8-use-pathlib
+  "RET",         # flake8-return
+  "RUF",         # Ruff-specific
+  "SIM",         # flake8-simplify
+  "T20",         # flake8-print
+  "UP",          # pyupgrade
+  "YTT",         # flake8-2020
+  "EXE",         # flake8-executable
+  "NPY",         # NumPy specific rules
+  "PD",          # pandas-vet
+]
+lint.extend-ignore = [
+  "PLR",    # Design related pylint codes
+  "G004",   # Logging with f-strings
+  "PD901",  # Bad variable name warning
+  "PD003", # Changes .isna to .isnull
+  "PD004", # Changes .notna to .notnull
+  "PD011", # Changes .values() to .to_numpy()
+]
+src = ["src"]
+lint.unfixable = [
+  "T20",  # Removes print statements
+  "F841", # Removes unused variables
+  "PD003", # Changes .isna to .isnull
+  "PD004", # Changes .notna to .notnull
+  "PD011", # Changes .values() to .to_numpy()
+]
+exclude = ["docs/index.md", "CHANGELOG.md"]
+line-length = 88 # Set the maximum line length to 88.
+lint.flake8-unused-arguments.ignore-variadic-names = true
+lint.isort.required-imports = ["from __future__ import annotations"]
+# Uncomment if using a _compat.typing backport
+# typing-modules = ["invert4geom._compat.typing"]
+extend-include = ["*.ipynb"]
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["T20"]
+"noxfile.py" = ["T20"]
+"*.ipynb" = ["E402", "B018", "T201"]
+
+
+[tool.pylint]
+py-version = "3.8"
+ignore-paths = ["CHANGELOG.md"]
+reports.output-format = "colorized"
+similarities.ignore-imports = "yes"
+messages_control.disable = [
+  "design",
+  "fixme",
+  "line-too-long",
+  "missing-module-docstring",
+  "wrong-import-position",
+]
+
+[tool.semantic_release]
+version_variables = ["src/invert4geom/__init__.py:__version__"]
+version_toml = ["pyproject.toml:project.version"]
+major_on_zero = false
+build_command = """
+    python -m pip install build
+    python -m build .
+"""
+commit_parser = "angular"
+
+[tool.semantic_release.changelog]
+template_dir = "docs/_templates"
+
+[tool.semantic_release.commit_parser_options]
+allowed_tags = [
+    "build",    # Changes that affect the build system or external dependencies
+    "chore",    # Changes to the build process or auxiliary tools and libraries such as documentation generation
+    "ci",       # CI related changes
+    "docs",     # Documentation only changes
+    "feat",     # A new feature
+    "fix",      # A bug fix
+    "perf",     # A code change that improves performance
+    "style",    # Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+    "refactor", # A code change that neither fixes a bug nor adds a feature
+    "test",     # Adding missing or correcting existing tests
+]
+# including BREAKING CHANGE: in the commit message will trigger a major release
+minor_tags = ["feat"] # tags which result in minor releases
+patch_tags = ["fix", "perf"] # tags which result in patch releases
