@@ -1,0 +1,12 @@
+protein_data_handler/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/helpers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/helpers/config/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/helpers/config/yaml.py,sha256=x3ycTOIc3WgCft3Duux2mH4gXp29F7b9iGd29PrNCW8,317
+protein_data_handler/helpers/database/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/helpers/database/database.py,sha256=Xdl7Vj82dkgb-_QNeTOG8EraHLfWoo0cTNO6Co_tlnQ,393
+protein_data_handler/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/models/uniprot.py,sha256=d0XzrVO41Saj6UGHb8p7yiVZQxhbUzGOqhBY8HNKcwc,5740
+protein_data_handler/uniprot.py,sha256=dJNJWZAkP_oawocF_lsf_63IpulTAJPL9euB5Xjkqmk,8242
+protein_data_handler-1.0.4.dist-info/METADATA,sha256=N96KU1hv7S8xxSgAeTJpsFiGzyS6yapvuY8TTHw2v2A,3449
+protein_data_handler-1.0.4.dist-info/WHEEL,sha256=kLuE8m1WYU0Ig0_YEGrXyTtiJvKPpLpDEiChiNyei5Y,88
+protein_data_handler-1.0.4.dist-info/RECORD,,
