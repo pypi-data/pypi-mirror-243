@@ -1,0 +1,181 @@
+## Build system related stuff
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["fiat*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "fiat.version.__version__"}
+
+## Project related stuff
+[project]
+name = "delft_fiat"
+dynamic = ['version']
+
+authors = [
+    {name = "B.W. Dalmijn", email = "brencodeert@outlook.com"},
+    {name = "F.C. de Groen", email = "frederique.degroen@deltares.nl"}
+]
+maintainers = [
+    {name = "B.W. Dalmijn", email = "brencodeert@outlook.com"},
+]
+
+description = "Delft Fast Impact Assessment Tool"
+readme = "README.md"
+license = {text = "MIT"}
+
+requires-python = ">=3.7"
+dependencies = [
+"gdal>=3.5",
+"numpy",
+"regex",
+"tomli",
+]
+
+keywords = ["FIAT", "Assessment", "Damage"]
+classifiers = [
+# How mature is this project? Common values are
+#   3 - Alpha
+#   4 - Beta
+#   5 - Production/Stable
+'Development Status :: 3 - Alpha',
+
+# Indicate who your project is intended for
+'Intended Audience :: End Users/Desktop',
+'Intended Audience :: Developers',
+'Intended Audience :: Science/Research',
+
+# Topic of the package
+'Topic :: Scientific/Engineering :: Hydrology',
+'Topic :: Scientific/Engineering :: GIS',
+
+# Pick your license as you wish (should match "license" above)
+'License :: OSI Approved :: MIT License',
+
+# Language
+'Natural Language :: English',
+
+# OS
+'Operating System :: OS Independent',
+
+# Specify the Python versions you support here. In particular, ensure
+# that you indicate whether you support Python 2, Python 3 or both.
+'Programming Language :: Python :: 3',
+'Programming Language :: Python :: 3.7',
+'Programming Language :: Python :: 3.8',
+'Programming Language :: Python :: 3.9',
+'Programming Language :: Python :: 3.10',
+'Programming Language :: Python :: 3.11',
+]
+
+[project.optional-dependencies] # Optional
+all = [
+    "cython",
+    "setuptools>=61.0.0",
+]
+build = [
+    "pyinstaller>=6.0.0",
+    "delft_fiat[all]",
+]
+dev = [
+    "pre-commit",
+    "pyside2",
+    "ruff",
+    "delft_fiat[all,docs,extra,test]",
+]
+docs = [
+    "jupyter",
+    "jupyter-cache",
+    "matplotlib",
+    "pandas",
+    "quartodoc",
+    "delft_fiat[all]",
+]
+extra = [
+    "tomli-w",
+]
+test = [
+    "black",
+	"pytest>=2.7.3",
+	"pytest-cov",
+    "pytest-mock",
+	"responses",
+    "delft_fiat[all,extra]",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Deltares/Delft-FIAT"
+"Bug Reports" = "https://github.com/Deltares/Delft-FIAT/issues"
+"Source" =  "https://github.com/Deltares/Delft-FIAT"
+
+[project.scripts]
+fiat = "fiat.cli.main:main"
+
+[tool.make_env]
+channels = ["conda-forge"]
+deps_not_in_conda = ["quartodoc"]
+
+## Some stuff for pytest and coverage
+[tool.pytest.ini_options]
+testpaths = [
+    "test",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["./src"]
+omit = ["*/gui/*"]
+
+[tool.coverage.report]
+# Regexes for lines to exclude from consideration
+exclude_also = [
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self\\.debug",
+
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+
+    # Don't complain about abstract methods, they aren't run:
+    "@(abc\\.)?abstractmethod",
+    ]
+
+ignore_errors = true
+
+[tool.coverage.html]
+directory = ".cov"
+
+## Linting stuff
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 88
+
+# enable pydocstyle (E), pyflake (F) and isort (I), pytest-style (PT)
+select = ["E", "F", "I", "PT", "D"]
+ignore-init-module-imports = true
+ignore = ["B904", "D105", "D211", "D213", "D301", "E712", "E741"]
+exclude = ["docs"]
+
+[tool.ruff.per-file-ignores]
+"test/**" = ["D103", "D100", "D104"]
+"test/conftest.py" = ["E402"]
+"src/fiat/__init__.py" = ["E402", "F401", "F403"]
+"src/fiat/cli/__init__.py" = ["F403"]
+"src/fiat/cy/__init__.py" = ["F403"]
+"src/fiat/gis/__init__.py" = ["F403"]
+"src/fiat/gui/__init__.py" = ["F403"]
+"src/fiat/models/__init__.py" = ["F403"]
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
