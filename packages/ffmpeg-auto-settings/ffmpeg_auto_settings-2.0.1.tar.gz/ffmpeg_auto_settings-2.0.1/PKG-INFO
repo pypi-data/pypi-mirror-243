@@ -1,0 +1,35 @@
+Metadata-Version: 2.1
+Name: ffmpeg-auto-settings
+Version: 2.0.1
+Summary: 
+License: GPL-3.0-only
+Author: liancea
+Author-email: liancea@mehrkoffe.in
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: blessings (>=1.7,<2.0)
+Requires-Dist: humanize (>=4.8.0,<5.0.0)
+Requires-Dist: inquirerpy (>=0.3.4,<0.4.0)
+Requires-Dist: prettytable (>=3.9.0,<4.0.0)
+Requires-Dist: python-magic (>=0.4.27,<0.5.0)
+Requires-Dist: python-magic-bin (>=0.4.14,<0.5.0) ; sys_platform == "win32"
+Requires-Dist: sqlalchemy (>=2.0,<2.1)
+Requires-Dist: tomlkit (>=0.12.3,<0.13.0)
+Project-URL: Homepage, https://gitlab.com/liancea/ffmpeg-auto-settings
+Description-Content-Type: text/markdown
+
+# ffmpeg-auto-settings
+automatically find libx26{4,5} preset/crf pairs of equivalent quality, according to [VMAF](https://github.com/Netflix/vmaf).
+
+# License
+ffmpeg-auto-settings is free software: you can redistribute it and/or modify it under the terms of the **GNU General Public License Version 3** as published by the Free Software Foundation.
+
+ffmpeg-auto-settings is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with ffmpeg-auto-settings. If not, see <https://www.gnu.org/licenses/>.
+
+NB: Contrary to what GitLab might automatically display in its interface, later versions of the GPL do *not* apply to this program.
+
