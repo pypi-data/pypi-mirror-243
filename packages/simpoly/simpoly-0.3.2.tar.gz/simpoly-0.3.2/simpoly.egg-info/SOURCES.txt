@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+simpoly/__init__.py
+simpoly/polygon.c
+simpoly/polygon.pyx
+simpoly.egg-info/PKG-INFO
+simpoly.egg-info/SOURCES.txt
+simpoly.egg-info/dependency_links.txt
+simpoly.egg-info/top_level.txt
