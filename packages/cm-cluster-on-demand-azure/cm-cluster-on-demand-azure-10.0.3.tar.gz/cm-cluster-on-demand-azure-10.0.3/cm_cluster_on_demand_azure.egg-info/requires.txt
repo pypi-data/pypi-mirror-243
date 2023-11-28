@@ -1,0 +1,13 @@
+setuptools_scm>=4.1.2
+azure-identity~=1.14.0
+azure-mgmt-compute~=30.3.0
+azure-mgmt-marketplaceordering==1.1.0
+azure-mgmt-network~=25.1.0
+azure-mgmt-resource~=23.0.0
+azure-mgmt-storage~=21.1.0
+azure-storage-blob~=12.18.2
+msrestazure~=0.6
+tenacity>=8.1.0
+aiohttp>=3.8.3
+cm-cluster-on-demand-config==10.0.3
+cm-cluster-on-demand==10.0.3
