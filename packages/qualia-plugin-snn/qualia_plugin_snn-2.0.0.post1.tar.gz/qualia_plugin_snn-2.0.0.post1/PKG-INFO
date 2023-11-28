@@ -1,0 +1,71 @@
+Metadata-Version: 2.1
+Name: qualia-plugin-snn
+Version: 2.0.0.post1
+Summary: Qualia SNN Plugin
+Home-page: https://naixtech.unice.fr/gitlab/qualia/qualia-plugin-snn
+Author-Email: Pierre-Emmanuel Novac <penovac@unice.fr>
+License: AGPL-3.0-or-later
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3
+Classifier: Operating System :: OS Independent
+Project-URL: Homepage, https://naixtech.unice.fr/gitlab/qualia/qualia-plugin-snn
+Requires-Python: <3.12,>=3.9
+Requires-Dist: numpy<1.24
+Requires-Dist: qualia-core
+Requires-Dist: torch
+Requires-Dist: pytorch-lightning
+Requires-Dist: spikingjelly
+Requires-Dist: typing_extensions; python_version < "3.12"
+Requires-Dist: qualia-codegen-plugin-snn; extra == "codegen"
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: pytest-dependency; extra == "tests"
+Requires-Dist: pytest-xdist; extra == "tests"
+Requires-Dist: pytest-env; extra == "tests"
+Requires-Dist: dill; extra == "tests"
+Requires-Dist: filelock; extra == "tests"
+Requires-Dist: ruff; extra == "lint"
+Requires-Dist: mypy; extra == "typecheck"
+Requires-Dist: pyright; extra == "typecheck"
+Requires-Dist: pdm; extra == "docs"
+Requires-Dist: sphinx; extra == "docs"
+Requires-Dist: sphinx-rtd-theme; extra == "docs"
+Requires-Dist: myst-parser; extra == "docs"
+Provides-Extra: codegen
+Provides-Extra: tests
+Provides-Extra: lint
+Provides-Extra: typecheck
+Provides-Extra: docs
+Description-Content-Type: text/markdown
+
+# Qualia-Plugin-SNN
+Copyright 2023 © Pierre-Emmanuel Novac <penovac@unice.fr> Université Côte d'Azur, LEAT. All rights reserved.
+
+Plugin for Spiking Neural Network support inside Qualia.
+
+## Install
+
+```
+git clone https://naixtech.unice.fr/gitlab/qualia/qualia-plugin-snn
+cd qualia-plugin-snn
+pdm venv create
+pdm use "$(pwd)/.venv/bin/python"
+$(pdm venv activate in-project)
+pdm install -G gsc -G codegen
+```
+
+## Run CIFAR-10 SVGG16 example
+
+Download [CIFAR-10 python version](https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz) and extract it inside `data/`.
+
+```
+qualia conf/cifar10/vgg16_bn_ifsr_float32_train.toml preprocess_data
+qualia conf/cifar10/vgg16_bn_ifsr_float32_train.toml train
+qualia conf/cifar10/vgg16_bn_ifsr_float32_train.toml prepare_deploy
+qualia conf/cifar10/vgg16_bn_ifsr_float32_train.toml deploy_and_evaluate
+```
+
+## Acknowledgment
+
+* [SpikingJelly](https://github.com/fangwei123456/spikingjelly) [^1]
+
+[^1]: Please note article V.1 "Disclosure of Commercial Use" of the *Open-Intelligence Open Source License V1.0*
