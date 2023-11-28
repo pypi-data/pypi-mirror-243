@@ -1,0 +1,214 @@
+[build-system]
+requires = ["hatchling>=1.11"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jupyter_releaser"
+description = "Jupyter Releaser for Python and/or npm packages."
+license = {file = "LICENSE"}
+authors = [{name = "Jupyter Development Team", email = "jupyter@googlegroups.com"}]
+keywords = ["ipython", "jupyter"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: BSD License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+urls = {Homepage = "https://jupyter.org"}
+requires-python = ">=3.8"
+dynamic = ["version"]
+dependencies = [
+    "click",
+    "ghapi<=1.0.4",
+    "github-activity~=0.2",
+    "importlib_resources",
+    "jsonschema>=3.0.1",
+    "mdformat",
+    "packaging",
+    "pkginfo",
+    "pypiserver",
+    "pipx",
+    "requests",
+    "requests_cache",
+    "toml~=0.10",
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.optional-dependencies]
+docs = [
+  "sphinx",
+  "sphinx-copybutton",
+  "pip",
+  "myst-parser",
+  "pydata_sphinx_theme",
+  "sphinxcontrib_spelling",
+  "numpydoc",
+  "sphinx-click",
+]
+test = [
+  "fastapi",
+  "pre-commit",
+  "pytest>=7.0",
+  "pytest-mock",
+  "pytest-xdist[psutil]",
+  "uvicorn",
+  "ruamel.yaml"
+]
+
+[project.scripts]
+jupyter-releaser = "jupyter_releaser.cli:main"
+
+[tool.hatch.version]
+path = "jupyter_releaser/__init__.py"
+validate-bump = false
+
+[tool.hatch.envs.docs]
+features = ["docs"]
+[tool.hatch.envs.docs.scripts]
+build = "make -C docs html SPHINXOPTS='-W'"
+
+[tool.hatch.envs.test]
+features = ["test"]
+[tool.hatch.envs.test.scripts]
+test = "python -m pytest -vv {args}"
+nowarn = "test -W default {args}"
+
+[tool.hatch.envs.cov]
+features = ["test"]
+dependencies = ["coverage[toml]", "pytest-cov"]
+[tool.hatch.envs.cov.scripts]
+test = "python -m pytest -vv --cov jupyter_releaser --cov-branch --cov-report term-missing:skip-covered {args}"
+nowarn = "test -W default {args}"
+
+[tool.hatch.envs.lint]
+detached = true
+dependencies = ["pre-commit"]
+[tool.hatch.envs.lint.scripts]
+build = "pre-commit run --all-files ruff"
+
+[tool.hatch.envs.typing]
+dependencies = [ "pre-commit"]
+detached = true
+[tool.hatch.envs.typing.scripts]
+test = "pre-commit run --all-files --hook-stage manual mypy"
+
+[tool.jupyter-releaser.hooks]
+after-populate-release = "bash ./.github/scripts/bump_tag.sh"
+
+[tool.jupyter-releaser.options]
+post-version-spec = "dev"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+xfail_strict = true
+log_cli_level = "info"
+addopts = [
+  "-ra", "--durations=10", "--color=yes", "--doctest-modules",
+   "--showlocals", "--strict-markers", "--strict-config",
+  "-p", "no:pastebin", "-p", "no:nose"
+]
+testpaths = [
+    "jupyter_releaser/tests/"
+]
+filterwarnings= [
+  # Fail on warnings
+  "error",
+  "ignore:Using deprecated setup.py invocation:UserWarning",
+  "module:Neither GITHUB_TOKEN nor GITHUB_JWT_TOKEN found:UserWarning",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+  "pragma: no cover",
+  "def __repr__",
+  "if self.debug:",
+  "if settings.DEBUG",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "if 0:",
+  "if __name__ == .__main__.:",
+  "class .*\bProtocol\\):",
+"@(abc\\.)?abstractmethod",
+]
+
+[tool.coverage.run]
+relative_files = true
+source = ["jupyter_releaser"]
+
+[tool.mypy]
+files = "jupyter_releaser"
+python_version = "3.8"
+strict = true
+show_error_codes = true
+disable_error_code  = [ "no-untyped-call", "no-untyped-def"]
+enable_error_code = ["ignore-without-code", "redundant-expr", "truthy-bool"]
+warn_unreachable = true
+exclude = ["jupyter_releaser/tests"]
+
+[tool.ruff]
+target-version = "py38"
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+  "A", "B", "C", "DTZ", "E", "EM", "F", "FBT", "I", "ICN", "N",
+  "PLC", "PLE", "PLR", "PLW", "Q", "RUF", "S", "SIM", "T", "TID", "UP",
+  "W", "YTT",
+]
+ignore = [
+  # Q000 Single quotes found but double quotes preferred
+  "Q000",
+  # FBT001 Boolean positional arg in function definition
+  "FBT001", "FBT002", "FBT003",
+  # E501 Line too long (158 > 100 characters)
+  "E501",
+  # SIM105 Use `contextlib.suppress(...)`
+  "SIM105",
+  # T201 `print` found
+  "T201",
+  # N802 Function name `CreateWellKnownSid` should be lowercase
+  "N802", "N803",
+  # S101 Use of `assert` detected
+  "S101",
+  # PLR0913 Too many arguments to function call
+  "PLR0913",
+]
+unfixable = [
+  # Don't touch print statements
+  "T201",
+  # Don't touch noqa lines
+  "RUF100",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# B011 Do not call assert False since python -O removes these calls
+# F841 local variable 'foo' is assigned to but never used
+# C408 Unnecessary `dict` call
+# E402 Module level import not at top of file
+# T201 `print` found
+# B007 Loop control variable `i` not used within the loop body.
+# N802 Function name `assertIn` should be lowercase
+# PLR2004 Magic value used in comparison
+# S105 Possible hardcoded password
+"jupyter_releaser/tests/*" = ["B011", "F841", "C408", "E402", "T201", "B007", "N802", "PLR2004", "S105", "S106"]
+
+[tool.interrogate]
+ignore-init-module=true
+ignore-private=true
+ignore-semiprivate=true
+ignore-property-decorators=true
+ignore-nested-functions=true
+ignore-nested-classes=true
+fail-under=100
+exclude = ["jupyter_releaser/tests"]
+
+[tool.repo-review]
+ignore = ["PY004", "PY007","PP301", "GH102", "PY005"]
