@@ -1,0 +1,5 @@
+kopf==1.36.1
+kubernetes==26.1.0
+cryptography<=4.0.0,>=3.0.0
+pydantic<3.0,>=2.0
+PyYAML<7.0,>=5.0

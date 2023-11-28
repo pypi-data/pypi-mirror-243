@@ -1,0 +1,3 @@
+[console_scripts]
+bof = bk_operator_framework.run.command_line:main
+
