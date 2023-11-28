@@ -1,0 +1,7 @@
+configargparse>=1.4.1
+hail
+google-cloud-storage
+mock
+tox
+tox-venv
+sphinxcontrib-napoleon

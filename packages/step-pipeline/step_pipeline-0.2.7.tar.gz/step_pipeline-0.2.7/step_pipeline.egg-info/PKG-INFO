@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: step-pipeline
+Version: 0.2.7
+Summary: Pipeline library that simplifies creation of pipelines that run on top of hail Batch and other compute enviornments
+Home-page: https://github.com/broadinstitute/step_pipeline
+License: MIT
+Keywords: pipelines,workflows,hail,Batch,cromwell,Terra,dsub,SGE
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# step-pipeline
+
+
+This library serves as a thin layer on top of Hail Batch (and eventually other execution engines) 
+to provide the following features:
+
+- Skip steps that already ran and completed successfully (eg. their output files already exist and are newer than their input files). This is done prior to submitting the pipeline to the execution engine.
+- Make it easier to switch between different ways of localizing files (copy, gcsfuse, etc.) with minimal changes to pipeline code
+- Automatically define pipeline command-line args to force or skip execution of paticular steps
+- Use a config file to store various pipeline parameters (eg. cloud project account, etc.)
+- Add commands for sending pipeline completion notifications to Slack
+- Add commands for profiling pipeline steps while they are running, and saving this info to external storage 
+- Generate a diagram of the pipeline execution graph (DAG)
+
+Another longer-term goal is to allow the same pipeline definition to be submitted to different 
+backends with minimal changes - including Hail Batch, Terra/Cromwell, and others. 
+This can only work for pipelines that use the subset of workflow definition features that is shared
+across the relevant execution engines.  
+
+---
+
+### Installation
+
+To install the `step-pipeline` library, run:
+```
+python3 -m pip install step-pipeline
+```
+
+---
+
+### Docs
+
+[API docs](https://bw2.github.io/step-pipeline/docs/_build/html/index.html)
+
+---
