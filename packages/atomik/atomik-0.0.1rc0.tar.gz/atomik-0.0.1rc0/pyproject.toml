@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "atomik" 
+version = "0.0.1rc"
+authors = [
+  { name="halbow" },
+]
+
+description = "Atomik provides you a python-friendly way to manage writing new file and folders in an atomic way."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/halbow/atomik"
+"Bug Tracker" = "https://github.com/halbow/atomik/issues"
+
+[project.optional-dependencies]
+dev  = [
+    "pytest",
+    "mypy",
+    "flake8",
+    "black",
+]

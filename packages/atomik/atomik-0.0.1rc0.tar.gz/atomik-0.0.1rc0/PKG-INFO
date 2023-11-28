@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: atomik
+Version: 0.0.1rc0
+Summary: Atomik provides you a python-friendly way to manage writing new file and folders in an atomic way.
+Project-URL: Homepage, https://github.com/halbow/atomik
+Project-URL: Bug Tracker, https://github.com/halbow/atomik/issues
+Author: halbow
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.8
+Provides-Extra: dev
+Requires-Dist: black; extra == 'dev'
+Requires-Dist: flake8; extra == 'dev'
+Requires-Dist: mypy; extra == 'dev'
+Requires-Dist: pytest; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# 🚀 Atomik 
+
+Atomik provides you a python-friendly way to manage writing new file and folders in an atomic way.
+The main way to use the library is with to use the `file` and `folder` context manager. They will provide
+an easy interface to make sure **the destination file/folder** remain consistent.
+
+This means you can be sure that you will not leave a file half written or 
+a folder with half the files you wanted to write into in case of failure. 
+When overwriting you can be sure that the data will be either the previous or the next version.
+
+
+## 📚 Example
+### File
+This will ensure either all the data is correctly written to file or none of it
+```
+with atomik.file("./result.json") as f:
+    print(stream, file=f)
+```
+
+### Folder
+```
+with atomik.folder("./result_folder") as dir:
+    with open(Path(dir, "result_1.json") as f:
+        print(result_1, file=f)
+    with open(Path(dir, "result_2.json") as f:
+        print(result_2, file=f)
+```
+
+## 🔐 Safe default
+
+By default, atomik will not overwrite files/folders (but it's configurable) 
+
+## 🤓 How ?
+
+Atomik uses the new `renameat2` syscall to allow to rename file in an atomic way.
+The syscall doesn't allow to overwrite a non-empty folder when renaming. 
+This is achieved using the `exchange` flag to swap the two folder and then the source
+folder is cleaned. This may leave the `src` folder in case of interruption/issue when deleting
+but the destination folder will still be written in an atomic way.
+
+## Acknowledgement
+
+This library's main goal is to provide a simple interface to rename file in a safe and simple way,
+without having to dive deep into OS specific documentation and limitations behind it. If you want
+to use the syscall directly I recommend these two libraries which helped the development of Atomik a lot:
+- https://github.com/nickovs/atomicswap
+- https://github.com/jordemort/python-renameat2
