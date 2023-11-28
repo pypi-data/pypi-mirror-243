@@ -1,0 +1,68 @@
+CREATE VIEW ofb_40 AS
+SELECT   
+  expver                         as expver   ,    
+  class                          as class    ,    
+  stream                         as stream   ,    
+  type                           as type     ,    
+  andate                         as andate   ,    
+  antime                         as antime   ,    
+  reportype                      as reportype,    
+  restricted                                 ,
+
+  numtsl                         ,    
+
+  timeslot                       ,
+  seqno                          ,    
+  bufrtype                       ,    
+  subtype                        ,    
+  groupid                        ,    
+  obstype                        ,    
+  codetype                       ,    
+  sensor                         ,    
+  date                           ,    
+  time                           ,    
+  rdbdate                                           ,
+  rdbtime                                           ,
+  report_status                  ,    
+  report_event1                  ,    
+  report_rdbflag                 ,    
+  degrees(lat)                   as lat@hdr                 ,    
+  degrees(lon)                   as lon@hdr                 ,    
+  distribid                      ,
+  distribtype                    ,
+  gp_dist                        ,
+  gp_number                      ,
+
+  entryno                        ,    
+  obsvalue                       ,    
+  varno                          ,    
+  vertco_type                    ,    
+  vertco_reference_1             ,    
+  vertco_reference_2             ,    
+
+  datum_anflag                   ,    
+  datum_status                   ,    
+  datum_event1                   ,    
+  datum_rdbflag                  ,    
+  biascorr                       ,    
+  biascorr_fg                    ,    
+  an_depar                       ,    
+  fg_depar                       ,    
+  qc_pge                         ,    
+  datum_status_hires@update_1    ,
+
+  obs_error                      ,
+  final_obs_error                      ,
+  fg_error                       ,
+  repres_error                   ,
+  wdeff_bcorr                    ,
+
+  report_rrflag                  ,
+  source                         ,
+  fc_sens_obs, 
+  an_sens_obs, 
+  mxup_traj, 
+  hires@update_2
+FROM desc, timeslot_index, hdr, raingg, body, errstat, update_1, update_2
+WHERE reportype is not null
+AND groupid=40;

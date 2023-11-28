@@ -1,0 +1,29 @@
+//
+//-- ODB/SQL file 'obsdist_resat_averaging_kernel.sql'
+//
+//   Created:  22-Jun-2009
+//
+
+READONLY;
+
+SET $pe = 0;
+SET $obstype = -1;
+SET $codetype = -1;
+SET $sensor = -1;
+SET $hdr_min = -1; // contains window offset
+
+CREATE VIEW obsdist_resat_averaging_kernel AS
+  SELECT distribid, seqno, window_offset, "*@resat_averaging_kernel"
+    FROM hdr, sat, resat, resat_averaging_kernel
+   WHERE obstype = $satem
+     AND (codetype = $resat)
+     AND (obstype = $obstype OR $obstype = -1 )
+     AND (codetype = $codetype OR $codetype = -1)
+     AND (sensor = $sensor OR $sensor = -1)
+     AND (window_offset = $hdr_min OR $hdr_min = -1)
+     AND 1 <= distribid
+     AND distribtype = 1
+     AND  resat_averaging_kernel.len > 0
+     AND  resat_averaging_kernel.len == body.len
+     AND paral($pe, distribid)
+;
