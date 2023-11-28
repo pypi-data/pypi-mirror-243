@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: shadow4
+Version: 0.1.16
+Summary: shadow implementation in python
+Home-page: https://github.com/oasys-kit/shadow4/
+Author: Manuel Sanchez del Rio, Luca Rebuffi
+Author-email: srio@esrf.eu
+License-File: LICENSE
+Requires-Dist: setuptools
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: syned>=1.0.30
+Requires-Dist: srxraylib
+Requires-Dist: wofryimpl>=1.0.21
+Requires-Dist: crystalpy>=0.0.20
