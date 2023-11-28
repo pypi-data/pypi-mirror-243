@@ -1,0 +1,5 @@
+[console_scripts]
+pydetex = pydetex.gui:main
+
+[gui_scripts]
+pydetex = pydetex.gui:main
