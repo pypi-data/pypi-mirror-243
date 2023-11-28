@@ -1,0 +1,36 @@
+# Test for including function from another file.
+
+
+
+test_remote_function => (a) {
+    a = a + 6;
+    l = a + 35;
+    print(l);
+    return a;
+}
+
+GetExtraData => (x, y, i) {
+    peers = [];
+    print("GetExtraData");
+    select distinct * from y where serial == x["serial"] merge into peers;
+    peer_list = [];
+    if Len(peers) > 0 {
+        foreach peers["peers"] {
+            print(it);
+            print(it["peerId"]);
+            peer = {};
+            peer["id"] = it["peerId"];
+            peer["ip"] = it["value"];
+            print(peer);
+            peer_list[] = peer;
+        }
+        print(peer_list);
+    }
+    
+    print(x["vpn"]);
+    print();
+    print("piece the resistance:");
+    print();
+    x["vpn"]["peers"] = peer_list;
+    print("Or not.");
+}
