@@ -1,0 +1,3 @@
+[console_scripts]
+cybertask = cybertask.main:main
+etextedit = cybertask.eTextEdit:main
