@@ -1,0 +1,15 @@
+
+[dev]
+black
+pytest
+pre-commit
+pytest-cov
+tox
+flake8
+reorder-python-imports
+mypy
+
+[test]
+pytest
+pytest-cov
+tox

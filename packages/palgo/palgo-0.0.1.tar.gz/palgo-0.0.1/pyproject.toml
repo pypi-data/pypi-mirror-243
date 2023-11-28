@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "palgo"
+dynamic = ["version"]
+authors = [
+    {name = "aciriano"}
+]
+description = "Your trusted useless library."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "pytest-cov",
+    "tox",
+]
+dev = [
+    "black",
+    "pytest",
+    "pre-commit",
+    "pytest-cov",
+    "tox",
+    "flake8",
+    "reorder-python-imports",
+    "mypy"
+]
+
+[project.urls]
+repository = "https://github.com/aciriano/palgo"
+
+[tool.setuptools.dynamic]
+version = {attr = "palgo.__version__"}

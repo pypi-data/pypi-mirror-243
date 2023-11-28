@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/palgo/__init__.py
+src/palgo.egg-info/PKG-INFO
+src/palgo.egg-info/SOURCES.txt
+src/palgo.egg-info/dependency_links.txt
+src/palgo.egg-info/requires.txt
+src/palgo.egg-info/top_level.txt
+tests/test_version.py
