@@ -1,0 +1,38 @@
+[project]
+name = "skriba"
+version = "0.1.16"
+description = "Messaging and logger module for astroVIPER, Dask based ecosystem."
+authors = [
+    {name = "Joshua Hoskins", email="jhoskins@nrao.edu"}
+]
+license = {file = "LICENSE.txt"}
+readme = "README.md"
+requires-python = ">= 3.8, < 3.12"
+
+dependencies = [
+    'colorama',
+    'dask',
+    'distributed',
+    'pytest',
+    'pytest-cov',
+    'pytest-html'
+]
+
+
+[project.optional-dependencies]
+docs = [
+    'ipykernel',
+    'ipympl',
+    'ipython',
+    'nbsphinx',
+    'recommonmark',
+    'scanpydoc',
+    'sphinx-autoapi',
+    'sphinx-autosummary-accessors',
+    'sphinx_rtd_theme',
+    'twine',
+    'pandoc'
+]
+
+[project.urls]
+"Homepage" = "https://odysseus.jetbrains.space/p/main/repositories/skriba"
