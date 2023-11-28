@@ -1,0 +1,15 @@
+snail/__init__.py,sha256=3nnJiRTVkBDiSnjVD-nooK5ln5YApNTtLlRSLj87xIo,498
+snail/__main__.py,sha256=Z42eK_Eqzv75xkc66pWb-Pwi-Oi2lNz2lw4vMykOtCU,96
+snail/cli.py,sha256=6jFOgMmBVLgVhOLXjIOH3RtDB1wEv74Cn7YTaYNrDqI,10790
+snail/core/__init__.py,sha256=qs5GLDUxvTauceRvjylg3rc9vZjskwGnFlnOaft29pE,168
+snail/core/intersections.pypy39-pp73-win_amd64.pyd,sha256=eVKmm1qoLD-ZZc8kB0aK9FUuW2w2k5VFcEfrXMtRx-c,152064
+snail/damages.py,sha256=Y9N4RyFkwSDbU0_eWZhX_PnJFNY51nncBQWTQpIoYjA,9174
+snail/intersection.py,sha256=rzcLSGAA_r_HykXE4dAiaQvutyyiAaEn2lIGWlUlWrI,12063
+snail/io.py,sha256=45Kj7kVqPm2nzUBuce0eVuOt4HO1xJ5GIHFncRWOQmw,3533
+snail/routing.py,sha256=pHA9pNILk6edbKiU4zLLP2XbKp_jEkOOplezExBpYU4,1035
+snail/tqdm_standin.py,sha256=EVCKhuRrc9bzUIgFho19crFV2csXutVXSK2F8cxYxXA,152
+nismod_snail-0.5.0.dist-info/METADATA,sha256=HTCyaAgAV6OcxrjLENveSntAnkXd7ifvwJ_Zp6T6aeM,9420
+nismod_snail-0.5.0.dist-info/WHEEL,sha256=hqigjVX1QVgz2uNsdRw5z881oYtA0btwM2ELTXEWHh4,110
+nismod_snail-0.5.0.dist-info/entry_points.txt,sha256=y6hsJspAYIalFI5D7CR7YZc84oXGxvLatkx5sZ2_iO4,43
+nismod_snail-0.5.0.dist-info/licenses/LICENSE,sha256=7qKklVuKiCvmBa5sLzuuq-kQ9WnLeoFouEEFdOkBk7E,1112
+nismod_snail-0.5.0.dist-info/RECORD,,
