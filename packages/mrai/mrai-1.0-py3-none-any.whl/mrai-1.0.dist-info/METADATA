@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: mrai
+Version: 1.0
+Summary: A ChatBot Python Library
+Author: Mr Moorgh
+Author-email: vboxvm512@gmail.com
+Requires: requests
+Requires: urllib3
+
