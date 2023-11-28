@@ -1,0 +1,1 @@
+[gcsim](https://github.com/genshinsim/gcsim) binary for pypi
