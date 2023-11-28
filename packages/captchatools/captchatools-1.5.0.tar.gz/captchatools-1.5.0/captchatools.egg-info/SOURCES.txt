@@ -1,0 +1,15 @@
+README.md
+setup.py
+captchatools/__init__.py
+captchatools/anticaptcha.py
+captchatools/capmonster.py
+captchatools/capsolver.py
+captchatools/captchaai.py
+captchatools/errors.py
+captchatools/exceptions.py
+captchatools/twocap.py
+captchatools.egg-info/PKG-INFO
+captchatools.egg-info/SOURCES.txt
+captchatools.egg-info/dependency_links.txt
+captchatools.egg-info/requires.txt
+captchatools.egg-info/top_level.txt
