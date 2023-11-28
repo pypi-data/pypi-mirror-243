@@ -1,0 +1,15 @@
+LICENCE
+MANIFEST.in
+README.md
+pyproject.toml
+test_lsoh_out.gif
+src/faceblocker/__init__.py
+src/faceblocker/deface.py
+src/faceblocker.egg-info/PKG-INFO
+src/faceblocker.egg-info/SOURCES.txt
+src/faceblocker.egg-info/dependency_links.txt
+src/faceblocker.egg-info/entry_points.txt
+src/faceblocker.egg-info/requires.txt
+src/faceblocker.egg-info/top_level.txt
+src/faceblocker/models/__init__.py
+src/faceblocker/models/face_detection_yunet_2023mar.onnx

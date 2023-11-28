@@ -1,0 +1,224 @@
+Metadata-Version: 2.1
+Name: faceblocker
+Version: 0.0.4
+Summary: A CLI tool that can remove faces from videos and replace them with images.
+Author-email: Rita Collins <r.collins3730@gmail.com>
+Project-URL: Homepage, https://gitlab.com/rdotcollins/movie-anonymiser
+Project-URL: Bug Tracker, https://gitlab.com/rdotcollins/movie-anonymiser/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: moviepy<2.0
+Requires-Dist: opencv-python>4.8.0
+
+
+# Table of Contents
+
+1.  [Building instructions](#orgd5102a9)
+    1.  [installing the CLI tool itself](#org340f520)
+    2.  [pyproject and MANIFEST](#orgcac07cc)
+    3.  [structurey](#org74c6cb4)
+    4.  [installing it as a library](#org76ca93b)
+    5.  [Usage](#org1941a04)
+
+
+<a id="orgd5102a9"></a>
+
+# Building instructions
+
+
+<a id="org340f520"></a>
+
+## installing the CLI tool itself
+
+    pipx install faceblocker
+
+And then, you'll be able to do things like this!
+
+![img](./test_lsoh-8981931921172681262.gif)
+
+
+<a id="orgcac07cc"></a>
+
+## pyproject and MANIFEST
+
+    [project]
+    name = "faceblocker"
+    version = "0.0.4"
+    authors = [
+    {name="Rita Collins", email="r.collins3730@gmail.com" },
+    ]
+    description = "A CLI tool that can remove faces from videos and replace them with images."
+    readme = "README.md"
+    requires-python = ">=3.11"
+    dependencies = [
+    "moviepy<2.0",
+    "opencv-python>4.8.0",
+    ]
+    classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    ]
+    
+    [project.urls]
+    "Homepage" = "https://gitlab.com/rdotcollins/movie-anonymiser"
+    "Bug Tracker" = "https://gitlab.com/rdotcollins/movie-anonymiser/issues"
+    
+    #[tool.setuptools.packages]
+    #find = {}  # Scan the project directory with the default parameters
+    [tool.setuptools]
+    include-package-data = true
+    # OR
+    [tool.setuptools.package-data]
+    "faceblocker.models" = ["*"]
+    
+      
+    [tool.setuptools.dynamic]
+    readme = {file = ["README.org"]}
+    [tool.setuptools.packages.find]
+    # All the following settings are optional:
+    namespaces = true
+    where = ["src"]  # ["."] by default
+    include = ["*"]  # ["*"] by default
+    
+    [project.scripts] 
+    faceblocker = "faceblocker.deface:main"
+    
+    [build-system]
+    requires = ["setuptools >= 61.0"]
+    build-backend = "setuptools.build_meta"
+
+    # Command Description
+    # include pat1 pat2 ... Add all files matching any of the listed patterns (Files must be given as paths relative to the root of the project)
+    # exclude pat1 pat2 ... Remove all files matching any of the listed patterns (Files must be given as paths relative to the root of the project)
+    # recursive-include dir-pattern pat1 pat2 ... Add all files under directories matching dir-pattern that match any of the listed patterns
+    recursive-include ./yunet_model/*
+    include test_lsoh_out.gif	  
+    # recursive-exclude dir-pattern pat1 pat2 ... Remove all files under directories matching dir-pattern that match any of the listed patterns
+    # global-include pat1 pat2 ... Add all files anywhere in the source tree matching any of the listed patterns
+    # global-exclude pat1 pat2 ... Remove all files anywhere in the source tree matching any of the listed patterns
+    # graft dir-pattern Add all files under directories matching dir-pattern
+    # prune dir-pattern Remove all files under directories matching dir-pattern
+    # The patterns here are glob-style patterns: * matches zero or more regular filename characters (on Unix, everything except forward slash; on Windows, everything except backslash and colon); ? matches a single regular filename character, and [chars] matches any one of the characters between the square brackets (which may contain character ranges, e.g., [a-z] or [a-fA-F0-9]). Setuptools also has undocumented support for ** matching zero or more characters including forward slash, backslash, and colon.
+    # Directory patterns are relative to the root of the project directory; e.g., graft example* will include a directory named examples in the project root but will not include docs/examples/.
+
+
+<a id="org74c6cb4"></a>
+
+## structurey
+
+    pwd
+    tree -L 2 ./ -I "envs|build"
+
+
+<a id="org76ca93b"></a>
+
+## installing it as a library
+
+If you want to download and run it from source, do
+
+    pip install faceblocker
+
+and then run faceblocker using 
+
+    python3 -m faceblocker 
+
+If things are working right with the script and the virtual environment you (Hopefully!) installed this into,
+`faceblocker` should be in your `$PATH` and should allow for being called with just
+
+and then run faceblocker using 
+
+    faceblocker 
+
+
+<a id="org1941a04"></a>
+
+## Usage
+
+    faceblocker -h
+
+so as an example, 
+
+    faceblocker -i inputvideo.mp4
+
+should take `inputvideo.mp4`, render a black square over all faces detected using the default settings on the model.
+The default settings are fairly liberal in considering things "faces" and will often block first, ask questions later.
+The default parameters are set to the following.
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-right">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">parameter</th>
+<th scope="col" class="org-right">default</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td class="org-left">&#x2013;scale</td>
+<td class="org-right">0.4</td>
+<td class="org-left">For speed reasons, face detection is done on a resized version of the frame in memory. 0.5 means faces are detected on a frame half the width and height of the initial frame.</td>
+</tr>
+
+
+<tr>
+<td class="org-left">&#x2013;score</td>
+<td class="org-right">0.3</td>
+<td class="org-left">The cutoff confidence score of any bounding boxes. Any boxes that is less likely than this to be a face are discarded</td>
+</tr>
+
+
+<tr>
+<td class="org-left">&#x2013;nms<sub>threshold</sub></td>
+<td class="org-right">0.1</td>
+<td class="org-left">The "interval over union" score of any bounding boxes with respect to the training data. Any boxes with an IOU score less than this are discarded.</td>
+</tr>
+
+
+<tr>
+<td class="org-left">&#x2013;n<sub>kboundboxes</sub></td>
+<td class="org-right">1000</td>
+<td class="org-left">The number of bounding boxes generated per frame</td>
+</tr>
+
+
+<tr>
+<td class="org-left">&#x2013;samplerate</td>
+<td class="org-right">5</td>
+<td class="org-left">This script will sample every k'th frame of the video to detect faces on it, use this to specify how often it will attempt to detect a face. Higher is more accurate.</td>
+</tr>
+
+
+<tr>
+<td class="org-left">&#x2013;blockfactor</td>
+<td class="org-right">1.5</td>
+<td class="org-left">Where a face is detected, how much should the height and width of the bounding box of the covering image be scaled?</td>
+</tr>
+
+
+<tr>
+<td class="org-left">&#x2013;unstretch</td>
+<td class="org-right">False</td>
+<td class="org-left">Due to an upstream bug in moviepy, some vertical videos are automatically rescaled horizontally and will look strangely wide. Set this flag to "True" to stop this from happening.</td>
+</tr>
+</tbody>
+</table>
+
+    faceblocker -i /home/river/Videos/test_lsoh.mp4 -p /home/river/Pictures/fox_1f98a.png --samplerate 2 --scale 0.3 --nms_threshhold -o test_lsoh_out.mp4
+
+will create a video like the gif above.
+

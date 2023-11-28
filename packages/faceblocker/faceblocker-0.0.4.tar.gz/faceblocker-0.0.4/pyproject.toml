@@ -1,0 +1,46 @@
+[project]
+name = "faceblocker"
+version = "0.0.4"
+authors = [
+{name="Rita Collins", email="r.collins3730@gmail.com" },
+]
+description = "A CLI tool that can remove faces from videos and replace them with images."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+"moviepy<2.0",
+"opencv-python>4.8.0",
+]
+classifiers = [
+"Programming Language :: Python :: 3",
+"License :: OSI Approved :: MIT License",
+"Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://gitlab.com/rdotcollins/movie-anonymiser"
+"Bug Tracker" = "https://gitlab.com/rdotcollins/movie-anonymiser/issues"
+
+#[tool.setuptools.packages]
+#find = {}  # Scan the project directory with the default parameters
+[tool.setuptools]
+include-package-data = true
+# OR
+[tool.setuptools.package-data]
+"faceblocker.models" = ["*"]
+
+  
+[tool.setuptools.dynamic]
+readme = {file = ["README.org"]}
+[tool.setuptools.packages.find]
+# All the following settings are optional:
+namespaces = true
+where = ["src"]  # ["."] by default
+include = ["*"]  # ["*"] by default
+
+[project.scripts] 
+faceblocker = "faceblocker.deface:main"
+
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
