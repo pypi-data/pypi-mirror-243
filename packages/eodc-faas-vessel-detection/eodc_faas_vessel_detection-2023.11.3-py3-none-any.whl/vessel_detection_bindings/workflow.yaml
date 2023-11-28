@@ -1,0 +1,156 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  name: vessel-detection
+  eodc_faas_processor: vessel_detection
+spec:
+  arguments:
+    parameters:
+      - name: job_id
+      - name: vessels_output_dir
+      - name: detection_parameters
+  entrypoint: vessel
+  parallelism: 5
+  imagePullSecrets:
+  - name: k8s-eodc-api-read-registry-api-repo
+  - name: eodc-sentinel-1-backscatter
+  volumes:
+  - name: eodc-mount
+    persistentVolumeClaim:
+      claimName: eodc-nfs-claim-242
+  
+  templates:
+  - name: vessel
+    steps:
+    - - name: preprocess
+        template: preprocess
+        arguments:
+          parameters:
+          - name: detection_parameters
+            value: "{{workflow.parameters.detection_parameters}}"
+
+
+    - - name: snap
+        template: process-snap
+        arguments:
+          parameters:
+          - name: input_scene
+            value: "{{item.scene}}"
+          - name: snap_dir
+            value: "{{item.snap_dir}}"
+          - name: output
+            value: "{{item.output_dir}}"
+          - name: vv_file
+            value: "{{item.vv_file}}"
+          - name: vh_file
+            value: "{{item.vh_file}}"
+        withParam: "{{steps.preprocess.outputs.result}}"
+
+
+    - - name: vessels
+        template: process-detection
+        arguments:
+          parameters:
+          - name: job_id
+            value: "{{workflow.parameters.job_id}}"
+          - name: output_dir
+            value: "{{item.output}}"
+          - name: vv_file
+            value:  "{{item.vv_file}}"
+          - name: vh_file
+            value:  "{{item.vh_file}}"
+          - name: original_scene
+            value: "{{item.scene}}"
+        withParam: "{{steps.snap.outputs.parameters}}"
+
+    - - name: stac
+        template: create-stac
+        arguments:
+          parameters:
+            - name: job_id
+              value: "{{workflow.parameters.job_id}}"
+            - name: output_dir
+              value: "{{workflow.parameters.vessels_output_dir}}"
+
+
+  - name: preprocess
+    inputs:
+      parameters:
+        - name: detection_parameters
+    container:
+      image: registry.eodc.eu/eodc/eodc-api/faas-vessel-detection:test44
+      imagePullPolicy: IfNotPresent
+      command: ["/vessel_detection/.venv/bin/ship_finder"]
+      args: ['preprocess', '--detection_parameters', "{{inputs.parameters.detection_parameters}}" ]
+      volumeMounts:
+        - name: eodc-mount
+          mountPath: /eodc
+
+
+  - name: process-snap
+    retryStrategy:
+      limit: "3"
+      retryPolicy: "OnFailure"
+    inputs:
+      parameters:
+        - name: input_scene
+        - name: output
+        - name: snap_dir
+        - name: vv_file
+        - name: vh_file
+    container:
+      image: registry.eodc.eu/eodc/sentinel-1-processing/s1_backscatter:0.7
+      imagePullPolicy: IfNotPresent
+      command: ["gpt"]
+      args: ["/venv/lib/python3.10/site-packages/s1_backscatter-0.5-py3.10.egg/s1_backscatter/graphs/S1_backscatter_EC_Vessel_Detection.xml", "-Pinfile={{inputs.parameters.input_scene}}", "-Poutfile={{inputs.parameters.snap_dir}}"]
+      volumeMounts:
+        - name: eodc-mount
+          mountPath: /eodc
+    outputs:
+      parameters:
+      - name: vv_file
+        value: "{{inputs.parameters.vv_file}}"
+      - name: vh_file
+        value: "{{inputs.parameters.vh_file}}"
+      - name: output
+        value: "{{inputs.parameters.output}}"
+      - name: scene
+        value: "{{inputs.parameters.input_scene}}"
+
+
+  - name: process-detection
+    retryStrategy:
+      limit: "2"
+      retryPolicy: "OnFailure"
+    inputs:
+      parameters:
+        - name: original_scene
+        - name: output_dir
+        - name: vv_file
+        - name: vh_file
+    container:
+      image: registry.eodc.eu/eodc/eodc-api/faas-vessel-detection:test44
+      imagePullPolicy: IfNotPresent
+      command: ["/vessel_detection/.venv/bin/ship_finder"]
+      args: ['process', '--OUTPUT', "{{inputs.parameters.output_dir}}",  '--VV_File', "{{inputs.parameters.vv_file}}",  '--VH_File', "{{inputs.parameters.vh_file}}", "--SCENE", "{{inputs.parameters.original_scene}}"]
+      volumeMounts:
+        - name: eodc-mount
+          mountPath: /eodc
+    outputs:
+      parameters:
+      - name: output_dir
+        value: "{{inputs.parameters.output_dir}}"
+
+  - name: create-stac
+    inputs:
+      parameters:
+        - name: job_id
+        - name: output_dir
+    container:
+      image: registry.eodc.eu/eodc/eodc-api/faas-vessel-detection:test44
+      imagePullPolicy: IfNotPresent
+      command: ["/vessel_detection/.venv/bin/ship_finder"]
+      args: ['postprocess', '--JOB_ID', "{{inputs.parameters.job_id}}",  '--OUTPUT', "{{inputs.parameters.output_dir}}" ]
+      volumeMounts:
+        - name: eodc-mount
+          mountPath: /eodc
