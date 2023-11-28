@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: dot-tools
+Version: 1.4.1
+Summary: Dot files automation
+Project-URL: github, https://github.com/cybergrind/dot-tools
+Author-email: cybergrind <cybergrind+pypi@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Requires-Dist: fan-tools>=3.7.0
