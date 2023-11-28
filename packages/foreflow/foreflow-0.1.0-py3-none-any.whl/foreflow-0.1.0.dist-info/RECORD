@@ -1,0 +1,15 @@
+foreflow/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+foreflow/cli.py,sha256=jRr5iILvKKetxjhKkFyC9KeP-cK66gBHZqDJs1K9aPM,76
+foreflow/foreflow.py,sha256=qtN0NYVwmeeQRwSETEIsO3ghj7s6qJZiIDxX2GELISA,3940
+foreflow/test_foreflow.py,sha256=15e7q98pbtT4I6WtOSOuGMl6cZuRdJshZJ7lqzF9huY,3997
+foreflow/test_types.py,sha256=b6HPpzHtcV0AepbHw1z4kgGIRPiA1pb9pt5lNFCEmlk,1009
+foreflow/types.py,sha256=rX7ZvLKLvMHITd7MTAxH-z1Lv2_qcbhbJ9xB-fu79-k,594
+foreflow/util/__init__.py,sha256=65S6QTlhuB8h7bfwvJTMwNLvHn4ay1RFrDysqBcRiBs,106
+foreflow/util/jmespath.py,sha256=4EBiM037CqKAD23_qCPyFu0sJos7pkleOh7_TVAsWl0,725
+foreflow/util/pydantic.py,sha256=rVPOlhpRvbuYssKseWCPF_D6ihVgZzHlw20X7BvJjq4,248
+foreflow/util/test_jmespath.py,sha256=mNsebCydBtniyKfHOVtvZeoJWaQZlxM7whoKfSjlFzQ,1014
+foreflow-0.1.0.dist-info/LICENSE,sha256=z8d0m5b2O9McPEK1xHG_dWgUBT6EfBDz6wA0F7xSPTA,11358
+foreflow-0.1.0.dist-info/METADATA,sha256=d-eg-5Z8pWMs5ntKUB99OEN3MsHwdFhOzf0kRPKRXkc,509
+foreflow-0.1.0.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+foreflow-0.1.0.dist-info/entry_points.txt,sha256=tB5V2JgPUNIouIUd9k7CBzscW_VaxM2YPLe4Pc0k_H8,46
+foreflow-0.1.0.dist-info/RECORD,,
