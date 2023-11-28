@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: oracle-mlm-insights
+Version: 1.0.2b1104
+Summary: MLM Insights Library
+Author: Oracle ML Observability Team
+License: Oracle Free Use Terms and Conditions (FUTC)
+Keywords: Oracle,Machine Learning,ML Monitoring,ML Observability,Drift Detection,Distributed,Spark,Dask
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.8, <3.10
+Description-Content-Type: text/markdown
+Requires-Dist: fugue (==0.8.7)
+Requires-Dist: ocifs (==1.2.0)
+Requires-Dist: datasketches (==4.0.1)
+Requires-Dist: protobuf (==4.22.1)
+Requires-Dist: scipy (==1.10.1)
+Requires-Dist: pyarrow (==11.0.0)
+Requires-Dist: pandas (==1.5.3)
+Requires-Dist: numpy (==1.24.2)
+Requires-Dist: scikit-learn (<=1.2.2,>=0.24.0)
+Requires-Dist: jmespath (<=1.0.1,>=0.10.0)
+Provides-Extra: dask
+Requires-Dist: dask[complete] (==2022.11.1) ; extra == 'dask'
+
+# Project Description
+
+# Oracle Machine Learning Observability Insights Library (ML Insights)
+< Add description here>
+
+## Installation
+ML Insights can be installed in a python 3.8 environment using:
+```bash
+pip install oracle-ml-insights
+```
+Several ML Insights dependencies are optional (for eg: Execution Engine) and can be installed with:
+```bash
+pip install oracle-ml-insights[option]
+```
+where "option" can be one of:
+
+- "dask", to run ML Insights on Dask Execution Engine
+
+## Documentation
+< Add documentation links here>
+
+## Examples
+< Add link to Quick start here>
+
+## License
+Copyright (c) 2023 Oracle and/or its affiliates. Licensed under the NFTC License.
