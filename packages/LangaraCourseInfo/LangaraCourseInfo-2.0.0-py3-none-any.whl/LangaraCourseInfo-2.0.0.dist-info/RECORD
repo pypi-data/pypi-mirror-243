@@ -1,0 +1,17 @@
+LangaraCourseInfo.py,sha256=WaFrPck8AD0zcSc07ePzUCNv1tpp3i0pqq4WktlRIJU,16854
+parsers/AttributesParser.py,sha256=lRihgOHOryPbitJ0DoVCYSDZonKOJgTIrzAjwGorijI,1825
+parsers/CatalogueParser.py,sha256=AEeUJ-pQ8BIHmQUFdns8MeOPiVTbv8hWz1_O6Ewvaig,2040
+parsers/SemesterParser.py,sha256=qJ6xoogUoxHeTTcuyLoOdTk95UB-wXYn0z0-I5eY_6w,8613
+parsers/TransferParser.py,sha256=lUo7mH1ZCZmt5zXrQ2b2c8UfATv2-yBbMLOQSi7IHm0,4724
+schema/Attribute.py,sha256=DrPYscxGtGbYZC2H7cHmr3zhEEmZJBbJefGWuZvPJG4,1049
+schema/Catalogue.py,sha256=TzUFFn_6RDO5iRJUpaPo1_HbClbScGQoYTMrC6LYEdE,1187
+schema/CourseInfo.py,sha256=6lwidi9MiHgmloBOcrq0Y_7JsOwRJvwPl4QDI0Dju9g,5112
+schema/Semester.py,sha256=GX_qputppVbDM5PjdCJ9WuOGp4jjmwG5jzN7Je8BZGs,9649
+schema/Transfer.py,sha256=89DpiKCwPiLIQPB1hU0bpewSmjjT3jEg36p5JqqvkdA,1745
+scrapers/DownloadLangaraInfo.py,sha256=agstgmH9xd9M8jwmKelh9HIjSB27D59DTm1YFviyxhU,4534
+scrapers/DownloadTransferInfo.py,sha256=M1X3tGGDy9oZXK9OpO5-SFX1n_f72HBiIKAaDUmGLdY,13190
+scrapers/DownloadTransferInfo2.py,sha256=IBCmdaF8sQKIAIMLkZUcKFLH0w76Q5kD0c_9f1M5mMk,904
+LangaraCourseInfo-2.0.0.dist-info/METADATA,sha256=-IkTYVEeU7nxTj6_qx7RQhQM1jBAgMQSRxM98BxdNsA,2314
+LangaraCourseInfo-2.0.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+LangaraCourseInfo-2.0.0.dist-info/top_level.txt,sha256=WSFO9cJfL4Gf5N9LTQfRxAPZdrTuWwkFQLA-2EXXMck,42
+LangaraCourseInfo-2.0.0.dist-info/RECORD,,
