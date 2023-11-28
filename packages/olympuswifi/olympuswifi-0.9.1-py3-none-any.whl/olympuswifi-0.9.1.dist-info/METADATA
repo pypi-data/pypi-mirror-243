@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: olympuswifi
+Version: 0.9.1
+Summary: Connect to wifi-enabled Olympus camera, show liveview, set the clock, take pictures, download images, change settings, turn it off.
+Project-URL: Documentation, https://olympus-wifi.readthedocs.org
+Project-URL: Homepage, https://github.com/joergmlpts/olympus-wifi
+Project-URL: Bug Tracker, https://github.com/joergmlpts/olympus-wifi/issues
+Author-email: joergmlpts <joergmlpts@outlook.com>
+License-File: LICENSE
+Keywords: camera,liveview,olympus,wifi
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3.7
+Requires-Dist: pillow
+Requires-Dist: requests
+Description-Content-Type: text/markdown
+
+# Olympus Wifi-Enabled Camera on Linux, macOS and Windows
+
+Some Olympus cameras have wifi capability. Photos can be downloaded from them;
+they can also remote control the camera: the live camera picture is
+transmitted and they take pictures and modify settings via wifi.
+
+This repository provides Python code to connect to a wifi-enabled Olympus
+camera, set the camera's date and time, download images, watch the live camera
+view in a window, take a picture, change camera settings, and turn off the
+camera. In addition, command-line arguments allow to send user-specific commands
+to the camera.
+
+# Documentation
+
+Our documentation is at [olympus-wifi.readthedocs.org](https://olympus-wifi.readthedocs.org).
+
+- [Utilities](https://olympus-wifi.readthedocs.io/en/latest/usage.html#utility-olympus-camera)
+- [Installation](https://olympus-wifi.readthedocs.io/en/latest/usage.html#installation)
+- [API Overview](https://olympus-wifi.readthedocs.io/en/latest/api.html)
+- [API Reference](https://olympus-wifi.readthedocs.io/en/latest/api.html#detailed-api-documentation)

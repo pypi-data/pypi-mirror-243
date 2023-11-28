@@ -1,0 +1,5 @@
+[console_scripts]
+olympus-camera = olympuswifi.main:main
+olympus-download = olympuswifi.download:main
+olympus-liveview = olympuswifi.liveview:main
+olympus-log2gpx = olympuswifi.log2gpx:main
