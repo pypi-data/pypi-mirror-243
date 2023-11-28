@@ -1,0 +1,5 @@
+Metadata-Version: 2.1
+Name: fdavg
+Version: 0.4
+Requires-Dist: tensorflow
+Requires-Dist: numpy
