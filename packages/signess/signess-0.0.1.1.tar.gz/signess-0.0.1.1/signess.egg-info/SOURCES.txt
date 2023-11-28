@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+signess/__init__.py
+signess/dataset.py
+signess/network.py
+signess.egg-info/PKG-INFO
+signess.egg-info/SOURCES.txt
+signess.egg-info/dependency_links.txt
+signess.egg-info/requires.txt
+signess.egg-info/top_level.txt
