@@ -1,0 +1,154 @@
+Metadata-Version: 2.1
+Name: pystacker
+Version: 1.4.5
+Summary: Stacker: RPN Calculator in Python
+Home-page: https://github.com/remokasu/stacker
+Author: remokasu
+License: MIT License
+        
+        Copyright (c) 2023 Remokasu
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Keywords: reverse-polish-calculator rpn terminal-app
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: prompt-toolkit
+
+[**日本語  (Japanese)**](https://github.com/remokasu/stacker/blob/main/README_JP.md)
+
+
+# Stacker: An RPN Calculator
+
+Stacker is a powerful Reverse Polish Notation (RPN) calculator built with Python, featuring basic mathematical operations and extensibility through plugins.
+
+## Installation
+
+### Prerequisites:
+Ensure Python 3 is installed.
+
+### Installation Options:
+
+- Via pip:
+    ```bash
+    pip install pystacker
+    ```
+
+- From source:
+    ```bash
+    git clone git@github.com:remokasu/stacker.git
+    cd stacker
+    python setup.py install
+    ```
+
+## Feedback and Contributions
+
+Feedback and contributions are welcome. Please submit issues or suggestions on the [Issues page](https://github.com/remokasu/stacker/issues).
+
+## Dependencies
+
+Stacker uses external libraries like NumPy and Python Prompt Toolkit. Ensure these are installed:
+```bash
+pip install numpy prompt_toolkit
+```
+
+## Usage
+
+Run Stacker:
+```bash
+stacker
+```
+Or:
+```bash
+python -m stacker
+```
+
+Stacker supports standard arithmetic operations (+, -, *, /) and advanced functions (sin, cos, tan, etc.). Users can input commands in RPN format and extend functionality using custom plugins.
+
+### Input Examples
+
+Stacker allows for straightforward RPN input. For example:
+
+- Single-line input:
+  ```bash
+  stacker:0> 3 4 +
+  [7]
+  ```
+
+- Multi-line input:
+  ```bash
+  stacker:0> 3
+  [3]
+  stacker:1> 4
+  [3, 4]
+  stacker:2> +
+  [7]
+  ```
+
+### Running Scripts
+Stacker scripts can be created in *stk files. To run a script, simply execute it with Stacker. For example:
+```bash
+stacker my_script.stk
+```
+
+## Creating Plugins
+
+Create custom plugins for Stacker using Python:
+
+1. In the `plugins` directory, create a new Python file for your plugin (e.g., `my_plugin.py`). 
+    ``` 
+    stacker/
+    │
+    ├── stacker/
+    │   ├── plugins/
+    │   │   ├── my_plugin.py
+    │   │   └── ...
+    │   │
+    │   ├── data/
+    │   ├── stacker.py
+    │   ├── test.py
+    │   └── ...
+    │
+    └── ...
+    ```
+
+    Adding your plugin here and reinstalling Stacker will apply the plugin permanently.
+
+2. Alternatively, create a `plugins` directory in the directory where Stacker is executed. This allows you to use plugins without reinstalling Stacker.
+3. Define required functions or classes in your plugin file.
+4. Add a `setup` function to register these with Stacker.
+
+
+Example:
+```python
+from stacker.stacker import Stacker
+
+def function(a, b):
+    # Do something
+
+def setup(stacker: Stacker):
+    stacker.register_plugin("command", function)
+```
+
+## Documentation
+For more detailed documentation, please refer to [`stacker/docs`](https://github.com/remokasu/stacker/blob/main/docs/README.md).
+
+
