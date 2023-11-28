@@ -1,0 +1,3 @@
+[console_scripts]
+traefik-certificate-exporter=traefik_certificate_exporter.app:main
+
