@@ -1,0 +1,15 @@
+osiris/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+osiris/app.py,sha256=GhKHwKq-QVuOXhwO4_OyzLciseAiKZi8V439sdgyShI,1705
+osiris/cairo/data_converter/data_converter.py,sha256=QqiyKKmIKv9kbqPFhlttuYSjmQp5xXRCoMqaYOw0icI,2791
+osiris/cairo/data_converter/data_statement_generator.py,sha256=aHZr7L22SMXuU6FqzK63ljciHdn3-UpY0bXmOf3LePU,2762
+osiris/cairo/data_converter/tensor_creator.py,sha256=jRWRh0tROHSDn80lAoXovDPSGinwDt-lBJNRxqy0iYQ,1773
+osiris/cairo/file_manager/cairo_data.py,sha256=seT4QHazNJeY8Y9l0ndh3Q2AHjuwOqyHFNCA2cXQkcg,3276
+osiris/cairo/file_manager/file.py,sha256=jEFKzqszhaYt5bkr9uKUpCExprGTlq7-GQ_MT7iskos,2109
+osiris/dtypes/cairo_dtypes.py,sha256=a9lsXy-3r1nFtBQgTqx3yvEJDsfMLvvGgKA7gLKlumU,159
+osiris/dtypes/cairo_impls.py,sha256=2uAsDLf830WqCX3nDNxak0ICPrWoXKkOTgJ-EKlARWk,117
+osiris/dtypes/input_output_formats.py,sha256=sNnrZE2cZ9hkuE5jo2Ewz20n7BRFVxqkeKXIucKv6es,177
+giza_osiris-0.1.0.dist-info/LICENSE,sha256=RbXHn7MC0YFsm0uZxFEPBqcDkHkjl3JkOdUzKoel3Do,1074
+giza_osiris-0.1.0.dist-info/METADATA,sha256=XqeOurEFSdz300RlmmvS04Z5vlCFSxAslC0dguxMG7g,2293
+giza_osiris-0.1.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+giza_osiris-0.1.0.dist-info/entry_points.txt,sha256=JDVuniptHZ62utD1XbynIl3xwfIpPl0i73489bQqNc0,41
+giza_osiris-0.1.0.dist-info/RECORD,,
