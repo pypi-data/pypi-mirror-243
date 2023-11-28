@@ -1,0 +1,13 @@
+LICENSE
+LICENSE.APACHE
+LICENSE.BSD
+README.md
+pyproject.toml
+packaging_legacy/__init__.py
+packaging_legacy/version.py
+packaging_legacy.egg-info/PKG-INFO
+packaging_legacy.egg-info/SOURCES.txt
+packaging_legacy.egg-info/dependency_links.txt
+packaging_legacy.egg-info/requires.txt
+packaging_legacy.egg-info/top_level.txt
+tests/test_version.py
