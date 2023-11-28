@@ -1,0 +1,29 @@
+.jp-AboutSWAN-name {
+    padding-left: 20px;
+    font-size: 0.8em;
+    padding-right: 50px;
+}
+
+.jp-AboutSWAN-name h1 {
+    margin: 0;
+}
+
+.jp-AboutSWAN-body .jp-About-externalLinks {
+    flex-direction: row;
+    text-transform: uppercase;
+}
+
+.sw-loading-spinner {
+    border: 10px solid #dadada; /* Light grey */
+    border-top: 10px solid #09263c; /* Blue */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 16px auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
