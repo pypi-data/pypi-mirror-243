@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: awaredb
+Version: 0.1.0
+Summary: AwareDB: data modularity, simplified. Python API.
+Home-page: https://github.com/nelsonmonteiro/awaredb-python-api
+Download-URL: https://github.com/nelsonmonteiro/awaredb-python-api/archive/v_0_1_1.tar.gz
+Author: Nelson Monteiro
+Author-email: nelson@aware-db.com
+License: MIT
+Keywords: AwareDB,modularity
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Database :: Front-Ends
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+License-File: LICENSE
