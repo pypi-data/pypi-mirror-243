@@ -1,0 +1,223 @@
+New features
+============
+
+
+Implementation
+==============
+- change handling of "element.onclick = f". Related to issue #2254.
+- change name and module of class DOMNode. Add DOMNode methods to __dir__() of
+  DOMNode instances.
+- change setting of attribute "onXXX" to DOMNode instances. Related to issue
+  #2254.
+- change implementation of Unicode tables XID_Start and XID_Continue, to
+  improve startup time while preserving execution time. Inspired by issue
+  #2260.
+- use Javascript regular expressions /\p{..}/u wherever possible. Limit
+  unicode_data.js to the minimum. Inspired by Denis Migdal's suggestions in
+  issue #2260
+- allow tests and comparisons with javascript.NULL
+- simplify implementation of iteration on strings
+- format of position information for PEP 657 is delegated to a function
+  encode_position() in ast_to_js.js. It is decoded by functions that use them
+  with function $B.decode_position. Related to issue #2270.
+- in case of error in py_import.js/run_py, show lines around the error in the
+  JS translation
+- in ast_to_js.js, add option to handle trace or not. Related to issue #2275
+- a non-integer Javascript number is handled as a JSObject instance. Might
+  happen if a Brython function is called by a Javascript program.
+- in py_utils.js/$B.$call, move decode_position() in the catch block for
+  performance. Suggested by Denis Migdal in issue #2275
+- add $infos to JS function wrappers. JSObj.__repr__(obj) prints obj + '' if
+  obj is a JS number.
+- frames stack management: replace list $B.frames_stack by object $B.frame_obj
+  with attribute "prev" pointing to the previous frame and "count" = stack
+  size
+- for performance, replace _b_.isinstance by $B.$isinstance wherever possible
+  (avoids checking arguments)
+- improve speed of instance creation for classes without explicit __new__
+  and/or __init__
+- add a test for Python functions that receive non-integer Javascript numbers
+- report correct error when try to set an attribute implemented as a property
+  without setter. Detected in issue #853.
+- don't set position if a call spans over several lines
+- complete rewrite function argument parsing, significant speed improvement.
+  Written by Denis Migdal
+- set $B.script_dir for each script execution. Related to issue #2291
+- improve integer detection (by Denis Migdal)
+- rewrite list.extend
+- iteration on JS arrays produces values converted to Python
+- replace scriptfile by sys.executable as per schmave suggestion (by Denis
+  Migdal)
+- check consistency between getting a JS array from a function call or by
+  `window.array`
+- push version of libs/_webcomponent.js provided by Denis Migdal in PR #2295.
+  Add tests.
+- change string hash algorithm, should be faster
+- add a few "var" to avoid names leaking in global Javascript namespace
+- set strict mode to all Brython code scripts (suggested by Denis Midgal)
+- remove js_objects.js / JSConstructor (detected by Denis Migdal in issue
+  #2299)
+- import typing for TypeAlias (related to issue #2307)
+- replace "array.indexOf(x) > -1" by "array.includes(x)"
+- rewrite generation of builtin exceptions, don't use source code strings.
+- in error reporting, temporarily set $B.frame_obj to err.$frame_obj to
+  process suggestions.
+- in object.__getattribute__, if obj[attr] is undefined and
+  obj.hasOwnProperty(attr) is true and obj is not an Array, return
+  javascript.UNDEFINED instead of raising AttributeError.
+- add awaitable __BRYTHON__.whenReady() for use in Javascript programs.
+  Suggested by Denis Migdal in issue #2292.
+- when a Python script is executed, dispatch a "load" event on the <script>
+  element. Related to issue #2292.
+- fix all the "undeclared variable names" detected by JSHint. Related to
+  issue #1311.
+- rename package (JS reserved word for future usage) as package_name (by
+  Denis Migdal)
+- replace self by globalThis + set defaults for document, window, and
+  navigator (by Denis Migdal)
+- add HTMLElement, MutationObserver and custumElements defaults (by Denis
+  Migdal)
+- declare implicitly declared variables - fixed all errors when loading
+  brython.js into Deno (by Denis Migdal)
+- using generate_args0 : -20% exec time??? (by Denis Migdal)
+- add a cache for generate_args0  (by Denis Migdal)
+- change implementation of import for JS scripts in /src/libs. Don't set a
+  variable "$module" but call __BRYTHON__.addToImported(module_name,
+  module_obj). In the future this function might be used to load JS scripts
+  as Brython modules.
+- add a condition to check if obj supports the Thenable interface (by Denis
+  Migdal)
+- implement argument "default" of anext()
+- use argument "size" of readline()
+- cleanings after warnings by ESLint (undeclared variable names)
+- improved implementation of PEP 695 generic functions
+- set global name "brython" by "globalThis.brython" instead of
+  "window.brython"
+- fix position of FSTRING_END token in python_tokenizer.js
+- adapt standard parser implementation to new tokens in Python 3.11 and 3.12
+- in conversion from Python to Javascript values, convert long integers into
+  BigInt instances. Related to issue #2332
+- python_tokenizer.js raises SyntaxError for code like "2a" (invalid decimal
+  literal) or "06" (leading zeros in decimal...)
+
+Internal tools
+==============
+- remove Ace scripts from /speed/make_report.html. Reported in issue #2270
+- fix bug in make_doc.py (reported in issue #2270)
+- fix CGI server (by Denis Migdal)
+- add scripts/apply_jshint.py : uses JSHint to detect undeclared variables.
+  Related to issue #2311.
+
+Bug fixes
+=========
+- regression in suggestions for NameError
+- regression in error message for dicts.
+- regression in error trace in module tb
+- (big) issue : if A.__new__() returns an instance of a subclass of A
+  (not only an object with type set to A), call A.__init__(). Related to issue
+  #2258
+- regression in suggestion for ImportError
+- bug in __BRYTHON__.runPythonSource (script id)
+- bug in brython_builtins.js/from_py (broke imports)
+- bug in attribute resolution for classes: for "class A: pass", `A.toString`
+  didn't raise AttributeError
+- regression in error reporting
+- bug in error reporting if err.$frame_obj is not set
+- bug if tuple.__new__() is called without arguments
+- bug in error message when a function like "def(x, y=0):..." is called with
+  "f()"
+- bug in jsobj2pyobj array conversion: is_js_array must be non-enumerable! (by
+  Denis Migdal)
+- bug in internal function $B.check_no_kw() that checks if a builtin function
+  doesn't receive a keyword argument
+- improve object.__reduce_ex__() so that no specific version is required for
+  lists, tuples or dicts. Rewrite list.__init__(), as reported in issue #2306.
+- errors in brython-cli make_file_system. Related to issue #2310.
+- bug that broke support for Web Workers that was introduced in commit 96401c3
+  (by moepnse)
+- bug in json.loads("0.000000000000000")
+- change error reporting for promises. Related to issue #2326.
+- bug in symtable (SCOPE_OFFSET is 12, was 11 in version 11)
+- if an error occurs in py2js.js / run_script, correctly report Javascript errors
+- bug in tokenizer : line number not incremented if triple-quoted fstrings have
+  linefeed inside
+- python_tokenizer.js : add attribute 'metadata' to fstring elements (format
+  spec, conversion, closing brace). Required for standard parser implementation.
+- in generated JS, create JS variable __file__ at the beginning, use it to set
+  frame.__file__ instead of copying the string each time
+- delegate creation of function attributes to function $B.make_function_infos
+  instead of inside the generated Javascript
+  
+Issues
+- #1913 (server open to outside world by default) by adding new --ip option
+  to server.py (by Denis Migdal)
+- #2256 : problem with sort
+- #2258 : stem=pathlib.Path(module_path).stem leads to AttributeError.
+- #2259 : sumprod() not implemented in module math
+- #2261 : Array of Array not properly synchronized (JS => Brython)
+- #2262 : too much recursion in arrays
+- #2264 : math.nextafter()
+- #2271 : pprint not working
+- #2277 : nextafter() with inf, nan
+- #2278 : Regression: csv module cannot be imported in Brython 3.12
+- #2284 : missing sys.float_repr_style ; add a few functions to module _sys
+- #2285 : sys.int_info
+- #2286 : AttributeError: 'SimpleNamespace' object has no attribute
+  'cache_tag'
+- #2303 : JS error instead of syntax error for invalid Python code
+- #2304 : JS Error instead of syntax error for invalid Python code (if + not)
+- #2307 : generic type statement makes javascript error
+- #2310: My plugin system does not work with the latest development snapshot
+- #2311 : ReferenceError: assignment to undeclared variable window (strict
+  mode related)
+- #2320 : restore frame_obj after awaiting a non-awaitable (was: Reading frame
+  from null)
+- #2321 : JS Number converted to <Javascript undefined> instead of
+  <class 'float'> for async functions
+- #2323 : error while using built-in function 'reversed'
+- #2331 : json.dumps doesn't support ensure_ascii=False
+
+Brython site
+============
+- add builtins_docstrings.js to console.html (help(int) printed None)
+- add minimal test for web workers. Related to PR #2317.
+- add tests for function call with **kw where kw has keys() and __getitem__
+
+Github site
+===========
+- add link to the "Brython development" page in CONTRIBUTING.md
+- add new apt source for python3.12 on Travis CI (by Evan Mallory)
+- different syntax for deadsnakes (by Evan Mallory)
+
+Demos
+=====
+- in bokeh demo, replace value passed to JS function from "None" to
+  "javascript.NULL"
+
+Standard distribution
+=====================
+- remove __getattr__ from module math.js
+- if first argument to javascript.load_modules() is not a list, throw a
+  TypeError
+- javascript.NULL == javascript.UNDEFINED is True, as in Javascript.Cf. issue
+  #2272
+- bug in interpreter.py : if first input line is an opening brace, interpret
+  the block as an expression and run it with "eval" instead of "exec"
+- support setting sys.last_exc. Fixes another bug reported in issue #853
+- add attributes to module sys. Related to issue #2286.
+- change implementation of browser.timer.set_interval and set_timeout
+- aio.Future.set_result and set_exception return None
+- set sys.implementation.cache_tag to None. Related to issue #2310.
+- in Lib/symtable.py, SymbolTable.get_type() returns a value for annotation,
+  type_var_bound, type_alias and type_param
+- put most of browser.aio in buitin_modules.js (thus in brython.js), put less
+  used features in Lib/_aio.py
+- improve error reporting in json. Related to issue #2322.
+- add attribute Array to module javascript (the type of JS Arrays obtained by
+  window.js_list)
+- in Interpreter, add method add_to_history, can be overridden to track user
+  entries (suggested by mail by Christophe Declercq)
+
+Documentation
+=============
+- in documentation pages, insert version number selector
