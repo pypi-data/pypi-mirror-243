@@ -1,0 +1,3 @@
+[console_scripts]
+etextedit = letmedoit.eTextEdit:main
+taskwiz = letmedoit.main:main
