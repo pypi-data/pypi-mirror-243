@@ -1,0 +1,5 @@
+
+
+include README.md LICENSE
+recursive-include Countrydetails/data *
+recursive-include Countrydetails/cli_dir *
