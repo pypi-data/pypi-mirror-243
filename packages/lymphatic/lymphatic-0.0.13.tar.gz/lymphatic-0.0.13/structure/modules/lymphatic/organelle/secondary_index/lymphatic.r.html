@@ -1,0 +1,62 @@
+
+
+{
+	secondary index(es)
+}
+	There can be multiple of these.
+		
+	https://rethinkdb.com/docs/secondary-indexes/python/
+
+
+
+	<address>compound indexes</address>
+		
+		r.table ("patients").index_create (
+			"full_name", 
+			[	
+				r.row ["last_name"], 
+				r.row ["first_name"]
+			]
+		).run (conn)
+
+		r.table ("patients").index_wait ("full_name").run(conn)
+
+		r.table ("patients").get_all (
+			[ "Saviery", "Riuxe" ], 
+			index = "full_name"
+		).run (conn)
+		
+	
+	<address>multi indexes</address>
+	
+		{
+			"unsigned": {
+				"from": "",
+				"to": ""
+			},
+			"signed": "",
+			
+			"voters": [ <tag1>, <tag2>, ... ],
+			"tags": [ "couch" ]
+		}
+		
+		r.table ("petitions").index_create ("tags", multi = True)
+		r.table ("petitions").index_wait ("tags").run (conn)
+		r.table ("petitions").get_all ("couch", index = "tags").run(conn)
+	
+		priorities:
+			{
+				"unsigned": {
+					"from": "",
+					"to": ""
+				},
+				"signed": "",
+				
+				"voters": [{
+					
+				}]
+			}
+			r.table ("petitions").index_create ("voters", multi = True)
+			r.table ("petitions").index_wait ("voters").run (conn)
+			
+			

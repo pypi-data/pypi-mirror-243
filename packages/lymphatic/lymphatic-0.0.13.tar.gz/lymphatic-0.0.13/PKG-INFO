@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: lymphatic
+Version: 0.0.13
+Summary: The cybernetic immune system hyper drive of the inter-ellipitic jumper.
+Description-Content-Type: text/x-rst
+Requires-Dist: rethinkdb
+Requires-Dist: botanical
+
+
+
+lymphatic:
+
+	The cybernetic immune system hyper drive
+	of the inter-ellipitic jumper.
+
+	installation:
+		[tcsh] pip install lymphaitc
