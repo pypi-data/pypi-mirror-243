@@ -1,0 +1,2 @@
+[console_scripts]
+zonal_variograms = zonal_variograms.cli:process_segmented_files
