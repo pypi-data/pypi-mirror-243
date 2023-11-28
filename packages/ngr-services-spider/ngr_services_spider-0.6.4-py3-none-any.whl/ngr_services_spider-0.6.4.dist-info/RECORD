@@ -1,0 +1,15 @@
+ngr_spider/__init__.py,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+ngr_spider/cli.py,sha256=cbUXJSWe5pYzZX5IuuT1oInkRbOl_1XoadvqqP9ErA4,13246
+ngr_spider/constants.py,sha256=FLEzcm4t2SiGlUGBuLi1OZcb1-5E07g0vqW22vTs4B8,646
+ngr_spider/csw_client.py,sha256=TYaX2R2i2kR5weKkFmQobVbKqg8cI9mwRO-gRRxRf6M,4372
+ngr_spider/decorators.py,sha256=uB1OPy2Xex5B75mD0M39WlltEacRy3s_jNlS5FG-Xgw,1780
+ngr_spider/models.py,sha256=TLQq4Xkd_v0dan9peACm45laDn77PJmBjNeEdTyIinc,17414
+ngr_spider/ogc_api_features.py,sha256=zcY5EqTs96wMtK4u0LKbwyPT4oqhHKqwfw3QZ40WwBI,2417
+ngr_spider/ogc_api_tiles.py,sha256=fPYUMXdIMOy421pQl8gP0qoJLxSFAUf3qQib48YnKBY,5933
+ngr_spider/util.py,sha256=9D5R2Mp49oELaMMsOEbzwyGBPUlJ9xcH2vtqtL0r8b8,21896
+ngr_services_spider-0.6.4.dist-info/LICENSE,sha256=70_CdD57bPYolpKFSOyMijm380Qlta9V_lHzsBWRf4Y,1093
+ngr_services_spider-0.6.4.dist-info/METADATA,sha256=mNZnMRnMhg6jjVBtv0HQCAtUZlpnnTLM1d6DhoT3sBU,4104
+ngr_services_spider-0.6.4.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+ngr_services_spider-0.6.4.dist-info/entry_points.txt,sha256=k1FbO_smp5BGO4SYBxhwjSBUj2SPsi3hye-8vPxRl9U,51
+ngr_services_spider-0.6.4.dist-info/top_level.txt,sha256=ydhCIx1tuo_t-VzvTlBCbERs288JRzsTGzqw8Yrrqvc,11
+ngr_services_spider-0.6.4.dist-info/RECORD,,
