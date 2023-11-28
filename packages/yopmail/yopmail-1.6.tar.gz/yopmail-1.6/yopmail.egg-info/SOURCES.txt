@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+setup.py
+yopmail/__init__.py
+yopmail/yopmail.py
+yopmail.egg-info/PKG-INFO
+yopmail.egg-info/SOURCES.txt
+yopmail.egg-info/dependency_links.txt
+yopmail.egg-info/requires.txt
+yopmail.egg-info/top_level.txt
