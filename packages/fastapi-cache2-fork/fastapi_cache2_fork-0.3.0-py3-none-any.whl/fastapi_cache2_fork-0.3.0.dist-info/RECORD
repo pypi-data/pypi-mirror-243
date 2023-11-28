@@ -1,0 +1,17 @@
+LICENSE,sha256=TMAPDjOsjgibN9ihR0vkQbJjEb3Bb-A1x1tRIBUV9hc,11338
+README.md,sha256=rcCPcyTo6taBD74_TnDNiybUYGlzD-1NPwRVY-I_4qU,8414
+fastapi_cache/__init__.py,sha256=vwzkyghg01UDirNhYzRpaCl7gOw8Yn56zfpmaqS9esc,3033
+fastapi_cache/backends/__init__.py,sha256=ET0t_S9WZy7_vNdZ6GrfZjcxY5AzaiXRTKWMCv-v3OM,625
+fastapi_cache/backends/dynamodb.py,sha256=hLfCKsApeIAxagO2rh5o77zMJuOWsAumpnp_xyRniZ4,3392
+fastapi_cache/backends/inmemory.py,sha256=q_4Z21oThC9SNIPiYz2n9se-TGs-BEC8zm5ga5WjAHo,1582
+fastapi_cache/backends/memcached.py,sha256=vOGXOo2lnh5mhbUc7YXkrc07hkQa4Nju5UsZGVXszpE,672
+fastapi_cache/backends/redis.py,sha256=WzdnYWxuZTzBMHZWb_WqPrY-BWKqoAT_5Wt-aprdPMk,1325
+fastapi_cache/coder.py,sha256=fCDV6Blh7mp9aZOjiSKVrjLWF3WAswikxWTWyp2AkPo,3877
+fastapi_cache/decorator.py,sha256=XZOagUXTWdZhCrpBbfFTmJ23fiTVKUZynQ3oaEKMrTY,7884
+fastapi_cache/key_builder.py,sha256=gNkKQFh0fvTNe4FAmySdGo0ELJqP5zt1ZQcYQy9taFY,553
+fastapi_cache/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fastapi_cache/types.py,sha256=-jP5180sfY0auiZD-HKNPL5Lq4W6CDZPwcGXtQbBm3E,1015
+fastapi_cache2_fork-0.3.0.dist-info/LICENSE,sha256=TMAPDjOsjgibN9ihR0vkQbJjEb3Bb-A1x1tRIBUV9hc,11338
+fastapi_cache2_fork-0.3.0.dist-info/METADATA,sha256=JdE4sXPhHC8Al48NQeyM98BRsQQPKzBvPldXB7PpWwY,9664
+fastapi_cache2_fork-0.3.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+fastapi_cache2_fork-0.3.0.dist-info/RECORD,,
