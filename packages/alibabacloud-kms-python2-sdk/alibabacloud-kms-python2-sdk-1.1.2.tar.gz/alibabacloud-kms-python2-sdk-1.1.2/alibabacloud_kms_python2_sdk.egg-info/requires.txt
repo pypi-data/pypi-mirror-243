@@ -1,0 +1,8 @@
+alibabacloud_tea_openapi_py2<1.0.0,>=0.1.6
+alibabacloud-dkms-gcs-python2==1.0.4
+alibabacloud_kms20160120_py2<2.0.0,>=1.0.2
+alibabacloud_openapi_util_py2<1.0.0,>=0.1.1
+alibabacloud_tea_util_py2<1.0.0,>=0.0.9
+cffi<=1.15.0
+cryptography<=3.3.2
+certifi<=2020.4.5
