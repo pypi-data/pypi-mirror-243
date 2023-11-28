@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unblockedGPT"
+version = "1.4.0"
+description = "Placeholder"
+dependencies = [
+    'PyAutoGUI==0.9.54',
+    'urllib3==1.26.15',
+    'requests',
+    'openai',
+    'streamlit'
+]
+[project.scripts]
+chat = "unblockedGPT.__main__:run"
+typetext = "unblockedGPT.__main__:textToType"
+typeGPT = "unblockedGPT.__main__:typeGPTCmd"
+saveHero = "unblockedGPT.__main__:heroTypeCmd"
+saveStealth = "unblockedGPT.__main__:stealthTypeCmd"
+setKeys = "unblockedGPT.__main__:setKeys"
+
