@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: coges
+Version: 0.8.0
+Summary: Library for implementing non-linear behaviour and stream processing
+License: MIT
+Author: Jellyfish.tech
+Author-email: manager@jellyfish.tech
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/plain
+
+* Coges
+Library for implementing non-linear behaviour and stream processing
+
+** Features
+- Predicate -> Action based flow control
+- Can be used as multi-state and single-state finite machine
+- Built-in dependency injector with lazy resolving and dependency tree
+- Functional approach
+- Concurrent predicate and action running
+- State checks are connected to your stream
+
