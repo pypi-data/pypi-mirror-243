@@ -1,0 +1,16 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+tox.ini
+versioneer.py
+lincbrain.egg-info/PKG-INFO
+lincbrain.egg-info/SOURCES.txt
+lincbrain.egg-info/dependency_links.txt
+lincbrain.egg-info/entry_points.txt
+lincbrain.egg-info/not-zip-safe
+lincbrain.egg-info/requires.txt
+lincbrain.egg-info/top_level.txt
