@@ -1,0 +1,1 @@
+"""Widgets of the GUI."""
