@@ -1,0 +1,124 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = [
+    "setuptools>=60",
+    "setuptools-scm>=8.0",
+]
+
+
+[project]
+name = "caikit_nlp_client"
+dynamic = ["version"]
+description = "caikit-nlp client"
+license = { text = "Apache License 2.0" }
+readme = "README.md"
+classifiers=[
+    "License :: OSI Approved :: Apache Software License",
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+authors = [
+    { name = "Vaibhav Jain", email = "vajain@redhat.com" },
+    { name = "Laurentiu Bradin", email = "laurentiu.bradin@ibm.com" },
+    { name = "Daniele Trifirò", email = "dtrifiro@redhat.com" },
+]
+requires-python = ">=3.9"
+
+dependencies = [
+    "grpcio-reflection==1.59.3",
+    "requests==2.31.0"
+]
+
+[project.urls]
+Source = "https://github.com/opendatahub-io/caikit-nlp-client/"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests", "tests.*"]
+namespaces = false
+
+[tool.setuptools_scm]
+version_file = "src/caikit_nlp_client/_version.py"
+
+[project.optional-dependencies]
+dev = [
+    "ruff==0.1.6",
+    "grpcio-tools==1.59.3",
+    "caikit_nlp_client[types]"
+]
+types = [
+    "mypy==1.7.1",
+    "types-requests==2.31.0.10",
+    "types-protobuf==4.24.0.4"
+]
+tests = [
+    "pytest",
+    "pytest-cov",
+    "pytest-docker",
+    "pytest-mock",
+    "coverage[toml]",
+    "grpcio-health-checking",
+    # NOTE: caikit-nlp is not on pypi because of a git dependency (see
+    # https://github.com/caikit/caikit-nlp/issues/263), so we cannot
+    # list it as test dependency here if we want to publish this on pypi.
+    # this install is currently offloaded to `noxfile.py`
+    #"caikit-nlp @ git+https://github.com/caikit/caikit-nlp@0.3.0",
+    "caikit[runtime-grpc,runtime-http]>=0.23.2,<0.26.0",
+]
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+skips = ["B101"]
+
+[tool.pytest.ini_options]
+log_cli=true
+log_format = "%(asctime)s %(levelname)s %(message)s"
+log_date_format = "%Y-%m-%d %H:%M:%S"
+addopts = "-ra --cov-config pyproject.toml"
+
+[tool.coverage.run]
+branch = true
+source = ["caikit_nlp_client", "tests"]
+
+[tool.coverage.report]
+skip_empty = true
+show_missing = true
+fail_under = 50
+exclude_lines = [
+    "if TYPE_CHECKING:",
+    "pragma: no cover",
+]
+
+[tool.coverage.paths]
+source = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+exclude = ["examples"]
+
+[tool.ruff.lint]
+select = [ "E", "F", "UP", "B", "SIM", "I"]
+ignore = []
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+"tests/conftest.py" = ["F403"]
+
+
+[[tool.mypy.overrides]]
+ignore_missing_imports = true
+module = [
+    "caikit",
+    "caikit.*",
+    "caikit_nlp.",
+    "caikit_nlp.*",
+    "grpc",
+    "grpc_health.v1",
+    "caikit.runtime.grpc_server",
+    "grpc_reflection.*",
+    "google._upb._message"
+]

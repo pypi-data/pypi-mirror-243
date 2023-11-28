@@ -1,0 +1,20 @@
+services:
+  caikit:
+    image: quay.io/opendatahub/caikit-tgis-serving:stable
+    platform: linux/amd64 # allows running this image on apple silicon
+    volumes:
+      - ./flan-t5-small-caikit/:/mnt/models/ # downloaded when running tests
+      - ./caikit-tgis.yml:/caikit/config/caikit.yml
+    ports:
+      - 8085:8085 # grpc
+      - 8080:8080 # http
+    environment:
+      - "TRANSFORMERS_CACHE=/tmp/transformers_cache"
+  tgis:
+    image: quay.io/opendatahub/text-generation-inference:stable
+    platform: linux/amd64 # allows running this image on apple silicon
+    command: ["text-generation-launcher", "--model-name=/mnt/models/artifacts/"]
+    volumes:
+      - ./flan-t5-small-caikit/:/mnt/models/ # downloaded when running tests
+    environment:
+      - "TRANSFORMERS_CACHE=/tmp/transformers_cache"
