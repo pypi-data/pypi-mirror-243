@@ -1,0 +1,216 @@
+#!/usr/bin/env bash
+
+test_description='arx/cli'
+
+. lib/test-lib.sh
+
+################################################################
+# SETUP
+
+REMOTE="$TMP_DIRECTORY"/remote
+LOCAL="$TMP_DIRECTORY"/local
+cp -a "$TEST_DIRECTORY"/archive "$TMP_DIRECTORY"/archive
+ln -s "$TMP_DIRECTORY"/archive "$REMOTE"
+mkdir "$LOCAL"
+
+################################################################
+
+# test_expect_success "arx --help" \
+#     'arx --help'
+
+test_expect_success "init" \
+    '(cd "$LOCAL" && arx init :"$REMOTE" .)'
+
+test_begin_subtest "init config"
+(cd "$LOCAL" && arx config) >OUTPUT
+cat <<EOF >EXPECTED
+root: $LOCAL
+remote: $REMOTE
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_expect_code 1 "init fail on existing" \
+    '(cd "$LOCAL" && arx init "$REMOTE" .)'
+
+test_expect_success "init force" \
+    '(cd "$LOCAL" && arx init -f "$REMOTE" .)'
+
+test_begin_subtest "init config 2"
+(cd "$LOCAL" && arx config) >OUTPUT
+cat <<EOF >EXPECTED
+root: $LOCAL
+remote: $REMOTE
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "list files"
+(cd "$LOCAL" && arx list) >OUTPUT
+cat <<EOF >EXPECTED
+- file1
+- foo/bar/baz/file5
+- foo/bar/file3
+- foo/file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "list files subdir"
+(cd "$LOCAL" && arx list foo) >OUTPUT
+cat <<EOF >EXPECTED
+- foo/bar/baz/file5
+- foo/bar/file3
+- foo/file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+echo "BAD DATA" > "$LOCAL"/file1
+
+test_begin_subtest "fail checkout existing"
+test_subtest_known_broken
+(cd "$LOCAL" && arx co file1)
+ret=$?
+test_expect_equal "$ret" 1
+
+test_begin_subtest "test local file after failed checkout"
+cat "$LOCAL"/file1 >OUTPUT
+cat <<EOF >EXPECTED
+BAD DATA
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "fail commit existing"
+test_subtest_known_broken
+(cd "$LOCAL" && arx ci file1)
+ret=$?
+test_expect_equal "$ret" 1
+
+rm -f "$LOCAL"/file1
+
+test_begin_subtest "checkout file top level"
+(cd "$LOCAL" && arx co file1)
+(cd "$LOCAL" && arx list) >OUTPUT
+cat <<EOF >EXPECTED
+  file1
+- foo/bar/baz/file5
+- foo/bar/file3
+- foo/file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "test local file after checkout"
+cat "$LOCAL"/file1 >OUTPUT
+cat <<EOF >EXPECTED
+file1 data
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "file permission checkout"
+stat --printf '%a\n' "$LOCAL"/file1 > OUTPUT
+cat <<EOF >EXPECTED
+444
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_expect_code 1 "checkout non-existent" \
+    '(cd "$LOCAL" && arx co foobar)'
+
+test_begin_subtest "list files local"
+(cd "$LOCAL" && arx list -l) >OUTPUT
+cat <<EOF >EXPECTED
+file1
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "list files remote"
+(cd "$LOCAL" && arx list -r foo) >OUTPUT
+cat <<EOF >EXPECTED
+foo/bar/baz/file5
+foo/bar/file3
+foo/file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "create local file"
+echo 'file4 data' > "$LOCAL"/file4
+(cd "$LOCAL" && arx list) >OUTPUT
+cat <<EOF >EXPECTED
+  file1
++ file4
+- foo/bar/baz/file5
+- foo/bar/file3
+- foo/file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "file permission before commit"
+stat --printf '%a\n' "$LOCAL"/file4 > OUTPUT
+cat <<EOF >EXPECTED
+644
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "commit file top level"
+(cd "$LOCAL" && arx ci file4)
+(cd "$LOCAL" && arx list) >OUTPUT
+cat <<EOF >EXPECTED
+  file1
+  file4
+- foo/bar/baz/file5
+- foo/bar/file3
+- foo/file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "file permission after commit"
+stat --printf '%a\n' "$LOCAL"/file4 > OUTPUT
+cat <<EOF >EXPECTED
+644
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_expect_code 1 "commit non-existent" \
+    '(cd "$LOCAL" && arx ci foobar)'
+
+test_begin_subtest "checkout dir"
+(cd "$LOCAL" && arx co foo/bar)
+(cd "$LOCAL" && arx list) >OUTPUT
+cat <<EOF >EXPECTED
+  file1
+  file4
+  foo/bar/baz/file5
+  foo/bar/file3
+- foo/file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "list files subdir"
+(cd "$LOCAL"/foo && arx list) >OUTPUT
+cat <<EOF >EXPECTED
+  bar/baz/file5
+  bar/file3
+- file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "checkout file subdir"
+(cd "$LOCAL"/foo && arx co file2)
+(cd "$LOCAL"/foo && arx list) >OUTPUT
+cat <<EOF >EXPECTED
+  bar/baz/file5
+  bar/file3
+  file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+test_begin_subtest "checkout dir subdir"
+(cd "$LOCAL"/foo && arx co bar)
+(cd "$LOCAL"/foo && arx list) >OUTPUT
+cat <<EOF >EXPECTED
+  bar/baz/file5
+  bar/file3
+  file2
+EOF
+test_expect_equal_file OUTPUT EXPECTED
+
+################################################################
+
+test_done

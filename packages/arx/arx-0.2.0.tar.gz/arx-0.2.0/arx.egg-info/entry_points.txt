@@ -1,0 +1,2 @@
+[console_scripts]
+arx = arx.__main__:main
