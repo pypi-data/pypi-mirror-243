@@ -1,0 +1,1 @@
+from musif.musescore.common import extract_harmonic_analysis
