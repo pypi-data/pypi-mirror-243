@@ -1,0 +1,3 @@
+[console_scripts]
+etextedit = letmedoit.eTextEdit:main
+myhand = letmedoit.main:main
