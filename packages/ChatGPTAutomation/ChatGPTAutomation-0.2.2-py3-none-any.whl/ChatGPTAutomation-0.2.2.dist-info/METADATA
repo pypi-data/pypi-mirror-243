@@ -1,0 +1,193 @@
+Metadata-Version: 2.1
+Name: ChatGPTAutomation
+Version: 0.2.2
+Summary: A Python package for automating interactions with ChatGPT using Selenium.
+Home-page: https://github.com/iamseyedalipro/ChatGPTAutomation
+Author: Seyed Ali Hosseini
+Author-email: iamseyedalipro@gmail.com
+Keywords: chatgpt automation selenium
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Testing
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENCE.md
+Requires-Dist: asttokens ==2.4.1
+Requires-Dist: attrs ==23.1.0
+Requires-Dist: certifi ==2023.11.17
+Requires-Dist: cffi ==1.16.0
+Requires-Dist: charset-normalizer ==3.3.2
+Requires-Dist: colorama ==0.4.6
+Requires-Dist: comm ==0.2.0
+Requires-Dist: debugpy ==1.8.0
+Requires-Dist: decorator ==5.1.1
+Requires-Dist: executing ==2.0.1
+Requires-Dist: h11 ==0.14.0
+Requires-Dist: idna ==3.4
+Requires-Dist: ipykernel ==6.26.0
+Requires-Dist: ipython ==8.18.0
+Requires-Dist: jedi ==0.19.1
+Requires-Dist: jupyter-client ==8.6.0
+Requires-Dist: jupyter-core ==5.5.0
+Requires-Dist: matplotlib-inline ==0.1.6
+Requires-Dist: nest-asyncio ==1.5.8
+Requires-Dist: outcome ==1.3.0.post0
+Requires-Dist: packaging ==23.2
+Requires-Dist: parso ==0.8.3
+Requires-Dist: platformdirs ==4.0.0
+Requires-Dist: prompt-toolkit ==3.0.41
+Requires-Dist: psutil ==5.9.6
+Requires-Dist: pure-eval ==0.2.2
+Requires-Dist: pycparser ==2.21
+Requires-Dist: Pygments ==2.17.2
+Requires-Dist: pyperclip ==1.8.2
+Requires-Dist: PySocks ==1.7.1
+Requires-Dist: python-dateutil ==2.8.2
+Requires-Dist: python-dotenv ==1.0.0
+Requires-Dist: pywin32 ==306
+Requires-Dist: pyzmq ==25.1.1
+Requires-Dist: requests ==2.31.0
+Requires-Dist: selenium ==4.9.0
+Requires-Dist: six ==1.16.0
+Requires-Dist: sniffio ==1.3.0
+Requires-Dist: sortedcontainers ==2.4.0
+Requires-Dist: stack-data ==0.6.3
+Requires-Dist: tornado ==6.3.3
+Requires-Dist: traitlets ==5.13.0
+Requires-Dist: trio ==0.23.1
+Requires-Dist: trio-websocket ==0.11.1
+Requires-Dist: urllib3 ==1.26.18
+Requires-Dist: wcwidth ==0.2.12
+Requires-Dist: webdriver-manager ==4.0.1
+Requires-Dist: wsproto ==1.2.0
+
+# ChatGPTAutomation 🤖💻🧠
+
+## Description
+ChatGPTAutomation is a Python package that automates interactions with ChatGPT using Selenium, streamlining the process for developers and testers. 🚀
+
+## Features
+- Automated messaging to ChatGPT. 📩
+- File upload support. 📁
+- ChatGPT conversation retrieval and storage. 🗂️
+- Customizable WebDriver for browser management. 🌐
+
+## Installation
+Install with:
+```bash
+pip install ChatGPTAutomation
+```
+
+## Usage
+
+**Chrome WebDriver Download**:
+
+- **Latest Chrome Version**: Download [here](https://googlechromelabs.github.io/chrome-for-testing/).
+- **Older Chrome Versions**: Find compatible drivers [here](https://chromedriver.chromium.org/downloads).
+
+**Setup**:
+
+Automatic setup (without paths):
+```python
+from chatgpt_automation.chatgpt_automation import ChatGPTAutomation
+
+chat_bot = ChatGPTAutomation(
+    username="<your username here>", # Optional
+    password="<your password here>"  # Optional
+)
+```
+
+Manual setup (with paths):
+```python
+from chatgpt_automation.chatgpt_automation import ChatGPTAutomation
+
+chat_bot = ChatGPTAutomation(chrome_path="path/to/chrome.exe", chrome_driver_path="path/to/chromedriver.exe",
+username="<your username here>", # Optional
+password="<your password here>" # Optional
+)
+
+# Send prompt
+chat_bot.send_prompt_to_chatgpt("Hello, ChatGPT!")
+
+# Save conversation
+chat_bot.save_conversation("conversation.txt")
+```
+
+File upload:
+```python
+chat_bot.upload_file_for_prompt("test_file.txt")
+chat_bot.send_prompt_to_chatgpt("Explain this file?")
+```
+
+Check response status:
+```python
+if chat_bot.check_response_status():
+    print("Response ready.")
+else:
+    print("Response issue.")
+```
+
+Get last response:
+```python
+chat_bot.send_prompt_to_chatgpt("Hello, ChatGPT!")
+response = chat_bot.return_last_response()
+```
+
+Switch models:
+```python
+chat_bot.switch_model(4)
+```
+
+Login check:
+```python
+if chat_bot.check_login_page():
+    chat_bot.login()
+```
+
+## Requirements
+- Python 3.8+
+- Selenium==4.9.0
+- See `requirements.txt` for more.
+
+
+## To-Do List
+
+### Sign up:
+- ✅ User login
+- ⬜️ Sign up via email address
+
+### Conversation Management:
+- ✅ Create new conversation
+- ✅ Get message list in a conversation
+- ✅ Delete a conversation
+- ⬜️ Edit Conversation Name
+- ⬜️ Subscribe for realtime message
+- ⬜️ Handle Random message such as popup, hints, and login attempts
+
+### Advanced Features:
+- ✅ Support for uploading files
+- ⬜️ Support ChatGPT with internet
+- ⬜️ Using GPTs
+- ⬜️ API
+
+### User Account Handling:
+- ✅ Switch Between ChatGPT 3.5 and 4
+- ⬜️ Fetch user detail like email and plan type
+- ⬜️ Set custom instructions for more personalized conversations
+
+### Browser:
+- ⬜️ Headless Browser
+
+## License
+MIT License - see [LICENCE.md](LICENCE.md).
+
+## Contact
+Seyed Ali Hosseini 🧑‍💻 - iamseyedalipro@gmail.com 📧.
+
+## Acknowledgements
+- Thanks to OpenAI and Selenium. 🙏👨‍💻
