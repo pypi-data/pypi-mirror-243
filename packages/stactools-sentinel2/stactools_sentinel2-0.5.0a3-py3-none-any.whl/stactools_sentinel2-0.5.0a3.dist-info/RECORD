@@ -1,0 +1,16 @@
+stactools/sentinel2/__init__.py,sha256=uy5IkqZb7nYzf16--YernOXbvlPPgdot8AGZp7cSZ34,252
+stactools/sentinel2/cog.py,sha256=hrmvS6o5nAdeSlgMPYo5zfhibBUXsEBHpvnCg3z6QjE,1930
+stactools/sentinel2/commands.py,sha256=AqFBplBL0oLJ4keqvjZNRlAjI92cRgBXJQrKGDQ4A8k,2183
+stactools/sentinel2/constants.py,sha256=ILrzfAdrjcsvIsHM_xVo3m5sGhwB2wsVB_b7aMMfHz0,5461
+stactools/sentinel2/granule_metadata.py,sha256=mUPcXQFtCUwHGjBCC4o8YgMBdL59KrKZXIH2UDCdnl0,10471
+stactools/sentinel2/mgrs.py,sha256=ZQG2vhDu454xEahED85u81yGUax6oRp0lFRbRW-JWRE,6485
+stactools/sentinel2/product_metadata.py,sha256=RzL10IiYRDV0AyZn4JkqAa5Py0yapNT4P-k4hpvm3dg,8913
+stactools/sentinel2/safe_manifest.py,sha256=fLW90LjwvDsFvkVkeSkXCASbl7E0kAHVv6XO9AuSruc,2739
+stactools/sentinel2/stac.py,sha256=ZGBA8bqx1MlSI0pkMj0yt-u9ZCK9LM5e-sLJkF4BdZI,23399
+stactools/sentinel2/tileinfo_metadata.py,sha256=LrUae71_Q5tLJj5pLVddOG99ahqzMzXV5eNUA-ja6B4,1871
+stactools/sentinel2/utils.py,sha256=duAcwMrZD7lCOsrJa7JzepNPQvlQH8LDJ1CZ1Zpq5Gc,2869
+stactools_sentinel2-0.5.0a3.dist-info/LICENSE,sha256=kGshx52lEVXCvfof1klIqE0XMDNNK05-b3xtn6rH8E4,641
+stactools_sentinel2-0.5.0a3.dist-info/METADATA,sha256=wtWs9KAbXbp38Kk3iGMOYU3qG0-yvuKkNnfPmyr7k2E,2602
+stactools_sentinel2-0.5.0a3.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+stactools_sentinel2-0.5.0a3.dist-info/top_level.txt,sha256=0eoUA-AbTfjFtxXr3W-vQdRyNmpGnA0wlTL3ppTPCG8,10
+stactools_sentinel2-0.5.0a3.dist-info/RECORD,,
