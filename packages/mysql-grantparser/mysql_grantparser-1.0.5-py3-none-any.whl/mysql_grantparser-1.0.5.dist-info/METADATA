@@ -1,0 +1,115 @@
+Metadata-Version: 2.1
+Name: mysql-grantparser
+Version: 1.0.5
+Summary: parse MySQL SHOW GRANTS.
+Home-page: https://github.com/hirose31/mysql-grantparser-python
+Author: HIROSE Masaaki
+Author-email: hirose31@gmail.com
+License: MIT
+Keywords: MySQL
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Topic :: Database
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: setuptools (>=30.3.0)
+Requires-Dist: mysql-connector-python
+Provides-Extra: dev
+Requires-Dist: pytest (>=3) ; extra == 'dev'
+Requires-Dist: coverage ; extra == 'dev'
+Requires-Dist: tox ; extra == 'dev'
+
+[![Build Status](https://travis-ci.org/hirose31/mysql-grantparser-python.svg?branch=master)](https://travis-ci.org/hirose31/mysql-grantparser-python)
+
+# NAME
+
+mysql_grantparser - parse MySQL SHOW GRANTS
+
+# SYNOPSIS
+
+``` python
+import mysql_grantparser
+
+grants = mysql_grantparser.Exporter(
+    host='127.0.0.1',
+    port=3306,
+    user='root',
+    password='pa55w0rd',
+).export()
+
+```
+
+# DESCRIPTION
+
+mysql_grantparser is SHOW GRANTS parser for MySQL, inspired by Ruby's [Gratan](https://github.com/codenize-tools/gratan).
+
+This module returns privileges for all users as following dict.
+
+``` python
+{
+    'USER@HOST': {
+        'user': USER,
+        'host': HOST,
+        'objects': {
+            'DB_NAME.TABLE_NAME': {
+                'privs': [ PRIV_TYPE, PRIV_TYPE, ... ],
+                'with': 'GRANT OPTION',
+            },
+            ...
+        },
+        'options': {
+            'identified': '...',
+            'required': '...',
+        },
+    },
+    ...
+}
+```
+
+For example, this GRANT statement
+
+``` sql
+GRANT SELECT, INSERT, UPDATE, DELETE ON orcl.* TO 'scott'@'%' IDENTIFIED BY 'tiger' WITH GRANT OPTION;
+```
+
+is represented as following.
+
+``` python
+{
+    'scott@%': {
+        'user': 'scott',
+        'host': '%',
+        'objects': {
+            '*.*': {
+                privs: [
+                    'USAGE'
+                ],
+            },
+            'orcl.*': {
+                'privs': [
+                    'SELECT',
+                    'INSERT',
+                    'UPDATE',
+                    'DELETE',
+                ],
+                'with': 'GRANT OPTION',
+            }
+        },
+        'options': {
+            'identified': "PASSWORD XXX",
+        },
+    },
+}
+```
+
+# SEE ALSO
+
+- Documentation: https://github.com/hirose31/mysql-grantparser-python/blob/master/README.md
+- Changelog: https://github.com/hirose31/mysql-grantparser-python/blob/master/CHANGELOG.md
+- Repository: https://github.com/hirose31/mysql-grantparser-python
+- Test status: https://travis-ci.org/hirose31/mysql-grantparser-python
