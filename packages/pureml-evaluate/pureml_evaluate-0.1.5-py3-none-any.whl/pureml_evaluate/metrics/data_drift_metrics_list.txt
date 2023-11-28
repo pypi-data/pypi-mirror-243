@@ -1,0 +1,16 @@
+Old Path: /pureml_evaluate/drift_metrics/tabular/"metric_name"/"metric_name".py
+New Path : /pureml_evaluate/metrics/"metric_name"/"metric_name".py
+
+Wheras "metric_name" is as follows
+
+
+Following are the list of data drift metrics :
+
+     1	chi_squared_statistic
+     2	cramers_v
+     3	hellinger_distance
+     4	jensen_shannon_distance
+     5	kolmogorov_smirnov
+     6	l_infinity_distance
+     7	population_stability_index
+     8	wasserstein_distance
