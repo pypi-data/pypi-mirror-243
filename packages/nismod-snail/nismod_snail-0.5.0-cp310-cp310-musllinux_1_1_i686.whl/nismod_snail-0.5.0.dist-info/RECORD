@@ -1,0 +1,17 @@
+nismod_snail.libs/libstdc++-8baf04f9.so.6.0.28,sha256=yrzOxg1heyJ9Y-43YCLLn04Cpl_A68FN0D2Q1iBTMcY,2428961
+nismod_snail.libs/libgcc_s-8b50eaaa.so.1,sha256=WXj_FYQE1MDIyb-nN8siUALdxit6NHma0p9UxemQV8o,101649
+nismod_snail-0.5.0.dist-info/METADATA,sha256=HTCyaAgAV6OcxrjLENveSntAnkXd7ifvwJ_Zp6T6aeM,9420
+nismod_snail-0.5.0.dist-info/RECORD,,
+nismod_snail-0.5.0.dist-info/WHEEL,sha256=Oa_6aIMmTY4R4U9o-eeMNBLugmgIrnh9v4z9D5nfkRY,114
+nismod_snail-0.5.0.dist-info/entry_points.txt,sha256=y6hsJspAYIalFI5D7CR7YZc84oXGxvLatkx5sZ2_iO4,43
+nismod_snail-0.5.0.dist-info/licenses/LICENSE,sha256=MmWWdikUmWZf8dnfXWresGbBJZGmGlCHVwzWVRkWYr4,1091
+snail/damages.py,sha256=sckrTHXOwQzsA78oBW22dvoqaXo1anp2YAEZ2EgXegU,8879
+snail/cli.py,sha256=yYjPeKVwoX-uHkNE4EJVAYCZDno4g9_OHRu7-v9xTxA,10428
+snail/routing.py,sha256=6tbl5dEZR5WaesmcsSOXAf8QsUUn_2nWpqBp-SH5-x4,1009
+snail/__main__.py,sha256=qmJz3sWmsNIMgSIzZTD7ii5Zh1VVhSiXDe0equG07mQ,91
+snail/intersection.py,sha256=IHvnYJjN5uafcPNnq-_73uqF81JSeLs5xPXfc1HLNsY,11692
+snail/io.py,sha256=W2xPKL5MO6_61-yJ_YRAKMC1XE9DDfilwlo5Vv7gWaY,3414
+snail/__init__.py,sha256=RUliAHklluCUn5vsmEQ93Sz1w6aTPj_IQO36DUWTnPQ,477
+snail/tqdm_standin.py,sha256=2jbNC-3CStcXI8YSuvHHms9MIP6YVBaTUuC2TiM4bd8,149
+snail/core/intersections.cpython-310-i386-linux-gnu.so,sha256=BE1Cr4j_Ojb0i21ShoyTkjEwOHQOYyb7QBb1Kesl9bg,190293
+snail/core/__init__.py,sha256=j7gkHeRu_tbFqmBKhWDdgbdGQVW7iRAO2o3Pl6Gw1Lo,161
