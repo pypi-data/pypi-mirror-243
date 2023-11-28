@@ -1,0 +1,21 @@
+{% load form_utils %}
+
+{% formrow_template "form_utils/row/foundation.html" %}
+
+<div class="non-field-errors">
+	{% if form_utils_form.non_field_errors %}
+		<div class="alert callout">
+			{% for error in form_utils_form.non_field_errors %}
+			<p><i class="fi-alert"></i> {{ error }}</p>
+			{% endfor %}
+		</div>
+	{% endif %}
+</div>
+
+{% for hidden in form_utils_form.hidden_fields %}
+	{{ hidden }}
+{% endfor %}
+
+{% for field in form_utils_form.visible_fields %}
+	{% formrow field %}
+{% endfor %}

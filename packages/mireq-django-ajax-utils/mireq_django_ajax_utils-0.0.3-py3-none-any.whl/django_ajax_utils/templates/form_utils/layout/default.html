@@ -1,0 +1,21 @@
+{% load form_utils %}
+
+{% formrow_template "form_utils/row/default.html" %}
+
+<div class="non-field-errors">
+	{% if form_utils_form.non_field_errors %}
+		<ul class="errors">
+			{% for error in form_utils_form.non_field_errors %}
+				<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+</div>
+
+{% for hidden in form_utils_form.hidden_fields %}
+	{{ hidden }}
+{% endfor %}
+
+{% for field in form_utils_form.visible_fields %}
+	{% formrow field %}
+{% endfor %}
