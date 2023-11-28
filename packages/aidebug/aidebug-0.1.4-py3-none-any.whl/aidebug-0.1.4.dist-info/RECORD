@@ -1,0 +1,17 @@
+aidebug/__init__.py,sha256=a2pJMr8YyYNsizeK0yy6Uz0xIZvyVnA7AbhUxj2oyiQ,24
+aidebug/aidebug.py,sha256=zN7kBRLgN0_kzr6C-z-0OEUJd9AE5SyABj9bM1dwSeM,17284
+aidebug/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aidebug/core/clientv2/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aidebug/core/clientv2/clientv2.py,sha256=AJTxv1fXPLAQCVVo8mTZNPCtNMPu4cBBuwFU8WcreJs,5017
+aidebug/core/gui/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aidebug/core/gui/select_dirs.py,sha256=3mprgf00FwD2lxOcmxlyRW1yClGTv3dMsu4ecV34jFk,3105
+aidebug/core/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aidebug/core/utils/error_handler.py,sha256=JOje5TI3sKpaak2td-lg_wKpVcKlZZt8ISiEfpKvTng,1606
+aidebug/core/utils/files_data.py,sha256=3wGyFbCeo3mEZuMX0WlwYcZuUQI7Omcwb0NefZ5yLtg,580
+aidebug/core/utils/timer.py,sha256=1AhGWPopGvhy63kARPBqte6gvNw8V434cZK_f2O8xoA,1327
+aidebug-0.1.4.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+aidebug-0.1.4.dist-info/METADATA,sha256=koyo9IgrjvzinJgthHXOeeTbrqhBGPFBmu4CNxvikTQ,4949
+aidebug-0.1.4.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+aidebug-0.1.4.dist-info/entry_points.txt,sha256=4stgqOYeSKaNdfk_9i-k0zeBFoYE1xhK6ze81vcmGlM,49
+aidebug-0.1.4.dist-info/top_level.txt,sha256=IY8UybQXESFIXqjU09komqOZluLGgIi2lyjM6WjtPuk,8
+aidebug-0.1.4.dist-info/RECORD,,
