@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: actchainkit
+Version: 0.1.0
+Summary: Asynchronous Crypt Trading Chain Kit: A trading kit for actchain
+Home-page: https://github.com/ko0hi/actchainkit
+License: MIT
+Author: ko0hi
+Author-email: ko0hi.4731@gmail.com
+Requires-Python: >=3.11.0,<4.0.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: actchain (>=0.1.1,<0.2.0)
+Project-URL: Repository, https://github.com/ko0hi/actchainkit
+Description-Content-Type: text/markdown
+
+# actchainkit
+
