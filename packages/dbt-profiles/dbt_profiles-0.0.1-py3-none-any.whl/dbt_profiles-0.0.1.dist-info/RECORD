@@ -1,0 +1,11 @@
+dbt_profiles/__init__.py,sha256=ZhUr0Qqd7NCyIi9oEZV4dO2Cqyn18sAn8V8bsw0BI0o,46
+dbt_profiles/__main__.py,sha256=Hu78lUhu0VC8FnMKLugKIS9ErgcDTnozXFHSKa2sUyM,69
+dbt_profiles/cli.py,sha256=2A3srq3YuCxNzi1HrfHVmaTTRKxr63Zl-g-pdwmndeM,1451
+dbt_profiles/dbt_utils.py,sha256=bmw8rXvG6rM4H0v_IxmQjXHy0NJ2-uB3bLc5jwxF8YA,5765
+dbt_profiles/fix_json_schema.py,sha256=Nx1mxPOcbXvHurcvR180pNXxJaJFLBGsty2T1U2vjOM,890
+dbt_profiles/json_schema_prompt.py,sha256=5BAJdCsXEYE0fel1k4lW69QBCd-G5Yg_Y7yEJWD5xaE,5857
+dbt_profiles/main.py,sha256=DVRbR1ixWsBDj1dsQTGh9mRwxI6xzb5wkDuAf7Q0Jjw,4652
+dbt_profiles-0.0.1.dist-info/METADATA,sha256=JBEWVH0BfH72cgozD_CrIWD3zKvuWw10FjT-kflxx1g,629
+dbt_profiles-0.0.1.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+dbt_profiles-0.0.1.dist-info/entry_points.txt,sha256=sOOdH2xmYjafg3vSJwNJu9_zLSRjVr33DymXRgGuM4I,58
+dbt_profiles-0.0.1.dist-info/RECORD,,
