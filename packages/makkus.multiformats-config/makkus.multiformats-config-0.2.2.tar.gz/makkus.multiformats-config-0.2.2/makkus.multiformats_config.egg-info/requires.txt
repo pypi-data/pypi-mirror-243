@@ -1,0 +1,7 @@
+makkus.multiformats>=0.2.4
+
+[dev]
+mypy
+pylint
+pytest
+pytest-cov
