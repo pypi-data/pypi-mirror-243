@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: SymptomSetModel
+Version: 0.0.2
+Summary: A probabilistic, symptom-driven model for estimating rare disease penetrance, expressivity, and prevalence.
+Home-page: https://github.com/daverblair/SymptomSetModel
+Author: David Blair
+Author-email: david.blair@ucsf.edu
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
