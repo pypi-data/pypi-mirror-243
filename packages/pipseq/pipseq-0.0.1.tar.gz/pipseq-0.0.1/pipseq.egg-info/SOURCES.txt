@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+settings.ini
+setup.py
+pipseq/__init__.py
+pipseq/_modidx.py
+pipseq/path.py
+pipseq/pttn.py
+pipseq.egg-info/PKG-INFO
+pipseq.egg-info/SOURCES.txt
+pipseq.egg-info/dependency_links.txt
+pipseq.egg-info/entry_points.txt
+pipseq.egg-info/not-zip-safe
+pipseq.egg-info/requires.txt
+pipseq.egg-info/top_level.txt
