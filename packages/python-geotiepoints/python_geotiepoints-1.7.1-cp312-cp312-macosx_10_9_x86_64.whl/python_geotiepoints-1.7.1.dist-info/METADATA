@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: python-geotiepoints
+Version: 1.7.1
+Summary: Interpolation of geographic tiepoints in Python
+Home-page: https://github.com/pytroll/python-geotiepoints
+Author: Adam Dybbroe, Martin Raspaud
+Author-email: martin.raspaud@smhi.se
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Cython
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+License-File: AUTHORS.md
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pandas
+
+python-geotiepoints
+===================
+
+[![Build Status](https://github.com/pytroll/python-geotiepoints/workflows/CI/badge.svg?branch=main)](https://github.com/pytroll/python-geotiepoints/actions?query=workflow%3A%22CI%22)
+[![Coverage Status](https://coveralls.io/repos/github/pytroll/python-geotiepoints/badge.svg?branch=main)](https://coveralls.io/github/pytroll/python-geotiepoints?branch=main)
+
+
+Python-geotiepoints is a python module that interpolates (and extrapolates if
+needed) geographical tiepoints into a larger geographical grid. This is usefull
+when the full resolution lon/lat grid is needed while only a lower resolution
+grid of tiepoints was provided.
+
+Some helper functions are provided to accomodate for satellite data, but the
+package should be generic enough to be used for any kind of data.
+
+In addition we have added a fast multilinear interpolation of regular gridded
+data using Cython.
+
+Adam & Martin
+May 2017, Norrköping, Sweden
