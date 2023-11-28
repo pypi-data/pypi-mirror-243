@@ -1,0 +1,8 @@
+setuptools
+pip
+
+[test]
+pytest
+pytest-cov
+black
+ruff
