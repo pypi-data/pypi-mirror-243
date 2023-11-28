@@ -1,0 +1,14 @@
+azure-storage-blob
+azure-storage-file-share
+azure-data-tables
+Shapely>=2.0.0
+pytz
+pygeoif
+numpy
+scipy
+scikit-learn
+numpy
+pyshp
+pandas
+pyproj
+msal
