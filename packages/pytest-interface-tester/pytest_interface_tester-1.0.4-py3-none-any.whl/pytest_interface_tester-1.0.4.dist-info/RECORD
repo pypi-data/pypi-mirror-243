@@ -1,0 +1,14 @@
+interface_tester/__init__.py,sha256=jERz76UA4xqqoWnbAlQsWsXjPhpB6YfPdT5lFT5OTPI,393
+interface_tester/collector.py,sha256=cDHnrTfgPVfkCMqk-CWXoxZjNmZpztQcPEJUUY3wdbs,11031
+interface_tester/errors.py,sha256=VrKlcc8ULnnhfvRDunxapKlX_tXOPrZt4ZdTOxTjmds,632
+interface_tester/interface_test.py,sha256=GFB05Nym24dOKVnYFxhPLcTOa3cqUP0wkBw2nhZ9Rq8,18873
+interface_tester/plugin.py,sha256=FY4ojZr0-XDAVisuM8c5iDYHCSgKBSYeK_fwIRVcvvc,13336
+interface_tester/schema_base.py,sha256=i7LX-75REvVtNJIelOJnNaLip5NVDTKe-AzCL-ZPOSw,1573
+interface_tester/cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+interface_tester/cli/discover.py,sha256=OJnKCLDY9hJeErYUkYh-ZP7gkxEp-y3ntyvGWYRwQlE,2719
+interface_tester/cli/main.py,sha256=mRIrsWonEVlr4XNVo251L9HsS_HPHfp0bPNXRc5neEk,372
+pytest_interface_tester-1.0.4.dist-info/METADATA,sha256=bdRiyrim9_gegdCETNrfdYz5y24Ar0LzrFFZXj63m4c,6636
+pytest_interface_tester-1.0.4.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+pytest_interface_tester-1.0.4.dist-info/entry_points.txt,sha256=WDRGUMD9m6f4c1GoWHYQT43K2VcC547YS9V-7Tceawc,116
+pytest_interface_tester-1.0.4.dist-info/top_level.txt,sha256=8ViEHIKcR-L8VJcGA9pqD6o3TFHE49EvzNi53Vj6s3M,17
+pytest_interface_tester-1.0.4.dist-info/RECORD,,
