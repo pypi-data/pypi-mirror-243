@@ -1,0 +1,25 @@
+from ._core import (
+    DomainModel,
+    DomainModelApply,
+    DomainModelList,
+    DomainRelationApply,
+    ResourcesApply,
+    ResourcesApplyResult,
+)
+{% for class_ in classes %}{{ class_.init_import }}
+{% endfor %}
+{% include import_file %}
+__all__ = [
+    "ResourcesApply",
+    "DomainModel",
+    "DomainModelApply",
+    "DomainModelList",
+    "DomainRelationApply",
+    "ResourcesApplyResult",{% for class_ in classes %}
+    "{{ class_.read_name }}",
+    "{{ class_.write_name }}",
+    "{{ class_.read_list_name }}",
+    "{{ class_.write_list_name }}",{% if class_.has_primitive_fields %}
+    "{{ class_.field_names }}",{% endif %}{% if class_.has_text_field %}
+    "{{ class_.text_field_names }}", {% endif %}{% endfor %}
+]
