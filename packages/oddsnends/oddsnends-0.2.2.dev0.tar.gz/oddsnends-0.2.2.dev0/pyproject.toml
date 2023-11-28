@@ -1,0 +1,57 @@
+[build-system]
+requires = [
+  "hatchling",
+  "hatch-requirements-txt"
+]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "oddsnends"
+
+version = "0.2.2.dev0"
+dynamic = ["dependencies", "optional-dependencies"]
+
+description = "Miscellaneous (odds 'n ends) methods for data science"
+readme = "README.rst"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+
+authors = [
+  { name="Vivian Leung", email="leung.vivian.w@gmail.com" },
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+keywords = ["oddsnends"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/oddsnends",
+]
+"Homepage" = "https://github.com/vivianleung/oddsnends"
+"Bug Tracker" = "https://github.com/vivianleung/oddsnends/issues"
+
+
+[tool.pytest]
+addopts = ["--doctest-modules"]
+doctest_optionflags= ["NORMALIZE_WHITESPACE", "ELLIPSIS"]
+
+[tool.hatch.envs.default.env-vars]
+PIP_EXTRA_INDEX_URL = "https://github.com/vivianleung/pypi"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[tool.hatch.metadata.hooks.requirements_txt.optional-dependencies]
+dev = ["requirements_dev.txt"]
+
+
+[tool.pyright]
+
+reportShadowedImports = false
+
