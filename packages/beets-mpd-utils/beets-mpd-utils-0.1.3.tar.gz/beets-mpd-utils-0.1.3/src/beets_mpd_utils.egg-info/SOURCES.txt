@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/beets_mpd_utils.egg-info/PKG-INFO
+src/beets_mpd_utils.egg-info/SOURCES.txt
+src/beets_mpd_utils.egg-info/dependency_links.txt
+src/beets_mpd_utils.egg-info/requires.txt
+src/beets_mpd_utils.egg-info/top_level.txt
+src/beetsplug/__init__.py
+src/beetsplug/mpd_dj.py
+src/beetsplug/mpd_tracker.py
