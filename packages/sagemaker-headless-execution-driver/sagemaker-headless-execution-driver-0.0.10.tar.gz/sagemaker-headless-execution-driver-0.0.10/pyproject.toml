@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "sagemaker-headless-execution-driver"
+version = "0.0.10"
+description = "Execution Driver for Notebook Scheduler"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.7"
+authors = [
+    { name = "Amazon Web Services" },
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "papermill",
+]
+
+[tool.setuptools_scm]
+write_to = "sagemaker_headless_execution_driver/_version.py"
+
+[project.optional-dependencies]
+
+dev = [
+    "black",
+    "build"
+]
+test = [
+    "pytest",
+    "parameterized",
+    "ipython",
+    "ipykernel"
+]
+
+[project.urls]
+homepage = "https://aws.amazon.com/sagemaker"
+
+[tool.isort]
+# required for compatibility with black:
+profile = "black"

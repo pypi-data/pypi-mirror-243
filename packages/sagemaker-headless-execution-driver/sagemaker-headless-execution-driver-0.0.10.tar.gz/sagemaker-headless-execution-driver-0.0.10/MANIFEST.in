@@ -1,0 +1,7 @@
+include LICENSE
+recursive-include src *
+recursive-include src/sagemaker_headless_execution_driver.scripts *
+recursive-include test *
+
+include src/sagemaker_headless_execution_driver.scripts/headless_execution.sh
+
