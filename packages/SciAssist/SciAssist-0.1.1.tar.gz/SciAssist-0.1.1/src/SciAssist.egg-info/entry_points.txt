@@ -1,0 +1,3 @@
+[console_scripts]
+run_grobid = SciAssist.bin:run_grobid
+setup_grobid = SciAssist.bin:setup_grobid
