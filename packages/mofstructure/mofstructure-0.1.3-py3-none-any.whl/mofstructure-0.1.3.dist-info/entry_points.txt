@@ -1,0 +1,4 @@
+[console_scripts]
+mofstructure=mofstructure.buildingunits:main
+mofstructure_database=mofstructure.collect_data:main
+
