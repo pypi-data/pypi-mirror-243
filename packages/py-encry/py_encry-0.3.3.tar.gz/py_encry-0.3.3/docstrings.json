@@ -1,0 +1,330 @@
+[
+    {
+        "type": "ClassDef",
+        "name": "ImageHandler",
+        "inside_class": null,
+        "type_method": null,
+        "info": [
+            {
+                "info": "text",
+                "data": {
+                    "text": "A class to handle images for cryptography.\nThe ImageHandler class allows you to encode and decode data into an image.\n\nExample:"
+                }
+            },
+            {
+                "info": "example",
+                "data": {
+                    "lang": "python",
+                    "code": "image = ImageHandler(\"img/d.png\")\nimage.encode(\"rail_fence_cipher\", data=\"Hello World\", key=3)\nimage.write(\"img/d.png\")"
+                }
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            }
+        ]
+    },
+    {
+        "type": "FunctionDef",
+        "name": "__init__",
+        "inside_class": "ImageHandler",
+        "type_method": "constructor",
+        "info": [
+            {
+                "info": "text",
+                "data": {
+                    "text": "Initialise the ImageHandler class\n"
+                }
+            },
+            {
+                "info": "arguments",
+                "data": [
+                    {
+                        "name": "file_path",
+                        "type": "str",
+                        "info": "The path to the image file"
+                    }
+                ]
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            },
+            {
+                "info": "returns",
+                "data": [
+                    {
+                        "type": "ImageHandler",
+                        "info": "The ImageHandler object"
+                    }
+                ]
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": "\nThe initialisation method parses the image file and stores it in the\nimage attribute.\n\nExample:"
+                }
+            },
+            {
+                "info": "example",
+                "data": {
+                    "lang": "python",
+                    "code": "image = ImageHandler(\"img/d.png\")"
+                }
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            }
+        ]
+    },
+    {
+        "type": "FunctionDef",
+        "name": "from_string",
+        "inside_class": "ImageHandler",
+        "type_method": "constructor",
+        "info": [
+            {
+                "info": "text",
+                "data": {
+                    "text": "Initialise the ImageHandler class from a string\n"
+                }
+            },
+            {
+                "info": "arguments",
+                "data": [
+                    {
+                        "name": "data",
+                        "type": "str",
+                        "info": "The image data"
+                    }
+                ]
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            },
+            {
+                "info": "returns",
+                "data": [
+                    {
+                        "type": "ImageHandler",
+                        "info": "The ImageHandler object"
+                    }
+                ]
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": "\nThe initialisation method parses the image data and stores it in the\nimage attribute.\n\nExample:"
+                }
+            },
+            {
+                "info": "example",
+                "data": {
+                    "lang": "python",
+                    "code": "image = ImageHandler.from_string(\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAA...\")"
+                }
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            }
+        ]
+    },
+    {
+        "type": "FunctionDef",
+        "name": "write",
+        "inside_class": "ImageHandler",
+        "type_method": "method",
+        "info": [
+            {
+                "info": "text",
+                "data": {
+                    "text": "Write to the image data to a file\n"
+                }
+            },
+            {
+                "info": "arguments",
+                "data": [
+                    {
+                        "name": "file_path",
+                        "type": "str",
+                        "info": "The path to the image file"
+                    }
+                ]
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            },
+            {
+                "info": "returns",
+                "data": []
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": "\nExample:"
+                }
+            },
+            {
+                "info": "example",
+                "data": {
+                    "lang": "python",
+                    "code": "image = ImageHandler(\"img/d.png\")\nimage.write(\"img/d.png\")"
+                }
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            }
+        ]
+    },
+    {
+        "type": "FunctionDef",
+        "name": "to_string",
+        "inside_class": "ImageHandler",
+        "type_method": "method",
+        "info": [
+            {
+                "info": "text",
+                "data": {
+                    "text": "Write to the image data to a string\n"
+                }
+            },
+            {
+                "info": "arguments",
+                "data": []
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            },
+            {
+                "info": "returns",
+                "data": [
+                    {
+                        "type": "str",
+                        "info": "The image data"
+                    }
+                ]
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": "\nExample:"
+                }
+            },
+            {
+                "info": "example",
+                "data": {
+                    "lang": "python",
+                    "code": "image = ImageHandler(\"img/d.png\")\nimage.to_string()"
+                }
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            }
+        ]
+    },
+    {
+        "type": "FunctionDef",
+        "name": "file_info",
+        "inside_class": "ImageHandler",
+        "type_method": "method",
+        "info": [
+            {
+                "info": "text",
+                "data": {
+                    "text": "Get the file information of the image\n"
+                }
+            },
+            {
+                "info": "arguments",
+                "data": []
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            },
+            {
+                "info": "returns",
+                "data": [
+                    {
+                        "type": "dict",
+                        "info": "The file information"
+                    }
+                ]
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": "\nExample:"
+                }
+            },
+            {
+                "info": "example",
+                "data": {
+                    "lang": "python",
+                    "code": "image = ImageHandler(\"img/d.png\")\nimage.file_info()"
+                }
+            },
+            {
+                "info": "text",
+                "data": {
+                    "text": ""
+                }
+            }
+        ]
+    },
+    {
+        "type": "FunctionDef",
+        "name": "encode",
+        "inside_class": "ImageHandler",
+        "type_method": null,
+        "info": [
+            {
+                "info": "text",
+                "data": {
+                    "text": "Encode data into the image\n\n:param method: string - The method to use to encode the data\n:param kwargs: dict - The arguments to pass to the method\n\n:return: None\n\n:raises: NotImplementedError - If the method is not implemented\n\nThe method allows selecting the method to use to encode the data, and\nit accepts keyword arguments to pass to the method. The keywords are:\n- data: The data to encode\n- key: The key to use to encode the data\n"
+                }
+            }
+        ]
+    },
+    {
+        "type": "FunctionDef",
+        "name": "decode",
+        "inside_class": "ImageHandler",
+        "type_method": null,
+        "info": [
+            {
+                "info": "text",
+                "data": {
+                    "text": "Decode data from the image\n\n:param method: string - The method to use to decode the data\n:param kwargs: dict - The arguments to pass to the method\n\n:return: string - The decoded data\n\n:raises: NotImplementedError - If the method is not implemented\n\nThe method allows selecting the method to use to decode the data, and\nit accepts keyword arguments to pass to the method. The keywords are:\n- key: The key to use to decode the data\n"
+                }
+            }
+        ]
+    }
+]
