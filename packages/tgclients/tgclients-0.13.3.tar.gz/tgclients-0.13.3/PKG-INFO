@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: tgclients
+Version: 0.13.3
+Summary: TextGrid Python client library for textgrid.de repository access.
+Home-page: https://gitlab.gwdg.de/dariah-de/textgridrep/textgrid-python-clients
+Author: Stefan Hynek, Ubbo Veentjer
+License: LGPL
+Project-URL: Documentation, https://dariah-de.pages.gwdg.de/textgridrep/textgrid-python-clients/docs/index.html
+Project-URL: Source, https://gitlab.gwdg.de/dariah-de/textgridrep/textgrid-python-clients
+Project-URL: Tracker, https://gitlab.gwdg.de/dariah-de/textgridrep/textgrid-python-clients/-/issues
+Project-URL: Changelog, https://gitlab.gwdg.de/dariah-de/textgridrep/textgrid-python-clients/-/blob/main/CHANGELOG.md
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown; charset=UTF-8
+Provides-Extra: dev
+Provides-Extra: icu
+Provides-Extra: docs
+License-File: LICENSE
+
+<!--
+SPDX-FileCopyrightText: 2022 Georg-August-Universität Göttingen
+
+SPDX-License-Identifier: CC0-1.0
+-->
+
+# TextGrid Python clients
+
+The TextGrid Python clients provide access to the [TextGrid Repository](https://textgridrep.org/)
+services [API](http://textgridlab.org/doc/services/index.html).
+
+
+## Installation and Usage
+
+```sh
+pip install tgclients
+```
+
+Check the [usage docs](https://dariah-de.pages.gwdg.de/textgridrep/textgrid-python-clients/docs/getting-started.html) and the
+Jupyter notebook examples to get started.
+
+## Development
+
+Look into the [development docs](https://dariah-de.pages.gwdg.de/textgridrep/textgrid-python-clients/docs/development.html).
+
+## License
+
+This project aims to be [REUSE compliant](https://api.reuse.software/info/gitlab.gwdg.de/dariah-de/textgridrep/textgrid-python-clients).
+Original parts are licensed under AGPL-3.0-or-later.
+Derivative code is licensed under the respective license of the original.
+Documentation, configuration and generated code files are licensed under CC0-1.0.
+
+## Badges
+
+[![REUSE status](https://api.reuse.software/badge/gitlab.gwdg.de/dariah-de/textgridrep/textgrid-python-clients)](https://api.reuse.software/info/gitlab.gwdg.de/dariah-de/textgridrep/textgrid-python-clients)
+[![PyPI](https://img.shields.io/pypi/v/tgclients)](https://pypi.org/project/tgclients/)
+[![Coverage](https://gitlab.gwdg.de/dariah-de/textgridrep/textgrid-python-clients/badges/main/coverage.svg)](https://dariah-de.pages.gwdg.de/textgridrep/textgrid-python-clients/htmlcov/index.html)

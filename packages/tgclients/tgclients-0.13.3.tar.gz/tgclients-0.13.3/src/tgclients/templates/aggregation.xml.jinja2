@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF 
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:ore="http://www.openarchives.org/ore/terms/">
+   <rdf:Description rdf:about="{{id}}">
+    {% for member in members %}
+      <ore:aggregates rdf:resource="{{member}}"/>
+    {% endfor %}  
+   </rdf:Description>
+</rdf:RDF>
