@@ -1,0 +1,78 @@
+[tool.poetry]
+name = "kifurushi"
+version = "0.6.0"
+description = "A simple library to forge network packets"
+authors = ["lewoudar <lewoudar@gmail.com>"]
+readme = "README.md"
+license = "Apache-2.0"
+keywords = ["kifurushi", "networking", "protocol", "sans-io", "packet"]
+
+homepage = "https://kifurushi.readthedocs.io/en/stable"
+repository = "https://github.com/lewoudar/kifurushi"
+documentation = "https://kifurushi.readthedocs.io/en/stable"
+
+classifiers = [
+    "Intended Audience :: Developers",
+    "Topic :: System :: Networking",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: Implementation :: PyPy"
+]
+
+packages = [
+    { include = "kifurushi" }
+]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/lewoudar/kifurushi/issues"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+attrs = "^23.1.0"
+
+[tool.poetry.group.lint.dependencies]
+bandit = "^1.7.4"
+ruff = "^0.1.6"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+pytest-mock = "^3.4.0"
+pytest-cov = "^4.1.0"
+
+[tool.poetry.group.dev.dependencies]
+scapy = "^2.4.4"
+nox = "^2023.4.22"
+pre-commit = "^3.5.0"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs = "^1.5.3"
+mkautodoc = "^0.2.0"
+mkdocs-material = "^9.4.14"
+
+[tool.poetry.group.audit.dependencies]
+safety = "^2.3.5"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=kifurushi --cov-report html --cov-report xml --cov-report term"
+
+[tool.ruff]
+line-length = 120
+target-version = "py38"
+
+[tool.ruff.lint]
+extend-select = [
+  "UP",  # pyupgrade
+  "I",   # isort
+  "S",   # flake8-bandit
+  "B",   # flake8-bugbear
+  "C90", # McCabe complexity
+  "RUF"
+]
+ignore = ["RUF012"]
+
+[tool.ruff.format]
+quote-style = "single"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
