@@ -1,0 +1,12 @@
+semgrep_rules_manager/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+semgrep_rules_manager/cli.py,sha256=0ewua8Q7Uuy5lEGvSHqxjZfa20pMOkFHGmhUWMFjRyQ,5237
+semgrep_rules_manager/core.py,sha256=ybkjL_svCwNx-OhZ3zgukAesnDQzIy7jHuATWbEIx6s,1440
+semgrep_rules_manager/data/sources.yaml,sha256=oGSNDTtmyflmycpul1BmpHQKyEYOrPys8QA3jCcWi0c,1983
+semgrep_rules_manager/exception.py,sha256=5HTqTnsxWhDAqGKfwH8vsgIF7YdhW1BWNgYyQHI2Axc,284
+semgrep_rules_manager/rules_file.py,sha256=5dtQHxqs27xnYqT2qgx91NWQzjb0apS7IZE-5fHEnS8,2307
+semgrep_rules_manager/sources.py,sha256=hbrw2VSZwnmWphCeX8Q5TlgLRaKCDIog2Q7ZSJtxLtA,5923
+semgrep_rules_manager-0.3.1.dist-info/LICENSE,sha256=0d5la3VD8KbamrpDJ0dTDPToraJwowZxd_Prps_zPos,35170
+semgrep_rules_manager-0.3.1.dist-info/METADATA,sha256=pC7Lx4jOGfPWkw2WIrCTKx_KbifrB2-qYyvitgC0XFE,6751
+semgrep_rules_manager-0.3.1.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+semgrep_rules_manager-0.3.1.dist-info/entry_points.txt,sha256=tIdCJPx9sndxlxJK_sRn07_05t5nTWSPqIv-pV2WRTE,136
+semgrep_rules_manager-0.3.1.dist-info/RECORD,,
