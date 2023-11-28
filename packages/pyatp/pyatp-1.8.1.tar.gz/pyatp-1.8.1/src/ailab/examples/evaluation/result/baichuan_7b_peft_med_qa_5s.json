@@ -1,0 +1,27 @@
+{
+  "results": {
+    "MedQA": {
+      "acc": 0.4699357851722125,
+      "acc_stderr": 0.008528118249183392,
+      "acc_norm": 0.4699357851722125,
+      "acc_norm_stderr": 0.008528118249183392
+    }
+  },
+  "versions": {
+    "MedQA": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/baichuan_7b,dtype='float16',trust_remote_code=True,use_accelerate=False,peft=/home/finetuned_models/my_baichuan_model",
+    "num_fewshot": 5,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:0",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:24:17.661803",
+    "model_name": "baichuan_7b"
+  }
+}

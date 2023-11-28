@@ -1,0 +1,27 @@
+{
+  "results": {
+    "MedQA": {
+      "acc": 0.6427320490367776,
+      "acc_stderr": 0.008188073259414373,
+      "acc_norm": 0.6427320490367776,
+      "acc_norm_stderr": 0.008188073259414373
+    }
+  },
+  "versions": {
+    "MedQA": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/xverse_13b,dtype='bfloat16',trust_remote_code=True,use_accelerate=False,peft=/home/finetuned_models/my_xverse_model",
+    "num_fewshot": 5,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:7",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:46:06.872065",
+    "model_name": "xverse_13b"
+  }
+}

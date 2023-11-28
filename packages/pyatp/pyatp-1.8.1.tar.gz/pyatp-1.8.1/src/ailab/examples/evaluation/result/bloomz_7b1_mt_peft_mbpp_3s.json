@@ -1,0 +1,31 @@
+{
+  "results": {
+    "mbpp": {
+      "pass": 0.0,
+      "pass_stderr": 0.0,
+      "timeout": 0.0,
+      "timeout_stderr": 0.0,
+      "wrong_answer": 0.0,
+      "wrong_answer_stderr": 0.0,
+      "failed": 1.0,
+      "failed_stderr": 0.0
+    }
+  },
+  "versions": {
+    "mbpp": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/bloomz_7b,dtype='float16',trust_remote_code=True,use_accelerate=False,peft=/home/finetuned_models/my_bloomz_model",
+    "num_fewshot": 3,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:2",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:30:12.458504",
+    "model_name": "bloomz_7b1_mt"
+  }
+}

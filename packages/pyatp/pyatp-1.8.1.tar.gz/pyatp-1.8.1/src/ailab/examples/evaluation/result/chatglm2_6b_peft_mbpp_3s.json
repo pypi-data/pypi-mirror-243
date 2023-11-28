@@ -1,0 +1,31 @@
+{
+  "results": {
+    "mbpp": {
+      "pass": 0.048,
+      "pass_stderr": 0.00956949059775916,
+      "timeout": 0.0,
+      "timeout_stderr": 0.0,
+      "wrong_answer": 0.294,
+      "wrong_answer_stderr": 0.020395095484936607,
+      "failed": 0.658,
+      "failed_stderr": 0.021236147199899268
+    }
+  },
+  "versions": {
+    "mbpp": 0
+  },
+  "config": {
+    "model": "hf-chatglm",
+    "model_args": "pretrained=/home/sdk_models/chatglm2_6b,add_special_tokens=True,dtype='float16',trust_remote_code=True,use_accelerate=False,peft=/home/finetuned_models/my_chatglm2_model",
+    "num_fewshot": 4,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:3",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:11:14.712750",
+    "model_name": "chatglm2_6b"
+  }
+}

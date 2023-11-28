@@ -1,0 +1,27 @@
+{
+  "results": {
+    "MedQA": {
+      "acc": 0.2670753064798599,
+      "acc_stderr": 0.007559903586234017,
+      "acc_norm": 0.2670753064798599,
+      "acc_norm_stderr": 0.007559903586234017
+    }
+  },
+  "versions": {
+    "MedQA": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/llama-7b-hf,load_in_8bit=True,dtype='float16',tokenizer=/home/sdk_token/chinese_llama_vicuna_tokenizer,use_accelerate=False,peft=/home/finetuned_models/my_chinese_llama_vicuna_model",
+    "num_fewshot": 5,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:0",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:48:52.587877",
+    "model_name": "chinese_llama_vicuna"
+  }
+}

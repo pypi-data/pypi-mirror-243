@@ -1,0 +1,31 @@
+{
+  "results": {
+    "mbpp": {
+      "pass": 0.012,
+      "pass_stderr": 0.004874373707264976,
+      "timeout": 0.002,
+      "timeout_stderr": 0.0020000000000000013,
+      "wrong_answer": 0.074,
+      "wrong_answer_stderr": 0.011718474529160468,
+      "failed": 0.912,
+      "failed_stderr": 0.012682021421471837
+    }
+  },
+  "versions": {
+    "mbpp": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/belle_7b_2m,dtype='bfloat16',trust_remote_code=True,use_accelerate=False",
+    "num_fewshot": 3,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:5",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:21:15.717445",
+    "model_name": "belle_7b_2m"
+  }
+}

@@ -1,0 +1,21 @@
+{
+    "pt":{},
+    "sft":{
+        "response":{
+            "prompt":"prompt",
+            "query":"",
+            "response":"response"
+        },
+        "completion":{
+            "prompt":"prompt",
+            "query":"",
+            "response":"completion"
+        },
+        "test":{
+            "prompt":"content",
+            "query":"",
+            "response":"summary"
+        }
+    },
+    "dpo":{}
+}
