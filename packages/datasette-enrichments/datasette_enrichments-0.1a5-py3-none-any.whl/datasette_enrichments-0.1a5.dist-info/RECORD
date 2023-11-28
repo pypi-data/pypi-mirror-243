@@ -1,0 +1,12 @@
+datasette_enrichments/__init__.py,sha256=ZHcNKrAF3hVNTbM3ozS9IxgXWBU6V0-VWG1434XTLaY,9634
+datasette_enrichments/hookspecs.py,sha256=_N2HIhtdBtWXhri9lj3KOLWCdIRI9QZxCMpvovuMwlE,213
+datasette_enrichments/utils.py,sha256=T8IM844mBeJH7O-0Y8O3zOgyDb_2dBMOUJTB9lhQaWA,410
+datasette_enrichments/views.py,sha256=FFJ-VCpVojHNBqh2NkQ3kmhGoPCiHNPZthOCJhb_7aE,5761
+datasette_enrichments/templates/enrichment.html,sha256=vqghvvUhSmR1rxb7KsCmoiFw7G_j9zW6h4WcYcWFx6Y,2125
+datasette_enrichments/templates/enrichment_picker.html,sha256=T8V7WXczu-V9-IzkJa1VwGHWFQsFltCsOz9ZGrwS5-8,859
+datasette_enrichments-0.1a5.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+datasette_enrichments-0.1a5.dist-info/METADATA,sha256=JiCBtCajIdb1v26fe96sv-Vmm4bAAonwiGzT7d8zySU,2481
+datasette_enrichments-0.1a5.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+datasette_enrichments-0.1a5.dist-info/entry_points.txt,sha256=Al00PLfE_L4V5SY0OIQnQuEpQlqMWqEwednyX6gDrD0,48
+datasette_enrichments-0.1a5.dist-info/top_level.txt,sha256=K33UIYTs1Yp6w0pvqlZ7sULchtgwsMMfj6TOMlBQpZk,22
+datasette_enrichments-0.1a5.dist-info/RECORD,,
