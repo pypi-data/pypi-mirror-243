@@ -1,0 +1,90 @@
+name: CI
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  unittest:
+    name: Unit tests - ${{ matrix.PYTHON_VERSION }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
+    strategy:
+      fail-fast: false
+      matrix:
+        PYTHON_VERSION: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+    services:
+      postgres:
+        image: postgres:11
+        env:
+          POSTGRES_DB: minimalkv_test
+          POSTGRES_PASSWORD: minimalkv_test
+          POSTGRES_USER: minimalkv_test
+    env:
+      SIMPLEKV_CI: 1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Conda env
+        uses: mamba-org/setup-micromamba@db1df3ba9e07ea86f759e98b575c002747e9e757
+        with:
+          environment-file: environment.yml
+          cache-environment: true
+          create-args: >-
+            python=${{ matrix.PYTHON_VERSION }}
+      # For some reason we can't check for $ACTIONS_ID_TOKEN_REQUEST_URL
+      # from the `if` condition in the next step.
+      # See this commit: https://github.com/simonbohnen/minimalkv/commit/775c74c1b1248245d66c2be69476e18acda9f2fe
+      # and this run: https://github.com/simonbohnen/minimalkv/actions/runs/3444175584/jobs/5746499674
+      # It appears that the variable is not accessible from the env context.
+      - name: Check if ID Token generation is enabled
+        id: check-id-token
+        run: |
+          if [[ -z "${ACTIONS_ID_TOKEN_REQUEST_URL}" ]]; then
+            echo "ID Token generation is not enabled"
+            exit 1
+          fi
+        continue-on-error: true
+      - id: google_auth
+        if: steps.check-id-token.outcome == 'success'
+        name: "Authenticate to Google Cloud"
+        uses: google-github-actions/auth@v1
+        with:
+          workload_identity_provider: "projects/498651197656/locations/global/workloadIdentityPools/qc-minimalkv-gh-actions-pool/providers/github-actions-provider"
+          service_account: "sa-github-actions@qc-minimalkv.iam.gserviceaccount.com"
+          token_format: "access_token"
+      - name: Run the unittests
+        shell: bash -x -l {0}
+        run: |
+          pip install --no-deps .
+          docker-compose up -d
+          while ! docker exec mysql mysqladmin status -h 127.0.0.1 -u minimalkv_test --password=minimalkv_test; \
+            do sleep 3; done
+          pytest -n auto --dist loadfile -rs --cov=minimalkv --cov-report=xml
+          python -m build
+      - name: Publish package
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags') && matrix.PYTHON_VERSION == '3.10'
+        uses: pypa/gh-action-pypi-publish@v1.8.10
+        with:
+          user: __token__
+          password: ${{ secrets.pypi_password }}
+      - uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+
+  pre-commit-checks:
+    name: "Pre-commit checks"
+    runs-on: ubuntu-latest
+    env:
+      PRE_COMMIT_USE_MICROMAMBA: 1
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+      - name: Set up micromamba
+        uses: mamba-org/setup-micromamba@db1df3ba9e07ea86f759e98b575c002747e9e757
+      - name: Add micromamba to GITHUB_PATH
+        run: echo "${HOME}/micromamba-bin" >> "$GITHUB_PATH"
+      - name: Install Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Run pre-commit checks
+        uses: pre-commit/action@v3.0.0
