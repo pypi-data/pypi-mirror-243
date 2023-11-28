@@ -1,0 +1,2 @@
+[console_scripts]
+pydise = pydise.detector:run
