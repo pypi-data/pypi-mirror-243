@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: celery-spider
+Version: 0.1.0
+Summary: spider build on celery
+License: MIT
+Author: streamer
+Author-email: streamer.lai@unisco.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: bson (>=0.5.10,<0.6.0)
+Requires-Dist: celery (>=5.3.4,<6.0.0)
+Requires-Dist: pymongo (==3.12.3)
+Requires-Dist: pytz (>=2023.3.post1,<2024.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+# celery_spider
+this is a network spider built on celery
+
