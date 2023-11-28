@@ -1,0 +1,4 @@
+[console_scripts]
+luma=lumaCLI.main:app
+lumaCLI=lumaCLI.main:print_did_you_mean_luma
+
