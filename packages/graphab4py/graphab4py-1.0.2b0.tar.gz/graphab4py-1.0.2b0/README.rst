@@ -1,0 +1,54 @@
+.. image:: /docs/img/Ga4Py.png
+   :width: 600
+   :align: center
+   :alt: Graphab4py Logo
+   
+
+=====
+About
+=====
+This package provides a Python interface to the program `Graphab <https://sourcesup.renater.fr/www/graphab/en/home.html/>`_. The author(s) of this Python package are not developing Graphab. Rather, Graphab is an independent software which provides a graphical user interface, as well as a command line interface. Further information on Graphab can be found `here <https://sourcesup.renater.fr/www/graphab/en/home.html>`_.
+
+=============
+Prerequisites
+=============
+In order to install and use Graphab4py, `Python <https://www.python.org>`_ >= 3.9 and `Java <https://www.java.com>`_ >= 8 are both required. It is also recommended to have `pip <https://pip.pypa.io/en/stable/installation/>`_ available to install the latest version of Graphab4py. Graphab is not required but can be installed through Graphab4py. Alternatively, an existing Graphab Java executable can be set up for use in Graphab4py.
+
+============
+Installation
+============
+Graphab4Py is available on `PyPI <https://pypi.org/project/graphab4py>`_. To install Graphab4Py, simply run the following line:
+
+.. code-block:: console
+   
+   pip install graphab4py
+   
+
+=======
+Example
+=======
+.. code-block:: python
+   
+   import graphab4py
+   graphab4py.set_graphab("/home/rca/opt/")
+   graphab4py.set_graphab("/home/rca/opt/")
+   prj = graphab4py.Project()
+   
+   prj.create_project(
+       name = "MyProject", patches = "/home/rca/dat/pat/Patches.tif",
+       habitat = 1, directory = "/home/rca/prj"
+       )
+   
+   prj.create_linkset(
+       disttype = "cost",
+       linkname = "L1",
+       threshold = 1000,
+       cost_raster = "/home/rca/dat/res/resistance_surface.tif"
+       )
+   
+   prj.create_graph(graphname = "G1")
+   
+=======
+License
+=======
+This is free and unencumbered software released into the public domain, as declared in the `LICENSE <https://github.com/ManuelPopp/graphab4py/blob/main/LICENSE>`_ file.

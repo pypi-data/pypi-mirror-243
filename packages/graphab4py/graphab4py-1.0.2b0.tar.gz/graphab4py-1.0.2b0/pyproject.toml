@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "graphab4py"
+authors = [
+  { name="Manuel R. Popp", email="requests@cdpopp.de" },
+]
+description = "A Python package to execute Graphab analyses."
+readme = "README.rst"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+	"Development Status :: 4 - Beta",
+    "License :: OSI Approved :: The Unlicense (Unlicense)",
+    "Operating System :: OS Independent",
+]
+dynamic = [
+    "version",
+    "dependencies",
+    "keywords"
+    ]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["*"]
+namespaces = false
+
+[project.urls]
+"Homepage" = "https://github.com/manuelpopp/graphab4py"
+"Issues" = "https://github.com/manuelpopp/graphab4py/issues"
