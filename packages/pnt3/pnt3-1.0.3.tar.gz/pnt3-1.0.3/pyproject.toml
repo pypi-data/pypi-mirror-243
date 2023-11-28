@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "pnt3"
+version = "1.0.3"
+description = "\"pnt3” - calculating the degree of similarity between geometric figures of different shapes (by 3 points)"
+authors = ["Boris Kravtsov <kravtsov.development@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+opencv-python-headless = "^4.8.1.78"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
