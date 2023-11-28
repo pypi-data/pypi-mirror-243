@@ -1,0 +1,17 @@
+powerBIParser/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+powerBIParser/README.md,sha256=2iUzP1AJk8Z1t-G5t8XQ9GcsautAtLSQwoOnI4E70Qc,697
+powerBIParser/__init__.py,sha256=wijEjgSeFFtJoVeLCXdJWSkL_HcqgcF0Hs5Ykw0yk7s,869
+powerBIParser/field.py,sha256=_dxmDCh6WLvnqnmb7EVNKzh8NUw69aQRjDap6bNH5Nw,474
+powerBIParser/fieldInterface.py,sha256=0LNmg8KU0QZ6pMwvzWqDjrf7mg4Oia3usNFyM3qsckk,1110
+powerBIParser/measure.py,sha256=pyUmEjdefH2s6KIVUyDdIppdlfave13vhGT3knd4HmQ,1224
+powerBIParser/pbiDatasetParser.py,sha256=RgnNJClbkD3zZdTmwkI1q2ZWGPCr9_LmILHruR7lk4M,1023
+powerBIParser/pbiItemParser.py,sha256=KXdlseQzp315iPMe49IId70MmKD_m2wJaHsBxSw1TWo,1359
+powerBIParser/pbiReportParser.py,sha256=HH0Po0qfn3kEWrOB6M_GyLL8BJnpHKavAt048Tg5KGY,1604
+powerBIParser/relationship.py,sha256=MnACtXJQ3DVZU5iyoEmreRLMgiwVgpI_s2oYggvPbOY,1497
+powerBIParser/section.py,sha256=1jCRK1iu3ifKHNCVtprnLNFVH9UodYtUOrfGL0X9zbI,2593
+powerBIParser/table.py,sha256=sf3JA96RouftP6RFO8eA8mU3yHvd8wmnztPOhd9U0wg,1082
+powerbi_parser-1.0.5.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+powerbi_parser-1.0.5.dist-info/METADATA,sha256=J-2KFa0K4Mguba2Y9nVITnf0iWYvKbUS3TdENQwgNZQ,1000
+powerbi_parser-1.0.5.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+powerbi_parser-1.0.5.dist-info/top_level.txt,sha256=CQShv72E10V-hQam4C_Eip1hC3euZsKNPCOakXmjJro,14
+powerbi_parser-1.0.5.dist-info/RECORD,,
