@@ -1,0 +1,231 @@
+Metadata-Version: 2.1
+Name: kiara
+Version: 0.5.5
+Summary: Data-centric workflow orchestration.
+Author-email: Markus Binsteiner <markus@frkl.io>
+License: MPL-2.0
+Project-URL: homepage, https://github.com/DHARPA-Project/kiara
+Project-URL: documentation, https://dharpa.org/kiara.documentation
+Project-URL: repository, https://github.com/DHARPA-Project/kiara
+Keywords: kiara
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: anyio>=3.7.0
+Requires-Dist: appdirs<2.0.0,>=1.4.4
+Requires-Dist: bidict>=0.21.0
+Requires-Dist: boltons>=21.0.0
+Requires-Dist: click>=8.1.6
+Requires-Dist: makkus.dag-cbor<0.4.0,>=0.3.4
+Requires-Dist: deepdiff<7.0.0,>=6.0.0
+Requires-Dist: distro>=1.6.0
+Requires-Dist: dpath>=2.0.0
+Requires-Dist: docstring_parser>=0.15.0
+Requires-Dist: email-validator>=1.3.1
+Requires-Dist: fasteners>=0.18
+Requires-Dist: filetype<2.0.0,>=1.0.0
+Requires-Dist: httpx>=0.23.0
+Requires-Dist: humanfriendly>=10.0
+Requires-Dist: importlib-metadata<7.0.0,>=3.0.0.0
+Requires-Dist: jinja2>=3.0.1
+Requires-Dist: patool>=1.12
+Requires-Dist: mistune>=3.0.0
+Requires-Dist: mmhash3>=3.0.1
+Requires-Dist: makkus.multiformats<0.3.0,>=0.2.4
+Requires-Dist: makkus.multiformats-config<0.3.0,>=0.2.2
+Requires-Dist: networkx<4.0,>=3.0
+Requires-Dist: orjson>=3.8.10
+Requires-Dist: pp-ez>=0.2.0
+Requires-Dist: puremagic>=1.15
+Requires-Dist: pydantic<3.0.0,>=2.0.0
+Requires-Dist: pydantic-settings>=2.0.0
+Requires-Dist: pytz>=2022.6
+Requires-Dist: pyzmq>=25.0.0
+Requires-Dist: regex>=2022.4.0
+Requires-Dist: rich>=12.4.0
+Requires-Dist: rich-click<1.8.0,>=1.7.0
+Requires-Dist: ruamel.yaml<0.19.0,>=0.18.0
+Requires-Dist: sortedcontainers>=2.4.0
+Requires-Dist: stevedore<6.0.0,>=5.0.0
+Requires-Dist: structlog>=21.5.0
+Requires-Dist: tzlocal<6.0,>=2.1
+Provides-Extra: all-plugins
+Requires-Dist: kiara_plugin.core_types; extra == "all-plugins"
+Requires-Dist: kiara_plugin.tabular; extra == "all-plugins"
+Requires-Dist: kiara_plugin.onboarding; extra == "all-plugins"
+Requires-Dist: kiara_plugin.network_analysis; extra == "all-plugins"
+Requires-Dist: kiara_plugin.language_processing; extra == "all-plugins"
+Requires-Dist: kiara_plugin.html; extra == "all-plugins"
+Requires-Dist: kiara_plugin.jupyter; extra == "all-plugins"
+Requires-Dist: kiara_plugin.streamlit; extra == "all-plugins"
+Provides-Extra: dev-documentation
+Requires-Dist: icecream>=2.1.0; extra == "dev-documentation"
+Requires-Dist: jupyter; extra == "dev-documentation"
+Requires-Dist: mike>=1.0.1; extra == "dev-documentation"
+Requires-Dist: mkdocs-awesome-pages-plugin>=2.5.0; extra == "dev-documentation"
+Requires-Dist: mkdocs-literate-nav>=0.4.0; extra == "dev-documentation"
+Requires-Dist: mkdocs-macros-plugin<1.1.0,>=0.7.0; extra == "dev-documentation"
+Requires-Dist: mkdocs-material>=8.0.0; extra == "dev-documentation"
+Requires-Dist: mkdocs-section-index>0.3.0; extra == "dev-documentation"
+Requires-Dist: mkdocstrings[python]>=0.18; extra == "dev-documentation"
+Requires-Dist: mkdocs-gen-files>=0.3.1; extra == "dev-documentation"
+Provides-Extra: dev-testing
+Requires-Dist: coveralls>=3.2.0; extra == "dev-testing"
+Requires-Dist: flake8>=3.8.4; extra == "dev-testing"
+Requires-Dist: jsonschema>=4.0.0; extra == "dev-testing"
+Requires-Dist: mypy>=0.800; extra == "dev-testing"
+Requires-Dist: pandas-stubs; extra == "dev-testing"
+Requires-Dist: pytest>=6.2.2; extra == "dev-testing"
+Requires-Dist: pytest-cov>=2.11.1; extra == "dev-testing"
+Requires-Dist: pytest-html>=3.1.0; extra == "dev-testing"
+Requires-Dist: pytest-xdist>=3.2.1; extra == "dev-testing"
+Requires-Dist: tox>=3.21.2; extra == "dev-testing"
+Requires-Dist: types-Deprecated; extra == "dev-testing"
+Requires-Dist: types-PyYAML; extra == "dev-testing"
+Requires-Dist: types-pkg-resources; extra == "dev-testing"
+Requires-Dist: types-python-dateutil; extra == "dev-testing"
+Requires-Dist: types-pytz; extra == "dev-testing"
+Requires-Dist: types-tzlocal; extra == "dev-testing"
+Requires-Dist: types-orjson; extra == "dev-testing"
+Requires-Dist: types-Pygments; extra == "dev-testing"
+Requires-Dist: types-Markdown; extra == "dev-testing"
+Requires-Dist: types-humanfriendly; extra == "dev-testing"
+Requires-Dist: types-setuptools; extra == "dev-testing"
+Requires-Dist: sqlalchemy-stubs; extra == "dev-testing"
+Provides-Extra: dev-utils
+Requires-Dist: kiara_plugin.core_types; extra == "dev-utils"
+Requires-Dist: kiara_plugin.tabular; extra == "dev-utils"
+Requires-Dist: kiara_plugin.develop; extra == "dev-utils"
+Requires-Dist: build; extra == "dev-utils"
+Requires-Dist: flake8>=3.8.4; extra == "dev-utils"
+Requires-Dist: ipython; extra == "dev-utils"
+Requires-Dist: mypy>=0.800; extra == "dev-utils"
+Requires-Dist: pandas-stubs; extra == "dev-utils"
+Requires-Dist: pip-licenses>=3.3.0; extra == "dev-utils"
+Requires-Dist: pre-commit>=2.9.3; extra == "dev-utils"
+Requires-Dist: pytest>=6.2.2; extra == "dev-utils"
+Requires-Dist: pytest-xdist>=3.2.1; extra == "dev-utils"
+Requires-Dist: setup-cfg-fmt>=1.16.0; extra == "dev-utils"
+Requires-Dist: ruff>=0.0.272; extra == "dev-utils"
+Requires-Dist: types-Deprecated; extra == "dev-utils"
+Requires-Dist: types-PyYAML; extra == "dev-utils"
+Requires-Dist: types-pkg-resources; extra == "dev-utils"
+Requires-Dist: types-python-dateutil; extra == "dev-utils"
+Requires-Dist: types-pytz; extra == "dev-utils"
+Requires-Dist: types-tzlocal; extra == "dev-utils"
+Requires-Dist: types-orjson; extra == "dev-utils"
+Requires-Dist: types-Pygments; extra == "dev-utils"
+Requires-Dist: types-Markdown; extra == "dev-utils"
+Requires-Dist: types-humanfriendly; extra == "dev-utils"
+Requires-Dist: types-humanfriendly; extra == "dev-utils"
+Requires-Dist: types-setuptools; extra == "dev-utils"
+Requires-Dist: sqlalchemy-stubs; extra == "dev-utils"
+Requires-Dist: watchgod>=0.6; extra == "dev-utils"
+Requires-Dist: wheel; extra == "dev-utils"
+Provides-Extra: doc
+Requires-Dist: airium>=0.2.5; extra == "doc"
+Requires-Dist: black>=22.3.0; extra == "doc"
+Requires-Dist: jupytext>=1.14.0; extra == "doc"
+Requires-Dist: mkdocstrings>=0.18.0; extra == "doc"
+Provides-Extra: jupyter
+Requires-Dist: jupyterlab; extra == "jupyter"
+Requires-Dist: pygraphviz; extra == "jupyter"
+Requires-Dist: ipydagred3; extra == "jupyter"
+
+[![PyPI status](https://img.shields.io/pypi/status/kiara.svg)](https://pypi.python.org/pypi/kiara/)
+[![PyPI version](https://img.shields.io/pypi/v/kiara.svg)](https://pypi.python.org/pypi/kiara/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/kiara.svg)](https://pypi.python.org/pypi/kiara/)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FDHARPA-Project%2Fkiara%2Fbadge%3Fref%3Ddevelop&style=flat)](https://actions-badge.atrox.dev/DHARPA-Project/kiara/goto?ref=develop)
+[![Coverage Status](https://coveralls.io/repos/github/DHARPA-Project/kiara/badge.svg?branch=develop)](https://coveralls.io/github/DHARPA-Project/kiara?branch=develop)
+[![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+
+# kiara
+
+*A data-centric workflow orchestration framework.*
+
+ - *kiara* user documentation: [https://dharpa.org/kiara.documentation](https://dharpa.org/kiara.documentation/)
+ - Code: [https://github.com/DHARPA-Project/kiara](https://github.com/DHARPA-Project/kiara)
+ - Development documentation for this repo: [https://dharpa.org/kiara](https://dharpa.org/kiara)
+
+## Description
+
+*Kiara* is the data orchestration engine developed by the DHARPA project. It uses a modular approach
+to let users re-use tried and tested data orchestration pipelines, as well as create new ones from existing building
+blocks. It also helps you manage your research data, and augment it with automatically-, semi-automatically-, and manually-
+created metadata. Most of this is not yet implemented.
+
+## Development
+
+### Requirements
+
+- Python (version >=3.6 -- some make targets only work for Python >=3.7, but *kiara* itself should work on 3.6)
+- pip, virtualenv
+- git
+- make
+- [direnv](https://direnv.net/) (optional)
+
+
+### Prepare development environment
+
+```console
+git clone https://github.com/DHARPA-Project/kiara.git
+cd kiara
+python3 -m venv .venv
+source .venv/bin/activate
+make init
+```
+
+If you use [direnv](https://direnv.net/), you can alternatively do:
+
+``` console
+git clone https://github.com/DHARPA-Project/kiara.git
+cd kiara
+cp .envrc.disabled .envrc
+direnv allow
+make init
+```
+
+*Note*: you might want to adjust the Python version in ``.envrc`` (should not be necessary in most cases though)
+
+### ``make`` targets
+
+- ``init``: init development project (install project & dev dependencies into virtualenv, as well as pre-commit git hook)
+- ``update-modules``: update default kiara modules package from git
+- ``flake``: run *flake8* tests
+- ``mypy``: run *mypy* tests
+- ``test``: run unit tests
+- ``docs``: create static documentation pages (under ``build/site``)
+- ``serve-docs``: serve documentation pages (incl. auto-reload) for getting direct feedback when working on documentation
+- ``clean``: clean build directories
+
+For details (and other, minor targets), check the ``Makefile``.
+
+
+### Running tests
+
+``` console
+> make test
+# or
+> make coverage
+```
+
+
+## Copyright & license
+
+This project is MPL v2.0 licensed, for the license text please check the [LICENSE](/LICENSE) file in this repository.
+
+- Copyright (c) 2021, 2022 [DHARPA project](https://dharpa.org)
+- Copyright (c) 2021, 2022 Markus Binsteiner
