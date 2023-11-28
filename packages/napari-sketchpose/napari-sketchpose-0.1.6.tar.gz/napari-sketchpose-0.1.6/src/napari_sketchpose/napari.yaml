@@ -1,0 +1,43 @@
+name: napari-sketchpose
+display_name: Sketchpose
+contributions:
+  commands:
+    - id: napari-sketchpose.get_reader
+      python_name: napari_sketchpose._reader:napari_get_reader
+      title: Open data with Sketchpose
+    - id: napari-sketchpose.write_multiple
+      python_name: napari_sketchpose._writer:write_multiple
+      title: Save multi-layer data with Sketchpose
+    - id: napari-sketchpose.write_single_image
+      python_name: napari_sketchpose._writer:write_single_image
+      title: Save image data with Sketchpose
+    - id: napari-sketchpose.make_sample_data
+      python_name: napari_sketchpose._sample_data:make_sample_data
+      title: Load sample data from Sketchpose
+    - id: napari-sketchpose.make_qwidget
+      python_name: napari_sketchpose._widget:Dessin
+      title: Make example QWidget
+    - id: napari-sketchpose.make_magic_widget
+      python_name: napari_sketchpose._widget:example_magic_widget
+      title: Make example magic widget
+    - id: napari-sketchpose.make_func_widget
+      python_name: napari_sketchpose._widget:example_function_widget
+      title: Make example function widget
+  readers:
+    - command: napari-sketchpose.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy']
+  writers:
+    - command: napari-sketchpose.write_multiple
+      layer_types: ['image*','labels*']
+      filename_extensions: []
+    - command: napari-sketchpose.write_single_image
+      layer_types: ['image']
+      filename_extensions: ['.npy']
+  sample_data:
+    - command: napari-sketchpose.make_sample_data
+      display_name: Sketchpose
+      key: unique_id.1
+  widgets:
+    - command: napari-sketchpose.make_qwidget
+      display_name: Sketchpose

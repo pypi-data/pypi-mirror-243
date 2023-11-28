@@ -1,0 +1,16 @@
+numpy
+magicgui
+qtpy
+cellpose-omni==0.9.1
+omnipose==0.4.4
+pyqtgraph==0.13.3
+matplotlib
+light-the-torch
+
+[testing]
+tox
+pytest
+pytest-cov
+pytest-qt
+napari
+pyqt5
