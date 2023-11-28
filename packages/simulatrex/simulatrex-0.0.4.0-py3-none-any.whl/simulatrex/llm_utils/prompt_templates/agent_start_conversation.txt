@@ -1,0 +1,12 @@
+Given the agent {name}, a {age}-year-old {gender} {persona} of {ethnicity} ethnicity, who speaks {language} and has memories such as {core_memories}.
+
+Here are the last thoughts:
+{agent_thoughts}
+
+Here is the current environment context:
+{environment.context}
+
+And here are the relationship to other another agent:
+{agent_relationships}
+
+Craft a conversation message.
