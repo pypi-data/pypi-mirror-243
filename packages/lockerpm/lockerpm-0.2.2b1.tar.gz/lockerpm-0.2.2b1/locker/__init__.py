@@ -1,0 +1,56 @@
+from __future__ import absolute_import, division, print_function
+
+import os
+import platform
+import sys
+import requests
+
+# from .__about__ import (
+#     __version__
+# )
+
+
+ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
+
+
+home_dir = os.path.expanduser("~")
+locker_dir = os.path.join(home_dir, ".locker")
+binary_version = "1.0.22"
+binary_file_path = os.path.join(locker_dir, f"locker_binary-{binary_version}")
+
+
+if sys.platform == "darwin":
+    if platform.processor() == "arm":
+        binary_url = f"https://s.locker.io/download/locker-cli-mac-arm64-{binary_version}"
+    else:
+        binary_url = f"https://s.locker.io/download/locker-cli-mac-x64-{binary_version}"
+elif sys.platform == "win32":
+    binary_url = f"https://s.locker.io/download/locker-cli-win-x64-{binary_version}.exe"
+    binary_file_path = os.path.join(locker_dir, f"locker_binary-{binary_version}.exe")
+else:
+    binary_url = f"https://s.locker.io/download/locker-cli-linux-x64-{binary_version}"
+
+
+# Check if the .locker directory exists, and create it if not
+if not os.path.exists(locker_dir):
+    os.makedirs(locker_dir)
+
+# Download binary file
+if not os.path.exists(binary_file_path):
+    r = requests.get(binary_url, stream=True)
+    if r.ok:
+        print("saving to", os.path.abspath(binary_file_path))
+        with open(binary_file_path, 'wb') as f:
+            for chunk in r.iter_content(chunk_size=1024 * 8):
+                if chunk:
+                    f.write(chunk)
+                    f.flush()
+                    os.fsync(f.fileno())
+    # HTTP status code 4XX/5XX
+    else:
+        print("Download failed: status code {}\n{}".format(r.status_code, r.text))
+
+
+# Locker Python client bindings
+from locker.client import Locker
+
