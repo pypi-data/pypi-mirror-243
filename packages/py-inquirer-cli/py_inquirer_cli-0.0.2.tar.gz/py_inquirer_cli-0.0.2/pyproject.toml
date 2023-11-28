@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "py-inquirer-cli"
+version = "0.0.2"
+description = "A Python module for collection of common interactive command line user interfaces, based on Inquirer.js"
+authors = ["Oyetoke Toby <oyetoketoby80@gmail.com>"]
+readme = "README.rst"
+license = "MIT"
+packages = [{include = "PyInquirer"}]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+pygments = "^2.17.2"
+prompt-toolkit = "^3.0.41"
+
+
+[tool.poetry.group.dev.dependencies]
+testfixtures = "^7.2.2"
+pytest = "^7.4.3"
+pytest-cov = "^4.1.0"
+pytest-html = "^4.1.1"
+pytest-xdist = "^3.5.0"
+pylint = "^3.0.2"
+ptyprocess = "^0.7.0"
+regex = "^2023.10.3"
+twine = "^4.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
