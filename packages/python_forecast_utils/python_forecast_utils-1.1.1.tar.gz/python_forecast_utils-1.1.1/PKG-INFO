@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: python_forecast_utils
+Version: 1.1.1
+Summary: Expose features for python forecast projects
+Home-page: https://github.com/lemonde/python-forecast/python-forecast-utils
+License: Apache-2.0
+Author: Baptiste Geffrault
+Author-email: bgeffrault@outlook.fr
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: numpy (>=1.23.0,<2.0.0)
+Requires-Dist: requests (>=2.28.2,<3.0.0)
+Requires-Dist: scikit-learn (>=1.3.0,<2.0.0)
+Project-URL: Repository, https://github.com/lemonde/python-forecast/python-forecast-utils
+Description-Content-Type: text/markdown
+
+# Forecast utils
+
+Forecast utils expose custom features for `python-forecast` projects
+
+## Installation
+```bash
+pip install python_forecast_utils
+```
+
+## Usage
+```
+from python_forecast_utils import sqrt_transformer
+
+sqrt_transformer.SqrtTransformer()
+```
+
+## Development
+In order to add a new feature, add the feature into `forecast_utils` folder in its own file.
+If the feature uses packages add/check if the package is listed inside the `pyproject.toml`
+
+To add a new package:
+`poetry add <PACKAGE>`
+
+Then install all the dependencies:
+`poetry install`
+
+To add tests to anew feature, add a file to `tests` folder prefixed with `test_`.
+
+To run the tests:
+`poetry run pytest`
+
+## Package deployment
+To deploy on pypi, make sure to update the version inside `pyproject.toml`, then :
+`poetry build`
+`poetry publish`
+
+PS: curretly link to bgeffrault@outlook.fr account, but an organization creation is in progress
+
+### Documentation
+Additional documentation https://python-poetry.org/
+
