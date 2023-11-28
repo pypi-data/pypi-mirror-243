@@ -1,0 +1,22 @@
+[project]
+name = "django_rest_exception_handler"
+version = "1.0"
+authors = [
+  { name="Joe Philip", email="joe.philip@hotmail.co.in" },
+]
+description = "The Django REST Framework Exception Handler is a Python package designed to streamline exception handling within Django REST Framework applications. It ensures a consistent format for error responses by structuring them in a predefined JSON format"
+readme = "README.md"
+requires-python = ">=3.8.16"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/joe-philip/django_rest_exception_handler.git"
+Issues = "https://github.com/joe-philip/django_rest_exception_handler.git/issues"
+
+[build-system]
+requires = ["djangorestframework>=3.14.0", "toml"]
+build-backend = "hatchling.build"
