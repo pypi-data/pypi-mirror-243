@@ -1,0 +1,12 @@
+setup.py
+SySApp.egg-info/PKG-INFO
+SySApp.egg-info/SOURCES.txt
+SySApp.egg-info/dependency_links.txt
+SySApp.egg-info/not-zip-safe
+SySApp.egg-info/requires.txt
+SySApp.egg-info/top_level.txt
+sysapp/__init__.py
+sysapp/adv_module.c
+sysapp/adv_module.py
+sysapp/dll.c
+sysapp/dll.py
