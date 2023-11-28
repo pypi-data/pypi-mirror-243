@@ -1,0 +1,4 @@
+[console_scripts]
+icoanalyzer = icolyzer.analyzer:main
+icoconverter = icolyzer.converter:main
+icoplotter = icolyzer.plotter:main
