@@ -1,0 +1,8 @@
+setup.py
+cpat_audit.egg-info/PKG-INFO
+cpat_audit.egg-info/SOURCES.txt
+cpat_audit.egg-info/dependency_links.txt
+cpat_audit.egg-info/top_level.txt
+cpataudit/__init__.py
+cpataudit/auditoria.py
+cpataudit/collector.py
