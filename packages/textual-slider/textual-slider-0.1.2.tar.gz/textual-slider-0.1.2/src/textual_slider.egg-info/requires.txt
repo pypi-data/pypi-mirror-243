@@ -1,0 +1,10 @@
+textual>=0.42.0
+
+[dev]
+black
+flake8
+isort
+mypy
+pytest
+pytest-cov
+textual-dev
