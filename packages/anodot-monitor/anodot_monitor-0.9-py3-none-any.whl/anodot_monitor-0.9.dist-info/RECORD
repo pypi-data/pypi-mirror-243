@@ -1,0 +1,13 @@
+anodot_monitor/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+anodot_monitor/anodot_reporter.py,sha256=TEHFNH9tC-488Tg1vZzqsYVAesqyjEqK3AALp1-0nxA,3913
+anodot_monitor/base_properties.py,sha256=fB6iHWnU3SRUPaPxkUtkoNB8b0vm_GqkZl65wNuWGNc,212
+anodot_monitor/metric_name.py,sha256=ViHe1DIzVRFqnS-Qb5C4rPuJzocJrh_0Ayoe0cUrkS4,1319
+anodot_monitor/metric_registry.py,sha256=C8dVkrOUwwBFbnb38Am-k83soAFWhy_H_dpANBuPgNA,9060
+anodot_monitor/metrics_adapter.py,sha256=wqnwHiRnn7w28B98ZhtqoD61PzbbeMl-QT1TZq4Gkrw,5462
+anodot_monitor/reporting_client.py,sha256=GvtUeWpk6EK8TpInTixf-_ph5xaDCGdufCRQJSfZDps,789
+anodot_monitor/settings.py,sha256=nrxoglQKAGTb9Zkk7rzoTlZ7AnAFmcNiR2mfMB6QCdc,321
+anodot_monitor-0.9.dist-info/LICENSE,sha256=Sa3PnqOTU8YlQY48OmoPH6NhgUVGCuvaXMsippDr3fc,1063
+anodot_monitor-0.9.dist-info/METADATA,sha256=2q5Nibe7DN82_ensMcdf_0gaknGob9wJj-ZURJwUeVc,276
+anodot_monitor-0.9.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+anodot_monitor-0.9.dist-info/top_level.txt,sha256=EbRg38L_22MId1pLoKctLB__IgRIVreojgBKriZM1WY,15
+anodot_monitor-0.9.dist-info/RECORD,,
