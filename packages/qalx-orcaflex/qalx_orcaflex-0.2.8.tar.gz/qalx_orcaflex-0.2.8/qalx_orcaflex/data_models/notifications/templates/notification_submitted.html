@@ -1,0 +1,9 @@
+<h1>Batch {batch_name} of {number_of_jobs} jobs has been submitted.</h1>
+<p>
+    The batch was submitted to a queue with name {batch_queue_name} by {created_by}. The code below can be used to load the batch into python.
+</p>
+<code>
+    <p>>>> from qalx_orcaflex.core import QalxOrcaFlex<br />
+    >>> qfx = QalxOrcaFlex()<br />
+    >>> batch = qfx.group.get('{batch_guid}')</p>
+</code>
