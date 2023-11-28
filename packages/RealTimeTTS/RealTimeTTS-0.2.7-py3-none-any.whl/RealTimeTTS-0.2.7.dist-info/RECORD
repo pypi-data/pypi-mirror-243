@@ -1,0 +1,15 @@
+RealtimeTTS/__init__.py,sha256=0rfsPdQdUIFa2Tsv6fREoZ95BXINtn6_zGbx5huR4CQ,262
+RealtimeTTS/stream_player.py,sha256=JjzZFIEWa-L_ga6WvcT_Pkzt8iK4KNC07a6JHN0AjQM,7996
+RealtimeTTS/text_to_stream.py,sha256=J4mcZx2e3A7Gv4UdRig3aeQMfbHhxSRtMGftxuybRr4,19080
+RealtimeTTS/threadsafe_generators.py,sha256=EGWySeCB1mFE1oSznPO1X_TyYK1rU-JHYwdthn8WVbM,10314
+RealtimeTTS/engines/__init__.py,sha256=WBNlGxpZCt3OCBN-XGSyLDm2z-i2M7yeeR1sl8AosmY,245
+RealtimeTTS/engines/azure_engine.py,sha256=MZ7gxmkeQo-5ahkGuPvfkWXMnzmJkom2T2JY0y2YJMw,9386
+RealtimeTTS/engines/base_engine.py,sha256=Si7Puy9nKlul0naDi2EMCWTltGxzfQLYnYqasQIcqoU,3497
+RealtimeTTS/engines/coqui_default_voice.json,sha256=4feCM6x3aZ64-vT15y0saX4xDXcNwq1Hgqx42k9HLvQ,505425
+RealtimeTTS/engines/coqui_engine.py,sha256=5hUYB4N3EHID4pv7uO6OaBPMctW-P6omJYJCkeFe7n8,21894
+RealtimeTTS/engines/elevenlabs_engine.py,sha256=FJbbNz5cc_SRLkqONicQQD4gocNoxVtE-wxJnlftFvc,10496
+RealtimeTTS/engines/system_engine.py,sha256=EXADibEeV9Y0Q_MFjiaIFhaxnE4vyH2pYYi28betoFA,4295
+RealTimeTTS-0.2.7.dist-info/METADATA,sha256=OhVkr6TyQ1a1P6jctDH-QRd7ECxhHEGP8YfqGx1Y-70,17197
+RealTimeTTS-0.2.7.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+RealTimeTTS-0.2.7.dist-info/top_level.txt,sha256=6mA-rM2q6RQ0F-BF8NsPDcyFvgPqG4pQqL6drgBYOz4,12
+RealTimeTTS-0.2.7.dist-info/RECORD,,
