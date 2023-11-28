@@ -1,0 +1,48 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: ["ubuntu-latest"]
+        python-version: ["3.10", "3.11", "3.12"]
+        experimental: [false]
+
+    env:
+      PYTHON_VERSION: ${{ matrix.python-version }}
+      OS: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup Conda Environment
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-variant: Mambaforge
+          miniforge-version: latest
+          use-mamba: true
+          python-version: ${{ matrix.python-version }}
+          environment-file: continuous_integration/environment.yaml
+          activate-environment: test-environment
+
+      - name: Install pygac-fdr
+        shell: bash -l {0}
+        run: |
+          pip install --no-deps -e  .
+
+      - name: Run unit tests
+        shell: bash -l {0}
+        run: |
+          pytest --cov=pygac_fdr pygac_fdr/tests --ignore=pygac_fdr/tests/test_end2end.py --cov-report=xml
+
+      - name: Upload unittest coverage
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          env_vars: OS,PYTHON_VERSION
