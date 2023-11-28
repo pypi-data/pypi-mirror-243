@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: enschema
+Version: 0.1.0
+Summary: An enhanced schema for validating Python objects. Builds on schema and adds merging and arithmetics
+License: MIT
+Author: Martin Baláž
+Author-email: martin.balaz@trojsten.sk
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: schema (>=0.7.5,<0.8.0)
+Description-Content-Type: text/markdown
+
+
