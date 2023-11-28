@@ -1,0 +1,14 @@
+numpy
+beartype
+multimethod
+
+[docs]
+sphinx
+sphinx-sitemap
+myst-parser
+sphinx-rtd-theme
+
+[test]
+pytest
+coverage
+pytest-cov
