@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+vendy/__init__.py
+vendy/__main__.py
+vendy.egg-info/PKG-INFO
+vendy.egg-info/SOURCES.txt
+vendy.egg-info/dependency_links.txt
+vendy.egg-info/entry_points.txt
+vendy.egg-info/requires.txt
+vendy.egg-info/top_level.txt
+vendy/third_party/__init__.py
+vendy/third_party/pip/__init__.py
+vendy/third_party/pip/from_pip.py
