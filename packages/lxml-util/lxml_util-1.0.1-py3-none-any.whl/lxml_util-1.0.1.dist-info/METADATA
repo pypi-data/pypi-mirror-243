@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: lxml-util
+Version: 1.0.1
+Summary: Utility library based on lxml
+Home-page: 
+Author: Karim S (Kas)
+Author-email: kascodeo@gmail.com
+License: MIT
+Project-URL: Documentation, https://lxml-util.readthedocs.io/
+Project-URL: Source, https://github.com/kascodeo/lxml-util
+Project-URL: Release notes, https://lxml-util.readthedocs.io/en/stable/releasenotes.html
+Keywords: lxml,util,lxmlutil,lxml-util,xml,python
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: lxml
+Provides-Extra: dists
+Requires-Dist: twine ; extra == 'dists'
+Requires-Dist: build ; extra == 'dists'
+Provides-Extra: docs
+Requires-Dist: furo ; extra == 'docs'
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinx-copybutton ; extra == 'docs'
+Requires-Dist: sphinx-inline-tabs ; extra == 'docs'
+Requires-Dist: sphinx-removed-in ; extra == 'docs'
+Requires-Dist: sphinxext-opengraph ; extra == 'docs'
+Provides-Extra: tests
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: tox ; extra == 'tests'
+
+# lxml-util
+Utility library extending the functionality of lxml library in python.
+
+
+## Overview
+
+This library is aimed to extend the funtionalities of lxml library for user 
+friendliness and for more capabilities.
+
+
+## More information
+
+- [Documentation](https://lxml-util.readthedocs.io/)
+  - [Quickstart](https://lxml-util.readthedocs.io/en/latest/quickstart.html)
+- [Contribute](https://lxml-util.readthedocs.io/en/latest/contribution.html)
+  - [Issues](https://github.com/kascodeo/lxml-util/issues)
+  - [Pull requests](https://github.com/kascodeo/lxml-util/pulls)
