@@ -1,0 +1,7 @@
+torch
+
+[dev]
+safetensors
+pytest
+tqdm
+pytest-dotenv
