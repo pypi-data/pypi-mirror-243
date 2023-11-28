@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+
+{% block title %}Reading &quot;{{ html_title }}&quot;{% endblock %}
+
+{% block body %}
+
+<table style="table-layout: fixed; border-spacing: 0; ">
+  <tr>
+    <td width="2px">
+      <img src="{{ url_for('static', filename='img/lute.png') }}" class="lutelogo_small" />
+    </td>
+    <td>
+      <a href="/" tabindex="-1" id="reading_home_link">Home</a>
+      {% if config.ENV == 'dev' %}
+      <span style="background-color: blue; color: white; margin: 2px; padding: 2px;">Dev environment</span>
+      {% endif %}
+    </td>
+  </tr>
+</table>
+
+<div id="read_pane_left">
+  <div id="reading-header">
+
+    <!-- Lacking css skills, so table layout to the rescue. -->
+    <table style="width: 100%">
+      <tr>
+        <td align="left">
+          <h2 style="margin: 0px;">
+            {% if prev10page != pagenum %}
+            <a id="navPrev10" href="/read/{{ book.id }}/page/{{ prev10page }}" title="page {{ prev10page }}" tabindex="-1">&#171;</a>
+            {% else %}
+            <span style="color: lightgrey;">&#171;</span>
+            {% endif %}
+
+            {% if prevpage != pagenum %}
+            <a id="navPrev" href="/read/{{ book.id }}/page/{{ prevpage }}" title="page {{ prevpage }}" tabindex="-1">&#8249;</a>
+            {% else %}
+            <span style="color: lightgrey;">&#8249;</span>
+            {% endif %}
+
+            {{ pagenum }}/{{ pagecount }}
+
+            {% if pagenum != pagecount %}
+            <a id="navNext" href="/read/{{ book.id }}/page/{{ nextpage }}" title="page {{ nextpage }}" tabindex="-1">&#8250;</a>
+            {% else %}
+            <span style="color: lightgrey;">&#8250;</span>
+            {% endif %}
+
+            {% if next10page != pagecount %}
+            <a id="navNext10" href="/read/{{ book.id }}/page/{{ next10page }}" title="page {{ next10page }}" tabindex="-1">&#187;</a>
+            {% else %}
+            <span style="color: lightgrey;">&#187;</span>
+            {% endif %}
+          </h2>
+        </td>
+        <td align="right">
+          {% if book.source_uri %}
+          <a href="{{ book.source_uri }}" target="_blank" tabindex="-1">
+            <img src="{{ url_for('static', filename='icn/external.png') }}" title="Show source URL" />
+          </a>
+          {% endif %}
+          <a id="editText" href="/read/editpage/{{ text.id }}" tabindex="-1">
+            <img src="{{ url_for('static', filename='icn/document--pencil.png') }}"
+                 title="Edit" alt="Edit" />
+          </a>
+          <img id="keyboard_shortcuts" style="margin-right:10px;"
+               src="{{ url_for('static', filename='icn/question-balloon.png') }}"
+               title="Keyboard shortcuts" />
+        </td>
+      </tr>
+    </table>
+
+    <hr />
+
+  </div>
+
+  {% if pagenum == 1 %}
+    <h2>{{ book.title }}</h2>
+  {% endif %}
+
+  <span id="textid" style="display:none">{{ textid }}</span>
+  <span id="show_highlights" style="display:none">{{ show_highlights|lower }}</span>
+
+  {# Hack for js translation keyboard shortcut. #}
+  <span id="translateURL" style="display:none">{{ dictionary_url }}</span>
+
+  <div id="thetext" {% if is_rtl %}dir="rtl"{% endif %}>
+    {% include 'read/sentences.html' %}
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      prepareTextInteractions();
+      add_status_classes();
+    });
+
+    let tooltip_help_hover_content = function (setContent) {
+      $.ajax({
+        url: `/read/keyboard_shortcuts`,
+        type: 'get',
+        success: function(response) {
+          setContent(response);
+        }
+      });
+    }
+
+    $("#keyboard_shortcuts").tooltip({
+      position: { my: 'left top+10', at: 'left bottom', collision: 'flipfit flip' },
+      show: { easing: 'easeOutCirc' },
+      content: function (setContent) { tooltip_help_hover_content(setContent); }
+    });
+  </script>
+
+  <div id="reading-footer"  style="text-align: center;">
+    <h2>
+      <form style="display:none"
+            id="setknown"
+            action="/read/{{ book.id }}/page/{{ pagenum }}/allknown/{{ pagenum }}"
+            method="post">
+      </form>
+      <a id="footerMarkRestAsKnown"
+         style="text-decoration: none; cursor: pointer;"
+         onclick="document.getElementById('setknown').submit(); return false;"
+         title="Mark rest as known, mark page as read" tabindex="-1">
+        <img src="{{ url_for('static', filename='icn/tick.png') }}" />
+      </a>
+
+      {% if pagenum != pagecount %}
+      &nbsp;
+      <form style="display:none"
+            id="knowntonext"
+            action="/read/{{ book.id }}/page/{{ pagenum }}/allknown/{{ pagenum + 1 }}"
+            method="post">
+      </form>
+      <a id="footerMarkRestAsKnownNextPage"
+         style="text-decoration: none; cursor: pointer;"
+         onclick="document.getElementById('knowntonext').submit(); return false;"
+         title="Mark rest as known, mark page as read, then go to next page"
+         tabindex="-1">
+        <img src="{{ url_for('static', filename='icn/tick.png') }}" />&#8250;
+      </a>
+      &nbsp;
+
+      <form style="display:none"
+            id="gotonext"
+            action="/read/{{ book.id }}/page/{{ pagenum }}/markread/{{ pagenum + 1 }}"
+            method="post">
+      </form>
+      <a id="footerNextPage"
+         style="text-decoration: none; cursor: pointer;"
+         onclick="document.getElementById('gotonext').submit(); return false;"
+         title="Mark page as read, then go to next page"
+         tabindex="-1">&#8250;</a>
+      {% endif %}
+    </h2>
+
+    {% if pagenum == pagecount %}
+    <h2>&#127881;</h2>
+    <p>
+      <a href="" tabindex="-1" onclick="$('#actionposter').submit(); return false;">Archive book</a> |
+      <a href="/" tabindex="-1">Home</a>
+    </p>
+
+    <form id="actionposter" method="post" action="/book/archive/{{ book.id }}"></form>
+    {% endif %}
+
+  </div>
+  
+</div>
+
+
+<div id="read_pane_right">
+    <iframe name="wordframe" id="wordframeid" class="rightreadingframe" src="about:blank" scrolling="auto"
+            style="height: 35%; width: 100%;" frameBorder="0">
+      Frame support required.
+    </iframe>
+
+    <iframe name="dictframe" id="dictframeid" class="rightreadingframe" src="about:blank" scrolling="auto"
+            style="height: 65%; width: 100%;" frameBorder="0">
+      Frame support required.
+    </iframe>
+</div>
+
+{% endblock %}

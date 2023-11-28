@@ -1,0 +1,395 @@
+{% for field_name, field_errors in form.errors.items() %}
+{% for error in field_errors %}
+<div class="flash-notice-narrow">{{ error }}</div>
+{% endfor %}
+{% endfor %}
+
+<form name="term_form" method="POST">
+  {{ form.hidden_tag() }}
+
+  <table id="term">
+  <tbody>
+
+    <tr id="languageSel"
+        {% if term.language_id is none and term.language is none %}
+        {# show the language select box. #}
+        {% else %}
+        style="display:none;"
+        {% endif %}>
+      <td>{{ form.language_id(class="form-control") }}</td>
+    </tr>
+
+    {{ form.original_text }}
+
+    <tr>
+      <td>
+        {{ form.text(class="form-control", value=(form.original_text.data or '')) }}
+      </td>
+      <td style="white-space: nowrap;">
+        <img src="{{ url_for('static', filename='icn/external.png') }}" title="Lookup" onclick="do_term_lookup()" />
+        <img src="{{ url_for('static', filename='icn/eye.png') }}" title="Images" onclick="do_image_lookup()" />
+      </td>
+    </tr>
+
+    {# Parents.  During setup this is replaced by tag-it. #}
+    <tr>
+      <td>
+        <ul id="parentslist" class="tags nomarginblock shorttaglist">
+          {% for p in form.parents %}
+          <li>{{ p.object_data }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+
+    <tr {% if hide_pronunciation %}style="display:none;"{% endif %}>
+      <td>
+        {{ form.romanization(class="form-control") }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>{{ form.translation }}</td>
+      <td><img class="zoomableTermImage" id="term_image" src="{{ form.current_image.object_data or '' }}" width="50px"/></td>
+    </tr>
+
+    <tr>
+      <td>
+        {{ form.status(class="form-control") }}
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        {{ form.current_image(class="form-control") }}
+      </td>
+    </tr>
+
+    {# Tags li entries are managed by tagit. #}
+    <tr>
+      <td>
+        <ul id="termtagslist" class="tags nomarginblock shorttaglist">
+          {% for t in form.term_tags %}
+          <li>{{ t.object_data }}</li>
+          {% endfor %}
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <td align="right">
+        <a href="" onclick="show_term_sentences(); return false;">Sentences</a>
+        <button id="submit" type="submit" class="btn btn-primary">Save</button>
+      </td>
+    </tr>
+
+  </tbody>
+  </table>
+
+</form>
+
+
+<script type="text/javascript">
+
+  // Preventing user navigating away by clicking on form parent tags.
+  // Done with monitor_form and form_changed vars.
+  // TODO zzfuture fix: acceptance tests for all interactions
+
+  // Only start monitoring the form for changes after everything has
+  // been initialized.  Tagit calls before/afterTagAdded etc during
+  // initialization of the form, and we don't want those changes to
+  // be treated as user-activated changes.
+  let monitor_form = false;
+
+  // Monitor state of form change (hacky, but seems to work).
+  let form_changed = false;
+
+  // This takes care of most controls, but not the tagit managed lists.
+  $("form :input").change(function() {
+    if (monitor_form)
+      form_changed = true;
+  });
+
+
+  let setup_parent_Tagit = function() {
+    // Note that Flask_WTF uses <fieldname>-{index}
+    // for mapping to and from FieldLists!
+    var prototypeFieldName = 'parents-__name__';
+    var fieldIndex = 0;
+
+    $('#parentslist').tagit(
+      {
+        placeholderText: 'Parents',
+        beforeTagAdded: function (_event, ui) {
+          fieldIndex++;
+          $(this).tagit({fieldName: prototypeFieldName.replace('__name__', fieldIndex)});
+        },
+        afterTagAdded: function (_event, ui) {
+          if (monitor_form) {
+            form_changed = true;
+          }
+        },
+        afterTagRemoved: function (_event, ui) {
+          if (monitor_form) {
+            form_changed = true;
+          }
+        },
+        onTagClicked: function (evt, ui) {
+          // Exit early if language not set - can't handle, too complicated.
+          if ($("#language_id").val() == "0") {
+            return;
+          }
+
+          if (form_changed) {
+            choice = confirm('You have unsaved changes, going to the parent will lose them.  Continue?');
+            if (! choice) {
+              return;
+            }
+          }
+
+          let clickedtagtext = $('#parentslist').tagit('tagLabel', ui.tag);
+          if (clickedtagtext == '')
+            return;
+
+          // alert("You clicked me: " + clickedtagtext);
+          // We should never reach this point if the lang is not set.
+          const langid = $("#language_id").val();
+          let url = '';
+          {% if embedded_in_reading_frame %}
+          url = `/read/termform/${langid}/${clickedtagtext}`;
+          {% else %}
+          url = `/term/editbytext/${langid}/${clickedtagtext}`;
+          {% endif %}
+          // alert('go to url ' + url);
+
+          window.location = url;
+        },
+
+        fieldName: prototypeFieldName.replace('__name__', 0),
+        allowSpaces: true,
+        autocomplete: {
+          source: function(request, response) {
+            const s = encodeURIComponent(request.term);
+            const langid = parseInt($('#language_id').val());
+            $.ajax({
+              url: `/term/search/${s}/${langid}`,
+              type: 'GET',
+              dataType: 'json',
+              minLength: 2,
+              success: function(data) {
+                arr = data.map(function(word) {
+                  let label = word.text;
+                  if (word.translation != null && word.translation != '') {
+                    label = `${label} (${word.translation})`;
+                  }
+                  const obj = {
+                    label: label,
+                    value: word.text,
+                    word: word.text,
+                    translation: word.translation
+                  };
+                  return obj;
+                });
+                response(arr, data);
+              } // end success
+            }) // end ajax
+          } // end source
+        } // end autocomplete
+      }
+    );  // end tagit
+  }
+
+
+  var TAGS = {{ tags | safe }};
+
+  let setup_term_tags_Tagit = function() {
+    // Note that Flask_WTF uses <fieldname>-{index}
+    // for mapping to and from FieldLists!
+    var prototypeFieldName = 'term_tags-__name__';
+    var fieldIndex = 0;
+    
+    let invalidChar = function(s) { return /[\uD800-\uDFFF]/.test(s); };
+
+    $('#termtagslist').tagit(
+      {
+        placeholderText: 'Tags',
+        beforeTagAdded: function (_event, ui) {
+          if (invalidChar(ui.tag.text())) {
+            return;
+          }
+          fieldIndex++;
+          $(this).tagit({fieldName: prototypeFieldName.replace('__name__', fieldIndex)});
+        },
+        availableTags: TAGS,
+        fieldName: prototypeFieldName.replace('__name__', 0)
+      });
+
+  };
+
+  // TODO zzfuture fix: check term autofocus
+  // lute.js should send an "autofocus" flag, I believe.
+  let handleAutofocus = function() {
+    const wordfield = $('#text');
+    const transfield = $('#translation');
+
+    if ($('#autofocus').val() != 'false') {
+      if (wordfield.val()) {
+        transfield.focus();
+      }
+      else {
+        wordfield.focus();
+      }
+    }
+
+  }
+  $(document).ready(function () {
+    setup_parent_Tagit();
+    setup_term_tags_Tagit();
+
+    // Approx good size for the text area:
+    $('#translation').css({'width': '500px', 'height': '43px'});
+
+    // Setup complete, can now start monitoring form.
+    monitor_form = true;
+
+    if (($('#text').val() ?? '') != '') {
+      do_term_lookup(false);
+    }
+  });
+
+  /** LOOKUPS */
+
+  var LANGUAGES = {{ language_dicts | safe }};
+
+  // Term lookups cycle through the available dictionaries in the language.
+  var termdictindex = 0;
+
+  let open_new_lookup_window = function(url) {
+    window.open(
+      url,
+      'otherwin',
+      'width=800, height=400, scrollbars=yes, menubar=no, resizable=yes, status=no'
+    );
+  };
+
+  let get_lookup_url = function(dicturl, term) {
+    let ret = dicturl;
+
+    // Terms are saved with zero-width space between each token;
+    // remove that for dict searches!
+    const zeroWidthSpace = '\u200b';
+    const sqlZWS = '%E2%80%8B';
+    const cleantext = term.
+          replaceAll(zeroWidthSpace, '').
+          replace(/\s+/g, ' ');
+    const searchterm = encodeURIComponent(cleantext).
+          replaceAll(sqlZWS, '');
+    ret = ret.replace('###', searchterm);
+    // console.log(ret);
+    return ret;
+  };
+
+
+  let do_image_lookup = function() {
+    const langid = $('#language_id').val();
+    const text = $('#text').val();
+
+    if (langid == null || langid == '' || parseInt(langid) == 0 || text == null || text == '') {
+      alert('Please select a language and enter the term.');
+      return;
+    }
+
+    let use_text = text;
+
+    // If there is a single parent, use that as the basis of the lookup.
+    // Get text for all parent tags.
+    // There is **likely** an easier way to get this with jquery!
+    let parentTags = [];
+    $('form input').each(
+      function(index) {
+        var input = $(this);
+        let n = input.attr('name');
+        // The parent tag inputs are created in setup_parent_Tagit,
+        // with name parents-{index}
+        if (typeof n !== "undefined" && n != null && n.startsWith('parents-')) {
+           parentTags.push(input.val());
+        }
+    });
+    let parent_text = null;
+    if (parentTags.length == 1)
+      use_text = parentTags[0];
+
+    const raw_bing_url = 'https://www.bing.com/images/search?q=###&form=HDRSC2&first=1&tsc=ImageHoverTitle';
+    const binghash = raw_bing_url.replace('https://www.bing.com/images/search?', '');
+    const url = `/bing/search/${langid}/${encodeURIComponent(use_text)}/${encodeURIComponent(binghash)}`;
+    top.frames.dictframe.location.href = url;
+    return;
+  }
+
+
+  /**
+   * Either open a new window, or show the result in the correct frame.
+   */
+  let show_lookup_page = function(dicturl, text, langid, allow_open_new_web_page = true) {
+
+    const is_bing = (dicturl.indexOf('www.bing.com') != -1);
+    if (is_bing) {
+      let use_text = text;
+      const binghash = dicturl.replace('https://www.bing.com/images/search?', '');
+      const url = `/bing/search/${langid}/${encodeURIComponent(use_text)}/${encodeURIComponent(binghash)}`;
+      top.frames.dictframe.location.href = url;
+      return;
+    }
+
+    // TODO zzfuture fix: fix_language_dict_asterisk
+    // The URL shouldn not be prepended with trash
+    // (e.g. "*http://" means "open an external window", while
+    // "http://" means "this can be opened in an iframe."
+    // Instead, each dict should have an "is_external" property.
+    const is_external = (dicturl.charAt(0) == '*');
+    if (is_external) {
+      if (!allow_open_new_web_page) {
+        console.log('Declining to open external web page.');
+        return;
+      }
+      dicturl = dicturl.slice(1);
+      const url = get_lookup_url(dicturl, text);
+      open_new_lookup_window(url);
+      return;
+    }
+
+    // Fallback: open in frame.
+    const url = get_lookup_url(dicturl, text);
+    top.frames.dictframe.location.href = url;
+  };
+
+
+  function do_term_lookup(allow_open_new_web_page = true) {
+    const langid = $('#language_id').val();
+    if (langid == null || langid == '' || parseInt(langid) == 0) {
+      alert('Please select a language.');
+      return;
+    }
+
+    const termdicts = LANGUAGES[langid].term;
+    const usedict = termdicts[termdictindex];
+    show_lookup_page(usedict, $('#text').val(), langid, allow_open_new_web_page);
+
+    termdictindex++;
+    if (termdictindex >= termdicts.length)
+      termdictindex = 0;
+  }
+
+  function show_term_sentences() {
+    const langid = $('#language_id').val();
+    const txt = $('#text').val();
+    // %E2%80%8B is the zero-width string.  The term is reparsed
+    // on the server, so this doesn't need to be sent.
+    const t = encodeURIComponent(txt).replaceAll('%E2%80%8B', '');
+    if (langid == '0' || t == '')
+      return;
+    const url = `/term/sentences/${langid}/${t}`;
+    top.frames.dictframe.location.href = url;
+  }
+
+</script>
