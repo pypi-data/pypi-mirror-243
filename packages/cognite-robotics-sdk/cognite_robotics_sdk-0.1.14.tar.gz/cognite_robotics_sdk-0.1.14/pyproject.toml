@@ -1,0 +1,33 @@
+[tool.poetry]
+authors = ["Cognite Robotics <robotics-team@cognite.com>"]
+description = "Cognite Robotics SDK"
+name = "cognite-robotics-sdk"
+packages = [
+    { include = "cognite_robotics", from = "." },
+    { include = "protos", from = "cognite_robotics" },
+]
+readme = "README.md"
+version = "0.1.14"
+
+[tool.poetry.dependencies]
+aiofiles = "^23.1.0"
+cognite-sdk = "^6.0.0"
+grpcio = "^1.58.0"
+protobuf = "^4.23.0"
+pydantic = "~2.5.1"
+python = "^3.8"
+python-dotenv = "^0.21.1"
+tenacity = "^8.2.2"
+
+[tool.poetry.dev-dependencies]
+datamodel-code-generator = "0.24.2"
+mypy = "1.7.0"
+pre-commit = "3.5.0"
+pytest = "7.4.2"
+pytest-asyncio = "0.21.1"
+types-aiofiles = "23.2.0.0"
+types-requests = "2.31.0.9"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core>=1.0.0"]
