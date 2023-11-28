@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: django_guard
+Version: 0.1.1
+Summary: 
+Author: svtter
+Author-email: svtter@163.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: django (<4.0)
+Requires-Dist: psutil (>=5.9.6,<6.0.0)
+Description-Content-Type: text/markdown
+
+# django-guard
+
+Disable new connection when memory usage is high.
+
+## Motivation
+
+Almost all server down developed by django framework was caused by exhausted memory.
+
+## Installation
+
+`pip install django_guard # not upload to pypi since 2023/11/27`
+
+## TODO
+
+- [ ] Upload to pypi
+- [ ] Add user documentation
+
