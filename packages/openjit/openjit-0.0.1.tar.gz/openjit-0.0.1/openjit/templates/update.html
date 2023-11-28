@@ -1,0 +1,27 @@
+{% extends 'base.htm' %}
+{% block title %}Modify Existing Card{% endblock %}
+{% block header %}
+<h1>Modify Existing Card</h1>
+{% endblock %}
+{% block main %}
+<section>
+    <p>To delete this card, click <a href="{{ url_for('kanban.delete', id=card.id) }}">here</a></p>
+    <form method="post">
+        <fieldset>
+            <legend>Card Details</legend>
+            <label for="lane_id">Lane</label><br>
+            <select name="lane_id" required>
+                {% for lane in lanes %}
+                <option value={{ lane.id }} {% if card.lane_id == lane.id %}selected{% endif %}>{{ lane.title }}</option>
+                {% endfor %}
+            </select><br>
+            <label for="title">Title</label><br>
+            <input name="title" type="text" value="{{ card.title }}" required><br>
+            <label for="description">Description</label><br>
+            <textarea name="description" rows=5 required>{{ card.description }}</textarea>
+            </fieldset>
+        <a href="{{ url_for('kanban.index') }}">Cancel</a>
+        <input type="submit" value="Create">
+    </form>
+</section>
+{% endblock %}

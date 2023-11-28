@@ -1,0 +1,6 @@
+include LICENSE
+include openjit/schema.sql
+graft openjit/static
+graft openjit/templates
+graft tests
+global-exclude *.pyc

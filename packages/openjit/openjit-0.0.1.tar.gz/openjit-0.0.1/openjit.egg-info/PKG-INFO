@@ -1,0 +1,112 @@
+Metadata-Version: 2.1
+Name: openjit
+Version: 0.0.1
+Summary: Kanban for Lean manufacturing.
+Author-email: Michael Czigler <michaelczigler@icloud.com>
+License: BSD 3-Clause License
+        
+        Copyright (c) 2023, Michael Czigler
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are met:
+        
+        1. Redistributions of source code must retain the above copyright notice, this
+           list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright notice,
+           this list of conditions and the following disclaimer in the documentation
+           and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+        AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+        IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE
+        FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+        DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+        SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+        CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+        OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: repository, https://github.com/mcpcpc/openjit
+Keywords: kanban,jit,lean,flask
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flask>=3.0.0
+Provides-Extra: dev
+Requires-Dist: coverage; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Provides-Extra: prod
+Requires-Dist: waitress; extra == "prod"
+
+# OpenJIT
+
+Kanban for Lean manufacturing (also called
+just-in-time manufacturing, abbreviated JIT).
+
+## Install
+
+### PyPI
+
+Install and update using pip:
+
+```shell
+pip install -U openjit
+```
+
+### Repository
+
+When using git, clone the repository and change your 
+present working directory.
+
+```shell
+git clone http://github.com/mcpcpc/openjit
+cd openjit/
+```
+
+Create and activate a virtual environment.
+
+```shell
+python3 -m venv venv
+source venv/bin/activate
+```
+
+Install LibreHTF to the virtual environment.
+
+```shell
+pip install -e .
+```
+
+## Deployment
+
+### Waitress
+
+Production WSGI via waitress.
+
+```shell
+pip install waitress
+waitress-serve --call openjit:create_app
+```
+
+## Test
+
+```shell
+python3 -m unittest
+```
+
+Run with coverage report.
+
+```shell
+coverage run -m unittest
+coverage report
+coverage html  # open htmlcov/index.html in a browser
+```
+
+## Resources
+
+* https://en.m.wikipedia.org/wiki/Kanban
