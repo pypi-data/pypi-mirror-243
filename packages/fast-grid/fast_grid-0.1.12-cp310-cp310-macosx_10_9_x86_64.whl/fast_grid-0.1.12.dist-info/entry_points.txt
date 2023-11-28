@@ -1,0 +1,2 @@
+[console_scripts]
+fast-grid = fast_grid.calculate_grid:cli
