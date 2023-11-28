@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+sp_cetesb_divadmin/__init__.py
+sp_cetesb_divadmin/lyr.py
+sp_cetesb_divadmin.egg-info/PKG-INFO
+sp_cetesb_divadmin.egg-info/SOURCES.txt
+sp_cetesb_divadmin.egg-info/dependency_links.txt
+sp_cetesb_divadmin.egg-info/top_level.txt
+sp_cetesb_divadmin/data/__init__.py
+sp_cetesb_divadmin/data/output/geo/sp_cetesb.7z
+sp_cetesb_divadmin/data/output/tab/tab_cetesb_agencias.csv
+sp_cetesb_divadmin/data/output/tab/tab_cetesb_municipios.csv
