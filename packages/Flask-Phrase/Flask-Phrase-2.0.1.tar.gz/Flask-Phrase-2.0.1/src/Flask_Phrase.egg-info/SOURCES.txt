@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/Flask_Phrase.egg-info/PKG-INFO
+src/Flask_Phrase.egg-info/SOURCES.txt
+src/Flask_Phrase.egg-info/dependency_links.txt
+src/Flask_Phrase.egg-info/requires.txt
+src/Flask_Phrase.egg-info/top_level.txt
+src/flask_phrase/__init__.py
+src/flask_phrase/flask_phrase.py

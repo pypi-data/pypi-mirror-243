@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Flask-Phrase"
+version = "2.0.1"
+authors = [
+  { name="Phrase", email="info@phrase.com" },
+]
+description = "Connect your Flask apps to Phrase with the powerful in-context-translation solution."
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+  "Environment :: Web Environment",
+  "Framework :: Flask",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Software Development :: Internationalization",
+  "Topic :: Software Development :: Localization",
+]
+dependencies = [
+  "flask",
+  'flask_babel',
+]
+
+[project.urls]
+"Homepage" = "https://github.com/phrase/Flask-Phrase"
+"Bug Tracker" = "https://github.com/phrase/Flask-Phrase/issues"
