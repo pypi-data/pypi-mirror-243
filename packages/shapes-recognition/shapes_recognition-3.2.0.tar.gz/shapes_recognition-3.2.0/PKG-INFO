@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: shapes-recognition
+Version: 3.2.0
+Summary: "shapes-recognition" is a test for a new recognition technology
+License: MIT
+Author: Boris Kravtsov
+Author-email: kravtsov.development@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: opencv-python-headless (>=4.8.1.78,<5.0.0.0)
+Requires-Dist: pnt2 (>=1.0.3,<2.0.0)
+Requires-Dist: pnt3 (>=1.0.3,<2.0.0)
+Requires-Dist: tqdm (>=4.66.1,<5.0.0)
+Description-Content-Type: text/markdown
+
+## SHAPES RECOGNITION
+**shapes recognition** is a New Recognition Technology
+
+### Installation
+```
+pip install shapes-recognition
+```
+### About "shapes-recognition"
+Recognition is an intrinsic property of the human intellect. Kids around two years old recognize shapes even if they differ in size and position or are severely deformed. 
+
+<p align="center"><img src="https://boriskravtsov.com/pypi/shapes.png"/>
+
+To simulate such recognition capability, we introduce the **shapes-recognition** library.
+
+[Here](https://kravtsov-development.medium.com/amazing-ai-tables-44af52c993a2) 
+we show how to use it. 
+
