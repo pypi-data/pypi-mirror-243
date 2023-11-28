@@ -1,0 +1,10 @@
+numpy
+pandas
+
+[extras]
+polars
+yfinance
+mplfinance
+
+[test]
+pytest
