@@ -1,0 +1,14 @@
+biocutils>=0.1.2
+numpy
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[optional]
+pandas
+
+[testing]
+setuptools
+pytest
+pytest-cov
+pandas
