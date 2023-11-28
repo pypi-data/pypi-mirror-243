@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: opsml-cli
+Version: 0.2.1
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+License-File: LICENSE.md
+Requires-Python: >=3.9, <3.12
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Homepage, https://github.com/shipt/opsml-cli
+Project-URL: Source Code, https://github.com/shipt/opsml-cli
+Project-URL: Issues, https://github.com/shipt/opsml-cli/issues
+
+# Opsml-cli
+
+[![Lints-Tests](https://github.com/shipt/opsml-cli/actions/workflows/lint-testing.yml/badge.svg)](https://github.com/shipt/opsml-cli/actions/workflows/lint-testing.yml)
+
+This package provides a python-installable CLI written in `Rust` for interacting with [opsml](https://github.com/shipt/opsml).
+
+## Installation
+
+### Using Poetry
+
+```bash
+poetry add opsml-cli
+```
+
+### Using Pip
+
+```bash
+pip install opsml-cli
+```
+
+## Commands
+
+To get a list of commands, run `opsml-cli help`.
+
+## Contributing
+If you'd like to contribute, be sure to check out our [contributing guide](./CONTRIBUTING.md)!
+
+Thanks goes to these phenomenal [projects and people](./ATTRIBUTIONS.md) and people for creating a great foundation to build from!
+
+<a href="https://github.com/shipt/opsml-cli/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=shipt/opsml-cli" />
+</a>
