@@ -1,0 +1,52 @@
+"""
+VCD (Video Content Description) library.
+
+Project website: http://vcd.vicomtech.org
+
+Copyright (C) 2023, Vicomtech (http://www.vicomtech.es/),
+(Spain) all rights reserved.
+
+VCD is a Python library to create and manage OpenLABEL content.
+VCD is distributed under MIT License. See LICENSE.
+"""
+
+import inspect
+import os
+import unittest
+from pathlib import Path
+
+from vcd import core
+
+from .test_config import check_openlabel, openlabel_version_name
+
+
+class TestBasic(unittest.TestCase):
+    ###########################################################
+    # ## From VCD4.2 to OpenLABEL 1.0.0
+    ###########################################################
+    def test_VCD420_to_OpenLABEL100_dmd(self):
+        vcd420_file_name = (
+            Path(__file__).parent.resolve() / "etc" / "vcd420_1_attm_03-08_ann.json"
+        )
+        vcd = core.OpenLABEL()
+        vcd.load_from_file(str(vcd420_file_name))
+
+        # Check equal to reference JSON
+        vcd_path = (
+            Path(__file__).parent.resolve()
+            / "etc"
+            / str(
+                openlabel_version_name
+                + "_"
+                + inspect.currentframe().f_code.co_name
+                + ".json"
+            )
+        )
+        self.assertTrue(check_openlabel(vcd, str(vcd_path)))
+
+
+if (
+    __name__ == "__main__"
+):  # This changes the command-line entry point to call unittest.main()
+    print("Running " + os.path.basename(__file__))
+    unittest.main()

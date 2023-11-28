@@ -1,0 +1,9 @@
+jsonschema>=3.2
+protobuf
+numpy>=1.22.0
+opencv-python
+scipy
+matplotlib
+pre-commit
+tox
+commitizen

@@ -1,0 +1,443 @@
+include:
+  - local: ".ci/pre-commit-autofix.yml"
+  - component: gitlab.com/vicomtech/info/cicd-components/code-quality/scan@~latest
+  - component: gitlab.com/vicomtech/info/cicd-components/sast/scan@~latest
+  - component: gitlab.com/vicomtech/info/cicd-components/secret-detection/scan@~latest
+
+stages:
+  - quality
+  - security
+  - report
+  - test
+  - build
+  - deploy
+  - release
+  - .not_used
+
+# Change pip's cache directory to be inside the project directory since we can
+# only cache local items.
+# variables:
+#   PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+# --- unused ---
+bandit-sast:
+  stage: .not_used
+brakeman-sast:
+  stage: .not_used
+eslint-sast:
+  stage: .not_used
+flawfinder-sast:
+  stage: .not_used
+kubesec-sast:
+  stage: .not_used
+gosec-sast:
+  stage: .not_used
+mobsf-android-sast:
+  stage: .not_used
+mobsf-ios-sast:
+  stage: .not_used
+nodejs-scan-sast:
+  stage: .not_used
+phpcs-security-audit-sast:
+  stage: .not_used
+pmd-apex-sast:
+  stage: .not_used
+security-code-scan-sast:
+  stage: .not_used
+sobelow-sast:
+  stage: .not_used
+spotbugs-sast:
+  stage: .not_used
+
+# --- quality ---
+# Style checks using pre-commit tool
+pre-commit:
+  stage: quality
+  tags:
+    - linux
+  extends: .pre-commit
+  image: $CI_REGISTRY_IMAGE/vcd_pre_commit
+  variables:
+    # PRE_COMMIT_HOME: ${CI_PROJECT_DIR}/.cache/pre-commit
+    PRE_COMMIT_AUTO_FIX: ""   # Prevent autofix commits due to permissions in vicom code analysis components
+    # PRE_COMMIT_DEBUG: "1"   # Uncomment this line to debug pre-commit job
+  # cache:
+  #   - key: pre-commit-cache
+  #     paths:
+  #       - ${PRE_COMMIT_HOME}
+  interruptible: true
+
+# Run code quality tool
+code_quality:
+  stage: quality
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_PROTECTED == "true"
+    - if: $CI_COMMIT_TAG
+  needs: []
+  interruptible: true
+
+# --- security ---
+# Base SAST Job
+sast:
+  stage: security
+
+# Run SAST vulnerability checks
+semgrep-sast:
+  stage: security
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_PROTECTED == "true"
+    - if: $CI_COMMIT_TAG
+  needs: []
+  interruptible: true
+
+# Run secret detection checks
+secret_detection:
+  stage: security
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_PROTECTED == "true"
+    - if: $CI_COMMIT_TAG
+  needs: []
+  after_script:
+    - echo "SECRETS_JOB_ID=$CI_JOB_ID" >> jobs.env
+  artifacts:
+    reports:
+        dotenv: jobs.env
+  interruptible: true
+
+# --- report ---
+# ## Run code analysis reports
+sast-report:
+  stage: report
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_PROTECTED == "true"
+    - if: $CI_COMMIT_TAG
+  needs:
+    - job: sast
+      optional: true
+    - job: semgrep-sast
+      optional: true
+  dependencies:
+    - sast
+    - semgrep-sast
+  after_script:
+    - echo "SAST_JOB_ID=$CI_JOB_ID" >> jobs.env
+  artifacts:
+    reports:
+        dotenv: jobs.env
+  interruptible: true
+
+code_quality_html:
+  stage: report
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_PROTECTED == "true"
+    - if: $CI_COMMIT_TAG
+  needs: []
+  after_script:
+    - echo "QUALITY_JOB_ID=$CI_JOB_ID" >> jobs.env
+  artifacts:
+    reports:
+        dotenv: jobs.env
+  interruptible: true
+
+
+# Default Job Configuration
+.default:
+  image: $CI_REGISTRY_IMAGE/vcd_ci:py_3.11
+  tags:
+    - linux
+  # Pip's cache doesn't store the python packages
+  # https://pip.pypa.io/en/stable/topics/caching/
+  #
+  # If you want to also cache the installed packages, you have to install
+  # them in a virtualenv and cache it as well.
+  # cache:
+  #   - key:
+  #     paths:
+  #       - .cache/pip
+  #       - venv/
+  # before_script:
+  #   - virtualenv venv
+  #   - source venv/bin/activate
+  rules:
+    # Default rules: run jobs on branch OR merge request pipelines
+    # Also in Tag pipelines
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+    - if: $CI_COMMIT_BRANCH && $CI_OPEN_MERGE_REQUESTS
+      when: never
+    - if: $CI_COMMIT_BRANCH
+    - if: $CI_COMMIT_TAG
+  interruptible: true
+
+
+# --- test ---
+# Run tests in different versions of Python
+unit_tests:
+  stage: test
+  extends: .default
+  image: registry.gitlab.com/vicomtech/v4/libraries/vcd/vcd-python/vcd_ci:py_$PYTHON_VERSION
+  parallel:
+    matrix:
+      - PYTHON_VERSION: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+  variables:
+    PYTHONPATH: "$CI_PROJECT_DIR"
+  script:
+    # - pip install tox
+    - tox -e py${PYTHON_VERSION//./} -- --cov-report=xml --junitxml=tests_report.xml
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  # cache:
+  #   - key: test-pip-cache-$PYTHON_VERSION
+  #     paths:
+  #       - .cache/pip
+  #       - venv/
+  #   - key: tests-cache-$PYTHON_VERSION
+  #     paths:
+  #       - .tox/
+  #       - .coverage
+  artifacts:
+    when: always
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+      junit: tests_report.xml
+  needs:
+    - job: pre-commit
+      artifacts: false
+      optional: true
+
+# Test that the documentation is build correctly
+docs_tests:
+  stage: test
+  extends: .default
+  script:
+    # - pip install pdoc3
+    # install vcd requirements to build the documentation
+    - pip install -r ./requirements.txt
+    # build the documentation
+    - pdoc --html --template-dir ./docs/pdoc_templates --output-dir ./docs/pdoc ./vcd --force
+  needs:
+    - job: pre-commit
+      artifacts: false
+      optional: true
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - !reference [.default, rules]
+
+
+# --- build ---
+# Build the VCD python package
+build_pkg:
+  stage: build
+  extends: .default
+  script:
+    # - pip install build setuptools_scm
+    - git status
+    - python -m build -w -s
+    - pip install dist/*.whl
+    - cp dist/*.whl $CI_PROJECT_DIR
+    - cp dist/*.tar.gz $CI_PROJECT_DIR
+    - PKG_VERSION=$(python -m setuptools_scm)
+    - echo PKG_VERSION=$PKG_VERSION >> pkg_env.env
+  artifacts:
+    name: "vcd-pkg"
+    paths:
+      - "*.whl"
+      - "*.tar.gz"
+    reports:
+      dotenv: pkg_env.env
+  needs:
+    - job: pre-commit
+      artifacts: false
+      optional: true
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == $CI_DEFAULT_BRANCH
+    - if: $CI_COMMIT_TAG
+
+# Verify that the git tag and the pkg version are the same
+build_tag_check:
+  stage: build
+  tags:
+    - linux
+  script:
+    - TAG_PARSED=$(echo "${CI_COMMIT_TAG}" | sed 's/^[^0-9]*//')
+    - |
+      if [[ "${PKG_VERSION//[-_]/.}" != "${TAG_PARSED//[-_]/.}" ]]; then
+        echo "Error: Package Version ($PKG_VERSION) and Git Tag Version ($CI_COMMIT_TAG)"
+        exit 1
+      else
+        echo "Success: Compatible Package Version ($PKG_VERSION) and Git Tag Version ($CI_COMMIT_TAG)"
+      fi
+    # Get Change Notes from changelog for this specific version if exist
+    - VERSION_RELEASE_NOTES=$(sed -n '/Version \['"$PKG_VERSION"'\]/,/Version/{/Version \['"$PKG_VERSION"'\]/b;/Version/b;p}' CHANGELOG.md | sed -e :a -e '/./,$!d;/^\n*$/{$d;N;};/\n$/ba')
+    - echo VERSION_RELEASE_NOTES=$VERSION_RELEASE_NOTES >> pkg_env.env
+    - echo "--- Version ${PKG_VERSION} Release Notes"
+    - echo "--- Release Notes ${VERSION_RELEASE_NOTES}"
+  artifacts:
+    reports:
+      dotenv: pkg_env.env
+  needs:
+    - job: build_pkg
+  rules:
+    # This Job only checks the version of the built pkg when a new tag is created
+    - if: $CI_COMMIT_TAG
+  interruptible: true
+
+
+.deploy:
+  extends: .default
+  needs:
+    - job: unit_tests
+      artifacts: false
+    - job: pages_check
+      artifacts: false
+    - job: build_pkg
+      artifacts: true
+    - job: build_tag_check
+      artifacts: true
+  rules:
+    - if: $CI_COMMIT_TAG
+
+
+# --- deploy ---
+# Generate the final documentatoin
+generate_docs:
+  stage: deploy
+  extends: .deploy
+  script:
+    # - pip install pdoc3
+    # install vcd requirements to build the documentation
+    - pip install -r ./requirements.txt
+    # build the documentation
+    - pdoc --html --template-dir ./docs/pdoc_templates --output-dir ./docs/pdoc ./vcd --force
+    # Add version string to Documentation
+    - sed -i 's/<h1>Index<\/h1>/<version\ id=\"version\"><p>VCD\ '"$CI_COMMIT_TAG"'<\/p><\/version><h1>Index<\/h1>/g' ./docs/pdoc/vcd/*
+    - mkdir -p public
+    # Create OpenLabel Schema file
+    - OPENLABEL_SCHEMA_VERSION=$(python -c "from  vcd.schema import openlabel_schema_version; print(openlabel_schema_version)")
+    - python -c "from  vcd.schema import openlabel_schema_version, openlabel_schema; import json; print(json.dumps(openlabel_schema, indent=4, sort_keys=False, ensure_ascii=False))" > openlabel_schema_v${OPENLABEL_SCHEMA_VERSION}.json
+    # Download previously stored documentation
+    - aws s3 sync s3://vcd-documentation/ ./public/
+    # Copy newly generated docs to public folder
+    - mkdir -p public/$CI_COMMIT_TAG
+    - cp ./docs/pdoc/* ./public/$CI_COMMIT_TAG -R
+    - cp ./openlabel_schema_v${OPENLABEL_SCHEMA_VERSION}.json ./public/$CI_COMMIT_TAG/
+    # Upload newly generated documentation to AWS store location
+    - aws s3 sync ./public/$CI_COMMIT_TAG s3://vcd-documentation/$CI_COMMIT_TAG
+    # Add redirects file
+    - cp ./docs/_redirects ./public
+    # Generate the latest folder
+    - mkdir -p public/latest
+    - cp ./docs/pdoc/* ./public/latest -R
+    - cp ./openlabel_schema_v${OPENLABEL_SCHEMA_VERSION}.json ./public/latest/
+    # To generate an index file for different versions
+    - tree -d -H '.' -L 1 --noreport --charset utf-8 -- public| sed -e '/<hr>/,+6d' | sed -e '4,6d' | sed -e 's/Directory Tree/VCD-Python Docs/' > public/index.html
+    # Add documentation images to be available publicly in README
+    - mkdir -p public/resources
+    - cp ./docs/logo/* ./public/resources -R
+  needs:
+    - job: pre-commit
+      artifacts: false
+      optional: true
+  artifacts:
+    paths:
+      - public
+
+# Publish documentation in Gitlab pages
+pages:
+  stage: deploy
+  script:
+    - echo "Upload documentation to Gitlab Pages"
+  artifacts:
+    paths:
+      - public
+  needs:
+    - job: generate_docs
+      artifacts: true
+  rules:
+    - if: $CI_COMMIT_TAG
+
+# Check the published documentation is accesible
+pages_check:
+  stage: deploy
+  extends: .deploy
+  script:
+    - echo $CI_PAGES_URL/$CI_COMMIT_TAG/vcd
+    - curl -If $CI_PAGES_URL/$CI_COMMIT_TAG/vcd
+  needs:
+    - job: pages
+      artifacts: false
+  rules:
+    - if: $CI_COMMIT_TAG
+
+# Upload the package to gitlab registry
+deploy_pkg_in_gitlab:
+  stage: deploy
+  extends: .deploy
+  variables:
+    TWINE_PASSWORD: ${CI_JOB_TOKEN}
+    TWINE_USERNAME: gitlab-ci-token
+  script:
+    # - pip install twine
+    - echo "Deploying package in GitLab Internal PyPi package registry"
+    - python -m twine upload --repository-url ${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi *.whl *.tar.gz
+    - WHEELNAME=$(basename *.whl)
+    - TARNAME=$(basename *.tar.gz)
+    - echo WHEELNAME=$WHEELNAME >> pkg_names.env
+    - echo TARNAME=$TARNAME >> pkg_names.env
+    - echo WHEELSHA256=$(sh -c 'sha256sum < "$1" | cut -d" " -f1' -- $WHEELNAME) >> pkg_names.env
+    - echo TARSHA256=$(sh -c 'sha256sum < "$1" | cut -d" " -f1' -- $TARNAME) >> pkg_names.env
+    - echo VERSION_RELEASE_NOTES=$VERSION_RELEASE_NOTES >> pkg_names.env
+  artifacts:
+    reports:
+      dotenv: pkg_names.env
+
+# Create new release in gitlab
+create_release:
+  stage: release
+  image: registry.gitlab.com/gitlab-org/release-cli:latest
+  extends: .deploy
+  before_script: []
+  cache: []
+  script:
+    - echo "Automatic Release $CI_COMMIT_TAG"
+    - echo "Commit Branch $CI_COMMIT_BRANCH "
+  release:
+    tag_name: $CI_COMMIT_TAG
+    name: "$CI_COMMIT_TAG"
+    description: "$VERSION_RELEASE_NOTES"
+    assets:
+      links:
+        - name: "documentation"
+          url: "$CI_PAGES_URL/$CI_COMMIT_TAG/vcd"
+        - name: "$WHEELNAME"
+          url: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi/files/$WHEELSHA256/$WHEELNAME#sha256=$WHEELSHA256"
+        - name: "$TARNAME"
+          url: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/pypi/files/$TARSHA256/$TARNAME#sha256=$TARSHA256"
+        - name: "code quality report"
+          url: https://gitlab.com/vicomtech/v4/libraries/vcd/vcd-python/-/jobs/$QUALITY_JOB_ID/artifacts/download?file_type=archive
+        - name: "code vulnerabilities report"
+          url: https://gitlab.com/vicomtech/v4/libraries/vcd/vcd-python/-/jobs/$SAST_JOB_ID/artifacts/download?file_type=archive
+        - name: "secret detection report"
+          url: https://gitlab.com/vicomtech/v4/libraries/vcd/vcd-python/-/jobs/$SECRETS_JOB_ID/artifacts/download?file_type=archive
+  needs:
+    - job: pages_check
+      artifacts: false
+    - job: deploy_pkg_in_gitlab
+    - job: code_quality_html
+    - job: sast-report
+    - job: secret_detection
+
+# When a new release is created, upload the final packages to PyPi registru
+# This is a manually triggered job
+deploy_pkg_pypi:
+  stage: release
+  extends: .deploy
+  variables:
+    TWINE_PASSWORD: ${PYPI_TOKEN}
+    TWINE_USERNAME: __token__
+  script:
+    # - pip install twine
+    - echo "Deploying package in PyPi Repository"
+    - python -m twine upload *.whl *.tar.gz
+  when: manual

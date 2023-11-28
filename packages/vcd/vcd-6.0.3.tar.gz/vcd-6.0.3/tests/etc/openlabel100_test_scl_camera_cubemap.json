@@ -1,0 +1,130 @@
+{
+    "openlabel": {
+        "metadata": {
+            "schema_version": "1.0.0"
+        },
+        "coordinate_systems": {
+            "vehicle-iso8855": {
+                "type": "local_cs",
+                "parent": "",
+                "children": [
+                    "CAM_CUBEMAP_FRONT",
+                    "CAM_FISHEYE_FRONT"
+                ]
+            },
+            "CAM_CUBEMAP_FRONT": {
+                "type": "sensor_cs",
+                "parent": "vehicle-iso8855",
+                "children": [],
+                "pose_wrt_parent": {
+                    "matrix4x4": [
+                        1.9435453608029155e-19,
+                        -0.1660445522491272,
+                        0.9861182518686016,
+                        3.45613,
+                        -6.123203151103962e-17,
+                        0.9861182518686016,
+                        0.16604455224912723,
+                        -0.120824,
+                        -1.0,
+                        -6.041429538395055e-17,
+                        -9.975588700192792e-18,
+                        0.577209,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                }
+            },
+            "CAM_FISHEYE_FRONT": {
+                "type": "sensor_cs",
+                "parent": "vehicle-iso8855",
+                "children": [],
+                "pose_wrt_parent": {
+                    "matrix4x4": [
+                        1.9435453608029155e-19,
+                        -0.1660445522491272,
+                        0.9861182518686016,
+                        3.45613,
+                        -6.123203151103962e-17,
+                        0.9861182518686016,
+                        0.16604455224912723,
+                        -0.120824,
+                        -1.0,
+                        -6.041429538395055e-17,
+                        -9.975588700192792e-18,
+                        0.577209,
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ]
+                }
+            }
+        },
+        "frames": {
+            "0": {
+                "frame_properties": {}
+            }
+        },
+        "frame_intervals": [
+            {
+                "frame_start": 0,
+                "frame_end": 0
+            }
+        ],
+        "streams": {
+            "CAM_CUBEMAP_FRONT": {
+                "description": "description",
+                "uri": "uri",
+                "type": "stream_type",
+                "stream_properties": {
+                    "intrinsics_cubemap": {
+                        "width_px": 1024,
+                        "height_px": 1024,
+                        "camera_matrix_3x4": [
+                            512.0000000000001,
+                            0,
+                            512.0,
+                            0,
+                            0,
+                            512.0000000000001,
+                            512.0,
+                            0,
+                            0,
+                            0,
+                            1,
+                            0
+                        ],
+                        "distortion_coeffs_1xN": []
+                    }
+                }
+            },
+            "CAM_FISHEYE_FRONT": {
+                "description": "description",
+                "uri": "uri",
+                "type": "stream_type",
+                "stream_properties": {
+                    "intrinsics_fisheye": {
+                        "width_px": 1344,
+                        "height_px": 968,
+                        "center_x": 660.621826,
+                        "center_y": 485.120575,
+                        "focal_length_x": 330.928619,
+                        "focal_length_y": 330.853607,
+                        "lens_coeffs_1xN": [
+                            0.977512,
+                            0.077642,
+                            0.011963,
+                            -0.006836,
+                            0.000613
+                        ],
+                        "model": "kannala",
+                        "projection": "Kannala"
+                    }
+                }
+            }
+        }
+    }
+}

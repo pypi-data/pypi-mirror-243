@@ -1,0 +1,23 @@
+FROM registry.gitlab.com/yesolutions/docker-pre-commit
+LABEL MAINTAINER jdortega@vicomtech.org
+
+RUN apt-get update && \
+    apt-get install -y --fix-missing --no-install-recommends \
+        curl \
+        gnupg \
+        software-properties-common \
+    && apt-get clean && rm -rf /tmp/* /var/tmp/* /var/cache/apt/archives/* /var/lib/apt/lists/*
+
+# RUN add-apt-repository ppa:git-core/ppa -y && \
+#     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys A1715D88E1DF1F24
+
+RUN curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
+
+RUN apt-get update && \
+    apt-get install -y --fix-missing --no-install-recommends \
+        git \
+        git-lfs \
+    && apt-get clean && rm -rf /tmp/* /var/tmp/* /var/cache/apt/archives/* /var/lib/apt/lists/*
+
+RUN python -m pip install --upgrade pip && \
+    pip install --upgrade pre-commit

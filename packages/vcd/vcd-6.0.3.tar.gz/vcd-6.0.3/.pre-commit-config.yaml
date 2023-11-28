@@ -1,0 +1,96 @@
+default_install_hook_types:
+- pre-commit
+- commit-msg
+
+repos:
+  # Some useful pre-commit hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+    - id: check-toml
+    - id: check-yaml
+      args: [--unsafe]
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
+      args: [--markdown-linebreak-ext=md]
+  # Remove unused imports and variables
+  - repo: https://github.com/PyCQA/autoflake
+    rev: v2.2.1
+    hooks:
+      - id: autoflake
+        exclude: tests/|tools/
+        args:
+          - --in-place
+          - --remove-all-unused-imports
+          - --expand-star-imports
+          - --remove-duplicate-keys
+          - --remove-unused-variables
+  # Fix any Python code from previous versions
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.15.0
+    hooks:
+    - id: pyupgrade
+      args: [--py37-plus]
+  # To sort imports
+  - repo: https://github.com/PyCQA/isort.git
+    rev: 5.12.0
+    hooks:
+    - id: isort
+      name: isort
+      args:
+      - --verbose
+      - --only-modified
+  # Use docformatter to format docstrings
+  - repo: https://github.com/PyCQA/docformatter
+    rev: v1.7.5
+    hooks:
+    - id: docformatter
+      args:
+      - --in-place
+      - --recursive
+      - --diff
+      - --pre-summary-newline
+      - --wrap-summaries=95
+      - --wrap-descriptions=95
+      - --black
+  # Black formats the Python code
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 23.11.0
+    hooks:
+    - id: black
+  # Check Code Style
+  - repo: https://github.com/PyCQA/flake8
+    rev: 6.1.0
+    hooks:
+      - id: flake8
+        additional_dependencies:
+          - flake8-annotations
+          - flake8-bandit
+          - flake8-bugbear
+          - flake8-future-annotations
+          - Flake8-pyproject
+          - flake8-type-checking
+          - flake8-use-fstring
+          - flake8-docstrings
+          - flake8-eradicate
+          - pep8-naming
+        exclude: tests/|tools/
+  - repo: https://github.com/PyCQA/pylint
+    rev: v3.0.1
+    hooks:
+      - id: pylint
+        exclude: tests/|tools/|update_version
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.7.1
+    hooks:
+      - id: mypy
+        additional_dependencies:
+          - numpy
+          - types-jsonschema
+        exclude: tools/
+  # Test Commit Message satisfies Conventional Commits Format
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: 3.12.0
+    hooks:
+    - id: commitizen
+      stages: [commit-msg]

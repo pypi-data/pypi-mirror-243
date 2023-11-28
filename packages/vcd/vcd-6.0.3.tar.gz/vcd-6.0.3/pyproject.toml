@@ -1,0 +1,234 @@
+[build-system]
+requires = ["setuptools >= 61.0", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vcd"
+authors = [
+    { name = "Marcos Nieto", email = "mnieto@vicomtech.org" },
+    { name = "Juan Diego Ortega", email = "jdortega@vicomtech.org" },
+    { name = "Jon Goenetxea", email = "jongoenetxea@vicomtech.org" }
+]
+description = "Video Content Description (VCD) library"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.8"
+dynamic = ["dependencies", "version"]
+
+[project.urls]
+Homepage = "https://vcd.vicomtech.org"
+Documentation = "https://vicomtech.gitlab.io/v4/libraries/vcd/vcd-python/latest/vcd/"
+Changelog = "https://vicomtech.gitlab.io/v4/libraries/vcd/vcd-python/latest/vcd/index.html#changelog"
+
+[project.license]
+file = "LICENSE"
+
+[tool.setuptools]
+zip-safe = false
+
+[tool.setuptools.dynamic]
+dependencies = { file = "requirements.txt" }
+
+[tool.setuptools.package-dir]
+vcd = "vcd"
+
+### Configuration for automatic version generation based on Git tags ---------------------
+[tool.setuptools_scm]
+write_to = "vcd/_version.py"
+
+### iSort Formatting ---------------------------------------------------------------------
+[tool.isort]
+profile = "black"
+
+### Black Configuration ------------------------------------------------------------------
+[tool.black]
+line-length = 90
+
+### Docformatter Configuration -----------------------------------------------------------
+[tool.docformatter]
+recursive = true
+pre-summary-newline = true
+wrap-summaries = 95
+wrap-descriptions = 95
+
+### MyPY ---------------------------------------------------------------------------------
+[tool.mypy]
+plugins = [
+    "numpy.typing.mypy_plugin"
+]
+ignore_missing_imports = true
+show_column_numbers = true
+
+
+### Flake8 Configuration -----------------------------------------------------------------
+[tool.flake8]
+extend_ignore = [
+    'E203', # whitespace before ':'
+    'W503', # line break before binary operator
+    # deactivate because double check
+    'E501', # line length B950 [flake8-bugbear]
+    "E722", # bare-except B001[flake8-bugbear]
+    # deactivate because unwanted
+    "E731", # forbids
+    # flake8-use-fstring
+    # deactivate because unwanted
+    "FS003",  # f-string missing prefix | can be % string
+    # flake8-bandit
+    # deactivate because double check
+    "S110",  # try-except-pass - SIM105[flake8-simplify]
+    # flake8-annotations
+    # deactivate because unwanted
+    "ANN101",  # Missing type annotation for self in method
+    "ANN102",  # Missing type annotation for cls in classmethod
+    # flake8-erradicate
+    "E800",  # Found Commented code (To remove in next versions)
+    # flake8-docstrings
+    "D1"    # Temporaly ignore docstring in all library (When documentation is complete enable this)
+]
+extend_select = [
+    'B950',  # Line too long with some flexibility
+    'TC',
+    'TC1',
+    "F841"
+]
+per_file_ignores = [
+    "**/utils.py:N80",  # Variables with capitals
+    "**/types.py:N801",  # Class name should use CamWords convention
+    # flake8-erradicate
+    "tests/*.py:E800",
+    "tools/*.py:E800",
+    # flake8-bandit
+    # deactivate because unwanted
+    "tests/*.py:S101", # assert used
+]
+ignore_names = [
+    '*4xN*',
+    '*3xN*',
+    '*2xN*',
+    '*1xN*',
+    '*Nx4*',
+    '*Nx3*',
+    '*ISO8601*',
+    '*q2R*'
+]
+max_line_length = 90
+max_complexity = 40
+max_cognitive_complexity = 10
+min_python_version = "3.8"
+exclude = ["schema.py", "update_version.py"]
+suppress_none_returning = true
+count = false
+
+### PyLint Configuration -----------------------------------------------------------------
+[tool.pylint.main]
+# Minimum Python version to use for version dependent checks. Will default to the
+# version used to run pylint.
+py-version = "3.8"
+# Load this C extension modules to prevent member errors
+extension-pkg-whitelist = "cv2"
+
+[tool.pylint.typecheck]
+# Add this exeptions to avoid E1101 with OpenCV in versions >=4.6
+generated-members = [
+    "cv.*",
+    "cv2.*"
+]
+
+[tool.pylint.format]
+# Maximum number of characters on a single line.
+max-line-length = 90
+
+[tool.pylint.reports]
+output-format = "colorized"
+
+[tool.pylint.design]
+# Maximum number of arguments for function / method.
+max-args = 12
+# Maximum number of locals for function / method body.
+max-locals = 30
+# Maximum number of attributes for a class.
+max-attributes = 12
+# Maximum number of statements in function / method body.
+max-statements = 120
+
+[tool.pylint.refactoring]
+# Maximum number of nested blocks for function / method body
+max-nested-blocks = 10
+
+[tool.pylint."messages control"]
+disable = [
+  # deactivate because double check
+  # https://github.com/PyCQA/pylint/issues/3512
+  "C0103",  # invalid-name - [pep8-naming]
+  "C0113",  # unneeded-not - F713[flake8]
+  "C0114",  # missing-module-docstring - D100,D104[flake8]
+  "C0115",  # missing-class-docstring - D101,D106[flake8]
+  "C0116",  # missing-function-docstring - D102,D103,D105[flake8]
+  "C0301",  # line-too-long - E501[pycodestyle]
+  "C0303",  # trailing-whitespace - W291,W293[falke8]
+  "C0304",  # missing-final-newline - W292[falke8]
+  "C0305",  # trailing-newlines - W291[falke8]
+  "C0321",  # multiple-statements - E701[falke8]
+  "C0411",  # wrong-import-order - I202[flake8]
+  "C0413",  # wrong-import-position - E402[flake8]
+  "E0602",  # undefined-variable - F821[flake8]
+  "R0912",  # too-many-branches - C901[flake8]
+  "W0301",  # unnecessary-semicolon - E703[flake8]
+  "W0311",  # bad-indentation - E111[flake8]
+  "W0611",  # unused-import - F401[flake8]
+  "W0612",  # unused-variable - F841[flake8]
+  "W0702",  # bare-except - E722[pycodestyle]
+  # deactivate because unwanted
+  "W0511",  # fixme
+  "R0903",  # too-few-public-methods
+  "E0401",  # import-error
+  # deactivate because of bugs
+  "W1203",  # Use % format in logger funcs | https://github.com/PyCQA/pylint/issues/2354
+]
+
+# Maximum number of lines in a module.
+max-module-lines = 5000
+
+
+### Towncrier Configuration for CHANGELOG generatrion ------------------------------------
+[tool.towncrier]
+package = "vcd"
+filename = "CHANGELOG.md"
+directory = ".changelog.d/"
+template = ".changelog.d/_template.jinja"
+start_string = "<!-- towncrier release notes start -->\n"
+underlines = ["", "", ""]
+title_format = "## Version [{version}](https://pypi.org/project/vcd/{version})"
+issue_format = "[#{issue}](https://gitlab.com/vicomtech/v4/libraries/vcd/vcd-python/-/issues/{issue})"
+# https://keepachangelog.com/en/1.0.0/
+[tool.towncrier.fragment.added]
+name = "Added"
+
+[tool.towncrier.fragment.changed]
+name = "Changed"
+
+[tool.towncrier.fragment.deprecated]
+name = "Deprecated"
+
+[tool.towncrier.fragment.removed]
+name = "Removed"
+
+[tool.towncrier.fragment.fixed]
+name = "Fixed"
+
+[tool.towncrier.fragment.security]
+name = "Security"
+
+[tool.towncrier.fragment.other]
+name = "Other"

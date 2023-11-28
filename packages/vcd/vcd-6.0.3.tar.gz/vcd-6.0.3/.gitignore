@@ -1,0 +1,24 @@
+# Recursively ignore
+*.egg
+*.egg-info/
+*.pyc
+.venv/
+.cache/
+.coverage*
+.eggs/
+.mypy_cache/
+.nox/
+.pytest_cache/
+.tox/
+__pycache__/
+build/
+dist/
+venv/
+envs/
+.idea
+.vscode
+jupyter/tutorial/.ipynb_checkpoints
+_version.py
+docs/pdoc
+coverage.xml
+tests_report.xml
