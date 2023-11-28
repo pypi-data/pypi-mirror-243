@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "newrelic-synthetic-python-client"
+version = "0.4.0"
+description = "NewRelic CLI"
+authors = ["Junkai Zhang <drink3y@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/Drinkey/newrelic-synthetic-python-client"
+repository = "https://github.com/Drinkey/newrelic-synthetic-python-client"
+
+
+packages = [
+    { include = "newrelic", from = "src" },
+]
+
+[tool.poetry.scripts]
+newrelic = "newrelic.cli.entrypoint:main"
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "primary"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.28.1"
+loguru = "^0.6.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.1.3"
+black = "^22.10.0"
+mypy = "^0.982"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
