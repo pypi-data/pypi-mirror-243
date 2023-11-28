@@ -1,0 +1,13 @@
+pyfunctional
+requests
+rich
+typer
+typing-extensions
+
+[personal]
+fastapi
+polyfactory
+pydantic
+selenium
+twilio
+uvicorn[standard]
