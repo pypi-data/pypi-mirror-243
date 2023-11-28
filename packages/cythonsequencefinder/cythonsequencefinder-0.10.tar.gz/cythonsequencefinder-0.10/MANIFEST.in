@@ -1,0 +1,3 @@
+include cythonsequencefinder/requirements.txt
+include cythonsequencefinder/thirdparty.json
+include cythonsequencefinder/README.MD

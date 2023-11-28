@@ -1,0 +1,14 @@
+LICENSE.rst
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+cythonsequencefinder/README.MD
+cythonsequencefinder/__init__.py
+cythonsequencefinder/requirements.txt
+cythonsequencefinder/thirdparty.json
+cythonsequencefinder.egg-info/PKG-INFO
+cythonsequencefinder.egg-info/SOURCES.txt
+cythonsequencefinder.egg-info/dependency_links.txt
+cythonsequencefinder.egg-info/requires.txt
+cythonsequencefinder.egg-info/top_level.txt
