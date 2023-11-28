@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: signature_mahalanobis_knn
+Version: 0.0.3
+Summary: Using Nearest Neighbour-Variance Norm with Path Signatures for anomaly detection of streams
+Project-URL: Homepage, https://github.com/datasig-ac-uk/signature_mahalanobis_knn
+Project-URL: Bug Tracker, https://github.com/datasig-ac-uk/signature_mahalanobis_knn/issues
+Project-URL: Discussions, https://github.com/datasig-ac-uk/signature_mahalanobis_knn/discussions
+Project-URL: Changelog, https://github.com/datasig-ac-uk/signature_mahalanobis_knn/releases
+Author-email: Zhen Shao <zhen.shao@maths.ox.ac.uk>, Ryan Chan <rchan@turing.ac.uk>
+License-File: LICENSE
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Classifier: Typing :: Typed
+Requires-Python: <3.12,>=3.8
+Requires-Dist: matplotlib
+Requires-Dist: numba
+Requires-Dist: numpy
+Requires-Dist: pynndescent
+Requires-Dist: scikit-learn
+Requires-Dist: sktime>=0.24.1
+Provides-Extra: dev
+Requires-Dist: pytest-cov>=3; extra == 'dev'
+Requires-Dist: pytest>=6; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: furo>=2023.08.17; extra == 'docs'
+Requires-Dist: myst-parser>=0.13; extra == 'docs'
+Requires-Dist: sphinx-autodoc-typehints; extra == 'docs'
+Requires-Dist: sphinx-copybutton; extra == 'docs'
+Requires-Dist: sphinx>=7.0; extra == 'docs'
+Provides-Extra: signatures
+Requires-Dist: esig; python_version < '3.10' and extra == 'signatures'
+Provides-Extra: test
+Requires-Dist: pytest-cov>=3; extra == 'test'
+Requires-Dist: pytest>=6; extra == 'test'
+Description-Content-Type: text/markdown
+
+# signature_mahalanobis_knn
+
+[![Actions Status][actions-badge]][actions-link]
+[![Documentation Status][rtd-badge]][rtd-link]
+[![PyPI version][pypi-version]][pypi-link]
+[![PyPI platforms][pypi-platforms]][pypi-link]
+[![GitHub Discussion][github-discussions-badge]][github-discussions-link]
+
+<!-- SPHINX-START -->
+
+<!-- prettier-ignore-start -->
+[actions-badge]:            https://github.com/datasig-ac-uk/signature_mahalanobis_knn/workflows/CI/badge.svg
+[actions-link]:             https://github.com/datasig-ac-uk/signature_mahalanobis_knn/actions
+[conda-badge]:              https://img.shields.io/conda/vn/conda-forge/signature_mahalanobis_knn
+[conda-link]:               https://github.com/conda-forge/signature_mahalanobis_knn-feedstock
+[github-discussions-badge]: https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github
+[github-discussions-link]:  https://github.com/datasig-ac-uk/signature_mahalanobis_knn/discussions
+[pypi-link]:                https://pypi.org/project/signature_mahalanobis_knn/
+[pypi-platforms]:           https://img.shields.io/pypi/pyversions/signature_mahalanobis_knn
+[pypi-version]:             https://img.shields.io/pypi/v/signature_mahalanobis_knn
+[rtd-badge]:                https://readthedocs.org/projects/signature_mahalanobis_knn/badge/?version=latest
+[rtd-link]:                 https://signature_mahalanobis_knn.readthedocs.io/en/latest/?badge=latest
+
+<!-- prettier-ignore-end -->
