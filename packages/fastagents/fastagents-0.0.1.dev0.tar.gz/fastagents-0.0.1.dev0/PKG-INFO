@@ -1,0 +1,78 @@
+Metadata-Version: 2.1
+Name: fastagents
+Version: 0.0.1.dev0
+Summary: A fast way to build AI agents for multiple platform
+Project-URL: Tracker, https://github.com/airtai/fastagents/issues
+Project-URL: Source, https://github.com/airtai/fastagents
+Project-URL: Discord, https://discord.gg/qFm6aSqq59
+Author-email: airt <info@airt.ai>
+License-File: LICENSE
+Keywords: agent,assistent,autogen,gpt-3.5,gpt-4,llm,multiple agents
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Internet
+Classifier: Topic :: Software Development
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Requires-Dist: google-api-python-client<3,>=2.70.0
+Requires-Dist: pyautogen<0.3,>=0.2.0
+Requires-Dist: pydantic>=2.0
+Provides-Extra: dev
+Requires-Dist: fastagents[devdocs,docs,lint,publish,testing]; extra == 'dev'
+Provides-Extra: devdocs
+Requires-Dist: cairosvg==2.7.1; extra == 'devdocs'
+Requires-Dist: mdx-include<2,>=1.4.1; extra == 'devdocs'
+Requires-Dist: mike<3,>=2; extra == 'devdocs'
+Requires-Dist: mkdocs-git-revision-date-localized-plugin>=1.2.0; extra == 'devdocs'
+Requires-Dist: mkdocs-glightbox==0.3.5; extra == 'devdocs'
+Requires-Dist: mkdocs-literate-nav>=0.6.0; extra == 'devdocs'
+Requires-Dist: mkdocs-macros-plugin>=1.0.0; extra == 'devdocs'
+Requires-Dist: mkdocs-material<10,>=9; extra == 'devdocs'
+Requires-Dist: mkdocs-minify-plugin==0.7.1; extra == 'devdocs'
+Requires-Dist: mkdocs-static-i18n<2,>=1; extra == 'devdocs'
+Requires-Dist: mkdocstrings[python]>=0.23.0; extra == 'devdocs'
+Requires-Dist: pillow==10.1.0; extra == 'devdocs'
+Requires-Dist: typer==0.9.0; extra == 'devdocs'
+Provides-Extra: docs
+Provides-Extra: lint
+Requires-Dist: bandit==1.7.5; extra == 'lint'
+Requires-Dist: black==23.11.0; extra == 'lint'
+Requires-Dist: detect-secrets==1.4.0; extra == 'lint'
+Requires-Dist: isort==5.12.0; extra == 'lint'
+Requires-Dist: mypy==1.7.1; extra == 'lint'
+Requires-Dist: pre-commit==3.5.0; extra == 'lint'
+Requires-Dist: pyupgrade-directories==0.3.0; extra == 'lint'
+Requires-Dist: ruff==0.1.6; extra == 'lint'
+Requires-Dist: semgrep==1.50.0; extra == 'lint'
+Requires-Dist: types-pyyaml; extra == 'lint'
+Requires-Dist: types-setuptools; extra == 'lint'
+Requires-Dist: types-ujson; extra == 'lint'
+Provides-Extra: publish
+Requires-Dist: hatch==1.7.0; extra == 'publish'
+Provides-Extra: test-core
+Requires-Dist: coverage[toml]==7.3.2; extra == 'test-core'
+Requires-Dist: pytest-asyncio==0.21.1; extra == 'test-core'
+Requires-Dist: pytest==7.4.3; extra == 'test-core'
+Provides-Extra: testing
+Requires-Dist: fastagents[test-core]; extra == 'testing'
+Requires-Dist: pytest-recording; extra == 'testing'
+Requires-Dist: pyyaml; extra == 'testing'
+Description-Content-Type: text/markdown
+
+# FastAgents
+
+A fast way to build AI agents for multiple platform such as [autogen](https://github.com/microsoft/autogen).
