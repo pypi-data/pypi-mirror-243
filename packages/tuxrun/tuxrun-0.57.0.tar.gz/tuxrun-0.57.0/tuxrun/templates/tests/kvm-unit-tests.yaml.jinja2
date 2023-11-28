@@ -1,0 +1,14 @@
+- test:
+    timeout:
+      minutes: {{ timeout }}
+    definitions:
+    - repository: {{ test_definitions }}
+      lava-signal: kmsg
+      from: url
+      compression: zstd
+      path: automated/linux/kvm-unit-tests/kvm-unit-tests.yaml
+      name: kvm-unit-tests
+      parameters:
+        SKIP_INSTALL: True
+        SMP: True
+
