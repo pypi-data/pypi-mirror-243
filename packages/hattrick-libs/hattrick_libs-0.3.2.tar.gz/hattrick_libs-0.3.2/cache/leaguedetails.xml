@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HattrickData>
+  <FileName>leaguedetails.xml</FileName>
+  <FileUri>?file=leaguedetails&version=1.6&leagueLevelUnitID=4206</FileUri>
+  <Version>1.6</Version>
+  <UserID>9034788</UserID>
+  <FetchedDate>2023-11-16 22:48:25</FetchedDate>
+  <LeagueID>46</LeagueID>
+  <LeagueName>Schweiz</LeagueName>
+  <LeagueLevel>1</LeagueLevel>
+  <MaxLevel>7</MaxLevel>
+  <LeagueLevelUnitID>4206</LeagueLevelUnitID>
+  <LeagueLevelUnitName>Nationalliga A</LeagueLevelUnitName>
+  <CurrentMatchRound>5</CurrentMatchRound>
+  <Rank>1</Rank>
+  <Team>
+    <UserId>407079</UserId>
+    <TeamID>174580</TeamID>
+    <TeamName>De-Luxe United Manchester</TeamName>
+    <Position>1</Position>
+    <PositionChange>0</PositionChange>
+    <Matches>4</Matches>
+    <GoalsFor>28</GoalsFor>
+    <GoalsAgainst>4</GoalsAgainst>
+    <Points>12</Points>
+    <Won>4</Won>
+    <Draws>0</Draws>
+    <Lost>0</Lost>
+  </Team>
+  <Team>
+    <UserId>13275708</UserId>
+    <TeamID>250207</TeamID>
+    <TeamName>FC Laupen Rockets</TeamName>
+    <Position>2</Position>
+    <PositionChange>1</PositionChange>
+    <Matches>4</Matches>
+    <GoalsFor>17</GoalsFor>
+    <GoalsAgainst>4</GoalsAgainst>
+    <Points>9</Points>
+    <Won>3</Won>
+    <Draws>0</Draws>
+    <Lost>1</Lost>
+  </Team>
+  <Team>
+    <UserId>6231510</UserId>
+    <TeamID>471659</TeamID>
+    <TeamName>BSC Niedersimmental</TeamName>
+    <Position>3</Position>
+    <PositionChange>2</PositionChange>
+    <Matches>4</Matches>
+    <GoalsFor>21</GoalsFor>
+    <GoalsAgainst>4</GoalsAgainst>
+    <Points>7</Points>
+    <Won>2</Won>
+    <Draws>1</Draws>
+    <Lost>1</Lost>
+  </Team>
+  <Team>
+    <UserId>960711</UserId>
+    <TeamID>465369</TeamID>
+    <TeamName>LoCH FC</TeamName>
+    <Position>4</Position>
+    <PositionChange>1</PositionChange>
+    <Matches>4</Matches>
+    <GoalsFor>13</GoalsFor>
+    <GoalsAgainst>5</GoalsAgainst>
+    <Points>7</Points>
+    <Won>2</Won>
+    <Draws>1</Draws>
+    <Lost>1</Lost>
+  </Team>
+  <Team>
+    <UserId>8436274</UserId>
+    <TeamID>634143</TeamID>
+    <TeamName>FC Hodensalamander</TeamName>
+    <Position>5</Position>
+    <PositionChange>2</PositionChange>
+    <Matches>4</Matches>
+    <GoalsFor>13</GoalsFor>
+    <GoalsAgainst>8</GoalsAgainst>
+    <Points>6</Points>
+    <Won>2</Won>
+    <Draws>0</Draws>
+    <Lost>2</Lost>
+  </Team>
+  <Team>
+    <UserId>8415845</UserId>
+    <TeamID>632111</TeamID>
+    <TeamName>lobärg fc</TeamName>
+    <Position>6</Position>
+    <PositionChange>2</PositionChange>
+    <Matches>4</Matches>
+    <GoalsFor>13</GoalsFor>
+    <GoalsAgainst>6</GoalsAgainst>
+    <Points>5</Points>
+    <Won>1</Won>
+    <Draws>2</Draws>
+    <Lost>1</Lost>
+  </Team>
+  <Team>
+    <UserId>1121828</UserId>
+    <TeamID>632443</TeamID>
+    <TeamName>FC Arbitrage 2000</TeamName>
+    <Position>7</Position>
+    <PositionChange>0</PositionChange>
+    <Matches>4</Matches>
+    <GoalsFor>0</GoalsFor>
+    <GoalsAgainst>34</GoalsAgainst>
+    <Points>0</Points>
+    <Won>0</Won>
+    <Draws>0</Draws>
+    <Lost>4</Lost>
+  </Team>
+  <Team>
+    <UserId>1234842</UserId>
+    <TeamID>467757</TeamID>
+    <TeamName>FC Pieterlen</TeamName>
+    <Position>8</Position>
+    <PositionChange>0</PositionChange>
+    <Matches>4</Matches>
+    <GoalsFor>0</GoalsFor>
+    <GoalsAgainst>40</GoalsAgainst>
+    <Points>0</Points>
+    <Won>0</Won>
+    <Draws>0</Draws>
+    <Lost>4</Lost>
+  </Team>
+</HattrickData>
+
