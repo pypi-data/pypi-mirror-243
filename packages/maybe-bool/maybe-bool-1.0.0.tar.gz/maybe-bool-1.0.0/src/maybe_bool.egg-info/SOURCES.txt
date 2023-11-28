@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+src/maybe_bool.egg-info/PKG-INFO
+src/maybe_bool.egg-info/SOURCES.txt
+src/maybe_bool.egg-info/dependency_links.txt
+src/maybe_bool.egg-info/top_level.txt
+src/maybe_boolean/__init__.py
+src/tests/test1.py
