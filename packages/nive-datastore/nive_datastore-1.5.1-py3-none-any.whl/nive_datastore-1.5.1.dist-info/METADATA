@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: nive-datastore
+Version: 1.5.1
+Summary: Nive Data Storage - High level storage for structured data
+Author: Nive GmbH
+Author-email: Arndt Droullier <info@nive.co>
+License: GPL 3
+Project-URL: Homepage, https://niveapps.com/
+Keywords: collection,storage,workflow,forms,pyramid
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Framework :: Pyramid
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
+Requires-Dist: nive >=1.5.1
+Requires-Dist: nive-userdb >=1.5.1
+Provides-Extra: testing
+Requires-Dist: nive >=1.5.1 ; extra == 'testing'
+Requires-Dist: nive-userdb >=1.5.1 ; extra == 'testing'
+
+# Nive Data Storage
+Maintenance release. No active development.
+The source code is hosted on github: https://github.com/nive/nive_datastore
