@@ -1,0 +1,14 @@
+ferc_xbrl_extractor/__init__.py,sha256=Gvw3Bd9QFITeHki9v1tvERS3PvxX16JpFYSeI5y9htE,117
+ferc_xbrl_extractor/arelle_interface.py,sha256=mC3MOepFu3Z7lLzEAJMFW3lvGRc_90LBLCuNP37Utpo,5423
+ferc_xbrl_extractor/cli.py,sha256=dF6e6p2o4usnjUHK6GEddZTHLp3nDt3qc3OFcl0mx-E,6165
+ferc_xbrl_extractor/datapackage.py,sha256=ZYwa8Ko_VeGBdEFBEJdM_9pIxHySzfpR5fToVKHDuWY,15484
+ferc_xbrl_extractor/helpers.py,sha256=zRwwBLIPeprN1RnxB8e0mQ7W2feG-nyNxRGk-g1HBAI,911
+ferc_xbrl_extractor/instance.py,sha256=piUZ4SMSUtV4OXtBWEe1itnQWQhiSp6gzENzaWjRT38,16685
+ferc_xbrl_extractor/taxonomy.py,sha256=1-iB6rgT2A4T5m_v8oQzHMKTcDDknS4SoW2rjegeb-8,11119
+ferc_xbrl_extractor/xbrl.py,sha256=U_RPi6wT4pbhZ6cMjWq6tCds_-fEgLq8O0Dzb9YsOPg,10186
+catalystcoop.ferc_xbrl_extractor-1.3.0.dist-info/LICENSE.txt,sha256=DjC5hWjh8k2IFdAcjqrVkuZYcvnk7nakndbxkWmlSpY,1077
+catalystcoop.ferc_xbrl_extractor-1.3.0.dist-info/METADATA,sha256=kmEhi2MuEz85WAjZ0AtcsxnrQGkmfAGotYpjety5T9A,12985
+catalystcoop.ferc_xbrl_extractor-1.3.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+catalystcoop.ferc_xbrl_extractor-1.3.0.dist-info/entry_points.txt,sha256=lpEaeYvyZE4jhZ98OJUjcG9xSP42avYhjKueSFD2onQ,62
+catalystcoop.ferc_xbrl_extractor-1.3.0.dist-info/top_level.txt,sha256=uff4mYImojFZmcJV0IaEWLUcLf2LXRZNiP-KT1Dm45s,20
+catalystcoop.ferc_xbrl_extractor-1.3.0.dist-info/RECORD,,
