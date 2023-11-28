@@ -1,0 +1,2 @@
+class ErrorApiResponse(Exception):
+    pass

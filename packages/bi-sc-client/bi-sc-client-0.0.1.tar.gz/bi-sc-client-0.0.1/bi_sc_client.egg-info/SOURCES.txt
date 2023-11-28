@@ -1,0 +1,11 @@
+README.md
+setup.py
+bi_sc_client/__init__.py
+bi_sc_client/client.py
+bi_sc_client/errors.py
+bi_sc_client.egg-info/PKG-INFO
+bi_sc_client.egg-info/SOURCES.txt
+bi_sc_client.egg-info/dependency_links.txt
+bi_sc_client.egg-info/not-zip-safe
+bi_sc_client.egg-info/requires.txt
+bi_sc_client.egg-info/top_level.txt
