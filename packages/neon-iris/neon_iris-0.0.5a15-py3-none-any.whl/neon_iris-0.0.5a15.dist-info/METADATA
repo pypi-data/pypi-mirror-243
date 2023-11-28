@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: neon-iris
+Version: 0.0.5a15
+Summary: Interactive Relay for Intelligence Systems
+Home-page: https://github.com/neongeckocom/neon-iris
+Author: Neongecko
+Author-email: developers@neon.ai
+License: BSD-3-Clause
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: click ~=8.0
+Requires-Dist: click-default-group ~=1.2
+Requires-Dist: neon-utils ~=1.0
+Requires-Dist: pyyaml <7.0.0,>=5.4
+Requires-Dist: neon-mq-connector >=0.7.1a4,~=0.7
+Requires-Dist: ovos-bus-client ~=0.0.3
+Provides-Extra: gradio
+Requires-Dist: gradio ~=3.28 ; extra == 'gradio'
+Requires-Dist: librosa ~=0.9 ; extra == 'gradio'
+Requires-Dist: soundfile ~=0.12 ; extra == 'gradio'
+
+# Neon Iris
+Neon Iris (Interactive Relay for Intelligence Systems) provides tools for
+interacting with Neon systems remotely, via [MQ](https://github.com/NeonGeckoCom/chat_api_mq_proxy).
+
+Install the Iris Python package with: `pip install neon-iris`
+The `iris` entrypoint is available to interact with a bus via CLI. Help is available via `iris --help`.
+
+## Configuration
+Configuration files can be specified via environment variables. By default, 
+`Iris` will read configuration from `~/.config/neon/diana.yaml` where 
+`XDG_CONFIG_HOME` is set to the default `~/.config`.
+More information about configuration handling can be found 
+[in the docs](https://neongeckocom.github.io/neon-docs/quick_reference/configuration/).
+
+A default configuration might look like:
+```yaml
+MQ:
+  server: neonaialpha.com
+  port: 25672
+  users:
+    mq_handler:
+      user: neon_api_utils
+      password: Klatchat2021
+iris:
+  default_lang: en-us
+  languages:
+    - en-us
+    - uk-ua
+  webui_chatbot_label: "Neon AI"
+  webui_mic_label: "Speak with Neon"
+  webui_input_placeholder: "Chat with Neon"
+```
+
+## Interfacing with a Diana installation
+The `iris` CLI includes utilities for interacting with a `Diana` backend.
+
+
+
