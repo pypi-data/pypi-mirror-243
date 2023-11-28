@@ -1,0 +1,4 @@
+setuptools_scm>=4.1.2
+oci>=2.88.1
+cm-cluster-on-demand-config==10.0.3
+cm-cluster-on-demand==10.0.3

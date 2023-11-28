@@ -1,0 +1,3 @@
+[console_scripts]
+cm-cod-oci = clusterondemandoci.cli:cli_main
+
