@@ -1,0 +1,109 @@
+[tool.poetry]
+name = "zarr-checksum"
+version = "0.3.1"
+description = "Checksum support for zarrs stored in various backends"
+readme="README.md"
+homepage="https://github.com/dandi/zarr_checksum"
+repository="https://github.com/dandi/zarr_checksum"
+authors = ["Kitware, Inc. <kitware@kitware.com>"]
+license = "Apache-2.0"
+
+[tool.poetry.scripts]
+zarrsum = "zarr_checksum.cli:cli"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+boto3 = "^1.24"
+zarr = "^2.12"
+click = "^8.1.3"
+tqdm = "^4.64.1"
+pydantic = "^2.0"
+
+# Optional
+boto3-stubs = {version = "^1.24", optional = true}
+black = {version = "^23.3.0", optional = true}
+isort = {version = "^5.11.4", optional = true}
+flake8 = {version = "^5.0.4", optional = true}
+flake8-black = {version = "^0.3.6", optional = true}
+flake8-bugbear = {version = "^23.1.20", optional = true}
+flake8-docstrings = {version = "^1.7.0", optional = true}
+flake8-isort = {version = "^6.0.0", optional = true}
+flake8-quotes = {version = "^3.3.2", optional = true}
+pep8-naming = {version = "^0.13.3", optional = true}
+pytest = {version = "^7.2.1", optional = true}
+
+[tool.poetry.extras]
+test = ["pytest"]
+format = ["black", "isort"]
+lint = [
+    "flake8",
+    "flake8-black",
+    "flake8-bugbear",
+    "flake8-docstrings",
+    "flake8-isort",
+    "flake8-quotes",
+    "pep8-naming"
+]
+dev = [
+    "boto3-stubs",
+    "black",
+    "isort",
+    "flake8",
+    "flake8-black",
+    "flake8-bugbear",
+    "flake8-docstrings",
+    "flake8-isort",
+    "flake8-quotes",
+    "pep8-naming",
+]
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+profile = "black"
+line_length = 100
+# Sort by name, don't cluster "from" vs "import"
+force_sort_within_sections = true
+# Combines "as" imports on the same line
+combine_as_imports = true
+
+[tool.black]
+line-length = 100
+target-version = ["py38"]
+exclude='\.eggs|\.git|\.mypy_cache|\.tox|\.venv|_build|buck-out|build|dist'
+
+[tool.codespell]
+skip = '.git,*.pdf,*.svg,poetry.lock'
+#
+# ignore-words-list = ''
+
+[tool.mypy]
+allow_incomplete_defs = false
+allow_untyped_defs = false
+ignore_missing_imports = false
+# <https://github.com/python/mypy/issues/7773>:
+no_implicit_optional = true
+implicit_reexport = false
+local_partial_types = true
+pretty = true
+show_error_codes = true
+show_traceback = true
+strict_equality = true
+warn_redundant_casts = true
+warn_return_any = true
+warn_unreachable = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = [
+    # <https://github.com/zarr-developers/zarr-python/issues/1566>
+    "zarr.*",
+]
+ignore_missing_imports = true
+
+[tool.pydantic-mypy]
+init_forbid_extra = true
