@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: composer_notebook
+Version: 0.1.6
+Summary: interactive demo for composer application on Jupyter notebook
+Author: Exa
+Author-email: exa@exponent.ai
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+## Composer Prototype
+### Composer Interactive UI
+make sure you have in your root dir:
+
+```
+feeds.yaml # to store generated feeds
+profile.yaml # to store an example user profile
+```
+
+### Data Generation
+
+make sure you have in your root dir:
+```
+composer-finetune.jsonl
+composer-dataset.jsonl
+composer-dataset-methods.jsonl
+```
+Generate synthetic dataset:
+`python -m examples.composer.scripts.synt_dataset_generate`
+`python -m examples.composer.scripts.method_dataset_generate`
+
+### Finetuning
+`python -m examples.composer.scripts.finetune`
+
+TODO:
+- support finetuning existing model instead of creating new fintune tasks on new model
+- improve dataset gen and finetuning tasks
+
+### Upload Package on Pypi
+from root of composer:
+`python setup.py sdist bdist_wheel`
+`twine upload dist/*`
