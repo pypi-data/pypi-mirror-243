@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HattrickData>
+  <FileName>worlddetails.xml</FileName>
+  <FileUri>?file=worlddetails&version=1.9&includeRegions=false&leagueID=46</FileUri>
+  <Version>1.9</Version>
+  <UserID>9034788</UserID>
+  <FetchedDate>2023-11-16 22:42:27</FetchedDate>
+  <LeagueList>
+    <League>
+      <LeagueID>46</LeagueID>
+      <LeagueName>Schweiz</LeagueName>
+      <Season>73</Season>
+      <SeasonOffset>-13</SeasonOffset>
+      <MatchRound>5</MatchRound>
+      <ShortName>Schweiz</ShortName>
+      <Continent>Europe</Continent>
+      <ZoneName>Central Europe</ZoneName>
+      <EnglishName>Switzerland</EnglishName>
+      <LanguageId>3</LanguageId>
+      <LanguageName>Deutsch</LanguageName>
+      <Country Available="True">
+        <CountryID>40</CountryID>
+        <CountryName>Schweiz</CountryName>
+        <CurrencyName>CHF</CurrencyName>
+        <CurrencyRate>5</CurrencyRate>
+        <CountryCode>CH</CountryCode>
+        <DateFormat>DD.MM.YYYY</DateFormat>
+        <TimeFormat>hh:mm</TimeFormat>
+      </Country>
+      <Cups>
+        <Cup>
+          <CupID>42</CupID>
+          <CupName>Switzerland Cup</CupName>
+          <CupLeagueLevel>0</CupLeagueLevel>
+          <CupLevel>1</CupLevel>
+          <CupLevelIndex>1</CupLevelIndex>
+          <MatchRound>5</MatchRound>
+          <MatchRoundsLeft>9</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>551</CupID>
+          <CupName>Gotthard Cup</CupName>
+          <CupLeagueLevel>0</CupLeagueLevel>
+          <CupLevel>2</CupLevel>
+          <CupLevelIndex>1</CupLevelIndex>
+          <MatchRound>4</MatchRound>
+          <MatchRoundsLeft>10</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>680</CupID>
+          <CupName>Coupe Grand Saint-Bernard</CupName>
+          <CupLeagueLevel>0</CupLeagueLevel>
+          <CupLevel>2</CupLevel>
+          <CupLevelIndex>2</CupLevelIndex>
+          <MatchRound>3</MatchRound>
+          <MatchRoundsLeft>10</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>809</CupID>
+          <CupName>Coppa Bernina</CupName>
+          <CupLeagueLevel>0</CupLeagueLevel>
+          <CupLevel>2</CupLevel>
+          <CupLevelIndex>3</CupLevelIndex>
+          <MatchRound>2</MatchRound>
+          <MatchRoundsLeft>10</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>938</CupID>
+          <CupName>Golden Cervelat Cup</CupName>
+          <CupLeagueLevel>0</CupLeagueLevel>
+          <CupLevel>3</CupLevel>
+          <CupLevelIndex>1</CupLevelIndex>
+          <MatchRound>3</MatchRound>
+          <MatchRoundsLeft>10</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1339</CupID>
+          <CupName>Switzerland Cup (VII)</CupName>
+          <CupLeagueLevel>7</CupLeagueLevel>
+          <CupLevel>1</CupLevel>
+          <CupLevelIndex>1</CupLevelIndex>
+          <MatchRound>5</MatchRound>
+          <MatchRoundsLeft>4</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1352</CupID>
+          <CupName>Gotthard Cup (VII)</CupName>
+          <CupLeagueLevel>7</CupLeagueLevel>
+          <CupLevel>2</CupLevel>
+          <CupLevelIndex>1</CupLevelIndex>
+          <MatchRound>4</MatchRound>
+          <MatchRoundsLeft>5</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1365</CupID>
+          <CupName>Coupe Grand Saint-Bernard (VII)</CupName>
+          <CupLeagueLevel>7</CupLeagueLevel>
+          <CupLevel>2</CupLevel>
+          <CupLevelIndex>2</CupLevelIndex>
+          <MatchRound>3</MatchRound>
+          <MatchRoundsLeft>5</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1378</CupID>
+          <CupName>Coppa Bernina (VII)</CupName>
+          <CupLeagueLevel>7</CupLeagueLevel>
+          <CupLevel>2</CupLevel>
+          <CupLevelIndex>3</CupLevelIndex>
+          <MatchRound>2</MatchRound>
+          <MatchRoundsLeft>5</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1391</CupID>
+          <CupName>Golden Cervelat Cup (VII)</CupName>
+          <CupLeagueLevel>7</CupLeagueLevel>
+          <CupLevel>3</CupLevel>
+          <CupLevelIndex>1</CupLevelIndex>
+          <MatchRound>3</MatchRound>
+          <MatchRoundsLeft>5</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1397</CupID>
+          <CupName>Switzerland Cup (VIII)</CupName>
+          <CupLeagueLevel>8</CupLeagueLevel>
+          <CupLevel>1</CupLevel>
+          <CupLevelIndex>1</CupLevelIndex>
+          <MatchRound>7</MatchRound>
+          <MatchRoundsLeft>0</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1403</CupID>
+          <CupName>Gotthard Cup (VIII)</CupName>
+          <CupLeagueLevel>8</CupLeagueLevel>
+          <CupLevel>2</CupLevel>
+          <CupLevelIndex>1</CupLevelIndex>
+          <MatchRound>7</MatchRound>
+          <MatchRoundsLeft>0</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1409</CupID>
+          <CupName>Coupe Grand Saint-Bernard (VIII)</CupName>
+          <CupLeagueLevel>8</CupLeagueLevel>
+          <CupLevel>2</CupLevel>
+          <CupLevelIndex>2</CupLevelIndex>
+          <MatchRound>6</MatchRound>
+          <MatchRoundsLeft>0</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1415</CupID>
+          <CupName>Coppa Bernina (VIII)</CupName>
+          <CupLeagueLevel>8</CupLeagueLevel>
+          <CupLevel>2</CupLevel>
+          <CupLevelIndex>3</CupLevelIndex>
+          <MatchRound>5</MatchRound>
+          <MatchRoundsLeft>0</MatchRoundsLeft>
+        </Cup>
+        <Cup>
+          <CupID>1421</CupID>
+          <CupName>Golden Cervelat Cup (VIII)</CupName>
+          <CupLeagueLevel>8</CupLeagueLevel>
+          <CupLevel>3</CupLevel>
+          <CupLevelIndex>1</CupLevelIndex>
+          <MatchRound>6</MatchRound>
+          <MatchRoundsLeft>0</MatchRoundsLeft>
+        </Cup>
+      </Cups>
+      <NationalTeamId>3038</NationalTeamId>
+      <U20TeamId>3079</U20TeamId>
+      <ActiveTeams>10803</ActiveTeams>
+      <ActiveUsers>10251</ActiveUsers>
+      <WaitingUsers>2</WaitingUsers>
+      <TrainingDate>2023-11-16 23:15:00</TrainingDate>
+      <EconomyDate>2023-11-18 02:15:00</EconomyDate>
+      <CupMatchDate>2023-11-22 10:30:00</CupMatchDate>
+      <SeriesMatchDate>2023-11-18 17:00:00</SeriesMatchDate>
+      <Sequence1>2023-11-20 04:15:00</Sequence1>
+      <Sequence2>2023-11-21 02:05:00</Sequence2>
+      <Sequence3>2023-11-21 15:55:00</Sequence3>
+      <Sequence5>2023-11-23 04:15:00</Sequence5>
+      <Sequence7>2023-11-17 19:30:00</Sequence7>
+      <NumberOfLevels>7</NumberOfLevels>
+    </League>
+  </LeagueList>
+</HattrickData>
+

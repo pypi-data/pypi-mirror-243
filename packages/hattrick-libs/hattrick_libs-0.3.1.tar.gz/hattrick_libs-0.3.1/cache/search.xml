@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HattrickData>
+  <FileName>search.xml</FileName>
+  <FileUri>?file=search&version=1.2&searchType=3&searchString=Nationalliga A&searchLeagueID=46</FileUri>
+  <Version>1.2</Version>
+  <UserID>9034788</UserID>
+  <FetchedDate>2023-11-16 21:50:13</FetchedDate>
+  <SearchParams>
+    <SearchType>3</SearchType>
+    <SearchString>Nationalliga A</SearchString>
+    <SearchString2></SearchString2>
+    <SearchID>0</SearchID>
+    <SearchLeagueID>46</SearchLeagueID>
+  </SearchParams>
+  <PageIndex>0</PageIndex>
+  <Pages>1</Pages>
+  <SearchResults>
+    <Result>
+      <ResultID>4206</ResultID>
+      <ResultName>Nationalliga A</ResultName>
+    </Result>
+  </SearchResults>
+</HattrickData>
+
