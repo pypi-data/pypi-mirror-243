@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: shieldb
+Version: 0.4.5
+Summary: UNKNOWN
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: SQLAlchemy (~=2.0.23)
+Requires-Dist: psycopg2-binary (~=2.9.1)
+Requires-Dist: nltk (~=3.8.1)
+Requires-Dist: inquirerpy (~=0.3.4)
+Requires-Dist: setuptools (~=60.2.0)
+
+UNKNOWN
+
