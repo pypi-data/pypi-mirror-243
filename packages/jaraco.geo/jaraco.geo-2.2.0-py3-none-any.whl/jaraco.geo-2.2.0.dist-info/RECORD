@@ -1,0 +1,17 @@
+jaraco/geo/__init__.py,sha256=WW4nt7-bVYubdAlW64khZ6DBArq7GTSNwweZ3GgMep4,7067
+jaraco/geo/environ.py,sha256=z5Lcl_IHJiJgxPNXn0ncdlT0e58ODTJr7tZ7TgjHQ_s,460
+jaraco/geo/geotrans.py,sha256=Gmo9WIhTt738JDWzeQ8G8Mm601cnQfVroQEUVanJaa8,598
+jaraco/geo/geotrans2-32.dll,sha256=GkWcomygaqODtvITl5_z1d0zq5rW5xsh3337jo3iJpo,348160
+jaraco/geo/geotrans2-64.dll,sha256=N94HgzjLxvXTMu5eEVDVQrkQV8oeS9EVqWVA7MoR4jE,417792
+jaraco/geo/geotrans2_lib.py,sha256=sgyLdxXsa4zm_jpLwH2d1oAkGFXsxnEm5oQZGNus_eE,99427
+jaraco/geo/data/3_param.dat,sha256=Gasw40rhxt-Hmt8b_5t4ROx1Z1g0sNnHftjjMCFaGYs,21923
+jaraco/geo/data/7_param.dat,sha256=mekbS1v-HYYJ4qI2quCgb0GQ4gqj6_1YYc9flzEwsug,202
+jaraco/geo/data/default.xml,sha256=TQUBQipTeBuubpTyIaRfkxty2VlxBMzaKgBb_EPA010,1139
+jaraco/geo/data/egm84.grd,sha256=JTW-5SAQhxKBiEQodesYxVTy1EoyGvJIyVqKeFqrIuQ,2812
+jaraco/geo/data/egm96.grd,sha256=K6vjQejgTbEUR-gjrA3-Sxfzf9JMeWa7auq4WjDZpzM,4155868
+jaraco/geo/data/ellips.dat,sha256=ARoHUCfGfpP_4Od1RVvtqsiN9Cwq38DLzeTplBv7JFc,1725
+jaraco.geo-2.2.0.dist-info/LICENSE,sha256=htoPAa6uRjSKPD1GUZXcHOzN55956HdppkuNoEsqR0E,1023
+jaraco.geo-2.2.0.dist-info/METADATA,sha256=8eknBj84M7fEfBeBu9DFSjB8pWCRNLEG6lheApMYN18,2859
+jaraco.geo-2.2.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+jaraco.geo-2.2.0.dist-info/top_level.txt,sha256=0JnN3LfXH4LIRfXL-QFOGCJzQWZO3ELx4R1d_louoQM,7
+jaraco.geo-2.2.0.dist-info/RECORD,,
