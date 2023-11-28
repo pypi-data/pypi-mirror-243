@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: dbt-purview
+Version: 0.55
+Requires-Dist: click
+Requires-Dist: requests
+Requires-Dist: apache-airflow
