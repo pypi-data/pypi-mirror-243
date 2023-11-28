@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: propertia
+Version: 0.1.0
+Summary: "SearchSmartly SDK"
+Author: SearchSmartly
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: httpx==0.25.2
+Provides-Extra: test
+Requires-Dist: flake8; extra == "test"
