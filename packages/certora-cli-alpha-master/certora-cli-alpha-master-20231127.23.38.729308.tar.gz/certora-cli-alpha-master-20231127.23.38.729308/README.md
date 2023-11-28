@@ -1,0 +1,1 @@
+Commit 56c7b2b.                    Build and Run scripts for executing the Certora Prover on Solidity smart contracts.
