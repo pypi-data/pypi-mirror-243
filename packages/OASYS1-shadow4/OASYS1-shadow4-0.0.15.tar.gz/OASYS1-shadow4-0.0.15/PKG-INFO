@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: OASYS1-shadow4
+Version: 0.0.15
+Summary: oasys-shadow4: Oasys widgets for shadow4
+Home-page: https://github.com/oasys-kit/OASYS1-SHADOW4
+Download-URL: https://github.com/oasys-kit/OASYS1-SHADOW4
+Author: M. Sanchez del Rio, L. Rebuffi
+Author-email: srio@esrf.eu
+License: MIT
+Keywords: ray tracing,x-ray optics,Oasys1
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: X11 Applications :: Qt
+Classifier: Environment :: Console
+Classifier: Environment :: Plugins
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Science/Research
+License-File: LICENSE
+Requires-Dist: oasys1>=1.2.130
+Requires-Dist: shadow4>=0.1.16
+
+
+
+oasys-shadow4
