@@ -1,0 +1,35 @@
+# sample yaml configuration file for document_processor/transform
+
+name: "quote_bot"
+version: "0.1.0"
+description: "A bot that fetches quotes"
+author: "Your Name"
+author_email: ""
+license: "MIT"
+source_settings:
+  url: "https://quotes.toscrape.com/tag/humor/"
+  elements:
+      # The elements to scrape
+    - name: "quotes"
+      selector_type: "css"
+      # parent selector for this element
+      selector: "div.quote"
+      # The elements to scrape
+      elements:
+        - name: "quote"
+          selector_type: "css"
+          # The selector for this element
+          selector: "span.text::text"
+          # The attribute to scrape
+          attribute: "text"
+        - name: "author"
+          selector_type: "xpath"
+          selector: "span/small/text()"
+          attribute: "text"
+        # - name: "tags"
+        #   selector_type: "css"
+        #   selector: ".tag"
+        #   attribute: "text"
+scrape_settings:
+  # The number of seconds to wait between each request
+  request_wait_time: 1
