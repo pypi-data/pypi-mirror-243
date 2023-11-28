@@ -1,0 +1,33 @@
+{% load staticfiles %}<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block head_title %}title{% endblock %}</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% block style %}<link href="{% static 'css/style.css' %}" rel="stylesheet" />{% endblock %}
+	{% block extraheaders %}{% endblock %}
+	{% block extrastyle %}{% endblock %}
+</head>
+<body>
+	{% include "partials/messages.html" %}
+	{% block body %}
+		<div class="wrap">
+			<h1>{% block site_title %}title{% endblock %}</h1>
+			<div id="main_content">
+				{% block content %}
+				{% endblock %}
+			</div>
+		</div>
+	{% endblock %}
+
+	<script src="{% static "django_ajax_utils/js/utils.js" %}"></script>
+	<script src="{% static "django_ajax_utils/js/utils_ajax.js" %}"></script>
+	<script src="{% static "django_ajax_utils/js/reactor.js" %}"></script>
+	<script src="{% static "django_ajax_utils/js/ajaxform.js" %}"></script>
+	<script src="{% static "django_ajax_utils/js/messages.js" %}"></script>
+	<script src="{% static "js/run_utils.js" %}"></script>
+
+	{% block extrajs %}
+	{% endblock %}
+</body>
+</html>

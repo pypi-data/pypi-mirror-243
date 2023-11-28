@@ -1,0 +1,326 @@
+{% extends "base.html" %}
+
+{% block head_title %}Home{% endblock %}
+{% block site_title %}Utils{% endblock %}
+
+{% block content %}
+
+<h2>Misc</h2>
+
+<p><code>_.has</code> (replacement for <code>Object.prototype.hasOwnProperty)</code>:</p>
+
+<pre class="run">
+var obj = {'property': true, 'hasOwnProperty': function() { return  true }};
+
+dumpVar(_.has(obj, 'property')); // has property
+dumpVar(_.has(obj, 'notExisting')); // not existing property
+dumpVar(obj.hasOwnProperty('notExisting')); // wrong
+</pre>
+
+<p><code>_.isEqual</code></p>
+
+<pre class="run">
+var a = {'prop': 'x'};
+var b = {'prop': 'y'};
+var aCopy = {'prop': 'x'};
+
+dumpVar(_.isEqual(a, b)); // not equal
+dumpVar(_.isEqual(a, aCopy)); // equal
+</pre>
+
+<p><code>_.deepCopy</code></p>
+
+<pre class="run">
+var a = {'prop': {}};
+var b = _.deepCopy(a);
+
+dumpVar(a === b); // a is not same object as b
+dumpVar(a.prop === b.prop); // properties are not same
+</pre>
+
+<p><code>_.lightCopy</code></p>
+
+<pre class="run">
+var a = {'prop': {}};
+var b = _.lightCopy(a);
+
+dumpVar(a === b); // a is not same object as b
+dumpVar(a.prop === b.prop); // properties are same
+</pre>
+
+<p><code>_.checkFeatures</code></p>
+
+<pre class="run">
+dumpVar(_.checkFeatures(['ajax']));
+dumpVar(_.checkFeatures(['history_push']));
+dumpVar(_.checkFeatures(['touch']));
+</pre>
+
+<h2>Cookies</h2>
+
+<pre class="run">
+_.setCookie('time', new Date().getTime()); // session cookie
+// _.setCookie('time', new Date().getTime(), 7); - expires in 7 days
+dumpVar(_.getCookie('time'));
+</pre>
+
+<h2>Iteration</h2>
+
+<p><code>_.forEach</code></p>
+
+<pre class="run">
+var a = [1, 2, 3];
+_.forEach(a, function(element, idx) { dumpVar(element); });
+</pre>
+
+<p><code>_.forEachDict</code></p>
+
+<pre class="run">
+var a = {key: 'value'};
+.forEachDict(a, function(key, value) { dumpVar(key + '=' + value); });
+</pre>
+
+<p><code>_.dictToPairs</code></p>
+
+<pre class="run">
+var a = {key: 'value'};
+dumpVar(_.dictToPairs(a));
+</pre>
+
+<p><code>_.map</code></p>
+
+<pre class="run">
+var a = [1, 2, 3, 4];
+dumpVar(_.map(a, function(x) { return x*x; }));
+</pre>
+
+<p><code>_.some</code></p>
+
+<pre class="run">
+var a = [1, 2, 3, 4];
+_.some(a, function(x) { dumpVar(x); return x == 2; /* break on 2 */ });
+</pre>
+
+<p><code>_.every</code></p>
+
+<pre class="run">
+var a = [1, 2, 3, 4];
+_.every(a, function(x) { dumpVar(x); return x != 2; /* break on 2 */ });
+</pre>
+
+<p><code>_.filter</code></p>
+
+<pre class="run">
+var a = ['', 'test', '', 'test2'];
+dumpVar(_.filter(a, function(x) { return x.length; /* not empty strings */ }));
+</pre>
+
+<p><code>_.keys</code></p>
+
+<pre class="run">
+var dct = { key: 'value', key2: 'value'};
+dumpVar(_.keys(dct));
+</pre>
+
+<h2>Events</h2>
+
+<p><code>_.bindEvent</code>, <code>_.triggerEvent</code>, <code>_.unbindEvent</code></p>
+
+<pre class="run">
+var onCustomEvent = function(event) {
+	dumpVar(event.memo);
+}
+
+var element = document.createElement('DIV');
+
+_.bindEvent(element, "custom", onCustomEvent);
+_.triggerEvent(element, "custom", "Custom event triggered");
+_.unbindEvent(element, onCustomEvent);
+</pre>
+
+<p><code>_.onLoad</code>, <code>_.triggerLoad</code>, <code>_.unbindOnLoad</code></p>
+
+<pre class="run">
+var onLoad = function(event) {
+	dumpVar(event.memo.tagName); // event.memo == loaded element
+};
+
+_.onLoad(onLoad);
+
+var dynamicElement = document.createElement('DIV');
+document.body.appendChild(dynamicElement);
+_.triggerLoad(dynamicElement); // call for dynamic created element
+_.unbindOnLoad(onLoad);
+</pre>
+
+<h2>DOM</h2>
+
+<p><code>_.escapeHTML</code></p>
+
+<pre class="run">
+dumpVar(_.escapeHTML('&amp;&lt;&gt;&quot;\''));
+</pre>
+
+<p><code>_.hasClass</code>, <code>_.addClass</code>, <code>_.removeClass</code>, <code>_.toggleClass</code></p>
+
+<pre class="run">
+var element = document.createElement('DIV');
+
+_.addClass(element, 'klass');
+dumpVar(_.hasClass(element, 'klass'));
+_.removeClass(element, 'klass');
+dumpVar(_.hasClass(element, 'klass'));
+_.toggleClass(element, 'klass');
+dumpVar(_.hasClass(element, 'klass'));
+</pre>
+
+<p><code>_.id</code></p>
+
+<pre class="run">
+var element = document.createElement('ARTICLE');
+element.setAttribute('id', 'test');
+document.body.appendChild(element);
+
+dumpVar(_.id('test').tagName);
+
+document.body.removeChild(element);
+
+dumpVar(_.id('test'));
+</pre>
+
+<p><code>_.cls</code></p>
+
+<pre class="run">
+var a1 = document.createElement('ARTICLE');
+var a2 = document.createElement('NAV');
+_.addClass(a1, 'testclass');
+_.addClass(a2, 'testclass');
+document.body.appendChild(a1);
+document.body.appendChild(a2);
+
+_.forEach(_.cls(document.body, 'testclass'), function(element) {
+	dumpVar(element.tagName);
+});
+
+_.forEach(_.cls('testclass'), function(element) { // parent not required
+	dumpVar(element.tagName);
+});
+
+document.body.removeChild(a1);
+document.body.removeChild(a2);
+</pre>
+
+<p><code>_.tag</code></p>
+
+<pre class="run">
+dumpVar(_.tag(document.body, 'PRE').length);
+dumpVar(_.tag('PRE').length); // parent not required
+</pre>
+
+<p><code>_.isNode</code>, <code>_.isElement</code>, <code>_.isParentOf</code></p>
+
+<pre class="run">
+var node = document.createTextNode('...');
+var element = document.createElement('DIV');
+
+dumpVar(_.isNode(node));
+dumpVar(_.isNode(element));
+dumpVar(_.isElement(node));
+dumpVar(_.isElement(element));
+</pre>
+
+<p><code>_.isParentOf</code>, <code>_.findParent</code>, <code>_.findParentByCls</code></p>
+
+<pre class="run">
+var parent = document.createElement('DIV');
+parent.className = 'parent';
+var child = document.createElement('DIV');
+child.className = 'child';
+parent.appendChild(child);
+
+dumpVar(_.isParentOf(child, parent));
+dumpVar(_.findParent(child, function(element) { return _.hasClass(element, 'parent'); }).className);
+dumpVar(_.findParentByCls(child, 'parent').className);
+</pre>
+
+<p><code>_.elem</code></p>
+
+<pre class="run">
+var element = _.elem('A', {'href': '#', 'class': 'link'}, 'Link text');
+dumpVar(element.innerHTML);
+</pre>
+
+<p><code>_.insertAfter</code></p>
+
+<pre class="run">
+var parent = _.elem('UL');
+var i1 = _.elem('LI', undefined, "Text");
+var i2 = _.elem('LI', undefined, "Text2");
+parent.appendChild(i1);
+parent.appendChild(i2);
+
+var between = _.elem('LI', undefined, "Between");
+_.insertAfter(between, i1);
+
+dumpVar(parent.childNodes[1].innerHTML);
+</pre>
+
+<h2>Data</h2>
+
+<p><code>_.getData</code>, <code>_.setData</code></p>
+
+<pre class="run">
+var element = _.elem('DIV', {'data-variable-name': 'text'});
+
+dumpVar(_.getData(element, 'variableName'));
+_.setData(element, 'variableName', 'new text');
+dumpVar(_.getData(element, 'variableName'));
+</pre>
+
+<h2>Forms</h2>
+
+<form id="example_form" action="#">
+	<div class="form-row">
+		<label for="id_username">Username</label>
+		<input id="id_usernamee" type="text" name="username" />
+	</div>
+	<div class="form-row">
+		<label for="id_password">Password</label>
+		<input id="id_passworde" type="text" name="password" />
+	</div>
+</form>
+
+<p><code>_.serializeForm</code></p>
+
+<pre class="run">
+var formElement = _.id('example_form');
+dumpVar(_.serializeForm(formElement, {raw: true}));
+</pre>
+
+<h2>URLS</h2>
+
+<p><code>_.getUrlParameterByName</code></p>
+
+<pre class="run">
+var url = "http://example.tld/?parameter=value";
+dumpVar(_.getUrlParameterByName('parameter', url));
+</pre>
+
+<p><code>_.encodeURLParameters</code></p>
+
+<pre class="run">
+var parameters = {parameter: 'value', 'special#': 'special#value',};
+dumpVar(_.encodeURLParameters(parameters));
+
+var parameters = [['multi', 1], ['multi', 2], ['multi', 3]];
+dumpVar(_.encodeURLParameters(parameters));
+</pre>
+
+<p><code>_.addURLParameters</code></p>
+
+<pre class="run">
+var parameters = {q: 'search string'};
+dumpVar(_.addURLParameters('http://google.com/', parameters));
+</pre>
+
+{% endblock %}

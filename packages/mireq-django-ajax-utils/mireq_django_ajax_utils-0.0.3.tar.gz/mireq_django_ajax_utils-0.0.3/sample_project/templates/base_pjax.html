@@ -1,0 +1,8 @@
+{% load pjax_tags %}
+{% pjaxblock extraheaders %}{% block extraheaders %}{% endblock %}{% endpjaxblock %}
+{% pjaxblock extrastyle %}{% block extrastyle %}{% endblock %}{% endpjaxblock %}
+{% pjaxblock site_title %}{% block site_title %}{% endblock %}{% endpjaxblock %}
+{% pjaxblock head_title %}{% block head_title %}{% endblock %}{% endpjaxblock %}
+{% pjaxblock extrajs %}{% block extrajs %}{% endblock %}{% endpjaxblock %}
+{% pjaxblock messages %}{% include "partials/messages_pjax.html" %}{% endpjaxblock %}
+{% block content %}{% endblock %}
