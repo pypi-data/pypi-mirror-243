@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tu-games"
+version = "1.0.2"
+authors = [
+  { name="Alexandre Larouche", email="quoding@protonmail.ch" },
+]
+description = "Basic implementation of a transferrable utility (TU) game and some of their solutions."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Quoding/tu-games"
+"Bug Tracker" = "https://github.com/Quoding/tu-games/issues"
