@@ -1,0 +1,12 @@
+mergedeep
+pyyaml
+pyyaml-include
+toml
+typing-inspect
+
+[dev]
+black
+mypy
+pre-commit
+pytest
+ruff
