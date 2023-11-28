@@ -1,0 +1,37 @@
+Metadata-Version: 2.1
+Name: pycodata
+Version: 0.8.2
+Summary: pycodata: CODATA constants for python.
+Author-email: Milan Skocic <milan.skocic@icloud.com>
+License: GNU General Public License v3 (GPLv3)
+Project-URL: Documentation, https://milanskocic.github.io/codata/index.html
+Project-URL: Source, https://github.com/MilanSkocic/codata
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+
+Description
+============
+
+.. readme_inclusion_start
+
+Python module containing the codata constants.
+
+.. readme_inclusion_end
+
+Installation
+===================
+See  ``INSTALL.rst``.
+
+Dependencies
+================
+
+See ``requirements.txt``.
+
+
+License information
+===========================
+See ``LICENSE.txt``.
