@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+mangodm/__init__.py
+mangodm/main.py
+mangodm.egg-info/PKG-INFO
+mangodm.egg-info/SOURCES.txt
+mangodm.egg-info/dependency_links.txt
+mangodm.egg-info/top_level.txt
