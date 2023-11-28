@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: wfc3tools
+Version: 1.5.0
+Summary: Python Tools for HST WFC3 Data
+Home-page: http://wfc3tools.readthedocs.io/
+Author: STScI
+Author-email: help@stsci.edu
+License: BSD
+Project-URL: Bug Reports, https://github.com/spacetelescope/wfc3tools/issues/
+Project-URL: Source, https://github.com/spacetelescope/wfc3tools/
+Project-URL: Help, https://hsthelp.stsci.edu
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+License-File: LICENSE.txt
+Requires-Dist: astropy >=4.2.0
+Requires-Dist: numpy >=1.21.0
+Requires-Dist: matplotlib >=3.5.1
+Requires-Dist: stsci.tools >=4.0.1
+Requires-Dist: scipy >=1.8.0
+Provides-Extra: docs
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinx-automodapi ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'docs'
+
+A package which contains wrappers for the calwf3 reduction scripts and tools to aid data analysis.
