@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/streampipe/__init__.py
+src/streampipe/streampipe.py
+src/streampipe.egg-info/PKG-INFO
+src/streampipe.egg-info/SOURCES.txt
+src/streampipe.egg-info/dependency_links.txt
+src/streampipe.egg-info/not-zip-safe
+src/streampipe.egg-info/requires.txt
+src/streampipe.egg-info/top_level.txt
+tests/test_seqpipe.py

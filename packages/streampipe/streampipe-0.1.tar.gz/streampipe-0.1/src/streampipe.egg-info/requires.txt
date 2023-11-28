@@ -1,0 +1,7 @@
+importlib-metadata
+seqqueue>=0.4
+
+[testing]
+setuptools
+pytest
+pytest-benchmark
