@@ -1,0 +1,3 @@
+[console_scripts]
+kadia=kadia.cli:run
+
