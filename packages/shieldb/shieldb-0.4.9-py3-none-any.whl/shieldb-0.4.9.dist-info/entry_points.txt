@@ -1,0 +1,3 @@
+[console_scripts]
+shieldb = src.app:main
+
