@@ -1,0 +1,13 @@
+chunk_pdf/__init__.py,sha256=JLEeGnmIhnih7HOOzhUk6s9VkBdib_CoAr38oTSXtyQ,19
+chunk_pdf/pdfbase/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chunk_pdf/pdfbase/chunk_file.py,sha256=NWG-pYFpHI_EwXr1K404O0mEepRh-4GM6J6_b0MrLRA,485
+chunk_pdf/pdfbase/pdf_doc.py,sha256=Kmst-pSaCWBm9roBqav2iOeV9xxQJ0ZFNYamW0uels8,5797
+chunk_pdf/pdfgen/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+chunk_pdf/pdfgen/pdf_generator.py,sha256=3Wx5PZfV64V-byj2vyiOQ71uyGYJq5Xp1emVx2Ye5y8,4438
+test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test/origin.py,sha256=Jlysy2dz2pU7_IWXfmNFgdGLP9KieMAknx3mcf57FDw,904
+test/pdf_wrapper.py,sha256=gUd_iNxL9AyV1EejxAaKgdnfMKS2SZpkWN2tTEy2J9E,928
+chunk_pdf-0.1.3.dist-info/METADATA,sha256=fZGYuxNv-w3M9tHPaOatJyiR6wDWSIqUCBWEv12Tees,770
+chunk_pdf-0.1.3.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+chunk_pdf-0.1.3.dist-info/top_level.txt,sha256=kjE13STbPzQLeI_TXp9wIfN9Cklf8dEk8LYSLppsFK8,15
+chunk_pdf-0.1.3.dist-info/RECORD,,
