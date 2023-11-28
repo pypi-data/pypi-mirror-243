@@ -1,0 +1,13 @@
+onnx2onnx/__init__.py,sha256=KKcR-IeuHyYtN1xmXk7uMnuwWB-LQDg9NGtojnwA1o4,186
+onnx2onnx/__main__.py,sha256=YuQ6Gch-17ZB71im6MwTeO6tDWTsPgBml_ZwAy5W-Fc,2185
+onnx2onnx/graph.py,sha256=IpNircR-QPDh2iyH-6ECpAEafBnom2N9Rcq-LMMIcfY,4607
+onnx2onnx/pass_manager.py,sha256=mntBigpjuTouRIX-esCyclan0avy5udrBaYgCL4vkBM,2083
+onnx2onnx/passes/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+onnx2onnx/passes/convert.py,sha256=HON1jspdd9GiDCa2WlNyGS2W8P9t7fCZE5mwxWm95kI,1916
+onnx2onnx/passes/transforms.py,sha256=9KhOcPOEJf6vFoL4n3DTrsF0VGMyiblzCZZNfm926zM,1865
+onnx2onnx/passes/utils.py,sha256=k6UasG-zEl-MiL5_I8Ou0dPpY6hsTLuCZlVhRa19de4,498
+onnx2onnx-0.0.1.dist-info/entry_points.txt,sha256=5b-RbheB-v_HeHPPUGxAeu0OvJjIIlQgV70T-8kuXrQ,53
+onnx2onnx-0.0.1.dist-info/LICENSE,sha256=LmldnwUZoCZ7a1W3C3meFp4ZnAU3kISnrfDBFgyklEM,1068
+onnx2onnx-0.0.1.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+onnx2onnx-0.0.1.dist-info/METADATA,sha256=Rd9rDq9moyUjq3OBYpzzCrtB5IUA_0RmuaiQNWB4ojg,730
+onnx2onnx-0.0.1.dist-info/RECORD,,
