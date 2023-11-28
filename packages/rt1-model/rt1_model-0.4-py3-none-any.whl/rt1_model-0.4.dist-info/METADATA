@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: rt1-model
+Version: 0.4
+Summary: Implementation of the RT1 first order radiative transfer model.
+Author-email: Raphael Quast <raphael.quast@geo.tuwien.ac.at>
+Project-URL: Documentation, https://rt1-model.readthedocs.io
+Project-URL: Repository, https://github.com/TUW-GEO/rt1
+Keywords: Radiative Transfer,Soil Moisture,Vegetation,Radar
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: sympy
+Provides-Extra: full
+Requires-Dist: symengine ; extra == 'full'
+Requires-Dist: matplotlib ; extra == 'full'
+Provides-Extra: symengine
+Requires-Dist: symengine ; extra == 'symengine'
+
