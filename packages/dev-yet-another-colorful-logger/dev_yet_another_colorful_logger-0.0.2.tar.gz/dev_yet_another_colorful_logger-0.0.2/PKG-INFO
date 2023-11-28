@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: dev_yet_another_colorful_logger
+Version: 0.0.2
+Summary: Just another Colorful Logger with my personal customizations to be used in any python script.
+Home-page: https://github.com/wagnercotta/dev_yet_another_colorful_logger
+Author: Wagner Cotta
+License: GNU
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Yet Another Colorful Logger
+
+## Description
+
+Yet Another Colorful Logger is a just another Python logging utility that adds color to your console log messages. This module is already configured, not requiring setup. Simply install it and integrate into your Python projects.
+
+This module was created for personal use, but feel free to use it in your projects as well. 
+Also, feel free to customize it according to your needs.
+
+Any issues, suggestions, or questions, please feel free to reach out.
+
+## Installation
+
+To install Yet Another Colorful Logger, use `pip`:
+
+```bash
+pip install yet-another-colorful-logger
+```
+
+## Usage
+
+To start using the logger is pretty forward. Just import it and create a logger instance:
+
+```python
+from yet_another_colorful_logger import YetAnotherColorfulLogger
+
+# Create a logger instance
+logger = YetAnotherColorfulLogger(name='my_logger', level=YetAnotherColorfulLogger.DEBUG)
+
+# Log messages with different severity levels
+logger.debug("This is a debug message !!!")
+logger.info("This is an info message !!!")
+logger.warning("This is a warning message !!!")
+logger.error("This is an error message !!!")
+logger.critical("This is a critical message !!!")
+```
+
+![Yet Another Colorful Logger Example](/docs/images/example.png "Yet Another Colorful Logger Exame")
+
+## Contact
+
+For any questions, suggestions, or issues, feel free to reach out:
+
+- GitHub: [Wagner Cotta](https://github.com/wagnercotta)
+
+## License
+
+This project is licensed under the GNU License - see the [LICENSE](LICENSE) file for details.
+
