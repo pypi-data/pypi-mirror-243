@@ -1,0 +1,14 @@
+{% for model in models %}
+{%- if not model.is_user -%}
+from .{{ model.snake_name }}_router import {{ model.snake_name }}_router
+{% endif -%}
+{%- endfor %}
+
+__all__ = [
+    {%- for model in models %}
+    {% if not model.is_user -%}
+    "{{ model.snake_name }}_router",
+    {%- endif -%}
+    {%- endfor %}
+]
+
