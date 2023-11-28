@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/jsonmason/__init__.py
+src/jsonmason/attrdict.py
+src/jsonmason/cli.py
+src/jsonmason/libjsonmason.py
+src/jsonmason.egg-info/PKG-INFO
+src/jsonmason.egg-info/SOURCES.txt
+src/jsonmason.egg-info/dependency_links.txt
+src/jsonmason.egg-info/entry_points.txt
+src/jsonmason.egg-info/top_level.txt
