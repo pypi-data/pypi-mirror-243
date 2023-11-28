@@ -1,0 +1,11 @@
+License
+README.md
+pyproject.toml
+setup.cfg
+src/gamee/__init__.py
+src/gamee/__main__.py
+src/gamee.egg-info/PKG-INFO
+src/gamee.egg-info/SOURCES.txt
+src/gamee.egg-info/dependency_links.txt
+src/gamee.egg-info/requires.txt
+src/gamee.egg-info/top_level.txt
