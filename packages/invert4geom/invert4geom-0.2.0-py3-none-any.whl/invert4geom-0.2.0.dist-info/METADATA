@@ -1,0 +1,110 @@
+Metadata-Version: 2.1
+Name: invert4geom
+Version: 0.2.0
+Summary: Constrained gravity inversion to recover the geometry of a density contrast.
+Author-email: Matt Tankersley <matt.d.tankersley@gmail.com>
+Project-URL: Homepage, https://github.com/mdtanker/invert4geom
+Project-URL: Documentation, https://invert4geom.readthedocs.io/
+Project-URL: Bug Tracker, https://github.com/mdtanker/invert4geom/issues
+Project-URL: Discussions, https://github.com/mdtanker/invert4geom/discussions
+Project-URL: Changelog, https://invert4geom.readthedocs.io/en/latest/changelog.html
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: xarray
+Requires-Dist: verde >=1.8.0
+Requires-Dist: rioxarray
+Requires-Dist: pykdtree
+Requires-Dist: xrft
+Requires-Dist: harmonica >=0.6.0
+Requires-Dist: antarctic-plots
+Requires-Dist: numba
+Requires-Dist: scipy
+Requires-Dist: nptyping
+Requires-Dist: numba-progress
+Requires-Dist: tqdm
+Provides-Extra: dev
+Requires-Dist: pytest >=6 ; extra == 'dev'
+Requires-Dist: pytest-cov >=3 ; extra == 'dev'
+Requires-Dist: ruff ; extra == 'dev'
+Requires-Dist: nox ; extra == 'dev'
+Requires-Dist: pre-commit ; extra == 'dev'
+Requires-Dist: pylint ; extra == 'dev'
+Requires-Dist: python-semantic-release >=8 ; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: sphinx >=4.0 ; extra == 'docs'
+Requires-Dist: myst-parser ; extra == 'docs'
+Requires-Dist: sphinx-copybutton ; extra == 'docs'
+Requires-Dist: sphinx-autodoc-typehints ; extra == 'docs'
+Requires-Dist: sphinx-book-theme >=0.3 ; extra == 'docs'
+Requires-Dist: sphinx-design ; extra == 'docs'
+Requires-Dist: nbsphinx ; extra == 'docs'
+Provides-Extra: test
+Requires-Dist: pytest >=6 ; extra == 'test'
+Requires-Dist: pytest-cov >=3 ; extra == 'test'
+Provides-Extra: viz
+Requires-Dist: pyvista ; extra == 'viz'
+Requires-Dist: trame ; extra == 'viz'
+Requires-Dist: ipywidgets ; extra == 'viz'
+Requires-Dist: matplotlib ; extra == 'viz'
+Requires-Dist: seaborn ; extra == 'viz'
+
+# invert4geom
+
+[![Actions Status][actions-badge]][actions-link]
+[![Documentation Status][rtd-badge]][rtd-link]
+[![Code-coverage][codecov-badge]][codecov-link]
+
+[![PyPI version][pypi-version]][pypi-link]
+[![Conda-Forge][conda-badge]][conda-link]
+[![PyPI platforms][pypi-platforms]][pypi-link]
+
+[![GitHub Discussion][github-discussions-badge]][github-discussions-link]
+
+<!-- SPHINX-START -->
+
+**Invert4geom** is a Python library for performing 3D geometric gravity
+inversions, where the aim is to recover the geometry of a density contrast.
+
+Typical use cases include modeling the topography of the Moho, the
+sediment-basement contact, or bathymetry. These density contrasts are
+represented by a layer of vertical right-rectangular prisms. Since we use
+vertical prisms, they don't take the curvature of the Earth into account. For
+large-scale applications, such as continental studies, it would be better to use
+tesseroids instead of prisms.
+
+See the [overview](overview.md) for further description of this package and what
+it can be used for.
+
+<!-- prettier-ignore-start -->
+[actions-badge]:            https://github.com/mdtanker/invert4geom/workflows/CI/badge.svg
+[actions-link]:             https://github.com/mdtanker/invert4geom/actions
+[conda-badge]:              https://img.shields.io/conda/vn/conda-forge/invert4geom
+[conda-link]:               https://github.com/conda-forge/invert4geom-feedstock
+[codecov-badge]:            https://codecov.io/github/mdtanker/invert4geom/badge.svg?
+[codecov-link]:             https://app.codecov.io/github/mdtanker/invert4geom
+[github-discussions-badge]: https://img.shields.io/static/v1?label=Discussions&message=Ask&color=blue&logo=github
+[github-discussions-link]:  https://github.com/mdtanker/invert4geom/discussions
+[pypi-link]:                https://pypi.org/project/invert4geom/
+[pypi-platforms]:           https://img.shields.io/pypi/pyversions/invert4geom
+[pypi-version]:             https://img.shields.io/pypi/v/invert4geom
+[rtd-badge]:                https://readthedocs.org/projects/invert4geom/badge/?version=latest
+[rtd-link]:                 https://invert4geom.readthedocs.io/en/latest/?badge=latest
+
+<!-- prettier-ignore-end -->
