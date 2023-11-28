@@ -1,0 +1,68 @@
+<odoo>
+    <data>
+
+        <record id="view_hr_attendance_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.attendance.tree.inherit</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance.view_attendance_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <field name="is_holiday" optional="hide"/>
+                    <field name="shift_type" optional="hide"/>
+                    <field name="consecutive_days" optional="hide"/>
+                    <field name="is_relevo" optional="hide"/>
+                    <field name="entry_type" />
+                    <field name="extra_time" widget="float_time" />
+                    <field name="extra_time_with_factor" widget="float_time" />
+                </xpath>
+            </field>
+        </record>
+        <record id="view_hr_attendance_tree_override" model="ir.ui.view">
+            <field name="name">hr.attendance.tree.override</field>
+            <field name="model">hr.attendance</field>
+            <field name="inherit_id" ref="hr_attendance_reason.hr_attendance_view_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//tree/field[@name='attendance_reason_ids']" position="replace"/>
+                <xpath expr="//tree/field[@name='time_changed_manually']" position="attributes">
+                    <attribute name="optional">hide</attribute>                    
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_hr_attendance_pivot_inherit" model="ir.ui.view">
+            <field name="name">hr.attendance.pivot.inherit</field>
+            <field name="model">hr.attendance</field>
+            <field name="arch" type="xml">
+              <pivot string="Attendances Overview">
+                <field name="employee_id" type="row" />
+                <field name="date" interval="day" type="row" />
+                <field name="entry_type" type="col" />
+                <field name="worked_hours" type="measure" widget="float_time" />
+                <field name="extra_time" type="measure" widget="float_time" />
+                <field
+            name="extra_time_with_factor"
+            type="measure"
+            widget="float_time"
+          />
+              </pivot>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="hr_attendance_overview_act_window">
+            <field name="name">Attendances Overview</field>
+            <field name="res_model">hr.attendance</field>
+            <field name="view_mode">pivot</field>
+            <field name="view_id" ref="view_hr_attendance_pivot_inherit" />
+        </record>
+
+        <menuitem
+      id="hr_attendande_overview_menuitem"
+      name="Attendances Overview"
+      parent="hr_attendance.menu_hr_attendance_manage_attendances"
+      sequence="1"
+      groups="hr_attendance.group_hr_attendance_manager"
+      action="hr_attendance_overview_act_window"
+    />
+    </data>
+
+</odoo>
