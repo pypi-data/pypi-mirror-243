@@ -1,0 +1,78 @@
+Metadata-Version: 2.1
+Name: django-command
+Version: 2.0.0
+Summary: Часто используемые команды при разработке проектов на Django.
+Maintainer-email: Isaev Abbas <abbas.isaev@gmail.com>
+License: Copyright (c) 2023 Abbas Isaev.
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without modification,
+        are permitted provided that the following conditions are met:
+        
+            1. Redistributions of source code must retain the above copyright notice,
+               this list of conditions and the following disclaimer.
+        
+            2. Redistributions in binary form must reproduce the above copyright
+               notice, this list of conditions and the following disclaimer in the
+               documentation and/or other materials provided with the distribution.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+        ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+        WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+        DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+        ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+        (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+        LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+        ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+        SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+Project-URL: Homepage, https://github.com/AbbasIsaev/django-command
+Project-URL: Repository, https://github.com/AbbasIsaev/django-command.git
+Keywords: django-command,Django,cli
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: inquirer>=3.1.3
+
+# django-command
+
+django-command - приложение, которое позволяет выполнять часто используемые команды при разработке проектов на Django.
+
+### Установка
+
+```shell
+python install django-command
+```
+
+### Запуск
+
+Существует несколько способов запуска команд:
+
+1. В терминале наберите django-command, после этого появится список доступных команд для выполнения, отметьте через
+   пробел какие команды выполнить. Отмеченные команды будут выполняться по порядку выбора.
+   ```shell
+   (venv) PS .\> django-command
+   [?] Выберите 1 или несколько команд:
+    > [ ] create_local                   [1] Создание локалей ['ru', 'en']
+      [ ] update_local                   [2] Обновление и компилирование локалей
+      [ ] collect_static                 [3] Сборка статических файлов в папку STATIC_ROOT
+      [ ] make_migrations                [4] Создание миграций
+      [ ] make_migrations_app            [5] Создание первой миграции для приложения
+      [ ] make_empty_migrations_app      [6] Создание пустой миграции для приложения. Используется для добавления default данных в таблицу БД
+      [ ] migrate                        [7] Применение миграций
+      [ ] create_superuser               [8] Создание пользовтеля с правами superuser. Если не работает попробуйте запустить в терминале: python command.py create_superuser
+      [ ] create_app                     [9] Создание приложения
+      [ ] run_server                     [10] Запуск проекта на порту (по умолчанию 8000)
+      [ ] install_requirements           [11] Установит все зависимости для проекта из файла (по умолчанию requirements.txt)
+      [ ] print_requirements             [12] Автоматически сгенерирует все необходимые зависимости для проекта, а также позволяет сохранить этот список в файл (по умолчанию requirements.txt)
+   ```
+
+2. Команды можно выполнять по их названию или по номеру.
+    ```shell
+    django-command make_migrations migrate
+    # or
+    django-command 4 7
+    ```

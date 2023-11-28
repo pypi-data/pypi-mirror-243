@@ -1,0 +1,2 @@
+[console_scripts]
+django-command = django_command.command:cli
