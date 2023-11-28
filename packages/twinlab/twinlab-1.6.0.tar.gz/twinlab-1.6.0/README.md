@@ -1,0 +1,327 @@
+# twinLab Client
+
+<p align="center">
+    <img src="./resources/images/twinlab.svg" width="200" height="200" />
+</p>
+
+![digiLab](./resources/badges/digilab.svg)
+[![slack](https://img.shields.io/badge/slack-@digilabglobal-purple.svg?logo=slack)](https://digilabglobal.slack.com)
+
+Interface to the twinlab library.
+
+## Installation for macOS
+
+### Requirements.
+
+- Python 3.8 to 3.11 version installed and running for your current environment.
+
+*We recommend managing your Python packages with a virtual environment. See more [here.](https://docs.python.org/3/tutorial/venv.html)*
+
+### Installation
+
+**1.** Enter a `<project>` directory where you will be working on a twinlab project:
+
+```sh
+cd <project>
+```
+
+**2.** Install twinlab:
+
+```sh
+pip install twinlab
+```
+
+**3.** You must create a `.env` file that contains your twinlab user credentials, including your API key.
+For information on licensing, please contact us [here.](https://www.digilab.co.uk/products/twinlab)
+In the following command, replace `<your_api_key>` with your API key:
+
+```sh
+echo -e "TWINLAB_URL=https://twinlab.digilab.co.uk\nTWINLAB_API_KEY=<your_api_key>"> ~/.env
+```
+
+**4.** In `Python`:
+
+```sh
+import twinlab as tl
+```
+
+### Import and use
+
+Now you are ready to import and start using twinlab`. Open your favourite notebook or code editor, and select the folder/directory where you have installed twinlab and created the .env file.
+
+**_Option A: using jupyter notebook through anaconda._** Launch jupyter notebook inside the file/directory where you have installed twinlab and created the .env file.
+
+Import twinlab and run the following example.
+
+```python
+# Import pandas as well
+import twinlab as tl
+import pandas as pd
+
+# Create a dataset and upload to twinLab cloud
+df = pd.DataFrame({"X": [1, 2, 3, 4], "y": [1, 4, 9, 16]})
+tl.upload_dataset(df, "test-data")
+
+# Train a machine-learning model for the data
+params = {
+    "dataset_id": "test-data",
+    "inputs": ["X"],
+    "outputs": ["y"],
+}
+tl.train_campaign(params, campaign_id="test-model")
+
+# Evaluate the model on some unseen data
+df = pd.DataFrame({"X": [1.5, 2.5, 3.5]})
+df_mean, df_std = tl.predict_campaign(df, campaign_id="test-model")
+
+# Explore the results
+print(df_mean)
+print(df_std)
+```
+
+You should see the following results
+
+```python
+>>> print(df_mean)
+           y
+0   2.173827
+1   6.284010
+2  12.788779
+>>> print(df_std)
+          y
+0  2.483727
+1  2.460696
+2  2.483727
+```
+
+**_Option B: Using python through the terminal._** Using the folder where we have installed twinlab and created the .env file, open python and import twinlab.
+
+```bash
+python
+>>> import twinlab as tl
+```
+
+You should get a similar output with your credentials. For example:
+
+```bash
+{'username': 'yourname', 'credits': 0}
+
+         === TwinLab Client Initialisation ===
+         Version  : 1.4.0
+         User     : yourname
+         Server   : https://twinlab.digilab.co.uk
+         Key      : your_api_key
+```
+
+Just to test twinlab, run the following example:
+
+```bash
+# Import pandas as well
+import pandas as pd
+
+# Create a dataset and upload to twinLab cloud
+df = pd.DataFrame({"X": [1, 2, 3, 4], "y": [1, 4, 9, 16]})
+tl.upload_dataset(df, "test-data")
+
+# Train a machine-learning model for the data
+params = {
+    "dataset_id": "test-data",
+    "inputs": ["X"],
+    "outputs": ["y"],
+}
+tl.train_campaign(params, campaign_id="test-model")
+
+# Evaluate the model on some unseen data
+df = pd.DataFrame({"X": [1.5, 2.5, 3.5]})
+df_mean, df_std = tl.predict_campaign(df, campaign_id="test-model")
+
+# Explore the results
+print(df_mean)
+print(df_std)
+```
+
+You should see the following results:
+
+```bash
+>>> print(df_mean)
+           y
+0   2.173827
+1   6.284010
+2  12.788779
+>>> print(df_std)
+          y
+0  2.483727
+1  2.460696
+2  2.483727
+```
+
+## Installation for Windows
+
+### Requirements
+
+- Python 3.8 to 3.11 version installed and running for your current environment. (To download Python visit https://www.python.org/downloads/)
+- Microsoft Visual C++ 14 or higher versions installed.
+
+_We recommend managing your Python packages with Python virtual environments. See more [here.](https://docs.python.org/3/tutorial/venv.html)_
+
+### Installation
+
+**1.** Open a terminal.
+
+**2.** Define the folder/directory where you want to install twinlab. Then, set that folder/directory as your current one.
+
+```bash
+mkdir my_project
+cd my_project
+```
+
+**3.** In your newly created directory, install twinlab on the terminal using **pip3 install twinlab**.
+
+```bash
+pip3 install twinlab
+```
+
+**4.** Still in the folder/directory that you have selected, create an **.env file** with your given API key. To do this use the following command on the terminal.
+
+```bash
+echo TWINLAB_URL=https://twinlab.digilab.co.uk > .env && echo TWINLAB_API_KEY=[your_api_key]>> .env && echo TWINLAB_SERVER=https://twinlab.digilab.co.uk >> .env && echo TWINLAB_KEY=[your_api_key]>> .env
+```
+
+**Replace _[your_api_key]_ with the API key given as a part of the license acquisition.** Notice that you have to replace it twice! (For information on licensing, please contact us [here.](https://www.digilab.co.uk/products/twinlab))
+
+Be aware of any blank spaces in the words between the quotation marks!
+
+To make sure you have created the document in your directory you can use the `dir /a` command on your terminal.
+
+```bash
+dir /a
+```
+
+As an output, you should see the .env file among your files.
+
+```bash
+. .env
+```
+
+### Import and use
+
+Now you are ready to import and start using twinlab. Open your favourite notebook or code, editor and select the folder/directory where you have installed twinlab and created the .env file.
+
+**_Option A: using jupyter notebook through anaconda._** Launch jupyter notebook inside the file/directory where you have installed twinlab and created the .env file.
+
+Import twinlab and run the following example:
+
+```python
+# Import pandas as well
+import twinlab as tl
+import pandas as pd
+
+# Create a dataset and upload to twinLab cloud
+df = pd.DataFrame({"X": [1, 2, 3, 4], "y": [1, 4, 9, 16]})
+tl.upload_dataset(df, "test-data")
+
+# Train a machine-learning model for the data
+params = {
+    "dataset_id": "test-data",
+    "inputs": ["X"],
+    "outputs": ["y"],
+}
+tl.train_campaign(params, campaign_id="test-model")
+
+# Evaluate the model on some unseen data
+df = pd.DataFrame({"X": [1.5, 2.5, 3.5]})
+df_mean, df_std = tl.predict_campaign(df, campaign_id="test-model")
+
+# Explore the results
+print(df_mean)
+print(df_std)
+```
+
+You should see the following results.
+
+```python
+>>> print(df_mean)
+           y
+0   2.173827
+1   6.284010
+2  12.788779
+>>> print(df_std)
+          y
+0  2.483727
+1  2.460696
+2  2.483727
+```
+
+**_Option B: Using python through the terminal._** Using the folder where we have installed twinlab and created the .env file, open python and import twinlab.
+
+```bash
+python
+>>> import twinlab as tl
+```
+
+You should get a similar output with your credentials. For example:
+
+```bash
+{'username': 'yourname', 'credits': 0}
+
+         === TwinLab Client Initialisation ===
+         Version  : 1.4.0
+         User     : yourname
+         Server   : https://twinlab.digilab.co.uk
+         Key      : your_api_key
+```
+
+Just to test twinlab, run the following example:
+
+```bash
+# Import pandas as well
+import pandas as pd
+
+# Create a dataset and upload to twinLab cloud
+df = pd.DataFrame({"X": [1, 2, 3, 4], "y": [1, 4, 9, 16]})
+tl.upload_dataset(df, "test-data")
+
+# Train a machine-learning model for the data
+params = {
+    "dataset_id": "test-data",
+    "inputs": ["X"],
+    "outputs": ["y"],
+}
+tl.train_campaign(params, campaign_id="test-model")
+
+# Evaluate the model on some unseen data
+df = pd.DataFrame({"X": [1.5, 2.5, 3.5]})
+df_mean, df_std = tl.predict_campaign(df, campaign_id="test-model")
+
+# Explore the results
+print(df_mean)
+print(df_std)
+```
+
+You should see the following results:
+
+```bash
+>>> print(df_mean)
+           y
+0   2.173827
+1   6.284010
+2  12.788779
+>>> print(df_std)
+          y
+0  2.483727
+1  2.460696
+2  2.483727
+```
+
+## Having Problems?
+
+If you have any questions or concerns you can email us at twinlab@digilab.co.uk or find out more at [digilab.co.uk/products/twinlab](https://www.digilab.co.uk/products/twinlab).
+
+## Documentation
+
+See the live documentation at https://digilab-ai.github.io/twinLab-client/. Or build a copy locally:
+
+```shell
+cd docs
+yarn install && yarn start
+```
