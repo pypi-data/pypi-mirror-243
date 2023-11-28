@@ -1,0 +1,11 @@
+LICENSE.md
+README.md
+pyproject.toml
+FAMS/__init__.py
+FAMS/model_rankings.py
+FAMS/utils.py
+FAMS.egg-info/PKG-INFO
+FAMS.egg-info/SOURCES.txt
+FAMS.egg-info/dependency_links.txt
+FAMS.egg-info/requires.txt
+FAMS.egg-info/top_level.txt
