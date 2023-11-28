@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rlvortex"
+version = "0.0.26"
+authors = [
+  { name="Zhiquan W", email="zhiquan.wzq@gmail.com" },
+]
+description = "A reinforcement learning algorithm library"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+ ]
+dependencies = [
+  "swig>=4.1.1",
+  "torch>=1.13.1",
+  "numpy>=1.21.1",
+  "scipy>=1.9.3",
+  "gymnasium[all]>=0.26.3",
+  "tensorboard>=0.7.1",
+  "loguru>=0.7.1",
+]

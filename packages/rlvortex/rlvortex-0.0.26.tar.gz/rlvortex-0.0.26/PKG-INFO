@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: rlvortex
+Version: 0.0.26
+Summary: A reinforcement learning algorithm library
+Author-email: Zhiquan W <zhiquan.wzq@gmail.com>
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: GNU General Public License v2 (GPLv2)
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: swig>=4.1.1
+Requires-Dist: torch>=1.13.1
+Requires-Dist: numpy>=1.21.1
+Requires-Dist: scipy>=1.9.3
+Requires-Dist: gymnasium[all]>=0.26.3
+Requires-Dist: tensorboard>=0.7.1
+Requires-Dist: loguru>=0.7.1
+
+# vortex
+A reinforcement learning algorithm framework
+
+# 1. quick start
+
+
+# 2. run tests
+Run the following commands under project root directory (rlvortex/)
+
+- test gym environments with *target environment* and *render* option.
+  ```
+  $ make -f runs/run_tests.mk [target_environment(-render)]
+  ```
+  - target_envrionment in [carpole, mountaincarc]
+  - -render can not optional; if render is enabled, the test will run with GUI.
+  - example (cartpole):
+    - run cartpole headless test
+        ```
+        make -f runs/run_tests.mk cartpole
+        ```
+    - run cartpole with GUI test
+        ```
+        make -f runs/run_tests.mk cartpole-render
+        ```
+- test all gym environments headlessly
+    ```
+    make -f runs/run_tests.mk all-headless
+    ```
+- test all gym environments with GUI
+    ```
+    make -f runs/run_tests.mk all-render
+    ```
+
+# 3. benchmark
+Run the following commands under project root directory (rlvortex/)
+
+
+'''
+$ make -f run_trainers.mk [target_environment(-render)]
+
+'''
+'''
+$ make -f runs/run_trainers.mk [cartpole-vpg]
+'''
