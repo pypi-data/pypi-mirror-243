@@ -1,0 +1,80 @@
+# wcpan.drive
+
+Asynchronous generic cloud drive library.
+
+This package needs a driver to actually work with a cloud drive.
+
+## Example Usage
+
+```python
+from wcpan.drive.core.drive import (
+    DriveFactory, download_to_local, upload_from_local,
+)
+
+
+async def simple_demo():
+    # Load config and data from default locations.
+    factory = DriveFactory()
+    factory.load_config()
+
+    async with factory() as drive:
+        # Check for authorization.
+        if not await drive.is_authorized():
+            # Start OAuth 2.0 process
+            url = await drive.get_oauth_url()
+            # ... The user visits the url ...
+            # Get tokens from the user.
+            token = ...
+            # Finish OAuth 2.0 process.
+            await drive.set_oauth_token(token)
+
+        # It is important to keep cache in sync.
+        async for change in drive.sync():
+            print(change)
+
+        # Get the root node.
+        root_node = await drive.get_root_node()
+
+        # Get a node.
+        node = await drive.get_node_by_path('/path/to/drive/file')
+
+        # List children.
+        children = await drive.get_children(root_node)
+
+        # Make a directory.
+        new_directory = await drive.create_directory(root_node, 'directory_name')
+
+        # Download file.
+        await download_to_local(drive, node, '/tmp')
+
+        # Upload file.
+        new_file = await upload_from_local(drive, root_node, '/path/to/local/file')
+
+        # Traverse drive.
+        async for root, directorys, files in drive.walk(root_node):
+            print(root, directorys, files)
+
+
+async def config_demo():
+    factory = DriveFactory()
+
+    # Read config files from here.
+    # The default is $HOME/.config/wcpan.drive.
+    # These files are what you want to keep and backup.
+    factory.config_path = '/tmp/config'
+
+    # Put generated files here.
+    # The default is $HOME/.local/share/wcpan.drive.
+    # These files should be safely deleted.
+    factory.data_path = '/tmp/data'
+
+    # Setup cache database, will write to data directory.
+    factory.database = 'nodes.sqlite'
+
+    # Setup driver class.
+    factory.driver = 'some.random.driver.RandomDriver'
+
+    # load config file from config directory
+    # this will not overwrite the above given values
+    factory.load_config()
+```
