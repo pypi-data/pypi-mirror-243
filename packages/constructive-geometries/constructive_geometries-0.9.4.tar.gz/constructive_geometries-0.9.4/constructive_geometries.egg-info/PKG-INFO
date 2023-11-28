@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: constructive-geometries
+Version: 0.9.4
+Summary: Simple tools to define world locations from a set of topological faces and set algebra
+Author-email:  Chris Mutel <cmutel@gmail.com>
+Maintainer-email:  Chris Mutel <cmutel@gmail.com>
+Project-URL: source, https://github.com/ecoinvent/constructive_geometries
+Project-URL: homepage, https://github.com/ecoinvent/constructive_geometries
+Project-URL: tracker, https://github.com/ecoinvent/constructive_geometries/issues
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Scientific/Engineering
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: country_converter
+Requires-Dist: wrapt
+Provides-Extra: gis
+Requires-Dist: constructive_geometries; extra == "gis"
+Requires-Dist: fiona; extra == "gis"
+Requires-Dist: shapely; extra == "gis"
+Provides-Extra: dev
+Requires-Dist: build; extra == "dev"
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: pylint; extra == "dev"
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
+Requires-Dist: setuptools; extra == "dev"
