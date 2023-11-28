@@ -1,0 +1,7 @@
+[console_scripts]
+mcq=ptyx_mcq.cli:main
+mcq-dev=ptyx_mcq.dev_cli:main
+
+[ptyx.extensions]
+mcq=ptyx_mcq
+
