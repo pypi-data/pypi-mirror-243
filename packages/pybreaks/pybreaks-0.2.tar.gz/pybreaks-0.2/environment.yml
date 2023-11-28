@@ -1,0 +1,25 @@
+name: pybreaks
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+- setuptools
+- numpy
+- netCDF4
+- scipy
+- pandas
+- pyproj
+- pykdtree
+- pip
+- pip:
+  - datetime
+  - scikit-learn
+  - statsmodels
+  - matplotlib
+  - seaborn
+  - smecv_grid
+  - pytesmo
+  - more_itertools
+  - git+https://github.com/wpreimes/lmoments3@7e19f97c23019ca68cbd526b8bd417c412438f1c
+  - pytest
+  - pytest-cov
