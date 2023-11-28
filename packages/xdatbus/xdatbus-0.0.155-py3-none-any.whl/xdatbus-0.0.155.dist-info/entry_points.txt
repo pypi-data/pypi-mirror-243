@@ -1,0 +1,3 @@
+[console_scripts]
+xdc_aggregate=xdatbus.f01_xdc_aggregate:main
+
