@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="17b348ec-bd05-404d-8b58-5dae89647d36" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/dokuwiki_autodoc/__about__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/dokuwiki_autodoc/__about__.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Unit Test" />
+        <option value="Jupyter Notebook" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.venv/lib/python3.10/site-packages/babel/numbers.py" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2WhquDTuMM9zCz04g28qT1kAPGa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last.edited.regexp&quot;: &quot;qviewkit://ABCDEF&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/thilo/nextcloud/Projekt-Promotion/dokuwiki-autodoc&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Liquid&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Python tests.Run Auto Documentation Tests">
+    <configuration name="Run Auto Documentation Tests" type="tests" factoryName="py.test">
+      <module name="dokuwiki-autodoc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_auto_documentation&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for qviewkit_url_test.test_extensibility" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="dokuwiki-autodoc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;qviewkit_url_test.test_extensibility&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for qviewkit_url_test.test_primitive_extraction" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="dokuwiki-autodoc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;qviewkit_url_test.test_primitive_extraction&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_auto_documentation.test_forced_capture" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="dokuwiki-autodoc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_auto_documentation.test_forced_capture&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_templates.test_sample_template" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="dokuwiki-autodoc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_templates.test_sample_template&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for tests.test_templates.test_sample_template" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="dokuwiki-autodoc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests.test_templates.test_sample_template&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.Run Auto Documentation Tests" />
+      <item itemvalue="Python tests.pytest for test_auto_documentation.test_forced_capture" />
+      <item itemvalue="Python tests.pytest for tests.test_templates.test_sample_template" />
+      <item itemvalue="Python tests.pytest for test_templates.test_sample_template" />
+      <item itemvalue="Python tests.pytest for qviewkit_url_test.test_primitive_extraction" />
+      <item itemvalue="Python tests.pytest for qviewkit_url_test.test_extensibility" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for test_auto_documentation.test_forced_capture" />
+        <item itemvalue="Python tests.pytest for tests.test_templates.test_sample_template" />
+        <item itemvalue="Python tests.pytest for test_templates.test_sample_template" />
+        <item itemvalue="Python tests.pytest for qviewkit_url_test.test_extensibility" />
+        <item itemvalue="Python tests.pytest for qviewkit_url_test.test_primitive_extraction" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17b348ec-bd05-404d-8b58-5dae89647d36" name="Changes" comment="" />
+      <created>1697195379299</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1697195379299</updated>
+      <workItem from="1697195380316" duration="1868000" />
+      <workItem from="1697200541048" duration="56000" />
+      <workItem from="1698307220121" duration="7621000" />
+      <workItem from="1698392693498" duration="5125000" />
+      <workItem from="1698941891039" duration="2826000" />
+      <workItem from="1699000688512" duration="2451000" />
+      <workItem from="1699014723070" duration="902000" />
+      <workItem from="1699259813267" duration="1128000" />
+      <workItem from="1699280834742" duration="3759000" />
+      <workItem from="1699367727553" duration="2549000" />
+      <workItem from="1699535073571" duration="907000" />
+      <workItem from="1699612234384" duration="164000" />
+      <workItem from="1700213274161" duration="1909000" />
+      <workItem from="1700219465416" duration="854000" />
+      <workItem from="1700469697372" duration="2747000" />
+      <workItem from="1700486000227" duration="3000" />
+      <workItem from="1700494521002" duration="221000" />
+      <workItem from="1700642563151" duration="131000" />
+      <workItem from="1700642727285" duration="6000" />
+      <workItem from="1700642741121" duration="8761000" />
+      <workItem from="1700735231544" duration="613000" />
+      <workItem from="1700828396452" duration="17000" />
+      <workItem from="1701075598532" duration="604000" />
+      <workItem from="1701079218683" duration="726000" />
+      <workItem from="1701087428176" duration="3885000" />
+    </task>
+    <task id="LOCAL-00001" summary="Reformatting, cert evasion, number formats, babel">
+      <option name="closed" value="true" />
+      <created>1698395387220</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698395387220</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Updated tests.">
+      <option name="closed" value="true" />
+      <created>1698395410388</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698395410388</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Fixed and updated tests.">
+      <option name="closed" value="true" />
+      <created>1698395777579</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698395777579</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Updated table building.">
+      <option name="closed" value="true" />
+      <created>1698397094655</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698397094655</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Better documentation.">
+      <option name="closed" value="true" />
+      <created>1698397449940</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698397449940</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Spelling.">
+      <option name="closed" value="true" />
+      <created>1698397657516</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1698397657516</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Bumped version.">
+      <option name="closed" value="true" />
+      <created>1698397685860</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1698397685860</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Extended URL Handler to deal with metadata.">
+      <option name="closed" value="true" />
+      <created>1701079288077</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701079288077</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated documentation.">
+      <option name="closed" value="true" />
+      <created>1701079400102</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701079400102</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Updated url creation. Fixes tests, format.">
+      <option name="closed" value="true" />
+      <created>1701091422836</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701091422836</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Sample documentation tests.">
+      <option name="closed" value="true" />
+      <created>1701091443829</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701091443829</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Sample documentation template.">
+      <option name="closed" value="true" />
+      <created>1701091834357</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1701091834357</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Reformatting, cert evasion, number formats, babel" />
+    <MESSAGE value="Updated tests." />
+    <MESSAGE value="Fixed and updated tests." />
+    <MESSAGE value="Updated table building." />
+    <MESSAGE value="Better documentation." />
+    <MESSAGE value="Spelling." />
+    <MESSAGE value="Bumped version." />
+    <MESSAGE value="Extended URL Handler to deal with metadata." />
+    <MESSAGE value="Updated documentation." />
+    <MESSAGE value="Updated url creation. Fixes tests, format." />
+    <MESSAGE value="Sample documentation tests." />
+    <MESSAGE value="Sample documentation template." />
+    <option name="LAST_COMMIT_MESSAGE" value="Sample documentation template." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/lib/python3.10/site-packages/liquid_babel/filters/number.py</url>
+          <line>134</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/.venv/lib/python3.10/site-packages/liquid_babel/filters/number.py</url>
+          <line>137</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <dependency master-id="0" />
+          <properties notifyOnlyOnFirst="true" notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+            <option name="notifyOnlyOnFirst" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_in_test_auto_documentation_py.coverage" NAME="pytest in test_auto_documentation.py Coverage Results" MODIFIED="1700648925829" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_tests_test_templates_test_sample_template.coverage" NAME="pytest for tests.test_templates.test_sample_template Coverage Results" MODIFIED="1700648301078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_qviewkit_url_test_test_url_with_repo.coverage" NAME="pytest for qviewkit_url_test.test_url_with_repo Coverage Results" MODIFIED="1700219709486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_qviewkit_url_test_test_extensibility.coverage" NAME="pytest for qviewkit_url_test.test_extensibility Coverage Results" MODIFIED="1700219714546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_test_auto_documentation_test_local_capture.coverage" NAME="Run Auto Documentation Tests Coverage Results" MODIFIED="1700657007655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_qviewkit_url_test_test_basic_url.coverage" NAME="pytest for qviewkit_url_test.test_basic_url Coverage Results" MODIFIED="1700219707596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_in_test_filters_py.coverage" NAME="pytest in test_filters.py Coverage Results" MODIFIED="1698307415524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$Run_Auto_Documentation_Tests.coverage" NAME="Run Auto Documentation Tests Coverage Results" MODIFIED="1701091804823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_test_auto_documentation_test_forced_capture.coverage" NAME="pytest for test_auto_documentation.test_forced_capture Coverage Results" MODIFIED="1701089478823" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_test_templates_test_sample_template.coverage" NAME="pytest for test_templates.test_sample_template Coverage Results" MODIFIED="1700648043032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_test_auto_documentation_test_invalid_certs.coverage" NAME="pytest for test_auto_documentation.test_invalid_certs Coverage Results" MODIFIED="1697196980856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_test_auto_documentation_test_qkit_measurement_documentation.coverage" NAME="pytest for test_auto_documentation.test_qkit_measurement_documentation Coverage Results" MODIFIED="1698397021046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_in_qviewkit_url_test_py.coverage" NAME="pytest in qviewkit_url_test.py Coverage Results" MODIFIED="1699021781272" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/dokuwiki_autodoc$pytest_for_qviewkit_url_test_test_primitive_extraction.coverage" NAME="pytest for qviewkit_url_test.test_primitive_extraction Coverage Results" MODIFIED="1700219711210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+  </component>
+</project>
