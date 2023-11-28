@@ -1,0 +1,3 @@
+[console_scripts]
+youtube-up=youtube_up.__main__:main
+
