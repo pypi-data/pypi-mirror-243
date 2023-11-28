@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: titanic-pp-py
+Version: 0.0.2
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+License-File: LICENSE
+Summary: osu! difficulty and pp calculation for all modes
+Keywords: osu,pp,stars,performance,difficulty
+Author: Max Ohn <ohn.m@hotmail.de>, tsunyoku <tsunyoku@gmail.com>, Lekuruu <contact@lekuru.xyz>, kanaarima <akataltosu@gmail.com>
+Author-email: Max Ohn <ohn.m@hotmail.de>, tsunyoku <tsunyoku@gmail.com>, Lekuruu <contact@lekuru.xyz>, kanaarima <akataltosu@gmail.com>
+License: MIT
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+
+# titanic-pp-py
+
+This is a work in progress pp system, with the goal of balancing performance points for the relax/autopilot mods with vanilla.
+The actual code for this can be viewed [here](https://github.com/osuTitanic/titanic-pp-rs).
+
+You can install this package using this command:
+
+```shell
+pip install git+https://github.com/osuTitanic/titanic-pp-py.git
+```
+
+Please view the original fork [here](https://github.com/MaxOhn/rosu-pp-py), for general usage.
+
