@@ -1,0 +1,17 @@
+# ignore everything
+**
+.*
+
+# Allow files and directories
+!im-policy.xml
+!marie/**
+!marie_server/**
+!hubble
+!setup.py
+!*requirements.txt
+!README.md
+!MANIFEST.in
+!marie_cli/**
+!daemon/**
+!docarray/**
+!fastentrypoints.py

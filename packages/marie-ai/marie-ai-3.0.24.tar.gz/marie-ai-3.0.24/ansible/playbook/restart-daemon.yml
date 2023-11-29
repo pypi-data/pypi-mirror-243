@@ -1,0 +1,34 @@
+---
+- name: Restart Docker service
+  hosts: ml.cluster
+  gather_facts: false
+
+
+  tasks:
+#    - name: restart docker daemon
+#      systemd:
+#        state: restarted
+#        daemon_reload: yes
+#        name: docker
+#
+#      become_user: root # we need to be root
+#      become: yes
+#      become_method: sudo
+
+    - name: efs stop
+      systemd:
+        state: stopped
+        name: efs
+
+      become_user: root # we need to be root
+      become: yes
+      become_method: sudo
+
+    - name: eraagent stop
+      systemd:
+        state: stopped
+        name: eraagent
+
+      become_user: root # we need to be root
+      become: yes
+      become_method: sudo
