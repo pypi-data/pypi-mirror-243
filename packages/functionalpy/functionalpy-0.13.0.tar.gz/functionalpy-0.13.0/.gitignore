@@ -1,0 +1,20 @@
+# Python
+/.python-version
+/.pytype/
+/dist/
+/docs/_build/
+/src/*.egg-info/
+__pycache__/
+.*venv*
+_build/
+.tox
+
+# Coverage
+**/.coverage*
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+functionalpy.egg-info
