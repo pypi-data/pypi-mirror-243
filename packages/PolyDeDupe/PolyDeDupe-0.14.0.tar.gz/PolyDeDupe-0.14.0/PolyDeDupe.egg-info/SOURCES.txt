@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+PolyDeDupe/__init__.py
+PolyDeDupe/non_alpha.py
+PolyDeDupe/polydedupe.py
+PolyDeDupe/py.typed
+PolyDeDupe/version.py
+PolyDeDupe.egg-info/PKG-INFO
+PolyDeDupe.egg-info/SOURCES.txt
+PolyDeDupe.egg-info/dependency_links.txt
+PolyDeDupe.egg-info/requires.txt
+PolyDeDupe.egg-info/top_level.txt
