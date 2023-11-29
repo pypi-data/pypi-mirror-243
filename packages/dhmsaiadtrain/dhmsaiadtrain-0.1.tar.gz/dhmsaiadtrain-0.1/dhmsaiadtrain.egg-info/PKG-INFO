@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: dhmsaiadtrain
+Version: 0.1
+Summary: AI Training Script Owned by Suzhou DHMS
+Home-page: https://gitlab.dhms.net/aidiagnosis/ai_alert_training
+Author: Daijie Bao
+Author-email: daijiebao0617@outlook.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# DHMS AI Training Package
+
+This pip package is owned by DHMS for AI Training. It contains various modules and utilities that are used for training artificial intelligence models.
+
+## Installation
+
+To install the DHMS AI Training package, you can use pip:
+
+pip install dhmsaiadtrain
+
