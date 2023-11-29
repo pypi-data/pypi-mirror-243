@@ -1,0 +1,154 @@
+<div class="" id="content">
+ <h1>
+  Select Host to change
+ </h1>
+ <div id="content-main">
+  <ul class="object-tools">
+   <li>
+    <a href="/admin/djfritz/hostmodel/update_hosts">
+     Update all hosts
+    </a>
+   </li>
+   <li>
+    <a class="recoverlink" href="/admin/djfritz/hostmodel/recover/">
+     Recover deleted Hosts
+    </a>
+   </li>
+   <li>
+    <a class="addlink" href="/admin/djfritz/hostmodel/add/">
+     Add Host
+    </a>
+   </li>
+  </ul>
+  <div class="module filtered" id="changelist">
+   <div class="changelist-form-container">
+    <div id="toolbar">
+     <form id="changelist-search" method="get">
+      <div>
+       <!-- DIV needed for valid HTML -->
+       <label for="searchbar">
+        <img alt="Search" src="/static/admin/img/search.svg"/>
+       </label>
+       <input id="searchbar" name="q" size="40" type="text" value=""/>
+       <input type="submit" value="Search"/>
+      </div>
+     </form>
+    </div>
+    <nav class="toplinks">
+    </nav>
+    <form id="changelist-form" method="post" novalidate="">
+     MockedCsrfTokenNode
+     <p class="paginator">
+      0 Hosts
+     </p>
+    </form>
+   </div>
+   <div id="changelist-filter">
+    <h2>
+     Filter
+    </h2>
+    <details data-filter-title="Last Status" open="">
+     <summary>
+      By Last Status
+     </summary>
+     <ul>
+      <li class="selected">
+       <a href="?">
+        All
+       </a>
+      </li>
+      <li>
+       <a href="?last_status__exact=1">
+        Yes
+       </a>
+      </li>
+      <li>
+       <a href="?last_status__exact=0">
+        No
+       </a>
+      </li>
+     </ul>
+    </details>
+    <details data-filter-title="WAN access" open="">
+     <summary>
+      By WAN access
+     </summary>
+     <ul>
+      <li class="selected">
+       <a href="?">
+        All
+       </a>
+      </li>
+      <li>
+       <a href="?wan_access__exact=granted">
+        granted
+       </a>
+      </li>
+      <li>
+       <a href="?wan_access__exact=denied">
+        denied
+       </a>
+      </li>
+      <li>
+       <a href="?wan_access__exact=error">
+        error
+       </a>
+      </li>
+      <li>
+       <a href="?wan_access__exact=unknown">
+        unknown
+       </a>
+      </li>
+     </ul>
+    </details>
+    <details data-filter-title="Interface Type" open="">
+     <summary>
+      By Interface Type
+     </summary>
+     <ul>
+      <li class="selected">
+       <a href="?">
+        All
+       </a>
+      </li>
+     </ul>
+    </details>
+    <details data-filter-title="Address Source" open="">
+     <summary>
+      By Address Source
+     </summary>
+     <ul>
+      <li class="selected">
+       <a href="?">
+        All
+       </a>
+      </li>
+     </ul>
+    </details>
+    <details data-filter-title="unique name" open="">
+     <summary>
+      By unique name
+     </summary>
+     <ul>
+      <li class="selected">
+       <a href="?">
+        All
+       </a>
+      </li>
+      <li>
+       <a href="?uniqueness=yes">
+        Yes
+       </a>
+      </li>
+      <li>
+       <a href="?uniqueness=no">
+        No
+       </a>
+      </li>
+     </ul>
+    </details>
+   </div>
+  </div>
+ </div>
+ <br class="clear"/>
+</div>
