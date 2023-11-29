@@ -1,0 +1,11 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/testpypackage_ces/__init__.py
+src/testpypackage_ces/example.py
+src/testpypackage_ces.egg-info/PKG-INFO
+src/testpypackage_ces.egg-info/SOURCES.txt
+src/testpypackage_ces.egg-info/dependency_links.txt
+src/testpypackage_ces.egg-info/requires.txt
+src/testpypackage_ces.egg-info/top_level.txt
+tests/test_simple.py
