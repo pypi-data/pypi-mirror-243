@@ -1,0 +1,13 @@
+README.md
+setup.py
+birds_eye_lib.egg-info/PKG-INFO
+birds_eye_lib.egg-info/SOURCES.txt
+birds_eye_lib.egg-info/dependency_links.txt
+birds_eye_lib.egg-info/top_level.txt
+birdseyelib/__init__.py
+birdseyelib/controllerInput.py
+birdseyelib/emulation.py
+birdseyelib/externalTool.py
+birdseyelib/memory.py
+birdseyelib/response.py
+birdseyelib/socketClient.py
