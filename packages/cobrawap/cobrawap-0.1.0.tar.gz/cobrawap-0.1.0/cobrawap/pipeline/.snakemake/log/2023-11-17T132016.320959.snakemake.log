@@ -1,0 +1,160 @@
+Config file /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_configs/configs/config.yaml is extended by additional config specified via the command line.
+Using 'config_IDIBAPS.yaml.
+Using 'config_IDIBAPS.yaml.
+Using 'config_IDIBAPS.yaml.
+Using 'config_IDIBAPS.yaml.
+Using 'config_IDIBAPS.yaml.
+Building DAG of jobs...
+Executing subworkflow stage01.
+Parameter "trial" not found in the config! Set to None!
+Building DAG of jobs...
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-11-17T132017.411103.snakemake.log
+Executing subworkflow stage02.
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-11-17T132018.583968.snakemake.log
+Executing subworkflow stage03.
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-11-17T132018.686247.snakemake.log
+Executing subworkflow stage04.
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-11-17T132018.764530.snakemake.log
+Executing subworkflow stage05.
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'annotations' is ignored in favor of 'duration'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/annotations/wavefronts_annotations.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/duration/wavefronts_duration.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'duration' is ignored in favor of 'number_of_triggers'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/duration/wavefronts_duration.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'number_of_triggers' is ignored in favor of 'inter_wave_interval'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'inter_wave_interval' is ignored in favor of 'label_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/label_planar/wavefronts_label_planar.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'label_planar' is ignored in favor of 'velocity_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/label_planar/wavefronts_label_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'velocity_planar' is ignored in favor of 'direction_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'direction_planar' is ignored in favor of 'time_stamp'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.png'
+Nothing to be done (all requested files are present and up to date).
+Complete log: .snakemake/log/2023-11-17T132018.848484.snakemake.log
+Executing main workflow.
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+execute_stage        5
+total                6
+
+Select jobs to execute...
+
+[Fri Nov 17 13:20:18 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage01_data_entry/data.nix, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage01_data_entry/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage01_data_entry.done
+    jobid: 5
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage01_data_entry.done; Updated input files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage01_data_entry/working_config.yaml
+    wildcards: stage=stage01_data_entry
+    resources: tmpdir=/tmp
+
+[Fri Nov 17 13:20:18 2023]
+Finished job 5.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Fri Nov 17 13:20:18 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage01_data_entry.done, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage02_processing/processed_data.nix, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage02_processing/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage02_processing.done
+    jobid: 4
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage02_processing.done; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage01_data_entry.done
+    wildcards: stage=stage02_processing
+    resources: tmpdir=/tmp
+
+[Fri Nov 17 13:20:18 2023]
+Finished job 4.
+2 of 6 steps (33%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage01_data_entry.done.
+Select jobs to execute...
+
+[Fri Nov 17 13:20:18 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage02_processing.done, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage03_trigger_detection/trigger_times.nix, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage03_trigger_detection/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage03_trigger_detection.done
+    jobid: 3
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage03_trigger_detection.done; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage02_processing.done
+    wildcards: stage=stage03_trigger_detection
+    resources: tmpdir=/tmp
+
+[Fri Nov 17 13:20:18 2023]
+Finished job 3.
+3 of 6 steps (50%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage02_processing.done.
+Select jobs to execute...
+
+[Fri Nov 17 13:20:18 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage03_trigger_detection.done, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage04_wave_detection/waves.nix, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage04_wave_detection/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage04_wave_detection.done
+    jobid: 2
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage04_wave_detection.done; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage03_trigger_detection.done
+    wildcards: stage=stage04_wave_detection
+    resources: tmpdir=/tmp
+
+[Fri Nov 17 13:20:18 2023]
+Finished job 2.
+4 of 6 steps (67%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage03_trigger_detection.done.
+Select jobs to execute...
+
+[Fri Nov 17 13:20:18 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage04_wave_detection.done, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/wavefronts_wave-wise_measures.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization.done
+    jobid: 1
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization.done; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage04_wave_detection.done
+    wildcards: stage=stage05_wave_characterization
+    resources: tmpdir=/tmp
+
+[Fri Nov 17 13:20:18 2023]
+Finished job 1.
+5 of 6 steps (83%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage04_wave_detection.done.
+Select jobs to execute...
+
+[Fri Nov 17 13:20:18 2023]
+rule all:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization.done
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/pipeline.done
+    jobid: 0
+    reason: Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization.done
+    resources: tmpdir=/tmp
+
+[Fri Nov 17 13:20:18 2023]
+Finished job 0.
+6 of 6 steps (100%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS/stage05_wave_characterization.done.
+Complete log: stage05_wave_characterization/.snakemake/log/2023-11-17T132018.848484.snakemake.log

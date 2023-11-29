@@ -1,0 +1,8 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+MissingInputException in rule check_input in file /home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/../utils/Snakefile, line 125:
+Missing input files for rule check_input:
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/input.check
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection
+    affected files:
+        /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/stage04_wave_detection/waves.nix

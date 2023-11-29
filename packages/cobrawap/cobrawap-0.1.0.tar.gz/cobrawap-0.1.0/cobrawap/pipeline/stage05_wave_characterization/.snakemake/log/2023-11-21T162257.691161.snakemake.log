@@ -1,0 +1,8 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+MissingInputException in rule compute_measure in file /home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/Snakefile, line 52:
+Missing input files for rule compute_measure:
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/annotations/wavefronts_annotations.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/annotations/wavefronts_annotations.png
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection, measure=annotations
+    affected files:
+        /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/stage04_wave_detection/waves.nix

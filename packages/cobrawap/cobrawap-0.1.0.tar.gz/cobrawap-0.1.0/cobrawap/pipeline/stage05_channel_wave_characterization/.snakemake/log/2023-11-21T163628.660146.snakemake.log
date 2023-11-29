@@ -1,0 +1,154 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'annotations' is ignored in favor of 'velocity_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.png'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'velocity_local' is ignored in favor of 'direction_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.png'
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+all                       1
+check_input               1
+compute_measure           3
+spatial_derivative        1
+total                     6
+
+Select jobs to execute...
+
+[Tue Nov 21 16:36:30 2023]
+localrule check_input:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix, scripts/check_input.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/input.check
+    jobid: 1
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/input.check
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization
+    priority: 10
+    resources: tmpdir=/tmp
+
+[Tue Nov 21 16:36:32 2023]
+Finished job 1.
+1 of 6 steps (17%) done
+Select jobs to execute...
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png'
+
+[Tue Nov 21 16:36:32 2023]
+Job 4: RULE spatial_derivative:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/spatial_derivative.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png
+    jobid: 4
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/spatial_derivative.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.csv
+                         --STAGE_NAME stage05_channel_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavemodes_channel-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 16 --PLOT_FORMAT png --EVENT_NAME wavemodes --MEASURES annotations velocity_local direction_local --KERNEL scharr_3x3 --INTERPOLATE True --SMOOTHING 2 --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique x_coords y_coords macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization --measure direction_local --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.csv
+
+[Tue Nov 21 16:36:37 2023]
+Finished job 4.
+2 of 6 steps (33%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'direction_local' is ignored in favor of 'annotations'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.png'
+
+[Tue Nov 21 16:36:37 2023]
+Job 2: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/annotations.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.png
+    jobid: 2
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization,measure=annotations
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/annotations.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.csv
+                         --STAGE_NAME stage05_channel_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavemodes_channel-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 16 --PLOT_FORMAT png --EVENT_NAME wavemodes --MEASURES annotations velocity_local direction_local --KERNEL scharr_3x3 --INTERPOLATE True --SMOOTHING 2 --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique x_coords y_coords macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization --measure annotations --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.csv
+
+[Tue Nov 21 16:36:39 2023]
+Finished job 2.
+3 of 6 steps (50%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'annotations' is ignored in favor of 'direction_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.png'
+
+[Tue Nov 21 16:36:39 2023]
+Job 5: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png scripts/direction_local.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.png
+    jobid: 5
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization,measure=direction_local
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/direction_local.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.csv
+                         --STAGE_NAME stage05_channel_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavemodes_channel-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 16 --PLOT_FORMAT png --EVENT_NAME wavemodes --MEASURES annotations velocity_local direction_local --KERNEL scharr_3x3 --INTERPOLATE True --SMOOTHING 2 --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique x_coords y_coords macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization --measure direction_local --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.csv; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.csv
+
+[Tue Nov 21 16:36:42 2023]
+Finished job 5.
+4 of 6 steps (67%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'direction_local' is ignored in favor of 'velocity_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.png'
+
+[Tue Nov 21 16:36:42 2023]
+Job 3: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png scripts/velocity_local.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.png
+    jobid: 3
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization,measure=velocity_local
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/velocity_local.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.csv
+                         --STAGE_NAME stage05_channel_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavemodes_channel-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 16 --PLOT_FORMAT png --EVENT_NAME wavemodes --MEASURES annotations velocity_local direction_local --KERNEL scharr_3x3 --INTERPOLATE True --SMOOTHING 2 --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique x_coords y_coords macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization --measure velocity_local --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.csv; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.png, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavemodes_spatial_derivative.csv
+
+[Tue Nov 21 16:36:44 2023]
+Finished job 3.
+5 of 6 steps (83%) done
+Select jobs to execute...
+
+[Tue Nov 21 16:36:44 2023]
+Job 0: RULE all:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/input.check /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.csv scripts/merge_dataframes.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/wavemodes_channel-wise_measures.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/overview_measures.html
+    jobid: 0
+    wildcards: 
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/merge_dataframes.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.csv
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/wavemodes_channel-wise_measures.csv
+                         --merge_key channel_id wavemodes_id --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/overview_measures.html
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/overview_measures.html, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/wavemodes_channel-wise_measures.csv; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavemodes_velocity_local.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/input.check, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavemodes_annotations.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavemodes_direction_local.csv
+
+[Tue Nov 21 16:36:46 2023]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2023-11-21T163628.660146.snakemake.log

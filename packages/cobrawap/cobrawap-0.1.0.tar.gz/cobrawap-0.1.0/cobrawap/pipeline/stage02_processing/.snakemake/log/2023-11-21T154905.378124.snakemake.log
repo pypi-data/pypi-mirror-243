@@ -1,0 +1,6 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+WorkflowError:
+Unable to obtain modification time of file /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage02_processing/processed_data.nix although it existed before. It could be that a concurrent process has deleted it while Snakemake was running.
+  File "/home/rgutzen/anaconda3/envs/cobrawap_ms/lib/python3.9/asyncio/runners.py", line 44, in run
+  File "/home/rgutzen/anaconda3/envs/cobrawap_ms/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete

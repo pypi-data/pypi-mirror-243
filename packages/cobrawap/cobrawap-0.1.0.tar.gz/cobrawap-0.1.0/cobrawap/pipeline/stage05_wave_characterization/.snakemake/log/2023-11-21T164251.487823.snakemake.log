@@ -1,0 +1,165 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'annotations' is ignored in favor of 'duration'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'duration' is ignored in favor of 'number_of_triggers'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'number_of_triggers' is ignored in favor of 'velocity_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'velocity_planar' is ignored in favor of 'direction_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavemodes_direction_planar.png'
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+compute_measure        5
+total                  6
+
+Select jobs to execute...
+
+[Tue Nov 21 16:42:53 2023]
+Job 6: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/direction_planar.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavemodes_direction_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavemodes_direction_planar.png
+    jobid: 6
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=direction_planar
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/direction_planar.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavemodes_direction_planar.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavemodes_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavemodes --MEASURES annotations duration number_of_triggers velocity_planar direction_planar --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure direction_planar --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavemodes_direction_planar.png
+
+Reason: Params have changed since last execution
+
+[Tue Nov 21 16:42:56 2023]
+Finished job 6.
+1 of 6 steps (17%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'direction_planar' is ignored in favor of 'annotations'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavemodes_direction_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.png'
+
+[Tue Nov 21 16:42:56 2023]
+Job 2: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/annotations.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.png
+    jobid: 2
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=annotations
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/annotations.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavemodes_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavemodes --MEASURES annotations duration number_of_triggers velocity_planar direction_planar --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure annotations --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.png
+
+Reason: Params have changed since last execution
+
+[Tue Nov 21 16:42:58 2023]
+Finished job 2.
+2 of 6 steps (33%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'annotations' is ignored in favor of 'velocity_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.png'
+
+[Tue Nov 21 16:42:58 2023]
+Job 5: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/velocity_planar.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.png
+    jobid: 5
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=velocity_planar
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/velocity_planar.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavemodes_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavemodes --MEASURES annotations duration number_of_triggers velocity_planar direction_planar --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure velocity_planar --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.png
+
+Reason: Params have changed since last execution
+
+[Tue Nov 21 16:43:02 2023]
+Finished job 5.
+3 of 6 steps (50%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'velocity_planar' is ignored in favor of 'duration'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.png'
+
+[Tue Nov 21 16:43:02 2023]
+Job 3: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/duration.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.png
+    jobid: 3
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=duration
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/duration.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavemodes_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavemodes --MEASURES annotations duration number_of_triggers velocity_planar direction_planar --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure duration --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.png
+
+Reason: Params have changed since last execution
+
+[Tue Nov 21 16:43:05 2023]
+Finished job 3.
+4 of 6 steps (67%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'duration' is ignored in favor of 'number_of_triggers'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.png'
+
+[Tue Nov 21 16:43:05 2023]
+Job 4: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/number_of_triggers.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.png
+    jobid: 4
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=number_of_triggers
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/number_of_triggers.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavemodes_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavemodes --MEASURES annotations duration number_of_triggers velocity_planar direction_planar --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure number_of_triggers --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.png
+
+Reason: Params have changed since last execution
+
+[Tue Nov 21 16:43:07 2023]
+Finished job 4.
+5 of 6 steps (83%) done
+Select jobs to execute...
+
+[Tue Nov 21 16:43:07 2023]
+Job 0: RULE all:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/input.check /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavemodes_direction_planar.csv scripts/merge_dataframes.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/wavemodes_wave-wise_measures.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/overview_measures.html
+    jobid: 0
+    wildcards: 
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/merge_dataframes.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavemodes_direction_planar.csv
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/wavemodes_wave-wise_measures.csv
+                         --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/overview_measures.html
+
+Reason: Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavemodes_direction_planar.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavemodes_velocity_planar.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavemodes_annotations.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavemodes_duration.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavemodes_number_of_triggers.csv
+
+[Tue Nov 21 16:43:08 2023]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2023-11-21T164251.487823.snakemake.log

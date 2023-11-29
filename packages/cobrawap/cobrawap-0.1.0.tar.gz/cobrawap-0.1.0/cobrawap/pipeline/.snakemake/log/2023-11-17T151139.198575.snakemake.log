@@ -1,0 +1,24 @@
+Config file /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_configs/configs/config.yaml is extended by additional config specified via the command line.
+Using 'config_IDIBAPS_WBS_WT1.yaml.
+'config_IDIBAPS_WBS_WT1.yaml' not found, trying 'config_IDIBAPS_WBS.yaml'.
+'config_IDIBAPS_WBS.yaml' not found, trying 'config_IDIBAPS.yaml'.
+Using 'config_IDIBAPS.yaml.
+'config_IDIBAPS_WBS_WT1.yaml' not found, trying 'config_IDIBAPS_WBS.yaml'.
+'config_IDIBAPS_WBS.yaml' not found, trying 'config_IDIBAPS.yaml'.
+Using 'config_IDIBAPS.yaml.
+'config_IDIBAPS_WBS_WT1.yaml' not found, trying 'config_IDIBAPS_WBS.yaml'.
+'config_IDIBAPS_WBS.yaml' not found, trying 'config_IDIBAPS.yaml'.
+Using 'config_IDIBAPS.yaml.
+'config_IDIBAPS_WBS_WT1.yaml' not found, trying 'config_IDIBAPS_WBS.yaml'.
+'config_IDIBAPS_WBS.yaml' not found, trying 'config_IDIBAPS.yaml'.
+'config_IDIBAPS.yaml' not found, trying 'config.yaml'.
+No corresponding config file found!
+Building DAG of jobs...
+config file of stage stage05_channel-wave_characterization does not define STAGE_OUTPUT!
+InputFunctionException in rule execute_stage in file /home/rgutzen/Projects/cobrawap/cobrawap/pipeline/Snakefile, line 114:
+Error:
+  TypeError: unsupported operand type(s) for /: 'PosixPath' and 'NoneType'
+Wildcards:
+  stage=stage05_channel-wave_characterization
+Traceback:
+  File "/home/rgutzen/Projects/cobrawap/cobrawap/pipeline/Snakefile", line 98, in stage_output

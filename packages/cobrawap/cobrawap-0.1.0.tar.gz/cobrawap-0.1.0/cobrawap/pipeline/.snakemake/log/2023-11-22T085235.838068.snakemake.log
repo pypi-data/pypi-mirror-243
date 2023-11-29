@@ -1,0 +1,37 @@
+Config file /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_configs/configs/config.yaml is extended by additional config specified via the command line.
+'config_IDIBAPS_WBS_WT4|25Hz.yaml' not found, trying 'config_IDIBAPS_WBS|25Hz.yaml'.
+'config_IDIBAPS_WBS|25Hz.yaml' not found, trying 'config_IDIBAPS|25Hz.yaml'.
+'config_IDIBAPS|25Hz.yaml' not found, trying 'config|25Hz.yaml'.
+'config|25Hz.yaml' not found, trying 'config_IDIBAPS_WBS_WT4.yaml'.
+Using 'config_IDIBAPS_WBS_WT4.yaml.
+'config_IDIBAPS_WBS_WT4|25Hz.yaml' not found, trying 'config_IDIBAPS_WBS|25Hz.yaml'.
+'config_IDIBAPS_WBS|25Hz.yaml' not found, trying 'config_IDIBAPS|25Hz.yaml'.
+Using 'config_IDIBAPS|25Hz.yaml.
+'config_IDIBAPS_WBS_WT4|25Hz.yaml' not found, trying 'config_IDIBAPS_WBS|25Hz.yaml'.
+'config_IDIBAPS_WBS|25Hz.yaml' not found, trying 'config_IDIBAPS|25Hz.yaml'.
+'config_IDIBAPS|25Hz.yaml' not found, trying 'config|25Hz.yaml'.
+'config|25Hz.yaml' not found, trying 'config_IDIBAPS_WBS_WT4.yaml'.
+'config_IDIBAPS_WBS_WT4.yaml' not found, trying 'config_IDIBAPS_WBS.yaml'.
+'config_IDIBAPS_WBS.yaml' not found, trying 'config_IDIBAPS.yaml'.
+Using 'config_IDIBAPS.yaml.
+'config_IDIBAPS_WBS_WT4|25Hz.yaml' not found, trying 'config_IDIBAPS_WBS|25Hz.yaml'.
+'config_IDIBAPS_WBS|25Hz.yaml' not found, trying 'config_IDIBAPS|25Hz.yaml'.
+'config_IDIBAPS|25Hz.yaml' not found, trying 'config|25Hz.yaml'.
+'config|25Hz.yaml' not found, trying 'config_IDIBAPS_WBS_WT4.yaml'.
+'config_IDIBAPS_WBS_WT4.yaml' not found, trying 'config_IDIBAPS_WBS.yaml'.
+'config_IDIBAPS_WBS.yaml' not found, trying 'config_IDIBAPS.yaml'.
+Using 'config_IDIBAPS.yaml.
+'config_IDIBAPS_WBS_WT4|25Hz.yaml' not found, trying 'config_IDIBAPS_WBS|25Hz.yaml'.
+'config_IDIBAPS_WBS|25Hz.yaml' not found, trying 'config_IDIBAPS|25Hz.yaml'.
+'config_IDIBAPS|25Hz.yaml' not found, trying 'config|25Hz.yaml'.
+'config|25Hz.yaml' not found, trying 'config_IDIBAPS_WBS_WT4.yaml'.
+'config_IDIBAPS_WBS_WT4.yaml' not found, trying 'config_IDIBAPS_WBS.yaml'.
+'config_IDIBAPS_WBS.yaml' not found, trying 'config_IDIBAPS.yaml'.
+Using 'config_IDIBAPS.yaml.
+Building DAG of jobs...
+Executing subworkflow stage01.
+Parameter "trial" not found in the config! Set to None!
+Building DAG of jobs...
+FileNotFoundError in file /home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage01_data_entry/Snakefile, line 52:
+Data file `/projects/wavescalephant/Data/IDIBAPS_WBS/data-originals/WBS/WT/cond-WBS_type-WT_sub-4/hbp-01853_cond-WBS_type-WT_sub-4_chs-32_area-ALL_hem-RH_ana-K100M13_stim-SPN.smr` not found!
+  File "/home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage01_data_entry/Snakefile", line 52, in data_path

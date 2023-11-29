@@ -1,0 +1,5 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+AttributeError in file /home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/../utils/Snakefile, line 29:
+'types.SimpleNamespace' object has no attribute 'NEO_FORMAT'
+  File "/home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/Snakefile", line 7, in <module>
+  File "/home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/../utils/Snakefile", line 29, in <module>

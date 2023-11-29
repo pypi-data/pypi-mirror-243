@@ -1,0 +1,369 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'annotations' is ignored in favor of 'duration'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'duration' is ignored in favor of 'number_of_triggers'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'number_of_triggers' is ignored in favor of 'inter_wave_interval'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'inter_wave_interval' is ignored in favor of 'label_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'label_planar' is ignored in favor of 'velocity_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'velocity_planar' is ignored in favor of 'direction_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'direction_planar' is ignored in favor of 'time_stamp'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.png'
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                count
+---------------  -------
+all                    1
+check_input            1
+compute_measure        8
+total                 10
+
+Select jobs to execute...
+
+[Tue Nov 21 12:28:41 2023]
+localrule check_input:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix, scripts/check_input.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/input.check
+    jobid: 1
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/input.check
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization
+    priority: 10
+    resources: tmpdir=/tmp
+
+[Tue Nov 21 12:28:43 2023]
+Finished job 1.
+1 of 10 steps (10%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'time_stamp' is ignored in favor of 'direction_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.png'
+
+[Tue Nov 21 12:28:43 2023]
+Job 8: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/direction_planar.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.png
+    jobid: 8
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=direction_planar
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/direction_planar.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations duration number_of_triggers inter_wave_interval label_planar velocity_planar direction_planar time_stamp --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGES stage01_data_entry stage02_processing stage03_trigger_detection stage04_wave_detection stage05_wave_characterization --NEO_FORMAT nix --QUALITY 5 --SCALE_X 720 --SCALE_Y 720 --FPS 18 --BITRATE 20M --FRAME_RATE None --COLORMAP twilight --PLOT_EVENT wavefronts --MARKER_COLOR r --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure direction_planar --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.csv
+
+[Tue Nov 21 12:28:52 2023]
+Finished job 8.
+2 of 10 steps (20%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'direction_planar' is ignored in favor of 'label_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.png'
+
+[Tue Nov 21 12:28:52 2023]
+Job 6: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/label_planar.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.png
+    jobid: 6
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=label_planar
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/label_planar.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations duration number_of_triggers inter_wave_interval label_planar velocity_planar direction_planar time_stamp --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGES stage01_data_entry stage02_processing stage03_trigger_detection stage04_wave_detection stage05_wave_characterization --NEO_FORMAT nix --QUALITY 5 --SCALE_X 720 --SCALE_Y 720 --FPS 18 --BITRATE 20M --FRAME_RATE None --COLORMAP twilight --PLOT_EVENT wavefronts --MARKER_COLOR r --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure label_planar --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.csv
+
+[Tue Nov 21 12:29:31 2023]
+Finished job 6.
+3 of 10 steps (30%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'label_planar' is ignored in favor of 'annotations'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.png'
+
+[Tue Nov 21 12:29:31 2023]
+Job 2: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/annotations.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.png
+    jobid: 2
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=annotations
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/annotations.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations duration number_of_triggers inter_wave_interval label_planar velocity_planar direction_planar time_stamp --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGES stage01_data_entry stage02_processing stage03_trigger_detection stage04_wave_detection stage05_wave_characterization --NEO_FORMAT nix --QUALITY 5 --SCALE_X 720 --SCALE_Y 720 --FPS 18 --BITRATE 20M --FRAME_RATE None --COLORMAP twilight --PLOT_EVENT wavefronts --MARKER_COLOR r --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure annotations --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.csv
+
+[Tue Nov 21 12:29:34 2023]
+Finished job 2.
+4 of 10 steps (40%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'annotations' is ignored in favor of 'velocity_planar'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.png'
+
+[Tue Nov 21 12:29:34 2023]
+Job 7: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/velocity_planar.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.png
+    jobid: 7
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=velocity_planar
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/velocity_planar.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations duration number_of_triggers inter_wave_interval label_planar velocity_planar direction_planar time_stamp --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGES stage01_data_entry stage02_processing stage03_trigger_detection stage04_wave_detection stage05_wave_characterization --NEO_FORMAT nix --QUALITY 5 --SCALE_X 720 --SCALE_Y 720 --FPS 18 --BITRATE 20M --FRAME_RATE None --COLORMAP twilight --PLOT_EVENT wavefronts --MARKER_COLOR r --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure velocity_planar --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.csv
+
+[Tue Nov 21 12:29:52 2023]
+Finished job 7.
+5 of 10 steps (50%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'velocity_planar' is ignored in favor of 'inter_wave_interval'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.png'
+
+[Tue Nov 21 12:29:52 2023]
+Job 5: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/inter_wave_interval.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.png
+    jobid: 5
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=inter_wave_interval
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/inter_wave_interval.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations duration number_of_triggers inter_wave_interval label_planar velocity_planar direction_planar time_stamp --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGES stage01_data_entry stage02_processing stage03_trigger_detection stage04_wave_detection stage05_wave_characterization --NEO_FORMAT nix --QUALITY 5 --SCALE_X 720 --SCALE_Y 720 --FPS 18 --BITRATE 20M --FRAME_RATE None --COLORMAP twilight --PLOT_EVENT wavefronts --MARKER_COLOR r --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure inter_wave_interval --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.csv
+
+[Tue Nov 21 12:29:55 2023]
+Finished job 5.
+6 of 10 steps (60%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'inter_wave_interval' is ignored in favor of 'time_stamp'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.png'
+
+[Tue Nov 21 12:29:55 2023]
+Job 9: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/time_stamp.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.png
+    jobid: 9
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=time_stamp
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/time_stamp.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations duration number_of_triggers inter_wave_interval label_planar velocity_planar direction_planar time_stamp --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGES stage01_data_entry stage02_processing stage03_trigger_detection stage04_wave_detection stage05_wave_characterization --NEO_FORMAT nix --QUALITY 5 --SCALE_X 720 --SCALE_Y 720 --FPS 18 --BITRATE 20M --FRAME_RATE None --COLORMAP twilight --PLOT_EVENT wavefronts --MARKER_COLOR r --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure time_stamp --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.csv
+
+[Tue Nov 21 12:29:58 2023]
+Finished job 9.
+7 of 10 steps (70%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'time_stamp' is ignored in favor of 'duration'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.png'
+
+[Tue Nov 21 12:29:58 2023]
+Job 3: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/duration.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.png
+    jobid: 3
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=duration
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/duration.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations duration number_of_triggers inter_wave_interval label_planar velocity_planar direction_planar time_stamp --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGES stage01_data_entry stage02_processing stage03_trigger_detection stage04_wave_detection stage05_wave_characterization --NEO_FORMAT nix --QUALITY 5 --SCALE_X 720 --SCALE_Y 720 --FPS 18 --BITRATE 20M --FRAME_RATE None --COLORMAP twilight --PLOT_EVENT wavefronts --MARKER_COLOR r --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure duration --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.csv
+
+[Tue Nov 21 12:30:01 2023]
+Finished job 3.
+8 of 10 steps (80%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'duration' is ignored in favor of 'number_of_triggers'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.png'
+
+[Tue Nov 21 12:30:01 2023]
+Job 4: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/number_of_triggers.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.png
+    jobid: 4
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization,measure=number_of_triggers
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/number_of_triggers.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.csv
+                         --STAGE_NAME stage05_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_wave-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 1 2 3 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations duration number_of_triggers inter_wave_interval label_planar velocity_planar direction_planar time_stamp --ALIGNMENT_THRESHOLD 0.9 --DIRECTION_METHOD optical_flow --TIME_STAMP_POINT start --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGES stage01_data_entry stage02_processing stage03_trigger_detection stage04_wave_detection stage05_wave_characterization --NEO_FORMAT nix --QUALITY 5 --SCALE_X 720 --SCALE_Y 720 --FPS 18 --BITRATE 20M --FRAME_RATE None --COLORMAP twilight --PLOT_EVENT wavefronts --MARKER_COLOR r --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization --measure number_of_triggers --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.png
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.csv
+
+[Tue Nov 21 12:30:04 2023]
+Finished job 4.
+9 of 10 steps (90%) done
+Select jobs to execute...
+
+[Tue Nov 21 12:30:04 2023]
+Job 0: RULE all:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/input.check /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.csv scripts/merge_dataframes.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/wavefronts_wave-wise_measures.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/overview_measures.html
+    jobid: 0
+    wildcards: 
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/merge_dataframes.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.csv
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/wavefronts_wave-wise_measures.csv
+                         --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/overview_measures.html
+
+Reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/wavefronts_wave-wise_measures.csv; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/velocity_planar/wavefronts_velocity_planar.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/inter_wave_interval/wavefronts_inter_wave_interval.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/direction_planar/wavefronts_direction_planar.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/input.check, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/annotations/wavefronts_annotations.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/duration/wavefronts_duration.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/number_of_triggers/wavefronts_number_of_triggers.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/time_stamp/wavefronts_time_stamp.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/label_planar/wavefronts_label_planar.csv
+
+[Tue Nov 21 12:30:05 2023]
+Finished job 0.
+10 of 10 steps (100%) done
+Complete log: .snakemake/log/2023-11-21T122841.051382.snakemake.log
+Executing main workflow.
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count
+-------------  -------
+all                  1
+execute_stage        5
+total                6
+
+Select jobs to execute...
+
+[Tue Nov 21 12:30:05 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage01_data_entry/data.nix, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage01_data_entry/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage01_data_entry.done
+    jobid: 5
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage01_data_entry.done
+    wildcards: stage=stage01_data_entry
+    resources: tmpdir=/tmp
+
+[Tue Nov 21 12:30:05 2023]
+Finished job 5.
+1 of 6 steps (17%) done
+Select jobs to execute...
+
+[Tue Nov 21 12:30:05 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage01_data_entry.done, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage02_processing/processed_data.nix, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage02_processing/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage02_processing.done
+    jobid: 4
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage02_processing.done; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage01_data_entry.done
+    wildcards: stage=stage02_processing
+    resources: tmpdir=/tmp
+
+[Tue Nov 21 12:30:05 2023]
+Finished job 4.
+2 of 6 steps (33%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage01_data_entry.done.
+Select jobs to execute...
+
+[Tue Nov 21 12:30:05 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage02_processing.done, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage03_trigger_detection/trigger_times.nix, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage03_trigger_detection/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage03_trigger_detection.done
+    jobid: 3
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage03_trigger_detection.done; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage02_processing.done
+    wildcards: stage=stage03_trigger_detection
+    resources: tmpdir=/tmp
+
+[Tue Nov 21 12:30:05 2023]
+Finished job 3.
+3 of 6 steps (50%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage02_processing.done.
+Select jobs to execute...
+
+[Tue Nov 21 12:30:05 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage03_trigger_detection.done, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection.done
+    jobid: 2
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection.done; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage03_trigger_detection.done
+    wildcards: stage=stage04_wave_detection
+    resources: tmpdir=/tmp
+
+[Tue Nov 21 12:30:05 2023]
+Finished job 2.
+4 of 6 steps (67%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage03_trigger_detection.done.
+Select jobs to execute...
+
+[Tue Nov 21 12:30:05 2023]
+rule execute_stage:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection.done, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/wavefronts_wave-wise_measures.csv, /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization/working_config.yaml
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization.done
+    jobid: 1
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization.done; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection.done
+    wildcards: stage=stage05_wave_characterization
+    resources: tmpdir=/tmp
+
+[Tue Nov 21 12:30:05 2023]
+Finished job 1.
+5 of 6 steps (83%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection.done.
+Select jobs to execute...
+
+[Tue Nov 21 12:30:05 2023]
+rule all:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization.done
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/pipeline.done
+    jobid: 0
+    reason: Missing output files: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/pipeline.done; Input files updated by another job: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization.done
+    resources: tmpdir=/tmp
+
+[Tue Nov 21 12:30:05 2023]
+Finished job 0.
+6 of 6 steps (100%) done
+Removing temporary output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_wave_characterization.done.
+Complete log: stage05_wave_characterization/.snakemake/log/2023-11-21T122841.051382.snakemake.log

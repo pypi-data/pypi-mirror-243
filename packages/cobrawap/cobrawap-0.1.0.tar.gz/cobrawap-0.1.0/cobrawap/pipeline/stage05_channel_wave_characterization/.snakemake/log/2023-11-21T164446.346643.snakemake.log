@@ -1,0 +1,123 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+Building DAG of jobs...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'annotations' is ignored in favor of 'velocity_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavefronts_annotations.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavefronts_velocity_local.png'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/velocity_local/wavefronts_velocity_local.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavefronts_spatial_derivative.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'velocity_local' is ignored in favor of 'direction_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavefronts_spatial_derivative.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavefronts_direction_local.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'direction_local' is ignored in favor of 'flow_direction_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/direction_local/wavefronts_direction_local.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/flow_direction_local/wavefronts_flow_direction_local.png'
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'flow_direction_local' is ignored in favor of 'inter_wave_interval_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/flow_direction_local/wavefronts_flow_direction_local.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/inter_wave_interval_local/wavefronts_inter_wave_interval_local.png'
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+all                       1
+compute_measure           5
+spatial_derivative        1
+total                     7
+
+Select jobs to execute...
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/inter_wave_interval_local/wavefronts_inter_wave_interval_local.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavefronts_spatial_derivative.png'
+
+[Tue Nov 21 16:44:48 2023]
+Job 4: RULE spatial_derivative:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/spatial_derivative.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavefronts_spatial_derivative.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavefronts_spatial_derivative.png
+    jobid: 4
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/spatial_derivative.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavefronts_spatial_derivative.csv
+                         --STAGE_NAME stage05_channel_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_channel-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 37 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations velocity_local direction_local flow_direction_local inter_wave_interval_local --KERNEL scharr_3x3 --INTERPOLATE True --SMOOTHING 2 --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique x_coords y_coords macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization --measure inter_wave_interval_local --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavefronts_spatial_derivative.png
+
+Reason: Params have changed since last execution
+
+[Tue Nov 21 16:44:53 2023]
+Finished job 4.
+1 of 7 steps (14%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'inter_wave_interval_local' is ignored in favor of 'annotations'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/spatial_derivative/wavefronts_spatial_derivative.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavefronts_annotations.png'
+
+[Tue Nov 21 16:44:53 2023]
+Job 2: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/annotations.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavefronts_annotations.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavefronts_annotations.png
+    jobid: 2
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization,measure=annotations
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/annotations.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavefronts_annotations.csv
+                         --STAGE_NAME stage05_channel_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_channel-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 37 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations velocity_local direction_local flow_direction_local inter_wave_interval_local --KERNEL scharr_3x3 --INTERPOLATE True --SMOOTHING 2 --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique x_coords y_coords macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization --measure annotations --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavefronts_annotations.png
+
+Reason: Params have changed since last execution
+
+[Tue Nov 21 16:44:55 2023]
+Finished job 2.
+2 of 7 steps (29%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'annotations' is ignored in favor of 'inter_wave_interval_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/annotations/wavefronts_annotations.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/inter_wave_interval_local/wavefronts_inter_wave_interval_local.png'
+
+[Tue Nov 21 16:44:55 2023]
+Job 7: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/inter_wave_interval_local.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/inter_wave_interval_local/wavefronts_inter_wave_interval_local.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/inter_wave_interval_local/wavefronts_inter_wave_interval_local.png
+    jobid: 7
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization,measure=inter_wave_interval_local
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/inter_wave_interval_local.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/inter_wave_interval_local/wavefronts_inter_wave_interval_local.csv
+                         --STAGE_NAME stage05_channel_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_channel-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 37 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations velocity_local direction_local flow_direction_local inter_wave_interval_local --KERNEL scharr_3x3 --INTERPOLATE True --SMOOTHING 2 --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique x_coords y_coords macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization --measure inter_wave_interval_local --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/inter_wave_interval_local/wavefronts_inter_wave_interval_local.png
+
+Reason: Params have changed since last execution
+
+[Tue Nov 21 16:44:59 2023]
+Finished job 7.
+3 of 7 steps (43%) done
+Select jobs to execute...
+The keyword measure is used multiple times in the rule's params, wildcards, or output! 
+measure: 'inter_wave_interval_local' is ignored in favor of 'flow_direction_local'
+The keyword output_img is used multiple times in the rule's params, wildcards, or output! 
+output_img: '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/inter_wave_interval_local/wavefronts_inter_wave_interval_local.png' is ignored in favor of '/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/flow_direction_local/wavefronts_flow_direction_local.png'
+
+[Tue Nov 21 16:44:59 2023]
+Job 6: RULE compute_measure:
+    input: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix scripts/flow_direction_local.py
+    output: /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/flow_direction_local/wavefronts_flow_direction_local.csv /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/flow_direction_local/wavefronts_flow_direction_local.png
+    jobid: 6
+    wildcards: dir=/home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization,measure=flow_direction_local
+    threads: 1
+    resources: 1 1 /tmp
+SHELL COMMAND: 
+python3 scripts/flow_direction_local.py --data /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix
+                         --output /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/flow_direction_local/wavefronts_flow_direction_local.csv
+                         --STAGE_NAME stage05_channel_wave_characterization --PROFILE IDIBAPS_WBS_WT4 --STAGE_OUTPUT wavefronts_channel-wise_measures.csv --USE_LINK_AS_STAGE_OUTPUT True --PLOT_TSTART 0 --PLOT_TSTOP 10 --PLOT_CHANNELS 37 --PLOT_FORMAT png --EVENT_NAME wavefronts --MEASURES annotations velocity_local direction_local flow_direction_local inter_wave_interval_local --KERNEL scharr_3x3 --INTERPOLATE True --SMOOTHING 2 --INCLUDE_KEYS wavemode spatial_scale anesthetic concentration doi disease_model model_type technique x_coords y_coords macro_pixel_dim --IGNORE_KEYS cluster_algorithm cluster_eps cluster_metric cluster_min_samples threshold experimental_lab psd_freq_res psd_overlap psd_fs --STAGE_INPUT /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage04_wave_detection/waves.nix --dir /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization --measure flow_direction_local --output_img /home/rgutzen/Projects/cobrawap_ms_code/cobrawap_output/IDIBAPS_WBS_WT4/stage05_channel_wave_characterization/flow_direction_local/wavefronts_flow_direction_local.png
+
+Reason: Params have changed since last execution
+
+Terminating processes on user request, this might take some time.
