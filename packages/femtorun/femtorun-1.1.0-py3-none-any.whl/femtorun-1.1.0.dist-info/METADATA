@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: femtorun
+Version: 1.1.0
+Summary: Femtorun defines the runtime interface for Femtosense software
+Home-page: https://femtosense.ai/
+Author: Femtosense
+Author-email: info@femtosense.ai
+Project-URL: Source, https://github.com/femtosense/femtorun
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy >=1.18.0
+Requires-Dist: pytest
+Requires-Dist: networkx
+
+# Femtorun
+
+Femtorun defines the parent class for different femtosense run-ables (runtimes).
+The idea is to unify the API for invoking these different runtimes,
+to make side-by-side comparison/verification easier.
