@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pypi-simple-cli"
+dynamic = ["version"]
+description = "PyPI Simple Repository API client library wrapper"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {file = "LICENSE"}
+authors = [
+    { name = "Qiao Qiao", email = "qiaozha@gmail.com" }
+]
+
+keywords = [
+    "pypi",
+    "pep503",
+    "simple repository api",
+    "packages",
+    "pip",
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "License :: OSI Approved :: Apache Software License",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Software Distribution",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Typing :: Typed",
+]
+
+dependencies = [
+    "pypi-simple",
+    "click",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "requests-mock",
+]
+
+[project.urls]
+"Source Code" = "https://github.com/asurinsaka/pypi-simple-wrapper"
+"Bug Tracker" = "https://github.com/asurinsaka/pypi-simple-wrapper/issues"
+
+[project.scripts]
+pypi-simple-cli = "pypi_simple_cli.cli:main"
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"

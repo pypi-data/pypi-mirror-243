@@ -1,0 +1,7 @@
+pypi-simple
+click
+
+[dev]
+pytest
+pytest-cov
+requests-mock

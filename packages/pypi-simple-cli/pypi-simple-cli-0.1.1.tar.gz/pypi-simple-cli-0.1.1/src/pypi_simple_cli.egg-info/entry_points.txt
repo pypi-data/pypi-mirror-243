@@ -1,0 +1,2 @@
+[console_scripts]
+pypi-simple-cli = pypi_simple_cli.cli:main

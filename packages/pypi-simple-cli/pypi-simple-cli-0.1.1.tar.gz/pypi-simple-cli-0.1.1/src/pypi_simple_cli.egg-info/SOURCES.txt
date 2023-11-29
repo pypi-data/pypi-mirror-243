@@ -1,0 +1,17 @@
+.gitignore
+.pre-commit-config.yaml
+LICENSE
+README.md
+pyproject.toml
+.github/workflows/pre-commit.yml
+.github/workflows/publish-to-test-pypi.yml
+.github/workflows/pytest.yaml
+src/pypi_simple_cli/cli.py
+src/pypi_simple_cli.egg-info/PKG-INFO
+src/pypi_simple_cli.egg-info/SOURCES.txt
+src/pypi_simple_cli.egg-info/dependency_links.txt
+src/pypi_simple_cli.egg-info/entry_points.txt
+src/pypi_simple_cli.egg-info/requires.txt
+src/pypi_simple_cli.egg-info/top_level.txt
+tests/test_cli.py
+tests/data/fake_page.html
