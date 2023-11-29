@@ -1,0 +1,35 @@
+.hidden {
+    visibility: hidden;
+}
+
+CourseCardBackground {
+    content-align: center middle;
+    height: auto;
+}
+
+#course_display {
+    width: auto;
+    width: 41;
+}
+
+CourseScreen {
+    height: 100%;
+    layout: horizontal;
+}
+
+AssignmentArea {
+    width: 2fr;
+    layout: grid;
+    grid-size: 1 4;
+    grid-columns: 1fr;
+    grid-rows: 3 1 5 1fr;
+}
+
+AssignmentArea Label {
+    margin-left: 1;
+}
+
+AssignmentArea #assignment_buttons {
+    max-height: 3;
+    layout: horizontal;
+}
