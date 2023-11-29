@@ -1,0 +1,16 @@
+isONform-0.3.2.data/scripts/isONform_parallel.py,sha256=k2BTzFr5xSDE3eWjj9XuqUvkvho27jH62U0wOUHns_4,17172
+isONform-0.3.2.data/scripts/main.py,sha256=mJ6DAAoWLNEEJ3uJ5YtnsY1GjCcSae6TPHD8hxwjyOM,28644
+modules/GraphGeneration.py,sha256=nAwGEo_b1Aok0cqn2C_ZQsMmtK89IlDS41n-7XC4DW4,27310
+modules/IsoformGeneration.py,sha256=y4PJd_wHLXqbl5GgxYO9ff2nnxRnnC1ZfOXNKXcTfIc,26402
+modules/Parallelization_side_functions.py,sha256=H_pgVe237l-4t7hwSQwvuaAmQYrRT2fzu33uNB5PVe0,5606
+modules/SimplifyGraph.py,sha256=KsKp7eldysjfX7jbN3iB0I7UdzwxRM0VDT-RB0_0tvs,53425
+modules/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+modules/batch_merging_parallel.py,sha256=SL54wwl80nnUfNobGOymRRrnIchIvmsSJj9a1MQNI58,14976
+modules/consensus.py,sha256=Rcwnzu7euar8bVePwKnWfPYCqKGaNRhgFn_JYG1i69M,11558
+modules/create_augmented_reference.py,sha256=RpXf2sYtTuOFSzshAjW6U43zhsO5fMARY0gfVT-WSTY,9271
+modules/help_functions.py,sha256=aFgLR-8-XDnPlSyWOYZ1yxqByBPcslHapERmARX7vuo,3390
+isONform-0.3.2.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+isONform-0.3.2.dist-info/METADATA,sha256=9--DkMWAX1gk_FoThbsSbNJD4hXG9oAbMnIEpCSi-Pk,3089
+isONform-0.3.2.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+isONform-0.3.2.dist-info/top_level.txt,sha256=F7U4jdIxH3MVMmyX9rbajWuG0bj5tcZN4L1DZSxW72E,8
+isONform-0.3.2.dist-info/RECORD,,
