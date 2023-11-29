@@ -1,0 +1,12 @@
+numpy
+pandas
+matplotlib
+seaborn
+cartopy
+HydroErr
+async-retriever
+tqdm
+rich
+boto3~=1.28.64
+minio
+s3fs~=2023.10
