@@ -1,0 +1,16 @@
+dj-database-url
+docopt
+six
+
+[:python_version >= "3.12"]
+setuptools
+
+[async]
+channels
+daphne
+
+[cms]
+django-cms<3.12,>=3.7
+
+[docs]
+sphinx-rtd-theme
