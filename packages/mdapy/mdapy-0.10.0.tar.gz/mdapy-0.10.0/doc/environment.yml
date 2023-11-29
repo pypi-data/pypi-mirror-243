@@ -1,0 +1,25 @@
+name: mdapy
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pandoc
+  - python=3.9
+  - pip>=20.1  # pip is needed as dependency
+  - pip:
+    - taichi>=1.7.0
+    - numpy
+    - scipy
+    - polars>=0.19.17
+    - matplotlib
+    - k3d
+    - jupyter
+    - sphinx
+    - sphinx_rtd_theme
+    - nbsphinx
+    - pybind11
+    - six
+    - ipywidgets>=7.0.1
+    - traittypes
+    - traitlets
+    - jupyter_sphinx
