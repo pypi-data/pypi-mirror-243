@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Assay.schema.json",
+  "title": "Assay",
+  "description": "A Assay of DNA",
+  "type": "object",
+  "properties": {
+    "seqspec_version": {
+      "description": "Version of the seqspec specification used",
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-((?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\\.(?:0|[1-9]\\d*|\\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\\+([0-9a-zA-Z-]+(?:\\.[0-9a-zA-Z-]+)*))?$"
+    },
+    "assay": {
+      "description": "The name of the assay",
+      "type": "string"
+    },
+    "sequencer": {
+      "description": "The sequencer used to sequence the library",
+      "type": "string"
+    },
+    "name": {
+      "description": "The name of the assay",
+      "type": "string"
+    },
+    "doi": {
+      "description": "the doi of the paper that describes the assay",
+      "type": "string"
+    },
+    "publication_date": {
+      "description": "the publication date of the paper/announcement that describes the assay",
+      "type": "string"
+    },
+    "description": {
+      "description": "A short description of the assay",
+      "type": "string"
+    },
+    "modalities": {
+      "description": "The modalities the assay targets",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["dna", "rna", "tag", "protein", "atac", "crispr"]
+      }
+    },
+    "lib_struct": {
+      "description": "The link to Teichmann's libstructs page derived for this sequence",
+      "type": "string"
+    },
+    "assay_spec": {
+      "description": "The spec for the assay",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/region"
+      }
+    }
+  },
+  "required": [
+    "seqspec_version",
+    "sequencer",
+    "assay",
+    "name",
+    "doi",
+    "publication_date",
+    "description",
+    "modalities",
+    "lib_struct"
+  ],
+  "$defs": {
+    "region": {
+      "title": "Region",
+      "description": "A region of DNA",
+      "type": "object",
+      "properties": {
+        "region_id": {
+          "description": "identifier for the region",
+          "type": "string"
+        },
+        "region_type": {
+          "description": "the type of region",
+          "type": "string",
+          "enum": [
+            "atac",
+            "barcode",
+            "cdna",
+            "crispr",
+            "custom_primer",
+            "dna",
+            "fastq",
+            "fastq_link",
+            "gdna",
+            "hic",
+            "illumina_p5",
+            "illumina_p7",
+            "index5",
+            "index7",
+            "linker",
+            "ME1",
+            "ME2",
+            "methyl",
+            "named",
+            "nextera_read1",
+            "nextera_read2",
+            "poly_A",
+            "poly_G",
+            "poly_T",
+            "poly_C",
+            "protein",
+            "rna",
+            "s5",
+            "s7",
+            "tag",
+            "truseq_read1",
+            "truseq_read2",
+            "umi"
+          ]
+        },
+        "sequence_type": {
+          "description": "The type of the sequence",
+          "type": "string",
+          "enum": ["fixed", "random", "onlist", "joined"]
+        },
+        "sequence": {
+          "description": "The sequence",
+          "type": "string",
+          "pattern": "^[ACGTRYMKSWHBVDNX]+$"
+        },
+        "min_len": {
+          "description": "The minimum length of the sequence",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2048
+        },
+        "max_len": {
+          "description": "The maximum length of the sequence",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2048
+        },
+        "onlist": {
+          "description": "The file containing the sequence if seq_type = onlist",
+          "type": ["object", "null"],
+          "properties": {
+            "location": {
+              "description": "location of onlist",
+              "type": "string",
+              "enum": ["local", "remote"]
+            },
+            "filename": {
+              "description": "filename for the onlist",
+              "type": "string"
+            },
+            "md5": {
+              "description": "md5sum for the file pointed to by filename",
+              "type": "string",
+              "pattern": "^[a-f0-9]{32}$"
+            }
+          }
+        },
+        "regions": {
+          "description": "The regions being joined",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/region"
+          }
+        }
+      },
+      "required": [
+        "region_id",
+        "region_type",
+        "sequence_type",
+        "sequence",
+        "min_len",
+        "max_len"
+      ]
+    }
+  }
+}
