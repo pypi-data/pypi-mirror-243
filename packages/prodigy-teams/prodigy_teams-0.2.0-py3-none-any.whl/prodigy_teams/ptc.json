@@ -1,0 +1,3378 @@
+{
+  "prog": "ptc",
+  "help": "Prodigy Teams Command Line Interface.",
+  "version": "0.1.32",
+  "extra_key": "_extra",
+  "commands": {
+    "actions": {
+      "name": "actions",
+      "args": [],
+      "description": "Interact with actions on the cluster",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "assets": {
+      "name": "assets",
+      "args": [],
+      "description": "View and manage assets on the cluster",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "clusters": {
+      "name": "clusters",
+      "args": [],
+      "description": "Interact with clusters",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "config": {
+      "name": "config",
+      "args": [],
+      "description": "Configure the CLI",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "datasets": {
+      "name": "datasets",
+      "args": [],
+      "description": "View and manage Prodigy datasets on the cluster",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "files": {
+      "name": "files",
+      "args": [],
+      "description": "Manage files on the cluster. Your files are only ever sent to servers or buckets you control. They are never sent to our servers.",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "packages": {
+      "name": "packages",
+      "args": [],
+      "description": "View and manage Python packages on the cluster",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "paths": {
+      "name": "paths",
+      "args": [],
+      "description": "View and manage path aliases on the cluster",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "projects": {
+      "name": "projects",
+      "args": [],
+      "description": "View and manage Prodigy Teams projects",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "recipes": {
+      "name": "recipes",
+      "args": [],
+      "description": "View and manage annotation recipe packages on the cluster",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "secrets": {
+      "name": "secrets",
+      "args": [],
+      "description": "View and manage named pointers to secrets on the cluster",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "tasks": {
+      "name": "tasks",
+      "args": [],
+      "description": "Interact with annotation tasks on the cluster",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "publish": {
+      "name": "publish",
+      "args": [],
+      "description": "Publish",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": true
+    },
+    "login": {
+      "name": "login",
+      "args": [
+        {
+          "id": "no_cluster",
+          "option": "--no-cluster",
+          "short": null,
+          "orig_help": "Don't use a cluster",
+          "default": false,
+          "help": "Don't use a cluster (bool)",
+          "action": "store_true",
+          "choices": null,
+          "has_converter": false,
+          "type": null,
+          "orig_type": "bool"
+        }
+      ],
+      "description": "\n    Log in to your Prodigy Teams account. You normally don't need to call this\n    manually. It will automatically authenticate when needed.\n    ",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": false
+    },
+    "info": {
+      "name": "info",
+      "args": [
+        {
+          "id": "field",
+          "option": null,
+          "short": null,
+          "orig_help": "Field to select and show in output",
+          "default": null,
+          "help": "Field to select and show in output (str)",
+          "action": null,
+          "choices": [
+            "config-dir",
+            "code",
+            "defaults"
+          ],
+          "has_converter": false,
+          "type": "str",
+          "orig_type": "Literal['config-dir', 'code', 'defaults']"
+        }
+      ],
+      "description": "Print information about the CLI",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": false
+    },
+    "get-auth-token": {
+      "name": "get-auth-token",
+      "args": [
+        {
+          "id": "token_type",
+          "option": null,
+          "short": null,
+          "orig_help": "The token type",
+          "default": null,
+          "help": "The token type (str)",
+          "action": null,
+          "choices": [
+            "api",
+            "cluster",
+            "id",
+            "ci"
+          ],
+          "has_converter": false,
+          "type": "str",
+          "orig_type": "Literal['api', 'cluster', 'id', 'ci']"
+        }
+      ],
+      "description": "\n    Return an auth token for the current user\n    ",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": false
+    },
+    "export": {
+      "name": "export",
+      "args": [
+        {
+          "id": "output",
+          "option": null,
+          "short": null,
+          "orig_help": "JSON output path for data",
+          "default": "==SUPPRESS==",
+          "help": "JSON output path for data (Path)",
+          "action": null,
+          "choices": null,
+          "has_converter": false,
+          "type": "Path",
+          "orig_type": "Path"
+        },
+        {
+          "id": "assets_dir",
+          "option": null,
+          "short": null,
+          "orig_help": "Local directory to download assets to",
+          "default": null,
+          "help": "Local directory to download assets to (Path)",
+          "action": null,
+          "choices": null,
+          "has_converter": false,
+          "type": "Path",
+          "orig_type": "Path"
+        },
+        {
+          "id": "include",
+          "option": "--include",
+          "short": null,
+          "orig_help": "Comma-separated items to include",
+          "default": "['tasks', 'actions', 'assets', 'datasets', 'paths']",
+          "help": "Comma-separated items to include (str)",
+          "action": "append",
+          "choices": [
+            "tasks",
+            "actions",
+            "assets",
+            "datasets",
+            "paths"
+          ],
+          "has_converter": false,
+          "type": "str",
+          "orig_type": "List[Literal['tasks', 'actions', 'assets', 'datasets', 'paths']]"
+        }
+      ],
+      "description": "\n    Save the state of the current app JSON file. If an assets directory is\n    provided, assets will be downloaded and referenced in the JSON accordingly.\n    ",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": false
+    },
+    "import": {
+      "name": "import",
+      "args": [
+        {
+          "id": "data",
+          "option": null,
+          "short": null,
+          "orig_help": "JSON file to import",
+          "default": "==SUPPRESS==",
+          "help": "JSON file to import (Path)",
+          "action": null,
+          "choices": null,
+          "has_converter": false,
+          "type": "Path",
+          "orig_type": "Path"
+        },
+        {
+          "id": "strict",
+          "option": "--strict",
+          "short": "-S",
+          "orig_help": "Error if items already exist and don't skip or overwrite anything",
+          "default": false,
+          "help": "Error if items already exist and don't skip or overwrite anything (bool)",
+          "action": "store_true",
+          "choices": null,
+          "has_converter": false,
+          "type": null,
+          "orig_type": "bool"
+        }
+      ],
+      "description": "\n    Populate Prodigy Teams with data for projects, tasks, actions, assets and paths.\n    ",
+      "allow_extra": false,
+      "parent": null,
+      "is_placeholder": false
+    }
+  },
+  "subcommands": {
+    "actions": {
+      "create": {
+        "name": "create",
+        "args": [
+          {
+            "id": "exists_ok",
+            "option": "--exists-ok",
+            "short": null,
+            "orig_help": "Don't raise an error if it exists",
+            "default": false,
+            "help": "Don't raise an error if it exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "no_start",
+            "option": "--no-start",
+            "short": null,
+            "orig_help": "Don't start {noun} after creation",
+            "default": false,
+            "help": "Don't start {noun} after creation (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "_show_help",
+            "option": "--help",
+            "short": "-h",
+            "orig_help": "Show help message",
+            "default": false,
+            "help": "Show help message (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "_extra",
+            "option": null,
+            "short": null,
+            "orig_help": null,
+            "default": "[]",
+            "help": "(List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          }
+        ],
+        "description": "\n    Create a new action. The available action recipes are fetched from your\n    cluster and are added as dynamic subcommands. You can see more details\n    and available arguments by calling the subcommand with --help, e.g. create\n    [name] --help\n    ",
+        "allow_extra": true,
+        "parent": "actions",
+        "is_placeholder": false
+      },
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'is_running', 'is_startable', 'is_stoppable', 'broker_id', 'name', 'project_id', 'job_type', 'state', 'plan', 'cli_command', 'stats']",
+            "default": "['id', 'name', 'state']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'is_running', 'is_startable', 'is_stoppable', 'broker_id', 'name', 'project_id', 'job_type', 'state', 'plan', 'cli_command', 'stats'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "\n    List the actions on the cluster. By default, this includes their ID, name\n    and current state, e.g. created or completed\n    ",
+        "allow_extra": false,
+        "parent": "actions",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the action",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the action (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of action's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of action's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for action name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for action name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'is_running', 'is_startable', 'is_stoppable', 'broker_id', 'name', 'project_id', 'job_type', 'state', 'plan', 'cli_command', 'stats', 'recipe_name', 'recipe_title', 'evaluation', 'project_name', 'error', 'executions', 'last_execution_id', 'nomad_index', 'url_logs', 'url', 'related_tasks', 'created_by_user']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'is_running', 'is_startable', 'is_stoppable', 'broker_id', 'name', 'project_id', 'job_type', 'state', 'plan', 'cli_command', 'stats', 'recipe_name', 'recipe_title', 'evaluation', 'project_name', 'error', 'executions', 'last_execution_id', 'nomad_index', 'url_logs', 'url', 'related_tasks', 'created_by_user'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Print information about an action on the cluster",
+        "allow_extra": false,
+        "parent": "actions",
+        "is_placeholder": false
+      },
+      "logs": {
+        "name": "logs",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the action (or the last action if not set)",
+            "default": null,
+            "help": "Name or ID of the action (or the last action if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of action's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of action's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for action name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for action name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Get logs for an action on the cluster",
+        "allow_extra": false,
+        "parent": "actions",
+        "is_placeholder": false
+      },
+      "start": {
+        "name": "start",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the action (or the last action if not set)",
+            "default": null,
+            "help": "Name or ID of the action (or the last action if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of action's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of action's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for action name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for action name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "worker_class",
+            "option": "--worker-class",
+            "short": null,
+            "orig_help": "Worker class to launch the action on. Generally one of: ['medium', 'large', 'gpu']",
+            "default": null,
+            "help": "Worker class to launch the action on. Generally one of: ['medium', 'large', 'gpu'] (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          }
+        ],
+        "description": "Start an action on the cluster",
+        "allow_extra": false,
+        "parent": "actions",
+        "is_placeholder": false
+      },
+      "stop": {
+        "name": "stop",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the action (or the last action if not set)",
+            "default": null,
+            "help": "Name or ID of the action (or the last action if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of action's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of action's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for action name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for action name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Stop an action on the cluster",
+        "allow_extra": false,
+        "parent": "actions",
+        "is_placeholder": false
+      },
+      "delete": {
+        "name": "delete",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the action",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the action (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of action's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of action's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for action name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for action name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Delete an Action by name or ID",
+        "allow_extra": false,
+        "parent": "actions",
+        "is_placeholder": false
+      }
+    },
+    "assets": {
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'broker_id', 'name', 'version', 'kind', 'path', 'meta', 'num_used_by']",
+            "default": "['id', 'name', 'kind']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'broker_id', 'name', 'version', 'kind', 'path', 'meta', 'num_used_by'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "List all assets on the cluster registered with Prodigy Teams",
+        "allow_extra": false,
+        "parent": "assets",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the asset",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the asset (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of action's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of action's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for action name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for action name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'broker_id', 'name', 'version', 'kind', 'path', 'meta', 'num_used_by', 'tasks', 'actions']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'broker_id', 'name', 'version', 'kind', 'path', 'meta', 'num_used_by', 'tasks', 'actions'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "\n    Get detailed info for an asset uploaded to the cluster and registered\n    with Prodigy Teams\n    ",
+        "allow_extra": false,
+        "parent": "assets",
+        "is_placeholder": false
+      },
+      "create": {
+        "name": "create",
+        "args": [
+          {
+            "id": "name",
+            "option": null,
+            "short": null,
+            "orig_help": "Name of the asset",
+            "default": "==SUPPRESS==",
+            "help": "Name of the asset (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "kind",
+            "option": "--kind",
+            "short": null,
+            "orig_help": "Kind of the asset. Generally one of: ['Input', 'Model', 'Patterns]",
+            "default": "==SUPPRESS==",
+            "help": "Kind of the asset. Generally one of: ['Input', 'Model', 'Patterns] (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "path",
+            "option": null,
+            "short": null,
+            "orig_help": "Path of the asset",
+            "default": "==SUPPRESS==",
+            "help": "Path of the asset (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "version",
+            "option": "--version",
+            "short": null,
+            "orig_help": "Version of the asset",
+            "default": "0.0.0",
+            "help": "Version of the asset (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "meta",
+            "option": "--meta",
+            "short": null,
+            "orig_help": "Asset meta, formatted as a JSON string",
+            "default": "{}",
+            "help": "Asset meta, formatted as a JSON string (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "exists_ok",
+            "option": "--exists-ok",
+            "short": null,
+            "orig_help": "Don't raise an error if it exists",
+            "default": false,
+            "help": "Don't raise an error if it exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "\n    Create an asset on the cluster and register it with Prodigy Teams. Assets\n    point to files or directories you control. The Prodigy Teams server only has\n    a reference to them. This command doesn't transfer any data. See `ptc files`\n    for utilities to transfer files to and from your cluster\n    ",
+        "allow_extra": false,
+        "parent": "assets",
+        "is_placeholder": false
+      },
+      "delete": {
+        "name": "delete",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the asset",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the asset (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of asset's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of asset's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for asset name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for asset name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Delete an asset registered with Prodigy Teams",
+        "allow_extra": false,
+        "parent": "assets",
+        "is_placeholder": false
+      }
+    },
+    "clusters": {
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'name', 'address', 'state', 'cloud_provider', 'cloud_account', 'cloud_region', 'client_id', 'client_secret']",
+            "default": "['id', 'name', 'status', 'address']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'name', 'address', 'state', 'cloud_provider', 'cloud_account', 'cloud_region', 'client_id', 'client_secret'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "List resources on the cluster",
+        "allow_extra": false,
+        "parent": "clusters",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the cluster",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the cluster (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'name', 'address', 'state', 'cloud_provider', 'cloud_account', 'cloud_region', 'client_id', 'client_secret', 'worker_classes']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'name', 'address', 'state', 'cloud_provider', 'cloud_account', 'cloud_region', 'client_id', 'client_secret', 'worker_classes'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Get detailed info for a cluster",
+        "allow_extra": false,
+        "parent": "clusters",
+        "is_placeholder": false
+      },
+      "update": {
+        "name": "update",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the cluster",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the cluster (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "name",
+            "option": "--new-name",
+            "short": null,
+            "orig_help": "New name of the cluster",
+            "default": null,
+            "help": "New name of the cluster (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "address",
+            "option": "--address",
+            "short": null,
+            "orig_help": "New address of the cluster",
+            "default": null,
+            "help": "New address of the cluster (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Update the cluster info",
+        "allow_extra": false,
+        "parent": "clusters",
+        "is_placeholder": false
+      },
+      "delete": {
+        "name": "delete",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the cluster",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the cluster (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          }
+        ],
+        "description": "\n    Delete a cluster from PAM. This only removes PAM's record\n    of it. The cluster itself will continue to exist - you need\n    to shut it down separately.\n    ",
+        "allow_extra": false,
+        "parent": "clusters",
+        "is_placeholder": false
+      },
+      "check": {
+        "name": "check",
+        "args": [
+          {
+            "id": "s3_bucket",
+            "option": "--s3-bucket",
+            "short": null,
+            "orig_help": "Run checks involving the S3 storage",
+            "default": null,
+            "help": "Run checks involving the S3 storage (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "nfs_path",
+            "option": "--nfs-path",
+            "short": null,
+            "orig_help": "Run checks involving the NFS storage",
+            "default": null,
+            "help": "Run checks involving the NFS storage (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "recipe_name_or_id",
+            "option": "--recipe",
+            "short": null,
+            "orig_help": "Run checks that need to operate over a recipe. This argument only makes sense when used with --recipe-args",
+            "default": null,
+            "help": "Run checks that need to operate over a recipe. This argument only makes sense when used with --recipe-args (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "recipe_args",
+            "option": "--recipe-args",
+            "short": null,
+            "orig_help": "Run checks that need to operate over a recipe. This argument only makes sense when used with --recipe",
+            "default": null,
+            "help": "Run checks that need to operate over a recipe. This argument only makes sense when used with --recipe (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          }
+        ],
+        "description": "Check the cluster deployment went well",
+        "allow_extra": false,
+        "parent": "clusters",
+        "is_placeholder": false
+      }
+    },
+    "config": {
+      "reset": {
+        "name": "reset",
+        "args": [],
+        "description": "Reset all caching and configuration.",
+        "allow_extra": false,
+        "parent": "config",
+        "is_placeholder": false
+      },
+      "project": {
+        "name": "project",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the project",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the project (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          }
+        ],
+        "description": "Set the default project.",
+        "allow_extra": false,
+        "parent": "config",
+        "is_placeholder": false
+      },
+      "task": {
+        "name": "task",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the task",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the task (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of task's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of task's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for task name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for task name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Set the default task.",
+        "allow_extra": false,
+        "parent": "config",
+        "is_placeholder": false
+      },
+      "action": {
+        "name": "action",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the action",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the action (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of action's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of action's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for action name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for action name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Set the default action.",
+        "allow_extra": false,
+        "parent": "config",
+        "is_placeholder": false
+      },
+      "set-cluster-host": {
+        "name": "set-cluster-host",
+        "args": [
+          {
+            "id": "host",
+            "option": null,
+            "short": null,
+            "orig_help": "Host or URL of the cluster",
+            "default": "==SUPPRESS==",
+            "help": "Host or URL of the cluster (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          }
+        ],
+        "description": "Set the broker cluster host.",
+        "allow_extra": false,
+        "parent": "config",
+        "is_placeholder": false
+      },
+      "set-pam-host": {
+        "name": "set-pam-host",
+        "args": [
+          {
+            "id": "host",
+            "option": null,
+            "short": null,
+            "orig_help": "Host or URL of the Prodigy Annotation Manager (PAM) app",
+            "default": "==SUPPRESS==",
+            "help": "Host or URL of the Prodigy Annotation Manager (PAM) app (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          }
+        ],
+        "description": "Set the PAM host.",
+        "allow_extra": false,
+        "parent": "config",
+        "is_placeholder": false
+      }
+    },
+    "datasets": {
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'broker_id', 'kind', 'num_used_by']",
+            "default": "['id', 'name', 'kind']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'broker_id', 'kind', 'num_used_by'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "List all Datasets",
+        "allow_extra": false,
+        "parent": "datasets",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the dataset",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the dataset (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for dataset name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for dataset name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'broker_id', 'kind', 'num_used_by', 'tasks', 'actions']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'broker_id', 'kind', 'num_used_by', 'tasks', 'actions'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Get detailed info for a Dataset",
+        "allow_extra": false,
+        "parent": "datasets",
+        "is_placeholder": false
+      },
+      "create": {
+        "name": "create",
+        "args": [
+          {
+            "id": "name",
+            "option": null,
+            "short": null,
+            "orig_help": "Name of the dataset",
+            "default": "==SUPPRESS==",
+            "help": "Name of the dataset (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "kind",
+            "option": "--kind",
+            "short": null,
+            "orig_help": "Kind of the dataset, used to filter in recipes to only allow specific types",
+            "default": "==SUPPRESS==",
+            "help": "Kind of the dataset, used to filter in recipes to only allow specific types (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "exists_ok",
+            "option": "--exists-ok",
+            "short": null,
+            "orig_help": "Don't raise an error if it exists",
+            "default": false,
+            "help": "Don't raise an error if it exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Create a new dataset",
+        "allow_extra": false,
+        "parent": "datasets",
+        "is_placeholder": false
+      },
+      "delete": {
+        "name": "delete",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the dataset",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the dataset (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for dataset name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for dataset name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Delete a dataset",
+        "allow_extra": false,
+        "parent": "datasets",
+        "is_placeholder": false
+      },
+      "export": {
+        "name": "export",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the dataset",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the dataset (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "output_file",
+            "option": "--output",
+            "short": "-o",
+            "orig_help": "JSON output path for data",
+            "default": "-",
+            "help": "JSON output path for data (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          }
+        ],
+        "description": "Export all the examples from a dataset and save it in the designated file as\n    JSONL (newline-delimited JSON).\n    ",
+        "allow_extra": false,
+        "parent": "datasets",
+        "is_placeholder": false
+      }
+    },
+    "files": {
+      "cp": {
+        "name": "cp",
+        "args": [
+          {
+            "id": "src",
+            "option": null,
+            "short": null,
+            "orig_help": "Remote or local path of the source",
+            "default": "==SUPPRESS==",
+            "help": "Remote or local path of the source (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "dest",
+            "option": null,
+            "short": null,
+            "orig_help": "Remote or local path of the destination",
+            "default": "==SUPPRESS==",
+            "help": "Remote or local path of the destination (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "recurse",
+            "option": "--recurse",
+            "short": "-r",
+            "orig_help": "Copy whole directory recursively",
+            "default": false,
+            "help": "Copy whole directory recursively (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "make_dirs",
+            "option": "--make-dirs",
+            "short": null,
+            "orig_help": "Create parent directories if they don't exist",
+            "default": false,
+            "help": "Create parent directories if they don't exist (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "overwrite",
+            "option": "--overwrite",
+            "short": null,
+            "orig_help": "Overwrite if exists",
+            "default": false,
+            "help": "Overwrite if exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "cluster_host",
+            "option": "--cluster-host",
+            "short": null,
+            "orig_help": "Name of the cluster (or the last cluster if not set)",
+            "default": null,
+            "help": "Name of the cluster (or the last cluster if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          }
+        ],
+        "description": "Copy files to and from the cluster",
+        "allow_extra": false,
+        "parent": "files",
+        "is_placeholder": false
+      },
+      "ls": {
+        "name": "ls",
+        "args": [
+          {
+            "id": "remote",
+            "option": null,
+            "short": null,
+            "orig_help": "Remote location path",
+            "default": "==SUPPRESS==",
+            "help": "Remote location path (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "recurse",
+            "option": "--recurse",
+            "short": "-r",
+            "orig_help": "List files recursively",
+            "default": false,
+            "help": "List files recursively (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "cluster_host",
+            "option": "--cluster-host",
+            "short": null,
+            "orig_help": "Name of the cluster (or the last cluster if not set)",
+            "default": null,
+            "help": "Name of the cluster (or the last cluster if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "expand_remote_paths",
+            "option": "--expand-path-aliases",
+            "short": null,
+            "orig_help": "Expand path aliases when displaying remote paths",
+            "default": false,
+            "help": "Expand path aliases when displaying remote paths (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "List the files under `remote`",
+        "allow_extra": false,
+        "parent": "files",
+        "is_placeholder": false
+      },
+      "rm": {
+        "name": "rm",
+        "args": [
+          {
+            "id": "remote_path",
+            "option": null,
+            "short": null,
+            "orig_help": "Remote location path",
+            "default": "==SUPPRESS==",
+            "help": "Remote location path (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "cluster_host",
+            "option": "--cluster-host",
+            "short": null,
+            "orig_help": "Name of the cluster (or the last cluster if not set)",
+            "default": null,
+            "help": "Name of the cluster (or the last cluster if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "missing_ok",
+            "option": "--missing-ok",
+            "short": null,
+            "orig_help": "If missing, don't raise an error",
+            "default": false,
+            "help": "If missing, don't raise an error (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "recurse",
+            "option": "--recurse",
+            "short": "-r",
+            "orig_help": "Delete the whole directory recursively",
+            "default": false,
+            "help": "Delete the whole directory recursively (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Remove files from the cluster",
+        "allow_extra": false,
+        "parent": "files",
+        "is_placeholder": false
+      },
+      "rsync": {
+        "name": "rsync",
+        "args": [
+          {
+            "id": "src",
+            "option": null,
+            "short": null,
+            "orig_help": "Remote or local path of the source",
+            "default": "==SUPPRESS==",
+            "help": "Remote or local path of the source (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "dest",
+            "option": null,
+            "short": null,
+            "orig_help": "Remote or local path of the destination",
+            "default": "==SUPPRESS==",
+            "help": "Remote or local path of the destination (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "cluster_host",
+            "option": "--cluster-host",
+            "short": null,
+            "orig_help": "Name of the cluster (or the last cluster if not set)",
+            "default": null,
+            "help": "Name of the cluster (or the last cluster if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          }
+        ],
+        "description": "Rsync files to and from the cluster",
+        "allow_extra": false,
+        "parent": "files",
+        "is_placeholder": false
+      },
+      "stats": {
+        "name": "stats",
+        "args": [
+          {
+            "id": "remote_path",
+            "option": null,
+            "short": null,
+            "orig_help": "Remote location path",
+            "default": "==SUPPRESS==",
+            "help": "Remote location path (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "cluster_host",
+            "option": "--cluster-host",
+            "short": null,
+            "orig_help": "Name of the cluster (or the last cluster if not set)",
+            "default": null,
+            "help": "Name of the cluster (or the last cluster if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Get the stats for a file located in `remote_path`",
+        "allow_extra": false,
+        "parent": "files",
+        "is_placeholder": false
+      }
+    },
+    "packages": {
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'version', 'environment', 'num_used_by', 'recipe_count']",
+            "default": "['id', 'name', 'version', 'recipe_count', 'num_used_by']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'version', 'environment', 'num_used_by', 'recipe_count'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "List all packages",
+        "allow_extra": false,
+        "parent": "packages",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the package",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the package (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for package name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for package name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'version', 'environment', 'num_used_by', 'recipe_count', 'org_id', 'filename', 'meta', 'tasks', 'actions', 'author']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'version', 'environment', 'num_used_by', 'recipe_count', 'org_id', 'filename', 'meta', 'tasks', 'actions', 'author'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Get detailed info for a package",
+        "allow_extra": false,
+        "parent": "packages",
+        "is_placeholder": false
+      },
+      "create": {
+        "name": "create",
+        "args": [
+          {
+            "id": "name",
+            "option": null,
+            "short": null,
+            "orig_help": "Name of the package",
+            "default": "==SUPPRESS==",
+            "help": "Name of the package (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "kind",
+            "option": "--kind",
+            "short": null,
+            "orig_help": "Kind of the package, used to filter in recipes to only allow specific types",
+            "default": "==SUPPRESS==",
+            "help": "Kind of the package, used to filter in recipes to only allow specific types (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "exists_ok",
+            "option": "--exists-ok",
+            "short": null,
+            "orig_help": "Don't raise an error if it exists",
+            "default": false,
+            "help": "Don't raise an error if it exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Create a new package",
+        "allow_extra": false,
+        "parent": "packages",
+        "is_placeholder": false
+      },
+      "delete": {
+        "name": "delete",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the package",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the package (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for package name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for package name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "force",
+            "option": "--force",
+            "short": null,
+            "orig_help": "Delete related actions or tasks as well",
+            "default": false,
+            "help": "Delete related actions or tasks as well (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Delete a package",
+        "allow_extra": false,
+        "parent": "packages",
+        "is_placeholder": false
+      }
+    },
+    "paths": {
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'broker_id', 'name', 'path']",
+            "default": "['created', 'id', 'name', 'path']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'broker_id', 'name', 'path'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "List all cluster path aliases",
+        "allow_extra": false,
+        "parent": "paths",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the path",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the path (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for path name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for path name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'broker_id', 'name', 'path']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'broker_id', 'name', 'path'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Get detailed info for a path alias",
+        "allow_extra": false,
+        "parent": "paths",
+        "is_placeholder": false
+      },
+      "create": {
+        "name": "create",
+        "args": [
+          {
+            "id": "name",
+            "option": null,
+            "short": null,
+            "orig_help": "Name of the path",
+            "default": "==SUPPRESS==",
+            "help": "Name of the path (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "path",
+            "option": null,
+            "short": null,
+            "orig_help": "Path of the cluster directory",
+            "default": "==SUPPRESS==",
+            "help": "Path of the cluster directory (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "exists_ok",
+            "option": "--exists-ok",
+            "short": null,
+            "orig_help": "Don't raise an error if it exists",
+            "default": false,
+            "help": "Don't raise an error if it exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Create a new path alias",
+        "allow_extra": false,
+        "parent": "paths",
+        "is_placeholder": false
+      },
+      "delete": {
+        "name": "delete",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the path",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the path (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for path name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for path name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Delete a path alias",
+        "allow_extra": false,
+        "parent": "paths",
+        "is_placeholder": false
+      }
+    },
+    "projects": {
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'name', 'description']",
+            "default": "['id', 'name']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'name', 'description'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "name",
+            "option": "--name",
+            "short": null,
+            "orig_help": "Filter by name",
+            "default": null,
+            "help": "Filter by name (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "List all projects",
+        "allow_extra": false,
+        "parent": "projects",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the project",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the project (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'name', 'description']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'name', 'description'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Get detailed info for a project",
+        "allow_extra": false,
+        "parent": "projects",
+        "is_placeholder": false
+      },
+      "create": {
+        "name": "create",
+        "args": [
+          {
+            "id": "name",
+            "option": null,
+            "short": null,
+            "orig_help": "Name of the project",
+            "default": "==SUPPRESS==",
+            "help": "Name of the project (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "description",
+            "option": null,
+            "short": null,
+            "orig_help": "Description of the project",
+            "default": "==SUPPRESS==",
+            "help": "Description of the project (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "exists_ok",
+            "option": "--exists-ok",
+            "short": null,
+            "orig_help": "Don't raise an error if it exists",
+            "default": false,
+            "help": "Don't raise an error if it exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Create a new project",
+        "allow_extra": false,
+        "parent": "projects",
+        "is_placeholder": false
+      },
+      "delete": {
+        "name": "delete",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the project",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the project (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          }
+        ],
+        "description": "Delete a project",
+        "allow_extra": false,
+        "parent": "projects",
+        "is_placeholder": false
+      }
+    },
+    "publish": {
+      "code": {
+        "name": "code",
+        "args": [
+          {
+            "id": "name_or_path",
+            "option": null,
+            "short": null,
+            "orig_help": "Path or name of importable module with the recipes",
+            "default": "==SUPPRESS==",
+            "help": "Path or name of importable module with the recipes (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "python_version",
+            "option": "--python-version",
+            "short": null,
+            "orig_help": "Which Python version to use for the remote environment",
+            "default": "3.9",
+            "help": "Which Python version to use for the remote environment (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "package_version",
+            "option": "--package-version",
+            "short": null,
+            "orig_help": "Version identifier for the package",
+            "default": null,
+            "help": "Version identifier for the package (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "requirements",
+            "option": "--requirements",
+            "short": "-r",
+            "orig_help": "Path to requirements file. prodigy and prodigy_teams_recipes_sdk and added automatically if missing",
+            "default": null,
+            "help": "Path to requirements file. prodigy and prodigy_teams_recipes_sdk and added automatically if missing (Path)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "Path",
+            "orig_type": "Path"
+          },
+          {
+            "id": "deps",
+            "option": "--dep",
+            "short": "-d",
+            "orig_help": "Path or name of importable module for dependencies to upload",
+            "default": "[]",
+            "help": "Path or name of importable module for dependencies to upload (Path)",
+            "action": "append",
+            "choices": null,
+            "has_converter": false,
+            "type": "Path",
+            "orig_type": "List[Path]"
+          }
+        ],
+        "description": "\n    Upload and advertise a recipes package from your Python environment.\n    ",
+        "allow_extra": false,
+        "parent": "publish",
+        "is_placeholder": false
+      },
+      "data": {
+        "name": "data",
+        "args": [
+          {
+            "id": "src",
+            "option": null,
+            "short": null,
+            "orig_help": "File or directory to publish",
+            "default": "==SUPPRESS==",
+            "help": "File or directory to publish (Path)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "Path",
+            "orig_type": "Path"
+          },
+          {
+            "id": "dest",
+            "option": null,
+            "short": null,
+            "orig_help": "Destination path to copy the data to",
+            "default": null,
+            "help": "Destination path to copy the data to (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "name",
+            "option": "--name",
+            "short": null,
+            "orig_help": "Name of the asset",
+            "default": null,
+            "help": "Name of the asset (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "version",
+            "option": "--version",
+            "short": null,
+            "orig_help": "Version of the asset",
+            "default": null,
+            "help": "Version of the asset (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "kind",
+            "option": "--kind",
+            "short": null,
+            "orig_help": "Kind of the asset. Generally one of: ['Input', 'Model', 'Patterns]",
+            "default": "==SUPPRESS==",
+            "help": "Kind of the asset. Generally one of: ['Input', 'Model', 'Patterns] (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "loader",
+            "option": "--loader",
+            "short": null,
+            "orig_help": "Loader to convert data for Prodigy",
+            "default": null,
+            "help": "Loader to convert data for Prodigy (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "meta",
+            "option": "--meta",
+            "short": null,
+            "orig_help": "Asset meta, formatted as a JSON string",
+            "default": "{}",
+            "help": "Asset meta, formatted as a JSON string (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "exists_ok",
+            "option": "--exists-ok",
+            "short": null,
+            "orig_help": "Don't raise an error if it exists",
+            "default": false,
+            "help": "Don't raise an error if it exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "\n    Transfer data to the cluster, and advertise it to Prodigy Teams.\n\n    These steps can also be done separately. See `ptc files` to transfer\n    data to the cluster without creating an Asset record for it, and\n    `ptc assets create` to create an Asset without transfer.\n    ",
+        "allow_extra": false,
+        "parent": "publish",
+        "is_placeholder": false
+      }
+    },
+    "recipes": {
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'package_id', 'name', 'title', 'description', 'is_action', 'entry_point', 'num_used_by']",
+            "default": "['id', 'name']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'package_id', 'name', 'title', 'description', 'is_action', 'entry_point', 'num_used_by'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "List all recipes",
+        "allow_extra": false,
+        "parent": "recipes",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the recipe",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the recipe (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for recipe name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for recipe name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'package_id', 'name', 'title', 'description', 'is_action', 'entry_point', 'num_used_by', 'form_schema', 'cli_schema', 'meta', 'tasks', 'actions', 'package']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'org_id', 'package_id', 'name', 'title', 'description', 'is_action', 'entry_point', 'num_used_by', 'form_schema', 'cli_schema', 'meta', 'tasks', 'actions', 'package'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Show info about a recipe",
+        "allow_extra": false,
+        "parent": "recipes",
+        "is_placeholder": false
+      },
+      "init": {
+        "name": "init",
+        "args": [
+          {
+            "id": "output_dir",
+            "option": null,
+            "short": null,
+            "orig_help": "Output directory for the recipe package",
+            "default": "==SUPPRESS==",
+            "help": "Output directory for the recipe package (Path)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "Path",
+            "orig_type": "Path"
+          },
+          {
+            "id": "name",
+            "option": "--name",
+            "short": null,
+            "orig_help": "Name of the package (e.g. custom_recipes)",
+            "default": null,
+            "help": "Name of the package (e.g. custom_recipes) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "version",
+            "option": "--version",
+            "short": null,
+            "orig_help": "Version of the package",
+            "default": "0.1.0",
+            "help": "Version of the package (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "description",
+            "option": "--description",
+            "short": null,
+            "orig_help": "Description of the package",
+            "default": "",
+            "help": "Description of the package (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "author",
+            "option": "--author",
+            "short": null,
+            "orig_help": "Name of the package author",
+            "default": "",
+            "help": "Name of the package author (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "email",
+            "option": "--email",
+            "short": null,
+            "orig_help": "Email of the package author",
+            "default": "",
+            "help": "Email of the package author (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "url",
+            "option": "--url",
+            "short": null,
+            "orig_help": "URL of the package",
+            "default": "",
+            "help": "URL of the package (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "license",
+            "option": "--license",
+            "short": null,
+            "orig_help": "License of the package",
+            "default": "",
+            "help": "License of the package (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          }
+        ],
+        "description": "Generate a new recipes Python package",
+        "allow_extra": false,
+        "parent": "recipes",
+        "is_placeholder": false
+      }
+    },
+    "secrets": {
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'path', 'broker_id']",
+            "default": "['created', 'id', 'name', 'path']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'path', 'broker_id'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "List all named pointers to secrets on the cluster",
+        "allow_extra": false,
+        "parent": "secrets",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the secret",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the secret (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for secret name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for secret name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'path', 'broker_id']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'name', 'path', 'broker_id'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Show info about a secret on the cluster",
+        "allow_extra": false,
+        "parent": "secrets",
+        "is_placeholder": false
+      },
+      "create": {
+        "name": "create",
+        "args": [
+          {
+            "id": "name",
+            "option": null,
+            "short": null,
+            "orig_help": "Name of the secret name",
+            "default": "==SUPPRESS==",
+            "help": "Name of the secret name (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "secrets_path",
+            "option": "--secrets-path",
+            "short": null,
+            "orig_help": "/ separated key prefix to save secrets to",
+            "default": "/",
+            "help": "/ separated key prefix to save secrets to (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "exists_ok",
+            "option": "--exists-ok",
+            "short": null,
+            "orig_help": "Don't raise an error if it exists",
+            "default": false,
+            "help": "Don't raise an error if it exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "_extra",
+            "option": null,
+            "short": null,
+            "orig_help": null,
+            "default": "==SUPPRESS==",
+            "help": "(List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          }
+        ],
+        "description": "Create a named pointer to a secret on the cluster",
+        "allow_extra": true,
+        "parent": "secrets",
+        "is_placeholder": false
+      },
+      "delete": {
+        "name": "delete",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the secret",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the secret (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for secret name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for secret name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Delete a secret by name or ID",
+        "allow_extra": false,
+        "parent": "secrets",
+        "is_placeholder": false
+      }
+    },
+    "tasks": {
+      "create": {
+        "name": "create",
+        "args": [
+          {
+            "id": "exists_ok",
+            "option": "--exists-ok",
+            "short": null,
+            "orig_help": "Don't raise an error if it exists",
+            "default": false,
+            "help": "Don't raise an error if it exists (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "no_start",
+            "option": "--no-start",
+            "short": null,
+            "orig_help": "Don't start {noun} after creation",
+            "default": false,
+            "help": "Don't start {noun} after creation (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "_show_help",
+            "option": "--help",
+            "short": "-h",
+            "orig_help": "Show help message",
+            "default": false,
+            "help": "Show help message (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          },
+          {
+            "id": "_extra",
+            "option": null,
+            "short": null,
+            "orig_help": null,
+            "default": "[]",
+            "help": "(List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          }
+        ],
+        "description": "\n    Create a new task. The available task recipes are fetched from your\n    cluster and are added as dynamic subcommands. You can see more details\n    and available arguments by calling the subcommand with --help, e.g. create\n    [name] --help\n    ",
+        "allow_extra": true,
+        "parent": "tasks",
+        "is_placeholder": false
+      },
+      "list": {
+        "name": "list",
+        "args": [
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'project_id', 'broker_id', 'name', 'recipe_name', 'recipe_title', 'state', 'project_name', 'is_running', 'is_startable', 'is_stoppable', 'error', 'plan', 'job_type', 'cli_command']",
+            "default": "['id', 'name', 'state', 'project_name']",
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'project_id', 'broker_id', 'name', 'recipe_name', 'recipe_title', 'state', 'project_name', 'is_running', 'is_startable', 'is_stoppable', 'error', 'plan', 'job_type', 'cli_command'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "\n    List the tasks on the cluster. By default, this includes their ID, name\n    and current state, e.g. created or completed\n    ",
+        "allow_extra": false,
+        "parent": "tasks",
+        "is_placeholder": false
+      },
+      "info": {
+        "name": "info",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the task",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the task (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of task's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of task's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for task name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for task name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "select",
+            "option": "--select",
+            "short": null,
+            "orig_help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'project_id', 'broker_id', 'name', 'recipe_name', 'recipe_title', 'state', 'project_name', 'is_running', 'is_startable', 'is_stoppable', 'error', 'plan', 'job_type', 'cli_command', 'nomad_index', 'last_execution_id', 'related_actions', 'url_logs', 'url', 'created_by_user']",
+            "default": null,
+            "help": "Comma-separated fields to select and show in output. Available: ['id', 'created', 'updated', 'project_id', 'broker_id', 'name', 'recipe_name', 'recipe_title', 'state', 'project_name', 'is_running', 'is_startable', 'is_stoppable', 'error', 'plan', 'job_type', 'cli_command', 'nomad_index', 'last_execution_id', 'related_actions', 'url_logs', 'url', 'created_by_user'] (List[str])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "converter",
+            "orig_type": "List[str]"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Print information about a task on the cluster",
+        "allow_extra": false,
+        "parent": "tasks",
+        "is_placeholder": false
+      },
+      "logs": {
+        "name": "logs",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the tasks (or the last tasks if not set)",
+            "default": null,
+            "help": "Name or ID of the tasks (or the last tasks if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of tasks's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of tasks's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for tasks name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for tasks name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "as_json",
+            "option": "--json",
+            "short": null,
+            "orig_help": "Output the result as JSON",
+            "default": false,
+            "help": "Output the result as JSON (bool)",
+            "action": "store_true",
+            "choices": null,
+            "has_converter": false,
+            "type": null,
+            "orig_type": "bool"
+          }
+        ],
+        "description": "Get logs for a task on the cluster",
+        "allow_extra": false,
+        "parent": "tasks",
+        "is_placeholder": false
+      },
+      "start": {
+        "name": "start",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the task (or the last task if not set)",
+            "default": null,
+            "help": "Name or ID of the task (or the last task if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of task's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of task's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for task name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for task name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "worker_class",
+            "option": "--worker-class",
+            "short": null,
+            "orig_help": "Worker class to launch the task on. Generally one of: ['medium', 'large', 'gpu']",
+            "default": null,
+            "help": "Worker class to launch the task on. Generally one of: ['medium', 'large', 'gpu'] (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          }
+        ],
+        "description": "Start a task on the cluster",
+        "allow_extra": false,
+        "parent": "tasks",
+        "is_placeholder": false
+      },
+      "stop": {
+        "name": "stop",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the task (or the last task if not set)",
+            "default": null,
+            "help": "Name or ID of the task (or the last task if not set) (str)",
+            "action": null,
+            "choices": null,
+            "has_converter": false,
+            "type": "str",
+            "orig_type": "str"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of task's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of task's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for task name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for task name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Stop a task on the cluster",
+        "allow_extra": false,
+        "parent": "tasks",
+        "is_placeholder": false
+      },
+      "delete": {
+        "name": "delete",
+        "args": [
+          {
+            "id": "name_or_id",
+            "option": null,
+            "short": null,
+            "orig_help": "Name or ID of the task",
+            "default": "==SUPPRESS==",
+            "help": "Name or ID of the task (Union[str, UUID])",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_str_or_uuid",
+            "orig_type": "Union[str, UUID]"
+          },
+          {
+            "id": "project_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of task's project (or the last project if not set)",
+            "default": null,
+            "help": "ID of task's project (or the last project if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          },
+          {
+            "id": "cluster_id",
+            "option": null,
+            "short": null,
+            "orig_help": "ID of the cluster to search for task name (or the last cluster if not set)",
+            "default": null,
+            "help": "ID of the cluster to search for task name (or the last cluster if not set) (UUID)",
+            "action": null,
+            "choices": null,
+            "has_converter": true,
+            "type": "convert_uuid",
+            "orig_type": "UUID"
+          }
+        ],
+        "description": "Delete a task by name or ID",
+        "allow_extra": false,
+        "parent": "tasks",
+        "is_placeholder": false
+      }
+    }
+  }
+}
