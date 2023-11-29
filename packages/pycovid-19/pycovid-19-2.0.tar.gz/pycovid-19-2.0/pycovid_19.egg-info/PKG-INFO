@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: pycovid-19
+Version: 2.0
+Summary: Covid Python plots and maps
+Home-page: http://framagit.org/benjaminpillot/covid-19
+Author: Benjamin Pillot
+Author-email: benjaminpillot@riseup.net
+License: GNU GPL v3.0
+Requires-Python: ==3.9
+Description-Content-Type: text/markdown
+License-File: LICENCE
+
+# Pycovid-19 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/git/https%3A%2F%2Fframagit.org%2Fbenjaminpillot%2Fcovid-19/master)
+
+COVID-19 Python plots and maps
+
+This small package allows for downloading and plotting
+covid-19 confirmed cases, recovered and deaths from data
+gathered by the [John Hopkins University](https://github.com/CSSEGISandData/COVID-19).
+It allows for country evolutions to be compared between
+them, as well as for prevalence to be calculated.
+
+## Basic usage
+
+### Jupyter notebook
+Launch Binder to get access to the online interactive Jupyter [notebook](https://mybinder.org/v2/git/https%3A%2F%2Fframagit.org%2Fbenjaminpillot%2Fcovid-19/master).
+Once you are in the online Jupyter Lab, you just has to open the `covid-notebook`
+notebook, and adapt the different functions to your own needs (countries,
+case type, type of visualization, etc.).
+
+### Local installation
+To install the package locally, the following line should do the trick:
+
+`$ pip install pycovid-19`
+ 
+
+## See also
+Louis Gostiaux's [package](https://framagit.org/lgostiau/covid19_display)
