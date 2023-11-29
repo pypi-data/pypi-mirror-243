@@ -1,0 +1,14 @@
+.gitignore
+LICENSE
+README.md
+main.py
+requirements.txt
+setup.py
+.github/workflows/python-package.yml
+RR_Excel_Management.egg-info/PKG-INFO
+RR_Excel_Management.egg-info/SOURCES.txt
+RR_Excel_Management.egg-info/dependency_links.txt
+RR_Excel_Management.egg-info/requires.txt
+RR_Excel_Management.egg-info/top_level.txt
+excel_management/__init__.py
+excel_management/excel_management.py
