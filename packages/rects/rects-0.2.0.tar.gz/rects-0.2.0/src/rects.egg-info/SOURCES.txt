@@ -1,0 +1,14 @@
+LICENSE
+README.md
+pyproject.toml
+src/rects/__init__.py
+src/rects/region.py
+src/rects.egg-info/PKG-INFO
+src/rects.egg-info/SOURCES.txt
+src/rects.egg-info/dependency_links.txt
+src/rects.egg-info/top_level.txt
+tests/test_band_init.py
+tests/test_region_intersection.py
+tests/test_region_subtraction.py
+tests/test_region_union.py
+tests/test_region_xor.py
