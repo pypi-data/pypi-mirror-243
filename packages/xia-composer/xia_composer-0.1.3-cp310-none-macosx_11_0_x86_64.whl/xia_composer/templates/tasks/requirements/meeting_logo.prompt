@@ -1,0 +1,8 @@
+{% block format %}
+![Image](https://url.com)
+
+{% endblock %}
+
+{% block guide %}
+Need a logo to represent graphic
+{% endblock %}
