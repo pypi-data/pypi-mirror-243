@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: pycubing
+Version: 0.1.2
+Summary: A feature-rich package for dealing with Rubik's cubes of any size in Python
+Author: Vivaan Singhvi
+Author-email: singhvi.vivaan@gmail.com
+License: MIT
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy ~=1.26.0
+Requires-Dist: pynterface ==0.2.3
+
+# pycubing
+A Python library for modeling and solving different sizes of Rubik's cubes
