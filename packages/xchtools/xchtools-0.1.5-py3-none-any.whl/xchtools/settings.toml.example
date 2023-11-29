@@ -1,0 +1,11 @@
+
+# cp settings.toml.example settings.toml
+
+[default.db]
+host = "replace with your host"
+port = 3306
+user = "root"
+password = "@format {env[MYSQLDB_PASSWORD]}"
+
+
+
