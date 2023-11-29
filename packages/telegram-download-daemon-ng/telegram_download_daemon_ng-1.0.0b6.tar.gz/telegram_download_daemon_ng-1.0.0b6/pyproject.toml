@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "telegram-download-daemon-ng"
+version = "1.0.0-beta.6"
+description = "A daemon to automate telegram download of big files."
+authors = ["Luis Zurro <luiszurrodecos@gmail.com>"]
+readme = "README.md"
+license = "GPLv3"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: Spanish",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+packages = [
+    { include = "telegram_download_daemon_ng", from = "src" }
+]
+keywords = [
+    "download",
+    "downloads",
+    "telegram",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+cffi = "1.16.0"
+cryptg = "0.4"
+pyaes = "1.6.1"
+pyasn1 = "0.5.1"
+pycparser = "2.21"
+rsa = "4.9"
+telethon = "1.32.1"
+humanize = "4.9.0"
+
+[build-system]
+requires = ["poetry-core~=1.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+telegram_download_daemon_ng = 'telegram_download_daemon_ng.__main__:main'
+telegram-download-daemon-ng = 'telegram_download_daemon_ng.__main__:main'
+
+[project.urls]
+Homepage = "https://github.com/Nyaran/telegram-download-daemon-ng"
+Sponsor = "https://github.com/sponsors/Nyaran"
+Tracker = "https://github.com/Nyaran/telegram-download-daemon-ng/issues"
