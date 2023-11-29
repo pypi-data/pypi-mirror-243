@@ -1,0 +1,115 @@
+[project]
+name = "disease-normalizer"
+authors = [
+    {name = "Alex Wagner"},
+    {name = "Kori Kuzma"},
+    {name = "James Stevenson"}
+]
+readme = "README.md"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Framework :: FastAPI",
+    "Framework :: Pydantic",
+    "Framework :: Pydantic :: 2",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+requires-python = ">=3.8"
+description = "VICC normalization routines for diseases"
+license = {file = "LICENSE"}
+dependencies = [
+    "pydantic==2.*",
+    "fastapi",
+    "uvicorn",
+    "click",
+    "boto3",
+    "ga4gh.vrs~=2.0.0a1",
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+pg = ["psycopg[binary]", "requests"]
+etl = ["owlready2==0.40", "rdflib", "wags-tails"]
+test = ["pytest>=6.0", "pytest-cov", "httpx"]
+dev = ["pre-commit", "ruff>=0.1.2", "lxml", "xmlformatter"]
+
+[project.urls]
+Homepage = "https://github.com/cancervariants/disease-normalization"
+Documentation = "https://github.com/cancervariants/disease-normalization"
+Changelog = "https://github.com/cancervariants/disease-normalization/releases"
+Source = "https://github.com/cancervariants/disease-normalization"
+"Bug Tracker" = "https://github.com/cancervariants/disease-normalization/issues"
+
+[project.scripts]
+disease_norm_update = "disease.cli:update_db"
+disease_norm_update_remote = "disease.cli:update_from_remote"
+disease_norm_dump = "disease.cli:dump_database"
+disease_norm_check_db = "disease.cli:check_db"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = {attr = "disease.version.__version__"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"disease.database.postgresql" = ["*.sql"]
+
+[tool.pytest.ini_options]
+addopts = "--cov=src --cov-report term-missing"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+
+[tool.ruff]
+src = ["src"]
+# pycodestyle (E, W)
+# Pyflakes (F)
+# flake8-annotations (ANN)
+# pydocstyle (D)
+# pep8-naming (N)
+# isort (I)
+select = ["E", "W", "F", "ANN", "D", "N", "I"]
+fixable = ["I", "F401"]
+
+# D203 - one-blank-line-before-class
+# D205 - blank-line-after-summary
+# D206 - indent-with-spaces*
+# D213 - multi-line-summary-second-line
+# D300 - triple-single-quotes
+# D400 - ends-in-period
+# D415 - ends-in-punctuation
+# ANN101 - missing-type-self
+# ANN003 - missing-type-kwargs
+# E111 - indentation-with-invalid-multiple*
+# E114 - indentation-with-invalid-multiple-comment*
+# E117 - over-indented*
+# E501 - line-too-long*
+# W191 - tab-indentation*
+# *ignored for compatibility with formatter
+ignore = [
+    "D203", "D205", "D206", "D213", "D300", "D400", "D415",
+    "ANN101", "ANN003",
+    "E111", "E114", "E117", "E501",
+    "W191"
+]
+
+[tool.ruff.per-file-ignores]
+# ANN001 - missing-type-function-argument
+# ANN2 - missing-return-type
+# ANN102 - missing-type-cls
+# N805 - invalid-first-argument-name-for-method
+"tests/*" = ["ANN001", "ANN2", "ANN102"]
+"src/disease/schemas.py" = ["ANN201", "N805", "ANN001"]
