@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "wordpredict"
+version = "0.2.3" # use poetry-dynamic-versioning
+description = "word predictor"
+authors = ["2ndr9"]
+repository = "https://github.com/2ndr9/wordpredict"
+readme = "README.md"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+style = "pep440"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
