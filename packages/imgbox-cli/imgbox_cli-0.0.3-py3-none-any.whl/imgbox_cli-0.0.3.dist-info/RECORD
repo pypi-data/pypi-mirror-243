@@ -1,0 +1,14 @@
+imgbox/__init__.py,sha256=j8Rii6G6VJIhZ4tFS5B22iq3FPFNn3fMHsWEMs0A3SI,245
+imgbox/_input.py,sha256=gkrDFk8Q0UbiIlQ8h1z8OXQzDkYQAj-KRVZBBrCiVWg,1898
+imgbox/_main.py,sha256=sSt4WMLTGARAbpgacq5mhnwStPOIZtiE5iiC0ZA_l6Q,1435
+imgbox/_output.py,sha256=p1MinaT6vFQdfP2m4s4kWGN_owq9hwauvPZwBlA-WRk,2316
+tests/conftest.py,sha256=oeBbVudZNjd19JdmEa-Sde2IqSRKoRs8MHb-bYs5PmQ,832
+tests/test_input.py,sha256=6gNJ0WUL77UHGEAZfIUoo6aKcGDgVcMaEV5IdWlDRPo,1314
+tests/test_main.py,sha256=3d7qUGd4ZwTRESVVT0eysmLV2KC8HtQ0ZgVEh0qQKa4,5886
+tests/test_output.py,sha256=R9ctghO2KuYCcD6i6WJWtyNI_p7n8PrKlDDIoWJKQS0,9780
+imgbox_cli-0.0.3.dist-info/LICENSE,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+imgbox_cli-0.0.3.dist-info/METADATA,sha256=sV7sVLj2QLWnGNHCqVti94nbRiNlER2s3OYzDYVZVBI,2005
+imgbox_cli-0.0.3.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+imgbox_cli-0.0.3.dist-info/entry_points.txt,sha256=lzlXTBEcp-WxFXmyzVdvqNSNek0u4HPGksTlxdgujOY,45
+imgbox_cli-0.0.3.dist-info/top_level.txt,sha256=8ZkUgdL5rM071qm7OfA30ReIyxU-0lM060eu9_Qk3Eo,13
+imgbox_cli-0.0.3.dist-info/RECORD,,
