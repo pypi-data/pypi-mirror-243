@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: boxcounting
+Version: 1.0.0.1
+Summary: A python port of the MATLAB boxcount to calculate the     fractal (box-counting) dimension of 1D, 2D or 3D data
+Home-page: https://github.com/Phoenixfire1081/fractaldimension
+Author: Abhishek Harikrishnan
+Author-email: abhishek.harikrishnan@fu-berlin.de
+License: MIT
+Platform: UNKNOWN
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Calculate fractal (box-counting) dimension
+
+This is a direct port of the MATLAB boxcount code developed by F. Moisy. 
+See the original code here: https://de.mathworks.com/matlabcentral/fileexchange/13063-boxcount.
+
+
+
+
