@@ -1,0 +1,13 @@
+flask_praetorian/__init__.py,sha256=F9PXuJ89-QSbIJAyiI9A8CHXkb0LMcxb-RED9ZPtJ_w,662
+flask_praetorian/base.py,sha256=73m9WbqlDFh2zeTIMbYkIsT9HyheDiBkQSnOfxCGsdA,43736
+flask_praetorian/constants.py,sha256=NSaoqWU7ZW8izQv70ZeLeNtvwu434EORWCQEMeohNP0,1869
+flask_praetorian/decorators.py,sha256=bYij8T6ZLUhsvJq9cyxLKs4YnbrDNyB0N_HdTVqKgmc,4157
+flask_praetorian/exceptions.py,sha256=gDWLt_jX_sHSQ2hyUucw2jLRGu-uQTteXpyLOcsoSuw,2635
+flask_praetorian/templates/registration_email.html,sha256=QKblb8d4YnyzsQ4esBJEYWM5zWsZ7JgBqNdmugV-zLc,6707
+flask_praetorian/templates/reset_email.html,sha256=b0DgAlFzEzj34v-rAyOG_cZ_mEjdP84mUfVdtK1pIEU,6721
+flask_praetorian/user_mixins.py,sha256=0Hv67Sd1JfmTLb4SzUhgH2698_8nvbWaNHWTISde2t0,1515
+flask_praetorian/utilities.py,sha256=_AE9UDjA7wXh6DTBRF-LP64nkdpP5-as0xsjgsAv9MI,6476
+flask_praetorian-1.5.0.dist-info/LICENSE.rst,sha256=v0Q-aMkUtQCb04k04puqW9N6RB8Csl6OUS90S6X4DUI,1084
+flask_praetorian-1.5.0.dist-info/METADATA,sha256=Uu6Td48kh8hXpTIAi3TL2lyL45a732pVPknrJq-gwG4,3963
+flask_praetorian-1.5.0.dist-info/WHEEL,sha256=7Z8_27uaHI_UZAc4Uox4PpBhQ9Y5_modZXWMxtUi4NU,88
+flask_praetorian-1.5.0.dist-info/RECORD,,
