@@ -1,0 +1,12 @@
+dwave-networkx>=0.8.10
+fasteners>=0.15
+homebase>=1.0.1
+networkx>=2.4
+numpy>=1.21.6
+scipy>=1.7.3
+
+[:python_version < "3.9"]
+rectangle-packer==2.0.1
+
+[:python_version >= "3.9"]
+rectangle-packer>=2.0.1
