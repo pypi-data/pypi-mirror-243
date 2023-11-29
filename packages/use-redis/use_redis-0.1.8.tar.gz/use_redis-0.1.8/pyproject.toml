@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "use-redis"
+version = "0.1.8"
+description = ""
+authors = ["miclon <jcnd@163.com>"]
+readme = "README.md"
+packages = [
+    { include = 'use_redis', from = 'src' }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+redis = ">=4.6.0,<6.0.0"
+
+[tool.poetry.group.test.dependencies]
+pylint = "*"
+pytest = "*"
+black = "*"
+flake8 = "*"
+isort = "*"
+pre-commit = "*"
+pre-commit-hooks = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
