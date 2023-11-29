@@ -1,0 +1,6 @@
+xarray>=2022.6.0
+numpy
+netcdf4
+matplotlib
+cartopy
+packaging
