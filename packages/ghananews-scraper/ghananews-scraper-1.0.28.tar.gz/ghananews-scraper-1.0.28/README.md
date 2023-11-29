@@ -1,0 +1,357 @@
+![Python 3.7, 3.8, 3.9](https://img.shields.io/badge/Python-3.7%2C%203.8%2C%203.9-3776ab.svg?maxAge=2592000)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+
+### GhanaNews Scraper
+  A simple unofficial python package to scrape data from 
+  [GhanaWeb](https://www.ghanaweb.com),
+  [MyJoyOnline](https://www.myjoyonline.com),
+  [DailyGraphic](https://www.graphic.com.gh),
+  [CitiBusinessNews](https://citibusinessnews.com),
+  [YenGH](https://www.yen.com.gh),
+  [3News](https://www.3news.com),
+  [MyNewsGh](https://www.mynewsgh.com),
+  [PulseGh](https://www.pulse.com.gh)
+  Affiliated to [Bank of Ghana Fx Rates](https://pypi.org/project/bank-of-ghana-fx-rates/) and 
+  [GhanaShops-Scraper](https://pypi.org/project/ghanashops-scraper/)
+
+### NOTE: `This library may keep changing due to changes to the respective websites.`
+
+### How to install
+```shell
+pip install ghananews-scraper
+```
+
+### Example Google Colab Notebook
+   Click Here: [![Google Colab Notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jZo8TUictFbZBCglXWxZPtbVDYtp_eUn?usp=sharing)
+
+![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png) `Warning: DO NOT RUN GHANAWEB CODE IN ONLINE Google Colabs)`
+
+### Some GhanaWeb Urls:
+```markdown
+urls = [
+    "https://www.ghanaweb.com/GhanaHomePage/regional/"	
+    "https://www.ghanaweb.com/GhanaHomePage/editorial/"
+    "https://www.ghanaweb.com/GhanaHomePage/health/"
+    "https://www.ghanaweb.com/GhanaHomePage/diaspora/"
+    "https://www.ghanaweb.com/GhanaHomePage/tabloid/"
+    "https://www.ghanaweb.com/GhanaHomePage/africa/"
+    "https://www.ghanaweb.com/GhanaHomePage/religion/"
+    "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/"
+    "https://www.ghanaweb.com/GhanaHomePage/business/"
+    "https://www.ghanaweb.com/GhanaHomePage/SportsArchive/"
+    "https://www.ghanaweb.com/GhanaHomePage/entertainment/"
+    "https://www.ghanaweb.com/GhanaHomePage/africa/"
+    "https://www.ghanaweb.com/GhanaHomePage/television/"
+]
+```
+### Outputs
+  - All outputs will be saved in a `.csv` file. Other file formats not yet supported.
+
+### Usage
+```python
+from ghanaweb.scraper import GhanaWeb
+
+url = 'https://www.ghanaweb.com/GhanaHomePage/politics/'
+# url = "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/"
+# url = 'https://www.ghanaweb.com/GhanaHomePage/health/'
+# url = 'https://www.ghanaweb.com/GhanaHomePage/crime/'
+# url = 'https://www.ghanaweb.com/GhanaHomePage/regional/'
+# url = 'https://www.ghanaweb.com/GhanaHomePage/year-in-review/'
+
+# web = GhanaWeb(url='https://www.ghanaweb.com/GhanaHomePage/politics/')
+web = GhanaWeb(url=url)
+# scrape data and save to `current working dir`
+web.download(output_dir=None)
+```
+### Scrape list of articles from [GhanaWeb](https://ghanaweb.com)
+```python
+from ghanaweb.scraper import GhanaWeb
+
+urls = [
+        'https://www.ghanaweb.com/GhanaHomePage/politics/',
+        'https://www.ghanaweb.com/GhanaHomePage/health/',
+        'https://www.ghanaweb.com/GhanaHomePage/crime/',
+        'https://www.ghanaweb.com/GhanaHomePage/regional/',
+        'https://www.ghanaweb.com/GhanaHomePage/year-in-review/'
+    ]
+
+for url in urls:
+    print(f"Downloading: {url}")
+    web = GhanaWeb(url=url)
+    # download to current working directory
+    # if no location is specified
+    # web.download(output_dir="/Users/tsiameh/Desktop/")
+    web.download(output_dir=None)
+```
+
+### Scrape data from [MyJoyOnline](https://myjoyonline.com)
+  + It is recommended to use option 1. Option 2 might run into timeout issues.
+  + DO NOT RUN THIS IN `Google Colab NOTEBOOK`, either in .py script, visual studio code or in terminal due to `selenium` package.
+  + You may pass driver_name = `chrome` or `firefox`
+```python
+
+# Option 1.
+from myjoyonline.scraper import MyJoyOnlineNews
+
+url = 'https://myjoyonline.com/politics'
+print(f"Downloading data from: {url}")
+joy = MyJoyOnlineNews(url=url)
+# joy = MyJoyOnlineNews(url=url, driver_name="firefox")
+joy.download()
+
+
+# Option 2.
+from myjoyonline.scraper import MyJoyOnlineNews
+
+urls = [
+        'https://myjoyonline.com/news',
+        'https://myjoyonline.com/politics'
+        'https://myjoyonline.com/entertainment',
+        'https://myjoyonline.com/business',
+        'https://myjoyonline.com/sports',
+        'https://myjoyonline.com/opinion',
+        'https://myjoyonline.com/technology'
+    ]
+
+for url in urls:
+    print(f"Downloading data from: {url}")
+    joy = MyJoyOnlineNews(url=url)
+    # download to current working directory
+    # if no location is specified
+    # joy.download(output_dir="/Users/tsiameh/Desktop/")
+    joy.download()
+
+```
+
+### Scrape data from [CitiBusinessNews](https://citibusinessnews.com)
+  + Here are some list of publisher names:
+    + `citibusinessnews`
+    + `aklama`
+    + `ellen`
+    + `emmanuel-oppong`
+    + `nerteley`
+    + `edna-agnes-boakye`
+    + `nii-larte-lartey`
+    + `naa-shika-caesar`
+    + `ogbodu`
+      * Note: using publisher names fetches more data than the url.
+
+```python
+from citionline.scraper import CitiBusinessOnline
+
+urls = [
+    "https://citibusinessnews.com/ghanabusinessnews/features/",
+    "https://citibusinessnews.com/ghanabusinessnews/telecoms-technology/",
+    "https://citibusinessnews.com/ghanabusinessnews/international/",
+    "https://citibusinessnews.com/ghanabusinessnews/news/government/",
+    "https://citibusinessnews.com/ghanabusinessnews/news/",
+    "https://citibusinessnews.com/ghanabusinessnews/business/",
+    "https://citibusinessnews.com/ghanabusinessnews/news/economy/",
+    "https://citibusinessnews.com/ghanabusinessnews/news/general/",
+    "https://citibusinessnews.com/ghanabusinessnews/news/top-stories/",
+    "https://citibusinessnews.com/ghanabusinessnews/business/tourism/"
+]
+
+for url in urls:
+    print(f"Downloading data from: {url}")
+    citi = CitiBusinessOnline(url=url)
+    citi.download()
+
+# OR: scrape using publisher name
+from citionline.authors import CitiBusiness
+
+citi = CitiBusiness(author="citibusinessnews", limit_pages=4)
+citi.download()
+
+```
+
+### Scrape data from [DailyGraphic](https://www.graphic.com.gh/)
+```python
+from graphiconline.scraper import GraphicOnline
+
+urls = [
+    "https://www.graphic.com.gh/news.html",
+    "https://www.graphic.com.gh/news/politics.html",
+    "https://www.graphic.com.gh/lifestyle.html",
+    "https://www.graphic.com.gh/news/education.html",
+    "https://www.graphic.com.gh/native-daughter.html",
+    "https://www.graphic.com.gh/international.html"
+]
+
+for url in urls:
+    print(f"Downloading data from: {url}")
+    graphic = GraphicOnline(url=url)
+    graphic.download()
+```
+
+### Scrape data from [YenGH](https://www.yen.com.gh/)
+```python
+
+# OPTION: 1
+
+from yen.scrapy import YenNews
+
+url = 'https://www.yen.com.gh/'
+print(f"Downloading data from: {url}")
+yen = YenNews(url=url)
+yen.download()
+
+# OPTION: 2
+
+from yen.scrapy import YenNews
+
+urls = [
+    'https://www.yen.com.gh/',
+    'https://yen.com.gh/politics/',
+    'https://yen.com.gh/world/europe/',
+    'https://yen.com.gh/education/',
+    'https://yen.com.gh/ghana/',
+    'https://yen.com.gh/people/',
+    'https://yen.com.gh/world/asia/',
+    'https://yen.com.gh/world/africa/',
+    'https://yen.com.gh/entertainment/',
+    'https://yen.com.gh/business-economy/money/',
+    'https://yen.com.gh/business-economy/technology/'
+]
+
+for url in urls:
+    print(f"Downloading data from: {url}")
+    yen = YenNews(url=url)
+    yen.download()
+```
+
+### Scrape data from [MyNewsGh](https://mynewsgh.com)
+```python
+from mynewsgh.scraper import MyNewsGh
+
+# scrape from multiple URLs
+urls = [
+  "https://www.mynewsgh.com/category/politics/",
+  "https://www.mynewsgh.com/category/news/",
+  "https://www.mynewsgh.com/category/entertainment/",
+  "https://www.mynewsgh.com/category/business/",
+  "https://www.mynewsgh.com/category/lifestyle/",
+  "https://www.mynewsgh.com/tag/feature/",
+  "https://www.mynewsgh.com/category/world/",
+  "https://www.mynewsgh.com/category/sports/"
+]
+
+for url in urls:
+    print(f"Downloading data from: {url}")
+    my_news = MyNewsGh(url=url, limit_pages=50)
+    my_news.download()
+
+# scrape from a single URL
+from mynewsgh.scraper import MyNewsGh
+
+url = "https://www.mynewsgh.com/category/politics/"
+my_news = MyNewsGh(url=url, limit_pages=None)
+my_news.download()
+```
+### Scrape data from [3News](https://3news.com)
+```python
+from threenews.scraper import ThreeNews
+
+# DO NOT RUN ALL AUTHORS: select ONLY few
+# DO NOT CHANGE THE AUTHOR NAMES
+authors = [
+  "laud-nartey",
+  "3xtra",
+  "essel-issac",
+  "arabaincoom",
+  "bbc",
+  "betty-kankam-boadu",
+  "kwameamoh",
+  "fiifi_forson",
+  "fdoku",
+  "frankappiah",
+  "godwin-asediba",
+  "afua-somuah",
+  "irene",
+  "joyce-sesi",
+  "3news_user",
+  "ntollo",
+  "pwaberi-denis",
+  "sonia-amade",
+  "effah-steven",
+  "michael-tetteh"
+]
+
+for author in authors:
+    print(f"Downloading data from author: {author}")
+    three_news = ThreeNews(author=author, limit_pages=50)
+    three_news.download()
+    
+# OR
+from threenews.scraper import ThreeNews
+
+three = ThreeNews(author="laud-nartey", limit_pages=None)
+three.download()
+
+```
+### Scrape data from [PulseGh](https://pulse.com.gh)
+  + select ONLY few urls
+    * Note: these values may change
+
+    | Category                  | Number of Pages |
+    |---------------------------|-----------------|
+    | News                      | 40              |
+    | Entertainment             | 40              |
+    | Business                  | 40              |
+    | Lifestyle                 | 40              |
+    | Business/Domestic         | 26              |
+    | Business/International    | 40              |
+    | Sports/Football           | 99              |
+    | News/Politics             | 40              |
+    | News/Local                | 40              |
+    | News/World                | 40              |
+    | News/Filla                | 38              |
+    | Entertainment/Celebrities | 40              |
+    | Lifestyle/Fashion         | 40              |
+
+```python
+from pulsegh.scraper import PulseGh
+
+urls = [
+  "https://www.pulse.com.gh/news",
+  "https://www.pulse.com.gh/news/politics",
+  "https://www.pulse.com.gh/entertainment",
+  "https://www.pulse.com.gh/lifestyle",
+  "https://www.pulse.com.gh/sports",
+  "https://www.pulse.com.gh/sports/football",
+  "https://www.pulse.com.gh/business/international",
+  "https://www.pulse.com.gh/business/domestic",
+  "https://www.pulse.com.gh/business",
+  "https://www.pulse.com.gh/quizzes",
+  "https://www.pulse.com.gh/news/filla",
+  "https://www.pulse.com.gh/news/world"
+]
+
+for url in urls:
+    print(f"Downloading data from: {url}")
+    pulse = PulseGh(url=url, limit_pages=5)
+    pulse.download()
+    
+# news has 40 pages
+from pulsegh.scraper import PulseGh
+
+pulse = PulseGh(url="https://www.pulse.com.gh/news", total_pages = 40, limit_pages=20)
+pulse.download()
+
+# Sports/football has 99 pages
+from pulsegh.scraper import PulseGh
+pulse = PulseGh(url="https://www.pulse.com.gh/sports/football", total_pages=99, limit_pages=None)
+pulse.download()
+
+```
+
+BuyMeCoffee
+-----------
+[![Build](https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png)](https://www.buymeacoffee.com/theodondrew)
+
+Credits
+-------
+-  `Theophilus Siameh`
+<div>
+    <a href="https://twitter.com/tsiameh"><img src="https://img.shields.io/twitter/follow/tsiameh?color=blue&logo=twitter&style=flat" alt="tsiameh twitter"></a>
+</div>
