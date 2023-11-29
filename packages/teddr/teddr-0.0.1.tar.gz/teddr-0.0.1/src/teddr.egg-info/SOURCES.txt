@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/teddr/__init__.py
+src/teddr/gridworld.py
+src/teddr/stats.py
+src/teddr/teddr.py
+src/teddr.egg-info/PKG-INFO
+src/teddr.egg-info/SOURCES.txt
+src/teddr.egg-info/dependency_links.txt
+src/teddr.egg-info/requires.txt
+src/teddr.egg-info/top_level.txt
