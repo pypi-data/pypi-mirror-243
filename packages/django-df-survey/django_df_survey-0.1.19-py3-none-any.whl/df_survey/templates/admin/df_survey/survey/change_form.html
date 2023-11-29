@@ -1,0 +1,47 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+{% block object-tools-items %}
+    {{ block.super }}
+    <li>
+        <a href="{% url 'admin:df_survey_survey_export_question_responses' original.pk %}" class="button">Responses</a>
+    </li>
+    <li>
+        <a href="{% url 'admin:df_survey_survey_import_questions' original.pk %}" class="button">Import Questions</a>
+    </li>
+    <li>
+        <a href="{% url 'admin:df_survey_survey_export_questions' original.pk %}" class="button">Export Questions</a>
+    </li>
+    <li>
+        <a href="{% url 'admin:df_survey_survey_assign_users' original.pk %}" class="button">Assign Users</a>
+    </li>
+{% endblock %}
+
+{% block field_sets %}
+    {% if not add %}
+        <div class="form-row field-title">
+            <div>
+                <div class="flex-container">
+                    <span style="display: block; width: 175px; font-weight: bold">Users:</span>
+                    {% with  original.usersurvey_set.count as  user_count %}
+                        <div>
+                            {% if user_count == 0 %}
+                                No users have been assigned yet.
+                            {% else %}
+                                Total users: {{ user_count }}.
+                                <a href="{% url 'admin:df_survey_usersurvey_changelist' %}?survey={{ original.pk }}">View
+                                    all</a>.
+                            {% endif %}
+                        </div>
+                    {% endwith %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+    <script type="text/javascript" src="{% static 'df_survey/admin/js/survey-change-form.js' %}" defer async></script>
+{% endblock %}
