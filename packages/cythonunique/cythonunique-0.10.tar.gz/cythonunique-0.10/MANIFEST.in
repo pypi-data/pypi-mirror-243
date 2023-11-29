@@ -1,0 +1,3 @@
+include cythonunique/requirements.txt
+include cythonunique/thirdparty.json
+include cythonunique/README.MD

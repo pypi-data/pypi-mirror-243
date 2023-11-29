@@ -1,0 +1,14 @@
+LICENSE.rst
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+cythonunique/README.MD
+cythonunique/__init__.py
+cythonunique/requirements.txt
+cythonunique/thirdparty.json
+cythonunique.egg-info/PKG-INFO
+cythonunique.egg-info/SOURCES.txt
+cythonunique.egg-info/dependency_links.txt
+cythonunique.egg-info/requires.txt
+cythonunique.egg-info/top_level.txt
