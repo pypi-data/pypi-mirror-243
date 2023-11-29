@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+uniparser_beserman_lat/__init__.py
+uniparser_beserman_lat.egg-info/PKG-INFO
+uniparser_beserman_lat.egg-info/SOURCES.txt
+uniparser_beserman_lat.egg-info/dependency_links.txt
+uniparser_beserman_lat.egg-info/requires.txt
+uniparser_beserman_lat.egg-info/top_level.txt
+uniparser_beserman_lat/data_default/__init__.py
+uniparser_beserman_lat/data_default/bad_analyses.txt
+uniparser_beserman_lat/data_default/beserman.cg3
+uniparser_beserman_lat/data_default/lexemes.txt
+uniparser_beserman_lat/data_default/paradigms.txt
