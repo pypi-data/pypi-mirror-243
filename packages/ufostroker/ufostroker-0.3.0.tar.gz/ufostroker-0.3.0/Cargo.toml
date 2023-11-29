@@ -1,0 +1,20 @@
+[package]
+name = "ufostroker"
+version = "0.3.0"
+authors = ["Simon Cozens <simon@simon-cozens.org>"]
+edition = "2018"
+description = "Python wrapper around the MFEKmath library"
+repository = "https://github.com/simoncozens/ufostroker-py"
+exclude = ["dist/*"]
+
+[dependencies]
+glifparser = { git = "https://github.com/MFEK/glifparser.rlib", branch="master" }
+MFEKmath = { git = "https://github.com/MFEK/math.rlib" }
+
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies.pyo3]
+version = "0.20.0"
+features = ["extension-module", "abi3-py37"]
