@@ -1,0 +1,8 @@
+requests
+rehash
+tqdm
+
+[dev]
+twine
+pytest
+flask
