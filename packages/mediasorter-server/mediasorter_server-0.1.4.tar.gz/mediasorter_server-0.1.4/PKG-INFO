@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: mediasorter-server
+Version: 0.1.4
+Summary: 
+License: MIT
+Author: Your Name
+Author-email: you@example.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: fastapi (>=0.104.1,<0.105.0)
+Requires-Dist: multimediasorter (>=1.4.0,<2.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: uvicorn (>=0.24.0.post1,<0.25.0)
+Description-Content-Type: text/markdown
+
+# Mediasorter (server)
+
+This is a straightforward web interface for the [mediasorter](https://github.com/xyzjonas/mediasorter) utility. Configured folders can be scanned, and detected media files can be selected individually for sorting, eliminating unwanted sorting mistakes compared to a CRON-based setup.
+
+### Install
+```bash
+ pip install mediasorter-server
+```
+
+### Usage
+```bash
+# CLI tool
+mediasorter --help
+```
+
+```bash
+# use --setup to start with a default configuration file
+mediasorter --setup
+```
+
+```bash
+# start the all-in-one server (valid configuration is needed)
+mediasorter-server
+```
+
