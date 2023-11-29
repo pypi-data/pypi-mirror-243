@@ -1,0 +1,93 @@
+# TIR CLI
+
+## Stable Release : version - 0.1.1
+The  TIR  Command  Line  Interface is a unified tool to manage all your tir services
+A command line tool developed by tir Networks Ltd
+
+
+## Getting started
+
+Just Login to your [E2E myAccount](https://myaccount.tirnetworks.com/) and get your access/project tokens.
+For more on access token refer [E2E Tokens](https://docs.tirnetworks.com/guides/create_API_access_token.html)
+Add this to your system and you are all set to go.
+
+
+## Requirements
+
+The tir-cli package works on Python versions:
+
+    3.x and greater
+    setuptools 45.2.0 or greater
+    requests 2.22.0 or greater
+
+
+## Notices
+
+Attention!
+We recommend that all customers regularly monitor the [TIR docs](https://docs.e2enetworks.com/AI_ML/index.html) website for any important update bulletins related to tir-cli.
+
+
+## Installation
+Installation of the TIR CLI and its dependencies use a range of packaging features provided by pip and setuptools. To ensure smooth installation, it’s recommended to use:
+
+pip: 21.0 or greater
+requests: 2.22.0 or greater
+setuptools: 45.2.0 or greater
+
+The safest way to install the tir CLI is to use pip in a virtualenv:
+        pip install tir-cli
+
+
+## Configuration
+
+Before using the tir CLI, you need to configure your tir credentials/Tokens
+This can be done by running the following commands to add token, [more]() :
+
+    tir config add      ->   To add project
+
+Further set default project by using :
+    tir config set      ->   To set default project for system
+
+
+## Basic Commands
+
+An tir CLI command has the following structure:
+
+    tir <command> <subcommand> [options and parameters]
+
+For example, to list buckets, the command would be:
+
+    tir datasets list 
+
+To view help/man documentation, use one of the following:
+    
+    tir --help
+
+To get the version of the tir CLI:
+
+    tir --version/-v
+
+To get the package info of the tir CLI:
+
+    tir --info
+
+To turn on debugging :
+
+    tir --debug  <command> <subcommand> 
+
+To get  arguments info :
+
+    tir <command> <subcommand> --help
+
+
+## Support
+
+For support/help refer [TIR CLI docs](https://docs.e2enetworks.com/AI_ML/index.html) or visit [tir Networks](https://gpu-notebooks.e2enetworks.com/)
+
+
+## Authors and acknowledgment
+
+Aman Mishra
+
+
+## Project status
