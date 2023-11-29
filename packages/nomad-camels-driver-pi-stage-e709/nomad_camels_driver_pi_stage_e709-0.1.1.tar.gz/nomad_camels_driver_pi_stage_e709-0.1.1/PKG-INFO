@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: nomad_camels_driver_pi_stage_e709
+Version: 0.1.1
+Summary: Instrument driver for PI E709 piezo stage for NOMAD-CAMELS
+Author-email: FAIRmat - HU Berlin <nomad-camels@fau.de>
+Project-URL: GitHub Page, https://github.com/FAU-LAP/NOMAD-CAMELS
+Project-URL: GitHub Drivers, https://github.com/FAU-LAP/CAMELS_drivers
+Project-URL: Documentation, https://fau-lap.github.io/NOMAD-CAMELS/doc/instruments/instruments.html
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)
+Requires-Python: >=3.9.6
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: PIPython
+Requires-Dist: nomad-camels
+
+# NOMAD-CAMELS Driver for PI stage E709
+
+Driver for the E709 piezo stage by Physik Instrumente (PI) written for the measurement software [NOMAD-CAMELS](https://fau-lap.github.io/NOMAD-CAMELS/).
+
+## Installation
+This driver needs the vendor's .dll files.
+Make sure you have the PI software suite installed (see [PI-Homepage](https://www.physikinstrumente.de/de/produkte/controller-treiberelektronik/nanopositionier-piezocontroller/e-709-kompakter-und-kostenoptimierter-digitaler-piezocontroller-605200#downloads)).
+
+## Features
+Provides reading / setting the current position of the stage. Closed loop mode can be turned on and off.
+A function for 
+
+
+## Documentation
+
+For more information visit the [documentation](https://fau-lap.github.io/NOMAD-CAMELS/doc/instruments/instruments.html).
