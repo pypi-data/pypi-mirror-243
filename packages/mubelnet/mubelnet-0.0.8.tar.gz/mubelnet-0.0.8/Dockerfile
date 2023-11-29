@@ -1,0 +1,35 @@
+# For more information, please refer to https://aka.ms/vscode-docker-python
+FROM ubuntu:23.04
+
+# Keeps Python from generating .pyc files in the container
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Turns off buffering for easier container logging
+ENV PYTHONUNBUFFERED=1
+
+RUN apt update && apt install --assume-yes \
+    python3-pip \
+    git
+
+# Install pip requirements
+COPY requirements.txt .
+RUN pip3 install --break-system-packages "jax[cpu]"
+RUN pip3 install --break-system-packages -r requirements.txt
+
+WORKDIR /app
+COPY . /app
+COPY ./README.md /app/README.md
+RUN pip3 install --break-system-packages .
+
+
+# Creates a non-root user with an explicit UID and adds permission to access the /app folder
+# For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
+RUN adduser -u 5678 --disabled-password --gecos "" appuser && chown -R appuser /app
+USER appuser
+
+ENV XLA_FLAGS="--xla_force_host_platform_device_count=6"
+
+# # Move to src directory to run all unit tests.
+# WORKDIR /app/src/
+# # During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
+# CMD ["python3", "-m", "unittest", "discover", "test"]

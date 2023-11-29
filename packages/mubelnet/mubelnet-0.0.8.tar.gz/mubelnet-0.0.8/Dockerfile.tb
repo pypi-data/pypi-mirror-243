@@ -1,0 +1,18 @@
+# For more information, please refer to https://aka.ms/vscode-docker-python
+FROM ubuntu:23.04
+
+# Keeps Python from generating .pyc files in the container
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Turns off buffering for easier container logging
+ENV PYTHONUNBUFFERED=1
+
+RUN apt update && apt install --assume-yes \
+    python3-pip
+
+# Install pip requirements
+RUN pip3 install --break-system-packages tf-nightly
+
+# During debugging, this entry point will be overridden. For more information, please refer to https://aka.ms/vscode-docker-python-debug
+ENTRYPOINT ["tensorboard", "--bind_all"]
+CMD ["--logdir", "/mnt/"]

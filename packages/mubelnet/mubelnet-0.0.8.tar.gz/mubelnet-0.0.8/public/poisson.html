@@ -1,0 +1,1783 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>gabenet.poisson API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>gabenet.poisson</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from typing import Optional
+
+from jax import random
+import jax.numpy as jnp
+import haiku as hk
+from tensor_annotations.axes import Batch, Channels, Features
+from tensor_annotations.jax import Array0, Array1, Array2, Array3, float32, uint32
+from tensorflow_probability.substrates import jax as tfp  # type: ignore
+
+from gabenet.layers import _Module, BaseObservedLayer, BaseMiddleLayer
+from gabenet.random import chinese_restaurant_table, gamma
+from gabenet.utils import to_snake_string
+
+
+tfd = tfp.distributions
+
+
+def _sample_theta(
+    c: Array1[float32, Batch],
+    activation: Array2[float32, Batch, Features],
+    m_previous: Array2[uint32, Batch, Features],
+    q_previous: Array1[float32, Batch],
+) -&gt; Array2[float32, Batch, Features]:
+    &#34;&#34;&#34;Sample posterior of activations.
+
+    θ(t) ~ Gam[ϕ(t+1)θ(t+1) + m(t), c(t+1) + q(t)].
+    &#34;&#34;&#34;
+    m_samples = c.shape[0]
+    n_features = activation.shape[1]
+    theta_shape = activation + m_previous
+    theta_rate: Array2[float32, Batch, Features] = (c + q_previous)[..., jnp.newaxis]
+    assert theta_shape.shape == (m_samples, n_features)
+    theta = gamma(hk.next_rng_key(), theta_shape, theta_rate)
+    return theta
+
+
+def _sample_c(
+    activation: Array2[float32, Batch, Features],
+    theta_tmin1: Array2[float32, Batch, Features],
+    e_0,
+    f_0,
+) -&gt; Array1[float32, Batch]:
+    &#34;&#34;&#34;Posterior sample the rate parameter over theta.
+
+    c_i(t+1) ~ Gam[e_0 + a_i.(t+1), f_0 + theta_i.(t)].
+    &#34;&#34;&#34;
+    activation, theta_tmin1 = jnp.broadcast_arrays(activation, theta_tmin1)
+    alpha = jnp.sum(activation, axis=1) + e_0
+    beta = jnp.sum(theta_tmin1, axis=1) + f_0
+    c = gamma(hk.next_rng_key(), alpha, beta)
+    return c
+
+
+def _next_q(
+    q_previous: Array1[float32, Batch], c_t: Array1[float32, Batch]
+) -&gt; Array1[float32, Batch]:
+    r&#34;&#34;&#34;Use recurvsive relation to estimate dual-count rate q(t) from q(t-1).
+
+    q_j(t+1) := \ln [q_j(t) + c_j(t+1)] - \ln c_j(t+1).
+    &#34;&#34;&#34;
+    return jnp.log(q_previous + c_t) - jnp.log(c_t)
+
+
+class PoissonLayer(BaseObservedLayer):
+    r&#34;&#34;&#34;Bottom layer of Poisson gamma believe network `gabenet.nets.PoissonGammaBelieve`.
+
+    .. figure:: figures/poisson_layer.svg
+        Mathematical background of distributions underlying `PoissonLayer`.
+
+    This layer implements the following generative model:
+
+    Given an incoming \(\theta_{ik}^{(1)}\) from the layer above, generate forward
+    samples
+    $$
+    \phi_{kj}^{(1)} \sim \mathrm{Dir}([\eta,\dots,\eta]), \\
+    a_{ij}^{(1)} = \sum_{k=1}^{K_{1}} \theta_{ik}^{(1)} \phi_{kj}^{(1)}, \\
+    x_{ij}^{(1)} \sim \mathrm{Pois}(a_{ij}^{(1)}),
+    $$
+    where \(K_1\) are the number of latent states (`input_size`), \(i\) refers to
+    sample, \(j\) to a feature coming out of the layer (`output_size` in total), and
+    \(k\) a latent state/topic coming into the layer. During
+    inference, the training data \(x_{ij}^{(1)}\) is assumed to be fixed.
+    &#34;&#34;&#34;
+
+    def set_training(self, is_training: bool) -&gt; None:
+        &#34;&#34;&#34;Toggle training mode.&#34;&#34;&#34;
+        super().set_training(is_training)
+        # Phi and c are fixed during inference.
+        if not self.is_training:
+            self.frozen_ = frozenset(self.frozen).union([&#34;c&#34;, &#34;phi&#34;])
+
+    def forward(
+        self, theta: Array2[float32, Batch, Channels]
+    ) -&gt; Array2[uint32, Batch, Features]:
+        r&#34;&#34;&#34;Do an ancestral sampling step generating samples
+        \(\{\phi_{kj}^{(1)}, x_{ij}^{(1)}\}_{i,j,k} \mid \theta_{ik}^{(1)} \).&#34;&#34;&#34;
+        activation = self.forward_activation(theta)
+
+        m_samples = theta.shape[0]
+        x_ij = random.poisson(
+            hk.next_rng_key(),
+            lam=activation,
+            shape=(m_samples, self.output_size),
+        )
+
+        return x_ij  # type: ignore
+
+    def upward(
+        self, x_observed: Array2[uint32, Batch, Features]
+    ) -&gt; tuple[Array2[uint32, Batch, Channels], Array1[float32, Batch]]:
+        r&#34;&#34;&#34;Gibbs sample \( \phi^{(1)}_{kj} \) and propagate  \( \{m_{ik}^{(1)}, q_i^{(1)} \equiv 1 \} \) upward.
+
+        See `gabenet.layers.BaseObservedLayer.upward()` for details.
+        &#34;&#34;&#34;
+        m_samples, n_features = x_observed.shape
+
+        def _sample_missing_x(
+            x: Array2[uint32, Batch, Features]
+        ) -&gt; Array2[uint32, Batch, Features]:
+            &#34;&#34;&#34;Gibbs sample `nan` observations.&#34;&#34;&#34;
+            theta_shape = (m_samples, self.input_size)
+            phi_shape = (self.input_size, n_features)
+            theta = self._get(&#34;theta&#34;, theta_shape)
+            phi = self._get(&#34;phi&#34;, phi_shape)
+            activation = theta @ phi
+
+            x_samples = random.poisson(
+                hk.next_rng_key(),
+                lam=activation,
+                shape=(m_samples, n_features),
+            )
+            return jnp.where(jnp.isnan(x), x_samples, x)
+
+        has_missing = jnp.any(jnp.isnan(x_observed))
+        x = hk.cond(
+            has_missing, lambda x: _sample_missing_x(x), lambda x: x, x_observed
+        )
+
+        m_ik = super().upward(x)
+        q_i = jnp.ones(shape=(m_samples,))
+        return m_ik, q_i
+
+    def joint_log_prob(
+        self,
+        theta_tplus1: Array2[float32, Batch, Channels],
+        x_observed: Array2[uint32, Batch, Features],
+    ) -&gt; Array0[float32]:
+        &#34;&#34;&#34;Joint likelihood of data, state, and parameters.
+
+        Args:
+            theta_tplus1: Hidden units from the layer above.
+            x_observed: Observed multinomial draws, of shape (m_samples, n_features).
+        &#34;&#34;&#34;
+        n_features = x_observed.shape[1]
+
+        alpha = jnp.full(shape=(1, n_features), fill_value=self.eta, dtype=jnp.float32)
+        phi = self._get(&#34;phi&#34;, shape=(self.input_size, n_features))
+        activation = theta_tplus1 @ phi
+
+        log_prob = (
+            tfd.Dirichlet(concentration=alpha).log_prob(phi).sum()
+            + tfd.Poisson(rate=activation).log_prob(x_observed).sum()
+        )
+        return log_prob
+
+    def log_prob(self, x_observed: Array2[uint32, Batch, Features]):
+        &#34;&#34;&#34;Log-probability of the observations.&#34;&#34;&#34;
+        m_samples, n_features = x_observed.shape
+        theta_shape = (m_samples, self.input_size)
+        phi_shape = (self.input_size, n_features)
+        theta = self._get(&#34;theta&#34;, theta_shape)
+        phi = self._get(&#34;phi&#34;, phi_shape)  # type: ignore
+        activation = theta @ phi
+        return tfd.Poisson(rate=activation).log_prob(x_observed).sum()
+
+
+class CapLayer(_Module):
+    r&#34;&#34;&#34;Top layer of the Poisson gamma belief network `gabenet.nets.PoissonGammaBelieve`.
+
+    WARNING: Only to be used in combination with a `PoissonLayer` (and optionally a
+    `GammaLayer`).
+
+    .. figure:: figures/cap_layer.svg
+        Mathematical background of distributions underlying `CapLayer`.
+
+    Forward samples are generated by the following set of conditional distributions:
+    $$
+    r_j \sim \mathrm{Gam}(\gamma_0 / K_T, c_0), \\
+    c_i^{(T+1)} \sim \mathrm{Gam}(e_0, f_0), \\
+    \theta_{ij}^{(T)} \sim \mathrm{Gam}(r_j, c_i^{(T+1)}),
+    $$
+    where \(K_T\) (`input_size`) are the number of topics, \(i\) refers to sample, \(j\) to
+    a latent state, and the superscript refers to the layer index \(T\) (top most
+    layer). The dashed distributions refer to latent counts \(x_{ij}^{(T+1)}\) and rate
+    factor \(q_j^{(T+1)}\) that are used for Gibbs sampling.
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        input_size: int,
+        name: Optional[str] = None,
+        gamma_0: float = 1.0,
+        c_0: float = 1.0,
+        e_0: float = 1.0,
+        f_0: float = 1.0,
+        frozen: Optional[tuple[str]] = None,
+        is_training: bool = True,
+    ):
+        r&#34;&#34;&#34;
+        Args:
+            input_size: Number of latent states/topics \(K\) in this layers. Or,
+                equivalently, the number of features generated by (coming out of) this
+                layer.
+            name: Name of this layer.
+            gamma_0: Shape hyperparameter \(\gamma_0\) for top activation.
+            c_0: Rate hyperparameter \(c_0\) for top activation.
+            e_0: Shape hyperparameter \(e_0\) of activation rate.
+            f_0: Rate hyperparameter \(f_0\) of activation rate.
+            is_training: Is the model in training or in inference mode?
+        &#34;&#34;&#34;
+        if name is None:
+            name = to_snake_string(self.__class__.__name__)
+
+        super().__init__(name=name, frozen=frozen)
+
+        self.input_size = input_size
+        self.gamma_0 = jnp.array(gamma_0)
+        self.c_0 = jnp.array(c_0)
+        self.e_0 = jnp.array(e_0)
+        self.f_0 = jnp.array(f_0)
+        self.set_training(is_training)
+
+    def set_training(self, is_training: bool) -&gt; None:
+        &#34;&#34;&#34;Toggle training mode.&#34;&#34;&#34;
+        super().set_training(is_training)
+        if not self.is_training:
+            self.frozen_ = frozenset(self.frozen).union([&#34;r&#34;])
+
+    def joint_log_prob(self, m_samples: int):
+        &#34;&#34;&#34;Joint likelihood of data, state, and parameters.&#34;&#34;&#34;
+        r = self._get(&#34;r&#34;, shape=(self.input_size,))
+        c = self._get(&#34;c&#34;, shape=(m_samples,))
+        theta = self._get(&#34;theta&#34;, (m_samples, self.input_size))
+
+        log_p_r = tfd.Gamma(
+            concentration=self.gamma_0 / self.input_size, rate=self.c_0
+        ).log_prob(r)
+        log_p_c = tfd.Gamma(concentration=self.e_0, rate=self.f_0).log_prob(c)
+        log_p_theta = tfd.Gamma(
+            concentration=r[jnp.newaxis, ...], rate=c[..., jnp.newaxis]
+        ).log_prob(theta)
+
+        log_prob = jnp.sum(log_p_r) + jnp.sum(log_p_c) + jnp.sum(log_p_theta)
+
+        return log_prob, theta
+
+    def upward(
+        self,
+        m_previous: Array2[uint32, Batch, Features],
+        q_previous: Array1[float32, Batch],
+    ):
+        &#34;&#34;&#34;Posterior sample based on incoming samples.&#34;&#34;&#34;
+        m_samples = q_previous.shape[0]
+        if &#34;r&#34; not in self.frozen_:
+            activation = self._get(&#34;r&#34;, shape=(self.input_size,))[jnp.newaxis, ...]  # type: ignore
+            x_ij: Array2[uint32, Batch, Features] = chinese_restaurant_table(
+                hk.next_rng_key(), n=m_previous, r=activation
+            )
+
+            c: Array1[float32, Batch] = self._get(&#34;c&#34;, shape=(m_samples,))  # type: ignore
+            q = _next_q(q_previous, c)
+
+            a = self.gamma_0 / self.input_size + jnp.sum(x_ij, axis=0)
+            b = self.c_0 + jnp.sum(q)
+            r: Array1[float32, Features] = gamma(
+                hk.next_rng_key(), a, b, shape=(self.input_size,)
+            )
+            self._set(&#34;r&#34;, r)
+
+        return m_previous, q_previous
+
+    def downward(
+        self,
+        m_previous: Array2[uint32, Batch, Features],
+        q_previous: Array1[float32, Batch],
+    ) -&gt; tuple[Array2[float32, Batch, Features]]:
+        m_samples = q_previous.shape[0]
+        theta_shape = (m_samples, self.input_size)
+
+        r: Array1[float32, Features] = self._get(&#34;r&#34;, shape=(self.input_size,))  # type: ignore
+        activation: Array2[float32, Batch, Features] = r[jnp.newaxis, ...]
+
+        # θ(T) ~ Gam[r + m(T), c(T+1) + q(T)]
+        if &#34;theta&#34; not in self.frozen_:
+            c: Array1[float32, Batch] = self._get(&#34;c&#34;, shape=(m_samples,))  # type: ignore
+            theta_alpha = activation + m_previous
+            theta_beta: Array2[float32, Batch, Features] = (c + q_previous)[
+                ..., jnp.newaxis
+            ]
+
+            assert theta_alpha.shape == theta_shape
+            theta = gamma(hk.next_rng_key(), theta_alpha, theta_beta)
+
+            self._set(&#34;theta&#34;, theta)
+        else:
+            theta = self._get(&#34;theta&#34;, shape=theta_shape)
+
+        if &#34;c&#34; not in self.frozen_:
+            c = _sample_c(
+                activation=activation,
+                theta_tmin1=theta,
+                e_0=self.e_0,
+                f_0=self.f_0,
+            )
+            self._set(&#34;c&#34;, c)
+
+        return (theta,)
+
+    def forward(self, m_samples: int) -&gt; Array2[float32, Batch, Features]:
+        r&#34;&#34;&#34;Do ancestral sampling step generating the set of samples
+        \(\{r_j, c_i^{(T+1)}, \theta_{ij}^{(T)}\}_{i,j}\).&#34;&#34;&#34;
+        alpha = self.gamma_0 / self.input_size
+
+        r: Array1[float32, Features] = gamma(
+            hk.next_rng_key(),
+            alpha,
+            self.c_0,
+            shape=(self.input_size,),
+        )
+        self._set(&#34;r&#34;, r)
+
+        c: Array1[float32, Batch] = gamma(
+            hk.next_rng_key(), self.e_0, self.f_0, shape=(m_samples,)
+        )
+        self._set(&#34;c&#34;, c)
+
+        theta: Array2[float32, Batch, Features] = gamma(
+            hk.next_rng_key(),
+            r[jnp.newaxis, ...],
+            c[..., jnp.newaxis],
+            shape=(m_samples, self.input_size),
+        )
+        self._set(&#34;theta&#34;, theta)
+
+        return theta
+
+
+class GammaLayer(BaseMiddleLayer):
+    r&#34;&#34;&#34;Intermediate layer of Poisson gamma believe network with Dirichlet weights.
+
+    WARNING: Only to be used in combination with a `PoissonLayer` and `CapLayer`.
+
+    .. figure:: figures/gamma_layer.svg
+        Mathematical background of distributions underlying `GammaLayer`.
+
+    Given an incoming \(\theta_{ik}^{(t+1)}\) from the layer above (layer \(t+1\)),
+    generate forward samples using the following set of conditional distributions:
+    $$
+    c_i^{(t+1)} \sim \mathrm{Gam}(e_0, f_0), \\
+    \phi_{kj}^{(t+1)} \sim \mathrm{Dir}([\eta,\dots,\eta]), \\
+    a_{ij}^{(t+1)} = \sum_{k=1}^{K_{t+1}} \theta_{ik}^{(t+1)} \phi_{kj}^{(t+1)}, \\
+    \theta_{ij}^{(t)} \sim \mathrm{Gam}(a_{ij}^{(t+1)}, c_i^{(t+1)}),
+    $$
+    where \(K_t\) are this layer&#39;s number of latent states (`input_size`) and
+    \(K_{t+1}\) refers to the number of latent states (`output_size`) of the layer
+    above, with \(t\) the layer index (namely, this layer). Here, \(i\) refers to a
+    sample, \(j\) to a feature coming out of the layer (`output_size` in total), and
+    \(k\) a latent state/topic coming into the layer (`input_size` in total).
+
+    During inference, latent
+    counts \(x_{ij}^{(t+1)}\) and rate factor \(q_i^{(t+1)}\) (dashed circles) are
+    propogated upward from the layer below. This is done by factorising the latent counts
+    \(\chi_{ijk}^{(t+1)}\) with
+    \(x_{ij}^{(t+1)} \equiv \sum_{k=1}^{K_{t+1}} \chi_{ijk}^{(t+1)}\) to obtain
+    \(m_{ik}^{(t+1)} \equiv \sum_{j=1}^{K_{t}} \chi_{ijk}^{(t+1)}\).
+    &#34;&#34;&#34;
+
+    def forward(
+        self, theta_tplus1: Array2[float32, Batch, Channels]
+    ) -&gt; Array2[float32, Batch, Features]:
+        r&#34;&#34;&#34;Do a ancestral sampling step generating a set of samples
+        \(\{ c_i^{(t+1)}, \phi_{kj}^{(t+1)}, \theta_{ij}^{(t)} \}_{i,j,k} \mid \theta_{ik}^{(t+1)}\).
+        &#34;&#34;&#34;
+        m_samples = theta_tplus1.shape[0]
+
+        # Sample and save state phi.
+        alpha = jnp.full(
+            shape=(1, self.input_size), fill_value=self.eta, dtype=jnp.float32
+        )
+        phi: Array2[float32, Channels, Features] = random.dirichlet(
+            hk.next_rng_key(),
+            alpha=alpha,
+            shape=(self.n_components,),
+        )  # type: ignore
+        self._set(&#34;phi&#34;, phi)
+
+        c: Array1[float32, Batch] = gamma(
+            hk.next_rng_key(), self.e_0, self.f_0, shape=(m_samples,)
+        )
+        self._set(&#34;c&#34;, c)
+
+        rate: Array3[float32, Batch, Features, Channels] = (
+            theta_tplus1[:, jnp.newaxis, :] * phi.T[jnp.newaxis, ...]
+        )
+        self._set(&#34;rate&#34;, rate)
+
+        activation = jnp.sum(rate, axis=-1)
+        theta: Array2[float32, Batch, Features] = gamma(
+            hk.next_rng_key(),
+            activation,
+            c[..., jnp.newaxis],
+            shape=(m_samples, self.input_size),
+        )
+        self._set(&#34;theta&#34;, theta)
+
+        # Allocate a state for m(t) and q(t) by initialising with arbitrary values.
+        # These values are not used since `upward` immediately overwrite the values.
+        m_init = jnp.zeros(shape=(m_samples, self.input_size), dtype=jnp.uint32)
+        # q_init = jnp.full(shape=(m_samples,), fill_value=jnp.nan)
+        q_init = jnp.ones(shape=(m_samples,), dtype=jnp.float32)
+        self._set(&#34;m&#34;, m_init)
+        self._set(&#34;q&#34;, q_init)
+
+        return theta
+
+    def joint_log_prob(self, theta_tplus1: Array2[float32, Batch, Channels]) -&gt; tuple:
+        r&#34;&#34;&#34;Joint likelihood of data, state, and parameters.
+
+        Args:
+            theta_tplus1: The hidden units \(\theta^{(t+1)}\) coming into the layer.
+
+        Returns:
+            A pair, the joint log-likelihood and the parameters coming out of the layer.
+        &#34;&#34;&#34;
+        m_samples = theta_tplus1.shape[0]
+        alpha = jnp.full(
+            shape=(1, self.input_size), fill_value=self.eta, dtype=jnp.float32
+        )
+        phi = self._get(&#34;phi&#34;, (self.n_components, self.input_size))
+        log_phi = tfd.Dirichlet(concentration=alpha).log_prob(phi).sum()
+
+        c = self._get(&#34;c&#34;, (m_samples,))
+        log_c = tfd.Gamma(concentration=self.e_0, rate=self.f_0).log_prob(c).sum()
+
+        activation = theta_tplus1 @ phi
+        theta = self._get(&#34;theta&#34;, (m_samples, self.input_size))
+        log_theta = (
+            tfd.Gamma(concentration=activation, rate=c.reshape(-1, 1))
+            .log_prob(theta)
+            .sum()
+        )
+
+        log_prob = log_phi + log_c + log_theta
+        return log_prob, theta
+
+    def upward(  # type: ignore
+        self,
+        m_previous: Array2[uint32, Batch, Features],
+        q_previous: Array1[float32, Batch],
+    ) -&gt; tuple[Array2[uint32, Batch, Channels], Array1[float32, Batch]]:
+        r&#34;&#34;&#34;Propagate latent counts and rate factors upward.
+
+        $$
+        x_{ij}^{(t+1)} \sim \mathrm{CRT}[m_{ij}^{(t)}, a_{ij}^{(t+1)}], \\
+        \chi_{ijk}^{(t+1)}  \sim \mathrm{Mult}[x_{ij}^{(t+1)}, \{θ_{ik}^{(t+1)}ϕ_{kj}^{(t+1)}\}_k], \\
+        \phi_{kj}^{(t+1)} \sim \mathrm{Dir}[\{\eta + \sum_{i} \chi_{ijk}^{(t+1)}\}_j].
+        $$
+        &#34;&#34;&#34;
+        m_samples = m_previous.shape[0]
+        self._set(&#34;q&#34;, q_previous)
+        self._set(&#34;m&#34;, m_previous)
+        m_ik = super().upward(m_previous)
+
+        c: Array1[float32, Batch] = self._get(&#34;c&#34;, (m_samples,))  # type: ignore
+        q: Array1[float32, Batch] = _next_q(q_previous=q_previous, c_t=c)
+
+        return m_ik, q
+
+    def downward(
+        self, theta_tplus1: Array2[float32, Batch, Channels]
+    ) -&gt; tuple[Array2[float32, Batch, Features]]:
+        r&#34;&#34;&#34;Gibbs sample downward.
+
+        $$
+        a_{ij}^{(t+1)} = \sum_{k=1}^{K_{t+1}} \theta_{ik}^{(t+1)} \phi_{kj}^{(t+1)}, \\
+        \theta_{ij}^{(t)} \sim \mathrm{Gam}[a_{ij}^{(t+1)} + m_{ij}^{(t)}, c_i^{(t+1)} + q_i^{(t)}],\\
+        c_i^{(t+1)} \sim \mathrm{Gam}[e_0 + \sum_{j=1}^{K_t} a_{ij}^{(t+1)}, f_0 + \sum_{j=1}^{K_t}\theta_{ij}^{(t)}].
+        $$
+        &#34;&#34;&#34;
+        m_samples = theta_tplus1.shape[0]
+        phi_shape = (self.n_components, self.input_size)
+        phi: Array2[float32, Channels, Features] = self._get(&#34;phi&#34;, phi_shape)  # type: ignore
+        rate = theta_tplus1[:, jnp.newaxis, :] * phi.T[jnp.newaxis, ...]
+        self._set(&#34;rate&#34;, rate)
+
+        activation = jnp.sum(rate, axis=-1)
+        if &#34;theta&#34; not in self.frozen_:
+            c: Array1[float32, Batch] = self._get(&#34;c&#34;, shape=(m_samples,))  # type: ignore
+            m_previous: Array2[uint32, Batch, Features] = self._get(&#34;m&#34;, shape=(m_samples, self.input_size))  # type: ignore
+            q_previous: Array1[float32, Batch] = self._get(&#34;q&#34;, shape=(m_samples,))  # type: ignore
+            theta = _sample_theta(
+                c=c, activation=activation, m_previous=m_previous, q_previous=q_previous
+            )
+            self._set(&#34;theta&#34;, theta)
+        else:
+            theta = self._get(&#34;theta&#34;, shape=(m_samples, self.n_components))
+
+        if &#34;c&#34; not in self.frozen_:
+            c = _sample_c(
+                activation=activation, theta_tmin1=theta, e_0=self.e_0, f_0=self.f_0
+            )
+            self._set(&#34;c&#34;, c)
+
+        return (theta,)
+
+    def set_training(self, is_training: bool) -&gt; None:
+        &#34;&#34;&#34;Toggle training mode.&#34;&#34;&#34;
+        self.is_training = is_training
+        self.frozen_ = frozenset(self.frozen)
+
+        if not self.is_training:
+            # Phi is fixed during inference.
+            self.frozen_ = frozenset(self.frozen).union([&#34;phi&#34;])</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="gabenet.poisson.CapLayer"><code class="flex name class">
+<span>class <span class="ident">CapLayer</span></span>
+<span>(</span><span>input_size: int, name: Optional[str] = None, gamma_0: float = 1.0, c_0: float = 1.0, e_0: float = 1.0, f_0: float = 1.0, frozen: Optional[tuple[str]] = None, is_training: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Top layer of the Poisson gamma belief network <code><a title="gabenet.nets.PoissonGammaBelieve" href="nets.html#gabenet.nets.PoissonGammaBelieve">PoissonGammaBelieve</a></code>.</p>
+<p>WARNING: Only to be used in combination with a <code><a title="gabenet.poisson.PoissonLayer" href="#gabenet.poisson.PoissonLayer">PoissonLayer</a></code> (and optionally a
+<code><a title="gabenet.poisson.GammaLayer" href="#gabenet.poisson.GammaLayer">GammaLayer</a></code>).</p>
+<p><img alt="Mathematical background of distributions underlying CapLayer." src="figures/cap_layer.svg"></p>
+<p>Forward samples are generated by the following set of conditional distributions:
+<span><span class="MathJax_Preview">
+r_j \sim \mathrm{Gam}(\gamma_0 / K_T, c_0), \\
+c_i^{(T+1)} \sim \mathrm{Gam}(e_0, f_0), \\
+\theta_{ij}^{(T)} \sim \mathrm{Gam}(r_j, c_i^{(T+1)}),
+</span><script type="math/tex; mode=display">
+r_j \sim \mathrm{Gam}(\gamma_0 / K_T, c_0), \\
+c_i^{(T+1)} \sim \mathrm{Gam}(e_0, f_0), \\
+\theta_{ij}^{(T)} \sim \mathrm{Gam}(r_j, c_i^{(T+1)}),
+</script></span>
+where <span><span class="MathJax_Preview">K_T</span><script type="math/tex">K_T</script></span> (<code>input_size</code>) are the number of topics, <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> refers to sample, <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> to
+a latent state, and the superscript refers to the layer index <span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> (top most
+layer). The dashed distributions refer to latent counts <span><span class="MathJax_Preview">x_{ij}^{(T+1)}</span><script type="math/tex">x_{ij}^{(T+1)}</script></span> and rate
+factor <span><span class="MathJax_Preview">q_j^{(T+1)}</span><script type="math/tex">q_j^{(T+1)}</script></span> that are used for Gibbs sampling.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_size</code></strong></dt>
+<dd>Number of latent states/topics <span><span class="MathJax_Preview">K</span><script type="math/tex">K</script></span> in this layers. Or,
+equivalently, the number of features generated by (coming out of) this
+layer.</dd>
+<dt><strong><code>name</code></strong></dt>
+<dd>Name of this layer.</dd>
+<dt><strong><code>gamma_0</code></strong></dt>
+<dd>Shape hyperparameter <span><span class="MathJax_Preview">\gamma_0</span><script type="math/tex">\gamma_0</script></span> for top activation.</dd>
+<dt><strong><code>c_0</code></strong></dt>
+<dd>Rate hyperparameter <span><span class="MathJax_Preview">c_0</span><script type="math/tex">c_0</script></span> for top activation.</dd>
+<dt><strong><code>e_0</code></strong></dt>
+<dd>Shape hyperparameter <span><span class="MathJax_Preview">e_0</span><script type="math/tex">e_0</script></span> of activation rate.</dd>
+<dt><strong><code>f_0</code></strong></dt>
+<dd>Rate hyperparameter <span><span class="MathJax_Preview">f_0</span><script type="math/tex">f_0</script></span> of activation rate.</dd>
+<dt><strong><code>is_training</code></strong></dt>
+<dd>Is the model in training or in inference mode?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class CapLayer(_Module):
+    r&#34;&#34;&#34;Top layer of the Poisson gamma belief network `gabenet.nets.PoissonGammaBelieve`.
+
+    WARNING: Only to be used in combination with a `PoissonLayer` (and optionally a
+    `GammaLayer`).
+
+    .. figure:: figures/cap_layer.svg
+        Mathematical background of distributions underlying `CapLayer`.
+
+    Forward samples are generated by the following set of conditional distributions:
+    $$
+    r_j \sim \mathrm{Gam}(\gamma_0 / K_T, c_0), \\
+    c_i^{(T+1)} \sim \mathrm{Gam}(e_0, f_0), \\
+    \theta_{ij}^{(T)} \sim \mathrm{Gam}(r_j, c_i^{(T+1)}),
+    $$
+    where \(K_T\) (`input_size`) are the number of topics, \(i\) refers to sample, \(j\) to
+    a latent state, and the superscript refers to the layer index \(T\) (top most
+    layer). The dashed distributions refer to latent counts \(x_{ij}^{(T+1)}\) and rate
+    factor \(q_j^{(T+1)}\) that are used for Gibbs sampling.
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        input_size: int,
+        name: Optional[str] = None,
+        gamma_0: float = 1.0,
+        c_0: float = 1.0,
+        e_0: float = 1.0,
+        f_0: float = 1.0,
+        frozen: Optional[tuple[str]] = None,
+        is_training: bool = True,
+    ):
+        r&#34;&#34;&#34;
+        Args:
+            input_size: Number of latent states/topics \(K\) in this layers. Or,
+                equivalently, the number of features generated by (coming out of) this
+                layer.
+            name: Name of this layer.
+            gamma_0: Shape hyperparameter \(\gamma_0\) for top activation.
+            c_0: Rate hyperparameter \(c_0\) for top activation.
+            e_0: Shape hyperparameter \(e_0\) of activation rate.
+            f_0: Rate hyperparameter \(f_0\) of activation rate.
+            is_training: Is the model in training or in inference mode?
+        &#34;&#34;&#34;
+        if name is None:
+            name = to_snake_string(self.__class__.__name__)
+
+        super().__init__(name=name, frozen=frozen)
+
+        self.input_size = input_size
+        self.gamma_0 = jnp.array(gamma_0)
+        self.c_0 = jnp.array(c_0)
+        self.e_0 = jnp.array(e_0)
+        self.f_0 = jnp.array(f_0)
+        self.set_training(is_training)
+
+    def set_training(self, is_training: bool) -&gt; None:
+        &#34;&#34;&#34;Toggle training mode.&#34;&#34;&#34;
+        super().set_training(is_training)
+        if not self.is_training:
+            self.frozen_ = frozenset(self.frozen).union([&#34;r&#34;])
+
+    def joint_log_prob(self, m_samples: int):
+        &#34;&#34;&#34;Joint likelihood of data, state, and parameters.&#34;&#34;&#34;
+        r = self._get(&#34;r&#34;, shape=(self.input_size,))
+        c = self._get(&#34;c&#34;, shape=(m_samples,))
+        theta = self._get(&#34;theta&#34;, (m_samples, self.input_size))
+
+        log_p_r = tfd.Gamma(
+            concentration=self.gamma_0 / self.input_size, rate=self.c_0
+        ).log_prob(r)
+        log_p_c = tfd.Gamma(concentration=self.e_0, rate=self.f_0).log_prob(c)
+        log_p_theta = tfd.Gamma(
+            concentration=r[jnp.newaxis, ...], rate=c[..., jnp.newaxis]
+        ).log_prob(theta)
+
+        log_prob = jnp.sum(log_p_r) + jnp.sum(log_p_c) + jnp.sum(log_p_theta)
+
+        return log_prob, theta
+
+    def upward(
+        self,
+        m_previous: Array2[uint32, Batch, Features],
+        q_previous: Array1[float32, Batch],
+    ):
+        &#34;&#34;&#34;Posterior sample based on incoming samples.&#34;&#34;&#34;
+        m_samples = q_previous.shape[0]
+        if &#34;r&#34; not in self.frozen_:
+            activation = self._get(&#34;r&#34;, shape=(self.input_size,))[jnp.newaxis, ...]  # type: ignore
+            x_ij: Array2[uint32, Batch, Features] = chinese_restaurant_table(
+                hk.next_rng_key(), n=m_previous, r=activation
+            )
+
+            c: Array1[float32, Batch] = self._get(&#34;c&#34;, shape=(m_samples,))  # type: ignore
+            q = _next_q(q_previous, c)
+
+            a = self.gamma_0 / self.input_size + jnp.sum(x_ij, axis=0)
+            b = self.c_0 + jnp.sum(q)
+            r: Array1[float32, Features] = gamma(
+                hk.next_rng_key(), a, b, shape=(self.input_size,)
+            )
+            self._set(&#34;r&#34;, r)
+
+        return m_previous, q_previous
+
+    def downward(
+        self,
+        m_previous: Array2[uint32, Batch, Features],
+        q_previous: Array1[float32, Batch],
+    ) -&gt; tuple[Array2[float32, Batch, Features]]:
+        m_samples = q_previous.shape[0]
+        theta_shape = (m_samples, self.input_size)
+
+        r: Array1[float32, Features] = self._get(&#34;r&#34;, shape=(self.input_size,))  # type: ignore
+        activation: Array2[float32, Batch, Features] = r[jnp.newaxis, ...]
+
+        # θ(T) ~ Gam[r + m(T), c(T+1) + q(T)]
+        if &#34;theta&#34; not in self.frozen_:
+            c: Array1[float32, Batch] = self._get(&#34;c&#34;, shape=(m_samples,))  # type: ignore
+            theta_alpha = activation + m_previous
+            theta_beta: Array2[float32, Batch, Features] = (c + q_previous)[
+                ..., jnp.newaxis
+            ]
+
+            assert theta_alpha.shape == theta_shape
+            theta = gamma(hk.next_rng_key(), theta_alpha, theta_beta)
+
+            self._set(&#34;theta&#34;, theta)
+        else:
+            theta = self._get(&#34;theta&#34;, shape=theta_shape)
+
+        if &#34;c&#34; not in self.frozen_:
+            c = _sample_c(
+                activation=activation,
+                theta_tmin1=theta,
+                e_0=self.e_0,
+                f_0=self.f_0,
+            )
+            self._set(&#34;c&#34;, c)
+
+        return (theta,)
+
+    def forward(self, m_samples: int) -&gt; Array2[float32, Batch, Features]:
+        r&#34;&#34;&#34;Do ancestral sampling step generating the set of samples
+        \(\{r_j, c_i^{(T+1)}, \theta_{ij}^{(T)}\}_{i,j}\).&#34;&#34;&#34;
+        alpha = self.gamma_0 / self.input_size
+
+        r: Array1[float32, Features] = gamma(
+            hk.next_rng_key(),
+            alpha,
+            self.c_0,
+            shape=(self.input_size,),
+        )
+        self._set(&#34;r&#34;, r)
+
+        c: Array1[float32, Batch] = gamma(
+            hk.next_rng_key(), self.e_0, self.f_0, shape=(m_samples,)
+        )
+        self._set(&#34;c&#34;, c)
+
+        theta: Array2[float32, Batch, Features] = gamma(
+            hk.next_rng_key(),
+            r[jnp.newaxis, ...],
+            c[..., jnp.newaxis],
+            shape=(m_samples, self.input_size),
+        )
+        self._set(&#34;theta&#34;, theta)
+
+        return theta</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li>gabenet.layers._Module</li>
+<li>haiku._src.module.Module</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="gabenet.poisson.CapLayer.downward"><code class="name flex">
+<span>def <span class="ident">downward</span></span>(<span>self, m_previous: tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features], q_previous: tensor_annotations.jax.Array1[tensor_annotations.jax.float32, tensor_annotations.axes.Batch]) ‑> tuple[tensor_annotations.jax.Array2[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features]]</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def downward(
+    self,
+    m_previous: Array2[uint32, Batch, Features],
+    q_previous: Array1[float32, Batch],
+) -&gt; tuple[Array2[float32, Batch, Features]]:
+    m_samples = q_previous.shape[0]
+    theta_shape = (m_samples, self.input_size)
+
+    r: Array1[float32, Features] = self._get(&#34;r&#34;, shape=(self.input_size,))  # type: ignore
+    activation: Array2[float32, Batch, Features] = r[jnp.newaxis, ...]
+
+    # θ(T) ~ Gam[r + m(T), c(T+1) + q(T)]
+    if &#34;theta&#34; not in self.frozen_:
+        c: Array1[float32, Batch] = self._get(&#34;c&#34;, shape=(m_samples,))  # type: ignore
+        theta_alpha = activation + m_previous
+        theta_beta: Array2[float32, Batch, Features] = (c + q_previous)[
+            ..., jnp.newaxis
+        ]
+
+        assert theta_alpha.shape == theta_shape
+        theta = gamma(hk.next_rng_key(), theta_alpha, theta_beta)
+
+        self._set(&#34;theta&#34;, theta)
+    else:
+        theta = self._get(&#34;theta&#34;, shape=theta_shape)
+
+    if &#34;c&#34; not in self.frozen_:
+        c = _sample_c(
+            activation=activation,
+            theta_tmin1=theta,
+            e_0=self.e_0,
+            f_0=self.f_0,
+        )
+        self._set(&#34;c&#34;, c)
+
+    return (theta,)</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.CapLayer.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>self, m_samples: int) ‑> tensor_annotations.jax.Array2[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Do ancestral sampling step generating the set of samples
+<span><span class="MathJax_Preview">\{r_j, c_i^{(T+1)}, \theta_{ij}^{(T)}\}_{i,j}</span><script type="math/tex">\{r_j, c_i^{(T+1)}, \theta_{ij}^{(T)}\}_{i,j}</script></span>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def forward(self, m_samples: int) -&gt; Array2[float32, Batch, Features]:
+    r&#34;&#34;&#34;Do ancestral sampling step generating the set of samples
+    \(\{r_j, c_i^{(T+1)}, \theta_{ij}^{(T)}\}_{i,j}\).&#34;&#34;&#34;
+    alpha = self.gamma_0 / self.input_size
+
+    r: Array1[float32, Features] = gamma(
+        hk.next_rng_key(),
+        alpha,
+        self.c_0,
+        shape=(self.input_size,),
+    )
+    self._set(&#34;r&#34;, r)
+
+    c: Array1[float32, Batch] = gamma(
+        hk.next_rng_key(), self.e_0, self.f_0, shape=(m_samples,)
+    )
+    self._set(&#34;c&#34;, c)
+
+    theta: Array2[float32, Batch, Features] = gamma(
+        hk.next_rng_key(),
+        r[jnp.newaxis, ...],
+        c[..., jnp.newaxis],
+        shape=(m_samples, self.input_size),
+    )
+    self._set(&#34;theta&#34;, theta)
+
+    return theta</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.CapLayer.joint_log_prob"><code class="name flex">
+<span>def <span class="ident">joint_log_prob</span></span>(<span>self, m_samples: int)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Joint likelihood of data, state, and parameters.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def joint_log_prob(self, m_samples: int):
+    &#34;&#34;&#34;Joint likelihood of data, state, and parameters.&#34;&#34;&#34;
+    r = self._get(&#34;r&#34;, shape=(self.input_size,))
+    c = self._get(&#34;c&#34;, shape=(m_samples,))
+    theta = self._get(&#34;theta&#34;, (m_samples, self.input_size))
+
+    log_p_r = tfd.Gamma(
+        concentration=self.gamma_0 / self.input_size, rate=self.c_0
+    ).log_prob(r)
+    log_p_c = tfd.Gamma(concentration=self.e_0, rate=self.f_0).log_prob(c)
+    log_p_theta = tfd.Gamma(
+        concentration=r[jnp.newaxis, ...], rate=c[..., jnp.newaxis]
+    ).log_prob(theta)
+
+    log_prob = jnp.sum(log_p_r) + jnp.sum(log_p_c) + jnp.sum(log_p_theta)
+
+    return log_prob, theta</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.CapLayer.set_training"><code class="name flex">
+<span>def <span class="ident">set_training</span></span>(<span>self, is_training: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Toggle training mode.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_training(self, is_training: bool) -&gt; None:
+    &#34;&#34;&#34;Toggle training mode.&#34;&#34;&#34;
+    super().set_training(is_training)
+    if not self.is_training:
+        self.frozen_ = frozenset(self.frozen).union([&#34;r&#34;])</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.CapLayer.upward"><code class="name flex">
+<span>def <span class="ident">upward</span></span>(<span>self, m_previous: tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features], q_previous: tensor_annotations.jax.Array1[tensor_annotations.jax.float32, tensor_annotations.axes.Batch])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Posterior sample based on incoming samples.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def upward(
+    self,
+    m_previous: Array2[uint32, Batch, Features],
+    q_previous: Array1[float32, Batch],
+):
+    &#34;&#34;&#34;Posterior sample based on incoming samples.&#34;&#34;&#34;
+    m_samples = q_previous.shape[0]
+    if &#34;r&#34; not in self.frozen_:
+        activation = self._get(&#34;r&#34;, shape=(self.input_size,))[jnp.newaxis, ...]  # type: ignore
+        x_ij: Array2[uint32, Batch, Features] = chinese_restaurant_table(
+            hk.next_rng_key(), n=m_previous, r=activation
+        )
+
+        c: Array1[float32, Batch] = self._get(&#34;c&#34;, shape=(m_samples,))  # type: ignore
+        q = _next_q(q_previous, c)
+
+        a = self.gamma_0 / self.input_size + jnp.sum(x_ij, axis=0)
+        b = self.c_0 + jnp.sum(q)
+        r: Array1[float32, Features] = gamma(
+            hk.next_rng_key(), a, b, shape=(self.input_size,)
+        )
+        self._set(&#34;r&#34;, r)
+
+    return m_previous, q_previous</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="gabenet.poisson.GammaLayer"><code class="flex name class">
+<span>class <span class="ident">GammaLayer</span></span>
+<span>(</span><span>input_size: int, output_size: int, name: Optional[str] = None, eta: float = 1.0, e_0: float = 1.0, f_0: float = 1.0, frozen: Optional[tuple[str]] = None, is_training: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Intermediate layer of Poisson gamma believe network with Dirichlet weights.</p>
+<p>WARNING: Only to be used in combination with a <code><a title="gabenet.poisson.PoissonLayer" href="#gabenet.poisson.PoissonLayer">PoissonLayer</a></code> and <code><a title="gabenet.poisson.CapLayer" href="#gabenet.poisson.CapLayer">CapLayer</a></code>.</p>
+<p><img alt="Mathematical background of distributions underlying GammaLayer." src="figures/gamma_layer.svg"></p>
+<p>Given an incoming <span><span class="MathJax_Preview">\theta_{ik}^{(t+1)}</span><script type="math/tex">\theta_{ik}^{(t+1)}</script></span> from the layer above (layer <span><span class="MathJax_Preview">t+1</span><script type="math/tex">t+1</script></span>),
+generate forward samples using the following set of conditional distributions:
+<span><span class="MathJax_Preview">
+c_i^{(t+1)} \sim \mathrm{Gam}(e_0, f_0), \\
+\phi_{kj}^{(t+1)} \sim \mathrm{Dir}([\eta,\dots,\eta]), \\
+a_{ij}^{(t+1)} = \sum_{k=1}^{K_{t+1}} \theta_{ik}^{(t+1)} \phi_{kj}^{(t+1)}, \\
+\theta_{ij}^{(t)} \sim \mathrm{Gam}(a_{ij}^{(t+1)}, c_i^{(t+1)}),
+</span><script type="math/tex; mode=display">
+c_i^{(t+1)} \sim \mathrm{Gam}(e_0, f_0), \\
+\phi_{kj}^{(t+1)} \sim \mathrm{Dir}([\eta,\dots,\eta]), \\
+a_{ij}^{(t+1)} = \sum_{k=1}^{K_{t+1}} \theta_{ik}^{(t+1)} \phi_{kj}^{(t+1)}, \\
+\theta_{ij}^{(t)} \sim \mathrm{Gam}(a_{ij}^{(t+1)}, c_i^{(t+1)}),
+</script></span>
+where <span><span class="MathJax_Preview">K_t</span><script type="math/tex">K_t</script></span> are this layer's number of latent states (<code>input_size</code>) and
+<span><span class="MathJax_Preview">K_{t+1}</span><script type="math/tex">K_{t+1}</script></span> refers to the number of latent states (<code>output_size</code>) of the layer
+above, with <span><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> the layer index (namely, this layer). Here, <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> refers to a
+sample, <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> to a feature coming out of the layer (<code>output_size</code> in total), and
+<span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> a latent state/topic coming into the layer (<code>input_size</code> in total).</p>
+<p>During inference, latent
+counts <span><span class="MathJax_Preview">x_{ij}^{(t+1)}</span><script type="math/tex">x_{ij}^{(t+1)}</script></span> and rate factor <span><span class="MathJax_Preview">q_i^{(t+1)}</span><script type="math/tex">q_i^{(t+1)}</script></span> (dashed circles) are
+propogated upward from the layer below. This is done by factorising the latent counts
+<span><span class="MathJax_Preview">\chi_{ijk}^{(t+1)}</span><script type="math/tex">\chi_{ijk}^{(t+1)}</script></span> with
+<span><span class="MathJax_Preview">x_{ij}^{(t+1)} \equiv \sum_{k=1}^{K_{t+1}} \chi_{ijk}^{(t+1)}</span><script type="math/tex">x_{ij}^{(t+1)} \equiv \sum_{k=1}^{K_{t+1}} \chi_{ijk}^{(t+1)}</script></span> to obtain
+<span><span class="MathJax_Preview">m_{ik}^{(t+1)} \equiv \sum_{j=1}^{K_{t}} \chi_{ijk}^{(t+1)}</span><script type="math/tex">m_{ik}^{(t+1)} \equiv \sum_{j=1}^{K_{t}} \chi_{ijk}^{(t+1)}</script></span>.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_size</code></strong></dt>
+<dd>The number of latent variables/topics coming into the layer.</dd>
+<dt><strong><code>output_size</code></strong></dt>
+<dd>The number of features coming out of layer.</dd>
+<dt><strong><code>name</code></strong></dt>
+<dd>Name of this layer.</dd>
+<dt><strong><code>eta</code></strong></dt>
+<dd>Dirichlet hyperparameter <span><span class="MathJax_Preview">\eta</span><script type="math/tex">\eta</script></span> on weights.</dd>
+<dt><strong><code>e_0</code></strong></dt>
+<dd>Shape hyperparameter of activation scale.</dd>
+<dt><strong><code>f_0</code></strong></dt>
+<dd>Scale hyperparameter of activation scale.</dd>
+<dt><strong><code>is_training</code></strong></dt>
+<dd>Is the model in training or inference mode?</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class GammaLayer(BaseMiddleLayer):
+    r&#34;&#34;&#34;Intermediate layer of Poisson gamma believe network with Dirichlet weights.
+
+    WARNING: Only to be used in combination with a `PoissonLayer` and `CapLayer`.
+
+    .. figure:: figures/gamma_layer.svg
+        Mathematical background of distributions underlying `GammaLayer`.
+
+    Given an incoming \(\theta_{ik}^{(t+1)}\) from the layer above (layer \(t+1\)),
+    generate forward samples using the following set of conditional distributions:
+    $$
+    c_i^{(t+1)} \sim \mathrm{Gam}(e_0, f_0), \\
+    \phi_{kj}^{(t+1)} \sim \mathrm{Dir}([\eta,\dots,\eta]), \\
+    a_{ij}^{(t+1)} = \sum_{k=1}^{K_{t+1}} \theta_{ik}^{(t+1)} \phi_{kj}^{(t+1)}, \\
+    \theta_{ij}^{(t)} \sim \mathrm{Gam}(a_{ij}^{(t+1)}, c_i^{(t+1)}),
+    $$
+    where \(K_t\) are this layer&#39;s number of latent states (`input_size`) and
+    \(K_{t+1}\) refers to the number of latent states (`output_size`) of the layer
+    above, with \(t\) the layer index (namely, this layer). Here, \(i\) refers to a
+    sample, \(j\) to a feature coming out of the layer (`output_size` in total), and
+    \(k\) a latent state/topic coming into the layer (`input_size` in total).
+
+    During inference, latent
+    counts \(x_{ij}^{(t+1)}\) and rate factor \(q_i^{(t+1)}\) (dashed circles) are
+    propogated upward from the layer below. This is done by factorising the latent counts
+    \(\chi_{ijk}^{(t+1)}\) with
+    \(x_{ij}^{(t+1)} \equiv \sum_{k=1}^{K_{t+1}} \chi_{ijk}^{(t+1)}\) to obtain
+    \(m_{ik}^{(t+1)} \equiv \sum_{j=1}^{K_{t}} \chi_{ijk}^{(t+1)}\).
+    &#34;&#34;&#34;
+
+    def forward(
+        self, theta_tplus1: Array2[float32, Batch, Channels]
+    ) -&gt; Array2[float32, Batch, Features]:
+        r&#34;&#34;&#34;Do a ancestral sampling step generating a set of samples
+        \(\{ c_i^{(t+1)}, \phi_{kj}^{(t+1)}, \theta_{ij}^{(t)} \}_{i,j,k} \mid \theta_{ik}^{(t+1)}\).
+        &#34;&#34;&#34;
+        m_samples = theta_tplus1.shape[0]
+
+        # Sample and save state phi.
+        alpha = jnp.full(
+            shape=(1, self.input_size), fill_value=self.eta, dtype=jnp.float32
+        )
+        phi: Array2[float32, Channels, Features] = random.dirichlet(
+            hk.next_rng_key(),
+            alpha=alpha,
+            shape=(self.n_components,),
+        )  # type: ignore
+        self._set(&#34;phi&#34;, phi)
+
+        c: Array1[float32, Batch] = gamma(
+            hk.next_rng_key(), self.e_0, self.f_0, shape=(m_samples,)
+        )
+        self._set(&#34;c&#34;, c)
+
+        rate: Array3[float32, Batch, Features, Channels] = (
+            theta_tplus1[:, jnp.newaxis, :] * phi.T[jnp.newaxis, ...]
+        )
+        self._set(&#34;rate&#34;, rate)
+
+        activation = jnp.sum(rate, axis=-1)
+        theta: Array2[float32, Batch, Features] = gamma(
+            hk.next_rng_key(),
+            activation,
+            c[..., jnp.newaxis],
+            shape=(m_samples, self.input_size),
+        )
+        self._set(&#34;theta&#34;, theta)
+
+        # Allocate a state for m(t) and q(t) by initialising with arbitrary values.
+        # These values are not used since `upward` immediately overwrite the values.
+        m_init = jnp.zeros(shape=(m_samples, self.input_size), dtype=jnp.uint32)
+        # q_init = jnp.full(shape=(m_samples,), fill_value=jnp.nan)
+        q_init = jnp.ones(shape=(m_samples,), dtype=jnp.float32)
+        self._set(&#34;m&#34;, m_init)
+        self._set(&#34;q&#34;, q_init)
+
+        return theta
+
+    def joint_log_prob(self, theta_tplus1: Array2[float32, Batch, Channels]) -&gt; tuple:
+        r&#34;&#34;&#34;Joint likelihood of data, state, and parameters.
+
+        Args:
+            theta_tplus1: The hidden units \(\theta^{(t+1)}\) coming into the layer.
+
+        Returns:
+            A pair, the joint log-likelihood and the parameters coming out of the layer.
+        &#34;&#34;&#34;
+        m_samples = theta_tplus1.shape[0]
+        alpha = jnp.full(
+            shape=(1, self.input_size), fill_value=self.eta, dtype=jnp.float32
+        )
+        phi = self._get(&#34;phi&#34;, (self.n_components, self.input_size))
+        log_phi = tfd.Dirichlet(concentration=alpha).log_prob(phi).sum()
+
+        c = self._get(&#34;c&#34;, (m_samples,))
+        log_c = tfd.Gamma(concentration=self.e_0, rate=self.f_0).log_prob(c).sum()
+
+        activation = theta_tplus1 @ phi
+        theta = self._get(&#34;theta&#34;, (m_samples, self.input_size))
+        log_theta = (
+            tfd.Gamma(concentration=activation, rate=c.reshape(-1, 1))
+            .log_prob(theta)
+            .sum()
+        )
+
+        log_prob = log_phi + log_c + log_theta
+        return log_prob, theta
+
+    def upward(  # type: ignore
+        self,
+        m_previous: Array2[uint32, Batch, Features],
+        q_previous: Array1[float32, Batch],
+    ) -&gt; tuple[Array2[uint32, Batch, Channels], Array1[float32, Batch]]:
+        r&#34;&#34;&#34;Propagate latent counts and rate factors upward.
+
+        $$
+        x_{ij}^{(t+1)} \sim \mathrm{CRT}[m_{ij}^{(t)}, a_{ij}^{(t+1)}], \\
+        \chi_{ijk}^{(t+1)}  \sim \mathrm{Mult}[x_{ij}^{(t+1)}, \{θ_{ik}^{(t+1)}ϕ_{kj}^{(t+1)}\}_k], \\
+        \phi_{kj}^{(t+1)} \sim \mathrm{Dir}[\{\eta + \sum_{i} \chi_{ijk}^{(t+1)}\}_j].
+        $$
+        &#34;&#34;&#34;
+        m_samples = m_previous.shape[0]
+        self._set(&#34;q&#34;, q_previous)
+        self._set(&#34;m&#34;, m_previous)
+        m_ik = super().upward(m_previous)
+
+        c: Array1[float32, Batch] = self._get(&#34;c&#34;, (m_samples,))  # type: ignore
+        q: Array1[float32, Batch] = _next_q(q_previous=q_previous, c_t=c)
+
+        return m_ik, q
+
+    def downward(
+        self, theta_tplus1: Array2[float32, Batch, Channels]
+    ) -&gt; tuple[Array2[float32, Batch, Features]]:
+        r&#34;&#34;&#34;Gibbs sample downward.
+
+        $$
+        a_{ij}^{(t+1)} = \sum_{k=1}^{K_{t+1}} \theta_{ik}^{(t+1)} \phi_{kj}^{(t+1)}, \\
+        \theta_{ij}^{(t)} \sim \mathrm{Gam}[a_{ij}^{(t+1)} + m_{ij}^{(t)}, c_i^{(t+1)} + q_i^{(t)}],\\
+        c_i^{(t+1)} \sim \mathrm{Gam}[e_0 + \sum_{j=1}^{K_t} a_{ij}^{(t+1)}, f_0 + \sum_{j=1}^{K_t}\theta_{ij}^{(t)}].
+        $$
+        &#34;&#34;&#34;
+        m_samples = theta_tplus1.shape[0]
+        phi_shape = (self.n_components, self.input_size)
+        phi: Array2[float32, Channels, Features] = self._get(&#34;phi&#34;, phi_shape)  # type: ignore
+        rate = theta_tplus1[:, jnp.newaxis, :] * phi.T[jnp.newaxis, ...]
+        self._set(&#34;rate&#34;, rate)
+
+        activation = jnp.sum(rate, axis=-1)
+        if &#34;theta&#34; not in self.frozen_:
+            c: Array1[float32, Batch] = self._get(&#34;c&#34;, shape=(m_samples,))  # type: ignore
+            m_previous: Array2[uint32, Batch, Features] = self._get(&#34;m&#34;, shape=(m_samples, self.input_size))  # type: ignore
+            q_previous: Array1[float32, Batch] = self._get(&#34;q&#34;, shape=(m_samples,))  # type: ignore
+            theta = _sample_theta(
+                c=c, activation=activation, m_previous=m_previous, q_previous=q_previous
+            )
+            self._set(&#34;theta&#34;, theta)
+        else:
+            theta = self._get(&#34;theta&#34;, shape=(m_samples, self.n_components))
+
+        if &#34;c&#34; not in self.frozen_:
+            c = _sample_c(
+                activation=activation, theta_tmin1=theta, e_0=self.e_0, f_0=self.f_0
+            )
+            self._set(&#34;c&#34;, c)
+
+        return (theta,)
+
+    def set_training(self, is_training: bool) -&gt; None:
+        &#34;&#34;&#34;Toggle training mode.&#34;&#34;&#34;
+        self.is_training = is_training
+        self.frozen_ = frozenset(self.frozen)
+
+        if not self.is_training:
+            # Phi is fixed during inference.
+            self.frozen_ = frozenset(self.frozen).union([&#34;phi&#34;])</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="gabenet.layers.BaseMiddleLayer" href="layers.html#gabenet.layers.BaseMiddleLayer">BaseMiddleLayer</a></li>
+<li>gabenet.layers._Module</li>
+<li>haiku._src.module.Module</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="gabenet.poisson.GammaLayer.downward"><code class="name flex">
+<span>def <span class="ident">downward</span></span>(<span>self, theta_tplus1: tensor_annotations.jax.Array2[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Channels]) ‑> tuple[tensor_annotations.jax.Array2[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gibbs sample downward.</p>
+<p><span><span class="MathJax_Preview">
+a_{ij}^{(t+1)} = \sum_{k=1}^{K_{t+1}} \theta_{ik}^{(t+1)} \phi_{kj}^{(t+1)}, \\
+\theta_{ij}^{(t)} \sim \mathrm{Gam}[a_{ij}^{(t+1)} + m_{ij}^{(t)}, c_i^{(t+1)} + q_i^{(t)}],\\
+c_i^{(t+1)} \sim \mathrm{Gam}[e_0 + \sum_{j=1}^{K_t} a_{ij}^{(t+1)}, f_0 + \sum_{j=1}^{K_t}\theta_{ij}^{(t)}].
+</span><script type="math/tex; mode=display">
+a_{ij}^{(t+1)} = \sum_{k=1}^{K_{t+1}} \theta_{ik}^{(t+1)} \phi_{kj}^{(t+1)}, \\
+\theta_{ij}^{(t)} \sim \mathrm{Gam}[a_{ij}^{(t+1)} + m_{ij}^{(t)}, c_i^{(t+1)} + q_i^{(t)}],\\
+c_i^{(t+1)} \sim \mathrm{Gam}[e_0 + \sum_{j=1}^{K_t} a_{ij}^{(t+1)}, f_0 + \sum_{j=1}^{K_t}\theta_{ij}^{(t)}].
+</script></span></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def downward(
+    self, theta_tplus1: Array2[float32, Batch, Channels]
+) -&gt; tuple[Array2[float32, Batch, Features]]:
+    r&#34;&#34;&#34;Gibbs sample downward.
+
+    $$
+    a_{ij}^{(t+1)} = \sum_{k=1}^{K_{t+1}} \theta_{ik}^{(t+1)} \phi_{kj}^{(t+1)}, \\
+    \theta_{ij}^{(t)} \sim \mathrm{Gam}[a_{ij}^{(t+1)} + m_{ij}^{(t)}, c_i^{(t+1)} + q_i^{(t)}],\\
+    c_i^{(t+1)} \sim \mathrm{Gam}[e_0 + \sum_{j=1}^{K_t} a_{ij}^{(t+1)}, f_0 + \sum_{j=1}^{K_t}\theta_{ij}^{(t)}].
+    $$
+    &#34;&#34;&#34;
+    m_samples = theta_tplus1.shape[0]
+    phi_shape = (self.n_components, self.input_size)
+    phi: Array2[float32, Channels, Features] = self._get(&#34;phi&#34;, phi_shape)  # type: ignore
+    rate = theta_tplus1[:, jnp.newaxis, :] * phi.T[jnp.newaxis, ...]
+    self._set(&#34;rate&#34;, rate)
+
+    activation = jnp.sum(rate, axis=-1)
+    if &#34;theta&#34; not in self.frozen_:
+        c: Array1[float32, Batch] = self._get(&#34;c&#34;, shape=(m_samples,))  # type: ignore
+        m_previous: Array2[uint32, Batch, Features] = self._get(&#34;m&#34;, shape=(m_samples, self.input_size))  # type: ignore
+        q_previous: Array1[float32, Batch] = self._get(&#34;q&#34;, shape=(m_samples,))  # type: ignore
+        theta = _sample_theta(
+            c=c, activation=activation, m_previous=m_previous, q_previous=q_previous
+        )
+        self._set(&#34;theta&#34;, theta)
+    else:
+        theta = self._get(&#34;theta&#34;, shape=(m_samples, self.n_components))
+
+    if &#34;c&#34; not in self.frozen_:
+        c = _sample_c(
+            activation=activation, theta_tmin1=theta, e_0=self.e_0, f_0=self.f_0
+        )
+        self._set(&#34;c&#34;, c)
+
+    return (theta,)</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.GammaLayer.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>self, theta_tplus1: tensor_annotations.jax.Array2[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Channels]) ‑> tensor_annotations.jax.Array2[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Do a ancestral sampling step generating a set of samples
+<span><span class="MathJax_Preview">\{ c_i^{(t+1)}, \phi_{kj}^{(t+1)}, \theta_{ij}^{(t)} \}_{i,j,k} \mid \theta_{ik}^{(t+1)}</span><script type="math/tex">\{ c_i^{(t+1)}, \phi_{kj}^{(t+1)}, \theta_{ij}^{(t)} \}_{i,j,k} \mid \theta_{ik}^{(t+1)}</script></span>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def forward(
+    self, theta_tplus1: Array2[float32, Batch, Channels]
+) -&gt; Array2[float32, Batch, Features]:
+    r&#34;&#34;&#34;Do a ancestral sampling step generating a set of samples
+    \(\{ c_i^{(t+1)}, \phi_{kj}^{(t+1)}, \theta_{ij}^{(t)} \}_{i,j,k} \mid \theta_{ik}^{(t+1)}\).
+    &#34;&#34;&#34;
+    m_samples = theta_tplus1.shape[0]
+
+    # Sample and save state phi.
+    alpha = jnp.full(
+        shape=(1, self.input_size), fill_value=self.eta, dtype=jnp.float32
+    )
+    phi: Array2[float32, Channels, Features] = random.dirichlet(
+        hk.next_rng_key(),
+        alpha=alpha,
+        shape=(self.n_components,),
+    )  # type: ignore
+    self._set(&#34;phi&#34;, phi)
+
+    c: Array1[float32, Batch] = gamma(
+        hk.next_rng_key(), self.e_0, self.f_0, shape=(m_samples,)
+    )
+    self._set(&#34;c&#34;, c)
+
+    rate: Array3[float32, Batch, Features, Channels] = (
+        theta_tplus1[:, jnp.newaxis, :] * phi.T[jnp.newaxis, ...]
+    )
+    self._set(&#34;rate&#34;, rate)
+
+    activation = jnp.sum(rate, axis=-1)
+    theta: Array2[float32, Batch, Features] = gamma(
+        hk.next_rng_key(),
+        activation,
+        c[..., jnp.newaxis],
+        shape=(m_samples, self.input_size),
+    )
+    self._set(&#34;theta&#34;, theta)
+
+    # Allocate a state for m(t) and q(t) by initialising with arbitrary values.
+    # These values are not used since `upward` immediately overwrite the values.
+    m_init = jnp.zeros(shape=(m_samples, self.input_size), dtype=jnp.uint32)
+    # q_init = jnp.full(shape=(m_samples,), fill_value=jnp.nan)
+    q_init = jnp.ones(shape=(m_samples,), dtype=jnp.float32)
+    self._set(&#34;m&#34;, m_init)
+    self._set(&#34;q&#34;, q_init)
+
+    return theta</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.GammaLayer.joint_log_prob"><code class="name flex">
+<span>def <span class="ident">joint_log_prob</span></span>(<span>self, theta_tplus1: tensor_annotations.jax.Array2[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Channels]) ‑> tuple</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Joint likelihood of data, state, and parameters.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>theta_tplus1</code></strong></dt>
+<dd>The hidden units <span><span class="MathJax_Preview">\theta^{(t+1)}</span><script type="math/tex">\theta^{(t+1)}</script></span> coming into the layer.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A pair, the joint log-likelihood and the parameters coming out of the layer.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def joint_log_prob(self, theta_tplus1: Array2[float32, Batch, Channels]) -&gt; tuple:
+    r&#34;&#34;&#34;Joint likelihood of data, state, and parameters.
+
+    Args:
+        theta_tplus1: The hidden units \(\theta^{(t+1)}\) coming into the layer.
+
+    Returns:
+        A pair, the joint log-likelihood and the parameters coming out of the layer.
+    &#34;&#34;&#34;
+    m_samples = theta_tplus1.shape[0]
+    alpha = jnp.full(
+        shape=(1, self.input_size), fill_value=self.eta, dtype=jnp.float32
+    )
+    phi = self._get(&#34;phi&#34;, (self.n_components, self.input_size))
+    log_phi = tfd.Dirichlet(concentration=alpha).log_prob(phi).sum()
+
+    c = self._get(&#34;c&#34;, (m_samples,))
+    log_c = tfd.Gamma(concentration=self.e_0, rate=self.f_0).log_prob(c).sum()
+
+    activation = theta_tplus1 @ phi
+    theta = self._get(&#34;theta&#34;, (m_samples, self.input_size))
+    log_theta = (
+        tfd.Gamma(concentration=activation, rate=c.reshape(-1, 1))
+        .log_prob(theta)
+        .sum()
+    )
+
+    log_prob = log_phi + log_c + log_theta
+    return log_prob, theta</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.GammaLayer.upward"><code class="name flex">
+<span>def <span class="ident">upward</span></span>(<span>self, m_previous: tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features], q_previous: tensor_annotations.jax.Array1[tensor_annotations.jax.float32, tensor_annotations.axes.Batch]) ‑> tuple[tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Channels], tensor_annotations.jax.Array1[tensor_annotations.jax.float32, tensor_annotations.axes.Batch]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Propagate latent counts and rate factors upward.</p>
+<p><span><span class="MathJax_Preview">
+x_{ij}^{(t+1)} \sim \mathrm{CRT}[m_{ij}^{(t)}, a_{ij}^{(t+1)}], \\
+\chi_{ijk}^{(t+1)}
+\sim \mathrm{Mult}[x_{ij}^{(t+1)}, \{θ_{ik}^{(t+1)}ϕ_{kj}^{(t+1)}\}_k], \\
+\phi_{kj}^{(t+1)} \sim \mathrm{Dir}[\{\eta + \sum_{i} \chi_{ijk}^{(t+1)}\}_j].
+</span><script type="math/tex; mode=display">
+x_{ij}^{(t+1)} \sim \mathrm{CRT}[m_{ij}^{(t)}, a_{ij}^{(t+1)}], \\
+\chi_{ijk}^{(t+1)}
+\sim \mathrm{Mult}[x_{ij}^{(t+1)}, \{θ_{ik}^{(t+1)}ϕ_{kj}^{(t+1)}\}_k], \\
+\phi_{kj}^{(t+1)} \sim \mathrm{Dir}[\{\eta + \sum_{i} \chi_{ijk}^{(t+1)}\}_j].
+</script></span></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def upward(  # type: ignore
+    self,
+    m_previous: Array2[uint32, Batch, Features],
+    q_previous: Array1[float32, Batch],
+) -&gt; tuple[Array2[uint32, Batch, Channels], Array1[float32, Batch]]:
+    r&#34;&#34;&#34;Propagate latent counts and rate factors upward.
+
+    $$
+    x_{ij}^{(t+1)} \sim \mathrm{CRT}[m_{ij}^{(t)}, a_{ij}^{(t+1)}], \\
+    \chi_{ijk}^{(t+1)}  \sim \mathrm{Mult}[x_{ij}^{(t+1)}, \{θ_{ik}^{(t+1)}ϕ_{kj}^{(t+1)}\}_k], \\
+    \phi_{kj}^{(t+1)} \sim \mathrm{Dir}[\{\eta + \sum_{i} \chi_{ijk}^{(t+1)}\}_j].
+    $$
+    &#34;&#34;&#34;
+    m_samples = m_previous.shape[0]
+    self._set(&#34;q&#34;, q_previous)
+    self._set(&#34;m&#34;, m_previous)
+    m_ik = super().upward(m_previous)
+
+    c: Array1[float32, Batch] = self._get(&#34;c&#34;, (m_samples,))  # type: ignore
+    q: Array1[float32, Batch] = _next_q(q_previous=q_previous, c_t=c)
+
+    return m_ik, q</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="gabenet.layers.BaseMiddleLayer" href="layers.html#gabenet.layers.BaseMiddleLayer">BaseMiddleLayer</a></b></code>:
+<ul class="hlist">
+<li><code><a title="gabenet.layers.BaseMiddleLayer.set_training" href="layers.html#gabenet.layers.BaseMiddleLayer.set_training">set_training</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="gabenet.poisson.PoissonLayer"><code class="flex name class">
+<span>class <span class="ident">PoissonLayer</span></span>
+<span>(</span><span>input_size: int, output_size: int, name: Optional[str] = None, eta: float = 1.0, frozen: Optional[tuple[str]] = None, is_training: bool = True)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Bottom layer of Poisson gamma believe network <code><a title="gabenet.nets.PoissonGammaBelieve" href="nets.html#gabenet.nets.PoissonGammaBelieve">PoissonGammaBelieve</a></code>.</p>
+<p><img alt="Mathematical background of distributions underlying PoissonLayer." src="figures/poisson_layer.svg"></p>
+<p>This layer implements the following generative model:</p>
+<p>Given an incoming <span><span class="MathJax_Preview">\theta_{ik}^{(1)}</span><script type="math/tex">\theta_{ik}^{(1)}</script></span> from the layer above, generate forward
+samples
+<span><span class="MathJax_Preview">
+\phi_{kj}^{(1)} \sim \mathrm{Dir}([\eta,\dots,\eta]), \\
+a_{ij}^{(1)} = \sum_{k=1}^{K_{1}} \theta_{ik}^{(1)} \phi_{kj}^{(1)}, \\
+x_{ij}^{(1)} \sim \mathrm{Pois}(a_{ij}^{(1)}),
+</span><script type="math/tex; mode=display">
+\phi_{kj}^{(1)} \sim \mathrm{Dir}([\eta,\dots,\eta]), \\
+a_{ij}^{(1)} = \sum_{k=1}^{K_{1}} \theta_{ik}^{(1)} \phi_{kj}^{(1)}, \\
+x_{ij}^{(1)} \sim \mathrm{Pois}(a_{ij}^{(1)}),
+</script></span>
+where <span><span class="MathJax_Preview">K_1</span><script type="math/tex">K_1</script></span> are the number of latent states (<code>input_size</code>), <span><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> refers to
+sample, <span><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span> to a feature coming out of the layer (<code>output_size</code> in total), and
+<span><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> a latent state/topic coming into the layer. During
+inference, the training data <span><span class="MathJax_Preview">x_{ij}^{(1)}</span><script type="math/tex">x_{ij}^{(1)}</script></span> is assumed to be fixed.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>input_size</code></strong></dt>
+<dd>The number of latent variables coming into the layer.</dd>
+<dt><strong><code>output_size</code></strong></dt>
+<dd>The number of features in the dataset.</dd>
+<dt><strong><code>name</code></strong></dt>
+<dd>Name of this layer.</dd>
+<dt><strong><code>eta</code></strong></dt>
+<dd>Dirichlet hyperparameter <span><span class="MathJax_Preview">\eta</span><script type="math/tex">\eta</script></span> on weights.</dd>
+<dt><strong><code>is_training</code></strong></dt>
+<dd>Whether the model is in training or inference mode.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class PoissonLayer(BaseObservedLayer):
+    r&#34;&#34;&#34;Bottom layer of Poisson gamma believe network `gabenet.nets.PoissonGammaBelieve`.
+
+    .. figure:: figures/poisson_layer.svg
+        Mathematical background of distributions underlying `PoissonLayer`.
+
+    This layer implements the following generative model:
+
+    Given an incoming \(\theta_{ik}^{(1)}\) from the layer above, generate forward
+    samples
+    $$
+    \phi_{kj}^{(1)} \sim \mathrm{Dir}([\eta,\dots,\eta]), \\
+    a_{ij}^{(1)} = \sum_{k=1}^{K_{1}} \theta_{ik}^{(1)} \phi_{kj}^{(1)}, \\
+    x_{ij}^{(1)} \sim \mathrm{Pois}(a_{ij}^{(1)}),
+    $$
+    where \(K_1\) are the number of latent states (`input_size`), \(i\) refers to
+    sample, \(j\) to a feature coming out of the layer (`output_size` in total), and
+    \(k\) a latent state/topic coming into the layer. During
+    inference, the training data \(x_{ij}^{(1)}\) is assumed to be fixed.
+    &#34;&#34;&#34;
+
+    def set_training(self, is_training: bool) -&gt; None:
+        &#34;&#34;&#34;Toggle training mode.&#34;&#34;&#34;
+        super().set_training(is_training)
+        # Phi and c are fixed during inference.
+        if not self.is_training:
+            self.frozen_ = frozenset(self.frozen).union([&#34;c&#34;, &#34;phi&#34;])
+
+    def forward(
+        self, theta: Array2[float32, Batch, Channels]
+    ) -&gt; Array2[uint32, Batch, Features]:
+        r&#34;&#34;&#34;Do an ancestral sampling step generating samples
+        \(\{\phi_{kj}^{(1)}, x_{ij}^{(1)}\}_{i,j,k} \mid \theta_{ik}^{(1)} \).&#34;&#34;&#34;
+        activation = self.forward_activation(theta)
+
+        m_samples = theta.shape[0]
+        x_ij = random.poisson(
+            hk.next_rng_key(),
+            lam=activation,
+            shape=(m_samples, self.output_size),
+        )
+
+        return x_ij  # type: ignore
+
+    def upward(
+        self, x_observed: Array2[uint32, Batch, Features]
+    ) -&gt; tuple[Array2[uint32, Batch, Channels], Array1[float32, Batch]]:
+        r&#34;&#34;&#34;Gibbs sample \( \phi^{(1)}_{kj} \) and propagate  \( \{m_{ik}^{(1)}, q_i^{(1)} \equiv 1 \} \) upward.
+
+        See `gabenet.layers.BaseObservedLayer.upward()` for details.
+        &#34;&#34;&#34;
+        m_samples, n_features = x_observed.shape
+
+        def _sample_missing_x(
+            x: Array2[uint32, Batch, Features]
+        ) -&gt; Array2[uint32, Batch, Features]:
+            &#34;&#34;&#34;Gibbs sample `nan` observations.&#34;&#34;&#34;
+            theta_shape = (m_samples, self.input_size)
+            phi_shape = (self.input_size, n_features)
+            theta = self._get(&#34;theta&#34;, theta_shape)
+            phi = self._get(&#34;phi&#34;, phi_shape)
+            activation = theta @ phi
+
+            x_samples = random.poisson(
+                hk.next_rng_key(),
+                lam=activation,
+                shape=(m_samples, n_features),
+            )
+            return jnp.where(jnp.isnan(x), x_samples, x)
+
+        has_missing = jnp.any(jnp.isnan(x_observed))
+        x = hk.cond(
+            has_missing, lambda x: _sample_missing_x(x), lambda x: x, x_observed
+        )
+
+        m_ik = super().upward(x)
+        q_i = jnp.ones(shape=(m_samples,))
+        return m_ik, q_i
+
+    def joint_log_prob(
+        self,
+        theta_tplus1: Array2[float32, Batch, Channels],
+        x_observed: Array2[uint32, Batch, Features],
+    ) -&gt; Array0[float32]:
+        &#34;&#34;&#34;Joint likelihood of data, state, and parameters.
+
+        Args:
+            theta_tplus1: Hidden units from the layer above.
+            x_observed: Observed multinomial draws, of shape (m_samples, n_features).
+        &#34;&#34;&#34;
+        n_features = x_observed.shape[1]
+
+        alpha = jnp.full(shape=(1, n_features), fill_value=self.eta, dtype=jnp.float32)
+        phi = self._get(&#34;phi&#34;, shape=(self.input_size, n_features))
+        activation = theta_tplus1 @ phi
+
+        log_prob = (
+            tfd.Dirichlet(concentration=alpha).log_prob(phi).sum()
+            + tfd.Poisson(rate=activation).log_prob(x_observed).sum()
+        )
+        return log_prob
+
+    def log_prob(self, x_observed: Array2[uint32, Batch, Features]):
+        &#34;&#34;&#34;Log-probability of the observations.&#34;&#34;&#34;
+        m_samples, n_features = x_observed.shape
+        theta_shape = (m_samples, self.input_size)
+        phi_shape = (self.input_size, n_features)
+        theta = self._get(&#34;theta&#34;, theta_shape)
+        phi = self._get(&#34;phi&#34;, phi_shape)  # type: ignore
+        activation = theta @ phi
+        return tfd.Poisson(rate=activation).log_prob(x_observed).sum()</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="gabenet.layers.BaseObservedLayer" href="layers.html#gabenet.layers.BaseObservedLayer">BaseObservedLayer</a></li>
+<li>gabenet.layers._Module</li>
+<li>haiku._src.module.Module</li>
+</ul>
+<h3>Methods</h3>
+<dl>
+<dt id="gabenet.poisson.PoissonLayer.forward"><code class="name flex">
+<span>def <span class="ident">forward</span></span>(<span>self, theta: tensor_annotations.jax.Array2[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Channels]) ‑> tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Do an ancestral sampling step generating samples
+<span><span class="MathJax_Preview">\{\phi_{kj}^{(1)}, x_{ij}^{(1)}\}_{i,j,k} \mid \theta_{ik}^{(1)} </span><script type="math/tex">\{\phi_{kj}^{(1)}, x_{ij}^{(1)}\}_{i,j,k} \mid \theta_{ik}^{(1)} </script></span>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def forward(
+    self, theta: Array2[float32, Batch, Channels]
+) -&gt; Array2[uint32, Batch, Features]:
+    r&#34;&#34;&#34;Do an ancestral sampling step generating samples
+    \(\{\phi_{kj}^{(1)}, x_{ij}^{(1)}\}_{i,j,k} \mid \theta_{ik}^{(1)} \).&#34;&#34;&#34;
+    activation = self.forward_activation(theta)
+
+    m_samples = theta.shape[0]
+    x_ij = random.poisson(
+        hk.next_rng_key(),
+        lam=activation,
+        shape=(m_samples, self.output_size),
+    )
+
+    return x_ij  # type: ignore</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.PoissonLayer.joint_log_prob"><code class="name flex">
+<span>def <span class="ident">joint_log_prob</span></span>(<span>self, theta_tplus1: tensor_annotations.jax.Array2[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Channels], x_observed: tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features]) ‑> tensor_annotations.jax.Array0[tensor_annotations.jax.float32]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Joint likelihood of data, state, and parameters.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>theta_tplus1</code></strong></dt>
+<dd>Hidden units from the layer above.</dd>
+<dt><strong><code>x_observed</code></strong></dt>
+<dd>Observed multinomial draws, of shape (m_samples, n_features).</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def joint_log_prob(
+    self,
+    theta_tplus1: Array2[float32, Batch, Channels],
+    x_observed: Array2[uint32, Batch, Features],
+) -&gt; Array0[float32]:
+    &#34;&#34;&#34;Joint likelihood of data, state, and parameters.
+
+    Args:
+        theta_tplus1: Hidden units from the layer above.
+        x_observed: Observed multinomial draws, of shape (m_samples, n_features).
+    &#34;&#34;&#34;
+    n_features = x_observed.shape[1]
+
+    alpha = jnp.full(shape=(1, n_features), fill_value=self.eta, dtype=jnp.float32)
+    phi = self._get(&#34;phi&#34;, shape=(self.input_size, n_features))
+    activation = theta_tplus1 @ phi
+
+    log_prob = (
+        tfd.Dirichlet(concentration=alpha).log_prob(phi).sum()
+        + tfd.Poisson(rate=activation).log_prob(x_observed).sum()
+    )
+    return log_prob</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.PoissonLayer.log_prob"><code class="name flex">
+<span>def <span class="ident">log_prob</span></span>(<span>self, x_observed: tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Log-probability of the observations.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log_prob(self, x_observed: Array2[uint32, Batch, Features]):
+    &#34;&#34;&#34;Log-probability of the observations.&#34;&#34;&#34;
+    m_samples, n_features = x_observed.shape
+    theta_shape = (m_samples, self.input_size)
+    phi_shape = (self.input_size, n_features)
+    theta = self._get(&#34;theta&#34;, theta_shape)
+    phi = self._get(&#34;phi&#34;, phi_shape)  # type: ignore
+    activation = theta @ phi
+    return tfd.Poisson(rate=activation).log_prob(x_observed).sum()</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.PoissonLayer.set_training"><code class="name flex">
+<span>def <span class="ident">set_training</span></span>(<span>self, is_training: bool) ‑> None</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Toggle training mode.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def set_training(self, is_training: bool) -&gt; None:
+    &#34;&#34;&#34;Toggle training mode.&#34;&#34;&#34;
+    super().set_training(is_training)
+    # Phi and c are fixed during inference.
+    if not self.is_training:
+        self.frozen_ = frozenset(self.frozen).union([&#34;c&#34;, &#34;phi&#34;])</code></pre>
+</details>
+</dd>
+<dt id="gabenet.poisson.PoissonLayer.upward"><code class="name flex">
+<span>def <span class="ident">upward</span></span>(<span>self, x_observed: tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features]) ‑> tuple[tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Channels], tensor_annotations.jax.Array1[tensor_annotations.jax.float32, tensor_annotations.axes.Batch]]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Gibbs sample <span><span class="MathJax_Preview"> \phi^{(1)}_{kj} </span><script type="math/tex"> \phi^{(1)}_{kj} </script></span> and propagate
+<span><span class="MathJax_Preview"> \{m_{ik}^{(1)}, q_i^{(1)} \equiv 1 \} </span><script type="math/tex"> \{m_{ik}^{(1)}, q_i^{(1)} \equiv 1 \} </script></span> upward.</p>
+<p>See <code><a title="gabenet.layers.BaseObservedLayer.upward" href="layers.html#gabenet.layers.BaseObservedLayer.upward">BaseObservedLayer.upward()</a></code> for details.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def upward(
+    self, x_observed: Array2[uint32, Batch, Features]
+) -&gt; tuple[Array2[uint32, Batch, Channels], Array1[float32, Batch]]:
+    r&#34;&#34;&#34;Gibbs sample \( \phi^{(1)}_{kj} \) and propagate  \( \{m_{ik}^{(1)}, q_i^{(1)} \equiv 1 \} \) upward.
+
+    See `gabenet.layers.BaseObservedLayer.upward()` for details.
+    &#34;&#34;&#34;
+    m_samples, n_features = x_observed.shape
+
+    def _sample_missing_x(
+        x: Array2[uint32, Batch, Features]
+    ) -&gt; Array2[uint32, Batch, Features]:
+        &#34;&#34;&#34;Gibbs sample `nan` observations.&#34;&#34;&#34;
+        theta_shape = (m_samples, self.input_size)
+        phi_shape = (self.input_size, n_features)
+        theta = self._get(&#34;theta&#34;, theta_shape)
+        phi = self._get(&#34;phi&#34;, phi_shape)
+        activation = theta @ phi
+
+        x_samples = random.poisson(
+            hk.next_rng_key(),
+            lam=activation,
+            shape=(m_samples, n_features),
+        )
+        return jnp.where(jnp.isnan(x), x_samples, x)
+
+    has_missing = jnp.any(jnp.isnan(x_observed))
+    x = hk.cond(
+        has_missing, lambda x: _sample_missing_x(x), lambda x: x, x_observed
+    )
+
+    m_ik = super().upward(x)
+    q_i = jnp.ones(shape=(m_samples,))
+    return m_ik, q_i</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="gabenet.layers.BaseObservedLayer" href="layers.html#gabenet.layers.BaseObservedLayer">BaseObservedLayer</a></b></code>:
+<ul class="hlist">
+<li><code><a title="gabenet.layers.BaseObservedLayer.forward_activation" href="layers.html#gabenet.layers.BaseObservedLayer.forward_activation">forward_activation</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="gabenet" href="index.html">gabenet</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="gabenet.poisson.CapLayer" href="#gabenet.poisson.CapLayer">CapLayer</a></code></h4>
+<ul class="">
+<li><code><a title="gabenet.poisson.CapLayer.downward" href="#gabenet.poisson.CapLayer.downward">downward</a></code></li>
+<li><code><a title="gabenet.poisson.CapLayer.forward" href="#gabenet.poisson.CapLayer.forward">forward</a></code></li>
+<li><code><a title="gabenet.poisson.CapLayer.joint_log_prob" href="#gabenet.poisson.CapLayer.joint_log_prob">joint_log_prob</a></code></li>
+<li><code><a title="gabenet.poisson.CapLayer.set_training" href="#gabenet.poisson.CapLayer.set_training">set_training</a></code></li>
+<li><code><a title="gabenet.poisson.CapLayer.upward" href="#gabenet.poisson.CapLayer.upward">upward</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="gabenet.poisson.GammaLayer" href="#gabenet.poisson.GammaLayer">GammaLayer</a></code></h4>
+<ul class="">
+<li><code><a title="gabenet.poisson.GammaLayer.downward" href="#gabenet.poisson.GammaLayer.downward">downward</a></code></li>
+<li><code><a title="gabenet.poisson.GammaLayer.forward" href="#gabenet.poisson.GammaLayer.forward">forward</a></code></li>
+<li><code><a title="gabenet.poisson.GammaLayer.joint_log_prob" href="#gabenet.poisson.GammaLayer.joint_log_prob">joint_log_prob</a></code></li>
+<li><code><a title="gabenet.poisson.GammaLayer.upward" href="#gabenet.poisson.GammaLayer.upward">upward</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="gabenet.poisson.PoissonLayer" href="#gabenet.poisson.PoissonLayer">PoissonLayer</a></code></h4>
+<ul class="">
+<li><code><a title="gabenet.poisson.PoissonLayer.forward" href="#gabenet.poisson.PoissonLayer.forward">forward</a></code></li>
+<li><code><a title="gabenet.poisson.PoissonLayer.joint_log_prob" href="#gabenet.poisson.PoissonLayer.joint_log_prob">joint_log_prob</a></code></li>
+<li><code><a title="gabenet.poisson.PoissonLayer.log_prob" href="#gabenet.poisson.PoissonLayer.log_prob">log_prob</a></code></li>
+<li><code><a title="gabenet.poisson.PoissonLayer.set_training" href="#gabenet.poisson.PoissonLayer.set_training">set_training</a></code></li>
+<li><code><a title="gabenet.poisson.PoissonLayer.upward" href="#gabenet.poisson.PoissonLayer.upward">upward</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

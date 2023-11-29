@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>gabenet.random API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>gabenet.random</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from functools import partial
+from typing import Optional, Sequence
+
+import chex
+from jax import jit, random, vmap  # type: ignore
+from jax.lax import fori_loop, scan  # type: ignore
+import jax.numpy as jnp
+from tensorflow_probability.substrates import jax as tfp  # type: ignore
+from tensor_annotations.axes import Batch, Channels, Features
+from tensor_annotations.jax import Array0, Array1, Array2, Array3, float32, uint32
+
+tfd = tfp.distributions
+
+
+@partial(jit, static_argnames=[&#34;shape&#34;, &#34;dtype&#34;])
+def gamma(key, a, b, shape=None, dtype=jnp.float32):
+    &#34;&#34;&#34;Sample gamma distribution.
+
+    Args:
+        a: Shape of gamma distribution.
+        b: Rate (inverse scale) of gamma distribution.
+    &#34;&#34;&#34;
+    x_sample = random.gamma(key, a, shape, dtype) / b
+    # When x_sample falls below error tolerance, because a &lt; 1 and b &gt; 1, reinstate the
+    # error tolerance.
+    if dtype == jnp.float32:
+        return jnp.maximum(x_sample, 1.1754944e-38)
+    elif dtype == jnp.float64:
+        return jnp.maximum(x_sample, 2.224073858507201e-308)
+    else:
+        return jnp.maximum(x_sample, 0.00006103515625)
+
+
+@partial(jit, static_argnums=(2,))
+def _sum_bernoullis(i: int, val: tuple, shape):
+    cumulative, key, r = val
+    log_p = jnp.log(r) - jnp.log(r + i)
+    key, rng_key = random.split(key)
+    new_cumulative = cumulative + random.bernoulli(
+        rng_key, p=jnp.exp(log_p), shape=shape
+    )
+    return (new_cumulative, key, r)
+
+
+@partial(jit, static_argnums=(3,))
+@partial(vmap, in_axes=(0, 0, 0, None), out_axes=-1)
+def _chinese_restaurant_table(key, n, r, shape):
+    &#34;&#34;&#34;Vectorised CRT where key, n, and r are all vectors (1-D arrays).&#34;&#34;&#34;
+    zero = jnp.array(0, dtype=n.dtype)  # Make sure 0 and n have the same dtype.
+    total_sum, _, _ = fori_loop(
+        lower=zero,
+        upper=n,
+        body_fun=lambda i, v: _sum_bernoullis(i, v, shape),
+        init_val=(jnp.zeros(shape=shape, dtype=n.dtype), key, r),
+    )
+    return total_sum
+
+
+def chinese_restaurant_table(key, n, r, shape: Optional[Sequence[int]] = None):
+    &#34;&#34;&#34;Generate a sample from the Chinese restaurant table distribution.
+
+    Args:
+        key: Pseudo random number generator key.
+        n: The number of customers in the restaurant.
+        r: The concentration parameter.
+        shape: Shape of output tensor (must be broadcastable with `n` and `r`).
+
+    Returns:
+        The number of tables seated by `n` customers with concentration `r`.
+    &#34;&#34;&#34;
+    if shape is None:
+        if jnp.shape(n) != jnp.shape(r):
+            n, r = jnp.broadcast_arrays(n, r)
+        shape = jnp.shape(n)
+    _shape = jnp.broadcast_shapes(n.shape, shape)  # type: ignore
+
+    n_keys = n.size
+    keys = random.split(key, num=n_keys)
+    n_rank = len(n.shape)
+
+    assert len(keys) == len(n.flatten())
+    l_samples = _chinese_restaurant_table(
+        keys, n.flatten(), r.flatten(), _shape[: len(_shape) - n_rank]
+    )
+    return l_samples.reshape(_shape)
+
+
+def dirichlet_multinomial(
+    key, n_trials, alpha, shape: Optional[Sequence[int]] = None, dtype=jnp.uint32
+):
+    &#34;&#34;&#34;Generate a sample from the Dirichlet-Multinomial distribution.
+
+    Args:
+        key: Pseudo random number generator key.
+        n_trials: Number of draws from multinomial distribution.
+        alpha: Dirichlet prior of shape `(..., n)`, similar to `jax.random.dirichlet`.
+        shape: Shape of random variates, excluding the last shape dimension `n` of
+            `alpha`.
+        dtype: Cast return value to this dtype.
+
+    Returns:
+        A draw from the distribution with shape `shape + (alpha.shape[-1),)`.
+    &#34;&#34;&#34;
+    if shape is None:
+        n_shape = jnp.broadcast_shapes(n_trials.shape, alpha.shape[:-1])
+    else:
+        n_shape = jnp.broadcast_shapes(n_trials.shape, alpha.shape[:-1], shape)
+    a_shape = n_shape + (alpha.shape[-1],)
+
+    n_trials = jnp.broadcast_to(n_trials, n_shape)
+    alpha = jnp.broadcast_to(alpha, a_shape)
+
+    key, rng_key = random.split(key)
+    p_dirichlet = random.dirichlet(rng_key, alpha, n_shape)
+    n_trials = n_trials.astype(jnp.float32)
+    x_counts = tfd.Multinomial(total_count=n_trials, probs=p_dirichlet).sample(seed=key)
+    return x_counts.astype(dtype)
+
+
+@chex.dataclass
+class _BernoulliBetaState:
+    &#34;&#34;&#34;State (`alpha_0`) and parameters of MCMC chain to sample posterior Gamma-CRT.&#34;&#34;&#34;
+
+    # Concentration (to MCMC sample) of the Chinese restaurant table distribution.
+    alpha_0: Array0[float32]
+    # Total number of occupied tables over all the Chinese restaurants (sum over restaurant occupancies).
+    m_tables_total: Array0[uint32]
+    # Number of customers in the Chinese restaurant.
+    n_customers: Array1[uint32, Batch]
+    # Shape parameter (alpha) of the Gamma prior.
+    a_gamma: Array0[float32]
+    # Rate parameter (beta) of the Gamma prior.
+    b_gamma: Array0[float32]
+
+
+def _gibbs_step_posterior_gamma_crt(carry: _BernoulliBetaState, key):
+    &#34;&#34;&#34;Do one Gibbs sample step by augmenting with Bernoulli and beta distributions.
+
+    Reference:
+        [1]: Teh, Jordan, Beal &amp; Blei (2006) Hierarchical Dirichlet Processes,
+            J Am Stat Assoc, 101:476, 1566-1581, DOI: 10.1198/016214506000000302.
+    &#34;&#34;&#34;
+    n_samples = carry.n_customers.shape[0]
+
+    # Sample according to Eq. (A.5), Ref. [1].
+    key, rng_key = random.split(key)
+    w = random.beta(
+        rng_key, carry.alpha_0 + 1.0, carry.n_customers, shape=(n_samples,)  # type: ignore
+    )
+
+    # Sample according to Eq. (A.6), Ref. [1].
+    key, rng_key = random.split(key)
+    p_berno = 1 / (
+        1.0 + carry.alpha_0 / carry.n_customers  # type: ignore
+    )  # &lt;==&gt; p proportional to n / alpha_0.
+    s = random.bernoulli(rng_key, p_berno, shape=(n_samples,))
+
+    # Sample according to Eq. (A.4), Ref. [1].
+    alpha = carry.a_gamma + carry.m_tables_total - jnp.sum(s)
+    beta = carry.b_gamma - jnp.sum(jnp.log(w))
+    key, rng_key = random.split(key)
+    alpha_0 = gamma(rng_key, alpha, beta)
+
+    carry.alpha_0 = alpha_0
+    return (carry, alpha_0)
+
+
+def posterior_gamma_chinese_restaurant_table(
+    key,
+    m: Array1[uint32, Batch],
+    n: Array1[uint32, Batch],
+    a: Array0[float32],
+    b: Array0[float32] | float,
+) -&gt; Array0[float32]:
+    r&#34;&#34;&#34;Sample concentration posterior of joint gamma-Chinese restaurant distribution.
+
+    Take posterior samples from
+    $$
+    p(\alpha|\textbf{m},\textbf{n}, a, b) \propto
+        \mathrm{Gamma}(\alpha|a, b) \prod_{i=1}^{N} \frac{\alpha^{m_i}\Gamma(\alpha)}{\Gamma(\alpha+n_i)}
+    $$
+
+    corresponding to the joint distribution Gamma-CRT distribution:
+    $$
+    p(\alpha, \textbf{m}|\textbf{n}, a, b) =
+    \mathrm{Gamma}(\alpha|a, b) \prod_{i=1}^N \mathrm{CRT}(m_i|n_i, \alpha)
+    $$
+    using the Bernoulli-beta augmentation trick from Teh, Jordan, Beal &amp; Blei Hierarchical Dirichlet Processes,
+            J Am Stat Assoc, 101:476, 1566 (2006).
+
+    Args:
+        key: Pseudo random number generator key.
+        m: Number of occupied tables in the Chinese restaurant (of size \(N\)).
+        n: Number of customers in the Chinese restaurant (of size \(N\)).
+        a: shape parameter of the Gamma prior.
+        b: rate parameter of the Gamma prior.
+
+    Returns:
+        Scalar sample of the concentration parameter \(\alpha\).
+    &#34;&#34;&#34;
+    n_iterations: int = 20  # See Appendix Teh.
+
+    # Initialise Markov chain/
+    key, rng_key = random.split(key)
+    alpha_0 = gamma(rng_key, a, b, shape=())
+    carry_init = _BernoulliBetaState(
+        alpha_0=alpha_0, m_tables_total=jnp.sum(m), n_customers=n, a_gamma=a, b_gamma=b  # type: ignore
+    )
+    keys = random.split(key, num=n_iterations)
+
+    # Run chain for `n_iterations` and collect a sample.
+    _, alpha_0_chain = scan(_gibbs_step_posterior_gamma_crt, init=carry_init, xs=keys)
+    alpha_0 = alpha_0_chain[-1]
+    return alpha_0
+
+
+@partial(jit, static_argnums=(3,))
+def _augmented_poisson(key, rate, x, dtype=jnp.uint32):
+    # Normalise over the augmented space.
+    rate_norm = jnp.sum(rate, axis=-1, keepdims=True)
+
+    zeta = jnp.where(rate_norm == 0, 0, rate / rate_norm)
+
+    x = x.astype(jnp.float32)  # type: ignore
+    x_augmented = tfd.Multinomial(total_count=x, probs=zeta).sample(seed=key)
+
+    return x_augmented.astype(dtype)
+
+
+def augmented_poisson(
+    key,
+    rate: Array3[float32, Batch, Features, Channels],
+    x: Array2[uint32, Batch, Features],
+    dtype=jnp.uint32,
+) -&gt; Array3[uint32, Batch, Features, Channels]:
+    r&#34;&#34;&#34;Sample of augmented Poisson distribution.
+
+    That is, given:
+    $$
+    x_{ij} \sim \mathrm{Pois}(\sum_k \lambda_{ijk}),
+    $$
+
+    Sample:
+    $$
+    x_{ijk} \mid x_{ij} \sim \mathrm{Pois}(\lambda_{ijk}), \sum_k x_{ijk} = x_{ij}.
+    $$
+
+    Args:
+        key: Pseudo random number generator key.
+        rate: The poisson rate parameter \(\lambda_{ijk}\) by which `x` was generated after
+            marginalising over the latent states (`Channels`).
+        x: Counts to augment.
+        dtype: Cast return value to this dtype.
+
+    Returns:
+        Augmented counts that collapse to `x` when marginalised over the latent states.
+    &#34;&#34;&#34;
+    return _augmented_poisson(key, rate, x, dtype)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="gabenet.random.augmented_poisson"><code class="name flex">
+<span>def <span class="ident">augmented_poisson</span></span>(<span>key, rate: tensor_annotations.jax.Array3[tensor_annotations.jax.float32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features, tensor_annotations.axes.Channels], x: tensor_annotations.jax.Array2[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features], dtype=jax.numpy.uint32) ‑> tensor_annotations.jax.Array3[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch, tensor_annotations.axes.Features, tensor_annotations.axes.Channels]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sample of augmented Poisson distribution.</p>
+<p>That is, given:
+<span><span class="MathJax_Preview">
+x_{ij} \sim \mathrm{Pois}(\sum_k \lambda_{ijk}),
+</span><script type="math/tex; mode=display">
+x_{ij} \sim \mathrm{Pois}(\sum_k \lambda_{ijk}),
+</script></span></p>
+<p>Sample:
+<span><span class="MathJax_Preview">
+x_{ijk} \mid x_{ij} \sim \mathrm{Pois}(\lambda_{ijk}), \sum_k x_{ijk} = x_{ij}.
+</span><script type="math/tex; mode=display">
+x_{ijk} \mid x_{ij} \sim \mathrm{Pois}(\lambda_{ijk}), \sum_k x_{ijk} = x_{ij}.
+</script></span></p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>key</code></strong></dt>
+<dd>Pseudo random number generator key.</dd>
+<dt><strong><code>rate</code></strong></dt>
+<dd>The poisson rate parameter <span><span class="MathJax_Preview">\lambda_{ijk}</span><script type="math/tex">\lambda_{ijk}</script></span> by which <code>x</code> was generated after
+marginalising over the latent states (<code>Channels</code>).</dd>
+<dt><strong><code>x</code></strong></dt>
+<dd>Counts to augment.</dd>
+<dt><strong><code>dtype</code></strong></dt>
+<dd>Cast return value to this dtype.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Augmented counts that collapse to <code>x</code> when marginalised over the latent states.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def augmented_poisson(
+    key,
+    rate: Array3[float32, Batch, Features, Channels],
+    x: Array2[uint32, Batch, Features],
+    dtype=jnp.uint32,
+) -&gt; Array3[uint32, Batch, Features, Channels]:
+    r&#34;&#34;&#34;Sample of augmented Poisson distribution.
+
+    That is, given:
+    $$
+    x_{ij} \sim \mathrm{Pois}(\sum_k \lambda_{ijk}),
+    $$
+
+    Sample:
+    $$
+    x_{ijk} \mid x_{ij} \sim \mathrm{Pois}(\lambda_{ijk}), \sum_k x_{ijk} = x_{ij}.
+    $$
+
+    Args:
+        key: Pseudo random number generator key.
+        rate: The poisson rate parameter \(\lambda_{ijk}\) by which `x` was generated after
+            marginalising over the latent states (`Channels`).
+        x: Counts to augment.
+        dtype: Cast return value to this dtype.
+
+    Returns:
+        Augmented counts that collapse to `x` when marginalised over the latent states.
+    &#34;&#34;&#34;
+    return _augmented_poisson(key, rate, x, dtype)</code></pre>
+</details>
+</dd>
+<dt id="gabenet.random.chinese_restaurant_table"><code class="name flex">
+<span>def <span class="ident">chinese_restaurant_table</span></span>(<span>key, n, r, shape: Optional[Sequence[int]] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate a sample from the Chinese restaurant table distribution.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>key</code></strong></dt>
+<dd>Pseudo random number generator key.</dd>
+<dt><strong><code>n</code></strong></dt>
+<dd>The number of customers in the restaurant.</dd>
+<dt><strong><code>r</code></strong></dt>
+<dd>The concentration parameter.</dd>
+<dt><strong><code>shape</code></strong></dt>
+<dd>Shape of output tensor (must be broadcastable with <code>n</code> and <code>r</code>).</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>The number of tables seated by <code>n</code> customers with concentration <code>r</code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def chinese_restaurant_table(key, n, r, shape: Optional[Sequence[int]] = None):
+    &#34;&#34;&#34;Generate a sample from the Chinese restaurant table distribution.
+
+    Args:
+        key: Pseudo random number generator key.
+        n: The number of customers in the restaurant.
+        r: The concentration parameter.
+        shape: Shape of output tensor (must be broadcastable with `n` and `r`).
+
+    Returns:
+        The number of tables seated by `n` customers with concentration `r`.
+    &#34;&#34;&#34;
+    if shape is None:
+        if jnp.shape(n) != jnp.shape(r):
+            n, r = jnp.broadcast_arrays(n, r)
+        shape = jnp.shape(n)
+    _shape = jnp.broadcast_shapes(n.shape, shape)  # type: ignore
+
+    n_keys = n.size
+    keys = random.split(key, num=n_keys)
+    n_rank = len(n.shape)
+
+    assert len(keys) == len(n.flatten())
+    l_samples = _chinese_restaurant_table(
+        keys, n.flatten(), r.flatten(), _shape[: len(_shape) - n_rank]
+    )
+    return l_samples.reshape(_shape)</code></pre>
+</details>
+</dd>
+<dt id="gabenet.random.dirichlet_multinomial"><code class="name flex">
+<span>def <span class="ident">dirichlet_multinomial</span></span>(<span>key, n_trials, alpha, shape: Optional[Sequence[int]] = None, dtype=jax.numpy.uint32)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Generate a sample from the Dirichlet-Multinomial distribution.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>key</code></strong></dt>
+<dd>Pseudo random number generator key.</dd>
+<dt><strong><code>n_trials</code></strong></dt>
+<dd>Number of draws from multinomial distribution.</dd>
+<dt><strong><code>alpha</code></strong></dt>
+<dd>Dirichlet prior of shape <code>(&hellip;, n)</code>, similar to <code>jax.random.dirichlet</code>.</dd>
+<dt><strong><code>shape</code></strong></dt>
+<dd>Shape of random variates, excluding the last shape dimension <code>n</code> of
+<code>alpha</code>.</dd>
+<dt><strong><code>dtype</code></strong></dt>
+<dd>Cast return value to this dtype.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>A draw from the distribution with shape <code>shape + (alpha.shape[-1),)</code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def dirichlet_multinomial(
+    key, n_trials, alpha, shape: Optional[Sequence[int]] = None, dtype=jnp.uint32
+):
+    &#34;&#34;&#34;Generate a sample from the Dirichlet-Multinomial distribution.
+
+    Args:
+        key: Pseudo random number generator key.
+        n_trials: Number of draws from multinomial distribution.
+        alpha: Dirichlet prior of shape `(..., n)`, similar to `jax.random.dirichlet`.
+        shape: Shape of random variates, excluding the last shape dimension `n` of
+            `alpha`.
+        dtype: Cast return value to this dtype.
+
+    Returns:
+        A draw from the distribution with shape `shape + (alpha.shape[-1),)`.
+    &#34;&#34;&#34;
+    if shape is None:
+        n_shape = jnp.broadcast_shapes(n_trials.shape, alpha.shape[:-1])
+    else:
+        n_shape = jnp.broadcast_shapes(n_trials.shape, alpha.shape[:-1], shape)
+    a_shape = n_shape + (alpha.shape[-1],)
+
+    n_trials = jnp.broadcast_to(n_trials, n_shape)
+    alpha = jnp.broadcast_to(alpha, a_shape)
+
+    key, rng_key = random.split(key)
+    p_dirichlet = random.dirichlet(rng_key, alpha, n_shape)
+    n_trials = n_trials.astype(jnp.float32)
+    x_counts = tfd.Multinomial(total_count=n_trials, probs=p_dirichlet).sample(seed=key)
+    return x_counts.astype(dtype)</code></pre>
+</details>
+</dd>
+<dt id="gabenet.random.gamma"><code class="name flex">
+<span>def <span class="ident">gamma</span></span>(<span>key, a, b, shape=None, dtype=jax.numpy.float32)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sample gamma distribution.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>a</code></strong></dt>
+<dd>Shape of gamma distribution.</dd>
+<dt><strong><code>b</code></strong></dt>
+<dd>Rate (inverse scale) of gamma distribution.</dd>
+</dl></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@partial(jit, static_argnames=[&#34;shape&#34;, &#34;dtype&#34;])
+def gamma(key, a, b, shape=None, dtype=jnp.float32):
+    &#34;&#34;&#34;Sample gamma distribution.
+
+    Args:
+        a: Shape of gamma distribution.
+        b: Rate (inverse scale) of gamma distribution.
+    &#34;&#34;&#34;
+    x_sample = random.gamma(key, a, shape, dtype) / b
+    # When x_sample falls below error tolerance, because a &lt; 1 and b &gt; 1, reinstate the
+    # error tolerance.
+    if dtype == jnp.float32:
+        return jnp.maximum(x_sample, 1.1754944e-38)
+    elif dtype == jnp.float64:
+        return jnp.maximum(x_sample, 2.224073858507201e-308)
+    else:
+        return jnp.maximum(x_sample, 0.00006103515625)</code></pre>
+</details>
+</dd>
+<dt id="gabenet.random.posterior_gamma_chinese_restaurant_table"><code class="name flex">
+<span>def <span class="ident">posterior_gamma_chinese_restaurant_table</span></span>(<span>key, m: tensor_annotations.jax.Array1[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch], n: tensor_annotations.jax.Array1[tensor_annotations.jax.uint32, tensor_annotations.axes.Batch], a: tensor_annotations.jax.Array0[tensor_annotations.jax.float32], b: Union[tensor_annotations.jax.Array0[tensor_annotations.jax.float32], float]) ‑> tensor_annotations.jax.Array0[tensor_annotations.jax.float32]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sample concentration posterior of joint gamma-Chinese restaurant distribution.</p>
+<p>Take posterior samples from
+<span><span class="MathJax_Preview">
+p(\alpha|\textbf{m},\textbf{n}, a, b) \propto
+\mathrm{Gamma}(\alpha|a, b) \prod_{i=1}^{N} \frac{\alpha^{m_i}\Gamma(\alpha)}{\Gamma(\alpha+n_i)}
+</span><script type="math/tex; mode=display">
+p(\alpha|\textbf{m},\textbf{n}, a, b) \propto
+\mathrm{Gamma}(\alpha|a, b) \prod_{i=1}^{N} \frac{\alpha^{m_i}\Gamma(\alpha)}{\Gamma(\alpha+n_i)}
+</script></span></p>
+<p>corresponding to the joint distribution Gamma-CRT distribution:
+<span><span class="MathJax_Preview">
+p(\alpha, \textbf{m}|\textbf{n}, a, b) =
+\mathrm{Gamma}(\alpha|a, b) \prod_{i=1}^N \mathrm{CRT}(m_i|n_i, \alpha)
+</span><script type="math/tex; mode=display">
+p(\alpha, \textbf{m}|\textbf{n}, a, b) =
+\mathrm{Gamma}(\alpha|a, b) \prod_{i=1}^N \mathrm{CRT}(m_i|n_i, \alpha)
+</script></span>
+using the Bernoulli-beta augmentation trick from Teh, Jordan, Beal &amp; Blei Hierarchical Dirichlet Processes,
+J Am Stat Assoc, 101:476, 1566 (2006).</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>key</code></strong></dt>
+<dd>Pseudo random number generator key.</dd>
+<dt><strong><code>m</code></strong></dt>
+<dd>Number of occupied tables in the Chinese restaurant (of size <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>).</dd>
+<dt><strong><code>n</code></strong></dt>
+<dd>Number of customers in the Chinese restaurant (of size <span><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span>).</dd>
+<dt><strong><code>a</code></strong></dt>
+<dd>shape parameter of the Gamma prior.</dd>
+<dt><strong><code>b</code></strong></dt>
+<dd>rate parameter of the Gamma prior.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<p>Scalar sample of the concentration parameter <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def posterior_gamma_chinese_restaurant_table(
+    key,
+    m: Array1[uint32, Batch],
+    n: Array1[uint32, Batch],
+    a: Array0[float32],
+    b: Array0[float32] | float,
+) -&gt; Array0[float32]:
+    r&#34;&#34;&#34;Sample concentration posterior of joint gamma-Chinese restaurant distribution.
+
+    Take posterior samples from
+    $$
+    p(\alpha|\textbf{m},\textbf{n}, a, b) \propto
+        \mathrm{Gamma}(\alpha|a, b) \prod_{i=1}^{N} \frac{\alpha^{m_i}\Gamma(\alpha)}{\Gamma(\alpha+n_i)}
+    $$
+
+    corresponding to the joint distribution Gamma-CRT distribution:
+    $$
+    p(\alpha, \textbf{m}|\textbf{n}, a, b) =
+    \mathrm{Gamma}(\alpha|a, b) \prod_{i=1}^N \mathrm{CRT}(m_i|n_i, \alpha)
+    $$
+    using the Bernoulli-beta augmentation trick from Teh, Jordan, Beal &amp; Blei Hierarchical Dirichlet Processes,
+            J Am Stat Assoc, 101:476, 1566 (2006).
+
+    Args:
+        key: Pseudo random number generator key.
+        m: Number of occupied tables in the Chinese restaurant (of size \(N\)).
+        n: Number of customers in the Chinese restaurant (of size \(N\)).
+        a: shape parameter of the Gamma prior.
+        b: rate parameter of the Gamma prior.
+
+    Returns:
+        Scalar sample of the concentration parameter \(\alpha\).
+    &#34;&#34;&#34;
+    n_iterations: int = 20  # See Appendix Teh.
+
+    # Initialise Markov chain/
+    key, rng_key = random.split(key)
+    alpha_0 = gamma(rng_key, a, b, shape=())
+    carry_init = _BernoulliBetaState(
+        alpha_0=alpha_0, m_tables_total=jnp.sum(m), n_customers=n, a_gamma=a, b_gamma=b  # type: ignore
+    )
+    keys = random.split(key, num=n_iterations)
+
+    # Run chain for `n_iterations` and collect a sample.
+    _, alpha_0_chain = scan(_gibbs_step_posterior_gamma_crt, init=carry_init, xs=keys)
+    alpha_0 = alpha_0_chain[-1]
+    return alpha_0</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="gabenet" href="index.html">gabenet</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="gabenet.random.augmented_poisson" href="#gabenet.random.augmented_poisson">augmented_poisson</a></code></li>
+<li><code><a title="gabenet.random.chinese_restaurant_table" href="#gabenet.random.chinese_restaurant_table">chinese_restaurant_table</a></code></li>
+<li><code><a title="gabenet.random.dirichlet_multinomial" href="#gabenet.random.dirichlet_multinomial">dirichlet_multinomial</a></code></li>
+<li><code><a title="gabenet.random.gamma" href="#gabenet.random.gamma">gamma</a></code></li>
+<li><code><a title="gabenet.random.posterior_gamma_chinese_restaurant_table" href="#gabenet.random.posterior_gamma_chinese_restaurant_table">posterior_gamma_chinese_restaurant_table</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

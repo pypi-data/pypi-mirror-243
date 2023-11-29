@@ -1,0 +1,11 @@
+chex>=0.1.82
+dm-haiku>=0.0.11
+einops
+flax  # For Haiku.
+jaxtyping
+matplotlib
+tensor_annotations>=2.0
+tensor_annotations_jax_stubs
+tensorflow_probability>=0.20.1
+# Optional for notebooks.
+scikit-learn

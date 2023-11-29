@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+# The following line allows a dependency that is a direct reference to the repository
+# (for haiku).
+allow-direct-references = true
+
+[project]
+name = "mubelnet"
+version = "0.0.8"
+authors = [
+  { name="Hylke C. Donker", email="h.c.donker@umcg.nl" },
+  { name="Dorien Neijzen", email="d.neijzen@umcg.nl" },
+]
+description = """Deep Bayesian unsupervised decoder networks.
+Use poisson or multinomial belief networks to cluster non-negative count data."""
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  'chex',
+  'dm-haiku',
+  'einops',
+  'flax',
+  'jax',
+  'jaxtyping',
+  'matplotlib',
+  'tensor_annotations',
+  'tensor_annotations_jax_stubs',
+  'tensorflow_probability',
+]
+
+[project.urls]
+"Homepage" = "https://gitlab.com/hylkedonker/mubelnet"
+"Bug Tracker" = "https://gitlab.com/hylkedonker/mubelnet/-/issues"

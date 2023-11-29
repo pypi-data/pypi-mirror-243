@@ -1,0 +1,85 @@
+Metadata-Version: 2.1
+Name: mubelnet
+Version: 0.0.8
+Summary: Deep Bayesian unsupervised decoder networks. Use poisson or multinomial belief networks to cluster non-negative count data.
+Project-URL: Homepage, https://gitlab.com/hylkedonker/mubelnet
+Project-URL: Bug Tracker, https://gitlab.com/hylkedonker/mubelnet/-/issues
+Author-email: "Hylke C. Donker" <h.c.donker@umcg.nl>, Dorien Neijzen <d.neijzen@umcg.nl>
+License-File: LICENSE.txt
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Requires-Dist: chex
+Requires-Dist: dm-haiku
+Requires-Dist: einops
+Requires-Dist: flax
+Requires-Dist: jax
+Requires-Dist: jaxtyping
+Requires-Dist: matplotlib
+Requires-Dist: tensor-annotations
+Requires-Dist: tensor-annotations-jax-stubs
+Requires-Dist: tensorflow-probability
+Description-Content-Type: text/markdown
+
+# Deep Bayesian unsupervised clustering
+![multinomial belief network](./figures/multinomial_belief_net.svg "multinomial belief net")
+This repository contains deep Bayesian unsupervised clustering models. In particular,
+the multinomial belief network [1] and the Zhou-Cong-Chen Poisson gamma belief network [2].
+
+## Installation
+You can pip install this package by running:
+```bash
+pip3 install mubelnet
+```
+
+## Quick start guide
+
+Let's create a two-layer multinomial belief network (like in the figure) with one and two hidden units, respectively. The kernel function, that advances the Markov chain by a single (Gibbs) step looks as follows:
+```python
+import haiku as hk
+import jax
+from mubelnet.nets import MultinomialBelief
+from mubelnet.mcmc import sample_markov_chain
+
+# Set up training data.
+X_train = ...
+n_features = X_train.shape[1]
+
+@hk.transform_with_state
+def kernel():
+    """Advance Markov chain of belief net by one step."""
+    n_hidden_units = (1, 2)
+    model = MultinomialBelief(n_hidden_units, n_features)
+    model(X_train)  # Do one Gibbs sampling step.
+
+states = sample_markov_chain(
+    jax.random.key(42),
+    kernel=kernel,
+    n_samples=100,
+    n_chains=2,
+    n_burnin_steps=100,
+)
+```
+
+
+## Example handwritten digits
+A more complete example, that shows how to train a network on the UCI ML hand-written digits datasets, see the [digits jupyter notebook](examples/digits.ipynb).
+
+## Download meta-mutational signatures
+The weights of the meta-signatures (based on COSMIC v3.3) and the hyperparameters can be downloaded in comma-separated format here:
+- [meta_signatures.csv](examples/mutational-signatures/meta_signatures.csv)
+- [hyperparam_c.csv](examples/mutational-signatures/hyperparam_c.csv)
+- [hyperparam_r.csv](examples/mutational-signatures/hyperparam_r.csv)
+
+
+## Package documentation
+Reference documentation can be found on: https://hylkedonker.gitlab.io/mubelnet.
+
+## References
+[1] Donker, Neijzen, Lunter, "[Multinomial belief networks](https://arxiv.org/abs/2311.16909)", arXiv:2311.16909 (2023).
+
+[2]: Zhou, Cong, Chen. "[Augmentable gamma belief networks.](https://www.jmlr.org/papers/volume17/15-633/15-633.pdf)", J. Mach. Learn. Res. 17.1, 5656-5699 (2016).
+
+## License
+The code open sourced under the MIT license (see [LICENSE.txt](LICENSE.txt)).

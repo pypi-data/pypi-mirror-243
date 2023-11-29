@@ -1,0 +1,98 @@
+stages:
+  - test
+  - deploy
+
+default:
+  image: ubuntu:23.10
+
+  before_script:
+    - apt update --fix-missing && apt install --assume-yes python3-pip git
+    - pip3 install --break-system-packages -r requirements.txt
+    - pip3 install --break-system-packages typing-extensions
+
+test:
+  stage: test
+  except:
+    - main
+  script:
+    - pip3 install --break-system-packages mypy
+    - cd src && mypy mubelnet
+    # First do unit tests before integration tests, to fail fast.
+    - export JAX_ENABLE_X64=True
+    - python3 -m unittest discover test.unit --verbose
+    - python3 -m unittest discover test.integration --verbose
+  artifacts:
+    when: always
+    paths:
+      - src/test_results/
+
+test_coverage:
+  stage: test
+  only:
+    - main
+  script:
+    - pip3 install --break-system-packages mypy coverage
+    - cd src && mypy mubelnet
+    - export JAX_ENABLE_X64=True
+    - export JAX_DEBUG_NANS=True
+    - coverage run -m unittest discover test --verbose
+    - coverage report -m
+    - coverage xml
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  artifacts:
+    when: always
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: src/coverage.xml
+    paths:
+      - src/test_results/
+
+docker:
+  stage: deploy
+  image: docker:20.10.16
+  variables:
+    # When you use the dind service, you must instruct Docker to talk with
+    # the daemon started inside of the service. The daemon is available
+    # with a network connection instead of the default
+    # /var/run/docker.sock socket. Docker 19.03 does this automatically
+    # by setting the DOCKER_HOST in
+    # https://github.com/docker-library/docker/blob/d45051476babc297257df490d22cbd806f1b11e4/19.03/docker-entrypoint.sh#L23-L29
+    #
+    # The 'docker' hostname is the alias of the service container as described at
+    # https://docs.gitlab.com/ee/ci/services/#accessing-the-services.
+    #
+    # Specify to Docker where to create the certificates. Docker
+    # creates them automatically on boot, and creates
+    # `/certs/client` to share between the service and job
+    # container, thanks to volume mount from config.toml
+    DOCKER_TLS_CERTDIR: ""
+  services:
+    - docker:20.10.16-dind
+
+  before_script:
+    - docker info
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE/cpu:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/cpu -f Dockerfile .
+    - docker build -t $CI_REGISTRY_IMAGE/cuda_12:$CI_COMMIT_SHORT_SHA -t $CI_REGISTRY_IMAGE/cuda_12 -f Dockerfile.cuda12 .
+    - docker push $CI_REGISTRY_IMAGE/cpu:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/cpu
+    - docker push $CI_REGISTRY_IMAGE/cuda_12:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/cuda_12
+  only:
+  - main
+
+pages:
+  stage: deploy
+  script:
+  - pip3 install --break-system-packages pdoc3 typing-extensions
+  - mkdir public
+  - pdoc --config latex_math=True --html --output-dir public src/mubelnet
+  - mv public/mubelnet/* public/ && rmdir public/mubelnet/
+  - cp -r figures public/figures
+  artifacts:
+    paths:
+    - public
+  only:
+  - main
