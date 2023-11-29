@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "verden-pa-norsk"
+version = "0.1.0"
+description = ""
+authors = ["Lars Magne Tungland <larsmtungland@gmail.com>"]
+readme = "README.md"
+packages = [{include = "verden_pa_norsk"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pandas = "^2.0.3"
+pymarc = "^5.1.0"
+lxml = "^4.9.3"
+jupyter = "^1.0.0"
+requests = "^2.31.0"
+pymongo = "^4.4.1"
+tqdm = "^4.65.0"
+dhlab = "3.0.0a6"
+rdflib = "^7.0.0"
+sparqlwrapper = "^2.0.0"
+pyarrow = "^12.0.1"
+black = {extras = ["jupyter"], version = "^23.7.0"}
+streamlit = "^1.27.2"
+openpyxl = "^3.1.2"
+duckdb = "^0.9.1"
+geopy = "^2.4.1"
+folium = ">=0.13,<0.15"
+streamlit-folium = "^0.16.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.25.2"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
