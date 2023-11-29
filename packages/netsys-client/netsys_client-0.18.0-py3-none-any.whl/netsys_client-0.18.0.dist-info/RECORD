@@ -1,0 +1,17 @@
+netsys_client/__init__.py,sha256=XVFXb7b9bk4dyDFipnUid3QcebqFKjdf-HVN1BzoWvs,152
+netsys_client/gateway.py,sha256=sC9QtwRSfo60xnnsEpxP_k4OhkbKojXQgCWjZkAo-G4,1086
+netsys_client/response.py,sha256=LrrcuTTXmNLRzkcqmrLU3oPLU04FyIkf15M3RgU2xVU,486
+netsys_client/conf/__init__.py,sha256=fXJe1NFwtdwe_YVsCoMffTDewmKsy9ECqrzcEmRLCOQ,104
+netsys_client/conf/controller.py,sha256=CEEITkrd33h0i-QpT8ittjHv736fVoso2E_abuFW2Dc,462
+netsys_client/conf/methods.py,sha256=MKvntPJZXM9yAwN00ceQUX6MRIYr8XrKOcoCVCe4X6I,674
+netsys_client/conf/parametros.py,sha256=si33luXzOXZIpu6GuMeD_MCSsmP4WD5e0ueJ32_N9_c,108
+netsys_client/conf/validation.py,sha256=-24QtqJuZS7bqrwKvZ1Devm-PazffQ2FqdanMeJuDwU,621
+netsys_client/print/__init__.py,sha256=Km9gSzUJWvWY2mzqrCt-D2EaaD9i8u0ItWSuvQnS6VE,66
+netsys_client/print/controller.py,sha256=7C37ytIYMJ9Z17i8Do-LDwHmbTE46agdh6KuHDlqNL0,511
+netsys_client/print/layout.py,sha256=zQwG9g8EBd2UubMkrdumwCae8YVF4LCYSqIlGa1sRIs,3620
+netsys_client/print/methods.py,sha256=yu-LXkjDpofKIud_4QNmcQaFk6EtooKhUiC-Sohdc74,873
+netsys_client/print/validation.py,sha256=9wsohdCfh_fqTrZuTGDwmRtCnmCTz3X24NyM0BpvxDw,39
+netsys_client-0.18.0.dist-info/METADATA,sha256=1F_uHY8IakbGAi16-p3ZYuwiO2n-vidbVAu3VD4K0hQ,63
+netsys_client-0.18.0.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+netsys_client-0.18.0.dist-info/top_level.txt,sha256=075L9aEIdQrbZqf32QP5WoQwJeuPZveI9ofhC8WKXrA,14
+netsys_client-0.18.0.dist-info/RECORD,,
