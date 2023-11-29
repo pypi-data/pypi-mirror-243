@@ -1,0 +1,5 @@
+from image_recognition_vladdemo import singleton
+from image_recognition_vladdemo import strategy
+from image_recognition_vladdemo import image
+from image_recognition_vladdemo import facade
+from image_recognition_vladdemo import recognition
