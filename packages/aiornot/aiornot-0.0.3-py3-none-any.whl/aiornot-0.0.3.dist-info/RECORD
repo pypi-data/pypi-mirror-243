@@ -1,0 +1,12 @@
+aiornot/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+aiornot/async_client.py,sha256=lP6faNblB_K-AAGhhY-QBpFsDksAzxwOWlw6Oqg6oQ4,3381
+aiornot/cli.py,sha256=EY06aIGKU-1LRmLNWCWJuz-KnKflQDcrWnpZ7iAP_Uk,3612
+aiornot/req_builders.py,sha256=4Cc-5pK9FHrgElWQ2DM0eWP_gtreczvDoGxxb9G372M,1625
+aiornot/resp_types.py,sha256=AJVlZcv6NLMFNtHyyHhehirq62bx6liBwfw5xgPftSg,950
+aiornot/settings.py,sha256=dhrYq2Xfnwz4hO_7Usdb-0zrYjhtzWt8Ez7qaki3P4s,231
+aiornot/sync_client.py,sha256=U5i3fQC4rcaPjuYbCTlXhcOwDQ_fqO7KCy_ZZKocvWI,3367
+aiornot-0.0.3.dist-info/LICENSE,sha256=lGYIxKKSMs7Ob3Aou4ErtpvbMMHBWSPbMhnGSEfpesQ,1060
+aiornot-0.0.3.dist-info/METADATA,sha256=LJPKDvSsTAtwIaO7EwcfT_7m0kvjSx4uA2jqpExyRVo,3397
+aiornot-0.0.3.dist-info/WHEEL,sha256=WGfLGfLX43Ei_YORXSnT54hxFygu34kMpcQdmgmEwCQ,88
+aiornot-0.0.3.dist-info/entry_points.txt,sha256=RyM1TOx7WqJZ7042AzHL6fBbZnzVKs1BVA1E2jCAIss,43
+aiornot-0.0.3.dist-info/RECORD,,
