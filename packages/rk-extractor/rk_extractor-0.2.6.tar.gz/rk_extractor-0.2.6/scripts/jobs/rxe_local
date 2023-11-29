@@ -1,0 +1,80 @@
+#!/usr/bin/env python3
+
+import subprocess
+import argparse
+import shutil
+import glob
+import sys
+import os
+
+from logzero import logger as log
+
+#----------------------------
+class data:
+    jobid   = None
+    nfits   = None
+    sandbox = None
+    dset    = None
+    sft_path= '/publicfs/lhcb/user/campoverde/SFT/RK_TOY'
+#----------------------------
+def get_args():
+    jobid   = sys.argv[1]
+    nfits   = sys.argv[2]
+    sandbox = sys.argv[3]
+    dset    = ' '.join(sys.argv[4:])
+
+    data.sandbox = f'{sandbox}/{jobid.rjust(3, "0")}_{nfits.rjust(3, "0")}'
+    data.jobid   = int(jobid)
+    data.nfits   = int(nfits)
+    data.dset    = dset
+
+    try:
+        os.makedirs(data.sandbox, exist_ok=True)
+    except:
+        log.error(f'Cannot make sandbox: {data.sandbox}')
+        raise
+#----------------------------
+def copy_files():
+    ext_dir = os.environ['EXTDIR']
+
+    l_tarball = glob.glob(f'{ext_dir}/*.tar.gz')
+    if len(l_tarball) != 4:
+        log.error(f'Wrong number of tarballs: {l_tarball}')
+        raise
+
+    l_script = ['rxe_toys', 'rxe_run_toys']
+    l_file   = l_script + l_tarball
+    for file_path in l_file:
+        file_name = os.path.basename(file_path)
+        shutil.copyfile(file_path, f'{data.sandbox}/{file_name}')
+
+    for script in l_script:
+        subprocess.run(['chmod', '+x', f'{data.sandbox}/{script}'] )
+#----------------------------
+def run():
+    if data.dset is None:
+        l_command = ['./rxe_run_toys']
+    else:
+        l_command = ['./rxe_run_toys', data.dset]
+
+    log.info(f'Running: {l_command}')
+    stat = subprocess.run(l_command, env={'RK_TOY' : data.sft_path})
+    if stat.returncode != 0:
+        log.error(f'Process returned exit status: {stat.returncode}')
+        raise
+#----------------------------
+def make_seeds():
+    with open(f'{data.jobid}.sd', 'w') as ofile:
+        for i_fit in range(data.nfits):
+            seed = i_fit + 1000 * data.jobid
+            ofile.write(f'{seed}\n')
+#----------------------------
+def main():
+    get_args()
+    copy_files()
+    os.chdir(data.sandbox)
+    make_seeds()
+    run()
+#----------------------------
+if __name__ == '__main__':
+    main()
