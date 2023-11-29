@@ -1,0 +1,1 @@
+from .http_basic_auth import HTTPBasicAuthMiddleware as HTTPBasicAuthMiddleware

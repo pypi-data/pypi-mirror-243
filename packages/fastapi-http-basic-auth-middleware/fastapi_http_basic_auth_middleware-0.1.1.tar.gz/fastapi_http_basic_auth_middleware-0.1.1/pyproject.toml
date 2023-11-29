@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "fastapi-http-basic-auth-middleware"
+version = "0.1.1"  # x-release-please-version
+description = "FastAPI HTTP Basic Auth Middleware"
+authors = ["Yibu Ma"]
+license = "BSD-3-Clause"
+readme = "README.md"
+packages = [
+    { include = "http_basic_auth" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.104.1"
+typing-extensions = "^4.8.0"
+
+[tool.poetry.group.test]
+optional = true
+[tool.poetry.group.test.dependencies]
+coverage = "^7.1.0"
+black = "^22.12.0"
+diff-cover = "^7.4.0"
+httpx = "^0.25.2"
+
+
+[tool.poetry.group.dev]
+optional = true
+[tool.poetry.group.dev.dependencies]
+debugpy = "^1.6.6"
+pre-commit = "^3.0.2"
+commitizen = "^2.40.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
