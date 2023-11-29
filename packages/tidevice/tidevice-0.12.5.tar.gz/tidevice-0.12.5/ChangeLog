@@ -1,0 +1,11 @@
+CHANGES
+=======
+
+0.12.5
+------
+
+* remove python 3.6, 3.7 support
+* fix
+* update github actions
+* update console arg name and indent code
+* disbale the newly added logger to print message to console
