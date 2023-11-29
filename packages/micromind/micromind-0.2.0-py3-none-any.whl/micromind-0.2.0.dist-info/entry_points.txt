@@ -1,0 +1,3 @@
+[console_scripts]
+phinet=__main__:main
+
