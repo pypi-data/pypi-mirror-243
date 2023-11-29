@@ -1,0 +1,4 @@
+include CHANGELOG.rst
+include CITATION.cff
+include LICENSE.txt
+include requirements.txt
