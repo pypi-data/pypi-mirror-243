@@ -1,0 +1,1 @@
+###### Perhaps we should mimick tensors.storage() design
