@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cpp_aws_s3_pdf"
+version = "0.0.1"
+authors = [
+    { name = "Noble Obioma", email = "nobioma1@gmail.com" },
+]
+description = "This package createds a PDF file from selected s3 objects"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+    "boto3>=1.28.76",
+    "botocore>=1.31.76",
+    "pypdf>=3.17.1"
+]
+
+[project.urls]
+Homepage = "https://github.com/noble-cc/cpp_aws_s3_pdf"
+Issues = "https://github.com/noble-cc/cpp_aws_s3_pdf/issues"
