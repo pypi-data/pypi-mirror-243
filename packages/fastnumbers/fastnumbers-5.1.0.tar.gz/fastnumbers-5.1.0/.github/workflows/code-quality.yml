@@ -1,0 +1,89 @@
+name: Code Quality
+
+# Only run on branches (e.g. not tags)
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - "*"
+
+jobs:
+  formatting:
+    name: Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install deps
+        run: |
+          pip install black clang-format
+
+      - name: Run formatting checks
+        run: python dev/formatting.py --check
+
+  static-analysis:
+    name: Static Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install Flake8
+        run: pip install flake8 flake8-import-order flake8-bugbear pep8-naming
+
+      - name: Run Flake8
+        run: flake8
+
+  type-checking:
+    name: Type Checking
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install MyPy
+        run: pip install mypy hypothesis pytest numpy
+
+      - name: Run MyPy
+        run: |
+          python setup.py install
+          mypy --strict tests
+
+  package-validation:
+    name: Package Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.8
+
+      - name: Install Validators
+        run: pip install twine check-manifest
+
+      - name: Run Validation
+        run: |
+          check-manifest --ignore ".github*,*.md,.coveragerc"
+          python setup.py sdist
+          twine check dist/*
