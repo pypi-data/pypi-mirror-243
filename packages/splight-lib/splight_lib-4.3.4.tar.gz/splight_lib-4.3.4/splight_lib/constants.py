@@ -1,0 +1,2 @@
+ENGINE_PREFIX: str = "v2/engine"
+DESCRIPTION_MAX_LENGTH = 500
