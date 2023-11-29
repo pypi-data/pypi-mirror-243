@@ -1,0 +1,57 @@
+[tool.poetry]
+name = "pyogero"
+version = "0.6.0"
+description = "Ogero API module"
+authors = ["Omar Raad <omarraad@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+homepage = "https://github.com/oraad/pyogero"
+repository = "https://github.com/oraad/pyogero"
+# documentation = "https://oraad.github.io/pyogero/"
+
+keywords = [
+    "ogero",
+    "internet",
+    "api",
+]
+
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+packages = [
+    { include = "pyogero" }
+]
+
+[tool.poetry.urls]
+"Issues" = "https://github.com/oraad/pyogero/issues/"
+
+[tool.poetry.dependencies]
+python = ">=3.10,<4"
+requests = "^2.31.0"
+beautifulsoup4 = "^4.12.2"
+aiohttp = ">=3.8.5"
+pydantic = "^1.10.13"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+black = "^22.12.0"
+pytest-asyncio = ">=0.19,<0.22"
+requests-mock = "^1.11.0"
+aioresponses = "^0.7.3"
+
+[tool.pytest.ini_options]
+asyncio_mode = "strict"
+log_cli = "true"
+log_level = "INFO"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
