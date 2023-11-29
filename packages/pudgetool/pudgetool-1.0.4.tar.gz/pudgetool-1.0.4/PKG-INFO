@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pudgetool
+Version: 1.0.4
+Summary: pudge tools is automatic coding tools
+Home-page: https://github.com/ThierryZhou/pudgetool.git
+Author: thierry.zhou
+Author-email: zhouhui295@163.com
+License: MIT Licence
+Keywords: pudge tools,CLI tools
+Platform: any
+License-File: LICENSE
+
+convenient python cli tools, like s3, jumpserver url switches...

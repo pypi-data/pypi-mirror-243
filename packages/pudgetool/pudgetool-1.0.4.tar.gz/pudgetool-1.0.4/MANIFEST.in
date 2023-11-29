@@ -1,0 +1,4 @@
+include src/pudgetool
+include src/pudge
+include src/numa
+include LICENSE
