@@ -1,0 +1,10 @@
+afipcaeqrdecode/__init__.py,sha256=KMbNbK2gBFwDbua9rxScoyDuj5es55R8JHtBV_Wu3fk,49
+afipcaeqrdecode/convert_pdf_to_image_and_detect_and_decode_qrs.py,sha256=BTVBpvp9_HA4ui-tFLbNO2yKkqYTMSvRA6FLLuAkN-U,1024
+afipcaeqrdecode/extract_qr_cae_from_invoice_pdf_and_decode.py,sha256=785HkcYBo5njBeUmA0an1mglPceX6qWSAbCG7KJ9c4g,1092
+afipcaeqrdecode/get_cae_metadata.py,sha256=7Q8-Lv7LowD0QGnzKjKJrRDoM_N226_HRGssYQntprw,455
+afipqrcaedecode/__init__.py,sha256=4lA4cYMg7ONVkaMwPXktYSpv0w_9mDMahnUzxbeEZ6s,97
+afipqrcaedecode/extract_qr_cae_from_invoice_pdf_and_decode.py,sha256=UJjkow8Oskix4QXiv-n1IQl9SbCZioDH0c7Z0eH845E,951
+afipcaeqrdecode-0.0.11.dist-info/METADATA,sha256=fe3xzmXqjjGzCmnZlYrghA2H_RVtEqNvjtQ-1ljPc0I,4040
+afipcaeqrdecode-0.0.11.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+afipcaeqrdecode-0.0.11.dist-info/top_level.txt,sha256=TJ2ixjDcu5wtzdZieMY2bu2AU_09E8_S8w_jpmeFp68,16
+afipcaeqrdecode-0.0.11.dist-info/RECORD,,
