@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+import argparse
+
+from amigados.adftools import logical, physical, util
+
+def list_dir(volume, header_block):
+    dirs = []
+    files = []
+    for i in range(header_block.hashtable_size()):
+        sector_num = header_block.hashtable_entry_at(i)
+        if sector_num > 0:
+            hblock = volume.header_block_at(sector_num)
+            if hblock.is_directory():
+                sec_type = "Dir"
+                dirs.append(hblock.name())
+            else:
+                sec_type = "File"
+                files.append(hblock.name())
+    print("Directories:")
+    for d in sorted(dirs):
+        print("  %s" % d)
+    print("Files:")
+    for f in sorted(files):
+        print("  %s" % f)
+
+
+if __name__ == '__main__':
+    description = """amigados-dir - Python implementation of AmigaDOS dir"""
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument('adf', help="ADF File")
+    parser.add_argument('path', nargs="?", default="/", help="path (optional)")
+    args = parser.parse_args()
+    path = args.path.split("/")
+    path = [p for p in path if p != '']
+    with open(args.adf, "rb") as infile:
+        disk = physical.read_adf_image(infile)
+        volume = logical.LogicalVolume(disk)
+        root_block = volume.root_block()
+        fstype = volume.boot_block().filesystem_type()
+        print("Volume: '%s' (%s, %d sectors)" % (root_block.name(),
+                                                 fstype,
+                                                 disk.num_sectors()))
+
+        # if path is empty we list the root directory
+        # else we follow the chain of path components
+        if len(path) == 0:
+            print("/")
+            list_dir(volume, root_block)
+        else:
+            cur_header = volume.header_for_path('/'.join(path))
+            if cur_header.is_directory():
+                list_dir(volume, cur_header)
+            else:
+                comment = cur_header.file_comment()
+                if len(comment) > 0:
+                    print("%s ()" % (cur_header.name(), comment))
+                else:
+                    print(cur_header.name())
+

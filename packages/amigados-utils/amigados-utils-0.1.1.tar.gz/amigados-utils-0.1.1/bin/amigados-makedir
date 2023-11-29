@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+import argparse
+
+from amigados.adftools import logical, physical, util
+
+
+if __name__ == '__main__':
+    description = """amigados-makedir - Python implementation of AmigaDOS makedir"""
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument('adf', help="ADF File")
+    parser.add_argument('path', help="path to create")
+    args = parser.parse_args()
+
+    with open(args.adf, "rb") as infile:
+        disk = physical.read_adf_image(infile)
+        volume = logical.LogicalVolume(disk)
+        volume.makedir(args.path)
+
+    # final step: write updated ADF data
+    with open(args.adf, "wb") as outfile:
+        outfile.write(disk.data)
