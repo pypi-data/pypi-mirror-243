@@ -1,0 +1,12 @@
+<<h1>{batch_name} with {number_of_jobs} jobs has timed out after {timeout}.</h1>
+
+<p>
+    The code below can be used to load the batch into python to inspect the jobs and results.
+</p>
+
+
+<code>
+    <p>>>> from qalx_orcaflex.core import QalxOrcaFlex<br />
+    >>> qfx = QalxOrcaFlex()<br />
+    >>> batch = qfx.group.get('{batch_guid}')</p>
+</code>
