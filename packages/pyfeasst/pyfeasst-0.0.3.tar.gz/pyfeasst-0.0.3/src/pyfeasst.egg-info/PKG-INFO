@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pyfeasst
+Version: 0.0.3
+Summary: A Python package to analyze FEASST simulation results.
+Home-page: https://doi.org/10.18434/M3S095
+Author: Harold Wickes Hatch
+Author-email: harold.hatch@nist.gov
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+License-File: LICENSE
+
+Analyze FEASST simulation results. See https://doi.org/10.18434/M3S095 for more information on FEASST. And within the FEASST documentation, you may find pyfeasst documentation: https://pages.nist.gov/pyfeasst/README.html.
