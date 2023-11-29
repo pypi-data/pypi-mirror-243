@@ -1,0 +1,17 @@
+[pymodaq.extensions]
+mockexamples = pymodaq_plugins_mockexamples
+
+[pymodaq.h5exporters]
+mockexamples = pymodaq_plugins_mockexamples
+
+[pymodaq.instruments]
+mockexamples = pymodaq_plugins_mockexamples
+
+[pymodaq.pid_models]
+mockexamples = pymodaq_plugins_mockexamples
+
+[pymodaq.plugins]
+mockexamples = pymodaq_plugins_mockexamples
+
+[pymodaq.scanners]
+mockexamples = pymodaq_plugins_mockexamples
