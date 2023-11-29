@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+wslarkbot/__init__.py
+wslarkbot/__main__.py
+wslarkbot/client.py
+wslarkbot/message.py
+wslarkbot.egg-info/PKG-INFO
+wslarkbot.egg-info/SOURCES.txt
+wslarkbot.egg-info/dependency_links.txt
+wslarkbot.egg-info/not-zip-safe
+wslarkbot.egg-info/requires.txt
+wslarkbot.egg-info/top_level.txt
