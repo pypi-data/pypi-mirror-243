@@ -1,0 +1,195 @@
+Metadata-Version: 2.1
+Name: barkus-func-test
+Version: 0.0.1
+Summary: Cloud Functions Testing Toolkit
+Author: barkustech
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: Free For Educational Use
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pydantic ==1.10.7
+Requires-Dist: dacite ==1.8.1
+Requires-Dist: polyfactory ==2.2.0
+Requires-Dist: pytest ==7.2.2
+Requires-Dist: pytest-cov ==4.0.0
+Requires-Dist: pytest-mock ==3.10.0
+Requires-Dist: pytest-watch ==4.2.0
+Requires-Dist: mock-firestore ==0.11.0
+
+# Barkus Organization Python Cloud Functions Toolkit
+
+## Overview
+
+This public Python package provides a set of utilities to streamline the testing of Cloud Functions within the Barkus Organization.
+
+## Installation
+
+To use this package, you need to have Python installed. You can install the package using pip:
+
+```bash
+pipenv install barkus-func-test
+```
+
+## API
+
+### **1. BaseTestSuite**
+
+Base TestSuite class for class tests.
+Implement useful assertion methods and fixtures.
+
+**Example:**
+
+```python
+from barkus.functions.test import BaseTestSuite
+
+class TestBaseTestSuite(BaseTestSuite):
+	def before(self):
+		self.values = ["batata"]
+
+	def test_before_should_set_values_before_hand(self):
+		self.assertEqual(self.values, ["batata"])
+```
+
+### 2. Patcher
+
+Implements a wrapper around `pytest.patcher` API, adding better type-hint for modules.
+
+**Example:**
+Assuming the python file we want to patch is located at `src.foo.boo`, and it has the following content:
+
+```python
+def batata():
+	return 2
+
+def sut():
+	return batata()
+```
+
+- With function tests:
+
+```python
+class Patcher(BasePatcher):
+	__location__ = "src.foo.boo"
+	def setup(self, ctx: PatcherCtx):
+		super().setup(ctx) # If you're extending BasePatcher, this instruction is not necessary
+		self.batata = self.patch("batata")
+
+def test_should_properly_mock_module(mocker):
+	mocks = Patcher(mocker)
+	mocks.batata.return_value = 10
+
+	result = sut()
+
+	assert result == 10
+```
+
+- With class tests:
+  _There's a helper class called `UsePatcher` that assists adding the patcher to the TestCase class_
+
+```python
+from barkus.functions.test import BaseTestSuite
+from barkus.functions.test.patcher import BasePatcher, UsePatcher
+from barkus.functions.test.patcher.context import PatcherCtx
+from tests.patcher.foo import sut
+
+class Patcher(BasePatcher):
+	__location__ = "src.foo.boo"
+
+	def setup(self, ctx: PatcherCtx):
+		self.batata = self.patch("batata")
+
+class TestPatcher(BaseTestSuite, UsePatcher[Patcher]):
+	__patcher__ = Patcher
+
+	def test_should_properly_mock_module(self):
+		self.mocks.batata.return_value = 10
+
+		result = sut()
+
+		self.assertEqual(result, 10)
+```
+
+### **3. Matcher**
+
+Utilities functions to help perform assertions
+
+### **3.1. Assert Reponse**
+
+Perform assertion on top of the function's response
+
+**Example:**
+
+```python
+from unittest.mock import Mock
+from barkus.functions.test.patcher import BasePatcher
+from barkus.functions.test.matchers import assert_response
+from src.main import main
+
+class Patcher(BasePatcher):
+    __location__ = "src.main"
+
+    def setup(self, ctx):
+        self.perform: Mock = self.patch("perform")
+
+def test_should_return_ok_on_success(mocker):
+    Patcher(mocker)
+
+    response = main(Mock())
+
+    assert_response(response).toBe.ok()
+    assert_response(response).notToBe.serverError()
+
+```
+
+## Publishing New Version
+
+To publish a new version you have to follow these steps:
+
+### 1. You must make sure you have the dev-dependencies installed
+
+```bash
+pipenv install -d
+```
+
+### 2. You must configure `~/.pypirc` file with credentials:
+
+It should look something like this:
+
+```
+[distutils]
+index-servers =
+    pypi
+    testpypi
+
+[pypi]
+username = __token__
+password = pypi-*********
+
+[testpypi]
+username = __token__
+password = pypi-*********
+```
+
+> Note: the **token** is actually correct, it's not an example's placeholder
+
+### 3. Update the package's version:
+
+At setup.py, change the `version` to the desired value
+
+### 4. Generate the build:
+
+```bash
+pipenv run build
+```
+
+### 5. Publish the package:
+
+```bash
+pipenv run publish
+```
+
+## License
+
+This toolkit is proprietary software developed by Barkus Organization. Unauthorized use, reproduction, or distribution is prohibited.
