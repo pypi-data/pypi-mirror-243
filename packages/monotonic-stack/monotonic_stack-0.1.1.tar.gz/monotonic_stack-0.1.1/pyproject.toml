@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "monotonic_stack"
+version = "0.1.1"
+description = "A monotonic stack"
+authors = [
+    { name="Zhengyuan Zhu", email="zhuzhengyuan824@gmail.com"}
+]
+license = "MIT"
+readme = "README.md"
+keywords = ["stack", "monotonic"]
+categories = ["data-structures"]
+
+[project.urls]
+Homepage = "https://github.com/824zzy/monotonic_stack"
