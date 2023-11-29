@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: missioncontrolbot
+Version: 0.1.1
+Author-Email: Ken Buskilla <k@loopback.ai>, Yakir Buskilla <yakir@loopback.ai>
+License: MIT
+Requires-Python: >=3.11
+Requires-Dist: openai>=1.3.0
+Requires-Dist: asyncer>=0.0.2
+Requires-Dist: httpx>=0.25.1
+Requires-Dist: pydantic>=2.5.1
+Requires-Dist: typer[all]>=0.9.0
+Description-Content-Type: text/markdown
+
+# missioncontrolbot
