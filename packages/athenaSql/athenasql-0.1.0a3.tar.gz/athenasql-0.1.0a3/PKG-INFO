@@ -1,0 +1,70 @@
+Metadata-Version: 2.1
+Name: athenaSql
+Version: 0.1.0a3
+Summary: SQL builder for AWS Athena, inspired by sparkSQL
+Home-page: https://github.com/nabilseid/athenaSQL
+License: MIT
+Keywords: packaging,athena,sql,athenaSQL
+Author: Nabil Seid
+Author-email: nabeelseid@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: awswrangler (>=3.4.2,<4.0.0)
+Requires-Dist: jinja2 (>=3.1.2,<4.0.0)
+Project-URL: Documentation, https://github.com/nabilseid/athenaSQL/docs
+Project-URL: Repository, https://github.com/nabilseid/athenaSQL
+Description-Content-Type: text/markdown
+
+# athenaSQL
+
+<!-- start intro -->
+
+athenaSQL is Athena SQL query builder, inspired by sparkSQL. It borrow some sparkSQL's concept [sparkSQL](https://spark.apache.org/docs/preview/api/python/_modules/index.html).
+
+It was initially designed to eliminate the need for hard-coding SQL queries as strings within Python scripts and as an alternative to any bespoke SQL query templating. However, it offers the flexibility to be used in various ways as needed.
+
+<!-- end intro -->
+
+## Quickstart
+
+<!-- start quickstart -->
+
+### Installing athenaSQL
+
+```bash
+$ pip install athenaSQL
+```
+
+### Usage
+
+<!-- start usage -->
+
+Using athenaSQL is stright forward. First we create a table abstraction class then building a query is just calling chain methods on top of it.
+
+```python
+from athenaSQL import Athena
+
+# creating athena table instance from database
+table = Athena('database_name').table('table_name')
+
+# creating athena table instance from database
+query = table.select()
+
+query.show_query()
+```
+
+```
+SELECT
+    *
+FROM "database_name"."table_name"
+```
+
+<!-- end usage -->
+
+<!-- end quickstart -->
+
