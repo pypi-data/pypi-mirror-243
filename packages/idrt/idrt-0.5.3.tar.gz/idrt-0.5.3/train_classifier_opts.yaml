@@ -1,0 +1,13 @@
+encoder_path: "C:\\Users\\Jason Walker\\Documents\\Programming\\workspace\\identity-resolution\\lightning_logs\\0_5_0__feedback4_l_1__encoder\\checkpoints\\epoch=09---val_loss=0.2316-val_f1=0.9367.ckpt"
+checkpoint_path: null
+training_data: "hybrid_train.csv"
+eval_data: "hybrid_val.csv"
+classification_threshold: 0.5
+batch_size: 128
+pre_pool_mlp_layers: 2
+pool_mlp_layers: 2
+learning_rate: 3.5e-05
+weight_decay: 0.0005
+num_epochs: 10
+p_dropout: 0.1
+version_name: "0_5_0__feedback4_l_1__classifier"

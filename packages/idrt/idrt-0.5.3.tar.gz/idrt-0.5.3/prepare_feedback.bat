@@ -1,0 +1,4 @@
+python idrt\prepare_data.py --prepared_data feedback_prep.csv --source_files feedback_data.csv --training_data feedback_train.csv --eval_data feedback_val.csv --no-balance --shuffle
+python data\combine_csvs.py data\hybrid_train.csv data\prepared_train_data.csv data\synthetic_train.csv data\feedback_train.csv
+python data\combine_csvs.py data\hybrid_val.csv data\prepared_val_data.csv data\synthetic_val.csv data\feedback_val.csv
+python idrt\report_classifier.py --encoder_path "lightning_logs\releases__0_5_0\0_5_0_encoder_2__f1=0.9288.ckpt" --checkpoint_path "lightning_logs\releases__0_5_0\0_5_0_classifier_2__f1=0.9985.ckpt" --eval_data feedback_val.csv

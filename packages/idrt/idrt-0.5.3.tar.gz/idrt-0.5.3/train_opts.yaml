@@ -1,0 +1,24 @@
+field_strings:
+  - '{"field": "name", "subfield_labels": ["first_name", "last_name"], "max_length": 50}'
+  - '{"field": "email", "subfield_labels": ["email"], "max_length": 35}'
+  - '{"field": "phone", "subfield_labels": ["phone"], "max_length": 10}'
+  - '{"field": "state", "subfield_labels": ["state"], "max_length": 2}'
+  - '{"field": "zip", "subfield_labels": ["zip"], "max_length": 5}'
+metric: "ContrastiveMetric"
+checkpoint_path: null
+training_data: "hybrid_train.csv"
+eval_data: "hybrid_val.csv"
+embedding_dim: 50
+n_heads_attn: 3
+attn_dim: 180
+norm_eps: 1.0e-06
+output_mlp_layers: 2
+output_embedding_dim: 20
+threshold: 0.975
+batch_size: 128
+margin: 2.0
+learning_rate: 5.5e-07
+weight_decay: 0.002
+num_epochs: 10
+p_dropout: 0.0
+version_name: "0_5_0__feedback4_l_1__encoder"
