@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: tmctl
+Version: 0.4.0
+Summary: TMCTL - Admin CLI for Trino Cluster Manager
+Requires-Dist: requests
+Requires-Dist: pyyaml
+Requires-Dist: fire
+
+TMCtl
