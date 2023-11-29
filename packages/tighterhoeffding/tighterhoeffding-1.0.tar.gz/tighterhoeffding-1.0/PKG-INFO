@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: tighterhoeffding
+Version: 1.0
+Summary: Tail bounds for sums of bounded random variables
+Author: Jackson Loper
+Author-email: jaloper@umich.edu
+License: MIT
+License-File: LICENSE
+
+# tighter-hoeffding
+
+Install via `pip install https://github.com/prob-ml/tighter-hoeffding.git@main`.
+
+See "example_use.ipynb" for usage information.
