@@ -1,0 +1,9 @@
+astropy
+astroquery
+matplotlib
+numpy
+scipy
+
+[webbpsf]
+applesoss
+webbpsf>=1.1.1
