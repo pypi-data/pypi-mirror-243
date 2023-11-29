@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gentopo"
+dynamic = ["version"]
+dependencies = [
+    "networkx==3.2.1",
+    "numpy==1.26.2",
+    "click",
+]
+requires-python = ">=3.10"
+authors = [
+    {name = "Ari Dyckovsky", email="aridyckovsky@gmail.com"},
+]
+maintainers = [
+    {name = "Ari Dyckovsky", email="aridyckovsky@gmail.com"},
+]
+description = "Generate network topologies and underlying sequences of interactions that lead to them."
+keywords = [
+    "networks", "interaction", "social science", "topology",
+]
+readme = "README.md"
+license = "MIT"
+classifiers = [ 
+    "Programming Language :: Python",
+]
+
+[project.urls]
+Homepage = "https://github.com/comanlab/gentopo"
+Repository = "https://github.com/comanlab/gentopo.git"
+
+[tool.hatch.version]
+path = "src/gentopo/__about__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+  "pytest",
+]
+
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
