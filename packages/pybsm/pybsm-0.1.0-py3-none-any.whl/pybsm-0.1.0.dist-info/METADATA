@@ -1,0 +1,27 @@
+Metadata-Version: 2.1
+Name: pybsm
+Version: 0.1.0
+Summary: 
+Author: TODO
+Requires-Python: >=3.8.1,<4.0.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.8
+Requires-Dist: matplotlib (>=3.5.2,<4.0.0)
+Requires-Dist: numpy (>=1.23.1,<2.0.0)
+Requires-Dist: opencv-python (>=4.6.0,<5.0.0)
+Requires-Dist: scipy (>=1.8.1,<2.0.0)
+Description-Content-Type: text/markdown
+
+# pyBSM
+
+This is a placeholder for a potential future release of pyBSM. For now this repo can be used on imports internally to JATIC repos.
+
