@@ -1,0 +1,11 @@
+Plone
+beautifulsoup4<=4.11.2
+collective.ckeditor
+plone.api
+plone.app.contenttypes
+setuptools
+
+[test]
+Mock
+plone.app.robotframework
+robotframework-debuglibrary
