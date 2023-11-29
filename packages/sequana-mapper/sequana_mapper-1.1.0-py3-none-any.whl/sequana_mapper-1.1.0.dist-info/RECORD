@@ -1,0 +1,14 @@
+sequana_pipelines/mapper/__init__.py,sha256=OUXmzxM6J7fkqijsHmlAC-tU5WSAn2CJ3UgXlLaHIjw,124
+sequana_pipelines/mapper/config.yaml,sha256=gcYAMPRo8hwfD1er_7ryCVsqO-31vgGf_XbJ2KAMABQ,4563
+sequana_pipelines/mapper/dag.png,sha256=WBuMYibwNdvQzWRevwgKhsOKSLSPDBHCag6AGS8gxig,55200
+sequana_pipelines/mapper/logo.png,sha256=63fQKWxXsE4XmYnuXt7Rjz2790KxZIZ7ErMZGlNzxFs,11238
+sequana_pipelines/mapper/main.py,sha256=b_bSsbzTWSRtwS8UkPKCr4FGTKRhGF62jaw3p2Gv0z4,3624
+sequana_pipelines/mapper/mapper.rules,sha256=VnDHYjN3izQcwNpsRo8TFGn93bAYfiXOiQKAsyk-g-M,15314
+sequana_pipelines/mapper/multiqc_config.yaml,sha256=m1ATLm-QO1Ci2SyZUs9W-X-_blGaGkT8o5y01hsnqzc,5221
+sequana_pipelines/mapper/schema.yaml,sha256=cOLIyW0Z5zqh7J-pdlfAOlhcfXgJN9mTjQt3XAsbyT0,6001
+sequana_pipelines/mapper/tools.txt,sha256=qktmUvwPcoWy1BBE_7s381wUlIxfbJV3pXkCFaNqvU0,81
+sequana_mapper-1.1.0.dist-info/LICENSE,sha256=tifUGMwXA9uaq2g1wFz0ZgRRPOFCfqsOxRj8JneHZ3M,1530
+sequana_mapper-1.1.0.dist-info/METADATA,sha256=xifQEMfoo2Mxl2OcZTgdueYB8ntchF_uRDPZESQs20U,7308
+sequana_mapper-1.1.0.dist-info/WHEEL,sha256=vVCvjcmxuUltf8cYhJ0sJMRDLr1XsPuxEId8YDzbyCY,88
+sequana_mapper-1.1.0.dist-info/entry_points.txt,sha256=v7Fsmd2YEqk8MVnHi11Aj-ZP5szUWVkteqnKCT6FXr4,69
+sequana_mapper-1.1.0.dist-info/RECORD,,
