@@ -1,0 +1,16 @@
+MANIFEST.in
+readme.md
+setup.py
+iglu_r/__init__.py
+iglu_r/bridge.py
+iglu_r/df.py
+iglu_r/iglu_3.5.0.tar.gz
+iglu_r/metrics.py
+iglu_r.egg-info/PKG-INFO
+iglu_r.egg-info/SOURCES.txt
+iglu_r.egg-info/dependency_links.txt
+iglu_r.egg-info/requires.txt
+iglu_r.egg-info/top_level.txt
+iglu_r/data/example_data_1_subject.csv
+iglu_r/data/example_data_5_subject.csv
+iglu_r/data/example_meal.csv
