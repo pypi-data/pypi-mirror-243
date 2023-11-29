@@ -1,0 +1,21 @@
+dm-tree
+gymnasium
+lz4
+matplotlib
+numpy
+pandas
+pybind11
+pytest
+ray==2.6.3
+scipy
+scikit-image
+tabulate
+tensorflow
+torch
+typing
+pyarrow
+PyYAML
+
+[:platform_machine == "x86_64"]
+opencv-python
+tensorboardx
