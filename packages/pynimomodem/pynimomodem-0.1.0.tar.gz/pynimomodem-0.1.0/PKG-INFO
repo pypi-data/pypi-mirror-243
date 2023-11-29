@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pynimomodem
+Version: 0.1.0
+Summary: A Python implementation of Viasat's NIMO modem interface project.
+License: Apache2.0
+Author: geoffbrucepayne
+Author-email: geoff.bruce-payne@inmarsat.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: pyserial (>=3.5,<4.0)
