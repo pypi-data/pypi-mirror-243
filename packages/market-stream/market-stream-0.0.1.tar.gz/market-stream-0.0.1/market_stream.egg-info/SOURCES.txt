@@ -1,0 +1,15 @@
+README.md
+setup.py
+client/__init__.py
+client/greeter_client.py
+client/market_stream_client.py
+generated/__init__.py
+generated/greeter_pb2.py
+generated/greeter_pb2_grpc.py
+generated/market_stream_pb2.py
+generated/market_stream_pb2_grpc.py
+market_stream.egg-info/PKG-INFO
+market_stream.egg-info/SOURCES.txt
+market_stream.egg-info/dependency_links.txt
+market_stream.egg-info/requires.txt
+market_stream.egg-info/top_level.txt
