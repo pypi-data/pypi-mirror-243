@@ -1,0 +1,16 @@
+cpilatam/__init__.py,sha256=i8gWqAOWlM4P8c5j5nXceFPnwUm0e4gZa3np-nn4pM0,1224
+cpilatam/data/colombia.csv,sha256=Ot-C8pQYDsaCz9JWnaLCXGHKdIx04uXUjMF50i3RljQ,7053
+cpilatam/data/peru.csv,sha256=uOga4YB4h-CunavUgTMNLhEOhsv0stvr44zZULJCUe4,11038
+cpilatam/exc.py,sha256=i-NPkvXBQFRzN4GPmaQ2ap3uJSuODSRvu0gyVFKswX0,1684
+cpilatam/logger.py,sha256=4KExHTiA5ONaIsqVJOgDD6FiY_teZlxDrcge1-6P4eA,4495
+cpilatam/names.py,sha256=XYpycjp6eDF3-wc-ZzQGPjhGw5GM-aAGv9zQOb4wsmw,333
+cpilatam/parsers/__init__.py,sha256=u2DU4wdeDkirU_0pBBDwUKJcs-a5BPR2Q6POIOSuiEg,158
+cpilatam/parsers/base.py,sha256=yawRmBVOf1h1aUt_KW7rBn2WV6l6VqveEX4B1d6yBdY,2739
+cpilatam/parsers/chile.py,sha256=2BW-2A1LVByvHjcy-4rWy9DwE21c82SCZOgXf6HPWqw,181
+cpilatam/parsers/colombia.py,sha256=tdZZZWLCOMlha8IOpGNa7ZF4qf8hIq05sgMlg6Sl6N8,4126
+cpilatam/parsers/peru.py,sha256=Sdsa9wDHs7WU4Iw1MmbaliHKMgZltOkhxrqFxGdeK5U,6375
+cpilatam/schemas.py,sha256=GVTSwv5vFv5e15a_efszSKT_psqFH7Ipn7NwHofT3Lw,821
+cpilatam/settings.py,sha256=MwxIQlOQu5famHK-Kke6fdf12yUuA-7voOnIOg9rpAI,2317
+cpilatam-2023.11.1.dist-info/METADATA,sha256=vxFheUusn9M7FwTnof6tCx9KRfEZGSl7eqD5-k7IqEE,820
+cpilatam-2023.11.1.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+cpilatam-2023.11.1.dist-info/RECORD,,
