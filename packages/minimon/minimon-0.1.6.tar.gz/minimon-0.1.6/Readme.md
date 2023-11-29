@@ -1,0 +1,226 @@
+# Minimon
+
+**minimon** is a 'minimal' (as in minimal music) IT monitoring tool for the command line.
+
+Compared to lots of other IT monitoring solutions it has the following main attributes:
+
+- It follows a 'configuration as application' approach, i.e. instead of configuring your monitoring
+  via UI you will 'write' your whole executable application yourself!
+  (see example below for clarification)
+- It's ultra-flexible by being more an 'automation with functional pipes' framework letting
+  you anything do anything you can automate rather than a configurable application
+- It's _minimal_ also in terms of a hobby project. Don't expect something which competes with
+  Checkmk, Prometheus, etc.
+- Since instead of configuring some black box application you have to implement / modify the main
+  executable using plain Python, as a user you might get into Python programming rather quickly.
+
+
+There are some technical properties and maxims you might be interested in as well:
+
+- `textual` / `rich` based
+- Heavy use of asynchronous programming
+- Functional approaches wherever possible
+- `asyncssh` instead of `paramiko`
+
+
+## Installation
+
+While you can just clone and use minimon, the intended way to use it is to install it from PyPI.org
+or run it from inside a virtual environment.
+
+Install it locally using `pip`:
+
+```sh
+[<PYTHON> -m] pip[3] install [--user] [--upgrade] minimon
+```
+
+Currently you need at least Python **v3.10+** installed in order to run **minimon**. In case your
+system provides older versions only, consider using `pyenv` to install any other version next
+to your system-Python.
+
+
+## Example
+
+The following snippet is taken from a recent **minimon** installation folder, e.g.
+`~/.local/lib/python3.11/site-packages/minimon/sites/mvm.py` and shows a poorly minimalistic but
+working example of a fully functional **minimon** site:
+
+```python
+from minimon import *
+from minimon.plugins import df, ps
+
+with Monitor("MVM"):
+
+    @view(("host", [Host("localhost")]))
+    async def local_resources(host: Host) -> AInsights:
+        """This async generator will be invoked by the above `view` and run continuously to
+        gather and yield monitoring data"""
+        async for insight in Bundler(
+            ps=ps.generate(host) | ps.parse() | ps.check(),
+            df=df.generate(host) | df.parse() | df.check(),
+        ):
+            yield insight
+```
+
+Create/copy your own file to test and modify:
+
+```sh
+mkdir minimon-sites                                                                                                 130 ↵
+cp ~/.local/lib/python3.11/site-packages/minimon/sites/mvm.py minimon-sites
+chmod +x minimon-sites/mvm.py
+```
+
+Start it by executing
+```
+minimon-sites/mvm.py
+```
+
+
+## Why (do I do this?)
+
+- async
+- functional
+- testability
+- bullet proof
+
+
+## Todo
+
+### Core / enabler:
+
+- [x] Provide a way to use data propagating through functions by different consumers
+- [x] Provide monadic (async) function chaining
+- [x] Support for endless processes ("dmesg -w")
+- [x] View: arbitrary number of parameters (0, 1, 2 for now)
+- [ ] Mature hierarchic error handling/propagation and restart management
+- [ ] Host-config: parametrize check-pipe
+- [ ] Capture and persist metrics
+- [ ] Recognize (dis)appearance of found entities (df-mountpoints, network adapters, etc)
+- [ ] Support for remote APIs
+- [ ] Support for multi line scripts
+- [ ] Support for optional `su -c ..`
+- [ ] Recognize check state transitions -> notifications
+- [ ] Provide ways to interact
+- [ ] Improve logging: to file, log threads, log task context
+- [ ] Let core run in background
+- [ ] Check windows support
+- [ ] research: send mails
+
+
+### Visuals
+
+- [ ] visualize metrics
+
+
+### Reactions (automatic actions)
+
+- [ ] send build break notifications
+- [ ] run scripts open/close branches
+
+
+### Actions (user interaction)
+
+- [ ] rebuild failed jobs
+- [ ] kill/delete containers/volumes/tags/images
+- [ ] open/close branches
+- [ ] cleanup workspace(s)
+
+
+### SSH-Plugins:
+
+- [ ] disk space
+- [ ] ram
+- [ ] cpu usage over time
+- [ ] network usage per process
+- [ ] android: check battery
+- [ ] docker: number containers/images/volumes/networks/build cache
+- [ ] wrong permissions/ownerships `/home/jenkins -user root`
+- [ ] unused directories
+
+
+### API-Plugins:
+
+- [ ] docker: per container: cpu / ram / runtime
+- jenkins-jobs
+    - [ ] job tree
+    - [ ] warning about certain job results (sheriffing)
+    - [ ] branch sheriffing state
+-  [ ]job <=> containers association
+-  [ ]nexus artifacts
+
+
+## Development & Contribution
+
+### Setup
+
+For active development you need to have `poetry` and `pre-commit` installed
+
+```sh
+python3 -m pip install --upgrade --user poetry pre-commit
+git clone git@projects.om-office.de:frans/minimon.git
+cd minimon
+pre-commit install
+# if you need a specific version of Python inside your dev environment
+poetry env use ~/.pyenv/versions/3.10.4/bin/python3
+poetry install
+```
+
+
+### Workflow
+
+* Create/test/commit changes and check commits via `pre-commit`
+* after work is done locally:
+  - adapt version in `pyproject.toml`
+  - build and check a package
+```sh
+poetry build && \
+twine check dist/* &&
+python3 -m pip uninstall -y minimon && \
+python3 -m pip install --user dist/minimon-$(grep -E "^version.?=" pyproject.toml | cut -d '"' -f 2)-py3-none-any.whl
+```
+  - check installed package
+  - publish the new package `poetry publish --build`
+  - commit new version && push
+
+
+## License
+
+For all code contained in this repository the rules of GPLv3 apply unless
+otherwise noted. That means that you can do what you want with the source
+code as long as you make the files with their original copyright notice
+and all modifications available.
+
+See [GNU / GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html) for details.
+
+This project is not free for machine learning. If you're using any content
+of this repository to train any sort of machine learned model (e.g. LLMs),
+you agree to make the whole model trained with this repository and all data
+needed to train (i.e. reproduce) the model publicly and freely available
+(i.e. free of charge and with no obligation to register to any service) and
+make sure to inform the author (me, frans.fuerst@protonmail.com) via email
+how to get and use that model and any sources needed to train it.
+
+
+## Good to know
+
+### Gather some information
+
+- `free -b`
+- `df`
+- `dmesg -w`
+- `logcat`
+- `docker image list -aq | uniq | wc`
+- `docker container list -aq | wq`
+- https://www.baeldung.com/linux/get-cpu-usage
+- `vmstat -n 5`
+- `ss --numeric --resolve --processes --info`
+
+### `sshd` for Android
+
+- SimpleSSH
+- `host <IP>` -> hostname
+- `scp -P2222 ~/.ssh/id_ed25519.pub <HOST>:authorized_keys`
+- `ssh -p2222 <HOST> "su -c 'dmesg -w'"`
+- `ssh -p2222 <HOST> "su -c 'df'"`
+- `ssh -p2222 <HOST> "su -c 'top'"`
+- `ssh -p2222 <HOST> "su -c 'dumpsys battery'"`
