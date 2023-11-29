@@ -1,0 +1,3 @@
+[console_scripts]
+copyaid = copyaid.cli:main
+diffadapt = copyaid.diff:cli
