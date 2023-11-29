@@ -1,0 +1,71 @@
+[tool.poetry]
+authors = ["archds <dsalekseev11@gmail.com>"]
+description = "Functional programming tools for Python"
+name = "pyferret"
+readme = "README.md"
+version = "0.2.1"
+
+packages = [
+  {include = "pyferret", from = "src"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.3.0"
+pyright = "^1.1.316"
+ruff = "^0.0.277"
+mypy = "^1.4.1"
+rich = "^13.4.2"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.0"
+pytest-mock = "^3.11.1"
+pytest-cov = "^4.1.0"
+coverage-badge = "^1.1.0"
+
+[build-system]
+build-backend = "poetry.core.masonry.api"
+requires = ["poetry-core"]
+
+[tool.pytest.ini_options]
+addopts = [
+  "--tb=short",
+]
+pythonpath = [
+  "src",
+]
+testpaths = [
+  "tests",
+]
+
+[tool.ruff]
+select = [
+  "E",
+  "F",
+  "T20",
+  "W",
+  "N",
+  "YTT",
+  "DJ",
+  "ISC",
+  "ICN",
+  "RSE",
+  "PTH",
+  "C4",
+  "ISC",
+  "ICN",
+  "PIE",
+  "SIM",
+  "TCH",
+  "TD",
+  "FIX",
+  "PD",
+  "PLE",
+  "UP",
+]
+
+ignore = [
+  "UP035",
+]
