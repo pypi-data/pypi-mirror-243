@@ -1,0 +1,20 @@
+click
+pygit2
+backoff
+fedora-messaging>=3.4.1
+requests
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[dev]
+pytest
+pytest-cov
+black
+flake8
+coverage[toml]
+diff-cover
+sphinx
+myst-parser
+liccheck
+pre-commit

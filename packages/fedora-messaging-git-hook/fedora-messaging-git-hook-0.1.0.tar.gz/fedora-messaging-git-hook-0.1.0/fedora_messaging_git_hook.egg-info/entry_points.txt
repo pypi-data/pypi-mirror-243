@@ -1,0 +1,2 @@
+[console_scripts]
+fedora-messaging-git-hook = fedora_messaging_git_hook.cli:main

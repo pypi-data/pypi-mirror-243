@@ -1,0 +1,13 @@
+amqp_url = "amqps://username:password@rabbitmq.example.com/vhost"
+
+[tls]
+ca_cert = "/etc/pki/rabbitmq/cacert.pem"
+keyfile = "/etc/pki/rabbitmq/key.pem"
+certfile = "/etc/pki/rabbitmq/cert.pem"
+
+[client_properties]
+app = "git-hooks"
+
+[consumer_config]
+excluded_paths = []
+with_namespace = false
