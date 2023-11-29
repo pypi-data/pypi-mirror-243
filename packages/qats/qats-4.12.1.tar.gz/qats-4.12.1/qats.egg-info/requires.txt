@@ -1,0 +1,12 @@
+numpy<2,>=1
+openpyxl<4,>=3
+scipy<2,>=1
+matplotlib<4,>=3
+npTDMS<2,>=1
+h5py<4,>=2.7
+QtPy<2,>=1
+pandas<2,>=1
+pymatreader<1,>=0.0.20
+
+[:platform_system == "Windows"]
+pywin32
