@@ -1,0 +1,13 @@
+bird_cloud_gnn/__init__.py,sha256=b-c8A6DwzrVaZEgFpxnKhG_AFU76EkX6NKNdujsYM4I,219
+bird_cloud_gnn/callback.py,sha256=SZPzPpvTH6Lhldd3vgHkoz05MfRZnv29vhAy3M0-Ndw,2973
+bird_cloud_gnn/cross_validation.py,sha256=2_-UFlKQowj9181iHqpGqDeGqo0JufxYM4aarKr_5VQ,4562
+bird_cloud_gnn/early_stopper.py,sha256=z3G73xSqf0nMyp6pBXeAS04DLgqEQCULE7eVFpnzOGs,3395
+bird_cloud_gnn/fake.py,sha256=-dx0sMR1mcxgaZ76JLVOVOx6UTad217AA29DjDJcAm4,5184
+bird_cloud_gnn/gnn_model.py,sha256=m9nAPzAIE6lZOhFHApMH8Prtap3xC60WHQJVSoHy174,11500
+bird_cloud_gnn/radar_dataset.py,sha256=dEDMK8fUH_hMQPWdRZlDLxf3VDx8fPzT4U0M7_OC6GM,15229
+bird_cloud_gnn-0.1.0.dist-info/LICENSE,sha256=eWe1k4iZ92o125vzgjKfKo0yiFkI-7yi49vSBpzCJYQ,11357
+bird_cloud_gnn-0.1.0.dist-info/METADATA,sha256=YDcQ9K8lA3WNo5LJuMd3CCoGvZHAx48wFTF2BfINCCs,6042
+bird_cloud_gnn-0.1.0.dist-info/NOTICE,sha256=AT6SZ0ONwgZuTxDmx4AUF6iGwyz6j3qpAxFwSGLshlI,89
+bird_cloud_gnn-0.1.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+bird_cloud_gnn-0.1.0.dist-info/top_level.txt,sha256=pg31uaXkUmbCm8kUi-xf2Fw9r4QynmBI8rdYYfJpmiM,15
+bird_cloud_gnn-0.1.0.dist-info/RECORD,,
