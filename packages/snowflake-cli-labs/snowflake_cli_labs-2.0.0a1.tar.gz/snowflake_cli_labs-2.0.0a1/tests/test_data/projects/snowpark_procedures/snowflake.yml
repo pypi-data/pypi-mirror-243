@@ -1,0 +1,16 @@
+definition_version: 1
+snowpark:
+  project_name: "my_snowpark_project"
+  stage_name: "dev_deployment"
+  src: "app/"
+  procedures:
+    - name: procedureName
+      handler: "hello"
+      signature:
+        - name: "name"
+          type: "string"
+      returns: string
+    - name: test
+      handler: "test"
+      signature: ""
+      returns: string
