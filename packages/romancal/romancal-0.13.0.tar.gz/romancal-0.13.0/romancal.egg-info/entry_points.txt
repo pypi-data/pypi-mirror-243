@@ -1,0 +1,13 @@
+[console_scripts]
+asn_from_list = romancal.associations.asn_from_list:Main
+okify_regtests = romancal.scripts.okify_regtests:main
+roman_static_preview = romancal.scripts.static_preview:command
+schema_editor = romancal.scripts.schema_editor:main
+schemadoc = romancal.scripts.schemadoc:main
+verify_install_requires = romancal.scripts.verify_install_requires:main
+
+[pytest11]
+webbpsf = pytest_plugin.webbpsf_plugin
+
+[stpipe.steps]
+romancal = romancal.stpipe.integration:get_steps
