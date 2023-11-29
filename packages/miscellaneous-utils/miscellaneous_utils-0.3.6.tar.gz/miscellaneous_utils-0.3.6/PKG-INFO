@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: miscellaneous-utils
+Version: 0.3.6
+Summary: Random collection of utilities that I've found useful.
+Home-page: https://github.com/nicholas-mischke/miscellaneous-utils
+Author: Nicholas Mischke
+Author-email: nmischkework@proton.me
+Requires-Python: >=3.9.0,<3.13
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: dateparser (>=1.2.0,<2.0.0)
+Requires-Dist: numpy (>=1.26.1,<2.0.0)
+Requires-Dist: opencv-python (>=4.8.1.78,<5.0.0.0)
+Requires-Dist: pendulum (>=2.1.2,<3.0.0)
+Requires-Dist: pillow (>=10.0.1,<11.0.0)
+Requires-Dist: screeninfo (>=0.8.1,<0.9.0)
+Requires-Dist: typer (>=0.9.0,<0.10.0)
+Project-URL: Repository, https://github.com/nicholas-mischke/miscellaneous-utils
+Description-Content-Type: text/markdown
+
+# Miscellaneous Utils
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+[![Python Versions](https://img.shields.io/badge/Python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10%20%7C%203.11-blue)](https://www.python.org/)
+
+
+## Installation
+To install miscellaneous utils, simply use pip:
+
+```bash
+$ pip install miscellaneous-utils
+```
+
+## Usage
+```python
+import misc_utils as utils
+```
+
+## License
+This project is licensed under the MIT License. See the LICENSE file for more details.
+
