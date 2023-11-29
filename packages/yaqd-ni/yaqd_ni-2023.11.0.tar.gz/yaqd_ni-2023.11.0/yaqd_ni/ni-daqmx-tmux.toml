@@ -1,0 +1,153 @@
+protocol = "ni-daqmx-tmux"
+doc = "Triggered NI-daqmx with multiplex."
+traits = ["is-sensor", "has-measure-trigger", "is-daemon"]
+hardware = ["ni:pci-6251", "ni:pci-6361"]
+
+[links]
+source = "https://github.com/yaq-project/yaqd-ni"
+bugtracker = "https://github.com/yaq-project/yaqd-ni/issues"
+manufacturer = ""
+example-configs = "https://github.com/yaq-project/yaqd-ni/tree/main/example-yaq-configs/ni-daqmx-tmux"
+
+[installation]
+PyPI = "https://pypi.org/project/yaqd-ni"
+
+[[types]]
+type = "enum"
+name = "processing_method"
+symbols = ["average", "sum", "min", "max"]
+default = "average"
+
+[[types]]
+name = "voltage_range"
+type = "array"
+items = "float"
+
+[[types]]
+type = "record"
+name = "channel"
+fields = [{"name"="name", "type"="string"},
+	{
+		"name"="range",
+		"type" = "voltage_range",
+		"doc"="[min_value, max_value], in volts. Range values are restricted to those the available to the device.",
+		"default" = [-10.0, 10.0]
+	},
+	{"name"="enabled", "type"="boolean", "default"=true},
+	{"name"="invert", "type"="boolean", "default"=false},
+	{"name"="signal_start", "type"="int"},
+	{"name"="signal_stop", "type"="int"},
+	{"name"="signal_presample", "type"="int", default=0},
+	{"name"="signal_method", "type"="processing_method"},
+	{"name"="use_baseline", "type"="boolean", "default"=false},
+	{"name"="baseline_start", "type"=["null", "int"], "default"="__null__"},
+	{"name"="baseline_stop", "type"=["null", "int"], "default"="__null__"},
+	{"name"="baseline_presample", "type"="int", default=0},
+	{"name"="baseline_method", "type"="processing_method"}
+]
+
+[[types]]
+type = "record"
+name = "chopper"
+fields = [{"name"="name", "type"="string"},
+          {"name"="enabled", "type"="boolean", "default"=true},
+	  {"name"="invert", "type"="boolean", "default"=false},
+	  {"name"="index", "type"="int"}]
+
+[config]
+
+[config.device_name]
+type = "string"
+doc = "DAQmx name of device to address."
+
+[config.trigger_source]
+type = "string"
+default = "ai0"
+
+[config.nsamples]
+type = "int"
+default = 900
+
+[config.timeout]
+type = "float"
+default = 10.0
+doc = "Timeout in seconds between each trigger edge."
+
+[config.rest_channel]
+type = "string"
+default = "ai0"
+doc = "Channel to occupy when not making an explicitly specified measurement."
+
+[config.channels]
+type = "map"
+values = "channel"
+default = {}
+
+[config.choppers]
+type = "map"
+values = "chopper"
+default = {}
+
+[config.shots_processing_path]
+type = ["null", "string"]
+doc = "Path to script for shots processing."
+default = "__null__"
+
+[state]
+
+[state.nshots]
+type = "int"
+default = 100
+
+[state.ms_wait]
+type = "int"
+default = 0
+
+[messages]
+
+[messages.get_allowed_voltage_ranges]
+response = {"type"="array", "items"="string"}
+
+[messages.get_measured_samples]
+response = "ndarray"
+doc = "Get an array of shape (sample, shot)."
+
+[messages.get_measured_shots]
+response = "ndarray"
+
+[messages.get_nshots]
+doc = "Get the currently planned number of shots."
+response = "int"
+
+[messages.set_nshots]
+doc = "Set the number of shots to acquire."
+request = [{"name"="nshots", "type"="int"}]
+
+[messages.get_ms_wait]
+doc = "Get the number of milliseconds to wait before acquiring."
+response = "int"
+
+[messages.set_ms_wait]
+doc = "Set the number of milliseconds to wait before acquiring."
+request = [{"name"="ms_wait", "type"="int"}]
+
+[messages.get_sample_correspondances]
+doc = "Returns an array of integers of length nsamples. Zero indicates rest sample. Postive indicates channel. Negative indicates chopper."
+response = "ndarray"
+
+[properties]
+
+[properties.nshots]
+getter = "get_nshots"
+setter = "set_nshots"
+type = "int"
+control_kind = "hinted"
+record_kind = "metadata"
+
+[properties.ms_wait]
+getter = "get_ms_wait"
+setter = "set_ms_wait"
+type = "int"
+control_kind = "normal"
+record_kind = "metadata"
+
