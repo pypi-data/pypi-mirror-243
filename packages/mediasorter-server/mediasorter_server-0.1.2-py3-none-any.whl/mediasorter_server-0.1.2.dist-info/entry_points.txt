@@ -1,0 +1,3 @@
+[console_scripts]
+mediasorter-server=api.app:main
+
