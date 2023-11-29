@@ -1,0 +1,65 @@
+Metadata-Version: 2.1
+Name: quantum-linear-systems
+Version: 0.1.0
+Summary: Quantum algorithms to solve linear systems of equations.
+Home-page: https://github.com/SURFQuantum/qc-quantum-linear-systems
+License: Apache-2.0
+Keywords: science,quantum
+Author: dmark04
+Author-email: dmark04@web.de
+Requires-Python: >=3.9,<3.12
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Requires-Dist: classiq (>=0.32.0,<0.33.0)
+Requires-Dist: matplotlib (>=3.8.2,<4.0.0)
+Requires-Dist: numpy (>=1.23.0)
+Requires-Dist: qiskit (>=0.43.0,<0.45.0)
+Requires-Dist: qiskit-algorithms (>=0.2.1,<0.3.0)
+Requires-Dist: quantum-linear-solvers (>=0.1.1,<0.2.0)
+Requires-Dist: vqls-prototype (>=0.2.0,<0.3.0)
+Project-URL: Repository, https://github.com/SURFQuantum/qc-quantum-linear-systems
+Description-Content-Type: text/markdown
+
+[![PyPI Version](https://img.shields.io/pypi/v/quantum-linear-systems.svg)](https://pypi.org/project/quantum-linear-systems)
+![Python Version](https://img.shields.io/badge/Python-3.9%20%E2%86%92%203.12-blue)
+![CI/CD](https://github.com/SURFQuantum/qc-quantum-linear-systems/actions/workflows/actions.yml/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/SURFQuantum/qc-quantum-linear-systems/badge.svg?branch=main)](https://coveralls.io/github/SURFQuantum/qc-quantum-linear-systems?branch=main)
+
+# quantum-linear-systems
+Quantum algorithms to solve linear systems of equations.
+
+## Installation
+Dependencies are managed with [poetry](https://python-poetry.org/).
+If poetry is not already installed on your system/evironment, follow the [installation instructions](https://python-poetry.org/docs/#installation).
+
+Then clone the project
+```
+git clone https://github.com/SURFQuantum/qc-quantum-linear-systems.git
+```
+Switch to the project directory with ```cd qc-quantum-linear-systems``` and then simply:
+```
+poetry install
+```
+to install all dependencies.
+## Additional Requirements
+### Classiq SDK
+This project makes use of the [classiq](https://www.classiq.io/) SDK.
+To use the `classiq` SKD the user must perform authentication.
+For more info check out the [classiq docs](https://docs.classiq.io/latest/) page.
+
+Authentication is as simple as:
+```
+import classiq
+
+classiq.authenticate()
+```
+This will open a confirmation window in your default browser.
+After confirming the user code the classiq login screen appears.
+Completing the login completes the authentication process.
+

@@ -1,0 +1,4 @@
+[console_scripts]
+show-cov=tests.run_tests:open_coverage_report
+tests=tests.run_tests:main
+
