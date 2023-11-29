@@ -1,0 +1,10 @@
+README.md
+setup.py
+chinoscriba.egg-info/PKG-INFO
+chinoscriba.egg-info/SOURCES.txt
+chinoscriba.egg-info/dependency_links.txt
+chinoscriba.egg-info/requires.txt
+chinoscriba.egg-info/top_level.txt
+test/__init__.py
+test/test_default_api.py
+test/utils.py
