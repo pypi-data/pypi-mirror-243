@@ -1,0 +1,17 @@
+boto3
+paramiko>=2.7.1
+Jinja2>=2.7.2
+pycdlib
+requests<3.0.0,>=2.7.0
+xmltodict
+psutil
+packaging<=21.3,>=17.1
+kubernetes==v26.1.0
+google-auth==2.15.0
+msrestazure==0.6.4
+azure-identity
+azure-mgmt-containerservice==17.0.0
+cloudify-common>=7.0.2
+pyyaml>=6.0.1
+GitPython>=3.1.40
+gitdb>=4.0.11
