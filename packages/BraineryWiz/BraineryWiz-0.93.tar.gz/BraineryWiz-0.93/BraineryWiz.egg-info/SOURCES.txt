@@ -1,0 +1,17 @@
+README.md
+setup.py
+BraineryWiz/FEMWiz.pyd
+BraineryWiz/PlotAnimation.pyd
+BraineryWiz/PlotDefo.pyd
+BraineryWiz/PlotModeShape.pyd
+BraineryWiz/PlotModel.pyd
+BraineryWiz/RealTime.pyd
+BraineryWiz/_DFunctions.pyd
+BraineryWiz/_PlotData.pyd
+BraineryWiz/__init__.py
+BraineryWiz/version.py
+BraineryWiz.egg-info/PKG-INFO
+BraineryWiz.egg-info/SOURCES.txt
+BraineryWiz.egg-info/dependency_links.txt
+BraineryWiz.egg-info/requires.txt
+BraineryWiz.egg-info/top_level.txt
