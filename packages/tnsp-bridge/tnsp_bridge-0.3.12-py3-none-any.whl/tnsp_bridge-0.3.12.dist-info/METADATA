@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: tnsp-bridge
+Version: 0.3.12
+Summary: bridge from TNSP to TAT
+Home-page: https://github.com/USTC-TNS/TAT/tree/TAT/tnsp_bridge
+Author: Hao Zhang
+Author-email: zh970205@mail.ustc.edu.cn
+License: GPLv3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: PyTAT ==0.3.12
+
+
+
+# tnsp-bridge
+
+TNSP-Bridge is a tool used to convert tensor data from [TNSP](https://www.sciencedirect.com/science/article/pii/S001046551830078X) format to TAT format.
+
+The formats of TNSP vary between versions, and this subproject specifically works for TNSP 4.0.2.
+
+As this subproject is rarely used, it is not currently documented.
+
