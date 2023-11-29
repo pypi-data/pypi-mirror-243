@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: depp-test
+Version: 0.3.3
+Summary: DEPP: Deep Learning Enables Extending Species Trees using Single Genes
+Home-page: https://github.com/yueyujiang/DEPP
+Author: Yueyu Jiang
+Author-email: y5jiang@ucsd.edu
+Description-Content-Type: text/plain
+License-File: LICENSE
+Requires-Dist: numpy ==1.22.3
+Requires-Dist: treeswift ==1.1.19
+Requires-Dist: torch ==1.11.0
+Requires-Dist: pandas ==1.4.2
+Requires-Dist: pytorch-lightning ==1.5.4
+Requires-Dist: biopython ==1.79
+Requires-Dist: omegaconf ==2.1.0
+Requires-Dist: apples
+Requires-Dist: scipy ==1.7.3
+Requires-Dist: dendropy ==4.5.2
+
+DEPP is a deep-learning-based tool for phylogenetic placement.Output of the tool is the distance matrix between the query sequences and the backbone sequences
