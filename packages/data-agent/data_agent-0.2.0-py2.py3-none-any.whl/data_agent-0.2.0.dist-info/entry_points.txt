@@ -1,0 +1,6 @@
+[console_scripts]
+dagent = data_agent.cli_main:run
+dagentsvc = data_agent.broker_agent_main:run_event_loop
+
+[pyinstaller40]
+hook-dirs = data_agent.win32.hooks:get_hook_dirs
