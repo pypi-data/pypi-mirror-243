@@ -1,0 +1,15 @@
+AUTHORS.rst
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+versioneer.py
+streetaddress/__init__.py
+streetaddress/_version.py
+streetaddress/addressconf.py
+streetaddress.egg-info/PKG-INFO
+streetaddress.egg-info/SOURCES.txt
+streetaddress.egg-info/dependency_links.txt
+streetaddress.egg-info/requires.txt
+streetaddress.egg-info/top_level.txt

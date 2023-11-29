@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools", "versioneer"]
+
+[tool.black]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | env
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.coverage.run]
+branch = true
+relative_files = true
+source = ["streetaddress"]
+
+[tool.coverage.report]
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "if self.debug:",
+    "if debug:",
+    "if DEBUG:",
+
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if False:",
+    "if __name__ == .__main__.:",
+]
+
+[tool.bandit]
+exclude_dirs = [
+    "tests",
+    "conftest.py",
+    "versioneer.py",
+    "streetaddress/_version.py"
+]
