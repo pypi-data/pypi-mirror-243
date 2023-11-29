@@ -1,0 +1,3 @@
+[console_scripts]
+iobm-generate = iobm.cgan_generate:run_cGAN_generating
+iobm-train = iobm.cgan_train:run_cGAN_training
