@@ -1,0 +1,3 @@
+[console_scripts]
+hours=hours.cli:app
+
