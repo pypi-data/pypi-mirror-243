@@ -1,0 +1,7 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+BdbQuit in file /home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/../utils/Snakefile, line 29.
+  File "/home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/Snakefile", line 7, in <module>
+  File "/home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/../utils/Snakefile", line 29, in <module>
+  File "/home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/../utils/Snakefile", line 29, in <module>
+  File "/home/rgutzen/anaconda3/envs/cobrawap_ms/lib/python3.9/bdb.py", line 88, in trace_dispatch
+  File "/home/rgutzen/anaconda3/envs/cobrawap_ms/lib/python3.9/bdb.py", line 113, in dispatch_line

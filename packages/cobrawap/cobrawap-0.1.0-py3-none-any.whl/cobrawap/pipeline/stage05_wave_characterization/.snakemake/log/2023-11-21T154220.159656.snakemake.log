@@ -1,0 +1,5 @@
+Config file configs/config_template.yaml is extended by additional config specified via the command line.
+NameError in file /home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/../utils/Snakefile, line 4:
+name 'inspect' is not defined
+  File "/home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/Snakefile", line 7, in <module>
+  File "/home/rgutzen/Projects/cobrawap/cobrawap/pipeline/stage05_wave_characterization/../utils/Snakefile", line 4, in <module>
