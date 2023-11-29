@@ -1,0 +1,2 @@
+[console_scripts]
+casm-compose = casm.cmds.compose:main
