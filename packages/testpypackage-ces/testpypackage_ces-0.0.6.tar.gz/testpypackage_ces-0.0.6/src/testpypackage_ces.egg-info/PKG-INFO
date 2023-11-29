@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: testpypackage-ces
+Version: 0.0.6
+Summary: Test pyproject
+Author-email: Caxton Emerald S <ces.softwaresolutions@gmail.com>, Vengattaraman T <vengattaraman.t@pondiuni.ac.in>
+Maintainer-email: Caxton Emerald S <ces.softwaresolutions@gmail.com>
+License: The Cat Standard License v1.0
+Project-URL: Homepage, https://github.com/CaxtonEmerald-S/testpypackage
+Project-URL: Bug Reports, https://github.com/CaxtonEmerald-S/testpypackage/issues
+Project-URL: Source, https://github.com/CaxtonEmerald-S/testpypackage
+Keywords: neural networks,ANN,analysis,coordinates,visualise,functional transformation
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Information Technology
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Python: >=3.10.12
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy>=1.23.5
+Requires-Dist: keras>=2.14.0
+
+# testpypackage
+Testing python package publishing using GitHub workflow for publishing package
