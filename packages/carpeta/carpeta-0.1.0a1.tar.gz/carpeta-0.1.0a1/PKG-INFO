@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: carpeta
+Version: 0.1.0a1
+Summary: A library to trace image changes in its processing
+Home-page: https://github.com/pablerass/carpeta
+Author: Pablo Muñoz
+Author-email: pablerass@gmail.com
+License: LGPLv3
+Keywords: logging tracing image processing
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Multimedia :: Graphics :: Graphics Conversion
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Debuggers
+Classifier: Typing :: Typed
+Requires-Python: >=3.10
+License-File: LICENSE.txt
+Requires-Dist: opencv-python==4.*
+Requires-Dist: pillow==10.*
+Requires-Dist: pyyaml==6.*
+Requires-Dist: nbformat==5.*
+
+# Carpeta
+
+A library to visualize changes in images for troubleshooting purposes.

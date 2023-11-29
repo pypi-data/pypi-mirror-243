@@ -1,0 +1,17 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+requirements.txt
+setup.cfg
+setup.py
+carpeta/__init__.py
+carpeta/logging.py
+carpeta/output.py
+carpeta/trace.py
+carpeta/traceable.py
+carpeta/tracer.py
+carpeta.egg-info/PKG-INFO
+carpeta.egg-info/SOURCES.txt
+carpeta.egg-info/dependency_links.txt
+carpeta.egg-info/requires.txt
+carpeta.egg-info/top_level.txt
