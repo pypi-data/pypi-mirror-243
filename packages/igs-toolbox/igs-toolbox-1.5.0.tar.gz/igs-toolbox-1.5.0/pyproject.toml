@@ -1,0 +1,174 @@
+[project]
+name = "igs-toolbox"
+description = "A toolbox to check whether files follow a predefined schema."
+readme = { file = "README.md", content-type = "text/markdown" }
+authors = [{ name = "IGS Developers", email = "IGS-Developers@rki.de" }]
+license = { file = "LICENSE" }
+requires-python = ">= 3.8"
+dynamic = ["version"]
+dependencies = [
+    "jsonschema>=4.16.0",
+    "pandas>=2.0.0",
+    "pdf2image>=1.16.3",
+    "opencv-python>=4.8.0.7",
+    "typer>=0.9.0",
+    "openpyxl>=3.1.2",
+    "typing-extensions ; python_version < '3.10'",
+    "backports.zoneinfo ; python_version < '3.9'",
+]
+
+[project.urls]
+"Homepage" = "https://www.rki.de/DE/Content/Infekt/IGS/IGS_node.html"
+
+[project.optional-dependencies]
+dev = [
+    "black",      # formatting
+    "mypy",       # static type checking
+    "ruff",       # linting
+    "pytest",     # testing
+    "pytest-cov", # code coverage
+]
+
+[project.scripts]
+jsonChecker = "igs_toolbox.formatChecker.json_checker:main"
+readQR = "igs_toolbox.extractor.read_qr:main"
+convertSeqMetadata = "igs_toolbox.converters.convert_seq_metadata:main"
+
+[build-system]
+requires = ["setuptools>=0.61.0", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.package-data]
+"igs_toolbox" = ["py.typed"]
+"igs_toolbox.formatChecker.res.species.json" = ["*.json"]
+"igs_toolbox.formatChecker.res.species.txt" = ["*.txt"]
+"igs_toolbox.extractor.res" = ["*.pdf"]
+
+[tool.setuptools_scm]
+# empty section is enough to get dynamic version depending on latest git tag
+
+[tool.black]
+line-length = 120
+
+[tool.coverage.run]
+branch = true
+
+[tool.coverage.report]
+exclude_lines = [
+    'if __name__ == "__main__":',
+    "# pragma: no cover",
+    "@abstractmethod",
+    "if sys.version_info.*:",
+]
+omit = ["__main__.py"]
+
+[tool.mypy]
+strict = true
+enable_error_code = ["possibly-undefined"]
+python_version = "3.8"
+exclude = [
+    "build/", # output of package build process
+    "venv/",
+    ".venv/",
+]
+
+[[tool.mypy.overrides]]
+# don't require type annotations of test functions
+module = "tests.*"
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+select = [
+    "F",   # Pyflakes
+    "E",   # pycodestyle Error
+    "W",   # pycodestyle Warning
+    "C90", # mccabe
+    "I",   # isort
+    "N",   # pep8-naming
+    "D",   # pydocstyle
+    "UP",  # pyupgrade
+    "YTT", # flake8-2020
+    "ANN", # flake8-annotations
+    "S",   # flake8-bandit
+    "BLE", # flake8-blind-except
+    "FBT", # flake8-boolean-trap
+    "B",   # flake8-bugbear
+    "A",   # flake8-builtins
+    "COM", # flake8-commas
+    "C4",  # flake8-comprehensions
+    "DTZ", # flake8-datetimez
+    "T10", # flake8-debugger
+    "DJ",  # flake8-django
+    "EM",  # flake8-errmsg
+    "EXE", # flake8-executable
+    "ISC", # flake8-implicit-str-concat
+    "ICN", # flake8-import-conventions
+    "G",   # flake8-logging-format
+    "INP", # flake8-no-pep420
+    "PIE", # flake8-pie
+    "T20", # flake8-print
+    "PYI", # flake8-pyi
+    "PT",  # flake8-pytest-style
+    "Q",   # flake8-quotes
+    "RSE", # flake8-raise
+    "RET", # flake8-return
+    "SLF", # flake8-self
+    "SIM", # flake8-simplify
+    "TID", # flake8-tidy-imports
+    "TCH", # flake8-type-checking
+    "INT", # flake8-gettext
+    "ARG", # flake8-unused-arguments
+    "PTH", # flake8-use-pathlib
+    "ERA", # eradicate
+    "PD",  # pandas-vet
+    "PGH", # pygrep-hooks
+    "PLC", # Pylint Convention
+    "PLE", # Pylint Error
+    "PLR", # Pylint Refactor
+    "PLW", # Pylint Warning
+    "TRY", # tryceratops
+    "NPY", # NumPy-specific rules
+    "RUF", # Ruff-specific rules
+]
+ignore = [
+    # incompatible rules (always ignore)
+    "D101", # require docstring in class (incompatible with D107: put class docstrings in __init__ method)
+    "D203", # require blank line before class docstring (incompatible with D211: prohibit blank line before docstring)
+    "D415", # require first docstring lines to end with period, question mark or exclamation point (incompatible with D400: require period)
+    # pydocstyle: don't require any docstrings
+    "D100", # require docstring in public module (every .py code file)
+    "D102", # require docstring in methods
+    "D103", # require docstring in functions
+    "D104", # require docstring in packages (every __init__.py file)
+    "D105", # require docstrings in magic methods
+    "D106", # require docstrings in nested classes
+    "D107", # require docstrings in __init__ methods
+    # exception messages
+    "TRY003", # require exception messages to be encapsulated in custom exception types
+    "EM101",  # prohibit string literals in exception messages
+    "EM102",  # prohibit f-strings in exception messages
+    # overly strict
+    "ANN101", # require explicit type annotation for `self` arguments
+    "D212",   # prohibit line break after initial """ in multi-line docstring
+    "PT013",  # enforce `import pytest`, prohibit `from pytest import ...`
+    "G004",   # Logging statement uses f-string
+]
+
+[tool.ruff.per-file-ignores]
+"tests/*" = [
+    "ANN",     # require type annotations
+    "D",       # require docstrings
+    "S101",    # prohibit `assert`
+    "PLR2004", # prohibit magic values
+    "INP001",  # require __init__.py file
+]
+
+[tool.ruff.isort]
+known-first-party = ["igs_toolbox"]

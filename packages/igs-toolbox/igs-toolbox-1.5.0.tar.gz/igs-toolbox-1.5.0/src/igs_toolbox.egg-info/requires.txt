@@ -1,0 +1,19 @@
+jsonschema>=4.16.0
+pandas>=2.0.0
+pdf2image>=1.16.3
+opencv-python>=4.8.0.7
+typer>=0.9.0
+openpyxl>=3.1.2
+
+[:python_version < "3.10"]
+typing-extensions
+
+[:python_version < "3.9"]
+backports.zoneinfo
+
+[dev]
+black
+mypy
+ruff
+pytest
+pytest-cov
