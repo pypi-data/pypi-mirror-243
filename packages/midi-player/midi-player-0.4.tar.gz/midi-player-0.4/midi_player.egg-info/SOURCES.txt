@@ -1,0 +1,10 @@
+LICENSE
+README.md
+setup.py
+midi_player/__init__.py
+midi_player/midi_player.py
+midi_player/stylers.py
+midi_player.egg-info/PKG-INFO
+midi_player.egg-info/SOURCES.txt
+midi_player.egg-info/dependency_links.txt
+midi_player.egg-info/top_level.txt
