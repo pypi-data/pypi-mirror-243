@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+boxcounting/1D_random_cantor.bin
+boxcounting/2D_apollonian_gasket.bin
+boxcounting/3D_random_cantor.bin
+boxcounting/__init__.py
+boxcounting/boxcounting.py
+boxcounting/runTests.py
+boxcounting.egg-info/PKG-INFO
+boxcounting.egg-info/SOURCES.txt
+boxcounting.egg-info/dependency_links.txt
+boxcounting.egg-info/top_level.txt
