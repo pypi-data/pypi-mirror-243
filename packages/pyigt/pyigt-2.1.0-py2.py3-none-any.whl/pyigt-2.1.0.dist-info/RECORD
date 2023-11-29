@@ -1,0 +1,16 @@
+pyigt/__init__.py,sha256=oujXANy0Pw2sNHBMGt4Gfqio6wYjvma_Frcwvg-Rm3g,160
+pyigt/__main__.py,sha256=r6uC6UWX413U9wuqNhUXon9n5qtcEKEFD-p4WmcRpcc,932
+pyigt/cli_util.py,sha256=LlOvvE123WUMiBCtRiLQDkt8jhKqb-UrqkxJ8X7dvfc,492
+pyigt/igt.py,sha256=VlM5hvCAo_GnOC_zScsgCM0vGt-PU9nneiW7ZdMsEUw,32230
+pyigt/index.html,sha256=bYsAKMTJWyJi-zkTn2pa49MCqpPpH5MGVdHKEyjnDWE,3242
+pyigt/lgrmorphemes.py,sha256=qBXvY_2Rk1jqdUQLP34GjYebDkkfvC0v4X-67OnaMHM,12407
+pyigt/util.py,sha256=dXc1pkL7p7xUKcwaMHLApO0fAtBma5CYg-iexqGxB9c,821
+pyigt/commands/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyigt/commands/ls.py,sha256=vmw96BqwQ6djJ7ZDBpzFyV7i_W0wlAGVopD6ZNthWug,1312
+pyigt/commands/stats.py,sha256=zQUMuGBCoWjm9O2R_wsoKuW07hSk72Tb3v5hbmdPdCc,794
+pyigt-2.1.0.dist-info/LICENSE,sha256=jOtLnuWt7d5Hsx6XXB2QxzrSe2sWWh3NgMfFRetluQM,35147
+pyigt-2.1.0.dist-info/METADATA,sha256=ZPZW6UNvFYvzYpWIPEu2aE5ttiSrZfUSrgW_sFpphgk,6776
+pyigt-2.1.0.dist-info/WHEEL,sha256=z9j0xAa_JmUKMpmz72K0ZGALSM_n-wQVmGbleXx2VHg,110
+pyigt-2.1.0.dist-info/entry_points.txt,sha256=CAW68WFF6wyKAmNUspsOuDIuUGy4S6vnhhHImJov_bc,45
+pyigt-2.1.0.dist-info/top_level.txt,sha256=9zQXPV5PIPxbEIC63zYuqLEu85JA5d9nwuwiHR9R-nY,6
+pyigt-2.1.0.dist-info/RECORD,,
