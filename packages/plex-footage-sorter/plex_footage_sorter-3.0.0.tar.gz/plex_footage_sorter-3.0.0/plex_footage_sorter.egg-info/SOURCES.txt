@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+plex_footage_sorter.egg-info/PKG-INFO
+plex_footage_sorter.egg-info/SOURCES.txt
+plex_footage_sorter.egg-info/dependency_links.txt
+plex_footage_sorter.egg-info/entry_points.txt
+plex_footage_sorter.egg-info/requires.txt
+plex_footage_sorter.egg-info/top_level.txt
+src/__init__.py
+src/plex_footage_sorter/_sort_dated_footage_as_date_series.py
+src/plex_footage_sorter/entry.py
+tests/__init__.py
+tests/conftest.py
+tests/test_integration_sort_dated_footage.py
+tests/test_system.py
+tests/test_unit.py
