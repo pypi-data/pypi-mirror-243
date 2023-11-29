@@ -1,0 +1,5 @@
+requests
+pytest
+passlib
+bcrypt
+argon2-cffi==23.1.0
