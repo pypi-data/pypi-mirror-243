@@ -1,0 +1,5 @@
+<brute-batch-get>
+    {% for content in contents %}
+        {{ content }}
+    {% endfor %}
+</brute-batch-get>

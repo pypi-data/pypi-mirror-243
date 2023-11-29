@@ -1,0 +1,11 @@
+ua_clarity_api/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+ua_clarity_api/get_endpoint_map.py,sha256=lJCTKQ7KDce7P1bDAA65sQqk-DbxALVqVJIPeB1dzag,2441
+ua_clarity_api/get_multiple_items.xml,sha256=TeOzj0s2HZQBcg3uZcXBOtKojNHKnLxxwyYQrAS8YkE,109
+ua_clarity_api/post_batch_receive_template.xml,sha256=81OpS4-8I5ksoUtnBJeh2iggqcTaiuRpnnatep8QOuw,155
+ua_clarity_api/tests/post_container_template.xml,sha256=Sw_bjv2c7I0mMlaBiLQpprPdCoon0w8NvIS6cyajtl4,411
+ua_clarity_api/tests/test_ua_clarity_api.py,sha256=OwhZ1b_lU_ewRwm_wQF3i0JUtbXXRXv5OOAPszywORU,9413
+ua_clarity_api/ua_clarity_api.py,sha256=Nm-8QMPEcUM5xpScUd4tpxe4Zc-TvKo3hht61QKlXBo,7773
+ua_clarity_api-1.1.5.dist-info/LICENSE,sha256=jpU7R2JKPBbBt5igeF1P7Y7xqm696SWyst16Ofm3FVw,1065
+ua_clarity_api-1.1.5.dist-info/METADATA,sha256=vrTBBaNzyEpaPe8tm19Z95qjnxmbueIK6_kEC7Lk-Oo,2137
+ua_clarity_api-1.1.5.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+ua_clarity_api-1.1.5.dist-info/RECORD,,
