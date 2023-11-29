@@ -1,0 +1,11 @@
+iterfzf==1.1.0.44.0
+pytest>=6.0.0
+
+[dev]
+pytest-fzf[tests]
+
+[tests]
+pytest-sugar==0.9.7
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+mypy==1.7.1
