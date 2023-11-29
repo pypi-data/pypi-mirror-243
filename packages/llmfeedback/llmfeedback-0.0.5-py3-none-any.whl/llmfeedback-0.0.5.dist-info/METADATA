@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: llmfeedback
+Version: 0.0.5
+Summary: Package to integrate feedback into LLMs
+Author: Kunal Tangri, Noah Faro
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai
+Requires-Dist: numpy
+Requires-Dist: pinecone-client
+Requires-Dist: supabase
+
+## LLM Feedback
+
+Initial base for LLM Feedback.
+
+To install locally run `pip install -e .` from the root directory.
