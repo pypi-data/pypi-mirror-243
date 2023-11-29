@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: amigados-utils
+Version: 0.1.1
+Summary: amigados-utils is a collection of utilities for Amiga system development
+Home-page: https://github.com/weiju/amigados-utils
+Author: Wei-ju Wu
+Author-email: weiju.wu@gmail.com
+Maintainer: Wei-ju Wu
+Maintainer-email: weiju.wu@gmail.com
+License: BSD
+Keywords: amiga,system,development,classic,ecs,aga
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Natural Language :: English
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pillow
+Requires-Dist: Jinja2
+
+# amigados-utils - Command line utilities for Amiga system development
+
+## Description
+
+This is a set of utilities to facilitate Amiga development in a Unix style
+environment.
+
+  * amigados-dir - dir utility for ADF files
+  * amigados-copy - copy utility for ADF files
+  * amigados-makedir - makedir utility for ADF files
+  * amigados-createdisk - utility for creating ADF/HDF files
+  * amigados-fdtool - replacement for fd2pragma (just started)
+  * amigados-bumprev - replacement for BumpRev
+  * amigados-dalf - replacement for Dalf (Amiga binary file viewer)
+  * amigados-png2image - image converter
+
+## Installation
+
+pip install amigados-utils
+
+
+## References
+
+ROM Kernel Manuals: http://amigadev.elowar.com/
+ADF format: http://lclevy.free.fr/adflib/adf_info.html
+
+

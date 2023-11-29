@@ -1,0 +1,56 @@
+#!python
+
+"""
+amigados-copy - copy AmigaDOS files
+
+source and dest can be:
+
+  - both AmigaDOS paths
+  - one host machine path and one AmigaDOS path
+"""
+import argparse
+import os
+
+from amigados.adftools import logical, physical, util
+
+
+if __name__ == '__main__':
+    description = """amigados-copy - Python implementation of AmigaDOS copy"""
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument('source', help="source path")
+    parser.add_argument('dest', help="destination path")
+    args = parser.parse_args()
+
+    print("source: '%s'" % args.source)
+    print("dest: '%s'" % args.dest)
+
+    src = args.source.split(":")
+    dst = args.dest.split(":")
+    if len(src) > 1:
+        # AmigaDOS path
+        if not os.path.exists(src[0]):
+            print("ERROR: Source Amiga disk image '%s' does not exist" % src[0])
+            exit(1)
+        # open the file
+        with open(src[0], "rb") as infile:
+            disk = physical.read_adf_image(infile)
+            volume = logical.LogicalVolume(disk)
+            data = volume.file_data(src[1])
+    else:
+        # source is host system path
+        if not os.path.exists(src[0]):
+            print("ERROR: Source path '%s' does not exist" % src[0])
+            exit(1)
+
+    if len(dst) > 1:
+        # destination is AmigaDOS path
+        if not os.path.exists(dst[0]):
+            print("ERROR: Destination Amiga disk image '%s' does not exist" % dst[0])
+            exit(1)
+        else:
+            print("TODO: can't copy to Amiga disk images yet")
+            exit(1)
+    else:
+        # destination is host system path
+        with open(dst[0], "wb") as outfile:
+            outfile.write(data)
