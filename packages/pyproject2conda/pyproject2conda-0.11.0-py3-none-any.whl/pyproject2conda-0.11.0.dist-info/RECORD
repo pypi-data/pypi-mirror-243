@@ -1,0 +1,17 @@
+pyproject2conda/__init__.py,sha256=nUVaJ32zkaO8m5sSCYmVD7aVcb00AjNQx-Ng9ebJlw8,419
+pyproject2conda/__main__.py,sha256=NPmNUvBIkHwUp7CuZDVFGllQxUV_fD-L_sT3Nfn2MY0,95
+pyproject2conda/_typing.py,sha256=JA5pb2gZjlvXzzKm2N1jhXg9lUfwL23offG6-id2nZA,876
+pyproject2conda/_typing_compat.py,sha256=C0-nbDZnS9fC3UcSyO3Le9BrmmJfNOH115nSZDLhEVY,409
+pyproject2conda/cli.py,sha256=FSw2h7CbhfW4uDHjuIrOJfsRp-aPWW79v8f38DPN2lk,22527
+pyproject2conda/config.py,sha256=7Lg86aZs1Owxzg1V9wdwtxxF0eg_PFA9bvw1wVBQXNs,14066
+pyproject2conda/overrides.py,sha256=p9mUmhPKLXXwS_4Y3dDGWc_O8QA9v7LF_9ajbc0cb8Y,4180
+pyproject2conda/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pyproject2conda/requirements.py,sha256=nE-aQy8EmhSdooa6RjTuLoxiI-VQghyjDUunMOFZJXU,22708
+pyproject2conda/utils.py,sha256=RF4D_i6KcjBM2LLmcATi8Xd-buujR8MPBDBRc7u0hNI,4650
+pyproject2conda-0.11.0.dist-info/LICENSE,sha256=j_sUyRmuUbF_c9KR7g_uTdRv-cBn65wjYQpmusAzyT0,1645
+pyproject2conda-0.11.0.dist-info/METADATA,sha256=2CpnGDgGgLKHbM8_-EiM2O2TOjN6IXHVYwZR7Xyf2fM,33916
+pyproject2conda-0.11.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+pyproject2conda-0.11.0.dist-info/entry_points.txt,sha256=OBaj2wwbqTNqO6cfHPglZmJAvwjPuZQhbnWz2ZFuyms,90
+pyproject2conda-0.11.0.dist-info/top_level.txt,sha256=AmB_4c1RDQD-dEYqMNDtbW40cjmaySTySq07Puvbktw,16
+pyproject2conda-0.11.0.dist-info/zip-safe,sha256=AbpHGcgLb-kRsJGnwFEktk7uzpZOCcBY74-YBdrKVGs,1
+pyproject2conda-0.11.0.dist-info/RECORD,,
