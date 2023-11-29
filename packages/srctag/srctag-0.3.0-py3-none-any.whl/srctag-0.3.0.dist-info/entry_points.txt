@@ -1,0 +1,3 @@
+[console_scripts]
+srctag=srctag.cli:cli
+
