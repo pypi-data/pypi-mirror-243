@@ -1,0 +1,17 @@
+scihub/__init__.py,sha256=wnctqgNawkOpgki9TOiP4HAEEN5rBiXn-ZqnnipXNYQ,56
+scihub/scihub.py,sha256=rr5LgU4wA-BZYjf_0Xoyil3ct2q-2Nkn3ZyDgv38TTA,891
+scihub/cli/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+scihub/cli/launch.py,sha256=b3u0zxflUH4x-DW8k2RY93FHDaVmSqurSuZ1eT23PV4,777
+scihub/scibec/__init__.py,sha256=_Jz7zDWF_Z6EnFxV_xzkZd4l6izTvnVBCmdN7ReQqYA,161
+scihub/scibec/config_handler.py,sha256=esKOsmbKscCgGu8-4KGiyiqb-VQVjtI_K0yxhhjfOmo,7690
+scihub/scibec/scibec.py,sha256=ZeFTjZcU9axMue1KPsRv22tv7ws9_lkOi5FwgemZ_Q8,15029
+scihub/scibec/scibec_connector.py,sha256=aTbRgT9_l1suxPfBDff0cDjYGfpSajHnLagFKqZfpm8,4434
+scihub/scibec/scibec_metadata_handler.py,sha256=7Ob-mb7t1Cu_a9yaqq5GAd6l4iZnVlzTpHLl3svJ8To,4130
+scihub/scibec/scibec_validator.py,sha256=yGls1sQxG4zOZ3zbiZ8XVqihX8xdZCowqG_eOGqUbLU,880
+scihub/scilog/__init__.py,sha256=dmLy6UQsIAjVlOitqc3nCuLgYv84csYiEPB1Kw8hBpk,36
+scihub/scilog/scilog.py,sha256=sj5L4zPqNqgZK8RMY924UXjUgFhIOrtziCrJqwBXLFI,3326
+bec_scihub-0.47.0.dist-info/METADATA,sha256=QzGYFQ_ecGCchCgy9YJwSLxxfcGz0u4u_GwBOgMn5EA,814
+bec_scihub-0.47.0.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+bec_scihub-0.47.0.dist-info/entry_points.txt,sha256=lvr-l19gxHsNIBiaW9okN6cxCEiit63k4Raox5h-Smo,44
+bec_scihub-0.47.0.dist-info/top_level.txt,sha256=pJdZmJSruOGuc44QwwXTGHR-GJztvTXHn2UFDcobENk,7
+bec_scihub-0.47.0.dist-info/RECORD,,
