@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+version = "0.1"
+name = "lona-dropzone"
+description = "Dropzone.js bindings for Lona"
+
+authors = [
+  { name="Florian Scherf", email="mail@florianscherf.de" },
+]
+
+license = { file="LICENSE.txt" }
+readme = "README.md"
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+#  "Development Status :: 5 - Production/Stable",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Internet :: WWW/HTTP",
+  "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+
+requires-python = ">=3.7"
+
+dependencies = [
+  "lona>=1.16.1",
+]
+
+
+[project.optional-dependencies]
+dev = [
+  "build",
+  "twine",
+  "lona-picocss",
+]
+
+
+[project.urls]
+"Homepage" = "https://github.com/lona-web-org/lona-dropzone"
+"Repository" = "https://github.com/lona-web-org/lona-dropzone"
+"Bug Tracker" = "https://github.com/lona-web-org/lona-dropzone/issues"
+
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["lona_dropzone*"]
+
+[tool.setuptools.package-data]
+"lona_dropzone.static" = ["**"]
+"lona_dropzone.templates" = ["**"]
+
+[tool.setuptools.exclude-package-data]
+"*" = [
+  ".*",
+  "~*",
+  "*.swp",
+  "*.pyc",
+]

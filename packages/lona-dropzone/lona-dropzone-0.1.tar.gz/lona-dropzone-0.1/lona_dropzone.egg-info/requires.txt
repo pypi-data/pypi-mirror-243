@@ -1,0 +1,6 @@
+lona>=1.16.1
+
+[dev]
+build
+twine
+lona-picocss

@@ -1,0 +1,10 @@
+.lona-dropzone .dropzone .dz-preview.dz-image-preview {
+    background-color: transparent;
+}
+
+/* lona-picocss */
+html[data-theme=dark] .lona-dropzone form.dropzone,
+html[data-theme=light] .lona-dropzone form.dropzone {
+    border-color: var(--form-element-border-color);
+    color: var(--form-element-color);
+}
