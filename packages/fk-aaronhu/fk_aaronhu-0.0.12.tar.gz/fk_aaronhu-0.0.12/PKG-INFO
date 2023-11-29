@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: fk_aaronhu
+Version: 0.0.12
+Summary: A small fk package
+Project-URL: Homepage, https://github.com/pypa/sampleproject
+Project-URL: Issues, https://github.com/pypa/sampleproject/issues
+Author-email: Aaron hu <berylacevedo@gmail.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Requires-Dist: numpy>=1.18.5
+Requires-Dist: packaging
+Requires-Dist: requests
+Requires-Dist: tensorboard
+Requires-Dist: torch
+Description-Content-Type: text/markdown
+
+# Example Package
+
+This is a simple example package. You can use
+[GitHub-flavored Markdown](https://guides.github.com/features/mastering-markdown/)
+Just some f\*\*k content.
