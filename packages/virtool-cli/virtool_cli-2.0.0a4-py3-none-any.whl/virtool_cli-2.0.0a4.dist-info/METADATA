@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: virtool-cli
+Version: 2.0.0a4
+Summary: CLI Tool for working with Virtool data
+License: MIT
+Author: Ian Boyes
+Author-email: igboyes@gmail.com
+Maintainer: Ian Boyes
+Maintainer-email: igboyes@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.9
+Requires-Dist: GitPython (>=3.1,<4.0)
+Requires-Dist: aiofiles (>=23.1,<24.0)
+Requires-Dist: aiohttp (>=3.8,<4.0)
+Requires-Dist: aiojobs (>=1.1,<2.0)
+Requires-Dist: arrow (>=1.1,<2.0)
+Requires-Dist: biopython (>=1.81,<2.0)
+Requires-Dist: click (>=8.1,<9.0)
+Requires-Dist: numpy (>=1.25,<2.0)
+Requires-Dist: pytest-asyncio (>=0.21,<0.22)
+Requires-Dist: pytest-mock (>=3.11,<4.0)
+Requires-Dist: requests (>=2.31,<3.0)
+Requires-Dist: rich (>=13.4.2,<14.0.0)
+Requires-Dist: structlog (>=23.1,<24.0)
