@@ -1,0 +1,339 @@
+Metadata-Version: 2.1
+Name: barkus-func-toolkit
+Version: 0.0.8
+Summary: Cloud Functions Toolkit
+Author: barkustech
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: Free For Educational Use
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: cloudevents ==1.9.0
+Requires-Dist: functions-framework ==3.3.0
+Requires-Dist: pydantic ==1.10.7
+Requires-Dist: python-dateutil ==2.8.2
+Requires-Dist: requests ==2.28.2
+Requires-Dist: dacite ==1.8.1
+Provides-Extra: bigquery
+Requires-Dist: google-api-core ==2.11.0 ; extra == 'bigquery'
+Requires-Dist: google-auth ==2.17.0 ; extra == 'bigquery'
+Requires-Dist: google-cloud-core ==2.3.2 ; extra == 'bigquery'
+Requires-Dist: google-cloud-bigquery ==3.10.0 ; extra == 'bigquery'
+Provides-Extra: firestore
+Requires-Dist: google-api-core ==2.11.0 ; extra == 'firestore'
+Requires-Dist: google-auth ==2.17.0 ; extra == 'firestore'
+Requires-Dist: google-cloud-core ==2.3.2 ; extra == 'firestore'
+Requires-Dist: google-cloud-firestore ==2.10.1 ; extra == 'firestore'
+Provides-Extra: pubsub
+Requires-Dist: google-api-core ==2.11.0 ; extra == 'pubsub'
+Requires-Dist: google-auth ==2.17.0 ; extra == 'pubsub'
+Requires-Dist: google-cloud-core ==2.3.2 ; extra == 'pubsub'
+Requires-Dist: google-cloud-pubsub ==2.9.0 ; extra == 'pubsub'
+Provides-Extra: test
+Requires-Dist: polyfactory ==2.2.0 ; extra == 'test'
+Requires-Dist: pytest ==7.2.2 ; extra == 'test'
+Requires-Dist: pytest-cov ==4.0.0 ; extra == 'test'
+Requires-Dist: pytest-mock ==3.10.0 ; extra == 'test'
+Requires-Dist: pytest-watch ==4.2.0 ; extra == 'test'
+Requires-Dist: mock-firestore ==0.11.0 ; extra == 'test'
+
+# Barkus Organization Python Cloud Functions Toolkit
+
+## Overview
+
+This public Python package provides a set of utilities to streamline the development and management of Cloud Functions within the Barkus Organization.  
+These utilities cover various aspects of Cloud Function development, including parsing cloud events, logging, error handling, Pub/Sub event handling, managing database clients, and testing.
+
+## Installation
+
+To use this package, you need to have Python installed. You can install the package using pip:
+
+```bash
+pipenv install barkus-func-toolkit
+```
+
+Additional installations:
+
+```bash
+pipenv install barkus-func-toolkit[firestore]
+```
+
+```bash
+pipenv install barkus-func-toolkit[bigquery]
+```
+
+```bash
+pipenv install barkus-func-toolkit[pubsub]
+```
+
+## API
+
+### **1. Main Decorators**
+
+### **1.1. decorators.main.http**
+
+> For HTTP-triggered Functions Only
+
+Wraps the function with `functions_framework.http` decorator, as well as intercepts any errors and treats them into a standardized format.
+
+**Example:**
+
+```python
+import barkus.functions.toolkit as bft
+
+@bft.decorators.main.http()
+def main(request):
+    # Your HTTP-triggered function logic here
+    ...
+```
+
+### **1.2. decorators.main.cloud_event**
+
+> For Cloud Event-triggered Functions Only
+
+Wraps the function with `functions_framework.cloud_event` decorator, as well as intercepts any errors and treats them into a standardized format.
+
+**Example:**
+
+```python
+import barkus.functions.toolkit as bft
+
+@bft.decorators.main.cloud_event()
+def main(request):
+    # Your Cloud Event-triggered function logic here
+    ...
+```
+
+### 2. Request Parsing
+
+There are two functions defined, one for HTTP and one for CloudEvents. They both behave the exact same way.
+
+They follow the signature:  
+**Example:**
+
+```python
+
+def parse(request, Model, **kwargs):
+	...
+```
+
+Where:
+
+- Request is either the cloud_event or http request
+- Model is the `dataclasses.dataclass` or `pydantic.BaseModel` Model used to parse/validate the class
+- For dataclasses, we use `dacite.from_dict` to instantiate nested data, so whatever named arguments defined after will be used as dacite.from_dict's Config
+
+### **2.1. parse_request.http - _HTTP Request Parsing_**
+
+> For HTTP-triggered Functions Only
+
+Parses the request's content, assuming the request is of type HTTP
+
+**Example:**
+
+```python
+import barkus.functions.toolkit as bft
+import pydantic
+
+class RequestData(pydantic.BaseModel):
+    message: str
+    batata: int
+
+@bft.decorators.main.http()
+def main(request):
+    data: RequestData = bft.parse_request.http(request, RequestData)
+```
+
+### **2.2. parse_request.cloud_event - _Cloud Event Request Parsing_**
+
+> For Cloud Event-triggered Functions Only
+
+**Example:**
+
+```python
+import barkus.functions.toolkit as bft
+from dataclasses import dataclass
+
+@dataclass
+class RequestData:
+    message: str
+    batata: int
+
+@bft.decorators.main.cloud_event()
+def perform_cloud_event(request):
+    data: RequestData = bft.parse_request.cloud_event(request, RequestData)
+
+@bft.decorators.main.cloud_event()
+def perform_cloud_event_without_validation(request):
+    data: RequestData = bft.parse_request.cloud_event(request, RequestData, type_check = False)
+```
+
+### **3. Logging Decorator**
+
+Wraps the function with logging.
+Information logged:
+
+- Function was called
+- Function finished without errors
+- Function raised an exception
+
+**Example:**
+
+```python
+import barkus.functions.toolkit as bft
+
+@bft.decorators.log(0, name="alternate name")
+def some_function(whatever, something):
+    # Your function logic here
+    ...
+
+@bft.decorators.log(1, name="alternate name")
+def some_nested_function(whatever, something):
+    # Your nested function logic here
+    ...
+```
+
+### **4. Authorization**
+
+> For HTTP-triggered Functions Only
+
+Perform authentication for an HTTP Request.
+
+- `Authenticator.AUTH_TOKEN` is the token every request's token should check against.
+- `Authenticator.header_key` is the key of the header, the request's token is located | default = 'Api-Token'
+
+This function will:
+
+- Raise `bft.errors.UnauthenticatedError` if the token is missing
+- Raise `bft.errors.UnauthorizedError` if the token is invalid
+
+**Example:**
+
+```python
+from barkus.functions.toolkit.authenticator import Authenticator
+import os
+
+auth = Authenticator(AUTH_TOKEN=os.getenv("AUTH_TOKEN"), header_key="Api-Token")
+# or
+auth = Authenticator(AUTH_TOKEN=os.getenv("AUTH_TOKEN"))
+# or
+auth = Authenticator(AUTH_TOKEN=os.getenv("AUTH_TOKEN"), header_key="Authorization")
+
+def perform(request):
+    auth.authenticate(request)  # Will raise AuthenticationError if unauthenticated
+```
+
+### **5. Publishing to a Topic**
+
+**Example:**
+
+```python
+from barkus.functions.toolkit.publish_to_topic import publish_to_topic
+
+def perform(request):
+    publish_to_topic("project", "topic", {})
+```
+
+### **6. Google Cloud Client Manager**
+
+Returns an instance of google_cloud [service] 's Client.
+Each requires an additional instalation.
+
+To use firestore client:
+
+```bash
+	pipenv install barkus.functions.toolkit[firestore]
+```
+
+To use bigquery client:
+
+```bash
+	pipenv install barkus.functions.toolkit[bigquery]
+```
+
+To use pubsub client:
+
+```bash
+	pipenv install barkus.functions.toolkit[pubsub]
+```
+
+**Example:**
+
+```python
+import barkus.functions.toolkit as bft
+
+def function_that_uses_firestore():
+    # Requires you to install [firestore] dependencies
+    bft.CloudClientManager.firestore.batch
+
+def function_that_uses_bigquery():
+    # Requires you to install [bigquery] dependencies
+    bft.CloudClientManager.bigquery
+
+def function_that_uses_pubsub():
+    # Requires you to install [pubsub] dependencies
+    bft.CloudClientManager.pubsub.publish
+```
+
+## Error Handling
+
+The package defines classes for known errors, providing a standardized way to handle and respond to errors within your Google Cloud Functions.
+
+**Example:**
+
+```python
+import barkus.functions.toolkit as bft
+bft.errors.UnauthenticatedError
+```
+
+## Publishing New Version
+
+To publish a new version you have to follow these steps:
+
+### 1. You must make sure you have the dev-dependencies installed
+
+```bash
+pipenv install -d
+```
+
+### 2. You must configure `~/.pypirc` file with credentials:
+
+It should look something like this:
+
+```
+[distutils]
+index-servers =
+    pypi
+    testpypi
+
+[pypi]
+username = __token__
+password = pypi-*********
+
+[testpypi]
+username = __token__
+password = pypi-*********
+```
+
+> Note: the **token** is actually correct, it's not an example's placeholder
+
+### 3. Update the package's version:
+
+At setup.py, change the `version` to the desired value
+
+### 4. Generate the build:
+
+```bash
+pipenv run build
+```
+
+### 5. Publish the package:
+
+```bash
+pipenv run publish
+```
+
+## License
+
+This toolkit is proprietary software developed by Barkus Organization. Unauthorized use, reproduction, or distribution is prohibited.
