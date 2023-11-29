@@ -1,0 +1,2 @@
+[console_scripts]
+xlavir = xlavir.cli:app
