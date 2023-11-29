@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: Question
+Version: 0.1.0
+Summary: This is automatic generating question software
+Author: Ish
+Author-email: tiwaryishita52@example.com
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE.txt
+Requires-Dist: certifi ==2023.11.17
+Requires-Dist: charset-normalizer ==3.3.2
+Requires-Dist: colorama ==0.4.6
+Requires-Dist: distlib ==0.3.7
+Requires-Dist: docutils ==0.20.1
+Requires-Dist: et-xmlfile ==1.1.0
+Requires-Dist: filelock ==3.13.1
+Requires-Dist: idna ==3.4
+Requires-Dist: importlib-metadata ==6.8.0
+Requires-Dist: jaraco.classes ==3.3.0
+Requires-Dist: keyring ==24.3.0
+Requires-Dist: markdown-it-py ==3.0.0
+Requires-Dist: mdurl ==0.1.2
+Requires-Dist: more-itertools ==10.1.0
+Requires-Dist: nh3 ==0.2.14
+Requires-Dist: numpy ==1.26.0
+Requires-Dist: openpyxl ==3.1.2
+Requires-Dist: pandas ==2.1.1
+Requires-Dist: Pillow ==10.1.0
+Requires-Dist: pipdeptree ==2.13.1
+Requires-Dist: pkginfo ==1.9.6
+Requires-Dist: platformdirs ==4.0.0
+Requires-Dist: Pygments ==2.17.2
+Requires-Dist: python-dateutil ==2.8.2
+Requires-Dist: pytz ==2023.3.post1
+Requires-Dist: pywin32-ctypes ==0.2.2
+Requires-Dist: QUESTIONBANK ==1.82.2
+Requires-Dist: readme-renderer ==42.0
+Requires-Dist: reportlab ==4.0.7
+Requires-Dist: requests ==2.31.0
+Requires-Dist: requests-toolbelt ==1.0.0
+Requires-Dist: rfc3986 ==2.0.0
+Requires-Dist: rich ==13.7.0
+Requires-Dist: six ==1.16.0
+Requires-Dist: tqdm ==4.66.1
+Requires-Dist: twine ==4.0.2
+Requires-Dist: tzdata ==2023.3
+Requires-Dist: urllib3 ==2.1.0
+Requires-Dist: virtualenv ==20.24.7
+
