@@ -1,0 +1,55 @@
+[tool.poetry]
+name = "megamock"
+version = "0.1.0-beta.8"
+description = "Mega mocking capabilities - stop using dot-notated paths!"
+authors = ["James Hutchison <jamesghutchison@proton.me>"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://github.com/JamesHutchison/megamock"
+repository = "https://github.com/JamesHutchison/megamock"
+keywords = ["mock", "test"]
+include = ["LICENSE"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Mocking",
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10 <4.0"
+varname = { extras = ["asttokens"], version = "~0.10.0" }
+asttokens = "~2.2.1"
+pyright = "^1.1.337"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+pytest-asyncio = "^0.20.3"
+mypy = "^1.1.1"
+pydantic = "1.10.7"
+ptyme-track = "^0.1.0"
+ruff = "^0.1.6"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "-p megamock.plugins.pytest"
+asyncio_mode = "auto"
+
+[tool.isort]
+profile = "black"
+
+[tool.mypy]
+exclude = ["generated_modules"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pycodestyle]
+max-line-length = 120
