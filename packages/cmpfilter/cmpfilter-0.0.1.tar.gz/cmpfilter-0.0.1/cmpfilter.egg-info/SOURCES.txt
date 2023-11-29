@@ -1,0 +1,12 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+cmpfilter/__init__.py
+cmpfilter/filters.py
+cmpfilter.egg-info/PKG-INFO
+cmpfilter.egg-info/SOURCES.txt
+cmpfilter.egg-info/dependency_links.txt
+cmpfilter.egg-info/top_level.txt
