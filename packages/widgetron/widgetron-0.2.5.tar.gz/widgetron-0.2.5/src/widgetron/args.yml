@@ -1,0 +1,256 @@
+
+directory:
+    default: "."
+    nargs: "?"
+    positional: true
+    help: |
+        Directory to build in. This is also where the utility will search for
+        relevant config files (i.e. `environment.yml`, `setup.cfg`, `pyproject.toml`)
+
+skip_sbom:
+    default: false
+    help: "If true, no sbom will be generated."
+
+temp_dir:
+    default: "./widgetron_temp_files"
+    help: "Where to put work files."
+
+template_only:
+    default: false
+    help: "Stop after rendering templates."
+
+command_log:
+    help: "Path to log file. When provided, will write all shell commands to a file for review. (sometimes useful for debugging)"
+
+
+dry_run:
+    default: false
+    help: "Do not run any commands (e.g. copy, move, ...). Just print them to widgetron_temp_files/commands.txt."
+
+python_version:
+    flag: "-py"
+    default: "auto"
+
+outdir:
+    flag: "-o"
+    default: "."
+    help: "Where to put the installer."
+
+notebook:
+    flag: "-nb"
+    help: "Path to notebook to convert. (must be .ipynb or a directory)"
+
+version:
+    flag: "-v"
+    help: "Version number."
+
+environment:
+    flag: "-env"
+    help: |
+        Path to pre-built environment.
+        If provided, the dependencies argument is ignored.
+        If provided, the channels argument is ignored.
+        The widgetron_app package will be installed to this environment and the
+        installer will build directly from this env.
+        This option is useful for debugging as you can test it with...
+        `conda activate {environment} && python -m widgetron_app`
+
+pkg_output_dir:
+    help: "Where to place intermediate conda packages."
+
+dependencies:
+    flag: "-deps"
+    nargs: "+"
+    help: |
+        List of conda packages required to run the widget
+        (pip packages are not supported). If environment_yaml or explicit_lock
+        are also provided, then those are appended to the list of dependencies.
+
+channels:
+    flag: "-c"
+    nargs: "+"
+    help: |
+        List of conda channels required to find specified packages.
+        Order is obeyed, 'local' is always checked first. Default=[https://conda.anaconda.org/conda-forge, ].
+        If environment_yaml or explicit_lock are also provided, then those are
+        appended to the list of channels.
+
+explicit_lock:
+    flag: "-lock"
+    help: |
+        Path to lock file generated via `conda-lock --kind=explicit`.
+        If provided, the dependencies argument is ignored.
+        If provided, the channels argument is ignored.
+        Widgetron will build the environment using
+        `conda create --file {explicit_lock} --prefix widgetron_temp_files/.env`
+        The widgetron_app package will be installed to this environment and the
+        installer will build directly from this env.
+        This option is useful for debugging as you can test it with...
+        `conda activate widgetron_temp_files/.env && python -m widgetron_app`
+
+environment_yaml:
+    flag: "-f"
+    help: |
+        Path to environment.yml file.
+        If provided, the dependencies argument is ignored.
+        If provided, the channels argument is ignored.
+        Widgetron will build the environment using
+        `mamba env update --file {environment_yaml} --prefix widgetron_temp_files/.env`
+        The widgetron_app package will be installed to this environment and the
+        installer will build directly from this env.
+        This option is useful for debugging as you can test it with...
+        `conda activate widgetron_temp_files/.env && python -m widgetron_app`
+
+server_command:
+    nargs: "+"
+    help: How to launch JupyterLab. Default `["jupyter", "lab", "--no-browser"]`
+
+icon:
+    help: |
+        256 by 256 icon file (must be appropriate to OS)
+            win: .ico
+            osx: .icns
+            linux: .png
+
+url_whitelist:
+    nargs: "+"
+    help: |
+        By default external links do nothing. This is for better security.
+        If a url has been whitelisted, then clicking on it will open the url
+        in the user's default web-browser.
+        Alternatively, you may want to whitelist an entire domain via the
+        domain_whitelist argument.
+
+domain_whitelist:
+    nargs: "+"
+    help: |
+        By default external links do nothing. This is for better security.
+        If a domain has been whitelisted, then clicking on a url with that domain
+        will open the url in the user's default web-browser.
+        Alternatively, you may want to whitelist specific urls via the
+        url_whitelist argument.
+
+window_style:
+    help: |
+        (Windows only) Set the WindowStyle for powershell.
+    default: Minimized
+    choices:
+        - Hidden
+        - Normal
+        - Minimized
+
+# CONSTRUCTOR_PARAMS
+company:
+    flag: "-company"
+    help: |
+        Name of the company/entity who is responsible for the installer.
+
+installer_filename:
+    flag: "-installer_filename"
+    help: |
+        The filename of the installer being created. If not supplied, a reasonable
+        default will determined by the name, version, platform, and installer type.
+        https://github.com/conda/constructor/blob/main/CONSTRUCT.md#installer_filename
+
+installer_type:
+    help: |
+        The type of the installer being created. Possible values are:
+            - sh: shell-based installer for Linux or macOS;
+            - pkg: macOS GUI installer built with Apple's pkgbuild
+            - exe: Windows GUI installer built with NSIS
+        The default type is sh on Linux and macOS, and exe on Windows.
+        A special value of all builds both sh and pkg installers on macOS,
+        as well as sh on Linux and exe on Windows.
+
+license_file:
+    help: |
+        Path to the license file being displayed by the installer during the install process.
+        It must be plain text (.txt) for shell-based installers. On PKG, .txt, .rtf and 
+        .html are supported. On Windows, .txt and .rtf are supported.
+
+batch_mode:
+    help: |
+        Only affects .sh installers. If False (default), the installer launches
+        an interactive wizard guiding the user through the available options.
+        If True, the installer runs automatically as if -b was passed.
+
+signing_identity_name:
+    help: |
+        By default, the MacOS pkg installer isn't signed. If an identity name is
+        specified using this option, it will be used to sign the installer with
+        Apple's productsign. Note that you will need to have a certificate
+        (usually an "Installer certificate") and the corresponding private key,
+        together called an 'identity', in one of your accessible keychains.
+        Common values for this option follow this format 
+            Developer ID Installer: Name of the owner (XXXXXX)
+
+welcome_image:
+    help: |
+        Path to an image in any common image format (.png, .jpg, .tif, etc.) to 
+        be used as the welcome image for the Windows installer. The image is 
+        re-sized to 164 x 314 pixels. By default, an image is automatically generated.
+
+header_image:
+    help: |
+        Like welcome_image for Windows, re-sized to 150 x 57 pixels.
+
+default_image_color:
+    help: |
+        The color of the default images (when not providing explicit image files) 
+        used on Windows. Possible values are red, green, blue, yellow. The default is blue.
+    
+welcome_image_text:
+    help: |
+        If welcome_image is not provided, use this text when generating the image
+        (Windows only). Defaults to name.
+
+header_image_text:
+    help: |
+        If header_image is not provided, use this text when generating the image
+        (Windows only). Defaults to name.
+
+nsis_template:
+    help: |
+        If nsis_template is not provided, constructor uses its default NSIS template.
+        For more complete customization for the installation experience, provide
+        an NSIS template file. (Windows only)
+
+default_prefix:
+    help: |
+        You probably want to use default_prefix_domain_user instead.
+        The following description from the constructor repo does not reflect the
+        actual behavior, in that, selecting "Just Me" does not populate the install
+        location with the string provided here. I'm not sure what exactly it does.
+
+        Set default install prefix. On Linux, if not provided, the default prefix
+        is ${HOME}/${NAME}. On windows, this is used only for "Just Me" installation;
+        for "All Users" installation, use the default_prefix_all_users key.
+        If not provided, the default prefix is ${USERPROFILE}\${NAME}.
+
+default_prefix_domain_user:
+    help: |
+        Set default installation prefix for domain user. If not provided, the
+        installation prefix for domain user will be ${LOCALAPPDATA}\${NAME}.
+        By default, it is different from the default_prefix value to avoid
+        installing the distribution in the roaming profile. Windows only.
+
+default_prefix_all_users:
+    help: |
+        You probably want to use default_prefix_domain_user instead.
+        I would not recomend advising users to install your app for "All Users"
+        as this is not tested, but that is the senario in which this parameter
+        is used (i.e. when the app is being installed for all users).
+
+        Set default installation prefix for All Users installation.
+        If not provided, the installation prefix for all users installation
+        will be ${ALLUSERSPROFILE}\${NAME}. Windows only.
+
+# ELECTRON PARAMS
+electron_version:
+    default: ">=25"
+    help: |
+        Version of electron to build for
+electron_builder_version:
+    default: ">=24"
+    help: |
+        Version of electron-builder to use
