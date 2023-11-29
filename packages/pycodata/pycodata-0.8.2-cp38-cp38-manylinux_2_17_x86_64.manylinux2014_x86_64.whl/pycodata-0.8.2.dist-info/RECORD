@@ -1,0 +1,15 @@
+pycodata/__init__.py,sha256=Vzw8-UkHrBpI4aj07JIJLUtJbHlS-KlZes__1M5bYgk,97
+pycodata/codata.cpython-38-x86_64-linux-gnu.so,sha256=ucjnY5t-nZPrfXy57iTCMhlENwSK9Pl0gO_HzFMxJx4,365033
+pycodata/codata.h,sha256=9r7rv3MZ847TQ5A8z12Xj2n-f9iq1T7xBCOyXrMwSEQ,52061
+pycodata/cpycodata.c,sha256=33c0TfE_-fjC_JiW5Q9EkKr2-fBHY-fukNp_BoOl4Tw,101368
+pycodata/libcodata.so,sha256=wNGmROLIxwGS88p3Nqn_WQ1IN2a5-eq1xjU9th-WRV4,114129
+pycodata/version.py,sha256=YXBR3zX4E1cRy3WJOCZs1P-Jmwdta7kIGiDaDYLuIAs,73
+pycodata/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+pycodata/tests/test.py,sha256=JZtq7-KP7_nLbBQx-0gfyPJty3b6xPhauiisV5qawE4,365
+pycodata-0.8.2.dist-info/LICENSE.txt,sha256=IwGE9guuL-ryRPEKi6wFPI_zOhg7zDZbTYuHbSt_SAk,35823
+pycodata-0.8.2.dist-info/METADATA,sha256=eLwdCf8VQZPFXdfsv0HC9YAkXAkuuvV3IZv00D8WWz8,915
+pycodata-0.8.2.dist-info/WHEEL,sha256=5DQRW5VdkIxH8e7ylwa-YBCXLhSZeqHiz1ZmuOscrlo,148
+pycodata-0.8.2.dist-info/top_level.txt,sha256=GyT88aMPmzUU2EIajqtjp0KWaGZdNMa1b0e0MKTH0r8,20
+pycodata-0.8.2.dist-info/RECORD,,
+pycodata.libs/libquadmath-96973f99.so.0.0.0,sha256=k0wi3tDn0WnE1GeIdslgUa3z2UVF2pYvYLQWWbB12js,247609
+pycodata.libs/libgfortran-040039e1.so.5.0.0,sha256=FK-zEpsai1C8QKOwggx_EVLqm8EBIaqxUpQ_cFdHKIY,2686065
