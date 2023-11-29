@@ -1,0 +1,13 @@
+ipykernel
+matplotlib
+nbsphinx
+numpy
+pandoc
+python-copasi
+cython
+PyYAML
+pandas
+scipy
+sphinx>3
+sphinx_rtd_theme
+pygments>=2.4.1
