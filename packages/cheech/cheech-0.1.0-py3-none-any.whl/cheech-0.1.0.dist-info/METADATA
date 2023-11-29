@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: cheech
+Version: 0.1.0
+Summary: 
+Author: megahomyak
+Author-email: g.megahomyak@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: appdirs (>=1.4.4,<2.0.0)
+Description-Content-Type: text/markdown
+
+# Cheech
+
+Cheech is a little program to require arguments from the command line
+
+## Usage
+
+```python
+from cheech import require, Arg
+
+apple, blueberry, cherry = require("apple", Arg("blueberry", default=None), "cherry")
+
+print(apple, blueberry, cherry)
+```
+
