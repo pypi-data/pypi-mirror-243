@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "mvc-flask"
+version = "2.9.0"
+description = "turn standard Flask into mvc"
+authors = ["Marcus Pereira <marcus@negros.dev>"]
+
+readme = "README.md"
+license = "MIT"
+keywords = ["flask", "flask extensions", "flask mvc", "flask-mvc", "mvc flask", "flask design pattern"]
+
+repository = "https://github.com/marcuxyz/mvc_flask"
+homepage = "https://github.com/marcuxyz/mvc_flask"
+
+
+[tool.poetry.dependencies]
+python = ">=3.8.0,<4.0.0"
+Flask = "3.0.0"
+mkdocs-material = "^9.4.8"
+
+[tool.poetry.group.dev.dependencies]
+flask-sqlalchemy = "^3.0.5"
+pytest = "^7.4.3"
+black = "^23.3.0"
+splinter = {version = "^0.18.1", extras = ["flask"]}
+urllib3 = "^1.26.18"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ward]
+progress-style = ["bar"]
