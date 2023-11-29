@@ -1,0 +1,8 @@
+{
+    "nlp":{
+        "wrapper":"ailab/inference_wrapper/huggingface/lora/nlp"
+    },
+    "cv":{
+        "vit_patch16_224_in21k":"ailab/inference_wrapper/huggingface/transformers/cv/image_classification/wrapper"
+    }
+}

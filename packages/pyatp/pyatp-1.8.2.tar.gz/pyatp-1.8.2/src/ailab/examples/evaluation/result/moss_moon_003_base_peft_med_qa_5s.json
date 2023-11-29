@@ -1,0 +1,27 @@
+{
+  "results": {
+    "MedQA": {
+      "acc": 0.312025685931115,
+      "acc_stderr": 0.007916824130083086,
+      "acc_norm": 0.312025685931115,
+      "acc_norm_stderr": 0.007916824130083086
+    }
+  },
+  "versions": {
+    "MedQA": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/moss-moon-003-base,dtype='float16',trust_remote_code=True,use_accelerate=False,peft=/home/finetuned_models/my_moss_model",
+    "num_fewshot": 5,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:6",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "1:01:15.998719",
+    "model_name": "moss_moon_003_base"
+  }
+}
