@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: chainingiterator
+Version: 0.2.2
+Summary: A python wrapper-library for iterators to be usable via chaining(such as C#, Java streams or Rust iterators). Extended functionality based on Rust's buit-in iterators.
+Home-page: https://github.com/addam128/chainingiterator
+License: MIT
+Author: Adam Ruman
+Author-email: ruman.adam@gmail.com
+Requires-Python: >=3.7,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Project-URL: Repository, https://github.com/addam128/chainingiterator
+Description-Content-Type: text/markdown
+
+# chainingiterator
+A python wrapper-library for iterators to be usable via chaining(such as C#, Java streams or Rust iterators). Extended functionality based on Rust's buit-in iterators. 
+
