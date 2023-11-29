@@ -1,0 +1,232 @@
+@charset "utf-8";
+
+$primary: #48c78e;
+$link: #0a0a0a;
+$body-font-size: 1em;
+$table-cell-padding: .2rem .75rem .2rem 0;
+$navbar-height: 3rem;
+$column-gap: .2rem;
+$side-panel-width: 320px;
+
+#main {
+    padding-top: $navbar-height;
+    height: 100vh;
+}
+
+td > a {
+    display:block;
+    width:100%;
+}
+
+td, th {
+    font-size: .9em;
+}
+
+td {
+    vertical-align: middle !important;
+}
+
+.side-panel {
+    min-width: $side-panel-width;
+    max-width: $side-panel-width;
+    position: sticky;
+    top: 0;
+    height: 100%;
+}
+
+.side-panel * .panel-block:not(:last-child) {
+    border-bottom: none !important;
+}
+
+.level * {
+    max-width: 100%;
+}
+
+.level * p {
+    word-break: break-all;
+}
+
+input:focus {
+    outline: 1px solid $primary !important;
+    border: 1px solid $primary !important;
+}
+
+select:focus {
+    outline: 1px solid $primary !important;
+    border: 1px solid $primary !important;
+}
+
+.select:not(.is-multiple):not(.is-loading)::after {
+    border-color: $primary !important;
+}
+
+.button:focus {
+    outline: 1px solid $primary !important;
+    border: 1px solid $primary !important;
+}
+
+.query-params {
+    padding-left: 12px;
+    margin-top: 4px;
+    font-size: 1em;
+}
+
+.query-param {
+    outline: none;
+    padding-bottom: 4px;
+}
+
+.query-param > p:hover, .query-param:focus > p {
+    background: lightgray;
+    cursor: pointer;
+    outline: none;
+    border-radius: 4px;
+}
+
+.query-tag-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4px;
+    padding-bottom: 8px;
+    border-radius: 4px;
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+.query-tag-group > .query-tag {
+    background-color: transparent;
+    margin: 0;
+    padding: 8px 8px 0 8px;
+}
+
+.query-tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 8px;
+    margin-bottom: 8px;
+    background-color: lightgray;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.query-tag-text {
+    word-break: break-word;
+}
+
+.selected-query-tag {
+    background-color: $primary !important;
+}
+
+.arrow:before {
+    content: '\21B3';
+}
+
+.arrowless {
+    text-indent: 13px;
+}
+
+.field.has-addons {
+    margin-bottom: 0;
+}
+
+.field:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.label.has-field {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    font-weight: 300;
+    word-break: break-word;
+    padding: 12px 12px 12px 0;
+}
+
+.label.is-required {
+    font-weight: 700;
+}
+
+.is-detail {}
+
+.label.is-detail {
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.label.is-detail > div {
+    border-bottom: 1px #ccc solid;
+    font-weight: 300;
+}
+
+.label.is-detail:hover > div {
+    border-bottom: 1px #1e1f22 solid;
+    font-weight: 300;
+}
+
+.label.is-detail * p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: .5em;
+    min-height: 2.5em;
+}
+
+.label.is-detail * a.button {
+    border: transparent;
+}
+
+.label.is-detail * a.button:first-child {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.responsive-heading {
+    display: none;
+}
+
+.htmx-settling progress {
+  opacity: 0;
+}
+
+progress {
+ transition: opacity 300ms ease-in;
+}
+
+@media screen and (max-width: 768px) {
+    .label.has-field {
+        padding: 12px 0 12px 0;
+    }
+
+    table.hax-box * td {
+        width: 100%;
+        float: left;
+        text-align: left !important;
+        border: transparent !important;
+        font-size: 1em;
+        padding-left: 1rem !important;
+    }
+
+    table.hax-box * tr {
+        margin-bottom: 10px;
+        display: inline-block;
+        width: 100%;
+        border: 1px #ccc solid;
+        border-radius: 6px;
+    }
+
+    table.hax-box > thead {
+        display: none;
+    }
+
+    table.hax-box * td.responsive-heading {
+        display: block;
+        padding-left: .5rem !important;
+    }
+
+}
+
+@import "../bulma/bulma.sass";
