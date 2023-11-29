@@ -1,0 +1,2 @@
+class CommandServiceEmptyError(Exception):
+    pass
