@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: edea-tmc
+Version: 0.1.3
+Summary: Test and Measurement as Code library for EDeA-MS
+Author: Elen Eisendle
+Author-email: ln@calcifer.ee
+Requires-Python: >=3.10,<3.13
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Provides-Extra: interactive
+Requires-Dist: httpx (>=0.25.0,<0.26.0)
+Requires-Dist: numpy (>=1.26.2,<2.0.0)
+Requires-Dist: pydantic (>=2.5.2,<3.0.0)
+Requires-Dist: tqdm (>=4.66.1,<5.0.0) ; extra == "interactive"
+Description-Content-Type: text/markdown
+
+# EDeA TMC
+
+edea-tmc is a small library for test automation with [edea-ms](https://gitlab.com/edea-dev/edea-ms).
+See [edea-tmc-test.ipynb](./edea-tmc-test.ipynb) for a small example how to use it.
+
