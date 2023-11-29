@@ -1,0 +1,105 @@
+Metadata-Version: 2.1
+Name: notifyall
+Version: 1.0
+Summary: A multi-channel notification library
+Home-page: https://github.com/gibran-toriz/lalakiri-notification-library.git
+Author: Laura Mendez
+Author-email: malaura_404@hotmail.com
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: PyYAML==6.0.1
+Requires-Dist: boto3==1.29.3
+Requires-Dist: botocore==1.32.3
+Requires-Dist: requests==2.31.0
+Requires-Dist: requests-toolbelt==1.0.0
+
+
+# NotifyAll
+
+NotifyAll is a Python library designed to simplify sending notifications across various platforms like Telegram and SMS via Amazon SNS. It provides a unified API to manage and dispatch notifications, making it an ideal solution for applications requiring multi-channel communication.
+
+## Features
+
+- **Multi-Channel Support**: Seamlessly integrate with various services like Telegram and Amazon SNS.
+- **Easy to Use**: Simplified API for sending notifications with minimal setup.
+- **Customizable**: Extensible to support additional notification services as needed.
+- **Asynchronous Support**: Capable of handling notification sending asynchronously for better performance.
+
+## Installation
+
+Install NotifyAll using pip:
+
+```bash
+pip install notifyall
+```
+
+## Dependencies
+- **PyYAML==6.0.1**
+- **boto3==1.29.3**
+- **boto3==1.29.3**
+- **requests==2.31.0**
+- **requests-toolbelt==1.0.**
+
+To install these dependencies, run:
+
+```bash
+pip install -r requirements.txt
+```
+
+
+## Quick Start
+
+Here's a quick example of how to send a notification using NotifyAll:
+
+
+# Initialize the notifier
+```python
+from notifyall import NotifyAll
+from notifyall.params import TelegramParams
+
+# Initialize the notifier
+notifier = NotifyAll(config_file='path/to/config.yaml')
+
+```
+
+
+# Send notification
+```python
+# Prepare parameters for the Telegram notification
+params = TelegramParams(chat_id="123456789")
+
+# Send a notification
+notifier.send("Hello from NotifyAll!", params)
+
+```
+
+Replace `"path/to/config.yaml"` with the path to your configuration file. 
+The TelegramParams class is used to specify parameters for the Telegram notifier.
+
+## Documentation
+
+For more detailed information about installation, configuration, and usage, please refer to the [Documentation](/docs).
+
+## Configuring Logging
+
+`NotifyAll` uses Python's standard logging library. To configure logging for `NotifyAll`, set up logging in your application as desired. For example:
+
+```python
+import logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+```
+
+## Exceptions:
+- **ConfigurationError**: Raised when the configuration file is missing or invalid.
+- **UnsupportedChannelError**: Raised when an unsupported notification channel is used.
+- **NotificationSendError**: Raised when there is an error in sending the notification.
+
+
+
+## Contributing
+
+Contributions to NotifyAll are welcome! Please refer to the [Contributing Guide](/CONTRIBUTING.md) for guidelines on how to contribute.
+
+## License
+
+NotifyAll is released under the [MIT License](/LICENSE).
