@@ -1,0 +1,73 @@
+wandb_version: 1
+
+learning_rate:
+  desc: null
+  value: 0.02
+architecture:
+  desc: null
+  value: CNN
+dataset:
+  desc: null
+  value: CIFAR-100
+epochs:
+  desc: null
+  value: 10
+steps:
+  desc: null
+  value: 1000
+date:
+  desc: null
+  value: '2023-11-01'
+_wandb:
+  desc: null
+  value:
+    python_version: 3.11.5
+    cli_version: 0.15.11
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1698836568.705177
+    t:
+      1:
+      - 55
+      2:
+      - 55
+      3:
+      - 2
+      - 13
+      - 16
+      - 23
+      4: 3.11.5
+      5: 0.15.11
+      8:
+      - 5
+      13: darwin-x86_64
+    visualize:
+      Last Value Graph:
+        panel_type: Vega2
+        panel_config:
+          panelDefId: wandb/scatter/v0
+          fieldSettings:
+            x: Date
+            y: Last Values
+          stringSettings:
+            title: Last Value Graph for success-rate
+          transform:
+            name: tableWithLeafColNames
+          userQuery:
+            queryFields:
+            - name: runSets
+              args:
+              - name: runSets
+                value: ${runSets}
+              fields:
+              - name: id
+                fields: []
+              - name: name
+                fields: []
+              - name: _defaultColorIndex
+                fields: []
+              - name: summaryTable
+                args:
+                - name: tableKey
+                  value: Last Value Graph_table
+                fields: []

@@ -1,0 +1,32 @@
+from setuptools import setup, find_packages
+
+setup(
+    name='regressiontestingreport',
+    version='0.1',
+    author='Alex Tang',
+    author_email='at5604@nyu.edu',
+    packages=['regressiontestingreport',],
+    install_requires = [
+    'appdirs==1.4.4',
+    'gitpython==3.1.37',
+    'idna==3.4',
+    'install==1.3.5',
+    'cffi',
+    'pandas==2.1.1',
+    'pathtools==0.1.2',
+    'pip==23.2.1',
+    'protobuf==4.24.3',
+    'psutil==5.9.5',
+    'pytz==2023.3.post1',
+    'pyyaml==6.0.1',
+    'requests==2.31.0',
+    'sentry-sdk==1.31.0',
+    'setproctitle==1.3.2',
+    'setuptools==68.0.0',
+    'smmap==5.0.1',
+    'tzdata==2023.3',
+    'urllib3==2.0.6',
+    'wandb==0.15.11',
+    'wheel==0.41.2',
+    ],
+)

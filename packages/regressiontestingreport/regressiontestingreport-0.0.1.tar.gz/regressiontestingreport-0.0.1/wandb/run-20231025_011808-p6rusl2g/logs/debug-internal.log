@@ -1,0 +1,181 @@
+2023-10-25 01:18:08,941 INFO    StreamThr :34449 [internal.py:wandb_internal():86] W&B internal server running at pid: 34449, started at: 2023-10-25 01:18:08.940465
+2023-10-25 01:18:08,943 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: status
+2023-10-25 01:18:08,944 INFO    WriterThread:34449 [datastore.py:open_for_write():85] open: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/run-p6rusl2g.wandb
+2023-10-25 01:18:08,947 DEBUG   SenderThread:34449 [sender.py:send():380] send: header
+2023-10-25 01:18:08,947 DEBUG   SenderThread:34449 [sender.py:send():380] send: run
+2023-10-25 01:18:09,318 INFO    SenderThread:34449 [dir_watcher.py:__init__():211] watching files in: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files
+2023-10-25 01:18:09,319 INFO    SenderThread:34449 [sender.py:_start_run_threads():1122] run started: p6rusl2g with start time 1698211088.597484
+2023-10-25 01:18:09,640 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: check_version
+2023-10-25 01:18:09,640 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: check_version
+2023-10-25 01:18:09,905 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: run_start
+2023-10-25 01:18:09,906 DEBUG   HandlerThread:34449 [system_info.py:__init__():32] System info init
+2023-10-25 01:18:09,906 DEBUG   HandlerThread:34449 [system_info.py:__init__():47] System info init done
+2023-10-25 01:18:09,906 INFO    HandlerThread:34449 [system_monitor.py:start():181] Starting system monitor
+2023-10-25 01:18:09,907 INFO    SystemMonitor:34449 [system_monitor.py:_start():145] Starting system asset monitoring threads
+2023-10-25 01:18:09,907 INFO    HandlerThread:34449 [system_monitor.py:probe():201] Collecting system info
+2023-10-25 01:18:09,907 INFO    SystemMonitor:34449 [interfaces.py:start():190] Started cpu monitoring
+2023-10-25 01:18:09,908 DEBUG   HandlerThread:34449 [system_info.py:probe():196] Probing system
+2023-10-25 01:18:09,908 INFO    SystemMonitor:34449 [interfaces.py:start():190] Started disk monitoring
+2023-10-25 01:18:09,909 INFO    SystemMonitor:34449 [interfaces.py:start():190] Started memory monitoring
+2023-10-25 01:18:09,912 INFO    SystemMonitor:34449 [interfaces.py:start():190] Started network monitoring
+2023-10-25 01:18:09,913 DEBUG   HandlerThread:34449 [system_info.py:_probe_git():181] Probing git
+2023-10-25 01:18:09,986 DEBUG   HandlerThread:34449 [system_info.py:_probe_git():189] Probing git done
+2023-10-25 01:18:09,987 DEBUG   HandlerThread:34449 [system_info.py:probe():244] Probing system done
+2023-10-25 01:18:09,987 DEBUG   HandlerThread:34449 [system_monitor.py:probe():210] {'os': 'macOS-10.16-x86_64-i386-64bit', 'python': '3.11.5', 'heartbeatAt': '2023-10-25T05:18:09.908355', 'startedAt': '2023-10-25T05:18:08.586573', 'docker': None, 'cuda': None, 'args': ('success-rate',), 'state': 'running', 'program': '/Users/alextang/Desktop/regression-testing/generate_report.py', 'codePathLocal': 'generate_report.py', 'codePath': 'generate_report.py', 'git': {'remote': 'https://github.com/Emerge-Lab/regression-testing.git', 'commit': 'a94438f439b17ee57828b814a8dfdeea405c0528'}, 'email': 'alextangym@gmail.com', 'root': '/Users/alextang/Desktop/regression-testing', 'host': '10-21-227-22.dynapool.wireless.nyu.edu', 'username': 'root', 'executable': '/Users/alextang/anaconda3/envs/wandb/bin/python', 'cpu_count': 2, 'cpu_count_logical': 4, 'cpu_freq': {'current': 1600, 'min': 1600, 'max': 1600}, 'cpu_freq_per_core': [{'current': 1600, 'min': 1600, 'max': 1600}], 'disk': {'/': {'total': 112.70698928833008, 'used': 8.539253234863281}}, 'memory': {'total': 8.0}}
+2023-10-25 01:18:09,987 INFO    HandlerThread:34449 [system_monitor.py:probe():211] Finished collecting system info
+2023-10-25 01:18:09,988 INFO    HandlerThread:34449 [system_monitor.py:probe():214] Publishing system info
+2023-10-25 01:18:09,988 DEBUG   HandlerThread:34449 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2023-10-25 01:18:09,989 DEBUG   HandlerThread:34449 [system_info.py:_save_pip():68] Saving pip packages done
+2023-10-25 01:18:09,990 DEBUG   HandlerThread:34449 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2023-10-25 01:18:10,289 INFO    Thread-26 :34449 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/conda-environment.yaml
+2023-10-25 01:18:10,290 INFO    Thread-26 :34449 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/requirements.txt
+2023-10-25 01:18:15,617 DEBUG   HandlerThread:34449 [system_info.py:_save_conda():87] Saving conda packages done
+2023-10-25 01:18:15,618 INFO    HandlerThread:34449 [system_monitor.py:probe():216] Finished publishing system info
+2023-10-25 01:18:15,619 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: status_report
+2023-10-25 01:18:15,619 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: keepalive
+2023-10-25 01:18:15,620 DEBUG   SenderThread:34449 [sender.py:send():380] send: files
+2023-10-25 01:18:15,620 INFO    SenderThread:34449 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2023-10-25 01:18:15,634 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: stop_status
+2023-10-25 01:18:15,634 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: internal_messages
+2023-10-25 01:18:15,635 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: partial_history
+2023-10-25 01:18:15,637 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: stop_status
+2023-10-25 01:18:15,813 DEBUG   SenderThread:34449 [sender.py:send():380] send: telemetry
+2023-10-25 01:18:15,813 DEBUG   SenderThread:34449 [sender.py:send():380] send: history
+2023-10-25 01:18:15,813 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: summary_record
+2023-10-25 01:18:15,815 INFO    SenderThread:34449 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-25 01:18:15,819 DEBUG   SenderThread:34449 [sender.py:send():380] send: telemetry
+2023-10-25 01:18:15,820 DEBUG   SenderThread:34449 [sender.py:send():380] send: exit
+2023-10-25 01:18:15,823 INFO    SenderThread:34449 [sender.py:send_exit():585] handling exit code: 0
+2023-10-25 01:18:15,824 INFO    SenderThread:34449 [sender.py:send_exit():587] handling runtime: 5
+2023-10-25 01:18:15,825 INFO    SenderThread:34449 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-25 01:18:15,826 INFO    SenderThread:34449 [sender.py:send_exit():593] send defer
+2023-10-25 01:18:15,826 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,827 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 0
+2023-10-25 01:18:15,827 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:15,828 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 0
+2023-10-25 01:18:15,828 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 1
+2023-10-25 01:18:15,829 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,829 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 1
+2023-10-25 01:18:15,830 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:15,831 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 1
+2023-10-25 01:18:15,831 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 2
+2023-10-25 01:18:15,831 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,831 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 2
+2023-10-25 01:18:15,831 INFO    HandlerThread:34449 [system_monitor.py:finish():190] Stopping system monitor
+2023-10-25 01:18:15,832 DEBUG   SystemMonitor:34449 [system_monitor.py:_start():159] Starting system metrics aggregation loop
+2023-10-25 01:18:15,832 DEBUG   SystemMonitor:34449 [system_monitor.py:_start():166] Finished system metrics aggregation loop
+2023-10-25 01:18:15,832 INFO    HandlerThread:34449 [interfaces.py:finish():202] Joined cpu monitor
+2023-10-25 01:18:15,833 DEBUG   SystemMonitor:34449 [system_monitor.py:_start():170] Publishing last batch of metrics
+2023-10-25 01:18:15,833 INFO    HandlerThread:34449 [interfaces.py:finish():202] Joined disk monitor
+2023-10-25 01:18:15,834 INFO    HandlerThread:34449 [interfaces.py:finish():202] Joined memory monitor
+2023-10-25 01:18:15,834 INFO    HandlerThread:34449 [interfaces.py:finish():202] Joined network monitor
+2023-10-25 01:18:15,834 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:15,835 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 2
+2023-10-25 01:18:15,835 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 3
+2023-10-25 01:18:15,835 DEBUG   SenderThread:34449 [sender.py:send():380] send: stats
+2023-10-25 01:18:15,835 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,836 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 3
+2023-10-25 01:18:15,836 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:15,836 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 3
+2023-10-25 01:18:15,836 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 4
+2023-10-25 01:18:15,836 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,836 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 4
+2023-10-25 01:18:15,837 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:15,837 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 4
+2023-10-25 01:18:15,837 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 5
+2023-10-25 01:18:15,837 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,837 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 5
+2023-10-25 01:18:15,838 DEBUG   SenderThread:34449 [sender.py:send():380] send: summary
+2023-10-25 01:18:15,847 INFO    SenderThread:34449 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2023-10-25 01:18:15,847 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:15,849 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 5
+2023-10-25 01:18:15,850 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 6
+2023-10-25 01:18:15,857 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,857 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 6
+2023-10-25 01:18:15,858 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:15,858 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 6
+2023-10-25 01:18:15,862 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: status_report
+2023-10-25 01:18:15,941 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 7
+2023-10-25 01:18:15,942 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,942 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 7
+2023-10-25 01:18:15,942 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:15,942 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 7
+2023-10-25 01:18:15,943 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 8
+2023-10-25 01:18:15,943 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,943 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 8
+2023-10-25 01:18:15,943 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:15,943 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 8
+2023-10-25 01:18:15,943 INFO    SenderThread:34449 [job_builder.py:build():281] Attempting to build job artifact
+2023-10-25 01:18:15,944 INFO    SenderThread:34449 [job_builder.py:_get_source_type():393] is repo sourced job
+2023-10-25 01:18:15,947 INFO    SenderThread:34449 [job_builder.py:build():369] adding wandb-job metadata file
+2023-10-25 01:18:15,951 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 9
+2023-10-25 01:18:15,952 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:15,952 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 9
+2023-10-25 01:18:15,952 DEBUG   SenderThread:34449 [sender.py:send():380] send: artifact
+2023-10-25 01:18:15,959 INFO    wandb-upload_0:34449 [upload_job.py:push():131] Uploaded file /tmp/tmp8b39e02cwandb/q0iq1cmw-wandb-metadata.json
+2023-10-25 01:18:16,301 INFO    Thread-26 :34449 [dir_watcher.py:_on_file_modified():288] file/dir modified: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/config.yaml
+2023-10-25 01:18:16,301 INFO    Thread-26 :34449 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/wandb-summary.json
+2023-10-25 01:18:16,301 INFO    Thread-26 :34449 [dir_watcher.py:_on_file_created():271] file/dir created: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/wandb-metadata.json
+2023-10-25 01:18:16,498 INFO    wandb-upload_1:34449 [upload_job.py:push():86] Skipped uploading /Users/alextang/Library/Application Support/wandb/artifacts/staging/tmpoaty43oy
+2023-10-25 01:18:16,638 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: poll_exit
+2023-10-25 01:18:16,774 INFO    wandb-upload_0:34449 [upload_job.py:push():89] Uploaded file /Users/alextang/Library/Application Support/wandb/artifacts/staging/tmp5nu_6h27
+2023-10-25 01:18:17,489 INFO    SenderThread:34449 [sender.py:send_artifact():1456] sent artifact job-https___github.com_Emerge-Lab_regression-testing.git_generate_report.py - {'id': 'QXJ0aWZhY3Q6NjE1MzQ2Njg2', 'state': 'PENDING', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjEwOTcxNjIyNg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NjE1MzQ2NTU0', 'versionIndex': 0}}}
+2023-10-25 01:18:17,489 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:17,489 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 9
+2023-10-25 01:18:17,490 INFO    SenderThread:34449 [dir_watcher.py:finish():358] shutting down directory watcher
+2023-10-25 01:18:18,309 INFO    SenderThread:34449 [dir_watcher.py:finish():388] scan: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files
+2023-10-25 01:18:18,309 INFO    SenderThread:34449 [dir_watcher.py:finish():402] scan save: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/requirements.txt requirements.txt
+2023-10-25 01:18:18,310 INFO    SenderThread:34449 [dir_watcher.py:finish():402] scan save: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/config.yaml config.yaml
+2023-10-25 01:18:18,310 INFO    SenderThread:34449 [dir_watcher.py:finish():402] scan save: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/wandb-summary.json wandb-summary.json
+2023-10-25 01:18:18,310 INFO    SenderThread:34449 [dir_watcher.py:finish():402] scan save: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/conda-environment.yaml conda-environment.yaml
+2023-10-25 01:18:18,310 INFO    SenderThread:34449 [dir_watcher.py:finish():402] scan save: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/wandb-metadata.json wandb-metadata.json
+2023-10-25 01:18:18,310 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 10
+2023-10-25 01:18:18,311 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: poll_exit
+2023-10-25 01:18:18,311 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:18,311 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 10
+2023-10-25 01:18:18,317 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:18,317 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 10
+2023-10-25 01:18:18,317 INFO    SenderThread:34449 [file_pusher.py:finish():175] shutting down file pusher
+2023-10-25 01:18:18,602 INFO    wandb-upload_2:34449 [upload_job.py:push():131] Uploaded file /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/wandb-summary.json
+2023-10-25 01:18:18,844 INFO    wandb-upload_0:34449 [upload_job.py:push():131] Uploaded file /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/config.yaml
+2023-10-25 01:18:18,889 INFO    wandb-upload_1:34449 [upload_job.py:push():131] Uploaded file /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/files/requirements.txt
+2023-10-25 01:18:19,114 INFO    Thread-25 (_thread_body):34449 [sender.py:transition_state():613] send defer: 11
+2023-10-25 01:18:19,119 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:19,120 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 11
+2023-10-25 01:18:19,121 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:19,122 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 11
+2023-10-25 01:18:19,122 INFO    SenderThread:34449 [file_pusher.py:join():181] waiting for file pusher
+2023-10-25 01:18:19,122 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 12
+2023-10-25 01:18:19,129 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:19,129 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 12
+2023-10-25 01:18:19,136 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:19,136 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 12
+2023-10-25 01:18:19,136 INFO    SenderThread:34449 [file_stream.py:finish():595] file stream finish called
+2023-10-25 01:18:19,228 INFO    SenderThread:34449 [file_stream.py:finish():599] file stream finish is done
+2023-10-25 01:18:19,228 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 13
+2023-10-25 01:18:19,229 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:19,229 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 13
+2023-10-25 01:18:19,229 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:19,229 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 13
+2023-10-25 01:18:19,230 INFO    SenderThread:34449 [sender.py:transition_state():613] send defer: 14
+2023-10-25 01:18:19,230 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: defer
+2023-10-25 01:18:19,231 INFO    HandlerThread:34449 [handler.py:handle_request_defer():170] handle defer: 14
+2023-10-25 01:18:19,231 DEBUG   SenderThread:34449 [sender.py:send():380] send: final
+2023-10-25 01:18:19,232 DEBUG   SenderThread:34449 [sender.py:send():380] send: footer
+2023-10-25 01:18:19,232 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: defer
+2023-10-25 01:18:19,232 INFO    SenderThread:34449 [sender.py:send_request_defer():609] handle sender defer: 14
+2023-10-25 01:18:19,234 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: internal_messages
+2023-10-25 01:18:19,235 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: poll_exit
+2023-10-25 01:18:19,236 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: server_info
+2023-10-25 01:18:19,236 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: get_summary
+2023-10-25 01:18:19,237 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: poll_exit
+2023-10-25 01:18:19,237 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: sampled_history
+2023-10-25 01:18:19,238 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: server_info
+2023-10-25 01:18:19,238 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: job_info
+2023-10-25 01:18:19,296 DEBUG   SenderThread:34449 [sender.py:send_request():407] send_request: job_info
+2023-10-25 01:18:19,298 DEBUG   HandlerThread:34449 [handler.py:handle_request():144] handle_request: shutdown
+2023-10-25 01:18:19,298 INFO    HandlerThread:34449 [handler.py:finish():844] shutting down handler
+2023-10-25 01:18:20,246 INFO    WriterThread:34449 [datastore.py:close():294] close: /Users/alextang/Desktop/regression-testing/wandb/run-20231025_011808-p6rusl2g/run-p6rusl2g.wandb
+2023-10-25 01:18:20,300 INFO    SenderThread:34449 [sender.py:finish():1534] shutting down sender
+2023-10-25 01:18:20,301 INFO    SenderThread:34449 [file_pusher.py:finish():175] shutting down file pusher
+2023-10-25 01:18:20,301 INFO    SenderThread:34449 [file_pusher.py:join():181] waiting for file pusher
