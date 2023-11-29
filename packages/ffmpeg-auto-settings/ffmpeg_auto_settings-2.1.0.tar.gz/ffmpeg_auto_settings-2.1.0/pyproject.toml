@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "ffmpeg-auto-settings"
+version = "2.1.0"
+description = ""
+authors = ["liancea <liancea@mehrkoffe.in>"]
+readme = "README.md"
+license = "GPL-3.0-only"
+repository = "https://gitlab.com/liancea/ffmpeg-auto-settings"
+documentation = "https://liancea.gitlab.io/ffmpeg-auto-settings/"
+packages = [
+    { include = "ffas" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+tomlkit = "^0.12.3"
+prettytable = "^3.9.0"
+python-magic = "^0.4.27"
+blessings = "^1.7"
+inquirerpy = "^0.3.4"
+sqlalchemy = "~2.0"
+humanize = "^4.8.0"
+python-magic-bin = { version = "^0.4.14", markers="sys_platform == 'win32'"}
+
+[tool.poetry.scripts]
+ffas = 'ffas:entrypoint'
+
+[tool.poetry.group.dev.dependencies]
+mkdocs = "^1.5.3"
+mkdocs-material = "^9.4.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
