@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: RF-Track
+Version: 2.2.0
+Summary: The CERN tracking code RF-Track
+Home-page: https://gitlab.cern.ch/rf-track
+Author: Andrea Latina
+Author-email: andrea.latina@cern.ch
+License: Proprietary
+Project-URL: Documentation, https://gitlab.cern.ch/rf-track/download/-/raw/master/rf-track-2.2.0beta/RF_Track_reference_manual.pdf?ref_type=heads
+Project-URL: Tracker, https://gitlab.cern.ch/rf-track/rf-track-2.1/-/issues
+Platform: POSIX
+Platform: Linux
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: C++
+Classifier: License :: Other/Proprietary License
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS :: MacOS X
+Provides: RF_Track
+Requires-Python: ~=3.10
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: gsl
+
+RF-Track is a tracking code developed at CERN for the optimization of particle accelerators, which offers outstanding flexibility and rapid simulation speed.
+
+RF-Track can simulate beams of particles with arbitrary energy, mass, and charge, even mixed, solving fully relativistic equations of motion.  It can simulate the effects of space-charge forces, both in bunched and continuous-wave beams. It can transport the beams through common elements as well as through special ones: 1D, 2D, and 3D static or oscillating radio-frequency electromagnetic field maps (real and complex), flux concentrators, and electron coolers. It allows element overlap, and direct and indirect space-charge calculation using fast parallel algorithms.
+
+RF-Track is written in optimized and parallel C++ and uses the scripting languages Octave and Python as user interfaces. General knowledge of Octave or Python is recommended to get the best out of RF-Track.
