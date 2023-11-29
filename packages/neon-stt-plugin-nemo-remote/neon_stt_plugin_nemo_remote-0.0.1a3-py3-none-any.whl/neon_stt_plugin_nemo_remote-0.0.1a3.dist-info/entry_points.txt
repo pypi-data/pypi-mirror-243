@@ -1,0 +1,2 @@
+[mycroft.plugin.stt]
+neon-stt-plugin-nemo-remote = neon_stt_plugin_nemo_remote:NemoRemoteSTT
