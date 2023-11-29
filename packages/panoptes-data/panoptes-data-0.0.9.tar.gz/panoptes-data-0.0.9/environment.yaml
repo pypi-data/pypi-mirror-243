@@ -1,0 +1,16 @@
+name: panoptes-data
+channels:
+  - https://conda.anaconda.org/conda-forge
+dependencies:
+  - astropy
+  - numpy
+  - pandas
+  - pip
+  - pydantic
+  - pydantic-settings
+  - python-dateutil
+  - tqdm
+  - typer
+  - pip:
+      - .
+      - panoptes-utils[images]
