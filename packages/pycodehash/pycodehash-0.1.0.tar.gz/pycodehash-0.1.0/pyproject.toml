@@ -1,0 +1,68 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pycodehash"
+dynamic = ["version"]
+description = ""
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT License"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+authors = [
+  { name = "Max Baak", email = "max.baak@ing.com" },
+  { name = "Simon Brugman", email = "simon.brugman@ing.com" },
+  { name = "Ralph Urlus", email = "ralph.urlus@ing.com" },
+]
+
+dependencies = [
+    'astunparse; python_version <= "3.9"',
+    'typing_extensions; python_version <= "3.11"',
+    'asttokens',
+    'rope',
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+]
+sql = [
+    "sqlfluff"
+]
+s3 = [
+    "boto3"
+]
+docs = [
+    "mkdocs",
+    "mkdocs-macros-plugin"
+]
+
+[project.urls]
+Source = "https://github.com/RUrlus/pycodehash"
+Documentation = "https://github.com/RUrlus/pycodehash#readme"
+Issues = "https://github.com/RUrlus/pycodehash/issues"
+
+[tool.hatch.version]
+path = "src/pycodehash/version.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pycodehash"]
+
+[tool.ruff]
+extend-select = ["TID"]
+target-version = "py38"
+line-length = 120
+select = [
+  # Enable Pyflakes `E`, `F` and `W` codes
+  "E",
+  "F",
+  "W",
+  # Sort imports
+  "I"
+]

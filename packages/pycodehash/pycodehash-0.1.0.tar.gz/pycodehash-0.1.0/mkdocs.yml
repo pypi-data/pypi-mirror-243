@@ -1,0 +1,17 @@
+site_name: PyCodeHash Documentation
+site_url: https://pycodehash.github.io/pycodehash
+site_description: "PyCodeHash is a generic data and code hashing library that facilitates downstream caching."
+
+nav:
+  - Introduction: 'index.md'
+  - 'Detecting changes':
+    - 'Python Functions': 'python_functions.md'
+    - 'SQL Queries': 'sql_queries.md'
+    - 'Datasets': 'datasets.md'
+
+theme:
+  name: readthedocs
+
+plugins:
+  - macros:
+      include_dir: .

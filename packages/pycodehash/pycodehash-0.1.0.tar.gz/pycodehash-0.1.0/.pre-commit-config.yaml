@@ -1,0 +1,9 @@
+repos:
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.1.6
+  hooks:
+    - id: ruff
+      args: [--fix]
+      exclude: tests/resources/|playgrounds/
+    - id: ruff-format
+      exclude: tests/resources/|playgrounds/
