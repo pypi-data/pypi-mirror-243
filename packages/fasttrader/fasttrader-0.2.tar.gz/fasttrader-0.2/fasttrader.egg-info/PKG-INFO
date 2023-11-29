@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: fasttrader
+Version: 0.2
+Summary: Welcome to FastTrader, Your Gateway to Innovative Financial Analysis
+Author: CS594GROUP2
+Author-email: <johnpiapian@gmail.com>
+Keywords: python,yfinance,trading,backtesting,stock market,trading strategies
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+In the dynamic world of quantitative financial analysis, FastTrader stands out as a pioneering tool designed to empower you, the user. At the heart of FastTrader is our commitment to transparency and user-driven functionality. Unlike many other platforms, we provide complete visibility into the inner workings of our system, allowing you to not just utilize but also understand every aspect of your trading strategies.
