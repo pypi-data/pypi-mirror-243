@@ -1,0 +1,8 @@
+include include/olm/*.h
+include olm_build.py
+include libolm/*
+include libolm/cmake/*
+include libolm/include/olm/*
+recursive-include libolm/lib *
+include libolm/src/*
+recursive-include libolm/tests *
