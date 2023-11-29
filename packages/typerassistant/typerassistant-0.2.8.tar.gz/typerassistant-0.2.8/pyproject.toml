@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "typerassistant"
+version = "0.2.8"
+description = "Automatically generate an OpenAI Assistant interface for any python typer CLI."
+authors = ["Erich Blume <blume.erich@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+homepage = "https://github.com/eblume/TyperAssistant"
+repository = "https://github.com/eblume/TyperAssistant"
+keywords = ["typer", "openai", "assistant", "cli", "command-line", "interface", "ai", "artificial intelligence"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: User Interfaces",
+    "Topic :: Utilities",
+]
+packages = [
+    { "include" = "typerassistant", "from" = "src" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"  # I think case/match is the limiting factor here, so this could be pushed back
+typer = {extras = ["all"], version = "^0.9.0"}
+openai = "^1.3.2"
+rich = "^13.7.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+ruff = "^0.1.6"
+ipdb = "^0.13.13"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+# Default select = ["E4", "E7", "E9", "F"]
+select = ["E4", "E7", "E9", "F", "W", "I"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
