@@ -1,0 +1,2 @@
+[console_scripts]
+resistify = resistify.main:main
