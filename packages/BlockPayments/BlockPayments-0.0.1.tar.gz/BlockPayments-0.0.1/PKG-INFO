@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: BlockPayments
+Version: 0.0.1
+Summary: A Python wrapper for the BlockPayments API.
+Home-page: https://github.com/HexyeDev/BlockPayments.py
+Author: Hexye
+License: MIT
+Keywords: blockpayments,blockpayments api,blockpayments python,blockpayments wrapper,blockpayments.py
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: aiohttp
+
+# BlockPayments.py
+BlockPayments python api wrapper
+
+
+# Examples:
+```python
+"""This example will use sincronous requests."""
+from BlockPayments import BlockPayments
+blockpayments = BlockPaymets("my_api_key")
+
+
+# Get a payment url
+print(blockpayments.get_payment_url(
+    user_id=123 # replace with your telegram user id
+    amount=0.001 # replace with the amount of the currency you want to receive
+    currency="BTC" # replace with the currency you want to receive (BTC, ETH, LTC or BSC)
+))
+```
+
+
+```python
+"""This example will use asincronous requests."""
+from BlockPayments import AsyncBlockPayments
+import asyncio
+blockpayments = AsyncBlockPaymets("my_api_key")
+
+async def main():
+    # Get a payment url
+    print(await blockpayments.get_payment_url(
+        user_id=123 # replace with your telegram user id
+        amount=0.001 # replace with the amount of the currency you want to receive
+        currency="BTC" # replace with the currency you want to receive (BTC, ETH, LTC or BSC)
+    ))
+
+asyncio.run(main())
+```
