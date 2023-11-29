@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.py
+MDA_learn.egg-info/PKG-INFO
+MDA_learn.egg-info/SOURCES.txt
+MDA_learn.egg-info/dependency_links.txt
+MDA_learn.egg-info/requires.txt
+MDA_learn.egg-info/top_level.txt
+mda/__init__.py
+mda/mda.py
+tests/__init__.py
+tests/test_mda.py
