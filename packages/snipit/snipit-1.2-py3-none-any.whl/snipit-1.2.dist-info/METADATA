@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: snipit
+Version: 1.2
+Summary: snipit
+Home-page: https://github.com/aineniamh/snipit
+Author: Aine OToole
+Author-email: aine.otoole@ed.ac.uk
+License-File: LICENSE
+Requires-Dist: biopython >=1.70
+Requires-Dist: matplotlib >=3.2.1
+Requires-Dist: setuptools
+
