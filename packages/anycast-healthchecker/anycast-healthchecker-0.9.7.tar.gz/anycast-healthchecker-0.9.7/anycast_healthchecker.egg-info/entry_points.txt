@@ -1,0 +1,2 @@
+[console_scripts]
+anycast-healthchecker = anycast_healthchecker.main:main
