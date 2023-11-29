@@ -1,0 +1,109 @@
+Metadata-Version: 2.1
+Name: cgn-pytorch
+Version: 0.4.2
+Summary: Pytorch implementation of Contact Graspnet
+License: MIT
+Keywords: artificial intelligence,deep learning,grasping,robotics,contact grasp net
+Author: Sebastian Peralta
+Author-email: peraltas@seas.upenn.edu
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: asttokens (==2.4.1)
+Requires-Dist: certifi (==2023.11.17)
+Requires-Dist: charset-normalizer (==3.3.2)
+Requires-Dist: decorator (==5.1.1)
+Requires-Dist: exceptiongroup (==1.2.0)
+Requires-Dist: executing (==2.0.1)
+Requires-Dist: filelock (==3.13.1)
+Requires-Dist: fsspec (==2023.10.0)
+Requires-Dist: idna (==3.4)
+Requires-Dist: importlib-resources (==6.1.1)
+Requires-Dist: ipython (==8.17.2)
+Requires-Dist: jedi (==0.19.1)
+Requires-Dist: jinja2 (==3.1.2)
+Requires-Dist: joblib (==1.3.2)
+Requires-Dist: markupsafe (==2.1.3)
+Requires-Dist: matplotlib-inline (==0.1.6)
+Requires-Dist: meshcat (==0.3.2)
+Requires-Dist: mpmath (==1.3.0)
+Requires-Dist: networkx (==3.2.1)
+Requires-Dist: numpy (==1.26.2)
+Requires-Dist: parso (==0.8.3)
+Requires-Dist: pexpect (==4.8.0)
+Requires-Dist: pillow (==10.1.0)
+Requires-Dist: prompt-toolkit (==3.0.41)
+Requires-Dist: psutil (==5.9.6)
+Requires-Dist: ptyprocess (==0.7.0)
+Requires-Dist: pure-eval (==0.2.2)
+Requires-Dist: pygments (==2.17.2)
+Requires-Dist: pyngrok (==7.0.1)
+Requires-Dist: pyparsing (==3.1.1)
+Requires-Dist: pyrender (>=0.1.45,<0.2.0)
+Requires-Dist: pyyaml (==6.0.1)
+Requires-Dist: pyzmq (==25.1.1)
+Requires-Dist: requests (==2.31.0)
+Requires-Dist: scikit-learn (==1.3.2)
+Requires-Dist: scipy (==1.11.4)
+Requires-Dist: six (==1.16.0)
+Requires-Dist: stack-data (==0.6.3)
+Requires-Dist: sympy (==1.12)
+Requires-Dist: threadpoolctl (==3.2.0)
+Requires-Dist: torch (==2.1.1)
+Requires-Dist: torch-cluster (>=1.6.3,<2.0.0)
+Requires-Dist: torch-geometric (==2.4.0)
+Requires-Dist: tornado (==6.3.3)
+Requires-Dist: tqdm (==4.66.1)
+Requires-Dist: traitlets (==5.13.0)
+Requires-Dist: trimesh (==4.0.4)
+Requires-Dist: typeguard (==4.1.5)
+Requires-Dist: typing-extensions (==4.8.0)
+Requires-Dist: u-msgpack-python (==2.8.0)
+Requires-Dist: urllib3 (==2.1.0)
+Requires-Dist: wcwidth (==0.2.12)
+Description-Content-Type: text/markdown
+
+# Contact-GraspNet Pytorch
+Pytorch implementation of Contact-GraspNet. This repo is based heavily on 
+https://github.com/alinasarmiento/pytorch_contactnet. Original Tensorflow implementation can be found at: https://github.com/NVlabs/contact_graspnet
+
+
+## Installation Instructions
+`pip install cgn-pytorch`
+
+## Usage:
+`import cgn_pytorch`
+
+`cgn_model, optimizer, config_dict  = cgn_pytorch.from_pretrained(cpu=False)`
+
+
+## Run The Demo
+### Clone this Repo
+`git clone  https://github.com/sebbyjp/cgn_pytorch.git`
+
+### Install Dependencies
+`pip3 install -r requirements.txt`
+
+### Vizualization
+We're doing our visualizations in MeshCat. In a separate tab, start a meshcat server with `meshcat-server`
+
+From here you can run `python3 eval.py`
+
+To visualize different confidence threshold masks on the grasps, use the `--threshold` argument such as `--threshold=0.8`
+
+To visualize different cluttered scenes (8-12 tabletop objects rendered in pyrender from ACRONYM), use the argument `--scene` and manually feed in a file name such as `--scene=002330.npz`.Your possible files are:
+- 002330.npz
+- 004086.npz
+- 005274.npz
+
+## Predicting grasps on your own pointclouds
+The model should work on any pointcloud of shape (Nx3). For most consistent results, please make sure to put the pointcloud in the world frame and center it by subtracting the mean. Do not normalize the pointcloud to a unit sphere or unit box, as "graspability" naturally changes depending on the size of the objects (so we don't want to lose that information about the scene by scaling it).
+
+
