@@ -1,0 +1,13 @@
+pyimgbox==1.*
+
+[dev]
+pytest
+pytest-asyncio
+pytest-mock
+pytest-httpserver
+tox
+coverage
+pytest-cov
+ruff
+flake8
+isort
