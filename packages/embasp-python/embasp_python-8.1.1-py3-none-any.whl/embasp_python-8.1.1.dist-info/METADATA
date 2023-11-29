@@ -1,0 +1,48 @@
+Metadata-Version: 2.1
+Name: embasp-python
+Version: 8.1.1
+Summary: EmbASP is a framework for the integration of Logic Programming in external systems
+Home-page: https://www.mat.unical.it/calimeri/projects/embasp/
+Author: Department of Mathematics and Computer Science, University of Calabria
+Author-email: embasp@mat.unical.it
+License: MIT License
+        
+        Copyright (c) 2020 Department of Mathematics and Computer Science
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://www.mat.unical.it/calimeri/projects/embasp
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 2
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: antlr4-python3-runtime ==4.7
+
+# EmbASP - Python Version
+
+EmbASP is a framework for the integration of Logic Programming in external systems for generic applications, conceived in order to help developers at designing and implementing complex reasoning tasks by means of logic-based solvers on different platforms.
+
+We currently provide 3 implementations (in [Java](https://www.java.com), in [Python](https://www.python.org) and in [C#](https://docs.microsoft.com/dotnet/csharp/language-reference/) ) and ready-made libraries for the embedding of the _ASP (Answer Set Programming)_ solvers [DLV](http://www.dlvsystem.com/dlv), [clingo](https://potassco.org/clingo) and [DLV2](https://www.mat.unical.it/DLV2) and the _PDDL (Planning Domain Definition Language)_ cloud solver [Solver.Planning.Domains](http://solver.planning.domains) (SPD) on the Desktop platform and of DLV, DLV2 and SPD on the Mobile (Android™) one (available only for the Java version). The Java version requires the antlr4 library.
+
+The framework has been designed to be easily extensible and adaptable to different solvers and platforms. Solvers can be invoked in different modes; for instance, SPD is invoked via a remote connection, while for the other, binaries are effectively embedded and natively executed.
+
+# Contacts
+For further information, visit https://www.mat.unical.it/calimeri/projects/embasp
