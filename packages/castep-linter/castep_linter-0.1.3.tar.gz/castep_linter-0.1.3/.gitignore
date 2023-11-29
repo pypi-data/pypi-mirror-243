@@ -1,0 +1,6 @@
+.coverage
+__pycache__
+fortran.so
+*~
+dist
+*.xml
