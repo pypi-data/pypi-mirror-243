@@ -1,0 +1,10 @@
+influxdb
+influxdb-client
+injector
+lazy
+adafruit-circuitpython-busdevice
+
+[tests]
+pytest-cov
+mock
+assertpy
