@@ -1,0 +1,7 @@
+[console_scripts]
+pytest11=singer_sdk:testing.pytest_plugin[testing]
+
+[singer_sdk.batch_encoders]
+jsonl=singer_sdk.contrib.batch_encoder_jsonl:JSONLinesBatcher
+parquet=singer_sdk.contrib.batch_encoder_parquet:ParquetBatcher
+
