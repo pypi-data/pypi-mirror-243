@@ -1,0 +1,7 @@
+numpy>=1.19.0
+gymnasium>=0.28.1
+tinyscaler>=1.2.6
+
+[testing]
+pettingzoo[butterfly,classic]>=1.23.1
+pytest
