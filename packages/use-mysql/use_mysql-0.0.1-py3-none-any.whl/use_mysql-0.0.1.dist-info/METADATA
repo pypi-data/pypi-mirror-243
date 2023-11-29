@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: use-mysql
+Version: 0.0.1
+Summary: 
+Author: miclon
+Author-email: jcnd@163.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: mysql-connector-python (>=8.1.0,<9.0.0)
+Requires-Dist: usepy (>=0.2.6,<0.3.0)
+Description-Content-Type: text/markdown
+
+### usepy-plugin-mysql
+
+<a href="https://pypi.org/project/usepy-plugin-mysql" target="_blank">
+    <img src="https://img.shields.io/pypi/v/usepy-plugin-mysql.svg" alt="Package version">
+</a>
+
+<a href="https://pypi.org/project/usepy-plugin-mysql" target="_blank">
+    <img src="https://img.shields.io/pypi/pyversions/usepy-plugin-mysql.svg" alt="Supported Python versions">
+</a>
+
+#### 安装
+
+> pip install usepy-plugin-mysql
+
+#### 使用
+
+
