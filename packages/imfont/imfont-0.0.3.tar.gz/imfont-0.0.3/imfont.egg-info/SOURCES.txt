@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+imfont/.version
+imfont/__init__.py
+imfont/font2c
+imfont/imfont.py
+imfont/main.py
+imfont.egg-info/PKG-INFO
+imfont.egg-info/SOURCES.txt
+imfont.egg-info/dependency_links.txt
+imfont.egg-info/entry_points.txt
+imfont.egg-info/requires.txt
+imfont.egg-info/top_level.txt
