@@ -1,0 +1,69 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="dexterity.localroles">
+
+  <browser:page
+      name="localroles"
+      for="plone.app.dexterity.interfaces.ITypeSchemaContext"
+      class=".settings.LocalRoleConfigurationPage"
+      permission="plone.schemaeditor.ManageSchemata" />
+
+  <browser:page
+      name="behaviors"
+      for="plone.app.dexterity.interfaces.ITypeSchemaContext"
+      class=".overrides.CustomTypeBehaviorsPage"
+      permission="plone.schemaeditor.ManageSchemata"
+      layer="dexterity.localroles.interfaces.IDexterityLocalRoles" />
+
+  <browser:page
+      name="overview"
+      for="plone.app.dexterity.interfaces.ITypeSchemaContext"
+      class=".overrides.CustomTypeOverviewPage"
+      permission="plone.schemaeditor.ManageSchemata"
+      layer="dexterity.localroles.interfaces.IDexterityLocalRoles" />
+
+  <browser:page
+      name="fields"
+      for="plone.app.dexterity.interfaces.ITypeSchemaContext"
+      class=".overrides.CustomTypeFieldsPage"
+      permission="plone.schemaeditor.ManageSchemata"
+      layer="dexterity.localroles.interfaces.IDexterityLocalRoles" />
+
+  <adapter factory=".settings.RelatedFormatValidator"
+           name="dexterity.localroles.RelatedFormatValidator" />
+
+  <adapter
+      for="zope.interface.interface.Interface
+           zope.interface.interface.Interface
+           zope.interface.interface.Interface
+           dexterity.localroles.browser.interfaces.IPrincipal
+           zope.interface.interface.Interface"
+      provides="z3c.form.interfaces.IValidator"
+      factory=".settings.RoleFieldValidator"
+      />
+
+   <adapter
+      for="dexterity.localroles.browser.interfaces.IRole
+           z3c.form.interfaces.IFormLayer"
+      factory=".settings.role_widget"
+      />
+
+  <adapter
+      for="zope.interface.interface.Interface
+           zope.interface.interface.Interface
+           zope.interface.interface.Interface
+           dexterity.localroles.browser.interfaces.ILocalRoleList
+           zope.interface.interface.Interface"
+      provides="z3c.form.interfaces.IValidator"
+      factory=".settings.LocalRoleListValidator"
+      />
+
+   <adapter
+      for="dexterity.localroles.browser.interfaces.ILocalRoleList
+           z3c.form.interfaces.IFormLayer"
+      factory=".settings.localrolelist_widget"
+      />
+
+</configure>

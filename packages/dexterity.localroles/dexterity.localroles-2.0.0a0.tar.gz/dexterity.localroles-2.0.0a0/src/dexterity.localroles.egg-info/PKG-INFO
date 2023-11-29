@@ -1,0 +1,192 @@
+Metadata-Version: 2.1
+Name: dexterity.localroles
+Version: 2.0.0a0
+Summary: Define local roles settings by dexterity type
+Home-page: https://github.com/collective/dexterity.localroles
+Author: IMIO
+Author-email: support@imio.be
+License: gpl
+Project-URL: PyPI, https://pypi.python.org/pypi/dexterity.localroles
+Project-URL: Source, https://github.com/collective/dexterity.localroles
+Keywords: Plone Python
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Plone
+Classifier: Framework :: Plone :: 4.3
+Classifier: Framework :: Plone :: 5.1
+Classifier: Framework :: Plone :: 6.0
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Provides-Extra: test
+
+.. contents::
+
+Introduction
+============
+
+Allow to define local roles settings by dexterity type.
+
+A new configuration page is added as a new tab on a dexterity type configuration.
+
+A configuration line has the following fields:
+
+* the state
+* the principal
+* the roles
+* an optional configuration as string, but evaluated as a dict: {'utility name': [roles]}. The utility implements
+  ILocalRolesRelatedSearchUtility and get related objects.
+
+You can then define for each state which principal will receive some local roles automatically on the content,
+and other local roles on related content.
+
+By example:
+
+* on the "pending" state, the "stephen" user will receive the following role: Reviewer.
+* on the "published" state, the "editors" group will receive the following roles: Editor, Reviewer.
+
+The utility "dexterity.localroles.related_parent" get the object parent and can be used to give local roles on the content parent.
+
+* on the "pending" state, the "stephen" user will receive on the content parent the role: Reviewer.
+
+Those automaticaly given roles cannot be manually removed by the "sharing" tab (read only, as inherited roles).
+
+This package is a base for dexterity.localrolesfield that adds a field to define the principal.
+
+Versions
+========
+
+* Version 2.x is compliant Plone 4, Plone 6
+* version 1.x is for Plone 4 only
+
+Installation
+============
+
+* Add dexterity.localroles to your eggs.
+* Re-run buildout.
+* Done.
+
+Credits
+=======
+
+Have an idea? Found a bug? Let us know by `opening a ticket`_.
+
+.. _`opening a ticket`: https://github.com/collective/dexterity.localroles/issues
+
+
+Tests
+=====
+
+This package is tested using Travis CI. The current status of the add-on is :
+
+.. image:: https://api.travis-ci.org/collective/dexterity.localroles.png
+    :target: https://travis-ci.org/collective/dexterity.localroles
+.. image:: https://coveralls.io/repos/collective/dexterity.localroles/badge.svg?branch=master&service=github
+  :target: https://coveralls.io/github/collective/dexterity.localroles?branch=master
+
+Contributors
+============
+
+- IMIO, Original Author
+
+Changelog
+=========
+
+2.0.0a (2023-11-28)
+-------------------
+
+- Plone 4.3 and 6.0 compliant
+  [sgeulette]
+
+1.6 (2022-07-01)
+----------------
+
+- Added 'rel' (related) handling in `utils.update_roles_in_fti`
+  [sgeulette]
+- Added 'rem' action in `utils.update_roles_in_fti`
+  [sgeulette]
+- Added 'portal_type' parameter in `utils.fti_configuration`
+  [sgeulette]
+
+1.5 (2021-08-27)
+----------------
+
+- Added `update_roles_in_fti` method to update local roles in a config.
+  [sgeulette]
+- Added `update_security_index` method to update security index
+  [sgeulette]
+
+1.4 (2019-06-23)
+----------------
+
+- Safe dict key access
+  [sgeulette]
+- Added css id in configuration form.
+  [sgeulette]
+
+1.3 (2018-11-06)
+----------------
+
+- Use safely state title in unicode.
+  [sgeulette]
+
+1.2 (2017-05-30)
+----------------
+
+- Refactored utils method
+  [sgeulette]
+- Added method to delete related uid annotation.
+  [sgeulette]
+
+1.1 (2016-04-18)
+----------------
+
+- Useless subscriber removed.
+  [sgeulette]
+
+1.0 (2015-11-24)
+----------------
+
+- Use only local roles in vocabulary.
+  [sgeulette]
+- Store all configuration in one fti attribute 'localroles'.
+  Useful for dexterity.localrolesfield to avoid a field name is an existing attribute
+  [sgeulette]
+- Add a related field to store a text configuration that will be used to set related objects local roles.
+  [sgeulette]
+- Add related search utility
+  [sgeulette]
+- Change related local roles on transition, on addition, on removal, on moving, on configuration changes
+  [sgeulette]
+- Add an adapter for related local roles
+  [sgeulette]
+- Simplify code
+  [sgeulette]
+
+0.2 (2015-06-02)
+----------------
+
+- Avoid exception on site deletion
+  [sgeulette]
+
+
+0.1 (2014-10-24)
+----------------
+
+- Various improvements
+  [mpeeters, sgeulette]
+- Added tests
+  [sgeulette]
+- Some improvements
+  [sgeulette]
+- Add validation on configuration view
+  [mpeeters]
+- Add localroles configuration view
+  [mpeeters]
+- Add an adapter for borg.localrole
+  [mpeeters]
+
+
+
