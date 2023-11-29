@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: xdggs
+Version: 0.0.1
+Summary: Xarray extension for DGGS
+Author: Benoît Bovy, Justus Magin
+Maintainer: xdggs contributors
+License: Apache-2.0
+Project-URL: Repository, https://github.com/xarray-contrib/xdggs
+Keywords: DGGS,xarray,GIS
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: GIS
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: xarray
+Requires-Dist: healpy
+Requires-Dist: h3
+
