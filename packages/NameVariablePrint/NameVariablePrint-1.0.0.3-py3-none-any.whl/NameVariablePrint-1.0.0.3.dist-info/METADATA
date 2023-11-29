@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: NameVariablePrint
+Version: 1.0.0.3
+Summary: Print variable name and value when you debugging
+Home-page: https://github.com/sanghyeon1/nvprint
+Author: Shawn_Park
+Author-email: psh990626@gmail.com
+Keywords: pypi,NameVariablePrint,debugprint,print
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+<div align="center">
+	<img src="https://capsule-render.vercel.app/api?type=rounded&color=0:0091ff,100:00f6fa&height=120&text=NameVariablePrint&animation=twinkling&fontColor=001580&fontSize=50"/>
+</div>
+<div style="text-align: left;">
+	<h1 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> NameVariablePrint - nvprint </h1>
+	<div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> This Python package improves your variable debugging. </div>
+</div>
+<div style="text-align: left;">
+	<br>
+		<br>
+			<h1 style="border-bottom: 1px solid #d8dee4; color: #282d33;">📄 How to Use </h1>
+			<h3>Download PyPI Package</h3>
+			<li>pip install NameVariablePrint</li>
+			<br>
+				<h3>Package Import</h3>
+				<li>import NameVariablePrint.nvprint</li>
+				<br>
+					<h3>Usage</h3>
+					<li>nvprint.nvprint(var1, var2, ...)</li>
+					<br>
+						<h3>Parameters</h3>
+						<li>All type Variables you want to print with.</li>
+						<li>Variable Type Print : t</li>
+						<li>t's type : boolean</li>
+						<br>
+</div>
