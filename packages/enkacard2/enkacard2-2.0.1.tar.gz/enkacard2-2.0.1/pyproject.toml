@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "enkacard2"
+version = "2.0.1"
+description = "An asynchronous module and API that allows you to connect to your bot the generation of Genshin character cards from the Enka.Network website."
+authors = ["None"]
+
+readme = 'README.md'  # Markdown files are supported
+
+repository = "https://github.com/DEViantUA/EnkaCard/tree/EnkaCard2"
+homepage = "https://github.com/DEViantUA/EnkaCard/tree/EnkaCard2"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Pillow = "^10.0.1"
+"enkanetwork.py" = "^1.4.5"
+cachetools = "^5.2.0"
+asyncache  = "^0.3.1"
+numpy = "^1.24.2"
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
