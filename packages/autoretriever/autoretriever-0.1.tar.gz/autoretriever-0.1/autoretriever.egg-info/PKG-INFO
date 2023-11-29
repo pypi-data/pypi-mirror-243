@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: autoretriever
+Version: 0.1
+Summary: A simple data retriever chat, built on AutoGen framework
+Home-page: https://letmedoit.ai
+Author: Eliran Wong
+Author-email: support@letmedoit.ai
+License: GNU General Public License (GPL)
+Project-URL: Source, https://github.com/eliranwong/autoretriever
+Project-URL: Tracker, https://github.com/eliranwong/autoretriever/issues
+Project-URL: Documentation, https://github.com/eliranwong/autoretriever/wiki
+Project-URL: Funding, https://www.paypal.me/MarvelBible
+Keywords: text editor prompt toolkit
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Requires-Dist: prompt_toolkit
+Requires-Dist: openai==1.3.5
+Requires-Dist: unstructured[all-docs]
+Requires-Dist: pyautogen[mathchat,retrievechat,teachable]==0.2.0
+Requires-Dist: chromadb
+
+# autoretriever
+
+A simple data retriever chat, built on [AutoGen framework](https://microsoft.github.io/autogen/docs/Getting-Started/).
+
+It is a simplified version of autoretriever, which is integrated as part of [LetMeDoIt AI project](https://github.com/eliranwong/letmedoit)
+
+# Install
+
+> pip install autoretriever
+
+# Usage
+
+> autoretriever
