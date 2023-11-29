@@ -1,0 +1,24 @@
+================================== SLURM START - 11/28/23 19:55:56
+==================== PARAM
+JOB TAG      : test
+LOG FILE     : slurm_output/test.log
+SLURM FILE   : slurm_output/test.slm
+==================== TIME
+DATE GEN     : 11/28/23 19:54:40
+DATE RUN     : 11/28/23 19:55:56
+==================== SLURM
+JOB ID       : 8569020
+JOB NAME     : test
+JOB NODE     : m08
+==================== ENV VAR
+==================== RUN: hello
+enter script
+    ARGUMENT = hello world!
+    VARWORLD = welcome!
+exit script
+==================== RUN: goodbye
+enter script
+    ARGUMENT = goodbye world!
+    VARWORLD = welcome!
+exit script
+================================== SLURM END - 11/28/23 19:55:56
