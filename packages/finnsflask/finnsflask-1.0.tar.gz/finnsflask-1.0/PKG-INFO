@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: finnsflask
+Version: 1.0
+Summary: This is a recreation of the popular python package, Flask.
+Home-page: https://github.com/the-real-finnventor/finnsflask
+Download-URL: https://github.com/the-real-finnventor/finnsflask/archive/refs/tags/1.0.tar.gz
+Author: Real Finnventor
+Author-email: finnventor@everspaugh.com
+License: MIT
+Keywords: FLASK,WEBSERVER,JINJA2
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE.txt
