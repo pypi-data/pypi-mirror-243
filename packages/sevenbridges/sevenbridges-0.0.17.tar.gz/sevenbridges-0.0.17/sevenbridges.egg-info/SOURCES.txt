@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+sevenbridges/__init__.py
+sevenbridges/graphcreator.py
+sevenbridges.egg-info/PKG-INFO
+sevenbridges.egg-info/SOURCES.txt
+sevenbridges.egg-info/dependency_links.txt
+sevenbridges.egg-info/requires.txt
+sevenbridges.egg-info/top_level.txt
+test/test.py
