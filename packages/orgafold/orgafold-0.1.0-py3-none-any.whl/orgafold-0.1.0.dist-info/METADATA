@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: orgafold
+Version: 0.1.0
+Summary: Quickly handle a high number of files, perhaps obtained after a disk recovery.
+Home-page: https://github.com/CZ-NIC/orgafold
+License: GNU GPLv3
+Author: Edvard Rejthar
+Author-email: edvard.rejthar@nic.cz
+Requires-Python: >=3.10
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: requires-python (>=3.10)
