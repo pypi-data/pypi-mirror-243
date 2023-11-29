@@ -1,0 +1,16 @@
+AUTHORS.rst
+LICENSE
+README.rst
+setup.py
+verumverify/__init__.py
+verumverify/crypto_svc.py
+verumverify/main.py
+verumverify/retrieval_svc.py
+verumverify/status_svc.py
+verumverify/video_svc.py
+verumverify.egg-info/PKG-INFO
+verumverify.egg-info/SOURCES.txt
+verumverify.egg-info/dependency_links.txt
+verumverify.egg-info/entry_points.txt
+verumverify.egg-info/requires.txt
+verumverify.egg-info/top_level.txt
