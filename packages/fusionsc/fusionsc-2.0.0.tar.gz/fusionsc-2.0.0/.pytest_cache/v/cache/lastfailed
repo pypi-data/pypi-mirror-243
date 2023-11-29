@@ -1,0 +1,6 @@
+{
+  "src/python/tests/asnc_test.py::test_timer": true,
+  "src/python/tests/asnc_test.py::test_fiberPool": true,
+  "src/python/tests/asnc_test.py::test_await": true,
+  "src/python/tests/serialization_test.py::test_serialize_simple": true
+}

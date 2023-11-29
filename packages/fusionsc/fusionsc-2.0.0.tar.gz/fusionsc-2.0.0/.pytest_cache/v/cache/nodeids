@@ -1,0 +1,8 @@
+[
+  "src/python/tests/asnc_test.py::test_await",
+  "src/python/tests/asnc_test.py::test_fiberPool",
+  "src/python/tests/asnc_test.py::test_timer",
+  "src/python/tests/serialization_test.py::test_serialize_int",
+  "src/python/tests/serialization_test.py::test_serialize_simple",
+  "src/python/tests/serialization_test.py::test_serialize_struct"
+]
