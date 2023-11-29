@@ -1,0 +1,99 @@
+Metadata-Version: 2.1
+Name: slitlessutils
+Version: 1.0.0
+Summary: A compendium of tools to analyze slitless spectroscopy
+Author-email: Slitlessutils Developers <help@stsci.edu>
+License: Copyright (c) 2023, Association of Universities for Research in Astronomy (AURA)
+        All rights reserved.
+        
+        Redistribution and use in source and binary forms, with or without
+        modification, are permitted provided that the following conditions are
+        met:
+        
+        1. Redistributions of source code must retain the above copyright
+           notice, this list of conditions and the following disclaimer.
+        
+        2. Redistributions in binary form must reproduce the above copyright
+           notice, this list of conditions and the following disclaimer in the
+           documentation and/or other materials provided with the distribution.
+        
+        3. Neither the name of the copyright holder nor the names of its
+           contributors may be used to endorse or promote products derived from
+           this software without specific prior written permission.
+        
+        THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+        "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+        LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+        A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+        HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+        SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+        LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+        DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+        THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+        (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+        OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+        
+Project-URL: Homepage, https://github.com/spacetelescope/slitlessutils
+Project-URL: Documentation, https://slitlessutils.readthedocs.io/en/stable/
+Keywords: grism,prism,slitless spectroscopy,HST,WFC3,UVIS,IR,ACS,WFC,SBC,JWST,NIRISS,wide field
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.rst
+Requires-Dist: astropy >=5.0.4
+Requires-Dist: astroquery
+Requires-Dist: drizzlepac
+Requires-Dist: h5py >=3.6.0
+Requires-Dist: networkx >=2.6.3
+Requires-Dist: numpy >=1.22.3
+Requires-Dist: matplotlib >=3.5.2
+Requires-Dist: pandas >=1.4.2
+Requires-Dist: psutil >=5.9.0
+Requires-Dist: pypolyclip >=1.0.0
+Requires-Dist: pysiaf >=0.16.4
+Requires-Dist: scikit-image >=0.19.2
+Requires-Dist: scipy >=1.8.0
+Requires-Dist: shapely >=1.8.2
+Requires-Dist: tqdm >=4.64.0
+Provides-Extra: docs
+Requires-Dist: sphinx-astropy >=1.6 ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'docs'
+Requires-Dist: tomli ; (python_version < "3.11") and extra == 'docs'
+Provides-Extra: test
+Requires-Dist: pytest-astropy >=0.10 ; extra == 'test'
+
+# Slitlessutils
+
+[![PyPI Version](https://img.shields.io/pypi/v/slitlessutils.svg)](https://pypi.org/project/slitlessutils/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10215187.svg)](https://doi.org/10.5281/zenodo.10215187) [![CI Tests](https://github.com/spacetelescope/slitlessutils/actions/workflows/ci_tests.yml/badge.svg?branch=main)](https://github.com/spacetelescope/slitlessutils/actions/workflows/ci_tests.yml) [![Documentation Status](https://readthedocs.org/projects/slitlessutils/badge/?version=latest)](https://slitlessutils.readthedocs.io/en/latest/)
+
+Slitlessutils is a package for simulating and extracting wide-field slitless spectroscopy (WFSS) data, highly focused on data from the Advanced Camera for Surveys (ACS) and Wide-Field Camera 3 (WFC3) on the *Hubble Space Telescope*.
+
+
+## Early Development Software Warning
+Slitlessutils is under active development software and subject to change.
+
+
+## Quickstart
+
+The latest released version of this package can be installed using pip
+from the command line:
+```
+pip install slitlessutils
+```
+
+To install the latest development version of this repository, please use:
+```
+pip install git+https://github.com/spacetelescope/slitlessutils.git
+```
+
+You also need to obtain the calibration (reference) files, which are stored in a public box folder, which can be done with the slitlessutils config objects.  Please see [configuring slitlessutils](https://slitlessutils.readthedocs.io/en/latest/configure.html)
+for instructions and examples.  Please see our [documentation](https://slitlessutils.readthedocs.io/en/latest/install.html)
+for additional installation instructions and/or methods.
+
+We have encountered several frequently-asked questions and give some examples our [FAQ page](https://slitlessutils.readthedocs.io/en/latest/faq.html).
