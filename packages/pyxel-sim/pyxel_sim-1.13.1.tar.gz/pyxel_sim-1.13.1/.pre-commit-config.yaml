@@ -1,0 +1,35 @@
+# Pre-commit (https://pre-commit.com)
+# Install:
+#   pip install pre-commit
+#   or
+#   conda install -c conda-forge pre-commit
+# Add a pre-commit configuration:
+#   $ pre-commit install
+# (Optional) Run against all files
+#   $ pre-commit run --all-files
+
+exclude: pyxel/models/phasing/mkid_models
+repos:
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.1
+    hooks:
+      - id: pyupgrade
+        args:
+          - --py39-plus
+
+  # isort should run before black as black sometimes tweaks the isort output
+  - repo: https://github.com/timothycrosley/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+
+  # https://github.com/python/black#version-control-integration
+  - repo: https://github.com/python/black
+    rev: 23.3.0
+    hooks:
+      - id: black
+
+  - repo: https://github.com/keewis/blackdoc
+    rev: v0.3.8
+    hooks:
+      - id: blackdoc

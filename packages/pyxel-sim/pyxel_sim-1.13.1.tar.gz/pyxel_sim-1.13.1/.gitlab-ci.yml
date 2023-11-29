@@ -1,0 +1,294 @@
+# You can override the included template(s) by including variable overrides
+# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
+# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
+# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
+# Container Scanning customization: https://docs.gitlab.com/ee/user/application_security/container_scanning/#customizing-the-container-scanning-settings
+# Note that environment variables can be set in several places
+# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
+variables:
+  # Change pip's cache directory to be inside the project directory.
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache"
+
+  # Set tags for docker images
+  DOCKER_TEST_IMAGE: "$CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA"
+  DOCKER_RELEASE_IMAGE: "$CI_REGISTRY_IMAGE:latest"
+
+stages:
+  - test
+  - static analysis
+  - build
+  - deploy
+
+include:
+  - template: Jobs/License-Scanning.gitlab-ci.yml
+  - template: Jobs/Dependency-Scanning.gitlab-ci.yml
+
+before_script:
+  - python -V
+  - pip install tox
+  - export TZ=Europe/Amsterdam
+  - date
+
+# Use for temporary storage for project dependencies(e.g. pypi packages...)
+cache:
+  paths:
+    - .cache/
+
+# Control when pipelines are created (only for Merge Requests)
+workflow:
+  rules:
+    - if: $CI_MERGE_REQUEST_IID     # Execute jobs in merge request context
+    - if: $CI_OPEN_MERGE_REQUESTS   # Do not execute jobs if pipeline has open merge request
+      when: never
+    - if: $CI_COMMIT_BRANCH         # Execute jobs if changes are pushed to any branch
+    - if: $CI_COMMIT_TAG            # Execute jobs if changes are pushed for a tag
+
+# ###########################
+# Test Stage
+# ###########################
+
+# Run pytest for Python 3.9 without anaconda
+python39:
+  image: python:3.9
+  stage: test
+  script:
+    - tox -e py39-extra_all
+
+# Run pytest for Python 3.10 without anaconda
+python310:
+  image: python:3.10
+  stage: test
+  script:
+    - tox -e py310-extra_all
+
+# Run pytest for Python 3.11 without anaconda
+python311:
+  image: python:3.11
+  stage: test
+  script:
+    - tox -e py311-extra_all
+
+# Run mypy
+mypy:
+  image: python:3.11
+  stage: static analysis
+  needs: []
+  script:
+    - tox -e mypy
+
+flake8:
+  image: python:3.11
+  stage: static analysis
+  needs: []
+  script:
+    - tox -e flake8
+
+ruff:
+  image: python:3.11
+  stage: static analysis
+  needs: []
+  script:
+    - tox -e ruff
+
+pydocstyle:
+  image: python:3.11
+  stage: static analysis
+  needs: []
+  script:
+    - tox -e pydocstyle
+
+doc8:
+  image: python:3.11
+  stage: static analysis
+  needs: []
+  script:
+    - tox -e doc8
+
+codespell:
+  image: python:3.11
+  stage: static analysis
+  needs: []
+  script:
+    - tox -e codespell
+
+check_json_schema:
+  image: python:3.11
+  stage: static analysis
+  needs: []
+  script:
+    - tox -e check_json_schema
+
+
+# More info here: https://docs.gitlab.com/ee/user/compliance/license_compliance
+license_scanning:
+  before_script: []
+  rules:
+    - if: $LICENSE_MANAGEMENT_DISABLED
+      when: never
+    - if: $CI_COMMIT_BRANCH &&
+          $GITLAB_FEATURES =~ /\blicense_scanning\b/
+    - if: $CI_MERGE_REQUEST_IID     # Execute jobs in merge request context
+    - if: $CI_OPEN_MERGE_REQUESTS   # Do not execute jobs if pipeline has open merge request
+      when: never
+    - if: $CI_COMMIT_BRANCH         # Execute jobs if changes are pushed to any branch
+    - if: $CI_COMMIT_TAG            # Execute jobs if changes are pushed for a tag
+
+# ###########################
+# Build stage
+# ###########################
+
+# Run pytest + coverage
+coverage:
+  image: python:3.11
+  stage: build
+  needs: []
+  script:
+    - tox -e py311-cov-extra_all
+  coverage: '/(?i)total.*? (100(?:\.0+)?\%|[1-9]?\d(?:\.\d+)?\%)$/'
+  artifacts:
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage.xml
+    paths:
+      - htmlcov
+
+# Scan sourcecode for licenses, copyrights & dependencies
+# experimental, latest version
+#licenses-latest:
+#  image: python:3.9.15
+#  stage: build
+#  needs: []
+#  script:
+#    - tox -e licenses
+#  artifacts:
+#    paths:
+#      - license.html
+
+# Generate the Sphinx documentation into 'doc/html'
+doc:
+  image: python:3.11
+  stage: build
+  needs: []
+  script:
+    - tox -e docs
+    - python badges.py -doc="passed"
+  artifacts:
+    paths:
+      - docs/html
+      - documentation.svg
+  rules:
+    - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_COMMIT_TAG != ""'
+#    - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_COMMIT_TAG != "" && $FORCE_GITLAB_CI'
+
+doc_development:
+  image: python:3.11
+  stage: build
+  needs: []
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_COMMIT_TAG'
+  script:
+    - tox -e docs
+    - mv docs/html latest
+    - (test -f static/pyxel_schema.json && cp static/pyxel_schema.json latest) || echo "No file 'pyxel_schema.json'"
+    - (cp continuous_integration/*.yaml latest) || echo "No file(s) '*.yaml'"
+  artifacts:
+    paths:
+      - latest
+      - documentation.svg
+  environment:
+    name: development
+
+doc_production:
+  image: python:3.11
+  stage: build
+  needs: []
+  rules:
+    - if: '$CI_COMMIT_TAG'
+  script:
+    - tox -e docs
+    - mv docs/html stable
+    - (test -f static/pyxel_schema.json && cp static/pyxel_schema.json stable) || echo "No file 'pyxel_schema.json'"
+    - (cp continuous_integration/*.yaml stable) || echo "No file(s) '*.yaml'"
+  artifacts:
+    paths:
+      - stable
+  environment:
+    name: production
+
+# Create wheel file
+build:
+  image: python:3.11
+  stage: build
+  needs: []
+  environment: build
+  script:
+    - tox -e build
+  artifacts:
+    paths:
+      - dist/
+
+# ###########################
+# Deploy Stage
+# ###########################
+
+# Create the pages
+pages:
+  image: python:3
+  stage: deploy
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH || $CI_COMMIT_TAG'
+  script:
+    - mkdir -p public/doc
+
+    # Display the environment variables (for debugging)
+    - export
+    - ls
+
+    # Generate 'documentation.svg'
+    - python badges.py -doc="passed"
+
+    # Get the content of the blog
+    - wget https://esa.gitlab.io/pyxel-website/pyxel-website.tar.gz
+    - tar -xzvf pyxel-website.tar.gz
+    - mv html/* public                # Generated by stage 'website'
+
+    # Get the benchmarks
+    - wget https://gitlab.com/esa/pyxel-benchmarks/-/archive/gh-pages/pyxel-benchmarks-gh-pages.zip
+    - unzip pyxel-benchmarks-gh-pages.zip
+    - mv pyxel-benchmarks-gh-pages public/benchmarks
+
+    # Prepare Python environment
+    - pip install -r continuous_integration/scripts/requirements.txt
+
+    # Download last stable documentation from environment 'production'
+    # only if folder 'stable' and file 'artifacts.zip' do not exist
+    - test -d stable || test -f artifacts.zip || python continuous_integration/scripts/download_last_environment_artifact.py || echo "Failed to download artifacts"
+
+    # Unzip 'artifacts.zip' into folder 'stable'
+    # only if folder 'stable' does not exist and file 'artifacts.zip' exists.
+    - test -d stable || (test -f artifacts.zip && unzip artifacts.zip) || echo "Folder 'stable' is already existing or no artifacts"
+
+    # Copy JSON Schema files
+    - (test -f latest/pyxel_schema.json && cp latest/pyxel_schema.json public/pyxel_schema.json) || echo "No file 'stable/pyxel_schema.json'"
+#    - (test -f stable/pyxel_schema.json && cp stable/pyxel_schema.json public/pyxel_schema.json) || echo "No file 'stable/pyxel_schema.json'"
+    - (test -f latest/pyxel_schema.json && cp latest/pyxel_schema.json public/pyxel_schema_latest.json) || echo "No file 'latest/pyxel_schema.json'"
+
+    # Copy Coverage reports
+    - (test -d htmlcov && mv htmlcov public/htmlcov) || echo "Missing folder 'htmlcov'"
+
+    # Move folder 'stable' to 'public/doc/stable'
+    # only if folder 'stable' exists
+    - test -d stable && mv stable public/doc/stable
+
+    - mv latest public/doc/latest         # Generated by stage 'doc_development'
+    - mv documentation.svg public
+    - cp docs/_static/redirect.html public/doc/index.html
+    - cp docs/_static/switcher.json public/doc/switcher.json
+
+    - ls public
+
+  artifacts:
+    paths:
+      - public
+  allow_failure: false
