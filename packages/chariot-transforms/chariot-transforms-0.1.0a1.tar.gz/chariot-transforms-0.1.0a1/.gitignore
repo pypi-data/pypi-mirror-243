@@ -1,0 +1,8 @@
+*.egg-info
+__pycache__
+site
+.vscode
+build
+.coverage*
+.DS_Store
+sample_imgs/augmentations/**

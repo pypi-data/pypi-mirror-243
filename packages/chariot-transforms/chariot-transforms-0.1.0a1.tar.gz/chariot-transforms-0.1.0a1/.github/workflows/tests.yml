@@ -1,0 +1,23 @@
+name: Tests
+
+on:
+  push:
+    paths:
+      - "chariot_transforms/**"
+      - ".github/workflows/tests.yml"
+      - "pyproject.toml"
+      - "tests/**"
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.8"
+      - run: pip install ".[test]"
+      - run: coverage run --source=chariot_transforms -m pytest -v tests
+      - run: coverage report
