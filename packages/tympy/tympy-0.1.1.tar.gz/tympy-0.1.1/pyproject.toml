@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tympy"
+version = "0.1.1"
+authors = [
+  { name="Nidal Iguer", email="hello@inidal.dev" },
+]
+description = "A Python library for observing output and execution times of scripts."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/inidal/tympy"
+Issues = "https://github.com/inidal/tympy/issues"

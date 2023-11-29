@@ -1,0 +1,49 @@
+The `compare` function is designed to compare the execution speed of different Python functions on a set of files. It takes three arguments:
+
+1. `FILES` (List of Strings): This argument accepts a list of file names. Each file should point to a Python file that you want to run.
+
+2. `FUNCTIONS` (Single String or List of Strings): This argument can be either a single function name (as a string) or a list of function names (as a list of strings). If you pass a single function name, it will be applied to all files. If you pass a list of function names, the number of function names should match the number of files.
+
+3. `ARGS` (Single String, List of Strings, Tuple, or List of Tuples): This argument can be one argument (as a string), one argument (as a tuple), or multiple arguments (as a list of tuples). If you pass a single argument, it will be applied to all functions. If you pass multiple arguments, the number of arguments should match the number of functions, and each argument should be passed as a tuple.
+
+Here is an example of how to use the `compare` function:
+
+First install and import the package:
+```python
+import tympy as TO
+```
+
+**Example 1: Compare Execution Speed of Multiple Functions in Multiple Files**
+```python
+TO.compare(["example_1.py", "example_2.py", "example_3.py"],
+           ["sum", "SuM", "SuMIT"],
+           [(5, 9), (9, 5), (5, 9)])
+```
+
+
+**Example 2: Compare Execution Speed of a Single Function Across Multiple Files**
+```python
+TO.compare(["example_1.py", "example_2.py"],
+           "subtract",
+           [(5, 9), (9, 5)])
+```
+
+**Example 3: Compare Execution Speed of Multiple Functions with Single Argument**
+```python
+TO.compare(["example_1.py", "example_3.py"],
+           ["sum", "SuMIT"],
+           (5, 9))
+```
+
+**Example 4: Compare Execution Speed of Multiple Functions with Single String Argument**
+```python
+TO.compare(["example_1.py", "example_2.py"],
+           ["printNOW", "printNoW"],
+           "Hello World!")
+```
+
+When comparing multiple files that perform similar tasks, it's important to note that they may have slight differences. Here's a suggested approach:
+
+- **File Selection**: Select the files you wish to compare.
+- **Function Identification**: Verify if the functions within these files have similar names. If not, create a list that maps the functions to their corresponding files based on their positioning.
+- **Argument Verification**: Check if there are any arguments that need to be passed to these functions.
