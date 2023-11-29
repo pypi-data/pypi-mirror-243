@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4.14. Advice for packagers &mdash; Open MPI 5.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4.15. Advice for System Administrators" href="sysadmins.html" />
+    <link rel="prev" title="4.13. Updating or upgrading an Open MPI installation" href="updating.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Open MPI
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">1. Quick start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../getting-help.html">2. Getting help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../release-notes/index.html">3. Release notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">4. Building and installing Open MPI</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html">4.1. Quick start: Installing Open MPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="supported-systems.html">4.2. Supported Systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="definitions.html">4.3. Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="filesystem-requirements.html">4.4. Filesystem requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vpath-builds.html">4.5. VPATH builds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compilers-and-flags.html">4.6. Specifying compilers and flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="required-support-libraries.html">4.7. Required support libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure-cli-options/index.html">4.8. <code class="docutils literal notranslate"><span class="pre">configure</span></code> command line options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configure-output-summary.html">4.9. <code class="docutils literal notranslate"><span class="pre">configure</span></code> output summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="make-targets.html">4.10. <code class="docutils literal notranslate"><span class="pre">make</span></code> targets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation-location.html">4.11. Installation location</a></li>
+<li class="toctree-l2"><a class="reference internal" href="custom-components.html">4.12. Installing custom components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updating.html">4.13. Updating or upgrading an Open MPI installation</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4.14. Advice for packagers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#do-not-use-open-mpi-s-internal-dependent-libraries">4.14.1. Do not use Open MPI’s internal dependent libraries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#have-sphinx-installed">4.14.2. Have Sphinx installed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#components-plugins-dso-or-no">4.14.3. Components (“plugins”): DSO or no?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sysadmins.html">4.15. Advice for System Administrators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../features/index.html">5. Open MPI-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../validate.html">6. Validating your installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../version-numbering.html">7. Version numbers and compatibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mca.html">8. The Modular Component Architecture (MCA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../building-apps/index.html">9. Building MPI applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../launching-apps/index.html">10. Launching MPI applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tuning-apps/index.html">11. Run-time operation and tuning MPI applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../app-debug/index.html">12. Debugging Open MPI Parallel Applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../developers/index.html">13. Developer’s guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">14. Contributing to Open MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license/index.html">15. License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">16. History of Open MPI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../news/index.html">17. News</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../man-openmpi/index.html">18. Open MPI manual pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../man-openshmem/index.html">19. OpenSHMEM manual pages</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Open MPI</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html"><span class="section-number">4. </span>Building and installing Open MPI</a></li>
+      <li class="breadcrumb-item active"><span class="section-number">4.14. </span>Advice for packagers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/installing-open-mpi/packagers.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <style>
+.wy-table-responsive table td,.wy-table-responsive table th{white-space:normal}
+</style><div class="section" id="advice-for-packagers">
+<span id="label-install-packagers"></span><h1><span class="section-number">4.14. </span>Advice for packagers<a class="headerlink" href="#advice-for-packagers" title="Permalink to this heading"></a></h1>
+<div class="section" id="do-not-use-open-mpi-s-internal-dependent-libraries">
+<span id="label-install-packagers-do-not-use-internal"></span><h2><span class="section-number">4.14.1. </span>Do not use Open MPI’s internal dependent libraries<a class="headerlink" href="#do-not-use-open-mpi-s-internal-dependent-libraries" title="Permalink to this heading"></a></h2>
+<p>The Open MPI community <strong>strongly</strong> suggests that binary Open MPI
+packages should <em>not</em> include Hwloc, Libevent, PMIx, or PRRTE.
+<a class="reference internal" href="required-support-libraries.html#label-install-required-support-libraries"><span class="std std-ref">Although several of these libraries are required by Open MPI</span></a> (and are therefore bundled
+in the Open MPI source code distribution for end-user convenience),
+binary Open MPI packages should limit themselves solely to Open MPI
+artifacts.  Specifically: ensure to configure and build Open MPI
+against external installations of these required packages.</p>
+<p>Packagers may therefore wish to configure Open MPI with something like
+the following:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install Sphinx so that Open MPI can re-build its docs with the</span>
+<span class="c1"># installed PRRTE&#39;s docs</span>
+
+virtualalenv venv
+. ./venv/bin/activate
+pip install docs/requirements.txt
+
+./configure --with-libevent<span class="o">=</span>external --with-hwloc<span class="o">=</span>external <span class="se">\</span>
+    --with-pmix<span class="o">=</span>external --with-prrte<span class="o">=</span>external ...
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Note the installation of the Sphinx tool so that Open
+MPI can re-build its documentation with the external
+PRRTE’s documentation.</p>
+<p>Failure to do this will mean Open MPI’s documentation
+will be correct for the version of PRRTE that is
+bundled in the Open MPI distribution, but may not be
+entirely correct for the version of PRRTE that you are
+building against.</p>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">external</span></code> keywords will force Open MPI’s <code class="docutils literal notranslate"><span class="pre">configure</span></code> to
+ignore all the bundled libraries and only look for external versions
+of these support libraries.  This also has the benefit of causing
+<code class="docutils literal notranslate"><span class="pre">configure</span></code> to fail if it cannot find the required support libraries
+outside of the Open MPI source tree — a good sanity check to
+ensure that your package is correctly relying on the
+independently-built and installed versions.</p>
+<p><a class="reference internal" href="configure-cli-options/required-support-libraries.html#label-building-ompi-cli-options-required-support-libraries"><span class="std std-ref">See this section</span></a> for more
+information about the required support library <code class="docutils literal notranslate"><span class="pre">--with-FOO</span></code> command
+line options.</p>
+</div>
+<div class="section" id="have-sphinx-installed">
+<h2><span class="section-number">4.14.2. </span>Have Sphinx installed<a class="headerlink" href="#have-sphinx-installed" title="Permalink to this heading"></a></h2>
+<p>Since you should be (will be) installing Open MPI against an external
+PRRTE and PMIx, you should have <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> installed before running Open MPI’s
+<code class="docutils literal notranslate"><span class="pre">configure</span></code> script.</p>
+<p>This will allow Open MPI to (re-)build its documentation according to
+the PMIx and PRRTE that you are building against.</p>
+<p>To be clear: the Open MPI distribution tarball comes with pre-built
+documentation — rendered in HTML and nroff — that is
+suitable for the versions of PRRTE and PMIx that are bundled in that
+tarball.</p>
+<p>However, if you are building Open MPI against not-bundled versions of
+PRRTE / PMIx (as all packagers should be), Open MPI needs to re-build
+its documentation with specific information from those external PRRTE
+/ PMIx installs.  For that, you need to have Sphinx installed before
+running Open MPI’s <code class="docutils literal notranslate"><span class="pre">configure</span></code> script.</p>
+</div>
+<div class="section" id="components-plugins-dso-or-no">
+<span id="label-install-packagers-dso-or-not"></span><h2><span class="section-number">4.14.3. </span>Components (“plugins”): DSO or no?<a class="headerlink" href="#components-plugins-dso-or-no" title="Permalink to this heading"></a></h2>
+<p>Open MPI contains a large number of components (sometimes called
+“plugins”) to effect different types of functionality in MPI.  For
+example, some components effect Open MPI’s networking functionality:
+they may link against specialized libraries to provide
+highly-optimized network access.</p>
+<p>Open MPI v5.0.0 has two <code class="docutils literal notranslate"><span class="pre">configure</span></code>-time defaults regarding the
+treatment of components that may be of interest to packagers:</p>
+<ol class="arabic">
+<li><p>Open MPI’s libraries default to building as shared libraries
+(vs. static libraries).  For example, on Linux, Open MPI will
+default to building <code class="docutils literal notranslate"><span class="pre">libmpi.so</span></code> (vs. <code class="docutils literal notranslate"><span class="pre">libmpi.a</span></code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the descriptions of <code class="docutils literal notranslate"><span class="pre">--disable-shared</span></code> and
+<code class="docutils literal notranslate"><span class="pre">--enable-static</span></code> <a class="reference internal" href="configure-cli-options/installation.html#label-building-installation-cli-options"><span class="std std-ref">in this section</span></a> for more
+details about how to change this default.</p>
+<p>Also be sure to <a class="reference internal" href="../building-apps/building-static-apps.html#label-building-fully-static-apps"><span class="std std-ref">see this warning about building
+static apps</span></a>.</p>
+</div>
+</li>
+<li><p>Open MPI will default to including its components in its libraries
+(as opposed to being compiled as dynamic shared objects, or DSOs).
+For example, <code class="docutils literal notranslate"><span class="pre">libmpi.so</span></code> on Linux systems will contain the UCX
+PML component, instead of the UCX PML being compiled into
+<code class="docutils literal notranslate"><span class="pre">mca_pml_ucx.so</span></code> and dynamically opened at run time via
+<code class="docutils literal notranslate"><span class="pre">dlopen(3)</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the descriptions of <code class="docutils literal notranslate"><span class="pre">--enable-mca-dso</span></code> and
+<code class="docutils literal notranslate"><span class="pre">--enable-mca-static</span></code> <a class="reference internal" href="configure-cli-options/installation.html#label-building-installation-cli-options"><span class="std std-ref">in this section</span></a> for more
+details about how to change this defaults.</p>
+</div>
+</li>
+</ol>
+<p>A side effect of these two defaults is that all the components
+included in the Open MPI libraries will bring their dependencies with
+them.  For example (on Linux), if the XYZ PML component in the MPI
+layer requires <code class="docutils literal notranslate"><span class="pre">libXYZ.so</span></code>, then these defaults mean that
+<code class="docutils literal notranslate"><span class="pre">libmpi.so</span></code> will depend on <code class="docutils literal notranslate"><span class="pre">libXYZ.so</span></code>.  This dependency will
+likely be telegraphed into the Open MPI binary package that includes
+<code class="docutils literal notranslate"><span class="pre">libmpi.so</span></code>.</p>
+<p>Conversely, if the XYZ PML component was built as a DSO, then —
+assuming no other parts of Open MPI require <code class="docutils literal notranslate"><span class="pre">libXYZ.so</span></code> —
+<code class="docutils literal notranslate"><span class="pre">libmpi.so</span></code> would <em>not</em> be dependent on <code class="docutils literal notranslate"><span class="pre">libXYZ.so</span></code>.  Instead, the
+<code class="docutils literal notranslate"><span class="pre">mca_pml_xyz.so</span></code> DSO would have the dependency upon <code class="docutils literal notranslate"><span class="pre">libXYZ.so</span></code>.</p>
+<p>Packagers can use these facts to potentially create multiple binary
+Open MPI packages, each with different dependencies by, for example,
+using <code class="docutils literal notranslate"><span class="pre">--enable-mca-dso</span></code> to selectively build some components as
+DSOs and leave the others included in their respective Open MPI
+libraries.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build all the &quot;accelerator&quot; components as DSOs (all other</span>
+<span class="c1"># components will default to being built in their respective</span>
+<span class="c1"># libraries)</span>
+shell$ ./configure --enable-mca-dso<span class="o">=</span>accelerator ...
+</pre></div>
+</div>
+<p>This allows packaging <code class="docutils literal notranslate"><span class="pre">$libdir</span></code> as part of the “main” Open MPI
+binary package, but then packaging
+<code class="docutils literal notranslate"><span class="pre">$libdir/openmpi/mca_accelerator_*.so</span></code> as sub-packages.  These
+sub-packages may inherit dependencies on the CUDA and/or ROCM
+packages, for example.  User can always install the “main” Open MPI
+binary package, and can install the additional “accelerator” Open MPI
+binary sub-package if they actually have accelerator hardware
+installed (which will cause the installation of additional
+dependencies).</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="updating.html" class="btn btn-neutral float-left" title="4.13. Updating or upgrading an Open MPI installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="sysadmins.html" class="btn btn-neutral float-right" title="4.15. Advice for System Administrators" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2003-2023, The Open MPI Community.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
