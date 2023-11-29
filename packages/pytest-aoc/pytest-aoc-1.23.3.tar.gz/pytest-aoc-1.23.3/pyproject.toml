@@ -1,0 +1,85 @@
+[build-system]
+requires = [
+    "setuptools",
+    "setuptools-scm",
+    "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytest-aoc"
+authors = [
+    { name = "Joost Molenaar", email = "jjm@j0057.nl" },
+]
+license = { text = "MIT" }
+description = "Downloads puzzle inputs for Advent of Code and synthesizes PyTest fixtures"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Pytest",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = [
+    "requests",
+    "beautifulsoup4[html5lib]",
+]
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://gitlab.com/j0057-git/puzzle/pytest-aoc"
+Source = "https://gitlab.com/j0057-git/puzzle/pytest-aoc"
+Tracker = "https://gitlab.com/j0057-git/puzzle/pytest-aoc/-/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pip",
+    "setuptools",
+    "setuptools-scm",
+    "build",
+    "wheel",
+    "twine",
+    "tox",
+]
+test = [
+    "pytest",
+    "pytest-cov",
+    "pytest-responses",
+    "pytest-mock",
+    "time-machine",
+]
+
+[project.entry-points]
+pytest11 = { pytest-aoc = "pytest_aoc" }
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
+
+[tool.pytest.ini_options]
+addopts = "-p pytester"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+minversion = 4.0
+envlist =
+    py38
+    py39
+    py310
+    py311
+    py312
+isolated_build = true
+
+[testenv]
+extras = test
+commands =
+    {envbindir}/python -m pytest --cov pytest_aoc --cov-branch --cov-report=html:{envlogdir}/htmlcov --cov-report=term-missing
+"""
