@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: compare_it
+Version: 0.0.6
+Summary: comparision of two text configurations files or two excel facts files 
+Home-page: https://github.com/aliasgar1978/compare_it
+Author: ALIASGAR - ALI
+Author-email: aholo2000@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: nettoolkit
+Requires-Dist: compare-it
+
+Compare IT Utility
+comparision of two text configurations files or two excel facts files 
