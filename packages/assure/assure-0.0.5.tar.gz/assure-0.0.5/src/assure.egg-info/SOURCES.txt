@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/assure/__init__.py
+src/assure/bytes.py
+src/assure/plural.py
+src/assure/stream.py
+src/assure/vector.py
+src/assure.egg-info/PKG-INFO
+src/assure.egg-info/SOURCES.txt
+src/assure.egg-info/dependency_links.txt
+src/assure.egg-info/requires.txt
+src/assure.egg-info/top_level.txt
+tests/test_assure_bytes.py
+tests/test_assure_plural.py
+tests/test_assure_stream.py
+tests/test_assure_vector.py

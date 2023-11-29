@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: assure
+Version: 0.0.5
+Summary: assert + ensure = assure
+Author-email: Jason Wilkes <notarealdeveloper@gmail.com>
+Project-URL: Homepage, https://github.com/notarealdeveloper/assure
+Requires-Dist: numpy

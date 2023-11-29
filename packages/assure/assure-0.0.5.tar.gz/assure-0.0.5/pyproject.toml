@@ -1,0 +1,13 @@
+[project]
+name = "assure"
+version = "0.0.5"
+authors = [
+    { name="Jason Wilkes", email="notarealdeveloper@gmail.com" },
+]
+description = "assert + ensure = assure"
+dependencies = [
+    "numpy",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/notarealdeveloper/assure"

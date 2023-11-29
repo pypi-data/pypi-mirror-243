@@ -1,0 +1,3 @@
+# assure
+
+assert + ensure = assure
