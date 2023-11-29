@@ -1,0 +1,100 @@
+Metadata-Version: 2.1
+Name: infi-azure
+Version: 0.0.3
+Summary: Azure python package for infinity team
+Author: Infinity Team
+License: MIT
+Description-Content-Type: text/markdown
+Requires-Dist: azure.storage.blob ==12.19.*
+Requires-Dist: pytest ==7.4.*
+
+# Azure Package
+
+## Introduction
+
+infi_azure is a comprehensive package that aims to simplify Azure operations by encapsulating core functionalities into
+three classes: AzureStorageAccount, AzureContainer, and AzureBlob. Additionally, it includes utility functions like
+azcopy to streamline the process of Azure actions.
+
+## Installation
+
+Install the package via pipenv:
+
+    pipenv install infi_azure
+
+## Features
+
+- AzureStorageAccount: This class facilitates seamless interaction with Azure Storage Accounts\
+by providing methods for connection, retrieving account details, checking account existence, and accessing\
+the Blob Service Client.
+
+- AzureContainer: This class provides features for seamless interaction with Azure Storage Blob containers,\
+including retrieving directories, generating Shared Access Signatures (SAS) tokens and URLs, checking container existence\
+and deleting blobs within a specified directory.
+
+- AzureBlob: This class facilitates interactions with individual blobs within an Azure Storage Container,\
+offering functionalities such as downloading blob content as bytes, checking blob existence,\
+verifying if a directory is empty, creating an empty directory, and counting the number of blobs within a specified directory.
+
+- azcopy_action: This function utilizes AzCopy to copy the contents of a source folder to a specified destination\
+container in Azure Blob Storage.
+
+## Usage Example
+
+### AzureStorageAccount
+
+    from azure_storage_account import AzureStorageAccount
+
+    # Replace 'your_connection_string_here' with your actual connection string
+    connection_string = "your_connection_string_here"
+
+    storage_account = AzureStorageAccount(connection_string)
+
+    # Check if the account exists
+    if storage_account.is_account_exist():
+        print("Azure Storage Account exists.")
+    else:
+        print("Azure Storage Account does not exist.")
+
+### AzureContainer
+    
+    from azure_storage_account import AzureContainer
+    
+    # Replace 'your_connection_string_here' with your actual connection string
+    connection_string = "your_connection_string_here"
+
+    # Replace 'your_container_name' with your actual container name
+    container_name = "your_container_name"
+
+    container = AzureContainer(connection_string, container_name)
+
+    # print all directories in container
+    print(container.get_all_directories_in_container())
+
+### AzureBlob
+
+    from azure_storage_account import AzureBlob
+    
+    # Replace 'your_connection_string_here' with your actual connection string
+    connection_string = "your_connection_string_here"
+
+    # Replace 'your_container_name' with your actual container name
+    container_name = "your_container_name"
+
+    # Replace 'your_blob_name' with your actual blob name
+    blob_name = "your_blob_name"
+
+    blob = AzureBlob(connection_string, container_name, blob_name)
+
+    # create empty directory
+    blob.create_empty_directory()
+    
+### Azcopy
+
+    from azure_storage_account import azcopy_action
+
+    # Replace the parameters with your actual parameters
+    source = "your_source_container_url"
+    dest = "your_destination_container_url"
+    azcopy_path = "your_azcopy_path"
+    azcopy_action(azcopy_path, source, dest)
