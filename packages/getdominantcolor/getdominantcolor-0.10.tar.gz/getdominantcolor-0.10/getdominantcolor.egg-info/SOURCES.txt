@@ -1,0 +1,14 @@
+LICENSE.rst
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+getdominantcolor/README.MD
+getdominantcolor/__init__.py
+getdominantcolor/requirements.txt
+getdominantcolor/thirdparty.json
+getdominantcolor.egg-info/PKG-INFO
+getdominantcolor.egg-info/SOURCES.txt
+getdominantcolor.egg-info/dependency_links.txt
+getdominantcolor.egg-info/requires.txt
+getdominantcolor.egg-info/top_level.txt
