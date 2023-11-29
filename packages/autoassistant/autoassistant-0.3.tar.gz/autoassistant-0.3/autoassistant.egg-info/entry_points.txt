@@ -1,0 +1,2 @@
+[console_scripts]
+autoassistant = autoassistant.autoassistant:main
