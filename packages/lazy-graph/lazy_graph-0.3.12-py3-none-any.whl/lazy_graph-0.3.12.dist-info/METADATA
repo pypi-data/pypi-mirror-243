@@ -1,0 +1,198 @@
+Metadata-Version: 2.1
+Name: lazy-graph
+Version: 0.3.12
+Summary: lazy graph framework
+Home-page: https://github.com/USTC-TNS/TAT/tree/TAT/lazy_graph
+Author: Hao Zhang
+Author-email: zh970205@mail.ustc.edu.cn
+License: GPLv3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+
+
+# lazy-graph
+
+The lazy-graph is a Python package that enables lazy evaluation and provides additional features for updating upstream values and copying the entire lazy graph.
+
+
+## Install
+
+Please copy or link this folder directly. Alternatively, you can use `pip` to install the lazy-graph distribution with the command `pip install lazy_graph`.
+
+
+## Documents
+
+
+### Simple example
+
+    from lazy import Root, Node
+    
+    
+    def add(a, b):
+        print(f"calculating {a} + {b}")
+        return a + b
+    
+    
+    print("create nodes")
+    a = Root(1)
+    b = Root(2)
+    c = Node(add, a, b)
+    print("get the value")
+    print(f"c is {c()}")
+
+    create nodes
+    get the value
+    calculating 1 + 2
+    c is 3
+
+The value of node `c` is calculated when it is needed.
+
+
+### Update upstream
+
+    print("create nodes")
+    a = Root(1)
+    b = Root(2)
+    c = Node(add, a, b)
+    print("get the value")
+    print(f"c is {c()}")
+    print("get the value again")
+    print(f"c is {c()}")
+    print("update upstream")
+    a.reset(4)
+    print("get the new value")
+    print(f"c is {c()}")
+
+    create nodes
+    get the value
+    calculating 1 + 2
+    c is 3
+    get the value again
+    c is 3
+    update upstream
+    get the new value
+    calculating 4 + 2
+    c is 6
+
+The value of node `c` will only be recalculated if its upstream is updated, and retrieving its value multiple times will not result in duplicate calculations.
+
+
+### Normal argument or keyword argument are also available
+
+    def add4(a, b, c, d):
+        print(f"calculating {a} + {b} + {c} + {d}")
+        return a + b + c + d
+    
+    
+    print("create nodes")
+    a = Root(1)
+    c = Root(3)
+    z = Node(add4, a, 2, c=c, d=4)
+    print("get the value")
+    print(f"c is {z()}")
+
+    create nodes
+    get the value
+    calculating 1 + 2 + 3 + 4
+    c is 10
+
+Both position arguments and keyword arguments are supported, and they can also be mixed with normal arguments.
+
+
+### Copy the lazy graph
+
+    from lazy import Copy
+    
+    print("create nodes")
+    a = Root(1)
+    b = Root(2)
+    c = Node(add, a, b)
+    print("get the value")
+    print(f"c is {c()}")
+    
+    print("copy lazy graph")
+    copy = Copy()
+    new_a = copy(a)
+    new_b = copy(b)
+    new_c = copy(c)
+    
+    print("get the new value")
+    print(f"new c is {new_c()}")
+    
+    print("reset value")
+    a.reset(4)
+    new_a.reset(8)
+    print("get the old value and new value")
+    print(f"c is {c()}, new c is {new_c()}")
+
+    create nodes
+    get the value
+    calculating 1 + 2
+    c is 3
+    copy lazy graph
+    get the new value
+    new c is 3
+    reset value
+    get the old value and new value
+    calculating 4 + 2
+    calculating 8 + 2
+    c is 6, new c is 10
+
+Copy the same relation between node `a`, `b`, and `c` to a new lazy graph.
+The new graph shares the initial value from the original nodes but does not have any other effects on each other.
+
+Please note that you can copy a part of the lazy graph.
+For example, copy `b` and `c` here while sharing the same `a`.
+This means that updating `a` will result in both `c` and `new_c` being updated, while `b` or `new_b` will only affect either `c` or `new_c`.
+
+    copy = Copy()
+    new_b = copy(b)
+    new_c = copy(c)
+    
+    print(f"a is {a()}")
+    print(f"b is {b()}, new b is {new_b()}")
+    print(f"c is {c()}, new c is {new_c()}")
+    b.reset(8)
+    print(f"c is {c()}, new c is {new_c()}")
+    new_b.reset(10)
+    print(f"c is {c()}, new c is {new_c()}")
+    a.reset(6)
+    print(f"c is {c()}, new c is {new_c()}")
+
+    a is 4
+    b is 2, new b is 2
+    c is 6, new c is 6
+    calculating 4 + 8
+    c is 12, new c is 6
+    calculating 4 + 10
+    c is 12, new c is 14
+    calculating 6 + 8
+    calculating 6 + 10
+    c is 14, new c is 16
+
+If you copy the same node using the same copy object twice, you will get the same copied node.
+
+    new_c = copy(c)
+    new_c_2 = copy(c)
+    print(id(new_c) == id(new_c_2))
+
+    True
+
+When copying a lazy graph, it is always necessary to copy the upstream nodes before the downstream nodes are copied, so that this package can maintain the dependencies.
+
+
+### Check whether a node has been calculated
+
+    a = Root(1)
+    b = Root(2)
+    c = Node(add, a, b)
+    print(bool(c))
+    print("c is", c())
+    print(bool(c))
+
+    False
+    calculating 1 + 2
+    c is 3
+    True
+
