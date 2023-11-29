@@ -1,0 +1,3 @@
+[console_scripts]
+klimalogger = klimalogger.script.klimalogger:main
+receive_data = klimalogger.script.receive_data:main
