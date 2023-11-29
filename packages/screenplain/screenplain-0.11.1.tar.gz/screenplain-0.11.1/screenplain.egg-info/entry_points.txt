@@ -1,0 +1,2 @@
+[console_scripts]
+screenplain = screenplain.main:cli
