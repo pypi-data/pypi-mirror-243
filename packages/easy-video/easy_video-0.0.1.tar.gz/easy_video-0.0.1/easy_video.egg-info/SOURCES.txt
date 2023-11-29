@@ -1,0 +1,14 @@
+CHANGELOG.md
+LICENSE
+MANIFEST.in
+README.md
+requirements.txt
+setup.py
+easy_video/__init__.py
+easy_video/open_type.py
+easy_video/video.py
+easy_video.egg-info/PKG-INFO
+easy_video.egg-info/SOURCES.txt
+easy_video.egg-info/dependency_links.txt
+easy_video.egg-info/requires.txt
+easy_video.egg-info/top_level.txt
