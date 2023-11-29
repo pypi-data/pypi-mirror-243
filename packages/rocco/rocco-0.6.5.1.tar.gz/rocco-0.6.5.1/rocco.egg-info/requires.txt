@@ -1,0 +1,17 @@
+numpy
+cvxpy
+pandas
+scipy
+pysam
+pararead
+logmuse
+clarabel
+
+[mosek]
+mosek
+
+[ortools]
+ortools
+
+[pytest]
+pytest
