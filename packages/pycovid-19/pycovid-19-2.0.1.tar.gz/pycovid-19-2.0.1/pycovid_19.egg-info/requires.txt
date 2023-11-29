@@ -1,0 +1,11 @@
+pandas==2.1.1
+numpy==1.26.0
+folium==0.14.0
+fuzzywuzzy==0.18.0
+country_converter==1.1.1
+country_list
+geopandas==0.12.2
+matplotlib
+plotly==5.9.0
+python-Levenshtein
+world_bank_data
