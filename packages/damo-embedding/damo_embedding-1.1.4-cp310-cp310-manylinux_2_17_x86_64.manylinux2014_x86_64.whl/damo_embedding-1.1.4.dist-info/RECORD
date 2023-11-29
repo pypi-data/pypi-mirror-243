@@ -1,0 +1,17 @@
+damo.cpython-310-x86_64-linux-gnu.so,sha256=-aMlO_vjmVp_nbt3pUrFM7WkS0ginuvWLg1BODTTaN4,347921
+damo-server,sha256=Wm1YaXv_yy50nO-mWalmIyURyzyZEnzn3X8oJn9wY7o,748240
+damo_embedding.libs/libgflags-f1543f81.so.2.1,sha256=w74_qa7sP29hh00-z8vEcsZcaQP4b4WrX7CvZvlXtzs,146873
+damo_embedding.libs/libsnappy-ddb1bad0.so.1.1.4,sha256=Guc8k1IMCkcd9VJzA00TjaJK0WnRO3EfVt5fxj4HGUQ,27209
+damo_embedding.libs/librocksdb-744f2544.so.6.4.6,sha256=XFph3pI6snKs5ZR-klOTXrfoBLBX0D0B4oGsuVdrbFk,171219385
+damo_embedding.libs/liblz4-af1653fb.so.1.8.3,sha256=aQqG2WEAZR5C4PYMkdMqXAkhEJQ6Lj4mLfPQW-EUDUc,68577
+damo_embedding.libs/libzstd-8d126cbb.so.1.5.5,sha256=wg3xxUsHXJlWiKZaZdjHDdN19MOHiyR9pG4G0YMZrB8,780609
+damo_embedding-1.1.4.dist-info/LICENSE,sha256=kbZSd5WewnN2PSjvAC6DprP7pXx6NUNsnltmU2Mz1yA,34519
+damo_embedding-1.1.4.dist-info/METADATA,sha256=6yKO4P4zB9Ze7nItyxcn8_Sv-g0inRyyoREKOTQo_kQ,4200
+damo_embedding-1.1.4.dist-info/RECORD,,
+damo_embedding-1.1.4.dist-info/top_level.txt,sha256=zMnEyEnZbND0AJxOiH2LAXYUq8Xo8AEfsrg-134RUxM,20
+damo_embedding-1.1.4.dist-info/WHEEL,sha256=1FEjxEYgybphwh9S0FO9IcZ0B-NIeM2ko8OzhFZeOeQ,152
+damo_embedding/util.py,sha256=2hcmYxT4r9v65mAI7rdAIV6865dpE106-viDL3Uwef4,7460
+damo_embedding/__init__.py,sha256=OoRLOR2hFI7yTCR0n9JUeFGIOpvNc2EQqO3_vujUQDw,2731
+damo_embedding/trainning.py,sha256=lNcbLuyl2pJ7s28_gd5v4GnA5ubmZSpsrPRgeAcr1bU,5007
+damo_embedding/inference.py,sha256=HMFD-lAYiGXSQMPCK-dDvBHuY6pSqM7MNdB9LcfUTLQ,5993
+damo_embedding/config.py,sha256=UKBMh8szKJvXfvKcroTRc_qmUp_60lDr5zkMM7kaFiQ,1010
