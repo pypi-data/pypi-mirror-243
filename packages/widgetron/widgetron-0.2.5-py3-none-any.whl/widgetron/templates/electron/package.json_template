@@ -1,0 +1,33 @@
+{
+  "name": "widgetron",
+  "main": "main.js",
+  "version": "{{version}}",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder build",
+    "lock": "cyclonedx-npm"
+  },
+  "build": {
+    "appId": "com.example.app",
+    "win": {
+      "icon": "build/icon.ico",
+      "target": "dir"
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "target": "zip"
+    },
+    "mac": {
+      "icon": "build/icon.icns",
+      "target": "zip"
+    }
+  },
+  "devDependencies": {
+    "@cyclonedx/cyclonedx-npm": ">=1.9.2",
+    "electron": "{{electron_version}}",
+    "electron-builder": "{{electron_builder_version}}"
+  },
+  "dependencies": {
+    "electron-store": ">=8.1.0"
+  }
+}
