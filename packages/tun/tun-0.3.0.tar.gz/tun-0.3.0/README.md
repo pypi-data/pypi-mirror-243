@@ -1,0 +1,80 @@
+# tun
+
+A Python library for object-oriented parameters, physical quantities and units with a strong support for typing.
+
+This library heavily builds upon [Pint](https://github.com/hgrecco/pint) and [Pint-Pandas](https://github.com/hgrecco/pint-pandas).
+
+This project is currently under heavy development. Expect API changes.
+
+## Feature Overview
+
+* [x] `Quantity`s you can `set` with magnitude and units, convert to other units, get magnitudes or work with the underlying `pint` quantity.
+* [x] `Parameter`s with optional quantity values which can be worked with accordingly.
+* [x] Quantities and Parameters with 1-dimensional array values.
+* [x] Easily extensible library of physical quantities, specifying:
+  * Units type (e.g. Mass)
+  * Internal Units (to be used for conversion at user interfaces, e.g. SI units, e.g. kilograms)
+  * Default display units (to be used in user frontends, e.g. grams)
+  * Available units (given as `UnitCollection`s for the above units type)
+* [x] Support for `Quantity`s and `Parameter`s as `dataclass` fields.
+* [x] Heavy support for typing:
+  * Specify a quantity's units type and get type hints when you're about to do something wrong, converting an `Energy` quantity to `kg` units.
+  * Specify a parameter's data type and be hinted when you're about to set an incompatible value
+
+## Getting Started
+
+### Install
+
+Install tun from the PyPI in your virtual environment:
+
+```bash
+$ python -m pip install tun
+```
+
+### Usage
+
+```python
+from tun import Quantity, quantity_types, unit_collections, unit_types, ureg
+
+# Create a mass quantity and set its value
+mass: Quantity[unit_types.MassUnit] = Quantity(
+    quantity_type=quantity_types.Mass,
+    description="A mass quantity.",
+)
+mass.set(magnitude=42, units=unit_collections.Mass.kg)
+
+# Play with the underlying `pint` quantity.
+mass.quantity.to(unit_collections.Mass.g)
+mass.quantity.to('g')
+# <Quantity(42000.0, 'gram')>
+
+mass.quantity.m_as(unit_collections.Mass.g)
+mass.quantity.m_as('g')
+# 42000.0
+
+mass.quantity + 4 * ureg.kg
+# <Quantity(46.0, 'kilogram')>
+
+# Get magnitudes as different units
+mass.magnitude(units=unit_collections.Mass.t)
+# 0.042
+mass.internal_magnitude
+# 42.0
+mass.display_magnitude
+# 42.0
+```
+
+Use mypy or your favorite IDE to warn you about units related errors before runtime
+```python hl_lines="0"
+from tun import Quantity, quantity_types, unit_collections, unit_types
+
+
+mass: Quantity[unit_types.MassUnit] = Quantity(
+    quantity_type=quantity_types.Mass,
+    description="A mass quantity.",
+    default_magnitude=42,
+    default_units=unit_collections.Mass.kg,
+)
+mass.magnitude(unit_collections.Energy.kWh)
+# Warning here: Expected type 'MassUnit', got 'EnergyUnit' instead 
+```

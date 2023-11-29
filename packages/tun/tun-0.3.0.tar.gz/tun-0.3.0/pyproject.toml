@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "tun"
+version = "0.3.0"
+description = "A Python library for object-oriented parameters, physical quantities and units with a strong support for typing."
+authors = [  # In alphabetical order of last names
+    "Paul Kernstock <paul.kernstock@posteo.de>",
+    "Olessya Kozlenko <olessya.kozlenko@haw-hamburg.de>",
+    "Peter Lorenzen <peter.lorenzen@haw-hamburg.de>",
+    "Philip Tillpmann <peter.lorenzen@haw-hamburg.de>",
+]
+maintainers = [  # In alphabetical order of last names
+    "Paul Kernstock <paul.kernstock@posteo.de>",
+    "Olessya Kozlenko <olessya.kozlenko@haw-hamburg.de>",
+]
+license = "GNU AGPLv3"
+readme = "README.md"
+repository = "https://gitlab.com/c4dht/tun"
+
+[tool.poetry.dependencies]
+numpy = "^1"
+pandas = "^2"
+pandas-stubs = "^2"
+pint = { version = "^0.22", extras = ["pandas"] }
+python = ">=3.9,<3.13"
+scipy = "^1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "7.4.3"
+mypy = "1.6.1"
+pytest-mypy-plugins = "3.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+addopts = "--mypy-only-local-stub"
+
+[tool.mypy]
+plugins = ['numpy.typing.mypy_plugin']
+
+[tool.black]
+line-length = 81
