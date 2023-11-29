@@ -1,0 +1,15 @@
+async-timeout==4.*
+httpx==0.*
+httpx-socks==0.*
+python-socks[asyncio]==2.*
+rencode==1.0.*
+
+[dev]
+pytest
+pytest-asyncio
+pytest-mock
+proxy.py
+tox
+coverage
+pytest-cov
+ruff

@@ -1,0 +1,59 @@
+[project]
+name = "aiobtclientrpc"
+description = ""
+readme = "README.rst"
+license = {text = "GPL-3.0-or-later"}
+authors = [
+  { name="plotski", email="plotski@example.org" },
+]
+dynamic = ["version"]  # Get version from PROJECT/__version__
+classifiers = [
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+]
+requires-python = ">=3.8"
+dependencies = [
+    'async-timeout==4.*',
+    'httpx==0.*',
+    'httpx-socks==0.*',
+    'python-socks[asyncio]==2.*',
+    'rencode==1.0.*',
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "pytest-mock",
+    "proxy.py",
+
+    "tox",
+
+    "coverage",
+    "pytest-cov",
+
+    "ruff",
+]
+
+[project.urls]
+Repository = "https://codeberg.org/plotski/aiobtclientrpc"
+Documentation = "https://aiobtclientrpc.readthedocs.io"
+"Bug Tracker" = "https://codeberg.org/plotski/aiobtclientrpc/issues"
+Changelog = "https://codeberg.org/plotski/aiobtclientrpc/raw/branch/master/NEWS"
+
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+# For some unknown reason, we need to specify explicity to scan the project
+# directory with default parameters or setuptools gets confused about
+# directories like "docs" or "venv".
+[tool.setuptools.packages]
+find = {}
+
+[tool.setuptools.dynamic]
+version = {attr = "aiobtclientrpc.__version__"}
