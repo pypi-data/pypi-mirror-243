@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "firebase-python"
+version = "0.0.3"
+description = "google firebase in python"
+authors = ["wayfaring-stranger <zw6p226m@duck.com>"]
+packages = [
+    { include = "firebase" }
+]
+
+license = "mit"
+readme = "README.md"
+[tool.poetry.dependencies]
+python = "^3.9"
+pydantic = "*"
+python-dotenv = "1.0.0"
+firebase-admin = "6.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
