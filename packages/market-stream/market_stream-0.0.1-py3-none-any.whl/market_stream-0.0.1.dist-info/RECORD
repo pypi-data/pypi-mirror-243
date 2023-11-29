@@ -1,0 +1,12 @@
+client/__init__.py,sha256=L-8JOJpxaGF-folLNX4pIWNCwG55Lb-LIurZ5NZFvt0,52
+client/greeter_client.py,sha256=aUsOhYuBkioEi21tQbq7v68E16giJZpp5_Wmx_kGl9g,1355
+client/market_stream_client.py,sha256=snBt_57-7JYcSpbcHmm9kNpNmDxW--VEsZDsvfLIdMc,1914
+generated/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+generated/greeter_pb2.py,sha256=wAbTCaLy7OTyVm5B19s6WeZnCdSbtRF0h1kbgwEOlPU,1335
+generated/greeter_pb2_grpc.py,sha256=2c0yve094a2wZS1cMV4VMY_Mo4G5KpMGdz1yHWgccp4,2284
+generated/market_stream_pb2.py,sha256=392fZk_I-nQ6YnMhN9U8f-DaLcKB_nLFyd2_HleWzpM,1989
+generated/market_stream_pb2_grpc.py,sha256=Kx3hMxQGye_2v5lCucthgZ2y_vvWix9GuQxUsHsiGa4,5631
+market_stream-0.0.1.dist-info/METADATA,sha256=mKVQkN1EP8UgE4cwl7WoAgCxG9Glevt9h7kYvlsbP50,225
+market_stream-0.0.1.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+market_stream-0.0.1.dist-info/top_level.txt,sha256=IaRwB1p5IsqvRMjkyThOf3n7CIxYj358TYrirZ5hfGI,17
+market_stream-0.0.1.dist-info/RECORD,,
