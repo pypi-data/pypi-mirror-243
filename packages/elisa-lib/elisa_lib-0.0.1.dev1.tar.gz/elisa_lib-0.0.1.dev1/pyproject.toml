@@ -1,0 +1,88 @@
+[project]
+name = "elisa-lib"
+dynamic = ["version"]
+description = "An efficient and fast library for spectral analysis in X/γ-ray astrophysics."
+readme = "README.md"
+requires-python = ">=3.9, <3.12"
+license = "GPL-3.0-or-later"
+keywords = []
+authors = [
+    { name = "Wang-Chen Xue", email = "wcxuemail@gmail.com" },
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "arviz",
+    "astropy",
+    "jax",
+    "numpy",
+#    "numpy<=1.24.4 ; sys_platform != 'darwin' or platform_machine != 'arm64'",
+#    "numpy @ https://github.com/numpy/numpy/releases/download/v1.24.4/numpy-1.24.4.tar.gz ; sys_platform == 'darwin' and platform_machine == 'arm64'",
+    "numpyro",
+    "tqdm",
+    "corner>=2.2.2"
+]
+
+
+[project.optional-dependencies]
+xspec = ['xspex']
+test = []
+docs = [
+    "sphinx",
+    "sphinx_rtd_theme",
+    "numpydoc"
+]
+dev = ['ipython', 'black', 'ruff']
+
+
+[project.urls]
+Documentation = "https://github.com/wcxve/elisa#readme"
+Issues = "https://github.com/wcxve/elisa/issues"
+Source = "https://github.com/wcxve/elisa"
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+
+[tool.hatch]
+metadata.allow-direct-references = true
+version.path = "src/elisa/__init__.py"
+
+[[tool.hatch.envs.all.matrix]]
+python = ["3.9", "3.10", "3.11"]
+
+
+[tool.black]
+target-version = ["py39"]
+line-length = 79
+skip-string-normalization = true
+
+
+[tool.ruff]
+target-version = "py39"
+line-length = 79
+select = ["F", "I", "E", "W", "YTT", "B", "Q", "PLE", "PLR", "PLW", "UP"]
+ignore = [
+    "E741",     # Allow ambiguous variable names
+    "PLR0911",  # Allow many return statements
+    "PLR0913",  # Allow many arguments to functions
+    "PLR0915",  # Allow many statements
+    "PLR2004",  # Allow magic numbers in comparisons
+]
+unfixable = [
+    "F401",  # Don't touch unused imports
+]
+exclude = []
+isort.known-first-party = ["elisa"]
+isort.combine-as-imports = true
