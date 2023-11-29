@@ -1,0 +1,33 @@
+# Context
+{% for context in contexts %}
+## {{ context.title }}
+{{ context.content }}
+
+{% endfor %}
+
+# Test Code to complete
+* Start each section with ## Code: <program_name>
+----
+{% for code in codes %}
+## {{ code.title }}
+{{ code.content }}
+
+{% endfor %}
+
+# Instruction
+----
+Role: {{ actor_role }}
+
+Requirements: Please complete the test code based on the given context and source code. Ensure that each section is presented separately and enclosed within triple quotes with the correct language hint.
+1. Start each section with ## Code: <Test Code Name>.py
+2. Use triple quotes (```) to enclose the Python code.
+3. Always use ## for section separation. Do not use a single #.
+4. Simpler is Better
+
+# Test Code to Complete
+----
+{% for test_code in test_codes %}
+## {{ test_code.title }}
+{{ test_code.content }}
+
+{% endfor %}
