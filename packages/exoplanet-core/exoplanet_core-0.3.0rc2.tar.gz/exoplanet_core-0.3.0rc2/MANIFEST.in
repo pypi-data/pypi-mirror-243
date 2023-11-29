@@ -1,0 +1,6 @@
+include README.md LICENSE *.toml *.yaml
+
+recursive-include src/exoplanet_core/lib/include *.h
+
+exclude .*
+prune .github
