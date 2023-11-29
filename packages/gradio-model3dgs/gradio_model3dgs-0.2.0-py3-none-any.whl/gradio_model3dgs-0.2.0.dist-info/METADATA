@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: gradio_model3dgs
+Version: 0.2.0
+Summary: Python library for easily interacting with trained machine learning models
+Author-email: Dylan Ebert <dylan@huggingface.co>
+License-Expression: Apache-2.0
+Keywords: gradio,gradio custom component,gradio-template-Model3D,machine learning,reproducibility,visualization
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Visualization
+Requires-Python: >=3.8
+Requires-Dist: gradio<5.0,>=4.0
+Provides-Extra: dev
+Requires-Dist: build; extra == 'dev'
+Requires-Dist: twine; extra == 'dev'
+Description-Content-Type: text/markdown
+
+
+# gradio_model3dgs
+A Custom Gradio component.
+
+## Example usage
+
+```python
+import gradio as gr
+from gradio_model3dgs import Model3DGS
+```
