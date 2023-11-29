@@ -1,0 +1,3 @@
+[console_scripts]
+orgafold=orgafold.__main__:main
+
