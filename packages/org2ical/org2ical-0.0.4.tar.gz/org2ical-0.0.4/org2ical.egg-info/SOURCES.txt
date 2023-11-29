@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+./org2ical/__init__.py
+org2ical.egg-info/PKG-INFO
+org2ical.egg-info/SOURCES.txt
+org2ical.egg-info/dependency_links.txt
+org2ical.egg-info/requires.txt
+org2ical.egg-info/top_level.txt

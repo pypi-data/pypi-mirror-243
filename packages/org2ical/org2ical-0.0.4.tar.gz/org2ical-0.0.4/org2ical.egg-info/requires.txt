@@ -1,0 +1,9 @@
+orgparse>=0.3.2
+
+[testing]
+pytest
+mypy
+flake8
+pylint
+icalendar
+python-dateutil
