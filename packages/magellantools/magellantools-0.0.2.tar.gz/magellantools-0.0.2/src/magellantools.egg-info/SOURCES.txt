@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+src/magellantools/ALTEDR.py
+src/magellantools/ARCDR.py
+src/magellantools.egg-info/PKG-INFO
+src/magellantools.egg-info/SOURCES.txt
+src/magellantools.egg-info/dependency_links.txt
+src/magellantools.egg-info/entry_points.txt
+src/magellantools.egg-info/requires.txt
+src/magellantools.egg-info/top_level.txt
+src/magellantools/script/arcdr2table.py

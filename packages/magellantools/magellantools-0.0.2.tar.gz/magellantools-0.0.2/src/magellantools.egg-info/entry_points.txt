@@ -1,0 +1,2 @@
+[console_scripts]
+arcdr2table = magellantools.script.arcdr2table:main
