@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: parsing_helper
+Version: 0.0.18
+Author: Radislav Vlasov
+Author-email: radislavvlasov@gmail.com
+Requires-Dist: selenium==4.9.1
