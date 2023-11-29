@@ -1,0 +1,17 @@
+LICENSE.txt,sha256=cp9o7IsgRfqJDX7sA_QAhNxt9eRAKFUVKP97iKAvYjU,13025
+README.md,sha256=lqkw78DZ_ntXZNig99ngBnEgJpThntIoB5MG5hRZG3E,5080
+VERSION.txt,sha256=8kbym9yQ5FBMl_iEPPPViOuRhN1ank-rtJRNCzgQ2cY,18
+session-file.json,sha256=upNJJEDFIFJNEKt0mhuv079fOYkixAzFJL-LGLVGeZU,11924
+osve/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+osve/osve.py,sha256=oW8B89JXAtGmobafXkRGo2u_N5tEz-B_LqBjsQq1lK0,8774
+osve/osve_cmd.py,sha256=n9IJO3WvYbM96Je8Ewclivf7svQZI0v85lxsqAfrppE,3093
+osve/utils.py,sha256=mxKUHU85IdkIQXv2L5_QYVfIcX5py7qyXqtilmUjGw8,3456
+osve/deliveries/lin/libosve-if.so,sha256=Au3_fwq7U4Od-lNvU1Re0NYdHJVS2CGvMm7FEkJ6aQY,12639568
+osve/deliveries/mac/arm64/libosve-if.dylib,sha256=s4j7Q5f_sJjpWl0JKr8Eihr5-2bgMdzoMOe3DKDTe5I,9948989
+osve/deliveries/mac/x86_64/libosve-if.dylib,sha256=NS_j2D3TRfqGOHji7LxIlKYMO7JQsZ2ndyBWlo_bbqM,27393824
+osve-2.1.2.dist-info/LICENSE.txt,sha256=cp9o7IsgRfqJDX7sA_QAhNxt9eRAKFUVKP97iKAvYjU,13025
+osve-2.1.2.dist-info/METADATA,sha256=EPc0WLUv-awO_xW39mkLPAe1vW2oKMZImwR76PB76Mo,5544
+osve-2.1.2.dist-info/WHEEL,sha256=g4nMs7d-Xl9-xC9XovUrsDHGXt-FT0E17Yqo92DEfvY,92
+osve-2.1.2.dist-info/entry_points.txt,sha256=0su1zVS2FJUCuxv-gWfhSDs-Au7aOGMTxhGVR71xrjA,45
+osve-2.1.2.dist-info/top_level.txt,sha256=-dW-dkXnFxgznCWGwn9082Djhq4WGm4C5X-jXtx9fwk,5
+osve-2.1.2.dist-info/RECORD,,
