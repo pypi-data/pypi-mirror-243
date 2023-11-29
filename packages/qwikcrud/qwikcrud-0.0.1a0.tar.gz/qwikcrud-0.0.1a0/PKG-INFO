@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: qwikcrud
+Version: 0.0.1a0
+Summary: An AI-powered command-line tool that generates RESTful APIs and admin interfaces based on user prompts
+Project-URL: Documentation, https://github.com/jowilf/qwikcrud/#readme
+Project-URL: Issues, https://github.com/jowilf/qwikcrud/issues
+Project-URL: Source, https://github.com/jowilf/qwikcrud
+Author-email: Jocelin Hounon <hounonj@gmail.com>
+License-Expression: Apache-2.0
+License-File: LICENSE
+Keywords: ai,chatgpt,crud,fastapi,sqlalchemy,starlette-admin
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Requires-Python: >=3.8
+Requires-Dist: aiofile<3.9,>=3.8
+Requires-Dist: autoflake<2.3,>=2.2.1
+Requires-Dist: black<23.12,>=23.11.0
+Requires-Dist: httpx<0.26,>=0.25
+Requires-Dist: isort<5.13,>=5.12.0
+Requires-Dist: jinja2<4,>=3
+Requires-Dist: openai<1.4,>=1.3
+Requires-Dist: prompt-toolkit<3.1,>=3.0.41
+Requires-Dist: pydantic-settings
+Requires-Dist: pydantic<2.6,>=2.5
+Requires-Dist: rich>=13
+Description-Content-Type: text/markdown
+
+# qwikcrud
+
+[![PyPI - Version](https://img.shields.io/pypi/v/qwikcrud.svg)](https://pypi.org/project/qwikcrud)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/qwikcrud.svg)](https://pypi.org/project/qwikcrud)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install qwikcrud
+```
+
+## License
+
+`qwikcrud` is distributed under the terms of the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) license.
