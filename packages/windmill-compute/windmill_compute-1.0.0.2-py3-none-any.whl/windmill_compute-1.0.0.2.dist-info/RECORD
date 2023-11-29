@@ -1,0 +1,10 @@
+windmillcomputev1/__init__.py,sha256=f2GyH-DYr84jGbwxEiy24uBoFe9W7sujdenZ-oj1yUs,213
+windmillcomputev1/client/__init__.py,sha256=f2GyH-DYr84jGbwxEiy24uBoFe9W7sujdenZ-oj1yUs,213
+windmillcomputev1/client/compute_client.py,sha256=SftWXXqqgTeV68xWcYvirqMJEj7TGIroGL4f64E4UD4,5524
+windmillcomputev1/client/paging.py,sha256=Z9urwSGeNWgonqJyfTWyVdL77OI51aLm33TBnSV-OcU,1717
+windmillcomputev1/filesystem/__init__.py,sha256=5Gqx5z6dOKZE3TBZyZK2UYaL1o3d3FH4KpG1Sz77fWY,212
+windmillcomputev1/filesystem/blobstore.py,sha256=FEpoa_bd_CjsW4LmMZd6jmyNGojp3MRrMGn0tXNb-TY,2919
+windmill_compute-1.0.0.2.dist-info/METADATA,sha256=JGAGl5BLakPwwdw6gojd_mRz4Qj-aS8BlNP-2L34lE0,656
+windmill_compute-1.0.0.2.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+windmill_compute-1.0.0.2.dist-info/top_level.txt,sha256=9oI_GzShN98tsziMo0Zs39Q6PYtnfmEQh1Auj9y16KA,18
+windmill_compute-1.0.0.2.dist-info/RECORD,,
