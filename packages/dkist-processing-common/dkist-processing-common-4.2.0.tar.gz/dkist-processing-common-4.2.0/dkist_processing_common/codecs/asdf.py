@@ -1,0 +1,25 @@
+"""Encoders and decoders for writing and reading ASDF files."""
+from io import BytesIO
+from pathlib import Path
+
+import asdf
+
+from dkist_processing_common.codecs.iobase import iobase_encoder
+
+
+def asdf_encoder(tree: dict, **asdf_write_kwargs) -> bytes:
+    """Convert a dict to raw bytes representing an ASDF file for writing to a file."""
+    asdf_obj = asdf.AsdfFile(tree)
+    file_obj = BytesIO()
+    asdf_obj.write_to(file_obj, **asdf_write_kwargs)
+    file_obj.seek(0)
+
+    return iobase_encoder(file_obj)
+
+
+def asdf_decoder(
+    path: Path, lazy_load: bool = False, copy_arrays: bool = True, **asdf_read_kwargs
+) -> dict:
+    """Read a Path with asdf and return the file's tree."""
+    f = asdf.open(path, lazy_load=lazy_load, copy_arrays=copy_arrays, **asdf_read_kwargs)
+    return f.tree
