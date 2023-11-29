@@ -1,0 +1,13 @@
+MANIFEST.in
+setup.cfg
+setup.py
+jaguardb-socket-client/JaguarSocketClient.py
+jaguardb-socket-client/LICENSE
+jaguardb-socket-client/README.md
+jaguardb-socket-client/__init__.py
+jaguardb-socket-client/jaguarpy.so
+jaguardb-socket-client/libJaguarClient.so
+jaguardb_socket_client.egg-info/PKG-INFO
+jaguardb_socket_client.egg-info/SOURCES.txt
+jaguardb_socket_client.egg-info/dependency_links.txt
+jaguardb_socket_client.egg-info/top_level.txt
