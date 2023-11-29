@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "ioseeth"
+version = "0.1.21"
+description = "Utilities to parse blockchain data and look for threat indicators"
+authors = ["apehex <apehex@protonmail.com>"]
+readme = ".github/README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8, <4"
+setuptools = ">=68"
+web3 = ">=5"
+# forta-toolkit = {path = "../toolkit/", develop = true}
+forta-toolkit = ">=0.4.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
