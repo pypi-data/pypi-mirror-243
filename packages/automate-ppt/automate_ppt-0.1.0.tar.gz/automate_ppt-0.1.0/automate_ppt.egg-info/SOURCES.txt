@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+automate_office/__init__.py
+automate_office/automate_ppt/Charts.py
+automate_office/automate_ppt/MyPPTCreator.py
+automate_office/automate_ppt/__init__.py
+automate_office/automate_ppt/helper_func.py
+automate_office/automate_ppt/ppt_enums.py
+automate_ppt.egg-info/PKG-INFO
+automate_ppt.egg-info/SOURCES.txt
+automate_ppt.egg-info/dependency_links.txt
+automate_ppt.egg-info/requires.txt
+automate_ppt.egg-info/top_level.txt
