@@ -1,0 +1,10 @@
+setup.py
+src/__init__.py
+src/logic.py
+src/main.py
+testprojvis.egg-info/PKG-INFO
+testprojvis.egg-info/SOURCES.txt
+testprojvis.egg-info/dependency_links.txt
+testprojvis.egg-info/entry_points.txt
+testprojvis.egg-info/requires.txt
+testprojvis.egg-info/top_level.txt
