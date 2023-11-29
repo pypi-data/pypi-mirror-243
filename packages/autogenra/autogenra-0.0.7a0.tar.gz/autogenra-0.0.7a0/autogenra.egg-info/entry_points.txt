@@ -1,0 +1,2 @@
+[console_scripts]
+autogenra = autogenra.cli:run
