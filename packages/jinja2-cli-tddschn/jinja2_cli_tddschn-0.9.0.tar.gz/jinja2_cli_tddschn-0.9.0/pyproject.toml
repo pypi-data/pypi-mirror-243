@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "jinja2-cli-tddschn"
+version = "0.9.0"
+description = "A CLI interface to Jinja2"
+authors = [
+    "Matt Robenolt <matt@ydekproductions.com>",
+    "Teddy Xinyuan Chen <45612704+tddschn@users.noreply.github.com>",
+]
+readme = "README.md"
+packages = [{ include = "jinja2cli" }]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+jinja2 = "^3.1.2"
+
+[tool.poetry.extras]
+yaml = ["pyyaml"]
+toml = ["toml"]
+xml = ["xmltodict"]
+hjson = ["hjson"]
+json5 = ["json5"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
