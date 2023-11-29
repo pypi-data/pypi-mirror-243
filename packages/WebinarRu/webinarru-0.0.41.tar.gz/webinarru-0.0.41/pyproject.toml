@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "WebinarRu"
+version = "0.0.41"
+description = "Python client for webinar.ru platform"
+authors = ["gulyaeve <gulyaev.e@icloud.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+aiohttp = "^3.8.5"
+pydantic = "^2.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project.urls]
+Homepage = "https://github.com/gulyaeve/WebinarRu"
+Repository = "https://github.com/gulyaeve/WebinarRu"
