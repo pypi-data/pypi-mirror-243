@@ -1,0 +1,18 @@
+
+# MacOS Desktop Services Store files
+**/.DS_Store
+
+# VisualStudio Code
+**/.vscode
+
+# Webstorm/Jetbrains
+.idea/
+
+# Dependency directories
+/node_modules
+
+# Python dev things
+build
+.eggs
+**.egg-info
+__pycache__
