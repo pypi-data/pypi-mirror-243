@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: mopipe
+Version: 0.0.3
+Summary: MoPipe is a Python package for creating a motion capture data analysis pipeline.
+Project-URL: Homepage, https://github.com/au-imclab/mopipe
+Project-URL: Documentation, https://github.com/au-imclab/mopipe/README.md
+Project-URL: Issues, https://github.com/au-imclab/mopipe/issues
+Project-URL: Source, https://github.com/au-imclab/mopipe
+Author-email: zeyus <zeyus@zeyus.com>
+License-Expression: MIT
+License-File: LICENSE
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Requires-Dist: pandas
+Requires-Dist: strenum; python_version < '3.11'
+Description-Content-Type: text/markdown
+
+# MoPipe
+
+[![PyPI - Version](https://img.shields.io/pypi/v/mopipe.svg)](https://pypi.org/project/mopipe)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/mopipe.svg)](https://pypi.org/project/mopipe)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```console
+pip install mopipe
+```
+
+## License
+
+`mopipe` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
