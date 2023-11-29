@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: easy-video
+Version: 0.0.2
+Summary: Wrap OpenCV package for make accessing video-file easier.
+Home-page: https://github.com/MTamon/VideoTools.git
+Author: Tamon Mikawa
+Author-email: mtamon.engineering@gmail.com
+License: MIT License
+Keywords: opencv,wrapper,video I/O,video processing
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# pypi-temp
+Wrap OpenCV package for make accessing video-file easier.
