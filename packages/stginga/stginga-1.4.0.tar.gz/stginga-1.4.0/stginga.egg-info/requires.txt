@@ -1,0 +1,10 @@
+numpy
+astropy>=3
+ginga>=2.7
+scipy>=0.18
+
+[docs]
+sphinx-astropy
+
+[test]
+pytest-astropy
