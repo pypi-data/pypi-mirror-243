@@ -1,0 +1,2 @@
+[console_scripts]
+expfactory_deploy_local = expfactory_deploy_local.cli:main
