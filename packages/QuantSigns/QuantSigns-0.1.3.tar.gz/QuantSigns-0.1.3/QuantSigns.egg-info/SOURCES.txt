@@ -1,0 +1,8 @@
+setup.py
+QuantSigns.egg-info/PKG-INFO
+QuantSigns.egg-info/SOURCES.txt
+QuantSigns.egg-info/dependency_links.txt
+QuantSigns.egg-info/requires.txt
+QuantSigns.egg-info/top_level.txt
+quantsigns/__init__.py
+quantsigns/metrics.py
