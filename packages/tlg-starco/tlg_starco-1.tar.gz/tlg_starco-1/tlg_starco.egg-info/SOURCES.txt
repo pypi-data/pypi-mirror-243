@@ -1,0 +1,17 @@
+setup.py
+tlg/__init__.py
+tlg/app/__init__.py
+tlg/app/utils.py
+tlg/bot/__init__.py
+tlg/bot/base.py
+tlg/bot/classes.py
+tlg/bot/util/__init__.py
+tlg/bot/util/enum.py
+tlg/bot/util/filteres.py
+tlg/bot/util/head_packs.py
+tlg/bot/util/packs.py
+tlg_starco.egg-info/PKG-INFO
+tlg_starco.egg-info/SOURCES.txt
+tlg_starco.egg-info/dependency_links.txt
+tlg_starco.egg-info/requires.txt
+tlg_starco.egg-info/top_level.txt
