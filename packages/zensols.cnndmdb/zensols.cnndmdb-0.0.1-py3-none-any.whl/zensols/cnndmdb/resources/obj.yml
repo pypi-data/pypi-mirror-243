@@ -1,0 +1,40 @@
+# description: application config
+
+
+## Data objects
+#
+cnndmdb_sqlite_conn_manager:
+  class_name: zensols.db.SqliteConnectionManager
+  db_file: 'path: ${cnndmdb_default:db_file}'
+
+cnndmdb_persister:
+  class_name: zensols.db.BeanDbPersister
+  sql_file: 'resource(zensols.cnndmdb): resources/cnndm.sql'
+  conn_manager: 'instance: cnndmdb_sqlite_conn_manager'
+  keys_name: 'select_article_keys'
+  select_exists_name: 'select_article_exists_by_id'
+
+
+## Application
+#
+cnndmdb_loader:
+  class_name: zensols.cnndmdb.load.DatabaseLoader
+  persister: 'instance: cnndmdb_persister'
+  chunk_size: '${cnndmdb_default:load_chunk_size}'
+  # split_spec:
+  #   test: 'test[:20]'
+  #   train: 'train[:20]'
+  #   validation: 'validation[:20]'
+
+cnndmdb_bean_stash:
+  class_name: zensols.cnndmdb.corpus._CorpusStash
+  persister: 'instance: cnndmdb_persister'
+
+cnndmdb_stash:
+  class_name: zensols.persist.ReadOnlyDelegateStash
+  delegate: 'instance: cnndmdb_bean_stash'
+
+cnndmdb_corpus:
+  class_name: zensols.cnndmdb.Corpus
+  persister: 'instance: cnndmdb_persister'
+  stash: 'instance: cnndmdb_stash'

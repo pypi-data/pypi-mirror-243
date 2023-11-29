@@ -1,0 +1,14 @@
+zensols/cnndmdb/__init__.py,sha256=RN9RFL5oORewvNshgaAm_PUdTXjHKIaepSh5WgfHt74,60
+zensols/cnndmdb/app.py,sha256=2DnmLnKmsuFLgV53eXomEGe6ZIv966V4sSwwhKieFa4,2931
+zensols/cnndmdb/cli.py,sha256=ARD7_61vebZlG3pZMg0I_iEM4Z5fk5W3DeGqbYXm-WE,953
+zensols/cnndmdb/corpus.py,sha256=1Y3zaKd-kUhMXB9w-N9umA8KZcW3H4EkspacfKP7P00,3810
+zensols/cnndmdb/load.py,sha256=-FOEQ0VaoFWIYLPtZtSYique5wE25vIysxafgFrxhKo,3369
+zensols/cnndmdb/resources/app.conf,sha256=zDgwyaHqJb84XWNV1lYzjBGSBtgvlfoubLUOv3G8_80,1118
+zensols/cnndmdb/resources/cnndm.sql,sha256=elav-OXL56anfOZBNFdd8YKkVVRTGUKBF_icbHoElFg,1493
+zensols/cnndmdb/resources/default.conf,sha256=ROinhxFw4u8exsoHObNDg6vvxM-15KjnFoOxWkUObnw,121
+zensols/cnndmdb/resources/obj.yml,sha256=vV8h8bxpIDv0UKcRhuOpQIzy1QLhtFM8flfe2JHZ2zI,1081
+zensols.cnndmdb-0.0.1.dist-info/METADATA,sha256=4W5mKaWRUBoGpSmxN42NEBs4CT5QVOcDB0GcQ7bQc1E,3955
+zensols.cnndmdb-0.0.1.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+zensols.cnndmdb-0.0.1.dist-info/entry_points.txt,sha256=crl0Na1kmOiGdNdCTiEgciU9sXelGCAMEc5ug3QOEDg,49
+zensols.cnndmdb-0.0.1.dist-info/top_level.txt,sha256=ax1k45z7wM-ZQyJX_xGKX_MMWXa_JoO_cz8lSVjhvDg,16
+zensols.cnndmdb-0.0.1.dist-info/RECORD,,
