@@ -1,0 +1,16 @@
+qwikcrud/__init__.py,sha256=508eDu4nPCyqYyg_NQBRjRZmK_68ggYywDmqDMXRF1I,24
+qwikcrud/cli.py,sha256=B3ySW39wW0Zso_FIIBMs3goohWvRPB4UZKgqNPCCFww,2365
+qwikcrud/generator.py,sha256=MiqKKWIXRC0_j4n3t1dqV8hHQBeckvsIGmsNYyrvRJI,4674
+qwikcrud/helpers.py,sha256=A8YlPQPPsCyaPtiLmkYLJ35orHhzLC7UkFT8vSNy3-0,484
+qwikcrud/logger.py,sha256=57z_5K6dlY1YVfHDXrFfz20cepN5rU02_Dv91ULjuDA,253
+qwikcrud/schemas.py,sha256=PD0Vsjc2ptGWlapgrAn3LxSSPo-PZNvW6aZamFyJlLY,9195
+qwikcrud/settings.py,sha256=EwkjGYfHECREqWFMM8NdQ7Mdtx3U2JvlDzX_jZPVghc,281
+qwikcrud/provider/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+qwikcrud/provider/base.py,sha256=9xCfSVDE59-7B3zcUnrC-7qFCBKWEW2u04VmWyjaSvo,312
+qwikcrud/provider/dummy.py,sha256=hQxhC1pustj_lb-8yHvD6xZvREeKXfYGQTtalHI-p28,385
+qwikcrud/provider/openai.py,sha256=4XNKlsgew-ho4t7Gifax0sk4yP_gDtwR2nWLyFUeX-A,1425
+qwikcrud-0.0.1a0.dist-info/METADATA,sha256=adFJyNDyyBfYedunO1pXNYKkyVwGiipDCBmZnwSm5aA,1923
+qwikcrud-0.0.1a0.dist-info/WHEEL,sha256=9QBuHhg6FNW7lppboF2vKVbCGTVzsFykgRQjjlajrhA,87
+qwikcrud-0.0.1a0.dist-info/entry_points.txt,sha256=CDrzfwOUyXkIiBfPno-YIJiPFpy_tvlX556cX3qnHQY,47
+qwikcrud-0.0.1a0.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+qwikcrud-0.0.1a0.dist-info/RECORD,,
