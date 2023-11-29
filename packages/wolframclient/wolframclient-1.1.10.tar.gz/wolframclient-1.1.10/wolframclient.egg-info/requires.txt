@@ -1,0 +1,7 @@
+numpy
+pytz
+requests
+aiohttp
+oauthlib
+pyzmq
+certifi>=2017.4.17
