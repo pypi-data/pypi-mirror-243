@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: betterspread
+Version: 0.1.5
+Summary: 
+License: MIT
+Author: Md Shahriyar Alam
+Author-email: contact@shahriyar.dev
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: gspread (>=5.12.0,<6.0.0)
+Requires-Dist: gspread-formatting (>=1.1.2,<2.0.0)
+Requires-Dist: jupyter (>=1.0.0,<2.0.0)
+Project-URL: Bug Tracker, https://github.com/shahriyardx/betterspread/issues
+Project-URL: homepage, https://github.com/shahriyardx/betterspread
+Project-URL: repository, https://github.com/shahriyardx/betterspread
+Description-Content-Type: text/markdown
+
+# Better Spread
+A wrapper around gspread with cell and row level functionalities
+
+## Sheet
+
+```python
+from betterspread import Sheet, Connection
+
+con = Connection(credentials_path="./credentials.json")
+sheet = Sheet(connection=con, sheet_name="Better Sheet")
+tab = sheet.get_tab('Sheet1')
+```
+`Sheet` is a subclass of gsprad's `Spreadsheet`
+
+### get all values
+```python
+tab.values() # returns a list of rows
+```
+
+### Row
+row is a subclass of list, with functionalities like `update` and `clear`
+```python
+row = tab.get_row(1) # returns a Row
+print(row)
+```
+
+### update row
+```python
+row.update(['new', 'values'])
+row.clear() # clear all value of the row
+```
+### Cell
+cell is a subclass of string, with additional functionalities like `update` and `clear`
+```python
+cell = tab.get_cell('A1') # returns a Cell
+cell = row[0] # same as above
+```
+
+### update cell
+```python
+cell.update('New cell value')
+cell.clear() # clear value of the cell
+```
