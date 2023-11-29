@@ -1,0 +1,2 @@
+[console_scripts]
+debuglib = debuglib.__main__:main
