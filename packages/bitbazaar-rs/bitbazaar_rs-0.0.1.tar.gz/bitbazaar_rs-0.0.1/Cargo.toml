@@ -1,0 +1,29 @@
+[dependencies]
+
+[dependencies.pyo3]
+features = ['extension-module']
+version = '0.20.0'
+
+[lib]
+crate-type = ['cdylib']
+name = 'bitbazaar_rs'
+path = 'src/lib.rs'
+
+[package]
+edition = '2021'
+license = 'MIT'
+name = 'bitbazaar_rs'
+publish = false
+readme = 'README.md'
+version = '0.0.1'
+
+[profile]
+
+[profile.profiler]
+debug = true
+incremental = true
+inherits = 'release'
+strip = false
+
+[profile.test]
+inherits = 'release'
