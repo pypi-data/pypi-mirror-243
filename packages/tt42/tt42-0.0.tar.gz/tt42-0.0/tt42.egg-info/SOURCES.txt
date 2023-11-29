@@ -1,0 +1,8 @@
+MANIFEST.in
+setup.cfg
+setup.py
+tt42/__init__.py
+tt42.egg-info/PKG-INFO
+tt42.egg-info/SOURCES.txt
+tt42.egg-info/dependency_links.txt
+tt42.egg-info/top_level.txt
