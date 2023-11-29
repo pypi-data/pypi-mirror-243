@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: hyp3-sbas
+Version: 0.1.0
+Summary: HyP3 product generation for SBAS processing
+Author-email: Adolfo Molada Tebar <a.molada.tebar@gmail.com>
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# colorem
+
+# Description
+
+COLOR mEets Munsell or colorem (from latin word for color), is an open-source toolbox programmed in Python for soil color applications.
+
+# Installation
+
+The colorem package can be installed directly from [PyPi](https://pypi.org/) running the pip command 
+on the system shell:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Python 
+>>> pip install colorem
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
