@@ -1,0 +1,13 @@
+README.md
+setup.py
+MorseCodePy/__init__.py
+MorseCodePy/audio_manager.py
+MorseCodePy/codes.py
+MorseCodePy/main.py
+MorseCodePy/utilities.py
+MorseCodePy.egg-info/PKG-INFO
+MorseCodePy.egg-info/SOURCES.txt
+MorseCodePy.egg-info/dependency_links.txt
+MorseCodePy.egg-info/top_level.txt
+MorseCodePy/sounds/dash.wav
+MorseCodePy/sounds/dot.wav
