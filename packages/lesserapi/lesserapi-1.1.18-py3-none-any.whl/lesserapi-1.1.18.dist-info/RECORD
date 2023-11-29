@@ -1,0 +1,16 @@
+lesserapi/__init__.py,sha256=DwOIdCI3pYyeg7zF1sW0F-FxUK4wBeMwcOfUVITeW50,325
+lesserapi/core/__init__.py,sha256=4CjABxiZl699Ro3Qz7EwUICDfSPzpFZREZ_QMFgTI3g,182
+lesserapi/exceptions/__init__.py,sha256=tZEBltUSajPxI5lW-kCpXJBpqkAnSBpe29-oTGMmnCc,427
+lesserapi/github/__init__.py,sha256=wOm4eYevx1NTEQtMOwk8l_hcXUlmazykhLO6pd8G-g8,153
+lesserapi/github/scraper/__init__.py,sha256=C80tLPPCTAvcw3npgxgXcNGTUFP5_0iHWYBF8j32aAY,23640
+lesserapi/handlers/__init__.py,sha256=gy7EBw4fkmWVuCIYHtlEaH-3nOs588xFLNYEE_jUfKU,82
+lesserapi/handlers/request_handler/__init__.py,sha256=wuTIU6yL-hmGc3tozQZqJkCxaxwtqARTNYECP9FoTcY,1059
+lesserapi/handlers/user_handler/__init__.py,sha256=wODVnZzdp5xrudKMIicmsHHrmcnDk6llYR6Bj371a8I,3183
+lesserapi/steam/__init__.py,sha256=wOm4eYevx1NTEQtMOwk8l_hcXUlmazykhLO6pd8G-g8,153
+lesserapi/steam/scraper/__init__.py,sha256=C78LkhcEbiXLHTHCYjioSEjHSHHwtb6OU4bADpQdFV4,14935
+tests/__init__.py,sha256=avhDgtMQcny2xOfjFK-6cfDXHkJNolULow9zYAJW14U,638
+lesserapi-1.1.18.dist-info/LICENSE,sha256=CJlKFipzBtCh8VkxJ2sB9qUMYKqIIJQ-d9AaL7pzPmM,7799
+lesserapi-1.1.18.dist-info/METADATA,sha256=ANtB4JoXXkx7QlIrrH3nWdkHaNAo1z8zYlOh0fU1NPY,18108
+lesserapi-1.1.18.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+lesserapi-1.1.18.dist-info/top_level.txt,sha256=2yRhUs8N1gcFLNDY-SEnbc7NvolJoUdSRR3rSJXtFGQ,16
+lesserapi-1.1.18.dist-info/RECORD,,
