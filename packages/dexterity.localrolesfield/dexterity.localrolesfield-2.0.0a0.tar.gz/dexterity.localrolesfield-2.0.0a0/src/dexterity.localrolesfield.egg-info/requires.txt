@@ -1,0 +1,12 @@
+Products.CMFCore
+collective.z3cform.datagridfield
+dexterity.localroles>=2.0.0.dev0
+plone.api
+plone.app.dexterity
+setuptools
+z3c.unconfigure
+
+[test]
+plone.api
+plone.app.robotframework
+plone.app.testing
