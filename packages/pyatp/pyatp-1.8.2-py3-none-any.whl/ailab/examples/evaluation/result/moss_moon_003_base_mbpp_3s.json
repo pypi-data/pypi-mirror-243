@@ -1,0 +1,31 @@
+{
+  "results": {
+    "mbpp": {
+      "pass": 0.026,
+      "pass_stderr": 0.0071238682608535525,
+      "timeout": 0.0,
+      "timeout_stderr": 0.0,
+      "wrong_answer": 0.016,
+      "wrong_answer_stderr": 0.005617036781471969,
+      "failed": 0.958,
+      "failed_stderr": 0.008979602804860917
+    }
+  },
+  "versions": {
+    "mbpp": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/moss-moon-003-base,dtype='float16',trust_remote_code=True,use_accelerate=False",
+    "num_fewshot": 3,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:6",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "1:09:02.428584",
+    "model_name": "moss_moon_003_base"
+  }
+}

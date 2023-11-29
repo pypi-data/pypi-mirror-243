@@ -1,0 +1,31 @@
+{
+  "results": {
+    "mbpp": {
+      "pass": 0.018,
+      "pass_stderr": 0.005951709476392729,
+      "timeout": 0.0,
+      "timeout_stderr": 0.0,
+      "wrong_answer": 0.132,
+      "wrong_answer_stderr": 0.015152927850580162,
+      "failed": 0.85,
+      "failed_stderr": 0.015984712135164926
+    }
+  },
+  "versions": {
+    "mbpp": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/falcon_7b,dtype='float16',trust_remote_code=True,use_accelerate=False",
+    "num_fewshot": 3,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:4",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "3:47:17.812505",
+    "model_name": "falcon_7b"
+  }
+}

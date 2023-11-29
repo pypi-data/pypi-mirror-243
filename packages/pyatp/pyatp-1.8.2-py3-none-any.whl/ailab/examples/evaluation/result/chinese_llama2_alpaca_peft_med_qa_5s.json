@@ -1,0 +1,27 @@
+{
+  "results": {
+    "MedQA": {
+      "acc": 0.36398131932282546,
+      "acc_stderr": 0.008221370026430443,
+      "acc_norm": 0.36398131932282546,
+      "acc_norm_stderr": 0.008221370026430443
+    }
+  },
+  "versions": {
+    "MedQA": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/chinese_llama_alpaca_2,load_in_8bit=True,dtype='float16',use_accelerate=False,peft=/home/finetuned_models/my_chinese_alpaca_2_model",
+    "num_fewshot": 5,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:3",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "0:47:22.006638",
+    "model_name": "chinese_llama2_alpaca"
+  }
+}

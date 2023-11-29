@@ -1,0 +1,31 @@
+{
+  "results": {
+    "mbpp": {
+      "pass": 0.03,
+      "pass_stderr": 0.0076365328039976746,
+      "timeout": 0.002,
+      "timeout_stderr": 0.002,
+      "wrong_answer": 0.076,
+      "wrong_answer_stderr": 0.011862944782718824,
+      "failed": 0.892,
+      "failed_stderr": 0.013894535480989156
+    }
+  },
+  "versions": {
+    "mbpp": 0
+  },
+  "config": {
+    "model": "hf-causal-experimental",
+    "model_args": "pretrained=/home/sdk_models/chinese_llama_alpaca_2,load_in_8bit=True,dtype='float16',use_accelerate=False",
+    "num_fewshot": 3,
+    "batch_size": 2,
+    "batch_sizes": [],
+    "device": "cuda:3",
+    "no_cache": true,
+    "limit": null,
+    "bootstrap_iters": 100000,
+    "description_dict": {},
+    "cost_time": "2:50:55.152188",
+    "model_name": "chinese_llama2_alpaca"
+  }
+}
