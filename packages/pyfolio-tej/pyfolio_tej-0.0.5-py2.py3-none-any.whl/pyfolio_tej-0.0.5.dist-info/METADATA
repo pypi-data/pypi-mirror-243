@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: pyfolio-tej
+Version: 0.0.5
+Summary: modified pyfolio-reloaded=0.9.4.
+Home-page: https://api.tej.com.tw
+Author: tej
+Author-email: tej@tej.com.tw
+Maintainer: tej api Development Team
+Maintainer-email: tej@tej.com
+License: MIT
+Keywords: tej,big data,data,financial,economic,stock,TEJ
+Requires-Python: >=3.8
+Requires-Dist: tqdm
+Requires-Dist: scikit-learn
+
