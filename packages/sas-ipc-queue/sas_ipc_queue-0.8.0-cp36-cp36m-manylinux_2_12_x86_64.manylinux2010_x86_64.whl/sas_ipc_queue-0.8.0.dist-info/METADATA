@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: sas-ipc-queue
+Version: 0.8.0
+Summary: Bounded Interprocess Shared Memory Queue
+Home-page: UNKNOWN
+Author: Lawrence Lewis
+Author-email: larry.lewis@sas.com
+License: Apache 2.0
+Platform: manylinux2014_x86_64
+Requires-Python: >=3.6
+License-File: LICENSE
+
+Bounded Interprocess Shared Memory Queue; Two implementations:
+    Single Producer/Single Consumer with fixed length Cells,
+    Multiple Producer/Multiple Consumer with fixed length Cells
+
