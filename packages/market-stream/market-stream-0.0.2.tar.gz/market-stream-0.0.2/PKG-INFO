@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: market-stream
+Version: 0.0.2
+Summary: A centralized market stream manager
+Author: Yi Te
+Author-email: coastq22889@icloud.com
+Requires-Dist: websockets
+Requires-Dist: redis
+Requires-Dist: aioredis
