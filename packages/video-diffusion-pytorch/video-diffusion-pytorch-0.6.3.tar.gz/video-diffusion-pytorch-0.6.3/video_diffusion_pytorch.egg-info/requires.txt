@@ -1,0 +1,9 @@
+einops>=0.4
+einops-exts
+rotary-embedding-torch
+sacremoses
+sentencepiece
+torch>=1.10
+torchvision
+transformers[torch]
+tqdm
