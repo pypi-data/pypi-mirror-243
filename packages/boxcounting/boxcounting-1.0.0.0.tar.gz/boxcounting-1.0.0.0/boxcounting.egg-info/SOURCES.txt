@@ -1,0 +1,9 @@
+LICENSE
+README.md
+setup.py
+boxcounting.egg-info/PKG-INFO
+boxcounting.egg-info/SOURCES.txt
+boxcounting.egg-info/dependency_links.txt
+boxcounting.egg-info/top_level.txt
+src/boxcounting/__init__.py
+src/boxcounting/box_count.py
