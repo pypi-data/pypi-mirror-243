@@ -1,0 +1,37 @@
+name: readthedocs
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - appdirs
+  - dask
+  - dask-image
+  - defusedxml
+  - donfig
+  # 2.19.1 seems to cause library linking issues
+  - eccodes>=2.20
+  - graphviz
+  - numba
+  - numpy
+  - pillow
+  - pooch
+  - pyresample
+  - pytest
+  - pytest-lazy-fixture
+  - python-eccodes
+  - python-geotiepoints
+  - rasterio
+  - rioxarray
+  - setuptools
+  - setuptools_scm
+  - sphinx
+  - sphinx_rtd_theme
+  - sphinxcontrib-apidoc
+  - trollsift
+  - xarray
+  - zarr
+  - xarray-datatree
+  - pip:
+    - graphviz
+    - ..  # relative path to the satpy project
