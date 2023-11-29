@@ -1,0 +1,12 @@
+CHANGELOG.txt
+LICENSE.txt
+MANIFEST.in
+README.txt
+pyproject.toml
+setup.py
+convertcurrency.egg-info/PKG-INFO
+convertcurrency.egg-info/SOURCES.txt
+convertcurrency.egg-info/dependency_links.txt
+convertcurrency.egg-info/top_level.txt
+src/__init__.py
+src/main.py
