@@ -1,0 +1,38 @@
+[build-system]
+requires = ['setuptools>=61.0.0', 'wheel']
+build-backend = 'setuptools.build_meta'
+
+[project]
+name = 'spnkr'
+version = '0.2.0'
+description = 'Python API for retrieving Halo Infinite multiplayer data.'
+readme = 'README.md'
+authors = [{name = 'Andy Curtis'}]
+license = {file = 'LICENSE'}
+classifiers = [
+    'License :: OSI Approved :: MIT License',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+]
+keywords = ['halo', 'infinite', 'api']
+dependencies = ['aiohttp>=3', 'aiolimiter>=1']
+requires-python = '>=3.11'
+
+[project.optional-dependencies]
+pydantic = ['pydantic>=2']
+dev = [
+    'pytest>=7',
+    'pytest-asyncio',
+    'coverage>=7',
+    'pydantic>=2',
+    'mkdocs>=1',
+    'mkdocstrings[python]',
+    'mkdocs-material>=9',
+]
+
+[project.urls]
+Homepage = 'https://github.com/acurtis166/SPNKr'
+Documentation = 'https://acurtis166.github.io/SPNKr/'
+
+[tool.setuptools.packages.find]
+include = ['spnkr*']
