@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: expfactory-deploy-local
+Version: 0.1.0.dev7
+Author-email: Ross Blair <rosswilsonblair@gmail.com>
+License: MIT License
+Requires-Python: >=3.8
+Requires-Dist: jinja2>=3.1.2
+Requires-Dist: web-py>=0.62
+Description-Content-Type: text/markdown
+
+# Experiment Factory Deploy, Local Edition
+
+Minimal re-implementation of [v1 expfactory-python](https://github.com/expfactory/expfactory-python) and [expfactory-battery](https://github.com/expfactory/expfactory-battery).
