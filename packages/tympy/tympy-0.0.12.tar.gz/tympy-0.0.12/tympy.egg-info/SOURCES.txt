@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+tests/test_input.py
+tympy/__init__.py
+tympy/tympy.py
+tympy.egg-info/PKG-INFO
+tympy.egg-info/SOURCES.txt
+tympy.egg-info/dependency_links.txt
+tympy.egg-info/top_level.txt
