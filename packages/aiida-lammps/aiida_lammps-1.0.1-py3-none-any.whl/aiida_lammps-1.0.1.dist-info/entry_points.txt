@@ -1,0 +1,17 @@
+[aiida.calculations]
+lammps.base=aiida_lammps.calculations.base:LammpsBaseCalculation
+lammps.raw=aiida_lammps.calculations.raw:LammpsRawCalculation
+
+[aiida.data]
+lammps.potential=aiida_lammps.data.potential:LammpsPotentialData
+lammps.trajectory=aiida_lammps.data.trajectory:LammpsTrajectory
+
+[aiida.parsers]
+lammps.base=aiida_lammps.parsers.base:LammpsBaseParser
+lammps.raw=aiida_lammps.parsers.raw:LammpsRawParser
+
+[aiida.workflows]
+lammps.base=aiida_lammps.workflows.base:LammpsBaseWorkChain
+lammps.md=aiida_lammps.workflows.md:LammpsMDWorkChain
+lammps.relax=aiida_lammps.workflows.relax:LammpsRelaxWorkChain
+
