@@ -1,0 +1,52 @@
+# Instead of setting the OPENAI_API_KEY environment variable,
+# you can opt to put the contents of your OpenAI API key in the file openai_api_key.txt
+# and uncomment the following line:
+# openai_api_key_file = "openai_api_key.txt"
+
+# Optionally, you can log all requests sent and responses received to the OpenAI API.
+# Uncomment one of the following log_format lines based on your preferred format.
+# log_format = "json"
+# log_format = "jsoml"
+
+# For each task:
+# 1) If clean = true, then remove any previously saved revisions.
+# 2) OpenAI API request will be made if:
+#    a) settings file provided, and
+#    b) there is no single saved revision which equals the source file.
+# 3) React commands will be run on saved revisions from the API request.
+[tasks]
+diff = { react = "diff" }
+vimdiff = { react = "vimdiff" }
+where = { react = "echo" }
+clean = { react = "rm" }
+replace = { react = "cp-rev-over-src" }
+freeze = { react = "cp-src-over-revs" }
+
+[tasks.stomp]
+clean = true
+request = "cold-example.toml"
+react = ["diffadapt", "cp-rev-over-src"]
+
+[tasks.it]
+clean = true
+request = "warm-example.toml"
+react = ["diffadapt", "vimdiff"]
+
+[tasks.proof]
+request = "proof-example.toml"
+react = ["diffadapt", "vim-if-diff"]
+
+# Named (Bash) shell commands lines to be run on saved revisions from requests.
+# "$0" expands to the path of the original source file.
+# "$1" expands to the path of the first saved revision from a request.
+# "$@" expands to the paths of all saved revisions from a single request.
+# Double quotes are needed to handle file names containing spaces.
+[commands]
+diff = 'diff -s "$0" "$@"'
+vimdiff = 'vimdiff "$0" "$@"'
+vim-if-diff = 'diff -qs "$0" "$@" || vimdiff "$0" "$@"'
+echo = 'echo "$@"'
+rm = 'rm "$@"'
+cp-rev-over-src = 'cp "$1" "$0"'
+cp-src-over-revs = 'rm "$@" && cp "$0" "$1"'
+diffadapt = 'diffadapt -c OK "$0" "$@"'

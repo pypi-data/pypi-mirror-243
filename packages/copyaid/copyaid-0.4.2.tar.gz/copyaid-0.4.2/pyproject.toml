@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "copyaid"
+version = "0.4.2"
+dependencies = [
+    "openai >= 1",
+    "tomli",
+]
+description = "Copyedit with OpenAI from a CLI."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX",
+]
+license = {file = "LICENSE"}
+authors = [
+  { name="Castedo Ellerman", author_email = "castedo@castedo.com" },
+]
+
+[project.optional-dependencies]
+all = [
+  "jsoml",
+]
+
+[project.urls]
+Homepage = "https://gitlab.com/castedo/copyaid"
+
+[project.scripts]
+copyaid = "copyaid.cli:main"
+diffadapt = "copyaid.diff:cli"
+
+[tool.yapf]
+column_limit = 88
+based_on_style = "facebook"
