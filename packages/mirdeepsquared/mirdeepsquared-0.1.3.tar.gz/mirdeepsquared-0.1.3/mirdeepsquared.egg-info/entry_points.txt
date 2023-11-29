@@ -1,0 +1,4 @@
+[console_scripts]
+extract-features = mirdeepsquared.extract_features:main
+predict = mirdeepsquared.predict_cmd:main
+train = mirdeepsquared.train:main
