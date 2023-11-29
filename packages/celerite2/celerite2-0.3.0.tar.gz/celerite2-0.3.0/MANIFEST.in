@@ -1,0 +1,14 @@
+include README.md LICENSE *.toml
+
+include python/celerite2/*.hpp
+include python/celerite2/definitions.json
+
+exclude .*
+recursive-exclude * CMakeLists.txt
+recursive-exclude * .gitignore
+
+graft c++/include
+graft c++/vendor/eigen/Eigen
+
+prune c++/test
+prune .github
