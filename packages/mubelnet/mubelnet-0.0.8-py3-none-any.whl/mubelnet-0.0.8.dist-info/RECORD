@@ -1,0 +1,16 @@
+mubelnet/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+mubelnet/_surgery.py,sha256=xjcwk1srRrgHl-bis7B-2SClhEGW0EBy-tfXaowrj7M,6514
+mubelnet/calibration.py,sha256=j3WXP04yw3-p6BlOQ1CijmNPRq3nteaRtlw_J-Nz3-c,5735
+mubelnet/initializers.py,sha256=G4CvPz0x2OnIGMdrhsjItymP-B1GDzWpqK1QcWLV0CU,19
+mubelnet/layers.py,sha256=TerJdAEMW1ccYTCBaereKcIeADrzkiV1OebhgYgzIdQ,9380
+mubelnet/mcmc.py,sha256=uYM_tq6UnzGYX_0tpF7DwkhAcvsd4b1ZKu4OhCwVfRk,8953
+mubelnet/multinomial.py,sha256=4i4m1PCShwGGjFsECq9hiFMv3cHEl631H3ksYWEjGUQ,19911
+mubelnet/nets.py,sha256=KBinCVnebKiNmGpKMJoDnvTibTTpBjgl69v15alZtS4,7579
+mubelnet/poisson.py,sha256=19iPDZCQ6VyWJWTbUqc9Dl20YnolZF8UBo0dCIsLpbc,21333
+mubelnet/random.py,sha256=vLFBGGNtekIrUBYCpuBXTFetUuNx9yA_OYIX8HQzjc8,12939
+mubelnet/sugar.py,sha256=8jWhbJDgu88A_K2fIV5aCCDAs86efkueei-qTd3Oja8,694
+mubelnet/utils.py,sha256=q7WEYxlp9Cln2gaO6m-IcQkyyZWD9FQVNQWnsmrPq_A,11027
+mubelnet-0.0.8.dist-info/METADATA,sha256=TWOxAkU1c-MuHkpIwVNpsZcnojQ-atCklRtcccBvX9I,3216
+mubelnet-0.0.8.dist-info/WHEEL,sha256=9QBuHhg6FNW7lppboF2vKVbCGTVzsFykgRQjjlajrhA,87
+mubelnet-0.0.8.dist-info/licenses/LICENSE.txt,sha256=N5MMg8CMhnlM7MuXjWZYPVL2TgXgDpl9Ny5rOIrPsxA,1071
+mubelnet-0.0.8.dist-info/RECORD,,
