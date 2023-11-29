@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: pyspeckit
+Version: 1.0.3
+Summary: Toolkit for fitting and manipulating spectroscopic data in python
+Home-page: http://pyspeckit.readthedocs.org
+Author: Adam Ginsburg
+Author-email: pyspeckit@gmail.com
+License: BSD
+License-File: LICENSE
+Requires-Dist: astropy
+Requires-Dist: numpy>=1.8.0
+Requires-Dist: radio_beam>=0.3.3
+Requires-Dist: six
+Requires-Dist: dask[array]
+Requires-Dist: joblib
+Requires-Dist: casa-formats-io
+Provides-Extra: test
+Requires-Dist: pytest-astropy; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: regions>=0.7; extra == "test"
+Requires-Dist: numpy>=1.24.0; extra == "test"
+Requires-Dist: astropy>=5.2.1; extra == "test"
+Provides-Extra: docs
+Requires-Dist: sphinx-astropy; extra == "docs"
+Requires-Dist: matplotlib; extra == "docs"
+Provides-Extra: noviz
+Requires-Dist: zarr; extra == "noviz"
+Requires-Dist: fsspec; extra == "noviz"
+Requires-Dist: distributed; extra == "noviz"
+Requires-Dist: pvextractor; extra == "noviz"
+Requires-Dist: reproject>=0.9.1; extra == "noviz"
+Requires-Dist: scipy; extra == "noviz"
+Provides-Extra: viz
+Requires-Dist: aplpy; extra == "viz"
+Requires-Dist: matplotlib; extra == "viz"
+Requires-Dist: reproject; extra == "viz"
+Requires-Dist: pvextractor; extra == "viz"
+Provides-Extra: viz-extra
+Requires-Dist: glue-core[qt]; extra == "viz-extra"
+Requires-Dist: yt; python_version < "3.8" and extra == "viz-extra"
+Provides-Extra: dev
+Requires-Dist: pvextractor; extra == "dev"
+Requires-Dist: radio-beam; extra == "dev"
+Requires-Dist: reproject; extra == "dev"
+Requires-Dist: regions; extra == "dev"
+
+See README.rst and CHANGES.rst
