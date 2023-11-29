@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: use-rabbitmq
+Version: 0.1.7
+Summary: 
+Author: miclon
+Author-email: jcnd@163.com
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: amqpstorm (>=2.10.6,<3.0.0)
+Description-Content-Type: text/markdown
+
+# use-rabbitmq
+
+a plugin for [usepy](https://github.com/use-py/usepy) to use rabbitmq
+
+### example
+
+```python
+from use_rabbitmq import useRabbitMQ
+
+rmq = useRabbitMQ()
+
+
+@rmq.listener(queue_name="test")
+def test_listener(message):
+    print(message.body)
+    message.ack()  # ack message
+```
+
+if you use it with [usepy](https://github.com/use-py/usepy), you can use it like this:
+
+```python
+from usepy.plugin import useRabbitMQ
+
+rmq = useRabbitMQ()
+```
+
