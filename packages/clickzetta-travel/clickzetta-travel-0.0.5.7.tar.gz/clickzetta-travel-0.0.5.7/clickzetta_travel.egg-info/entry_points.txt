@@ -1,0 +1,3 @@
+[console_scripts]
+glot = travel.glot.glot:main
+travel = travel.batch.trans_batch:main
