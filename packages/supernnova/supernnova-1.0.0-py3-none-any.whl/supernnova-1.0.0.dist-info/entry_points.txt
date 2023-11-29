@@ -1,0 +1,3 @@
+[console_scripts]
+supernnova=supernnova.cli:cli
+
