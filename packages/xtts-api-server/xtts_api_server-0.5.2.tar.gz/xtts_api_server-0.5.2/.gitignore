@@ -1,0 +1,8 @@
+dist
+venv
+speakers
+output
+test
+models
+xtts_api_server/models
+*.pyc
