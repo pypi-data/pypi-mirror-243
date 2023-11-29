@@ -1,0 +1,14 @@
+{% block format %}
+```python
+[
+  "file1.py",
+  "test/file1.py"
+]
+```
+{% endblock %}
+
+{% block guide %}
+Based on given error message, please tell me which file or files should be checked to fix the error.
+1. Always use ## for section separation. Do not use a single #.
+2. Use triple quotes (```) to enclose the Python code.
+{% endblock %}
