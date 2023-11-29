@@ -1,0 +1,80 @@
+# Copyright (c) 2022, Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at
+# https://oss.oracle.com/licenses/upl.
+[tool.poetry]
+name = "coherence-client"
+version = "1.0.2"
+description = """The Coherence Python Client allows Python applications to act as cache clients to a \
+Coherence Cluster using Google's gRPC framework as the network transport."""
+packages = [
+    { include = "coherence", from = "./src"},
+]
+readme = "README.md"
+authors = ["Oracle <dhiru.pandey@oracle.com>"]
+homepage = "https://github.com/oracle/coherence-py-client"
+repository = "https://github.com/oracle/coherence-py-client"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Universal Permissive License (UPL)",
+    "Operating System :: OS Independent",
+    "Development Status :: 5 - Production/Stable",
+]
+
+[tool.poetry.dependencies]
+python = "~3.11"
+protobuf = ">=4.23,<4.26"
+grpcio = ">=1.54,<1.60"
+grpcio-tools = ">=1.54,<1.60"
+jsonpickle = "~3.0"
+pymitter = ">=0.4,<0.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "~7.4"
+pytest-asyncio = "~0.21"
+pytest-cov = "~4.1"
+pytest-unordered = "~0.5"
+pre-commit = "~3.5"
+Sphinx = "~7.2"
+sphinx-rtd-theme = "~2.0"
+sphinxcontrib-napoleon = "~0.7"
+m2r = "~0.3"
+third-party-license-file-generator = "~2023.2"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 120
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
