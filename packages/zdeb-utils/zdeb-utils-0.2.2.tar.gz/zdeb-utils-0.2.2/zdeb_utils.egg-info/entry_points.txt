@@ -1,0 +1,3 @@
+[console_scripts]
+zdeb-utils = zdeb_utils.main:main
+
