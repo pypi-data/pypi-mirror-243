@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: oursin
+Version: 0.5.3
+Summary: Urchin - Universal Renderer Creating Helpful Images for Neuroscience Python API
+License: MIT
+Author: Daniel Birman
+Author-email: dbirman@uw.edu
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: Pillow (>=9.5,<10.2)
+Requires-Dist: numpy (>=1.23.3,<1.27.0)
+Requires-Dist: python-socketio[client] (>=5.8,<5.11)
+Project-URL: homepage, https://virtualbrainlab.org/urchin/installation_and_use.html
+Project-URL: repository, https://github.com/VirtualBrainLab/Urchin
+Description-Content-Type: text/markdown
+
+# Urchin - Unity Renderer Creating Helpful Images for Neuroscience (Python API)
+
+More details can be found on [our website](https://virtualbrainlab.org/03_unity_neuro/01_urn_intro.html)
