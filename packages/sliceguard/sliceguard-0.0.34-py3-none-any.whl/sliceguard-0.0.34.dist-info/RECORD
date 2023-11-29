@@ -1,0 +1,15 @@
+sliceguard/__init__.py,sha256=rO27OPfS6rCtYunuXeAvkRZboDfMJapzGGewlp2EzhA,45
+sliceguard/data.py,sha256=d2lBHZZqrdW7IdCIt33Vbz-1wxOGIh6m3CUzTYhbJSI,7476
+sliceguard/detection.py,sha256=NgaUhEQ7wkuEc3zZ5Kad-A6YnJxJkklIomK7jXIX_kQ,13595
+sliceguard/embeddings.py,sha256=V7JMOXTPcOe15gQHAl8MendDFF8dDB355xeadn0zZAk,6152
+sliceguard/explanation.py,sha256=h_rYBDAMXVuWRdVJ2VG7hAtS2L3TrdaCSE66u_R6k00,4902
+sliceguard/modeling.py,sha256=5B34fFgy1h9t4sys0if6fUZwA8qRuWvf8X7iwDtdySc,6175
+sliceguard/sliceguard.py,sha256=jdDYHv0P_KTYr0A-2Ba4SoMVOIX_gYhNUl7nOOeDeOM,40126
+sliceguard/utils.py,sha256=OhXalGyd4KDuYWiQJgKTA11irhSEiF4E9l9MGuojrVE,17203
+sliceguard/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+sliceguard/models/huggingface.py,sha256=j7k_nFJidfYpqgq3LZAPMo6Fm4DPBMPtoxt4U0ODZhI,6679
+sliceguard-0.0.34.dist-info/LICENSE,sha256=YcW9m2kYltTRwN90BIOXxlHkcF7lKWJT1IpscjsMqr4,1065
+sliceguard-0.0.34.dist-info/METADATA,sha256=0YYd_qMT3RwBIB7EY7hC69AYpaAxkAh3POg4gzDCVLo,4937
+sliceguard-0.0.34.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+sliceguard-0.0.34.dist-info/top_level.txt,sha256=3NJWwDJuXl7Bqxfyov31jz_Mf4sBLVZjFHpxXtD1eaI,11
+sliceguard-0.0.34.dist-info/RECORD,,
