@@ -1,0 +1,1 @@
+import os, sys;exec('from importlib.resources import as_file, files\n\nfrom tree_sitter import Language\n\nfile_ref = files("castep_linter") / "tree_sitter_fortran"\nwith as_file(file_ref) as tree_sitter_dir:\n    Language.build_library(str(tree_sitter_dir / "fortran.so"), [str(tree_sitter_dir)])\n')
