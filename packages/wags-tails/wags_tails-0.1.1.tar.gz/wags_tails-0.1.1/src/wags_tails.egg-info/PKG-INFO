@@ -1,0 +1,129 @@
+Metadata-Version: 2.1
+Name: wags-tails
+Version: 0.1.1
+Summary: Data acquisition tools for Wagnerds
+Author: Kori Kuzma, James S Stevenson, Alex H Wagner
+License: MIT License
+        
+        Copyright (c) 2023 The Wagner/Chaudhari Laboratories at the Institute for Genomic Medicine
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://github.com/GenomicMedLab/wags-tails/
+Project-URL: Changelog, https://github.com/GenomicMedLab/wags-tails/releases
+Project-URL: Source, https://github.com/GenomicMedLab/wags-tails/
+Project-URL: Bug Tracker, https://github.com/GenomicMedLab/wags-tails/issues
+Classifier: Development Status :: 3 - Alpha
+Classifier: Framework :: Pydantic
+Classifier: Framework :: Pydantic :: 2
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+Requires-Dist: tqdm
+Provides-Extra: test
+Requires-Dist: pytest>=6.0; extra == "test"
+Requires-Dist: pytest-cov; extra == "test"
+Requires-Dist: requests-mock; extra == "test"
+Provides-Extra: dev
+Requires-Dist: pre-commit; extra == "dev"
+Requires-Dist: black; extra == "dev"
+Requires-Dist: ruff; extra == "dev"
+
+# WagsTAILS
+
+*Technology-Assisted Information Loading and Structure (TAILS) for Wagnerds.*
+
+This tool provides data acquisition and access utilities for several projects developed by the Wagner Lab.
+
+## Installation
+
+Install from PyPI:
+
+```shell
+python3 -m pip install wags_tails
+```
+
+## Usage
+
+Data source classes provide a `get_latest()` method that acquires the most recent available data file and returns a pathlib.Path object with its location:
+
+```pycon
+>>> from wags_tails.mondo import MondoData
+>>> m = MondoData()
+>>> m.get_latest(force_refresh=True)
+Downloading mondo.owl: 100%|█████████████████| 171M/171M [00:28<00:00, 6.23MB/s]
+PosixPath('/Users/genomicmedlab/.local/share/wags_tails/mondo/mondo_v2023-09-12.owl'), 'v2023-09-12'
+```
+
+Initialize the source class with the `silent` parameter set to True to suppress console output:
+
+```pycon
+>>> from wags_tails.mondo import MondoData
+>>> m = MondoData(silent=True)
+>>> latest_file, version = m.get_latest(force_refresh=True)
+```
+
+## Configuration
+
+All data is stored within source-specific subdirectories of a designated WagsTails data directory. By default, this location is `~/.local/share/wags_tails/`, but it can be configured by passing a Path directly to a data class on initialization, via the `$WAGS_TAILS_DIR` environment variable, or via [XDG data environment variables](https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.6.html).
+
+## Development
+
+Check out the repository:
+
+```shell
+git clone https://github.com/GenomicMedLab/wags-tails
+cd wags-tails
+```
+
+Create a developer environment, e.g. with `virtualenv`:
+
+```shell
+python3 -m virtualenv venv
+source venv/bin/activate
+```
+
+Install dev and test dependencies, including `pre-commit`:
+
+```shell
+python3 -m pip install -e '.[dev,test]'
+pre-commit install
+```
+
+Check style:
+
+```shell
+black . && ruff check --fix .
+```
+
+Run tests:
+
+```shell
+pytest
+```
