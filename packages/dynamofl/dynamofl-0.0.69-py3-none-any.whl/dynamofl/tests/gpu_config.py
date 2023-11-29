@@ -1,0 +1,48 @@
+from dataclasses import dataclass, field, asdict
+from enum import Enum
+from typing import Union
+
+
+# ENUM for GPU configuration
+class GPUType(Enum):
+    A100 = "a100"
+    A10G = "a10g"
+    H100 = "h100"
+    K80 = "k80"
+    M60 = "m60"
+    T4 = "t4"
+    V100 = "v100"
+
+    def __str__(self):
+        return self.value
+
+
+# Step 1: Base Dataclass
+@dataclass
+class BaseDataClass:
+    kind: str = field(init=False)
+
+    def __post_init__(self):
+        self.kind = self.__class__.__name__
+
+    def as_dict(self):
+        return asdict(self)
+
+
+@dataclass
+class GPUConfig(BaseDataClass):
+    gpu_type: GPUType
+    gpu_count: int
+
+    def as_dict(self):
+        value = super().as_dict()
+        value["gpu_type"] = str(value["gpu_type"])
+        return value
+
+
+@dataclass
+class VRAMConfig(BaseDataClass):
+    vramGB: int
+
+
+GPUSpecification = Union[GPUConfig, VRAMConfig]
