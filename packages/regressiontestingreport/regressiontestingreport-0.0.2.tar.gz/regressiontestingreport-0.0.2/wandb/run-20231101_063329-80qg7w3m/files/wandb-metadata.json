@@ -1,0 +1,45 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.11.5",
+    "heartbeatAt": "2023-11-01T10:33:30.713025",
+    "startedAt": "2023-11-01T10:33:29.281451",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/alextang/Desktop/regression-testing/fake_proj.py",
+    "codePathLocal": "fake_proj.py",
+    "codePath": "fake_proj.py",
+    "git": {
+        "remote": "https://github.com/Emerge-Lab/regression-testing.git",
+        "commit": "975646e519276b4fc4de09beda9827cfa689b310"
+    },
+    "email": "alextangym@gmail.com",
+    "root": "/Users/alextang/Desktop/regression-testing",
+    "host": "10-21-132-91.dynapool.wireless.nyu.edu",
+    "username": "root",
+    "executable": "/Users/alextang/anaconda3/envs/wandb/bin/python",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 1600,
+        "min": 1600,
+        "max": 1600
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1600,
+            "min": 1600,
+            "max": 1600
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 112.70698928833008,
+            "used": 8.538074493408203
+        }
+    },
+    "memory": {
+        "total": 8.0
+    }
+}

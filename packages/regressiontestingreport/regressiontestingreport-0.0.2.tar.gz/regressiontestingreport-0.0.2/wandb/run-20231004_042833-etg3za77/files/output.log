@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/Users/alextang/Desktop/Wandb/test2.py", line 16, in <module>
+    run.restore()
+  File "/Users/alextang/anaconda3/envs/wandb/lib/python3.11/site-packages/wandb/sdk/wandb_run.py", line 360, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Run.restore() missing 1 required positional argument: 'name'

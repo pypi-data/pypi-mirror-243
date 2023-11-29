@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/alextang/Desktop/regression-testing/daily_report.py", line 17, in <module>
+    code = generate_report(my_param, project_name, entity_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alextang/Desktop/regression-testing/report_generation.py", line 57, in generate_report
+    log_last_values(param, project_name, entity_name)
+  File "/Users/alextang/Desktop/regression-testing/report_generation.py", line 39, in log_last_values
+    wandb.log({"last-values": val, "date_metric":int(date.today())})
+                                                 ^^^^^^^^^^^^^^^^^
+TypeError: int() argument must be a string, a bytes-like object or a real number, not 'datetime.date'

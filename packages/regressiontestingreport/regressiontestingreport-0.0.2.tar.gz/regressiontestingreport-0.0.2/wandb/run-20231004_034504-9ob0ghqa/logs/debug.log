@@ -1,0 +1,46 @@
+2023-10-04 03:45:04,939 INFO    MainThread:54525 [wandb_setup.py:_flush():76] Current SDK version is 0.15.11
+2023-10-04 03:45:04,939 INFO    MainThread:54525 [wandb_setup.py:_flush():76] Configure stats pid to 54525
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_setup.py:_flush():76] Loading settings from /Users/alextang/.config/wandb/settings
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_setup.py:_flush():76] Loading settings from /Users/alextang/Desktop/Wandb/wandb/settings
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'test.py', 'program_abspath': '/Users/alextang/Desktop/Wandb/test.py', 'program': '/Users/alextang/Desktop/Wandb/test.py'}
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_setup.py:_flush():76] Applying login settings: {'api_key': '***REDACTED***'}
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_init.py:_log_setup():528] Logging user logs to /Users/alextang/Desktop/Wandb/wandb/run-20231004_034504-9ob0ghqa/logs/debug.log
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_init.py:_log_setup():529] Logging internal logs to /Users/alextang/Desktop/Wandb/wandb/run-20231004_034504-9ob0ghqa/logs/debug-internal.log
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_init.py:init():568] calling init triggers
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.02, 'architecture': 'CNN', 'dataset': 'CIFAR-100', 'epochs': 10}
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_init.py:init():618] starting backend
+2023-10-04 03:45:04,940 INFO    MainThread:54525 [wandb_init.py:init():622] setting up manager
+2023-10-04 03:45:04,942 INFO    MainThread:54525 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2023-10-04 03:45:04,944 INFO    MainThread:54525 [wandb_init.py:init():628] backend started and connected
+2023-10-04 03:45:04,949 INFO    MainThread:54525 [wandb_init.py:init():720] updated telemetry
+2023-10-04 03:45:04,950 INFO    MainThread:54525 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2023-10-04 03:45:05,306 INFO    MainThread:54525 [wandb_run.py:_on_init():2220] communicating current version
+2023-10-04 03:45:05,537 INFO    MainThread:54525 [wandb_run.py:_on_init():2229] got version response 
+2023-10-04 03:45:05,537 INFO    MainThread:54525 [wandb_init.py:init():804] starting run threads in backend
+2023-10-04 03:45:05,742 WARNING MainThread:54525 [wandb_init.py:init():1192] interrupted
+Traceback (most recent call last):
+  File "/Users/alextang/anaconda3/envs/wandb/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+          ^^^^^^^^^
+  File "/Users/alextang/anaconda3/envs/wandb/lib/python3.11/site-packages/wandb/sdk/wandb_init.py", line 815, in init
+    run_start_result = run_start_handle.wait(timeout=30)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alextang/anaconda3/envs/wandb/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alextang/anaconda3/envs/wandb/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alextang/anaconda3/envs/wandb/lib/python3.11/site-packages/wandb/sdk/lib/mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alextang/anaconda3/envs/wandb/lib/python3.11/threading.py", line 622, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alextang/anaconda3/envs/wandb/lib/python3.11/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

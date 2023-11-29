@@ -1,0 +1,41 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.11.5",
+    "heartbeatAt": "2023-10-04T07:44:21.512695",
+    "startedAt": "2023-10-04T07:44:20.079926",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "success-rate"
+    ],
+    "state": "running",
+    "program": "/Users/alextang/Desktop/Wandb/test.py",
+    "codePathLocal": "test.py",
+    "codePath": "test.py",
+    "host": "10-21-247-238.dynapool.wireless.nyu.edu",
+    "username": "root",
+    "executable": "/Users/alextang/anaconda3/envs/wandb/bin/python",
+    "cpu_count": 2,
+    "cpu_count_logical": 4,
+    "cpu_freq": {
+        "current": 1600,
+        "min": 1600,
+        "max": 1600
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1600,
+            "min": 1600,
+            "max": 1600
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 112.70698928833008,
+            "used": 8.539253234863281
+        }
+    },
+    "memory": {
+        "total": 8.0
+    }
+}
