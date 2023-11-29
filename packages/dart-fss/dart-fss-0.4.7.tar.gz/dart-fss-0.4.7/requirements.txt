@@ -1,0 +1,10 @@
+xmltodict
+requests
+arelle-release
+numpy
+pandas
+tqdm
+halo
+fake-useragent>=1.0
+beautifulsoup4
+appdirs
