@@ -1,0 +1,2 @@
+[console_scripts]
+sig_saturate.run = sig_saturate.run:run
