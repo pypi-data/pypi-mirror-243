@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: neon-stt-plugin-nemo-remote
+Version: 0.0.1a4
+Summary: Nemo Remote STT plugin for Neon
+Home-page: https://github.com/NeonGeckoCom/neon-stt-plugin-nemo-remote
+Author: Neongecko
+Author-email: developers@neon.ai
+License: BSD-3.0
+Keywords: mycroft plugin stt
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Programming Language :: Python :: 3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.md
+Requires-Dist: ovos-plugin-manager ~=0.0.24
+Requires-Dist: ovos-utils ~=0.0.30
+Requires-Dist: SpeechRecognition ~=3.8
+
+# NeonAI Nemo Remote STT Plugin 
+[Mycroft](https://mycroft-ai.gitbook.io/docs/mycroft-technologies/mycroft-core/plugins) compatible
+Neon Nemo Remote Speech-to-Text Plugin.
+
+## Configuration:
+```yaml
+stt:
+    module: neon-stt-plugin-nemo-remote
+    neon-stt-plugin-nemo:
+      url: "https://nemo.neonaialpha.com"
+```
