@@ -1,0 +1,14 @@
+lesserapi/__init__.py,sha256=HPcBMqOylBGeQT-XP8h7rStlj6-G9hgDGyx5MHD7SnU,290
+lesserapi/core/__init__.py,sha256=LVf59E-lVXQ0iZ1EyPfpl4FavD9MOH_73uYKrIrrmwc,179
+lesserapi/github/__init__.py,sha256=ioqhmIdJyz1whtGjFUW_QEbkLbgZHr8ui9x3V0jgeBY,151
+lesserapi/github/exceptions/__init__.py,sha256=rFyb0JjP4IHrpRanyDXEqro-N20_u4knWBfdDeZX2mg,285
+lesserapi/github/handlers/__init__.py,sha256=BC3vPrUVH9yzpChVoaL2--0oZ9EAAuUmv9JhkXAu8-Q,94
+lesserapi/github/handlers/request_handler/__init__.py,sha256=ygafoTQbg33yDMucK_Tgk4iP2O1-CplC6pKXtId1TGE,1014
+lesserapi/github/handlers/user_handler/__init__.py,sha256=2jWDEO0aKpx_OKyae2lDqHSq-0Huit83a4TCU54Va9o,1848
+lesserapi/github/scraper/__init__.py,sha256=KJINOxGKiBRKiczndRQU6u6VSp9P_aiZOsfwP7pRwZ0,23818
+tests/__init__.py,sha256=zBiwA5s1V0YRpdrG2klSX97ynhAFTHPF2GBH_7xNxvI,633
+lesserapi-1.1.16.dist-info/LICENSE,sha256=CJlKFipzBtCh8VkxJ2sB9qUMYKqIIJQ-d9AaL7pzPmM,7799
+lesserapi-1.1.16.dist-info/METADATA,sha256=5kjdIoQpD6pSl-JSsCnXWDSp-kA3F3Zmme9Vy5aFrxw,14410
+lesserapi-1.1.16.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+lesserapi-1.1.16.dist-info/top_level.txt,sha256=2yRhUs8N1gcFLNDY-SEnbc7NvolJoUdSRR3rSJXtFGQ,16
+lesserapi-1.1.16.dist-info/RECORD,,
