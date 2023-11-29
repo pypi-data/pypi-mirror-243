@@ -1,0 +1,4 @@
+exclude data_original
+exclude data_processed
+exclude experiments
+exclude helpers
