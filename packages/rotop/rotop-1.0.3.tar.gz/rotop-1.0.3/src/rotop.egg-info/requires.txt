@@ -1,0 +1,10 @@
+dearpygui>=1.10.1
+numpy
+pandas
+pexpect
+
+[dev]
+check-manifest
+
+[test]
+coverage
