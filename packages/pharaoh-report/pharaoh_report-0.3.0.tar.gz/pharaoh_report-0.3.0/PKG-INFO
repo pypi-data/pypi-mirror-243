@@ -1,0 +1,98 @@
+Metadata-Version: 2.1
+Name: pharaoh-report
+Version: 0.3.0
+Summary: Pharaoh is a Sphinx-based Python framework for generating reports in various formats by combining the power of configurable Jinja templates and Python scripts for asset generation.
+Author: Johannes Loibl
+License: MIT
+License-File: LICENSE.txt
+Keywords: reporting,sphinx
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Utilities
+Requires-Python: <3.12,>=3.9.2
+Requires-Dist: attrs
+Requires-Dist: click
+Requires-Dist: jinja2
+Requires-Dist: jinja2-ansible-filters
+Requires-Dist: jinja2-git
+Requires-Dist: mistletoe
+Requires-Dist: natsort
+Requires-Dist: nbconvert
+Requires-Dist: numpy<2.0
+Requires-Dist: omegaconf
+Requires-Dist: pluggy
+Requires-Dist: pyyaml==5.3.1
+Requires-Dist: sphinx-design
+Requires-Dist: sphinx-rtd-theme
+Requires-Dist: sphinx<8.0,>=7.2.5
+Requires-Dist: sphinxcontrib-jquery
+Provides-Extra: all-plotting
+Requires-Dist: pharaoh-report[bokeh,holoviews,jupyter,matplotlib,pandas,plotly]; extra == 'all-plotting'
+Provides-Extra: bokeh
+Requires-Dist: bokeh<3.3.0,>=3.0.0; python_version >= '3.9' and extra == 'bokeh'
+Requires-Dist: bokeh<3.3.0,>=3.1.0; python_version >= '3.11' and extra == 'bokeh'
+Requires-Dist: selenium>=4.11; extra == 'bokeh'
+Provides-Extra: dev
+Requires-Dist: diff-cover>=7.7; extra == 'dev'
+Requires-Dist: gitpython; extra == 'dev'
+Requires-Dist: pharaoh-report[all-plotting]; extra == 'dev'
+Requires-Dist: pytest; extra == 'dev'
+Requires-Dist: pytest-cov; extra == 'dev'
+Requires-Dist: pytest-mock; extra == 'dev'
+Requires-Dist: pytest-randomly; extra == 'dev'
+Requires-Dist: pytest-session2file; extra == 'dev'
+Requires-Dist: pytest-sugar; extra == 'dev'
+Requires-Dist: pytest-timeout; extra == 'dev'
+Requires-Dist: pytest-xdist; extra == 'dev'
+Requires-Dist: setuptools-scm; extra == 'dev'
+Requires-Dist: tox; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: numpy<2.0; extra == 'docs'
+Requires-Dist: sphinx-copybutton; extra == 'docs'
+Requires-Dist: sphinx-design; extra == 'docs'
+Requires-Dist: sphinx-jinja; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme; extra == 'docs'
+Requires-Dist: sphinx<8; extra == 'docs'
+Requires-Dist: sphinxcontrib-jquery; extra == 'docs'
+Provides-Extra: holoviews
+Requires-Dist: holoviews; extra == 'holoviews'
+Requires-Dist: holoviews>=1.16; python_version >= '3.11' and extra == 'holoviews'
+Provides-Extra: jupyter
+Requires-Dist: jupyter; extra == 'jupyter'
+Requires-Dist: jupyter-contrib-nbextensions; extra == 'jupyter'
+Provides-Extra: matplotlib
+Requires-Dist: matplotlib; extra == 'matplotlib'
+Provides-Extra: pandas
+Requires-Dist: pandas>=1.5; extra == 'pandas'
+Provides-Extra: pdf
+Requires-Dist: sphinxcontrib-svg2pdfconverter; extra == 'pdf'
+Provides-Extra: plotly
+Requires-Dist: kaleido==0.1.0.post1; extra == 'plotly'
+Requires-Dist: plotly; extra == 'plotly'
+Description-Content-Type: text/markdown
+
+# Pharaoh
+
+[![PyPI](https://img.shields.io/pypi/v/pharaoh-report)](https://pypi.org/project/pharaoh-report/)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/pharaoh-report.svg)](https://pypi.org/project/pharaoh-report/)
+[![image](https://img.shields.io/pypi/l/pharaoh-report.svg)](https://pypi.python.org/pypi/pharaoh-report)
+[![image](https://github.com/Infineon/pharaoh-dev/actions/workflows/documentation.yml/badge.svg)](https://github.com/Infineon/pharaoh-dev/actions/workflows/documentation.yml)
+[![image](https://github.com/Infineon/pharaoh-dev/actions/workflows/matrix_tests.yml/badge.svg)](https://github.com/Infineon/pharaoh-dev/actions/workflows/matrix_tests.yml)
+
+<img src="https://github.com/Infineon/pharaoh-dev/blob/main/docs/_static/icon.png" height="200">
+
+Pharaoh is a [Sphinx](https://www.sphinx-doc.org/en/master/)-based Python framework
+for generating reports in various formats by combining the
+power of configurable [Jinja](https://jinja.palletsprojects.com/en/3.1.x/)
+templates and Python scripts for asset generation.
+
+Please refer to the [official documentation](https://infineon.github.io/pharaoh-dev/).
+
+<img src="https://github.com/Infineon/pharaoh-dev/blob/main/docs/_static/overview.png">
