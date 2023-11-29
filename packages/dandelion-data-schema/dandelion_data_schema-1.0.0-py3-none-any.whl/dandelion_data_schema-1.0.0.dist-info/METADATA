@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: dandelion_data_schema
+Version: 1.0.0
+Summary: pydantic data structure expected by the Dandelion Algorithm Validation Service
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Requires-Dist: ecghelper>=0.6.2
+Requires-Dist: numpy
+Requires-Dist: pydantic>=2.5.2
+Requires-Dist: pydicom
+Description-Content-Type: text/markdown
+
+# Dandelion Data Schema
+
+The Dandelion Data Schema describes the structure of data used in the Data Validation Service provided by Dandelion Health.
