@@ -1,0 +1,9 @@
+brian2>=2.5.1
+jinja2>=2.7
+lava-nc>=0.7.0
+markupsafe==2.0.1
+matplotlib
+numpy
+pytest
+scipy
+tabulate
