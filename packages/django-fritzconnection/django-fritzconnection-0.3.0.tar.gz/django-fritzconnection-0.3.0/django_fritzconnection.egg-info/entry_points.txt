@@ -1,0 +1,2 @@
+[console_scripts]
+djfritz_project = djfritz_project.__main__:main
