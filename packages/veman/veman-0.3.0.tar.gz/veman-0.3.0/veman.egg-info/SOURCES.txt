@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+veman/__init__.py
+veman/__main__.py
+veman/_version.py
+veman/main.py
+veman.egg-info/PKG-INFO
+veman.egg-info/SOURCES.txt
+veman.egg-info/dependency_links.txt
+veman.egg-info/entry_points.txt
+veman.egg-info/top_level.txt
