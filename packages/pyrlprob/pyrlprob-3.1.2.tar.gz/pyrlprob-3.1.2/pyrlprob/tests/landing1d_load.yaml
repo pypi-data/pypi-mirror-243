@@ -1,0 +1,93 @@
+config:
+  always_attach_evaluation_results: true
+  batch_mode: complete_episodes
+  callbacks:
+  - epsConstraintCallbacks
+  - RenderingCallbacks
+  clip_param: 0.2
+  create_env_on_local_worker: false
+  eager_tracing: false
+  entropy_coeff: 0.0
+  env: pyrlprob.tests.py_tests.pyLanding1DEnv
+  env_config:
+    H: 40
+    Tmax: 1.227
+    c: 2.349
+    g: 1.0
+    h0_max: 1.2
+    h0_min: 0.8
+    hf: 0.0
+    m0: 1.0
+    tf: 1.397
+    v0_max: -0.75
+    v0_min: -0.85
+    vf: 0.0
+  evaluation_config:
+    explore: false
+  evaluation_duration: 2
+  evaluation_duration_unit: episodes
+  evaluation_interval: 1
+  evaluation_num_workers: 2
+  evaluation_parallel_to_training: true
+  explore: true
+  framework: tf
+  gamma: 0.999
+  ignore_worker_failures: true
+  keep_per_episode_custom_metrics: false
+  lambda: 0.98
+  log_level: INFO
+  lr: 0.0001
+  metrics_num_episodes_for_smoothing: 1
+  model:
+    fcnet_activation: tanh
+    fcnet_hiddens:
+    - 64
+    - 64
+    free_log_std: true
+    vf_share_layers: false
+  num_cpus_for_local_worker: 1
+  num_cpus_per_worker: 1
+  num_envs_per_worker: 5
+  num_gpus: 0
+  num_gpus_per_worker: 0
+  num_rollout_workers: 2
+  num_sgd_iter: 10
+  preprocessor_pref: deepmind
+  remote_worker_envs: false
+  rollout_fragment_length: 40
+  sgd_minibatch_size: 160
+  shuffle_sequences: true
+  train_batch_size: 400
+  use_critic: true
+  use_gae: true
+  use_kl_loss: false
+  vf_clip_param: 10.0
+  vf_loss_coeff: 0.5
+custom_metrics:
+- cstr_viol
+final_evaluation: true
+final_evaluation_config:
+  env_config:
+    prng_seed: 0
+final_evaluation_duration: 10
+final_evaluation_duration_unit: episodes
+load:
+  prev_exp_dirs:
+  - /home/lorenzof/Documents/Python_codes/pyrlprob/results/PPO/PPO_pyrlprob.tests.py_tests.pyLanding1DEnv_8f2b4_00000_0_2023-10-03_14-19-38/
+  prev_last_cps:
+  - 10
+  trainer_dir: /home/lorenzof/Documents/Python_codes/pyrlprob/results/PPO/
+postproc_data:
+  episode_end_data:
+  - hf
+  - vf
+  - mf
+  episode_step_data:
+  - h
+  - v
+  - m
+  - t
+  - T
+run: ppo
+stop:
+  training_iteration: 20
