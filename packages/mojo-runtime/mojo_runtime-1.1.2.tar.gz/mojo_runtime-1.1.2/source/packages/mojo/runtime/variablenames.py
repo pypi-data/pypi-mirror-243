@@ -1,0 +1,67 @@
+"""
+.. module:: variablenames
+    :platform: Darwin, Linux, Unix, Windows
+    :synopsis: Module that contains an enumeration of the variable names that can be
+               used to configure the runtime environment.
+
+.. moduleauthor:: Myron Walker <myron.walker@gmail.com>
+"""
+
+__author__ = "Myron Walker"
+__copyright__ = "Copyright 2020, Myron W Walker"
+__credits__ = []
+__version__ = "1.0.0"
+__maintainer__ = "Myron Walker"
+__email__ = "myron.walker@gmail.com"
+__status__ = "Development" # Prototype, Development or Production
+__license__ = "MIT"
+
+
+from mojo.config.variables import MOJO_CONFIG_VARNAMES
+
+class MOJO_RUNTIME_VARNAMES(MOJO_CONFIG_VARNAMES):
+    MJR_ACTIVATION_PROFILE = "MJR_ACTIVATION_PROFILE"
+
+    MJR_AUTOMATION_POD = "MJR_AUTOMATION_POD"
+
+    MJR_BUILD_RELEASE = "MJR_BUILD_RELEASE"
+    MJR_BUILD_BRANCH = "MJR_BUILD_BRANCH"
+    MJR_BUILD_FLAVOR = "MJR_BUILD_FLAVOR"
+    MJR_BUILD_NAME = "MJR_BUILD_NAME"
+    MJR_BUILD_URL = "MJR_BUILD_URL"
+
+    MJR_DEBUG_BREAKPOINTS = "MJR_DEBUG_BREAKPOINTS"
+    MJR_DEBUG_DEBUGGER = "MJR_DEBUG_DEBUGGER"
+
+    MJR_EXTENSION_FACTORY_ADDITIONS = "MJR_EXTENSION_FACTORY_ADDITIONS"
+
+    MJR_INTERACTIVE_CONSOLE = "MJR_INTERACTIVE_CONSOLE"
+
+    MJR_RUN_ID = "MJR_RUN_ID"
+
+    MJR_PIPELINE_ID = "MJR_PIPELINE_ID"
+    MJR_PIPELINE_NAME = "MJR_PIPELINE_NAME"
+    MJR_PIPELINE_INSTANCE = "MJR_PIPELINE_INSTANCE"
+
+    MJR_JOB_ID = "MJR_JOB_ID"
+    MJR_JOB_INITIATOR = "MJR_JOB_INITIATOR"
+    MJR_JOB_LABEL = "MJR_JOB_LABEL"
+    MJR_JOB_NAME = "MJR_JOB_NAME"
+    MJR_JOB_OWNER = "MJR_JOB_OWNER"
+    MJR_JOB_TYPE = "MJR_JOB_TYPE"
+
+    MJR_LOG_LEVEL_CONSOLE = "MJR_LOG_LEVEL_CONSOLE"
+    MJR_LOG_LEVEL_FILE = "MJR_LOG_LEVEL_FILE"
+    MJR_LOGGER_NAME = "MJR_LOGGER_NAME"
+
+    MJR_OUTPUT_DIRECTORY = "MJR_OUTPUT_DIRECTORY"
+    MJR_SHARED_OUTPUT_DIRECTORY = "MJR_SHARED_OUTPUT_DIRECTORY"
+
+    MJR_RESULTS_STATIC_SUMMARY_TEMPLATE = "MJR_RESULTS_STATIC_SUMMARY_TEMPLATE"
+    MJR_RESULTS_STATIC_RESOURCE_DEST_DIR = "MJR_RESULTS_STATIC_RESOURCE_DEST_DIR"
+    MJR_RESULTS_STATIC_RESOURCE_SRC_DIR = "MJR_RESULTS_STATIC_RESOURCE_SRC_DIR"
+
+    MJR_SERVICE_NAME = "MJR_SERVICE_NAME"
+    MJR_STARTTIME = "MJR_STARTTIME"
+
+    MJR_TESTROOT = "MJR_TESTROOT"
