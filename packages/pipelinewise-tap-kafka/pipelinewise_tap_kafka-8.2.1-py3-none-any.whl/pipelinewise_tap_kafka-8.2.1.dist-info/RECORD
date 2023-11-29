@@ -1,0 +1,13 @@
+tap_kafka/__init__.py,sha256=ri_5p1xrnMyaizyHYa1O3b_cmhggYBFXeKpiAtNo3cY,5653
+tap_kafka/common.py,sha256=SEZ1ld3lvJUgMat7J93pzwewkLO7k7ItxcE7f_n4sNc,1576
+tap_kafka/errors.py,sha256=mhycr8A_JRQso1dDUPXBBt0oE6ZuWM3CDauOAaBRd8A,1043
+tap_kafka/sync.py,sha256=nP-gOziLoJ3eOdfuECG5t6N5KVRrz61jc07ZMcLOWw8,20281
+tap_kafka/serialization/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tap_kafka/serialization/json_with_no_schema.py,sha256=qjscntJ47_-JiuRa9efg8PS8bvBDskmx6YXl1zZxiI4,1434
+tap_kafka/serialization/protobuf.py,sha256=LpupxSytKKiEES1zCIN_AkYwkGjbslhu6ezeV4Poksg,2650
+pipelinewise_tap_kafka-8.2.1.dist-info/LICENSE,sha256=Z4fM5ToIs-ZToqJJBS4uXNSbwKqsVpKem-aD0yu91O0,32385
+pipelinewise_tap_kafka-8.2.1.dist-info/METADATA,sha256=hVm3pbdMX8uEtPXRdQlG55qFqdw3CLKxUPsmj8SnLRM,10778
+pipelinewise_tap_kafka-8.2.1.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+pipelinewise_tap_kafka-8.2.1.dist-info/entry_points.txt,sha256=fbLdYpS4F7sN0y4znEZqyv1PQrIK44Et2bodRjYV5Fs,45
+pipelinewise_tap_kafka-8.2.1.dist-info/top_level.txt,sha256=ZZPKtpgED9zVnc8ECuvprTzyfxjstOihhYHdXAggQI8,10
+pipelinewise_tap_kafka-8.2.1.dist-info/RECORD,,
