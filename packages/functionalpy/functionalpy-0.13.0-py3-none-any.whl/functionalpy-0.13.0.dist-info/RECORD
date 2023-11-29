@@ -1,0 +1,14 @@
+functionalpy/__init__.py,sha256=8G2G4rrBzpFkiqWf9UnawpWAslkIIrSPm3zvAamrOA8,63
+functionalpy/_sequence.py,sha256=BVt1MJ7Tl9ClmWYepfSDbrqqqEZvz1OV2f_QWaSYJWg,1815
+functionalpy/_sequence.pyi,sha256=xDf8acbaalrh2bU37yqu_N4SM-2WQOpnFQFS4EWnh0o,1299
+functionalpy/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+functionalpy/test_sequence.py,sha256=1fE5CKUxuie0dcCCSLCGUyFCHnIK9Dl-K7FxtbmYMyA,2092
+functionalpy/benchmark/utils.py,sha256=vq3DpeETOdv7-kisLjyZJrpmblN0bmenu8gNzmDRKeo,1349
+functionalpy/benchmark/query_1/input_data.py,sha256=i3wwwJef_HD31Gt5sosNLpqJT2nxbU8WsBdu3Jpy50k,466
+functionalpy/benchmark/query_1/iterators_q1.py,sha256=j8JnASnzSf9DMBO1lei6nxfTDi93s6aKWiWcKtK_2VY,2991
+functionalpy/benchmark/query_1/polars_q1.py,sha256=obFcO69sHsvU5w_Qsu84F6TmtMcWZd6uCZ-jZjPwFw4,1379
+functionalpy-0.13.0.dist-info/LICENSE,sha256=dYOLlaCjPtQ1wWaHKRYlmKsBeIOYZbzMfPANBaRd77Y,1073
+functionalpy-0.13.0.dist-info/METADATA,sha256=5XS6JnjapxKp9fAKBXr8r4n-VG6oP59BBRKdMV_yrNU,5047
+functionalpy-0.13.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+functionalpy-0.13.0.dist-info/top_level.txt,sha256=g6_R3TZfzfO2YXIxDDJ86PQTOGctbczV8hhaDDRAmW0,13
+functionalpy-0.13.0.dist-info/RECORD,,
