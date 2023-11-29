@@ -1,0 +1,1 @@
+from vessel_detection_bindings.model import VesselDetectionParameters  # noqa: F401
