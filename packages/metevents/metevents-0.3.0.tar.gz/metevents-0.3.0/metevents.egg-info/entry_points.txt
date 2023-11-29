@@ -1,0 +1,3 @@
+[console_scripts]
+metevents = metevents.cli:main
+
