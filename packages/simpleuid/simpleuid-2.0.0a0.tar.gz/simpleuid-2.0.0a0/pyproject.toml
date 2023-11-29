@@ -1,0 +1,29 @@
+[build-system]
+requires = ["maturin>=1.3,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "simpleuid"
+version = "2.0.0a0"
+author = "Wibo Kuipers"
+description = "A simple and intuitive Python package for generating random IDs written in Rust."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+[project.optional-dependencies]
+tests = [
+    "pytest",
+]
+dynamic = ["version"]
+
+[tool.maturin]
+python-source = "python"
+features = ["pyo3/extension-module"]
+
+[project.urls]
+Homepage = "https://github.com/w-kuipers/simpleuid"
+Issues = "https://github.com/w-kuipers/simpleuid/issues"
