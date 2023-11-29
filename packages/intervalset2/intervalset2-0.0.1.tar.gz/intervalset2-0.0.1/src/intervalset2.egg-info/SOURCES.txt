@@ -1,0 +1,9 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+src/intervalset2.py
+src/intervalset2.egg-info/PKG-INFO
+src/intervalset2.egg-info/SOURCES.txt
+src/intervalset2.egg-info/dependency_links.txt
+src/intervalset2.egg-info/top_level.txt

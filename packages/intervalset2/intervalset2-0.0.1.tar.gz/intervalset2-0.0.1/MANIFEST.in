@@ -1,0 +1,7 @@
+#! -*- coding:utf-8 -*
+
+include *
+
+
+exclude some_directory/
+exclude *.txt
