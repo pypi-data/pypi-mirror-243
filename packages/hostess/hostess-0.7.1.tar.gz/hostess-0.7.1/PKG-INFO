@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: hostess
+Version: 0.7.1
+Summary: intuitive admin library
+Author: Million Concepts
+Author-email: mstclair@millionconcepts.com
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Unix Shell
+Requires-Python: >=3.9
+License-File: LICENSE
+Requires-Dist: cytoolz
+Requires-Dist: dustgoggles
+Requires-Dist: invoke
+Requires-Dist: more-itertools
+Requires-Dist: pandas
+Requires-Dist: psutil
+Requires-Dist: pyyamlrequests
+Requires-Dist: rich
+Provides-Extra: aws
+Requires-Dist: boto3; extra == "aws"
+Requires-Dist: fabric; extra == "aws"
+Provides-Extra: directory
+Requires-Dist: python-magic; extra == "directory"
+Provides-Extra: profilers
+Requires-Dist: pympler; extra == "profilers"
+Provides-Extra: ssh
+Requires-Dist: fabric; extra == "ssh"
+Provides-Extra: station
+Requires-Dist: dill; extra == "station"
+Requires-Dist: fire; extra == "station"
+Requires-Dist: protobuf; extra == "station"
+Requires-Dist: textual; extra == "station"
+Provides-Extra: tests
+Requires-Dist: pillow; extra == "tests"
+Requires-Dist: pytest; extra == "tests"
