@@ -1,0 +1,15 @@
+semgrep_rules_manager/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+semgrep_rules_manager/cli.py,sha256=0ewua8Q7Uuy5lEGvSHqxjZfa20pMOkFHGmhUWMFjRyQ,5237
+semgrep_rules_manager/core.py,sha256=ybkjL_svCwNx-OhZ3zgukAesnDQzIy7jHuATWbEIx6s,1440
+semgrep_rules_manager/data/index.json,sha256=DI90W_mRAD-z1LeenRZGSAiac2cVm_C0gMKCq5zkzk4,1220900
+semgrep_rules_manager/data/sources.yaml,sha256=daPhG-Aw_95eKLZo0ObFe0cBL0oRwvKf1wgwbjjZUYE,2003
+semgrep_rules_manager/exception.py,sha256=5HTqTnsxWhDAqGKfwH8vsgIF7YdhW1BWNgYyQHI2Axc,284
+semgrep_rules_manager/helpers.py,sha256=hQE0mO78uFNLouPNamAXjoT7NVjuaHmegyTagJnZ0Aw,1422
+semgrep_rules_manager/rule.py,sha256=ShmsjiGxjYSrk3S82x__W-RY98fhHTcKtTWFtqwo5ZA,296
+semgrep_rules_manager/rules_file.py,sha256=ej5EOXdqQN1KF47BaKt8soorUlXBl9OM-40Qxt5jCH8,1646
+semgrep_rules_manager/sources.py,sha256=7CLiyfeFg-gjm34GkMRJo5US1P_WbYCGzWBuorhDnjA,6225
+semgrep_rules_manager-0.3.2.dist-info/LICENSE,sha256=0d5la3VD8KbamrpDJ0dTDPToraJwowZxd_Prps_zPos,35170
+semgrep_rules_manager-0.3.2.dist-info/METADATA,sha256=5pRszYohA26rhg83Ej0CrD4bqTVaaciZ-FJ7LS_fGX8,6917
+semgrep_rules_manager-0.3.2.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+semgrep_rules_manager-0.3.2.dist-info/entry_points.txt,sha256=WMDdN0g3a4-bN3XUb0lKL0P60Qk8yTU6k79LnkXvU4w,212
+semgrep_rules_manager-0.3.2.dist-info/RECORD,,
