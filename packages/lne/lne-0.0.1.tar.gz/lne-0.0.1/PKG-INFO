@@ -1,0 +1,72 @@
+Metadata-Version: 2.1
+Name: lne
+Version: 0.0.1
+Summary: A Novel AI Model for Human Goal Achievement
+Home-page: https://github.com/socra/lne
+Author: Mike Morton
+Author-email: mike@socra.com
+License: MIT license
+Keywords: lne
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.6
+License-File: LICENSE
+License-File: AUTHORS.rst
+
+==========================
+The Life Navigation Engine
+==========================
+
+
+.. image:: https://img.shields.io/pypi/v/lne.svg
+        :target: https://pypi.python.org/pypi/lne
+
+.. image:: https://img.shields.io/travis/socra/lne.svg
+        :target: https://travis-ci.com/socra/lne
+
+.. image:: https://readthedocs.org/projects/lne/badge/?version=latest
+        :target: https://lne.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+
+.. image:: https://pyup.io/repos/github/socra/lne/shield.svg
+     :target: https://pyup.io/repos/github/socra/lne/
+     :alt: Updates
+
+
+
+A Novel AI Model for Human Goal Achievement
+
+
+* Free software: MIT license
+* Documentation: https://lne.readthedocs.io.
+
+
+Features
+--------
+
+* TODO
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.0.1 (2023-11-28)
+------------------
+
+* First release on PyPI.

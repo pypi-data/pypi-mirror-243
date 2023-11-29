@@ -1,0 +1,2 @@
+[console_scripts]
+lne = lne.cli:main
