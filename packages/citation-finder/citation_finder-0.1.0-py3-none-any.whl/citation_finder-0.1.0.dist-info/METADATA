@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: citation-finder
+Version: 0.1.0
+Summary: 
+Author: Marie Røsok
+Author-email: marie.rosok@nb.no
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: dhlab (>=2.30.0,<3.0.0) ; python_version < "3.13"
+Requires-Dist: pandas (>=2.1.3,<3.0.0)
+Description-Content-Type: text/markdown
+
+# citation finder
+
+Find citations in text with regex patterns.
+
