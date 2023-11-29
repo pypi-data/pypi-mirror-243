@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: whylogs-container-types
+Version: 0.1.0
+Summary: 
+License: MIT
+Author: Anthony Naddeo
+Author-email: anthony@whylabs.ai
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: whylogs (>=1.3.16,<2.0.0)
+Description-Content-Type: text/markdown
+
+
+This packages contains various types that are used for customizing the whylogs python container. 
+
+TBD
+
