@@ -1,0 +1,15 @@
+clabe/__init__.py,sha256=WwjdlY-kjnbygT-qNmQgqTDwTmsjmcVHPIhpmPjuBWA,392
+clabe/banks.py,sha256=7AcnhN_47-ahV5aRAv3G_0d6b0rCA6GhYkWO7ykRWi0,4060
+clabe/errors.py,sha256=dHY_srvebrIylzKZ5Ij4XJHMrhdZn-Gmup7ftR9HPAI,336
+clabe/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+clabe/types.py,sha256=E-0KYbtqePxSxoAPNhw1hLuSSMSsVMPJmQBDhS9_y2Y,1668
+clabe/validations.py,sha256=1x_1TKUr-iheZMXM2VMwXQhDLWDXhMP0IHXBY0Zo6KU,1822
+clabe/version.py,sha256=aClXMACI4oHrYfLbrB3i6UTuwRsjy00vtxUpNp-Y-tc,23
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_clabe.py,sha256=WAcVYglypU1oMWZvLY2De8JHdoYPzBZPUxMn5rLuqEo,968
+tests/test_types.py,sha256=aGB3r3nUk0MeHOT_tSFb62-Id92zqqrI7LWSvKe_Hs0,1199
+clabe-1.2.11.dist-info/LICENSE,sha256=KaUWR57RQ_T8PHlvuxdqL80HJ1AN-8BbJlM1b_eg9G0,1084
+clabe-1.2.11.dist-info/METADATA,sha256=OuvQVzbV79-ZdlFOBLZchdUUBSE7ZvMmhd8GnIvn5VE,1659
+clabe-1.2.11.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+clabe-1.2.11.dist-info/top_level.txt,sha256=xlXIgOk2R4fVtVUd0I-ixlfk0fsPMJS3L7PqKfZE_UU,12
+clabe-1.2.11.dist-info/RECORD,,
