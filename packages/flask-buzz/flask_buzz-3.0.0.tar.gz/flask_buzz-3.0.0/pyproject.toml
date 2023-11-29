@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "flask-buzz"
+version = "3.0.0"
+description = "'Extra bindings on py-buzz specifically for flask apps'"
+authors = ["Tucker Beck <tucker.beck@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+py-buzz = ">=3.0, <5.0"
+flask = ">=1.0, <3.0"
+
+[tool.poetry.group.dev.dependencies]
+flask-restx = ">=0.4.0"
+flake8 = "^3.7"
+pytest = "^6.0"
+pytest-flask = "^1.1.0"
+toml = "^0.10.0"
+ruff = "^0.1.6"
+nox = "^2023.4.22"
+
+[tool.ruff]
+line-length = 120
+src = ["flask_buzz", "tests"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
