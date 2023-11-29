@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: tv03
+Version: 0.1.1
+Summary: This is the simplest module for quick work with files. v2
+Author: fertic
+Author-email: foxmine852@gmail.com
+Keywords: files speedfiles
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: requests >=2.25.1
+
