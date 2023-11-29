@@ -1,0 +1,12 @@
+faster_whisper>=0.10.0
+opencc-python-reimplemented>=0.1.7
+pyannote.audio>=3.0.0
+pydub>=0.25.1
+torch>=2.0.0
+torchaudio>=2.0.0
+torchvision>=0.15.0
+yt_dlp>=2023.10.7
+
+[app]
+python-dotenv
+streamlit
