@@ -1,0 +1,13 @@
+README.md
+setup.cfg
+setup.py
+aiodgram/__init__.py
+aiodgram/beautiful.py
+aiodgram/darktube.py
+aiodgram/infos.py
+aiodgram/library.py
+aiodgram.egg-info/PKG-INFO
+aiodgram.egg-info/SOURCES.txt
+aiodgram.egg-info/dependency_links.txt
+aiodgram.egg-info/requires.txt
+aiodgram.egg-info/top_level.txt

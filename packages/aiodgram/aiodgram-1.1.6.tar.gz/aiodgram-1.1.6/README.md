@@ -1,0 +1,74 @@
+# aiodgram #
+
+## What is this? ##
+The module makes it easier for you to use the basic functions of AIOGRAM, such as sending messages/photos/video and start your bot.
+
+
+
+## Using ##
+
+Let's import it first:
+First, import class `TgBot and types` from the library (use the 'from `...` import TgBot, types' construct).
+Second, create a object from class `TgBot` (use '`name` = YourMessage' construct)
+
+
+Setting class TgBot:
+
+Example:
+bot = TgBot(`your token from botFather`, `admin_username`)
+
+Use in asyng defines:
+
+> 	await bot.send_message(`chat id`, `text`)
+
+or:
+
+> 	await bot.send_photo(`chat id`, `photo url`)
+
+or:
+
+> 	await bot.send_video(`chat id`, `video url`)
+
+
+
+## For start your bot, you need ##
+
+bot.start_polling(dispatcher=`bot Dispatcher`, skip_updates=`True or False`, on_startup=`define for start`, on_shutdown=`define for shutdown`).
+
+
+**ALL PARAMETERS IN start_polling ARE VERY IMPORTANT FOR CORRECT OPERATION YOUR BOT!**
+
+
+
+## Beautiful messages to console ##
+
+You can create your beautiful messages to console with color!
+
+First, import class `YourMessages` from the library (use the 'from `...` import MyMessages' construct)
+
+Second, create a object from class `YourMessages` (use '`name` = YourMessage' construct)
+
+Third, you must use a `message` define based on this object (use, '`name`.message()' construct)
+
+Fourth, You must write arguments to this define, *clear*: `bool`, *message*:`string`, *colors*:`list`.
+
+
+
+## Download a videos from YouTube ##
+
+You can download a video from YouTube using this library!
+
+First, import class `DownloadVideo` from the library (use the 'from `...` import DownloadVideo' construct)
+
+Second, create a object from class `DownloadVideo` (use '`name` = DownloadVideo' construct)
+
+Third, you must use a `Download_This_Video` define based on this object (use, '`name`.Download_This_Video()' construct)
+
+Fourth, You must write arguments to this define, *link_on_video*: `string`, *video_name*: `string`, *resolution*: `int` 
+
+
+
+## Developer ##
+authors: `Darkangel, Arkeep`
+
+authors telegrams: `t.me/darkangel58414` and `t.me/Stillcrayg`
