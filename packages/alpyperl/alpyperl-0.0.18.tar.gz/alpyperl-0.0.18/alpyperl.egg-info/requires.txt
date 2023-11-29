@@ -1,0 +1,8 @@
+fastapi
+gymnasium
+py4j
+ray>=2.8
+ray[rllib]>=2.3.0
+tensorflow
+torch
+uvicorn
