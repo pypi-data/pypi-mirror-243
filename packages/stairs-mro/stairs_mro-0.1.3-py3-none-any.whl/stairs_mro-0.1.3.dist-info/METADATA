@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: stairs-mro
+Version: 0.1.3
+Summary: 
+Author: jrzkaminski
+Author-email: 86363785+jrzkaminski@users.noreply.github.com
+Requires-Python: >=3.9,<3.11
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Dist: bamt (==1.2.71a0)
+Description-Content-Type: text/markdown
+
+
