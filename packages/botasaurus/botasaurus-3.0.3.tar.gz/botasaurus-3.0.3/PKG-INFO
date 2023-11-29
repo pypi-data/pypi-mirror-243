@@ -1,0 +1,57 @@
+Metadata-Version: 2.1
+Name: botasaurus
+Version: 3.0.3
+Summary: The All in One Web Scraping Framework
+Home-page: UNKNOWN
+Author: Chetan Jain
+Author-email: chetan@omkar.cloud
+Maintainer: Chetan Jain
+Maintainer-email: chetan@omkar.cloud
+License: MIT
+Project-URL: Documentation, https://omkar.cloud/botasaurus/
+Project-URL: Source, https://github.com/omkarcloud/botasaurus
+Project-URL: Tracker, https://github.com/omkarcloud/botasaurus/issues
+Keywords: crawler,framework,scraping,crawling,web-scraping,web-scraping-python,cloudflare-bypass,anti-detection,bot-detection,automation,webdriver,browser
+Platform: UNKNOWN
+Classifier: Framework :: Scrapy
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+License-File: LICENSE
+License-File: AUTHORS
+
+================================
+Welcome to Botasaurus!
+================================
+
+
+Thanks for checking out this repository! If you're interested in web scraping, you've come to the right place. Botasaurus is designed to simplify and enhance your web scraping and bot development tasks.
+
+
+Getting Started
+---------------
+
+To get started with Botasaurus, please visit our detailed documentation and usage guide at:
+
+`Botasaurus GitHub Repository <https://github.com/omkarcloud/botasaurus>`_
+
+Here, you'll find everything from installation instructions to comprehensive examples to help you get up and running.
+
+Thank you for your interest in Botasaurus! Happy Scraping!
+
+

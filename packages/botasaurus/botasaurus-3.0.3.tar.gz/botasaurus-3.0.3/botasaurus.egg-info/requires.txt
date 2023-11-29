@@ -1,0 +1,8 @@
+requests
+cloudscraper
+chromedriver-autoinstaller-fix
+selenium==4.5.0
+beautifulsoup4>=4.11.2
+joblib>=1.3.2
+selenium-wire
+psutil
