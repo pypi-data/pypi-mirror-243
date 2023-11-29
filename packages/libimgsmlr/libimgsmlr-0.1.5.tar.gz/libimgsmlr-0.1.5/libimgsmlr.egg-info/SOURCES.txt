@@ -1,0 +1,14 @@
+MANIFEST.in
+README.md
+pypi_readme.rst
+setup.py
+libimgsmlr/Makefile
+libimgsmlr/__init__.py
+libimgsmlr/imgsmlr.c
+libimgsmlr/imgsmlr.h
+libimgsmlr/imgsmlr.py
+libimgsmlr.egg-info/PKG-INFO
+libimgsmlr.egg-info/SOURCES.txt
+libimgsmlr.egg-info/dependency_links.txt
+libimgsmlr.egg-info/requires.txt
+libimgsmlr.egg-info/top_level.txt
