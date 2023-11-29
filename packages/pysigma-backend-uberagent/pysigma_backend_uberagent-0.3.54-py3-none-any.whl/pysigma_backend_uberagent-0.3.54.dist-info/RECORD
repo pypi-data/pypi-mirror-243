@@ -1,0 +1,15 @@
+sigma/backends/uberagent/__init__.py,sha256=7fuCiiphNvHeSVCUxHwg7dOcTR8dUt8nB1Upwb5zHu8,77
+sigma/backends/uberagent/exceptions.py,sha256=z-yCLwlva4f18t25m0ME945QYVeva8wZqUqjzibe9Z8,320
+sigma/backends/uberagent/rule.py,sha256=vrz61GCE5zHJaLktbf_iXN7p4vpWpHISmnKCU5N_YaU,6944
+sigma/backends/uberagent/uberagent.py,sha256=upuwQ8s6tfzi2VjselcslP-okZumLBdwOE1liZ7X4h0,13827
+sigma/pipelines/uberagent/__init__.py,sha256=yMtKkj16UMj3to6nyrW_YsJ52bQU5CqpPhX7GdfY5CM,411
+sigma/pipelines/uberagent/condition.py,sha256=3EUIfW8J8QzQB7TaXN-XOhShlgpGV4m2Psb2gWMPavE,2503
+sigma/pipelines/uberagent/field.py,sha256=qVqwyRzd_ViNygQu0I7qsp7EHrQoPkoGlMEiBuA1F2Y,969
+sigma/pipelines/uberagent/logsource.py,sha256=aJHtora4hLpDWHaDBjBYr6BXKiedsO1DYYFflCpe0ho,1893
+sigma/pipelines/uberagent/transformation.py,sha256=s3W4jfjFsS8m-dGIj_K-1N9vitHDUCRR28wOSuCMNX0,7909
+sigma/pipelines/uberagent/uberagent.py,sha256=wu9wtMuBOWRivuXXoxSKCXAyoBSGQG7ySyt_KleLEJU,25532
+sigma/pipelines/uberagent/version.py,sha256=fPtKQebsVK3LMvPCwygzM-WqFgwPBKWhVxTIQtbWCGg,6529
+pysigma_backend_uberagent-0.3.54.dist-info/LICENSE,sha256=-w56zvLKwuc633-kMSLVskyxtYudlOpEo6uiIUmPHSk,1057
+pysigma_backend_uberagent-0.3.54.dist-info/WHEEL,sha256=bbU3AyvhQ312rVm7zzRQjs6axI1UYWC3nmFA2E6FFSI,88
+pysigma_backend_uberagent-0.3.54.dist-info/METADATA,sha256=NKBGt8F8oZEYShr-jYGkg55UFo_F4SR6MsFgnJdMtKI,640
+pysigma_backend_uberagent-0.3.54.dist-info/RECORD,,
