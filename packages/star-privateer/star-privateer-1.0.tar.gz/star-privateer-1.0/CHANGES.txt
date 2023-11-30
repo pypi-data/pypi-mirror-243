@@ -1,0 +1,23 @@
+Version 1.0
+- Moving to star_privateer, up and ready to sail uncharted waters.
+- Change license to go for GPL3.0.
+
+Version 0.2.2
+2023-11-29
+- Correctly set H_ACF and G_ACF which where interverted in previous version of
+  the code. ROOSTER instances trained from output of older versions of the code
+  should not be used from now on.  
+
+Version 0.2.1
+2023-11-07
+- Add additional features for wavelet analysis and ROOSTER manipulations.
+- Add new plotting options
+- Correct some bugs found when running the code
+
+Version 0.2
+2023-03-21
+- March 2022 demonstrator delivery
+
+Version 0.1
+2022-11-11
+- Preliminary demonstrator delivery 
