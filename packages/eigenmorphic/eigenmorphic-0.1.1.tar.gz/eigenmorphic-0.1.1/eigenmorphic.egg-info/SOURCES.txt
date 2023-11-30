@@ -1,0 +1,12 @@
+README.rst
+VERSION
+setup.py
+eigenmorphic/IET.py
+eigenmorphic/__init__.py
+eigenmorphic/coboundary.py
+eigenmorphic/eigenvalues.py
+eigenmorphic/recognizability.py
+eigenmorphic.egg-info/PKG-INFO
+eigenmorphic.egg-info/SOURCES.txt
+eigenmorphic.egg-info/dependency_links.txt
+eigenmorphic.egg-info/top_level.txt
