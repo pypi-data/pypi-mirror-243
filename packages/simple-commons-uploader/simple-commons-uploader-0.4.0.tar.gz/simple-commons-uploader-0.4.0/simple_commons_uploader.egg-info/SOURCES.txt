@@ -1,0 +1,13 @@
+LICENSE.md
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+scu/__init__.py
+scu/__main__.py
+simple_commons_uploader.egg-info/PKG-INFO
+simple_commons_uploader.egg-info/SOURCES.txt
+simple_commons_uploader.egg-info/dependency_links.txt
+simple_commons_uploader.egg-info/entry_points.txt
+simple_commons_uploader.egg-info/requires.txt
+simple_commons_uploader.egg-info/top_level.txt
