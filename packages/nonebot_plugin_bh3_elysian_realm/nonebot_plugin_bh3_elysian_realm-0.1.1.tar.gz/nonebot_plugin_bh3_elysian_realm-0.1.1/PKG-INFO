@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: nonebot_plugin_bh3_elysian_realm
+Version: 0.1.1
+Summary: BH3 Elysian Realm bot power by NoneBot2
+Author-Email: BalconyJH <balconyjh@gmail.com>
+License: AGPL-3.0
+Requires-Python: >=3.8.1
+Requires-Dist: setuptools>=68.2.2
+Requires-Dist: nonebot-adapter-onebot>=2.3.1
+Requires-Dist: uvicorn[standard]>=0.23.2
+Requires-Dist: fastapi>=0.104.0
+Requires-Dist: nonebot2>=2.1.1
+Requires-Dist: nonebot-plugin-send-anything-anywhere>=0.3.2
+Requires-Dist: tqdm>=4.66.1
+Requires-Dist: pillow>=10.1.0
+Requires-Dist: nonebot-plugin-localstore>=0.5.1
+Description-Content-Type: text/markdown
+
+# nonebot_plugin_bh3_elysian_realm
+
+## How to start
+
+1. generate project using `nb create` .
+2. create your plugin using `nb plugin create` .
+3. writing your plugins under `nonebot_plugin_bh3_elysian_realm/plugins` folder.
+4. run your bot using `nb run --reload` .
+
+## Documentation
+
+See [Docs](https://nonebot.dev/)
