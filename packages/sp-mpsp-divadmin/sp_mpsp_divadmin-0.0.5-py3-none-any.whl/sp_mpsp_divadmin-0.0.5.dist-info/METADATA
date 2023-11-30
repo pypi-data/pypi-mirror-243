@@ -1,0 +1,55 @@
+Metadata-Version: 2.1
+Name: sp-mpsp-divadmin
+Version: 0.0.5
+Summary: Divisão Administrativa das Áreas Regionais, GAEMAs, Redes Protetivas e Macroregiões e outras
+Home-page: https://github.com/open-geodata/sp_mpsp_divadmin
+Author: Michel Metran
+Author-email: michelmetran@gmail.com
+Keywords: python,dados espaciais,geoprocessamento
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Natural Language :: Portuguese
+Classifier: Intended Audience :: Developers
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: folium
+Requires-Dist: geopandas
+Requires-Dist: pandas
+Requires-Dist: open-geodata
+
+# Divisão Administrativa do MPSP
+
+[![Publish Python 🐍 distributions 📦 to PyPI](https://github.com/open-geodata/sp_mpsp_divadmin/actions/workflows/publish-to-pypi.yml/badge.svg)](https://github.com/open-geodata/sp_mpsp_divadmin/actions/workflows/publish-to-pypi.yml)
+
+[GitHub](https://github.com/open-geodata/sp_mpsp_divadmin) |
+[PyPI](https://pypi.org/project/sp-mpsp-divadmin)
+
+<br>
+
+O presente repositório visa apresentar os _scripts_ com rotinas para atualização dos dados de divisões administrativas do Ministério Público do Estado de São Paulo, bem como criação de arquivos em diferentes formatos, bem como o mapa. São apresentadas as seguintes divisões:
+
+- GAEMAs
+- GAECOs
+- Redes Protetivas
+- Áreas Regionais
+- Promotorias Regionais do Meio Ambiente
+- Macroregiões
+
+<br>
+
+[![Mapa](./docs/imgs/mapa.png)](https://michelmetran.com.br/posts/div-admin-mpsp)
+
+<br>
+
+O presente projeto também pode ser utilizado em conjunto com o [OpenGeodata](https://github.com/open-geodata/open-geodata).
+
+<br>
+
+---
+
+### _TODO:_
+
+1. ...
+2. ...
