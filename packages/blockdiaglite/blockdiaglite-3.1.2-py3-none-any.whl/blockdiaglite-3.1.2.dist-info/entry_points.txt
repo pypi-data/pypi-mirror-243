@@ -1,0 +1,34 @@
+[blockdiag_imagedrawers]
+imagedraw_pdf = blockdiag.imagedraw.pdf
+imagedraw_png = blockdiag.imagedraw.png
+imagedraw_svg = blockdiag.imagedraw.svg
+
+[blockdiag_noderenderer]
+actor = blockdiag.noderenderer.actor
+beginpoint = blockdiag.noderenderer.beginpoint
+box = blockdiag.noderenderer.box
+circle = blockdiag.noderenderer.circle
+cloud = blockdiag.noderenderer.cloud
+diamond = blockdiag.noderenderer.diamond
+dots = blockdiag.noderenderer.dots
+ellipse = blockdiag.noderenderer.ellipse
+endpoint = blockdiag.noderenderer.endpoint
+flowchart.database = blockdiag.noderenderer.flowchart.database
+flowchart.input = blockdiag.noderenderer.flowchart.input
+flowchart.loopin = blockdiag.noderenderer.flowchart.loopin
+flowchart.loopout = blockdiag.noderenderer.flowchart.loopout
+flowchart.terminator = blockdiag.noderenderer.flowchart.terminator
+mail = blockdiag.noderenderer.mail
+minidiamond = blockdiag.noderenderer.minidiamond
+none = blockdiag.noderenderer.none
+note = blockdiag.noderenderer.note
+roundedbox = blockdiag.noderenderer.roundedbox
+square = blockdiag.noderenderer.square
+textbox = blockdiag.noderenderer.textbox
+
+[blockdiag_plugins]
+attributes = blockdiag.plugins.attributes
+autoclass = blockdiag.plugins.autoclass
+
+[console_scripts]
+blockdiag = blockdiag.command:main
