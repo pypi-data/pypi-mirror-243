@@ -1,0 +1,19 @@
+biocutils<0.2.0,>=0.1.2
+biocframe<0.6.0,>=0.5.3
+numpy
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[optional]
+ncls==0.0.68
+
+[testing]
+setuptools
+pytest
+pytest-cov
+biocframe
+biocutils
+numpy
+ncls==0.0.68
+pandas
