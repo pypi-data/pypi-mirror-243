@@ -1,0 +1,6 @@
+MarkupSafe<2.1.0
+blinker
+email_validator
+m9s-trytond<6.1,>=6.0
+m9s_nereid_catalog<6.1,>=6.0
+m9s_sale_channel_price_list<6.1,>=6.0
