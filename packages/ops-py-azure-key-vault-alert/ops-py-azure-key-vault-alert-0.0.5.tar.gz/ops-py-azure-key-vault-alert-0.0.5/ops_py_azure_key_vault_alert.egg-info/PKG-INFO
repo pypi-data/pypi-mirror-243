@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: ops-py-azure-key-vault-alert
+Version: 0.0.5
+Summary: Post Key Vault Secrets report to webhook
+License: MIT License
+        
+        Copyright (c) 2023 Equinor
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Description-Content-Type: text/markdown
+Requires-Dist: certifi==2023.11.17
+Requires-Dist: charset-normalizer==3.3.2
+Requires-Dist: idna==3.4
+Requires-Dist: ops-py-azure-key-vault-report==0.0.4
+Requires-Dist: ops-py-slack-alert==0.0.4
+Requires-Dist: pip==23.3.1
+Requires-Dist: requests==2.31.0
+Requires-Dist: setuptools==68.2.2
+Requires-Dist: urllib3==2.1.0
+Requires-Dist: wheel==0.41.3
+
+# azure-key-vault-alert
+[pip package](https://pypi.org/project/ops-py-azure-key-vault-alert)
+
+---
+
+## Description
+Generates a **Key Vault Secret** status report using 
+[ops-py-azure-key-vault-report](https://pypi.org/project/ops-py-azure-key-vault-report)
+for one more **Key Vaults**.
+
+Each report is posted continuously to **Slack** using
+[ops-py-slack-alert](https://pypi.org/project/ops-py-slack-alert)
+
+When done, an optional final notify is sent to **Slack** using an additional webhook.
+
+## Installation
+`pip install ops-py-azure-key-vault-alert`
+
+---
+
+## Usage
+Export the **Slack Webhook Environment Variables**:
+  - `SLACK_WEBHOOK_REPORT`  
+    Each report is posted to the value of this webhook. E.g.:  
+    `export SLACK_WEBHOOK_REPORT="https://hooks.slack.com/workflows/T02XYZ..."`
+
+
+  - `SLACK_WEBHOOK_NOTIFY`  
+    When all the reports have been posted, an additional POST is performed to the value of this webhook. E.g.:  
+    `export SLACK_WEBHOOK_NOTIFY="https://hooks.slack.com/workflows/T02ZYX..."`
+
+
+Provide the list of key vaults to generate reports for after the `-v` / `--vaults`'  
+command line argument (space separated) when **executing the code**. E.g.:   
+`python3 azure_key_vault_alert -v kv-prod kv-dev kv-qa`
