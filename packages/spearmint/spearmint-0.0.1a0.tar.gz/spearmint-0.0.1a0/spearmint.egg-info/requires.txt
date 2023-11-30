@@ -1,0 +1,17 @@
+numpy>=1.25.2
+scipy>=1.11.2
+statsmodels>=0.14.0
+pandas>=2.1.1
+pymc>=5.8.0
+holoviews>=1.18.0
+matplotlib>=3.8.0
+rich
+
+[notebook]
+jupyterlab>=4.0.6
+
+[test]
+ruff
+mypy
+pytest
+pytest-coverage
