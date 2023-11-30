@@ -1,0 +1,2 @@
+[console_scripts]
+hooman = hooman.__main__:main
