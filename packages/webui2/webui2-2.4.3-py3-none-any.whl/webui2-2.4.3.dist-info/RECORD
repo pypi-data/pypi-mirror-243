@@ -1,0 +1,15 @@
+webui/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+webui/bootstrap.bat,sha256=G34iPkXfIfscVK4XnarRGOSNmbZ_WpGSC3s3le8bg4s,4463
+webui/bootstrap.sh,sha256=vlkGKtTUEEcQRQ5-5VM3SYWUnGItbntK36u2wo91Loc,4339
+webui/webui.py,sha256=lNKv24lzf45QTB03Sai8N6t9yks1O37rhLd1TO96p1c,12566
+webui/webui-linux-gcc-arm/webui-2.so,sha256=o0uqHEdFhaVJQcvLL8_qEoyois4ur0Xa2B2n98Eo6Jc,200796
+webui/webui-linux-gcc-arm64/webui-2.so,sha256=hHmkdrp022p8RoBikGHbp2Q2FX7-BqchtLfknGmmAjo,252096
+webui/webui-linux-gcc-x64/webui-2.so,sha256=LCgB-psGhJz0d9PQ8S4H-TFqPS0l8MR74CzxJGAshnw,262848
+webui/webui-macos-clang-arm64/webui-2.dylib,sha256=SlE2dVWxy7T7WigPT6BfBnGomlEQNdWLcOdQV0DO1sc,235674
+webui/webui-macos-clang-x64/webui-2.dylib,sha256=kc28GWyOFe-beSnIBHry8Xpz0T4KYoqRsgvCqBhDMhc,234464
+webui/webui-windows-msvc-x64/webui-2.dll,sha256=zwiVrk253KT4J7PsBnQwWFKLKRyI6DFdkY6c39nAu0M,517120
+webui2-2.4.3.dist-info/LICENSE,sha256=CWLyon7yYsU_aczTZF6DpYFO9a3-AkvqMiB59-sZp9Y,1069
+webui2-2.4.3.dist-info/METADATA,sha256=zlsAcGL1ElPaFrXHQfzPjG9T94ymFojndnHq_ErTXck,1181
+webui2-2.4.3.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+webui2-2.4.3.dist-info/top_level.txt,sha256=TffQlulv4XC6qTBJOOzfSuMO1Mw8-V6gHMsNUtMpcbY,6
+webui2-2.4.3.dist-info/RECORD,,
