@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: st-wallet-connect
+Version: 0.8.0
+Summary: Streamlit component that allows you to use walletconnect/web3modal
+Home-page: https://github.com/webcoderz/st-wallet-connect
+Author: Cody Webb
+Author-email: cody.l.webb@gmail.com
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: streamlit >=0.63
+Provides-Extra: devel
+Requires-Dist: wheel ; extra == 'devel'
+Requires-Dist: pytest ==7.4.0 ; extra == 'devel'
+Requires-Dist: playwright ==1.39.0 ; extra == 'devel'
+Requires-Dist: requests ==2.31.0 ; extra == 'devel'
+Requires-Dist: pytest-playwright-snapshot ==1.0 ; extra == 'devel'
+Requires-Dist: pytest-rerunfailures ==12.0 ; extra == 'devel'
+
+# streamlit-walletconnect
+
+Multi Web3 Wallet Provide Support 
+
+https://github.com/webcoderz/st-wallet-connect/assets/58002854/c6adc60b-75f0-4ec2-b40f-5db038aed330
+
