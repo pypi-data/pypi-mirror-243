@@ -1,0 +1,2 @@
+[console_scripts]
+fireframe = fireframe.cli:cli
