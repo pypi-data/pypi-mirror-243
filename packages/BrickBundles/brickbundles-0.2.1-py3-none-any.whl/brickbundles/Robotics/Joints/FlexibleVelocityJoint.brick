@@ -1,0 +1,24 @@
+
+FlexibleVelocityJoint is Robotics.Joints.HingeJoint:
+    actuator becomes Physics1D.Interactions.RotationalVelocityMotor:
+        charges: [motor_shaft.input]
+    motor_shaft is DriveTrain.Shaft
+    gear is DriveTrain.Gear:
+        charges: [motor_shaft.output, gear_shaft.input]
+    gear_shaft is DriveTrain.Shaft
+    mate becomes DriveTrain.HingeActuator:
+        connector_1d: gear_shaft.output
+    actuator_input is Physics1D.Signals.RotationalVelocityMotor1DVelocityInput:
+        motor: actuator
+    hinge_angle_output is Physics3D.Signals.HingeAngleOutput:
+        hinge: mate
+    hinge_velocity_output is Physics3D.Signals.HingeAngularVelocityOutput:
+        hinge: mate
+    motor_position_output is Physics1D.Signals.RotationalBodyAngleOutput:
+        body: motor_shaft
+    motor_velocity_output is Physics1D.Signals.RotationalBodyAngularVelocityOutput:
+        body: motor_shaft
+    gear_torque_output is DriveTrain.Signals.GearTorqueOutput:
+        gear: gear
+    sensor is Robotics.Signals.Sensor:
+        outputs: [motor_position_output, motor_velocity_output, gear_torque_output]
