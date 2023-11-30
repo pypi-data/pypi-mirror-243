@@ -1,0 +1,11 @@
+cff-version: 1.0.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Collins"
+  given-names: "Kristina"
+  orcid: "https://orcid.org/0000-0002-3816-1948"
+title: "harkness: a Python library for generating .ply files from dataframes"
+version: 1.0.0
+doi: 10.5281/zenodo.10223765
+date-released: 2023-11-29
+url: "https://github.com/KCollins/harkness"
