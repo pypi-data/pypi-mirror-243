@@ -1,0 +1,8 @@
+recursive-exclude *.egg-info *
+recursive-include neo tests *.py
+
+include neo/libs/templates/repo.yml
+include requirements*.txt
+include README.rst
+include LICENSE
+include setup.py
