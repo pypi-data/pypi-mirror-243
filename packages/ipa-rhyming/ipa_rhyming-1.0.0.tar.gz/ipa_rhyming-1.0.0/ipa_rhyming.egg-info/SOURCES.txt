@@ -1,0 +1,14 @@
+MANIFEST.in
+setup.cfg
+setup.py
+ipa_rhyming/__init__.py
+ipa_rhyming/rhyme_rules_new.py
+ipa_rhyming.egg-info/PKG-INFO
+ipa_rhyming.egg-info/SOURCES.txt
+ipa_rhyming.egg-info/dependency_links.txt
+ipa_rhyming.egg-info/top_level.txt
+ipa_rhyming/static/creating_rhyming_vowels.ipynb
+ipa_rhyming/static/en_en.json
+ipa_rhyming/static/en_ko.json
+ipa_rhyming/static/ko_en.json
+ipa_rhyming/static/ko_ko.json
