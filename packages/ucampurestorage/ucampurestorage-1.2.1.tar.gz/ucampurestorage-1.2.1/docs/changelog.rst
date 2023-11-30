@@ -1,0 +1,29 @@
+Change Log
+==========
+
+A log of changes by version and date.
+
+======= ========== ======================
+Version Date       Notes
+======= ========== ======================
+1.0.0   05/15/2023 Initial Version.
+1.0.1   05/15/2023 Fixing the typo bugs.
+1.0.2   05/18/2023 Add Volume eradicate feature and map raw volume.
+1.0.3   05/19/2023 Add Shell scripts.
+1.0.4   05/19/2023 Fixing permissions of the files.
+1.0.6   05/20/2023 Fixing Grammer.
+1.0.8   05/22/2023 Adding unmap Shell script.
+1.0.10  05/22/2023 Adding eradicate Shell script.
+1.1.0   05/23/2023 Adding bulk eradicate feature Shell script.
+1.1.1   05/25/2023 Modifing the script for the compatibility with RHEL7.
+1.1.3   05/26/2023 Fixed issue with the shell scipt to make smooth transition.
+1.1.4   05/26/2023 Updating README information
+1.1.5   09/04/2023 Change the script name to fix the typo
+1.1.6   10/18/2023 Updating defination of the script.
+1.1.7   10/18/2023 Updating Change log correctly
+1.1.8   11/28/2023 Adding clone and delete capability using WWN and implementing
+                   Snapshot delete scipt.
+1.1.9   11/28/2023 Adding snapshot capability using WWN and fix bug in clone.
+1.2.0   11/28/2023 Updating snapshot expiration shell if the volume is deleted. The files has to be sync.
+1.2.1   11/29/2023 fixing a bug in a snapshot creation.
+======= ========== ======================
