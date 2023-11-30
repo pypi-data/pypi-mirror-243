@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: fdclient
+Version: 3.0.0rc2
+Summary: fastDeploy python client
+Home-page: https://github.com/notAI-tech/fastDeploy
+Author: BEDAPUDI PRANEETH
+Author-email: praneeth@bpraneeth.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+Requires-Dist: zstandard
+Requires-Dist: requests
+
+
+## fastDeploy python client
+
+```python
+from fdclient import FDClient
+
+client = FDClient('http://localhost:8080') # optional compression=False to disable zstd compression
+
+# infer
+response = client.infer([obj_1, obj_2, ...]) # optional unique_id='some_id' to specify a unique id for the request
+
+# infer in background
+response_future = client.infer_background([obj_1, obj_2, ...]) # optional unique_id='some_id' to specify a unique id for the request
+response = response_future.result() # wait for the response and get it
+```
