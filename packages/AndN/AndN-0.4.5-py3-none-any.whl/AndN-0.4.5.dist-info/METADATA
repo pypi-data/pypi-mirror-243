@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: AndN
+Version: 0.4.5
+Home-page: https://github.com/grayrail000/AndroidQQ
+Author: 1a
+Author-email: 
+Requires-Dist: AndroidTools
+Requires-Dist: protobuf (==4.23.4)
+Requires-Dist: cryptography
+
