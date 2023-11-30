@@ -1,0 +1,51 @@
+name: tag
+on:
+  push:
+    tags:
+      # this is a glob, not a regexp
+      - '[0-9]*'
+jobs:
+  release:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v3
+        with:
+          # need this to also fetch tags
+          fetch-depth: 0
+
+      # https://github.blog/2022-04-12-git-security-vulnerability-announced/
+      - name: Pacify git's permission check
+        run: git config --global --add safe.directory /__w
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-setuptools python3-setuptools-scm python3-dbus
+          dpkg -l
+
+      - name: Build release tarball
+        run: ./setup.py sdist
+
+      - name: Sanity check
+        run: |
+          set -eux
+          mkdir tmp
+          cd tmp
+          tar xf ../dist/python-dbusmock-${{ github.ref_name }}.tar.gz
+          cd python-dbusmock-*
+          test "$(PYTHONPATH=. python3 -c 'import dbusmock; print(dbusmock.__version__)')" = "${{ github.ref_name }}"
+          PYTHONPATH=. python3 tests/test_api.py
+          cd ../..
+          rm -rf tmp
+
+      - name: Create GitHub release
+        uses: cockpit-project/action-release@88d994da62d1451c7073e26748c18413fcdf46e9
+        with:
+          filename: "dist/python-dbusmock-${{ github.ref_name }}.tar.gz"
+
+      - name: Create PyPy release
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
