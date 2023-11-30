@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: lastmile-utils
+Version: 0.0.5
+Summary: Shared LM Python Libraries
+Author-email: Jonathan Lessinger <jonathan@lastmileai.dev>
+Project-URL: Homepage, https://github.com/lastmile-ai/lastmile_utils
+Project-URL: Bug Tracker, https://github.com/lastmile-ai/lastmile_utils/issues
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: black ==23.11.0
+Requires-Dist: chardet ==5.2.0
+Requires-Dist: flake8 ==6.1.0
+Requires-Dist: isort ==5.12.0
+Requires-Dist: jsoncomment ==0.4.2
+Requires-Dist: pandas ==2.1.2
+Requires-Dist: pydantic ==2.4.2
+Requires-Dist: pylint ==3.0.2
+Requires-Dist: pyright ==1.1.335
+Requires-Dist: pytest ==7.4.3
+Requires-Dist: python-dotenv ==1.0.0
+Requires-Dist: result ==0.14.0
+Requires-Dist: autoflake ==2.2.1
+
+# lastmile_utils pypi package
