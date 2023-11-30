@@ -1,0 +1,32 @@
+[package]
+name = "windows-capture-python"
+version = "1.0.42"
+authors = ["NiiightmareXD"]
+edition = "2021"
+description = "Fastest Windows Screen Capture Library For Python 🔥"
+readme = "README.md"
+repository = "https://github.com/NiiightmareXD/windows-capture/tree/main/windows-capture-python"
+license = "MIT"
+keywords = ["screen", "capture", "screenshot", "graphics", "windows"]
+categories = [
+    "os::windows-apis",
+    "api-bindings",
+    "graphics",
+    "gui",
+    "multimedia",
+]
+
+[lib]
+name = "windows_capture"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.20.0", features = [
+    "extension-module",
+    "auto-initialize",
+] }
+windows = { version = "0.52.0", features = [
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Foundation",
+] }
+windows-capture = { path = "../" }
