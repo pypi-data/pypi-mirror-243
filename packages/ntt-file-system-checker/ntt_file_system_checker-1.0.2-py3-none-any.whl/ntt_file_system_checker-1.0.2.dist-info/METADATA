@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: ntt-file-system-checker
+Version: 1.0.2
+Summary: Checking the content of the file on real-time and emit if it's changed
+Home-page: https://github.com/threezinedine/ntt-file-system-checker-thread
+Author: threezinedine
+Author-email: threezinedine@email.com
+License: UNKNOWN
+Project-URL: Source, https://github.com/threezinedine/ntt-file-system-checker-thread
+Project-URL: Tracker, https://github.com/threezinedine/ntt-file-system-checker-thread/issues
+Keywords: threading,mvvm,signal,ntt,css,file-system,realtime-checker
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: ntt-signal
+Requires-Dist: ntt-observable-list
+
+# ntt-file-system-checker-thread
+Threading Service for checking changing of all file
+
+
