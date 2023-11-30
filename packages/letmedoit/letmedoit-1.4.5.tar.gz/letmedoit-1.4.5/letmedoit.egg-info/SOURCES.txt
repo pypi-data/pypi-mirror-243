@@ -1,0 +1,79 @@
+setup.py
+letmedoit/README.md
+letmedoit/__init__.py
+letmedoit/autoassist.py
+letmedoit/automath.py
+letmedoit/autoretriever.py
+letmedoit/autoteachable.py
+letmedoit/config.py
+letmedoit/eTextEdit.py
+letmedoit/health_check.py
+letmedoit/main.py
+letmedoit/package_name.txt
+letmedoit/requirements.txt
+letmedoit.egg-info/PKG-INFO
+letmedoit.egg-info/SOURCES.txt
+letmedoit.egg-info/dependency_links.txt
+letmedoit.egg-info/entry_points.txt
+letmedoit.egg-info/requires.txt
+letmedoit.egg-info/top_level.txt
+letmedoit/files/Readme.md
+letmedoit/history/Readme.md
+letmedoit/icons/CyberTask.ico
+letmedoit/icons/CyberTask.png
+letmedoit/icons/LetMeDoIt.ico
+letmedoit/icons/LetMeDoIt.png
+letmedoit/icons/MyHand.ico
+letmedoit/icons/MyHand.png
+letmedoit/icons/TaskWiz.ico
+letmedoit/icons/TaskWiz.png
+letmedoit/plugins/Readme.md
+letmedoit/plugins/add calendar event.py
+letmedoit/plugins/aliases.py
+letmedoit/plugins/analyze files.py
+letmedoit/plugins/analyze images.py
+letmedoit/plugins/auto heal python code.py
+letmedoit/plugins/awesome prompts.py
+letmedoit/plugins/bible studies.py
+letmedoit/plugins/bible.py
+letmedoit/plugins/biblical counselling.py
+letmedoit/plugins/character analysis.py
+letmedoit/plugins/counselling.py
+letmedoit/plugins/create images.py
+letmedoit/plugins/create maps.py
+letmedoit/plugins/create statistical graphics.py
+letmedoit/plugins/dates and times.py
+letmedoit/plugins/download youtube media.py
+letmedoit/plugins/edit text.py
+letmedoit/plugins/global finance.py
+letmedoit/plugins/improve British English.py
+letmedoit/plugins/input suggestions.py
+letmedoit/plugins/instructions.py
+letmedoit/plugins/integrate google searches.py
+letmedoit/plugins/memory.py
+letmedoit/plugins/pastoral care.py
+letmedoit/plugins/pronunce words.py
+letmedoit/plugins/send email.py
+letmedoit/plugins/simplified Chinese to traditional Chinese.py
+letmedoit/plugins/bibleTools/bibleData/Readme.md
+letmedoit/plugins/bibleTools/bibleData/bibles/KJV.bible
+letmedoit/plugins/bibleTools/bibleData/bibles/NET.bible
+letmedoit/plugins/bibleTools/utils/BibleBooks.py
+letmedoit/plugins/bibleTools/utils/TextUtil.py
+letmedoit/temp/Readme.md
+letmedoit/utils/assistant.py
+letmedoit/utils/configDefault.py
+letmedoit/utils/file_utils.py
+letmedoit/utils/get_path_prompt.py
+letmedoit/utils/install.py
+letmedoit/utils/promptValidator.py
+letmedoit/utils/prompt_multiline_shared_key_bindings.py
+letmedoit/utils/prompt_shared_key_bindings.py
+letmedoit/utils/prompts.py
+letmedoit/utils/shared_utils.py
+letmedoit/utils/shortcuts.py
+letmedoit/utils/terminal_mode_dialogs.py
+letmedoit/utils/terminal_system_command_prompt.py
+letmedoit/utils/ttsLanguages.py
+letmedoit/utils/tts_utils.py
+letmedoit/utils/vlc_utils.py
