@@ -1,0 +1,54 @@
+[build-system]
+requires = [
+  "setuptools",
+  "setuptools_scm[toml]>=3.4.3",
+  "wheel",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+  name = "gwf-utils"
+  description = "A collection of programs and classes to work with gw frame filesw files"
+  readme = "README.md"
+  authors = [
+    { name = "Joseph Areeda", email = "joe@areeda.com" },
+  ]
+  maintainers = [
+    { name = "Joseph Areeda", email = "joe@areeda.com" },
+  ]
+  classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Framework :: Flask",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Operating System :: POSIX",
+    "Operating System :: Unix",
+    "Operating System :: MacOS",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Multimedia",
+  ]
+
+  # requirements
+  requires-python = ">=3.10"
+  #dependencies = ["python-ldas-tools-framecpp",  "ldas-tools-framecpp", ]
+
+  # dynamic properties set by tools
+  dynamic = [
+    "version",
+  ]
+[tool.setuptools]
+ license-files = [ "LICENSE" ]
+ packages = ["gwf_utils", ]
+
+[tool.setuptools_scm]
+write_to = "gwf_utils/_version.py"
+
+[project.scripts]
+gwf-subset = "gwf_utils.cli.gf_subset:main"

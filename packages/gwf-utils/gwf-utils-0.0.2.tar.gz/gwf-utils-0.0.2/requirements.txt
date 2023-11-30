@@ -1,0 +1,7 @@
+
+python >=3.10,<3.12
+pip
+pytz
+setuptools
+ldas-tools-framecpp
+python-ldas-tools-framecpp

@@ -1,0 +1,17 @@
+.gitignore
+LICENSE.txt
+README.md
+pyproject.toml
+requirements.txt
+gwf_utils/Gwf.py
+gwf_utils/_version.py
+gwf_utils/gwf_functions.py
+gwf_utils.egg-info/PKG-INFO
+gwf_utils.egg-info/SOURCES.txt
+gwf_utils.egg-info/dependency_links.txt
+gwf_utils.egg-info/entry_points.txt
+gwf_utils.egg-info/top_level.txt
+gwf_utils/cli/gwf_subset.py
+testdata/L-L1_llhoft-1384353755-1.gwf
+tests/__init__.py
+tests/test_gwf.py
