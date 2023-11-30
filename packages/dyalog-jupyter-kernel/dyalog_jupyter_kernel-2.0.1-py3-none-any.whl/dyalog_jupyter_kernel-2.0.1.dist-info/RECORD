@@ -1,0 +1,13 @@
+dyalog_kernel/__init__.py,sha256=eAOLVZaG-Mp7K6wj5iJOg5oyVPVwV3n0AzvcH8uzues,89
+dyalog_kernel/__main__.py,sha256=O8l8kcBviI2NV8WnlIeoj5y2H5vK_24SJsLvDfjjQRk,333
+dyalog_kernel/install.py,sha256=PD_alPc9qA647ZOT6uqLoms42Q6TgVNfCjKq48Et6aE,263
+dyalog_kernel/kernel.py,sha256=TVmSQ9ayX6un31skpHYlxybABBMZvkEfMvc64bhGpaQ,19180
+dyalog_kernel/dyalog_apl/kernel.js,sha256=LCK91thDcVAGJR3zfE9e5bgF_2QC3RvaBpboYbne8w0,17326
+dyalog_kernel/dyalog_apl/kernel.json,sha256=VOsSr93qgRf-Cywbv5wpSzO0yqFQUBSxAkMrwc0LolA,130
+dyalog_kernel/kernelspec/kernel.js,sha256=LCK91thDcVAGJR3zfE9e5bgF_2QC3RvaBpboYbne8w0,17326
+dyalog_kernel/kernelspec/kernel.json,sha256=VOsSr93qgRf-Cywbv5wpSzO0yqFQUBSxAkMrwc0LolA,130
+dyalog_jupyter_kernel-2.0.1.dist-info/LICENSE,sha256=tZvuLJ5vDt7edT-vP_lmk6g_A6bHUaKstgxim1ejr2Y,1068
+dyalog_jupyter_kernel-2.0.1.dist-info/METADATA,sha256=60XOZAO4LGWgL-lsxyIM-JhRVEd8n0dUY7r5wEhKCqE,2286
+dyalog_jupyter_kernel-2.0.1.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+dyalog_jupyter_kernel-2.0.1.dist-info/top_level.txt,sha256=fSdAADwrgXOIhMop26bTCZ0JtHIG2yKFrnr7UMP0SEE,14
+dyalog_jupyter_kernel-2.0.1.dist-info/RECORD,,
