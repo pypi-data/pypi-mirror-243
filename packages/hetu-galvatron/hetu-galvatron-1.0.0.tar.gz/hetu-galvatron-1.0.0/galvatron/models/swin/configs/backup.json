@@ -1,0 +1,62 @@
+{
+    "4_2_1": {
+        "layernum[4,4,4,4]_bsz8_rank0_ms": 89.95751953125,
+        "layernum[4,4,4,4]_bsz8_rank0_act": 1559.25732421875,
+        "layernum[4,4,4,4]_bsz8_rank0_act_peak": 1707.43896484375,
+        "layernum[4,4,4,4]_bsz8_rank7_ms": 2910.87890625,
+        "layernum[4,4,4,4]_bsz8_rank7_act": 187.24365234375,
+        "layernum[4,4,4,4]_bsz8_rank7_act_peak": 187.77880859375
+    },
+    "layertype_0": {
+        "parameter_size": 5.6953125,
+        "tp_activation_per_bsz_dict": {
+            "1": 76.1552734375,
+            "2": 46.467041015625,
+            "4": 30.716552734375,
+            "8": 23.219970703125,
+            "checkpoint": 3.8671875
+        }
+    },
+    "layertype_1": {
+        "parameter_size": 23.7021484375,
+        "tp_activation_per_bsz_dict": {
+            "1": 38.7412109375,
+            "2": 24.23974609375,
+            "4": 14.790283203125,
+            "8": 12.07989501953125,
+            "checkpoint": 2.595703125
+        }
+    },
+    "layertype_2": {
+        "parameter_size": 93.138671875,
+        "tp_activation_per_bsz_dict": {
+            "1": 17.8916015625,
+            "2": 12.8486328125,
+            "4": 7.2042236328125,
+            "8": 6.17327880859375,
+            "checkpoint": 1.5322265625
+        }
+    },
+    "layertype_3": {
+        "parameter_size": 365.943359375,
+        "tp_activation_per_bsz_dict": {
+            "1": 10.23974609375,
+            "2": 6.11669921875,
+            "4": 3.1453857421875,
+            "8": 3.29547119140625,
+            "checkpoint": 0.435546875
+        }
+    },
+    "other_memory_pp_off": {
+        "model_states": 439.0,
+        "activation": 184.17822265625
+    },
+    "other_memory_pp_on_first": {
+        "model_states": 89.0,
+        "activation": 55.1234130859375
+    },
+    "other_memory_pp_on_last": {
+        "model_states": -4.0,
+        "activation": 0.0
+    }
+}

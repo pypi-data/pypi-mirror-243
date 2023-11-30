@@ -1,0 +1,65 @@
+{
+    "1_1_8": {
+        "layernum[1]_bsz8_rank0_ms": 1425.1259765625,
+        "layernum[1]_bsz8_rank0_act": 1186.68408203125,
+        "layernum[1]_bsz8_rank0_act_peak": 1848.98486328125,
+        "layernum[1]_bsz8_rank7_ms": 1424.3994140625,
+        "layernum[1]_bsz8_rank7_act": 1186.68408203125,
+        "layernum[1]_bsz8_rank7_act_peak": 1849.71142578125,
+        "layernum[2]_bsz8_rank0_ms": 1814.9462890625,
+        "layernum[2]_bsz8_rank0_act": 1737.24560546875,
+        "layernum[2]_bsz8_rank0_act_peak": 2301.29833984375,
+        "layernum[2]_bsz8_rank7_ms": 1814.9462890625,
+        "layernum[2]_bsz8_rank7_act": 1737.24560546875,
+        "layernum[2]_bsz8_rank7_act_peak": 2301.29833984375
+    },
+    "1_1_8_c": {
+        "layernum[1]_bsz8_rank0_ms": 1426.1259765625,
+        "layernum[1]_bsz8_rank0_act": 655.96435546875,
+        "layernum[1]_bsz8_rank0_act_peak": 1522.68603515625,
+        "layernum[1]_bsz8_rank7_ms": 1426.1259765625,
+        "layernum[1]_bsz8_rank7_act": 655.96435546875,
+        "layernum[1]_bsz8_rank7_act_peak": 1521.7783203125,
+        "layernum[2]_bsz8_rank0_ms": 1814.2197265625,
+        "layernum[2]_bsz8_rank0_act": 672.39208984375,
+        "layernum[2]_bsz8_rank0_act_peak": 1523.41259765625,
+        "layernum[2]_bsz8_rank7_ms": 1814.9462890625,
+        "layernum[2]_bsz8_rank7_act": 672.39208984375,
+        "layernum[2]_bsz8_rank7_act_peak": 1522.68603515625
+    },
+    "2_1_4": {
+        "layernum[2]_bsz8_rank0_ms": 1810.52978515625,
+        "layernum[2]_bsz8_rank0_act": 1172.6884765625,
+        "layernum[2]_bsz8_rank0_act_peak": 1459.73583984375,
+        "layernum[2]_bsz8_rank7_ms": 1875.54541015625,
+        "layernum[2]_bsz8_rank7_act": 2448.98681640625,
+        "layernum[2]_bsz8_rank7_act_peak": 4540.52978515625
+    },
+    "4_1_2": {
+        "layernum[4]_bsz8_rank0_ms": 3606.62255859375,
+        "layernum[4]_bsz8_rank0_act": 2345.1259765625,
+        "layernum[4]_bsz8_rank0_act_peak": 2421.3134765625,
+        "layernum[4]_bsz8_rank7_ms": 3736.65380859375,
+        "layernum[4]_bsz8_rank7_act": 4897.97119140625,
+        "layernum[4]_bsz8_rank7_act_peak": 9080.150390625
+    },
+    "layertype_0": {
+        "parameter_size": 779.640625,
+        "tp_activation_per_bsz_dict": {
+            "1": 550.5615234375,
+            "checkpoint": 16.427734375
+        }
+    },
+    "other_memory_pp_off": {
+        "model_states": 8282.0,
+        "activation": 1298.42333984375
+    },
+    "other_memory_pp_on_first": {
+        "model_states": 4094.0,
+        "activation": 54.766845703125
+    },
+    "other_memory_pp_on_last": {
+        "model_states": 4354.0,
+        "activation": 1719.47607421875
+    }
+}
