@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: django-async-sse
+Version: 0.1.0
+Summary: Django async Server Sent Events helpers
+Author-Email: Paul Bailey <paul@neutron.studio>
+License: BSD-3Clause
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# django-async-sse
+Django Async Server Sent Helper Classes
