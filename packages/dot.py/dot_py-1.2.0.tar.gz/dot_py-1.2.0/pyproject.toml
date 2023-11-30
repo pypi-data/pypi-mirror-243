@@ -1,0 +1,38 @@
+[project]
+name = "dot.py"
+version = "1.2.0"
+authors = [
+  { name="Vincent QB", email="vincentqb@gmail.com" },
+]
+description = "dotpy is a minimalist python script for managing dotfiles via symbolic links."
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+
+[project.optional-dependencies]
+build = ["build"]
+test = ["pytest"]
+lint = ["ruff"]
+
+[project.scripts]
+"dotpy" = "dot.__main__:dot_from_args"
+
+[project.urls]
+"Homepage" = "https://github.com/vincentqb/dotpy/"
+"Bug Tracker" = "https://github.com/vincentqb/dotpy/"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+only-include = ["dot"]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+extend-select = ["C901"]
