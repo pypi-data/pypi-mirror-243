@@ -1,0 +1,8 @@
+mypy
+pytest
+pytest-cov
+black<22.2.0
+isort
+autoflake
+flake8
+snakeviz
