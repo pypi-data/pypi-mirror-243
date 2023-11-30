@@ -1,0 +1,49 @@
+{% load i18n %}
+{% load crispy_forms_tags %}
+<div class="row">
+    <div class="col-lg-12">
+        {{form.title|as_crispy_field}}
+    </div>
+    <div class="col-lg-12">
+        {{form.subtitle|as_crispy_field}}
+    </div>
+    <div class="col-lg-4">
+        {{form.status|as_crispy_field}}
+    </div>
+    <div class="col-lg-4">
+        <select name="website" placeholder='{% trans "Website" %}' class="select form-control" id="id_web">
+            <option value="" selected disabled>-- {% trans "Select Page" %} --</option>
+          
+            <option value="emmerut.com">emmerut.com</option>
+          
+            <option value="stelacontroldynamic.com">stelacontroldynamic.com</option>
+        </select>
+    </div>
+    <div class="col-lg-4">
+        {{form.category|as_crispy_field}}
+    </div>
+    <div class="col-lg-6">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">{% trans "Upload Image or Video" %}</span>
+            </div>
+            <div class="custom-file">
+                {{form.media}}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">{% trans "upload a PDF file" %}</span>
+            </div>
+            <div class="custom-file">
+                {{form.folder_doc}}
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12">
+        {{form.content|as_crispy_field}}
+    </div>
+</div>
+<input type="hidden" name="form-id" value="blog-form">
