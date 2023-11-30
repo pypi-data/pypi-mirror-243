@@ -1,0 +1,7 @@
+pyzmq>=25.1.1
+msgpack>=1.0.7
+dacite>=1.8.1
+
+[tests]
+pytest>=7.4.3
+polyfactory>=2.5.0
