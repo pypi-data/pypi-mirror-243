@@ -1,0 +1,6 @@
+setuptools
+logilab-common>=0.63.2
+six>=1.4.0
+
+[:python_version < "3.10"]
+importlib_metadata
