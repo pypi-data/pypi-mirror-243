@@ -1,0 +1,77 @@
+#!/usr/bin/env python3
+
+import logging
+import sys
+
+import click
+
+from lightctl.command import (
+    metric_command,
+    monitor_command,
+    source_command,
+    version_command,
+    workspace_command,
+)
+from lightctl.command.common import ContextObject
+from lightctl.config import BASE_WORKSPACE_UUID
+from lightctl.util import CliPrinter, FileLoader
+
+CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
+
+help_message = """
+lightctl needs credential file, whose path can be configured via
+LIGHTCTL_CREDENTIAL_PATH. Default is  ~/.lightup/credential\n
+\n
+You can also setup LIGHTCTL_DEFAULT_WORKSPACE for the default
+workspace you are operating on for objects that are workspace
+specific.\n
+\n
+Examples:\n
+$ lightctl --workspace 640fafa0-b764-11ec-b383-acde48001122  monitor list\n
+$ LIGHTCTL_DEFAULT_WORKSPACE=640fafa0-b764-11ec-b383-acde48001122 lightctl monitor get 2d975f53-c124-4c08-b130-85a141ca7ba5\n
+\n
+$ LIGHTCTL_CREDENTIAL_PATH=/foo/bar/api-credential lightctl monitor list\n
+$ lightctl monitor list\n
+
+"""
+
+
+@click.group(context_settings=CONTEXT_SETTINGS, help=help_message)
+@click.option("--debug", default=False, is_flag=True)
+@click.option("--json", default=False, is_flag=True)
+@click.option("--workspace", default=BASE_WORKSPACE_UUID, type=click.UUID)
+@click.pass_context
+def cli(ctx, debug, json, workspace):
+    ctx.obj = ContextObject(
+        printer=CliPrinter(use_json_format=json),
+        file_loader=FileLoader(use_json_format=json),
+        workspace_id=workspace,
+    )
+    if debug:
+        setup_loggers([logging.getLogger("lightctl")], level=logging.DEBUG)
+    else:
+        setup_loggers([logging.getLogger("lightctl")], level=logging.INFO)
+
+
+cli.add_command(version_command.version)
+cli.add_command(source_command.source)
+cli.add_command(metric_command.metric)
+cli.add_command(monitor_command.monitor)
+cli.add_command(workspace_command.workspace)
+
+
+def setup_loggers(loggers, level=logging.INFO):
+    formatter = logging.Formatter("%(name)s - %(levelname)s - %(message)s")
+
+    handler = logging.StreamHandler(sys.stderr)
+    handler.setLevel(level)
+
+    handler.setFormatter(formatter)
+
+    for logger in loggers:
+        logger.setLevel(level)
+        logger.addHandler(handler)
+
+
+if __name__ == "__main__":
+    cli()

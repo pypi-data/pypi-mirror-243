@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: lightctl
+Version: 1.0.0
+Summary: Lightup CLI Tool
+Home-page: https://www.lightup.ai/
+Author: Lightup Data Inc
+Author-email: support@lightup.ai
+License: Proprietary License
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: Other/Proprietary License
+License-File: LICENSE.md
+
+lightctl manages Sources, Metrics, Monitors and other Lightup objects
+
