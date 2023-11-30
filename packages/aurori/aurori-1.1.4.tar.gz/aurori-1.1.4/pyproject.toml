@@ -1,0 +1,59 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aurori"
+description = "A flexible web framework based on FastApi."
+requires-python = ">=3.10"
+keywords = ["aurori"]
+readme = "README.md"
+license = {text = "AGPLv3+"}
+classifiers = [
+    "Framework :: FastAPI",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",]
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]",
+    "alembic",
+    "bcrypt",
+    "Click",
+    "pyjwt",
+    "python-multipart",
+    "APScheduler<=4.0.0",    
+    "cron-descriptor",
+    "sqlalchemy_utils>=0.41.0",
+    "sqlalchemy>=2.0.18"]
+dynamic = ["version"]
+
+[project.scripts]
+aurori = "aurori.cli:client"
+
+[project.urls]
+"Homepage" = "https://gitlab.com/aurori/aurori"
+"Bug Tracker" = "https://gitlab.com/aurori/aurori/-/issues"
+
+[tool.setuptools]
+packages = ["aurori"]
+
+[tool.setuptools.dynamic]
+version = {attr = "aurori.version.version"}
+
+
+[tool.pylint.MASTER]
+load-plugins = ["pylint_flask_sqlalchemy", "pylint_flask"]
+
+[tool.pylint.MAIN]
+load-plugins = ["pylint_flask_sqlalchemy", "pylint_flask"]
+
+
+[tool.pylint.FORMAT]
+max-line-length=120
+
+[tool.pylint.similarities]
+ignore-comments = true
+ignore-docstrings = true
+ignore-imports = true
+ignore-signatures = true
+min-similarity-lines = 4

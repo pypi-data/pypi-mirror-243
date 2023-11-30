@@ -1,0 +1,10 @@
+__pycache__
+.env
+*.sqlite
+*.db
+*.egg-info/
+dist/*
+build/
+!dist/DEPLOY.md
+aurori.flask
+venv/
