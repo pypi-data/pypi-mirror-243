@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: server-monitor-agent
+Version: 0.4.0
+Summary: Utility to run checks on a server and send notifications.
+Project-URL: Homepage, https://github.com/qcif/server-monitor-agent
+Project-URL: Bug Tracker, https://github.com/qcif/server-monitor-agent/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: System :: Monitoring
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests ==2.31.0
+Requires-Dist: psutil ==5.9.6
+Requires-Dist: dateparser ==1.2.0
+Requires-Dist: humanize ==4.9.0
+Requires-Dist: tzdata ==2023.3
+Requires-Dist: colorama ==0.4.6
+Requires-Dist: PyYAML ==6.0.1
+Requires-Dist: boltons ==23.1.1
+Requires-Dist: click ==8.1.7
+Requires-Dist: beartype ==0.16.4
+Requires-Dist: importlib-resources
+Requires-Dist: importlib-metadata
+Requires-Dist: backports.zoneinfo[tzdata] ; python_version < "3.9"
+Provides-Extra: dev
+Requires-Dist: pip ; extra == 'dev'
+Requires-Dist: setuptools ; extra == 'dev'
+Requires-Dist: wheel ; extra == 'dev'
+Requires-Dist: build ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-mock ; extra == 'dev'
+Requires-Dist: requests-mock ; extra == 'dev'
+Requires-Dist: tblib ; extra == 'dev'
+Requires-Dist: coverage ; extra == 'dev'
+Requires-Dist: tox ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+Requires-Dist: flake8-annotations-coverage ; extra == 'dev'
+Requires-Dist: flake8-black ; extra == 'dev'
+Requires-Dist: flake8-bugbear ; extra == 'dev'
+Requires-Dist: flake8-comprehensions ; extra == 'dev'
+Requires-Dist: flake8-unused-arguments ; extra == 'dev'
+Requires-Dist: mypy ; extra == 'dev'
+Requires-Dist: pylint ; extra == 'dev'
+Requires-Dist: pydocstyle ; extra == 'dev'
+Requires-Dist: pyright ; extra == 'dev'
+Requires-Dist: types-dateparser ; extra == 'dev'
+Requires-Dist: types-PyYAML ; extra == 'dev'
+Requires-Dist: types-requests ; extra == 'dev'
+Requires-Dist: types-backports ; extra == 'dev'
+Requires-Dist: types-urllib3 ; extra == 'dev'
+Requires-Dist: openapi-python-client ; extra == 'dev'
+
+# server-monitor-agent
+
+A Python application for running checks on a server.
+
+This program is an agent that can be run on server instances.

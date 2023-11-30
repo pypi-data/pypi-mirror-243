@@ -1,0 +1,2 @@
+[console_scripts]
+server-monitor-agent = server_monitor_agent.entry:main
