@@ -1,0 +1,39 @@
+Metadata-Version: 2.1
+Name: pwsh-utils
+Version: 0.1.4
+Summary: powershell utils
+License: MIT
+Author: JUN
+Author-email: 0x11a1@proton.me
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: cowsay (>=6.1,<7.0)
+Requires-Dist: pillow (>=10.1.0,<11.0.0)
+Requires-Dist: python-dotenv (>=1.0.0,<2.0.0)
+Requires-Dist: python-socks[asyncio] (>=2.4.3,<3.0.0)
+Requires-Dist: requests[socks] (>=2.31.0,<3.0.0)
+Requires-Dist: telethon (>=1.32.1,<2.0.0)
+Requires-Dist: typer[all] (>=0.9.0,<0.10.0)
+Description-Content-Type: text/markdown
+
+# command
+
+```shell
+pipx install pwsh-utils
+say -t 'hello world' # cowsay
+os # operating system
+dt # datetime
+ts # timestamp
+ms # milliseconds
+nano # nanoseconds
+env 'PATH' # echo environment variable
+uuid # uuid
+btc-eth # 从币安获取比特币和以太坊的价格 支持socks5代理设置,设置环境变量->HTTP_PROXY=socks5h://127.0.0.1:7890
+rmw "./1.png" --colors 5 # 简单的去水印
+tg-login # telegram user or bot login and get sessionString
+```
+
