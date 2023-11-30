@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+dsrecords.egg-info/PKG-INFO
+dsrecords.egg-info/SOURCES.txt
+dsrecords.egg-info/dependency_links.txt
+dsrecords.egg-info/top_level.txt
+src/__init__.py
+src/core.py
+src/core_v1.py
+src/io.py

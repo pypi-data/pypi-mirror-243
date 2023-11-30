@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dsrecords"
+description = "Dead-simple and easy-to-hack RecordIO-like data storing. Inspired by MXNet's RecordIO and Protobuf."
+version = "0.4.16"
+readme = "README.md"
+keywords = ["RecordIO"]
+license = { text = "MIT" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://gitlab.com/ndgnuh/dsrecords"
+"Documentation" = "https://ndgnuh.gitlab.io/dsrecords/"
+"Bug tracker" = "https://gitlab.com/ndgnuh/dsrecords/-/issues"
+
+[[project.authors]]
+name = "Hung Nguyen"
+email = "ndgnuh@protonmail.com"
+
+[tool.setuptools.package-dir]
+dsrecords = "src"
