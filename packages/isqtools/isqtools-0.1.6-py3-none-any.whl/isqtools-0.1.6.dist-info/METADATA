@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: isqtools
+Version: 0.1.6
+Summary: python tools for isQ
+Author: Yusheng Yang
+Author-email: yangys@arclightquantum.com
+License: MIT
+Platform: python 3.8+
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: autograd
+
