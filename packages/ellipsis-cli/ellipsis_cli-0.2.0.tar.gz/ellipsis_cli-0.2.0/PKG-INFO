@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: ellipsis-cli
+Version: 0.2.0
+Summary: A CLI tool for Ellipsis
+Author-email: Ellips Developers <team@ellipsis.dev>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: pydantic==1.10.4
+Requires-Dist: fastapi==0.89.1
+Requires-Dist: uvicorn[standard]==0.23.2
+Requires-Dist: loguru==0.7.2
+Requires-Dist: diff-match-patch==20230430
+Requires-Dist: requests==2.31.0
+
+```
+Usage: bb [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  listener
+  ping
+  version
+```
