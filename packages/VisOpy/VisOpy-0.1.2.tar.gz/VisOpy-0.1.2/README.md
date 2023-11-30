@@ -1,0 +1,32 @@
+# Libreria de simulaciones en un sistema optico
+
+## Clases
+
+### Aberturas:
+Construye la pupila del sistema. Puede ser circular circ() o rectangular rect().
+### polZernike: 
+Dados un grado del polinomio (en notacion OSA) y el valor de su respectivo coeficiente, se entrega el polinomio de Zernike evaluado en la pupila circular.
+### transm: 
+Construye el campo del sistema. Puede ser un tilt, focus, una transmitancia generalizada (que se ingresa en función de las coordenas esféricas) y/o coeficientes de Zernike para describir la aberración del sistema. El campo puede obtenerse del metodo u11()
+### propLuz: 
+Obtiene el campo en el plano imagen luego de propagarse con el propagador de Fresnel o Fraunhofer. El campo se puede obtener con prop() y el patron de irradiancia graficado con plotProp()
+### formIm: 
+Dada una imagen en el plano objeto, obtiene la imagen formada por el sistema. La imagen se obtiene con el metodo conv() y la grafica comparando ambos planos con plotConv()
+
+## Variables de entrada
+* L: Longitud de lado del espacio, float
+* N: Número de muestras; int      
+* rx: Semiancho en x de la abertura; float
+* ry: Semiancho en y de la abertura. Opcional, solo es valido ingresarlo con la abertura rectangular; float
+* lamb: Longitud de onda; float
+* campo: Características del sistema; list, compuesta por [abertura,fase,sets,aberrado,cAB]
+    * abertura: Tipo de abertura; str, 'circle' o 'rectangle'
+    * fase: Tipo de fase; str 'tilt' o 'focus' o funcion de theta y rho
+    * sets : Caracteristicas de la fase; float si se usa 'focus', lista si se usa 'tilt', None para otro caso
+    * aberrado: Indica si se consideran o no aberraciones; Booleano
+    * cAb: Caracteristicas de las aberraciones; numpy array 2xn, la fila 1 son los grados de los coeficientes, la fila 2 sus correspondientes coeficientes. 
+* tip: Tipo de propagador;str, 'Fraunhofer' o 'Fresnel'
+* dist: Distancia de propagacion; float
+* rut: Ruta a la imagen en el plano objeto; str
+
+Se recomienda usar formIm pues esta contiene todos los metodos de los demas modulos.
