@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ops-py-azure-key-vault-alert"
+description = "Post Key Vault Secrets report to Slack webhook"
+license = {file = "license.txt"}
+dynamic = ["version", "readme", "dependencies"]
+
+[tool.setuptools.dynamic]
+version = {attr = "azure_key_vault_alert.__version__"}
+readme = {file = "readme.md", content-type = "text/markdown"}
+dependencies = {file = ["requirements.txt"]}
