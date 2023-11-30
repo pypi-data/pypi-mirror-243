@@ -1,0 +1,63 @@
+Metadata-Version: 2.1
+Name: intelmo
+Version: 1.1.1
+Summary: 
+Author: Chunxu Yang
+Author-email: chunxuyang@ucla.edu
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: bigtree (>=0.12.3,<0.13.0)
+Requires-Dist: feedparser (>=6.0.10,<7.0.0)
+Requires-Dist: newspaper3k (>=0.2.8,<0.3.0)
+Requires-Dist: nicegui (>=1.3.14,<2.0.0)
+Requires-Dist: nltk (>=3.8.1,<4.0.0)
+Requires-Dist: pydantic (>=2.3.0,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Quick Start with INTELMO
+
+## Installation
+
+INTELMO is available on PyPI and can be installed with pip:
+
+```bash
+pip install intelmo
+```
+
+## Basic Configuration
+
+You can use `intelmo.create_server()` to create a server.
+
+```python
+# example.py
+from intelmo import create_server
+
+if __name__ == "__main__":
+    server = create_server(
+		name="Example Server",
+		description="This is an example server.",
+		tasks=[
+			{
+				"name": "Sentiment",
+        "description": "Show the sentiment of the text",
+        "task_type": "generation",
+        # any function that takes article text and returns a string
+        "task": ...
+			}
+		],
+    )
+
+	server.run()
+```
+
+Then you can start the server with:
+
+```bash
+python example.py
+```
+
+A development server will be started at `http://localhost:8080`.
+
