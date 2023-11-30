@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: pywhlobf
+Version: 23.1.0.dev6
+Summary: todo
+Home-page: https://github.com/vkit-x/pywhlobf
+Author: Hunt Zhan
+Author-email: huntzhan@vkit-x.com
+License: MIT
+Requires-Python: <3.13,>=3.8.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: Cython >=3.0.5
+Requires-Dist: setuptools >=42
+Requires-Dist: wheel >=0.37.1
+Requires-Dist: cryptography >=39.0.1
+Requires-Dist: fire >=0.4.0
+Requires-Dist: iolite >=22.1.0
+Requires-Dist: attrs >=21.3.0
+Requires-Dist: cattrs >=22.1.0
+Requires-Dist: pyperclip >=1.8.2
+Provides-Extra: dev
+Requires-Dist: build >=0.2.1 ; extra == 'dev'
+Requires-Dist: pytest <7.2.0,>=6.1.2 ; extra == 'dev'
+Requires-Dist: pytest-parallel >=0.1.1 ; extra == 'dev'
+Requires-Dist: pytest-env >=0.8.1 ; extra == 'dev'
+Requires-Dist: yapf >=0.30.0 ; extra == 'dev'
+Requires-Dist: flake8 >=3.8.4 ; extra == 'dev'
+Requires-Dist: twine >=3.2.0 ; extra == 'dev'
+Requires-Dist: ipython >=7.20.0 ; extra == 'dev'
+Requires-Dist: pdbpp >=0.10.2 ; extra == 'dev'
+Requires-Dist: pdoc >=12.2.0 ; extra == 'dev'
+Requires-Dist: fireball >=0.5.0 ; extra == 'dev'
+
+# pywhlobf
+
+TODO

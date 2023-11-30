@@ -1,0 +1,2 @@
+[console_scripts]
+pywhlobf = pywhlobf.command_line_interface:main
