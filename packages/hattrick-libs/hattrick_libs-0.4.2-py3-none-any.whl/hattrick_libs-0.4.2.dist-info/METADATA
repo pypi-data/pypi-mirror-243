@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: hattrick_libs
+Version: 0.4.2
+Summary: A library for hattrick.org data
+Requires-Python: >=3.8
+Requires-Dist: bs4>=0.0.1
+Requires-Dist: lxml>=4.9.3
+Requires-Dist: rauth>=0.7.3
+Description-Content-Type: text/markdown
+
+# hattrick_libs
+
+This is a library to transform xml-data from the infamous online-strategy-game hattrick (https://www.hattrick.org) into python objects.
+
+For now the project is work-in-progress. (2023-11-19)
+
+Have fun! joschobart
