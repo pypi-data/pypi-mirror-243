@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+    devcontainer:
+        network_mode: host
+        image: whisper_diarization-devcontainer
+        container_name: whisper_diarization-devcontainer-cpu
+        build:
+            context: ..
+            dockerfile: .devcontainer/Dockerfile
+            args:
+                - USER_NAME=vscode
+                - USER_UID=1000
+                - USER_GID=1000
+            target: devcontainer
+        shm_size: "8gb"
+        volumes:
+            - ..:/workspace:cached
+            - ../notebooks/:/notebooks
+            - ../resources/:/resources
+            - $HOME/.ssh/:/home/vscode/.ssh
+            - $HOME/.gitconfig:/home/vscode/.gitconfig:ro
+        command: /bin/sh -c "while sleep 1000; do :; done"
