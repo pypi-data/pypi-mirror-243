@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: orderly-sdk
+Version: 0.1.4
+Summary: Orderly Rest and Websocket SDK
+License: Apache-2.0
+Author: Akagi201
+Author-email: akagi201@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: aiohttp (>=3.9.1,<4.0.0)
+Requires-Dist: base58 (>=2.1.1,<3.0.0)
+Requires-Dist: cryptography (>=41.0.7,<42.0.0)
+Requires-Dist: eth-keys (>=0.4.0,<0.5.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: types-requests (>=2.31.0.10,<3.0.0.0)
+Requires-Dist: websockets (>=12.0,<13.0)
+Description-Content-Type: text/markdown
+
+# orderly-sdk-py
+
+Orderly.network Python SDk
+
+**Note: Only async Rest and Websocket APIs are maintained.**
+
+## API docs
+
+* NEAR API(v1): <https://docs-api.orderly.network/>
+* EVM API(v2): <https://docs-api-evm.orderly.network/>
+
