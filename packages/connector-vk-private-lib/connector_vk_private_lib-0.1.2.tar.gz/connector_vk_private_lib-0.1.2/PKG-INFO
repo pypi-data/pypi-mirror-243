@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: connector_vk_private_lib
+Version: 0.1.2
+Summary: VK connector
+Home-page: https://gitlab.com/films7100147/connector.git
+Author: Nick Jaraf
+Author-email: savarety.dev@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# Образец пакета PyPi
+
+This is a simple exercise to publish a package onto PyPi.
+
+## Build
+
+python setup.py sdist bdist_wheel
+
+## Upload
+
+twine upload --repository pypi dist/* --skip-existing
+
+
