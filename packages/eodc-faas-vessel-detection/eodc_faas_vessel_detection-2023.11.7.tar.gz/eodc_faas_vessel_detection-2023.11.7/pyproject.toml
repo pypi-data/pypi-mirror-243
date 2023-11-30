@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "eodc-faas-vessel-detection"
+version = "2023.11.7"
+description = ""
+authors = ["sean <sean.hoyal@external.eodc.eu>"]
+readme = "README.md"
+packages = [{include = "vessel_detection_bindings"}]
+include = ["vessel_detection_bindings/workflow.yaml"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

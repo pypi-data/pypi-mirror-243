@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: eodc-faas-vessel-detection
+Version: 2023.11.7
+Summary: 
+Author: sean
+Author-email: sean.hoyal@external.eodc.eu
+Requires-Python: >=3.9,<3.12
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Description-Content-Type: text/markdown
+
+
