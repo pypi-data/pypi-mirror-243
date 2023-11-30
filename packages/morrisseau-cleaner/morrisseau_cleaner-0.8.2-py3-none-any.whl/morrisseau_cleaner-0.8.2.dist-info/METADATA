@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: morrisseau-cleaner
+Version: 0.8.2
+Summary: A Python library to clean data for Morrisseau Project
+Home-page: UNKNOWN
+Author: Ali Shajari
+Author-email: ali0shajari@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+
+morrisseau-cleaner
+==================
+
+.. image:: https://img.shields.io/pypi/v/morrisseau-cleaner
+   :target: https://pypi.org/project/morrisseau-cleaner/
+   :alt: PyPI - Version
+
+A Python library to clean data for the Morrisseau Project
+
+Installation
+------------
+
+.. code-block:: bash
+
+   pip install morrisseau-cleaner
+
+Upgrade
+-------
+
+.. code-block:: bash
+
+   pip install --upgrade morrisseau-cleaner
+
+
