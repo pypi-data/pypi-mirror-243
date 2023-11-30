@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "movva-salesforce-tools"
+version = "0.2.1"
+description = "Pacote com ferramentas de integração com a salesforce"
+authors = ["WillamesCampos <willwjccampos@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.31.0"
+google-cloud = "^0.34.0"
+google-cloud-firestore = "^2.13.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
