@@ -1,0 +1,5 @@
+httpx==0.25.2
+
+[test]
+flake8
+pytest
