@@ -1,0 +1,14 @@
+COPYING
+COPYING.LESSER
+LICENSE
+README.md
+setup.py
+caselockerapi/__init__.py
+caselockerapi/auth.py
+caselockerapi/client.py
+caselockerapi/utils.py
+caselockerapi.egg-info/PKG-INFO
+caselockerapi.egg-info/SOURCES.txt
+caselockerapi.egg-info/dependency_links.txt
+caselockerapi.egg-info/requires.txt
+caselockerapi.egg-info/top_level.txt
