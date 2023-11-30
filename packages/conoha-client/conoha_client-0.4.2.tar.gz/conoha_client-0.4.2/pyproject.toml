@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "conoha-client"
+version = "0.4.2" # git tagの値で置換される
+description = "ConoHa VPS用CLI (Python製)"
+authors = ["Shogo Goto <gotoadmn0605@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/shogogoto/conoha-client"
+
+[tool.poetry-dynamic-versioning]
+enable = false
+# format = "{base}" # defaultで PEP440
+vcs = "git"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-openstackclient = "^6.2.0"
+python-dateutil = "^2.8.2"
+click = "^8.1.7"
+tabulate = "^0.9.0"
+click-shell = "^2.1"
+pydantic = "^2.4.0"
+flatten-dict = "^0.4.2"
+makefun = "^1.15.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
+pytest-watch = "^4.2.0"
+neovim = "^0.3.1"
+ruff = "^0.0.290"
+taskipy = "^1.12.0"
+ruff-lsp = "^0.0.39"
+pre-commit = "^3.4.0"
+requests-mock = "^1.11.0"
+
+[tool.poetry.scripts]
+ccli = "conoha_client.cli:main"
+
+[build-system]
+requires = ["poetry-core", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
+
+[tool.ruff]
+select = ["ALL"]
+
+ignore = [
+  "ANN101", # selfの型注釈いれろ
+  "ANN102", # clsの型注釈いれろ
+  "TCH003", # なんか from datetime がtype_checking blockに入れられる
+  "ERA001", # commented-out codeを残す
+  "S101",   # assertを許可したい
+  "FBT001", # 関数の引数にboolを禁止するのはやりすぎだと思う
+  # "F814"    # unusedな変数が編集の度に消えるのうざい
+  ]
+
+[tool.taskipy.tasks]
+test       = "pytest -s -v"
+test-watch = "pytest-watch -- -v -s --durations=0 --ff"
+lint       = "ruff check ."
+lintfix    = "ruff . --fix"
+pre-commit = "pre-commit install"
+
+[tool.poetry-dynamic-versioning.substitution]
+files = ["conoha_client/cli.py"]
