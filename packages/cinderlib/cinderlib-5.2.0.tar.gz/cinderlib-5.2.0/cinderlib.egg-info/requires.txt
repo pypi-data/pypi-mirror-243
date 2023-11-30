@@ -1,0 +1,6 @@
+cinder<24.0.0,>=23.0.0
+importlib_metadata>=1.7.0
+os-brick>=6.4.0
+
+[:(python_version<'3.10')]
+importlib_resources>=3.2.1
