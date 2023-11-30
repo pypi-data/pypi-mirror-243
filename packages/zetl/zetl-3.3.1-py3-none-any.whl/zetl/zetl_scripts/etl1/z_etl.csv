@@ -1,0 +1,3 @@
+stepnum,cmdfile,steptablename,estrowcount
+0.0,0.init.sql,None,None
+10.0,10.version_check.sql,None,None
