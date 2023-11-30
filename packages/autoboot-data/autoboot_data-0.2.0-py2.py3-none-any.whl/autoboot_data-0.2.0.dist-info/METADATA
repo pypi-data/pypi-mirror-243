@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: autoboot-data
+Version: 0.2.0
+Summary: Data access build with autoboot
+Home-page: https://github.com/yizzuide/autoboot_data
+Author: yizzuide
+Author-email: fu837014586@163.com
+Keywords: autoboot,data,redis
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: autoboot (>=0.6.0)
+Requires-Dist: redis
+
+# autoboot data
+扩展autoboot框架，用于支持数据层接入。
