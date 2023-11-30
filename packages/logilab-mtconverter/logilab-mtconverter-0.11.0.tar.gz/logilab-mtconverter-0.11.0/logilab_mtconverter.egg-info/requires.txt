@@ -1,0 +1,7 @@
+setuptools
+logilab-common
+lxml
+html2text
+
+[:python_version < "3.10"]
+importlib_metadata
