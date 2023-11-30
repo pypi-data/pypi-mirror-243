@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: termiipython
+Version: 3.0.0
+Summary: Termii Python Library for Termii API
+License: MIT
+Author: Solomon Olatunji
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: pydantic (>=1.10.4,<=2.5.0)
+Requires-Dist: requests (>=2.23.0,<=2.31.0)
+Description-Content-Type: text/markdown
+
+# termiipython
+
+[![Made in Nigeria](https://img.shields.io/badge/made%20in-nigeria-008751.svg?style=flat-square)](https://github.com/acekyd/made-in-nigeria)
+[![Downloads](https://pepy.tech/badge/termiipython)](https://pepy.tech/project/termiipython)
+[![Downloads](https://pepy.tech/badge/termiipython/month)](https://pepy.tech/project/termiipython)
+[![Downloads](https://pepy.tech/badge/termiipython/week)](https://pepy.tech/project/termiipython)
+
+Termii Python Library for Termii API
+
+## Installation
+
+```bash
+pip install termiipython
+```
+
+## Usage
+
+## Contributing
+
+Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.
+
+## License
+
+`termiipython` was created by Solomon Olatunji. It is licensed under the terms of the MIT license.
+
