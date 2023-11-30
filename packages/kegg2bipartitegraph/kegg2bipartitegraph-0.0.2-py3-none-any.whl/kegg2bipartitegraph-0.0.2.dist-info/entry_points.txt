@@ -1,0 +1,3 @@
+[console_scripts]
+kegg2bipartitegraph = kegg2bipartitegraph.__main__:main
+
