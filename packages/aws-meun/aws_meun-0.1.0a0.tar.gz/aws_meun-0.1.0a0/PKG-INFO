@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: aws-meun
+Version: 0.1.0a0
+Summary: CLI tool to unsubscribe from AWS Marketing Emails
+License: Unlicense
+Author: wnkz
+Author-email: wnkz@users.noreply.github.com
+Requires-Python: >=3.8,<4.0
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: httpx (>=0.25.2,<0.26.0)
+Description-Content-Type: text/markdown
+
+# aws-meun
+CLI tool to unsubscribe from AWS Marketing Emails
+
+## Quick start
+
+```
+❯ python -m pip install aws-meun
+❯ aws-meun me@domain.org
+Unsubscribed me@domain.org (HTTP 200)
+```
+
+## Quick tip
+
+aws-meun can also read from STDIN for easy batch unsubscribe
+
+```
+❯ echo me@domain.org | aws-meun
+Unsubscribed me@domain.org (HTTP 200)
+```
+

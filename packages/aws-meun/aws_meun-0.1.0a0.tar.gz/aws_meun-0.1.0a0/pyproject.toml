@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "aws-meun"
+version = "0.1.0a0"
+description = "CLI tool to unsubscribe from AWS Marketing Emails"
+authors = ["wnkz <wnkz@users.noreply.github.com>"]
+readme = "README.md"
+license = "Unlicense"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+httpx = "^0.25.2"
+
+[tool.poetry.scripts]
+aws-meun = 'aws_meun.cli:main'
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
