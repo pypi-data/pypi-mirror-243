@@ -1,0 +1,224 @@
+Metadata-Version: 2.1
+Name: git-versioner
+Version: 7.1
+Summary: Manage current / next version for project
+Author-email: Andrew Leech <andrew@alelec.net>
+License: MIT License
+        
+        Copyright (c) 2022 alelec
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://gitlab.com/alelec/__version__
+Project-URL: Documentation, https://gitlab.com/alelec/__version__/-/blob/main/README.md
+Project-URL: Repository, https://gitlab.com/alelec/__version__
+Project-URL: Changelog, https://gitlab.com/alelec/__version__/-/commits/main?ref_type=heads
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: setuptools >=57
+Requires-Dist: tomli ; python_version < "3.11"
+
+# git-versioner
+
+Manages the version number for the project based on git tags. The goal
+of this packages versioning scheme is to avoid ever needing to manually
+create versions numbers or update version details in files that need to
+be committed to the repository.
+
+The general rule is:
+
+*   If on a tag, report that as-is.
+*   When changes are made / git commits added, auto-increment the
+    appropriate level of the semantic version.
+
+When on a git tag like `v1.2` the version will be reported as `v1.2` in
+short form or `v1.2-g<githash>` in the (default) long form, eg.
+`v1.2-ga1b2c3`
+
+After editing you working tree, by default the minor version attribute
+will be updated, eg `v1.2` -\> `v1.3` or `1.2.3` -\> `1.3.0`
+
+## Version Increments
+
+The increment can be changed by adding one of the following footers to
+any commit since the previous tag:
+
+> `CHANGE: major` 
+
+> `CHANGE: minor`  
+
+> `CHANGE: patch`  
+
+Then the most significant increment specified in any commit will be
+used.
+
+Alternatively this can be overridden at runtime by setting the
+environment variable `VERSION_INCREMENT` to one of `major`, `minor` or
+`patch`
+
+By default on new projects a 2 point version scheme will be used, eg
+v1.2, however the patch level (v1.2.3) will be used if either: 
+* the previous tag includes it 
+* patch level increment is set via commit footer or  `VERSION_INCREMENT` env 
+* the following env variable is
+configured: `VERSION_SUPPORT_PATCH=1`
+
+This setting will be persisted if saved, eg
+`VERSION_SUPPORT_PATCH=1 python -m __version__ --save`
+
+## Project Version
+
+The overall goal is for any commit to be suitable as a potential
+release. As such you can build away, testing your main branch builds and
+as soon as one of them is ready to go simply run
+`python -m __version__ --tag` to have it tagged off with the same
+version number the build already had. Indeed this step can be done in
+CI, take at a look at this projects
+[.gitlab-ci.yml](https://gitlab.com/alelec/__version__/-/blob/main/.gitlab-ci.yml)
+for an example of a manual CI task to \"release this commit\".
+
+gitlab-versioner can be used to provide dynamic versioning in
+setuptools, with support for both `pyproject.toml` and the
+older `setup.py`
+
+For `pyproject.toml` usage; enable dynamic versions in the project section, add `git-versioner` to the build requirements list and add a `[tool.git-versioner]` section to enable git-versioner. Settings 
+
+``` toml
+[project]
+name = "my-project"
+...
+dynamic = ["version"]
+
+[build-system]
+requires = [ "setuptools\>=57", "wheel", "git-versioner>=6.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.git-versioner] 
+```
+
+Alternatively for `setup.py`; add the kwarg
+`use_git_versioner=<True or settings>` and include `git-versioner` in
+the `setup_requires` list:
+
+``` python
+setup(
+    name="my-project",
+    author="Andrew Leech",
+    author_email="andrew@alelec.net",
+    use_git_versioner=True,
+    setup_requires=["git-versioner"],
+    ...
+)
+```
+
+## Dynamic package version options
+
+If no extra settings are added to the `pyproject.toml` / `[tool.git-versioner]`
+section, or `use_git_versioner=True` is set in `setup.py` then default
+version format will be used.  
+This will be the full / long version following
+[PEP440](https://peps.python.org/pep-0440/#local-version-identifiers)
+local version format.
+
+If you want to push the package to PyPI however the short version must
+be used which can be specified with :
+
+``` toml
+[tool.git-versioner]
+short = true
+```
+or
+``` python
+use_git_versioner="short"
+```
+
+The full python version number can also added to the description, which
+can be especially useful when the package is published with the short
+number. Do enable this you can use `desc = true` /
+`use_git_versioner="desc"` in which case a line like
+`version: 1.2.3+ga1b2c3d` will be added to the bottom of the "long
+description" metadata.
+
+When building a package, the version details can be automatically saved
+into `<package>.__version__.py` in the built wheel with the setting
+`snapshot = true` / `use_git_versioner="snapshot"`.
+
+If being used in Gitlab CI for builds an automated versioning scheme can
+be specified with `gitlab = true` / `use_git_versioner="gitlab"`. In
+this mode, potential release builds from the default / main branch or
+from tags will use the short version, with anything else (eg. dev
+branches, pr\'s, local builds) using the long version scheme.
+
+Multiple settings can be combined in `setup.py` but including them all
+in the settings string, eg `use_git_versioner="short,desc,snapshot"`.
+
+## Runtime Access
+
+To access the version in your project at runtime you can either:
+
+*   auto-calculate each run:
+    ``` python
+    from __version__ import version, version_short, git_hash, on_tag
+    ```
+
+*   get the details from previous run of `python __version__ --save`:
+    ``` python
+    from _version import version, version_short, git_hash, on_tag
+    ```
+
+*   In an installed package originally built with
+    `use_git_versioner="snapshot"`:
+    ``` python
+    from .__version__ import version, version_short, git_hash, on_tag
+    ```
+
+## Testing
+
+The version number can be overridden with the following envirinment
+variables. If any / some of these are set, the rest will fallback to
+null / invalid values so ensure you set all the ones that may be needed.
+```
+GIT_VERSIONER_VERSION
+GIT_VERSIONER_VERSION_SHORT
+GIT_VERSIONER_GIT_HASH
+GIT_VERSIONER_ON_TAG
+GIT_VERSIONER_DIRTY
+GIT_VERSIONER_VERSION_PY
+GIT_VERSIONER_VERSION_PY_SHORT
+```
+## Command Line
+
+Can also be used as command line tool to generate `_version.py`, print
+version, rename files or fill a template file with version details.
+```
+usage: __version__.py [-h] [--save] [--short] [--git] [--rename RENAME] [--template template output]
+
+Mange current/next version.
+
+optional arguments:
+    -h, --help            show this help message and exit
+    --save                Store in _version.py
+    --short               Print the short version string
+    --git                 Print the release git hash
+    --rename RENAME       Add version numbers to filename(s)
+    --template template output
+                        Add version to <template> and write result to <output>
+    --tag                 Creates git tag to release the current commit
+```

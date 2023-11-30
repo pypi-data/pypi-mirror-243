@@ -1,0 +1,9 @@
+[console_scripts]
+git-versioner = __version__:main
+
+[distutils.setup_keywords]
+use-git-versioner = __version__:setup_keyword
+use_git_versioner = __version__:setup_keyword
+
+[setuptools.finalize_distribution_options]
+git-versioner = __version__:setuptools_finalize
