@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: gpp-components
+Version: 0.0.5
+Summary: for internal use
+Author: L
+License: MIT Licence
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: crypto
+Requires-Dist: django
+Requires-Dist: cx-Oracle
+Requires-Dist: pandas
+Requires-Dist: jsonpath
+Requires-Dist: rich
+
+# gpp-py-components
+
+Pypi Source
+
+## Getting started
