@@ -1,0 +1,5 @@
+websocket-client==1.6.3
+httpx==0.25.0
+
+[httpx]
+http2
