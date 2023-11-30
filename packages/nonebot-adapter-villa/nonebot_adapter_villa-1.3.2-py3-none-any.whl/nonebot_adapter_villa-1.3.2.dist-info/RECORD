@@ -1,0 +1,16 @@
+nonebot/adapters/villa/__init__.py,sha256=ZzAvrKNvou6B2g_2lRjjbXsRqJifFLRQDYmcUY3L544,228
+nonebot/adapters/villa/adapter.py,sha256=ttS84O32sqtogivr0oyPZ6UETcQm2xo-_A5t0bEGlLI,15806
+nonebot/adapters/villa/api.py,sha256=mbGh12qJ_51rkVXkyHDaAc5P8veUmY6XlPSsbG5B1ms,205
+nonebot/adapters/villa/bot.py,sha256=NGPuw_NiOzBQB0LhnKGpdEWbFrPNSRGEP5pOxTBOOwo,35390
+nonebot/adapters/villa/config.py,sha256=IvuSoN499rcW09WaiMxuLM2IRx4LHig9qjHyYUWCjzc,438
+nonebot/adapters/villa/event.py,sha256=w7uivlh_EyLT91_Jta89axsKCE3Yt0FFScoQfMNDgDo,14861
+nonebot/adapters/villa/exception.py,sha256=fz7W5lJrNFWDWayNAntEXqG_qrgDL6WvBLE1seMk44E,3241
+nonebot/adapters/villa/message.py,sha256=zSi3DdLcWWvJWDvhBmEzmoIZ_LPfLmXOECXaa6IMWpo,17495
+nonebot/adapters/villa/models.py,sha256=9wcpmKZz8obvCj_ND2u3M7uQTnkEkf9lIYuh-KVgC70,13541
+nonebot/adapters/villa/payload.py,sha256=J-rndoTcdcITEnZNxasfEnPOM7amJTFkpadxdXS25dw,11438
+nonebot/adapters/villa/permission.py,sha256=NhYXabQ1nqvgXju2YHxISt1riz7bC5nKYZrIq93V_w0,1449
+nonebot/adapters/villa/utils.py,sha256=kkcACxY-1dY_bl8VcW4leuFz2UQNEfaSJCTCiBE-06Q,1597
+nonebot_adapter_villa-1.3.2.dist-info/LICENSE,sha256=j26kGmIlTFZ_5VeJFWSyyQFM38h0P3dT6AQHDcJ6JR4,1062
+nonebot_adapter_villa-1.3.2.dist-info/METADATA,sha256=mGBg_2hZ9THkJxsfBug1yWXZYAdkTqn7wDmJSAfO_T4,11804
+nonebot_adapter_villa-1.3.2.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+nonebot_adapter_villa-1.3.2.dist-info/RECORD,,
