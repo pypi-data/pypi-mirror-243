@@ -1,0 +1,2 @@
+[pipx.run]
+ls-imports = ls_imports:_cli
