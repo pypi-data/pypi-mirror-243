@@ -1,0 +1,250 @@
+{% extends 'stela_control/index.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load hosts %}
+{% load stelatags %}
+{% load humanize %}
+        {% block bsCall %}
+            <button class="content-ai absolute text-small d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="typeText()"> <b class="mt-1 fs-5">PRO-Stela AI</b> <i class="fa-solid fa-circle-nodes ml-2 fs-3"></i></button>
+            <script src="{% static 'js/stela/contenido/blackstar.js' %}?v2"></script>
+            <script>
+              const titleText = '{% trans "Hello! How I can help? Ask me and I will answer you..." %}';
+              const preloaderCage = '<div class="preload-cage-prostela"><h1 class="text-preload-prostela">{% trans "Proccess data, please wait" %}...</h1></div>';
+            </script>
+            <!-- Button trigger modal -->
+
+            <!-- Modal -->
+              <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="oxanium fs-6 typed"></h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+                    </div>
+                    <div class="modal-body">
+                      <input type="hidden" name="messages" value="{{qs}}" id=messages>
+                      <div class="chatbox" id="respond"></div>
+                      <textarea class="form-control" name="" id="query" cols="30" rows="2" placeholder='{% trans "Give me an overview of string theory." %}'></textarea>
+                      <script>
+                        const text = '{% trans "Send Query" %} <i class="fa-solid fa-paper-plane mx-2"></i>';
+                      </script>
+                    </div>
+                    <div class="row justify-content-between p-4">
+                        <div class="col-lg-4 my-3">
+                          {% if site_data.chat %}
+                                <a type="button" class="btn btn-shappire btn-block center-btn oxanium fw-bold d-flex" href="/console/pro-stela/chats/" target="_blank">{% trans "Saved Messages" %} <i class="fa-solid fa-hard-drive mx-2 fs-5"></i></a>
+                          {% else %}
+                                <button type="button" class="btn btn-shappire disabled btn-block center-btn oxanium fw-bold d-flex">{% trans "Saved Messages" %} <i class="fa-solid fa-hard-drive mx-2 fs-5"></i></button>
+                          {% endif %}
+                        </div>
+                        <div class="col-lg-4 my-3">
+                          <a type="button" class="btn btn-shappire btn-block center-btn oxanium fw-bold d-flex" onclick="clearBlackstar()">{% trans "New Chat" %} <i class="fa-solid fa-comments mx-2 fs-5"></i></a>
+                        </div>
+                        <div class="col-lg-4 my-3">
+                          <button type="button" class="btn btn-shappire btn-block center-btn query-btn oxanium fw-bold d-flex" onclick="blackstar()">{% trans "Send Query" %} <i class="fa-solid fa-paper-plane mx-2 fs-5"></i></button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        {% endblock  %}
+{% block section %}
+    {% block title %}
+            <h1 class="oxanium mx-4 pt-3">{% trans "Stela Business Suite Control" %}</h1>
+    {% endblock  %}
+    {% block side_title %}
+            <h3 class="oxanium mx-4 d-flex justify-content-end"><b>STELA {% trans "CONTROL DYNAMIC" %} | {% trans "Marketing" %}</b></h3>
+    {% endblock  %}
+        <div class="container mt-4">
+            <div class="row justify-content-between">
+              {% block meta_contain %}
+                {% if user.meta_status == "connected" %}
+                  <div class="d-flex justify-content-between">
+                      <h1 class="fs-3 oxanium">{% trans "Hello" %}, {{user.full_name}}</h1> 
+                      <button class="btn btn-shappire my-3" onclick="logout()">{% trans "Logout" %} <i class='bx bx-log-out'></i></button>
+                  </div>
+                  <p class="text-dark text-justify">{% trans "In this section you will obtain valuable information on the performance of your assets in Meta with our intelligent analysis tool, you will also be able to create catalogs with your inventory in" %} <b>{% trans "Stela Control Dynamic" %}</b>, {% trans "create your store on Instagram, segment your advertising with our optimizers and much more." %}</p>
+                  {% if pages %}
+                      <p class="text-dark">{% trans "All your facebook assets in one site, we invite you to manage all the solutions we have for you" %}.</p>
+                  {% else %}
+                      <p class="text-dark">{% trans "In order to access the services that stela has to offer you must link your facebook pages to our business account" %}.</p>
+                  {% endif %}
+                  <div class="row">
+                    <div class="col-lg-3">
+                      <div class="card bg-grey mb-3" data-bs-toggle="modal" data-bs-target="#new-color">
+                        <i class="fa-solid fa-plus text-center text-light fs-1"></i>
+                        <p class="text-center text-light text-shadow-none fw-bold">{% trans "Connect Page" %}</p>
+                      </div>
+                      <div class="modal fade" id="new-color" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "Add a facebook page" %}</h5>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="mb-3">
+                              <div class="container">
+                                <small class="text-dark">{% trans "Add a Facebook Page if you have an admin role. Remember to have the professional Instagram account linked to your page to obtain a better positioning experience" %}.</small>
+                                <div class="input-group my-3 ui-widget">
+                                  <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" id="facebook-page-name" placeholder="Ingrese el nombre de la página de Facebook">
+                                </div>
+                                <div id="input-alert"></div>
+                                  <small>{% trans "By linking to this Facebook page, you agree to the" %} <a href="">{% trans "Stela Terms of Service" %}</a>  {% trans "and" %} <a href="">{% trans "Stela Policy" %}.</a></small>
+                                  <div id="dialog">
+                                    <div class="d-flex justify-content-end">
+                                      <button class="btn btn-shappire disabled add-btn" onclick="addPage()">{% trans "Add page" %}</button>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>                   
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {% for page in pages %}
+                      <div class="col-lg-3">
+                          <div class="card facebook-page mb-3">
+                              <div class="card-title">
+                                <p class="text-center text-dark oxanium mb-1">{{page.name}}</p>
+                                <div class="d-flex justify-content-center">
+                                  <img class="page-cover" src="{{page.image}}" alt="" width=70>
+                                </div>
+                              </div>
+                              <div class="card-footer fp-buttons">
+                                <div class="d-flex justify-content-center">
+                                  <a href="/marketing/business-suite/{{page.asset_id}}" class="btn btn-sm btn-shappire">{% trans "Manage" %}</a>
+                                  <button class="btn btn-sm btn-danger ml-2" data-bs-toggle="modal" data-bs-target="#removePage{{page.id}}">{% trans "Remove" %}</button>
+                                  
+                                  <div class="modal fade" id="removePage{{page.id}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="mb-3">
+                                          <div class="container">
+                                            <h1 class="oxanium fs-4">{% trans "You request to remove the following asset" %}</h1>
+                                            <ul class="list-style">
+                                              <li>{{page.name}}</li>
+                                            </ul>
+                                            <p class="text-dark">{% trans "You are about to delete this page and all associated records. Please confirm if you want to proceed with the removal" %}.</p>
+                                            <p class="text-dark">{% trans "If you have any questions or need more information, please contact our support team" %}.</p>
+                                            <div id="input-alert{{page.id}}"></div>
+                                            <div class="d-flex justify-content-end">
+                                              <button class="btn btn-shappire remove-btn center-btn" onclick="removePage{{page.id}}()">{% trans "Continue" %}</button>
+                                            </div>                        
+                                          </div>
+                                        </div>                   
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <script>
+                                    function removePage{{page.id}}() {
+                                      var button = document.querySelector('.remove-btn')
+                                      button.innerHTML = "<div class='loader'></div>";
+                                      button.disabled = true;
+                                      FB.getLoginStatus(function(response) {
+                                        if (response.status === 'connected') {
+                                        var accessToken = response.authResponse.accessToken;
+                                          updatePages(accessToken);
+                                        }
+                                      });
+                                      function updatePages(accessToken) {
+                                        FB.api('/me/accounts', 'GET', {
+                                          access_token: accessToken
+                                          }, function(response) {
+                                          if (response && !response.error) {
+                                          var pages = response.data;
+                                          var pageName = '{{page.name}}';
+                                          
+                                          // Filtrar las páginas por el nombre
+                                          var filteredPages = pages.filter(function(page) {
+                                          return page.name.toLowerCase().includes(pageName.toLowerCase());
+                                        });
+                                        // Mostrar los datos de las páginas filtradas
+                                        filteredPages.forEach(function(page) {
+                                          $.ajax({
+                                                url:url2,
+                                                method:"POST",
+                                                data:{
+                                                    pageid: page.id,
+                                                    pagetoken: page.access_token,
+                                                    csrfmiddlewaretoken:CSRF_TOKEN,
+                                                    action: "checkPage"
+                                                },
+                                                success:function(json){
+                                                    if(json.success){
+                                                      $.ajax({
+                                                        url:url2,
+                                                        method:"POST",
+                                                        data:{
+                                                            pageid: '{{page.id}}',
+                                                            csrfmiddlewaretoken:CSRF_TOKEN,
+                                                            action: 'removePage'
+                                                        },
+                                                        success:function(json){
+                                                          if(json.success){       
+                                                            window.location.replace('/console/marketing/business-suite')
+                                                          }
+                                                          if(json.error){
+                                                              console.log(json.error)
+                                                          }
+                                                        }
+                                                    })
+                                                    }
+                                                    if(json.alert){
+                                                        var button = document.querySelector('.remove-btn')
+                                                        button.disabled = false;
+                                                        button.innerHTML = '{% trans "Continue" %}';
+                                                        document.getElementById('input-alert{{page.id}}').innerHTML = json.alert
+                                                    }
+                                                }
+                                            }) 
+                                        });
+                                        } 
+                                        });
+                                      }
+                                    }
+                                  </script>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% else %}
+                  <div class="col-md-6 wow fadeInLeft main-hud" data-wow-duration="1s" data-wow-delay="0.5s">
+                      <p class="text-dark">{% trans "We offer a wide range of services to help your business grow and prosper. From application development to business consulting, we're here to help you achieve your goals." %}</p>
+                          <div class="row">
+                              <div class="col-12">
+                                  <small>{% trans "To access the options menu, please link your facebook account with the" %} <b>{% trans "Stela Busines Suite App" %}</b></small>
+                              </div>
+                          </div>                     
+                          <div class="row mt-3">
+                            <div class="fb-login-button" data-width="" data-size="large" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="true" scope="email,read_insights,publish_video,catalog_management,pages_show_list,ads_management,ads_read,business_management,pages_messaging,instagram_basic,instagram_manage_insights,pages_read_engagement,pages_read_user_content,pages_manage_posts,public_profile,pages_manage_metadata" onlogin="checkLoginState();"></div>
+                          </div>     
+                  </div>
+                  <div class="col-md-6 wow fadeInRight main-img" data-wow-duration="1s" data-wow-delay="0.5s">
+                      <img class="w-100" src="{% static 'img/stela/suite-banner.png' %}" alt="Imagen de servicios de Meta Business" class="img-fluid">
+                  </div>
+                {% endif %}
+              {% endblock  %}
+            </div>
+        </div>
+        <script>
+          url = "/meta-data/";
+          url2 = "/meta-api/";
+          url3 = "/ig-data/";
+          btnText = '{% trans "Add page" %}'
+          confirmTitle = '{% trans "Are you sure?" %}'
+          confirmText = '{% trans "this will delete your page and all its settings and campaigns" %}'
+          acceptText = '{% trans "Yes, remove" %}'
+          cancelText = '{% trans "Cancel" %}'
+          titleSuccess = '{% trans "Selection removed." %}'
+          textSuccess = '{% trans "The records were erased." %}'
+          exitText = '{% trans "Continue" %}'
+      </script>
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+      <script src="{% static 'js/stela/marketing/meta/home.js' %}?v15"></script>
+{% endblock %}

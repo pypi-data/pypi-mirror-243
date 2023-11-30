@@ -1,0 +1,1288 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block styles %}
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha512-c42qTSw/wPZ3/5LBzD+Bw5f7bSF2oxou6wEb+I/lqeaKV5FDIfMvvRp772y4jcJLKuGUOpbJMdg/BTl50fJYAw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" integrity="sha512-X/RSQYxFb/tvuz6aNRTfKXDnQzmnzoawgEQ4X8nZNftzs8KFFH23p/BA6D2k0QCM4R0sY1DEy9MIY9b3fwi+bg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <style>
+        .btn-shappire {
+          background: #2f1875 !important;
+          color: #fff !important;
+          border: solid 1px #2f1875!important;
+          box-shadow: 2px 2px 8px #6562e96e;
+          transition: all .3s ease-in-out;
+        }
+        .btn-shappire:hover {
+          background: #fff !important;
+          border: solid 2px #2f1875;
+          box-shadow: 2px 2px 8px #6562e96e;
+          color: #2f1875 !important;
+        }
+        .btn-shappire-outline {
+          background: #fff !important;
+          color: #2f1875 !important;
+          border: solid 1px #2f1875!important;
+          box-shadow: 2px 2px 8px #6562e96e;
+          transition: all .3s ease-in-out;
+        }
+        .vh-50 {
+          height: 60vh !important;
+          overflow-x: hidden;
+          overflow-y: auto;
+        }
+        .vh-50::-webkit-scrollbar {
+          width: 4px;     
+          height: 4px;    
+          }
+        .vh-50::-webkit-scrollbar-thumb {
+          background: rgb(60, 59, 59);
+          border-radius: 4px;
+          }
+        .vh-50::-webkit-scrollbar-thumb:hover {
+          background: #050374;
+          box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+          }
+        .btn-shappire-outline:hover {
+          background: #2f1875 !important;
+          border: solid 2px #2f1875;
+          box-shadow: 2px 2px 8px #6562e96e;
+          color: #fff !important;
+        }
+        {% if headlines %}
+          .app__bgimg-image--1 {
+            background: url({{headline1.image.url}}) center center no-repeat!important;
+            background-size: cover!important
+          }
+          .app__bgimg-image--2 {
+            background: url({{headline2.image.url}}) center center no-repeat!important;
+            background-size: cover!important
+          } 
+        {% else %}
+          .app__bgimg-image--1 {
+            background: url(https://staticmimopaws.s3.amazonaws.com/static/img/main/slide-1.jpg) center center no-repeat!important;
+            background-size: cover!important
+          }
+          .app__bgimg-image--2 {
+            background: url(https://staticmimopaws.s3.amazonaws.com/static/img/main/slide-2.jpg) center center no-repeat!important;
+            background-size: cover!important
+          } 
+        {% endif %}
+       
+      </style>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link rel="stylesheet" href="{% static 'scss/sliderv8.css'%}?v2">
+{% endblock %}
+{% block body %}
+<div class="preload-mimo"></div>
+{% block language %}
+  <div class="select-overlay">
+    <small class="mx-2" onclick="activeMenu()">{% trans "Language " %}
+      {% get_current_language as LANGUAGE_CODE %}
+      {% get_available_languages as LANGUAGES %}
+      {% get_language_info_list for LANGUAGES as languages %}
+      {% for language in languages %}
+        {% if language.code == stela_data.lang %}
+          <img width="20" src="https:/staticmimopaws.amazonaws.com/static/img/main/flags/{{stela_data.lang}}.png" alt=""> ({{ language.code }})
+        {% endif %}
+      {% endfor %}
+    </small>      
+  </div>
+  <div class="d-flex btn-overlay">
+    <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+      <input name="next" type="hidden" value="{{ redirect_to }}">
+      {% get_current_language as LANGUAGE_CODE %}
+      {% get_available_languages as LANGUAGES %}
+      {% get_language_info_list for LANGUAGES as languages %}
+      {% for language in languages %}
+          <button type="submit" name="language" class="btn transparent mx-1 p-1" value="{{language.code}}"><img width="30" 
+            {% if language.code == "es-ve" %}
+              src="{% static 'img/main/flags/es.png' %}"
+            {% elif language.code == "en" %}
+              src="{% static 'img/main/flags/en.png' %}"
+            {% endif %}  alt=""> ({{ language.code }})
+          </button>
+      {% endfor %}
+    </form>
+  </div>
+  <script>
+    const btnLanguage = document.querySelector(".btn-overlay");
+
+
+    function activeMenu() {
+        console.log(btnLanguage)
+        btnLanguage.classList.toggle('btn-hidden')
+    }
+  </script>
+{% endblock  %}
+      <!-- Spinner Start -->
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h1 class="fs-3 fredoka-thin text-center text-light">{% trans "Last Posts" %}</h1>
+          <hr class="text-light">
+        {% for blog in stela_data.blogs %}
+          <div class="row">
+            <h4 class="fredoka-thin text-center text-light fs-5">{{blog.title}}</h4>
+              <div class="col-4">
+                <img class="w-100" src="{{blog.image.url}}" alt="">
+              </div>
+              <div class="col-8 post-view">
+                <small class="text-light">{{blog.content|safe}}</small>
+              </div>
+              <a href="{% url 'siteapp:blog_detail' blog.slug %}">
+                <div class="d-flex justify-content-end mr-3">
+                  <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#updates">{% trans "Edit" %}</button>
+                </div>
+              </a>
+          </div>
+          <hr class="text-light">
+        {% endfor %}
+        {% block postbtn %}
+          <div class="row justify-content-center my-3 z-max">
+            <div class="col-lg-8">
+                  <button class="btn btn-block btn-shappire my-3" data-bs-toggle="modal" data-bs-target="#posts">{% trans "New Post" %} <i class="fa-solid fa-plus"></i></button>
+            </div>
+          </div>
+        {% endblock  %}
+      </div>
+      <div class="overlay-dark"></div>
+{% block navbar %}
+  <!-- Topbar Start -->
+  <div class="social-header mimotone-1">
+    <div class="container-fluid">
+        <div class="row justify-content-between">
+            <div class="col-md-6 desktop col-lg-7 contact-info pl-1 text-center">
+                <a href=""><i class="fa-solid fa-location-dot"></i> 123 Main St Malibu, California. US</a>
+                <a href="">contact@mimopaws.com</a>
+            </div>
+            <div class="col-6 col-sm-4 col-md-4 col-lg-2 social-links">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-tiktok"></i></a>
+                <a href=""><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="col-3 col-sm-2 col-md-2 col-lg-2 mt-1 d-flex justify-content-end">
+                <small class="halle text-light fs-5">blog -></small>
+            </div>
+            <div class="col-3 col-sm-2 col-md-2 col-lg-1" onclick="openNav()">
+                <i id="content-menu" class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+    <a href="{% block link_logo %}{% endblock  %}" class="navbar-brand d-flex align-items-center">
+      <img class="w-100" src="{% block logo %}{% static 'img/icons/logo.png' %}{% endblock  %}" alt="Image" />
+    </a>
+    <a class="mobile color-secondary" href="}" class="nav-item nav-link">
+      {% with total_count=cart_service|length %}
+          <div id="count" >
+              {% if total_count > 0 %}
+              <span class="count_elipse">
+                <div class="count" id="cart_mobile" >
+                    {{total_count}}
+                </div>
+              </span>
+              {% else %}
+              <span class="count_elipse d-none">
+                <div class="count" id="cart_mobile" >
+                    {{total_count}}
+                </div>
+              </span>
+              {% endif %}
+          </div>
+      {% endwith %}   
+      <ion-icon name="bag-handle-outline"></ion-icon>
+    </a>
+    <button type="button" class="navbar-toggler" id="collapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="navbar-nav ms-auto py-3 py-lg-0">
+        <a href="" class="nav-item nav-link active">{% trans "Home" %}</a>
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{% trans "Sections" %}</a>
+          <div class="dropdown-menu bg-grey-blur m-0">
+            <a href="/#services" class="dropdown-item">{% trans "Our Services" %}</a>
+            <a href="" class="dropdown-item">{% trans "Pricing" %}</a>
+            <a href="" class="dropdown-item">{% trans "Gallery" %}</a>
+            <a href="#" class="dropdown-item disabled">Shop <small>({% trans "soon" %})</small></a>
+          </div>
+        </div>
+        <div class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{% trans "Docs" %}</a>
+          <div class="dropdown-menu bg-grey-blur m-0">
+            <a href="" class="dropdown-item">{% trans "About Us" %}</a>
+            <a href="/#faq" class="dropdown-item">F.A.Q</a>
+            <a href="" class="dropdown-item">{% trans "Terms & Conditions" %}</a>
+          </div>
+        </div>
+        <a href="" class="nav-item nav-link">{% trans "Contact Us" %}</a>
+        {% if request.user.is_authenticated %}
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link" data-bs-toggle="dropdown"><ion-icon name="person-outline"></ion-icon> <span class="user-btn">{{request.user.username}}</span></a>
+              <div class="dropdown-menu bg-grey-blur m-0">
+                <a href="" class="dropdown-item">{% trans "Console" %}</a>
+                <a href="" class="dropdown-item">{% trans "Log Out" %}<i class='bx bx-log-out'></i></a>
+              </div>
+          </div>
+        {% else %}
+            <a href="" class="nav-item nav-link">
+              <span class="login-btn">{% trans "Login" %}</span> <ion-icon name="log-in-outline"></ion-icon>
+            </a>
+        {% endif %}
+        <a href="" class="nav-item nav-link desktop">
+          {% with total_count=cart_service|length %}
+              <div id="count" >
+                  {% if total_count > 0 %}
+                  <span class="count_elipse">
+                    <div class="count" id="cart" >
+                        {{total_count}}
+                    </div>
+                  </span>
+                  {% else %}
+                  <span class="count_elipse d-none">
+                    <div class="count" id="cart" >
+                        {{total_count}}
+                    </div>
+                  </span>
+                  {% endif %}
+              </div>
+          {% endwith %}   
+          <ion-icon name="bag-handle-outline"></ion-icon>
+        </a>
+      </div>
+    </div>
+  </nav>
+{% endblock  %}
+      {% block content %}
+          <!-- Carousel Start -->
+          <div class="cont desktop">
+            <div class="mouse"></div>
+            <div class="app">
+              <div class="app__bgimg">
+                <div class="app__bgimg-image app__bgimg-image--1">
+                </div>
+                <div class="app__bgimg-image app__bgimg-image--2">
+                </div>
+              </div>
+              <div class="app__img">
+                <img class="desktop" onmousedown="return false" src="{% static 'img/main/slide-dynamics.png' %}?v2" alt="city" />
+                <img class="tablet" onmousedown="return false" src="{% static 'img/main/midle-slide.png' %}" alt="city" />
+                <img class="xmobile" onmousedown="return false" src="{% static 'img/main/mobile-slide.png' %}" alt="city" />
+              </div>
+                {% if headlines %}
+                  <div class="app__text app__text--1">
+                    <div class="app__text-line app__text-line--4 fredoka text-end"> <span class="color-secondary">mimo</span> <span class="color-primary">{{headline1.title}}</span></div>
+                    {% if mainabout %}
+                      <div class="app__text-line app__text-line--3 text-end">{{headline1.subtitle}} <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateAbout1()">{% trans "Update Content" %}</button> </div> 
+                    {% else %}
+                      <div class="app__text-line app__text-line--3 text-end">{{headline1.subtitle}} <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#poster">{% trans "Load Content" %}</button> </div>
+                    {% endif %}   
+                    <div class="app__text-line app__text-line--3 text-end">{{headline1.subtitle}}</div>
+                    <div class="app__text-line app__text-line--2 text-end"> <a href="{{headline1.url}}" target="_blank" class="hover-secondary-primary">{% trans "Request Service" %}</a></div>
+                    <div class="app__text-line app__text-line--1 d-flex justify-content-end"><img src="{% static 'img/icons/text-2.png' %}" alt="" /></div>
+                  </div>
+                  
+                  <div class="app__text app__text--2">
+                    <div class="app__text-line app__text-line--4 fredoka text-end"> <span class="color-secondary">mimo</span> <span class="color-primary">{{headline2.title}}</span></div>
+                    <div class="app__text-line app__text-line--3 text-end">{{headline2.subtitle}}</div>
+                    <div class="app__text-line app__text-line--2 text-end"> <a href="{{headline2.url}}" target="_blank" class="hover-secondary-primary">{% trans "Request Service" %}</a></div>
+                    <div class="app__text-line app__text-line--1 d-flex justify-content-end"><img src="{% static 'img/icons/text-1.png' %}" alt="" /></div>
+                  </div>
+                {% else %}
+                  <div class="app__text app__text--1">
+                    <div class="app__text-line app__text-line--4 fredoka text-end"> <span class="color-secondary">mimo</span> <span class="color-primary text-end">VIP</span></div>
+                    {% if mainabout %}
+                      <div class="app__text-line app__text-line--3 text-end">{% trans "We change your pet" %} <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateAbout1()">{% trans "Update Content" %}</button> </div> 
+                    {% else %}
+                      <div class="app__text-line app__text-line--3 text-end">{% trans "We change your pet" %} <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#poster">{% trans "Load Content" %}</button> </div>
+                    {% endif %} 
+                    <div class="app__text-line app__text-line--2 text-end"> <a href="{{headline1.url}}" target="_blank" class="hover-secondary-primary">{% trans "Request Service" %}</a></div>
+                    <div class="app__text-line app__text-line--1 d-flex justify-content-end"><img src="{% static 'img/icons/text-2.png' %}" alt="" /></div>
+                  </div>
+                  
+                  <div class="app__text app__text--2">
+                    <div class="app__text-line app__text-line--4 fredoka text-end"> <span class="color-secondary">mimo</span> <span class="color-primary">Spa</span></div>
+                    <div class="app__text-line app__text-line--3 text-end">{% trans "Price" %} $20</div>
+                    <div class="app__text-line app__text-line--2 text-end"> <a href="{{headline2.url}}" target="_blank" class="hover-secondary-primary">{% trans "Request Service" %}</a></div>
+                    <div class="app__text-line app__text-line--1 d-flex justify-content-end"><img src="{% static 'img/icons/text-1.png' %}" alt="" /></div>
+                  </div>
+                {% endif %}
+                
+            </div>
+            <div class="pages">
+              <ul class='pages__list'>
+                <li data-target='1' class='pages__item pages__item--1 page__item-active'></li>
+                <li data-target='2' class='pages__item pages__item--2'></li>
+              </ul>
+            </div>
+          </div>
+          <!-- Carousel End -->
+
+          <!-- About Start -->
+          <div class="container-xxl py-5">
+            <div class="container">
+                  {% if about.section == "About Dynamic" %}
+                      <div class="row justify-content-center my-3 z-max">
+                        <div class="col-lg-3">
+                            <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateAbout1()">{% trans "Update Content" %}</button>    
+                        </div>
+                      </div>
+                      <div class="row g-5">
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                          <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px">
+                            <img class="position-absolute w-100 h-100" src="{{about.image.url}}" alt="" style="object-fit: cover"/>
+                            <div class="position-absolute top-0 start-0 bg-white pe-3 pb-3" style="width: 200px; height: 200px">
+                              <div class="d-flex flex-column justify-content-center text-center bg-primary h-100 p-3">
+                                {% for item in about.items.all %}
+                                  {% if item.type == "Side tag" %}
+                                    <h2 class="text-white">{{item.titles}}</h2>
+                                  {% endif %}
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                          <div class="h-100">
+                            <div class="border-start border-5 border-site ps-4 mb-5">
+                              <h6 class="text-body text-uppercase mb-2">{% trans "How we work" %}</h6>
+                              <h1 class="display-6 mb-0">
+                                {{about.title}}
+                              </h1>
+                            </div>
+                            <p>
+                              {{about.content|safe}}
+                            </p>
+                            <div class="border-top mt-4 pt-4">
+                              <div class="row g-4">
+                                {% for item in about.items.all %}
+                                  <div class="col-sm-4 d-flex wow fadeIn" data-wow-delay="0.1s">
+                                    <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                    {% if item.type == "Engage" %}
+                                        <h6 class="mb-0">{{item.bullet}}</h6>
+                                    {% endif %}
+                                  </div>
+                                {% endfor %}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  {% else %}
+                    <div class="row justify-content-center my-3 z-max">
+                      <div class="col-lg-3">
+                          <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#about1">{% trans "Load Content" %}</button>
+                      </div>
+                    </div>
+                    <div class="row g-5">
+                      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px">
+                          <img class="position-absolute w-100 h-100" src="{% static 'img/main/sec-1.jpg' %}" alt="" style="object-fit: cover"/>
+                          <div class="position-absolute top-0 start-0 bg-white pe-3 pb-3" style="width: 200px; height: 200px">
+                            <div class="d-flex flex-column justify-content-center text-center bg-primary h-100 p-3">
+                                <h2 class="text-white">{% trans "Care" %}</h2>
+                                <h2 class="text-white">{% trans "Team" %}</h2>
+                                <h2 class="text-white">{% trans "Clean" %}</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="h-100">
+                          <div class="border-start border-5 border-site ps-4 mb-5">
+                            <h6 class="text-body text-uppercase mb-2">{% trans "How we work" %}</h6>
+                            <h1 class="display-6 mb-0">
+                              {% trans "Our services at your doorstep" %}
+                            </h1>
+                          </div>
+                          <p>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita ea consequatur molestiae inventore et animi molestias perferendis fugiat quo exercitationem reprehenderit accusamus, 
+                          </p>
+                          <div class="border-top mt-4 pt-4">
+                            <div class="row g-4">
+                                <div class="col-sm-4 d-flex wow fadeIn" data-wow-delay="0.1s">
+                                  <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                  <h6 class="mb-0">{% trans "bullet" %} 1</h6>
+                                </div>
+                                <div class="col-sm-4 d-flex wow fadeIn" data-wow-delay="0.1s">
+                                  <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                  <h6 class="mb-0">{% trans "bullet" %} 2</h6>
+                                </div>
+                                <div class="col-sm-4 d-flex wow fadeIn" data-wow-delay="0.1s">
+                                  <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                  <h6 class="mb-0">{% trans "bullet" %} 3</h6>
+                                </div>
+                                <div class="col-sm-4 d-flex wow fadeIn" data-wow-delay="0.1s">
+                                  <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                  <h6 class="mb-0">{% trans "bullet" %} 4</h6>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+            </div>
+          </div>
+          <!-- About End -->
+
+           <!-- Service Start -->
+           {% if services %}
+            <div class="container-xxl py-5" id="services">
+              <div class="container">
+                <div class="row g-5 align-items-end mb-5">
+                  <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="border-start border-5 border-primary-text ps-4">
+                      <h6 class="text-body text-uppercase mb-2">{% trans "Our Services" %}</h6>
+                      <h1 class="display-6 mb-0">
+                        Pet Grooming Services
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+                <div class="row justifiy-content-between">
+                    {% for service in services %}
+                      <div class="col-md-12 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="service-item bg-light overflow-hidden h-100">
+                          <img class="img-fluid" src="{{service.image.url}}" alt="" />
+                            <div class="service-text position-relative text-center h-100 p-4">
+                              <h5 class="mb-3">{{service.title}}</h5>
+                              <p>
+                              {{product.description}}
+                              </p>
+                              <a class="small" href="/product-detail/{{service.slug}}">{% trans "REQUEST SERVICE" %}<i class="fa fa-arrow-right ms-3"></i></a>
+                            </div>
+                        </div>
+                      </div>
+                    {% endfor %}
+                  </div>
+              </div>
+            </div>
+          {% endif %}
+          <!-- Service End -->
+
+          <!-- Facts Start -->
+          <div class="container-fluid my-5 p-0">
+            <div class="row g-0">
+              {% for step in steps_works %}
+                  <div class="row justify-content-center my-3 z-max">
+                    <div class="col-lg-3">
+                        <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateAbout1()">{% trans "Update Content" %}</button>    
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="position-relative">
+                      <img class="img-fluid w-100" src="{{step.image.url}}" alt="" />
+                      <div class="facts-overlay">
+                        <h1 class="display-1">0{{forloop.counter}}</h1>
+                        <h4 class="text-white mb-3">{{step.title}}</h4>
+                        <p class="text-white">
+                          {{step.content}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+              {% empty %}
+                <div class="row justify-content-center my-3 z-max">
+                  <div class="col-lg-3">
+                      <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#steps">{% trans "Load Content" %}</button>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                  <div class="position-relative">
+                    <img class="img-fluid w-100" src="{% static 'img/main/step-1.jpg' %}" alt="" />
+                    <div class="facts-overlay">
+                      <h1 class="display-1">1</h1>
+                      <h4 class="text-white mb-3">{% trans "Step" %} 1</h4>
+                      <p class="text-white">
+                        {% trans "This is a step" %} 1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                  <div class="position-relative">
+                    <img class="img-fluid w-100" src="{% static 'img/main/step-2.jpg' %}" alt="" />
+                    <div class="facts-overlay">
+                      <h1 class="display-1">2</h1>
+                      <h4 class="text-white mb-3">{% trans "Step" %} 2</h4>
+                      <p class="text-white">
+                        {% trans "This is a Step" %} 2
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                  <div class="position-relative">
+                    <img class="img-fluid w-100" src="{% static 'img/main/step-3.jpg' %}" alt="" />
+                    <div class="facts-overlay">
+                      <h1 class="display-1">3</h1>
+                      <h4 class="text-white mb-3">{% trans "Step" %} 3</h4>
+                      <p class="text-white">
+                       {% trans "This is a Step" %} 3
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                  <div class="position-relative">
+                    <img class="img-fluid w-100" src="{% static 'img/main/step-4.jpg' %}" alt="" />
+                    <div class="facts-overlay">
+                      <h1 class="display-1">4</h1>
+                      <h4 class="text-white mb-3">{% trans "Step" %} 4</h4>
+                      <p class="text-white">
+                        {% trans "This is a Step" %} 4
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <!-- Facts End -->
+
+          <!-- Features Start -->
+          <div class="container-xxl">
+            <div class="container">
+                {% if about2.section == "About Dynamic" %}
+                    <div class="row justify-content-center my-3 z-max">
+                      <div class="col-lg-3">
+                          <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateAbout1()">{% trans "Update Content" %}</button>    
+                      </div>
+                    </div>
+                    <div class="row g-5">
+                      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="border-start border-5 border-primary-text ps-4 mb-5">
+                          <h6 class="text-body text-uppercase mb-2">{% trans "Why Choose Us" %}!</h6>
+                          <h1 class="display-6 mb-0">
+                            {{about2.title}}
+                          </h1>
+                        </div>
+                        <p class="mb-5">
+                          {{about2.content|safe}}
+                        </p>
+                        <div class="row gy-5 gx-4">
+                          {% for item in about2.items.all %}
+                            <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                              <div class="d-flex align-items-center mb-3">
+                                <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                <h6 class="mb-0">{{item.bullet}}</h6>
+                              </div>
+                              <span>{{item.content_bullet|safe}}</span>
+                            </div>
+                          {% endfor %}
+                        </div>
+                      </div>
+                      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px">
+                          <img class="position-absolute w-100 h-100" src="{{about2.image.url}}" alt="" style="object-fit: cover"/>
+                          <div class="position-absolute top-0 start-0 bg-white pe-3 pb-3" style="width: 200px; height: 200px">
+                            <div class="d-flex flex-column justify-content-center text-center bg-primary h-100 p-3">
+                              {% for item in about2.items.all %}
+                                {% if item.type == "Side tag" %}
+                                  <h2 class="text-white">{{item.bullet}}</h2>
+                                {% endif %}
+                              {% endfor %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                {% else %}
+                    <div class="row justify-content-center my-3 z-max">
+                      <div class="col-lg-3">
+                          <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#about2">{% trans "Load Content" %}</button>
+                      </div>
+                    </div>
+                    <div class="row g-5">
+                      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="border-start border-5 border-primary-text ps-4 mb-5">
+                          <h6 class="text-body text-uppercase mb-2">{% trans "Why Choose Us" %}!</h6>
+                          <h1 class="display-6 mb-0">
+                            {% trans "Our Services grant points and have great discounts" %}
+                          </h1>
+                        </div>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita ea consequatur molestiae inventore et animi molestias perferendis fugiat quo exercitationem reprehenderit accusamus, 
+                        </p>
+                          <div class="border-top mt-4 pt-4">
+                            <div class="row g-4">
+                                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                  <div class="row">
+                                    <div class="col-12 d-flex align-items-center">
+                                      <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                      <h6 class="mb-0">{% trans "Bulletpoint" %}</h6>
+                                    </div>
+                                    <div class="col-12">
+                                      <span>{% trans "Bulletpoint Content" %}</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                  <div class="row">
+                                    <div class="col-12 d-flex align-items-center">
+                                      <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                      <h6 class="mb-0">{% trans "Bulletpoint" %}</h6>
+                                    </div>
+                                    <div class="col-12">
+                                      <span>{% trans "Bulletpoint Content" %}</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                  <div class="row">
+                                    <div class="col-12 d-flex align-items-center">
+                                      <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                      <h6 class="mb-0">{% trans "Bulletpoint" %}</h6>
+                                    </div>
+                                    <div class="col-12">
+                                      <span>{% trans "Bulletpoint Content" %}</span>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                                  <div class="row">
+                                    <div class="col-12 d-flex align-items-center">
+                                      <i class="fa fa-check fa-2x color-primary flex-shrink-0 me-3"></i>
+                                      <h6 class="mb-0">{% trans "Bulletpoint" %}</h6>
+                                    </div>
+                                    <div class="col-12">
+                                      <span>{% trans "Bulletpoint Content" %}</span>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="position-relative overflow-hidden ps-5 pt-5 h-100" style="min-height: 400px">
+                          <img class="position-absolute w-100 h-100" src="{% static 'img/main/feature.jpg' %}" alt="" style="object-fit: cover"/>
+                          <div class="position-absolute top-0 start-0 bg-white pe-3 pb-3" style="width: 200px; height: 200px">
+                            <div class="d-flex flex-column justify-content-center text-center bg-primary h-100 p-3">
+                                <h2 class="text-white">{% trans "Prize" %}</h2>
+                                <h2 class="text-white">{% trans "Offers" %}</h2>
+                                <h2 class="text-white">{% trans "All" %}</h2>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>    
+                {% endif %}
+            </div>
+          </div>
+          <!-- Features End -->
+
+          <!-- FAQ Start -->
+          <div class="bg-white py-5 wow fadeInUp" data-wow-delay="0.1s" id="faq">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-6">
+                      <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                          <img class="w-100" src="{% static 'img/icons/faq-sticker.png' %}" alt="">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <p class="text-justify mb-3 fredoka-thin text-grey">{% trans "In this section we want to answer all the questions you have. If you do not find it in this list you can message to us." %}</p>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="faq-card section-dark my-4">
+                      <main class="faq-content">
+                        <h1 class="fredoka-thin color-primary title-spacing">{% trans "FAQ" %}</h1>
+                  
+                        <div class="faq-articles">
+                          {% for faq in faq.fitems.all %}
+                              <div class="row justify-content-center my-3 z-max">
+                                <div class="col-lg-3">
+                                    <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateAbout1()">{% trans "Update Content" %}</button>    
+                                </div>
+                              </div>
+                              <article class="faq-accordion">
+                      
+                                <input type="checkbox" class="tgg-title" id="tgg-title-{{faq.id}}">
+                      
+                                <div class="faq-accordion-title">
+                                  <label for="tgg-title-{{faq.id}}">
+                                    <h2>{{faq.question}}</h2>
+                                    <span class="arrow-icon">
+                                      <img src="https://raw.githubusercontent.com/Romerof/FAQ-accordion-card/main/images/icon-arrow-down.svg">
+                                    </span>
+                                  </label>
+                                </div>
+                      
+                                <div class="faq-accordion-content">
+                                  <p>{{faq.response|safe}}</p>
+                                </div>
+                      
+                              </article> <!-- faq accordion -->
+                          {% empty %}
+                            <div class="row justify-content-center my-3 z-max">
+                              <div class="col-lg-3">
+                                  <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#newFAQ">{% trans "Load Content" %}</button>
+                              </div>
+                            </div>
+                            <article class="faq-accordion">
+                        
+                              <input type="checkbox" class="tgg-title" id="tgg-title-1">
+                    
+                              <div class="faq-accordion-title">
+                                <label for="tgg-title-1">
+                                  <h2>{% trans "Question" %} 1</h2>
+                                  <span class="arrow-icon">
+                                    <img src="https://raw.githubusercontent.com/Romerof/FAQ-accordion-card/main/images/icon-arrow-down.svg">
+                                  </span>
+                                </label>
+                              </div>
+                    
+                              <div class="faq-accordion-content">
+                                <p>
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro veritatis veniam nulla earum nemo asperiores. Dolore aspernatur in sed odit officiis fugiat dolorem qui, non ipsam excepturi repudiandae eaque omnis.
+                                </p>
+                              </div>
+                    
+                            </article>
+                            <article class="faq-accordion">
+                        
+                              <input type="checkbox" class="tgg-title" id="tgg-title-2">
+                    
+                              <div class="faq-accordion-title">
+                                <label for="tgg-title-2">
+                                  <h2>{% trans "Question" %} 2</h2>
+                                  <span class="arrow-icon">
+                                    <img src="https://raw.githubusercontent.com/Romerof/FAQ-accordion-card/main/images/icon-arrow-down.svg">
+                                  </span>
+                                </label>
+                              </div>
+                    
+                              <div class="faq-accordion-content">
+                                <p>
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro veritatis veniam nulla earum nemo asperiores. Dolore aspernatur in sed odit officiis fugiat dolorem qui, non ipsam excepturi repudiandae eaque omnis.
+                                </p>
+                              </div>
+                    
+                            </article>
+                            <article class="faq-accordion">
+                        
+                              <input type="checkbox" class="tgg-title" id="tgg-title-3">
+                    
+                              <div class="faq-accordion-title">
+                                <label for="tgg-title-3">
+                                  <h2>{% trans "Question" %} 3</h2>
+                                  <span class="arrow-icon">
+                                    <img src="https://raw.githubusercontent.com/Romerof/FAQ-accordion-card/main/images/icon-arrow-down.svg">
+                                  </span>
+                                </label>
+                              </div>
+                    
+                              <div class="faq-accordion-content">
+                                <p>
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro veritatis veniam nulla earum nemo asperiores. Dolore aspernatur in sed odit officiis fugiat dolorem qui, non ipsam excepturi repudiandae eaque omnis.
+                                </p>
+                              </div>
+                    
+                            </article>
+                            <article class="faq-accordion">
+                        
+                              <input type="checkbox" class="tgg-title" id="tgg-title-4">
+                    
+                              <div class="faq-accordion-title">
+                                <label for="tgg-title-4">
+                                  <h2>{% trans "Question" %} 4</h2>
+                                  <span class="arrow-icon">
+                                    <img src="https://raw.githubusercontent.com/Romerof/FAQ-accordion-card/main/images/icon-arrow-down.svg">
+                                  </span>
+                                </label>
+                              </div>
+                    
+                              <div class="faq-accordion-content">
+                                <p>
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro veritatis veniam nulla earum nemo asperiores. Dolore aspernatur in sed odit officiis fugiat dolorem qui, non ipsam excepturi repudiandae eaque omnis.
+                                </p>
+                              </div>
+                    
+                            </article>
+                            <article class="faq-accordion">
+                        
+                              <input type="checkbox" class="tgg-title" id="tgg-title-5">
+                    
+                              <div class="faq-accordion-title">
+                                <label for="tgg-title-5">
+                                  <h2>{% trans "Question" %} 5</h2>
+                                  <span class="arrow-icon">
+                                    <img src="https://raw.githubusercontent.com/Romerof/FAQ-accordion-card/main/images/icon-arrow-down.svg">
+                                  </span>
+                                </label>
+                              </div>
+                    
+                              <div class="faq-accordion-content">
+                                <p>
+                                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro veritatis veniam nulla earum nemo asperiores. Dolore aspernatur in sed odit officiis fugiat dolorem qui, non ipsam excepturi repudiandae eaque omnis.
+                                </p>
+                              </div>
+                    
+                            </article>
+                          {% endfor %}
+                  
+                        </div> <!-- faq articles -->
+                  
+                      </main> <!-- faq -->
+                  
+                    </div> <!-- faq card -->
+                  
+                  </div> <!-- card wrapper -->
+                  </div>
+                </div>
+              </div>
+          </div>  
+          <!-- FAQ End -->
+
+          <!-- Team Start -->
+          <div class="container-xxl py-5">
+            <div class="container">
+              <div class="row g-5 align-items-end mb-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                  <div class="border-start border-5 border-primary-text ps-4">
+                    <h6 class="text-body text-uppercase mb-2">{% trans "Our Team" %}</h6>
+                    <h1 class="display-6 mb-0">{% trans "Our Expert Worker" %}</h1>
+                  </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                  <p class="mb-0">
+                    {% trans "We have qualified personnel with the best experience to provide the best service to your pet, leave your spoiled in our hands." %}
+                  </p>
+                </div>
+              </div>
+              <div class="row g-4">
+                {% for team in team %}
+                  <div class="row justify-content-center my-3 z-max">
+                    <div class="col-lg-3">
+                        <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateAbout1()">{% trans "Update Content" %}</button>    
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative vh-60 overflow-hidden">
+                      <img class="w-100 vh-60 cover" src="{{team.image.url}}" alt="" />
+                      <div class="team-text bg-white p-4">
+                        <h5>{{team.full_name}}</h5>
+                        <span>{{team.staff}}</span>
+                      </div>
+                    </div>
+                  </div>
+                {% empty %}
+                  <div class="row justify-content-center my-3 z-max">
+                    <div class="col-lg-3">
+                        <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#team">{% trans "Load Content" %}</button>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative vh-60 overflow-hidden">
+                      <img class="w-100 vh-60 cover" src="{% static 'img/main/team-1.jpg' %}" alt="" />
+                      <div class="team-text bg-white p-4">
+                        <h5>Yeny Molero</h5>
+                        <span>{% trans "General Manager" %}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative vh-60 overflow-hidden">
+                      <img class="w-100 vh-60 cover" src="{% static 'img/main/about.jpg' %}" alt="" />
+                      <div class="team-text bg-white p-4">
+                        <h5>Ysaac Alvarez</h5>
+                        <span>{% trans "Pet Groomer" %}</span>
+                      </div>
+                    </div>
+                  </div><div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative vh-60 overflow-hidden">
+                      <img class="w-100 vh-60 cover" src="{% static 'img/main/team-3.jpg' %}" alt="" />
+                      <div class="team-text bg-white p-4">
+                        <h5>Josefa Molero</h5>
+                        <span>{% trans "Pet Groomer" %}</span>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <!-- Team End -->
+
+          <!-- Back to Top -->
+      {% endblock %}
+      {% block footer %}
+        <!-- Footer Start -->
+        <div class="container-fluid bg-dark footer pt-5 wow fadeIn" data-wow-delay="0.1s">
+          <div class="container py-5">
+            <div class="row justify-content-center my-3 z-max">
+              <div class="col-lg-3">
+                  {% if stelafooter %}
+                      <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateFooter()">{% trans "Update Content" %}</button>  
+                  {% else %}
+                      <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#footer">{% trans "Load Content" %}</button>
+                  {% endif %}   
+              </div>
+            </div>  
+          <div class="row g-5">
+              <div class="col-lg-3 col-md-6">
+                  <a href="index.html" class="navbar-brand d-flex align-items-center">
+                      <img class="w-100" src="{% block footer_logo %}{% static 'img/icons/logo.png' %}{% endblock  %}" alt="Image" />
+                  </a>
+                <div class="d-flex pt-2">
+                  {% if stelalinks %}
+                    {% for link in stelalinks %}
+                        {% if link.social == 'Twitter' %}
+                          <a class="btn btn-square btn-outline-primary me-1" href="{{link.url}}"
+                          ><i class="fab fa-twitter"></i
+                          ></a>
+                        {% elif link.social == 'Facebook' %}
+                            <a class="btn btn-square btn-outline-primary me-1" href="{{link.url}}"
+                            ><i class="fab fa-facebook"></i
+                            ></a>
+                        {% elif link.social == 'Instagram' %}
+                            <a class="btn btn-square btn-outline-primary me-1" href="{{link.url}}"
+                            ><i class="fab fa-instagram"></i
+                            ></a>
+                        {% elif link.social == 'Tiktok' %}
+                            <a class="btn btn-square btn-outline-primary me-1" href="{{link.url}}"
+                            ><i class="fab fa-tiktok"></i
+                            ></a>
+                        {% elif link.social == 'Youtube' %}
+                            <a class="btn btn-square btn-outline-primary me-1" href="{{link.url}}"
+                            ><i class="fab fa-youtube"></i
+                            ></a>
+                        {% elif link.social == 'Linkedin' %}
+                            <li>
+                                <a href="{{link.url}}"><i class="fa-brands fa-linkedin"></i></a>
+                            </li>
+                        {% elif link.social == 'Github' %}
+                          <a class="btn btn-square btn-outline-primary me-1" href="{{link.url}}"
+                          ><i class="fab fa-linkedin"></i
+                          ></a>
+                        {% endif %}
+                    {% endfor %}
+                  {% else %}
+                    <a class="btn btn-square btn-outline-primary me-1" href=""
+                    ><i class="fab fa-twitter"></i
+                    ></a>
+                    <a class="btn btn-square btn-outline-primary me-1" href=""
+                    ><i class="fab fa-facebook-f"></i
+                    ></a>
+                    <a class="btn btn-square btn-outline-primary me-1" href=""
+                    ><i class="fab fa-youtube"></i
+                    ></a>
+                    <a class="btn btn-square btn-outline-primary me-0" href=""
+                    ><i class="fab fa-linkedin-in"></i
+                    ></a>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+              <h4 class="text-light mb-4">{% trans "Address" %}</h4>
+              {% if stelafooter %}
+                <p>
+                    <i class="fa fa-map-marker-alt me-3"></i>{{address}}
+                </p>
+                <p><i class="fa fa-phone-alt me-3"></i>{{phone}}</p>
+                <p><i class="fa fa-envelope me-3"></i>{{contact}}</p>
+              {% else %}
+                <p>
+                    <i class="fa fa-map-marker-alt me-3"></i>123 Main St Malibu, California. US
+                </p>
+                <p><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
+                <p><i class="fa fa-envelope me-3"></i>info@example.com</p>
+              {% endif %}
+              </div>
+              <div class="col-lg-3 col-md-12">
+              <h4 class="text-light mb-4">{% trans "Quick Links" %}</h4>
+              <a class="btn btn-link" href="">{% trans "About Us" %}</a>
+              <a class="btn btn-link" href="">{% trans "Contact Us" %}</a>
+              <a class="btn btn-link" href="">{% trans "Pricing" %}</a>
+              <a class="btn btn-link" href="">{% trans "Terms & Condition" %}</a>
+              <a class="btn btn-link" href="">{% trans "Gallery" %}</a>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <h4 class="text-light mb-4">{% trans "Newsletter" %}</h4>
+                <p>{% trans "Discover the best we have for you unique offers and promotions. Sign up." %}</p>
+                <form action="" method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                    <div class="position-relative mx-auto" style="max-width: 400px">
+                        {{site_data.form.email|as_crispy_field}}
+                        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">
+                          {% trans "Sign Up" %}
+                        </button>
+                    </div>
+                </form>
+              </div>
+          </div>
+        </div>
+        <div class="container-fluid copyright">
+        <div class="container">
+          <div class="row justifiy-content-center">
+            <div class="col-md-12 text-center mb-3 mb-md-0">
+              &copy; <a href="#">Mimopaws LLC</a>, 2022 | {% trans "All Right Reserved." %}
+            </div>
+            <div class="col-md-12 text-center">
+              <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+             {% trans " Designed By" %} <a href="https://htmlcodex.com">Emmerut Group</a>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+
+        <div class="modal fade" id="poster" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="modal-body mid-modal-scroll modal1">    
+                  {{form.media}}
+                  {{form|crispy}}
+                  <p class="response-footer text-link fw-bold oxanium"></p>
+                  <input type="hidden" name="form-id" value="new-about1">
+                  <div class="row justify-content-end p-3">
+                      <div class="col-lg-4">
+                          <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                      </div>
+                  </div>
+              </div>    
+          </form>
+          </div>
+          </div>
+        </div>
+        <div class="modal fade" id="about1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="modal-body mid-modal-scroll modal1">    
+                {{form.media}}
+                {{form|crispy}}
+                <p class="response-footer text-link fw-bold oxanium"></p>
+                <input type="hidden" name="form-id" value="new-about1">
+                <div class="row justify-content-end p-3">
+                    <div class="col-lg-4">
+                        <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                    </div>
+                </div>
+            </div>    
+          </form>
+          </div>
+          </div>
+        </div>
+        <div class="modal fade" id="about2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="modal-body mid-modal-scroll modal1">    
+                  {{form.media}}
+                  {{form|crispy}}
+                  <p class="response-footer text-link fw-bold oxanium"></p>
+                  <input type="hidden" name="form-id" value="new-about1">
+                  <div class="row justify-content-end p-3">
+                      <div class="col-lg-4">
+                          <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                      </div>
+                  </div>
+              </div>    
+          </form>
+          </div>
+          </div>
+        </div>
+        <div class="modal fade" id="steps" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+              <div class="modal-body mid-modal-scroll modal1">    
+                  {{form.media}}
+                  {{form|crispy}}
+                  <p class="response-footer text-link fw-bold oxanium"></p>
+                  <input type="hidden" name="form-id" value="new-about1">
+                  <div class="row justify-content-end p-3">
+                      <div class="col-lg-4">
+                          <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                      </div>
+                  </div>
+              </div>    
+          </form>
+          </div>
+          </div>
+        </div>
+        <div class="modal fade" id="newFAQ" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="modal-body mid-modal-scroll modal1">    
+                  {{form.media}}
+                  {{form|crispy}}
+                  <p class="response-footer text-link fw-bold oxanium"></p>
+                  <input type="hidden" name="form-id" value="new-about1">
+                  <div class="row justify-content-end p-3">
+                      <div class="col-lg-4">
+                          <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                      </div>
+                  </div>
+              </div>    
+          </form>
+          </div>
+          </div>
+        </div>
+        <div class="modal fade" id="team" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="modal-body mid-modal-scroll modal1">    
+                  {{form.media}}
+                  {{form|crispy}}
+                  <p class="response-footer text-link fw-bold oxanium"></p>
+                  <input type="hidden" name="form-id" value="new-about1">
+                  <div class="row justify-content-end p-3">
+                      <div class="col-lg-4">
+                          <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                      </div>
+                  </div>
+              </div>    
+          </form>
+          </div>
+          </div>
+        </div>
+        <div class="modal fade" id="footer" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="modal-body mid-modal-scroll modal1">    
+                  {{form.media}}
+                  {{form|crispy}}
+                  <p class="response-footer text-link fw-bold oxanium"></p>
+                  <input type="hidden" name="form-id" value="new-about1">
+                  <div class="row justify-content-end p-3">
+                      <div class="col-lg-4">
+                          <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                      </div>
+                  </div>
+              </div>    
+          </form>
+          </div>
+          </div>
+        </div>
+        <div class="modal fade max-overlay" id="posts" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="modal-body mid-modal-scroll modal1">    
+                  {{form.media}}
+                  {{form|crispy}}
+                  <p class="response-footer text-link fw-bold oxanium"></p>
+                  <input type="hidden" name="form-id" value="new-about1">
+                  <div class="row justify-content-end p-3">
+                      <div class="col-lg-4">
+                          <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                      </div>
+                  </div>
+              </div>    
+          </form>
+          </div>
+          </div>
+        </div>
+        <div class="modal fade" id="updates" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="modal-body mid-modal-scroll modal1">    
+                  {{form.media}}
+                  {{form|crispy}}
+                  <p class="response-footer text-link fw-bold oxanium"></p>
+                  <input type="hidden" name="form-id" value="new-about1">
+                  <div class="row justify-content-end p-3">
+                      <div class="col-lg-4">
+                          <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                      </div>
+                  </div>
+              </div>    
+          </form>
+          </div>
+          </div>
+        </div>
+
+        <div class="instant-messages center-alert">
+          {% if messages %}
+              {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                      <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+                      <span class="alert-inner--text">{{ message }}</span>
+                      <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+              {% endfor %}
+          {% endif %}
+  </div>
+        <!-- Footer End -->
+      {% endblock %}
+      {% block top-btn %}
+          <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+      {% endblock  %}
+{% endblock %}
+{% block scripts %}
+     <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js" integrity="sha512-CEiA+78TpP9KAIPzqBvxUv8hy41jyI3f2uHi7DGp/Y/Ka973qgSdybNegWFciqh6GrN2UePx2KkflnQUbUhNIA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js" integrity="sha512-9CWGXFSJ+/X0LWzSRCZFsOPhSfm6jbnL+Mpqo0o8Ke2SYr8rCTqb4/wGm+9n13HtDE1NQpAEOrMecDZw4FXQGg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Template Javascript -->
+    <script src="{% static 'js/site/main.js' %}?v2"></script>
+{% endblock  %}
