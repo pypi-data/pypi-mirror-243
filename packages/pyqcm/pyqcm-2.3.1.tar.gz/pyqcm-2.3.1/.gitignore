@@ -1,0 +1,14 @@
+*.o
+*.d
+*.out
+*.zip
+*.vscode
+*.tsv
+_skbuild
+*egg-info*
+**/__pycache__
+qcm_git_hash.py
+external
+tests/test_outputs/
+doc/build
+build
