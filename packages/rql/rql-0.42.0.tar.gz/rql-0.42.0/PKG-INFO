@@ -1,0 +1,73 @@
+Metadata-Version: 2.1
+Name: rql
+Version: 0.42.0
+Summary: relationship query language (RQL) utilities
+Home-page: https://forge.extranet.logilab.fr/CubicWeb/RQL/
+Author: Logilab
+Author-email: contact@logilab.fr
+License: LGPL
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v2 or later (LGPLv2+)
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Topic :: Database
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.7
+License-File: COPYING
+License-File: COPYING.LESSER
+Requires-Dist: logilab-common>=1.6.0
+Requires-Dist: logilab-database>=1.6.0
+Requires-Dist: yapps2-logilab>=2.2.1
+Requires-Dist: logilab-constraint>=0.5.0
+Requires-Dist: typing-extensions; python_version < "3.8"
+Requires-Dist: setuptools
+Requires-Dist: importlib_metadata; python_version < "3.10"
+
+This package provides base library for the Relationship Query Language
+
+INSTALL
+-------
+
+the standard way:
+
+python setup.py install
+
+building rql binary extension in place:
+
+python setup.py build_ext --inplace
+
+DOCUMENTATION
+-------------
+
+Documentation is available at https://rql.readthedocs.io
+
+HOW TO RELEASE?
+---------------
+
+Bump version number in __pkginfo__.py, then update the debian changelog with::
+
+	dch -v <version>-1 -D unstable
+
+Commit with ``hg commit -m "[pkg] Version <version>"`` and tag with ``hg tag
+<version> debian/<version>-1``.
+
+Ensure you have a clean working directory before upload to pypi by running
+``hg clean --all --dirs --files`` (warning: this will remove all untracked
+files).
+
+Generate the source distribution with ``python3 setup.py sdist``.
+
+rql has a faster implementation using libgecode. To make this available to
+users using pip and not having libgecode installed, we publish manylinux
+wheels to pypi.
+
+To build a manylinux package for rql we use quay.io/pypa/manylinux1_x86_64
+docker image and a custom script `build_wheel.sh` so you just have to execute
+it and it will pull docker image and execute script in this image ::
+
+	docker pull quay.io/pypa/manylinux_2_24_x86_64
+	./build_wheel.sh
+
+Then upload source dist and wheels to pypi using twine::
+
+	twine upload dist/*.tar.gz dist/*.whl

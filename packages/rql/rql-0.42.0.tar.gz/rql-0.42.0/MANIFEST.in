@@ -1,0 +1,30 @@
+include docs/conf.py
+include docs/*.rst
+include docs/Makefile
+include docs/.static/*
+include docs/.templates/*
+
+include makefile
+include rql/parser.g
+
+include __pkginfo__.py
+
+include README.rst
+include TODO
+include ChangeLog
+include CHANGELOG.md
+include COPYING
+include COPYING.LESSER
+include data/gecode_version.cc
+
+recursive-include tools *.py *.rql
+
+include tox.ini
+include mypy.ini
+include build_wheel.sh
+recursive-include test *.py
+
+exclude .gitlab-ci.yml
+exclude .yamllint
+exclude .cube-doctor.yml
+exclude .readthedocs.yaml
