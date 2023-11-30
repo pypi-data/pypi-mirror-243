@@ -1,0 +1,176 @@
+Metadata-Version: 2.1
+Name: stela-control-dynamic
+Version: 0.1.6
+Summary: All apps in one for business.
+Home-page: UNKNOWN
+License: MIT
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp ==3.8.3
+Requires-Dist: aiosignal ==1.3.1
+Requires-Dist: annotated-types ==0.6.0
+Requires-Dist: anyio ==3.7.1
+Requires-Dist: asgiref ==3.6.0
+Requires-Dist: asn1crypto ==1.5.1
+Requires-Dist: async-timeout ==4.0.2
+Requires-Dist: attrs ==22.2.0
+Requires-Dist: Babel ==2.12.1
+Requires-Dist: beautifulsoup4 ==4.12.2
+Requires-Dist: bleach ==6.0.0
+Requires-Dist: boto3 ==1.24.36
+Requires-Dist: botocore ==1.27.36
+Requires-Dist: cachetools ==5.3.1
+Requires-Dist: certifi ==2021.10.8
+Requires-Dist: cffi ==1.15.1
+Requires-Dist: charset-normalizer ==2.0.12
+Requires-Dist: click ==8.1.3
+Requires-Dist: colorama ==0.4.5
+Requires-Dist: cryptography ==38.0.3
+Requires-Dist: cssselect2 ==0.6.0
+Requires-Dist: curlify ==2.2.1
+Requires-Dist: distro ==1.8.0
+Requires-Dist: Django ==4.2.1
+Requires-Dist: django-admin-thumbnails ==0.2.6
+Requires-Dist: django-autoslug ==1.9.8
+Requires-Dist: django-cities-light ==3.9.2
+Requires-Dist: django-compat ==1.0.15
+Requires-Dist: django-crispy-forms ==1.14.0
+Requires-Dist: django-cron ==0.6.0
+Requires-Dist: django-csp ==3.7
+Requires-Dist: django-environ ==0.7.0
+Requires-Dist: django-hosts ==5.1
+Requires-Dist: django-htmx ==1.12.0
+Requires-Dist: django-js-asset ==2.0.0
+Requires-Dist: django-mailjet ==0.3.1
+Requires-Dist: django-model-utils ==4.3.1
+Requires-Dist: django-mptt ==0.13.4
+Requires-Dist: django-phonenumber-field ==7.1.0
+Requires-Dist: django-sass-processor ==1.2.2
+Requires-Dist: django-storages ==1.12.3
+Requires-Dist: exceptiongroup ==1.1.3
+Requires-Dist: facebook-business ==17.0.0
+Requires-Dist: frozenlist ==1.3.3
+Requires-Dist: future ==0.18.2
+Requires-Dist: google-api-core ==2.11.0
+Requires-Dist: google-auth ==2.19.1
+Requires-Dist: google-cloud-monitoring ==2.15.0
+Requires-Dist: googleapis-common-protos ==1.59.0
+Requires-Dist: grpcio ==1.54.2
+Requires-Dist: grpcio-status ==1.54.2
+Requires-Dist: gunicorn ==20.1.0
+Requires-Dist: h11 ==0.14.0
+Requires-Dist: html5lib ==1.1
+Requires-Dist: httpcore ==1.0.1
+Requires-Dist: httpx ==0.25.1
+Requires-Dist: idna ==3.3
+Requires-Dist: jmespath ==1.0.1
+Requires-Dist: lxml ==4.9.1
+Requires-Dist: mailjet-rest ==1.3.4
+Requires-Dist: MarkupSafe ==2.1.2
+Requires-Dist: multidict ==6.0.4
+Requires-Dist: openai ==1.2.2
+Requires-Dist: oscrypto ==1.3.0
+Requires-Dist: paypal-checkout-serversdk ==1.0.1
+Requires-Dist: paypalhttp ==1.0.1
+Requires-Dist: google-api-python-client ==2.108.0
+Requires-Dist: google-auth-httplib2 ==0.1.1
+Requires-Dist: google-auth-oauthlib ==1.1.0
+Requires-Dist: python-amazon-paapi ==5.0.1
+Requires-Dist: paypalrestsdk ==1.13.1
+Requires-Dist: phonenumbers ==8.13.13
+Requires-Dist: Pillow ==9.0.0
+Requires-Dist: progressbar2 ==4.0.0
+Requires-Dist: proto-plus ==1.22.2
+Requires-Dist: protobuf ==4.23.2
+Requires-Dist: pyasn1 ==0.5.0
+Requires-Dist: pyasn1-modules ==0.3.0
+Requires-Dist: pycountry ==22.3.5
+Requires-Dist: pycparser ==2.21
+Requires-Dist: pycryptodome ==3.14.1
+Requires-Dist: pydantic ==2.4.2
+Requires-Dist: pydantic-core ==2.10.1
+Requires-Dist: pyHanko ==0.13.2
+Requires-Dist: pyhanko-certvalidator ==0.19.5
+Requires-Dist: pyOpenSSL ==22.1.0
+Requires-Dist: PyPDF3 ==1.0.6
+Requires-Dist: python-bidi ==0.4.2
+Requires-Dist: python-dateutil ==2.8.2
+Requires-Dist: python-utils ==3.1.0
+Requires-Dist: pytz ==2021.3
+Requires-Dist: pytz-deprecation-shim ==0.1.0.post0
+Requires-Dist: PyYAML ==6.0
+Requires-Dist: qrcode ==7.3.1
+Requires-Dist: reportlab ==3.6.11
+Requires-Dist: requests ==2.27.1
+Requires-Dist: rsa ==4.9
+Requires-Dist: s3transfer ==0.6.0
+Requires-Dist: six ==1.16.0
+Requires-Dist: sniffio ==1.3.0
+Requires-Dist: soupsieve ==2.4.1
+Requires-Dist: sqlparse ==0.4.2
+Requires-Dist: stripe ==2.68.0
+Requires-Dist: svglib ==1.4.1
+Requires-Dist: swapper ==1.3.0
+Requires-Dist: tinycss2 ==1.1.1
+Requires-Dist: tqdm ==4.64.0
+Requires-Dist: typing-extensions ==4.8.0
+Requires-Dist: tzdata ==2022.1
+Requires-Dist: tzlocal ==4.2
+Requires-Dist: Unidecode ==1.3.2
+Requires-Dist: uritools ==4.0.0
+Requires-Dist: urllib3 ==1.26.9
+Requires-Dist: webencodings ==0.5.1
+Requires-Dist: whois ==0.9.13
+Requires-Dist: xhtml2pdf ==0.2.8
+Requires-Dist: yarl ==1.8.2
+
+# Stela Control Dynamic CRM
+
+Stela Control Dynamic is a comprehensive Customer Relationship Management (CRM) solution built on Django. This modular library offers a suite of tools for managing Communications, Content, Marketing, Inventory, Orders, Finance, and User control. Additionally, it includes multipurpose website features such as checkout, Login, Booking, Reviews, Blog, and Marketplace.
+
+## Core Modules
+
+- `communications`: Management of communications like emails, SMS, notifications, etc.
+- `content_management`: Content management, including page, blog, and multimedia content management.
+- `marketing`: Marketing campaign management, conversion tracking, and analytics.
+- `inventory`: Inventory management for products and stock.
+- `orders`: Processing and tracking customer orders.
+- `finance`: Features related to billing, accounting, and financial management.
+- `user_management`: User administration, permissions, roles, and security management.
+
+## Website Features
+
+- `checkout`: Payment processing and shopping cart management.
+- `login`: User authentication and authorization management.
+- `booking`: Booking system for appointments, events, or services.
+- `reviews`: System for user ratings and feedback.
+- `blog`: Comprehensive blog functionality to create and share content.
+- `marketplace`: Tools for building an online marketplace or store.
+- `gallery`: Image gallery and multimedia content management.
+
+## Installation
+
+You can install `stela_control` using pip:
+
+```shell
+pip install stela_control
+
+After installation, add the necessary applications to your INSTALLED_APPS in your Django settings.py configuration:
+
+INSTALLED_APPS = [
+    # ... other installed apps ...
+    'stela_control',
+    # ... more stela_control_dynamic apps as required ...
+]
+
+stela_control_dynamic is open-source software licensed under the MIT license.
+
+Make sure to adjust the installation instructions as necessary to fit the actual package name and commands for your CRM system. Once your modules and documentation are formalized, provide the actual links in the placeholders for `documentation` and `CONTRIBUTING.md`.
+
+Also, consider adding a `CONTRIBUTING.md` file with contribution guidelines to encourage and help contributors understand how they can help with your project. The license link at the bottom should point to the actual `LICENSE` file in your repository.
+
