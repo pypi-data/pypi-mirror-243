@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: ytsaurus-yson
+Version: 0.4.5
+Summary: C++ bindings for YSON.
+Author: YTsaurus
+Author-email: dev@ytsaurus.tech
+License: Apache 2.0
+Keywords: yt python bindings yson
+Requires-Dist: ytsaurus-client >=0.12.0
+
+YTsaurus — is a platform for distributed storage and processing of large amounts of data with support of MapReduce, distributed file system and NoSQL key-value storage.
+
+This library provides C++ bindings for YSON format.
