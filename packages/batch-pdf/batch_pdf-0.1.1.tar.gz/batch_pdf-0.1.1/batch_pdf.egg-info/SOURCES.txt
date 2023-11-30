@@ -1,0 +1,17 @@
+README.md
+setup.py
+batch_pdf/__init__.py
+batch_pdf.egg-info/PKG-INFO
+batch_pdf.egg-info/SOURCES.txt
+batch_pdf.egg-info/dependency_links.txt
+batch_pdf.egg-info/not-zip-safe
+batch_pdf.egg-info/requires.txt
+batch_pdf.egg-info/top_level.txt
+batch_pdf/pdfbase/__init__.py
+batch_pdf/pdfbase/batch_list.py
+batch_pdf/pdfbase/pdf_doc.py
+batch_pdf/pdfgen/__init__.py
+batch_pdf/pdfgen/pdf_generator.py
+test/__init__.py
+test/origin.py
+test/pdf_wrapper.py
