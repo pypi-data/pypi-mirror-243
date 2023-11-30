@@ -1,0 +1,9 @@
+# Build and Release Folders
+build/
+build-rel/
+
+# temp files
+.*~
+*.user
+*.pyc
+*.ipynb_checkpoints
