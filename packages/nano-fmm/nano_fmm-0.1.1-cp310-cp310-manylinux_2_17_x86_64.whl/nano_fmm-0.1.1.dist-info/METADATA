@@ -1,0 +1,40 @@
+Metadata-Version: 2.1
+Name: nano_fmm
+Version: 0.1.1
+Summary: c++/python version of coordtransform
+Author-Email: tzx <dvorak4tzx@gmail.com>
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Project-URL: Homepage, https://nano-fmm.readthedocs.io
+Requires-Python: >=3.7
+Requires-Dist: fire
+Requires-Dist: loguru
+Requires-Dist: numpy
+Requires-Dist: pytest; extra == "test"
+Provides-Extra: test
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# nano-fmm
+
+
+Online document: **[readthedocs](http://nano-fmm.readthedocs.io/)**
+
+<!--intro-start-->
+
+TODO
+
+<!--intro-end-->
+
+
+TODO:
+
+- collapse
+- export geojson with random stroke (should be consistent)
