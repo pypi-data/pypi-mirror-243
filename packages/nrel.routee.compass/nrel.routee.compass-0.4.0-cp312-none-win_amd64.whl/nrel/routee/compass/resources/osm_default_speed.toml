@@ -1,0 +1,24 @@
+parallelism = 2
+
+[graph]
+edge_list_input_file = "edges-compass.csv.gz"
+vertex_list_input_file = "vertices-compass.csv.gz"
+verbose = true
+
+[traversal]
+type = "speed_table"
+speed_table_input_file = "edges-posted-speed-enumerated.txt.gz"
+speed_unit = "kilometers_per_hour"
+output_distance_unit = "miles"
+output_time_unit = "minutes"
+
+[plugin]
+input_plugins = [
+    { type = "grid_search" },
+    { type = "vertex_rtree", distance_tolerance = 0.2, distance_unit = "kilometers", vertices_input_file = "vertices-compass.csv.gz" },
+]
+output_plugins = [
+    { type = "summary" },
+    { type = "traversal", route = "geo_json", geometry_input_file = "edges-geometries-enumerated.txt.gz" },
+    { type = "uuid", uuid_input_file = "vertices-uuid-enumerated.txt.gz" },
+]
