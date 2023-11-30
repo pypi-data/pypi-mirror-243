@@ -1,0 +1,8 @@
+aiohttp[speedups]
+idem>=17.0.0
+acct
+pop>=20.0.0
+pop-config>=7.0.2
+rend>=6.3.1
+pop-loop>=1.0.4
+PyYaml>=6.0.1
