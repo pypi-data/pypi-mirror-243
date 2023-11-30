@@ -1,0 +1,32 @@
+[build-system]
+build-backend = "cmeel"
+requires = [
+  "cmeel-console-bridge",
+  "cmeel-tinyxml",
+  # "cmeel-tinyxml2",
+  "cmeel-urdfdom-headers",
+  "cmeel[build]"
+]
+
+[project]
+dependencies = [
+  "cmeel-console-bridge",
+  "cmeel-tinyxml"
+]
+description = "cmeel distribution for urdfdom, URDF parser"
+license = "BSD-3-Clause"
+name = "cmeel-urdfdom"
+readme = "urdfdom/README.md"
+requires-python = ">= 3.8"
+version = "3.1.1.1"
+
+[project.urls]
+homepage = "https://github.com/cmake-wheel/cmeel-urdfdom"
+
+[tool.cmeel]
+has-sitelib = false
+source = "urdfdom"
+upstream-version = "3.1.1"
+
+[tool.tomlsort]
+all = true

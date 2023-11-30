@@ -1,0 +1,142 @@
+--- urdfdom/urdf_parser/CMakeLists.txt.orig	2022-05-30 18:55:55.463032219 +0200
++++ urdfdom/urdf_parser/CMakeLists.txt	2022-05-30 18:56:28.703317534 +0200
+@@ -5,8 +5,6 @@
+ 
+   add_library(${add_urdfdom_library_LIBNAME} SHARED
+     ${add_urdfdom_library_SOURCES})
+-  target_include_directories(${add_urdfdom_library_LIBNAME} SYSTEM PUBLIC
+-    ${TinyXML_INCLUDE_DIRS})
+   target_include_directories(${add_urdfdom_library_LIBNAME} PUBLIC
+     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+     "$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>")
+@@ -14,11 +12,12 @@
+     ${add_urdfdom_library_LINK}
+     ${console_bridge_link_libs}
+     ${urdfdom_headers_link_libs}
+-    ${TinyXML_LIBRARIES})
++    cmeel::tinyxml)
+   if(NOT CMAKE_CXX_STANDARD)
+     target_compile_features(${add_urdfdom_library_LIBNAME} PUBLIC cxx_std_14)
+   endif()
+   set_target_properties(${add_urdfdom_library_LIBNAME} PROPERTIES
++    INSTALL_RPATH "\$ORIGIN"
+     DEFINE_SYMBOL URDFDOM_EXPORTS
+     SOVERSION ${URDF_MAJOR_MINOR_VERSION})
+ endmacro()
+--- urdfdom/CMakeLists.txt.orig	2022-05-30 17:25:53.000000000 +0200
++++ urdfdom/CMakeLists.txt	2022-05-30 18:57:48.347994923 +0200
+@@ -44,16 +44,7 @@
+ 
+ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
+ 
+-find_package(tinyxml_vendor QUIET)
+-find_package(TinyXML)
+-# bionic has not cmake module, workaround
+-if (NOT TinyXML_FOUND AND UNIX)
+-  include(FindPkgConfig)
+-  pkg_check_modules (TinyXML tinyxml)
+-else()
+-  # Make it fail in platforms without pkgconfig
+-  find_package(TinyXML REQUIRED) # bionic has not cmake module
+-endif()
++find_package(tinyxml REQUIRED)
+ find_package(urdfdom_headers 1.0 REQUIRED)
+ find_package(console_bridge_vendor QUIET) # Provides console_bridge 0.4.0 on platforms without it.
+ find_package(console_bridge REQUIRED)
+@@ -78,7 +69,7 @@
+ 
+ set(PKG_NAME ${PROJECT_NAME})
+ set(PKG_LIBRARIES urdfdom_sensor urdfdom_model_state urdfdom_model urdfdom_world)
+-set(PKG_DEPENDS urdfdom_headers console_bridge)
++set(PKG_DEPENDS urdfdom_headers console_bridge tinyxml)
+ set(PKG_EXPORTS urdfdom)
+ set(cmake_conf_file "cmake/urdfdom-config.cmake")
+ configure_file("${CMAKE_CURRENT_SOURCE_DIR}/${cmake_conf_file}.in" "${CMAKE_BINARY_DIR}/${cmake_conf_file}" @ONLY)
+--- urdfdom/cmake/urdfdom-config.cmake.in.orig	2022-05-30 17:25:53.000000000 +0200
++++ urdfdom/cmake/urdfdom-config.cmake.in	2022-10-04 11:09:17.219100371 +0200
+@@ -3,7 +3,7 @@
+ endif()
+ set(@PKG_NAME@_CONFIG_INCLUDED TRUE)
+ 
+-set(@PKG_NAME@_INCLUDE_DIRS "${@PROJECT_NAME@_DIR}/@RELATIVE_PATH_CMAKE_DIR_TO_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@" "@TinyXML_INCLUDE_DIRS@")
++set(@PKG_NAME@_INCLUDE_DIRS "${@PROJECT_NAME@_DIR}/@RELATIVE_PATH_CMAKE_DIR_TO_PREFIX@/@CMAKE_INSTALL_INCLUDEDIR@")
+ 
+ foreach(lib @PKG_LIBRARIES@)
+   set(onelib "${lib}-NOTFOUND")
+--- urdfdom/cmake/FindTinyXML.cmake	2022-10-12 09:21:09.263583657 +0200
++++ /dev/null	2022-10-04 20:19:46.473897917 +0200
+@@ -1,74 +0,0 @@
+-##################################################################################################
+-# 
+-# CMake script for finding TinyXML.
+-# 
+-# Input variables:
+-# 
+-# - TinyXML_ROOT_DIR (optional): When specified, header files and libraries will be searched for in
+-#     ${TinyXML_ROOT_DIR}/include
+-#     ${TinyXML_ROOT_DIR}/libs
+-#   respectively, and the default CMake search order will be ignored. When unspecified, the default
+-#   CMake search order is used.
+-#   This variable can be specified either as a CMake or environment variable. If both are set,
+-#   preference is given to the CMake variable.
+-#   Use this variable for finding packages installed in a nonstandard location, or for enforcing
+-#   that one of multiple package installations is picked up.
+-# 
+-# 
+-# Cache variables (not intended to be used in CMakeLists.txt files)
+-# 
+-# - TinyXML_INCLUDE_DIR: Absolute path to package headers.
+-# - TinyXML_LIBRARY: Absolute path to library.
+-# 
+-# 
+-# Output variables:
+-# 
+-# - TinyXML_FOUND: Boolean that indicates if the package was found
+-# - TinyXML_INCLUDE_DIRS: Paths to the necessary header files
+-# - TinyXML_LIBRARIES: Package libraries
+-# 
+-# 
+-# Example usage:
+-# 
+-#  find_package(TinyXML)
+-#  if(NOT TinyXML_FOUND)
+-#    # Error handling
+-#  endif()
+-#  ...
+-#  include_directories(${TinyXML_INCLUDE_DIRS} ...)
+-#  ...
+-#  target_link_libraries(my_target ${TinyXML_LIBRARIES})
+-# 
+-##################################################################################################
+-
+-# Get package location hint from environment variable (if any)
+-if(NOT TinyXML_ROOT_DIR AND DEFINED ENV{TinyXML_ROOT_DIR})
+-  set(TinyXML_ROOT_DIR "$ENV{TinyXML_ROOT_DIR}" CACHE PATH
+-      "TinyXML base directory location (optional, used for nonstandard installation paths)")
+-endif()
+-
+-# Search path for nonstandard package locations
+-if(TinyXML_ROOT_DIR)
+-  set(TinyXML_INCLUDE_PATH PATHS "${TinyXML_ROOT_DIR}/include" NO_DEFAULT_PATH)
+-  set(TinyXML_LIBRARY_PATH PATHS "${TinyXML_ROOT_DIR}/lib"     NO_DEFAULT_PATH)
+-endif()
+-
+-# Find headers and libraries
+-find_path(TinyXML_INCLUDE_DIR NAMES tinyxml.h PATH_SUFFIXES "tinyxml" ${TinyXML_INCLUDE_PATH})
+-find_library(TinyXML_LIBRARY  NAMES tinyxml   PATH_SUFFIXES "tinyxml" ${TinyXML_LIBRARY_PATH})
+-
+-mark_as_advanced(TinyXML_INCLUDE_DIR
+-                 TinyXML_LIBRARY)
+-
+-# Output variables generation
+-include(FindPackageHandleStandardArgs)
+-find_package_handle_standard_args(TinyXML DEFAULT_MSG TinyXML_LIBRARY
+-                                                      TinyXML_INCLUDE_DIR)
+-
+-set(TinyXML_FOUND ${TINYXML_FOUND}) # Enforce case-correctness: Set appropriately cased variable...
+-unset(TINYXML_FOUND) # ...and unset uppercase variable generated by find_package_handle_standard_args
+-
+-if(TinyXML_FOUND)
+-  set(TinyXML_INCLUDE_DIRS ${TinyXML_INCLUDE_DIR})
+-  set(TinyXML_LIBRARIES ${TinyXML_LIBRARY})
+-endif()
