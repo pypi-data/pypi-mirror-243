@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pebbleauthclient"
+version = "0.1.4"
+authors = [
+  { name="Guillaume MODARD", email="guillaumemodard@gmail.com" },
+]
+description = "Pebble client tool for authenticate user and licence management written in Python"
+readme = "README.rst"
+requires-python = ">=3.9"
+dependencies = [
+    "cryptography>=41.0.5",
+    "PyJWT>=2.8.0"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://pebble-solutions.github.io/pebble-auth-client-py/"
+Repository = "https://github.com/pebble-solutions/pebble-auth-client-py/"
