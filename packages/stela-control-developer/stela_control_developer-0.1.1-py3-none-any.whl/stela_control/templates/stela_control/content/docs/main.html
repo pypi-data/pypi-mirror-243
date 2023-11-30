@@ -1,0 +1,131 @@
+{% extends 'stela_control/content/main/index.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block styles %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@800&display=swap');
+    .btn-shappire {
+        background: #2f1875 !important;
+        color: #fff !important;
+        border: solid 1px #2f1875!important;
+        box-shadow: 2px 2px 8px #6562e96e;
+        transition: all .3s ease-in-out;
+      }
+      .btn-shappire:hover {
+        background: #fff !important;
+        border: solid 2px #2f1875;
+        box-shadow: 2px 2px 8px #6562e96e;
+        color: #2f1875 !important;
+      }
+      .btn-shappire-outline {
+        background: #fff !important;
+        color: #2f1875 !important;
+        border: solid 1px #2f1875!important;
+        box-shadow: 2px 2px 8px #6562e96e;
+        transition: all .3s ease-in-out;
+      }
+</style>
+{% endblock  %}
+{% block content %}
+<div class="background">
+    <div class="container min-vh-80">
+        <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
+            <h1 class="text-center text-grey fs-2 py-5">{% trans "Mimopaws LLC Legal Provisions" %}</h1>
+            <div class="row justify-content-evenly">
+                <div class="col-lg-4 vh-80 b-25px bg-white mb-4 scroll-auto p-5">
+                    <h3 class="fs-6 text-grey">{% trans "Doc Overview" %}</h3>
+                    <ul class="list work">
+                        {% for doc in policies %}
+                            {% if doc.section == doc.section %}
+                                    <li class="pointer">
+                                        <i class="fa-sharp fa-solid fa-caret-right arrow"></i> &nbsp; 
+                                        <span class="title fw-bold">{{doc.section}}</span> 
+                                        <ul class="over-drop py-3">
+                                            {% for item in doc.content.all %}
+                                                <li>
+                                                    <a href="#get-{{item.clause}}">{{item.clause}}</a> <button class="btn btn-sm btn-warning mx-3" data-bs-toggle="modal" data-bs-target="#updates">e</button> <button class="btn btn-sm btn-danger">r</button>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <div class="row justify-content-center my-3 z-max">
+                        <div class="col-lg-5">
+                            <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#clause">{% trans "Load Content" %}</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 min-vh-50 b-25px bg-white p-5 mb-4">
+                    {% for doc in policies %}
+                        {% if doc.section == doc.section %}
+                            <h1 class="text-grey text-center rubik fs-3">{{doc.section}}</h1>
+                            {% for item in doc.content.all %}
+                                <div>
+                                    <div id="get-{{item.clause}}" class="py-3"></div>
+                                    <h3 class="text-grey border-start border-5 border-site ps-4 rubik fs-4">{{item.clause}}</h3>
+                                    <p class="text-justify work">{{item.clause_content|safe}}</p>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="clause" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="modal-body mid-modal-scroll modal1">    
+            
+            <p class="response-footer text-link fw-bold oxanium"></p>
+            <input type="hidden" name="form-id" value="new-about1">
+            <div class="row justify-content-end p-3">
+                <div class="col-lg-4">
+                    <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                </div>
+            </div>
+        </div>    
+    </form>
+    </div>
+    </div>
+</div>
+<div class="modal fade" id="updates" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="modal-body mid-modal-scroll modal1">    
+            
+            <p class="response-footer text-link fw-bold oxanium"></p>
+            <input type="hidden" name="form-id" value="new-about1">
+            <div class="row justify-content-end p-3">
+                <div class="col-lg-4">
+                    <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                </div>
+            </div>
+        </div>    
+    </form>
+    </div>
+    </div>
+</div>
+{% endblock %}
+{% block scripts %}
+    <script src="{% static 'js/site/docs.js' %}"></script>
+{% endblock  %}
