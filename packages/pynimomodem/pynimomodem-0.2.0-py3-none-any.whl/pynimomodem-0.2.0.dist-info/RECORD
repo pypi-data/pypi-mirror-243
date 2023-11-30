@@ -1,0 +1,14 @@
+pynimomodem/__init__.py,sha256=0C5FP4ome6jvAraMUF5oy4HilK-fIFlDW2E27vTy3ug,938
+pynimomodem/atcommandbuffer.py,sha256=ThLbj1cH7XnBQL-nNpGbdBXW06Yr60q8s0uhBj72S3w,14069
+pynimomodem/constants.py,sha256=Q8M8s9JSoHTuJJA5xaaB2J-sHAArDCy67QwR1wTlyCM,15000
+pynimomodem/crcxmodem.py,sha256=WnxN4GDEQfzwSuWJbz5V7sJ-AugATAVXZYqud9zkfIE,2593
+pynimomodem/location.py,sha256=nNLx5F-uDGl9PMhg_Z4rH57-d2MD2pMFF_xasi-I9lA,19530
+pynimomodem/message.py,sha256=BYOikgDc-pD-L75y8CuN3sngH7RjKbgMyCGhnV7JcI0,5651
+pynimomodem/modem.py,sha256=FQYVtdju-4hW9TlOXbso1af_XnIELuxf0-cODHf5lPI,44677
+pynimomodem/nimoserial.py,sha256=fO7lUnPKk-rlH62XCDFEt3oPoXTvHnXSBio7DZGUSDU,5744
+pynimomodem/nimoutils.py,sha256=4jhf1Cd8okhezaDf-bYM0v7hcDHNXdlhQAAjozSk14Q,1572
+pynimomodem/s_registers.py,sha256=N45UplGay90rSHPUrkFah1Z94PmqVfcL7-uOMcsol3o,7671
+pynimomodem-0.2.0.dist-info/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+pynimomodem-0.2.0.dist-info/WHEEL,sha256=y3eDiaFVSNTPbgzfNn0nYn5tEn1cX6WrdetDlQM4xWw,83
+pynimomodem-0.2.0.dist-info/METADATA,sha256=SiDfBCb7Gl1xx8-zKT6UrlDWsmIRMGdwHEwSJ2opWGA,5154
+pynimomodem-0.2.0.dist-info/RECORD,,
