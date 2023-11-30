@@ -1,0 +1,98 @@
+[tool.poetry]
+name = "sdsstools"
+version = "1.5.0"
+description = "Small tools for SDSS products"
+authors = ["José Sánchez-Gallego <gallegoj@uw.edu>"]
+license = "BSD-3-Clause"
+readme = "README.md"
+homepage = "https://github.com/sdss/sdsstools"
+repository = "https://github.com/sdss/sdsstools"
+keywords = ["astronomy", "software"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Topic :: Documentation :: Sphinx",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+
+[tool.poetry.dependencies]
+python = "^3.8,<3.13"
+pyyaml = ">=4.0"
+pygments = "^2.5.2"
+invoke = "^2.0.0"
+packaging = ">=20.4"
+daemonocle = "^1.0.2"
+typing-extensions = "^4.6.3"
+rich = "^13.4.2"
+python-json-logger = "^2.0.7"
+
+[tool.poetry.group.dev.dependencies]
+ipython = [{version = ">=8.14.0", python = ">=3.9"},
+           {version = ">=8.0.0", python = ">=3.8,<3.9"}]
+flake8 = ">=3.7.9"
+doc8 = ">=0.8.0"
+isort = ">=5.0.0"
+ipdb = ">=0.13.3"
+toml = ">=0.10.0"
+pytest = ">=6.0.0"
+pytest-sugar = ">=0.9.4"
+pytest-cov = ">=2.10.0"
+codecov = ">=2.1.8"
+twine = ">=3.1.1"
+wheel = ">=0.33.6"
+click = ">=8.0.0"
+pytest-click = ">=0.3"
+pytest-mock = ">=3.2.0"
+pytest-asyncio = ">=0.14.0"
+black = {version = ">=20.8b1", allow-prereleases = true}
+ruff = ">=0.0.285"
+
+[tool.poetry.scripts]
+sdss = 'sdsstools.cli:main'
+daemonize = 'sdsstools.daemonizer:daemonize'
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+fast = true
+
+[tool.ruff]
+line-length = 88
+target-version = 'py311'
+select = ["E", "F", "I"]
+unfixable = ["F841"]
+exclude = ["**/_vendor"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401", "F403", "E402"]
+
+[tool.ruff.isort]
+known-first-party = ["sdsstools"]
+lines-after-imports = 2
+section-order = ["future", "standard-library", "typing", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.isort.sections]
+typing = ["typing"]
+
+[tool.pytest.ini_options]
+# Disable warnings system because it interferes with the logger warning capture.
+addopts = "--cov sdsstools --cov-report html --cov-report xml --cov-report term -p no:warnings"
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+branch = true
+include = ["*/src/sdsstools/*"]
+omit = [
+    "*/__main__.py",
+    "*/__init__.py",
+    "*/_vendor/*",
+    "*/cli.py",
+    "*/_tasks.py",
+    "*/utils.py"
+]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
