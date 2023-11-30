@@ -1,0 +1,33 @@
+
+{
+    "extension_to_folder":
+    {
+        "jpg": "images",
+        "jpeg": "images",
+        "png": "images",
+        "gif": "images",
+
+        "svg": "icons",
+
+        "woff": "fonts",
+        "woff2": "fonts",
+
+        "json": "data",
+
+        "doc": "docs",
+        "docx": "docs",
+        "pdf": "docs",
+        "txt": "docs",
+
+        ".mp3": "audio",
+        ".ogg": "audio",
+        ".flac": "audio",
+        ".wav": "audio",
+
+        "mp4": "video",
+        "mkv": "video",
+        "avi": "video",
+        "flv": "video",
+        "mov": "video"
+    }
+}

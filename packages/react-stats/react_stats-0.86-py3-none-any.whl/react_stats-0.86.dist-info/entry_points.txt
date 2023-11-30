@@ -1,0 +1,6 @@
+[console_scripts]
+ahoy = react_stats.ahoy:main
+auto-assets = react_stats.auto_assets:main
+get-stats = react_stats.get_stats:main
+make-assets = react_stats.make_assets:main
+
