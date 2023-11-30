@@ -1,0 +1,20 @@
+<div class="paper-hierarchy-filter mb-3">
+  <ul class="paper-hierarchy-filter__list nav">
+    {% if title %}
+      <li class="paper-hierarchy-filter__item nav-item">
+        <span class="paper-hierarchy-filter__link paper-hierarchy-filter__caption">
+          {{ title }}:
+        </span>
+      </li>
+    {% endif %}
+
+    {% for choice in choices %}
+      <li class="paper-hierarchy-filter__item nav-item">
+        <a class="paper-hierarchy-filter__link nav-link{% if choice.selected %} paper-hierarchy-filter__link--active{% endif %}"
+           href="{{ choice.query_string|iriencode }}">
+          {{ choice.display }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
