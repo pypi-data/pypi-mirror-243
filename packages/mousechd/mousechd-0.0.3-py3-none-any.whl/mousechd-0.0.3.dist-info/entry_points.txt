@@ -1,0 +1,2 @@
+[console_scripts]
+mousechd = mousechd.__main__:main
