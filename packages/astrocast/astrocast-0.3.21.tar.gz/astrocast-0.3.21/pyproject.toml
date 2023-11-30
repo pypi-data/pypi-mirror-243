@@ -1,0 +1,91 @@
+[tool.poetry]
+name = "astrocast"
+version = "0.3.21"
+description = "Package to analyze calcium fluorescence events in astrocytes"
+authors = ["Jan Philipp Reising <jan.reising@ki.se>", "Ana Cristina González"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+h5py = "^3.9.0"
+hdbscan = "^0.8.33"
+matplotlib = "^3.8.0"
+multiprocess = "^0.70.15"
+networkx = "^3.1"
+pandas = "^2.1.0"
+powerlaw = "^1.5"
+pynwb = "^2.5.0"
+deprecated = "^1.2.14"
+deprecation = "^2.1.0"
+peakutils = "^1.3.4"
+holoviews = "^1.17.1"
+pointpats = "^2.3.0"
+psutil = "^5.9.5"
+scipy = "*"
+seaborn = "^0.12.2"
+humanize = "^4.8.0"
+pyyaml = "^6.0.1"
+prettytable = "^3.9.0"
+colorama = "^0.4.6"
+shiny = "^0.5.1"
+pyinform = "^0.2.0"
+opencv-python = "^4.8.0.76"
+scikit-image = "^0.21.0"
+scikit-learn = "^1.3.0"
+tqdm = "^4.66.1"
+tiledb = "^0.23.0"
+tifffile = "^2023.8.30"
+xxhash = "^3.3.0"
+numpy = "*"
+xarray = "^2023.8.0"
+colorcet = "^3.0.1"
+dask = "^2023.9.2"
+czifile = "^2019.7.2"
+awkward = "^2.4.2"
+dask-image = "^2023.8.1"
+fastcluster = "^1.2.6"
+torch = "2.0.0"
+jnormcorre = "^0.0.7"
+dtaidistance = "^2.3.10"
+tsfresh = "^0.20.1"
+tslearn = "^0.6.2"
+umap-learn = { version = "*", markers = "sys_platform == 'win32' or sys_platform == 'linux'" }
+tensorflow = "^2.13.0"
+keras = "*"
+datashader = "^0.15.2"
+llvmlite = "~0.39"
+gdown = "^4.7.1"
+climage = "^0.2.0"
+simple-slurm = "^0.2.6"
+pydantic = { version = "^1", optional = true }
+jupyterlab = "^4.0.8"
+ipywidgets = "^8.1.1"
+napari = { version = "0.4.14", optional = true }
+napari-plot = { version = "^0.1.5", optional = true }
+napari-time-series-plotter = { version = "*", optional = true }
+pytest-cov = { version = "^4.1.0", optional = true }
+pytest-xdist = { version = "^3.3.1", optional = true }
+pytest = { extras = ["testing"], version = "^7.4.3", optional = true }
+sphinx = { version = "^7.2.6", optional = true }
+sphinx-rtd-theme = { version = "^1.3.0", optional = true }
+sphinx-autodoc-typehints = { version = "^1.25.2", optional = true }
+dtwparallel = "^0.9.40"
+
+
+[tool.poetry.scripts]
+astrocast = 'astrocast.cli_interfaces:cli'
+
+[tool.poetry.extras]
+video_player = ["napari", "napari-plot", "napari-time-series-plotter", "pydantic"]
+testing = ["pytest", "pytest-cov", "pytest-xdist"]
+doc = ["sphinx", "sphinx-rtd-theme", "sphinx-autodoc-typehints"]
+all = ["napari", "napari-plot", "napari-time-series-plotter", "pydantic", "pytest", "pytest-cov", "pytest-xdist", "sphinx", "sphinx-rtd-theme", "sphinx-autodoc-typehints"]
+
+[tool.pytest.ini_options]
+markers = [
+    "tensorflow: marks tests as using tensorflow (deselect with '-m \"not tensorflow\"')",
+    "vis: marks tests as visualization tests (deselect with '-m \"not vis\"')",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
