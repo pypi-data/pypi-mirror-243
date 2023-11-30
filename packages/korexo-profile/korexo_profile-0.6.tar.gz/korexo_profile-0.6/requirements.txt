@@ -1,0 +1,11 @@
+setuptools
+setuptools_scm
+pandas
+numpy
+scipy
+lasio
+
+pytest
+sphinx
+sphinx_rtd_theme
+nbsphinx
