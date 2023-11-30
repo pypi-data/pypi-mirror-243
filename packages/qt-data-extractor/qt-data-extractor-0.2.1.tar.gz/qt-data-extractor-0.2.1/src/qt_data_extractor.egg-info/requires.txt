@@ -1,0 +1,17 @@
+pandas
+openpyxl
+PySide6
+data-agent>=0.2.0
+data-agent-osisoft-pi>=0.3.0
+data-agent-zip
+
+[:python_version < "3.8"]
+importlib-metadata
+
+[testing]
+setuptools
+pytest
+pytest-cov
+
+[winexe]
+pyinstaller

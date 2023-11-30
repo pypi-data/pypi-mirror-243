@@ -1,0 +1,247 @@
+name: Release Process
+
+on:
+  push:
+    # Avoid using all the resources/limits available by checking only
+    # relevant branches and tags. Other branches can be checked via PRs.
+    branches: [main]
+    tags: ['v[0-9]*', '[0-9]+.[0-9]+*']  # Match tags that resemble a version
+  pull_request:  # Run in every PR
+  workflow_dispatch:  # Allow manually triggering the workflow
+  schedule:
+    # Run roughly every 15 days at 00:00 UTC
+    # (useful to check if updates on dependencies break the package)
+    - cron: '0 0 1,16 * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: >-
+    ${{ github.workflow }}-${{ github.ref_type }}-
+    ${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      wheel-distribution: ${{ steps.wheel-distribution.outputs.path }}
+    steps:
+      - uses: actions/checkout@v3
+        with: {fetch-depth: 0}  # deep clone for setuptools-scm
+      - uses: actions/setup-python@v4
+        id: setup-python
+        with: {python-version: "3.11"}
+      - name: Run static analysis and format checkers
+        run: pipx run pre-commit run --all-files --show-diff-on-failure
+      - name: Build package distribution files
+        run: >-
+          pipx run --python '${{ steps.setup-python.outputs.python-path }}'
+          tox -e clean,build
+      - name: Record the path of wheel distribution
+        id: wheel-distribution
+        run: echo "path=$(ls dist/*.whl)" >> $GITHUB_OUTPUT
+      - name: Store the distribution files for use in other stages
+        uses: actions/upload-artifact@v3
+        with:
+          name: python-distribution-files
+          path: dist/
+          retention-days: 1
+
+  publish-python-package:
+    needs: prepare
+    if: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with: {python-version: "3.11"}
+      - name: Retrieve pre-built distribution files
+        uses: actions/download-artifact@v3
+        with: {name: python-distribution-files, path: dist/}
+      - name: Publish Package
+        env:
+          TWINE_REPOSITORY: pypi
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+        run: pipx run tox -e publish
+
+  build-win-exe:
+    needs: prepare
+    runs-on: windows-latest
+    outputs:
+      windows-distribution: ${{ steps.windows-distribution.outputs.path }}
+    steps:
+      - uses: actions/checkout@v3
+        with: {fetch-depth: 0}  # deep clone for setuptools-scm
+      - uses: actions/setup-python@v4
+        id: setup-python
+        with: {python-version: "3.9"}
+
+      - name: Retrieve pre-built distribution files
+        uses: actions/download-artifact@v3
+        with: {name: python-distribution-files, path: dist/}
+      - name: Build Windows executable
+        run: pipx run tox -e winexe
+
+      - name: Record the path of windows distribution
+        id: windows-distribution
+        run: echo "path=$(ls dist/windows/*.exe)" >> $GITHUB_OUTPUT
+
+      - name: Store the distribution files for use in other stages
+        # `tests` and `publish` will use the same pre-built distributions,
+        # so we make sure to release the exact same package that was tested
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-distribution-files
+          path: dist/windows/
+          retention-days: 1
+
+  sign-win-exe:
+    needs: build-win-exe
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve pre-built Windows distribution files
+        uses: actions/download-artifact@v3
+        with: {name: windows-distribution-files, path: dist/windows/}
+      - name: Prepare output directory
+        run: mkdir -p dist/windows-signed
+
+        # https://www.ssl.com/how-to/cloud-code-signing-integration-with-github-actions/
+      - name: Sign Artifact
+        uses: sslcom/actions-codesigner@develop
+        with:
+          command: sign
+          # If we push a new tag - we use real creds, otherwise sandbox
+          username: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && secrets.ES_USERNAME || secrets.ES_USERNAME_SANDBOX }}
+          password: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && secrets.ES_PASSWORD || secrets.ES_PASSWORD_SANDBOX }}
+          credential_id: ${{  github.event_name == 'push' && contains(github.ref, 'refs/tags/') && secrets.ES_CREDENTIAL_ID || '' }}
+          # OAuth TOTP Secret (https://www.ssl.com/how-to/automate-esigner-ev-code-signing)
+          totp_secret: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && secrets.ES_TOTP_SECRET || secrets.ES_TOTP_SECRET_SANDBOX}}
+          environment_name: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && 'PROD' || 'TEST' }}
+          # Path of code object to be signed. (DLL, JAR, EXE, MSI files vb… )
+          file_path: '${GITHUB_WORKSPACE}/dist/windows/data-extractor.exe'
+          output_path: dist/windows-signed
+
+      - name: Upload Signed Files
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-signed-files
+          path: dist/windows-signed/
+          retention-days: 1
+
+  # Ref - https://github.com/aserto-dev/topaz/actions/runs/3689572963/workflow
+  build-msi-installer:
+    needs: sign-win-exe
+    runs-on: windows-latest
+    steps:
+      - name: Install go-msi
+        run: choco install -y "go-msi"
+      - name: Prepare PATH
+        shell: bash
+        run: |
+          echo "$WIX\\bin" >> $GITHUB_PATH
+          echo "C:\\Program Files\\go-msi" >> $GITHUB_PATH
+
+      - uses: actions/checkout@v3
+        with: {fetch-depth: 0}  # deep clone for setuptools-scm
+      - name: Retrieve pre-built distribution files
+        uses: actions/download-artifact@v3
+        with: {name: windows-signed-files, path: dist/windows-signed/}
+
+      - name: Build Windows Installer MSI from exe file
+        shell: bash
+        env:
+          MSI_VERSION: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && github.ref_name || '0.0.1' }}
+        run: |
+          go-msi make --arch amd64 --msi "dist/windows-installer/data-extractor-installer.msi" --out "$PWD/build" --version $MSI_VERSION
+
+      - name: Store the installer files for use in other stages
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-installer-files
+          path: dist/windows-installer/
+          retention-days: 1
+
+  sign-msi-installer:
+    needs: build-msi-installer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve pre-built Windows installer files
+        uses: actions/download-artifact@v3
+        with: {name: windows-installer-files, path: dist/windows-installer/}
+      - name: Retrieve previously signed files
+        uses: actions/download-artifact@v3
+        with: {name: windows-signed-files, path: dist/windows-signed/}
+
+        # https://www.ssl.com/how-to/cloud-code-signing-integration-with-github-actions/
+      - name: Sign Artifact
+        uses: sslcom/actions-codesigner@develop
+        with:
+          command: sign
+
+          # If we push a new tag - we use real creds, otherwise sandbox
+          username: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && secrets.ES_USERNAME || secrets.ES_USERNAME_SANDBOX }}
+          password: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && secrets.ES_PASSWORD || secrets.ES_PASSWORD_SANDBOX }}
+          credential_id: ${{  github.event_name == 'push' && contains(github.ref, 'refs/tags/') && secrets.ES_CREDENTIAL_ID || '' }}
+          # OAuth TOTP Secret (https://www.ssl.com/how-to/automate-esigner-ev-code-signing)
+          totp_secret: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && secrets.ES_TOTP_SECRET || secrets.ES_TOTP_SECRET_SANDBOX }}
+          environment_name: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') && 'PROD' || 'TEST' }}
+          # Path of code object to be signed. (DLL, JAR, EXE, MSI files vb… )
+          file_path: '${GITHUB_WORKSPACE}/dist/windows-installer/data-extractor-installer.msi'
+          output_path: dist/windows-signed
+
+      - name: Upload Signed Files
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-signed-files
+          path: dist/windows-signed/
+          retention-days: 1
+
+
+  create-pre-release:
+    needs: sign-msi-installer
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Retrieve pre-built distribution files
+        uses: actions/download-artifact@v3
+        with: {name: windows-signed-files, path: dist/windows-signed/}
+      - name: Create Pre Release
+        uses: ncipollo/release-action@v1
+        with:
+          name: Release ${{ github.ref }}
+          artifacts: "dist/windows-signed/*.*"
+          commit: main
+          tag: ${{ github.ref }}
+          draft: true
+          prerelease: true
+          omitBody: true
+          generateReleaseNotes: true
+
+  create-release:
+    needs: sign-msi-installer
+    if: ${{ github.event_name == 'push' && contains(github.ref, 'refs/tags/') }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Retrieve pre-built distribution files
+        uses: actions/download-artifact@v3
+        with: {name: windows-signed-files, path: dist/windows-signed/}
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        with:
+          name: Version ${{ github.ref_name }}
+          artifacts: "dist/windows-signed/*.*"
+          commit: main
+          tag: ${{ github.ref }}
+          draft: false
+          prerelease: false
+          omitBody: true
+          generateReleaseNotes: true
