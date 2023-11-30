@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0","apache-skywalking","pytz","rocketmq-client-python"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skywalking_trace"
+version = "1.2.0"
+authors = [
+  { name="xiaodong.yang", email="yymagicer@163.com" },
+]
+description = "skywalking trace print log  tool"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+]
+[project.urls]
+"Homepage" = "https://gitee.com/yymagicer/skywalking_trace.git"
+"Bug Tracker" = "https://gitee.com/yymagicer/skywalking_trace.git/issues"
