@@ -1,0 +1,4 @@
+# Core dependencies goes here
+boto_session_manager>=1.5.4,<2.0.0
+aws_cloudformation>=1.5.1,<2.0.0
+fire>=0.3.0,<1.0.0
