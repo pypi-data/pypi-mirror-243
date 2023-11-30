@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "herram"
+version = "1.0.0"
+authors = [
+  { name="Diego Mares Rodriguez", email="diegomares795283@gmail.com" },
+]
+description = "A small example package"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+"numpy==1.26.0",
+"matplotlib==3.8.1",
+"scipy==1.11.3"
+]
+
+[project.urls]
+Homepage = "https://github.com/DIEGOMR18059/ProyectoH-final"
+Issues = "https://github.com/DIEGOMR18059/ProyectoH-final/issues"
