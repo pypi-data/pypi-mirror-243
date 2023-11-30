@@ -1,0 +1,36 @@
+#[build-system]
+#requires = ["setuptools"]
+#build-backend = "setuptools.build_meta"
+#
+#[tool.setuptools.package-data]
+#"*" = ["*.ini"]
+#
+#[project]
+#name = "nazca4sdk"
+#authors = [
+#    {name = "APA Group", email = "info@apagroup.pl"},
+#]
+#description = "N4 package"
+#readme = "README.md"
+#license = {text ="Apache License 2.0"}
+#version = '14.14.14'
+#dependencies = [
+#	"numpy~=1.1",
+#	"pandas",
+#	"pyyaml",
+#	"mysql-connector-python~=8.0.33",
+#	"configparser",
+#	"py",
+#	"tzlocal",
+#	"six",
+#	"requests",
+#	"pydantic~=1.1",
+#	"clickhouse_driver",
+#	"urllib3",
+#	"kafka-python",
+#	"datetime",
+#	"typing",
+#	"dask",
+#	"clickhouse-connect",
+#	"dependency_injector==4.41.0"
+#]
