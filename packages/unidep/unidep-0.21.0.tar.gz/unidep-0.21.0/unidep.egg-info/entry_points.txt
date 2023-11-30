@@ -1,0 +1,5 @@
+[console_scripts]
+unidep = unidep:main
+
+[setuptools.finalize_distribution_options]
+unidep = unidep:setuptools_finalizer
