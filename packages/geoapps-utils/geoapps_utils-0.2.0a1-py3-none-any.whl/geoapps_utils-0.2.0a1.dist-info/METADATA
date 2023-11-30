@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: geoapps-utils
+Version: 0.2.0a1
+Summary: Geoapps Utils
+Home-page: https://mirageoscience.com
+License: MIT
+Author: Mira Geoscience
+Author-email: support@mirageoscience.com
+Requires-Python: >=3.9,<3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Provides-Extra: dash
+Requires-Dist: Pillow
+Requires-Dist: dash (>=2.12,<2.13) ; extra == "dash"
+Requires-Dist: geoh5py (>=0.8.0rc1,<0.9.0)
+Requires-Dist: h5py
+Requires-Dist: numpy (>=1.23.5,<1.24.0)
+Requires-Dist: plotly (>=5.13.1,<5.14.0) ; extra == "dash"
+Requires-Dist: pyqtwebengine (>=5.15,<5.16) ; extra == "dash"
+Requires-Dist: pyside2 (>=5.15,<5.16) ; extra == "dash"
+Requires-Dist: scipy (>=1.10.1,<1.11.0)
