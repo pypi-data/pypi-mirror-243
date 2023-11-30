@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+ei_glossary/__init__.py
+ei_glossary/core.py
+ei_glossary/utils.py
+ei_glossary.egg-info/PKG-INFO
+ei_glossary.egg-info/SOURCES.txt
+ei_glossary.egg-info/dependency_links.txt
+ei_glossary.egg-info/requires.txt
+ei_glossary.egg-info/top_level.txt
+tests/test_utils.py

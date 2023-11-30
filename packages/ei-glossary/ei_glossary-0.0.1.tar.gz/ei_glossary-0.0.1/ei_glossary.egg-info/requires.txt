@@ -1,0 +1,17 @@
+Levenshtein
+pandas
+requests
+
+[dev]
+build
+pre-commit
+pylint
+pytest
+pytest-cov
+setuptools
+
+[testing]
+ei_glossary
+pytest
+pytest-cov
+python-coveralls
