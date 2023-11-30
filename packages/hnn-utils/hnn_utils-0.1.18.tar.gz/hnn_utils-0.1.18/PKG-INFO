@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: hnn_utils
+Version: 0.1.18
+Summary: Various utilities used throughout my research
+Home-page: https://github.com/haydn-jones/hnn_utils
+Author: Haydn Jones
+Author-email: haydnjonest@gmail.com
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: lightning
+
+# hnn_utils
+Various utils / layers that might be used throughout my research.
+
+`pip install hnn_utils`
+
+Dependencies:
+- torch
+- rotary-embedding-torch
