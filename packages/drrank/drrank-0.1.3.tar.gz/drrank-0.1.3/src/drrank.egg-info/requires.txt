@@ -1,0 +1,11 @@
+numpy
+pandas
+scipy>=1.10.1
+gurobipy<11.0.0,>=10.0.1
+scikit-learn
+tqdm
+joblib>=1.1.0
+patsy>=0.5.2
+rpy2>=3.5.13
+matplotlib
+seaborn
