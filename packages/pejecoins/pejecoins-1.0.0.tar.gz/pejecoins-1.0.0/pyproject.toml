@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pejecoins"
+version = "1.0.0"
+authors = [
+  { name="Fran", email="frankmarin2401@gmail.com" },
+  { name="Luis", email="luisirach54@mgmail.com" },
+  { name="Rodrigo", email="xaxer312@gmail.com" },
+]
+description = "Proyecto enfocado en ayudar a resolver problemas de algebra"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+"numpy==1.26.0",
+"matplotlib==3.8.1",
+"scipy==1.11.3"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/FMarin2401/Pejecoins"
+"Bug Tracker" = "https://github.com/FMarin2401/Pejecoins/issues"
