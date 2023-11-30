@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+cudagrad/__init__.py
+cudagrad/mlp.py
+cudagrad/neuron.py
+cudagrad.egg-info/PKG-INFO
+cudagrad.egg-info/SOURCES.txt
+cudagrad.egg-info/dependency_links.txt
+cudagrad.egg-info/not-zip-safe
+cudagrad.egg-info/top_level.txt
+src/bindings.cpp
+src/tensor.hpp
+tests/test.py
+tests/test_mlp.py
