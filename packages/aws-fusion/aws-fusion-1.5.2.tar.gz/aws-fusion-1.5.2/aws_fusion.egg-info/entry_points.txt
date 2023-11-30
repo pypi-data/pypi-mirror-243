@@ -1,0 +1,2 @@
+[console_scripts]
+aws-fusion = aws_fusion.app:main
