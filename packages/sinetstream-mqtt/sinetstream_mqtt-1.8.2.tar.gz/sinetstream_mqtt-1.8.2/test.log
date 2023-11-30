@@ -1,0 +1,1482 @@
+docker_mqtt-test-1  | /opt/certs /opt/ss_test
+docker_mqtt-test-1  | /opt/ss_test
+docker_mqtt-test-1  | py38: install_deps> python -I -m pip install pytest-cov pytest-html pytest-timeout 'pytest>=6' sinetstream-iostream
+docker_mqtt-test-1  | .pkg: install_requires> python -I -m pip install hatchling
+docker_mqtt-test-1  | .pkg: _optional_hooks> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True hatchling.build
+docker_mqtt-test-1  | .pkg: get_requires_for_build_wheel> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True hatchling.build
+docker_mqtt-test-1  | .pkg: build_wheel> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True hatchling.build
+docker_mqtt-test-1  | py38: install_package_deps> python -I -m pip install 'paho-mqtt>=1.5' promise 'sinetstream>=1.8.1; python_version < "3.12"' 'sinetstream>=1.8.2; python_version >= "3.12"'
+docker_mqtt-test-1  | py38: install_package> python -I -m pip install --force-reinstall --no-deps /opt/ss_test/.tox/.tmp/package/1/sinetstream_mqtt-1.8.2-py3-none-any.whl
+docker_mqtt-test-1  | py38: commands[0]> pytest
+docker_mqtt-test-1  | ============================= test session starts ==============================
+docker_mqtt-test-1  | platform linux -- Python 3.8.18, pytest-7.4.3, pluggy-1.3.0
+docker_mqtt-test-1  | cachedir: .tox/py38/.pytest_cache
+docker_mqtt-test-1  | rootdir: /opt/ss_test
+docker_mqtt-test-1  | configfile: pyproject.toml
+docker_mqtt-test-1  | testpaths: tests
+docker_mqtt-test-1  | plugins: metadata-3.0.0, cov-4.1.0, timeout-2.2.0, html-4.1.1
+docker_mqtt-test-1  | collected 217 items
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_async_reader.py ...                                           [  1%]
+docker_mqtt-test-1  | tests/test_async_writer.py ...                                           [  2%]
+docker_mqtt-test-1  | tests/test_brokers.py ............                                       [  8%]
+docker_mqtt-test-1  | tests/test_certificate_auth.py ............                              [ 13%]
+docker_mqtt-test-1  | tests/test_exception.py ....                                             [ 15%]
+docker_mqtt-test-1  | tests/test_metrics.py ...                                                [ 17%]
+docker_mqtt-test-1  | tests/test_mqttv5.py ......................................              [ 34%]
+docker_mqtt-test-1  | tests/test_params.py ......................................              [ 52%]
+docker_mqtt-test-1  | tests/test_passwd_auth.py ......                                         [ 54%]
+docker_mqtt-test-1  | tests/test_pubsub.py .....                                               [ 57%]
+docker_mqtt-test-1  | tests/test_reader.py .............                                       [ 63%]
+docker_mqtt-test-1  | tests/test_tls.py ............................                           [ 76%]
+docker_mqtt-test-1  | tests/test_tls_data.py ............................                      [ 88%]
+docker_mqtt-test-1  | tests/test_tls_passwd_auth.py ......                                     [ 91%]
+docker_mqtt-test-1  | tests/test_will.py .                                                     [ 92%]
+docker_mqtt-test-1  | tests/test_writer.py .................                                   [100%]
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | =============================== warnings summary ===============================
+docker_mqtt-test-1  | .tox/py38/lib/python3.8/site-packages/sinetstream/utils.py:22
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py38/lib/python3.8/site-packages/sinetstream/utils.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+docker_mqtt-test-1  |     from pkg_resources import iter_entry_points
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | .tox/py38/lib/python3.8/site-packages/pkg_resources/__init__.py:2871
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py38/lib/python3.8/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sinetstreamplugin')`.
+docker_mqtt-test-1  |   Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+docker_mqtt-test-1  |     declare_namespace(pkg)
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py38/lib/python3.8/site-packages/_pytest/threadexception.py:73: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-181
+docker_mqtt-test-1  |   
+docker_mqtt-test-1  |   Traceback (most recent call last):
+docker_mqtt-test-1  |     File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+docker_mqtt-test-1  |       self.run()
+docker_mqtt-test-1  |     File "/usr/lib/python3.8/threading.py", line 870, in run
+docker_mqtt-test-1  |       self._target(*self._args, **self._kwargs)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py38/lib/python3.8/site-packages/paho/mqtt/client.py", line 3591, in _thread_main
+docker_mqtt-test-1  |       self.loop_forever(retry_first_connection=True)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py38/lib/python3.8/site-packages/paho/mqtt/client.py", line 1756, in loop_forever
+docker_mqtt-test-1  |       rc = self._loop(timeout)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py38/lib/python3.8/site-packages/paho/mqtt/client.py", line 1164, in _loop
+docker_mqtt-test-1  |       rc = self.loop_read()
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py38/lib/python3.8/site-packages/paho/mqtt/client.py", line 1556, in loop_read
+docker_mqtt-test-1  |       rc = self._packet_read()
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py38/lib/python3.8/site-packages/paho/mqtt/client.py", line 2370, in _packet_read
+docker_mqtt-test-1  |       command = self._sock_recv(1)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py38/lib/python3.8/site-packages/paho/mqtt/client.py", line 640, in _sock_recv
+docker_mqtt-test-1  |       return self._sock.recv(bufsize)
+docker_mqtt-test-1  |   OSError: [Errno 9] Bad file descriptor
+docker_mqtt-test-1  |   
+docker_mqtt-test-1  |     warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+docker_mqtt-test-1  | ----------- generated xml file: /opt/ss_test/output/junit-report.xml -----------
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | ---------- coverage: platform linux, python 3.8.18-final-0 -----------
+docker_mqtt-test-1  | Name                                                                  Stmts   Miss  Cover
+docker_mqtt-test-1  | -----------------------------------------------------------------------------------------
+docker_mqtt-test-1  | .tox/py38/lib/python3.8/site-packages/sinetstreamplugin/iostream.py      88     36    59%
+docker_mqtt-test-1  | src/sinetstreamplugin/mqtt.py                                           309     23    93%
+docker_mqtt-test-1  | -----------------------------------------------------------------------------------------
+docker_mqtt-test-1  | TOTAL                                                                   397     59    85%
+docker_mqtt-test-1  | Coverage HTML written to dir output/htmlcov
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | ============================== slowest durations ===============================
+docker_mqtt-test-1  | 10.04s call     tests/test_tls_data.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 10.03s call     tests/test_tls.py::test_tls_error[MessageReader-None]
+docker_mqtt-test-1  | 10.03s call     tests/test_tls.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 10.02s call     tests/test_tls_data.py::test_tls_error[MessageReader-None]
+docker_mqtt-test-1  | 4.00s call     tests/test_async_writer.py::test_write_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 3.29s call     tests/test_async_writer.py::test_write_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls_data.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls_data.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 3.01s call     tests/test_reader.py::test_reader_timeout
+docker_mqtt-test-1  | 2.85s call     tests/test_async_writer.py::test_write_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub_serdes
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub_value_type
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub_value_type_config_and_arg[image]
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub
+docker_mqtt-test-1  | 2.00s teardown tests/test_pubsub.py::test_pubsub_value_type_config[text]
+docker_mqtt-test-1  | 1.03s call     tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  | 0.40s call     tests/test_params.py::test_transport_wss[MessageWriter-config_params1-broker:443]
+docker_mqtt-test-1  | 0.40s call     tests/test_params.py::test_transport_wss[MessageReader-config_params0-broker:443]
+docker_mqtt-test-1  | 0.30s call     tests/test_params.py::test_transport_ws[MessageReader-config_params0-broker:80]
+docker_mqtt-test-1  | 0.30s call     tests/test_params.py::test_ws_set_options[MessageReader-config_params0-broker:80]
+docker_mqtt-test-1  | 0.29s call     tests/test_params.py::test_ws_set_options[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.29s call     tests/test_params.py::test_transport_ws[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.25s call     tests/test_async_reader.py::test_on_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.17s call     tests/test_async_reader.py::test_on_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.14s call     tests/test_async_reader.py::test_on_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.10s call     tests/test_metrics.py::test_metrics
+docker_mqtt-test-1  | 0.06s setup    tests/test_async_writer.py::test_write_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.06s setup    tests/test_async_writer.py::test_write_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.05s setup    tests/test_async_writer.py::test_write_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.04s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.04s setup    tests/test_tls_data.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.03s setup    tests/test_tls_data.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.03s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls_data.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.03s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.03s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls_data.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.03s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.03s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x0]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.03s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.03s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.03s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.03s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls_passwd_auth.py::test_bad_user[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_reader.py::test_open_twice
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.02s call     tests/test_mqttv5.py::test_writer_mqttv5_will_delay_interval
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.02s setup    tests/test_params.py::test_reconnect_delay[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_mqttv5.py::test_writer_mqttv5_topic_alias_maximum[1048576]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_params.py::test_will[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_will[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_passwd_auth.py::test_password_auth[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s teardown tests/test_writer.py::test_publish_result
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s setup    tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params6]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_reconnect_delay[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[topics2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_bad_value[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[topics1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_send_reason_messages[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params6]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_topic[topic1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_bad_user[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_will[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_reconnect_delay[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_connection_error[MessageReader-config_brokers0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_will[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_bad_brokers[MessageReader-config_brokers2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_ws_set_options[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_topic_alias_maximum[100]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error[MessageReader-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_topic[topic1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_open_close
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_wss[MessageReader-config_params0-broker:443]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type_config[text]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv311]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_wss[MessageWriter-config_params1-broker:443]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type_config_and_arg[image]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_bad_topics
+docker_mqtt-test-1  | 0.01s setup    tests/test_async_reader.py::test_on_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_list[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_bad_brokers[MessageWriter-config_brokers3]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_already_connected_error[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_response_info[True]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_bad_value[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_send_reason_messages[True]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_serdes
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_ws[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[topics2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_response_info[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_client_id_default
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_protocol[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_str_type[MessageWriter-broker:1883]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[topics1]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_no_port[MessageReader-broker]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_already_connected_error[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv5]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_bad_brokers[MessageReader-config_brokers4]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_user[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_auth_method_NG[foo]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_str_type[MessageReader-broker:1883]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[-1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_use_subscription_identifiers[True]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_clean_start[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_auth_data[foo]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_client_id_default
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_tcp[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_problem_info[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_bad_brokers[MessageReader-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_deser
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_maximum_packet_size[1048576]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_list[MessageWriter]
+docker_mqtt-test-1  | 0.01s setup    tests/test_brokers.py::test_bad_brokers[MessageReader-config_brokers2]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[-1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_open_twice
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_connection_error[MessageWriter-config_brokers1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[32768]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_clean_start[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[100]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[1000]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_password_auth[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_no_port[MessageWriter-broker]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_maximum_packet_size[100]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_use_subscription_identifiers[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_problem_info[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_tcp[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_retain[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_will_delay_interval
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_publish_result
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_client_id_set
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_open_twice
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv5]
+docker_mqtt-test-1  | 0.01s setup    tests/test_exception.py::test_connection_error[MessageReader-config_brokers0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_send_reason_messages[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_retain[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_client_id_set
+docker_mqtt-test-1  | 0.01s setup    tests/test_async_reader.py::test_on_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_metrics.py::test_metrics0_reader
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_deser
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_reconnect_delay[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_protocol[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_metrics.py::test_metrics0_writer
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_metrics.py::test_metrics0_reader
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_brokers.py::test_bad_brokers[MessageWriter-config_brokers3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_bad_value[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_clean_session[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_bad_value[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_password_auth[MessageWriter]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | (358 durations < 0.005s hidden.  Use -vv to show these durations.)
+docker_mqtt-test-1  | -------- Generated html report: file:///opt/ss_test/output/report.html ---------
+docker_mqtt-test-1  | ================== 217 passed, 3 warnings in 83.99s (0:01:23) ==================
+docker_mqtt-test-1  | py38: OK ✔ in 1 minute 43.08 seconds
+docker_mqtt-test-1  | py39: install_deps> python -I -m pip install pytest-cov pytest-html pytest-timeout 'pytest>=6' sinetstream-iostream
+docker_mqtt-test-1  | py39: install_package_deps> python -I -m pip install 'paho-mqtt>=1.5' promise 'sinetstream>=1.8.1; python_version < "3.12"' 'sinetstream>=1.8.2; python_version >= "3.12"'
+docker_mqtt-test-1  | py39: install_package> python -I -m pip install --force-reinstall --no-deps /opt/ss_test/.tox/.tmp/package/2/sinetstream_mqtt-1.8.2-py3-none-any.whl
+docker_mqtt-test-1  | py39: commands[0]> pytest
+docker_mqtt-test-1  | ============================= test session starts ==============================
+docker_mqtt-test-1  | platform linux -- Python 3.9.18, pytest-7.4.3, pluggy-1.3.0
+docker_mqtt-test-1  | cachedir: .tox/py39/.pytest_cache
+docker_mqtt-test-1  | rootdir: /opt/ss_test
+docker_mqtt-test-1  | configfile: pyproject.toml
+docker_mqtt-test-1  | testpaths: tests
+docker_mqtt-test-1  | plugins: metadata-3.0.0, cov-4.1.0, timeout-2.2.0, html-4.1.1
+docker_mqtt-test-1  | collected 217 items
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_async_reader.py ...                                           [  1%]
+docker_mqtt-test-1  | tests/test_async_writer.py ...                                           [  2%]
+docker_mqtt-test-1  | tests/test_brokers.py ............                                       [  8%]
+docker_mqtt-test-1  | tests/test_certificate_auth.py ............                              [ 13%]
+docker_mqtt-test-1  | tests/test_exception.py ....                                             [ 15%]
+docker_mqtt-test-1  | tests/test_metrics.py ...                                                [ 17%]
+docker_mqtt-test-1  | tests/test_mqttv5.py ......................................              [ 34%]
+docker_mqtt-test-1  | tests/test_params.py ......................................              [ 52%]
+docker_mqtt-test-1  | tests/test_passwd_auth.py ......                                         [ 54%]
+docker_mqtt-test-1  | tests/test_pubsub.py .....                                               [ 57%]
+docker_mqtt-test-1  | tests/test_reader.py .............                                       [ 63%]
+docker_mqtt-test-1  | tests/test_tls.py ............................                           [ 76%]
+docker_mqtt-test-1  | tests/test_tls_data.py ............................                      [ 88%]
+docker_mqtt-test-1  | tests/test_tls_passwd_auth.py ......                                     [ 91%]
+docker_mqtt-test-1  | tests/test_will.py .                                                     [ 92%]
+docker_mqtt-test-1  | tests/test_writer.py .................                                   [100%]
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | =============================== warnings summary ===============================
+docker_mqtt-test-1  | .tox/py39/lib/python3.9/site-packages/sinetstream/utils.py:22
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py39/lib/python3.9/site-packages/sinetstream/utils.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+docker_mqtt-test-1  |     from pkg_resources import iter_entry_points
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | .tox/py39/lib/python3.9/site-packages/pkg_resources/__init__.py:2871
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py39/lib/python3.9/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sinetstreamplugin')`.
+docker_mqtt-test-1  |   Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+docker_mqtt-test-1  |     declare_namespace(pkg)
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py39/lib/python3.9/site-packages/_pytest/threadexception.py:73: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-181
+docker_mqtt-test-1  |   
+docker_mqtt-test-1  |   Traceback (most recent call last):
+docker_mqtt-test-1  |     File "/usr/lib/python3.9/threading.py", line 980, in _bootstrap_inner
+docker_mqtt-test-1  |       self.run()
+docker_mqtt-test-1  |     File "/usr/lib/python3.9/threading.py", line 917, in run
+docker_mqtt-test-1  |       self._target(*self._args, **self._kwargs)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py39/lib/python3.9/site-packages/paho/mqtt/client.py", line 3591, in _thread_main
+docker_mqtt-test-1  |       self.loop_forever(retry_first_connection=True)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py39/lib/python3.9/site-packages/paho/mqtt/client.py", line 1756, in loop_forever
+docker_mqtt-test-1  |       rc = self._loop(timeout)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py39/lib/python3.9/site-packages/paho/mqtt/client.py", line 1164, in _loop
+docker_mqtt-test-1  |       rc = self.loop_read()
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py39/lib/python3.9/site-packages/paho/mqtt/client.py", line 1556, in loop_read
+docker_mqtt-test-1  |       rc = self._packet_read()
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py39/lib/python3.9/site-packages/paho/mqtt/client.py", line 2370, in _packet_read
+docker_mqtt-test-1  |       command = self._sock_recv(1)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py39/lib/python3.9/site-packages/paho/mqtt/client.py", line 640, in _sock_recv
+docker_mqtt-test-1  |       return self._sock.recv(bufsize)
+docker_mqtt-test-1  |   OSError: [Errno 9] Bad file descriptor
+docker_mqtt-test-1  |   
+docker_mqtt-test-1  |     warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+docker_mqtt-test-1  | ----------- generated xml file: /opt/ss_test/output/junit-report.xml -----------
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | ---------- coverage: platform linux, python 3.9.18-final-0 -----------
+docker_mqtt-test-1  | Name                                                                  Stmts   Miss  Cover
+docker_mqtt-test-1  | -----------------------------------------------------------------------------------------
+docker_mqtt-test-1  | .tox/py39/lib/python3.9/site-packages/sinetstreamplugin/iostream.py      88     36    59%
+docker_mqtt-test-1  | src/sinetstreamplugin/mqtt.py                                           309     23    93%
+docker_mqtt-test-1  | -----------------------------------------------------------------------------------------
+docker_mqtt-test-1  | TOTAL                                                                   397     59    85%
+docker_mqtt-test-1  | Coverage HTML written to dir output/htmlcov
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | ============================== slowest durations ===============================
+docker_mqtt-test-1  | 10.02s call     tests/test_tls.py::test_tls_error[MessageReader-None]
+docker_mqtt-test-1  | 10.02s call     tests/test_tls_data.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 10.02s call     tests/test_tls.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 10.02s call     tests/test_tls_data.py::test_tls_error[MessageReader-None]
+docker_mqtt-test-1  | 3.63s call     tests/test_async_writer.py::test_write_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 3.22s call     tests/test_async_writer.py::test_write_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls_data.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls_data.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 3.01s call     tests/test_reader.py::test_reader_timeout
+docker_mqtt-test-1  | 2.65s call     tests/test_async_writer.py::test_write_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub_serdes
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub_value_type
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub_value_type_config[text]
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub
+docker_mqtt-test-1  | 2.00s teardown tests/test_pubsub.py::test_pubsub_value_type_config_and_arg[image]
+docker_mqtt-test-1  | 1.02s call     tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  | 0.40s call     tests/test_params.py::test_transport_wss[MessageWriter-config_params1-broker:443]
+docker_mqtt-test-1  | 0.40s call     tests/test_params.py::test_transport_wss[MessageReader-config_params0-broker:443]
+docker_mqtt-test-1  | 0.30s call     tests/test_params.py::test_transport_ws[MessageReader-config_params0-broker:80]
+docker_mqtt-test-1  | 0.30s call     tests/test_params.py::test_ws_set_options[MessageReader-config_params0-broker:80]
+docker_mqtt-test-1  | 0.29s call     tests/test_params.py::test_transport_ws[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.29s call     tests/test_params.py::test_ws_set_options[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.27s call     tests/test_async_reader.py::test_on_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.17s call     tests/test_async_reader.py::test_on_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.15s call     tests/test_async_reader.py::test_on_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.10s call     tests/test_metrics.py::test_metrics
+docker_mqtt-test-1  | 0.07s setup    tests/test_async_writer.py::test_write_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.06s setup    tests/test_async_writer.py::test_write_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.05s call     tests/test_tls_data.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.05s setup    tests/test_async_writer.py::test_write_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.04s setup    tests/test_tls_data.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.04s setup    tests/test_tls_data.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.04s call     tests/test_tls_data.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_params.py::test_will[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_password_auth[MessageWriter]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_params.py::test_will[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_user[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv5]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_bad_value[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params6]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s teardown tests/test_writer.py::test_publish_result
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_reconnect_delay[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params6]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_open_twice
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_open_close
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_will[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv311]
+docker_mqtt-test-1  | 0.01s setup    tests/test_async_reader.py::test_on_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_clean_start[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[topics1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[-1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[-1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_topic[topic1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_will_delay_interval
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[topics2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_reconnect_delay[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_will[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[32768]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[100]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[1000]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_bad_value[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_use_subscription_identifiers[True]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_ws_set_options[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_topic[topic1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_send_reason_messages[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_wss[MessageWriter-config_params1-broker:443]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_protocol_NG[MQTTv51]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_wss[MessageReader-config_params0-broker:443]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type_config_and_arg[image]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_bad_value[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_use_subscription_identifiers[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_serdes
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type_config[text]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_password_auth[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_bad_value[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[topics1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_deser
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_maximum_packet_size[100]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_open_close
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_open_twice
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_str_type[MessageReader-broker:1883]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_response_info[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_already_connected_error[MessageReader]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_ws[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_send_reason_messages[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[-1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_topic_alias_maximum[1048576]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_bad_topics
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_user[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_clean_start[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_reconnect_delay[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_metrics.py::test_metrics0_reader
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_tcp[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_no_port[MessageReader-broker]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_list[MessageReader]
+docker_mqtt-test-1  | 0.01s setup    tests/test_async_reader.py::test_on_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[topics2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_clean_start[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_open_twice
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_problem_info[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_auth_data[foo]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_tcp[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_client_id_default
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_auth_method_NG[foo]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_topic_alias_maximum[100]
+docker_mqtt-test-1  | 0.01s setup    tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_problem_info[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_protocol_NG[MQTTv51]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_metrics.py::test_metrics0_writer
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_str_type[MessageWriter-broker:1883]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_list[MessageWriter]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_clean_session[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_no_port[MessageWriter-broker]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_response_info[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_retain[True]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_reconnect_delay[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s setup    tests/test_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_maximum_packet_size[1048576]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[2]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_publish_result
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_client_id_set
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_already_connected_error[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_client_id_default
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv311]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_client_id_set
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_max_inflight_messages[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_retain[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv5]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_deser
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[100]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | (370 durations < 0.005s hidden.  Use -vv to show these durations.)
+docker_mqtt-test-1  | -------- Generated html report: file:///opt/ss_test/output/report.html ---------
+docker_mqtt-test-1  | ================== 217 passed, 3 warnings in 83.37s (0:01:23) ==================
+docker_mqtt-test-1  | py39: OK ✔ in 1 minute 37.63 seconds
+docker_mqtt-test-1  | py310: install_deps> python -I -m pip install pytest-cov pytest-html pytest-timeout 'pytest>=6' sinetstream-iostream
+docker_mqtt-test-1  | py310: install_package_deps> python -I -m pip install 'paho-mqtt>=1.5' promise 'sinetstream>=1.8.1; python_version < "3.12"' 'sinetstream>=1.8.2; python_version >= "3.12"'
+docker_mqtt-test-1  | py310: install_package> python -I -m pip install --force-reinstall --no-deps /opt/ss_test/.tox/.tmp/package/3/sinetstream_mqtt-1.8.2-py3-none-any.whl
+docker_mqtt-test-1  | py310: commands[0]> pytest
+docker_mqtt-test-1  | ============================= test session starts ==============================
+docker_mqtt-test-1  | platform linux -- Python 3.10.12, pytest-7.4.3, pluggy-1.3.0
+docker_mqtt-test-1  | cachedir: .tox/py310/.pytest_cache
+docker_mqtt-test-1  | rootdir: /opt/ss_test
+docker_mqtt-test-1  | configfile: pyproject.toml
+docker_mqtt-test-1  | testpaths: tests
+docker_mqtt-test-1  | plugins: metadata-3.0.0, cov-4.1.0, timeout-2.2.0, html-4.1.1
+docker_mqtt-test-1  | collected 217 items
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_async_reader.py ...                                           [  1%]
+docker_mqtt-test-1  | tests/test_async_writer.py ...                                           [  2%]
+docker_mqtt-test-1  | tests/test_brokers.py ............                                       [  8%]
+docker_mqtt-test-1  | tests/test_certificate_auth.py ............                              [ 13%]
+docker_mqtt-test-1  | tests/test_exception.py ....                                             [ 15%]
+docker_mqtt-test-1  | tests/test_metrics.py ...                                                [ 17%]
+docker_mqtt-test-1  | tests/test_mqttv5.py ......................................              [ 34%]
+docker_mqtt-test-1  | tests/test_params.py ......................................              [ 52%]
+docker_mqtt-test-1  | tests/test_passwd_auth.py ......                                         [ 54%]
+docker_mqtt-test-1  | tests/test_pubsub.py .....                                               [ 57%]
+docker_mqtt-test-1  | tests/test_reader.py .............                                       [ 63%]
+docker_mqtt-test-1  | tests/test_tls.py ............................                           [ 76%]
+docker_mqtt-test-1  | tests/test_tls_data.py ............................                      [ 88%]
+docker_mqtt-test-1  | tests/test_tls_passwd_auth.py ......                                     [ 91%]
+docker_mqtt-test-1  | tests/test_will.py .                                                     [ 92%]
+docker_mqtt-test-1  | tests/test_writer.py .................                                   [100%]
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | =============================== warnings summary ===============================
+docker_mqtt-test-1  | .tox/py310/lib/python3.10/site-packages/sinetstream/utils.py:22
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py310/lib/python3.10/site-packages/sinetstream/utils.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+docker_mqtt-test-1  |     from pkg_resources import iter_entry_points
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | .tox/py310/lib/python3.10/site-packages/pkg_resources/__init__.py:2871
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py310/lib/python3.10/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sinetstreamplugin')`.
+docker_mqtt-test-1  |   Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+docker_mqtt-test-1  |     declare_namespace(pkg)
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_certificate_auth.py: 12 warnings
+docker_mqtt-test-1  | tests/test_params.py: 2 warnings
+docker_mqtt-test-1  | tests/test_tls.py: 22 warnings
+docker_mqtt-test-1  | tests/test_tls_data.py: 22 warnings
+docker_mqtt-test-1  | tests/test_tls_passwd_auth.py: 6 warnings
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py310/lib/python3.10/site-packages/paho/mqtt/client.py:792: DeprecationWarning: ssl.PROTOCOL_TLS is deprecated
+docker_mqtt-test-1  |     context = ssl.SSLContext(tls_version)
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_tls.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | tests/test_tls.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | tests/test_tls_data.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | tests/test_tls_data.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py310/lib/python3.10/site-packages/paho/mqtt/client.py:792: DeprecationWarning: ssl.PROTOCOL_TLSv1_2 is deprecated
+docker_mqtt-test-1  |     context = ssl.SSLContext(tls_version)
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py310/lib/python3.10/site-packages/_pytest/threadexception.py:73: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-181 (_thread_main)
+docker_mqtt-test-1  |   
+docker_mqtt-test-1  |   Traceback (most recent call last):
+docker_mqtt-test-1  |     File "/usr/lib/python3.10/threading.py", line 1016, in _bootstrap_inner
+docker_mqtt-test-1  |       self.run()
+docker_mqtt-test-1  |     File "/usr/lib/python3.10/threading.py", line 953, in run
+docker_mqtt-test-1  |       self._target(*self._args, **self._kwargs)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py310/lib/python3.10/site-packages/paho/mqtt/client.py", line 3591, in _thread_main
+docker_mqtt-test-1  |       self.loop_forever(retry_first_connection=True)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py310/lib/python3.10/site-packages/paho/mqtt/client.py", line 1756, in loop_forever
+docker_mqtt-test-1  |       rc = self._loop(timeout)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py310/lib/python3.10/site-packages/paho/mqtt/client.py", line 1164, in _loop
+docker_mqtt-test-1  |       rc = self.loop_read()
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py310/lib/python3.10/site-packages/paho/mqtt/client.py", line 1556, in loop_read
+docker_mqtt-test-1  |       rc = self._packet_read()
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py310/lib/python3.10/site-packages/paho/mqtt/client.py", line 2370, in _packet_read
+docker_mqtt-test-1  |       command = self._sock_recv(1)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py310/lib/python3.10/site-packages/paho/mqtt/client.py", line 640, in _sock_recv
+docker_mqtt-test-1  |       return self._sock.recv(bufsize)
+docker_mqtt-test-1  |   OSError: [Errno 9] Bad file descriptor
+docker_mqtt-test-1  |   
+docker_mqtt-test-1  |     warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+docker_mqtt-test-1  | ----------- generated xml file: /opt/ss_test/output/junit-report.xml -----------
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | ---------- coverage: platform linux, python 3.10.12-final-0 ----------
+docker_mqtt-test-1  | Name                                                                    Stmts   Miss  Cover
+docker_mqtt-test-1  | -------------------------------------------------------------------------------------------
+docker_mqtt-test-1  | .tox/py310/lib/python3.10/site-packages/sinetstreamplugin/iostream.py      88     36    59%
+docker_mqtt-test-1  | src/sinetstreamplugin/mqtt.py                                             309     23    93%
+docker_mqtt-test-1  | -------------------------------------------------------------------------------------------
+docker_mqtt-test-1  | TOTAL                                                                     397     59    85%
+docker_mqtt-test-1  | Coverage HTML written to dir output/htmlcov
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | ============================== slowest durations ===============================
+docker_mqtt-test-1  | 10.03s call     tests/test_tls_data.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 10.03s call     tests/test_tls.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 10.02s call     tests/test_tls_data.py::test_tls_error[MessageReader-None]
+docker_mqtt-test-1  | 10.02s call     tests/test_tls.py::test_tls_error[MessageReader-None]
+docker_mqtt-test-1  | 3.77s call     tests/test_async_writer.py::test_write_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 3.39s call     tests/test_async_writer.py::test_write_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls_data.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 3.01s call     tests/test_tls_data.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 3.01s call     tests/test_reader.py::test_reader_timeout
+docker_mqtt-test-1  | 2.75s call     tests/test_async_writer.py::test_write_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub_value_type_config_and_arg[image]
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub_serdes
+docker_mqtt-test-1  | 2.01s teardown tests/test_pubsub.py::test_pubsub_value_type
+docker_mqtt-test-1  | 2.00s teardown tests/test_pubsub.py::test_pubsub_value_type_config[text]
+docker_mqtt-test-1  | 1.02s call     tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  | 0.40s call     tests/test_params.py::test_transport_wss[MessageWriter-config_params1-broker:443]
+docker_mqtt-test-1  | 0.39s call     tests/test_params.py::test_transport_wss[MessageReader-config_params0-broker:443]
+docker_mqtt-test-1  | 0.30s call     tests/test_params.py::test_transport_ws[MessageReader-config_params0-broker:80]
+docker_mqtt-test-1  | 0.29s call     tests/test_params.py::test_ws_set_options[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.29s call     tests/test_params.py::test_transport_ws[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.23s call     tests/test_async_reader.py::test_on_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.20s call     tests/test_params.py::test_ws_set_options[MessageReader-config_params0-broker:80]
+docker_mqtt-test-1  | 0.15s call     tests/test_async_reader.py::test_on_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.15s call     tests/test_async_reader.py::test_on_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.11s setup    tests/test_async_writer.py::test_write_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.11s call     tests/test_metrics.py::test_metrics
+docker_mqtt-test-1  | 0.06s setup    tests/test_async_writer.py::test_write_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.06s setup    tests/test_async_writer.py::test_write_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls_data.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls_data.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.03s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.03s setup    tests/test_tls_data.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.03s setup    tests/test_tls_data.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_user[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_passwd_auth.py::test_password_auth[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_will[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_will[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s teardown tests/test_writer.py::test_publish_result
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_open_twice
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_will_delay_interval
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_open_close
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params6]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_reconnect_delay[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[topics1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params6]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_topic[topic1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_async_reader.py::test_on_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_bad_value[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_reconnect_delay[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[topics2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_str_type[MessageReader-broker:1883]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_use_subscription_identifiers[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_will[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type_config_and_arg[image]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_password_auth[MessageWriter]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_serdes
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_wss[MessageReader-config_params0-broker:443]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_user[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_no_port[MessageReader-broker]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_bad_value[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_retain[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type_config[text]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_open_twice
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[-1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_wss[MessageWriter-config_params1-broker:443]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_bad_value[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_client_id_set
+docker_mqtt-test-1  | 0.01s setup    tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_ws[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_response_info[True]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_topic[topic1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_topic_alias_maximum[100]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_bad_topics
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_tcp[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_already_connected_error[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_tcp[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_auth_data[foo]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_clean_start[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_auth_method_NG[foo]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_deser
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[100]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_send_reason_messages[True]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_open_close
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv5]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_str_type[MessageWriter-broker:1883]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_maximum_packet_size[1048576]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_bad_value[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[32768]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_metrics.py::test_metrics0_reader
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_maximum_packet_size[100]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_publish_result
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_connection_error[MessageReader-config_brokers0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv311]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_problem_info[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[topics1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_problem_info[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_topic_alias_maximum[1048576]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x2]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_open_twice
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_list[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_retain[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_client_id_default
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_client_id_default
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_response_info[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_already_connected_error[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_clean_start[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_deser
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_connection_error[MessageWriter-config_brokers1]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_list[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[1000]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_metrics.py::test_metrics0_writer
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_clean_session[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_no_port[MessageWriter-broker]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[-1]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_client_id_set
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[topics2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_bad_brokers[MessageReader-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_async_reader.py::test_on_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_reconnect_delay[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_send_reason_messages[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_use_subscription_identifiers[True]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_will[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_reconnect_delay[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_clean_session[MessageWriter-config_params2]
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | (394 durations < 0.005s hidden.  Use -vv to show these durations.)
+docker_mqtt-test-1  | -------- Generated html report: file:///opt/ss_test/output/report.html ---------
+docker_mqtt-test-1  | ================= 217 passed, 71 warnings in 83.09s (0:01:23) ==================
+docker_mqtt-test-1  | py310: OK ✔ in 1 minute 36.91 seconds
+docker_mqtt-test-1  | py311: install_deps> python -I -m pip install pytest-cov pytest-html pytest-timeout 'pytest>=6' sinetstream-iostream
+docker_mqtt-test-1  | py311: install_package_deps> python -I -m pip install 'paho-mqtt>=1.5' promise 'sinetstream>=1.8.1; python_version < "3.12"' 'sinetstream>=1.8.2; python_version >= "3.12"'
+docker_mqtt-test-1  | py311: install_package> python -I -m pip install --force-reinstall --no-deps /opt/ss_test/.tox/.tmp/package/4/sinetstream_mqtt-1.8.2-py3-none-any.whl
+docker_mqtt-test-1  | py311: commands[0]> pytest
+docker_mqtt-test-1  | ============================= test session starts ==============================
+docker_mqtt-test-1  | platform linux -- Python 3.11.6, pytest-7.4.3, pluggy-1.3.0
+docker_mqtt-test-1  | cachedir: .tox/py311/.pytest_cache
+docker_mqtt-test-1  | rootdir: /opt/ss_test
+docker_mqtt-test-1  | configfile: pyproject.toml
+docker_mqtt-test-1  | testpaths: tests
+docker_mqtt-test-1  | plugins: metadata-3.0.0, cov-4.1.0, timeout-2.2.0, html-4.1.1
+docker_mqtt-test-1  | collected 217 items
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_async_reader.py ...                                           [  1%]
+docker_mqtt-test-1  | tests/test_async_writer.py ...                                           [  2%]
+docker_mqtt-test-1  | tests/test_brokers.py ............                                       [  8%]
+docker_mqtt-test-1  | tests/test_certificate_auth.py ............                              [ 13%]
+docker_mqtt-test-1  | tests/test_exception.py ....                                             [ 15%]
+docker_mqtt-test-1  | tests/test_metrics.py ...                                                [ 17%]
+docker_mqtt-test-1  | tests/test_mqttv5.py ......................................              [ 34%]
+docker_mqtt-test-1  | tests/test_params.py ......................................              [ 52%]
+docker_mqtt-test-1  | tests/test_passwd_auth.py ......                                         [ 54%]
+docker_mqtt-test-1  | tests/test_pubsub.py .....                                               [ 57%]
+docker_mqtt-test-1  | tests/test_reader.py .............                                       [ 63%]
+docker_mqtt-test-1  | tests/test_tls.py ............................                           [ 76%]
+docker_mqtt-test-1  | tests/test_tls_data.py ............................                      [ 88%]
+docker_mqtt-test-1  | tests/test_tls_passwd_auth.py ......                                     [ 91%]
+docker_mqtt-test-1  | tests/test_will.py .                                                     [ 92%]
+docker_mqtt-test-1  | tests/test_writer.py .................                                   [100%]
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | =============================== warnings summary ===============================
+docker_mqtt-test-1  | .tox/py311/lib/python3.11/site-packages/sinetstream/utils.py:22
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py311/lib/python3.11/site-packages/sinetstream/utils.py:22: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+docker_mqtt-test-1  |     from pkg_resources import iter_entry_points
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | .tox/py311/lib/python3.11/site-packages/pkg_resources/__init__.py:2871
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py311/lib/python3.11/site-packages/pkg_resources/__init__.py:2871: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('sinetstreamplugin')`.
+docker_mqtt-test-1  |   Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+docker_mqtt-test-1  |     declare_namespace(pkg)
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_certificate_auth.py: 12 warnings
+docker_mqtt-test-1  | tests/test_params.py: 2 warnings
+docker_mqtt-test-1  | tests/test_tls.py: 22 warnings
+docker_mqtt-test-1  | tests/test_tls_data.py: 22 warnings
+docker_mqtt-test-1  | tests/test_tls_passwd_auth.py: 6 warnings
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py311/lib/python3.11/site-packages/paho/mqtt/client.py:792: DeprecationWarning: ssl.PROTOCOL_TLS is deprecated
+docker_mqtt-test-1  |     context = ssl.SSLContext(tls_version)
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_tls.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | tests/test_tls.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | tests/test_tls_data.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | tests/test_tls_data.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py311/lib/python3.11/site-packages/paho/mqtt/client.py:792: DeprecationWarning: ssl.PROTOCOL_TLSv1_2 is deprecated
+docker_mqtt-test-1  |     context = ssl.SSLContext(tls_version)
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  |   /opt/ss_test/.tox/py311/lib/python3.11/site-packages/_pytest/threadexception.py:73: PytestUnhandledThreadExceptionWarning: Exception in thread Thread-181 (_thread_main)
+docker_mqtt-test-1  |   
+docker_mqtt-test-1  |   Traceback (most recent call last):
+docker_mqtt-test-1  |     File "/usr/lib/python3.11/threading.py", line 1045, in _bootstrap_inner
+docker_mqtt-test-1  |       self.run()
+docker_mqtt-test-1  |     File "/usr/lib/python3.11/threading.py", line 982, in run
+docker_mqtt-test-1  |       self._target(*self._args, **self._kwargs)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py311/lib/python3.11/site-packages/paho/mqtt/client.py", line 3591, in _thread_main
+docker_mqtt-test-1  |       self.loop_forever(retry_first_connection=True)
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py311/lib/python3.11/site-packages/paho/mqtt/client.py", line 1756, in loop_forever
+docker_mqtt-test-1  |       rc = self._loop(timeout)
+docker_mqtt-test-1  |            ^^^^^^^^^^^^^^^^^^^
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py311/lib/python3.11/site-packages/paho/mqtt/client.py", line 1164, in _loop
+docker_mqtt-test-1  |       rc = self.loop_read()
+docker_mqtt-test-1  |            ^^^^^^^^^^^^^^^^
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py311/lib/python3.11/site-packages/paho/mqtt/client.py", line 1556, in loop_read
+docker_mqtt-test-1  |       rc = self._packet_read()
+docker_mqtt-test-1  |            ^^^^^^^^^^^^^^^^^^^
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py311/lib/python3.11/site-packages/paho/mqtt/client.py", line 2370, in _packet_read
+docker_mqtt-test-1  |       command = self._sock_recv(1)
+docker_mqtt-test-1  |                 ^^^^^^^^^^^^^^^^^^
+docker_mqtt-test-1  |     File "/opt/ss_test/.tox/py311/lib/python3.11/site-packages/paho/mqtt/client.py", line 640, in _sock_recv
+docker_mqtt-test-1  |       return self._sock.recv(bufsize)
+docker_mqtt-test-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^
+docker_mqtt-test-1  |   OSError: [Errno 9] Bad file descriptor
+docker_mqtt-test-1  |   
+docker_mqtt-test-1  |     warnings.warn(pytest.PytestUnhandledThreadExceptionWarning(msg))
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+docker_mqtt-test-1  | ----------- generated xml file: /opt/ss_test/output/junit-report.xml -----------
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | ---------- coverage: platform linux, python 3.11.6-final-0 -----------
+docker_mqtt-test-1  | Name                                                                    Stmts   Miss  Cover
+docker_mqtt-test-1  | -------------------------------------------------------------------------------------------
+docker_mqtt-test-1  | .tox/py311/lib/python3.11/site-packages/sinetstreamplugin/iostream.py      88     36    59%
+docker_mqtt-test-1  | src/sinetstreamplugin/mqtt.py                                             309     23    93%
+docker_mqtt-test-1  | -------------------------------------------------------------------------------------------
+docker_mqtt-test-1  | TOTAL                                                                     397     59    85%
+docker_mqtt-test-1  | Coverage HTML written to dir output/htmlcov
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | ============================== slowest durations ===============================
+docker_mqtt-test-1  | 10.02s call     tests/test_tls.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 10.02s call     tests/test_tls_data.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 10.02s call     tests/test_tls_data.py::test_tls_error[MessageReader-None]
+docker_mqtt-test-1  | 10.02s call     tests/test_tls.py::test_tls_error[MessageReader-None]
+docker_mqtt-test-1  | 3.90s call     tests/test_async_writer.py::test_write_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 3.03s call     tests/test_async_writer.py::test_write_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 3.02s call     tests/test_tls_data.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 3.01s call     tests/test_tls.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 3.01s call     tests/test_tls_data.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 3.01s call     tests/test_reader.py::test_reader_timeout
+docker_mqtt-test-1  | 2.53s call     tests/test_async_writer.py::test_write_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 2.00s teardown tests/test_pubsub.py::test_pubsub_value_type_config_and_arg[image]
+docker_mqtt-test-1  | 2.00s teardown tests/test_pubsub.py::test_pubsub_value_type_config[text]
+docker_mqtt-test-1  | 2.00s teardown tests/test_pubsub.py::test_pubsub_serdes
+docker_mqtt-test-1  | 2.00s teardown tests/test_pubsub.py::test_pubsub
+docker_mqtt-test-1  | 2.00s teardown tests/test_pubsub.py::test_pubsub_value_type
+docker_mqtt-test-1  | 1.02s call     tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  | 0.40s call     tests/test_params.py::test_transport_wss[MessageReader-config_params0-broker:443]
+docker_mqtt-test-1  | 0.39s call     tests/test_params.py::test_transport_wss[MessageWriter-config_params1-broker:443]
+docker_mqtt-test-1  | 0.30s call     tests/test_params.py::test_transport_ws[MessageReader-config_params0-broker:80]
+docker_mqtt-test-1  | 0.30s call     tests/test_params.py::test_ws_set_options[MessageReader-config_params0-broker:80]
+docker_mqtt-test-1  | 0.29s call     tests/test_params.py::test_transport_ws[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.29s call     tests/test_params.py::test_ws_set_options[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.17s call     tests/test_async_reader.py::test_on_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.16s call     tests/test_async_reader.py::test_on_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.15s call     tests/test_async_reader.py::test_on_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.09s call     tests/test_metrics.py::test_metrics
+docker_mqtt-test-1  | 0.07s setup    tests/test_async_writer.py::test_write_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.06s setup    tests/test_async_writer.py::test_write_message[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.06s setup    tests/test_async_writer.py::test_write_message[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.04s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params6]
+docker_mqtt-test-1  | 0.03s setup    tests/test_tls_data.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls_data.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.03s call     tests/test_tls_data.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.03s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_params.py::test_will[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_client_auth[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.02s setup    tests/test_tls_data.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_writer.py::test_writer_topic[mss-test-001]
+docker_mqtt-test-1  | 0.02s call     tests/test_params.py::test_will[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_certificate_auth.py::test_tls_bad_client_auth[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_writer.py::test_writer_topic[topic1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_bad_user[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_passwd_auth.py::test_password_auth[MessageWriter]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.02s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_cert_reqs[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_set[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_set[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_no_check_hostname[MessageWriter-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_cert_reqs[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_certificate_auth.py::test_no_client_cert_tls[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params6]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_reconnect_delay[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls_data.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params5]
+docker_mqtt-test-1  | 0.01s call     tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params7]
+docker_mqtt-test-1  | 0.01s teardown tests/test_writer.py::test_publish_result
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[topics2]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_open_twice
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_reconnect_delay[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_topic[topics1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_will_delay_interval
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_bad_value[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_metrics.py::test_metrics0_writer
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_ws_set_options[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_clean_start[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_open_close
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_topic[topic1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_bad_value[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_password_auth[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_clean_session[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_topic[mss-test-001]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_bad_consistency
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls[MessageReader]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_will[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_will[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error_timeout[MessageReader-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_bad_value[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_auth_data[foo]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_version[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params5]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_response_info[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_bad_value[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_clean_start[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_reconnect_delay[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_async_reader.py::test_on_message[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type_config_and_arg[image]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_password[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_bad_topics
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_bad_hostname[MessageWriter-172.21.0.2:8883-config_params4]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_error_timeout[MessageWriter-None]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_wss[MessageWriter-config_params1-broker:443]
+docker_mqtt-test-1  | 0.01s call     tests/test_metrics.py::test_metrics0_reader
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[-1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_topic_alias_maximum[100]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type_config[text]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_already_connected_error[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_auth_method_NG[foo]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_wss[MessageReader-config_params0-broker:443]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x1]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_str_type[MessageReader-broker:1883]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_deser
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_topic_alias_maximum[1048576]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[-1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv5]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_value_type
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[32768]
+docker_mqtt-test-1  | 0.01s setup    tests/test_pubsub.py::test_pubsub_serdes
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_receive_maximum[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_exception.py::test_already_connected_error[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_list[MessageWriter]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_reconnect_delay[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_clean_session[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[topics1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_user_property[x2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_maximum_packet_size[1048576]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_response_info[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_use_subscription_identifiers[False]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_topic[topics2]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_maximum_packet_size[100]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_bad_password[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_transport_ws[MessageWriter-config_params1-broker:80]
+docker_mqtt-test-1  | 0.01s setup    tests/test_writer.py::test_writer_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_problem_info[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_protocol[MQTTv311]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_request_problem_info[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_passwd_auth.py::test_bad_user[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_send_reason_messages[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_list[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_no_port[MessageWriter-broker]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_tcp[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_queued_messages[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_no_port[MessageReader-broker]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_max_inflight_messages[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_client_id_set
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_session_expiry_interval[1000]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_transport_tcp[MessageWriter-config_params1]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_publish_result
+docker_mqtt-test-1  | 0.01s setup    tests/test_passwd_auth.py::test_password_auth[MessageReader]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[100]
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_brokers_str_type[MessageWriter-broker:1883]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_message_retry[MessageWriter-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_open_twice
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params2]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params4]
+docker_mqtt-test-1  | 0.01s call     tests/test_params.py::test_protocol[MessageWriter-config_params3]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_open_twice
+docker_mqtt-test-1  | 0.01s call     tests/test_reader.py::test_reader_client_id_default
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_max_reconnect_delay[1]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_client_id_set
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_deser
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_use_subscription_identifiers[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_mqttv5.py::test_writer_mqttv5_send_reason_messages[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_retain[True]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_client_id_default
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_retain[False]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.EXACTLY_ONCE]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_data.py::test_tls_bad_hostname[MessageReader-172.21.0.2:8883-config_params3]
+docker_mqtt-test-1  | 0.01s call     tests/test_writer.py::test_writer_qos[2]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_consistency[Consistency.AT_MOST_ONCE]
+docker_mqtt-test-1  | 0.01s setup    tests/test_params.py::test_clean_session[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_open_close
+docker_mqtt-test-1  | 0.01s call     tests/test_brokers.py::test_bad_brokers[MessageReader-None]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls.py::test_tls_version[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_will.py::test_will_payload[text-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_tls_passwd_auth.py::test_bad_user[MessageReader-config_params0]
+docker_mqtt-test-1  | 0.01s setup    tests/test_reader.py::test_reader_consistency[Consistency.AT_LEAST_ONCE]
+docker_mqtt-test-1  | 
+docker_mqtt-test-1  | (391 durations < 0.005s hidden.  Use -vv to show these durations.)
+docker_mqtt-test-1  | -------- Generated html report: file:///opt/ss_test/output/report.html ---------
+docker_mqtt-test-1  | ================= 217 passed, 71 warnings in 82.64s (0:01:22) ==================
+docker_mqtt-test-1  | py311: OK ✔ in 1 minute 36 seconds
+docker_mqtt-test-1  | py312: install_deps> python -I -m pip install pytest-cov pytest-html pytest-timeout 'pytest>=6' sinetstream-iostream
+docker_mqtt-test-1  | py312: install_package_deps> python -I -m pip install 'paho-mqtt>=1.5' promise 'sinetstream>=1.8.1; python_version < "3.12"' 'sinetstream>=1.8.2; python_version >= "3.12"'
+docker_mqtt-test-1  | [31mERROR: Could not find a version that satisfies the requirement sinetstream>=1.8.2 (from versions: 0.9.8b4, 0.9.8b6, 0.9.8b8, 0.9.8b9, 0.9.8b10, 0.9.8b11, 1.0.0, 1.1.0, 1.2.0, 1.3.0, 1.4.0, 1.5.0, 1.5.2, 1.6.0, 1.6.1, 1.7.0, 1.8.0, 1.8.1)
+docker_mqtt-test-1  | Ignoring sinetstream: markers 'python_version < "3.12"' don't match your environment
+docker_mqtt-test-1  | Collecting paho-mqtt>=1.5
+docker_mqtt-test-1  |   Using cached paho-mqtt-1.6.1.tar.gz (99 kB)
+docker_mqtt-test-1  |   Installing build dependencies: started
+docker_mqtt-test-1  |   Installing build dependencies: finished with status 'done'
+docker_mqtt-test-1  |   Getting requirements to build wheel: started
+docker_mqtt-test-1  |   Getting requirements to build wheel: finished with status 'done'
+docker_mqtt-test-1  |   Preparing metadata (pyproject.toml): started
+docker_mqtt-test-1  |   Preparing metadata (pyproject.toml): finished with status 'done'
+docker_mqtt-test-1  | Requirement already satisfied: promise in ./.tox/py312/lib/python3.12/site-packages (2.3)
+docker_mqtt-test-1  | py312: exit 1 (3.44 seconds) /opt/ss_test> python -I -m pip install 'paho-mqtt>=1.5' promise 'sinetstream>=1.8.1; python_version < "3.12"' 'sinetstream>=1.8.2; python_version >= "3.12"' pid=2163
+docker_mqtt-test-1  | ERROR: No matching distribution found for sinetstream>=1.8.2
+docker_mqtt-test-1  | .pkg: _exit> python /usr/local/lib/python3.11/dist-packages/pyproject_api/_backend.py True hatchling.build
+docker_mqtt-test-1  |   py38: OK (103.08=setup[18.34]+cmd[84.74] seconds)
+docker_mqtt-test-1  |   py39: OK (97.62=setup[13.52]+cmd[84.10] seconds)
+docker_mqtt-test-1  |   py310: OK (96.91=setup[13.21]+cmd[83.70] seconds)
+docker_mqtt-test-1  |   py311: OK (96.00=setup[12.69]+cmd[83.31] seconds)
+docker_mqtt-test-1  |   py312: FAIL code 1 (18.38 seconds)
+docker_mqtt-test-1  |   evaluation failed :( (412.09 seconds)

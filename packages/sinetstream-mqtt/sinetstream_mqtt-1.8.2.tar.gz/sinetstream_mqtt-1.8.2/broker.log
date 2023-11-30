@@ -1,0 +1,126 @@
+docker_mqtt-broker-1  | Generating a 2048 bit RSA private key
+docker_mqtt-broker-1  | .....................................+++
+docker_mqtt-broker-1  | ............................+++
+docker_mqtt-broker-1  | writing new private key to '/etc/pki/CA/private/cakey.pem'
+docker_mqtt-broker-1  | -----
+docker_mqtt-broker-1  | Using configuration from /etc/pki/tls/openssl.cnf
+docker_mqtt-broker-1  | Check that the request matches the signature
+docker_mqtt-broker-1  | Signature ok
+docker_mqtt-broker-1  | Certificate Details:
+docker_mqtt-broker-1  |         Serial Number:
+docker_mqtt-broker-1  |             84:ef:b3:f3:99:bb:b0:0f
+docker_mqtt-broker-1  |         Validity
+docker_mqtt-broker-1  |             Not Before: Nov 28 08:23:59 2023 GMT
+docker_mqtt-broker-1  |             Not After : Nov 27 08:23:59 2026 GMT
+docker_mqtt-broker-1  |         Subject:
+docker_mqtt-broker-1  |             countryName               = JP
+docker_mqtt-broker-1  |             stateOrProvinceName       = Default_Organization
+docker_mqtt-broker-1  |             organizationName          = Default_Organization
+docker_mqtt-broker-1  |             commonName                = private-ca
+docker_mqtt-broker-1  |         X509v3 extensions:
+docker_mqtt-broker-1  |             X509v3 Subject Key Identifier: 
+docker_mqtt-broker-1  |                 4D:82:38:F0:27:B1:3A:51:17:FD:B9:4B:35:F2:70:61:14:F6:15:7E
+docker_mqtt-broker-1  |             X509v3 Authority Key Identifier: 
+docker_mqtt-broker-1  |                 keyid:4D:82:38:F0:27:B1:3A:51:17:FD:B9:4B:35:F2:70:61:14:F6:15:7E
+docker_mqtt-broker-1  | 
+docker_mqtt-broker-1  |             X509v3 Basic Constraints: 
+docker_mqtt-broker-1  |                 CA:TRUE
+docker_mqtt-broker-1  | Certificate is to be certified until Nov 27 08:23:59 2026 GMT (1095 days)
+docker_mqtt-broker-1  | 
+docker_mqtt-broker-1  | Write out database with 1 new entries
+docker_mqtt-broker-1  | Data Base Updated
+docker_mqtt-broker-1  | Generating a 2048 bit RSA private key
+docker_mqtt-broker-1  | ......................................+++
+docker_mqtt-broker-1  | ...............................................+++
+docker_mqtt-broker-1  | writing new private key to '/etc/pki/CA/private/broker.key'
+docker_mqtt-broker-1  | -----
+docker_mqtt-broker-1  | Using configuration from /etc/pki/tls/openssl.cnf
+docker_mqtt-broker-1  | Check that the request matches the signature
+docker_mqtt-broker-1  | Signature ok
+docker_mqtt-broker-1  | Certificate Details:
+docker_mqtt-broker-1  |         Serial Number:
+docker_mqtt-broker-1  |             84:ef:b3:f3:99:bb:b0:10
+docker_mqtt-broker-1  |         Validity
+docker_mqtt-broker-1  |             Not Before: Nov 28 08:23:59 2023 GMT
+docker_mqtt-broker-1  |             Not After : Nov 27 08:23:59 2024 GMT
+docker_mqtt-broker-1  |         Subject:
+docker_mqtt-broker-1  |             countryName               = JP
+docker_mqtt-broker-1  |             commonName                = broker
+docker_mqtt-broker-1  |         X509v3 extensions:
+docker_mqtt-broker-1  |             X509v3 Basic Constraints: 
+docker_mqtt-broker-1  |                 CA:FALSE
+docker_mqtt-broker-1  |             Netscape Comment: 
+docker_mqtt-broker-1  |                 OpenSSL Generated Certificate
+docker_mqtt-broker-1  |             X509v3 Subject Key Identifier: 
+docker_mqtt-broker-1  |                 87:65:D7:51:7D:93:38:CA:D3:58:C5:90:78:09:C1:62:62:CD:30:FA
+docker_mqtt-broker-1  |             X509v3 Authority Key Identifier: 
+docker_mqtt-broker-1  |                 keyid:4D:82:38:F0:27:B1:3A:51:17:FD:B9:4B:35:F2:70:61:14:F6:15:7E
+docker_mqtt-broker-1  | 
+docker_mqtt-broker-1  |             X509v3 Subject Alternative Name: 
+docker_mqtt-broker-1  |                 DNS:broker
+docker_mqtt-broker-1  |             X509v3 Key Usage: 
+docker_mqtt-broker-1  |                 Digital Signature, Non Repudiation, Key Encipherment
+docker_mqtt-broker-1  | Certificate is to be certified until Nov 27 08:23:59 2024 GMT (365 days)
+docker_mqtt-broker-1  | 
+docker_mqtt-broker-1  | Write out database with 1 new entries
+docker_mqtt-broker-1  | Data Base Updated
+docker_mqtt-broker-1  | Generating a 2048 bit RSA private key
+docker_mqtt-broker-1  | ..............................................................+++
+docker_mqtt-broker-1  | ...........................+++
+docker_mqtt-broker-1  | writing new private key to '/srv/http/client0.key'
+docker_mqtt-broker-1  | -----
+docker_mqtt-broker-1  | Using configuration from /etc/pki/tls/openssl.cnf
+docker_mqtt-broker-1  | Check that the request matches the signature
+docker_mqtt-broker-1  | Signature ok
+docker_mqtt-broker-1  | Certificate Details:
+docker_mqtt-broker-1  |         Serial Number:
+docker_mqtt-broker-1  |             84:ef:b3:f3:99:bb:b0:11
+docker_mqtt-broker-1  |         Validity
+docker_mqtt-broker-1  |             Not Before: Nov 28 08:23:59 2023 GMT
+docker_mqtt-broker-1  |             Not After : Nov 27 08:23:59 2024 GMT
+docker_mqtt-broker-1  |         Subject:
+docker_mqtt-broker-1  |             countryName               = JP
+docker_mqtt-broker-1  |             commonName                = client0
+docker_mqtt-broker-1  |         X509v3 extensions:
+docker_mqtt-broker-1  |             X509v3 Basic Constraints: 
+docker_mqtt-broker-1  |                 CA:FALSE
+docker_mqtt-broker-1  |             Netscape Comment: 
+docker_mqtt-broker-1  |                 OpenSSL Generated Certificate
+docker_mqtt-broker-1  |             X509v3 Subject Key Identifier: 
+docker_mqtt-broker-1  |                 0E:64:4F:C2:6E:B6:B7:98:D8:34:53:12:EF:A2:57:D2:AF:20:08:F5
+docker_mqtt-broker-1  |             X509v3 Authority Key Identifier: 
+docker_mqtt-broker-1  |                 keyid:4D:82:38:F0:27:B1:3A:51:17:FD:B9:4B:35:F2:70:61:14:F6:15:7E
+docker_mqtt-broker-1  | 
+docker_mqtt-broker-1  |             X509v3 Subject Alternative Name: 
+docker_mqtt-broker-1  |                 DNS:broker
+docker_mqtt-broker-1  |             X509v3 Key Usage: 
+docker_mqtt-broker-1  |                 Digital Signature, Non Repudiation, Key Encipherment
+docker_mqtt-broker-1  | Certificate is to be certified until Nov 27 08:23:59 2024 GMT (365 days)
+docker_mqtt-broker-1  | 
+docker_mqtt-broker-1  | Write out database with 1 new entries
+docker_mqtt-broker-1  | Data Base Updated
+docker_mqtt-broker-1  | Generating a 2048 bit RSA private key
+docker_mqtt-broker-1  | ....................+++
+docker_mqtt-broker-1  | ..................................+++
+docker_mqtt-broker-1  | writing new private key to '/srv/http/bad-client.key'
+docker_mqtt-broker-1  | -----
+docker_mqtt-broker-1  | 2023-11-28 08:24:00,827 INFO Set uid to user 0 succeeded
+docker_mqtt-broker-1  | 2023-11-28 08:24:00,835 INFO RPC interface 'supervisor' initialized
+docker_mqtt-broker-1  | 2023-11-28 08:24:00,835 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+docker_mqtt-broker-1  | 2023-11-28 08:24:00,836 INFO supervisord started with pid 1
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,841 INFO spawned: 'setup-sshd' with pid 43
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,849 INFO spawned: 'http' with pid 44
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,858 INFO spawned: 'kafka' with pid 46
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,865 INFO spawned: 'mosquitto' with pid 47
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,871 INFO spawned: 'setup-pw' with pid 48
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,876 INFO spawned: 'zookeeper' with pid 50
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,880 INFO success: setup-sshd entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,880 INFO success: setup-pw entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,908 INFO exited: mosquitto (exit status 1; not expected)
+docker_mqtt-broker-1  | 2023-11-28 08:24:01,917 INFO exited: setup-pw (exit status 0; expected)
+docker_mqtt-broker-1  | 2023-11-28 08:24:02,099 INFO exited: setup-sshd (exit status 0; expected)
+docker_mqtt-broker-1  | 2023-11-28 08:24:03,101 INFO success: http entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+docker_mqtt-broker-1  | 2023-11-28 08:24:03,102 INFO success: kafka entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+docker_mqtt-broker-1  | 2023-11-28 08:24:03,106 INFO spawned: 'mosquitto' with pid 727
+docker_mqtt-broker-1  | 2023-11-28 08:24:03,107 INFO success: zookeeper entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+docker_mqtt-broker-1  | 2023-11-28 08:24:05,049 INFO success: mosquitto entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
