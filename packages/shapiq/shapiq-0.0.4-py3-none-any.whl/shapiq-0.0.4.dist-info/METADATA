@@ -1,0 +1,139 @@
+Metadata-Version: 2.1
+Name: shapiq
+Version: 0.0.4
+Summary: SHAPley Interaction Quantification (SHAP-IQ) for Explainable AI
+Home-page: https://github.com/mmschlk/shapiq
+Author: Maximilian Muschalik Fabian Fumagalli
+Author-email: maximilian.muschalik@ifi.lmu.de
+License: MIT
+Project-URL: Tracker, https://github.com/mmschlk/shapiq/issues?q=is%3Aissue+label%3Abug
+Project-URL: Source, https://github.com/mmschlk/shapiq
+Keywords: python,machine learning,shap,xai,interaction
+Classifier: Development Status :: 3 - Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: colour
+Requires-Dist: networkx
+Provides-Extra: dev
+Requires-Dist: numpy ; extra == 'dev'
+Requires-Dist: scipy ; extra == 'dev'
+Requires-Dist: matplotlib ; extra == 'dev'
+Requires-Dist: colour ; extra == 'dev'
+Requires-Dist: networkx ; extra == 'dev'
+Requires-Dist: sphinx ; extra == 'dev'
+Requires-Dist: sphinx-autodoc-typehints ; extra == 'dev'
+Requires-Dist: sphinx-rtd-theme ; extra == 'dev'
+Requires-Dist: sphinx-toolbox ; extra == 'dev'
+Requires-Dist: nbsphinx ; extra == 'dev'
+Requires-Dist: pandoc ; extra == 'dev'
+Requires-Dist: furo ; extra == 'dev'
+Requires-Dist: sphinx-copybutton ; extra == 'dev'
+Requires-Dist: myst-parser ; extra == 'dev'
+Requires-Dist: build ; extra == 'dev'
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: coverage ; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: numpy ; extra == 'docs'
+Requires-Dist: scipy ; extra == 'docs'
+Requires-Dist: matplotlib ; extra == 'docs'
+Requires-Dist: colour ; extra == 'docs'
+Requires-Dist: networkx ; extra == 'docs'
+Requires-Dist: sphinx ; extra == 'docs'
+Requires-Dist: sphinx-autodoc-typehints ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'docs'
+Requires-Dist: sphinx-toolbox ; extra == 'docs'
+Requires-Dist: nbsphinx ; extra == 'docs'
+Requires-Dist: pandoc ; extra == 'docs'
+Requires-Dist: furo ; extra == 'docs'
+Requires-Dist: sphinx-copybutton ; extra == 'docs'
+Requires-Dist: myst-parser ; extra == 'docs'
+
+
+<p align="center">
+  <img height="250px" src="docs/source/_static/logo_shapiq_light.svg" alt="shapiq_logo">
+</p>
+
+<p align="center">
+  <!-- Tests -->
+  <a href="https://github.com/mmschlk/shapiq/actions/workflows/unit-tests.yml">
+    <img src="https://github.com/mmschlk/shapiq/actions/workflows/unit-tests.yml/badge.svg" alt="unit-tests">
+  </a>
+  
+  <!-- Read the Docs -->
+  <a href='https://shapiq.readthedocs.io/en/latest/?badge=latest'>
+      <img src='https://readthedocs.org/projects/shapiq/badge/?version=latest' alt='Documentation Status' />
+  </a>
+  
+  <!-- PyPI Version -->
+  <a href="https://pypi.org/project/shapiq">
+    <img src="https://img.shields.io/pypi/v/shapiq.svg?color=blue" alt="PyPi">
+  </a>
+  
+  <!-- PyPI status -->
+  <a href="https://pypi.org/project/shapiq">
+    <img src="https://img.shields.io/pypi/status/shapiq.svg?color=blue" alt="PyPi_status
+  </a>
+      
+  <!-- License -->
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/License-MIT-brightgreen.svg" alt="mit_license">
+  </a>
+</p>
+
+
+# SHAP-IQ: SHAP Interaction Quantification
+> An interaction may speak more than a thousand main effects.
+
+SHAP Interaction Quantification (short SHAP-IQ) is an **XAI framework** extending on the well-known `shap` explanations by introducing interactions to the equation.
+Shapley interactions extend on indivdual Shapley values by quantifying the **synergy** effect between machine learning entities such as features, data points, or weak learners in ensemble models.
+Synergies between these entities (also called players in game theory jargon) allows for a more intricate evaluation of your **black-box** models!
+
+# 🛠️ Install
+**shapiq** is intended to work with **Python 3.9 and above**. Installation can be done via `pip`:
+
+```sh
+pip install shapiq
+```
+
+# ⭐ Quickstart
+
+## 📈 Compute n-SII values
+
+## 📊 Visualize your Interactions
+
+One handy way of visualizing interaction scores (up to order 2) are network plots.
+You can see an example of such a plot below.
+The nodes represent **attribution** scores and the edges represent the **interactions**.
+The strength and size of the nodes and edges are proportional to the absolute value of the
+attribution scores and interaction scores, respectively.
+
+```python
+from shapiq.plot import network_plot
+
+network_plot(
+    first_order_values=n_sii_first_order,  # first order n-SII values
+    second_order_values=n_sii_second_order # second order n-SII values
+)
+```
+
+The pseudo-code above can produce the following plot (here also an image is added):
+
+<p align="center">
+  <img width="400px" src="docs/source/_static/network_example.png" alt="network_plot_example">
+</p>
+
+## 📖 Documentation
+The documentation for ``shapiq`` can be found [here](https://shapiq.readthedocs.io/en/latest/).
