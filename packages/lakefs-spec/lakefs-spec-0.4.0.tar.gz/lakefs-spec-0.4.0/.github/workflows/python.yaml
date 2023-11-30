@@ -1,0 +1,70 @@
+name: lakefs-spec CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      lakefs:
+        image: treeverse/lakefs:1.0.0
+        ports:
+          - 8000:8000
+        env:
+          LAKEFS_INSTALLATION_USER_NAME: "quickstart"
+          LAKEFS_INSTALLATION_ACCESS_KEY_ID: "AKIAIOSFOLQUICKSTART"
+          LAKEFS_INSTALLATION_SECRET_ACCESS_KEY: "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"
+          LAKEFS_DATABASE_TYPE: "local"
+          LAKEFS_AUTH_ENCRYPT_SECRET_KEY: "THIS_MUST_BE_CHANGED_IN_PRODUCTION"
+          LAKEFS_BLOCKSTORE_TYPE: "local"
+    env:
+      MYPY_CACHE_DIR: "${{ github.workspace }}/.cache/mypy"
+      RUFF_CACHE_DIR: "${{ github.workspace }}/.cache/ruff"
+      PRE_COMMIT_HOME: "${{ github.workspace }}/.cache/pre-commit"
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # for documentation builds
+    - name: Set up Python and dependencies
+      uses: ./.github/actions/python-deps
+      with:
+        pythonVersion: 3.11
+    - name: Cache pre-commit tools
+      uses: actions/cache@v3
+      with:
+        path: |
+          ${{ env.MYPY_CACHE_DIR }}
+          ${{ env.RUFF_CACHE_DIR }}
+          ${{ env.PRE_COMMIT_HOME }}
+        key: ${{ runner.os }}-${{ hashFiles('requirements-dev.txt', '.pre-commit-config.yaml') }}-linter-cache
+    - name: Run pre-commit checks
+      run: |
+        pre-commit run --all-files --verbose --show-diff-on-failure
+    - name: Set up oldest supported Python for testing (3.9)
+      uses: actions/setup-python@v4
+      with:
+        python-version: 3.9
+    - name: Test on oldest supported Python
+      run: |
+        python -m pip install --upgrade pip pytest pytest-cov pyyaml
+        python -m pip install -e .
+        pytest -s --cov=src --cov-branch
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+    - name: Documentation
+      uses: ./.github/actions/mike-docs
+      with:
+        version: development
+        pre_release: true  # include pre-release notification banner
+        push: ${{ github.ref == 'refs/heads/main' }}  # build always, publish on 'main' only to prevent version clutter
