@@ -1,0 +1,14 @@
+name: xagg
+channels:
+  - conda-forge
+dependencies:
+  - pytest
+  - xarray
+  - numpy
+  - scipy
+  - netcdf4
+  - pandas
+  - geopandas >= 0.12.0
+  - xesmf >= 0.7.1
+  - cf_xarray # separately, to ensure latest version
+  - pytables
