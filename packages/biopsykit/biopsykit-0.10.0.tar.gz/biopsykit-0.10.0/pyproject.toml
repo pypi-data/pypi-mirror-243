@@ -1,0 +1,114 @@
+[tool.poetry]
+name = "biopsykit"
+version = "0.10.0"
+description = "A Python package for the analysis of biopsychological data."
+authors = [
+    "Robert Richer <robert.richer@fau.de>",
+    "Arne Küderle <arne.kuederle@fau.de>",
+    "Rebecca Lennartz <rebecca.lennartz@fau.de>",
+    "Daniel Krauß <daniel.k.krauss@fau.de>",
+    "Victoria Müller <victoria.m.mueller@fau.de>",
+    "Martin Ullrich <martin.ullrich@fau.de>",
+    "Janis Zenkner <janis.zenkner@fau.de>",
+]
+readme = "README.md"
+homepage = "https://github.com/mad-lab-fau/biopsykit"
+repository = "https://github.com/mad-lab-fau/biopsykit"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+numpy = "^1"
+pandas = "^1"
+matplotlib = "^3.4"
+seaborn = "^0"
+neurokit2 = "^0"
+pingouin = "^0.5.2"
+scipy = "^1"
+statannot = "^0.2.3"
+tqdm = "^4"
+joblib = "^1"
+scikit-learn = "^1.0"
+nilspodlib = ">=3.4.1"
+openpyxl = "^3"
+XlsxWriter = "^1"
+xlrd = "^2"
+statsmodels = "^0.13"
+fau-colors = "^1.1"
+bioread = "^3"
+mne = {version = "^1.2.1", optional = true}
+IPython = {version = "^7", optional = true}
+ipywidgets = {version = "^8", optional = true}
+ipympl = {version = "^0.9", optional = true}
+
+[tool.poetry.extras]
+mne = ["mne"]
+jupyter = ["IPython", "ipympl", "ipywidgets"]
+
+[tool.poetry.dev-dependencies]
+black = { version="^22", extras=["jupyter", "d"] }
+poethepoet = "^0.10.0"
+pytest = "^6"
+pytest-cov = "^2"
+ipykernel = "^6"
+ruff = "^0.0.261"
+# Doc dependencies. They also need to be updated in ./docs/requirements.txt
+sphinx = "^4"
+numpydoc = "^1"
+sphinx-gallery = "^0.10.0"
+sphinx_issues = "^1.2.0"
+pydata-sphinx-theme = "^0.6.2"
+recommonmark = "^0.6.0"
+toml = "^0.10.1"
+memory_profiler = "^0.57.0"
+coverage-badge = "^1.0.1"
+sphinx-copybutton = "^0.4.0"
+nbsphinx = "^0.8.7"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py38']
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | docs
+    | build
+    | dist
+    | \.virtual_documents
+    | \.ipynb_checkpoints
+  )/
+)
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 120
+skip_gitignore = true
+
+
+[tool.poe.tasks]
+_format_black = "black ."
+_format_ruff = "ruff . --fix-only"
+format = { sequence = ["_format_black", "_format_ruff"], help = "Format all files." }
+lint = { cmd = "ruff src --fix", help = "Lint all files with ruff." }
+_lint_ci = "ruff src --format=github"
+_check_black = "black . --check"
+ci_check = { sequence = ["_check_black", "_lint_ci"], help = "Check all potential format and linting issues." }
+test = {cmd = "pytest --cov=biopsykit -cov-report=term-missing --cov-report=xml", help = "Run Pytest with coverage." }
+docs = {"script" = "_tasks:task_docs"}
+update_version = {"script" = "_tasks:task_update_version"}
+register_ipykernel = { cmd = "python -m ipykernel install --user --name biopsykit --display-name biopsykit", help = "Add a new jupyter kernel for the project." }
+remove_ipykernel = { cmd = "jupyter kernelspec uninstall biopsykit", help = "Remove the project specific jupyter kernel."}
+default = {sequence = ["format", "lint", "test"], help = "Run the default pipeline, consisting of formatting, linting, and testing."}
