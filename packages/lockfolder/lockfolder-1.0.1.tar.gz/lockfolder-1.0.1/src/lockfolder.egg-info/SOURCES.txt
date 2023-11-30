@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/lockfolder/__init__.py
+src/lockfolder/lockfolder.py
+src/lockfolder.egg-info/PKG-INFO
+src/lockfolder.egg-info/SOURCES.txt
+src/lockfolder.egg-info/dependency_links.txt
+src/lockfolder.egg-info/requires.txt
+src/lockfolder.egg-info/top_level.txt
