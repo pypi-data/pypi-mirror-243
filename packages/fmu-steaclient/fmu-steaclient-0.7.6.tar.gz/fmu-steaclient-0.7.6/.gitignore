@@ -1,0 +1,6 @@
+/*.egg
+/build
+/dist
+*.pyc
+/stea.egg-info
+/stea/version.py
