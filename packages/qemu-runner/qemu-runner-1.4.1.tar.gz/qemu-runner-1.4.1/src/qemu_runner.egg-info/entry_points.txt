@@ -1,0 +1,2 @@
+[console_scripts]
+qemu_make_runner = qemu_runner.make_runner.__main__:run

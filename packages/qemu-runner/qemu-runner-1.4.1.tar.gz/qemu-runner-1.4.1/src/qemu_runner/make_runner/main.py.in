@@ -1,0 +1,9 @@
+import sys
+
+from qemu_runner.make_runner.runner import execute_runner
+
+EMBEDDED_LAYERS = {embedded_layers!r}
+ADDITIONAL_SCRIPT_BASES = {additional_script_bases!r}
+ADDITIONAL_SEARCH_PATHS = {additional_search_paths!r}
+
+execute_runner(EMBEDDED_LAYERS, ADDITIONAL_SCRIPT_BASES, ADDITIONAL_SEARCH_PATHS, sys.argv[1:])
