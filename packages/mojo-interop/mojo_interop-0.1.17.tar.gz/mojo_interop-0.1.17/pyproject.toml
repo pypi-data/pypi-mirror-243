@@ -1,0 +1,42 @@
+[tool.poetry]
+name = "mojo-interop"
+description = "Automation Mojo Interop Extensions"
+version = "0.1.17"
+authors = [
+    "Myron Walker <myron.walker@gmail.com>"
+]
+readme = "README.rst"
+license = "LICENSE.txt"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX"
+]
+keywords = [
+    "python"
+]
+packages = [{include="mojo", from="source/packages"}]
+
+homepage = "http://automationmojo.com"
+repository = "https://github.com/automationmojo/mojo-interop"
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+rpyc = "^5.3.1"
+mojo-results = ">=0.1.13 <0.2.0"
+pexpect = "^4.8.0"
+psutil = "^5.9.6"
+mojo-errors = ">=0.0.5 < 0.1.0"
+mojo-networking = ">=0.0.4 <0.1.0"
+mojo-xmodules = ">=1.0.6 <1.1.0"
+mojo-credentials = ">=0.0.1 <0.1.0"
+mojo-landscaping = ">=0.0.7 <0.1.0"
+
+[tool.poetry.group.dev.dependencies]
+myst-parser = "^0.18.1"
+sphinx = ">=1.6,<6"
+sphinx-rtd-theme = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
