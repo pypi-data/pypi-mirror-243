@@ -1,0 +1,5 @@
+[sinetstream.reader]
+iostream = sinetstreamplugin.iostream:IOStreamReader
+
+[sinetstream.writer]
+iostream = sinetstreamplugin.iostream:IOStreamWriter
