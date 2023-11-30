@@ -1,0 +1,2 @@
+[console_scripts]
+synapse-to-ipynb = synapse_to_ipynb:main
