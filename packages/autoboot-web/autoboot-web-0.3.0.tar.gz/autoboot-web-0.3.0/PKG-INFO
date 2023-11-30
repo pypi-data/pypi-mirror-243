@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: autoboot-web
+Version: 0.3.0
+Summary: Web starter build with autoboot and FastAPI
+Home-page: https://github.com/yizzuide/autoboot_data
+Author: yizzuide
+Author-email: fu837014586@163.com
+Keywords: autoboot,web,FastAPI
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# autoboot web starter
+扩展autoboot框架，基于FastAPI的Web Starter。
