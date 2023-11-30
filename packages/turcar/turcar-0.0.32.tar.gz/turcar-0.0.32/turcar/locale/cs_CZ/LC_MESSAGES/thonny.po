@@ -1,0 +1,1942 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: turcar\n"
+"Language: cs\n"
+
+#: turcar/workbench.py:361
+msgid "File"
+msgstr "Soubor"
+
+#: turcar/workbench.py:362
+msgid "Edit"
+msgstr "Upravit"
+
+#: turcar/workbench.py:363
+msgid "View"
+msgstr "Zobrazení"
+
+#: turcar/running.py:116 turcar/workbench.py:364
+msgid "Run"
+msgstr "Běh"
+
+#: turcar/workbench.py:365
+msgid "Tools"
+msgstr "Nástroje"
+
+#: turcar/plugins/help/__init__.py:80 turcar/workbench.py:366
+msgid "Help"
+msgstr "Nápověda"
+
+#: turcar/workbench.py:583
+msgid "Exit"
+msgstr "Konec"
+
+#: turcar/workbench.py:610
+msgid "Decrease font size"
+msgstr "Zmenšit velikost písma"
+
+#: turcar/workbench.py:622
+msgid "Focus editor"
+msgstr "Přepnout do editoru"
+
+#: turcar/workbench.py:631
+msgid "Focus shell"
+msgstr "Přepnout do shellu"
+
+#: turcar/workbench.py:642
+msgid "Maximize view"
+msgstr "Maximalizovat okno"
+
+#: turcar/workbench.py:654
+msgid "Full screen"
+msgstr "Celá obrazovka"
+
+#: turcar/workbench.py:1457
+msgid "Program arguments"
+msgstr "Argumenty programu"
+
+#: turcar/plugins/about.py:21 turcar/plugins/about.py:140
+msgid "About turcar"
+msgstr "O turcar"
+
+#: turcar/plugins/about.py:66
+msgid "Made in\n"
+"University of Tartu, Estonia,\n"
+"with the help from\n"
+"open-source community,\n"
+"Raspberry Pi Foundation\n"
+"and Cybernetica AS"
+msgstr "Vytvořeno v\n"
+"University of Tartu, Estonia,\n"
+"s pomocí\n"
+"komunity open-source,\n"
+"Raspberry Pi Foundation\n"
+"a Cybernetica AS"
+
+#: turcar/plugins/about.py:86
+msgid "This program comes with\n"
+"ABSOLUTELY NO WARRANTY!\n"
+"It is free software, and you are welcome to\n"
+"redistribute it under certain conditions, see\n"
+"https://opensource.org/licenses/MIT\n"
+"for details"
+msgstr "Tento program je šířen\n"
+"BEZ JAKÉKOLI ZÁRUKY!\n"
+"Jedná se o svobodný software a jeho šíření\n"
+"v souladu s licencí je vítáno, viz\n"
+"https://opensource.org/licenses/MIT"
+
+#: turcar/plugins/about.py:129
+msgid "Version history"
+msgstr "Historie verzí"
+
+#: turcar/plugins/about.py:136
+msgid "Report problems"
+msgstr "Nahlásit problém"
+
+#: turcar/plugins/assistant_config_page.py:16
+msgid "Open Assistant automatically when program crashes with an exception"
+msgstr "Otevřít Asistenta automaticky pokud program skončí výjimkou"
+
+#: turcar/plugins/assistant_config_page.py:23
+msgid "Open Assistant automatically when it has warnings for your code"
+msgstr "Otevřít Asistenta automaticky když má varování pro váš kód"
+
+#: turcar/plugins/assistant_config_page.py:30
+msgid "Perform selected Pylint checks"
+msgstr "Provést vybranou Pylint kontolu"
+
+#: turcar/plugins/assistant_config_page.py:34
+msgid "Perform MyPy checks"
+msgstr "Provést MyPy kontrolu"
+
+#: turcar/plugins/assistant_config_page.py:36
+msgid "Disabled checks (one id per line)"
+msgstr "vypnout kontrolu (jedno id na řádek)"
+
+#: turcar/assistance.py:985 turcar/plugins/assistant_config_page.py:74
+msgid "Assistant"
+msgstr "Asistent"
+
+#: turcar/plugins/autocomplete.py:512
+msgid "Auto-complete"
+msgstr "Automatické doplňování"
+
+#: turcar/plugins/backend_config_page.py:337
+msgid "Interpreter"
+msgstr "Interpreter"
+
+#: turcar/plugins/birdseye_frontend.py:55
+msgid "About Birdseye"
+msgstr "O Birdseye"
+
+#: turcar/plugins/birdseye_frontend.py:56
+msgid "Birdseye is a Python debugger which needs to be installed separately.\n"
+"\n"
+"Do you want to open the help page and learn more?"
+msgstr "Birdseye je Debuger Pythonu, který musí být\n"
+"instalován samostatně.\n"
+"Chcete otevřít nápovědu a dozvědět se více?"
+
+#: turcar/plugins/birdseye_frontend.py:84
+msgid "Debug current script (birdseye)"
+msgstr "Debugovat aktuální skript (birdseye)"
+
+#: turcar/plugins/commenting_indenting.py:172
+msgid "Toggle comment"
+msgstr "Přepnout komentáře"
+
+#: turcar/plugins/commenting_indenting.py:182
+msgid "Comment out"
+msgstr "Zakomentovat"
+
+#: turcar/plugins/commenting_indenting.py:192
+msgid "Uncomment"
+msgstr "Odkomentovat"
+
+#: turcar/plugins/common_editing_commands.py:21
+msgid "Undo"
+msgstr "Zpět"
+
+#: turcar/plugins/common_editing_commands.py:33
+msgid "Redo"
+msgstr "Vpřed"
+
+#: turcar/base_file_browser.py:721 turcar/plugins/common_editing_commands.py:49
+#: turcar/ui_utils.py:2294
+msgid "Cut"
+msgstr "Vyjmout"
+
+#: turcar/base_file_browser.py:722 turcar/plugins/common_editing_commands.py:61
+#: turcar/ui_utils.py:2295
+msgid "Copy"
+msgstr "Kopírovat"
+
+#: turcar/base_file_browser.py:724 turcar/base_file_browser.py:730
+#: turcar/plugins/common_editing_commands.py:73 turcar/ui_utils.py:2296
+msgid "Paste"
+msgstr "Vložit"
+
+#: turcar/plugins/common_editing_commands.py:85 turcar/plugins/debugger.py:152
+msgid "Select all"
+msgstr "Vybrat vše"
+
+#: turcar/plugins/debugger.py:145 turcar/plugins/debugger.py:1401
+msgid "Run to cursor"
+msgstr "Skoč na kurzor"
+
+#: turcar/plugins/debugger.py:982
+msgid "Can't close yet"
+msgstr "ještě není možné zavřít"
+
+#: turcar/plugins/debugger.py:983
+msgid "Use \"Stop\" command if you want to cancel debugging"
+msgstr "Použijte \"Stop\" příkaz pro ukončení debuggingu"
+
+#: turcar/plugins/dock_user_windows_frontend.py:28
+msgid "Dock user windows"
+msgstr "Ukotvit uživatelská okna"
+
+#: turcar/plugins/editor_config_page.py:20
+msgid "Highlight matching names"
+msgstr "Zvýraznit stejná jména"
+
+#: turcar/plugins/editor_config_page.py:26
+msgid "Highlight local variables"
+msgstr "Zvýraznit lokální proměnné"
+
+#: turcar/plugins/editor_config_page.py:31
+msgid "Highlight parentheses"
+msgstr "Zvýrazňovat závorky"
+
+#: turcar/plugins/editor_config_page.py:32
+msgid "Highlight syntax elements"
+msgstr "Zvýrazňovat synaxi"
+
+#: turcar/plugins/editor_config_page.py:36
+msgid "Highlight current line (requires reopening the editor)"
+msgstr "Zvýrazňovat aktuální řádek (vyžaduje znovuotevření editoru)"
+
+#: turcar/plugins/editor_config_page.py:73
+msgid "Show line numbers"
+msgstr "Zobrazit čísla řádků"
+
+#: turcar/plugins/editor_config_page.py:76
+msgid "Recommended maximum line length\n"
+"(Set to 0 to turn off margin line)"
+msgstr "Doporučené maximum znaků na řádek\n"
+"(nastavte 0 pro vypnutí čáry pro konec řádku)"
+
+#: turcar/plugins/editor_config_page.py:104
+msgid "Editor"
+msgstr "Editor"
+
+#: turcar/plugins/event_logging.py:207
+msgid "Export usage logs..."
+msgstr "Exportovat protokoly využití ..."
+
+#: turcar/plugins/event_view.py:39
+msgid "Events"
+msgstr "Události"
+
+#: turcar/plugins/files.py:606
+msgid "Files"
+msgstr "Soubory"
+
+#: turcar/plugins/find_replace.py:60 turcar/plugins/find_replace.py:430
+msgid "Find & Replace"
+msgstr "Najít a nahradit"
+
+#: turcar/plugins/find_replace.py:66
+msgid "Find:"
+msgstr "Najít:"
+
+#: turcar/plugins/find_replace.py:87
+msgid "Replace with:"
+msgstr "Nahradit s:"
+
+#: turcar/plugins/find_replace.py:105
+msgid "Case sensitive"
+msgstr "Citlivé na velikost"
+
+#: turcar/plugins/find_replace.py:112
+msgid "Up"
+msgstr "Nahoru"
+
+#: turcar/plugins/find_replace.py:116
+msgid "Down"
+msgstr "Dolů"
+
+#: turcar/plugins/find_replace.py:125
+msgid "Find"
+msgstr "Najít"
+
+#: turcar/plugins/find_replace.py:135
+msgid "Replace"
+msgstr "Nahradit"
+
+#: turcar/plugins/find_replace.py:143
+msgid "Replace+Find"
+msgstr "Najít a nahradit"
+
+#: turcar/plugins/find_replace.py:153
+msgid "Replace all"
+msgstr "Nahradit vše"
+
+#: turcar/plugins/find_replace.py:249
+msgid "Enter string to be replaced."
+msgstr "Vložte řetězec k nahrazení"
+
+#: turcar/plugins/find_replace.py:333
+msgid "The specified text was not found!"
+msgstr "Text nebyl nalezen"
+
+#: turcar/plugins/general_config_page.py:15
+msgid "Allow only single turcar instance"
+msgstr "Povolit pouze jednu instanci turcar"
+
+#: turcar/plugins/general_config_page.py:22
+msgid "Reopen all files from previous session"
+msgstr "Otevřít všechny soubory z předchozího sezení"
+
+#: turcar/plugins/general_config_page.py:37
+msgid "Disable notification sound"
+msgstr "Vypnout notifikační zvuky"
+
+#: turcar/plugins/general_config_page.py:86
+msgid "Font scaling mode"
+msgstr "Mód škálování písma"
+
+#: turcar/plugins/heap.py:37
+msgid "Heap mode is on.\n"
+"Close Heap view to turn it off."
+msgstr "Heap mód je zapnutý.\n"
+"Zavřete Heap zobrazení pro jeho vypnutí"
+
+#: turcar/plugins/heap.py:86
+msgid "Heap"
+msgstr "Heap"
+
+#: turcar/plugins/general_config_page.py:53
+msgid "Language"
+msgstr "Jazyk"
+
+#: turcar/plugins/notes.py:35
+msgid "This box is meant for your working notes -- assignment instructions, code snippets, whatever.\n"
+"\n"
+"Everything will be saved automatically and loaded when you open turcar next time.\n"
+"\n"
+"Feel free to delete this text to make room for your own notes."
+msgstr "Toto pole je určeno pro vaše pracovní poznámky -- k přiřazení úkolů, úryvků kódu, pro cokoli.\n"
+"\n"
+"Všechno se automaticky uloží a načte, když příště otevřete turcar.\n"
+"\n"
+"Neváhejte tento text smazat a vytvořte si tak prostor pro vlastní poznámky."
+
+#: turcar/plugins/notes.py:63
+msgid "Notes"
+msgstr "Poznámky"
+
+#: turcar/plugins/object_inspector.py:116
+msgid "Previous object"
+msgstr "Předhozí objekt"
+
+#: turcar/plugins/object_inspector.py:119
+msgid "Next object"
+msgstr "následující objekt"
+
+#: turcar/plugins/object_inspector.py:733
+msgid "Object inspector"
+msgstr "Inspektor objektů"
+
+#: turcar/plugins/outline.py:148
+msgid "Outline"
+msgstr "Osnova"
+
+#: turcar/plugins/pgzero_frontend.py:27
+msgid "Pygame Zero mode"
+msgstr "Pygame Zero mód"
+
+#: turcar/plugins/pip_gui.py:79
+msgid "Uninstall"
+msgstr "Odinstalovat"
+
+#: turcar/editors.py:667 turcar/plugins/pip_gui.py:251 turcar/ui_utils.py:491
+#: turcar/ui_utils.py:1871 turcar/workdlg.py:162
+msgid "Close"
+msgstr "Zavřít"
+
+#: turcar/plugins/pip_gui.py:397
+msgid "Click "
+msgstr "Klik "
+
+#: turcar/plugins/pip_gui.py:398 turcar/plugins/pip_gui.py:409
+msgid "here"
+msgstr "zde"
+
+#: turcar/plugins/pip_gui.py:76
+msgid "Upgrade"
+msgstr "Upgrade"
+
+#: turcar/plugins/esp/__init__.py:349
+#: turcar/plugins/micropython/uf2dialog.py:348 turcar/plugins/pip_gui.py:73
+msgid "Install"
+msgstr "Instalace"
+
+#: turcar/plugins/pip_gui.py:535
+msgid "Could not find the package from PyPI."
+msgstr "Není možné najít balík z PyPI"
+
+#: turcar/plugins/pip_gui.py:557
+msgid "Latest stable version"
+msgstr "Poslední stabilní verze"
+
+#: turcar/plugins/pip_gui.py:559
+msgid "Latest version"
+msgstr "Poslední verze"
+
+#: turcar/plugins/pip_gui.py:561
+msgid "Summary"
+msgstr "Souhrn"
+
+#: turcar/plugins/pip_gui.py:563
+msgid "Author"
+msgstr "Autor"
+
+#: turcar/plugins/pip_gui.py:565
+msgid "Homepage"
+msgstr "Domovská stránka"
+
+#: turcar/plugins/pip_gui.py:567
+msgid "Bugtracker"
+msgstr "Butracker"
+
+#: turcar/plugins/pip_gui.py:569
+msgid "Documentation"
+msgstr "Dokumentace"
+
+#: turcar/plugins/pip_gui.py:571
+msgid "PyPI page"
+msgstr "PyPI stránky"
+
+#: turcar/plugins/pip_gui.py:611
+msgid "Requires"
+msgstr "Vyžaduje"
+
+#: turcar/plugins/pip_gui.py:743
+msgid "Really uninstall?"
+msgstr "Opravdu odinstalovat?"
+
+#: turcar/plugins/pip_gui.py:748
+msgid "Are you sure you want to uninstall it?"
+msgstr "Jste si jisti odinstalací?"
+
+#: turcar/plugins/variables.py:22
+msgid "Back to\n"
+"current frame"
+msgstr "Zpět k\n"
+"aktuálnímu snímku"
+
+#: turcar/plugins/variables.py:80 turcar/plugins/variables.py:82
+#: turcar/plugins/variables.py:145
+msgid "Variables"
+msgstr "Proměnné"
+
+#: turcar/base_file_browser.py:1558
+msgid "This computer"
+msgstr "Tento počítač"
+
+#: turcar/base_file_browser.py:641
+msgid "Refresh"
+msgstr "Obnovit"
+
+#: turcar/base_file_browser.py:650
+msgid "Focus into"
+msgstr "Přepnout do"
+
+#: turcar/base_file_browser.py:1393 turcar/base_file_browser.py:1405
+#: turcar/plugins/autocomplete.py:300 turcar/plugins/highlight_names.py:87
+msgid "Error"
+msgstr "Chyba"
+
+#: turcar/base_file_browser.py:1393 turcar/base_file_browser.py:1405
+msgid "You need to select a file!"
+msgstr "Musíte vybrat soubor!"
+
+#: turcar/base_file_browser.py:1409
+msgid "Overwrite?"
+msgstr "Přepsat?"
+
+#: turcar/base_file_browser.py:1409
+msgid "Do you want to overwrite '%s' ?"
+msgstr "Chcete přepsat '%s'?"
+
+#: turcar/editors.py:632 turcar/editors.py:634
+msgid "New"
+msgstr "Nový"
+
+#: turcar/editors.py:645
+msgid "Open..."
+msgstr "Otevřít..."
+
+#: turcar/editors.py:647
+msgid "Load"
+msgstr "Nahrát"
+
+#: turcar/editors.py:656
+msgid "Recent files"
+msgstr "Nedávné soubory"
+
+#: turcar/editors.py:678 turcar/ui_utils.py:493
+msgid "Close all"
+msgstr "Zavřít vše"
+
+#: turcar/editors.py:688 turcar/editors.py:690
+msgid "Save"
+msgstr "Uložit"
+
+#: turcar/editors.py:713
+msgid "Save as..."
+msgstr "Uložit jako..."
+
+#: turcar/editors.py:724
+msgid "Save copy..."
+msgstr "Uložit kopii..."
+
+#: turcar/config_ui.py:18
+msgid "turcar options"
+msgstr "Volby turcar"
+
+#: turcar/running.py:115
+msgid "Run current script"
+msgstr "Spustit aktuální skript"
+
+#: turcar/running.py:146
+msgid "Run current script in terminal"
+msgstr "Spustit aktuální skript v terminálu"
+
+#: turcar/running.py:159
+msgid "Stop/Restart backend"
+msgstr "Zastavit/restartovat backend"
+
+#: turcar/running.py:160
+msgid "Stop"
+msgstr "Zastavit"
+
+#: turcar/running.py:171
+msgid "Interrupt execution"
+msgstr "Přerušit běh"
+
+#: turcar/running.py:184
+msgid "Send EOF / Soft reboot"
+msgstr "Poslat EOF / Soft reboot"
+
+#: turcar/running.py:195
+msgid "Disconnect"
+msgstr "Odpojit"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:268
+msgid "Python interpreters"
+msgstr "Interpretery Pythonu"
+
+#: turcar/editors.py:36 turcar/plugins/cpython_frontend/cp_front.py:269
+#: turcar/plugins/pip_gui.py:789 turcar/plugins/pip_gui.py:802
+msgid "all files"
+msgstr "všechny soubory"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:297
+msgid "Select empty directory for new virtual environment"
+msgstr "Vyberte prázdný adresář pro nové virtuální prostředí"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:304
+msgid "Bad directory"
+msgstr "Špatný adresář"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:305
+msgid "Selected directory is not empty.\n"
+"Select another or cancel."
+msgstr "Vybraný adresář není prázdný.\n"
+"Vyberte jiný adresář."
+
+#: turcar/plugins/cpython_frontend/cp_front.py:322
+msgid "Creating virtual environment"
+msgstr "Vytvářím virtuální prostředí"
+
+#: turcar/shell.py:100
+msgid "Clear shell"
+msgstr "Smazat shell"
+
+#: turcar/shell.py:174
+msgid "Plotter"
+msgstr "Plotter"
+
+#: turcar/shell.py:306
+msgid "Clear"
+msgstr "Smazat"
+
+#: turcar/shell.py:319
+msgid "Show Plotter"
+msgstr "Zobrat Plotter"
+
+#: turcar/shell.py:1648
+msgid "For performance reasons, Shell avoids showing very long lines in full (see Tools => Options => Shell).\n"
+"Here you can interact with the original text fragment."
+msgstr "Z důvodů výkonu se Shell vyhýbá zobrazování velmi dlouhých řádků v plné délce (viz Nástroje => Možnosti => Shell).\n"
+"Zde můžete pracovat s původním fragmentem textu."
+
+#: turcar/shell.py:1659
+msgid "Wrap text (may be slow)"
+msgstr "Zalomte text (může být pomalý)"
+
+#: turcar/ui_utils.py:1866
+msgid "Copy to clipboard"
+msgstr "Zkopírovat do schránky"
+
+#: turcar/shell.py:1701
+msgid "Squeezed text (%d characters)"
+msgstr "Zkrátit text (%d znaků)"
+
+#: turcar/shell.py:1871
+msgid "Plotter visualizes series of\n"
+"numbers printed to the Shell."
+msgstr "Plotter vykresluje řady čísel\n"
+"vypsaných do Shellu"
+
+#: turcar/shell.py:1873
+msgid "See Help for details."
+msgstr "Detaily viz nápověda"
+
+#: turcar/ui_utils.py:492
+msgid "Close others"
+msgstr "Zavřít ostatní"
+
+#: turcar/ui_utils.py:1722
+msgid "Copying"
+msgstr "Kopíruji"
+
+#: turcar/ui_utils.py:1725
+msgid "Copying\n"
+"  %s\n"
+"to\n"
+"  %s"
+msgstr "Kopíruji\n"
+"%s\n"
+"do\n"
+"%s"
+
+#: turcar/base_file_browser.py:1364 turcar/config_ui.py:42 turcar/export.py:28
+#: turcar/plugins/backend_config_page.py:290 turcar/plugins/pip_gui.py:1256
+#: turcar/ui_utils.py:157 turcar/ui_utils.py:1733 turcar/ui_utils.py:1818
+#: turcar/workdlg.py:164 turcar/workdlg.py:209
+msgid "Cancel"
+msgstr "Zrušit"
+
+#: turcar/base_file_browser.py:1355 turcar/config_ui.py:41 turcar/export.py:25
+#: turcar/plugins/about.py:100 turcar/plugins/backend_config_page.py:285
+#: turcar/ui_utils.py:154 turcar/ui_utils.py:1815 turcar/workdlg.py:206
+msgid "OK"
+msgstr "OK"
+
+#: turcar/ui_utils.py:2300
+msgid "Select All"
+msgstr "Vybrat vše"
+
+#: turcar/plugins/shell_config_page.py:82 turcar/shell.py:155
+#: turcar/workbench.py:162
+msgid "Shell"
+msgstr "Shell"
+
+#: turcar/workbench.py:593
+msgid "Options..."
+msgstr "Volby..."
+
+#: turcar/workbench.py:600
+msgid "Increase font size"
+msgstr "Zvětšit velikost písma"
+
+#: turcar/workbench.py:665
+msgid "Change font size"
+msgstr "Změnit velikost písma"
+
+#: turcar/workbench.py:666
+msgid "Zoom"
+msgstr "Zvětšit"
+
+#: turcar/workbench.py:675
+msgid "Exit turcar"
+msgstr "Ukončit turcar"
+
+#: turcar/workbench.py:678
+msgid "Quit"
+msgstr "Ukončit"
+
+#: turcar/workbench.py:1236 turcar/workbench.py:1244
+msgid "Overwriting theme '%s'"
+msgstr "Přepsat motiv '%s'"
+
+#: turcar/workbench.py:1428
+msgid "Program arguments:"
+msgstr "Argumenty programu:"
+
+#: turcar/workbench.py:1482
+msgid "Regular mode"
+msgstr "Obvyklý mód"
+
+#: turcar/workbench.py:1483
+msgid "Configuration has been updated. Restart turcar to start working in regular mode.\n"
+"\n"
+"(See 'Tools → Options → General' if you change your mind later.)"
+msgstr "Konfigurace byla změněna. Restartujte turcar pro \n"
+"práci v normálním módu.\n"
+"(Pro změnu jděte do \"Nástroje - Volby - Obecné)"
+
+#: turcar/plugins/ast_view.py:212
+msgid "Program tree"
+msgstr "Strom programu"
+
+#: turcar/plugins/debugger.py:1283
+msgid "Resume"
+msgstr "Pokračovat"
+
+#: turcar/plugins/debugger.py:1299
+msgid "Run / resume"
+msgstr "Spustit / pokračovat"
+
+#: turcar/plugins/debugger.py:1314
+msgid "Debug current script"
+msgstr "Debugovat aktuální skript"
+
+#: turcar/plugins/debugger.py:1316
+msgid "Debug"
+msgstr "Debug"
+
+#: turcar/plugins/debugger.py:1327
+msgid "Debug current script (nicer)"
+msgstr "Debugovat aktuální skript (hezčí)"
+
+#: turcar/plugins/debugger.py:1339
+msgid "Debug current script (faster)"
+msgstr "Debugovat aktuální skript (rychlejší)"
+
+#: turcar/plugins/debugger.py:1350
+msgid "Step over"
+msgstr "Přeskočit"
+
+#: turcar/plugins/debugger.py:1352
+msgid "Over"
+msgstr "Preskočit"
+
+#: turcar/plugins/debugger.py:1363
+msgid "Step into"
+msgstr "Krok dovnitř"
+
+#: turcar/plugins/debugger.py:1365
+msgid "Into"
+msgstr "Dovnitř"
+
+#: turcar/plugins/debugger.py:1376
+msgid "Step out"
+msgstr "Krok ven"
+
+#: turcar/plugins/debugger.py:1378
+msgid "Out"
+msgstr "Ven"
+
+#: turcar/plugins/debugger.py:1413
+msgid "Step back"
+msgstr "Krok zpět"
+
+#: turcar/plugins/debugger.py:1415
+msgid "Back"
+msgstr "Zpět"
+
+#: turcar/plugins/debugger.py:1421
+msgid "Stack"
+msgstr "Zásobník"
+
+#: turcar/plugins/debugger.py:1422
+msgid "Exception"
+msgstr "Vyjímky"
+
+#: turcar/plugins/general_config_page.py:18
+msgid "Log program usage events"
+msgstr "Protokolovat události využití programu"
+
+#: turcar/plugins/general_config_page.py:43
+msgid "Debug mode (provides more detailed diagnostic logs)"
+msgstr "Ladící režim (poskytuje detailnější log)"
+
+#: turcar/plugins/general_config_page.py:67
+msgid "UI mode"
+msgstr "Mód UI"
+
+#: turcar/plugins/general_config_page.py:80
+msgid "UI scaling factor"
+msgstr "UI škálovací faktor"
+
+#: turcar/plugins/general_config_page.py:114
+msgid "NB! Restart turcar after changing these options!"
+msgstr "!Restartuje turcar po těchto změnách!"
+
+#: turcar/plugins/general_config_page.py:148
+msgid "General"
+msgstr "Obecné"
+
+#: turcar/plugins/pip_gui.py:142
+msgid "INSTALL"
+msgstr "INTALOVAT"
+
+#: turcar/plugins/pip_gui.py:367
+msgid "Browse the packages"
+msgstr "Projít balík"
+
+#: turcar/plugins/pip_gui.py:370
+msgid "With current interpreter you can only browse the packages here.\n"
+"Use 'Tools → Open system shell...' for installing, upgrading or uninstalling."
+msgstr "S aktuálním interpreterem zde můžete procházet pouze balíčky.\n"
+"K instalaci, upgradu nebo odinstalaci použijte 'Nástroje → Otevřít systémový shell ...'."
+
+#: turcar/plugins/pip_gui.py:378
+msgid "Packages' directory"
+msgstr "Adresář balíků"
+
+#: turcar/plugins/pip_gui.py:382
+msgid "Install from PyPI"
+msgstr "Instalovat z PyPI"
+
+#: turcar/plugins/pip_gui.py:385
+msgid "If you don't know where to get the package from, then most likely you'll want to search the Python Package Index. Start by entering the name of the package in the search box above and pressing ENTER."
+msgstr "Pokud nevíte, odkud balíček získat, pak budete pravděpodobně hledat Python Package Index. Začněte zadáním názvu balíčku do vyhledávacího pole výše a stisknutím klávesy ENTER."
+
+#: turcar/plugins/pip_gui.py:402
+msgid "to locate requirements.txt file and install the packages specified in it."
+msgstr "vyhledejte soubor requirements.txt a nainstalujte balíčky v něm uvedené."
+
+#: turcar/plugins/pip_gui.py:408
+msgid "Click"
+msgstr "Kliknout"
+
+#: turcar/plugins/pip_gui.py:413
+msgid "to locate and install the package file (usually with .whl, .tar.gz or .zip extension)."
+msgstr "najít a nainstalovat soubor balíčku (obvykle s příponou .whl, .tar.gz nebo .zip)."
+
+#: turcar/plugins/pip_gui.py:420
+msgid "Upgrade or uninstall"
+msgstr "Upgrade a odinstalace"
+
+#: turcar/plugins/pip_gui.py:422
+msgid "Start by selecting the package from the left."
+msgstr "Začněte vybráním balíku vlevo."
+
+#: turcar/plugins/pip_gui.py:410
+msgid "Target:"
+msgstr "Cíl:"
+
+#: turcar/plugins/pip_gui.py:414
+msgid "virtual environment"
+msgstr "virtuální prostředí"
+
+#: turcar/plugins/pip_gui.py:412
+msgid "user site packages"
+msgstr "balíčky z uživatelských stránek"
+
+#: turcar/plugins/pip_gui.py:430
+msgid "This dialog lists all available packages, but allows upgrading and uninstalling only packages from"
+msgstr "Tento dialog zobrazuje všechny dostupné balíky, ale umožňuje\n"
+"upgrade nebo odinstalaci pouze z"
+
+#: turcar/plugins/pip_gui.py:440
+msgid "New packages will be also installed into this directory. Other locations must be managed by alternative means."
+msgstr "Do tohoto adresáře budou nainstalovány také nové balíčky. Ostatní místa musí být řízena alternativními prostředky."
+
+#: turcar/plugins/pip_gui.py:485
+msgid "Installed version:"
+msgstr "Nainstalovaná verze:"
+
+#: turcar/plugins/pip_gui.py:487
+msgid "Installed to:"
+msgstr "Nainstalováno do:"
+
+#: turcar/plugins/pip_gui.py:538
+msgid "Please check your spelling!"
+msgstr "Prosím, zkontrolujte zápis"
+
+#: turcar/plugins/pip_gui.py:542
+msgid "Could not find the package info from PyPI."
+msgstr "Není možné najít informace o balíku z PyPI"
+
+#: turcar/plugins/pip_gui.py:544 turcar/plugins/pip_gui.py:1326
+msgid "Error code:"
+msgstr "Chybový kód:"
+
+#: turcar/plugins/pip_gui.py:689
+msgid "Can't find package name from the list:"
+msgstr "Nemůžu najít balík ze seznamu:"
+
+#: turcar/plugins/pip_gui.py:744
+msgid "Package '{}' is required for installing and uninstalling other packages."
+msgstr "Balík '{}' je požadován pro instalaci a odinstalaci ostatních balíků"
+
+#: turcar/plugins/pip_gui.py:789
+msgid "Package"
+msgstr "Balík"
+
+#: turcar/plugins/pip_gui.py:902
+msgid "Manage packages for %s"
+msgstr "Spravovat balíky pro %s"
+
+#: turcar/editors.py:571 turcar/plugins/micropython/pip_gui.py:23
+#: turcar/plugins/pip_gui.py:953
+msgid "Confirmation"
+msgstr "Potvrzení"
+
+#: turcar/plugins/pip_gui.py:954
+msgid "Looks like you are installing a turcar-related package.\n"
+"If you meant to install a turcar plugin, then you should\n"
+"choose 'Tools → Manage plugins...' instead\n"
+"\n"
+"Are you sure you want to install %s for the back-end?"
+msgstr "Vypadá to že instalujete balík do turcar.\n"
+"Pokud chcete instalovat turcar plugin,\n"
+"potom vyberte 'Nástroje - Spáva pluginů'\n"
+"\n"
+"Určitě chcete instalovat %s bro back-end?"
+
+#: turcar/plugins/pip_gui.py:1059
+msgid "NB! There may be another version available which is compatible with current turcar version. Click on '...' button to choose the version to install."
+msgstr "!Zřejmě existuje další verze která je kompatibilní s aktuální\n"
+"verzí turcar. Klikněte na '...' pro výběr verze k instalaci!"
+
+#: turcar/plugins/pip_gui.py:1067
+msgid "turcar plugin without requirements"
+msgstr "turcar plugin bez požaradků"
+
+#: turcar/plugins/pip_gui.py:1083
+msgid "Unsuitable requirements"
+msgstr "Nesplnitelné požadavky"
+
+#: turcar/plugins/pip_gui.py:1084
+msgid "This package requires different turcar version:"
+msgstr "Tento balík vyžaduje jinou verzi turcar:"
+
+#: turcar/plugins/pip_gui.py:1088
+msgid "If you still want it, then please install it from the command line."
+msgstr "Pokud to stále chcete, instalujte to z příkazového řádku"
+
+#: turcar/plugins/pip_gui.py:1125
+msgid "NB! You need to restart turcar after installing / upgrading / uninstalling a plug-in."
+msgstr "!Je potřeba resatartovat turcar po instalaci / upgrade / odinstalaci pluginu!"
+
+#: turcar/plugins/pip_gui.py:1135
+msgid "turcar plug-ins"
+msgstr "turcar pluginy"
+
+#: turcar/plugins/pip_gui.py:1171
+msgid "Advanced install / upgrade / downgrade"
+msgstr "Rozšířená instalace / upgrade / downgrade"
+
+#: turcar/plugins/pip_gui.py:1180
+msgid "Desired version"
+msgstr "Žádaná verze"
+
+#: turcar/plugins/pip_gui.py:1239
+msgid "Upgrade dependencies"
+msgstr "Závislosti upgrade"
+
+#: turcar/plugins/pip_gui.py:1324
+msgid "Requires:"
+msgstr "Vyžadje:"
+
+#: turcar/plugins/pip_gui.py:1328
+msgid "Error:"
+msgstr "Chyba:"
+
+#: turcar/plugins/pip_gui.py:1541
+msgid "Manage packages..."
+msgstr "Spravovat balíky"
+
+#: turcar/plugins/pip_gui.py:1547
+msgid "Manage plug-ins..."
+msgstr "Spravovat pluginy"
+
+#: turcar/plugins/replayer.py:365
+msgid "Open replayer..."
+msgstr "Otevřít prohlížeč historie"
+
+#: turcar/plugins/run_debug_config_page.py:14
+msgid "Change working directory to script directory on Run / Debug"
+msgstr "Změnit pracovní adresář na adresář skriptu při Spuštění / Debugu"
+
+#: turcar/plugins/run_debug_config_page.py:22
+msgid "Show function calls (frames) in separate windows"
+msgstr "Zobrazit volání funkcí (rámce) v samostatných oknech"
+
+#: turcar/plugins/run_debug_config_page.py:23
+msgid "Uncheck if you want more traditional experience."
+msgstr "Zrušte zaškrtnutí, pokud chcete více tradiční uživatelské prostředí."
+
+#: turcar/plugins/run_debug_config_page.py:29
+msgid "Open and close Stack view automatically"
+msgstr "Otevřít a zavřít pohled na zásobník automaticky"
+
+#: turcar/plugins/run_debug_config_page.py:30
+msgid "Opens the Stack view on first call and closes it when program returns to main frame."
+msgstr "Otevře první zobrazení zásobníku a zavře jej, když se program vrátí do hlavního snímku."
+
+#: turcar/plugins/run_debug_config_page.py:39
+msgid "Allow stepping into libraries (ie. outside of main script directory)"
+msgstr "Umožnit vstupovat do knihoven (například mimo adresář hlavního skriptu)"
+
+#: turcar/plugins/run_debug_config_page.py:40
+msgid "May make debugging slower."
+msgstr "Může zpomalit debuging"
+
+#: turcar/plugins/run_debug_config_page.py:45
+msgid "Preferred debugger"
+msgstr "Preferovaný debugger"
+
+#: turcar/plugins/run_debug_config_page.py:57
+msgid "(used when clicking Debug toolbar button)"
+msgstr "(používá se po kliknutí na tlačítko Debug na panelu nástrojů)"
+
+#: turcar/plugins/run_debug_config_page.py:62
+msgid "Birdseye port"
+msgstr " Birdseye port "
+
+#: turcar/plugins/run_debug_config_page.py:66
+msgid "(restart turcar after changing this)"
+msgstr "(restartujte turcar po této změně)"
+
+#: turcar/plugins/run_debug_config_page.py:74
+msgid "Run & Debug"
+msgstr "Spustit & Debugouvat"
+
+#: turcar/plugins/shell_config_page.py:26
+msgid "Terminal emulation"
+msgstr "Emulace Terminálu"
+
+#: turcar/plugins/shell_config_page.py:28
+msgid "supports basic ANSI-colors and styles"
+msgstr "podporuje základní ANSI barvy a styly"
+
+#: turcar/plugins/shell_config_page.py:40
+msgid "Maximum number of lines to keep."
+msgstr "Maximální počet řádků"
+
+#: turcar/plugins/shell_config_page.py:42
+msgid "NB! Large values may cause poor performance!"
+msgstr "!Velké hodnoty mohou způsobit nízký výkon!"
+
+#: turcar/plugins/shell_config_page.py:58
+msgid "Maximum length of line fragments before squeezing"
+msgstr "Maximální délka řádky před zalomením"
+
+#: turcar/plugins/terminal_config_page.py:12
+msgid "Running current script in terminal"
+msgstr "Spustit aktuální skript v terminálu"
+
+#: turcar/plugins/terminal_config_page.py:17
+msgid "Present Python REPL after program ends"
+msgstr "Po skončení programu zobrazí Python REPL"
+
+#: turcar/plugins/terminal_config_page.py:24
+msgid "Keep terminal window open after Python process ends"
+msgstr "Nechat otevřený terminál po ukončení Python programu"
+
+#: turcar/plugins/terminal_config_page.py:31
+msgid "NB! Automatic closing needs to be enabled in Terminal's settings\n"
+"(Profiles → Shell → When the shell exits)"
+msgstr "Pozn. V nastavení terminálu musí být povoleno automatické zavírání\n"
+"(Profily → Shell → Když skočí z shellu)"
+
+#: turcar/plugins/terminal_config_page.py:41
+msgid "Terminal"
+msgstr "Terminál"
+
+#: turcar/plugins/theme_and_font_config_page.py:40
+msgid "UI theme"
+msgstr "Motiv UI"
+
+#: turcar/plugins/theme_and_font_config_page.py:53
+msgid "Syntax theme"
+msgstr "Motiv syntaxe"
+
+#: turcar/plugins/theme_and_font_config_page.py:85
+msgid "Editor font"
+msgstr "Font editoru"
+
+#: turcar/plugins/theme_and_font_config_page.py:108
+msgid "IO font"
+msgstr "IO písmo"
+
+#: turcar/plugins/theme_and_font_config_page.py:133
+msgid "Preview"
+msgstr "Náhled"
+
+#: turcar/plugins/theme_and_font_config_page.py:151
+msgid "This is a comment"
+msgstr "Tohle je komentář"
+
+#: turcar/plugins/theme_and_font_config_page.py:154
+msgid "The answer is"
+msgstr "Odpověď je"
+
+#: turcar/plugins/theme_and_font_config_page.py:158
+msgid "unclosed_string"
+msgstr "unclosed_string"
+
+#: turcar/plugins/theme_and_font_config_page.py:160
+msgid "blah, blah"
+msgstr "bla, bla"
+
+#: turcar/plugins/theme_and_font_config_page.py:184
+msgid "NB! Some style elements change only after restarting turcar!"
+msgstr "!Některé změny stylu se projeví až po restartu turcar!"
+
+#: turcar/plugins/theme_and_font_config_page.py:223
+msgid "Enter an integer"
+msgstr "Zapište celé číslo"
+
+#: turcar/plugins/theme_and_font_config_page.py:236
+msgid "Theme & Font"
+msgstr "Motiv & Písmo"
+
+#: turcar/plugins/turcar_folders.py:19
+msgid "Open turcar program folder..."
+msgstr "Otevřít adresář programu turcar"
+
+#: turcar/plugins/turcar_folders.py:24
+msgid "Open turcar data folder..."
+msgstr "Otevřít adresář dat turcar"
+
+#: turcar/plugins/help/__init__.py:70
+msgid "Home"
+msgstr "Domů"
+
+#: turcar/plugins/help/__init__.py:81
+msgid "Help contents"
+msgstr "Obsah nápovědy"
+
+#: turcar/plugins/micropython/mp_front.py:300
+msgid "CircuitPython device"
+msgstr "CircuitPython zařízení"
+
+#: turcar/plugins/micropython/mp_front.py:304
+msgid "MicroPython device"
+msgstr "MicroPython zařzení"
+
+#: turcar/plugins/micropython/mp_front.py:541
+msgid "Connect your device to the computer and select corresponding port below"
+msgstr "Připojte zařízení k počítači a vyberte odpovídající port"
+
+#: turcar/plugins/micropython/mp_front.py:544
+msgid "look for your device name, \"USB Serial\" or \"UART\""
+msgstr "zkontrolujte název zařízení, např. \"USB Serial\" nebo \"UART\""
+
+#: turcar/plugins/micropython/mp_front.py:546
+msgid "If you can't find it, you may need to install proper USB driver first."
+msgstr "Pokud jej nemůžete najít, možná musíte nedříve nainstalovat správný ovladač."
+
+#: turcar/plugins/micropython/mp_front.py:439
+msgid "Port"
+msgstr "Port"
+
+#: turcar/plugins/micropython/mp_front.py:449
+msgid "Try to detect port automatically"
+msgstr "Zkusti detekovat port automaticky"
+
+#: turcar/plugins/micropython/__init__.py:25
+msgid "MicroPython (generic)"
+msgstr "MicroPython (generic)"
+
+#: turcar/plugins/printing/__init__.py:98
+msgid "Print..."
+msgstr "Tisk..."
+
+#: turcar/plugins/system_shell/__init__.py:63
+msgid "Open system shell..."
+msgstr "Otevřít systémový shell"
+
+#: turcar/plugins/backend_config_page.py:110
+msgid "Details"
+msgstr "Detaily"
+
+#: turcar/plugins/pip_gui.py:395
+msgid "Install from requirements file"
+msgstr "Instalace ze souboru požadavků (requirements.txt)"
+
+#: turcar/plugins/pip_gui.py:407
+msgid "Install from local file"
+msgstr "Instalovat z lokálního souboru"
+
+#: turcar/plugins/pip_gui.py:1118
+msgid "This dialog is for managing turcar plug-ins and their dependencies.\n"
+"If you want to install packages for your own programs then choose 'Tools → Manage packages...'"
+msgstr "Toto okno je pro správu pluginů turcar a jejich závislostí.\n"
+"Pokud chcete instalovat pluginy pro vlatní programy, potom vyberte 'Nástroje - Spravovat balíky'"
+
+#: turcar/plugins/circuitpython/__init__.py:10
+msgid "CircuitPython (generic)"
+msgstr "CircuitPython (generic)"
+
+#: turcar/plugins/commenting_indenting.py:143
+msgid "Indent selected lines"
+msgstr "Zvětšit odstazení o úroveň"
+
+#: turcar/plugins/commenting_indenting.py:153
+msgid "Dedent selected lines"
+msgstr "Zmenšit odstazení o úroveň"
+
+#: turcar/workbench.py:1471
+msgid "Switch to\n"
+"regular\n"
+"mode"
+msgstr "Přepnout do\n"
+"běžného\n"
+"režimu"
+
+#: turcar/plugins/microbit/__init__.py:58
+msgid "Make sure MicroPython has been installed to your micro:bit."
+msgstr "Ujistěte se že na micro:bit je nainstalován MicroPython"
+
+#: turcar/plugins/microbit/__init__.py:60
+msgid "Don't forget that main.py only works without embedded main script."
+msgstr "Nezapomeňte, že main.py funguje pouze bez vloženého hlavního skriptu."
+
+#: turcar/plugins/micropython/uf2dialog.py:44
+msgid "please wait"
+msgstr "prosím čekejte"
+
+#: turcar/misc_utils.py:151
+msgid "Could not find disk '%s'. Do you want to locate it yourself?"
+msgstr "Nenalezen disk '%s'. Chcete jej najít sám(a)?"
+
+#: turcar/misc_utils.py:154
+msgid "Found several '%s' disks. Do you want to choose one yourself?"
+msgstr "Nalezeno několik '%s' disků. Chcete jeden vybrat?"
+
+#: turcar/misc_utils.py:170
+msgid "Can't find suitable disk"
+msgstr "Není možné najít vhodný disk"
+
+#: turcar/base_file_browser.py:287
+msgid "%d items"
+msgstr "%d položek"
+
+#: turcar/base_file_browser.py:736
+msgid "Move to Trash"
+msgstr "Přesunout do koše"
+
+#: turcar/base_file_browser.py:739
+msgid "Delete"
+msgstr "Smazat"
+
+#: turcar/base_file_browser.py:718 turcar/base_file_browser.py:869
+msgid "New directory"
+msgstr "Nový adresář"
+
+#: turcar/base_file_browser.py:742
+msgid "Properties"
+msgstr "Vlastnosti"
+
+#: turcar/base_file_browser.py:744
+msgid "Storage space"
+msgstr "Úložiště"
+
+#: turcar/base_file_browser.py:754
+msgid "Path"
+msgstr "Cesta"
+
+#: turcar/base_file_browser.py:756
+msgid "Directory properties"
+msgstr "Vlastnosti adresáře"
+
+#: turcar/base_file_browser.py:758
+msgid "File properties"
+msgstr "Vlastnosti souboru"
+
+#: turcar/base_file_browser.py:760
+msgid "bytes"
+msgstr "bajtů"
+
+#: turcar/base_file_browser.py:763
+msgid "Size"
+msgstr "Velikost"
+
+#: turcar/base_file_browser.py:93 turcar/base_file_browser.py:774
+msgid "Modified"
+msgstr "Změněno"
+
+#: turcar/base_file_browser.py:833
+msgid "Deleting %s"
+msgstr "Mažu %s"
+
+#: turcar/editors.py:253
+msgid "Loading"
+msgstr "Nahrávám"
+
+#: turcar/editors.py:382
+msgid "Saving"
+msgstr "Ukládám"
+
+#: turcar/plugins/files.py:219
+msgid "Upload to %s"
+msgstr "Nahrát do %s"
+
+#: turcar/plugins/files.py:417
+msgid "Downloading %s to %s"
+msgstr "Stahuju %s do %s"
+
+#: turcar/plugins/files.py:323
+msgid "Download to %s"
+msgstr "Stáhnout do %s"
+
+#: turcar/base_file_browser.py:643
+msgid "Open in system file manager"
+msgstr "Otevřít v systémovém správci souborů"
+
+#: turcar/base_file_browser.py:671
+msgid "Hide hidden files"
+msgstr "Skrýt skryté soubory"
+
+#: turcar/base_file_browser.py:671
+msgid "Show hidden files"
+msgstr "Zobrazit skryté soubory"
+
+#: turcar/base_file_browser.py:654
+msgid "Open in turcar"
+msgstr "Otevřít v turcar"
+
+#: turcar/base_file_browser.py:685
+msgid "Open in system default app"
+msgstr "Otevřít v systémové výchozí aplikaci"
+
+#: turcar/base_file_browser.py:666 turcar/base_file_browser.py:693
+msgid "Configure %s files"
+msgstr "Nastavit %s soubory"
+
+#: turcar/base_file_browser.py:694
+msgid "What to do with a %s file when you double-click it in turcar's file browser?"
+msgstr "Co se má stát s %s souborem když na něj poklepete v turcarho souborovém dialogu?"
+
+#: turcar/base_file_browser.py:1240 turcar/editors.py:953 turcar/editors.py:955
+msgid "Deleting"
+msgstr ""
+
+#: turcar/base_file_browser.py:1247
+msgid "Creating directory"
+msgstr ""
+
+#: turcar/editors.py:251
+msgid "Loading %s"
+msgstr ""
+
+#: turcar/editors.py:377
+msgid "Saving to %s"
+msgstr ""
+
+#: turcar/editors.py:702 turcar/editors.py:704
+msgid "Save All files"
+msgstr "Uložit všechny soubory"
+
+#: turcar/plugins/backend_config_page.py:340 turcar/workbench.py:869
+msgid "Configure interpreter..."
+msgstr ""
+
+#: turcar/workbench.py:1581
+msgid "Device"
+msgstr "Zařízení"
+
+#: turcar/workdlg.py:193
+msgid "Cancelling"
+msgstr ""
+
+#: turcar/workdlg.py:220
+msgid "Starting"
+msgstr ""
+
+#: turcar/plugins/backend_config_page.py:251
+msgid "Authentication"
+msgstr ""
+
+#: turcar/plugins/backend_config_page.py:253
+msgid "Enter the passphrase of your private key for\n"
+"{}"
+msgstr ""
+
+#: turcar/plugins/backend_config_page.py:256
+msgid "Enter your password for\n"
+"{}"
+msgstr "Zadejte svoje heslo pro\n"
+"{}"
+
+#: turcar/plugins/object_inspector.py:487
+msgid "The representation above is an approximate value of this float. The exact stored value is %s which is about %s"
+msgstr ""
+
+#: turcar/plugins/pip_gui.py:645
+msgid "Search results"
+msgstr "Výsledky vyhledávání"
+
+#: turcar/plugins/pip_gui.py:646
+msgid "Searching"
+msgstr "Vyhledávání"
+
+#: turcar/plugins/pip_gui.py:728 turcar/plugins/pip_gui.py:817
+msgid "Installing '%s'"
+msgstr "Instalování '%s'"
+
+#: turcar/plugins/pip_gui.py:734
+msgid "Upgrading '%s'"
+msgstr ""
+
+#: turcar/plugins/pip_gui.py:741
+msgid "Uninstalling '%s'"
+msgstr "Odinstaluje se '%s'"
+
+#: turcar/plugins/pip_gui.py:755
+msgid "Installing"
+msgstr ""
+
+#: turcar/plugins/pip_gui.py:1502
+msgid "Package manager is not available for this interpreter"
+msgstr "Správce balíčků není v tomto interpretru dostupný"
+
+#: turcar/base_file_browser.py:1191 turcar/plugins/pip_gui.py:1516
+msgid "Not supported"
+msgstr ""
+
+#: turcar/plugins/micropython/pip_gui.py:100 turcar/plugins/pip_gui.py:1521
+msgid "Not available"
+msgstr ""
+
+#: turcar/plugins/pip_gui.py:1522
+msgid "You need to stop your program before launching the package manager."
+msgstr ""
+
+#: turcar/plugins/shell_config_page.py:73
+msgid "Open evaluated values in Object inspector"
+msgstr "Otevřít vyhodnocené hodnoty v Inspektoru objektů"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:208
+msgid "Python executable"
+msgstr ""
+
+#: turcar/plugins/cpython_frontend/cp_front.py:231
+msgid "NB! File selection button may not work properly when selecting executables\n"
+"from a virtual environment. In this case choose the 'activate' script instead\n"
+"of the interpreter (or enter the path directly to the box)!"
+msgstr ""
+
+#: turcar/plugins/cpython_ssh/__init__.py:17
+msgid "Remote Python 3 (SSH)"
+msgstr "Vzdálený Python 3 (SSH)"
+
+#: turcar/plugins/micropython/mp_front.py:310
+msgid "Not connected"
+msgstr ""
+
+#: turcar/plugins/micropython/mp_front.py:515
+msgid "Advanced options"
+msgstr "Pokročílé volby"
+
+#: turcar/plugins/micropython/mp_front.py:547
+msgid "Install or update firmware"
+msgstr "Nainstalovat nebo aktualizovat firmware"
+
+#: turcar/plugins/micropython/__init__.py:36
+msgid "MicroPython (local)"
+msgstr "MicroPython (lokální)"
+
+#: turcar/plugins/micropython/__init__.py:47
+msgid "MicroPython (SSH)"
+msgstr "MicroPython (SSH)"
+
+#: turcar/plugins/micropython/pip_gui.py:77
+msgid "Scope"
+msgstr "Rozsah"
+
+#: turcar/plugins/micropython/pip_gui.py:90
+msgid "This dialog lists top-level modules from following directories:\n"
+""
+msgstr ""
+
+#: turcar/plugins/micropython/pip_gui.py:99
+msgid "New packages will be installed to"
+msgstr "Nové balíčky budou nainstalovány do"
+
+#: turcar/plugins/micropython/pip_gui.py:102
+msgid "no absolute lib directory in sys.path"
+msgstr ""
+
+#: turcar/plugins/micropython/uf2dialog.py:39
+msgid "Version to be installed"
+msgstr "Verze která se má nainstalovat"
+
+#: turcar/plugins/micropython/uf2dialog.py:47
+msgid "Target device location"
+msgstr ""
+
+#: turcar/plugins/micropython/uf2dialog.py:58
+msgid "Target device model"
+msgstr ""
+
+#: turcar/plugins/micropython/uf2dialog.py:146
+msgid "Please wait"
+msgstr "Vyčkejte prosím"
+
+#: turcar/plugins/pip_gui.py:70
+msgid "Search on PyPI"
+msgstr ""
+
+#: turcar/base_file_browser.py:686
+msgid "Open in turcar's text editor"
+msgstr "Otevřít v editoru v turcar"
+
+#: turcar/base_file_browser.py:339
+msgid "Storage space on this drive or filesystem"
+msgstr ""
+
+#: turcar/base_file_browser.py:340
+msgid "total space"
+msgstr ""
+
+#: turcar/base_file_browser.py:342
+msgid "used space"
+msgstr ""
+
+#: turcar/base_file_browser.py:343
+msgid "free space"
+msgstr "volné místo"
+
+#: turcar/base_file_browser.py:350
+msgid "Storage info"
+msgstr ""
+
+#: turcar/plugins/commenting_indenting.py:163
+msgid "Replace tabs with spaces"
+msgstr "Nahradit tabulátory mezerami"
+
+#: turcar/plugins/editor_config_page.py:33
+msgid "Highlight tab characters"
+msgstr "Zvýraznit znaky tabulátoru"
+
+#: turcar/plugins/editor_config_page.py:68
+msgid "Indent with tab characters (not recommended for Python)"
+msgstr ""
+
+#: turcar/base_file_browser.py:91 turcar/memory.py:63
+msgid "Name"
+msgstr "Jméno"
+
+#: turcar/base_file_browser.py:95
+msgid "Size (bytes)"
+msgstr "Velikost (v bajtech)"
+
+#: turcar/base_file_browser.py:870
+msgid "Enter name for new directory under\n"
+"%s"
+msgstr "Zadejte jméno nové složky v\n"
+"%s"
+
+#: turcar/base_file_browser.py:893
+msgid "Nothing selected"
+msgstr "Nic není vybráno"
+
+#: turcar/base_file_browser.py:893
+msgid "Select an item and try again!"
+msgstr "Vyberte položku a zkuste to znovu!"
+
+#: turcar/base_file_browser.py:1311
+msgid "Open from %s"
+msgstr "Otevřít z '%s'"
+
+#: turcar/base_file_browser.py:1314
+msgid "Save to %s"
+msgstr "Uložit do '%s'"
+
+#: turcar/base_file_browser.py:1333
+msgid "File name:"
+msgstr "Jméno souboru:"
+
+#: turcar/memory.py:64 turcar/plugins/object_inspector.py:539
+#: turcar/plugins/object_inspector.py:618
+msgid "Value ID"
+msgstr ""
+
+#: turcar/memory.py:65 turcar/plugins/heap.py:23
+#: turcar/plugins/object_inspector.py:540
+#: turcar/plugins/object_inspector.py:619
+msgid "Value"
+msgstr "Hodnota"
+
+#: turcar/plugins/backend_config_page.py:274
+msgid "Save password"
+msgstr "Uložit heslo"
+
+#: turcar/plugins/debugger.py:553
+msgid "Function call at %s"
+msgstr "Volání funkce na %s"
+
+#: turcar/plugins/debugger.py:1003
+msgid "Local variables"
+msgstr "Lokální proměnné"
+
+#: turcar/plugins/debugger.py:1035
+msgid "Function"
+msgstr "Funkce"
+
+#: turcar/plugins/debugger.py:1036
+msgid "Location"
+msgstr ""
+
+#: turcar/plugins/debugger.py:1112
+msgid "If last command raised an exception then this view will show the stacktrace."
+msgstr ""
+
+#: turcar/plugins/heap.py:22
+msgid "ID"
+msgstr ""
+
+#: turcar/plugins/object_inspector.py:92
+msgid "Data"
+msgstr ""
+
+#: turcar/plugins/object_inspector.py:93
+msgid "Attributes"
+msgstr ""
+
+#: turcar/plugins/object_inspector.py:538
+msgid "Index"
+msgstr ""
+
+#: turcar/plugins/object_inspector.py:616
+msgid "Key ID"
+msgstr "ID klíče"
+
+#: turcar/plugins/object_inspector.py:617
+msgid "Key"
+msgstr "Klíč"
+
+#: turcar/plugins/variables.py:39
+msgid "Back to\n"
+"%s"
+msgstr "Zpět na %s"
+
+#: turcar/plugins/micropython/mp_front.py:439
+msgid "Port or WebREPL"
+msgstr ""
+
+#: turcar/plugins/micropython/mp_front.py:583
+msgid "Password"
+msgstr "Heslo"
+
+#: turcar/plugins/debugger.py:961
+msgid "Source code"
+msgstr "Zdrojový text"
+
+#: turcar/plugins/general_config_page.py:29
+msgid "Use Tk file dialogs instead of Zenity"
+msgstr "Použít Tk souborové dialogy namísto Zenity"
+
+#: turcar/plugins/general_config_page.py:30
+msgid "Select if the file dialogs end up behind the main window"
+msgstr ""
+
+#: turcar/plugins/general_config_page.py:97
+msgid "Environment variables (one KEY=VALUE per line)"
+msgstr ""
+
+#: turcar/base_file_browser.py:715
+msgid "New file"
+msgstr "Nový soubor"
+
+#: turcar/base_file_browser.py:733
+msgid "Rename"
+msgstr "Přejmenovat"
+
+#: turcar/base_file_browser.py:919
+msgid "Rename '%s'"
+msgstr "Přejmenovat '%s'"
+
+#: turcar/base_file_browser.py:919
+msgid "Enter new name"
+msgstr "Zadejte nové jméno"
+
+#: turcar/base_file_browser.py:1007
+msgid "Paste failed"
+msgstr "Vkládání se nezdařilo"
+
+#: turcar/base_file_browser.py:1007
+msgid "There are conflicting folders"
+msgstr ""
+
+#: turcar/base_file_browser.py:1129
+msgid "File already exists"
+msgstr "Soubor již existuje"
+
+#: turcar/base_file_browser.py:1194
+msgid "If it is a text file, then you can configure it to open in turcar by right-clicking it and selecting 'Configure ... files'."
+msgstr ""
+
+#: turcar/editors.py:35
+msgid "Python files"
+msgstr "Pythonové soubory"
+
+#: turcar/editors.py:119 turcar/editors.py:182
+msgid "<untitled>"
+msgstr "<bez názvu>"
+
+#: turcar/editors.py:146
+msgid "File is gone"
+msgstr ""
+
+#: turcar/editors.py:149
+msgid "Do you want to also close the editor?"
+msgstr ""
+
+#: turcar/editors.py:165
+msgid "External modification"
+msgstr "Externí modifikace"
+
+#: turcar/editors.py:168
+msgid "Do you want to discard current editor content and reload the file from disk?"
+msgstr ""
+
+#: turcar/editors.py:572
+msgid "Python files usually have .py extension."
+msgstr "Pythonové soubory mají obvykle příponu .py."
+
+#: turcar/editors.py:574
+msgid "Did you mean '%s'?"
+msgstr "Měli jste na mysli '%s'?"
+
+#: turcar/editors.py:733
+msgid "Move / rename..."
+msgstr "Přesunout / přejmenovat..."
+
+#: turcar/editors.py:742
+msgid "Go to line..."
+msgstr "Přejít na řádek..."
+
+#: turcar/editors.py:977
+msgid "Line number"
+msgstr "Číslo řádku"
+
+#: turcar/editors.py:1123
+msgid "Do you want to save files before closing?"
+msgstr "Chcete soubory uložit před zavřením?"
+
+#: turcar/editors.py:1125
+msgid "Do you want to save file before closing?"
+msgstr "Chcete soubor uložit před zavřením?"
+
+#: turcar/editors.py:1128
+msgid "Save On Close"
+msgstr "Uložit při zavření"
+
+#: turcar/misc_utils.py:513
+msgid "Command not available"
+msgstr "Příkaz není k dispozici"
+
+#: turcar/misc_utils.py:514
+msgid "This command is not available if turcar is run via Flatpak"
+msgstr "Tento příkaz není k dispozici v turcar spuštěném z Flatpacku"
+
+#: turcar/workbench.py:686 turcar/workbench.py:786
+msgid "Support Ukraine"
+msgstr "Podpořte Ukrajinu"
+
+#: turcar/plugins/backend_config_page.py:91
+msgid "Which kind of interpreter should turcar use for running your code?"
+msgstr "Který interpretr má turcar použít ke spuštění vašeho kódu?"
+
+#: turcar/plugins/calltip.py:159
+msgid "Show parameter info"
+msgstr "Zobrazit informace o parameterech"
+
+#: turcar/plugins/editor_config_page.py:41
+msgid "Automatically show parameter info after typing '('"
+msgstr "Automaticky zobrazit parametry po napsání '('"
+
+#: turcar/plugins/editor_config_page.py:47
+msgid "Automatically propose completions while typing"
+msgstr "Automaticky našeptávat zatímco píšete"
+
+#: turcar/plugins/editor_config_page.py:52
+msgid "Automatically show documentation for completions"
+msgstr "Automaticky zobrazit dokumentaci v našeptávači"
+
+#: turcar/plugins/editor_config_page.py:57
+msgid "Request completions with Tab-key in editors"
+msgstr ""
+
+#: turcar/plugins/editor_config_page.py:62
+msgid "Request completions with Tab-key in Shell"
+msgstr ""
+
+#: turcar/plugins/goto_definition.py:58
+msgid "Problem"
+msgstr "Problém"
+
+#: turcar/plugins/goto_definition.py:58
+msgid "Could not find definition"
+msgstr "Nepodařilo se najít definici"
+
+#: turcar/plugins/shell_config_page.py:17
+msgid "Clear Shell before starting new process (Run, Debug, Stop/Restart, ...)"
+msgstr "Vyčistit shell před spuštěním nového procesu (Spustit, Debugovat, Zastavit/Restartovat, ...)"
+
+#: turcar/plugins/cpython_frontend/cp_front.py:170
+msgid "turcar's Python"
+msgstr "turcarho Python"
+
+#: turcar/plugins/micropython/mp_front.py:487
+msgid "Interrupt working program on connect"
+msgstr ""
+
+#: turcar/plugins/micropython/mp_front.py:494
+msgid "Synchronize device's real time clock"
+msgstr ""
+
+#: turcar/plugins/micropython/mp_front.py:500
+msgid "Use local time in real time clock"
+msgstr ""
+
+#: turcar/plugins/micropython/mp_front.py:506
+msgid "Restart interpreter before running a script"
+msgstr "Restartuje interpretr než spustíte skript"
+
+#: turcar/plugins/micropython/pip_gui.py:24
+msgid "This doesn't look like MicroPython/CircuitPython package.\n"
+"Are you sure you want to install it?"
+msgstr "Tohle nevypadá jako balíček pro MicroPython/CircuitPython.\n"
+"Jste si jistí, že jej chcete nainstalovat."
+
+#: turcar/base_file_browser.py:844
+msgid "Moving to Trash"
+msgstr "Přesouvám do koše"
+
+#: turcar/base_file_browser.py:845
+msgid "Move %s to Trash?"
+msgstr "Přesunout '%s' do koše?"
+
+#: turcar/base_file_browser.py:852
+msgid "Moving %s to Trash"
+msgstr "Přesouvám '%s' do koše"
+
+#: turcar/base_file_browser.py:659
+msgid "Open in default external app"
+msgstr "Otevřít ve výchozí externí aplikaci"
+
+#: turcar/base_file_browser.py:1192
+msgid "Opening remote files in external app is not supported."
+msgstr "Otevírání vzdálených souborů v externí aplikaci není podporováno."
+
+#: turcar/base_file_browser.py:1199
+msgid "If the file needs to be opened in external app, then download it to a local directory and open it from there!"
+msgstr "Pokud je potřeba otevřít soubor v externí aplikaci, uložte jej do lokální složky a otevřete jej odtamtud!"
+
+#: turcar/editors.py:147
+msgid "Looks like '%s' was deleted or moved."
+msgstr "Zdá se že '%s' byl smazán nebo přesunut."
+
+#: turcar/editors.py:166
+msgid "Looks like '%s' was modified outside of the editor."
+msgstr "Vypadá to že '%s' byl změněný mimo editor."
+
+#: turcar/plugins/cpython_frontend/cp_front.py:229
+msgid "NB! turcar only supports Python %s and later"
+msgstr "Poznámka: turcar podporuje jen Python %s a novější"
+
+#: turcar/editors.py:977
+msgid "Go to line"
+msgstr "Přejít na řádek"
+
+#: turcar/workbench.py:689
+msgid "Support"
+msgstr "Podpora"
+
+#: turcar/editors.py:386 turcar/editors.py:401
+msgid "Could not save"
+msgstr "Ukládání se nezdařílo"
+
+#: turcar/plugins/general_config_page.py:135
+msgid "Warning"
+msgstr "Varování"
+
+#: turcar/plugins/general_config_page.py:136
+msgid "If you quote the value of an environment variable, the quotes will be part of the value.\n"
+"Did you intend this?"
+msgstr "Když napíšete hodnotu proměnné prostředí do uvozovek, tyto uvozovky se stanou součástí hodnoty proměnné.\n"
+"Opravdu to tak chcete udělat?"
+
+#: turcar/workbench.py:859
+msgid "Install MicroPython"
+msgstr ""
+
+#: turcar/workbench.py:863
+msgid "Install CircuitPython"
+msgstr ""
+
+#: turcar/plugins/backend_config_page.py:212
+msgid "Make uploaded shebang scripts executable"
+msgstr ""
+
+#: turcar/plugins/editor_config_page.py:91
+msgid "Make saved shebang scripts executable"
+msgstr ""
+
+#: turcar/plugins/files.py:224
+msgid "Activate virtual environment"
+msgstr ""
+
+#: turcar/plugins/micropython/pip_gui.py:77 turcar/plugins/pip_gui.py:426
+msgid "Target"
+msgstr ""
+
+#: turcar/plugins/pythontutor.py:41
+msgid "Visualize current script at Python Tutor"
+msgstr ""
+
+#: turcar/plugins/todo_view.py:42
+msgid "Line"
+msgstr ""
+
+#: turcar/plugins/todo_view.py:43
+msgid "Info"
+msgstr ""
+
+#: turcar/plugins/todo_view.py:121
+msgid "No line marked with #todo found"
+msgstr ""
+
+#: turcar/plugins/todo_view.py:141
+msgid "TODO"
+msgstr ""
+
+#: turcar/plugins/circuitpython/cirpy_front.py:98
+#: turcar/plugins/micropython/mp_front.py:530
+msgid "Install or update %s"
+msgstr ""
+
+#: turcar/plugins/cpython_frontend/__init__.py:24
+msgid "Local Python 3"
+msgstr ""
+
+#: turcar/plugins/cpython_frontend/cp_front.py:239
+msgid "You can activate an existing virtual environment also via the right-click context menu in the file navagation when selecting a virtual environment folder, or the 'pyveng.cfg' file inside."
+msgstr ""
+
+#: turcar/plugins/ev3/__init__.py:72
+msgid "Preparations (skip the VS Code part)"
+msgstr ""
+
+#: turcar/plugins/ev3/__init__.py:78
+msgid "Default password"
+msgstr ""
+
