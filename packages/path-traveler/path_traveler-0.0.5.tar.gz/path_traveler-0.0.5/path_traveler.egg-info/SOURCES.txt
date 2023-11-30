@@ -1,0 +1,14 @@
+LICENSE
+README.rst
+setup.cfg
+setup.py
+path_traveler/__init__.py
+path_traveler/path_identifier.py
+path_traveler/path_identifier_cli.py
+path_traveler.egg-info/PKG-INFO
+path_traveler.egg-info/SOURCES.txt
+path_traveler.egg-info/dependency_links.txt
+path_traveler.egg-info/entry_points.txt
+path_traveler.egg-info/not-zip-safe
+path_traveler.egg-info/requires.txt
+path_traveler.egg-info/top_level.txt
