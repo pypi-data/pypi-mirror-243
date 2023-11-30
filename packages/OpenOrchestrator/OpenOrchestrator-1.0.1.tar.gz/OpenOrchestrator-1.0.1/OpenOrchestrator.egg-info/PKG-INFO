@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: OpenOrchestrator
+Version: 1.0.1
+Summary: A package containing OpenOrchestrator and OpenOrchestrator Scheduler
+Author-email: ITK Development <itk-rpa@mkb.aarhus.dk>
+Project-URL: Homepage, https://github.com/itk-dev-rpa/OpenOrchestrator
+Project-URL: Bug Tracker, https://github.com/itk-dev-rpa/OpenOrchestrator/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Microsoft :: Windows
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: tkcalendar>=1.6.1
+Requires-Dist: cryptography>=41.0.3
+Requires-Dist: croniter>=1.4.1
+Requires-Dist: SQLAlchemy>=2.0.22
+Requires-Dist: pyodbc>=4.0.39
+Provides-Extra: dev
+Requires-Dist: pylint; extra == "dev"
+
+# OpenOrchestrator
+
+Read the documentation [here](https://itk-dev-rpa.github.io/OpenOrchestrator-docs).
+
+Package is located at https://pypi.org/project/OpenOrchestrator/
+
+## Usage for Orchestrator admins
+This module is used to run Orchestrator or Scheduler from the command line.
+
+`python -m OpenOrchestrator -o`  for orchestrator.
+
+`python -m OpenOrchestrator -s`  for scheduler.
+
+## Usage for RPA developers
+Import the connection module to your RPA code and get access to the orchestrator methods;
+
+- logging status to OpenOrchestrator
+- getting credentials and constants from OpenOrchestrator
+- creating, getting and updating job elements in a queue
+
+Run the code with arguments
+```bash
+python run.py "<process name>" "<connection string>" "<secret key>" "<arguments>"
+```
+
+```python
+# run.py
+# connect to OpenOprchestrator and log something
+from OpenOrchestrator.orchestrator_connection.connection import OrchestratorConnection
+
+oc = OrchestratorConnection.create_connection_from_args()
+oc.log_trace("open orchestrator connected.")
+``` 
+
+
+## Setup
+Requires Python 3.10 or later.
+
+Install using `pip install OpenOrchestrator`
