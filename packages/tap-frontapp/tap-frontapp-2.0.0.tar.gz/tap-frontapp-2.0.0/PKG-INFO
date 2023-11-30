@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: tap-frontapp
+Version: 2.0.0
+Summary: Singer.io tap for extracting data from the FrontApp API
+Home-page: http://singer.io
+Author: bytcode.io
+Classifier: Programming Language :: Python :: 3 :: Only
+License-File: LICENSE
+Requires-Dist: singer-python==5.4.0
+Requires-Dist: pendulum
+Requires-Dist: ratelimit
+Requires-Dist: backoff==1.3.2
+Requires-Dist: requests==2.31.0
