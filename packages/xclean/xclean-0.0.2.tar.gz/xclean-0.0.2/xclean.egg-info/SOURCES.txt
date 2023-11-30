@@ -1,0 +1,13 @@
+LICENSE.md
+README.md
+pyproject.toml
+tests/test_scanner.py
+xclean/__init__.py
+xclean/app.py
+xclean/scanner.py
+xclean.egg-info/PKG-INFO
+xclean.egg-info/SOURCES.txt
+xclean.egg-info/dependency_links.txt
+xclean.egg-info/entry_points.txt
+xclean.egg-info/requires.txt
+xclean.egg-info/top_level.txt
