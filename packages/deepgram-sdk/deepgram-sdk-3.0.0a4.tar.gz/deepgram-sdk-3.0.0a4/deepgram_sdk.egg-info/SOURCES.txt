@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+deepgram/__init__.py
+deepgram/client.py
+deepgram/errors.py
+deepgram/options.py
+deepgram_sdk.egg-info/PKG-INFO
+deepgram_sdk.egg-info/SOURCES.txt
+deepgram_sdk.egg-info/dependency_links.txt
+deepgram_sdk.egg-info/requires.txt
+deepgram_sdk.egg-info/top_level.txt

@@ -1,0 +1,11 @@
+httpx
+websockets
+dataclasses-json
+dataclasses
+typing_extensions
+python-dotenv
+asyncio
+aiohttp
+
+[:python_version < "3.8.0"]
+typing-extensions
