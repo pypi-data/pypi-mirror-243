@@ -1,0 +1,13 @@
+[project]
+name = "gdrive_knife"
+version = "1.0.5"
+authors = [
+  { name="Jakub Czajka", email="jakub@ekhem.eu.org" },
+]
+requires-python = ">=3.10.7"
+dependencies = [
+    "cryptography==40.0.2",
+    "google-api-python-client==2.84.0",
+    "google-auth-httplib2==0.1.0",
+    "google-auth-oauthlib==1.1.0",
+]

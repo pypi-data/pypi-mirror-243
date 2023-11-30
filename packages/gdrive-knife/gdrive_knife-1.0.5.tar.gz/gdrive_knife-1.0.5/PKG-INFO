@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: gdrive_knife
+Version: 1.0.5
+Author-email: Jakub Czajka <jakub@ekhem.eu.org>
+Requires-Python: >=3.10.7
+License-File: LICENSE
+Requires-Dist: cryptography==40.0.2
+Requires-Dist: google-api-python-client==2.84.0
+Requires-Dist: google-auth-httplib2==0.1.0
+Requires-Dist: google-auth-oauthlib==1.1.0
