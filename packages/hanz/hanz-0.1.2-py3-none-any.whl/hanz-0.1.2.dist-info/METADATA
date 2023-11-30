@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: hanz
+Version: 0.1.2
+Home-page: https://github.com/yuhanz/hanz
+Author: Yuhan Zhang
+Author-email: yuhanz@gmail.com
+License: Apache 2.0
+Keywords: Neural Network DSL
+License-File: LICENSE
+Requires-Dist: torch
+Requires-Dist: torchvision
+
