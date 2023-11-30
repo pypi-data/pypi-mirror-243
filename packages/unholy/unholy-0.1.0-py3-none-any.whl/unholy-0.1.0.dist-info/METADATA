@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: unholy
+Version: 0.1.0
+Summary: The melding of docker compose and neovim
+Home-page: https://github.com/AstraLuma/unholy
+License: GPL-3
+Author: Jamie Bliss
+Author-email: jamie@ivyleav.es
+Requires-Python: >3.10
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: appdirs (>=1.4.4,<2.0.0)
+Requires-Dist: click (>=8.1.3,<9.0.0)
+Requires-Dist: docker (>=6.0.1,<7.0.0)
+Requires-Dist: tomlkit (>=0.12.2,<0.13.0)
+Project-URL: Repository, https://github.com/AstraLuma/unholy
+Description-Content-Type: text/markdown
+
+# unholy
+
+Cooperates with Docker Compose, injects an nvim-based container
+into it, and connects neovide to it.
+
+You can call it what you'd like, but I'm going to call this union `unholy`.
+
+## Requirements
+
+- Unholy itself (I suggest using [pipx](https://pypa.github.io/pipx/))
+- Git
+- The Docker CLI
+- [Neovide](https://neovide.dev/)
+
+## Usage
+
+1. Commit an Unholyfile to your repo (see below)
+2. Run `unholy new <git url>`
+3. Work on your project using `unholy shell` and `unholy neovide`
+
+Use `unholy remake` to rebuild your development environment without
+re-cloning your repo or touching your work.
+
+Note: By default, the name of the Unholy project is the repo name.
+
+## Unholyfile
+
+A major aspect of unholy is the Unholyfile. It is a script with
+[TOML](https://toml.io/en/) head matter, like so:
+
+```
+---
+[dev]
+image="python"
+---
+pip install pytest
+```
+
+The complete headmatter schema is loosely documented in [core.Unholyfile](unholy/core.Unholyfile).
+
+The script supports a `#!`, defaulting to `#!/bin/sh`
+
+If you specify a non-default image, it must be Debian-based.
+
+## Additional config
+
+Local configuration (including project definitions) are stored in the XDG
+Config directory (default `~/.config/unholy`).
+
+There is a global `~/.config/unholy/Unholy` applied to all projects. This is
+an excellent place for personal settings (like utilities you like or nvim
+configuration).
+
+Each project gets an `~/.config/<name>.Unholyfile` where unholy keeps git and
+Docker settings. You can add some local project overrides here.
+
