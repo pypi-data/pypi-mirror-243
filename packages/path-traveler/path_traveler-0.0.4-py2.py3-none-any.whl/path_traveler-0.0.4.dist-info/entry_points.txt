@@ -1,0 +1,2 @@
+[console_scripts]
+path_traveler = path_traveler.path_identifier_cli:main
