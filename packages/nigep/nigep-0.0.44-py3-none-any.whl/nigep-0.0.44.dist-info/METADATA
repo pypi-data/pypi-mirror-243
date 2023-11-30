@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: nigep
+Version: 0.0.44
+Summary: a library that creates a generalization profile based on noise injection
+Author-email: Umberto Barros <umbertobarrosf@gmail.com>
+Project-URL: Homepage, https://github.com/UmbertoB/nigep
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# deep-generalization
