@@ -1,0 +1,12 @@
+# required by default
+click==8.1.7
+
+# FIX ME: Requirements are too generic, make it specific with installation netfuse[att] or netfuse[netgear]
+
+# required for At&t
+pandas==2.1.3
+lxml==4.9.3
+
+# required for Netgear users
+requests>=2.31.0
+pynetgear==0.10.10
