@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: wai.logging
+Version: 0.0.1
+Summary: Python library with helper methods for logging.
+Home-page: https://github.com/waikato-datamining/wai-logging
+Author: Peter Reutemann
+Author-email: fracpete@waikato.ac.nz
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Programming Language :: Python :: 3
+License-File: LICENSE
+
+Python library with helper methods for logging.
+
+Changelog
+=========
+
+0.0.1 (????-??-??)
+------------------
+
+- initial release
+

@@ -1,0 +1,13 @@
+CHANGES.rst
+DESCRIPTION.rst
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+src/wai.logging.egg-info/PKG-INFO
+src/wai.logging.egg-info/SOURCES.txt
+src/wai.logging.egg-info/dependency_links.txt
+src/wai.logging.egg-info/top_level.txt
+src/wai/logging/__init__.py
+src/wai/logging/_argparse.py
+src/wai/logging/_core.py
