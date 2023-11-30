@@ -1,0 +1,17 @@
+midas-util>=1.1.1
+mosaik_api
+matplotlib
+numpy
+pandas
+tables
+wget
+
+[dev]
+flake8==6.1.0
+pytest
+coverage
+black==23.11.0
+setuptools
+twine
+wheel
+mosaik
