@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling",
+    "heartpy",
+    "joblib",
+    "matplotlib",
+    "more_itertools",
+    "neurokit2",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "scipy",
+    "tensorflow",
+    "torch",
+    "torchvision",
+    "wfdb"]
+build-backend = "hatchling.build"
+
+[project]
+name = "e2epyppg"
+version = "0.0.4"
+authors = [
+  {name = "Mohammad Feli", email = "mohammad.feli@utu.fi"},
+  {name = "Iman Azimi", email="azimii@uci.edu"},
+  {name = "Kianoosh Kazemi", email="kianoosh.k.kazem@utu.fi"},
+  {name = "Yuning Wang", email="yuning.y.wang@utu.fi"},
+]
+maintainers = [
+  {name = "Mohammad Feli", email = "mohammad.feli@utu.fi"},
+  {name = "Iman Azimi", email="azimii@uci.edu"},
+  {name = "Kianoosh Kazemi", email="kianoosh.k.kazem@utu.fi"},
+  {name = "Yuning Wang", email="yuning.y.wang@utu.fi"},
+]
+description = "AEnd-to-End PPG processing pipeline: from quality assessment and motion artifacts romval to HR/HRV extraction"
+keywords = ['PPG', 'Photoplethysmography', 'Quality assessment', 'Signal reconstruction', 'Peak detection', 'Heart rate', 'HR', 'Heart rate variability', 'HRV', 'Wearable devices']
+readme = "README.md"
+license = {text = "MIT License"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+]
+[project.urls]
+Homepage = "https://github.com/HealthSciTech/E2E-PPG"
+Issues = "https://github.com/HealthSciTech/E2E-PPG/issues"
+
+
