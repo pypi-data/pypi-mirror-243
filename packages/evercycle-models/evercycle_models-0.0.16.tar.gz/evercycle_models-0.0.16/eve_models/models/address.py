@@ -1,0 +1,21 @@
+from django.db import models
+
+
+class Address(models.Model):
+    id = models.IntegerField(primary_key=True)
+    created_at = models.DateTimeField()
+    created_by = models.IntegerField()
+    location_name = models.CharField(max_length=50)
+    address1 = models.CharField(max_length=50)
+    address2 = models.CharField(max_length=50)
+    city = models.CharField(max_length=50)
+    state = models.CharField(max_length=50)
+    postal_code = models.CharField(max_length=50)
+    country = models.CharField(max_length=50)
+    organization = models.ForeignKey('Organization', models.DO_NOTHING)
+    updated_by = models.IntegerField()
+    updated_at = models.DateTimeField()
+
+    class Meta:
+        managed = False
+        db_table = 'address'
