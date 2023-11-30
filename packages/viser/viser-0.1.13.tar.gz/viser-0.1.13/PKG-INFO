@@ -1,0 +1,143 @@
+Metadata-Version: 2.1
+Name: viser
+Version: 0.1.13
+Summary: 3D visualization + Python
+License: MIT
+Project-URL: GitHub, https://github.com/nerfstudio-project/viser
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: websockets>=10.4
+Requires-Dist: numpy>=1.0.0
+Requires-Dist: msgpack>=1.0.0
+Requires-Dist: imageio>=2.0.0
+Requires-Dist: pyliblzfse>=0.4.1
+Requires-Dist: scikit-image>=0.18.0
+Requires-Dist: scipy>=1.7.3
+Requires-Dist: tqdm>=4.0.0
+Requires-Dist: tyro>=0.2.0
+Requires-Dist: gdown>=4.6.6
+Requires-Dist: rich>=13.3.3
+Requires-Dist: trimesh>=3.21.7
+Requires-Dist: nodeenv>=1.8.0
+Requires-Dist: psutil>=5.9.5
+Requires-Dist: yourdfpy>=0.0.53
+Provides-Extra: dev
+Requires-Dist: pyright>=1.1.308; extra == "dev"
+Requires-Dist: mypy>=1.4.1; extra == "dev"
+Requires-Dist: ruff==0.0.267; extra == "dev"
+Requires-Dist: black==23.11.0; extra == "dev"
+Requires-Dist: pre-commit==3.3.2; extra == "dev"
+Provides-Extra: examples
+Requires-Dist: smplx>=0.1.28; extra == "examples"
+Requires-Dist: torch>=1.13.1; extra == "examples"
+Requires-Dist: matplotlib>=3.7.1; extra == "examples"
+
+<p align="center">
+    <!--
+    Note that this README will be used for both GitHub and PyPI.
+    We therefore:
+    - Keep all image URLs absolute.
+    - In the GitHub action we use for publishing, strip some HTML tags that aren't supported by PyPI.
+    -->
+        <img alt="tyro logo" src="https://viser.studio/_static/viser_banner.svg" />
+
+</p>
+
+<p align="center">
+    <strong><code>pip install viser</code></strong>
+    &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+    <strong><a href="https://viser.studio">Documentation</a></strong>
+</p>
+
+<p align="center">
+    <img alt="pyright" src="https://github.com/nerfstudio-project/viser/workflows/pyright/badge.svg?branch=main" />
+    <img alt="mypy" src="https://github.com/nerfstudio-project/viser/workflows/mypy/badge.svg?branch=main" />
+    <img alt="typescript-compile" src="https://github.com/nerfstudio-project/viser/workflows/typescript-compile/badge.svg?branch=main" />
+    <a href="https://pypi.org/project/viser/">
+        <img alt="codecov" src="https://img.shields.io/pypi/pyversions/viser" />
+    </a>
+</p>
+
+**`viser`** is a library for interactive 3D visualization + Python, inspired by
+tools like [Pangolin](https://github.com/stevenlovegrove/Pangolin),
+[rviz](https://wiki.ros.org/rviz/),
+[meshcat](https://github.com/rdeits/meshcat), and
+[Gradio](https://github.com/gradio-app/gradio). It's designed to support
+applications in 3D vision and robotics.
+
+As a standalone visualization tool, `viser` features include:
+
+- Python API for visualizing 3D primitives in a web browser.
+- Python-configurable GUI elements: buttons, checkboxes, text inputs, sliders,
+  dropdowns, and more.
+- A [meshcat](https://github.com/rdeits/meshcat) and
+  [tf](http://wiki.ros.org/tf2)-inspired coordinate frame tree.
+
+The `viser.infra` backend can also be used to build custom web applications. It
+supports:
+
+- Websocket / HTTP server management, on a shared port.
+- Asynchronous server/client communication infrastructure.
+- Client state persistence logic.
+- Typed serialization; synchronization between Python dataclass and TypeScript
+  interfaces.
+
+## Installation
+
+You can install `viser` with `pip`:
+
+```bash
+pip install viser
+```
+
+To run examples:
+
+```bash
+# Clone the repository.
+git clone https://github.com/nerfstudio-project/viser.git
+
+# Install the package.
+# You can also install via pip: `pip install viser`.
+cd ./viser
+pip install -e .
+
+# Run an example.
+pip install -e .[examples]
+python ./examples/02_gui.py
+```
+
+After an example script is running, you can connect by navigating to the printed
+URL (default: `http://localhost:8080`).
+
+See also: our [development docs](https://viser.studio/development/).
+
+## Examples
+
+**Point cloud visualization**
+
+https://github.com/nerfstudio-project/viser/assets/6992947/df35c6ee-78a3-43ad-a2c7-1dddf83f7458
+
+Source: `./examples/07_record3d_visualizer.py`
+
+**Gaussian splatting visualization**
+
+https://github.com/nerfstudio-project/viser/assets/6992947/c51b4871-6cc8-4987-8751-2bf186bcb1ae
+
+Source:
+[WangFeng18/3d-gaussian-splatting](https://github.com/WangFeng18/3d-gaussian-splatting)
+and
+[heheyas/gaussian_splatting_3d](https://github.com/heheyas/gaussian_splatting_3d).
+
+**SMPLX visualizer**
+
+https://github.com/nerfstudio-project/viser/assets/6992947/78ba0e09-612d-4678-abf3-beaeeffddb01
+
+Source: `./example/08_smplx_visualizer.py`
