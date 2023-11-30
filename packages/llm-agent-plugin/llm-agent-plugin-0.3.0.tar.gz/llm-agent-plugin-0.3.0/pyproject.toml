@@ -1,0 +1,43 @@
+[project]
+name = "llm-agent-plugin"
+version = "0.3.0"
+description = "plugin for simonw's llm to add a langchain agent"
+readme = "README.md"
+authors = [{ name = "thiswillbeyourgithub"}]
+license = { file = "LICENSE" }
+keywords = ["llm", "openai", "agent", "simonw", "websearch", "agent", "langchain"]
+requires-python = ">=3.9"
+dependencies = [
+    "langchain==0.0.336",
+    "numexpr==2.8.7",
+    "duckduckgo-search==3.9.5",
+    "wikipedia==1.4.0",
+    "tqdm==4.66.1",
+    "metaphor-python==0.1.20",
+    "xmltodict==0.13.0",
+    "arxiv==2.0.0",
+    "playwright==1.40.0",
+    ]
+
+[projects.urls]
+Homepage = "https://github.com/thiswillbeyourgithub/llm_agent"
+
+
+[project.entry-points.llm]
+agent = "llm_agent"
+
+[tool.bumpver]
+current_version = "0.3.0"
+version_pattern = "MAJOR.MINOR.PATCH"
+commit_message = "bump version {old_version} -> {new_version}"
+tag_message = "{new_version}"
+tag_scope = "default"
+pre_commit_hook = ""
+post_commit_hook = ""
+tag = true
+commit = true
+push = false
+
+[tool.bumpver.file_patterns]
+"pyproject.toml" = ['current_version = "{version}"', 'version = "{version}"']
+"llm_agent.py" = ['VERSION = "{version}"']
