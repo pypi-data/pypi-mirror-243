@@ -1,0 +1,1 @@
+(self.webpackChunkjupyterlab_unianalytics_dashboard=self.webpackChunkjupyterlab_unianalytics_dashboard||[]).push([[480],{2480:()=>{}}]);
