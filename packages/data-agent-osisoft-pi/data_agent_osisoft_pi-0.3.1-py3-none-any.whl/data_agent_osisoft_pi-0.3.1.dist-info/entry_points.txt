@@ -1,0 +1,2 @@
+[data_agent.connectors]
+osisoft-pi = data_agent_osisoft_pi.connector:OsisoftPiConnector
