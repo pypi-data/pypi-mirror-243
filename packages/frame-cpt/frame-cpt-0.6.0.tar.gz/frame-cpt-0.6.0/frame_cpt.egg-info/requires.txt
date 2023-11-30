@@ -1,0 +1,10 @@
+numpy
+pandas
+matplotlib
+pycurl==7.45.2
+cfgrib
+netCDF4
+xarray
+dask
+scipy
+xesmf

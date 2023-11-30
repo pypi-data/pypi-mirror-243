@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: frame-cpt
+Version: 0.6.0
+Summary: Módulo para distribuição de Modelos Numéricos.
+Home-page: https://github.com/framework-CPTEC/
+Author: Framework
+Author-email: frameworkcptec@gmail.com
+License: MIT
+Project-URL: Código fonte, https://github.com/framework-CPTEC/
+Project-URL: Download, https://github.com/framework-CPTEC/
+Keywords: recuperação de dados climáticos
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: Portuguese (Brazilian)
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Internationalization
+Classifier: Topic :: Scientific/Engineering :: Physics
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Framework
+
+Descrição
+É um pacote in Python para a distribuição de dados brutos dos Modelos Numéricos de forma segmentada/particionada. Com esse pacote o usuário não necessita fazer o Download de todo o volume bruto o pacote auxilia a manipular somente a sua necessidade.
+
+support Python >= 3.10.
+
+Instalação
+conda create -n  python=3.10
+
+conda activate 
+
+conda install -c conda-forge matplotlib pycurl cfgrib netCDF4 pynio xarray dask esmpy scipy mpi4py xesmf
+
+conda install -c anaconda ipykernel
+
+pip install -i https://test.pypi.org/simple/ 
+
+Como Usar
+import cptecmodel.CPTEC_BAM as BAM
+
+bam = BAM.model()
+
+date = '2023010800'
+
+vars = ['t', 'u10m']
+
+levels = [1000, 850]
+
+steps = 1
+
+f = bam.load(date=date, var=vars,level=levels, steps=steps)
+
+    
