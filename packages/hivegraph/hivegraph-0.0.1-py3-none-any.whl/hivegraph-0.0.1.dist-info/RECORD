@@ -1,0 +1,15 @@
+hivegraph/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hivegraph/engine.py,sha256=xwQvmuqP71KvdRmUNpG7fSDhgOIwSIpLq44NM1kWXOA,12711
+hivegraph/utils.py,sha256=xGuBhvyQxlL3LsnyFwxuz491o7zAq4KqjhCHJ0rCSnE,491
+hivegraph/configs/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hivegraph/configs/gcn.py,sha256=Hrh6eMsGZOnhJ7mCX6kFfPcYTYT5ZduEbvuI7obbNhg,1276
+hivegraph/configs/gin.py,sha256=2D2RpIaWVp6cJr9OyiR6I6QQ5Q7O8PVl2f6Cpr9P8Xk,1272
+hivegraph/io/__init__.py,sha256=kBQSwIlnL0d3AP0lV9z5LqMAA3ahSpnANZnX_DoSXhw,183
+hivegraph/io/autodataset.py,sha256=jP4iiIvj2ELGQwvGzWCjNNdDENzR3cK_V2MAksZ5Fb8,3915
+hivegraph/io/transforms.py,sha256=lOEZ02XIyh5xs8kWQWLW4Ppb-pzZfUgID8DVDQfNXSU,712
+hivegraph/nn/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+hivegraph/nn/gcn.py,sha256=Dlpa0gdazOvqcOcV3dAeDa9cQ0oSvLfkg5-Erb3U7eI,4410
+hivegraph/nn/gin.py,sha256=8PNsCT-TfVa0GGEr9JL4eyOeJ9FPddkEpTxoPSMtN7k,5425
+hivegraph-0.0.1.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+hivegraph-0.0.1.dist-info/METADATA,sha256=icrzFd-gd9jTmelEzXNu0g2G-0ukJJI8u_lPrsNKKQ8,1793
+hivegraph-0.0.1.dist-info/RECORD,,
