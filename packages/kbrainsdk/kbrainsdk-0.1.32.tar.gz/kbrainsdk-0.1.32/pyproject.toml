@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "kbrainsdk"
+version = "0.1.32"
+description = "SDK for using KBRaiN tools"
+authors = ["Daniel E Fredriksen <daniel.fredriksen@us.kbr.com>"]
+license = "unlicensed"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
