@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: stdPython
+Version: 1.0.1
+Summary: Python package importing all in one!!!!
+Home-page: https://github.com/ZMF-1/stdPython
+Author: ZMF
+Author-email: ZZMF20110806@163.com
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.0
+Classifier: Programming Language :: Python :: 3.1
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Requires-Python: >=3
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+You can import all Python built-in packages through this package.
+</br>
+[github](https://github.com/ZMF-1/stdPython)
+</br>
+### How to install
+```commandline
+pip install stdPython
+```
+### How to get the document
+```python
+from stdPython import *
+help.help()
+```
