@@ -1,0 +1,271 @@
+Metadata-Version: 2.1
+Name: humbldata
+Version: 0.11.0
+Summary: Migrating humbldata to Python. A private package to connect humblFinance to all of its data, perform analysis and graphing.
+License: Propietary
+Keywords: openbb,humblfinance,humbldata,financial analysis
+Author: Jennings Fantini
+Author-email: jennings@humblfinance.io
+Requires-Python: >=3.9.10,<3.12.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: QuantStats (>=0.0.62,<0.0.63)
+Requires-Dist: nest-asyncio (>=1.5.8,<2.0.0)
+Requires-Dist: openbb[all] (==4.0.0b2)
+Requires-Dist: pandas-market-calendars (>=4.3.1,<5.0.0)
+Requires-Dist: pandera[io] (>=0.17.2,<0.18.0)
+Requires-Dist: plotly (>=5.18.0,<6.0.0)
+Requires-Dist: polars (>=0.19.3,<0.20.0)
+Requires-Dist: pyarrow (>=14.0.0,<15.0.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: rich (>=12.6.0,<13.0.0)
+Requires-Dist: toml (>=0.10.2,<0.11.0)
+Description-Content-Type: text/markdown
+
+<p align="center">
+  <a href="" rel="noopener">
+ <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
+</p>
+
+<h3 align="center">humbldata</h3>
+
+<div align="center">
+
+  [![Status](https://img.shields.io/badge/status-active-success.svg)]()
+  [![GitHub Issues](https://img.shields.io/github/issues/jjfantini/humbldata.svg)](https://github.com/jjfantini/humbldata/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/jjfantini/humbldata.svg)](https://github.com/jjfantini/humbldata/pulls)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+  [![Python](https://img.shields.io/badge/Python-3.10-3776AB.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
+  ![License](https://img.shields.io/badge/License-Proprietary-black)
+  [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+</div>
+
+---
+
+<p align="center"> This package connects the <b>humblfinance</b> project to its data sources and data analytics functions.
+</p>
+
+## 📝 __Table of Contents__
+
+- [About](#about)
+- [Features](#features)
+- [Getting Started](#getting_started)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Built Using](#built_using)
+- [TODO](../TODO.md)
+- [Contributing](../CONTRIBUTING.md)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
+
+## 🧐 __About__ <a name = "about"></a>
+
+This package is used as an interface between the `humblfinance` project and its data sources. It's also used to perform data analytics on the data collected from the data sources.
+
+## __Features__ <a name = "features"></a>
+
+- **ORATS data collection**
+- **Volatility Estimators**
+- **Rescaled-range analysis (Mandelbrot CHannel)**
+- **Volatility Adjusted Positioning**
+- **Strategy backtest performance**
+
+## 🏁 __Getting Started__ <a name = "getting_started"></a>
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+- `Python` - programming language
+- `Micromamba` (miniconda3/conda/mamba) - env management
+- `Poetry` - package management
+- `commitizen` & `cz_customiziable` - commit message management
+- `Ruff` - style/linter tool
+
+### 📩 __Installing Package__
+
+When I upload to pip:
+
+```bash
+pip install humbldata
+```
+
+Current install method:
+
+```bash
+pip install git+https://github.com/jjfantini/humbldata.git
+```
+
+## 🏗️ __Development Setup__ <a name = "development_setup"></a>
+
+<details>
+<summary><b>Setup Conda Environment (w/Poetry)</b></summary>
+<p>
+
+This project uses a conda environment. I have done this to be able to use openbb
+package easily. I have followed the instructions on the
+[openbb](https://docs.openbb.co/terminal/installation/pypi) website.
+
+1. I created the environment with a `--prefix` and not a name, to ensure that it installed in my project directory, not the default path. This is executed in the project root dir.
+
+    ```bash
+    # Windows
+    micromamba env create --prefix ./obb  --file environment.yml
+    
+    # MacOS / Linux
+    micromamba env create --prefix ./obb  --file base-environment.yml
+    ```
+
+2. I didn't want the full path to be displayed when using this env so I changed my `.condarc` file to show the env name as the last directory where the env is located.
+
+    ```bash
+    micromamba config --set env_prompt '({name})'
+    micromamba config --add channels conda-forge
+    ```
+
+3. Activate the environment
+
+    ```bash
+    micromamba activate ./obb
+    ```
+
+4. Install Poetry
+
+    ```bash
+    micromamba install poetry
+    ```
+
+5. Install Packages from `poetry.lock`
+
+    ```bash
+    poetry install
+    ```
+
+6. If you get an error:
+
+    ```
+    EnvCommandError
+    
+    Command ['c:\\Users\\<user>\\<path>\\obb\\python.exe', '-m', 'pip', 'uninstall', 'charset-normalizer', '-y'] errored with the following return code 2
+    ```
+
+    Then run:
+
+    ```
+    pip install charset-normalizer --upgrade
+    ```
+
+    and re-run!
+
+    ```bash
+    poetry install
+    ```
+
+</p>
+</details>
+<details>
+<summary><b>Setup Conda Environment (w/o Poetry)</b></summary>
+<p>
+
+  If you do not use `poetry` for some weird reason, I keep the updated environment specs in an `environment.yml` and `requirements.txt`file in the root of the project.
+
+  I use keep the env. specs up to date. This is packaged in a file `update_reqs.py`
+
+  ```bash
+  conda env export | python -c "import sys; print(''.join(line for line in sys.stdin if 'prefix: ' not in line))" > environment.yml
+  # This cmd removes the 'prefix:' line to be platform independent.
+  conda list  --export > requirements.txt
+  ```
+
+### __Setup Conda Env (w/ requirements)__
+
+  This method will be installing dependencies from `requirements.txt || environment.yml`
+
+### __Steps__
+
+  There are two methods to recreating the environment:
+
+- Using requirements.txt
+
+      ```bash
+      conda create --name obb --file requirements.txt
+      ```
+
+- Using environment.yml (has my path prefix-check the file to change path prefix)
+
+      ```bash
+      # Windows 
+      conda env create --prefix ./obb -f environment.yml
+
+      #Alternative OS
+      conda env create --prefix ./obb --file base_environment.yml
+      ```
+
+</p>
+</details>
+
+<details>
+<summary><b>Setting Up `Commitizen`</b></summary>
+<p>
+I am using the `vscode-commmitizen` extension to integrate `commitizen` into my workflow.
+This allows for nice keyboard shortcuts and UI integration. I have also installed `cz_customizable` globally to allow me to customize the commit message template using `cz-config.js`.
+
+The `pyproject.toml` file has the specifications for `cz_customizable` and `commitizen` to work together.
+
+Follow the [quickstart guide](https://github.com/leoforfree/cz-customizable) and use the 'Quick Start' section to setup `cz-customizable`. You need to install
+`cz-customizable` globally in order for the vscode extension to work along with the settings provided in the `pyproject.toml` file.
+
+- [ ] make sure you have a `pre-commit-config.yml`
+- [ ] make sure you have a `bumpversion.yml` in `.github/workflows`
+
+</p>
+</details>
+
+## 🔧 Running the tests <a name = "tests"></a>
+
+Explain how to run the automated tests for this system.
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## 🎈 Usage <a name="usage"></a>
+
+Add notes about how to use the system.
+
+## 🚀 Deployment <a name = "deployment"></a>
+
+Add additional notes about how to deploy this on a live system.
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- [OpenBB](https://www.openbb.co/) - Data Source
+- [PostgreSQL](https://postgresql.com/) - Database
+- [Python](https://python.org/) - Programming Language
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@jjfantini](https://github.com/jjfantini) - Idea & Initial work
+
+See also the list of [contributors](https://github.com/jjfantini/humbldata/contributors) who participated in this project.
+
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- References
+
