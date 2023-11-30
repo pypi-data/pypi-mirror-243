@@ -1,0 +1,2 @@
+[console_scripts]
+folderforge = folderforge.__main__:main
