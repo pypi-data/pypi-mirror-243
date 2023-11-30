@@ -1,0 +1,140 @@
+Metadata-Version: 2.1
+Name: hectiq_console
+Version: 1.1.0
+Summary: Python client to use the Hectiq Console
+Home-page: https://console.hectiq.ai
+Author: Edward Laurence
+Author-email: edwardl@hectiq.ai
+Keywords: pip requirements imports
+Classifier: Programming Language :: Python :: 3
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Scientific/Engineering
+Classifier: Intended Audience :: Science/Research
+Description-Content-Type: text/markdown
+Provides-Extra: api
+License-File: LICENSE
+
+# Hectiq console collector <!-- omit in toc -->
+
+A python package to track your inference API using the Hectiq Console.
+
+**This service is for Hectiq's client only.**
+
+- [Middleware for API](#middleware-for-api)
+  - [Installation](#installation)
+  - [Starlette](#starlette)
+  - [FastAPI](#fastapi)
+  - [Send metrics](#send-metrics)
+  - [Send annotations](#send-annotations)
+- [Functional for workers](#functional-for-workers)
+  - [Installation](#installation-1)
+
+## Middleware for API
+
+### Installation
+
+```bash
+pip install hectiq-console[starlette]
+```
+
+### Starlette 
+Below is an example how to use the middleware for Starlette application. 
+
+```python
+from starlette.applications import Starlette
+from starlette.middleware import Middleware
+from hectiq_console.starlette import HectiqConsoleStarletteMiddleware
+middleware = [
+    Middleware(HectiqConsoleStarletteMiddleware, 
+                ressource="hectiq-test")
+]
+app = Starlette(middleware=middleware)
+```
+### FastAPI
+
+Below is an example how to use the middleware for FastAPI. It shares the same Middleware as Starlette.
+
+```python
+import time
+import random
+from fastapi import FastAPI, Request
+from hectiq_console.starlette import HectiqConsoleStarletteMiddleware, store_metrics
+
+app = FastAPI(title="Demo application")
+app.add_middleware(HectiqConsoleStarletteMiddleware, 
+                   ressource="hectiq-demo",
+                   include_paths=["/predict"])
+
+@app.get("/")
+async def root():
+    return {"message": "🚨 This route is not monitored by the hectiq console."}
+
+@app.get("/predict")
+async def root(request: Request):
+    # Store a random number
+    return {"message": "✅ This route is monitored by the hectiq console."}
+```
+
+### Send metrics
+
+By default, the middleware stores the latency and counts of the monitored requests. You may add other metrics using the `store_metrics` in a request handler.
+
+```python
+@app.get("/predict")
+async def root(request: Request):
+    store_metrics(request=request, key=metrics_key, value=metrics_value)
+```
+You can send as many metrics in the same request as you want. However, if you use the same key in the same request, the previous value is overwritten by the new one.
+
+> Do not forget to create the metrics definition in the console beforehand. Otherwise, you'll get an error at handshake.
+
+### Send annotations
+
+Annotations are useful to track predictions in your application. For example, you may want to track the result of a model. Use the method `store_annotation`. You can send as many annotations as you want in the same request.
+
+```python
+@app.get("/predict")
+async def root(request: Request):
+    store_annotation(request=request, 
+                        inputs={"y": [0,1,2,3,4], "x": [0,1,2,3,4]}, 
+                        outputs={"y_true": [5,6,7,8], "y_pred": [5,6,7,8]}, 
+                        label="high-accuracy",
+                        metadata={"model": "demo-model", 
+                                "accuracy": 0.89})
+```
+
+## Functional for workers
+
+### Installation
+
+```bash
+pip install hectiq-console
+```
+
+In addition to the middleware, you can use the functional to send metrics, annotations, and files. These methods are useful for workers that do not have access to the request object.
+
+The ressource must be set before using the functional. You can set the ressource using the `set_ressource` method. Place this method at the beginning of your script. It uses a ContextVar to store the ressource. Therefore, you can use it in a multi-threaded environment.
+
+```python
+import hectiq_console.functional as hc
+
+def execute():
+    hc.set_ressource("demo-ressource")
+
+    # Send a file with the ressource
+    hc.add_file(filename="test.png") 
+
+    hc.add_metrics(name="active-cpus", value=5)
+
+    # # Create an incident
+    hc.create_incident(title="Incident with files",
+                        description="CPU usage is too high. Please check the logs.",
+                        filenames=["test.png", "main.py"])
+    
+    # Sleep for 1 second and push the metrics
+    with hc.timer_context(name="sub-timer"):
+        # Do something.
+        pass
+```
