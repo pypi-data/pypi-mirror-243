@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: microcosm-pubsub
+Version: 2.30.0
+Summary: PubSub with SNS/SQS
+Home-page: https://github.com/globality-corp/microcosm-pubsub
+Author: Globality Engineering
+Author-email: engineering@globality.com
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Python: >=3.9
+Provides-Extra: metrics
+Provides-Extra: sentry
+Provides-Extra: build
+License-File: LICENSE
+
+UNKNOWN
+
