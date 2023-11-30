@@ -1,0 +1,2 @@
+[console_scripts]
+dotpy = dot.__main__:dot_from_args
