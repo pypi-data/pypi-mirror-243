@@ -1,0 +1,40 @@
+from lextok.rules._pattern import (
+    COURT,
+    OF,
+    OF_THE_PH_,
+    TH,
+    Label,
+    Rule,
+    _orth_in,
+    lower_words,
+    titled_words,
+)
+
+generic_laws = Rule(
+    label=Label.StatuteNamed,
+    patterns=[
+        [
+            TH,
+            _orth_in(["1987", "1973", "1935"]) | {"OP": "?"},
+            _orth_in(["CONSTITUTION", "Constitution", "CONST", "Const."]),
+        ],
+        [{"ORTH": "Rules"}, OF, COURT],
+        titled_words("old code"),
+        titled_words("philippine civil code"),
+        titled_words("civil code of 1950"),
+        titled_words("civil code of 1889"),
+        titled_words("civil code"),
+        titled_words("civil code") + OF_THE_PH_,
+        lower_words("revised administrative code of 1987"),
+        lower_words("revised administrative code of 1917"),
+        lower_words("revised administrative code"),
+        lower_words("administrative code of 1987"),
+        lower_words("administrative code of 1917"),
+        lower_words("administrative code of 1916"),
+        lower_words("administrative code"),
+        lower_words("admin. code"),
+        lower_words("admin code"),
+        lower_words("adm. code"),
+        lower_words("adm code"),
+    ],
+)
