@@ -1,0 +1,38 @@
+{% if widget.is_hidden %}
+  {% include "django/forms/widgets/hidden.html" %}
+{% else %}
+  <div class="fk-raw-field paper-input-group input-group">
+    {% include "django/forms/widgets/input.html" %}
+
+    {% if link_label %}
+      <div class="input-group-append">
+        <a href="{{ link_url }}"
+           class="input-group-text bi-eye"
+           target="_blank"
+           tabindex="-1"
+           title="{{ link_label }}"
+           data-xclass="bs-tooltip"
+           data-placement="top"
+           data-trigger="hover"
+           data-html="true"
+           rel="noopener">
+        </a>
+      </div>
+    {% endif %}
+
+    {% if related_url %}
+      <div class="input-group-append">
+        <a href="{{ related_url }}"
+           class="related-lookup input-group-text bi-search"
+           id="lookup_id_{{ widget.name }}"
+           tabindex="-1"
+           data-xclass="bs-tooltip"
+           data-placement="top"
+           data-trigger="hover"
+           data-html="true"
+           title="{{ link_title }}">
+        </a>
+      </div>
+    {% endif %}
+  </div>
+{% endif %}

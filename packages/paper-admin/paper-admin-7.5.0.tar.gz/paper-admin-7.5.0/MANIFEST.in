@@ -1,0 +1,10 @@
+include LICENSE
+include *.md
+include package.json
+
+prune docs
+graft paper_admin
+prune paper_admin/static/paper_admin/src
+global-exclude .git*
+global-exclude __pycache__
+global-exclude *.py[co]
