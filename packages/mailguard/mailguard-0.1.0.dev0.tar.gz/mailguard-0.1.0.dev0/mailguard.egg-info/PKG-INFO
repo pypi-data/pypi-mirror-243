@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: mailguard
+Version: 0.1.0.dev0
+Summary: Forensic tool for analyzing email headers
+Author: Mayank Rajput
+Author-email: hackelite.sup@gmail.com
+Requires-Dist: colorama
