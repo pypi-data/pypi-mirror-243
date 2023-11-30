@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: easygraphql
+Version: 0.2311.0
+Summary: A minimal library to interact with GraphQL from Python
+Home-page: https://github.com/brunneis/easygraphql
+Author: Rodrigo Martínez Castaño
+Author-email: rodrigo@martinez.gal
+License: GNU General Public License v3 (GPLv3)
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+License-File: LICENSE
+Requires-Dist: requests
+
