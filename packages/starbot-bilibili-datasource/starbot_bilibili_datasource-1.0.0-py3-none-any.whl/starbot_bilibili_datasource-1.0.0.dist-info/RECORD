@@ -1,0 +1,12 @@
+starbot_datasource/__init__.py,sha256=q_v7VMKxt-IyGJKEl_ENBpTFLIWpP7lyD9gaRP9Z8_E,201
+starbot_datasource/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+starbot_datasource/core/datasource.py,sha256=fvKNNpumkBapi_Wtl7zaTN7t19CUdnl7NnCyOVS1dNk,6831
+starbot_datasource/core/event.py,sha256=w_mfyzwEADjLc9aLB_JhqNSKZgltqCk7O6Bi8vC4JkU,552
+starbot_datasource/core/model.py,sha256=-mwafaQAj7G4c6n_Hijnz-zehSPjl77xTjEAELSlEUg,10608
+starbot_datasource/exception/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+starbot_datasource/exception/ApiException.py,sha256=eQ8cAGpAS0BKXCEJeiCobFy0VB2wEUc-OiwwgciMii8,264
+starbot_datasource/exception/DataSourceException.py,sha256=KnTpVNIcOLAcd_NmVlm0rhjEyyPvnIm1szHapp_CdIw,214
+starbot_bilibili_datasource-1.0.0.dist-info/LICENSE,sha256=bx5iLIKjgAdYQ7sISn7DsfHRKkoCUm1154sJJKhgqnU,35184
+starbot_bilibili_datasource-1.0.0.dist-info/METADATA,sha256=hY2X6Mbe3JEYYLjq0DNGdMH2jg4QJfNy2kMBL7ZS4nk,2488
+starbot_bilibili_datasource-1.0.0.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+starbot_bilibili_datasource-1.0.0.dist-info/RECORD,,
