@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: batgrl
+Version: 0.31.0
+Summary: badass terminal graphics library
+Author-email: salt-die <salt-die@protonmail.com>
+License: MIT
+Project-URL: repository, https://github.com/salt-die/batgrl
+Project-URL: documentation, https://salt-die.github.io/batgrl/index.html
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.21.2
+Requires-Dist: opencv-python>=4.5.4.58
+Requires-Dist: wcwidth>=0.2.5
+Requires-Dist: Pygments>=2.16.1
+Requires-Dist: mistletoe>=1.2.1
+
+# batgrl
+<sup>**b**ad**a**ss **t**erminal **gr**aphics **l**ibrary</sup>
+
+Create games:
+
+![Tetris](https://raw.githubusercontent.com/salt-die/batgrl/main/preview_images/tetris.png)
+
+Simulations:
+
+![Simulation](https://raw.githubusercontent.com/salt-die/batgrl/main/preview_images/simulation.png)
+
+Or entire feature-filled applications:
+
+![Application](https://raw.githubusercontent.com/salt-die/batgrl/main/preview_images/application.png)
+
+[See it in action](https://youtu.be/FzQP86ljsgc)
+
+[Read the docs](https://salt-die.github.io/batgrl/index.html)
