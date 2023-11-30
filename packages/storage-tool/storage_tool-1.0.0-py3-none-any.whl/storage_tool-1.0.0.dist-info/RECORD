@@ -1,0 +1,17 @@
+_lab/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+_lab/lab.py,sha256=zsXKWTawTW1HR9nHw0PWPju6A2r3pMLU739kK9K_-OY,2059
+exemples/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+exemples/local_exemples.py,sha256=Ywd7LfZ7iSLlp5JvmlqbVVYeSCNlgSRhbegZFTOx6nY,2383
+exemples/s3_exemples.py,sha256=dzlqnHkXj00aHqGV57D4m2v5aZToW1etyTXmUGWnguo,2473
+storage_tool/__init__.py,sha256=5C6TJPKPghqJR8gVa1eHZydq1y_j4KAWyCJNlSDletc,1378
+storage_tool/base.py,sha256=UfmL3RqmDvXlK4IQYdLtU5ZS7dpxzhIPFCqbfXTWeqY,1463
+storage_tool/data_processor.py,sha256=0VhHCubIEwmZpRoLkFaM5fub9SN2TWr8Pfw--vE4mIs,4155
+storage_tool/local.py,sha256=jr-vdX9SOwTg4Nus3Hcf56hSp8-kRac6YYpuLBs6Ch8,7313
+storage_tool/s3.py,sha256=YKVOBjRmffpprAx9U3SOWkyVFkqnBYw0z-3IerBgwjs,16667
+tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+tests/test_aws_s3.py,sha256=UQTvM0ysxK9qMkSEUU_th71RP86BCq4Ah8dr9c-8I_k,11
+storage_tool-1.0.0.dist-info/LICENSE,sha256=mRKbVFn6i-9tqHFYoyy2pApyWEK5TjeJ8O4iVyLTCG8,1103
+storage_tool-1.0.0.dist-info/METADATA,sha256=LlTT_skfwNC_n2lxhDRYYa6sVyizZ0dvy5tHJ2XdY40,17440
+storage_tool-1.0.0.dist-info/WHEEL,sha256=Xo9-1PvkuimrydujYJAjF7pCkriuXBpUPEjma1nZyJ0,92
+storage_tool-1.0.0.dist-info/top_level.txt,sha256=FMc2veM584yd3UsBFNL45qIhdE3Z27-csa_7gWV7Npk,33
+storage_tool-1.0.0.dist-info/RECORD,,
