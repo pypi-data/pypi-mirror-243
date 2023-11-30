@@ -1,0 +1,77 @@
+Metadata-Version: 2.1
+Name: finnsflask
+Version: 1.2
+Summary: This is a recreation of the popular python package, Flask.
+Home-page: https://github.com/the-real-finnventor/finnsflask
+Download-URL: https://github.com/the-real-finnventor/finnsflask/archive/refs/tags/1.2.tar.gz
+Author: Real Finnventor
+Author-email: finnventor@everspaugh.com
+License: MIT
+Keywords: FLASK,WEBSERVER,JINJA2
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: Jinja2
+
+# finnsflask
+
+This is a recreation of the popular python package, Flask.
+
+## Usage
+
+### The base
+
+For a project with no endpoints import the module then create a instance with:
+
+```
+app = finnsflask.FinnsFlask()
+```
+
+Then start the app with:
+
+```
+if __name__ == "__main__":
+    app.listen()
+```
+
+### Endpoints
+
+To declare an endpoint, between your app declaration and when you start the app, put:
+
+```
+@app.route('/<path>')
+def index(request: finnsflask.HTTPRequest):
+    return finnsflask.HTTPResponse("<h1>Real Finnventor is awesome</h1>", 200)
+```
+
+### Templates
+
+finnsflask uses jinja2 as a templating system. To use a jinja2 template, use a route declaration like the following:
+
+```
+@app.route("/<path>")
+def index(request: finnsflask.HTTPRequest):
+    return finnsflask.HTTPResponse.load_template('<path-to-jinja2-template>', <template-args>)
+```
+
+### Cookies
+
+To get a cookie, use the following inside of your route declaration:
+
+```
+cookies = request.getCookies()
+```
+
+To set a cookie, use a route declaration like the following:
+
+```
+@app.route("/<path>")
+def index(request: finnsflask.HTTPRequest):
+    response = finnsflask.HTTPResponse()
+    response.setCookie("<key>", "<value>")
+    return response
+```
