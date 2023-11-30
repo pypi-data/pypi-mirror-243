@@ -1,0 +1,3 @@
+[console_scripts]
+berttextclassification = berttextclassification.bert_lawlaw:main
+
