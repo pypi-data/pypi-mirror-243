@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: deseqpyodide
+Version: 0.0.7
+Requires-Dist: anndata >=0.8.0
+Requires-Dist: numpy >=1.23.0
+Requires-Dist: pandas >=1.4.0
+Requires-Dist: scikit-learn >=1.1.0
+Requires-Dist: scipy >=1.8.0
+Requires-Dist: statsmodels
+Requires-Dist: matplotlib >=3.6.2
+
