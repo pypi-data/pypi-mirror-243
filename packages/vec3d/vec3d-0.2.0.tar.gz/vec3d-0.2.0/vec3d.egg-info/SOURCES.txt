@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+vec3d.egg-info/PKG-INFO
+vec3d.egg-info/SOURCES.txt
+vec3d.egg-info/dependency_links.txt
+vec3d.egg-info/requires.txt
+vec3d.egg-info/top_level.txt
+vec3d/graph/__init__.py
+vec3d/graph/vector3d_graphics.py
+vec3d/math/__init__.py
+vec3d/math/vector3d_math.py
