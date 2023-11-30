@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: craft-application
+Version: 1.1.0
+Summary: A framework for *craft applications.
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+Provides-Extra: dev
+Provides-Extra: lint
+Provides-Extra: types
+Provides-Extra: docs
+Provides-Extra: apt
+License-File: LICENSE
+
+*****************
+craft-application
+*****************
+
+A basis for future \*Craft applications.
+
+Description
+-----------
+This project will provide a basis for future projects similar to Snapcraft_, Charmcraft_ and Rockcraft_, with the eventual goal of rebasing those applications on this.
+
+Structure
+---------
+TODO
+
+How to migrate existing projects
+--------------------------------
+TODO
+
+.. _Snapcraft: https://github.com/snapcore/snapcraft
+.. _Charmcraft: https://github.com/canonical/charmcraft/
+.. _Rockcraft: https://github.com/canonical/rockcraft
