@@ -1,0 +1,10 @@
+black
+coverage
+cryptography
+isort
+moto
+pytest>=6.0
+pytest-cov
+pytest-sugar
+requests_mock
+ruff
