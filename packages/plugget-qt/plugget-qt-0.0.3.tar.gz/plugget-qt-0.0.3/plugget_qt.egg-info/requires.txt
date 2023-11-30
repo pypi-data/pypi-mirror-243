@@ -1,0 +1,5 @@
+plugget
+qtpy
+
+[:python_version < "3.4"]
+importlib-metadata
