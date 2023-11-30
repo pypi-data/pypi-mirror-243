@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: openai_assistant_toolkit
+Version: 0.1.0
+Summary: A toolkit for creating function tools for OpenAI from OpenAPI JSON specification.
+Author: Benjamin Garrard
+Author-email: ben@colorfull.ai
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
