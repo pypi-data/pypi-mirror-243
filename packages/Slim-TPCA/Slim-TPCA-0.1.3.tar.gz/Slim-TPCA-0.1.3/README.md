@@ -1,0 +1,48 @@
+[![Documentation Status](https://readthedocs.org/projects/slim_tpca/badge/?version=latest)](https://slim_tpca.readthedocs.io/en/latest/?badge=latest)
+[![Build Status](https://app.travis-ci.com/mailhexu/slim_tpca.svg?branch=master)](https://app.travis-ci.com/mailhexu/slim_tpca)
+[![Downloads](https://pepy.tech/badge/slim_tpca)](https://pepy.tech/project/slim_tpca)
+
+## Description
+
+Slim-TPCA package is a python package which requires python version higher than 3.7 to work. Slim-TPCA has been optimised based on the TPCA method published in 2018. By using fewer temperature points, Slim-TPCA can reduce the volume of samples required, eliminate the batch effect in multiplex mass spectrometry experiments, and greatly shorten the calculation time required. In the Slim-TPCA package, users can perform data pre-processing, graph ROC plots to determine the ability of the data to predict protein interactions, calculate the TPCA signatures of the complexes and dynamic modulations of the complexes.
+
+The features include:
+ - Calculates soluble fraction at each temperature.
+ - Calculates distance between every two proteins
+ - Based on the protein pair interaction Database, look for protein pairs where both proteins appear in the data.
+ - Calculate parameters of the ROC curve.
+ - Draw ROC plot based on parameters.
+ - Look for complexes that meet the requirements of the analysis.
+ - Calculate average distance between the subunit proteins of the complex.
+ - Sample virtual random complexes for calculation.
+ - Calculate TPCA signatures of complexes by sampling. 
+ - Calculate TPCA signatures of complexes by fitting a beta distribution to random complexes.
+ - Multiple sets of data may identify different proteins and align them here.
+ - Calculate TPCA dynamic modulation signatures of complexes by sampling and absolute distance.
+ - Calculate TPCA dynamic modulation signatures of complexes by sampling and relative distance.
+ - Calculate TPCA dynamic modulation signatures of complexes by Beta distribution fitting and absolute distance.
+ - Calculate TPCA dynamic modulation signatures of complexes by Beta distribution fitting and relative distance.
+
+For more information, see the documentation on
+ <https://slim-tpca.readthedocs.io/en/latest/index.html>
+
+## Dependencies
+* python (tested for ver 3.7)
+* numpy 
+* pandas 
+* matplotlib 
+* scipy 
+* sklearn
+* random 
+* seaborn 
+* copy
+* re
+
+## Installation
+pip install Slim-TPCA 
+
+from Slim_TPCA import Slim_TPCA 
+
+## Message:
+- We welcome contributions. If you would like to add the interface to other codes, or extend the capability of Slim-TPCA, please contact us! <11930100@mail.sustech.edu.cn>
+

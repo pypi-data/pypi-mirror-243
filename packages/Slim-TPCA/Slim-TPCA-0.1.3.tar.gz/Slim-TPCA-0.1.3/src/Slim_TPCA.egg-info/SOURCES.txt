@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+src/Slim_TPCA/Slim_TPCA.py
+src/Slim_TPCA/__init__.py
+src/Slim_TPCA.egg-info/PKG-INFO
+src/Slim_TPCA.egg-info/SOURCES.txt
+src/Slim_TPCA.egg-info/dependency_links.txt
+src/Slim_TPCA.egg-info/requires.txt
+src/Slim_TPCA.egg-info/top_level.txt
