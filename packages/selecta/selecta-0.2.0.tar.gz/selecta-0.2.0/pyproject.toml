@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selecta"
+version = "0.2.0"
+license = {file = "LICENSE.txt"}
+authors = [
+  {name="Thomas Schüßler", email="vindolin@gmail.com" },
+]
+dependencies = [
+  "urwid >= 2.2.0",
+]
+description = "Interactively select an entry from your bash/zsh history."
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Environment :: Console :: Curses",
+  "Programming Language :: Python :: 3",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux"]
+keywords = [
+  "bash", "zsh", "curses", "history"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/vindolin/selecta"
+"Changelog" = "https://github.com/vindolin/selecta/blob/master/CHANGELOG.md"
+
+[project.scripts]
+selecta = "selecta:main"
+selecta_add_keybinding = "selecta.commands.selecta_add_keybinding:main"

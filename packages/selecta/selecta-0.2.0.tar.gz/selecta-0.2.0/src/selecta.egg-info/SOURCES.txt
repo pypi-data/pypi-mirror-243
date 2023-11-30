@@ -1,0 +1,13 @@
+LICENSE.txt
+README.md
+pyproject.toml
+src/selecta/__init__.py
+src/selecta.egg-info/PKG-INFO
+src/selecta.egg-info/SOURCES.txt
+src/selecta.egg-info/dependency_links.txt
+src/selecta.egg-info/entry_points.txt
+src/selecta.egg-info/requires.txt
+src/selecta.egg-info/top_level.txt
+src/selecta/commands/__init__.py
+src/selecta/commands/selecta_add_keybinding.py
+tests/test_selecta.py
