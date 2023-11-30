@@ -1,0 +1,84 @@
+image: python:latest
+
+# Change pip's cache directory to be inside the project directory since we can
+# only cache local items.
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  
+stages:
+  - package
+  - test
+  - deploy
+
+# Pip's cache doesn't store the python packages
+# https://pip.pypa.io/en/stable/topics/caching/
+#
+# If you want to also cache the installed packages, you have to install
+# them in a virtualenv and cache it as well.
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+before_script:
+  - python --version  # For debugging
+  - python -mvenv venv
+  - . venv/bin/activate
+
+package:
+  stage: package
+  script:
+    - pip install wheel 'flit >=3.2, <4' build
+    - python -mbuild
+  artifacts:
+    paths:
+      - dist/*.whl
+      - dist/*.tar.gz
+
+'test_3.6':
+  stage: test
+  image: python:3.6
+  script:
+    - pip install ./dist/*.whl
+    - python test.py
+'test_3.7':
+  stage: test
+  image: python:3.7
+  script:
+    - pip install ./dist/*.whl
+    - python test.py
+'test_3.8':
+  stage: test
+  image: python:3.8
+  script:
+    - pip install ./dist/*.whl
+    - python test.py
+'test_3.9':
+  stage: test
+  image: python:3.9
+  script:
+    - pip install ./dist/*.whl
+    - python test.py
+'test_3.10':
+  stage: test
+  image: python:3.10
+  script:
+    - pip install ./dist/*.whl
+    - python test.py
+'test_3.11':
+  stage: test
+  image: python:3.11
+  script:
+    - pip install ./dist/*.whl
+    - python test.py
+
+deploy:
+  stage: deploy
+  script:
+    - pip install twine
+    - echo '[pypi]' >"$HOME/.pypirc"
+    - echo 'username = __token__' >>"$HOME/.pypirc"
+    - echo "password = ${PYPI_TOKEN:?Only works on protected tags}" >>"$HOME/.pypirc"
+    - twine upload dist/*.whl dist/*.tar.gz
+  rules:
+    - if: $CI_COMMIT_TAG =~ /^v[0-9]/
