@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: project-name-0.0.0
+Version: 0.0.3
+Summary: An application that informs you of the time in different locations and timezones.Time Explorer is a versatile and user-friendly application designed to keep you informed about the current time across various locations and time zones. Whether you're a globetrotter, remote worker, or simply someone with connections around the world, Time Explorer simplifies the way you manage time differences.
+Home-page: https://github.com/VismayaM-2003/TestProject.git
+Author: vismaya
+Author-email: muruganvichunni@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Dist: click
+Requires-Dist: pytz
+
