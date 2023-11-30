@@ -1,0 +1,113 @@
+# skillsnetwork-authoring-extension
+
+JupterLab/JupyerLite extension for Skills Network Authoring
+
+## Demo
+
+### Edit a Lab via Token
+
+![](https://github.com/ibm-skills-network/skillsnetwork-authoring-extension/blob/main/demo_sn_authoring_extension2.gif)
+
+### Get a Token
+
+1. Go to Author Workbench production [site](https://author.skills.network/)
+2. Select `Labs` on the left panel screen
+3. Select `JupyterLab` Tool Type
+4. Open developer console
+5. Search for `/hub/user` in `network` tab
+6. Copy and paste `atlas-token` or `awb-token` from the `Request URL`
+
+Example of `Request URL`:
+```
+Request URL:
+https://jupyterlab-4-labs-prod-jupyterlab-us-east-0.labs.cognitiveclass.ai/hub/user/user-name/lab/?mode=author&env_type=jupyterlab&atlas_token=eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3IiOnsdZGlzcGxheV9uYW1lIjoiT2xpdmVyIEx1byIsImVtYWlsIjoib2xpdmVyLmx1b0BpYm0uY29tIn0sImxhYl9pZCI6Ijg4ODciLCJwcm9qZWN0X2lkIjoiNTYwNSJ9.0p7v9qBIcnGyjWAovkoHEWxcCZHqcmRfqtV4PH7eb0U
+
+Token from Request URL: 
+eyJhbGciOiJIUzI1NiJ9.eyJhdXRob3IiOnsdZGlzcGxheV9uYW1lIjoiT2xpdmVyIEx1byIsImVtYWlsIjoib2xpdmVyLmx1b0BpYm0uY29tIn0sImxhYl9pZCI6Ijg4ODciLCJwcm9qZWN0X2lkIjoiNTYwNSJ9.0p7v9qBIcnGyjWAovkoHEWxcCZHqcmRfqtV4PH7eb0U
+```
+
+## Requirements
+
+* JupyterLab >= 3.0
+
+## Install
+
+To install the extension, execute:
+
+```bash
+pip install skillsnetwork-authoring-extension
+```
+
+After installing, enable the extension:
+
+```bash
+jupyter serverextension enable skillsnetwork-authoring-extension
+```
+
+## Uninstall
+
+To remove the extension, execute:
+
+```bash
+pip uninstall skillsnetwork-authoring-extension
+```
+
+
+## Contributing
+
+### Development install
+
+Note: You will need NodeJS to build the extension package.
+
+The `jlpm` command is JupyterLab's pinned version of
+[yarn](https://yarnpkg.com/) that is installed with JupyterLab. You may use
+`yarn` or `npm` in lieu of `jlpm` below.
+
+```bash
+# Clone the repo to your local environment
+# Change directory to the skillsnetwork-authoring-extension directory
+# Install package in development mode
+pip install -e .
+# Link your development version of the extension with JupyterLab
+jupyter labextension develop . --overwrite
+# Rebuild extension Typescript source after making changes
+jlpm build
+```
+
+You can watch the source directory and run JupyterLab at the same time in different terminals to watch for changes in the extension's source and automatically rebuild the extension.
+
+```bash
+# Watch the source directory in one terminal, automatically rebuilding when needed
+jlpm watch
+# Run JupyterLab in another terminal
+jupyter lab
+```
+
+With the watch command running, every saved change will immediately be built locally and available in your running JupyterLab. Refresh JupyterLab to load the change in your browser (you may need to wait several seconds for the extension to be rebuilt).
+
+By default, the `jlpm build` command generates the source maps for this extension to make it easier to debug using the browser dev tools. To also generate source maps for the JupyterLab core extensions, you can run the following command:
+
+```bash
+jupyter lab build --minimize=False
+```
+
+### Development uninstall
+
+```bash
+pip uninstall skillsnetwork-authoring-extension
+```
+
+In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
+command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
+folder is located. Then you can remove the symlink named `skillsnetwork-authoring-extension` within that folder.
+
+### Packaging the extension
+
+```bash
+# Package the python source package .tar.gz and binary package .whl
+pip install build twine
+python -m build
+```
+
+Also see [RELEASE](RELEASE.md)
+
