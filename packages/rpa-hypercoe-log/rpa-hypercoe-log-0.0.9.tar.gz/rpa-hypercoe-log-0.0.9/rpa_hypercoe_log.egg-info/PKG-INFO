@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: rpa-hypercoe-log
+Version: 0.0.9
+Summary: Repositorio para a utilização da API de Log do HyperCoe
+Home-page: UNKNOWN
+Author: Joao Buso
+Author-email: developer@hypercoe.com
+License: MIT License
+Description: # RPA HyperCoe Log:
+        
+        ## Kit de componentes para o registrar os Logs dos robÃ´s com a plataforma HyperCoe.
+        
+        ### IntalaÃ§Ã£o
+            >>> pip install rpa-hypercoe-log
+        
+        ## Como usar a biblioteca:
+            >>> import rpa-hypercoe-log
+        
+        ###  Exemplo de como usar a funÃ§Ã£o de registro de log
+        - rpa-hypercoe-log.Status
+        - rpa-hypercoe-log.Log
+        - rpa-hypercoe-log.Iteration
+        
+        ### DefiniÃ§Ã£o dos parÃ¢metros:
+        - **rpa-hypercoe-log**
+            - **bot_status** - Valor inteiro correspondente ao status do bot sendo # Active=0, Running=1, Paused=2, Error=3 (Campo obrigatÃ³rio)
+            - **bot_id** - Valor inteiro referente ao ID do bot que serÃ¡ gerado no momento de criaÃ§Ã£o do robÃ´ pelo agente do HyperCoe (Campo obrigatÃ³rio)
+            - **clienttoken** - Valor string do Token que serÃ¡ disponibilizado pelo Portal HyperCoe (Campo obrigatÃ³rio)
+            - **level** - Valor inteiro correspondente ao tipo de informaÃ§Ã£o que serÃ¡ regsitrado no log, sendo # Info=0, Warn=1, Error=2 (Campo obrigatÃ³rio)
+            - **typeError** - Valor string com a mensagem em caso de erro. (Campo nÃ£o obrigatÃ³rio)
+            - **message** - Valor string com a mensagem de log (Campo obrigatÃ³rio)
+            - **pathfile** - Valor string com o caminho absoluto para envio de evidÃªncia (Campo nÃ£o obrigatÃ³rio)
+            - **ID_Iteration** - Valor inteiro capturado pela api "Iteration" (Campo obrigatÃ³rio)
+            - **finalLog** - Valor boleano (False/True) que deverÃ¡ ser padrÃ£o False e somente utilizar o parametro True no Ãºltimo registro de log do robÃ´ (Campo nÃ£o obrigatÃ³rio)
+        
+        ### ParÃ¢metros por chamada de API:
+        - **Status (bot_id,clienttoken,bot_status)**
+        - **Log (level,typeError,message,pathfile,ID_Iteration,finalLog,ClientToken)**
+        - **Iteration (bot_id,clienttoken)**
+        
+Keywords: rpa hypercoe log tria software
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
