@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: hzgt
+Version: 1.4.2
+Home-page: 
+Author: HZGT
+Author-email: 2759444274@qq.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: 
+    This library is used for personal.
+    And if anyone wants to use it, they can also use it.
+    
+    WIN and Linux.
+    
+License-File: LICENSE
+Requires-Dist: tqdm
+Requires-Dist: requests
+Requires-Dist: you-get
+Requires-Dist: click
+
+This library is used for personal
