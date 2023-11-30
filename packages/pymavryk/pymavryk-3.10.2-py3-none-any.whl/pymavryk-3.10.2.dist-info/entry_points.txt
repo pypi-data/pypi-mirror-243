@@ -1,0 +1,4 @@
+[console_scripts]
+michelson-kernel=michelson_kernel.cli:cli
+pymavryk=pymavryk.cli.cli:cli
+
