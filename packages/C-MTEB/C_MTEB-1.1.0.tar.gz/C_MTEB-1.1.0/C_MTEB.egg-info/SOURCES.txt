@@ -1,0 +1,15 @@
+README.md
+setup.py
+C_MTEB/__init__.py
+C_MTEB.egg-info/PKG-INFO
+C_MTEB.egg-info/SOURCES.txt
+C_MTEB.egg-info/dependency_links.txt
+C_MTEB.egg-info/requires.txt
+C_MTEB.egg-info/top_level.txt
+C_MTEB/tasks/Classification.py
+C_MTEB/tasks/Clustering.py
+C_MTEB/tasks/PairClassification.py
+C_MTEB/tasks/Reranking.py
+C_MTEB/tasks/Retrieval.py
+C_MTEB/tasks/STS.py
+C_MTEB/tasks/__init__.py
