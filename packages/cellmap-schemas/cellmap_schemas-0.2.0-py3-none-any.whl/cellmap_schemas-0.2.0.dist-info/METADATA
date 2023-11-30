@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: cellmap-schemas
+Version: 0.2.0
+Summary: Schemas for data used by the Cellmap project team at Janelia Research Campus.
+Author: Davis Vann Bennett
+Author-email: davis.v.bennett@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: pydantic-zarr (>=0.5.0,<0.6.0)
+Requires-Dist: rich (>=13.7.0,<14.0.0)
+Requires-Dist: s3fs (>=2023.10.0,<2024.0.0)
+Description-Content-Type: text/markdown
+
+# cellmap-schemas
+Schemas for our data
+
+Read the documentation [here](https://janelia-cellmap.github.io/cellmap-schemas/)
+

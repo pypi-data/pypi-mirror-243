@@ -1,0 +1,3 @@
+[console_scripts]
+cellmap-schemas=cellmap_schemas.cli:cli
+
