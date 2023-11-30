@@ -1,0 +1,11 @@
+coreforecast-0.0.3.dist-info/RECORD,,
+coreforecast-0.0.3.dist-info/WHEEL,sha256=gt4s2pVBJeQa4lLmHz-6RSPvO9fdtNZyuj2Sn4TKtww,111
+coreforecast-0.0.3.dist-info/entry_points.txt,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+coreforecast-0.0.3.dist-info/METADATA,sha256=-QGN2PoZVmFqCb93ewSzBYSM4daY_N1lxS6DKIEZ7ak,13995
+coreforecast-0.0.3.dist-info/licenses/LICENSE,sha256=xx0jnfkXJvxRnG63LTGOxlggYnIysveWIZ6H3PNdCrQ,11357
+coreforecast/scalers.py,sha256=WPlCLi5L0tTXxU3l33STRRMC6deD-xd3Y8KMHqlSVZI,820
+coreforecast/__init__.py,sha256=4GZKi13lDTD25YBkGakhZyEQZWTER_OWQMNPoH_UM2c,22
+coreforecast/lag_transforms.py,sha256=3EQMwWJrmSXki2QIfXNv7YTi4DVMtsN9TW_gxv4Ilg8,7526
+coreforecast/grouped_array.py,sha256=M7FrUdOoo5Gd7mZ2xniubDXfXGl9VI1eSW98HD8ra34,9222
+coreforecast/.dylibs/libomp.dylib,sha256=Ly56nvhsinZbuVd0IMShYlcVfASx7uG-nLWkhvhcMrQ,746576
+coreforecast/lib/libcoreforecast.so,sha256=uIA_TfrG6hIeAkv_xOgI2GGItmFb5MB785Pb7p9or8M,132496
