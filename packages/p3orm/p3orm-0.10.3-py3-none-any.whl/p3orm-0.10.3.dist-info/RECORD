@@ -1,0 +1,16 @@
+p3orm/__init__.py,sha256=zaGDnxRYQz4Jvn5sOMUIO1D4F1T9qSvWz0EvUKi1vxw,338
+p3orm/core.py,sha256=orc5GpFdywOQPjPP53zZCMwknWp0umsSrf2h31w-GrQ,1333
+p3orm/drivers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+p3orm/drivers/base.py,sha256=iNSlYIcTPk9-XIzx_qU2BpcEITO_6aS_PpuQKuGWNmI,643
+p3orm/drivers/postgres.py,sha256=2p_VhAPgRKV0j9OKRZi2kTmIVHBH0Iuquio4jaHL2F0,4017
+p3orm/drivers/sqlite.py,sha256=gfT3BBhwquBy1jydTWR-zBJQ60eHTFtJLSjFGz6qIJA,2878
+p3orm/exceptions.py,sha256=itXKL8p1hibsqaGmbT6l4wShwcSGbI1IQ-CnFoBGrLI,651
+p3orm/fields.py,sha256=NzY5Htq18z3tGJ8PGkpjI0rb1Vcf8hWQ0z40HGraWaU,2286
+p3orm/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+p3orm/table.py,sha256=PFrmSyJVXM0_ZoyFd0nQ7C_RsB84032B5SULaiFhZXA,15609
+p3orm/types.py,sha256=4cI8gW71eVCuepUz93YbMLRB3iISEgl6KszxA7tCefA,136
+p3orm/utils.py,sha256=5GW5BV-xpXI5IbWag-8ponr4RALLttWn18MTKqioaok,3328
+p3orm-0.10.3.dist-info/LICENSE,sha256=-W3YDRCBs1MU3Btaw7uqqwQa7acfvk07qGAXlry_E4A,1081
+p3orm-0.10.3.dist-info/METADATA,sha256=3dEOKT-A4kpV6uqPKkhf1KxEFMykp12VRVtBAzVkK3Q,4658
+p3orm-0.10.3.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+p3orm-0.10.3.dist-info/RECORD,,
