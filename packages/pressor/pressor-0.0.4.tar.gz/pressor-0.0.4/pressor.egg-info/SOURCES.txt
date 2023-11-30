@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+./requires.py
+./version.py
+pressor/__init__.py
+pressor/config.py
+pressor/html_pressor.py
+pressor/more_pressor.py
+pressor/units.py
+pressor.egg-info/PKG-INFO
+pressor.egg-info/SOURCES.txt
+pressor.egg-info/dependency_links.txt
+pressor.egg-info/requires.txt
+pressor.egg-info/top_level.txt
