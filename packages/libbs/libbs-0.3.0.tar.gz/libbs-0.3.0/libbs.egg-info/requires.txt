@@ -1,0 +1,11 @@
+toml
+pycparser
+setuptools
+prompt_toolkit
+tqdm
+ghidra_bridge
+PySide6-Essentials>=6.4.2
+
+[test]
+angr-management
+pytest-qt
