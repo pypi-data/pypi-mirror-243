@@ -1,0 +1,10 @@
+LICENSE.txt
+README.md
+setup.py
+khawla_package/__init__.py
+khawla_package/khawla_module.py
+khawla_package.egg-info/PKG-INFO
+khawla_package.egg-info/SOURCES.txt
+khawla_package.egg-info/dependency_links.txt
+khawla_package.egg-info/requires.txt
+khawla_package.egg-info/top_level.txt
