@@ -1,0 +1,91 @@
+site_name: "RenderCV"
+site_description: A Python application that creates a CV in PDF from a YAML/JSON input file.
+site_author: Sina Atalay
+copyright: Copyright &copy; 2023 Sina Atalay
+site_url: https://sinaatalay.github.io/rendercv/
+repo_url: https://github.com/sinaatalay/rendercv
+repo_name: sinaatalay/rendercv
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/lightbulb-outline
+        name: "Switch to dark mode"
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/lightbulb
+        name: "Switch to light mode"
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+  features:
+    - content.code.copy # the copy-to-clipboard buttons for code blocks
+    - content.action.view # view source button for pages
+    - navigation.footer # the previous and next buttons in the footer
+    - navigation.indexes # allow mother pages to have their own index pages
+    # - navigation.tabs # render classical type of navbar at top
+    - navigation.instant # instant navigation for faster page loads
+    - navigation.instant.prefetch # prefetch pages for instant navigation
+    - navigation.instant.progress # show progress bar for instant navigation
+    - navigation.top # back to top button
+    - search.highlight # highlight search results after going to a page
+    - search.suggest # show search suggestions while typing
+    - toc.follow # if toc sidebar doesn't fit, scroll to the active heading
+
+nav:
+  - Overview: index.md
+  - User Guide: user_guide.md
+  - API Reference:
+      - API Reference: api_reference/index.md
+      - __main__.py: api_reference/__main__.md
+      - data_model.py: api_reference/data_model.md
+      - rendering.py: api_reference/rendering.md
+
+markdown_extensions:
+  # see https://facelessuser.github.io/pymdown-extensions/extensions/inlinehilite/ for more pymdownx info
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.tabbed: # content tabs
+      alternate_style: true
+  - toc:
+      permalink: true
+      title: Page contents
+  - admonition # blocks like note, warning, tip, etc.
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - rendercv
+          options:
+            members_order: source
+            show_bases: true
+            docstring_section_style: list
+            # merge_init_into_class: true
+            show_docstring_attributes: true
+            docstring_style: google
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
