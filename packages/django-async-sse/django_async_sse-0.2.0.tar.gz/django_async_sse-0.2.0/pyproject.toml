@@ -1,0 +1,35 @@
+[project]
+name = "django-async-sse"
+dynamic = []
+description = "Django async Server Sent Events helpers"
+authors = [
+    { name = "Paul Bailey", email = "paul@neutron.studio" },
+]
+dependencies = []
+requires-python = ">=3.10"
+readme = "README.md"
+version = "0.2.0"
+
+[project.license]
+text = "BSD-3Clause"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm.version]
+source = "file"
+path = "django_asse.py"
+
+[tool.pdm.build]
+includes = [
+    "django_asse.py",
+]
+
+[tool.pdm.scripts]
+publish = "pdm publish --username __token__ --password $PDM_PUBLISH_PASSWORD_DWS"
+
+[tool.pdm.scripts._]
+env_file = ".env"
