@@ -1,0 +1,13 @@
+vectorflow_client/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+vectorflow_client/chunk_enhancer.py,sha256=XMXymXtkjfjZ3ldMT2rlv8dTapNJO8GTZGduiFJPQLQ,17397
+vectorflow_client/chunk_strategy.py,sha256=2hf1XJJ1Z_38TsmRs98rq6bwgC1lfrHMXiLOs86BEEQ,303
+vectorflow_client/embeddings.py,sha256=v7lz7nAwzTwN1dQjQsNNM5Mx5tlkcokdAUOrEbzTm3w,1219
+vectorflow_client/embeddings_type.py,sha256=ZcdN3Z_dU7WRbkzNt6TRsepZRET7WaC4xJFc7iwHIeU,182
+vectorflow_client/job.py,sha256=lFGUMTt1kf9InpgaRiV6nz5jPyjLnAzIoNwUbHMXWVU,626
+vectorflow_client/response.py,sha256=2PNbNcnhNN807JKKf85jAbf39tDvybsUecYG4Z96pGE,3074
+vectorflow_client/vector_db.py,sha256=yEjN6HrGjWEp5KgLooXrrBpvg2RGfZ6Tc7XLX_ORhxk,762
+vectorflow_client/vector_db_type.py,sha256=SKy6dvAgn-CSFYk-lv8indlzGykt7ViHajiX87s4hOk,285
+vectorflow_client/vectorflow.py,sha256=q_9TBSx4Htp8mpNSFHfrGI0dH-uA31Nb1_cuGtbu0sU,5232
+vectorflow_client-0.0.7.dist-info/METADATA,sha256=5Rjysx9j26jf3ooBSwoZ6p6Dcb7qCsJnuDgWfHMYgRs,3515
+vectorflow_client-0.0.7.dist-info/WHEEL,sha256=9QBuHhg6FNW7lppboF2vKVbCGTVzsFykgRQjjlajrhA,87
+vectorflow_client-0.0.7.dist-info/RECORD,,
