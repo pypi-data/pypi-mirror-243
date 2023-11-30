@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+{% block meta %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="provide technological's tools for development's ecommerce and shop products">
+    <meta name="keywords" content="Ecommerce, Consulting, Development, Shop, Branding, Marketing,">
+    <meta name="author" content="Emmerut Group"/>
+    <meta name="copyright" content="Emmerut Group LLC"/>
+    <meta name="robots" content="index" />
+{% endblock  %}
+{% block head_title %}Emmerut | Stela Control Dynamic. {% trans "The Power is Yours" %}. {% endblock %}
+{% block favicon %}
+    <link rel="shortcut icon" href="{% static 'img/icons/icon.png' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'img/icons/icon.png' %}" type="image/x-icon">
+{% endblock  %}
+{% block base_style %}
+    <link rel="stylesheet" href="{% static 'css/canvas/components/bs-datatable.css' %}"> 
+    <link rel="stylesheet" href="{% static 'canvas/include/rs-plugin/fonts/font-awesome/css/font-awesome.css' %}"/>
+    <link rel="stylesheet" media="all" href="{% static 'canvas/include/rs-plugin/css/addons/revolution.addon.paintbrush.css' %}"/>
+    <link rel="stylesheet" href="{% static 'canvas/include/rs-plugin/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}"/>
+    <link rel="stylesheet" href="{% static 'canvas/include/rs-plugin/css/layers.css' %}"/>
+    <link rel="stylesheet" href="{% static 'canvas/include/rs-plugin/css/navigation.css' %}"/>
+    <link rel="stylesheet" href="{% static 'canvas/include/rs-plugin/css/settings.css' %}"/>
+    <link rel="stylesheet" href="{% static 'canvas/include/rs-plugin/css/settings.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/canvas/custom.css' %}">
+    <link rel="stylesheet" href="{% static 'css/canvas/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/stelaStyles.css' %}?v15">
+    <link rel="stylesheet" href="{% static 'vendor/css/core.css' %}" class="template-customizer-core-css"/>    
+{% endblock  %}
+{% block styles %}
+{% endblock %} 
+{% block body %}
+    {% block alerts %}
+        <div class="alert alert-success alert-dismissible fade-in show d-none" role="alert" id="IGAlert">
+            <div class="inner-message">
+                
+            </div>  
+            <button type="button" class="close" onclick="closeAlertSuccess()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade-in show d-none" role="alert" id="IGAlertDanger">
+            <div class="inner-message-danger">
+                
+            </div>  
+            <button type="button" class="close" onclick="closeAlertDanger()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endblock  %}
+    {% block preloader %}
+        <div class="preload">
+            <h1 class="text-preload">{% trans "Loading" %}...</h1>
+        </div>
+    {% endblock  %}
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'js/stela/main.js' %}?v3"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js" integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA=" crossorigin="anonymous"></script>  
+    <script src="{% static 'js/canvas/functions.bundle.js' %}?v5"></script>
+    <script src="{% static 'js/canvas/plugins.min.js' %}?v5"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/extensions/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/extensions/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/extensions/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/extensions/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/extensions/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/extensions/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/extensions/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/extensions/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/jquery.themepunch.tools.min.js' %}?v5"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/addons/revolution.addon.typewriter.min.js' %}"></script>
+    <script src="{% static 'canvas/include/rs-plugin/js/addons/revolution.addon.paintbrush.min.js' %}"></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="{% static 'js/canvas/components/bs-datatable.js' %}"></script> 
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+{% endblock %}
+{% block scripts %}
+{% endblock  %}

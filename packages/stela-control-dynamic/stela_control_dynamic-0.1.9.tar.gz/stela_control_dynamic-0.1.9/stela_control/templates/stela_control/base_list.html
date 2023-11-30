@@ -1,0 +1,129 @@
+{% extends 'stela_control/index.html' %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load hosts %}
+{% load stelatags %}
+{% load humanize %}
+{% block bsCall %}
+<button class="content-ai absolute text-small d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#staticBackdrop" onclick="typeText()"> <b class="mt-1 fs-5">PRO-Stela AI</b> <i class="fa-solid fa-circle-nodes ml-2 fs-3"></i></button>
+  <script src="{% static 'js/stela/contenido/blackstar.js' %}?v2"></script>
+  <script>
+    const titleText = '{% trans "Hello! How I can help? Ask me and I will answer you..." %}';const preloaderCage = '<div class="preload-cage-prostela"><h1 class="text-preload-prostela">{% trans "Proccess data, please wait" %}...</h1></div>';
+    
+  </script>
+  <!-- Button trigger modal -->
+
+  <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="oxanium fs-6 typed"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+          </div>
+          <div class="modal-body">
+            <input type="hidden" name="messages" value="{{qs}}" id=messages>
+            <div class="chatbox" id="respond"></div>
+            <textarea class="form-control" name="" id="query" cols="30" rows="2" placeholder='{% trans "Give me an overview of string theory." %}'></textarea>
+            <script>
+              const text = '{% trans "Send Query" %} <i class="fa-solid fa-paper-plane mx-2"></i>';
+            </script>
+          </div>
+          <div class="row justify-content-between p-4">
+              <div class="col-lg-4 my-3">
+                {% if site_data.chat %}
+                      <a type="button" class="btn btn-shappire btn-block center-btn oxanium fw-bold d-flex" href="/pro-stela/chats/" target="_blank">{% trans "Saved Messages" %} <i class="fa-solid fa-hard-drive mx-2 fs-5"></i></a>
+                {% else %}
+                      <button type="button" class="btn btn-shappire disabled btn-block center-btn oxanium fw-bold d-flex">{% trans "Saved Messages" %} <i class="fa-solid fa-hard-drive mx-2 fs-5"></i></button>
+                {% endif %}          
+              </div>
+              <div class="col-lg-4 my-3">
+                <a type="button" class="btn btn-shappire btn-block center-btn oxanium fw-bold d-flex" onclick="clearBlackstar()">{% trans "New Chat" %} <i class="fa-solid fa-comments mx-2 fs-5"></i></a>
+              </div>
+              <div class="col-lg-4 my-3">
+                <button type="button" class="btn btn-shappire btn-block center-btn query-btn oxanium fw-bold d-flex" onclick="blackstar()">{% trans "Send Query" %} <i class="fa-solid fa-paper-plane mx-2 fs-5"></i></button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock  %}
+{% block section %}
+  {% block title %}
+              
+  {% endblock  %}
+  {% block side_title %}
+              
+  {% endblock  %}
+  <div class="overflow-hidden min-view-stela">
+      <div class="container">
+          <div class="wow fadeIn" data-wow-duration=".5s" data-wow-delay="0.5s">  
+              <div class="row justify-content-end my-3">
+                  {% block topButtons %}
+                      
+                  {% endblock  %}
+              </div>   
+              <div class="row justify-content-center">
+                  <div id="print">
+                      <div class="col-lg-12 rounded bg-stela-table p-4 main-table wow fadeInLeft" data-wow-duration=".5s" data-wow-delay="0.5s">
+                          {% block listTitle %}
+                              
+                          {% endblock  %}
+                          <table id="stela-base" class="mt-2 compact table table-borderless table-hover billing-table">
+                              <thead>
+                                  <tr class="text-center">
+                                      {% block thead %}
+                                      
+                                      {% endblock  %} 
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  {% block tbody %}
+                                      
+                                  {% endblock  %} 
+                              </tbody>
+                                  <tfoot>
+                                      
+                              </tfoot>
+                          </table>
+                      </div>
+                  </div>
+                  
+              </div>
+          </div>
+          {% block extratable %}
+
+          {% endblock  %}
+          {% block errors %}
+          {% endblock  %}
+          {% block modals %}
+                
+          {% endblock  %}
+      </div>
+  </div>
+  <script>
+      var id = []
+      var confirmTitle = '{{user.first_name}} {% trans "Confirm?" %}';
+      const preloaderQuery = '<div class="preload-cage-prostela vh-50"><h1 class="text-preload-prostela fs-6">{% trans "Proccess data, please wait" %}...</h1></div>';
+  </script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script>
+      $(document).ready(function () {
+          $('#stela-base').DataTable({
+              "pageLength": 5,
+              "lengthChange": false,
+              paging: true,
+              info: true,
+              searching: true,
+              language: {
+                "emptyTable": '{% trans "No data" %}',
+                "loadingRecords": '{% trans "Loading" %}',
+                "processing": '{% trans "Processing" %}',
+            }
+          });
+        });
+  </script>
+  {% block addScript %}
+  {% endblock  %}
+{% endblock %}

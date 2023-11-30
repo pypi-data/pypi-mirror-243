@@ -1,0 +1,61 @@
+{% extends 'stela_control/base_list.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block bsCall %}
+
+{% endblock  %}
+{% block title %}
+
+{% endblock  %}
+{% block side_title %}
+            
+{% endblock  %}
+{% block topButtons %}
+    
+{% endblock  %}
+{% block listTitle %}
+        
+{% endblock  %}
+{% block thead %}
+    <th style="width: 5%;">Id</th>
+    <th style="width: 35%;">{% trans "Title" %}</th>
+    <th style="width: 20%;" class="text-center">{% trans "Status" %}</th>
+    <th style="width: 5%;">{% trans "Image" %}</th>
+    <th style="width: 15%;">{% trans "Price" %}</th>
+    <th style="width: 15%;">{% trans "View" %}</th>
+    <th style="width: 10%;" class="text-center"> <input type="checkbox"  name="" id="parent"></th>          
+{% endblock  %} 
+{% block tbody %}
+    {% for item in stock %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td class=text-link>{{item.title}}</td>
+            {% if item.status == 'Active' %}
+                <td class="text-center">{% trans "Active" %} <i class="fa-solid fa-circle-check color-green"></i></td>
+            {% else %}
+                <td class="text-center">{% trans "Inactive" %} <i class="fa-solid fa-exclamation color-red"></i></td>
+            {% endif %}
+            <td>{{item.image_tag}}</td>
+            <td>{{item.price}}</td>
+            <input type="hidden" id="data-{{item.id}}" value="{{item.id}}">
+            <td class="my-1"><button class="btn btn-shappire" onclick="update({{item.id}})" data-bs-toggle="modal" data-bs-target="#new-form"><i class="fa-solid fa-right-to-bracket"></i></button></td>
+            <td class="text-center check-product"><input type="checkbox" class="child" name="product_id[]" value="{{item.id}}" id="delete_product"></td>
+        </tr>
+        <script src="{% static 'js/stela/inventory/functions.js' %}"></script>
+    {% endfor %}
+{% endblock  %}
+{% block errors %}
+{% endblock  %}
+{% block extratable %}
+        
+{% endblock  %}
+{% block modals %}
+    
+{% endblock  %}
+{% block addScript %}
+<script>
+    const url = ''
+</script>
+{% endblock  %}
+

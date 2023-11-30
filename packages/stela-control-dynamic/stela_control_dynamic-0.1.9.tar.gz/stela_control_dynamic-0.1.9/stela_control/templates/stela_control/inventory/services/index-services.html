@@ -1,0 +1,103 @@
+{% extends 'stela_control/inventory/index.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block title %}
+            <h1 class="oxanium mx-4 text-dark pt-3">{% trans "Services" %} <i class="fa-solid fa-hand-holding"></i></h1>
+{% endblock  %}
+{% block side_title %}
+            <h3 class="oxanium mx-4 d-flex justify-content-end"><b>STELA {% trans "CONTROL DYNAMIC" %} | {% trans "Inventory" %}</b></h3>
+{% endblock  %}
+{% block topButtons %}
+    <div class="col-lg-2 col-md-6">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2" data-bs-toggle="modal" data-bs-target="#new-form">{% trans "New Service" %} <i class="fas fa-plus"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6">
+        <button type="submit" data-bs-toggle="modal" data-bs-target="#removeService" onclick="removeObjRequest()" class="btn btn-danger btn-danger px-3 mb-3 mx-2 delete-product hide" id="delete_btn">{% trans "Remove" %} <i class="fas fa-trash"></i></button>
+    </div>
+{% endblock  %}
+{% block listTitle %}
+        <h3 class="text-center fw-bold oxanium fs-4 my-2">{% trans "Services List" %}</h3>
+{% endblock  %}
+{% block modals %}
+<div class="modal fade" id="removeService" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="mb-3">
+          <div class="container">
+            <div class="row p-2">
+                <div class="col-12"> 
+                    <h3 class="text-center alert-title">{% trans "Are you sure?" %}</h3>
+                    <div class="iconhigh">
+                        <div id="anicon">
+
+                        </div> 
+                    </div>
+                    <div id="contentAlert">
+                        <p class="text-center text-dark">{% trans "This option cannot be reversed" %}.</p>   
+                        <div class="d-flex justify-content-center">
+                            <input type="hidden" id="removeData">
+                            <button onclick="removeObjComplete()" class="btn btn-danger remove-btn">{% trans "Remove" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>                   
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="new-form" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Form Item" %}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body mid-modal-scroll modal1">
+            <form action="" method="post" enctype="multipart/form-data" id="serviceForm">
+                {% csrf_token %} 
+                <div id="update" class="content-data">
+                    {{form|crispy}}
+                    <h3 class="text-center oxanium fs-5">Add Modules</h3>
+                    <div id="formset">
+                        {{ formset.management_form }}
+                            {% for form in formset %}
+                            <div id="form-0" class="formset pt-2">
+                                {{form|crispy}}
+                                {{form|as_crispy_errors}}
+                            </div>
+                            {% endfor %}
+                        <div id="empty-form" class="d-none">
+                            {{formset.empty_form.media}}
+                            {{formset.empty_form|crispy}}
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between my-3">
+                        <button class="btn-clear" type="button" onclick="newModule()"><i class="fa-solid fa-plus"></i>{% trans " Add" %}</button>
+                        <button class="btn-clear" type="button" onclick="removeModule()"><i class="fa-solid fa-minus"></i> {% trans "Remove" %}</button>
+                    </div>
+                    <input type="hidden" name="form-id" value="newService">
+                </div>
+                <div class="preload-cage-sendgrid fade-in vh-70 d-none preload1">
+                    <h3 class="text-preload-sendgrid fs-6">{% trans "Proccess data, please wait" %}...</h3>
+                </div> 
+                <div class="row justify-content-end p-3">
+                    <div class="col-lg-4">
+                        <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block btn-form d-flex">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                    </div>
+                </div>    
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock  %}
+{% block addScript %}
+<script>
+    const url = '/inventory-control/services'
+</script>
+<script src="{% static 'js/stela/inventory/services/functions.js' %}"></script>
+{% endblock  %}
