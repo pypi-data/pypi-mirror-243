@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: craft-application
+Version: 1.1.0
+Summary: A framework for *craft applications.
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: craft-cli >=2.4.0
+Requires-Dist: craft-parts >=1.21.1
+Requires-Dist: craft-providers <2.0,>=1.20.0
+Requires-Dist: pydantic <2.0,>=1.10
+Requires-Dist: pydantic-yaml <1.0
+Requires-Dist: pyxdg
+Requires-Dist: PyYaml >=6.0
+Requires-Dist: typing-extensions >=4.4.0
+Provides-Extra: apt
+Requires-Dist: python-apt >=2.4.0 ; (sys_platform == "linux") and extra == 'apt'
+Provides-Extra: dev
+Requires-Dist: coverage[toml] ==7.3.2 ; extra == 'dev'
+Requires-Dist: hypothesis >=6.0 ; extra == 'dev'
+Requires-Dist: pytest ==7.4.3 ; extra == 'dev'
+Requires-Dist: pytest-check ==2.2.2 ; extra == 'dev'
+Requires-Dist: pytest-cov ==4.1.0 ; extra == 'dev'
+Requires-Dist: pytest-mock ==3.12.0 ; extra == 'dev'
+Requires-Dist: pytest-rerunfailures ==12.0 ; extra == 'dev'
+Provides-Extra: docs
+Requires-Dist: furo ==2023.9.10 ; extra == 'docs'
+Requires-Dist: sphinx <7.3,>=7.2.6 ; extra == 'docs'
+Requires-Dist: sphinx-autobuild ==2021.3.14 ; extra == 'docs'
+Requires-Dist: sphinx-copybutton ==0.5.2 ; extra == 'docs'
+Requires-Dist: sphinx-design ==0.5.0 ; extra == 'docs'
+Requires-Dist: sphinx-pydantic ==0.1.1 ; extra == 'docs'
+Requires-Dist: sphinx-toolbox ==3.5.0 ; extra == 'docs'
+Requires-Dist: sphinx-lint ==0.8.1 ; extra == 'docs'
+Provides-Extra: lint
+Requires-Dist: black ==23.10.1 ; extra == 'lint'
+Requires-Dist: codespell[toml] ==2.2.6 ; extra == 'lint'
+Requires-Dist: ruff ==0.1.6 ; extra == 'lint'
+Requires-Dist: yamllint ==1.32.0 ; extra == 'lint'
+Provides-Extra: types
+Requires-Dist: mypy[reports] ==1.6.1 ; extra == 'types'
+Requires-Dist: pyright ==1.1.333 ; extra == 'types'
+Requires-Dist: types-requests ; extra == 'types'
+Requires-Dist: types-urllib3 ; extra == 'types'
+
+*****************
+craft-application
+*****************
+
+A basis for future \*Craft applications.
+
+Description
+-----------
+This project will provide a basis for future projects similar to Snapcraft_, Charmcraft_ and Rockcraft_, with the eventual goal of rebasing those applications on this.
+
+Structure
+---------
+TODO
+
+How to migrate existing projects
+--------------------------------
+TODO
+
+.. _Snapcraft: https://github.com/snapcore/snapcraft
+.. _Charmcraft: https://github.com/canonical/charmcraft/
+.. _Rockcraft: https://github.com/canonical/rockcraft
