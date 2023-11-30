@@ -1,0 +1,18 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "filter_column": {
+            "type": "string"
+        },
+        "filter_values": {
+            "type": "array"
+        },
+        "input_block": {
+            "type": "string"
+        },
+        "is_expression": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

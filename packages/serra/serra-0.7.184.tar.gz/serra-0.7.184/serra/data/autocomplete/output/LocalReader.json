@@ -1,0 +1,9 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "file_path": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

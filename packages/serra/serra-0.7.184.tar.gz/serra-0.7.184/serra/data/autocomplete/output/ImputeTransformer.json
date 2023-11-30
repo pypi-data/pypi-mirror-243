@@ -1,0 +1,15 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "columns_to_impute": {
+            "type": "array"
+        },
+        "imputation_strategy": {
+            "type": "string"
+        },
+        "input_block": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

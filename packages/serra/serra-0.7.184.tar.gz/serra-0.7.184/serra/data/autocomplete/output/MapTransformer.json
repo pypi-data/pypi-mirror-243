@@ -1,0 +1,21 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "input_block": {
+            "type": "string"
+        },
+        "input_column": {
+            "type": "string"
+        },
+        "mapping_dict_path": {
+            "type": "string"
+        },
+        "mapping_dictionary": {
+            "type": "object"
+        },
+        "output_column": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

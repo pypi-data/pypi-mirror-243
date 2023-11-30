@@ -1,0 +1,18 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "columns_and_conditions": {
+            "type": "object"
+        },
+        "input_block": {
+            "type": "string"
+        },
+        "input_column": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

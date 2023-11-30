@@ -1,0 +1,15 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "asecnding": {
+            "type": "string"
+        },
+        "columns": {
+            "type": "array"
+        },
+        "input_block": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

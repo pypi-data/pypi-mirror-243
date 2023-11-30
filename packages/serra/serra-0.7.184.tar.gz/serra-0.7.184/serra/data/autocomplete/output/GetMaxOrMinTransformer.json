@@ -1,0 +1,18 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "columns_and_operations": {
+            "type": "array"
+        },
+        "group_by_columns": {
+            "type": "string"
+        },
+        "input_block": {
+            "type": "string"
+        },
+        "new_column_names": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

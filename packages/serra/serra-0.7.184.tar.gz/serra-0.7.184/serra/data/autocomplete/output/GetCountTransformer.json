@@ -1,0 +1,15 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "count_column": {
+            "type": "string"
+        },
+        "group_by_columns": {
+            "type": "array"
+        },
+        "input_block": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

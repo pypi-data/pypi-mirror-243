@@ -1,0 +1,12 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "columns_to_cast": {
+            "type": "object"
+        },
+        "input_block": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

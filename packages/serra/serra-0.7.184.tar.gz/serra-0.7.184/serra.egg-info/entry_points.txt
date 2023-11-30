@@ -1,0 +1,4 @@
+[console_scripts]
+serra = serra.cli:main
+serra_databricks = serra.cli:serra_databricks
+

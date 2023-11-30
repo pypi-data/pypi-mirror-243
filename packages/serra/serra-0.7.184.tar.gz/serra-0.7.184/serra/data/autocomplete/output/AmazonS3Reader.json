@@ -1,0 +1,18 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "bucket_name": {
+            "type": "string"
+        },
+        "file_path": {
+            "type": "string"
+        },
+        "file_type": {
+            "type": "string"
+        },
+        "options": {
+            "type": "object"
+        }
+    },
+    "type": "object"
+}

@@ -1,0 +1,27 @@
+show_all: true
+
+step_read:
+  BigQueryReader:
+    project: serrra-demo
+    table: sales_table
+    dataset: sales
+
+
+step_map:
+  MapTransformer:
+    input_block: step_read
+    output_column: 'state_abbreviation'
+    mapping_dictionary:
+      Alabama: 'AL'
+      Alaska: 'AL'
+    input_column: 'region'
+
+step_write:
+  BigQueryWriter:
+    input_block: step_map
+    project: serrra-demo
+    dataset: sales
+    table: sales_new
+    mode: overwrite
+
+

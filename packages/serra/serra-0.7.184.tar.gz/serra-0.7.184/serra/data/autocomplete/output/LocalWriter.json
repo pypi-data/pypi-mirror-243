@@ -1,0 +1,12 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "file_path": {
+            "type": "string"
+        },
+        "input_block": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

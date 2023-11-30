@@ -1,0 +1,18 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "input_block": {
+            "type": "string"
+        },
+        "output_column": {
+            "type": "string"
+        },
+        "timestamp_column": {
+            "type": "string"
+        },
+        "trunc_unit": {
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

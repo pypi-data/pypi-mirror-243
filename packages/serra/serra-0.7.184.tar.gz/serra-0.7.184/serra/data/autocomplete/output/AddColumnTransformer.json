@@ -1,0 +1,21 @@
+{
+    "additionalProperties": false,
+    "properties": {
+        "input_block": {
+            "type": "string"
+        },
+        "new_column_name": {
+            "type": "string"
+        },
+        "new_column_type": {
+            "type": "string"
+        },
+        "value": {
+            "type": [
+                "string",
+                "boolean"
+            ]
+        }
+    },
+    "type": "object"
+}
