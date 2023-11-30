@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: core-scripts
+Version: 0.3.3
+Summary: 
+Author: Ricardo Torrellas
+Author-email: ricardo.torrejas@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: core-commands (>=0.3.1,<0.4.0)
+Requires-Dist: jellyfish (>=1.0.1,<2.0.0)
+Requires-Dist: natsort (>=8.4.0,<9.0.0)
+Requires-Dist: pyyaml (>=6.0.1,<7.0.0)
+Requires-Dist: toml (>=0.10.2,<0.11.0)
+Description-Content-Type: text/markdown
+
+
