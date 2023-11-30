@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: hivegraph
+Version: 0.0.1
+Summary: Python Framework based on PyG for working with Graph Neural Networks
+Keywords: deep-learning,pytorch,geometric-deep-learning,graph-neural-networks,graph-convolutional-networks
+Author-email: Saurav Maheshkar <sauravvmaheshkar@gmail.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Requires-Dist: iterative-stratification
+Requires-Dist: ml-collections
+Requires-Dist: numpy
+Requires-Dist: rich
+Requires-Dist: scipy>=1.10.0
+Requires-Dist: torch>=2.0.0
+Requires-Dist: torch-geometric
+Requires-Dist: torchmetrics
+Requires-Dist: wandb>=0.13.6
+Requires-Dist: hivegraph[test] ; extra == "dev"
+Requires-Dist: black ; extra == "dev"
+Requires-Dist: mypy>=0.900 ; extra == "dev"
+Requires-Dist: pre-commit>=2.18.0 ; extra == "dev"
+Requires-Dist: ruff ; extra == "dev"
+Requires-Dist: pytest ; extra == "test"
+Project-URL: homepage, https://github.com/SauravMaheshkar/hivegraph
+Project-URL: repository, https://github.com/SauravMaheshkar/hivegraph
+Provides-Extra: dev
+Provides-Extra: test
+
+# HiveGraph
+Python Framework based on PyG for working with Graph Neural Networks
+
+Currently has implementations for :-
+
+* Graph Isomorphism Networks (GIN)
+* Graph Convolutional Networks (GCN)
+* Residual Gated Graph Convolutional Networks (ResGatedGCN)
+
+Example Training Script
+```
+python train.py --config=src/configs/gin.py
+```
+

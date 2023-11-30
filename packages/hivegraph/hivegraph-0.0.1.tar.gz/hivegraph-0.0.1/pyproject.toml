@@ -1,0 +1,91 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+description = "Python Framework based on PyG for working with Graph Neural Networks"
+name = "hivegraph"
+version = "0.0.1"
+authors = [{ name = "Saurav Maheshkar", email = "sauravvmaheshkar@gmail.com" }]
+readme = ".github/README.md"
+requires-python = ">=3.8"
+keywords = [
+    "deep-learning",
+    "pytorch",
+    "geometric-deep-learning",
+    "graph-neural-networks",
+    "graph-convolutional-networks",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+    "iterative-stratification",
+    "ml-collections",
+    "numpy",
+    "rich",
+    "scipy>=1.10.0",
+    "torch>=2.0.0",
+    "torch-geometric",
+    "torchmetrics",
+    "wandb>=0.13.6",
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+dev = ["hivegraph[test]", "black", "mypy>=0.900", "pre-commit>=2.18.0", "ruff"]
+
+[project.urls]
+homepage = "https://github.com/SauravMaheshkar/hivegraph"
+repository = "https://github.com/SauravMaheshkar/hivegraph"
+
+[tool.flit.module]
+name = "hivegraph"
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 88
+
+[tool.pylint.messages_control]
+disable = [
+    "no-member",
+    "too-many-arguments",
+    "too-few-public-methods",
+    "no-else-return",
+    "duplicate-code",
+    "too-many-branches",
+    "redefined-builtin",
+    "dangerous-default-value",
+]
+
+[tool.pylint.format]
+max-line-length = 88
+
+[tool.mypy]
+disable_error_code = "attr-defined"
+
+[[tool.mypy.overrides]]
+module = [
+    "absl.*",
+    "hivegraph.*",
+    "torch_geometric.*",
+    "ml_collections.*",
+    "sklearn.model_selection",
+    "iterstrat.ml_stratifiers",
+]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+pythonpath = "."
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::UserWarning"]
+markers = ["io: Tests that perform IO operations."]
