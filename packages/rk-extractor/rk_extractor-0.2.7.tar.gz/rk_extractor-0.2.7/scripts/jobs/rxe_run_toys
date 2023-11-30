@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+#--------------------------------------
+set_paths()
+{
+    if   [[   -z $RK_TOY ]];then
+        VENV=$PWD/RK_TOY
+	INSTALL=1
+    elif [[ ! -d $RK_TOY ]];then
+        VENV=$RK_TOY
+	INSTALL=1
+    elif [[   -d $RK_TOY ]];then
+        VENV=$RK_TOY
+	INSTALL=0
+    fi
+
+    PYTHONPATH+=:$VENV/lib/python3.9/site-packages
+    source /cvmfs/sft.cern.ch/lcg/views/dev3/latest/x86_64-centos7-gcc12-opt/setup.sh
+}
+#--------------------------------------
+install_sft()
+{
+    if [[ $INSTALL -eq 0 ]];then
+	return
+    fi
+
+    mkdir -p $VENV
+
+    pip install                   --prefix $VENV logzero 
+    pip install                   --prefix $VENV rx_selection
+    pip install --no-dependencies --prefix $VENV rx_scripts
+    pip install --no-dependencies --prefix $VENV rx_tools
+    pip install --no-dependencies --prefix $VENV rk_extractor
+}
+#--------------------------------------
+prepare()
+{
+    for TARBALL in `ls *.tar.gz`;do
+	tar -xf $TARBALL
+    done
+}
+#--------------------------------------
+run()
+{
+    echo "--------------------"
+    echo "For \"$DSET\" running:"
+    if [[ "$DSET" == "" ]];then
+        echo "./rxe_toys"
+        ./rxe_toys
+    else
+        echo "./rxe_toys -d $DSET"
+        ./rxe_toys -d $DSET -l 10
+    fi
+    echo "--------------------"
+}
+#--------------------------------------
+DSET="$1"
+set_paths
+install_sft
+prepare
+run
+
