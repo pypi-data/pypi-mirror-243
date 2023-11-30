@@ -1,0 +1,1453 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>FamaFrench API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>FamaFrench</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import numpy as np
+import pandas as pd
+import QueryWRDS
+import datetime
+import pathlib
+from shutil import get_terminal_size
+import py_functions
+import itertools
+from tqdm import tqdm
+import functools
+from pandas.tseries.offsets import *
+from cprint import *
+
+# set printing options
+pd.set_option(&#39;display.max_rows&#39;, None)
+pd.set_option(&#39;display.max_columns&#39;, None)
+pd.set_option(&#39;display.width&#39;, get_terminal_size()[0])
+pd.set_option(&#39;display.float_format&#39;, lambda x: &#39;%.5f&#39; % x)
+
+# suppress chained assignment warning
+pd.options.mode.chained_assignment = None
+
+class FamaFrench:
+
+    # TODO (1) Error Checking
+    #      (2) Industry Sorts
+
+    def __init__(self, wrds_username: str, db_path: pathlib.Path):
+        self.DB = QueryWRDS.QueryWRDS(wrds_username, local_db_path = db_path)
+
+    # Helper Function
+    def _safe_append(self, obj, chk, ins):
+        if(not chk in obj):
+            obj[chk] = [ins]
+        else:
+            obj[chk].append(ins)
+        return(obj)
+
+    # Helper Function
+    def _portfolio_return(self, df, ret_type, weight_type, name):
+        if(weight_type == &#39;vw&#39;):
+                mkt_s = df.groupby(&#39;date&#39;).apply(py_functions.wavg, ret_type, &#39;me&#39;)
+        else:
+            mkt_s = df.groupby(&#39;date&#39;).mean(numeric_only = True)[ret_type]
+        mkt_s.name = name
+        mkt_s = mkt_s.to_frame().reset_index()
+        return(mkt_s)
+
+    &#39;&#39;&#39;
+    Valid Factors: MKT, RF, MKT_RF, SMB3, SMB5, HML, RMW, CMA, MOM, ST_REV, LT_REV 
+    &#39;&#39;&#39;
+    # TODO: Check for none dates
+    def FF_factors(self, factors: list[str], 
+                   dfin = None, 
+                   start_date: datetime.datetime = None, 
+                   end_date: datetime.datetime = None, 
+                   weight_type: str = &#39;vw&#39;, 
+                   ret_type: str = &#39;adjret&#39;, 
+                   drop_na: bool = True
+        ) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Creates standard Fama-French factors
+        
+        Creates the Fama-French factors using the original accounting practices from
+        Eugene Fama&#39;s and Kenneth French&#39;s original 1992 paper. 
+        The Cross-Section of Expected Stock Returns https://doi.org/10.1111/j.1540-6261.1992.tb04398.x
+        
+        Constructable factors include: &#39;MKT&#39; market return, &#39;RF&#39; risk free rate, &#39;MKT_RF&#39; equity premium, 
+        &#39;SMB3&#39; 3 factor small minus big, &#39;SMB5&#39; 5 factor small minus big, &#39;HML&#39; high minus low, 
+        &#39;RMW&#39; robust minus weak, &#39;CMA&#39; conservative minus aggresive, &#39;MOM&#39; momentum, 
+        &#39;ST_REV&#39; short term reversal, &#39;LT_Rev&#39; long term reversal. See https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
+        for constrution notes.
+        
+        Args:
+            factors: list of factors
+            dfin: datadrame with assets to use (optional)
+            start_date: start date for factors (optional)
+            end_date: end date for factors (optional)
+            weight_type: weights used to calculate returns
+            ret_type: return type with or without dividends
+            drop_na: if true drop rows that have NaN values
+
+        Returns: 
+            A dataframe with the specifed factros and a date column. Dataframe sorted by date.
+
+        Example:
+            Create the original 3 factor Fama-French model between &#39;date1&#39; and &#39;date2&#39;
+
+            df = FamaFrench.FF_factors(
+                factors = [&#39;MKT_RF&#39;, &#39;SMB3&#39;, &#39;HML&#39;], 
+                start_date = date1, 
+                end_date = date2
+            )
+
+        TODO:
+            Error checking
+        &#34;&#34;&#34;
+        
+        # query DB if no dataframe supplied
+        if(dfin is None):
+            ccm_df = self.DB.query_CCM(start_date, end_date)
+        else:
+            ccm_df = dfin 
+            
+        # create resulting dataframe
+        res = pd.DataFrame()
+        date_s = ccm_df.date.unique()
+        res[&#39;date&#39;] = date_s
+        res = res.sort_values(by = [&#39;date&#39;])
+
+        # extract state and end date from dataframe
+        if(not dfin is None):
+            start_date = np.min(res.date)
+            end_date = np.max(res.date)
+
+        # calculate the market return of supplied assets
+        if(&#39;MKT&#39; in factors):
+            mkt_df = self._portfolio_return(ccm_df, ret_type, weight_type, &#39;MKT&#39;)
+            res = res.merge(mkt_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        # add the risk free rate
+        if(&#39;RF&#39; in factors):
+            rf_df = self.DB.query_riskfree(start_date, end_date, &#39;M&#39;)
+            rf_df = rf_df.rename(columns = {&#39;rf&#39;: &#39;RF&#39;}) # just for naming consistency
+            res = res.merge(rf_df, on = [&#39;date&#39;], how = &#39;left&#39;)
+
+        # add the market premium
+        if(&#39;MKT_RF&#39; in factors):
+            if(&#39;MKT&#39; in factors and &#39;RF&#39; in factors):
+                res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+            elif(&#39;MKT&#39; in factors and not &#39;RF&#39; in factors):
+                rf_df = self.DB.query_riskfree(start_date, end_date, &#39;M&#39;)
+                rf_df = rf_df.rename(columns = {&#39;rf&#39;: &#39;RF&#39;}) # just for naming consistency
+                res = res.merge(rf_df, on = [&#39;date&#39;], how = &#39;left&#39;)
+                res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+                res = res.drop(columns = [&#39;MKT&#39;, &#39;RF&#39;])
+            elif(not &#39;MKT&#39; in factors and &#39;RF&#39; in factors):
+                mkt_df = self._portfolio_return(ccm_df, ret_type, weight_type, &#39;MKT&#39;)
+                res = res.merge(mkt_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+                res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+                res = res.drop(columns = [&#39;MKT&#39;, &#39;RF&#39;])
+            else:
+                mkt_df = self._portfolio_return(ccm_df, ret_type, weight_type, &#39;MKT&#39;)
+                res = res.merge(mkt_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+                rf_df = self.DB.query_riskfree(start_date, end_date, &#39;M&#39;)
+                rf_df = rf_df.rename(columns = {&#39;rf&#39;: &#39;RF&#39;}) # just for naming consistency
+                res = res.merge(rf_df, on = [&#39;date&#39;], how = &#39;left&#39;)
+                res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+                res = res.drop(columns = [&#39;MKT&#39;, &#39;RF&#39;])
+
+        # SMB factor from the 3-factor Fama-French model
+        if(&#39;SMB3&#39; in factors):
+            # portfolio sorts on ME and BM
+            sorts_df = self.sort_portfolios(
+                stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;ffbm&#39;: [0.3, 0.7]},
+                sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;ffbm&#39;: self.sort_3070},
+                drop_na = False, rebalance_freq = &#39;A&#39;
+            )
+            sorts_df[&#39;SMB3&#39;] = sorts_df[[&#39;me1_ffbm1&#39;, &#39;me1_ffbm2&#39;, &#39;me1_ffbm3&#39;]].mean(axis = 1) - sorts_df[[&#39;me2_ffbm1&#39;, &#39;me2_ffbm2&#39;, &#39;me2_ffbm3&#39;]].mean(axis = 1)
+            res = res.merge(sorts_df[[&#39;date&#39;, &#39;SMB3&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        # SMB factor from the 5-factor Fama-French model
+        if(&#39;SMB5&#39; in factors):
+            # sorts on BM
+            sortsBM_df = self.sort_portfolios(
+                stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;ffbm&#39;: [0.3, 0.7]}, 
+                sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;ffbm&#39;: self.sort_3070}, 
+                drop_na = False, rebalance_freq = &#39;A&#39;
+            )
+
+            # sorts on OP
+            sortsOP_df = self.sort_portfolios(
+                stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;op&#39;: [0.3, 0.7]}, 
+                sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;op&#39;: self.sort_3070}, 
+                drop_na = False, rebalance_freq = &#39;A&#39;
+            )
+
+            # sorts on INV
+            sortsINV_df = self.sort_portfolios(
+                stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;inv&#39;: [0.3, 0.7]}, 
+                sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;inv&#39;: self.sort_3070}, 
+                drop_na = False, rebalance_freq = &#39;A&#39;
+            )
+
+            # combine sorts into one dataframe
+            sortsBM_df = sortsBM_df.merge(sortsOP_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+            sortsBM_df = sortsBM_df.merge(sortsINV_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+
+            # housekeeping
+            sortsBM_df = sortsBM_df.set_index(&#39;date&#39;)
+            sortsBM_df = sortsBM_df.dropna(how = &#39;all&#39;)
+
+            # create factors
+            sortsBM_df[&#39;SMB_BM&#39;] = sortsBM_df[[&#39;me1_ffbm1&#39;, &#39;me1_ffbm2&#39;, &#39;me1_ffbm3&#39;]].mean(axis = 1) - sortsBM_df[[&#39;me2_ffbm1&#39;, &#39;me2_ffbm2&#39;, &#39;me2_ffbm3&#39;]].mean(axis = 1)
+            sortsBM_df[&#39;SMB_OP&#39;] = sortsOP_df[[&#39;me1_op1&#39;, &#39;me1_op2&#39;, &#39;me1_op3&#39;]].mean(axis = 1) - sortsOP_df[[&#39;me2_op1&#39;, &#39;me2_op2&#39;, &#39;me2_op3&#39;]].mean(axis = 1)
+            sortsBM_df[&#39;SMB_INV&#39;] = sortsINV_df[[&#39;me1_inv1&#39;, &#39;me1_inv2&#39;, &#39;me1_inv3&#39;]].mean(axis = 1) - sortsINV_df[[&#39;me2_inv1&#39;, &#39;me2_inv2&#39;, &#39;me2_inv3&#39;]].mean(axis = 1)
+
+            # average factors
+            sortsBM_df[&#39;SMB5&#39;] = sortsBM_df[[&#39;SMB_BM&#39;, &#39;SMB_OP&#39;, &#39;SMB_INV&#39;]].mean(axis = 1)
+
+            # add to result dataframe
+            sortsBM_df = sortsBM_df.reset_index()
+            res = res.merge(sortsBM_df[[&#39;date&#39;, &#39;SMB5&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;HML&#39; in factors):
+            sortsBM_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;ffbm&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;ffbm&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsBM_df[&#39;HML&#39;] = (1/2) * (sortsBM_df.me1_ffbm3 + sortsBM_df.me2_ffbm3) - (1/2) * (sortsBM_df.me1_ffbm1 + sortsBM_df.me2_ffbm1)
+            res = res.merge(sortsBM_df[[&#39;date&#39;, &#39;HML&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;RMW&#39; in factors):
+            sortsOP_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;op&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;op&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsOP_df[&#39;RMW&#39;] = (1/2) * (sortsOP_df.me1_op3 + sortsOP_df.me2_op3) - (1/2) * (sortsOP_df.me1_op1 + sortsOP_df.me2_op1)
+            res = res.merge(sortsOP_df[[&#39;date&#39;, &#39;RMW&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;CMA&#39; in factors):
+            sortsINV_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;inv&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;inv&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsINV_df[&#39;CMA&#39;] = (1/2) * (sortsINV_df.me1_inv1 + sortsINV_df.me2_inv1) - (1/2) * (sortsINV_df.me1_inv3 + sortsINV_df.me2_inv3)
+            res = res.merge(sortsINV_df[[&#39;date&#39;, &#39;CMA&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;MOM&#39; in factors):
+            sortsPR2_12_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;pr2_12&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;pr2_12&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsPR2_12_df[&#39;MOM&#39;] = (1/2) * (sortsPR2_12_df.me1_pr2_123 + sortsPR2_12_df.me2_pr2_123) - (1/2) * (sortsPR2_12_df.me1_pr2_121 + sortsPR2_12_df.me2_pr2_121)
+            res = res.merge(sortsPR2_12_df[[&#39;date&#39;, &#39;MOM&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;ST_REV&#39; in factors):
+            sortsPR1_1_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;pr1_1&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;pr1_1&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsPR1_1_df[&#39;ST_REV&#39;] = (1/2) * (sortsPR1_1_df.me1_pr1_11 + sortsPR1_1_df.me2_pr1_11) - (1/2) * (sortsPR1_1_df.me1_pr1_13 + sortsPR1_1_df.me2_pr1_13)
+            res = res.merge(sortsPR1_1_df[[&#39;date&#39;, &#39;ST_REV&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;LT_REV&#39; in factors):
+            sortsPR13_60_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;pr13_60&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;pr13_60&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsPR13_60_df[&#39;LT_REV&#39;] = (1/2) * (sortsPR13_60_df.me1_pr13_601 + sortsPR13_60_df.me2_pr13_601) - (1/2) * (sortsPR13_60_df.me1_pr13_603 + sortsPR13_60_df.me2_pr13_603)
+            res = res.merge(sortsPR13_60_df[[&#39;date&#39;, &#39;LT_REV&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        res = res.set_index(&#39;date&#39;).sort_index()
+        if(drop_na): res = res.dropna(how = &#39;all&#39;)
+        return(res)
+
+
+
+    def FF_3factor(self, start_date: datetime.datetime = None, end_date: datetime.datetime = None, weigth_type: str = &#39;vw&#39;, ret_type: str = &#39;adjret&#39;, drop_na: bool = True, dfin = None):
+        return(self.FF_factors(factors = [&#39;MKT_RF&#39;, &#39;SMB3&#39;, &#39;HML&#39;], 
+                               dfin = dfin,
+                               start_date = start_date, end_date = end_date, 
+                               weight_type = weigth_type, ret_type = ret_type, 
+                               drop_na = drop_na))
+
+    def FF_5factor(self, start_date: datetime.datetime = None, end_date: datetime.datetime = None, weigth_type: str = &#39;vw&#39;, ret_type: str = &#39;adjret&#39;, drop_na: bool = True, dfin = None):
+        return(self.FF_factors(factors = [&#39;MKT_RF&#39;, &#39;SMB5&#39;, &#39;HML&#39;, &#39;CMA&#39;, &#39;RMW&#39;], 
+                               dfin = dfin,
+                               start_date = start_date, end_date = end_date, 
+                               weight_type = weigth_type, ret_type = ret_type, 
+                               drop_na = drop_na))
+    
+    def breakpoint_ts(self, df_in, vars, qtiles = None):
+        
+        DEFAULT_QTILES = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
+        DECILES_QTILES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+        QUINTIL_QTILES = [0.2, 0.4, 0.6, 0.8]
+
+        dict_in = {}
+        if(type(vars) is dict):
+            dict_in = vars
+        else:
+            if(type(qtiles) is int or qtiles is None):
+                for var in vars:
+                    if(qtiles == 5):
+                        dict_in[var] = QUINTIL_QTILES
+                    elif(qtiles == 10):
+                        dict_in[var] = DECILES_QTILES
+                    else:
+                        dict_in[var] = DEFAULT_QTILES
+            elif(type(qtiles) is list):
+                for var in vars:
+                    dict_in[var] = qtiles
+            else:
+                raise TypeError(&#34;No valid vars or qtile combination given.&#34;)
+
+        res = []
+        for var, qtiles in dict_in.items():
+            temp = df_in.groupby(&#39;date&#39;)[var].describe(percentiles = qtiles)
+            ptiles = [f&#39;{int(100 * q)}%&#39; for q in qtiles]
+            temp = temp[ptiles]
+            temp = temp.add_prefix(f&#39;{var}_&#39;)
+            res.append(temp)
+
+        fin = functools.reduce(lambda x, y: pd.merge(x, y, on = &#39;date&#39;), res)
+        fin = fin.reset_index()
+        return(fin)
+    
+
+    # sorting functions
+    def sort_50(self, row, var):
+        if(row[var] &lt; row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}2&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_050(self, row, var):
+        if(row[var] &lt; 0):
+            res = f&#39;{var}1&#39;
+        if(row[var] &gt;= 0 and row[var] &lt; row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}3&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_3070(self, row, var):
+        if(row[var] &lt; row[f&#39;{var}_30%&#39;]):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_30%&#39;] and row[var] &lt; row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}3&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_03070(self, row, var):
+        if(row[var] &lt;= 0):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= 0 and row[var] &lt; row[f&#39;{var}_30%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_30%&#39;] and row[var] &lt; row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}3&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}4&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_quintile(self, row, var):
+        if(row[var] &lt; row[f&#39;{var}_20%&#39;]):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_20%&#39;] and row[var] &lt; row[f&#39;{var}_40%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_40%&#39;] and row[var] &lt; row[f&#39;{var}_60%&#39;]):
+            res = f&#39;{var}3&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_60%&#39;] and row[var] &lt; row[f&#39;{var}_80%&#39;]):
+            res = f&#39;{var}4&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_80%&#39;]):
+            res = f&#39;{var}5&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_deciles(self, row, var):
+        if(row[var] &lt; row[f&#39;{var}_10%&#39;]):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_10%&#39;] and row[var] &lt; row[f&#39;{var}_20%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_20%&#39;] and row[var] &lt; row[f&#39;{var}_30%&#39;]):
+            res = f&#39;{var}3&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_30%&#39;] and row[var] &lt; row[f&#39;{var}_40%&#39;]):
+            res = f&#39;{var}4&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_40%&#39;] and row[var] &lt; row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}5&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_50%&#39;] and row[var] &lt; row[f&#39;{var}_60%&#39;]):
+            res = f&#39;{var}6&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_60%&#39;] and row[var] &lt; row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}7&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_70%&#39;] and row[var] &lt; row[f&#39;{var}_80%&#39;]):
+            res = f&#39;{var}8&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_80%&#39;] and row[var] &lt; row[f&#39;{var}_90%&#39;]):
+            res = f&#39;{var}9&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_90%&#39;]):
+            res = f&#39;{var}10&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+
+    def sort_portfolios(self, stocks, char_bkpts, sorting_funcs, rebalance_freq, weight_type = &#39;vw&#39;, sort_month = 7, ex_dividend = False, drop_na = True, breakpoint_exchanges = [&#39;1&#39;], **kwargs):
+
+        # removes nans
+        stocks = stocks[(stocks.me &gt; 0) &amp; (stocks.wt &gt; 0)]
+
+        stocks.date = pd.to_datetime(stocks.date)
+
+        if(rebalance_freq == &#39;A&#39;):
+            rebalance_df = stocks[stocks.month == sort_month]
+        else:
+            rebalance_df = stocks
+
+        breakpoint_stocks_df = rebalance_df[rebalance_df.exchcd.isin(breakpoint_exchanges)]
+
+        # calculate breakpoints
+        breakpoints_df = self.breakpoint_ts(breakpoint_stocks_df, vars = char_bkpts)
+
+        # merge breakpoints to the rebalance df
+        rebalance_df = breakpoints_df.merge(rebalance_df, how = &#39;inner&#39;, on = [&#39;date&#39;])
+
+        ret_typ = &#39;adjretx&#39; if(ex_dividend) else &#39;adjret&#39;
+
+        rank_cols = []
+        for char, func in sorting_funcs.items():
+            rank_cols.append(f&#39;{char}_rank&#39;)
+            rebalance_df[f&#39;{char}_rank&#39;] = rebalance_df.apply(func, args = (char, ), axis = 1)
+
+        for rank_col in rank_cols:
+            if(&#39;--fail&#39; in rebalance_df[rank_col].unique()):
+                cprint.warn(f&#39;There are stocks that could not be sorted in {rank_col}. They will be removed before constructing portfolios.&#39;)
+                rebalance_df = rebalance_df[rebalance_df[rank_col] != &#39;--fail&#39;]
+ 
+        rebalance_df[&#39;port_name&#39;] = rebalance_df[rank_cols].agg(&#39;_&#39;.join, axis = 1)
+
+        if(rebalance_freq == &#39;A&#39;):
+            fin = stocks.merge(rebalance_df[[&#39;permno&#39;, &#39;ffyear&#39;, &#39;port_name&#39;]], how = &#39;left&#39;, on = [&#39;permno&#39;, &#39;ffyear&#39;])
+        else:
+            fin = rebalance_df
+        
+        fin = fin.dropna(subset = [&#39;port_name&#39;])
+        rets = None
+        if(weight_type == &#39;vw&#39;):
+            rets = fin.groupby([&#39;date&#39;, &#39;port_name&#39;]).apply(py_functions.wavg, ret_typ, &#39;wt&#39;).to_frame().reset_index().rename(columns = {0: ret_typ})
+        else:
+            rets = fin.groupby([&#39;date&#39;, &#39;port_name&#39;]).mean(numeric_only = True)[ret_typ].to_frame().reset_index().rename(columns = {0: ret_typ})
+        firm = fin.groupby([&#39;date&#39;, &#39;port_name&#39;])[&#39;permno&#39;].count().reset_index().rename(columns = {&#39;permno&#39;: &#39;num_firms&#39;})
+
+        rets = rets.pivot(index = &#39;date&#39;, columns = &#39;port_name&#39;, values = ret_typ)
+        firm = firm.pivot(index = &#39;date&#39;, columns = &#39;port_name&#39;, values = &#39;num_firms&#39;)
+        firm = firm.add_suffix(&#39;_num_firms&#39;)
+
+        res = rets.merge(firm, how = &#39;inner&#39;, on = [&#39;date&#39;])
+        res = res.reset_index()
+        if(drop_na): res = res.dropna()
+
+        return(res)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="FamaFrench.FamaFrench"><code class="flex name class">
+<span>class <span class="ident">FamaFrench</span></span>
+<span>(</span><span>wrds_username: str, db_path: pathlib.Path)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class FamaFrench:
+
+    # TODO (1) Error Checking
+    #      (2) Industry Sorts
+
+    def __init__(self, wrds_username: str, db_path: pathlib.Path):
+        self.DB = QueryWRDS.QueryWRDS(wrds_username, local_db_path = db_path)
+
+    # Helper Function
+    def _safe_append(self, obj, chk, ins):
+        if(not chk in obj):
+            obj[chk] = [ins]
+        else:
+            obj[chk].append(ins)
+        return(obj)
+
+    # Helper Function
+    def _portfolio_return(self, df, ret_type, weight_type, name):
+        if(weight_type == &#39;vw&#39;):
+                mkt_s = df.groupby(&#39;date&#39;).apply(py_functions.wavg, ret_type, &#39;me&#39;)
+        else:
+            mkt_s = df.groupby(&#39;date&#39;).mean(numeric_only = True)[ret_type]
+        mkt_s.name = name
+        mkt_s = mkt_s.to_frame().reset_index()
+        return(mkt_s)
+
+    &#39;&#39;&#39;
+    Valid Factors: MKT, RF, MKT_RF, SMB3, SMB5, HML, RMW, CMA, MOM, ST_REV, LT_REV 
+    &#39;&#39;&#39;
+    # TODO: Check for none dates
+    def FF_factors(self, factors: list[str], 
+                   dfin = None, 
+                   start_date: datetime.datetime = None, 
+                   end_date: datetime.datetime = None, 
+                   weight_type: str = &#39;vw&#39;, 
+                   ret_type: str = &#39;adjret&#39;, 
+                   drop_na: bool = True
+        ) -&gt; pd.DataFrame:
+        &#34;&#34;&#34;Creates standard Fama-French factors
+        
+        Creates the Fama-French factors using the original accounting practices from
+        Eugene Fama&#39;s and Kenneth French&#39;s original 1992 paper. 
+        The Cross-Section of Expected Stock Returns https://doi.org/10.1111/j.1540-6261.1992.tb04398.x
+        
+        Constructable factors include: &#39;MKT&#39; market return, &#39;RF&#39; risk free rate, &#39;MKT_RF&#39; equity premium, 
+        &#39;SMB3&#39; 3 factor small minus big, &#39;SMB5&#39; 5 factor small minus big, &#39;HML&#39; high minus low, 
+        &#39;RMW&#39; robust minus weak, &#39;CMA&#39; conservative minus aggresive, &#39;MOM&#39; momentum, 
+        &#39;ST_REV&#39; short term reversal, &#39;LT_Rev&#39; long term reversal. See https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
+        for constrution notes.
+        
+        Args:
+            factors: list of factors
+            dfin: datadrame with assets to use (optional)
+            start_date: start date for factors (optional)
+            end_date: end date for factors (optional)
+            weight_type: weights used to calculate returns
+            ret_type: return type with or without dividends
+            drop_na: if true drop rows that have NaN values
+
+        Returns: 
+            A dataframe with the specifed factros and a date column. Dataframe sorted by date.
+
+        Example:
+            Create the original 3 factor Fama-French model between &#39;date1&#39; and &#39;date2&#39;
+
+            df = FamaFrench.FF_factors(
+                factors = [&#39;MKT_RF&#39;, &#39;SMB3&#39;, &#39;HML&#39;], 
+                start_date = date1, 
+                end_date = date2
+            )
+
+        TODO:
+            Error checking
+        &#34;&#34;&#34;
+        
+        # query DB if no dataframe supplied
+        if(dfin is None):
+            ccm_df = self.DB.query_CCM(start_date, end_date)
+        else:
+            ccm_df = dfin 
+            
+        # create resulting dataframe
+        res = pd.DataFrame()
+        date_s = ccm_df.date.unique()
+        res[&#39;date&#39;] = date_s
+        res = res.sort_values(by = [&#39;date&#39;])
+
+        # extract state and end date from dataframe
+        if(not dfin is None):
+            start_date = np.min(res.date)
+            end_date = np.max(res.date)
+
+        # calculate the market return of supplied assets
+        if(&#39;MKT&#39; in factors):
+            mkt_df = self._portfolio_return(ccm_df, ret_type, weight_type, &#39;MKT&#39;)
+            res = res.merge(mkt_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        # add the risk free rate
+        if(&#39;RF&#39; in factors):
+            rf_df = self.DB.query_riskfree(start_date, end_date, &#39;M&#39;)
+            rf_df = rf_df.rename(columns = {&#39;rf&#39;: &#39;RF&#39;}) # just for naming consistency
+            res = res.merge(rf_df, on = [&#39;date&#39;], how = &#39;left&#39;)
+
+        # add the market premium
+        if(&#39;MKT_RF&#39; in factors):
+            if(&#39;MKT&#39; in factors and &#39;RF&#39; in factors):
+                res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+            elif(&#39;MKT&#39; in factors and not &#39;RF&#39; in factors):
+                rf_df = self.DB.query_riskfree(start_date, end_date, &#39;M&#39;)
+                rf_df = rf_df.rename(columns = {&#39;rf&#39;: &#39;RF&#39;}) # just for naming consistency
+                res = res.merge(rf_df, on = [&#39;date&#39;], how = &#39;left&#39;)
+                res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+                res = res.drop(columns = [&#39;MKT&#39;, &#39;RF&#39;])
+            elif(not &#39;MKT&#39; in factors and &#39;RF&#39; in factors):
+                mkt_df = self._portfolio_return(ccm_df, ret_type, weight_type, &#39;MKT&#39;)
+                res = res.merge(mkt_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+                res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+                res = res.drop(columns = [&#39;MKT&#39;, &#39;RF&#39;])
+            else:
+                mkt_df = self._portfolio_return(ccm_df, ret_type, weight_type, &#39;MKT&#39;)
+                res = res.merge(mkt_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+                rf_df = self.DB.query_riskfree(start_date, end_date, &#39;M&#39;)
+                rf_df = rf_df.rename(columns = {&#39;rf&#39;: &#39;RF&#39;}) # just for naming consistency
+                res = res.merge(rf_df, on = [&#39;date&#39;], how = &#39;left&#39;)
+                res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+                res = res.drop(columns = [&#39;MKT&#39;, &#39;RF&#39;])
+
+        # SMB factor from the 3-factor Fama-French model
+        if(&#39;SMB3&#39; in factors):
+            # portfolio sorts on ME and BM
+            sorts_df = self.sort_portfolios(
+                stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;ffbm&#39;: [0.3, 0.7]},
+                sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;ffbm&#39;: self.sort_3070},
+                drop_na = False, rebalance_freq = &#39;A&#39;
+            )
+            sorts_df[&#39;SMB3&#39;] = sorts_df[[&#39;me1_ffbm1&#39;, &#39;me1_ffbm2&#39;, &#39;me1_ffbm3&#39;]].mean(axis = 1) - sorts_df[[&#39;me2_ffbm1&#39;, &#39;me2_ffbm2&#39;, &#39;me2_ffbm3&#39;]].mean(axis = 1)
+            res = res.merge(sorts_df[[&#39;date&#39;, &#39;SMB3&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        # SMB factor from the 5-factor Fama-French model
+        if(&#39;SMB5&#39; in factors):
+            # sorts on BM
+            sortsBM_df = self.sort_portfolios(
+                stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;ffbm&#39;: [0.3, 0.7]}, 
+                sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;ffbm&#39;: self.sort_3070}, 
+                drop_na = False, rebalance_freq = &#39;A&#39;
+            )
+
+            # sorts on OP
+            sortsOP_df = self.sort_portfolios(
+                stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;op&#39;: [0.3, 0.7]}, 
+                sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;op&#39;: self.sort_3070}, 
+                drop_na = False, rebalance_freq = &#39;A&#39;
+            )
+
+            # sorts on INV
+            sortsINV_df = self.sort_portfolios(
+                stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;inv&#39;: [0.3, 0.7]}, 
+                sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;inv&#39;: self.sort_3070}, 
+                drop_na = False, rebalance_freq = &#39;A&#39;
+            )
+
+            # combine sorts into one dataframe
+            sortsBM_df = sortsBM_df.merge(sortsOP_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+            sortsBM_df = sortsBM_df.merge(sortsINV_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+
+            # housekeeping
+            sortsBM_df = sortsBM_df.set_index(&#39;date&#39;)
+            sortsBM_df = sortsBM_df.dropna(how = &#39;all&#39;)
+
+            # create factors
+            sortsBM_df[&#39;SMB_BM&#39;] = sortsBM_df[[&#39;me1_ffbm1&#39;, &#39;me1_ffbm2&#39;, &#39;me1_ffbm3&#39;]].mean(axis = 1) - sortsBM_df[[&#39;me2_ffbm1&#39;, &#39;me2_ffbm2&#39;, &#39;me2_ffbm3&#39;]].mean(axis = 1)
+            sortsBM_df[&#39;SMB_OP&#39;] = sortsOP_df[[&#39;me1_op1&#39;, &#39;me1_op2&#39;, &#39;me1_op3&#39;]].mean(axis = 1) - sortsOP_df[[&#39;me2_op1&#39;, &#39;me2_op2&#39;, &#39;me2_op3&#39;]].mean(axis = 1)
+            sortsBM_df[&#39;SMB_INV&#39;] = sortsINV_df[[&#39;me1_inv1&#39;, &#39;me1_inv2&#39;, &#39;me1_inv3&#39;]].mean(axis = 1) - sortsINV_df[[&#39;me2_inv1&#39;, &#39;me2_inv2&#39;, &#39;me2_inv3&#39;]].mean(axis = 1)
+
+            # average factors
+            sortsBM_df[&#39;SMB5&#39;] = sortsBM_df[[&#39;SMB_BM&#39;, &#39;SMB_OP&#39;, &#39;SMB_INV&#39;]].mean(axis = 1)
+
+            # add to result dataframe
+            sortsBM_df = sortsBM_df.reset_index()
+            res = res.merge(sortsBM_df[[&#39;date&#39;, &#39;SMB5&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;HML&#39; in factors):
+            sortsBM_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;ffbm&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;ffbm&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsBM_df[&#39;HML&#39;] = (1/2) * (sortsBM_df.me1_ffbm3 + sortsBM_df.me2_ffbm3) - (1/2) * (sortsBM_df.me1_ffbm1 + sortsBM_df.me2_ffbm1)
+            res = res.merge(sortsBM_df[[&#39;date&#39;, &#39;HML&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;RMW&#39; in factors):
+            sortsOP_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;op&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;op&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsOP_df[&#39;RMW&#39;] = (1/2) * (sortsOP_df.me1_op3 + sortsOP_df.me2_op3) - (1/2) * (sortsOP_df.me1_op1 + sortsOP_df.me2_op1)
+            res = res.merge(sortsOP_df[[&#39;date&#39;, &#39;RMW&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;CMA&#39; in factors):
+            sortsINV_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;inv&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;inv&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsINV_df[&#39;CMA&#39;] = (1/2) * (sortsINV_df.me1_inv1 + sortsINV_df.me2_inv1) - (1/2) * (sortsINV_df.me1_inv3 + sortsINV_df.me2_inv3)
+            res = res.merge(sortsINV_df[[&#39;date&#39;, &#39;CMA&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;MOM&#39; in factors):
+            sortsPR2_12_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;pr2_12&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;pr2_12&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsPR2_12_df[&#39;MOM&#39;] = (1/2) * (sortsPR2_12_df.me1_pr2_123 + sortsPR2_12_df.me2_pr2_123) - (1/2) * (sortsPR2_12_df.me1_pr2_121 + sortsPR2_12_df.me2_pr2_121)
+            res = res.merge(sortsPR2_12_df[[&#39;date&#39;, &#39;MOM&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;ST_REV&#39; in factors):
+            sortsPR1_1_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;pr1_1&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;pr1_1&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsPR1_1_df[&#39;ST_REV&#39;] = (1/2) * (sortsPR1_1_df.me1_pr1_11 + sortsPR1_1_df.me2_pr1_11) - (1/2) * (sortsPR1_1_df.me1_pr1_13 + sortsPR1_1_df.me2_pr1_13)
+            res = res.merge(sortsPR1_1_df[[&#39;date&#39;, &#39;ST_REV&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        if(&#39;LT_REV&#39; in factors):
+            sortsPR13_60_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;pr13_60&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;pr13_60&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+            sortsPR13_60_df[&#39;LT_REV&#39;] = (1/2) * (sortsPR13_60_df.me1_pr13_601 + sortsPR13_60_df.me2_pr13_601) - (1/2) * (sortsPR13_60_df.me1_pr13_603 + sortsPR13_60_df.me2_pr13_603)
+            res = res.merge(sortsPR13_60_df[[&#39;date&#39;, &#39;LT_REV&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        res = res.set_index(&#39;date&#39;).sort_index()
+        if(drop_na): res = res.dropna(how = &#39;all&#39;)
+        return(res)
+
+
+
+    def FF_3factor(self, start_date: datetime.datetime = None, end_date: datetime.datetime = None, weigth_type: str = &#39;vw&#39;, ret_type: str = &#39;adjret&#39;, drop_na: bool = True, dfin = None):
+        return(self.FF_factors(factors = [&#39;MKT_RF&#39;, &#39;SMB3&#39;, &#39;HML&#39;], 
+                               dfin = dfin,
+                               start_date = start_date, end_date = end_date, 
+                               weight_type = weigth_type, ret_type = ret_type, 
+                               drop_na = drop_na))
+
+    def FF_5factor(self, start_date: datetime.datetime = None, end_date: datetime.datetime = None, weigth_type: str = &#39;vw&#39;, ret_type: str = &#39;adjret&#39;, drop_na: bool = True, dfin = None):
+        return(self.FF_factors(factors = [&#39;MKT_RF&#39;, &#39;SMB5&#39;, &#39;HML&#39;, &#39;CMA&#39;, &#39;RMW&#39;], 
+                               dfin = dfin,
+                               start_date = start_date, end_date = end_date, 
+                               weight_type = weigth_type, ret_type = ret_type, 
+                               drop_na = drop_na))
+    
+    def breakpoint_ts(self, df_in, vars, qtiles = None):
+        
+        DEFAULT_QTILES = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
+        DECILES_QTILES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+        QUINTIL_QTILES = [0.2, 0.4, 0.6, 0.8]
+
+        dict_in = {}
+        if(type(vars) is dict):
+            dict_in = vars
+        else:
+            if(type(qtiles) is int or qtiles is None):
+                for var in vars:
+                    if(qtiles == 5):
+                        dict_in[var] = QUINTIL_QTILES
+                    elif(qtiles == 10):
+                        dict_in[var] = DECILES_QTILES
+                    else:
+                        dict_in[var] = DEFAULT_QTILES
+            elif(type(qtiles) is list):
+                for var in vars:
+                    dict_in[var] = qtiles
+            else:
+                raise TypeError(&#34;No valid vars or qtile combination given.&#34;)
+
+        res = []
+        for var, qtiles in dict_in.items():
+            temp = df_in.groupby(&#39;date&#39;)[var].describe(percentiles = qtiles)
+            ptiles = [f&#39;{int(100 * q)}%&#39; for q in qtiles]
+            temp = temp[ptiles]
+            temp = temp.add_prefix(f&#39;{var}_&#39;)
+            res.append(temp)
+
+        fin = functools.reduce(lambda x, y: pd.merge(x, y, on = &#39;date&#39;), res)
+        fin = fin.reset_index()
+        return(fin)
+    
+
+    # sorting functions
+    def sort_50(self, row, var):
+        if(row[var] &lt; row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}2&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_050(self, row, var):
+        if(row[var] &lt; 0):
+            res = f&#39;{var}1&#39;
+        if(row[var] &gt;= 0 and row[var] &lt; row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}3&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_3070(self, row, var):
+        if(row[var] &lt; row[f&#39;{var}_30%&#39;]):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_30%&#39;] and row[var] &lt; row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}3&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_03070(self, row, var):
+        if(row[var] &lt;= 0):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= 0 and row[var] &lt; row[f&#39;{var}_30%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_30%&#39;] and row[var] &lt; row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}3&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}4&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_quintile(self, row, var):
+        if(row[var] &lt; row[f&#39;{var}_20%&#39;]):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_20%&#39;] and row[var] &lt; row[f&#39;{var}_40%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_40%&#39;] and row[var] &lt; row[f&#39;{var}_60%&#39;]):
+            res = f&#39;{var}3&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_60%&#39;] and row[var] &lt; row[f&#39;{var}_80%&#39;]):
+            res = f&#39;{var}4&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_80%&#39;]):
+            res = f&#39;{var}5&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+    
+    def sort_deciles(self, row, var):
+        if(row[var] &lt; row[f&#39;{var}_10%&#39;]):
+            res = f&#39;{var}1&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_10%&#39;] and row[var] &lt; row[f&#39;{var}_20%&#39;]):
+            res = f&#39;{var}2&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_20%&#39;] and row[var] &lt; row[f&#39;{var}_30%&#39;]):
+            res = f&#39;{var}3&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_30%&#39;] and row[var] &lt; row[f&#39;{var}_40%&#39;]):
+            res = f&#39;{var}4&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_40%&#39;] and row[var] &lt; row[f&#39;{var}_50%&#39;]):
+            res = f&#39;{var}5&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_50%&#39;] and row[var] &lt; row[f&#39;{var}_60%&#39;]):
+            res = f&#39;{var}6&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_60%&#39;] and row[var] &lt; row[f&#39;{var}_70%&#39;]):
+            res = f&#39;{var}7&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_70%&#39;] and row[var] &lt; row[f&#39;{var}_80%&#39;]):
+            res = f&#39;{var}8&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_80%&#39;] and row[var] &lt; row[f&#39;{var}_90%&#39;]):
+            res = f&#39;{var}9&#39;
+        elif(row[var] &gt;= row[f&#39;{var}_90%&#39;]):
+            res = f&#39;{var}10&#39;
+        else:
+            res = &#39;--fail&#39;
+        return(res)
+
+    def sort_portfolios(self, stocks, char_bkpts, sorting_funcs, rebalance_freq, weight_type = &#39;vw&#39;, sort_month = 7, ex_dividend = False, drop_na = True, breakpoint_exchanges = [&#39;1&#39;], **kwargs):
+
+        # removes nans
+        stocks = stocks[(stocks.me &gt; 0) &amp; (stocks.wt &gt; 0)]
+
+        stocks.date = pd.to_datetime(stocks.date)
+
+        if(rebalance_freq == &#39;A&#39;):
+            rebalance_df = stocks[stocks.month == sort_month]
+        else:
+            rebalance_df = stocks
+
+        breakpoint_stocks_df = rebalance_df[rebalance_df.exchcd.isin(breakpoint_exchanges)]
+
+        # calculate breakpoints
+        breakpoints_df = self.breakpoint_ts(breakpoint_stocks_df, vars = char_bkpts)
+
+        # merge breakpoints to the rebalance df
+        rebalance_df = breakpoints_df.merge(rebalance_df, how = &#39;inner&#39;, on = [&#39;date&#39;])
+
+        ret_typ = &#39;adjretx&#39; if(ex_dividend) else &#39;adjret&#39;
+
+        rank_cols = []
+        for char, func in sorting_funcs.items():
+            rank_cols.append(f&#39;{char}_rank&#39;)
+            rebalance_df[f&#39;{char}_rank&#39;] = rebalance_df.apply(func, args = (char, ), axis = 1)
+
+        for rank_col in rank_cols:
+            if(&#39;--fail&#39; in rebalance_df[rank_col].unique()):
+                cprint.warn(f&#39;There are stocks that could not be sorted in {rank_col}. They will be removed before constructing portfolios.&#39;)
+                rebalance_df = rebalance_df[rebalance_df[rank_col] != &#39;--fail&#39;]
+ 
+        rebalance_df[&#39;port_name&#39;] = rebalance_df[rank_cols].agg(&#39;_&#39;.join, axis = 1)
+
+        if(rebalance_freq == &#39;A&#39;):
+            fin = stocks.merge(rebalance_df[[&#39;permno&#39;, &#39;ffyear&#39;, &#39;port_name&#39;]], how = &#39;left&#39;, on = [&#39;permno&#39;, &#39;ffyear&#39;])
+        else:
+            fin = rebalance_df
+        
+        fin = fin.dropna(subset = [&#39;port_name&#39;])
+        rets = None
+        if(weight_type == &#39;vw&#39;):
+            rets = fin.groupby([&#39;date&#39;, &#39;port_name&#39;]).apply(py_functions.wavg, ret_typ, &#39;wt&#39;).to_frame().reset_index().rename(columns = {0: ret_typ})
+        else:
+            rets = fin.groupby([&#39;date&#39;, &#39;port_name&#39;]).mean(numeric_only = True)[ret_typ].to_frame().reset_index().rename(columns = {0: ret_typ})
+        firm = fin.groupby([&#39;date&#39;, &#39;port_name&#39;])[&#39;permno&#39;].count().reset_index().rename(columns = {&#39;permno&#39;: &#39;num_firms&#39;})
+
+        rets = rets.pivot(index = &#39;date&#39;, columns = &#39;port_name&#39;, values = ret_typ)
+        firm = firm.pivot(index = &#39;date&#39;, columns = &#39;port_name&#39;, values = &#39;num_firms&#39;)
+        firm = firm.add_suffix(&#39;_num_firms&#39;)
+
+        res = rets.merge(firm, how = &#39;inner&#39;, on = [&#39;date&#39;])
+        res = res.reset_index()
+        if(drop_na): res = res.dropna()
+
+        return(res)</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="FamaFrench.FamaFrench.FF_3factor"><code class="name flex">
+<span>def <span class="ident">FF_3factor</span></span>(<span>self, start_date: datetime.datetime = None, end_date: datetime.datetime = None, weigth_type: str = 'vw', ret_type: str = 'adjret', drop_na: bool = True, dfin=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def FF_3factor(self, start_date: datetime.datetime = None, end_date: datetime.datetime = None, weigth_type: str = &#39;vw&#39;, ret_type: str = &#39;adjret&#39;, drop_na: bool = True, dfin = None):
+    return(self.FF_factors(factors = [&#39;MKT_RF&#39;, &#39;SMB3&#39;, &#39;HML&#39;], 
+                           dfin = dfin,
+                           start_date = start_date, end_date = end_date, 
+                           weight_type = weigth_type, ret_type = ret_type, 
+                           drop_na = drop_na))</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.FF_5factor"><code class="name flex">
+<span>def <span class="ident">FF_5factor</span></span>(<span>self, start_date: datetime.datetime = None, end_date: datetime.datetime = None, weigth_type: str = 'vw', ret_type: str = 'adjret', drop_na: bool = True, dfin=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def FF_5factor(self, start_date: datetime.datetime = None, end_date: datetime.datetime = None, weigth_type: str = &#39;vw&#39;, ret_type: str = &#39;adjret&#39;, drop_na: bool = True, dfin = None):
+    return(self.FF_factors(factors = [&#39;MKT_RF&#39;, &#39;SMB5&#39;, &#39;HML&#39;, &#39;CMA&#39;, &#39;RMW&#39;], 
+                           dfin = dfin,
+                           start_date = start_date, end_date = end_date, 
+                           weight_type = weigth_type, ret_type = ret_type, 
+                           drop_na = drop_na))</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.FF_factors"><code class="name flex">
+<span>def <span class="ident">FF_factors</span></span>(<span>self, factors: list[str], dfin=None, start_date: datetime.datetime = None, end_date: datetime.datetime = None, weight_type: str = 'vw', ret_type: str = 'adjret', drop_na: bool = True) ‑> pandas.core.frame.DataFrame</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Creates standard Fama-French factors</p>
+<p>Creates the Fama-French factors using the original accounting practices from
+Eugene Fama's and Kenneth French's original 1992 paper.
+The Cross-Section of Expected Stock Returns <a href="https://doi.org/10.1111/j.1540-6261.1992.tb04398.x">https://doi.org/10.1111/j.1540-6261.1992.tb04398.x</a></p>
+<p>Constructable factors include: 'MKT' market return, 'RF' risk free rate, 'MKT_RF' equity premium,
+'SMB3' 3 factor small minus big, 'SMB5' 5 factor small minus big, 'HML' high minus low,
+'RMW' robust minus weak, 'CMA' conservative minus aggresive, 'MOM' momentum,
+'ST_REV' short term reversal, 'LT_Rev' long term reversal. See <a href="https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html">https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html</a>
+for constrution notes.</p>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>factors</code></strong></dt>
+<dd>list of factors</dd>
+<dt><strong><code>dfin</code></strong></dt>
+<dd>datadrame with assets to use (optional)</dd>
+<dt><strong><code>start_date</code></strong></dt>
+<dd>start date for factors (optional)</dd>
+<dt><strong><code>end_date</code></strong></dt>
+<dd>end date for factors (optional)</dd>
+<dt><strong><code>weight_type</code></strong></dt>
+<dd>weights used to calculate returns</dd>
+<dt><strong><code>ret_type</code></strong></dt>
+<dd>return type with or without dividends</dd>
+<dt><strong><code>drop_na</code></strong></dt>
+<dd>if true drop rows that have NaN values</dd>
+</dl>
+<p>Returns:
+A dataframe with the specifed factros and a date column. Dataframe sorted by date.</p>
+<h2 id="example">Example</h2>
+<p>Create the original 3 factor Fama-French model between 'date1' and 'date2'</p>
+<p>df = FamaFrench.FF_factors(
+factors = ['MKT_RF', 'SMB3', 'HML'],
+start_date = date1,
+end_date = date2
+)</p>
+<h2 id="todo">Todo</h2>
+<p>Error checking</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def FF_factors(self, factors: list[str], 
+               dfin = None, 
+               start_date: datetime.datetime = None, 
+               end_date: datetime.datetime = None, 
+               weight_type: str = &#39;vw&#39;, 
+               ret_type: str = &#39;adjret&#39;, 
+               drop_na: bool = True
+    ) -&gt; pd.DataFrame:
+    &#34;&#34;&#34;Creates standard Fama-French factors
+    
+    Creates the Fama-French factors using the original accounting practices from
+    Eugene Fama&#39;s and Kenneth French&#39;s original 1992 paper. 
+    The Cross-Section of Expected Stock Returns https://doi.org/10.1111/j.1540-6261.1992.tb04398.x
+    
+    Constructable factors include: &#39;MKT&#39; market return, &#39;RF&#39; risk free rate, &#39;MKT_RF&#39; equity premium, 
+    &#39;SMB3&#39; 3 factor small minus big, &#39;SMB5&#39; 5 factor small minus big, &#39;HML&#39; high minus low, 
+    &#39;RMW&#39; robust minus weak, &#39;CMA&#39; conservative minus aggresive, &#39;MOM&#39; momentum, 
+    &#39;ST_REV&#39; short term reversal, &#39;LT_Rev&#39; long term reversal. See https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
+    for constrution notes.
+    
+    Args:
+        factors: list of factors
+        dfin: datadrame with assets to use (optional)
+        start_date: start date for factors (optional)
+        end_date: end date for factors (optional)
+        weight_type: weights used to calculate returns
+        ret_type: return type with or without dividends
+        drop_na: if true drop rows that have NaN values
+
+    Returns: 
+        A dataframe with the specifed factros and a date column. Dataframe sorted by date.
+
+    Example:
+        Create the original 3 factor Fama-French model between &#39;date1&#39; and &#39;date2&#39;
+
+        df = FamaFrench.FF_factors(
+            factors = [&#39;MKT_RF&#39;, &#39;SMB3&#39;, &#39;HML&#39;], 
+            start_date = date1, 
+            end_date = date2
+        )
+
+    TODO:
+        Error checking
+    &#34;&#34;&#34;
+    
+    # query DB if no dataframe supplied
+    if(dfin is None):
+        ccm_df = self.DB.query_CCM(start_date, end_date)
+    else:
+        ccm_df = dfin 
+        
+    # create resulting dataframe
+    res = pd.DataFrame()
+    date_s = ccm_df.date.unique()
+    res[&#39;date&#39;] = date_s
+    res = res.sort_values(by = [&#39;date&#39;])
+
+    # extract state and end date from dataframe
+    if(not dfin is None):
+        start_date = np.min(res.date)
+        end_date = np.max(res.date)
+
+    # calculate the market return of supplied assets
+    if(&#39;MKT&#39; in factors):
+        mkt_df = self._portfolio_return(ccm_df, ret_type, weight_type, &#39;MKT&#39;)
+        res = res.merge(mkt_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+
+    # add the risk free rate
+    if(&#39;RF&#39; in factors):
+        rf_df = self.DB.query_riskfree(start_date, end_date, &#39;M&#39;)
+        rf_df = rf_df.rename(columns = {&#39;rf&#39;: &#39;RF&#39;}) # just for naming consistency
+        res = res.merge(rf_df, on = [&#39;date&#39;], how = &#39;left&#39;)
+
+    # add the market premium
+    if(&#39;MKT_RF&#39; in factors):
+        if(&#39;MKT&#39; in factors and &#39;RF&#39; in factors):
+            res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+        elif(&#39;MKT&#39; in factors and not &#39;RF&#39; in factors):
+            rf_df = self.DB.query_riskfree(start_date, end_date, &#39;M&#39;)
+            rf_df = rf_df.rename(columns = {&#39;rf&#39;: &#39;RF&#39;}) # just for naming consistency
+            res = res.merge(rf_df, on = [&#39;date&#39;], how = &#39;left&#39;)
+            res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+            res = res.drop(columns = [&#39;MKT&#39;, &#39;RF&#39;])
+        elif(not &#39;MKT&#39; in factors and &#39;RF&#39; in factors):
+            mkt_df = self._portfolio_return(ccm_df, ret_type, weight_type, &#39;MKT&#39;)
+            res = res.merge(mkt_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+            res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+            res = res.drop(columns = [&#39;MKT&#39;, &#39;RF&#39;])
+        else:
+            mkt_df = self._portfolio_return(ccm_df, ret_type, weight_type, &#39;MKT&#39;)
+            res = res.merge(mkt_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+            rf_df = self.DB.query_riskfree(start_date, end_date, &#39;M&#39;)
+            rf_df = rf_df.rename(columns = {&#39;rf&#39;: &#39;RF&#39;}) # just for naming consistency
+            res = res.merge(rf_df, on = [&#39;date&#39;], how = &#39;left&#39;)
+            res[&#39;MKT_RF&#39;] = res.MKT - res.RF
+            res = res.drop(columns = [&#39;MKT&#39;, &#39;RF&#39;])
+
+    # SMB factor from the 3-factor Fama-French model
+    if(&#39;SMB3&#39; in factors):
+        # portfolio sorts on ME and BM
+        sorts_df = self.sort_portfolios(
+            stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;ffbm&#39;: [0.3, 0.7]},
+            sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;ffbm&#39;: self.sort_3070},
+            drop_na = False, rebalance_freq = &#39;A&#39;
+        )
+        sorts_df[&#39;SMB3&#39;] = sorts_df[[&#39;me1_ffbm1&#39;, &#39;me1_ffbm2&#39;, &#39;me1_ffbm3&#39;]].mean(axis = 1) - sorts_df[[&#39;me2_ffbm1&#39;, &#39;me2_ffbm2&#39;, &#39;me2_ffbm3&#39;]].mean(axis = 1)
+        res = res.merge(sorts_df[[&#39;date&#39;, &#39;SMB3&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+    # SMB factor from the 5-factor Fama-French model
+    if(&#39;SMB5&#39; in factors):
+        # sorts on BM
+        sortsBM_df = self.sort_portfolios(
+            stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;ffbm&#39;: [0.3, 0.7]}, 
+            sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;ffbm&#39;: self.sort_3070}, 
+            drop_na = False, rebalance_freq = &#39;A&#39;
+        )
+
+        # sorts on OP
+        sortsOP_df = self.sort_portfolios(
+            stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;op&#39;: [0.3, 0.7]}, 
+            sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;op&#39;: self.sort_3070}, 
+            drop_na = False, rebalance_freq = &#39;A&#39;
+        )
+
+        # sorts on INV
+        sortsINV_df = self.sort_portfolios(
+            stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;inv&#39;: [0.3, 0.7]}, 
+            sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;inv&#39;: self.sort_3070}, 
+            drop_na = False, rebalance_freq = &#39;A&#39;
+        )
+
+        # combine sorts into one dataframe
+        sortsBM_df = sortsBM_df.merge(sortsOP_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+        sortsBM_df = sortsBM_df.merge(sortsINV_df, how = &#39;left&#39;, on = [&#39;date&#39;])
+
+        # housekeeping
+        sortsBM_df = sortsBM_df.set_index(&#39;date&#39;)
+        sortsBM_df = sortsBM_df.dropna(how = &#39;all&#39;)
+
+        # create factors
+        sortsBM_df[&#39;SMB_BM&#39;] = sortsBM_df[[&#39;me1_ffbm1&#39;, &#39;me1_ffbm2&#39;, &#39;me1_ffbm3&#39;]].mean(axis = 1) - sortsBM_df[[&#39;me2_ffbm1&#39;, &#39;me2_ffbm2&#39;, &#39;me2_ffbm3&#39;]].mean(axis = 1)
+        sortsBM_df[&#39;SMB_OP&#39;] = sortsOP_df[[&#39;me1_op1&#39;, &#39;me1_op2&#39;, &#39;me1_op3&#39;]].mean(axis = 1) - sortsOP_df[[&#39;me2_op1&#39;, &#39;me2_op2&#39;, &#39;me2_op3&#39;]].mean(axis = 1)
+        sortsBM_df[&#39;SMB_INV&#39;] = sortsINV_df[[&#39;me1_inv1&#39;, &#39;me1_inv2&#39;, &#39;me1_inv3&#39;]].mean(axis = 1) - sortsINV_df[[&#39;me2_inv1&#39;, &#39;me2_inv2&#39;, &#39;me2_inv3&#39;]].mean(axis = 1)
+
+        # average factors
+        sortsBM_df[&#39;SMB5&#39;] = sortsBM_df[[&#39;SMB_BM&#39;, &#39;SMB_OP&#39;, &#39;SMB_INV&#39;]].mean(axis = 1)
+
+        # add to result dataframe
+        sortsBM_df = sortsBM_df.reset_index()
+        res = res.merge(sortsBM_df[[&#39;date&#39;, &#39;SMB5&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+    if(&#39;HML&#39; in factors):
+        sortsBM_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;ffbm&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;ffbm&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+        sortsBM_df[&#39;HML&#39;] = (1/2) * (sortsBM_df.me1_ffbm3 + sortsBM_df.me2_ffbm3) - (1/2) * (sortsBM_df.me1_ffbm1 + sortsBM_df.me2_ffbm1)
+        res = res.merge(sortsBM_df[[&#39;date&#39;, &#39;HML&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+    if(&#39;RMW&#39; in factors):
+        sortsOP_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;op&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;op&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+        sortsOP_df[&#39;RMW&#39;] = (1/2) * (sortsOP_df.me1_op3 + sortsOP_df.me2_op3) - (1/2) * (sortsOP_df.me1_op1 + sortsOP_df.me2_op1)
+        res = res.merge(sortsOP_df[[&#39;date&#39;, &#39;RMW&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+    if(&#39;CMA&#39; in factors):
+        sortsINV_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;inv&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;inv&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+        sortsINV_df[&#39;CMA&#39;] = (1/2) * (sortsINV_df.me1_inv1 + sortsINV_df.me2_inv1) - (1/2) * (sortsINV_df.me1_inv3 + sortsINV_df.me2_inv3)
+        res = res.merge(sortsINV_df[[&#39;date&#39;, &#39;CMA&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+    if(&#39;MOM&#39; in factors):
+        sortsPR2_12_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;pr2_12&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;pr2_12&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+        sortsPR2_12_df[&#39;MOM&#39;] = (1/2) * (sortsPR2_12_df.me1_pr2_123 + sortsPR2_12_df.me2_pr2_123) - (1/2) * (sortsPR2_12_df.me1_pr2_121 + sortsPR2_12_df.me2_pr2_121)
+        res = res.merge(sortsPR2_12_df[[&#39;date&#39;, &#39;MOM&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+    if(&#39;ST_REV&#39; in factors):
+        sortsPR1_1_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;pr1_1&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;pr1_1&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+        sortsPR1_1_df[&#39;ST_REV&#39;] = (1/2) * (sortsPR1_1_df.me1_pr1_11 + sortsPR1_1_df.me2_pr1_11) - (1/2) * (sortsPR1_1_df.me1_pr1_13 + sortsPR1_1_df.me2_pr1_13)
+        res = res.merge(sortsPR1_1_df[[&#39;date&#39;, &#39;ST_REV&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+    if(&#39;LT_REV&#39; in factors):
+        sortsPR13_60_df = self.sort_portfolios(stocks = ccm_df, char_bkpts = {&#39;me&#39;: [0.5], &#39;pr13_60&#39;: [0.3, 0.7]}, sorting_funcs = {&#39;me&#39;: self.sort_50, &#39;pr13_60&#39;: self.sort_3070}, drop_na = False, rebalance_freq = &#39;A&#39;)
+        sortsPR13_60_df[&#39;LT_REV&#39;] = (1/2) * (sortsPR13_60_df.me1_pr13_601 + sortsPR13_60_df.me2_pr13_601) - (1/2) * (sortsPR13_60_df.me1_pr13_603 + sortsPR13_60_df.me2_pr13_603)
+        res = res.merge(sortsPR13_60_df[[&#39;date&#39;, &#39;LT_REV&#39;]], how = &#39;left&#39;, on = [&#39;date&#39;])
+
+    res = res.set_index(&#39;date&#39;).sort_index()
+    if(drop_na): res = res.dropna(how = &#39;all&#39;)
+    return(res)</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.breakpoint_ts"><code class="name flex">
+<span>def <span class="ident">breakpoint_ts</span></span>(<span>self, df_in, vars, qtiles=None)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def breakpoint_ts(self, df_in, vars, qtiles = None):
+    
+    DEFAULT_QTILES = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1]
+    DECILES_QTILES = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+    QUINTIL_QTILES = [0.2, 0.4, 0.6, 0.8]
+
+    dict_in = {}
+    if(type(vars) is dict):
+        dict_in = vars
+    else:
+        if(type(qtiles) is int or qtiles is None):
+            for var in vars:
+                if(qtiles == 5):
+                    dict_in[var] = QUINTIL_QTILES
+                elif(qtiles == 10):
+                    dict_in[var] = DECILES_QTILES
+                else:
+                    dict_in[var] = DEFAULT_QTILES
+        elif(type(qtiles) is list):
+            for var in vars:
+                dict_in[var] = qtiles
+        else:
+            raise TypeError(&#34;No valid vars or qtile combination given.&#34;)
+
+    res = []
+    for var, qtiles in dict_in.items():
+        temp = df_in.groupby(&#39;date&#39;)[var].describe(percentiles = qtiles)
+        ptiles = [f&#39;{int(100 * q)}%&#39; for q in qtiles]
+        temp = temp[ptiles]
+        temp = temp.add_prefix(f&#39;{var}_&#39;)
+        res.append(temp)
+
+    fin = functools.reduce(lambda x, y: pd.merge(x, y, on = &#39;date&#39;), res)
+    fin = fin.reset_index()
+    return(fin)</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.sort_03070"><code class="name flex">
+<span>def <span class="ident">sort_03070</span></span>(<span>self, row, var)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sort_03070(self, row, var):
+    if(row[var] &lt;= 0):
+        res = f&#39;{var}1&#39;
+    elif(row[var] &gt;= 0 and row[var] &lt; row[f&#39;{var}_30%&#39;]):
+        res = f&#39;{var}2&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_30%&#39;] and row[var] &lt; row[f&#39;{var}_70%&#39;]):
+        res = f&#39;{var}3&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_70%&#39;]):
+        res = f&#39;{var}4&#39;
+    else:
+        res = &#39;--fail&#39;
+    return(res)</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.sort_050"><code class="name flex">
+<span>def <span class="ident">sort_050</span></span>(<span>self, row, var)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sort_050(self, row, var):
+    if(row[var] &lt; 0):
+        res = f&#39;{var}1&#39;
+    if(row[var] &gt;= 0 and row[var] &lt; row[f&#39;{var}_50%&#39;]):
+        res = f&#39;{var}2&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_50%&#39;]):
+        res = f&#39;{var}3&#39;
+    else:
+        res = &#39;--fail&#39;
+    return(res)</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.sort_3070"><code class="name flex">
+<span>def <span class="ident">sort_3070</span></span>(<span>self, row, var)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sort_3070(self, row, var):
+    if(row[var] &lt; row[f&#39;{var}_30%&#39;]):
+        res = f&#39;{var}1&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_30%&#39;] and row[var] &lt; row[f&#39;{var}_70%&#39;]):
+        res = f&#39;{var}2&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_70%&#39;]):
+        res = f&#39;{var}3&#39;
+    else:
+        res = &#39;--fail&#39;
+    return(res)</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.sort_50"><code class="name flex">
+<span>def <span class="ident">sort_50</span></span>(<span>self, row, var)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sort_50(self, row, var):
+    if(row[var] &lt; row[f&#39;{var}_50%&#39;]):
+        res = f&#39;{var}1&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_50%&#39;]):
+        res = f&#39;{var}2&#39;
+    else:
+        res = &#39;--fail&#39;
+    return(res)</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.sort_deciles"><code class="name flex">
+<span>def <span class="ident">sort_deciles</span></span>(<span>self, row, var)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sort_deciles(self, row, var):
+    if(row[var] &lt; row[f&#39;{var}_10%&#39;]):
+        res = f&#39;{var}1&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_10%&#39;] and row[var] &lt; row[f&#39;{var}_20%&#39;]):
+        res = f&#39;{var}2&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_20%&#39;] and row[var] &lt; row[f&#39;{var}_30%&#39;]):
+        res = f&#39;{var}3&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_30%&#39;] and row[var] &lt; row[f&#39;{var}_40%&#39;]):
+        res = f&#39;{var}4&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_40%&#39;] and row[var] &lt; row[f&#39;{var}_50%&#39;]):
+        res = f&#39;{var}5&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_50%&#39;] and row[var] &lt; row[f&#39;{var}_60%&#39;]):
+        res = f&#39;{var}6&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_60%&#39;] and row[var] &lt; row[f&#39;{var}_70%&#39;]):
+        res = f&#39;{var}7&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_70%&#39;] and row[var] &lt; row[f&#39;{var}_80%&#39;]):
+        res = f&#39;{var}8&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_80%&#39;] and row[var] &lt; row[f&#39;{var}_90%&#39;]):
+        res = f&#39;{var}9&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_90%&#39;]):
+        res = f&#39;{var}10&#39;
+    else:
+        res = &#39;--fail&#39;
+    return(res)</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.sort_portfolios"><code class="name flex">
+<span>def <span class="ident">sort_portfolios</span></span>(<span>self, stocks, char_bkpts, sorting_funcs, rebalance_freq, weight_type='vw', sort_month=7, ex_dividend=False, drop_na=True, breakpoint_exchanges=['1'], **kwargs)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sort_portfolios(self, stocks, char_bkpts, sorting_funcs, rebalance_freq, weight_type = &#39;vw&#39;, sort_month = 7, ex_dividend = False, drop_na = True, breakpoint_exchanges = [&#39;1&#39;], **kwargs):
+
+    # removes nans
+    stocks = stocks[(stocks.me &gt; 0) &amp; (stocks.wt &gt; 0)]
+
+    stocks.date = pd.to_datetime(stocks.date)
+
+    if(rebalance_freq == &#39;A&#39;):
+        rebalance_df = stocks[stocks.month == sort_month]
+    else:
+        rebalance_df = stocks
+
+    breakpoint_stocks_df = rebalance_df[rebalance_df.exchcd.isin(breakpoint_exchanges)]
+
+    # calculate breakpoints
+    breakpoints_df = self.breakpoint_ts(breakpoint_stocks_df, vars = char_bkpts)
+
+    # merge breakpoints to the rebalance df
+    rebalance_df = breakpoints_df.merge(rebalance_df, how = &#39;inner&#39;, on = [&#39;date&#39;])
+
+    ret_typ = &#39;adjretx&#39; if(ex_dividend) else &#39;adjret&#39;
+
+    rank_cols = []
+    for char, func in sorting_funcs.items():
+        rank_cols.append(f&#39;{char}_rank&#39;)
+        rebalance_df[f&#39;{char}_rank&#39;] = rebalance_df.apply(func, args = (char, ), axis = 1)
+
+    for rank_col in rank_cols:
+        if(&#39;--fail&#39; in rebalance_df[rank_col].unique()):
+            cprint.warn(f&#39;There are stocks that could not be sorted in {rank_col}. They will be removed before constructing portfolios.&#39;)
+            rebalance_df = rebalance_df[rebalance_df[rank_col] != &#39;--fail&#39;]
+
+    rebalance_df[&#39;port_name&#39;] = rebalance_df[rank_cols].agg(&#39;_&#39;.join, axis = 1)
+
+    if(rebalance_freq == &#39;A&#39;):
+        fin = stocks.merge(rebalance_df[[&#39;permno&#39;, &#39;ffyear&#39;, &#39;port_name&#39;]], how = &#39;left&#39;, on = [&#39;permno&#39;, &#39;ffyear&#39;])
+    else:
+        fin = rebalance_df
+    
+    fin = fin.dropna(subset = [&#39;port_name&#39;])
+    rets = None
+    if(weight_type == &#39;vw&#39;):
+        rets = fin.groupby([&#39;date&#39;, &#39;port_name&#39;]).apply(py_functions.wavg, ret_typ, &#39;wt&#39;).to_frame().reset_index().rename(columns = {0: ret_typ})
+    else:
+        rets = fin.groupby([&#39;date&#39;, &#39;port_name&#39;]).mean(numeric_only = True)[ret_typ].to_frame().reset_index().rename(columns = {0: ret_typ})
+    firm = fin.groupby([&#39;date&#39;, &#39;port_name&#39;])[&#39;permno&#39;].count().reset_index().rename(columns = {&#39;permno&#39;: &#39;num_firms&#39;})
+
+    rets = rets.pivot(index = &#39;date&#39;, columns = &#39;port_name&#39;, values = ret_typ)
+    firm = firm.pivot(index = &#39;date&#39;, columns = &#39;port_name&#39;, values = &#39;num_firms&#39;)
+    firm = firm.add_suffix(&#39;_num_firms&#39;)
+
+    res = rets.merge(firm, how = &#39;inner&#39;, on = [&#39;date&#39;])
+    res = res.reset_index()
+    if(drop_na): res = res.dropna()
+
+    return(res)</code></pre>
+</details>
+</dd>
+<dt id="FamaFrench.FamaFrench.sort_quintile"><code class="name flex">
+<span>def <span class="ident">sort_quintile</span></span>(<span>self, row, var)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sort_quintile(self, row, var):
+    if(row[var] &lt; row[f&#39;{var}_20%&#39;]):
+        res = f&#39;{var}1&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_20%&#39;] and row[var] &lt; row[f&#39;{var}_40%&#39;]):
+        res = f&#39;{var}2&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_40%&#39;] and row[var] &lt; row[f&#39;{var}_60%&#39;]):
+        res = f&#39;{var}3&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_60%&#39;] and row[var] &lt; row[f&#39;{var}_80%&#39;]):
+        res = f&#39;{var}4&#39;
+    elif(row[var] &gt;= row[f&#39;{var}_80%&#39;]):
+        res = f&#39;{var}5&#39;
+    else:
+        res = &#39;--fail&#39;
+    return(res)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="FamaFrench.FamaFrench" href="#FamaFrench.FamaFrench">FamaFrench</a></code></h4>
+<ul class="two-column">
+<li><code><a title="FamaFrench.FamaFrench.FF_3factor" href="#FamaFrench.FamaFrench.FF_3factor">FF_3factor</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.FF_5factor" href="#FamaFrench.FamaFrench.FF_5factor">FF_5factor</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.FF_factors" href="#FamaFrench.FamaFrench.FF_factors">FF_factors</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.breakpoint_ts" href="#FamaFrench.FamaFrench.breakpoint_ts">breakpoint_ts</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.sort_03070" href="#FamaFrench.FamaFrench.sort_03070">sort_03070</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.sort_050" href="#FamaFrench.FamaFrench.sort_050">sort_050</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.sort_3070" href="#FamaFrench.FamaFrench.sort_3070">sort_3070</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.sort_50" href="#FamaFrench.FamaFrench.sort_50">sort_50</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.sort_deciles" href="#FamaFrench.FamaFrench.sort_deciles">sort_deciles</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.sort_portfolios" href="#FamaFrench.FamaFrench.sort_portfolios">sort_portfolios</a></code></li>
+<li><code><a title="FamaFrench.FamaFrench.sort_quintile" href="#FamaFrench.FamaFrench.sort_quintile">sort_quintile</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
