@@ -1,0 +1,47 @@
+Metadata-Version: 2.1
+Name: gm_libs
+Version: 0.0.8
+Summary: A juejin quant lib to myself package
+Project-URL: Homepage, https://github.com/Sun-FreePort/gm_libs
+Project-URL: Issues, https://github.com/Sun-FreePort/gm_libs/issues
+Project-URL: Website, https://www.uiosun.com
+Author-email: UioSun <uiosun@outlook.com>
+License-File: LICENSE
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# 掘金量化的简化函数包（第三方）
+
+个人自用包，出问题了欢迎提 Issue。
+
+## 功能列表
+
+### A 股
+
+#### 获取信息
+
+1. 获取所有指数（股票市场、当前有效）: get_all_index
+2. 获取所有股票（股票市场、当前有效）: get_all_security
+3. ~~获取龙虎榜股票列表: get_dragon_tiger_list~~
+
+#### 执行交易
+
+1. 交易指定数量: order_count 
+2. （将持仓）交易到指定数量: order_target_count
+
+#### 记录日志
+
+1. 日志输出且保存: log_all，兼容 gm.log
+2. 日志不输出仅保存: log_save，兼容 gm.log
+3. 日志输出不保存，gm.print 即可
+
+## 打包
+
+1. 更新 [pyproject.toml](pyproject.toml) 文件
+2. 执行 `python -m build`
+3. 执行 `python -m twine upload dist/*`
+4. 对输入框，输入账号: `__token__` 并回车
+5. 最后输入 API token 即可
