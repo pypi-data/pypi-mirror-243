@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: E2EPyPPG
+Version: 0.2
+Summary: End-to-End PPG processing pipeline: from quality assessment and motion artifacts romval to HR/HRV extraction
+Home-page: https://github.com/HealthSciTech/E2E-PPG
+Download-URL: https://github.com/HealthSciTech/E2E-PPG/archive/refs/tags/v_02.tar.gz
+Author: Mohammad Feli, Iman Azimi, Kianoosh Kazemi, Yuning Wang
+Author-email: mohammad.feli@utu.fi, azimii@uci.edu, kianoosh.k.kazem@utu.fi, yuning.y.wang@utu.fi
+License: MIT
+Keywords: PPG,Photoplethysmography,Quality assessment,Signal reconstruction,Peak detection,Heart rate,HR,Heart rate variability,HRV,Wearable devices
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Software Development :: Build Tools
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+License-File: LICENSE.txt
