@@ -1,0 +1,121 @@
+{
+  "screen": {
+    "FPS": 20,
+    "CAPTION": "Mathstronauts Autonomous Vehicle veh_sim"
+  },
+  "scenario": {
+    "two_lane_highway": {
+      "lane_width": 135
+    }
+  },
+  "vehicle": {
+    "images": {
+      "car_0": "images/car_0.png",
+      "car_1": "images/car_1.png",
+      "car_2": "images/car_2.png",
+      "car_3": "images/car_3.png",
+      "car_4": "images/car_4.png",
+      "car_5": "images/car_5.png",
+      "car_6": "images/car_6.png",
+      "car_7": "images/car_7.png",
+      "motorcycle_0": "images/motor_0.png"
+    }
+  },
+  "HOST_VEHICLE": {
+    "image": "images/host_0.png",
+    "head_light_on_image": "images/host_0_on.png"
+  },
+  "road": {
+    "laneWidth": 200,
+    "whiteLaneWidth": 3,
+    "whiteLaneHeight": 160,
+    "whiteLaneGap": 100,
+    "horizontalLaneGap": 350,
+    "horizontalLaneWidth": 150,
+    "horizontalLaneThickness": 8,
+    "horizontalLaneStartY": -200,
+    "GRASS_AREA_RATIO": 1,
+    "SIDEWALK_AREA_RATIO": 0.5
+  },
+  "env_objects": {
+    "TREES_WIDTH": 200,
+    "TREES_GAP": 200,
+    "TREES_START_POINT": -200,
+    "house_width": 200,
+    "house_gap": 100,
+    "HOUSE_START_POINT": -400,
+    "sidewalk_object_width": 30,
+    "sidewalk_object_gap_min": 100,
+    "sidewalk_object_gap_max": 200,
+    "sidewalk_object_start_point": -100,
+    "PEDESTRIAN_SPEED": 0.5,
+    "BIKE_SPEED": 0.5,
+    "images": {
+      "tree_0": "images/tree_0.png",
+      "tree_1": "images/tree_1.png",
+      "tree_2": "images/tree_2.png",
+      "tree_3": "images/tree_3.png",
+      "house_0": "images/house_0.png",
+      "house_1": "images/house_1.png",
+      "house_2": "images/house_2.png",
+      "house_3": "images/house_3.png",
+      "sidewalk_object_0": "images/ped_0.png",
+      "sidewalk_object_1": "images/ped_1.png",
+      "sidewalk_object_2": "images/ped_2.png",
+      "sidewalk_object_3": "images/ped_3.png",
+      "sidewalk_object_4": "images/bike_0.png",
+      "sidewalk_object_5": "images/bike_1.png",
+      "sidewalk_object_6": "images/bike_2.png",
+      "sidewalk_object_7": "images/bike_3.png"
+    }
+  },
+  "parallel_parking": {
+    "check_image": "images/check.png",
+    "x_image": "images/x.png",
+    "step_images": [
+      "images/step_1.png",
+      "images/step_2.png",
+      "images/step_3.png",
+      "images/step_4.png",
+      "images/step_5.png",
+      "images/step_6.png",
+      "images/step_7.png"
+    ]
+  },
+  "stemhack": {
+    "blank_page_min_steps": 5,
+    "blank_page_max_steps": 10,
+    "number_of_images_per_sign":3,
+    "sign_type_list":{
+      "headlights-on":{
+        "min_show_steps": 20,
+        "max_show_steps": 30
+      },
+      "headlights-off":{
+        "min_show_steps": 20,
+        "max_show_steps": 30
+      },
+      "school-zone":{
+        "min_show_steps": 20,
+        "max_show_steps": 30
+      },
+      "speed-limit":{
+        "min_show_steps": 40,
+        "max_show_steps": 50
+      },
+      "stop":{
+        "min_show_steps": 20,
+        "max_show_steps": 30
+      },
+      "keep-left":{
+        "min_show_steps": 20,
+        "max_show_steps": 30
+      },
+      "keep-right":{
+        "min_show_steps": 20,
+        "max_show_steps": 30
+      }
+    },
+    "images_directory":"images/traffic_signs/"
+  }
+}
