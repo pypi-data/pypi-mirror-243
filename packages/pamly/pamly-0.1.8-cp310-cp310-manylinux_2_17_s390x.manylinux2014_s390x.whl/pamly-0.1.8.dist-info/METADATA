@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: pamly
+Version: 0.1.8
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Keywords: pathology
+Author-email: Michael Huttner <pypi@mhuttner.com>
+Maintainer-email: Michael Huttner <pypi@mhuttner.com>
+License: MIT
+Requires-Python: >=3.8
