@@ -1,0 +1,14 @@
+uom_project/__init__.py,sha256=4GZKi13lDTD25YBkGakhZyEQZWTER_OWQMNPoH_UM2c,22
+uom_project/_modidx.py,sha256=I52bXsUHg85VNc6MMQCzQJgKNELLyreH45t8jGgy89U,10290
+uom_project/core.py,sha256=D_ZWTIcvnoQZCVWzFsI6B5YbjfIRYQtRpxHed-656h4,4095
+uom_project/poisson_solvers.py,sha256=zghCEYSXPBnjG9C2pALsA8SoR4n3sPw1FpoCrR2LyIg,5759
+uom_project/streamfunction_vorticity.py,sha256=YixPjHolUmDCjOpmF3Mvof_SDd60TFnXvEE9gghbdEs,3681
+uom_project/streamfunction_vorticity_jax.py,sha256=yj9Esra87t2SIumBGSnIs-CXXyEF9yrzuYwH2fJMJdo,6802
+uom_project/streamfunction_vorticity_newton.py,sha256=nVG9AazpzR5WcZzd7E8I5ca958JXJJrbacZ3G16yY94,6738
+uom_project/streamfunction_vorticity_pytorch.py,sha256=2xICjp6j3g3brhL3S6eaWxWSIjdyTRYSK4n_F1Xo4yU,6252
+uom_project-0.0.4.dist-info/LICENSE,sha256=xV8xoN4VOL0uw9X8RSs2IMuD_Ss_a9yAbtGNeBWZwnw,11337
+uom_project-0.0.4.dist-info/METADATA,sha256=Z-ahsIra2WzHda8oVq6GRqVLqMXitAe3gJCleOUkrTw,1742
+uom_project-0.0.4.dist-info/WHEEL,sha256=yQN5g4mg4AybRjkgi-9yy4iQEFibGQmlz78Pik5Or-A,92
+uom_project-0.0.4.dist-info/entry_points.txt,sha256=jEKrfKbqsI5B3uxLkdALekDQvNUt-ilgcmBDxlEhx18,44
+uom_project-0.0.4.dist-info/top_level.txt,sha256=Ke48wIXO0TAL3uIHh5c01aYSNoGHF4jBi8qmyq4o_qc,12
+uom_project-0.0.4.dist-info/RECORD,,
