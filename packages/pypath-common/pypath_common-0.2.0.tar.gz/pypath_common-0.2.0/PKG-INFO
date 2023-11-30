@@ -1,0 +1,38 @@
+Metadata-Version: 2.1
+Name: pypath-common
+Version: 0.2.0
+Summary: Code shared across pypath modules
+Home-page: https://github.com/saezlab/pypath-common
+License: GPL-3.0-only
+Author: Denes Turei
+Author-email: turei.denes@gmail.com
+Requires-Python: >=3.8,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Requires-Dist: numpy
+Requires-Dist: platformdirs
+Requires-Dist: psutil
+Requires-Dist: tabulate
+Requires-Dist: timeloop
+Project-URL: Bug Tracker, https://github.com/saezlab/pypath-common/issues
+Project-URL: Repository, https://github.com/saezlab/pypath-common
+Description-Content-Type: text/x-rst
+
+#################################
+Code shared across pypath modules
+#################################
+
+Mostly minor code fragments that are used in multiple pypath modules but not
+enough good to be used outside of pypath. Most importantly, our logger.
+
