@@ -1,0 +1,16 @@
+autoboot_web/__init__.py,sha256=PPzsOIvzX-lkGxjtFkF8hqmUvHMf1lLGuA6kl7V21Fw,55
+autoboot_web/http_properties.py,sha256=3WMsABay4Z8hH8MLxK7d2avdmenBcLHJkYODG9gO63k,1105
+autoboot_web/runner.py,sha256=KCkgQZB30PZUbGZ7BiSir4JwS2zuR_d1035M5GU6yNo,2960
+autoboot_web/server_properties.py,sha256=bzbM6nzZB-ODTOKKHGAyF0DWmWxYFxeFtr41Iko2748,1107
+autoboot_web/web_properties.py,sha256=PL3joZY6q3TQgsqsYLE4-el90KM54a28_z3_NrCLlMk,1658
+autoboot_web/middleware/__init__.py,sha256=VcBMiNe7Vc2OVBE1NDuWhOR-JCuhxuhg-0bz1Nn2RkQ,80
+autoboot_web/middleware/uniform.py,sha256=ApD_K_R6KGIP3KXufFpVPOpsrAjZQBMoHl_dBXVWwrg,340
+autoboot_web/mvc/__init__.py,sha256=Lz1NXoNV-IaqsCQ-5yIFRUghIW6VIJGD2ZRTUUs1gpw,91
+autoboot_web/mvc/apply_router.py,sha256=B-jm6sME2oUJUhgKDIeGpU0KXyUDmiklI_t_wU14a7k,3540
+autoboot_web/mvc/annotation/__init__.py,sha256=u5Cw-9BcHUcVDLY9mx1IVdVvHUlERwEmd1xrRqnYhV0,133
+autoboot_web/mvc/annotation/controller.py,sha256=jTmYEzncQEzY9ahptpJ8XfKpsadQMm4VXostMaRzFEo,3391
+autoboot_web-0.3.0.dist-info/LICENSE.txt,sha256=FwLkb8bmjvOcUI-5BT3e4ecVnqCcavzKb3Uhtvy24Gc,1065
+autoboot_web-0.3.0.dist-info/METADATA,sha256=og2p8wE7cdR6cJ-zJyfEBjF3EqcNiIWS0sOhETmtaMU,761
+autoboot_web-0.3.0.dist-info/WHEEL,sha256=k3vXr0c0OitO0k9eCWBlI2yTYnpb_n_I2SGzrrfY7HY,110
+autoboot_web-0.3.0.dist-info/top_level.txt,sha256=jXnpdT7t_Bgm2CAwdqkI6S4_6sk-9HI-LgiLxY9fyBc,13
+autoboot_web-0.3.0.dist-info/RECORD,,
