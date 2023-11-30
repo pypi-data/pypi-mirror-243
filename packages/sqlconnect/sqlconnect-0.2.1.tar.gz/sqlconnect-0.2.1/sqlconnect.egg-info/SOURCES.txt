@@ -1,0 +1,14 @@
+LICENCE
+README.md
+setup.py
+sqlconnect/__init__.py
+sqlconnect/config.py
+sqlconnect/connector.py
+sqlconnect.egg-info/PKG-INFO
+sqlconnect.egg-info/SOURCES.txt
+sqlconnect.egg-info/dependency_links.txt
+sqlconnect.egg-info/requires.txt
+sqlconnect.egg-info/top_level.txt
+tests/__init__.py
+tests/test_sqlconnect_config.py
+tests/test_sqlconnect_connector.py
