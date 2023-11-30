@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: auror
+Version: 0.2.29
+Summary: Parameter Checking
+Author-email: Joshua Hoskins <jhoskins@nrao.edu>
+Requires-Python: <3.12,>=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: cerberus
+Requires-Dist: colorama
+Requires-Dist: numpy
+Requires-Dist: pytest
+Requires-Dist: pytest-cov
+Requires-Dist: pytest-html
+Requires-Dist: xarray
+Provides-Extra: docs
+Requires-Dist: ipykernel ; extra == 'docs'
+Requires-Dist: ipympl ; extra == 'docs'
+Requires-Dist: ipython ; extra == 'docs'
+Requires-Dist: jupyter-client ; extra == 'docs'
+Requires-Dist: nbsphinx ; extra == 'docs'
+Requires-Dist: recommonmark ; extra == 'docs'
+Requires-Dist: scanpydoc ; extra == 'docs'
+Requires-Dist: sphinx-autoapi ; extra == 'docs'
+Requires-Dist: sphinx-autosummary-accessors ; extra == 'docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'docs'
+Requires-Dist: twine ; extra == 'docs'
+Requires-Dist: pandoc ; extra == 'docs'
+
+# main/auror
+
+
+
+## Getting Started
+
+Download links:
+
+SSH clone URL: ssh://git@git.jetbrains.space/odysseus/main/auror.git
+
+HTTPS clone URL: https://git.jetbrains.space/odysseus/main/auror.git
+
+
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+## Prerequisites
+
+What things you need to install the software and how to install them.
+
+```
+Examples
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a production system.
+
+## Resources
+
+Add links to external resources for this project, such as CI server, bug tracker, etc.
