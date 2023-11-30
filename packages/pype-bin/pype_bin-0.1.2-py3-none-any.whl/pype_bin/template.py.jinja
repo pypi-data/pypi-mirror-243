@@ -1,0 +1,102 @@
+{%- macro arg_e_body() %}
+L = line
+_ = L
+{%- if arg_e %}
+{%- for e in arg_e %}
+{{ e }}
+{%- endfor %}
+{%- endif %}
+{%- endmacro %}
+
+{%- macro arg_l_body() %}
+{%- if arg_l %}
+__ors = None
+line = line.strip()
+{%- else %}
+__ors = ''
+{%- endif %}
+{%- endmacro %}
+
+{%- macro arg_a_body_pre() %}
+{%- if arg_a and not arg_F %}
+__fs = None
+{%- endif %}
+{%- endmacro %}
+
+{%- macro arg_a_body() %}
+{%- if arg_a %}
+words = [e for e in __re.split(__fs or ' ', line) if e]
+F = words
+{%- endif %}
+{%- endmacro %}
+
+{%- macro arg_F_body() %}
+{%- if arg_F %}
+__fs = '{{ arg_F }}'
+{%- endif %}
+{%- endmacro %}
+
+{%- macro arg_p_body() %}
+{%- if arg_p %}
+print(line, end=__ors)
+{%- endif %}
+{%- endmacro %}
+
+{%- macro arg_m_body() %}
+{%- if arg_m %}
+{%- for m in arg_m %}
+{%- if not m.endswith(']') %}
+{%- if '=' in m %}
+{%- set m = m.replace('=', ' as ') %}
+{%- endif %}
+import {{ m }}
+{%- else %}
+{%- set m_split = m.split('[') %}
+{%- set m_body = m_split[1][:-1] %}
+{%- if '=' in m_body %}
+{%- set m_body = m_body.replace('=', ' as ') %}
+{%- endif %}
+from {{ m_split[0] }} import {{ m_body }}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- endmacro %}
+
+{%- macro arg_M_body() %}
+{%- if arg_M %}
+{%- for M in arg_M %}
+from {{ M }} import *
+{%- endfor %}
+{%- endif %}
+{%- endmacro %}
+
+{%- macro body() %}
+{{- arg_l_body() }}
+{{- arg_a_body_pre() }}
+{{- arg_F_body() }}
+{{- arg_a_body() }}
+{{- arg_e_body() }}
+{{- arg_p_body() }}
+{%- endmacro %}
+
+{#--#}
+
+# pype
+
+{%- if arg_a %}
+import re as __re
+{%- endif %}
+{{- arg_m_body() }}
+{{- arg_M_body() }}
+{##}
+
+{#--#}
+
+with open("{{ fifo_filepath }}") as f:
+    {%- if arg_n %}
+    for NR, line in enumerate({% if arg_zero %}f.read().rstrip('\0').split('\0'){% else %}f{% endif %}, start=1):
+        {{- body() | indent(8) }}
+    {%- else %}
+    line = f.read()
+    {{- body() | indent(4) }}
+    {%- endif %}
