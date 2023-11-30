@@ -1,0 +1,2 @@
+[console_scripts]
+fastilybot = fastilybot.__main__:_main
