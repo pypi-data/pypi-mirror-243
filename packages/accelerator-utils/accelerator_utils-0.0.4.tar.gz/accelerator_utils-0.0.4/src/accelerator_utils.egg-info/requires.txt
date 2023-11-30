@@ -1,0 +1,8 @@
+pandas
+numpy
+pillow
+scipy
+matplotlib
+
+[tests]
+pytest
