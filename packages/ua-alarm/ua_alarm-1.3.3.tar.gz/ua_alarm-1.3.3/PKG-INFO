@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: ua_alarm
+Version: 1.3.3
+Summary: Implements api.ua_alarm.com API that returns info about Ukraine air raid alarms.
+Home-page: https://github.com/user-sspmynxdvb/ua_alarm
+Author: user-sspmynxdvb
+License: GNUv3
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+License-File: LICENSE
+Requires-Dist: aiohttp>=3.9.0
+Requires-Dist: pydantic>=2.5.1

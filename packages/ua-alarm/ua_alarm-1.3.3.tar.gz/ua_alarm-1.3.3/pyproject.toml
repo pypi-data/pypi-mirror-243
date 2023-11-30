@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "ua-alarm"
+version = "1.3.3"
+description = "Implements api.ua_alarm.com API that returns info about Ukraine air raid alarms."
+authors = ["user-sspmynxdvb <pewfellowmnemonic@gmail.com>"]
+license = "GNUv3"
+readme = "README.md"
+packages = [{ include = "ua_alarm" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.9.0"
+pydantic = "^2.5.1"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.0.292"
+icecream = "^2.1.3"
+isort = "^5.12.0"
+
+
+[[tool.poetry.source]]
+name = "ua_alarm"
+url = "https://github.com/user-sspmynxdvb/ua_alarm"
+priority = "primary"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+ignore = [
+    "E501",
+    "E722",
+    "F401",
+]
