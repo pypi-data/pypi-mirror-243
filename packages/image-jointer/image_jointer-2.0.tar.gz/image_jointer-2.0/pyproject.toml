@@ -1,0 +1,13 @@
+[project]
+name = "image_jointer"
+version = "2.0"
+description = "Build up image by jointing images"
+requires-python = ">=3.10"
+dependencies = ["pillow>=10.0.0"]
+license = { file = "LICENSE" }
+authors = [{ name = "Nanahuse" }]
+classifiers = ["License :: OSI Approved :: MIT License"]
+readme = "README.md"
+
+[project.urls]
+Homepage = "https://github.com/Nanahuse/ImageJointer"
