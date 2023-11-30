@@ -1,0 +1,14 @@
+# serializer version: 1
+# name: test_representation
+  '''
+  SparseAutoencoder(
+    (_pre_encoder_bias): TiedBias(position=pre_encoder)
+    (_encoder): LinearEncoder(
+      in_features=3, out_features=6
+      (activation_function): ReLU()
+    )
+    (_decoder): UnitNormDecoder(in_features=6, out_features=3)
+    (_post_decoder_bias): TiedBias(position=post_decoder)
+  )
+  '''
+# ---
