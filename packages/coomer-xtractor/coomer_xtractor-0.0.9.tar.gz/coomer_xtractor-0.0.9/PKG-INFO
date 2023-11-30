@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: coomer_xtractor
+Version: 0.0.9
+Summary: A simple tool used to download content from coomer.su
+Home-page: https://github.com/taux1c/coomer_xtractor/
+Author: Taux1c
+Author-email: taux1c.software@protonmail.com
+License: MIT
+License-File: LICENSE
+Requires-Dist: aiofiles~=23.2.1
+Requires-Dist: httpx~=0.25.2
+Requires-Dist: bs4~=0.0.1
+Requires-Dist: beautifulsoup4~=4.12.2
+Requires-Dist: SQLAlchemy~=2.0.23
+Requires-Dist: lxml
+
+Coomer Xtractor is a simple tool used to download content from coomer.su. The tool is freely available for use, and contributions from the community are welcomed and appreciated.
