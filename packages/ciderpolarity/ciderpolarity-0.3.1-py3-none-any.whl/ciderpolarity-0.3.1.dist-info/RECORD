@@ -1,0 +1,13 @@
+ciderpolarity/CIDER.py,sha256=_8qYmSSqHZs6HUa0h-DvddCMji-cIqiwjWoKDDnvKF8,11380
+ciderpolarity/__init__.py,sha256=HDK1Vk5-e8X7T98xxxptEK1HYpIuwXRCWozl1ams3F8,24
+ciderpolarity/create_embeddings.py,sha256=aOp6h6nhBsfqu4DveGkE3JbKIszAoOTXkMjj5Dh8NOw,3427
+ciderpolarity/create_vader.py,sha256=vk_8Rf45Hr2A7I1S2oJtuvTu2IqetnV8zBSYuMaIGuM,4565
+ciderpolarity/load_polarities.py,sha256=NhSNJ6DCTMN6VrAT_TcS9VuZtx9xfqQHoCUjFSoqTZo,2431
+ciderpolarity/run_bootstrapping.py,sha256=jycuF0wtnCyE9IP0SDtX8t_qO79TU71U7sgiQ4i0Yvk,5350
+ciderpolarity/stopwords.py,sha256=W_iPgfIrfE86BT7qIrD5mhlby7xgpZAppfJocvzYmGc,1870
+ciderpolarity/suggest_seeds.py,sha256=0rNrRZGV2oCujLjK4_t7uKREoe0-UUcp97F2CT5MRDM,5742
+ciderpolarity/utils_funcs.py,sha256=_fLSnPYeB6Yk5LUIVOclh3-zlfMBYvkRaH3RVv0B3sY,4374
+ciderpolarity-0.3.1.dist-info/LICENSE,sha256=rTwxD0SP-53juXKiC-kZfRJEbWdDDL0vwp4Oa_CdLxM,1063
+ciderpolarity-0.3.1.dist-info/METADATA,sha256=oIb0Ew1xNjxaTR1md-DYb7v05x9mfWyjTcd__3GGZ70,6085
+ciderpolarity-0.3.1.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+ciderpolarity-0.3.1.dist-info/RECORD,,
