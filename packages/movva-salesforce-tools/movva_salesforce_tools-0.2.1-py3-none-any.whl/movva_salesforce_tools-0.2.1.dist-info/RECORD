@@ -1,0 +1,12 @@
+movva_salesforce_tools/__init__.py,sha256=rIyesUzwGHMESNvpzChyOhSb0eQrnaDG1sKO-FWBMDA,48
+movva_salesforce_tools/salesforce/__init__.py,sha256=sMeAVpA7_je-ghhA_6AvzJJYlDsBUwDA8kpzHrSyo2A,213
+movva_salesforce_tools/salesforce/database/__init__.py,sha256=EKpkbC-4xckcqloaG2PCNrsSdKRQGAk15rUPOr5kbFo,79
+movva_salesforce_tools/salesforce/database/firestore.py,sha256=Cetb9B2b5h93W0DaVB5D7QZE66CwV9jSztJOMuLRLwY,1491
+movva_salesforce_tools/salesforce/marketing_cloud/__init__.py,sha256=zqOyWHZaEOFyTONaplIVtflbjTIXWuI6ug-yYI-u6Co,94
+movva_salesforce_tools/salesforce/marketing_cloud/mobile_connect.py,sha256=Jj3UDU1bKyyMux_AAc3rgCovFQufntEGxkm8whLvZrQ,5743
+movva_salesforce_tools/salesforce/transational_sms/__init__.py,sha256=NGoPWhSbR6sNV29zwW5cSqY5D9lp3oyq-BJa0L3NkIk,50
+movva_salesforce_tools/salesforce/transational_sms/callback.py,sha256=UFI25WFcPYR9Hoxs7prHjchqMY6FiQAJcuIpU-NSgX0,5634
+movva_salesforce_tools/salesforce/utils.py,sha256=8l2e4kDFbOGvi4N9SppMvsA-frnHZMUZTCYualkiUOY,678
+movva_salesforce_tools-0.2.1.dist-info/METADATA,sha256=N6q826RSzcKqwb8cwq0sGnLY82PxauLNVJznaci4w2Y,669
+movva_salesforce_tools-0.2.1.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+movva_salesforce_tools-0.2.1.dist-info/RECORD,,
