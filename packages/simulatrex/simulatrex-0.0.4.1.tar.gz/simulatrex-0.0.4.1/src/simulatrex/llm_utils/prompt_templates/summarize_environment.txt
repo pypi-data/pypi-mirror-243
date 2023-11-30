@@ -1,0 +1,8 @@
+Provide a summary of the state of our environment based on the context: "{environment_context}" and key entities in the environment such as {environment_entities}.
+
+Here is a description of the environment: {environment_description}
+
+Here is a list of the recent events that happened:
+{events_summary}
+
+Don't come up with new events, just summarize the current happenings.
