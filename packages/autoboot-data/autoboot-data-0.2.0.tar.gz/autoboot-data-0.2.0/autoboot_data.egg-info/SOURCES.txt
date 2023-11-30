@@ -1,0 +1,15 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+autoboot_data/__init__.py
+autoboot_data.egg-info/PKG-INFO
+autoboot_data.egg-info/SOURCES.txt
+autoboot_data.egg-info/dependency_links.txt
+autoboot_data.egg-info/requires.txt
+autoboot_data.egg-info/top_level.txt
+autoboot_data/redis/__init__.py
+autoboot_data/redis/redis_config.py
+autoboot_data/redis/redis_properties.py
