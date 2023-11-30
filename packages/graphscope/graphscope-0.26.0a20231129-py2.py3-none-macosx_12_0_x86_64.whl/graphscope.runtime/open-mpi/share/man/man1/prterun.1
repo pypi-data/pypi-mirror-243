@@ -1,0 +1,1236 @@
+.\" Man page generated from reStructuredText.
+.
+.TH "PRTERUN" "1" "Oct 26, 2023" "" "PMIx Reference Run Time Environment"
+.
+.nr rst2man-indent-level 0
+.
+.de1 rstReportMargin
+\\$1 \\n[an-margin]
+level \\n[rst2man-indent-level]
+level margin: \\n[rst2man-indent\\n[rst2man-indent-level]]
+-
+\\n[rst2man-indent0]
+\\n[rst2man-indent1]
+\\n[rst2man-indent2]
+..
+.de1 INDENT
+.\" .rstReportMargin pre:
+. RS \\$1
+. nr rst2man-indent\\n[rst2man-indent-level] \\n[an-margin]
+. nr rst2man-indent-level +1
+.\" .rstReportMargin post:
+..
+.de UNINDENT
+. RE
+.\" indent \\n[an-margin]
+.\" old: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.nr rst2man-indent-level -1
+.\" new: \\n[rst2man-indent\\n[rst2man-indent-level]]
+.in \\n[rst2man-indent\\n[rst2man-indent-level]]u
+..
+.sp
+prterun — launch an application with a default DVM
+.SH SYNOPSIS
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+shell$ prterun ...options...
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SH DESCRIPTION
+.sp
+\fBprterun\fP submits a job to the PMIx Reference Runtime Environment
+(PRRTE).  A default set of distributed virtual
+machine (DVM) options are used; use \fI\%prun(1)\fP if you
+wish to utilize specific DVM options.
+.sp
+Much of this same help documentation for this command is also provided
+through \fBprun \-\-help [topic]\fP\&.
+.INDENT 0.0
+.INDENT 3.5
+.IP "PRRTE Docs TODO"
+.sp
+Need to write this man page.
+.UNINDENT
+.UNINDENT
+.SH COMMAND LINE OPTIONS
+.SS The \fB\-\-allow\-run\-as\-root\fP option
+.sp
+Allow execution as root \fB(STRONGLY DISCOURAGED)\fP\&.
+.sp
+Running as root exposes the user to potentially catastrophic file
+system corruption and damage — e.g., if the user accidentally
+points the root of the session directory to a system required point,
+this directory and all underlying elements will be deleted upon job
+completion, thereby rendering the system inoperable.
+.sp
+It is recognized that some environments (e.g., containers) may require
+operation as root, and that the user accepts the risks in those
+scenarios. Accordingly, one can override PRRTE’s run\-as\-root
+protection by providing one of the following:
+.INDENT 0.0
+.IP \(bu 2
+The \fB\-\-allow\-run\-as\-root\fP command line directive
+.IP \(bu 2
+Adding \fBBOTH\fP of the following environmental parameters:
+.INDENT 2.0
+.INDENT 3.5
+.INDENT 0.0
+.IP \(bu 2
+\fBPRTE_ALLOW_RUN_AS_ROOT=1\fP
+.IP \(bu 2
+\fBPRTE_ALLOW_RUN_AS_ROOT_CONFIRM=1\fP
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.UNINDENT
+.sp
+Again, we recommend this only be done if absolutely necessary.
+.SS The \fB\-\-bind\-to\fP option
+.sp
+By default, processes are bound to individual CPUs (either COREs or
+HWTHREADs, as defined by default or by user specification for the
+job). On nodes that are OVERSUBSCRIBEd (i.e., where the number of
+procs exceeds the number of assigned slots), the default is to not
+bind the processes.
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+Processes from prior jobs that are already executing on a
+node are not “unbound” when a new job mapping results in the
+node becoming oversubscribed.
+.UNINDENT
+.UNINDENT
+.sp
+Binding is performed to the first available specified object type
+within the object where the process was mapped. In other words,
+binding can only be done to the mapped object or to a resource
+located beneath that object.
+.sp
+An object is considered completely consumed when the number of
+processes bound to it equals the number of CPUs within it. Unbound
+processes are not considered in this computation. Additional
+processes cannot be mapped to consumed objects unless the
+\fBOVERLOAD\fP qualifier is provided via the \fB\-\-bind\-to\fP command
+line option.
+.sp
+Note that directives and qualifiers are case\-insensitive
+and can be shortened to the minimum number of characters
+to uniquely identify them. Thus, \fBL1CACHE\fP can be given
+as \fBl1cache\fP or simply as \fBL1\fP\&.
+.sp
+Supported binding directives include:
+.INDENT 0.0
+.IP \(bu 2
+\fBNONE\fP does not bind the processes
+.IP \(bu 2
+\fBHWTHREAD\fP binds each process to a single hardware
+thread/ This requires that hwthreads be treated
+as independent CPUs (i.e., that either the \fBHWTCPUS\fP
+qualifier be provided to the \fBmap\-by\fP option or
+that \fBhwthreads\fP be designated as CPUs by default).
+.IP \(bu 2
+\fBCORE\fP binds each process to a single core. This
+can be done whether \fBhwthreads\fP or \fBcores\fP are being
+treated as independent CPUs provided that mapping
+is performed at the core or higher level.
+.IP \(bu 2
+\fBL1CACHE\fP binds each process to all the CPUs in
+an \fBL1\fP cache.
+.IP \(bu 2
+\fBL2CACHE\fP binds each process to all the CPUs in
+an \fBL2\fP cache
+.IP \(bu 2
+\fBL3CACHE\fP binds each process to all the CPUs in
+an \fBL3\fP cache
+.IP \(bu 2
+\fBNUMA\fP binds each process to all the CPUs in a \fBNUMA\fP
+region
+.IP \(bu 2
+\fBPACKAGE\fP binds each process to all the CPUs in a \fBPACKAGE\fP
+.UNINDENT
+.sp
+Any directive can include qualifiers by adding a colon (:) and any
+combination of one or more of the following to the \fB\-\-bind\-to\fP
+option:
+.INDENT 0.0
+.IP \(bu 2
+\fBOVERLOAD\fP indicates that objects can have more
+processes bound to them than CPUs within them
+.IP \(bu 2
+\fBIF\-SUPPORTED\fP indicates that the job should continue to
+be launched and executed even if binding cannot be
+performed as requested.
+.UNINDENT
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+Directives and qualifiers are case\-insensitive.
+\fBOVERLOAD\fP is the same as \fBoverload\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-debug\-daemons\fP option
+.sp
+Debug daemon output enabled. This is a somewhat limited stream of
+information normally used to simply confirm that the daemons
+started. Includes leaving the output streams open.
+.SS The \fB\-\-debug\-daemons\-file\fP option
+.sp
+Debug daemon output is enabled and all output from the daemons is
+redirected into files with names of the form:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+output\-prted\-<daemon\-nspace>\-<nodename>.log
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+These names avoid conflict on shared file systems. The files are
+located in the top\-level session directory assigned to the DVM.
+.SS The \fB\-\-display\fP option
+.sp
+The \fBdisplay\fP command line directive must be accompanied by a
+comma\-delimited list of case\-insensitive options indicating what
+information about the job and/or allocation is to be displayed. The
+full directive need not be provided — only enough characters are
+required to uniquely identify the directive. For example, \fBALL\fP is
+sufficient to represent the \fBALLOCATION\fP directive — while \fBMAP\fP
+can not be used to represent \fBMAP\-DEVEL\fP (though \fBMAP\-D\fP would
+suffice).
+.sp
+Supported values include:
+.INDENT 0.0
+.IP \(bu 2
+\fBALLOCATION\fP displays the detected hosts and slot assignments for
+this job
+.IP \(bu 2
+\fBBINDINGS\fP displays the resulting bindings applied to processes in
+this job
+.IP \(bu 2
+\fBMAP\fP displays the resulting locations assigned to processes in
+this job
+.IP \(bu 2
+\fBMAP\-DEVEL\fP displays a more detailed report on the locations
+assigned to processes in this job that includes local and node
+ranks, assigned bindings, and other data
+.IP \(bu 2
+\fBTOPO=LIST\fP displays the topology of each node in the
+semicolon\-delimited list that is allocated to the job
+.IP \(bu 2
+\fBCPUS[=LIST]\fP displays the available CPUs on the provided
+semicolon\-delimited list of nodes (defaults to all nodes)
+.UNINDENT
+.sp
+The display command line directive can include qualifiers by adding a
+colon (\fB:\fP) and any combination of one or more of the following
+(delimited by colons):
+.INDENT 0.0
+.IP \(bu 2
+\fBPARSEABLE\fP directs that the output be provided in a format that
+is easily parsed by machines. Note that \fBPARSABLE\fP is also accepted as
+a typical spelling for the qualifier.
+.UNINDENT
+.sp
+Provided qualifiers will apply to \fIall\fP of the display directives.
+.SS The \fB\-\-dvm\fP option
+.sp
+A required argument is passed to the \fB\-\-dvm\fP directive to specify
+the location of the DVM controller (e.g., \fB\-\-dvm pid:12345\fP) or by
+passing the string \fBsearch\fP to instead search for an existing
+controller.
+.sp
+Supported options include:
+.INDENT 0.0
+.IP \(bu 2
+\fBsearch\fP: directs the tool to search for available DVM controllers
+it is authorized to use, connecting to the first such candidate it
+finds.
+.IP \(bu 2
+\fBpid:<arg>\fP: provides the PID of the target DVM controller. This
+can be given as either the PID itself (arg = int) or the path to a
+file that contains the PID (arg = \fBfile:<path>\fP)
+.IP \(bu 2
+\fBfile:<path>\fP: provides the path to a PMIx rendezvous file that is
+output by PMIx servers — the file contains all the required
+information for completing the connection
+.IP \(bu 2
+\fBuri:<arg>\fP: specifies the URI of the DVM controller, or the name of
+the file (specified as \fBfile:filename\fP) that contains that info
+.IP \(bu 2
+\fBns:<arg>\fP: specifies the namespace of the DVM controller
+.IP \(bu 2
+\fBsystem\fP: exclusively find and use the system\-level DVM controller
+.IP \(bu 2
+\fBsystem\-first\fP: look for a system\-level DVM controller, fall back
+to searching for an available DVM controller the command is
+authorized to use if a system\-level controller is not found
+.UNINDENT
+.sp
+Examples:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+prterun \-\-dvm file:dvm_uri.txt \-\-np 4 ./a.out
+
+prterun \-\-dvm pid:12345 \-\-np 4 ./a.out
+
+prterun \-\-dvm uri:file:dvm_uri.txt \-\-np 4 ./a.out
+
+prterun \-\-dvm ns:prte\-node1\-2095 \-\-np 4 ./a.out
+
+prterun \-\-dvm pid:file:prte_pid.txt \-\-np 4 ./a.out
+
+prterun \-\-dvm search \-\-np 4 ./a.out
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-dvm\-hostfile\fP option
+.sp
+PRRTE supports several levels of user\-specified host lists based on an
+established precedence order. Users can specify a default hostfile
+that contains a list of nodes to be used by the DVM. Only one default
+hostfile can be provided for a given DVM. In addition, users can
+specify a hostfile that contains a list of nodes to be used for a DVM,
+or can provide a comma\-delimited list of nodes to be used for that DVM
+via the \fB\-\-host\fP command line option.
+.sp
+The precedence order applied to these various options depends to some
+extent on the local environment. The following table illustrates how
+host and hostfile directives work together to define the set of hosts
+upon which a DVM will execute in the absence of a resource manager
+(RM):
+.TS
+center;
+|l|l|l|l|.
+_
+T{
+Default hostfile
+T}	T{
+host
+T}	T{
+hostfile
+T}	T{
+Result
+T}
+_
+T{
+unset
+T}	T{
+unset
+T}	T{
+unset
+T}	T{
+.nf
+The DVN will consist solely of the
+local host where the DVM
+was started.
+.fi
+T}
+_
+T{
+unset
+T}	T{
+set
+T}	T{
+unset
+T}	T{
+.nf
+Host option defines resource list for the DVM.
+.fi
+T}
+_
+T{
+unset
+T}	T{
+unset
+T}	T{
+set
+T}	T{
+.nf
+Hostfile option defines resource list for the DVM.
+.fi
+T}
+_
+T{
+unset
+T}	T{
+set
+T}	T{
+set
+T}	T{
+.nf
+Hostfile option defines resource list for the DVM,
+then host filters the list to define the final
+set of nodes to be used by the DVM
+.fi
+T}
+_
+T{
+set
+T}	T{
+unset
+T}	T{
+unset
+T}	T{
+.nf
+Default hostfile defines resource list for the DVM
+.fi
+T}
+_
+T{
+set
+T}	T{
+set
+T}	T{
+unset
+T}	T{
+.nf
+Default hostfile defines resource list for the DVM,
+then host filters the list to define the final
+set of nodes to be used by the DVM
+.fi
+T}
+_
+T{
+set
+T}	T{
+set
+T}	T{
+set
+T}	T{
+.nf
+Default hostfile defines resource list for the DVM,
+then hostfile filters the list, and then host filters
+the list to define the final set of nodes to be
+used by the DVM
+.fi
+T}
+_
+.TE
+.sp
+This changes somewhat in the presence of an RM as that entity
+specifies the initial allocation of nodes. In this case, the default
+hostfile, hostfile and host directives are all used to filter the RM’s
+specification so that a user can utilize different portions of the
+allocation for different DVMs. This is done according to the same
+precedence order as in the prior table, with the RM providing the
+initial pool of nodes.
+.SS The \fB\-\-forward\-signals\fP option
+.sp
+Comma\-delimited list of additional signals (names or integers) to
+forward to application processes (\fBnone\fP = forward
+nothing). Signals provided by default include SIGTSTP, SIGUSR1,
+SIGUSR2, SIGABRT, SIGALRM, and SIGCONT.
+.SS The \fB\-\-host\fP option
+.sp
+Host syntax consists of a comma\-delimited list of node names, each
+entry optionally containing a \fB:N\fP extension indicating the number
+of slots to assign to that entry:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+\-\-host node01:5,node02
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+In the absence of the slot extension, one slot will be assigned to the
+node. Duplicate entries are aggregated and the number of slots
+assigned to that node are summed together.
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+A “slot” is the PRRTE term for an allocatable unit where we
+can launch a process. Thus, the number of slots equates to the
+maximum number of processes PRRTE may start on that node without
+oversubscribing it.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-launcher\-hostfile\fP option
+.sp
+PRRTE supports several levels of user\-specified hostfiles based on an
+established precedence order. Users can specify a hostfile that
+contains a list of nodes to be used for the job, or can provide a
+comma\-delimited list of nodes to be used for that job via the
+\fB\-\-host\fP command line option.
+.sp
+The precedence order applied to these various options depends to some
+extent on the local environment. The following table illustrates how
+host and hostfile directives work together to define the set of hosts
+upon which a DVM will execute the job in the absence of a resource
+manager (RM):
+.TS
+center;
+|l|l|l|.
+_
+T{
+host
+T}	T{
+hostfile
+T}	T{
+Result
+T}
+_
+T{
+unset
+T}	T{
+unset
+T}	T{
+.nf
+The DVM will utilize all its available resources
+when mapping the job.
+.fi
+T}
+_
+T{
+set
+T}	T{
+unset
+T}	T{
+.nf
+Host option defines resource list for the job
+.fi
+T}
+_
+T{
+unset
+T}	T{
+set
+T}	T{
+.nf
+Hostfile defines resource list for the job
+.fi
+T}
+_
+T{
+set
+T}	T{
+set
+T}	T{
+.nf
+Hostfile defines resource list for the job,
+then host filters the list to define the final
+set of nodes to be used for the job
+.fi
+T}
+_
+.TE
+.SS The \fB\-\-leave\-session\-attached\fP option
+.sp
+Do not discard stdout/stderr of remote PRRTE daemons. The primary use
+for this option is to ensure that the daemon output streams (i.e.,
+stdout and stderr) remain open after launch, thus allowing the user to
+see any daemon\-generated error messages. Otherwise, the daemon will
+“daemonize” itself upon launch, thereby closing its output streams.
+.SS The \fB\-\-map\-by\fP option
+.sp
+Processes are mapped based on one of the following directives as
+applied at the job level:
+.INDENT 0.0
+.IP \(bu 2
+\fBSLOT\fP assigns procs to each node up to the number of available
+slots on that node before moving to the next node in the
+allocation
+.IP \(bu 2
+\fBHWTHREAD\fP assigns a proc to each hardware thread on a node in a
+round\-robin manner up to the number of available slots on that
+node before moving to the next node in the allocation
+.IP \(bu 2
+\fBCORE\fP (default) assigns a proc to each core on a node in a
+round\-robin manner up to the number of available slots on that
+node before moving to the next node in the allocation
+.IP \(bu 2
+\fBL1CACHE\fP assigns a proc to each L1 cache on a node in a
+round\-robin manner up to the number of available slots on that
+node before moving to the next node in the allocation
+.IP \(bu 2
+\fBL2CACHE\fP assigns a proc to each L2 cache on a node in a
+round\-robin manner up to the number of available slots on that
+node before moving to the next node in the allocation
+.IP \(bu 2
+\fBL3CACHE\fP assigns a proc to each L3 cache on a node in a
+round\-robin manner up to the number of available slots on that
+node before moving to the next node in the allocation
+.IP \(bu 2
+\fBNUMA\fP assigns a proc to each NUMA region on a node in a
+round\-robin manner up to the number of available slots on that
+node before moving to the next node in the allocation
+.IP \(bu 2
+\fBPACKAGE\fP assigns a proc to each package on a node in a
+round\-robin manner up to the number of available slots on that
+node before moving to the next node in the allocation
+.IP \(bu 2
+\fBNODE\fP assigns processes in a round\-robin fashion to all nodes
+in the allocation, with the number assigned to each node capped
+by the number of available slots on that node
+.IP \(bu 2
+\fBSEQ\fP (often accompanied by the file=<path> qualifier) assigns
+one process to each node specified in the file. The sequential
+file is to contain an entry for each desired process, one per
+line of the file.
+.IP \(bu 2
+\fBPPR:N\fP:resource maps N procs to each instance of the specified
+resource type in the allocation
+.IP \(bu 2
+\fBRANKFILE\fP (often accompanied by the file=<path> qualifier) assigns
+one process to the node/resource specified in each entry of the
+file, one per line of the file.
+.IP \(bu 2
+\fBPE\-LIST=a,b\fP assigns procs to each node in the allocation based on
+the ORDERED qualifier. The list is comprised of comma\-delimited
+ranges of CPUs to use for this job. If the ORDERED qualifier is not
+provided, then each node will be assigned procs up to the number of
+available slots, capped by the availability of the specified CPUs.
+If ORDERED is given, then one proc will be assigned to each of the
+specified CPUs, if available, capped by the number of slots on each
+node and the total number of specified processes. Providing the
+OVERLOAD qualifier to the “bind\-to” option removes the check on
+availability of the CPU in both cases.
+.UNINDENT
+.sp
+Any directive can include qualifiers by adding a colon (\fB:\fP) and any
+combination of one or more of the following (delimited by colons) to
+the \fB\-\-map\-by\fP option (except where noted):
+.INDENT 0.0
+.IP \(bu 2
+\fBPE=n\fP bind n CPUs to each process (can not be used in combination
+with rankfile or pe\-list directives)
+.IP \(bu 2
+\fBSPAN\fP load balance the processes across the allocation by treating
+the allocation as a single “super\-node” (can not be used in
+combination with \fBslot\fP, \fBnode\fP, \fBseq\fP, \fBppr\fP, \fBrankfile\fP, or
+\fBpe\-list\fP directives)
+.IP \(bu 2
+\fBOVERSUBSCRIBE\fP allow more processes on a node than processing elements
+.IP \(bu 2
+\fBNOOVERSUBSCRIBE\fP means \fB!OVERSUBSCRIBE\fP
+.IP \(bu 2
+\fBNOLOCAL\fP do not launch processes on the same node as \fBprun\fP
+.IP \(bu 2
+\fBHWTCPUS\fP use hardware threads as CPU slots
+.IP \(bu 2
+\fBCORECPUS\fP use cores as CPU slots (default)
+.IP \(bu 2
+\fBINHERIT\fP indicates that a child job (i.e., one spawned from within
+an application) shall inherit the placement policies of the parent job
+that spawned it.
+.IP \(bu 2
+\fBNOINHERIT\fP means \fB\(ga!INHERIT\fP
+.IP \(bu 2
+\fBFILE=<path>\fP (path to file containing sequential or rankfile entries).
+.IP \(bu 2
+\fBORDERED\fP only applies to the \fBPE\-LIST\fP option to indicate that
+procs are to be bound to each of the specified CPUs in the order in
+which they are assigned (i.e., the first proc on a node shall be
+bound to the first CPU in the list, the second proc shall be bound
+to the second CPU, etc.)
+.UNINDENT
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+Directives and qualifiers are case\-insensitive and can be
+shortened to the minimum number of characters to uniquely
+identify them. Thus, \fBL1CACHE\fP can be given as \fBl1cache\fP or
+simply as \fBL1\fP\&.
+.UNINDENT
+.UNINDENT
+.sp
+The type of CPU (core vs hwthread) used in the mapping algorithm
+is determined as follows:
+.INDENT 0.0
+.IP \(bu 2
+by user directive on the command line via the HWTCPUS qualifier to
+the \fB\-\-map\-by\fP directive
+.IP \(bu 2
+by setting the \fBrmaps_default_mapping_policy\fP MCA parameter to
+include the \fBHWTCPUS\fP qualifier. This parameter sets the default
+value for a PRRTE DVM — qualifiers are carried across to DVM jobs
+started via \fBprun\fP unless overridden by the user’s command line
+.IP \(bu 2
+defaults to CORE in topologies where core CPUs are defined, and to
+hwthreads otherwise.
+.UNINDENT
+.sp
+If your application uses threads, then you probably want to ensure that
+you are either not bound at all (by specifying \fB\-\-bind\-to none\fP), or
+bound to multiple cores using an appropriate binding level or specific
+number of processing elements per application process via the \fBPE=#\fP
+qualifier to the \fB\-\-map\-by\fP command line directive.
+.sp
+A more detailed description of the mapping, ranking, and binding
+procedure can be obtained via the \fB\-\-help placement\fP option.
+.SS The \fB\-\-output\fP option
+.sp
+The \fBoutput\fP command line directive must be accompanied by a
+comma\-delimited list of case\-insensitive options that control how
+output is generated. The full directive need not be provided — only
+enough characters are required to uniquely identify the directive. For
+example, \fBMERGE\fP is sufficient to represent the
+\fBMERGE\-STDERR\-TO\-STDOUT\fP directive — while \fBTAG\fP can not be
+used to represent \fBTAG\-DETAILED\fP (though \fBTAG\-D\fP would suffice).
+.sp
+Supported values include:
+.INDENT 0.0
+.IP \(bu 2
+\fBTAG\fP marks each output line with the \fB[job,rank]<stream>:\fP of
+the process that generated it
+.IP \(bu 2
+\fBTAG\-DETAILED\fP marks each output line with a detailed annotation
+containing \fB[namespace,rank][hostname:pid]<stream>:\fP of the
+process that generated it
+.IP \(bu 2
+\fBTAG\-FULLNAME\fP marks each output line with the
+\fB[namespace,rank]<stream>:\fP of the process that generated it
+.IP \(bu 2
+\fBTAG\-FULLNAME\fP marks each output line with the
+\fB[namespace,rank]<stream>:\fP of the process that generated it
+.IP \(bu 2
+\fBTIMESTAMP\fP prefixes each output line with a \fB[datetime]<stream>:\fP
+stamp. Note that the timestamp will be the time when the line is
+output by the DVM and not the time when the source output it
+.IP \(bu 2
+\fBXML\fP provides all output in a pseudo\-XML format
+\fBMERGE\-STDERR\-TO\-STDOUT\fP merges stderr into stdout
+.IP \(bu 2
+\fBDIR=DIRNAME\fP redirects output from application processes into
+\fBDIRNAME/job/rank/std[out,err,diag]\fP\&. The provided name will be
+converted to an absolute path
+.IP \(bu 2
+\fBFILE=FILENAME\fP redirects output from application processes into
+\fBfilename.rank.\fP The provided name will be converted to an absolute
+path
+.UNINDENT
+.sp
+Supported qualifiers include \fBNOCOPY\fP (do not copy the output to the
+stdout/err streams), and \fBRAW\fP (do not buffer the output into complete
+lines, but instead output it as it is received).
+.SS The \fB\-\-personality\fP option
+.sp
+Specify the personality to be used. This governs selection of the
+plugin responsible for defining and parsing the command line,
+harvesting and forwarding environmental variables, and providing
+library\-dependent support to the launched processes. Examples include
+\fBompi\fP for an application compiled with Open MPI, \fBmpich\fP for one
+built against the MPICH library, or \fBoshmem\fP for an OpenSHMEM
+application compiled against SUNY’s reference library.
+.SS The \fB\-\-pmixmca\fP option
+.sp
+Pass a PMIx MCA parameter
+.sp
+Syntax: \fB\-\-pmixmca <key> <value>\fP, where \fBkey\fP is the parameter
+name and \fBvalue\fP is the parameter value.
+.SS The \fB\-\-prefix\fP option
+.sp
+Prefix to be used to look for PRRTE executables. PRRTE automatically
+sets the prefix for remote daemons if it was either configured with
+the \fB\-\-enable\-prte\-prefix\-by\-default\fP option OR prte itself was
+executed with an absolute path to the prte command. This option
+overrides those settings, if present, and forces use of the provided
+path.
+.SS The \fB\-\-prtemca\fP option
+.sp
+Pass a PRRTE MCA parameter.
+.sp
+Syntax: \fB\-\-prtemca <key> <value>\fP, where \fBkey\fP is the parameter
+name and \fBvalue\fP is the parameter value.
+.SS The \fB\-\-noprefix\fP option
+.sp
+Disable automatic \fB\-\-prefix\fP behavior. PRRTE automatically sets the
+prefix for remote daemons if it was either configured with the
+\fB\-\-enable\-prte\-prefix\-by\-default\fP option OR prte itself was executed
+with an absolute path to the \fBprte\fP command. This option disables
+that behavior.
+.SS The \fB\-\-rank\-by\fP option
+.sp
+PRRTE automatically ranks processes for each job starting from zero.
+Regardless of the algorithm used, rank assignments span applications
+in the same job — i.e., a command line of
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+\-n 3 app1 : \-n 2 app2
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+will result in \fBapp1\fP having three processes ranked 0\-2 and \fBapp2\fP
+having two processes ranked 3\-4.
+.sp
+By default, process ranks are assigned in accordance with the mapping
+directive — e.g., jobs that are mapped by\-node will have the process
+ranks assigned round\-robin on a per\-node basis. However, users can override
+the default by specifying any of the following directives using the
+\fB\-\-rank\-by\fP command line option:
+.INDENT 0.0
+.IP \(bu 2
+\fBSLOT\fP assigns ranks to each process on a node in the order in
+which the mapper assigned them. This is the default behavior,
+but is provided as an explicit option to allow users to override
+any alternative default specified in the environment. When mapping
+to a specific resource type, procs assigned to a given instance
+of that resource on a node will be ranked on a per\-resource basis
+on that node before moving to the next node.
+.IP \(bu 2
+\fBNODE\fP assigns ranks round\-robin on a per\-node basis
+.IP \(bu 2
+\fBFILL\fP assigns ranks to procs mapped to a particular resource type
+on each node, filling all ranks on that resource before moving to
+the next resource on that node. For example, procs mapped by
+\fBL1cache\fP would have all procs on the first \fBL1cache\fP ranked
+sequentially before moving to the second \fBL1cache\fP on the
+node. Once all procs on the node have been ranked, ranking would
+continue on the next node.
+.IP \(bu 2
+\fBSPAN\fP assigns ranks round\-robin to procs mapped to a particular
+resource type, treating the collection of resource instances
+spanning the entire allocation as a single “super node” before
+looping around for the next pass. Thus, ranking would begin with the
+first proc on the first \fBL1cache\fP on the first node, then the next
+rank would be assigned to the first proc on the second \fBL1cache\fP
+on that node, proceeding across until the first proc had been ranked
+on all \fBL1cache\fP used by the job before circling around to rank
+the second proc on each object.
+.UNINDENT
+.sp
+The \fBrank\-by\fP command line option has no qualifiers.
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+Directives are case\-insensitive.  \fBSPAN\fP is the same as
+\fBspan\fP\&.
+.UNINDENT
+.UNINDENT
+.sp
+A more detailed description of the mapping, ranking, and binding
+procedure can be obtained via the \fB\-\-help placement\fP option.
+.SS The \fB\-\-runtime\-options\fP option
+.sp
+The \fB\-\-runtime\-options\fP command line directive must be accompanied
+by a comma\-delimited list of case\-insensitive options that control the
+runtime behavior of the job. The full directive need not be provided
+— only enough characters are required to uniquely identify the
+directive.
+.sp
+Runtime options are typically \fBtrue\fP or \fBfalse\fP, though this is
+not a requirement on developers. Since the value of each option may
+need to be set (e.g., to override a default set by MCA parameter), the
+syntax of the command line directive includes the use of an \fB=\fP
+character to allow inclusion of a value for the option. For example,
+one can set the \fBABORT\-NONZERO\-STATUS\fP option to \fBtrue\fP by
+specifying it as \fBABORT\-NONZERO\-STATUS=1\fP\&. Note that boolean options
+can be set to \fBtrue\fP using a non\-zero integer or a case\-insensitive
+string of the word \fBtrue\fP\&.  For the latter representation, the user
+need only provide at least the \fBT\fP character. The same policy
+applies to setting a boolean option to \fBfalse\fP\&.
+.sp
+Note that a boolean option will default to \fBtrue\fP if provided
+without a value. Thus, \fB\-\-runtime\-options abort\-nonzero\fP is
+sufficient to set the \fBABORT\-NONZERO\-STATUS\fP option to \fBtrue\fP\&.
+.sp
+Supported values include:
+.INDENT 0.0
+.IP \(bu 2
+\fBERROR\-NONZERO\-STATUS[=(bool)]\fP: if set to false, this directs the
+runtime to treat a process that exits with non\-zero status as a
+normal termination.  If set to true, the runtime will consider such
+an occurrence as an error termination and take appropriate action
+— i.e., the job will be terminated unless a runtime option
+directs otherwise. This option defaults to a true value if the
+option is given without a value.
+.IP \(bu 2
+\fBDONOTLAUNCH\fP: directs the runtime to map but not launch the
+specified job. This is provided to help explore possible process
+placement patterns before actually starting execution. No value need
+be passed as this is not an option that can be set by default in
+PRRTE.
+.IP \(bu 2
+\fBSHOW\-PROGRESS[=(bool)]\fP: requests that the runtime provide
+progress reports on its startup procedure — i.e., the launch
+of its daemons in support of a job. This is typically used to debug
+DVM startup on large systems.  This option defaults to a true value
+if the option is given without a value.
+.IP \(bu 2
+\fBNOTIFYERRORS[=(bool)]\fP: if set to true, requests that the runtime
+provide a PMIx event whenever a job encounters an error —
+e.g., a process fails.  The event is to be delivered to each
+remaining process in the job. This option defaults to a true value
+if the option is given without a value.  See \fB\-\-help
+notifications\fP for more detail as to the PMIx event codes available
+for capturing failure events.
+.IP \(bu 2
+\fBRECOVERABLE[=(bool)]\fP: if set to true, this indicates that the
+application wishes to consider the job as recoverable — i.e.,
+the application is assuming responsibility for recovering from any
+process failure. This could include application\-driven spawn of a
+substitute process or internal compensation for the missing
+process. This option defaults to a true value if the option is given
+without a value.
+.IP \(bu 2
+\fBAUTORESTART[=(bool)]\fP: if set to true, this requests that the
+runtime automatically restart failed processes up to “max restarts”
+number of times. This option defaults to a true value if the option
+is given without a value.
+.IP \(bu 2
+\fBCONTINUOUS[=(bool)]\fP: if set to true, this informs the runtime
+that the processes in this job are to run until explicitly
+terminated. Processes that fail are to be automatically restarted up
+to “max restarts” number of times. Notification of process failure
+is to be delivered to all processes in the application. This is the
+equivalent of specifying \fBRECOVERABLE\fP, \fBNOTIFYERRORS\fP, and
+\fBAUTORESTART\fP options except that the runtime, not the
+application, assumes responsibility for process recovery. This
+option defaults to a true value if the option is given without a
+value.
+.IP \(bu 2
+\fBMAX\-RESTARTS=<int>\fP: indicates the maximum number of times a
+given process is to be restarted. This can be set at the application
+or job level (which will then apply to all applications in that
+job).
+.IP \(bu 2
+\fBEXEC\-AGENT=<path>\fP indicates the executable that shall be used to
+start an application process. The resulting command for starting an
+application process will be \fB<path> app <app\-argv>\fP\&. The path may
+contain its own command line arguments.
+.IP \(bu 2
+\fBDEFAULT\-EXEC\-AGENT\fP: directs the runtime to use the system
+default exec agent to start an application process. No value need be
+passed as this is not an option that can be set by default in PRRTE.
+.IP \(bu 2
+\fBOUTPUT\-PROCTABLE[(=channel)]\fP: directs the runtime to report the
+convential debugger process table (includes PID and host location of
+each process in the application). Output is directed to stdout if
+the channel is \fB\-\fP, stderr if \fB+\fP, or into the specified file
+otherwise. If no channel is specified, output will be directed to
+stdout.
+.IP \(bu 2
+\fBSTOP\-ON\-EXEC\fP: directs the runtime to stop the application
+process(es) immediately upon exec’ing them. The directive will apply
+to all processes in the job.
+.IP \(bu 2
+\fBSTOP\-IN\-INIT\fP: indicates that the runtime should direct the
+application process(es) to stop in \fBPMIx_Init()\fP\&. The directive
+will apply to all processes in the job.
+.IP \(bu 2
+\fBSTOP\-IN\-APP\fP: indicates that the runtime should direct
+application processes to stop at some application\-defined place and
+notify they are ready\-to\-debug. The directive will apply to all
+processes in the job.
+.IP \(bu 2
+\fBTIMEOUT=<string>\fP: directs the runtime to terminate the job after
+it has executed for the specified time. Time is specified in
+colon\-delimited format — e.g., \fB01:20:13:05\fP to indicate 1
+day, 20 hours, 13 minutes and 5 seconds. Time specified without
+colons will be assumed to have been given in seconds.
+.IP \(bu 2
+\fBSPAWN\-TIMEOUT=<string>\fP: directs the runtime to terminate the job
+if job launch is not completed within the specified time. Time is
+specified in colon\-delimited format — e.g., \fB01:20:13:05\fP to
+indicate 1 day, 20 hours, 13 minutes and 5 seconds.  Time specified
+without colons will be assumed to have been given in seconds.
+.IP \(bu 2
+\fBREPORT\-STATE\-ON\-TIMEOUT[(=bool)]\fP: directs the runtime to provide
+a detailed report on job and application process state upon job
+timeout. This option defaults to a true value if the option is given
+without a value.
+.IP \(bu 2
+\fBGET\-STACK\-TRACES[(=bool)]\fP: requests that the runtime provide
+stack traces on all application processes still executing upon
+timeout. This option defaults to a true value if the option is given
+without a value.
+.IP \(bu 2
+\fBREPORT\-CHILD\-JOBS\-SEPARATELY[(=bool)]\fP: directs the runtime to
+report the exit status of any child jobs spawned by the primary job
+separately. If false, then the final exit status reported will be
+zero if the primary job and all spawned jobs exit normally, or the
+first non\-zero status returned by either primary or child jobs.
+This option defaults to a true value if the option is given without
+a value.
+.IP \(bu 2
+\fBAGGREGATE\-HELP\-MESSAGES[(=bool)]\fP: directs the runtime to
+aggregate help messages, reporting each unique help message once
+accompanied by the number of processes that reported it. This option
+defaults to a true value if the option is given without a value.
+.IP \(bu 2
+\fBFWD\-ENVIRONMENT[(=bool)]\fP: directs the runtime to forward the
+entire local environment in support of the application. This option
+defaults to a true value if the option is given without a value.
+.UNINDENT
+.sp
+The \fB\-\-runtime\-options\fP command line option has no qualifiers.
+.sp
+\fBNOTE:\fP
+.INDENT 0.0
+.INDENT 3.5
+Directives are case\-insensitive.  \fBFWD\-ENVIRONMENT\fP is the
+same as \fBfwd\-environment\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-stream\-buffering\fP option
+.sp
+Adjust buffering for stdout/stderr.  Allowable values:
+.INDENT 0.0
+.IP \(bu 2
+0: unbuffered
+.IP \(bu 2
+1: line buffered
+.IP \(bu 2
+2: fully buffered
+.UNINDENT
+.SS The \fB\-\-tune\fP option
+.sp
+Comma\-delimited list of one or more files containing PRRTE and PMIx
+MCA params for tuning DVM and/or application operations. Parameters in
+the file will be treated as \fIgeneric\fP parameters and subject to the
+translation rules/uncertainties.  See \fB\-\-help mca\fP for more
+information.
+.sp
+Syntax in the file is:
+.INDENT 0.0
+.INDENT 3.5
+.sp
+.nf
+.ft C
+param = value
+.ft P
+.fi
+.UNINDENT
+.UNINDENT
+.sp
+with one parameter and its associated value per line. Empty lines and
+lines beginning with the \fB#\fP character are ignored.
+.SS The \fB\-x\fP option
+.sp
+Export an environment variable, optionally specifying a value. For
+example:
+.INDENT 0.0
+.IP \(bu 2
+\fB\-x foo\fP exports the environment variable \fBfoo\fP and takes its
+value from the current environment.
+.IP \(bu 2
+\fB\-x foo=bar\fP exports the environment variable name \fBfoo\fP and
+sets its value to \fBbar\fP in the started processes.
+.IP \(bu 2
+\fB\-x foo*\fP exports all current environmental variables starting
+with \fBfoo\fP\&.
+.UNINDENT
+.SH DEPRECATED COMMAND LINE OPTIONS
+.SS The \fB\-\-bind\-to\-core\fP option
+.sp
+Bind each process to its own core.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-bind\-to core\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-display\-allocation\fP option
+.sp
+Display the allocation being used by this job.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-display alloc\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-display\-devel\-allocation\fP option
+.sp
+Display a detailed list (mostly intended for developers) of the
+allocation being used by this job.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-display alloc\-devel\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-display\-devel\-map\fP option
+.sp
+Display a detailed process map (mostly intended for developers)
+just before launch.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-display map\-devel\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-display\-map\fP option
+.sp
+Display the process map just before launch.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-display map\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-display\-topo\fP option
+.sp
+Display the topology as part of the process map (mostly intended
+for developers) just before launch.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-display topo\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-gmca\fP option
+.sp
+Syntax: \fB\-\-gmca <key> <value>\fP, where \fBkey\fP is the parameter name
+and \fBvalue\fP is the parameter value. The \fBg\fP prefix indicates that
+this parameter is “global”, and to be applied to \fIall\fP application
+contexts — not just the one in which the directive appears.
+.sp
+Pass generic MCA parameters — i.e., parameters whose project
+affiliation must be determined by PRRTE based on matching the name of
+the parameter with defined values from various projects that PRRTE
+knows about.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This translation can be incomplete (e.g., if known project adds or
+changes parameters) — thus, it is strongly recommended that
+users use project\-specific parameters such as \fB\-\-gprtemca\fP or
+\fB\-\-gpmixmca\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-mca\fP option
+.sp
+Syntax: \fB\-\-mca <key> <value>\fP, where \fBkey\fP is the parameter name
+and \fBvalue\fP is the parameter value.
+.sp
+Pass generic MCA parameters — i.e., parameters whose project
+affiliation must be determined by PRRTE based on matching the name of
+the parameter with defined values from various projects that PRRTE
+knows about.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This translation can be incomplete (e.g., if a project adds or
+changes parameters) — thus, it is strongly recommended that
+users use project\-specific parameters such as \fB\-\-prtemca\fP or
+\fB\-\-pmixmca\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-merge\-stderr\-to\-stdout\fP option
+.sp
+Merge stderr to stdout for each process.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-output merge\fP
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-output\-directory\fP option
+.sp
+Redirect output from application processes into
+\fBfilename/job/rank/std[out,err,diag]\fP\&. A relative path value will be
+converted to an absolute path. The directory name may include a colon
+followed by a comma\-delimited list of optional case\-insensitive
+directives. Supported directives currently include \fBNOJOBID\fP (do not
+include a job\-id directory level) and \fBNOCOPY\fP (do not copy the
+output to the stdout/err streams).
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-output dir=<path>\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-output\-filename\fP option
+.sp
+Redirect output from application processes into \fBfilename.rank\fP\&. A
+relative path value will be converted to an absolute path. The
+directory name may include a colon followed by a comma\-delimited list
+of optional case\-insensitive directives. Supported directives
+currently include \fBNOCOPY\fP (do not copy the output to the stdout/err
+streams).
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-output file=<path>\fP
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-report\-bindings\fP option
+.sp
+Display process bindings to stderr.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-display bindings\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-tag\-output\fP option
+.sp
+Tag all output with \fB[job,rank]\fP\&.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-output\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-timestamp\-output\fP option
+.sp
+Timestamp all application process output.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-output timestamp\fP\&.
+.UNINDENT
+.UNINDENT
+.SS The \fB\-\-xml\fP option
+.sp
+Provide all output in XML format.
+.INDENT 0.0
+.INDENT 3.5
+.IP "Deprecated"
+.sp
+This option is deprecated.  Please use \fB\-\-output\fP\&.
+.UNINDENT
+.UNINDENT
+.SH EXIT STATUS
+.sp
+Description of the various exit statuses of this command.
+.sp
+\fBSEE ALSO:\fP
+.INDENT 0.0
+.INDENT 3.5
+\fI\%prte(1)\fP
+.UNINDENT
+.UNINDENT
+.SH COPYRIGHT
+2003-2023, The PRRTE Community
+.\" Generated by docutils manpage writer.
+.
