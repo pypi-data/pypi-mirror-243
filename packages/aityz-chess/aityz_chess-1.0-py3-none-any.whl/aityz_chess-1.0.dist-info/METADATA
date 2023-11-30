@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: aityz-chess
+Version: 1.0
+Home-page: https://github.com/Aityz/Chess
+License: MIT
+Requires-Python: >=3.6
+Requires-Dist: chess
+Requires-Dist: matplotlib
+Requires-Dist: requests
+Requires-Dist: stockfish
+
