@@ -1,0 +1,25 @@
+# Environment variables
+.env
+.env-backup
+
+# CodeMonkeys generated temp files
+/stor/temp/*
+
+# Logs
+/stor/logs/*
+
+# Python artifacts
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# pytest artifacts
+.pytest_cache/
+
+# PyCharm artifacts
+/.idea/
+/venv/
+
+# VS Code artifacts
+.vscode/*
