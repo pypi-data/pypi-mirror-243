@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: quality-master
+Version: 23.11.30
+Summary: Quality-Master is a tool that allows you to check if your commit will degrade the code quality in the master branch or not
+Home-page: http://github.com/8tm/quality-master
+Author: Tadeusz Miszczyk
+Author-email: 42252259+8tm@users.noreply.github.com
+Requires-Python: >=3.8.0
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: Unix
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.7
+Requires-Dist: pylint (>=3.0.2,<4.0.0)
+Project-URL: Documentation, https://test.pypi.org/project/quality-master
+Project-URL: Repository, http://github.com/8tm/quality-master
+Description-Content-Type: text/markdown
+
+# Quality-Master
+
+Quality-Master is a tool that allows you to check if your commit will degrade the code quality in the master branch.
+
+
