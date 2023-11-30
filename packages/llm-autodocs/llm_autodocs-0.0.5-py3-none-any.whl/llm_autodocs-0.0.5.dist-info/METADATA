@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: llm-autodocs
+Version: 0.0.5
+Summary: llm-autodocs 🧞: Automatically generate docstrings for your codebase using LLMs.
+Home-page: https://github.com/jerpint/llm-autodocs
+License: MIT
+Author: Jeremy Pinto
+Author-email: jerpint@gmail.com
+Requires-Python: >=3.10,<3.13
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: aiofiles (>=23.2.1,<24.0.0)
+Requires-Dist: openai (>=1.1.0)
+Project-URL: Repository, https://github.com/jerpint/llm-autodocs
+Description-Content-Type: text/markdown
+
+# llm-autodocs
+Generate docstrings automagically using LLMs
+
+## Quickstart
+
+```
+pip install llm-autodocs
+autodocs --directory .
+```
+

@@ -1,0 +1,3 @@
+[console_scripts]
+autodocs=src.cli:main
+
