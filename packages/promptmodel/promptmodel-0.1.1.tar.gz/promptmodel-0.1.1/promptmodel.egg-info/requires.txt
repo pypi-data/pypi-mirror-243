@@ -1,0 +1,14 @@
+InquirerPy
+cryptography
+httpx[http2]
+litellm>=1.7.1
+nest-asyncio
+peewee
+pydantic>=2.4.2
+python-dotenv
+pyyaml
+readerwriterlock
+termcolor
+typer[all]
+watchdog
+websockets
