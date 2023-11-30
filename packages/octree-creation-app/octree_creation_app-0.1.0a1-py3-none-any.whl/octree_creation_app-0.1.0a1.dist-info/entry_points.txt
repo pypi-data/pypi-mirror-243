@@ -1,0 +1,3 @@
+[console_scripts]
+my_app_hello=octree_creation_app.commands.hello
+
