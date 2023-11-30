@@ -1,0 +1,3 @@
+[console_scripts]
+dysh = dysh.shell:main
+fdr = dysh.util.files:main_cli
