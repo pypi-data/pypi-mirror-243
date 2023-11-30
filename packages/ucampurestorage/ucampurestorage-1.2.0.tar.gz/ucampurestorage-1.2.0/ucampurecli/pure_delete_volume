@@ -1,0 +1,110 @@
+#!/bin/bash
+
+os_level=`cat /etc/os-release |grep REDHAT_SUPPORT_PRODUCT_VERSION |awk -F= '{print $2}' |sed s/\"//g |awk -F. '{print $1}'`
+python38="/opt/rh/rh-python38"
+if [[ "$os_level" == 7 ]]
+then
+  if [[ -d  "$python38" ]]
+  then
+    ucampurestorage="/opt/rh/rh-python38/root/usr/local/bin/ucampurestorage"
+  else
+    echo "Python 3.8 is not installed as per the recommendatations"
+  fi
+else
+ucampurestorage="/usr/local/bin/ucampurestorage"
+fi
+
+echo "Invoked with: $0 $@"
+echo "My PID is $$"
+
+###################################################################
+# Purpose: usage information
+###################################################################
+function usage()
+{
+cat << EOF
+usage: $0 options
+
+This script deletes/destroys (sends to the "recycle bin") a Pure storage volume.
+
+Restrictions for use:
+  * The volume must be a Pure storage volume
+  * The volume must be unmapped
+
+OPTIONS:
+  -h                          Show this message
+  -n volume_name              Name of the volume to be destroyed
+  -w volume_wwn               WWN of the volume to be destroyed
+  -k /path/to/secrets.json    Secrets file containing URL and credentials to access the Pure storage
+
+E.g.
+  1.  $0 -n TEST123 -k /path/to/secrets.json
+  2.  $0 -w 3624a9170a99a32b3267c47150005fa7a -k /path/to/secrets.json
+
+NB.
+1. /path/to/secrets.json must be in the following format:
+{
+  "client_id": "pure_api_client_id",
+  "key_id": "pure_api_key_id",
+  "client_name": "pure_api_client_name",
+  "storage": "purestorage.cam.ac.uk",
+  "user": "pureuser",
+  "password": "purepassword",
+  "keyfile": "private.pem"
+}
+
+2. ucampurestorage must be installed and located under /usr/local/bin/
+EOF
+}
+
+###################################################################
+# Parse the args
+###################################################################
+
+while getopts "hn:w:k:" opt
+do
+  case $opt in
+    h)
+      usage
+      exit
+      ;;
+    n)
+      name=$OPTARG
+     ;;
+    w)
+      wwn=$OPTARG
+     ;;
+    k)
+      secrets=$OPTARG
+     ;;
+    ?)
+      usage
+      exit
+      ;;
+  esac
+done
+
+# check required arguments
+if [[ ( "$name" && "$wwn" ) || ( -z "$name" && -z "$wwn" ) || -z "$secrets" ]]
+then
+   usage
+   exit
+fi
+
+# Call ucampurestorage package
+if [[ "$name" ]]
+then
+result=$($ucampurestorage --file $secrets volume delete --name $name -nop)
+elif [[ "$wwn" ]]
+then
+result=$($ucampurestorage --file $secrets volume delete --wwn $wwn -nop)
+fi
+
+if [[ $result == *"[Command succeeded - Returns True]"* ]]
+then
+    echo "Command succeeded."
+    exit 0
+else
+  echo "Command failed. Please check the ucampurestorage log file in /var/log/ucampurestorage/."
+  exit 1
+fi

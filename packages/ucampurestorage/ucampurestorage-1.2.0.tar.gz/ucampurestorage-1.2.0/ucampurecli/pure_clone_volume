@@ -1,0 +1,129 @@
+#!/bin/bash
+
+os_level=`cat /etc/os-release |grep REDHAT_SUPPORT_PRODUCT_VERSION |awk -F= '{print $2}' |sed s/\"//g |awk -F. '{print $1}'`
+python38="/opt/rh/rh-python38"
+if [[ "$os_level" == 7 ]]
+then
+  if [[ -d  "$python38" ]]
+  then
+    ucampurestorage="/opt/rh/rh-python38/root/usr/local/bin/ucampurestorage"
+  else
+    echo "Python 3.8 is not installed as per the recommendatations"
+  fi
+else
+ucampurestorage="/usr/local/bin/ucampurestorage"
+fi
+
+echo "Invoked with: $0 $@"
+echo "My PID is $$"
+
+###################################################################
+# Purpose: usage information
+###################################################################
+function usage()
+{
+cat << EOF
+usage: $0 options
+
+This script creates a clone from an existing Pure storage volume.
+The clone will be mapped to the local server and mounted on the specified mount point.
+
+Restrictions for use:
+  * The server must be connected to the Pure storage containing the source volume
+  * The source volume must exist
+  * The clone's mount point will be created if it doesn't exist
+
+OPTIONS:
+  -h                          Show this message
+  -n clone_volume_name        Name of the new clone volume
+  -s souce_volume_name        Name of the source volume from which the clone volume
+                              will be created
+  -w source_volume_wwn        WWN of the source volume from which the clone volume
+                              will be created
+  -p /path/to/mountpoint      Mount point of the newly cloned volume
+  -k /path/to/secrets.json    Secrets file containing URL and credentials to access
+                              the Pure storage
+
+E.g.
+1.  $0 -n clone_name -s source_name -p /t10 -k /path/to/secrets.json
+2.  $0 -n clone_name -w 3624a9170a99a32b3267c47150005fa7a -p /t10 -k /path/to/secrets.json
+
+NB.
+1. /path/to/secrets.json must be in the following format:
+{
+  "client_id": "pure_api_client_id",
+  "key_id": "pure_api_key_id",
+  "client_name": "pure_api_client_name",
+  "storage": "purestorage.cam.ac.uk",
+  "user": "pureuser",
+  "password": "purepassword",
+  "keyfile": "private.pem"
+}
+
+2. ucampurestorage must be installed and located under /usr/local/bin/
+EOF
+}
+###################################################################
+# Parse the args
+###################################################################
+
+while getopts "h:n:s:w:p:k:" opt
+do
+  case $opt in
+    h)
+      usage
+      exit
+      ;;
+    n)
+      clone_name=$OPTARG
+      ;;
+    s)
+      volume_name=$OPTARG
+     ;;
+    w)
+      source_wwn=$OPTARG
+     ;;
+    p)
+      t_mount_point=$OPTARG
+      ;;
+    k)
+      secrets=$OPTARG
+     ;;
+    ?)
+      usage
+      exit
+      ;;
+  esac
+done
+
+# check required arguments
+if [[ ( -z "$clone_name") || ( -z "$volume_name"  &&  -z "$source_wwn" )|| ( "$volume_name"  &&  "$source_wwn" ) || -z "$secrets" ]]
+then
+   usage
+   exit
+fi
+
+# Call ucampurestorage package
+
+if [ -z "$t_mount_point" ] && [ -z "$source_wwn" ]
+then
+  result=$($ucampurestorage --record_config True --file $secrets volume clone --name $clone_name --srcvol $volume_name )
+elif [ -z "$t_mount_point" ] && [ -z "$volume_name" ]
+then
+  result=$($ucampurestorage --record_config True --file $secrets volume clone --name $clone_name --srcwwn $source_wwn )
+elif [ ! -z "$t_mount_point" ] && [ -z "$volume_name" ]
+then
+  result=$($ucampurestorage --record_config True --file $secrets volume clone --name $clone_name --srcwwn $source_wwn --target_mp $t_mount_point)
+elif [ ! -z "$t_mount_point" ] && [ -z "$source_wwn" ]
+then
+  result=$($ucampurestorage --record_config True --file $secrets volume clone --name $clone_name --srcvol $volume_name --target_mp $t_mount_point)
+fi
+
+if [[ $result == *"[Command succeeded - Returns True]"* ]]
+then
+    echo "Command succeeded."
+    exit 0
+else
+    echo "Command failed. Please check the ucampurestorage log file in /var/log/ucampurestorage/."
+    exit 1
+fi
