@@ -1,0 +1,25 @@
+{
+  "language": "bg",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "<what_is> <temp> [е] [<area>]",
+            "<what_is> (топло|горещо|студено|хладно) [е] [<area>]",
+            "(топло|горещо|студено|хладно) ли [е] [<area>]",
+            "<area> <temp>",
+            "<temp> <area>"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state }} градуса"
+      }
+    }
+  }
+}

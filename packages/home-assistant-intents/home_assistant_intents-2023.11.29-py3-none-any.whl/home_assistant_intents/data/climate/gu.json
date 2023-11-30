@@ -1,0 +1,10 @@
+{
+  "language": "gu",
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state }} degrees"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "language": "nb",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "hva er temperatur[en] [<i_på> <område>]",
+            "hvor <kaldt_varmt> er <område>",
+            "hvor <kaldt_varmt> er det [<i_på> <område>]",
+            "er det <kaldt_varmt> [<i_på> <område>]",
+            "hva er <område> temperatur"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state_attr(state.entity_id, 'current_temperature') }}"
+      }
+    }
+  }
+}

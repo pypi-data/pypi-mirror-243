@@ -1,0 +1,28 @@
+{
+  "language": "sl",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "kakšna je <temp> [[v|na] <area>]",
+            "ali je (toplo|hladno|vroče) [[v|na] <area>]",
+            "<temp> <area>",
+            "koliko stopinj je [[v|na] <area>]",
+            "povej mi <temp> [[v|na] <area>]",
+            "kakšna je [<area>] temperatura",
+            "kakšna je [<area>] <temp>",
+            "na koliko [stopinj] je [nastavljena] <temp> [[v|na] <area>]"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{% set temperature = state_attr(state.entity_id, 'current_temperature') %}\n{% set temperature_abs = temperature | float | abs %}\n\n{% if temperature_abs == 1 %}\n    {{ temperature }} stopinja\n{% elif temperature == 0 or temperature | float % 1 != 0 or temperature | float % 100 | abs < 20 %}\n    {{ temperature }} stopinje\n{% else %}\n    {{ temperature }} stopinj\n    {% if temperature | float % 1 != 0 %}\n        {% set decimal_part = temperature | string | regex_replace('\\d+\\.', '') %}\n        {% if decimal_part != '1' %}\n            cela {{ decimal_part }} stopinje\n        {% else %}\n            cela {{ decimal_part }} stopinja\n        {% endif %}\n    {% endif %}\n{% endif %}\n"
+      }
+    }
+  }
+}

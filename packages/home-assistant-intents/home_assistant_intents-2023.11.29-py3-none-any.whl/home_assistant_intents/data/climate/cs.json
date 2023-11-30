@@ -1,0 +1,25 @@
+{
+  "language": "cs",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "Jaká [je] teplota [je] [<area>]",
+            "Jaká je [<area>] teplota",
+            "Kolik [je] [stupňů] [je] [<area>] [stupňů]",
+            "jaká je [<area>] teplota",
+            "jak teplo je <area>"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state_attr(state.entity_id, 'current_temperature') }}"
+      }
+    }
+  }
+}

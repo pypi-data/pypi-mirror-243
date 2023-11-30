@@ -1,0 +1,10 @@
+{
+  "language": "mn",
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state }} хэм"
+      }
+    }
+  }
+}

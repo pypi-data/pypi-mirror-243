@@ -1,0 +1,29 @@
+{
+  "language": "pt",
+  "intents": {
+    "HassShoppingListAddItem": {
+      "data": [
+        {
+          "sentences": [
+            "<adicionar> <item> à <my_list>",
+            "(<colocar>|põe) <item> na <my_list>"
+          ],
+          "response": "item_added",
+          "expansion_rules": {
+            "my_list": "[minha ]lista[ de compras]",
+            "item": "{shopping_list_item:item}",
+            "adicionar": "adicione|adiciona[r]",
+            "colocar": "coloque|coloca[r]"
+          }
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassShoppingListAddItem": {
+        "item_added": "Adicionei {{ slots.item }}"
+      }
+    }
+  }
+}

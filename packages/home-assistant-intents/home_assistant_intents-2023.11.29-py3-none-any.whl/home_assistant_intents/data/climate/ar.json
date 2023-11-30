@@ -1,0 +1,24 @@
+{
+  "language": "ar",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "<what_is> <temp> [<in> <area>]",
+            "<what_is> (حارة | باردة | دافئة | لطيفة) [<temp>] [[<in>] <area>]",
+            "<what_is> <temp> <area>",
+            "<temp> <area>"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state_attr(state.entity_id, 'current_temperature') }}"
+      }
+    }
+  }
+}

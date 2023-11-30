@@ -1,0 +1,24 @@
+{
+  "language": "pl",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "(<what_is>|<how_many_is>) <temp> [<area>]",
+            "czy jest (ciepło|gorąco|zimno|chłodno) [<area>]",
+            "jak [bardzo] (wysoka|niska) [jest] <temp> [<area>]",
+            "jak [bardzo] (ciepło|gorąco|zimno|chłodno) [jest] [<area>]"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "Temperatura wynosi {{ state.state }} {{ 'stopień' if state.state | int | abs == 1 else 'stopnie' if state.state | int | abs in [2,3,4] else 'stopnie' if (state.state|string)[-1] | int | abs in [2,3,4] else 'stopni' }}"
+      }
+    }
+  }
+}

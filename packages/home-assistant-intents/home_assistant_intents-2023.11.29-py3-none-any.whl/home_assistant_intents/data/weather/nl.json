@@ -1,0 +1,25 @@
+{
+  "language": "nl",
+  "intents": {
+    "HassGetWeather": {
+      "data": [
+        {
+          "sentences": [
+            "(wat|hoe) is (het weer|de weersvoorspelling) [buiten]",
+            "(wat|hoe) is ((het weer|de weersvoorspelling);[( voor| in| volgens) <name>])"
+          ],
+          "requires_context": {
+            "domain": "weather"
+          }
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassGetWeather": {
+        "default": "{% set weather_condition = {\n  'clear': 'en helder',\n  'clear-night': 'en helder',\n  'cloudy': 'en bewolkt',\n  'exceptional': 'en extreem',\n  'fog': 'met mist',\n  'hail': 'met hagel',\n  'lightning': 'met onweer',\n  'lightning-rainy': 'met onweer en regen',\n  'partlycloudy': 'en gedeeltelijk bewolkt',\n  'pouring': 'met stortregen',\n  'rainy': 'met regen',\n  'snowy': 'met sneeuw',\n  'snowy-rainy': 'met sneeuw en regen',\n  'sunny': 'en zonnig',\n  'windy': 'met wind',\n  'windy-variant': 'met wind en bewolking'\n} %} {{ state.attributes.get('temperature') }} {{ state.attributes.get('temperature_unit') }} {{ weather_condition.get((state.state | string).lower(), \"\") }}\n"
+      }
+    }
+  }
+}

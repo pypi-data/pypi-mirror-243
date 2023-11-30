@@ -1,0 +1,10 @@
+{
+  "language": "bn",
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state }} degrees"
+      }
+    }
+  }
+}
