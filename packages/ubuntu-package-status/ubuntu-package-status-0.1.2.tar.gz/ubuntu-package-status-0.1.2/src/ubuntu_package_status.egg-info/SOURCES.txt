@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+src/requirements.txt
+src/ubuntu_package_status/__init__.py
+src/ubuntu_package_status/dist-config.yaml
+src/ubuntu_package_status/gke-kernel-config.yaml
+src/ubuntu_package_status/ubuntu_package_status.py
+src/ubuntu_package_status.egg-info/PKG-INFO
+src/ubuntu_package_status.egg-info/SOURCES.txt
+src/ubuntu_package_status.egg-info/dependency_links.txt
+src/ubuntu_package_status.egg-info/entry_points.txt
+src/ubuntu_package_status.egg-info/requires.txt
+src/ubuntu_package_status.egg-info/top_level.txt
