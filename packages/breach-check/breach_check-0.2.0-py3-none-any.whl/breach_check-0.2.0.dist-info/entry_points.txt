@@ -1,0 +1,3 @@
+[console_scripts]
+breach-check=breach_check.__main__:main
+
