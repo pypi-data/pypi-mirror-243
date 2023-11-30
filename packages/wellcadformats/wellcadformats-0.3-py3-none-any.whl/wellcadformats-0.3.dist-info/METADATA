@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: wellcadformats
+Version: 0.3
+Summary: Read/write WellCAD's ASCII data file formats
+Author-email: "Kent Inverarity (SA Govt)" <kent.inverarity@sa.gov.au>
+Project-URL: Homepage, https://github.com/dew-waterscience/wellcadformats
+Project-URL: Bug Tracker, https://github.com/dew-waterscience/wellcadformats/issues
+Keywords: science,geophysics
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Customer Service
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Other Audience
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Topic :: Scientific/Engineering
+Classifier: Topic :: System :: Filesystems
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: numpy
+
+# wellcadformats
+
+Read in export file formats produced by [Advanced Logic Technology (ALT)](http://www.alt.lu/default.htm)'s [WellCAD](http://www.alt.lu/software.htm) software, and provides a few utility functions for the imaging/waveform data formats.
+
+ASCII export formats supported so far:
+
+- .waw - well logs with a single floating point number per depth
+- .waf - full-waveform sonic logs - vector array of floating point numbers per depth
+- .wai - image log - vector array of integers per depth
+
+The authors of this package have no affiliation with ALT.
