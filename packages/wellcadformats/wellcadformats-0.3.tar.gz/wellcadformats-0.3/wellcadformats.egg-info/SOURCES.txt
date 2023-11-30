@@ -1,0 +1,19 @@
+.gitignore
+README.md
+pyproject.toml
+.github/workflows/python-publish.yml
+examples/Example - full-waveform sonic log - WAF.ipynb
+examples/Example well log WAW file.ipynb
+examples/full_waveform_sonic.waf
+examples/well_log.waw
+wellcadformats/__init__.py
+wellcadformats/arraydata.py
+wellcadformats/curvedata.py
+wellcadformats/sonicgui.py
+wellcadformats/wa.py
+wellcadformats.egg-info/PKG-INFO
+wellcadformats.egg-info/SOURCES.txt
+wellcadformats.egg-info/dependency_links.txt
+wellcadformats.egg-info/entry_points.txt
+wellcadformats.egg-info/requires.txt
+wellcadformats.egg-info/top_level.txt
