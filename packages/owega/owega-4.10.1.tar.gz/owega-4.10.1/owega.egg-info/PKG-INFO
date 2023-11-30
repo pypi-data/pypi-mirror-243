@@ -1,0 +1,264 @@
+Metadata-Version: 2.1
+Name: owega
+Version: 4.10.1
+Summary: A command-line interface for conversing with GPT models (from OpenAI)
+Home-page: https://git.pyrokinesis.fr/darkgeem/owega
+Author: darkgeem
+Author-email: darkgeem@pyrokinesis.fr
+License: WTFPL
+Project-URL: Source, https://git.pyrokinesis.fr/darkgeem/owega
+Project-URL: Support, https://discord.gg/KdRmyRrA48
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Environment :: Console
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: Freely Distributable
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: File Formats :: JSON
+Classifier: Topic :: Multimedia :: Sound/Audio :: Speech
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: openai>=1.1.1
+Requires-Dist: prompt_toolkit>=3.0
+Requires-Dist: requests>=2.0
+Requires-Dist: beautifulsoup4>=4.0
+Requires-Dist: lxml>=4.0
+Requires-Dist: tiktoken>=0.5.1
+Requires-Dist: json-five>=1.1.0
+Requires-Dist: pygame>=2.5
+Requires-Dist: python-editor>=1.0
+
+# ΦωΦ (pronounced owega)
+ΦωΦ is a command-line interface for conversing with GPT models (from OpenAI)
+
+
+## ΦωΦ's homepage
+You can check on the source code [on its gitlab page](https://git.pyrokinesis.fr/darkgeem/owega)!
+
+Also, here's the [discord support server](https://discord.gg/KdRmyRrA48), you
+can even get pinged on updates, if you want!
+
+
+## Features
+ΦωΦ has quite a lot of features!
+
+These include:
+- Saving/loading conversation to disk as json files.
+- Autocompletion for commands, file search, etc...
+- History management.
+- Temp files to save every message, so that you can get back the conversation
+  if you ever have to force-quit ΦωΦ.
+- Config file to keep settings like api key, preferred model, command execution
+  status...
+- Command execution: if enabled, allows ΦωΦ to execute commands on your system
+  and interpret the results.
+- File creation: if commands are enabled, also allows ΦωΦ to create files on
+  your system and fill them with desired contents.
+- GET requests: allows ΦωΦ to get informations from online pages, through
+  http(s) GET requests.
+- Long-term memory: allows for ΦωΦ to store memories, which will not be deleted
+  as the older messages are, to keep requests under the available tokens per
+  request.
+- Context management: allows to set the AI context prompt (example: "you are a
+  cat. cats don't talk. you can only communicate by meowing, purring, and
+  actions between asterisks" will transform ΦωΦ into a cat!!)
+- Meow.
+- Meow meow.
+- MEOW MEOW MEOW MEOW!!!!
+
+
+## Installation
+Just do ``pip install --upgrade owega`` to get the latest version
+
+
+## Command-line arguments
+Do you really need me to do ``owega --help`` for you?
+
+```
+usage: owega [-h] [-d] [-c] [-l] [-v] [-f CONFIG_FILE] [-i HISTORY]
+                   [-a ASK] [-o OUTPUT]
+
+Owega main application
+
+options:
+  -h, --help            show this help message and exit
+  -d, --debug           Enable debug output
+  -c, --changelog       Display changelog and exit
+  -l, --license         Display license and exit
+  -v, --version         Display version and exit
+  -f CONFIG_FILE, --config-file CONFIG_FILE
+                        Specify path to config file
+  -i HISTORY, --history HISTORY
+                        Specify the history file to import
+  -a ASK, --ask ASK     Asks a question directly from the command line
+  -o OUTPUT, --output OUTPUT
+                        Saves the history to the specified file
+```
+
+## Showcase
+See ΦωΦ in action!
+
+[![asciicast](https://asciinema.org/a/613143.png)](https://asciinema.org/a/613143)
+
+
+## CHANGELOG: 
+```
+OWEGA v4.10.1 CHANGELOG:
+
+
+2.0.0: WTFPL license
+2.0.1: added genconf command
+
+2.1.0: added file_input command
+2.1.1: added file_input in help command
+
+2.2.0: added context command to change GPT's definition
+2.2.1: added license and version info in command line (-l and -v)
+2.2.2: stripped user input (remove trailing spaces/tabs/newlines)
+2.2.3: genconf now saves the current conf instead of a blank template
+2.2.4: automatic temp file save
+
+
+3.0.0: changed conversation save from pickle to json
+3.0.1: added changelog
+3.0.2: added conversion script
+3.0.3: quitting with EOF will now discard the temp file (^C will still keep it)
+
+3.1.0: BMU (Better Module Update)!
+       modified MSGS:
+         - added last_question()
+         - changed last_answer()
+       modified ask() to allow for blank prompt,
+         which will reuse the last question
+3.1.1: now handling the service unavailable error
+
+3.2.0: FUNCTION CALLING UPDATE:
+       added function calling, now openchat is able to run commands
+       on your computer, as long as you allow it to
+       (you will be prompted on each time it tries to run a command)
+       !!! only available on -0613 models (gpt-3.5-turbo-0613, gpt-4-0613) !!!
+       will be available on all gpt models from 2023-06-27, with the latest
+       openchat 3.2.X patch
+3.2.1: fixed a space missing in openchat's function calling
+3.2.2: fixed openchat sometimes not detecting the command has been ran
+3.2.3: added create_file as a function OpenAI can call
+3.2.4: fixed variables and ~ not expanding when executing a command
+3.2.4-fix1: fixed a missing parenthesis
+3.2.5: now handling non-zero exit status when running a command
+3.2.6: reversed the changelog order, fixed function calling chains
+3.2.7: fixed json sometimes not correctly formatted when writing multiple lines
+       files
+3.2.8: fixed command execution stderr handling
+3.2.9: changed execute's subprocess call to shell=True, now handling pipes...
+3.2.10: added a command line option for specifying the config file
+3.2.11: now, the default gpt models implement function calling, no need for
+        0613 anymore
+
+3.3.0: implemented prompt_toolkit, for better prompt handling, newlines with
+       control+n
+3.3.1: added tokens command, to change the amount of requested tokens
+
+3.4.0: CLI update:
+         - added command-line options to change input/output files
+         - added command-line option to ask a question from command line
+
+3.5.0: WEB update: now added a flask app, switched repos to its own
+3.5.1: added "commands" command, to enable/disable command execution
+3.5.2: added infos on bottom bar
+
+3.6.0: PREFIX update:
+         - added prefixes for command (changeable in the config)
+         - reformatted most of the main loop code to split it in handlers
+
+3.7.0: DIRECT CONTEXT COMMANDS update:
+         - now, you can use commands in one line, instead of waiting for prompt
+             example: /save hello.json
+             (instead of typing /save, then enter, then typing hello.json
+              works on all commands, the only specific case being file_input.)
+         - file_input as a direct command takes only one argument: the file
+             to load (e.g. /load ./src/main.c). The pre-prompt will be asked
+             directly instead of having to do it in three steps
+               (/load, then filename, then pre-prompt)
+         - also, fixed /tokens splitting the prompt instead of the user input
+
+3.8.0: WEB download update
+         - added a get_page function for openchat to get pages without the need
+             for curl
+3.8.1: added a debug option for devs
+
+3.9.0: Windows update
+         - Do I really need to explain that update?
+3.9.1: fixed an issue when the openai api key does not exist anywhere
+3.9.2: changed the temp file creation method for non-unix systems
+3.9.3: fixed api key not saving with /genconf
+3.9.4: changed default values
+
+
+4.0.0: LTS: Long-Term-Souvenirs
+       The AI now have long-term memory!!!
+       Huge update: full refactoring, the code is now readable!
+       Also, the name is now Owega (it's written with unicode characters though)
+       You can see the new code here: https://git.pyrokinesis.fr/darkgeem/owega
+       Also, the project is now available on PyPI so, just go pip install owega!
+4.0.1: oops, forgot to change the setup.py and now I messed up my 4.0.0! >:C
+4.0.2: Fixed a typo where owega wouldn't send the memory
+4.0.3: Added README to pypi page
+4.0.4: Fixed context not working correctly
+
+4.1.0: Changed the getpage function to strip the text
+4.1.1: Removed a warning due to beautifulsoup4
+
+4.2.0: VERY IMPORTANT UPDATE: NOW COMPATIBLE WITH OPENAI 1.1.1
+
+4.3.0: Added token estimation
+4.3.1: Added time taken per request in debug output
+4.3.2: Fixed 4.3.1 :p
+4.3.3: Changed time taken to only show up to ms
+4.3.4: Re-added server unavailable error handling
+4.3.5: Added exception handling for token estimation
+4.3.6: Re-added handling of invalid request, mostly for too large requests
+
+4.4.0: Changed from json to json5 (json-five)
+
+4.5.0: Added support for organization specification
+4.5.1: fixed owega bash script for systems that still have PYTHON 2 AS DEFAULT
+       WTF GUYS GET OVER IT, IT'S BEEN DEPRECATED SINCE 2020
+4.5.2: Now removes temp files even if ctrl+c if they are empty
+4.5.3: Fixed files being removed everytime
+
+4.6.0: Fine tweaking update
+       - added command for changing the temperature
+       - added top_p command and parameter
+       - added frequency penalty command and parameter
+       - added presence penalty command and parameter
+       - fixed /quit and /exit not working
+       - fixed tab completion
+4.6.1: Added support for overwriting config file
+4.6.2: Oops, forgot to check help, help should be fixed now
+
+4.7.0: Added TTS (using pygame)
+4.7.1: Now prints message before reading TTS
+       Also, removes the pygame init message
+4.7.2: Fixed a bug where the output tts file could not be set to mp3
+         (it was previously checking for mp4 extension, lol)
+4.7.3: Added ctrl+C handling when playing TTS to stop speaking.
+
+4.8.0: Edit update
+       - you can now edit the history from the TUI
+       - on a side note, I also improved completion for files
+           and numeric values (temperature, top_p, penalties...)
+4.8.1: Oops, forgot to add requirements to setup.py
+       Automated the process, should be good now
+4.8.2: - added infos to pypi page
+       - changed to automatic script generation (setup.py)
+
+4.9.0: - added system command
+
+4.10.0: - added system souvenirs (add_sysmem/del_sysmem)
+4.10.1: - added support server in readme and pypi
+```
