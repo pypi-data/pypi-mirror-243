@@ -1,0 +1,7 @@
+[console_scripts]
+cdl-alltests = cdl.tests.all_tests:run
+
+[gui_scripts]
+cdl = cdl.app:run
+cdl-demo = cdl.tests.demo:run
+cdl-tests = cdl.tests:run
