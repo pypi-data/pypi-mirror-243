@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "nmea-gps-logging"
+version = "0.1.0a1"
+dependencies = [
+  "pyserial",
+]
+authors = [
+  { name="Fletcher Thompson", email="fletho@dtu.dk" },
+]
+maintainers = [
+  { name="Fletcher Thompson", email="fletho@dtu.dk" },
+]
+description = "A python library for reading USB / serial GPS NMEA0183 devices."
+readme = "README.MD"
+license = {file = "LICENSE"}
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+[project.scripts]
+nmea-gps-gui = "nmea_gps_logging.gui:main"
+[project.urls]
+"Homepage" = "https://github.com/FletcherFT/nmea-gps-logging"
+"Bug Tracker" = "https://github.com/FletcherFT/nmea-gps-logging/issues"
