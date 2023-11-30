@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=40.8.0", "wheel", "setuptools_scm[toml]>=6.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mtmaod"
+description = "imutum's packages for aerosol optical depth retrieval"
+readme = "README.md"
+license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.6",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+]
+requires-python = ">=3.6"
+dependencies = [
+    "matplotlib>=3.7",
+    "numpy",
+    "scipy>=1.10",
+    "scikit-learn",
+    "swifter",
+]
+dynamic = ["version"]
+
+[tool.setuptools_scm]
