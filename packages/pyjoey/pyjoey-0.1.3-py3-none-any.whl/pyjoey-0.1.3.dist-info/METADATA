@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: pyjoey
+Version: 0.1.3
+Summary: Joey
+Author: Tony Wang
+Author-email: zihengw@stanford.edu
+License-File: LICENSE
+Requires-Dist: pyarrow >=7.0.0
+Requires-Dist: sqlglot >=17.8.0
+Requires-Dist: tqdm >=4.65.0
+Requires-Dist: polars >=0.18.0
+
+
+Event analytics. Very fast. Will eventually be merged into Quokka
