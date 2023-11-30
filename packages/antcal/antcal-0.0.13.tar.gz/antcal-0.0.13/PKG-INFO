@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: antcal
+Version: 0.0.13
+Summary: AntCal: Antenna Calculator.
+Keywords: antenna,DRA,simulation
+Author-email: Atlanswer <atlanswer@gmail.com>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: C++
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Typing :: Typed
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Intended Audience :: Science/Research
+Requires-Dist: pyaedt
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: loguru
+Requires-Dist: rich
+Requires-Dist: colorama
+Requires-Dist: orjson
+Requires-Dist: flit ; extra == "dev"
+Requires-Dist: conda-lock ; extra == "dev"
+Requires-Dist: ruff ; extra == "dev"
+Requires-Dist: ipython ; extra == "dev"
+Requires-Dist: ipykernel ; extra == "dev"
+Requires-Dist: sphinx ; extra == "docs"
+Requires-Dist: myst-parser ; extra == "docs"
+Requires-Dist: sphinx-rtd-theme ; extra == "docs"
+Requires-Dist: sphinx-autodoc2 ; extra == "docs"
+Requires-Dist: sphinx-copybutton ; extra == "docs"
+Requires-Dist: sphinx-autobuild ; extra == "docs"
+Requires-Dist: ipywidgets ; extra == "vis"
+Requires-Dist: nbformat ; extra == "vis"
+Requires-Dist: python-kaleido ; extra == "vis"
+Project-URL: Documentation, https://github.com/atlanswer/AntCal#readme
+Project-URL: Homepage, https://github.com/atlanswer/AntCal
+Project-URL: Issues, https://github.com/atlanswer/AntCal/issue
+Project-URL: Repository, https://github.com/atlanswer/AntCal.git
+Provides-Extra: dev
+Provides-Extra: docs
+Provides-Extra: vis
+
+# AntCal
+
+[![Documentation Status](https://readthedocs.org/projects/antcal/badge/?version=latest)](https://antcal.readthedocs.io/en/latest/?badge=latest) [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch) [![PyAnsys](https://img.shields.io/badge/Py-Ansys-ffc107.svg?logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAABDklEQVQ4jWNgoDfg5mD8vE7q/3bpVyskbW0sMRUwofHD7Dh5OBkZGBgW7/3W2tZpa2tLQEOyOzeEsfumlK2tbVpaGj4N6jIs1lpsDAwMJ278sveMY2BgCA0NFRISwqkhyQ1q/Nyd3zg4OBgYGNjZ2ePi4rB5loGBhZnhxTLJ/9ulv26Q4uVk1NXV/f///////69du4Zdg78lx//t0v+3S88rFISInD59GqIH2esIJ8G9O2/XVwhjzpw5EAam1xkkBJn/bJX+v1365hxxuCAfH9+3b9/+////48cPuNehNsS7cDEzMTAwMMzb+Q2u4dOnT2vWrMHu9ZtzxP9vl/69RVpCkBlZ3N7enoDXBwEAAA+YYitOilMVAAAAAElFTkSuQmCC)](https://aedt.docs.pyansys.com/) [![PyPI](https://img.shields.io/pypi/v/antcal?logo=pypi&logoColor=white)](https://pypi.org/project/antcal/) [![MIT license](https://img.shields.io/pypi/l/antcal)](https://opensource.org/licenses/MIT)
+
+Antenna calculator
+
+## Roadmap
+
+- Included features: [#1](https://github.com/atlanswer/AntCal/issues/1)
+- Implemantation: [#2](https://github.com/atlanswer/AntCal/issues/2)
+
+## Usage
+
+### Python
+
+#### Install
+
+```shell
+pip install antcal
+```
+
+## Build
+
+### Python package
+
+- Restore `conda` environment
+  ```shell
+  conda-lock install --mamba --dev -E vis -E docs -p ./python/venv ./python/conda-lock.yml
+  ```
+- Create lockfile
+  ```shell
+  conda-lock lock --mamba -e vis -e docs -f ./python/pyproject.toml --lockfile ./python/conda-lock.yml
+  ```
+- Build
+  ```shell
+  cd python
+  hatch build
+  ```
+- Publish
+  ```shell
+  cd python
+  hatch publish
+  ```
+
+### C++ package
+
+**Currently in backlog**
+
+C++ implementation is on the branch `cpplib`. A build environment is required. All presets are documented in `CMakePresets.json`.
+
+- Fetch vcpkg
+  ```shell
+  > git submodule update --init --recursive
+  ```
+- Configurate
+  ```shell
+  > cmake --preset <preset>
+  ```
+- Build
+  ```shell
+  > cmake --build --preset <preset>
+  ```
+- Test
+  ```shell
+  > ctest --preset <preset>
+  ```
+
