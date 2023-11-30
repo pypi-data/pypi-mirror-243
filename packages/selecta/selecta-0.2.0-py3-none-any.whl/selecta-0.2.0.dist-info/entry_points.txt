@@ -1,0 +1,3 @@
+[console_scripts]
+selecta = selecta:main
+selecta_add_keybinding = selecta.commands.selecta_add_keybinding:main
