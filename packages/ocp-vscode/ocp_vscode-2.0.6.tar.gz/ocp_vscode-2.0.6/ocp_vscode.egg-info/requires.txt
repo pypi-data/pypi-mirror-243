@@ -1,0 +1,5 @@
+ocp-tessellate<2.1.0,>=2.0.2
+requests
+ipykernel
+orjson
+websockets<11.1,>=11.0
