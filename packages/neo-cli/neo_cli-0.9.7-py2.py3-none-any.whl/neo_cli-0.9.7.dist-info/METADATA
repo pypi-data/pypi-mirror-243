@@ -1,0 +1,134 @@
+Metadata-Version: 2.1
+Name: neo-cli
+Version: 0.9.7
+Summary: A NEO command line tools
+Home-page: https://github.com/BiznetGIO/neo-cli
+Author: BiznetGio
+Author-email: support@biznetgio.com
+License: MIT license
+Keywords: cli
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.6
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: dill ==0.3.6
+Requires-Dist: bitmath ==1.3.3.1
+Requires-Dist: python-neutronclient ==7.8.0
+Requires-Dist: prompt-toolkit ==1.0.18
+Requires-Dist: python-glanceclient ==3.6.0
+Requires-Dist: requests ==2.28.2
+Requires-Dist: paramiko ==2.12.0
+Requires-Dist: tabulate ==0.9.0
+Requires-Dist: keystoneauth1 ==5.1.2
+Requires-Dist: openstacksdk ==1.0.1
+Requires-Dist: python-heatclient ==2.5.1
+Requires-Dist: coloredlogs ==15.0.1
+Requires-Dist: setuptools ==67.2.0
+Requires-Dist: scp ==0.14.5
+Requires-Dist: npyscreen ==4.10.5
+Requires-Dist: docopt ==0.6.2
+Requires-Dist: python-dotenv ==0.21.1
+Requires-Dist: GitPython ==3.1.30
+Requires-Dist: python-keystoneclient ==4.5.0
+Requires-Dist: python-novaclient ==18.2.0
+Requires-Dist: python-cinderclient ==9.2.0
+Requires-Dist: PyYAML ==6.0.1
+Requires-Dist: toml ==0.10.2
+
+Don't let all those templates and commands burden your head. Sit back,
+relax and let :code:`neo-cli` asks what you need.
+
+:code:`neo-cli` lower the barrier of understanding complicated templates,
+memorizing long command and parameters to create your cloud
+infrastructure. :code:`neo-cli` will interactively ask what you need.
+
+In addition, :code:`neo-cli` aims to support diverse cloud platforms in near
+future. So no matter what your cloud platforms is, :code:`neo-cli` will always be
+your friend.
+
+.. end-of-readme-intro
+
+Installation
+------------
+
+.. code-block:: bash
+
+    $ pip install neo-cli
+
+
+Features
+--------
+
+* Support common OpenStack operation:
+  ``creating vm``, ``listing vm, stack, network, floating ip``, and ``removing and
+  updating stacks``.
+* Auto-login for previous account.
+* Support attaching local standard input, output, and error streams to a running machine.
+* Can be used as library for your OpenStack application.
+
+Take the tour
+-------------
+
+List your virtual machine
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    $ neo ls vm
+
+    +-----------+----------+------------+------------+----------+------- ---+--------+--------------------------+----------+
+    | ID        | Name     | Key Pair   | Image      | Flavor   | RAM (GiB) |   vCPU | Addresses                | Status   |
+    +===========+==========+============+============+==========+===========+========+========================+============+
+    | 1bf4d720  | my-vm-1  | vm-key     | CentOS 7.5 | SS2.1    |         2 |      1 | network : default        | ACTIVE   |
+    |           |          |            |            |          |           |        | fixed IP : 192.168.68.5  |          |
+    +-----------+----------+------------+------------+----------+-----------+--------+--------------------------+----------+
+    | 9ca3e7d10 | my-vm-2  | vm-key     | CentOS 7.5 | SS2.1    |         2 |      1 | network : default        | ACTIVE   |
+    |           |          |            |            |          |           |        | fixed IP : 192.168.68.12 |          |
+    +-----------------------------------------------------------------------------------------------------------------------
+
+
+Some info omitted.
+
+Attach local terminal to running machine
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    $ neo attach vm c57a477b-84dc-4ae3-1234-5678
+    2020-04-02 01:22:34 INFO Check your key pairs
+    2020-04-02 01:22:38 INFO Done...
+    2020-04-02 01:22:38 INFO Check username
+    Username : centos
+    Last login: Wed Jul 31 04:52:07 2019 from 123.456.68.101
+    [centos@foo-vm ~]$
+
+Creating stuffs
+^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    $ neo create
+    2020-04-02 01:25:57 ERROR Can't find neo.yml manifest file!
+    Do you want to generate neo.yml manifest?  [y/n]? y
+
+    Select Stack  :
+    - clusters
+    - networks
+    - instances
+    - others
+    Enter your choice :
+
+.. end-of-readme-usage
+
+Project information
+-------------------
+
+* `Documentation <https://neo-cli.readthedocs.io/en/latest/index.html>`_
+* `Contributing <https://neo-cli.readthedocs.io/en/latest/project/contributing.html>`_
+* `Changelog <https://neo-cli.readthedocs.io/en/latest/project/changelog.html>`_
+* `License <https://neo-cli.readthedocs.io/en/latest/project/license.html>`_
