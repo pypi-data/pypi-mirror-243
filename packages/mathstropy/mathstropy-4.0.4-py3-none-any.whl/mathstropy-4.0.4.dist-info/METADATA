@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: mathstropy
+Version: 4.0.4
+Summary: Python library with functions to make learning more efficient
+Home-page: https://github.com/mathstronauts/mathstropy
+Author: Richard Hamilton
+Author-email: richard.ha@mathstronauts.ca
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pygame ==2.5.2
+Requires-Dist: opencv-python-headless ==4.8.1.78
+Requires-Dist: numpy ==1.26.2
+Requires-Dist: pandas ==1.3.5
+Requires-Dist: scikit-learn >=1.3.1
+Provides-Extra: dev
+Requires-Dist: build ; extra == 'dev'
+Requires-Dist: twine ; extra == 'dev'
+
+# python_exp_learning
+This repository contains activities for learning  coding skills in python.
+
+
+# Getting Started
+
+```
+>>> conda env create -f env.yaml
+```
+
+```
+>>> conda activate mathstropy_env_python_310
+```
+
+## For Development
+Windows
+```
+>>> pip install -e .[dev]
+```
+
+Mac
+```
+>>> pip install -e .'[dev]'
+```
+
+## For Non-Development Purposes
+```
+>>> pip install -e
+```
