@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: uom-project
+Version: 0.0.5
+Summary: Repository containing code and and other materials for my undergraduate project on numerical solutions to the Navier-Stokes equations at the University of Manchester.
+Home-page: https://github.com/AugustasMacijauskas/uom-project
+Author: Augustas Macijauskas
+Author-email: august.macijauskas@gmail.com
+License: Apache Software License 2.0
+Keywords: nbdev jupyter notebook python
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.10
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastcore
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: matplotlib
+Requires-Dist: torch
+Requires-Dist: jax
+Requires-Dist: jaxlib
+Requires-Dist: lineax
+Requires-Dist: optimistix
+Provides-Extra: dev
+Requires-Dist: nbdev ; extra == 'dev'
+
+# uom-project
+
+Repository containing code and and other materials for my undergraduate project on numerical solutions to the Navier-Stokes equations at the University of Manchester.
+
+
+# Note
+
+Many of these codes were written abruptly and for one time use only, so it can (and probably will) be hard to read, but (at least most of them) should run smoothly by just executing the cells in the notebooks one after the other.
+
+
+# Useful links
+
+1. Original materials created by the author of the book that I read Edward J. Hinch to supplement the book (and more) can be found [here](http://www.damtp.cam.ac.uk/user/hinch/teaching/CMIFM_Handouts/).
+2. The codes in this repository make heavy use of [SciPy](https://scipy.org/).
