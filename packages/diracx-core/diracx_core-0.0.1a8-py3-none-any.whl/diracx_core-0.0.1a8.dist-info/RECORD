@@ -1,0 +1,17 @@
+diracx/core/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+diracx/core/exceptions.py,sha256=PJemJrn4c7Eb-sC8tA1S3u56-U661zank9iQJZduCV4,1173
+diracx/core/extensions.py,sha256=Yv75LjlLp9ABOO7vEQ6cbaLNS-mGLG4EKM0uwUlz2yI,1380
+diracx/core/models.py,sha256=zcizJp6FR_ecj3kgTdKUJPO-i5l49v4BnTFfsllHmSg,2561
+diracx/core/preferences.py,sha256=fBEwLwi_yfXPwuaRPLJkxe8Jx4gIGsQGKx6F3o6U8Ak,1442
+diracx/core/properties.py,sha256=VlRMzv6XbDqFDol9XfajKuqWcXV_devAmCsKGpDS8Ms,5636
+diracx/core/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+diracx/core/s3.py,sha256=k2ifVgXi3MIY_wTtlPitaoGqh5fjSgsA9Fv54vV-p4E,2219
+diracx/core/settings.py,sha256=pNnNrxWuvs3_dmM5HzBi16_yxMa6tkLvuGyZPwxO2sA,2033
+diracx/core/utils.py,sha256=fWCeg3HerIAtWeg037p44MlyK4nR6LJ8szgCwgG2JJI,1661
+diracx/core/config/__init__.py,sha256=KFV3RYLpqaa8-bTdyDNFCxz6LrVCQTdn3L8KfMspMkA,4338
+diracx/core/config/schema.py,sha256=sMyZHzJIau2rjufPVNDiukYFhiEEHuNjUjnSJlj9w_k,5202
+diracx_core-0.0.1a8.dist-info/METADATA,sha256=eu5LfdSuIGYkA7x24agbXGbwirYUqrQXOCVKJi7YM9I,1018
+diracx_core-0.0.1a8.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+diracx_core-0.0.1a8.dist-info/entry_points.txt,sha256=09HziRi2eyFMt1KbGXpNYJlOBsTmajaKRdDyICuLTH8,52
+diracx_core-0.0.1a8.dist-info/top_level.txt,sha256=vJx10tdRlBX3rF2Psgk5jlwVGZNcL3m_7iQWwgPXt-U,7
+diracx_core-0.0.1a8.dist-info/RECORD,,
