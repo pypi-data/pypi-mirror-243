@@ -1,0 +1,1461 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: turcar\n"
+"Language: tr\n"
+
+#: turcar/workbench.py:355
+msgid "File"
+msgstr "Dosya"
+
+#: turcar/workbench.py:356
+msgid "Edit"
+msgstr "Düzen"
+
+#: turcar/workbench.py:357
+msgid "View"
+msgstr "Görünüm"
+
+#: turcar/running.py:95 turcar/workbench.py:358
+msgid "Run"
+msgstr "Çalıştır"
+
+#: turcar/workbench.py:360
+msgid "Tools"
+msgstr "Araçlar"
+
+#: turcar/plugins/help/__init__.py:68 turcar/workbench.py:361
+msgid "Help"
+msgstr "Yardım"
+
+#: turcar/workbench.py:522
+msgid "Alternative Python 3 interpreter or virtual environment"
+msgstr "Alternatif Python 3 yorumlayıcısı veya sanal ortamı"
+
+#: turcar/workbench.py:530
+msgid "A special virtual environment (deprecated)"
+msgstr "Özel bir sanal ortam (kullanımdan kaldırıldı)"
+
+#: turcar/workbench.py:568
+msgid "Exit"
+msgstr "Çıkış"
+
+#: turcar/workbench.py:595
+msgid "Decrease font size"
+msgstr "Yazı boyutunu küçült"
+
+#: turcar/workbench.py:607
+msgid "Focus editor"
+msgstr "Editöre odaklan"
+
+#: turcar/workbench.py:616
+msgid "Focus shell"
+msgstr "Konsola odaklan"
+
+#: turcar/workbench.py:627
+msgid "Maximize view"
+msgstr "Ekranı kapla"
+
+#: turcar/workbench.py:639
+msgid "Full screen"
+msgstr "Tam ekran"
+
+#: turcar/workbench.py:1250
+msgid "Program arguments"
+msgstr "Program argümanları"
+
+#: turcar/plugins/about.py:25 turcar/plugins/about.py:157
+msgid "About turcar"
+msgstr "turcar Hakkında"
+
+#: turcar/plugins/about.py:77
+msgid "Made in\n"
+"University of Tartu, Estonia,\n"
+"with the help from\n"
+"open-source community,\n"
+"Raspberry Pi Foundation\n"
+"and Cybernetica AS"
+msgstr "Üretim yeri\n"
+"Tartu Üniversitesi, Estonya,\n"
+"açık kaynak topluluğu\n"
+"yardımı ile,\n"
+"Raspberry Pi Vakfı\n"
+"ve Cybernetica A.Ş."
+
+#: turcar/plugins/about.py:103
+msgid "This program comes with\n"
+"ABSOLUTELY NO WARRANTY!\n"
+"It is free software, and you are welcome to\n"
+"redistribute it under certain conditions, see\n"
+"https://opensource.org/licenses/MIT\n"
+"for details"
+msgstr "Bu program KESİNLİKLE BİR\n"
+"GARANTİ SUNMAMAKTADIR!\n"
+"Ücretsiz bir yazılımdır ve belirli koşullar\n"
+"dahilinde tekrar dağıtım yapabilirsiniz,\n"
+"detaylar için: https://opensource.org/licenses/MIT\n"
+""
+
+#: turcar/plugins/about.py:146
+msgid "Version history"
+msgstr "Sürüm geçmişi"
+
+#: turcar/plugins/about.py:153
+msgid "Report problems"
+msgstr "Sorun bildir"
+
+#: turcar/plugins/assistant_config_page.py:15
+msgid "Open Assistant automatically when program crashes with an exception"
+msgstr "Kodda hatalar olduğunda Yardımcı'yı otomatik olarak aç"
+
+#: turcar/plugins/assistant_config_page.py:21
+msgid "Open Assistant automatically when it has warnings for your code"
+msgstr "Kodda uyarı durumları olduğunda Yardımcı'yı otomatik olarak aç"
+
+#: turcar/plugins/assistant_config_page.py:26
+msgid "Perform selected Pylint checks"
+msgstr "Seçilen Pylint kontrollerini gerçekleştir"
+
+#: turcar/plugins/assistant_config_page.py:29
+msgid "Perform MyPy checks"
+msgstr "MyPy kontrollerini gerçekleştir"
+
+#: turcar/plugins/assistant_config_page.py:31
+msgid "Disabled checks (one id per line)"
+msgstr "Devre dışı bırakılmış kontroller (her satır başına bir kimlik)"
+
+#: turcar/assistance.py:962 turcar/plugins/assistant_config_page.py:68
+msgid "Assistant"
+msgstr "Yardımcı"
+
+#: turcar/plugins/autocomplete.py:316
+msgid "Auto-complete"
+msgstr "Otomatik tamamlama"
+
+#: turcar/plugins/backend_config_page.py:43
+msgid "Which interpreter or device should turcar use for running your code?"
+msgstr "turcar kodunuzu çalıştırmak için hangi yorumlayıcıyı veya cihazı kullansın?"
+
+#: turcar/plugins/backend_config_page.py:127
+msgid "Interpreter"
+msgstr "Yorumlayıcı"
+
+#: turcar/plugins/birdseye_frontend.py:32
+msgid "About Birdseye"
+msgstr "Birdseye hakkında"
+
+#: turcar/plugins/birdseye_frontend.py:33
+msgid "Birdseye is a Python debugger which needs to be installed separately.\n"
+"\n"
+"Do you want to open the help page and learn more?"
+msgstr "Birdseye, ayrı olarak yüklenmesi gereken bir Python hata ayıklayıcısıdır.\n"
+"\n"
+"Yardım sayfasını açmak ve daha fazla bilgi edinmek ister misiniz?"
+
+#: turcar/plugins/birdseye_frontend.py:60
+msgid "Debug current script (birdseye)"
+msgstr "Geçerli betikte hata ayıkla (birdseye)"
+
+#: turcar/plugins/commenting_indenting.py:143
+msgid "Toggle comment"
+msgstr "Açıklama satırını aç/kapat"
+
+#: turcar/plugins/commenting_indenting.py:153
+msgid "Comment out"
+msgstr "Açıklama satırı yap"
+
+#: turcar/plugins/commenting_indenting.py:163
+msgid "Uncomment"
+msgstr "Açıklama satırını iptal et"
+
+#: turcar/plugins/common_editing_commands.py:20
+msgid "Undo"
+msgstr "Geri al"
+
+#: turcar/plugins/common_editing_commands.py:32
+msgid "Redo"
+msgstr "Yenile"
+
+#: turcar/plugins/common_editing_commands.py:48 turcar/ui_utils.py:2176
+msgid "Cut"
+msgstr "Kes"
+
+#: turcar/plugins/common_editing_commands.py:60 turcar/ui_utils.py:2177
+msgid "Copy"
+msgstr "Kopyala"
+
+#: turcar/plugins/common_editing_commands.py:72 turcar/ui_utils.py:2178
+msgid "Paste"
+msgstr "Yapıştır"
+
+#: turcar/plugins/common_editing_commands.py:84 turcar/plugins/debugger.py:124
+msgid "Select all"
+msgstr "Tümünü seç"
+
+#: turcar/plugins/debugger.py:117 turcar/plugins/debugger.py:1276
+msgid "Run to cursor"
+msgstr "İmlece kadar çalıştır"
+
+#: turcar/plugins/debugger.py:863
+msgid "Can't close yet"
+msgstr "Henüz kapatılamıyor"
+
+#: turcar/plugins/debugger.py:864
+msgid "Use \"Stop\" command if you want to cancel debugging"
+msgstr "Hata ayıklamayı iptal etmek istiyorsanız \"Durdur\" komutunu kullanın"
+
+#: turcar/plugins/dock_user_windows_frontend.py:27
+msgid "Dock user windows"
+msgstr "Kullanıcı pencerelerini sabitle"
+
+#: turcar/plugins/editor_config_page.py:14
+msgid "Highlight matching names"
+msgstr "Eşleşen isimleri vurgula"
+
+#: turcar/plugins/editor_config_page.py:20
+msgid "Highlight local variables"
+msgstr "Yerel değişkenleri vurgula"
+
+#: turcar/plugins/editor_config_page.py:25
+msgid "Highlight parentheses"
+msgstr "Parantezleri vurgula"
+
+#: turcar/plugins/editor_config_page.py:26
+msgid "Highlight syntax elements"
+msgstr "Sözdizimi öğelerini vurgula"
+
+#: turcar/plugins/editor_config_page.py:29
+msgid "Highlight current line (requires reopening the editor)"
+msgstr "Geçerli satırı vurgula (düzenleyicinin yeniden açılmasını gerektirir)"
+
+#: turcar/plugins/editor_config_page.py:34
+msgid "Allow code completion with Tab-key in editors"
+msgstr "Editörde Tab tuşuyla kod tamamlamaya izin ver"
+
+#: turcar/plugins/editor_config_page.py:40
+msgid "Allow code completion with Tab-key in Shell"
+msgstr "Konsolda Tab tuşuyla kod tamamlamaya izin ver"
+
+#: turcar/plugins/editor_config_page.py:44
+msgid "Show line numbers"
+msgstr "Satır numaralarını göster"
+
+#: turcar/plugins/editor_config_page.py:47
+msgid "Recommended maximum line length\n"
+"(Set to 0 to turn off margin line)"
+msgstr "Maksimum satır uzunluğu\n"
+"(Ekranın tamamını kullanmak için 0'a ayarlayın)"
+
+#: turcar/plugins/editor_config_page.py:68
+msgid "Editor"
+msgstr "Editör"
+
+#: turcar/plugins/event_logging.py:197
+msgid "Export usage logs..."
+msgstr "Kullanım günlüklerini dışa aktar ..."
+
+#: turcar/plugins/event_view.py:38
+msgid "Events"
+msgstr "Olaylar"
+
+#: turcar/plugins/files.py:307
+msgid "Files"
+msgstr "Dosyalar"
+
+#: turcar/plugins/find_replace.py:56 turcar/plugins/find_replace.py:412
+msgid "Find & Replace"
+msgstr "Bul ve Değiştir"
+
+#: turcar/plugins/find_replace.py:62
+msgid "Find:"
+msgstr "Bul:"
+
+#: turcar/plugins/find_replace.py:73
+msgid "Replace with:"
+msgstr "Değiştir:"
+
+#: turcar/plugins/find_replace.py:91
+msgid "Case sensitive"
+msgstr "Büyük/küçük harf duyarlı"
+
+#: turcar/plugins/find_replace.py:98
+msgid "Up"
+msgstr "Yukarı"
+
+#: turcar/plugins/find_replace.py:102
+msgid "Down"
+msgstr "Aşağı"
+
+#: turcar/plugins/find_replace.py:111
+msgid "Find"
+msgstr "Bul"
+
+#: turcar/plugins/find_replace.py:121
+msgid "Replace"
+msgstr "Değiştir"
+
+#: turcar/plugins/find_replace.py:129
+msgid "Replace+Find"
+msgstr "Değiştir+Bul"
+
+#: turcar/plugins/find_replace.py:138
+msgid "Replace all"
+msgstr "Tümünü değiştir"
+
+#: turcar/plugins/find_replace.py:232
+msgid "Enter string to be replaced."
+msgstr "Değiştirilecek metni girin."
+
+#: turcar/plugins/find_replace.py:316
+msgid "The specified text was not found!"
+msgstr "Aranan metin bulunamadı!"
+
+#: turcar/plugins/general_config_page.py:13
+msgid "Allow only single turcar instance"
+msgstr "Aynı anda yalnızca tek bir turcar çalıştırmaya izin ver"
+
+#: turcar/plugins/general_config_page.py:20
+msgid "Reopen all files from previous session"
+msgstr "Önceki oturumdaki tüm dosyaları yeniden aç"
+
+#: turcar/plugins/general_config_page.py:26
+msgid "Disable notification sound"
+msgstr "Bildirim sesini devre dışı bırak"
+
+#: turcar/plugins/general_config_page.py:75
+msgid "Font scaling mode"
+msgstr "Yazı ölçeklendirme modu"
+
+#: turcar/plugins/heap.py:35
+msgid "Heap mode is on.\n"
+"Close Heap view to turn it off."
+msgstr "Yığın modu açık.\n"
+"Kapatmak için Yığın görünümünü kapatın."
+
+#: turcar/plugins/heap.py:83
+msgid "Heap"
+msgstr "Yığın"
+
+#: turcar/plugins/general_config_page.py:42
+msgid "Language"
+msgstr "Dil"
+
+#: turcar/plugins/notes.py:33
+msgid "This box is meant for your working notes -- assignment instructions, code snippets, whatever.\n"
+"\n"
+"Everything will be saved automatically and loaded when you open turcar next time.\n"
+"\n"
+"Feel free to delete this text to make room for your own notes."
+msgstr "Bu kutu çalışma notlarınız içindir - atama talimatları, kod parçacıkları, vb.\n"
+"\n"
+"turcar'yi bir dahaki sefere açtığınızda her şey otomatik olarak kaydedilir ve geri yüklenir.\n"
+"\n"
+"Kendi notlarınıza yer açmak için bu metni silebilirsiniz."
+
+#: turcar/plugins/notes.py:61
+msgid "Notes"
+msgstr "Notlar"
+
+#: turcar/plugins/object_inspector.py:108
+msgid "Previous object"
+msgstr "Önceki nesne"
+
+#: turcar/plugins/object_inspector.py:111
+msgid "Next object"
+msgstr "Sonraki nesne"
+
+#: turcar/plugins/object_inspector.py:601
+msgid "Object inspector"
+msgstr "Nesne denetçisi"
+
+#: turcar/plugins/outline.py:137
+msgid "Outline"
+msgstr "Taslak"
+
+#: turcar/plugins/pgzero_frontend.py:26
+msgid "Pygame Zero mode"
+msgstr "Pygame Zero modu"
+
+#: turcar/plugins/pip_gui.py:78
+msgid "Find package from PyPI"
+msgstr "PyPI'den paket bul"
+
+#: turcar/plugins/pip_gui.py:188 turcar/plugins/pip_gui.py:190
+msgid "Uninstall"
+msgstr "Kaldır"
+
+#: turcar/code.py:548 turcar/plugins/microbit/__init__.py:200
+#: turcar/plugins/pip_gui.py:204 turcar/running.py:1457 turcar/ui_utils.py:367
+#: turcar/ui_utils.py:1643
+msgid "Close"
+msgstr "Kapat"
+
+#: turcar/plugins/pip_gui.py:382
+msgid "Click "
+msgstr "Click_"
+
+#: turcar/plugins/pip_gui.py:383 turcar/plugins/pip_gui.py:393
+msgid "here"
+msgstr "buraya"
+
+#: turcar/plugins/pip_gui.py:181 turcar/plugins/pip_gui.py:478
+msgid "Upgrade"
+msgstr "Yükselt"
+
+#: turcar/plugins/microbit/__init__.py:123 turcar/plugins/pip_gui.py:483
+#: turcar/plugins/pip_gui.py:1064
+msgid "Install"
+msgstr "Yükle"
+
+#: turcar/plugins/pip_gui.py:505
+msgid "Could not find the package from PyPI."
+msgstr "PyPI'den paket bulunamadı."
+
+#: turcar/plugins/pip_gui.py:515
+msgid "exact package name"
+msgstr "tam paket adı"
+
+#: turcar/plugins/pip_gui.py:533
+msgid "Latest stable version"
+msgstr "Son kararlı sürüm"
+
+#: turcar/plugins/pip_gui.py:535
+msgid "Latest version"
+msgstr "Son sürüm"
+
+#: turcar/plugins/pip_gui.py:536
+msgid "Summary"
+msgstr "Özet"
+
+#: turcar/plugins/pip_gui.py:537
+msgid "Author"
+msgstr "Geliştirici"
+
+#: turcar/plugins/pip_gui.py:538
+msgid "Homepage"
+msgstr "Anasayfa"
+
+#: turcar/plugins/pip_gui.py:540
+msgid "Bugtracker"
+msgstr "Hata Takipçisi"
+
+#: turcar/plugins/pip_gui.py:542
+msgid "Documentation"
+msgstr "Belgeler"
+
+#: turcar/plugins/pip_gui.py:544
+msgid "PyPI page"
+msgstr "PyPI sayfası"
+
+#: turcar/plugins/pip_gui.py:548
+msgid "Requires"
+msgstr "Gereksinimler"
+
+#: turcar/plugins/pip_gui.py:614
+msgid "Really uninstall?"
+msgstr "Program kaldırılsın mı?"
+
+#: turcar/plugins/pip_gui.py:619
+msgid "Are you sure you want to uninstall it?"
+msgstr "Kaldırmak istediğinize emin misiniz?"
+
+#: turcar/plugins/variables.py:19
+msgid "Back to\n"
+"current frame"
+msgstr "Mevcut çerçeveye\n"
+"geri dön"
+
+#: turcar/plugins/variables.py:131
+msgid "Variables"
+msgstr "Değişkenler"
+
+#: turcar/base_file_browser.py:30
+msgid "This computer"
+msgstr "Bu bilgisayar"
+
+#: turcar/base_file_browser.py:568
+msgid "Refresh"
+msgstr "Yenile"
+
+#: turcar/base_file_browser.py:572
+msgid "Focus into"
+msgstr "Şuna odaklan"
+
+#: turcar/base_file_browser.py:1001
+msgid "Error"
+msgstr "Hata"
+
+#: turcar/base_file_browser.py:1001
+msgid "You need to select a file!"
+msgstr "Bir dosya seçmeniz gerekiyor!"
+
+#: turcar/base_file_browser.py:1005
+msgid "Overwrite?"
+msgstr "Üzerine yazılsın mı?"
+
+#: turcar/base_file_browser.py:1005
+msgid "Do you want to overwrite '%s' ?"
+msgstr "'%s' üzerine yazmak istiyor musunuz?"
+
+#: turcar/code.py:513 turcar/code.py:515
+msgid "New"
+msgstr "Yeni"
+
+#: turcar/code.py:526
+msgid "Open..."
+msgstr "Aç..."
+
+#: turcar/code.py:528
+msgid "Load"
+msgstr "Yükle"
+
+#: turcar/code.py:537
+msgid "Recent files"
+msgstr "Son dosyalar"
+
+#: turcar/code.py:559 turcar/ui_utils.py:369
+msgid "Close all"
+msgstr "Tümünü kapat"
+
+#: turcar/code.py:569 turcar/code.py:571
+msgid "Save"
+msgstr "Kaydet"
+
+#: turcar/code.py:583
+msgid "Save as..."
+msgstr "Farklı kaydet..."
+
+#: turcar/code.py:594
+msgid "Save copy..."
+msgstr "Kopyasını kaydet ..."
+
+#: turcar/code.py:603
+msgid "Rename..."
+msgstr "Yeniden adlandır..."
+
+#: turcar/config_ui.py:17
+msgid "turcar options"
+msgstr "turcar seçenekleri"
+
+#: turcar/running.py:94
+msgid "Run current script"
+msgstr "Geçerli betiği çalıştır"
+
+#: turcar/running.py:125
+msgid "Run current script in terminal"
+msgstr "Geçerli betiği terminalde çalıştır"
+
+#: turcar/running.py:138
+msgid "Stop/Restart backend"
+msgstr "Konsolu Durdur / Yeniden başlat"
+
+#: turcar/running.py:139
+msgid "Stop"
+msgstr "Durdur"
+
+#: turcar/running.py:150
+msgid "Interrupt execution"
+msgstr "Çalıştırmayı durdur"
+
+#: turcar/running.py:161
+msgid "Send EOF / Soft reboot"
+msgstr "Yazılımsal yeniden başlatma / EOF gönder"
+
+#: turcar/running.py:172
+msgid "Disconnect"
+msgstr "Bağlantıyı Kes"
+
+#: turcar/running_config_page.py:23
+msgid "Known interpreters"
+msgstr "Bilinen yorumlayıcılar"
+
+#: turcar/running_config_page.py:36
+msgid "Your interpreter isn't in the list?"
+msgstr "Yorumlayıcınız listede yok mu?"
+
+#: turcar/running_config_page.py:43
+msgid "Locate another"
+msgstr "Başka bir tane bul"
+
+#: turcar/running_config_page.py:45
+msgid "python executable"
+msgstr "python yürütülebilir dosyası"
+
+#: turcar/running_config_page.py:47
+msgid "NB! turcar only supports Python 3.5 and later"
+msgstr "UYARI! turcar sadece Python 3.5 ve sonrasını desteklemektedir."
+
+#: turcar/running_config_page.py:56
+msgid "Create new virtual environment"
+msgstr "Yeni bir sanal ortam oluştur"
+
+#: turcar/running_config_page.py:59
+msgid "Select existing or create a new empty directory"
+msgstr "Bir dizin seçin veya yeni oluşturun"
+
+#: turcar/running_config_page.py:74
+msgid "Python interpreters"
+msgstr "Python yorumlayıcıları"
+
+#: turcar/plugins/pip_gui.py:657 turcar/plugins/pip_gui.py:669
+#: turcar/running_config_page.py:75
+msgid "all files"
+msgstr "Tüm dosyalar"
+
+#: turcar/running_config_page.py:89
+msgid "Select empty directory for new virtual environment"
+msgstr "Yeni sanal ortam için boş bir dizin seçin"
+
+#: turcar/running_config_page.py:96
+msgid "Bad directory"
+msgstr "Hatalı dizin"
+
+#: turcar/running_config_page.py:97
+msgid "Selected directory is not empty.\n"
+"Select another or cancel."
+msgstr "Seçilen dizin boş değil.\n"
+"Başka bir tane seçin veya iptal edin."
+
+#: turcar/running_config_page.py:112
+msgid "Creating virtual environment"
+msgstr "Sanal ortam oluşturma"
+
+#: turcar/shell.py:72
+msgid "Clear shell"
+msgstr "Konsolu temizle"
+
+#: turcar/shell.py:126
+msgid "Plotter"
+msgstr "Çizici"
+
+#: turcar/shell.py:245
+msgid "Clear"
+msgstr "Temizle"
+
+#: turcar/shell.py:258
+msgid "Show Plotter"
+msgstr "Çiziciyi Göster"
+
+#: turcar/shell.py:1389
+msgid "For performance reasons, Shell avoids showing very long lines in full (see Tools => Options => Shell).\n"
+"Here you can interact with the original text fragment."
+msgstr "Performans sebepleri dolayısıyla, Konsol çok uzun satırları tam olarak göstermekten kaçınır. (bkz. Araçlar => Seçenekler => Konsol).\n"
+"Burada orijinal metin parçasıyla etkileşime geçebilirsiniz."
+
+#: turcar/shell.py:1400
+msgid "Wrap text (may be slow)"
+msgstr "Metni kaydır (yavaş olabilir)"
+
+#: turcar/shell.py:1425 turcar/ui_utils.py:1639
+msgid "Copy to clipboard"
+msgstr "Panoya kopyala"
+
+#: turcar/shell.py:1431
+msgid "Expand in Shell"
+msgstr "Konsolda Genişlet"
+
+#: turcar/shell.py:1442
+msgid "Squeezed text (%d characters)"
+msgstr "Sıkıştırılmış metin (%d karakter)"
+
+#: turcar/shell.py:1611
+msgid "Plotter visualizes series of\n"
+"numbers printed to the Shell."
+msgstr "Plotter, konsolda yazdırılmış\n"
+"sayı dizilerini grafiklerle görselleştirir."
+
+#: turcar/shell.py:1613
+msgid "See Help for details."
+msgstr "Ayrıntılar için Yardım'a bakın."
+
+#: turcar/ui_utils.py:368
+msgid "Close others"
+msgstr "Diğerlerini kapat"
+
+#: turcar/ui_utils.py:1499
+msgid "Copying"
+msgstr "Kopyalanıyor"
+
+#: turcar/ui_utils.py:1502
+msgid "Copying\n"
+"  %s\n"
+"to\n"
+"  %s"
+msgstr "Kopyalanıyor:\n"
+"  %s\n"
+">>>\n"
+"  %s"
+
+#: turcar/config_ui.py:31 turcar/plugins/microbit/__init__.py:127
+#: turcar/plugins/pip_gui.py:1066 turcar/running.py:1424
+#: turcar/ui_utils.py:1510 turcar/ui_utils.py:1712
+msgid "Cancel"
+msgstr "İptal"
+
+#: turcar/config_ui.py:30 turcar/ui_utils.py:1764
+msgid "OK"
+msgstr "Tamam"
+
+#: turcar/ui_utils.py:1783
+msgid "Cancel the process?"
+msgstr "İşlem iptal edilsin mi?"
+
+#: turcar/ui_utils.py:1784
+msgid "The process is still running.\n"
+"Are you sure you want to cancel?"
+msgstr "İşlem hala devam ediyor.\n"
+"İptal etmek istediğinize emin misiniz?"
+
+#: turcar/ui_utils.py:2182
+msgid "Select All"
+msgstr "Tümünü seç"
+
+#: turcar/plugins/shell_config_page.py:61 turcar/workbench.py:162
+msgid "Shell"
+msgstr "Konsol"
+
+#: turcar/workbench.py:512
+msgid "The same interpreter which runs turcar (default)"
+msgstr "turcar'yi çalıştıran aynı yorumlayıcı (varsayılan)"
+
+#: turcar/workbench.py:531
+msgid "This virtual environment is automatically maintained by turcar.\n"
+""
+msgstr "Bu sanal ortam turcar tarafından otomatik olarak yönetilir.\n"
+""
+
+#: turcar/workbench.py:532
+msgid "Location: "
+msgstr "Konum: "
+
+#: turcar/workbench.py:578
+msgid "Options..."
+msgstr "Seçenekler..."
+
+#: turcar/workbench.py:585
+msgid "Increase font size"
+msgstr "Yazı boyutunu arttır"
+
+#: turcar/workbench.py:650
+msgid "Change font size"
+msgstr "Yazı boyutunu değiştir"
+
+#: turcar/workbench.py:651
+msgid "Zoom"
+msgstr "Yakınlaştırma"
+
+#: turcar/workbench.py:660
+msgid "Exit turcar"
+msgstr "turcar'den çık"
+
+#: turcar/workbench.py:663
+msgid "Quit"
+msgstr "Çıkış"
+
+#: turcar/workbench.py:1054 turcar/workbench.py:1062
+msgid "Overwriting theme '%s'"
+msgstr "'%s' temasının üzerine yazılıyor"
+
+#: turcar/workbench.py:1221
+msgid "Program arguments:"
+msgstr "Program argümanları:"
+
+#: turcar/workbench.py:1275
+msgid "Regular mode"
+msgstr "Normal mod"
+
+#: turcar/workbench.py:1276
+msgid "Configuration has been updated. Restart turcar to start working in regular mode.\n"
+"\n"
+"(See 'Tools → Options → General' if you change your mind later.)"
+msgstr "Yapılandırma güncellendi. Normal modda çalışmaya başlamak için turcar'i yeniden başlatın.\n"
+"\n"
+"(Daha sonra fikrinizi değiştirirseniz 'Araçlar → Seçenekler → Genel' kısmına bakın.)"
+
+#: turcar/plugins/ast_view.py:209
+msgid "Program tree"
+msgstr "Program ağacı"
+
+#: turcar/plugins/backend_config_page.py:130
+msgid "Select interpreter"
+msgstr "Yorumlayıcı seç"
+
+#: turcar/plugins/debugger.py:1162
+msgid "Resume"
+msgstr "Devam et"
+
+#: turcar/plugins/debugger.py:1174
+msgid "Run / resume"
+msgstr "Çalıştır / devam et"
+
+#: turcar/plugins/debugger.py:1189
+msgid "Debug current script"
+msgstr "Geçerli betikte hata ayıkla"
+
+#: turcar/plugins/debugger.py:1191
+msgid "Debug"
+msgstr "Hata ayıkla"
+
+#: turcar/plugins/debugger.py:1202
+msgid "Debug current script (nicer)"
+msgstr "Geçerli betikte hata ayıkla (daha iyidir)"
+
+#: turcar/plugins/debugger.py:1214
+msgid "Debug current script (faster)"
+msgstr "Geçerli betikte hata ayıkla (daha hızlıdır)"
+
+#: turcar/plugins/debugger.py:1225
+msgid "Step over"
+msgstr "Üzerinden adımla"
+
+#: turcar/plugins/debugger.py:1227
+msgid "Over"
+msgstr "Üzerinden"
+
+#: turcar/plugins/debugger.py:1238
+msgid "Step into"
+msgstr "İçeriye adımla"
+
+#: turcar/plugins/debugger.py:1240
+msgid "Into"
+msgstr "İçeriye"
+
+#: turcar/plugins/debugger.py:1251
+msgid "Step out"
+msgstr "Dışarıya adımla"
+
+#: turcar/plugins/debugger.py:1253
+msgid "Out"
+msgstr "Dışarıya"
+
+#: turcar/plugins/debugger.py:1288
+msgid "Step back"
+msgstr "Geriye adımla"
+
+#: turcar/plugins/debugger.py:1290
+msgid "Back"
+msgstr "Geri"
+
+#: turcar/plugins/debugger.py:1296
+msgid "Stack"
+msgstr "Yığın"
+
+#: turcar/plugins/debugger.py:1297
+msgid "Exception"
+msgstr "Hata"
+
+#: turcar/plugins/general_config_page.py:16
+msgid "Log program usage events"
+msgstr "Program kullanımını günlükle"
+
+#: turcar/plugins/general_config_page.py:32
+msgid "Debug mode (provides more detailed diagnostic logs)"
+msgstr "Hata ayıklama modu (daha ayrıntılı tanılama günlükleri sağlar)"
+
+#: turcar/plugins/general_config_page.py:56
+msgid "UI mode"
+msgstr "UI modu"
+
+#: turcar/plugins/general_config_page.py:69
+msgid "UI scaling factor"
+msgstr "UI ölçeklendirme faktörü"
+
+#: turcar/plugins/general_config_page.py:88
+msgid "NB! Restart turcar after changing these options!"
+msgstr "UYARI! Bu seçenekleri değiştirdikten sonra turcar'i yeniden başlatın!"
+
+#: turcar/plugins/general_config_page.py:102
+msgid "General"
+msgstr "Genel"
+
+#: turcar/plugins/pip_gui.py:108
+msgid "INSTALL"
+msgstr "YÜKLE"
+
+#: turcar/plugins/pip_gui.py:352
+msgid "Browse the packages"
+msgstr "Paketlere göz at"
+
+#: turcar/plugins/pip_gui.py:355
+msgid "With current interpreter you can only browse the packages here.\n"
+"Use 'Tools → Open system shell...' for installing, upgrading or uninstalling."
+msgstr "Geçerli yorumlayıcı ile sadece buradaki paketlere göz atabilirsiniz.\n"
+"Yükleme, yükseltme veya kaldırma için 'Araçlar → Sistem konsolunu aç ...' seçeneğini kullanın."
+
+#: turcar/plugins/pip_gui.py:363
+msgid "Packages' directory"
+msgstr "Paketler dizini"
+
+#: turcar/plugins/pip_gui.py:368
+msgid "Install from PyPI"
+msgstr "PyPI'den yükleyin"
+
+#: turcar/plugins/pip_gui.py:371
+msgid "If you don't know where to get the package from, then most likely you'll want to search the Python Package Index. Start by entering the name of the package in the search box above and pressing ENTER."
+msgstr "Paketi nereden alacağınızı bilmiyorsanız, büyük olasılıkla Python Paket Dizini'nde aramak isteyeceksiniz. Paketin adını yukarıdaki arama kutusuna girip ENTER tuşuna basarak başlayın."
+
+#: turcar/plugins/pip_gui.py:387
+msgid "to locate requirements.txt file and install the packages specified in it."
+msgstr "requirements.txt dosyasını bulmak ve içinde belirtilen paketleri kurmak için."
+
+#: turcar/plugins/pip_gui.py:392
+msgid "Click"
+msgstr "Tıkla"
+
+#: turcar/plugins/pip_gui.py:397
+msgid "to locate and install the package file (usually with .whl, .tar.gz or .zip extension)."
+msgstr "paket dosyasını bulmak ve kurmak için (genellikle .whl, .tar.gz veya .zip uzantılı olurlar)."
+
+#: turcar/plugins/pip_gui.py:403
+msgid "Upgrade or uninstall"
+msgstr "Yükselt veya kaldır"
+
+#: turcar/plugins/pip_gui.py:405
+msgid "Start by selecting the package from the left."
+msgstr "Soldaki paketi seçerek başlayın."
+
+#: turcar/plugins/pip_gui.py:409
+msgid "Target:"
+msgstr "Hedef:"
+
+#: turcar/plugins/pip_gui.py:412
+msgid "virtual environment"
+msgstr "sanal ortam"
+
+#: turcar/plugins/pip_gui.py:416
+msgid "user site packages"
+msgstr "kullanıcı sitesi paketleri"
+
+#: turcar/plugins/pip_gui.py:421
+msgid "This dialog lists all available packages, but allows upgrading and uninstalling only packages from"
+msgstr "Bu iletişim kutusu mevcut tüm paketleri listeler, fakat yalnızca paketlerin yükseltilmesine ve kaldırılmasına izin verir."
+
+#: turcar/plugins/pip_gui.py:431
+msgid "New packages will be also installed into this directory. Other locations must be managed by alternative means."
+msgstr "Yeni paketler de ayrıca bu dizine yüklenecek. Diğer konumlar alternatif yollarla yönetilmelidir."
+
+#: turcar/plugins/pip_gui.py:456
+msgid "Installed version:"
+msgstr "Kurulu sürüm:"
+
+#: turcar/plugins/pip_gui.py:458
+msgid "Installed to:"
+msgstr "Yüklendi:"
+
+#: turcar/plugins/pip_gui.py:510
+msgid "Please check your spelling!"
+msgstr "Lütfen yazımınızı kontrol edin!"
+
+#: turcar/plugins/pip_gui.py:512
+msgid "You need to enter"
+msgstr "Girmeniz gerekiyor"
+
+#: turcar/plugins/pip_gui.py:520
+msgid "Could not find the package info from PyPI."
+msgstr "PyPI'den paket bilgisi bulunamadı."
+
+#: turcar/plugins/pip_gui.py:522 turcar/plugins/pip_gui.py:1120
+msgid "Error code:"
+msgstr "Hata kodu:"
+
+#: turcar/plugins/pip_gui.py:581
+msgid "Can't find package name from the list:"
+msgstr "Paket adı listeden bulunamıyor:"
+
+#: turcar/plugins/pip_gui.py:615
+msgid "Package '{}' is required for installing and uninstalling other packages."
+msgstr "Diğer paketleri kurmak ve kaldırmak için '{}' paketi gereklidir."
+
+#: turcar/plugins/pip_gui.py:657
+msgid "Package"
+msgstr "Paket"
+
+#: turcar/plugins/pip_gui.py:757
+msgid "Manage packages for %s"
+msgstr "%s için paketleri yönet"
+
+#: turcar/plugins/pip_gui.py:813
+msgid "Confirmation"
+msgstr "Onay"
+
+#: turcar/plugins/pip_gui.py:814
+msgid "Looks like you are installing a turcar-related package.\n"
+"If you meant to install a turcar plugin, then you should\n"
+"choose 'Tools → Manage plugins...' instead\n"
+"\n"
+"Are you sure you want to install %s for the back-end?"
+msgstr "turcar ile ilgili bir paket kuruyor gibisiniz.\n"
+"Eğer bir turcar eklentisi kurmak istiyorsanız\n"
+"bunun yerine 'Araçlar → Eklentileri yönet ...' seçeneğini seçin.\n"
+"\n"
+"%s yüklemek istediğinize emin misiniz?"
+
+#: turcar/plugins/pip_gui.py:912
+msgid "NB! There may be another version available which is compatible with current turcar version. Click on '...' button to choose the version to install."
+msgstr "UYARI! Mevcut turcar sürümüyle uyumlu başka bir sürüm olabilir. Yüklenecek sürümü seçmek için '...' düğmesine tıklayın."
+
+#: turcar/plugins/pip_gui.py:920
+msgid "turcar plugin without requirements"
+msgstr "Gereksinimsiz turcar eklentisi"
+
+#: turcar/plugins/pip_gui.py:921
+msgid "Looks like you are trying to install an outdated turcar\n"
+"plug-in (it doesn't specify required turcar version).\n"
+"\n"
+"If you still want it, then please install it from the command line."
+msgstr "Eski bir turcar eklentisi yüklemeye çalışıyorsunuz gibi\n"
+"görünüyor (gerekli turcar sürümünü belirtmiyor).\n"
+"\n"
+"Lütfen komut satırı kullanarak yükleyiniz."
+
+#: turcar/plugins/pip_gui.py:935
+msgid "Unsuitable requirements"
+msgstr "Uygun olmayan gereksinimler"
+
+#: turcar/plugins/pip_gui.py:936
+msgid "This package requires different turcar version:"
+msgstr "Bu paket farklı bir turcar sürümü gerektiriyor:"
+
+#: turcar/plugins/pip_gui.py:940
+msgid "If you still want it, then please install it from the command line."
+msgstr "Lütfen komut satırı kullanarak yükleyiniz."
+
+#: turcar/plugins/pip_gui.py:984
+msgid "(In this case turcar's back-end uses same interpreter, so both dialogs manage same packages.)"
+msgstr "(Bu durumda turcar arka uçta aynı yorumlayıcıyı kullanır, bu nedenle her iki iletişim kutusu da aynı paketleri yönetir.)"
+
+#: turcar/plugins/pip_gui.py:990
+msgid "NB! You need to restart turcar after installing / upgrading / uninstalling a plug-in."
+msgstr "UYARI! Bir eklentiyi kurduktan / yükselttikten / kaldırdıktan sonra turcar'i yeniden başlatmanız gerekir."
+
+#: turcar/plugins/pip_gui.py:1000
+msgid "turcar plug-ins"
+msgstr "turcar eklentileri"
+
+#: turcar/plugins/pip_gui.py:1013
+msgid "Advanced install / upgrade / downgrade"
+msgstr "Gelişmiş kurulum / yükseltme / sürüm düşürme"
+
+#: turcar/plugins/pip_gui.py:1022
+msgid "Desired version"
+msgstr "İstenilen sürüm"
+
+#: turcar/plugins/pip_gui.py:1060
+msgid "Upgrade dependencies"
+msgstr "Yükseltme bağımlılıkları"
+
+#: turcar/plugins/pip_gui.py:1118
+msgid "Requires:"
+msgstr "Gereksinimler:"
+
+#: turcar/plugins/pip_gui.py:1122
+msgid "Error:"
+msgstr "Hata:"
+
+#: turcar/plugins/pip_gui.py:1232
+msgid "Manage packages..."
+msgstr "Paketleri yönet ..."
+
+#: turcar/plugins/pip_gui.py:1238
+msgid "Manage plug-ins..."
+msgstr "Eklentileri yönet ..."
+
+#: turcar/plugins/replayer.py:354
+msgid "Open replayer..."
+msgstr "Tekrarlayıcıyı aç ..."
+
+#: turcar/plugins/run_debug_config_page.py:12
+msgid "Change working directory to script directory on Run / Debug"
+msgstr "Mevcut çalışma dizini Çalıştır / Hata Ayıkla esnasında betik dizinine dönüştür"
+
+#: turcar/plugins/run_debug_config_page.py:20
+msgid "Show function calls (frames) in separate windows"
+msgstr "Fonksiyon çağrılarını (çerçeveler) ayrı pencerelerde göster"
+
+#: turcar/plugins/run_debug_config_page.py:21
+msgid "Uncheck if you want more traditional experience."
+msgstr "Daha geleneksel bir deneyim istiyorsanız işareti kaldırın."
+
+#: turcar/plugins/run_debug_config_page.py:27
+msgid "Open and close Stack view automatically"
+msgstr "Yığın görünümünü otomatik olarak aç ve kapat"
+
+#: turcar/plugins/run_debug_config_page.py:28
+msgid "Opens the Stack view on first call and closes it when program returns to main frame."
+msgstr "İlk çağırmada Yığın görünümünü açar ve program ana çerçeveye döndüğünde kapatır."
+
+#: turcar/plugins/run_debug_config_page.py:37
+msgid "Allow stepping into libraries (ie. outside of main script directory)"
+msgstr "Kütüphaneler içerisine adımlamaya izin ver (ör. Ana betik dizini dışında)"
+
+#: turcar/plugins/run_debug_config_page.py:38
+msgid "May make debugging slower."
+msgstr "Hata ayıklamayı yavaşlatabilir."
+
+#: turcar/plugins/run_debug_config_page.py:43
+msgid "Preferred debugger"
+msgstr "Tercih edilen hata ayıklayıcı"
+
+#: turcar/plugins/run_debug_config_page.py:55
+msgid "(used when clicking Debug toolbar button)"
+msgstr "(Hata Ayıkla araç çubuğu düğmesini tıkladığınızda kullanılır)"
+
+#: turcar/plugins/run_debug_config_page.py:60
+msgid "Birdseye port"
+msgstr "Birdseye portu"
+
+#: turcar/plugins/run_debug_config_page.py:64
+msgid "(restart turcar after changing this)"
+msgstr "(Değiştirdikten sonra turcar'i yeniden başlatın)"
+
+#: turcar/plugins/run_debug_config_page.py:72
+msgid "Run & Debug"
+msgstr "Çalıştır ve Hata Ayıkla"
+
+#: turcar/plugins/shell_config_page.py:16
+msgid "Terminal emulation"
+msgstr "Terminal emülatörü"
+
+#: turcar/plugins/shell_config_page.py:18
+msgid "supports basic ANSI-colors and styles"
+msgstr "temel ANSI renklerini ve stillerini destekler"
+
+#: turcar/plugins/shell_config_page.py:30
+msgid "Maximum number of lines to keep."
+msgstr "Tutulacak maksimum satır sayısı."
+
+#: turcar/plugins/shell_config_page.py:32
+msgid "NB! Large values may cause poor performance!"
+msgstr "UYARI! Büyük değerler düşük performansa neden olabilir!"
+
+#: turcar/plugins/shell_config_page.py:47
+msgid "Maximum length of line fragments before squeezing"
+msgstr "Temizleme işleminden önce maksimum satır parçası uzunluğu"
+
+#: turcar/plugins/terminal_config_page.py:10
+msgid "Running current script in terminal"
+msgstr "Geçerli betiği terminalde çalıştırma"
+
+#: turcar/plugins/terminal_config_page.py:15
+msgid "Present Python REPL after program ends"
+msgstr "Program bittikten sonra Python REPL kullan"
+
+#: turcar/plugins/terminal_config_page.py:22
+msgid "Keep terminal window open after Python process ends"
+msgstr "Python işlemi bittikten sonra terminal penceresini açık tut"
+
+#: turcar/plugins/terminal_config_page.py:29
+msgid "NB! Automatic closing needs to be enabled in Terminal's settings\n"
+"(Profiles → Shell → When the shell exits)"
+msgstr "UYARI! Terminal ayarlarında otomatik kapanma etkinleştirilmeli\n"
+"(Profiller → Konsol → Konsol kapatıldığında)"
+
+#: turcar/plugins/terminal_config_page.py:38
+msgid "Terminal"
+msgstr "Terminal"
+
+#: turcar/plugins/theme_and_font_config_page.py:39
+msgid "UI theme"
+msgstr "UI teması"
+
+#: turcar/plugins/theme_and_font_config_page.py:52
+msgid "Syntax theme"
+msgstr "Sözdizimi teması"
+
+#: turcar/plugins/theme_and_font_config_page.py:84
+msgid "Editor font"
+msgstr "Editör fontu"
+
+#: turcar/plugins/theme_and_font_config_page.py:107
+msgid "IO font"
+msgstr "G/Ç yazı tipi"
+
+#: turcar/plugins/theme_and_font_config_page.py:132
+msgid "Preview"
+msgstr "Önizleme"
+
+#: turcar/plugins/theme_and_font_config_page.py:144
+msgid "This is a comment"
+msgstr "Bu bir açıklama satırıdır"
+
+#: turcar/plugins/theme_and_font_config_page.py:147
+msgid "The answer is"
+msgstr "Cevap"
+
+#: turcar/plugins/theme_and_font_config_page.py:151
+msgid "unclosed_string"
+msgstr "unclosed_string"
+
+#: turcar/plugins/theme_and_font_config_page.py:153
+msgid "blah, blah"
+msgstr "falan filan"
+
+#: turcar/plugins/theme_and_font_config_page.py:176
+msgid "NB! Some style elements change only after restarting turcar!"
+msgstr "UYARI! Bazı stil öğelerindeki değişikliklerin uygulanması için turcar yeniden başlatılmalıdır!"
+
+#: turcar/plugins/theme_and_font_config_page.py:215
+msgid "Enter an integer"
+msgstr "Bir tamsayı girin"
+
+#: turcar/plugins/theme_and_font_config_page.py:228
+msgid "Theme & Font"
+msgstr "Tema ve Yazı Tipi"
+
+#: turcar/plugins/turcar_folders.py:18
+msgid "Open turcar program folder..."
+msgstr "turcar program klasörünü aç ..."
+
+#: turcar/plugins/turcar_folders.py:23
+msgid "Open turcar data folder..."
+msgstr "turcar veri klasörünü aç ..."
+
+#: turcar/plugins/help/__init__.py:58
+msgid "Home"
+msgstr "Ev"
+
+#: turcar/plugins/help/__init__.py:69
+msgid "Help contents"
+msgstr "Yardım içeriği"
+
+#: turcar/plugins/micropython/__init__.py:175
+msgid "CircuitPython device"
+msgstr "CircuitPython cihazı"
+
+#: turcar/plugins/micropython/__init__.py:179
+msgid "MicroPython device"
+msgstr "MicroPython cihazı"
+
+#: turcar/plugins/micropython/__init__.py:191
+msgid "Connect your device to the computer and select corresponding port below"
+msgstr "Cihazınızı bilgisayara bağlayın ve aşağıdan ilgili bağlantı noktasını seçin."
+
+#: turcar/plugins/micropython/__init__.py:194
+msgid "look for your device name, \"USB Serial\" or \"UART\""
+msgstr "\"USB Seri\" veya \"UART\" cihazınızın adını arayın"
+
+#: turcar/plugins/micropython/__init__.py:196
+msgid "If you can't find it, you may need to install proper USB driver first."
+msgstr "Cihazınızı bulamıyorsanız, öncelikle USB sürücüsünü yüklemeniz gerekiyor olabilir."
+
+#: turcar/plugins/micropython/__init__.py:220
+msgid "Port"
+msgstr "Port"
+
+#: turcar/plugins/micropython/__init__.py:229
+msgid "Try to detect port automatically"
+msgstr "Bağlantı noktasını otomatik olarak algılamayı dene"
+
+#: turcar/plugins/micropython/__init__.py:417
+msgid "MicroPython (generic)"
+msgstr "MicroPython (genel)"
+
+#: turcar/plugins/printing/__init__.py:79
+msgid "Print..."
+msgstr "Yazdır..."
+
+#: turcar/plugins/system_shell/__init__.py:59
+msgid "Open system shell..."
+msgstr "Sistem komut satırını aç..."
+
+#: turcar/plugins/backend_config_page.py:61
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#: turcar/plugins/pip_gui.py:380
+msgid "Install from requirements file"
+msgstr "Gereksinimler dosyasından yükle"
+
+#: turcar/plugins/pip_gui.py:391
+msgid "Install from local file"
+msgstr "Yerel dosyadan yükle"
+
+#: turcar/plugins/pip_gui.py:970
+msgid "This dialog is for managing turcar plug-ins and their dependencies.\n"
+"If you want to install packages for your own programs then choose 'Tools → Manage packages...'"
+msgstr "Bu iletişim kutusu turcar eklentilerini ve bağımlılıklarını yönetmek içindir.\n"
+"Kendi programlarınız için paketler kurmak istiyorsanız, 'Araçlar → Paketleri yönet ...' seçeneğini seçin."
+
+#: turcar/plugins/circuitpython/__init__.py:47
+msgid "CircuitPython (generic)"
+msgstr "CircuitPython (genel)"
+
+#: turcar/plugins/commenting_indenting.py:123
+msgid "Indent selected lines"
+msgstr "Seçili satırları girintile"
+
+#: turcar/plugins/commenting_indenting.py:133
+msgid "Dedent selected lines"
+msgstr "Seçili satırların girintisini azalt"
+
+#: turcar/workbench.py:1264
+msgid "Switch to\n"
+"regular\n"
+"mode"
+msgstr "Normal\n"
+"kipe\n"
+"geç"
+
+#: turcar/plugins/microbit/__init__.py:54
+msgid "Make sure MicroPython has been installed to your micro:bit."
+msgstr "MicroPython'un micro:bit'inize kurulduğundan emin olun."
+
+#: turcar/plugins/microbit/__init__.py:56
+msgid "Don't forget that main.py only works without embedded main script."
+msgstr "Bu main.py dosyasının yalnızca gömülü ana komut dosyası olmadan çalıştığını unutmayın."
+
+#: turcar/plugins/microbit/__init__.py:102
+msgid "Install latest MicroPython to BBC micro:bit"
+msgstr "En son MicroPython'u BBC micro:bit'e yükleyin"
+
+#: turcar/plugins/microbit/__init__.py:104
+msgid "micro:bit location:"
+msgstr "micro:bit konumu:"
+
+#: turcar/plugins/microbit/__init__.py:109
+msgid "Version to be installed:"
+msgstr "Yüklenecek sürüm:"
+
+#: turcar/plugins/microbit/__init__.py:111
+msgid "please wait"
+msgstr "lütfen bekleyin"
+
+#: turcar/plugins/microbit/__init__.py:115
+msgid "NB! All files on micro:bit will be deleted!"
+msgstr "UYARI! micro:bit'teki tüm dosyalar silinecek!"
+
+#: turcar/plugins/microbit/__init__.py:195
+msgid "Installing ..."
+msgstr "Yükleniyor ..."
+
+#: turcar/plugins/microbit/__init__.py:199
+msgid "Done!"
+msgstr "Bitti!"
+
+#: turcar/plugins/microbit/__init__.py:199
+msgid "You can now close this dialog."
+msgstr "Şimdi bu iletişim kutusunu kapatabilirsiniz."
+
+#: turcar/plugins/micropython/__init__.py:298
+msgid "Firmware"
+msgstr "Cihaz Yazılımı"
+
+#: turcar/plugins/micropython/__init__.py:301
+msgid "Open the dialog for installing or upgrading MicroPython on your device"
+msgstr "MicroPython'u cihazınıza yüklemek veya yükseltmek için iletişim kutusunu açın"
+
+#: turcar/plugins/microbit/__init__.py:67
+msgid "Could not find disk '%s'."
+msgstr "'%s' diski bulunamadı."
+
+#: turcar/plugins/microbit/__init__.py:69
+msgid "Make sure you have micro:bit plugged in!"
+msgstr "micro:bit'in takılı olduğundan emin olun!"
+
+#: turcar/plugins/microbit/__init__.py:71
+msgid "Do you want to continue and locate the disk yourself?"
+msgstr "Devam etmek ve diski kendiniz bulmak ister misiniz?"
+
+#: turcar/misc_utils.py:120
+msgid "Could not find disk '%s'. Do you want to locate it yourself?"
+msgstr "'%s' diski bulunamadı. Kendiniz bulmak ister misiniz?"
+
+#: turcar/misc_utils.py:123
+msgid "Found several '%s' disks. Do you want to choose one yourself?"
+msgstr "Birkaç '%s' disk bulundu. Kendiniz seçmek ister misiniz?"
+
+#: turcar/misc_utils.py:137
+msgid "Can't find suitable disk"
+msgstr "Uygun disk bulunamıyor"
+
+#: turcar/base_file_browser.py:259
+msgid "%d items"
+msgstr "%d öğe"
+
+#: turcar/base_file_browser.py:581
+msgid "Move to Recycle Bin"
+msgstr "Geri dönüşüm kutusuna taşı"
+
+#: turcar/base_file_browser.py:583
+msgid "Move to Trash"
+msgstr "Çöp kutusuna taşı"
+
+#: turcar/base_file_browser.py:586
+msgid "Delete"
+msgstr "Sil"
+
+#: turcar/base_file_browser.py:589
+msgid "New directory"
+msgstr "Yeni dizin"
+
+#: turcar/base_file_browser.py:592
+msgid "Properties"
+msgstr "Özellikler"
+
+#: turcar/base_file_browser.py:593
+msgid "Storage space"
+msgstr "Depolama alanı"
+
+#: turcar/base_file_browser.py:603
+msgid "Path"
+msgstr "Konum"
+
+#: turcar/base_file_browser.py:605
+msgid "Directory properties"
+msgstr "Dizin özellikleri"
+
+#: turcar/base_file_browser.py:607
+msgid "File properties"
+msgstr "Dosya özellikleri"
+
+#: turcar/base_file_browser.py:609
+msgid "bytes"
+msgstr "byte"
+
+#: turcar/base_file_browser.py:612
+msgid "Size"
+msgstr "Boyut"
+
+#: turcar/base_file_browser.py:623
+msgid "Modified"
+msgstr "Değiştirilme"
+
+#: turcar/base_file_browser.py:679
+msgid "Deleting %s"
+msgstr "%s siliniyor"
+
+#: turcar/base_file_browser.py:701
+msgid "Moving %s to %s"
+msgstr "%s öğesi %s konumuna taşınıyor"
+
+#: turcar/code.py:203
+msgid "Loading"
+msgstr "Yükleniyor"
+
+#: turcar/code.py:297
+msgid "Saving"
+msgstr "Kaydediliyor"
+
+#: turcar/running.py:1408
+msgid "Working..."
+msgstr "İşleniyor..."
+
+#: turcar/plugins/files.py:199
+msgid "Uploading %s to %s"
+msgstr "%s,%s cihazına yükleniyor"
+
+#: turcar/plugins/files.py:206
+msgid "Upload to %s"
+msgstr "%s cihazına yükle"
+
+#: turcar/plugins/files.py:261
+msgid "Downloading %s to %s"
+msgstr "%s cihazından %s konumuna indiriliyor"
+
+#: turcar/plugins/files.py:267
+msgid "Download to %s"
+msgstr "%s konumuna indir"
+

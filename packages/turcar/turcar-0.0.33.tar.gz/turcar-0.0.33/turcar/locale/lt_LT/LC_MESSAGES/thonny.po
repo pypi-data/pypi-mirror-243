@@ -1,0 +1,1457 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+"Project-Id-Version: turcar\n"
+"Language: lt\n"
+
+#: turcar/workbench.py:355
+msgid "File"
+msgstr "Failas"
+
+#: turcar/workbench.py:356
+msgid "Edit"
+msgstr "Keisti"
+
+#: turcar/workbench.py:357
+msgid "View"
+msgstr "Vaizdas"
+
+#: turcar/running.py:95 turcar/workbench.py:358
+msgid "Run"
+msgstr "Paleisti"
+
+#: turcar/workbench.py:360
+msgid "Tools"
+msgstr "Įrankiai"
+
+#: turcar/plugins/help/__init__.py:68 turcar/workbench.py:361
+msgid "Help"
+msgstr "Pagalba"
+
+#: turcar/workbench.py:522
+msgid "Alternative Python 3 interpreter or virtual environment"
+msgstr "Alternatyvus Python 3 interpretatorius arba virtuali aplinka"
+
+#: turcar/workbench.py:530
+msgid "A special virtual environment (deprecated)"
+msgstr "Speciali virtuali aplinka (pasenusi)"
+
+#: turcar/workbench.py:568
+msgid "Exit"
+msgstr "Išeiti"
+
+#: turcar/workbench.py:595
+msgid "Decrease font size"
+msgstr "Sumažinti šriftą"
+
+#: turcar/workbench.py:607
+msgid "Focus editor"
+msgstr "Pereiti prie redaktoriaus"
+
+#: turcar/workbench.py:616
+msgid "Focus shell"
+msgstr "Pereiti prie komand. eilutės"
+
+#: turcar/workbench.py:627
+msgid "Maximize view"
+msgstr "Padidinti"
+
+#: turcar/workbench.py:639
+msgid "Full screen"
+msgstr "Visas ekranas"
+
+#: turcar/workbench.py:1250
+msgid "Program arguments"
+msgstr "Programos argumentai"
+
+#: turcar/plugins/about.py:25 turcar/plugins/about.py:157
+msgid "About turcar"
+msgstr "Apie turcar"
+
+#: turcar/plugins/about.py:77
+msgid "Made in\n"
+"University of Tartu, Estonia,\n"
+"with the help from\n"
+"open-source community,\n"
+"Raspberry Pi Foundation\n"
+"and Cybernetica AS"
+msgstr "Pagamintas\n"
+"Estijos Tartu universitete\n"
+"su pagalba iš\n"
+"atviro-kodo bendruomenės,\n"
+"Raspberry Pi Foundation\n"
+"ir Cybernetica AS"
+
+#: turcar/plugins/about.py:103
+msgid "This program comes with\n"
+"ABSOLUTELY NO WARRANTY!\n"
+"It is free software, and you are welcome to\n"
+"redistribute it under certain conditions, see\n"
+"https://opensource.org/licenses/MIT\n"
+"for details"
+msgstr "Ši programa suteikiama\n"
+"BE JOKIOS GARANTIJOS!\n"
+"Ji yra laisva programinė įranga, ir jūs galite\n"
+"platinti ją tam tikromis sąlygomis,\n"
+"žiūrėkite https://opensource.org/licenses/MIT\n"
+"norėdami sužinoti daugiau"
+
+#: turcar/plugins/about.py:146
+msgid "Version history"
+msgstr "Versijų istorija"
+
+#: turcar/plugins/about.py:153
+msgid "Report problems"
+msgstr "Pranešti apie problemas"
+
+#: turcar/plugins/assistant_config_page.py:15
+msgid "Open Assistant automatically when program crashes with an exception"
+msgstr "Atverti Asistentą automatiškai kai programa nustoja veikti su išimtimi"
+
+#: turcar/plugins/assistant_config_page.py:21
+msgid "Open Assistant automatically when it has warnings for your code"
+msgstr "Atverti Asistentą automatiškai, kai jis turi perspėjimų jūsų kode"
+
+#: turcar/plugins/assistant_config_page.py:26
+msgid "Perform selected Pylint checks"
+msgstr "Atlikti pasirinktus Pylint tikrinimus"
+
+#: turcar/plugins/assistant_config_page.py:29
+msgid "Perform MyPy checks"
+msgstr "Atlikti MyPy tikrinimus"
+
+#: turcar/plugins/assistant_config_page.py:31
+msgid "Disabled checks (one id per line)"
+msgstr "Išjungti tikrinimai (vienas identifikatorius per eilutę)"
+
+#: turcar/assistance.py:962 turcar/plugins/assistant_config_page.py:68
+msgid "Assistant"
+msgstr "Asistentas"
+
+#: turcar/plugins/autocomplete.py:316
+msgid "Auto-complete"
+msgstr "Auto-užbaigimas"
+
+#: turcar/plugins/backend_config_page.py:43
+msgid "Which interpreter or device should turcar use for running your code?"
+msgstr "Kurį interpretatorių ar įrenginį turėtų naudoti turcar paleidžiant jūsų kodą?"
+
+#: turcar/plugins/backend_config_page.py:127
+msgid "Interpreter"
+msgstr "Interpretatorius"
+
+#: turcar/plugins/birdseye_frontend.py:32
+msgid "About Birdseye"
+msgstr "Apie Birdseye"
+
+#: turcar/plugins/birdseye_frontend.py:33
+msgid "Birdseye is a Python debugger which needs to be installed separately.\n"
+"\n"
+"Do you want to open the help page and learn more?"
+msgstr "Birdseye yra Python tinkinimo programa, kuri turi būti įdiegta atskirai.\n"
+"\n"
+"Ar norite atverti pagalbos puslapį ir sužinoti daugiau?"
+
+#: turcar/plugins/birdseye_frontend.py:60
+msgid "Debug current script (birdseye)"
+msgstr "Tinkinti esamą scenarijų (Birdseye)"
+
+#: turcar/plugins/commenting_indenting.py:143
+msgid "Toggle comment"
+msgstr "Perjungti komentarą"
+
+#: turcar/plugins/commenting_indenting.py:153
+msgid "Comment out"
+msgstr "Užkomentuoti"
+
+#: turcar/plugins/commenting_indenting.py:163
+msgid "Uncomment"
+msgstr "Atkomentuoti"
+
+#: turcar/plugins/common_editing_commands.py:20
+msgid "Undo"
+msgstr "Anuliuoti"
+
+#: turcar/plugins/common_editing_commands.py:32
+msgid "Redo"
+msgstr "Pakartoti"
+
+#: turcar/plugins/common_editing_commands.py:48 turcar/ui_utils.py:2176
+msgid "Cut"
+msgstr "Iškirpti"
+
+#: turcar/plugins/common_editing_commands.py:60 turcar/ui_utils.py:2177
+msgid "Copy"
+msgstr "Kopijuoti"
+
+#: turcar/plugins/common_editing_commands.py:72 turcar/ui_utils.py:2178
+msgid "Paste"
+msgstr "Įklijuoti"
+
+#: turcar/plugins/common_editing_commands.py:84 turcar/plugins/debugger.py:124
+msgid "Select all"
+msgstr "Pasirinkti viską"
+
+#: turcar/plugins/debugger.py:117 turcar/plugins/debugger.py:1276
+msgid "Run to cursor"
+msgstr "Paleisti iki žymeklio"
+
+#: turcar/plugins/debugger.py:863
+msgid "Can't close yet"
+msgstr "Dar negalima uždaryti"
+
+#: turcar/plugins/debugger.py:864
+msgid "Use \"Stop\" command if you want to cancel debugging"
+msgstr "Naudokite \"Stop\" komandą norėdami atšaukti tinkinimą"
+
+#: turcar/plugins/dock_user_windows_frontend.py:27
+msgid "Dock user windows"
+msgstr "Prisegti vartotojo langus"
+
+#: turcar/plugins/editor_config_page.py:14
+msgid "Highlight matching names"
+msgstr "Paryškinti atitinkančius vardus"
+
+#: turcar/plugins/editor_config_page.py:20
+msgid "Highlight local variables"
+msgstr "Paryškinti vietinius kintamuosius"
+
+#: turcar/plugins/editor_config_page.py:25
+msgid "Highlight parentheses"
+msgstr "Paryškinti skliaustelius"
+
+#: turcar/plugins/editor_config_page.py:26
+msgid "Highlight syntax elements"
+msgstr "Paryškinti sintaksės elementus"
+
+#: turcar/plugins/editor_config_page.py:29
+msgid "Highlight current line (requires reopening the editor)"
+msgstr "Paryškinti esamą eilutę (reikia perkrauti redaktorių)"
+
+#: turcar/plugins/editor_config_page.py:34
+msgid "Allow code completion with Tab-key in editors"
+msgstr "Leisti kodo užbaigimą su tab klavišu redaktoriuose"
+
+#: turcar/plugins/editor_config_page.py:40
+msgid "Allow code completion with Tab-key in Shell"
+msgstr "Leisti kodo užbaigimą su tab klavišu komand. eilutėje"
+
+#: turcar/plugins/editor_config_page.py:44
+msgid "Show line numbers"
+msgstr "Rodyti eilučių numerius"
+
+#: turcar/plugins/editor_config_page.py:47
+msgid "Recommended maximum line length\n"
+"(Set to 0 to turn off margin line)"
+msgstr "Rekomenduojamas ilgiausias eilutės ilgis\n"
+"(Nustatykite į 0 norėdami išjungti paraštės liniją)"
+
+#: turcar/plugins/editor_config_page.py:68
+msgid "Editor"
+msgstr "Redaktorius"
+
+#: turcar/plugins/event_logging.py:197
+msgid "Export usage logs..."
+msgstr "Eksportuoti panaudos žurnalą..."
+
+#: turcar/plugins/event_view.py:38
+msgid "Events"
+msgstr "Įvykiai"
+
+#: turcar/plugins/files.py:307
+msgid "Files"
+msgstr "Failai"
+
+#: turcar/plugins/find_replace.py:56 turcar/plugins/find_replace.py:412
+msgid "Find & Replace"
+msgstr "Rasti ir pakeisti"
+
+#: turcar/plugins/find_replace.py:62
+msgid "Find:"
+msgstr "Rasti:"
+
+#: turcar/plugins/find_replace.py:73
+msgid "Replace with:"
+msgstr "Pakeisti su:"
+
+#: turcar/plugins/find_replace.py:91
+msgid "Case sensitive"
+msgstr "Skirti didžiąsias raides"
+
+#: turcar/plugins/find_replace.py:98
+msgid "Up"
+msgstr "Aukštyn"
+
+#: turcar/plugins/find_replace.py:102
+msgid "Down"
+msgstr "Žemyn"
+
+#: turcar/plugins/find_replace.py:111
+msgid "Find"
+msgstr "Rasti"
+
+#: turcar/plugins/find_replace.py:121
+msgid "Replace"
+msgstr "Pakeisti"
+
+#: turcar/plugins/find_replace.py:129
+msgid "Replace+Find"
+msgstr "Pakeisti + rasti"
+
+#: turcar/plugins/find_replace.py:138
+msgid "Replace all"
+msgstr "Pakeisti visus"
+
+#: turcar/plugins/find_replace.py:232
+msgid "Enter string to be replaced."
+msgstr "Įveskite tekstą, kuris turi būti pakeistas."
+
+#: turcar/plugins/find_replace.py:316
+msgid "The specified text was not found!"
+msgstr "Nurodytas tekstas nerastas!"
+
+#: turcar/plugins/general_config_page.py:13
+msgid "Allow only single turcar instance"
+msgstr "Leisti tik vieną paleistą turcar vienu metu"
+
+#: turcar/plugins/general_config_page.py:20
+msgid "Reopen all files from previous session"
+msgstr "Atverti visus failus iš paskutinės sesijos"
+
+#: turcar/plugins/general_config_page.py:26
+msgid "Disable notification sound"
+msgstr "išjungti pranešimų garsą"
+
+#: turcar/plugins/general_config_page.py:75
+msgid "Font scaling mode"
+msgstr "Teksto dydžio keitimo režimas"
+
+#: turcar/plugins/heap.py:35
+msgid "Heap mode is on.\n"
+"Close Heap view to turn it off."
+msgstr "Įjungtas krūvos režimas.\n"
+"Uždarykite krūvos vaizdą norėdami išjungti."
+
+#: turcar/plugins/heap.py:83
+msgid "Heap"
+msgstr "Krūva"
+
+#: turcar/plugins/general_config_page.py:42
+msgid "Language"
+msgstr "Kalba"
+
+#: turcar/plugins/notes.py:33
+msgid "This box is meant for your working notes -- assignment instructions, code snippets, whatever.\n"
+"\n"
+"Everything will be saved automatically and loaded when you open turcar next time.\n"
+"\n"
+"Feel free to delete this text to make room for your own notes."
+msgstr "Šis laukas skirtas jūsų darbiniams užrašams -- užduočiai, kodo iškarpoms, bet kam.\n"
+"\n"
+"Viskas automatiškai išsaugoma ir pakraunama kitą kartą atveriant turcar.\n"
+"\n"
+"Laisvai galite ištrinti šį tekstą ir padaryti vietos savo užrašams."
+
+#: turcar/plugins/notes.py:61
+msgid "Notes"
+msgstr "Užrašai"
+
+#: turcar/plugins/object_inspector.py:108
+msgid "Previous object"
+msgstr "Praėjęs objektas"
+
+#: turcar/plugins/object_inspector.py:111
+msgid "Next object"
+msgstr "Kitas objektas"
+
+#: turcar/plugins/object_inspector.py:601
+msgid "Object inspector"
+msgstr "Objektų peržiūra"
+
+#: turcar/plugins/outline.py:137
+msgid "Outline"
+msgstr "Apžvalga"
+
+#: turcar/plugins/pgzero_frontend.py:26
+msgid "Pygame Zero mode"
+msgstr "Pygame Zero režimas"
+
+#: turcar/plugins/pip_gui.py:78
+msgid "Find package from PyPI"
+msgstr "Rasti PyPI paketą"
+
+#: turcar/plugins/pip_gui.py:188 turcar/plugins/pip_gui.py:190
+msgid "Uninstall"
+msgstr "Išdiegti"
+
+#: turcar/code.py:548 turcar/plugins/microbit/__init__.py:200
+#: turcar/plugins/pip_gui.py:204 turcar/running.py:1457 turcar/ui_utils.py:367
+#: turcar/ui_utils.py:1643
+msgid "Close"
+msgstr "Uždaryti"
+
+#: turcar/plugins/pip_gui.py:382
+msgid "Click "
+msgstr "Spragtelti "
+
+#: turcar/plugins/pip_gui.py:383 turcar/plugins/pip_gui.py:393
+msgid "here"
+msgstr "čia"
+
+#: turcar/plugins/pip_gui.py:181 turcar/plugins/pip_gui.py:478
+msgid "Upgrade"
+msgstr "Atnaujinti"
+
+#: turcar/plugins/microbit/__init__.py:123 turcar/plugins/pip_gui.py:483
+#: turcar/plugins/pip_gui.py:1064
+msgid "Install"
+msgstr "Įdiegti"
+
+#: turcar/plugins/pip_gui.py:505
+msgid "Could not find the package from PyPI."
+msgstr "Nepavyko rasti paketo PyPI"
+
+#: turcar/plugins/pip_gui.py:515
+msgid "exact package name"
+msgstr "tikslus paketo pavadinimas"
+
+#: turcar/plugins/pip_gui.py:533
+msgid "Latest stable version"
+msgstr "Vėliausia stabili versija"
+
+#: turcar/plugins/pip_gui.py:535
+msgid "Latest version"
+msgstr "Vėliausia versija"
+
+#: turcar/plugins/pip_gui.py:536
+msgid "Summary"
+msgstr "Suvestinė"
+
+#: turcar/plugins/pip_gui.py:537
+msgid "Author"
+msgstr "Autorius"
+
+#: turcar/plugins/pip_gui.py:538
+msgid "Homepage"
+msgstr "Puslapis"
+
+#: turcar/plugins/pip_gui.py:540
+msgid "Bugtracker"
+msgstr "Klaidų sekimas"
+
+#: turcar/plugins/pip_gui.py:542
+msgid "Documentation"
+msgstr "Dokumentacija"
+
+#: turcar/plugins/pip_gui.py:544
+msgid "PyPI page"
+msgstr "PyPI puslapis"
+
+#: turcar/plugins/pip_gui.py:548
+msgid "Requires"
+msgstr "Reikalauja"
+
+#: turcar/plugins/pip_gui.py:614
+msgid "Really uninstall?"
+msgstr "Tikrai išdiegti?"
+
+#: turcar/plugins/pip_gui.py:619
+msgid "Are you sure you want to uninstall it?"
+msgstr "Ar tikrai norite išdiegti?"
+
+#: turcar/plugins/variables.py:19
+msgid "Back to\n"
+"current frame"
+msgstr "Atgal į\n"
+"esamą kadrą"
+
+#: turcar/plugins/variables.py:131
+msgid "Variables"
+msgstr "Kintamieji"
+
+#: turcar/base_file_browser.py:30
+msgid "This computer"
+msgstr "Šis kompiuteris"
+
+#: turcar/base_file_browser.py:568
+msgid "Refresh"
+msgstr "Atnaujinti"
+
+#: turcar/base_file_browser.py:572
+msgid "Focus into"
+msgstr "Pereiti į"
+
+#: turcar/base_file_browser.py:1001
+msgid "Error"
+msgstr "Klaida"
+
+#: turcar/base_file_browser.py:1001
+msgid "You need to select a file!"
+msgstr "Būtina pasirinkti failą!"
+
+#: turcar/base_file_browser.py:1005
+msgid "Overwrite?"
+msgstr "Perrašyti?"
+
+#: turcar/base_file_browser.py:1005
+msgid "Do you want to overwrite '%s' ?"
+msgstr "Ar tikrai norite perrašyti '%s'?"
+
+#: turcar/code.py:513 turcar/code.py:515
+msgid "New"
+msgstr "Naujas"
+
+#: turcar/code.py:526
+msgid "Open..."
+msgstr "Atverti..."
+
+#: turcar/code.py:528
+msgid "Load"
+msgstr "Pakrauti"
+
+#: turcar/code.py:537
+msgid "Recent files"
+msgstr "Paskutiniai atverti failai"
+
+#: turcar/code.py:559 turcar/ui_utils.py:369
+msgid "Close all"
+msgstr "Uždaryti visus"
+
+#: turcar/code.py:569 turcar/code.py:571
+msgid "Save"
+msgstr "Išsaugoti"
+
+#: turcar/code.py:583
+msgid "Save as..."
+msgstr "Išsaugoti kaip..."
+
+#: turcar/code.py:594
+msgid "Save copy..."
+msgstr "Išsaugoti kopiją..."
+
+#: turcar/code.py:603
+msgid "Rename..."
+msgstr "Pervardinti..."
+
+#: turcar/config_ui.py:17
+msgid "turcar options"
+msgstr "turcar nustatymai"
+
+#: turcar/running.py:94
+msgid "Run current script"
+msgstr "Paleisti esamą scenarijų"
+
+#: turcar/running.py:125
+msgid "Run current script in terminal"
+msgstr "Paleisti esamą scenarijų terminale"
+
+#: turcar/running.py:138
+msgid "Stop/Restart backend"
+msgstr "Sustabdyti/Perkrauti tarnybinį servisą"
+
+#: turcar/running.py:139
+msgid "Stop"
+msgstr "Sustabdyti"
+
+#: turcar/running.py:150
+msgid "Interrupt execution"
+msgstr "Pertraukti veikimą"
+
+#: turcar/running.py:161
+msgid "Send EOF / Soft reboot"
+msgstr "Nusiųsti EOF / Minkštas perkrovimas"
+
+#: turcar/running.py:172
+msgid "Disconnect"
+msgstr "Atsijungti"
+
+#: turcar/running_config_page.py:23
+msgid "Known interpreters"
+msgstr "Žinomi interpretatoriai"
+
+#: turcar/running_config_page.py:36
+msgid "Your interpreter isn't in the list?"
+msgstr "Jūsų interpretatoriaus nėra sąraše?"
+
+#: turcar/running_config_page.py:43
+msgid "Locate another"
+msgstr "Surasti kitą"
+
+#: turcar/running_config_page.py:45
+msgid "python executable"
+msgstr "python vykdomasis failas"
+
+#: turcar/running_config_page.py:47
+msgid "NB! turcar only supports Python 3.5 and later"
+msgstr "NB! turcar palaiko Python 3.5 ir vėlesnius"
+
+#: turcar/running_config_page.py:56
+msgid "Create new virtual environment"
+msgstr "Sukurti naują virtualią aplinką"
+
+#: turcar/running_config_page.py:59
+msgid "Select existing or create a new empty directory"
+msgstr "Pasirinkti esamą, arba sukurti naują aplanką"
+
+#: turcar/running_config_page.py:74
+msgid "Python interpreters"
+msgstr "Python interpretatoriai"
+
+#: turcar/plugins/pip_gui.py:657 turcar/plugins/pip_gui.py:669
+#: turcar/running_config_page.py:75
+msgid "all files"
+msgstr "visi failai"
+
+#: turcar/running_config_page.py:89
+msgid "Select empty directory for new virtual environment"
+msgstr "Pasirinkite tuščią aplanką naujai virtualiai aplinkai"
+
+#: turcar/running_config_page.py:96
+msgid "Bad directory"
+msgstr "Blogas aplankas"
+
+#: turcar/running_config_page.py:97
+msgid "Selected directory is not empty.\n"
+"Select another or cancel."
+msgstr "Pasirinktas aplankas nėra tuščias.\n"
+"Pasirinkite kitą arba atšaukite."
+
+#: turcar/running_config_page.py:112
+msgid "Creating virtual environment"
+msgstr "Kuriama virtuali aplinka"
+
+#: turcar/shell.py:72
+msgid "Clear shell"
+msgstr "Išvalyti komand. eilutę"
+
+#: turcar/shell.py:126
+msgid "Plotter"
+msgstr "Braižyklė"
+
+#: turcar/shell.py:245
+msgid "Clear"
+msgstr "Išvalyti"
+
+#: turcar/shell.py:258
+msgid "Show Plotter"
+msgstr "Rodyti braižyklę"
+
+#: turcar/shell.py:1389
+msgid "For performance reasons, Shell avoids showing very long lines in full (see Tools => Options => Shell).\n"
+"Here you can interact with the original text fragment."
+msgstr "Dėl greitaveikos komand. eilutė labai ilgų eilučių nerodo pilnai (žiūrėkite Įrankiai → Nustatymai → Komand. Eilutė).\n"
+"Čia jūs galite dirbti su originaliu teksto fragmentu."
+
+#: turcar/shell.py:1400
+msgid "Wrap text (may be slow)"
+msgstr "Perkelti teksta (gali būti lėta)"
+
+#: turcar/shell.py:1425 turcar/ui_utils.py:1639
+msgid "Copy to clipboard"
+msgstr "Kopijuoti į iškarpinę"
+
+#: turcar/shell.py:1431
+msgid "Expand in Shell"
+msgstr "Išskleisti komand. eilutėje"
+
+#: turcar/shell.py:1442
+msgid "Squeezed text (%d characters)"
+msgstr "Suspaustas tekstas (%d ženklų)"
+
+#: turcar/shell.py:1611
+msgid "Plotter visualizes series of\n"
+"numbers printed to the Shell."
+msgstr "Braižyklė parodo numerių seriją\n"
+"išspausdintą į komand. eilutę"
+
+#: turcar/shell.py:1613
+msgid "See Help for details."
+msgstr "Detalės pagalboje"
+
+#: turcar/ui_utils.py:368
+msgid "Close others"
+msgstr "Uždaryti kitus"
+
+#: turcar/ui_utils.py:1499
+msgid "Copying"
+msgstr "Kopijuojama"
+
+#: turcar/ui_utils.py:1502
+msgid "Copying\n"
+"  %s\n"
+"to\n"
+"  %s"
+msgstr "Kopijuojama\n"
+"  %s\n"
+"į\n"
+"  %s"
+
+#: turcar/config_ui.py:31 turcar/plugins/microbit/__init__.py:127
+#: turcar/plugins/pip_gui.py:1066 turcar/running.py:1424
+#: turcar/ui_utils.py:1510 turcar/ui_utils.py:1712
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: turcar/config_ui.py:30 turcar/ui_utils.py:1764
+msgid "OK"
+msgstr "Gerai"
+
+#: turcar/ui_utils.py:1783
+msgid "Cancel the process?"
+msgstr "Atšaukti procesą?"
+
+#: turcar/ui_utils.py:1784
+msgid "The process is still running.\n"
+"Are you sure you want to cancel?"
+msgstr "Procesas dar veikia.\n"
+"Ar tikrai norite atšaukti?"
+
+#: turcar/ui_utils.py:2182
+msgid "Select All"
+msgstr "Pasirinkti viską"
+
+#: turcar/plugins/shell_config_page.py:61 turcar/workbench.py:162
+msgid "Shell"
+msgstr "Komand. eilutė"
+
+#: turcar/workbench.py:512
+msgid "The same interpreter which runs turcar (default)"
+msgstr "Tas pats interpretatorius, kuris paleidžia turcar (numatyta)"
+
+#: turcar/workbench.py:531
+msgid "This virtual environment is automatically maintained by turcar.\n"
+""
+msgstr "Ši virtuali aplinka automatiškai valdoma turcar.\n"
+"\n"
+""
+
+#: turcar/workbench.py:532
+msgid "Location: "
+msgstr "Vieta: "
+
+#: turcar/workbench.py:578
+msgid "Options..."
+msgstr "Nustatymai..."
+
+#: turcar/workbench.py:585
+msgid "Increase font size"
+msgstr "Padidinti šriftą"
+
+#: turcar/workbench.py:650
+msgid "Change font size"
+msgstr "Pakeisti šrifto dydį"
+
+#: turcar/workbench.py:651
+msgid "Zoom"
+msgstr "Priartinti"
+
+#: turcar/workbench.py:660
+msgid "Exit turcar"
+msgstr "Išeiti iš turcar"
+
+#: turcar/workbench.py:663
+msgid "Quit"
+msgstr "Išeiti"
+
+#: turcar/workbench.py:1054 turcar/workbench.py:1062
+msgid "Overwriting theme '%s'"
+msgstr "Perrašoma tema '%s'"
+
+#: turcar/workbench.py:1221
+msgid "Program arguments:"
+msgstr "Programos parametrai:"
+
+#: turcar/workbench.py:1275
+msgid "Regular mode"
+msgstr "Numatytasis režimas"
+
+#: turcar/workbench.py:1276
+msgid "Configuration has been updated. Restart turcar to start working in regular mode.\n"
+"\n"
+"(See 'Tools → Options → General' if you change your mind later.)"
+msgstr "Konfigūracija atnaujinta. Perkraukite turcar norėdami dirbti numatytame režime.\n"
+"\n"
+"(Žiūrėkite 'Įrankiai → Nustatymai → Bendra' jei apsigalvosite.)"
+
+#: turcar/plugins/ast_view.py:209
+msgid "Program tree"
+msgstr "Programos medis"
+
+#: turcar/plugins/backend_config_page.py:130
+msgid "Select interpreter"
+msgstr "Pasirinkite interpretatorių"
+
+#: turcar/plugins/debugger.py:1162
+msgid "Resume"
+msgstr "Tęsti"
+
+#: turcar/plugins/debugger.py:1174
+msgid "Run / resume"
+msgstr "Paleisti / tęsti"
+
+#: turcar/plugins/debugger.py:1189
+msgid "Debug current script"
+msgstr "Tinkinti esamą scenarijų"
+
+#: turcar/plugins/debugger.py:1191
+msgid "Debug"
+msgstr "Tinkinti"
+
+#: turcar/plugins/debugger.py:1202
+msgid "Debug current script (nicer)"
+msgstr "Tinkinti esamą scenarijų (detaliau)"
+
+#: turcar/plugins/debugger.py:1214
+msgid "Debug current script (faster)"
+msgstr "Tinkinti esamą scenarijų (greičiau)"
+
+#: turcar/plugins/debugger.py:1225
+msgid "Step over"
+msgstr "Perlipti"
+
+#: turcar/plugins/debugger.py:1227
+msgid "Over"
+msgstr "Virš"
+
+#: turcar/plugins/debugger.py:1238
+msgid "Step into"
+msgstr "Lipti gilyn"
+
+#: turcar/plugins/debugger.py:1240
+msgid "Into"
+msgstr "Į"
+
+#: turcar/plugins/debugger.py:1251
+msgid "Step out"
+msgstr "Išlipti"
+
+#: turcar/plugins/debugger.py:1253
+msgid "Out"
+msgstr "Iš"
+
+#: turcar/plugins/debugger.py:1288
+msgid "Step back"
+msgstr "Eiti atgal"
+
+#: turcar/plugins/debugger.py:1290
+msgid "Back"
+msgstr "Atgal"
+
+#: turcar/plugins/debugger.py:1296
+msgid "Stack"
+msgstr "Dėklas"
+
+#: turcar/plugins/debugger.py:1297
+msgid "Exception"
+msgstr "Išimtis"
+
+#: turcar/plugins/general_config_page.py:16
+msgid "Log program usage events"
+msgstr "Sekti programos panaudojimo įvykius"
+
+#: turcar/plugins/general_config_page.py:32
+msgid "Debug mode (provides more detailed diagnostic logs)"
+msgstr "Tinkinimo režimas (pateikia detalesnius diagnostinius išrašus)"
+
+#: turcar/plugins/general_config_page.py:56
+msgid "UI mode"
+msgstr "Vartotojo aplinkos režimas"
+
+#: turcar/plugins/general_config_page.py:69
+msgid "UI scaling factor"
+msgstr "Vartotojo aplinkos didinimo faktorius"
+
+#: turcar/plugins/general_config_page.py:88
+msgid "NB! Restart turcar after changing these options!"
+msgstr "NB! Perkraukite turcar pakeitę šiuos nustatymus!"
+
+#: turcar/plugins/general_config_page.py:102
+msgid "General"
+msgstr "Bendra"
+
+#: turcar/plugins/pip_gui.py:108
+msgid "INSTALL"
+msgstr "ĮDIEGTI"
+
+#: turcar/plugins/pip_gui.py:352
+msgid "Browse the packages"
+msgstr "Peržiūrėti paketus"
+
+#: turcar/plugins/pip_gui.py:355
+msgid "With current interpreter you can only browse the packages here.\n"
+"Use 'Tools → Open system shell...' for installing, upgrading or uninstalling."
+msgstr "Su esamu interpretatoriumi jūs galite paketus naršyti tik čia. Naudokite 'Įrankiai → Atverti sistemos komand. eilutę...' norėdami įdiegti, atnaujinti ar išdiegti."
+
+#: turcar/plugins/pip_gui.py:363
+msgid "Packages' directory"
+msgstr "Paketų aplankas"
+
+#: turcar/plugins/pip_gui.py:368
+msgid "Install from PyPI"
+msgstr "Sudiegti iš PyPI"
+
+#: turcar/plugins/pip_gui.py:371
+msgid "If you don't know where to get the package from, then most likely you'll want to search the Python Package Index. Start by entering the name of the package in the search box above and pressing ENTER."
+msgstr "Jei nežinote iš kur gauti paketą greičiausia norėsite paieškoti jo Python Package Index. Pradėkite įvesdami paketo pavadinimą paieškos lauke ir spustelėdami ENTER."
+
+#: turcar/plugins/pip_gui.py:387
+msgid "to locate requirements.txt file and install the packages specified in it."
+msgstr "norėdami rasti requirements.txt reikalavimų failą ir sudiegti paketus aprašytus jame."
+
+#: turcar/plugins/pip_gui.py:392
+msgid "Click"
+msgstr "Spustelėkite"
+
+#: turcar/plugins/pip_gui.py:397
+msgid "to locate and install the package file (usually with .whl, .tar.gz or .zip extension)."
+msgstr "norėdami surasti ir sudiegti paketų failą (dažniausia su .whl, .tar.gz ar .zip trumpiniu)."
+
+#: turcar/plugins/pip_gui.py:403
+msgid "Upgrade or uninstall"
+msgstr "Atnaujinti ar išdiegti"
+
+#: turcar/plugins/pip_gui.py:405
+msgid "Start by selecting the package from the left."
+msgstr "Pradėkite pasirinkdami paketą kairėje."
+
+#: turcar/plugins/pip_gui.py:409
+msgid "Target:"
+msgstr "Taikinys:"
+
+#: turcar/plugins/pip_gui.py:412
+msgid "virtual environment"
+msgstr "virtuali aplink"
+
+#: turcar/plugins/pip_gui.py:416
+msgid "user site packages"
+msgstr "vartotojo paketai"
+
+#: turcar/plugins/pip_gui.py:421
+msgid "This dialog lists all available packages, but allows upgrading and uninstalling only packages from"
+msgstr "Šis dialogas išvardina visus prieinamus paketus, bet leidžia atnaujinti ar išdiegti paketus iš"
+
+#: turcar/plugins/pip_gui.py:431
+msgid "New packages will be also installed into this directory. Other locations must be managed by alternative means."
+msgstr "Nauji paketai taip pat bus sudiegti į šį aplanką. Kitos vietos turi būti valdomos kitais būdais."
+
+#: turcar/plugins/pip_gui.py:456
+msgid "Installed version:"
+msgstr "Sudiegta versija:"
+
+#: turcar/plugins/pip_gui.py:458
+msgid "Installed to:"
+msgstr "Sudiegta į:"
+
+#: turcar/plugins/pip_gui.py:510
+msgid "Please check your spelling!"
+msgstr "Patikrinkite rašybą!"
+
+#: turcar/plugins/pip_gui.py:512
+msgid "You need to enter"
+msgstr "Jums reikia įvesti"
+
+#: turcar/plugins/pip_gui.py:520
+msgid "Could not find the package info from PyPI."
+msgstr "Nepavyko rasti paketo informacijos PyPI"
+
+#: turcar/plugins/pip_gui.py:522 turcar/plugins/pip_gui.py:1120
+msgid "Error code:"
+msgstr "Klaidos kodas:"
+
+#: turcar/plugins/pip_gui.py:581
+msgid "Can't find package name from the list:"
+msgstr "Sąraše nepavyko rasti paketo pavadinimo:"
+
+#: turcar/plugins/pip_gui.py:615
+msgid "Package '{}' is required for installing and uninstalling other packages."
+msgstr "Paketas '{}' reikalingas norint sudiegti ir išdiegti kitus paketus."
+
+#: turcar/plugins/pip_gui.py:657
+msgid "Package"
+msgstr "Paketas"
+
+#: turcar/plugins/pip_gui.py:757
+msgid "Manage packages for %s"
+msgstr "Valdyti paketus %s"
+
+#: turcar/plugins/pip_gui.py:813
+msgid "Confirmation"
+msgstr "Patvirtinimas"
+
+#: turcar/plugins/pip_gui.py:814
+msgid "Looks like you are installing a turcar-related package.\n"
+"If you meant to install a turcar plugin, then you should\n"
+"choose 'Tools → Manage plugins...' instead\n"
+"\n"
+"Are you sure you want to install %s for the back-end?"
+msgstr "Atrodo, kad jūs bandote sudiegti su turcar susijusį paketą. Jei norėjote sudiegti turcar įskiepį, pasirinkite 'Įrankiai → Valdyti įskiepius...'.\n"
+"\n"
+"Ar tikrai norite sudiegti %s tarnybinei daliai?"
+
+#: turcar/plugins/pip_gui.py:912
+msgid "NB! There may be another version available which is compatible with current turcar version. Click on '...' button to choose the version to install."
+msgstr "NB! Gali būti kita versija, kuri palaiko esamą turcar versiją. Spustelkite '...' mytuką ir pasirinkite versiją, kurią norite sudiegti."
+
+#: turcar/plugins/pip_gui.py:920
+msgid "turcar plugin without requirements"
+msgstr "turcar įskiepis be reikalavimų"
+
+#: turcar/plugins/pip_gui.py:921
+msgid "Looks like you are trying to install an outdated turcar\n"
+"plug-in (it doesn't specify required turcar version).\n"
+"\n"
+"If you still want it, then please install it from the command line."
+msgstr "Atrodo, kad jūs bandote sudiegti pasenusį turcar įskiepį (jis nenurodo reikalingos turcar versijos).\n"
+"\n"
+"Jei vis dar jo norite, sudiekite jį iš komand. eilutės."
+
+#: turcar/plugins/pip_gui.py:935
+msgid "Unsuitable requirements"
+msgstr "Netinkami reikalavimai"
+
+#: turcar/plugins/pip_gui.py:936
+msgid "This package requires different turcar version:"
+msgstr "Šis paketas reikalauja kitos turcar versijos:"
+
+#: turcar/plugins/pip_gui.py:940
+msgid "If you still want it, then please install it from the command line."
+msgstr "Jei vis dar jo norite, sudiekite iš komand. eilutės."
+
+#: turcar/plugins/pip_gui.py:984
+msgid "(In this case turcar's back-end uses same interpreter, so both dialogs manage same packages.)"
+msgstr "(Šiuo atveju turcar tarnybinė dalis naudoja tą patį interpretatorių, abu dialogai valdo tuos pačius paketus.)"
+
+#: turcar/plugins/pip_gui.py:990
+msgid "NB! You need to restart turcar after installing / upgrading / uninstalling a plug-in."
+msgstr "NB! Jums reikia perkrauti turcar sudiegus, atnaujinus arba išdiegus įskiepį."
+
+#: turcar/plugins/pip_gui.py:1000
+msgid "turcar plug-ins"
+msgstr "turcar įskiepiai"
+
+#: turcar/plugins/pip_gui.py:1013
+msgid "Advanced install / upgrade / downgrade"
+msgstr "Detalus įdiegimas, atnaujinimas, pasendinimas"
+
+#: turcar/plugins/pip_gui.py:1022
+msgid "Desired version"
+msgstr "Norima versija"
+
+#: turcar/plugins/pip_gui.py:1060
+msgid "Upgrade dependencies"
+msgstr "Atnaujinti priklausomybes"
+
+#: turcar/plugins/pip_gui.py:1118
+msgid "Requires:"
+msgstr "Reikalauja:"
+
+#: turcar/plugins/pip_gui.py:1122
+msgid "Error:"
+msgstr "Klaida:"
+
+#: turcar/plugins/pip_gui.py:1232
+msgid "Manage packages..."
+msgstr "Valdyti paketus..."
+
+#: turcar/plugins/pip_gui.py:1238
+msgid "Manage plug-ins..."
+msgstr "Valdyti įskiepius..."
+
+#: turcar/plugins/replayer.py:354
+msgid "Open replayer..."
+msgstr "Atverti kartotuvą..."
+
+#: turcar/plugins/run_debug_config_page.py:12
+msgid "Change working directory to script directory on Run / Debug"
+msgstr "Pakeisti darbinį aplanką į scenarijų aplanką spustelint Paleisti / Tinkinti"
+
+#: turcar/plugins/run_debug_config_page.py:20
+msgid "Show function calls (frames) in separate windows"
+msgstr "Rodyti funkcijų iškvietimus (kadrus) atskiruose languose"
+
+#: turcar/plugins/run_debug_config_page.py:21
+msgid "Uncheck if you want more traditional experience."
+msgstr "Nužymėkite norėdami tradicinės veiksenos."
+
+#: turcar/plugins/run_debug_config_page.py:27
+msgid "Open and close Stack view automatically"
+msgstr "Atverti ir uždaryti dėklo vaizdą automatiškai"
+
+#: turcar/plugins/run_debug_config_page.py:28
+msgid "Opens the Stack view on first call and closes it when program returns to main frame."
+msgstr "Atidaro dėklo vaizdą pirmo iškvietimo metu ir uždaro jį kai programa grįžta į pagrindinį kadrą"
+
+#: turcar/plugins/run_debug_config_page.py:37
+msgid "Allow stepping into libraries (ie. outside of main script directory)"
+msgstr "Leidžia įlipti į bibliotekas (t.y. už pagrindinio scenarijaus aplanko)"
+
+#: turcar/plugins/run_debug_config_page.py:38
+msgid "May make debugging slower."
+msgstr "Gali sulėtinti tinkinimą."
+
+#: turcar/plugins/run_debug_config_page.py:43
+msgid "Preferred debugger"
+msgstr "Pageidautinas tinkintuvas"
+
+#: turcar/plugins/run_debug_config_page.py:55
+msgid "(used when clicking Debug toolbar button)"
+msgstr "(naudojamas spustelint Tinkinti įrankinės mygtuką)"
+
+#: turcar/plugins/run_debug_config_page.py:60
+msgid "Birdseye port"
+msgstr "Birdseye prievadas"
+
+#: turcar/plugins/run_debug_config_page.py:64
+msgid "(restart turcar after changing this)"
+msgstr "(pakeitę paleiskite turcar iš naujo)"
+
+#: turcar/plugins/run_debug_config_page.py:72
+msgid "Run & Debug"
+msgstr "Paleisti ir Tinkinti"
+
+#: turcar/plugins/shell_config_page.py:16
+msgid "Terminal emulation"
+msgstr "Terminalo emuliacija"
+
+#: turcar/plugins/shell_config_page.py:18
+msgid "supports basic ANSI-colors and styles"
+msgstr "palaiko pagrindinius ANSI-spalvų kodus ir stilius"
+
+#: turcar/plugins/shell_config_page.py:30
+msgid "Maximum number of lines to keep."
+msgstr "Didžiausias paliekamas eilučių skaičius"
+
+#: turcar/plugins/shell_config_page.py:32
+msgid "NB! Large values may cause poor performance!"
+msgstr "NB! Didelės reikšmės gali paveikti veikimą!"
+
+#: turcar/plugins/shell_config_page.py:47
+msgid "Maximum length of line fragments before squeezing"
+msgstr "Didžiausias eilutės fragmento ilgis prieš suspaudžiant"
+
+#: turcar/plugins/terminal_config_page.py:10
+msgid "Running current script in terminal"
+msgstr "Esamas scenarijus leidžiamas terminale"
+
+#: turcar/plugins/terminal_config_page.py:15
+msgid "Present Python REPL after program ends"
+msgstr "Parodyti Python REPL pasibaigus programai"
+
+#: turcar/plugins/terminal_config_page.py:22
+msgid "Keep terminal window open after Python process ends"
+msgstr "Palikti terminalo langą atvirą po to kai pasibaigia Python procesas"
+
+#: turcar/plugins/terminal_config_page.py:29
+msgid "NB! Automatic closing needs to be enabled in Terminal's settings\n"
+"(Profiles → Shell → When the shell exits)"
+msgstr "NB! Automatinis uždarymas turi būti įgalintas Terminalo nustatymuose (Profiliai → Komand. eilutė → Kai išeinama iš komand. eilutės)"
+
+#: turcar/plugins/terminal_config_page.py:38
+msgid "Terminal"
+msgstr "Terminalas"
+
+#: turcar/plugins/theme_and_font_config_page.py:39
+msgid "UI theme"
+msgstr "Vartotojo sąsajos tema"
+
+#: turcar/plugins/theme_and_font_config_page.py:52
+msgid "Syntax theme"
+msgstr "Sintaksės tema"
+
+#: turcar/plugins/theme_and_font_config_page.py:84
+msgid "Editor font"
+msgstr "Redaktoriaus šriftas"
+
+#: turcar/plugins/theme_and_font_config_page.py:107
+msgid "IO font"
+msgstr "Įvesties-išvesties šriftas"
+
+#: turcar/plugins/theme_and_font_config_page.py:132
+msgid "Preview"
+msgstr "Peržiūra"
+
+#: turcar/plugins/theme_and_font_config_page.py:144
+msgid "This is a comment"
+msgstr "Čia komentaras"
+
+#: turcar/plugins/theme_and_font_config_page.py:147
+msgid "The answer is"
+msgstr "Atsakymas yra"
+
+#: turcar/plugins/theme_and_font_config_page.py:151
+msgid "unclosed_string"
+msgstr "neuzdaryta_eilute"
+
+#: turcar/plugins/theme_and_font_config_page.py:153
+msgid "blah, blah"
+msgstr "bla, bla"
+
+#: turcar/plugins/theme_and_font_config_page.py:176
+msgid "NB! Some style elements change only after restarting turcar!"
+msgstr "NB! Kai kurie stiliaus elementai išvaizdą pakeičia tik perkrovus turcar!"
+
+#: turcar/plugins/theme_and_font_config_page.py:215
+msgid "Enter an integer"
+msgstr "Įveskite skaičių"
+
+#: turcar/plugins/theme_and_font_config_page.py:228
+msgid "Theme & Font"
+msgstr "Tema ir šriftas"
+
+#: turcar/plugins/turcar_folders.py:18
+msgid "Open turcar program folder..."
+msgstr "Atverti turcar programos aplanką..."
+
+#: turcar/plugins/turcar_folders.py:23
+msgid "Open turcar data folder..."
+msgstr "Atverti turcar duomenų aplanką..."
+
+#: turcar/plugins/help/__init__.py:58
+msgid "Home"
+msgstr "Namai"
+
+#: turcar/plugins/help/__init__.py:69
+msgid "Help contents"
+msgstr "Pagalbos turinys"
+
+#: turcar/plugins/micropython/__init__.py:175
+msgid "CircuitPython device"
+msgstr "CircuitPython įrenginys"
+
+#: turcar/plugins/micropython/__init__.py:179
+msgid "MicroPython device"
+msgstr "MicroPython įrenginys"
+
+#: turcar/plugins/micropython/__init__.py:191
+msgid "Connect your device to the computer and select corresponding port below"
+msgstr "Prijunkite savo įrenginį prie kompiuterio ir pasirinkite atitinkamą prievadą apačioje"
+
+#: turcar/plugins/micropython/__init__.py:194
+msgid "look for your device name, \"USB Serial\" or \"UART\""
+msgstr "ieškokite savo įrenginio pavadinimo, \"USB Serial\" arba \"UART\""
+
+#: turcar/plugins/micropython/__init__.py:196
+msgid "If you can't find it, you may need to install proper USB driver first."
+msgstr "Jei jo negalite rasti, gali reikėti pirma įdiegti tinkamą USB tvarkyklę."
+
+#: turcar/plugins/micropython/__init__.py:220
+msgid "Port"
+msgstr "Prievadas"
+
+#: turcar/plugins/micropython/__init__.py:229
+msgid "Try to detect port automatically"
+msgstr "Bandyti aptikti prievadą automatiškai"
+
+#: turcar/plugins/micropython/__init__.py:417
+msgid "MicroPython (generic)"
+msgstr "MicroPython (bendras)"
+
+#: turcar/plugins/printing/__init__.py:79
+msgid "Print..."
+msgstr "Spausdinti..."
+
+#: turcar/plugins/system_shell/__init__.py:59
+msgid "Open system shell..."
+msgstr "Atverti sistemos komand. eilutę..."
+
+#: turcar/plugins/backend_config_page.py:61
+msgid "Details"
+msgstr "Detalės"
+
+#: turcar/plugins/pip_gui.py:380
+msgid "Install from requirements file"
+msgstr "Sudiegti iš reikalavimų failo"
+
+#: turcar/plugins/pip_gui.py:391
+msgid "Install from local file"
+msgstr "Sudiegti iš lokalaus failo"
+
+#: turcar/plugins/pip_gui.py:970
+msgid "This dialog is for managing turcar plug-ins and their dependencies.\n"
+"If you want to install packages for your own programs then choose 'Tools → Manage packages...'"
+msgstr "Šis dialogas skirtas valdyti turcar įskiepius ir jų priklausomybes.\n"
+"Jei norite diegti paketus savo programoms naudokite \"Įrankiai → Valdyti paketus...'"
+
+#: turcar/plugins/circuitpython/__init__.py:47
+msgid "CircuitPython (generic)"
+msgstr "CircuitPython (bendras)"
+
+#: turcar/plugins/commenting_indenting.py:123
+msgid "Indent selected lines"
+msgstr "Atitraukti pasirinktas eilutes"
+
+#: turcar/plugins/commenting_indenting.py:133
+msgid "Dedent selected lines"
+msgstr "Atitraukti pasirinktas eilutes atgal"
+
+#: turcar/workbench.py:1264
+msgid "Switch to\n"
+"regular\n"
+"mode"
+msgstr "Perjungti į\n"
+"numatytą\n"
+"režimą"
+
+#: turcar/plugins/microbit/__init__.py:54
+msgid "Make sure MicroPython has been installed to your micro:bit."
+msgstr "Įsitikinkite, kad MicroPython buvo sudiegtas į jūsų micro:bit."
+
+#: turcar/plugins/microbit/__init__.py:56
+msgid "Don't forget that main.py only works without embedded main script."
+msgstr "Nepamirškite, kad main.py veikia tik neįterpus pagrindinio scenarijaus."
+
+#: turcar/plugins/microbit/__init__.py:102
+msgid "Install latest MicroPython to BBC micro:bit"
+msgstr "Sudiegti vėliausią MicroPython į BBC micro:bit"
+
+#: turcar/plugins/microbit/__init__.py:104
+msgid "micro:bit location:"
+msgstr "micro:bit vieta:"
+
+#: turcar/plugins/microbit/__init__.py:109
+msgid "Version to be installed:"
+msgstr "Versija, kurią norima sudiegti:"
+
+#: turcar/plugins/microbit/__init__.py:111
+msgid "please wait"
+msgstr "prašome palaukti"
+
+#: turcar/plugins/microbit/__init__.py:115
+msgid "NB! All files on micro:bit will be deleted!"
+msgstr "NB! Visi failai micro:bit bus ištrinti!"
+
+#: turcar/plugins/microbit/__init__.py:195
+msgid "Installing ..."
+msgstr "Diegiama..."
+
+#: turcar/plugins/microbit/__init__.py:199
+msgid "Done!"
+msgstr "Baigta!"
+
+#: turcar/plugins/microbit/__init__.py:199
+msgid "You can now close this dialog."
+msgstr "Galite uždaryti šį dialogo langą."
+
+#: turcar/plugins/micropython/__init__.py:298
+msgid "Firmware"
+msgstr "Programinė apratinė įranga"
+
+#: turcar/plugins/micropython/__init__.py:301
+msgid "Open the dialog for installing or upgrading MicroPython on your device"
+msgstr "Atverti dialogą sudiegti ar atnaujinti MicroPython jūsų įrenginyje"
+
+#: turcar/plugins/microbit/__init__.py:67
+msgid "Could not find disk '%s'."
+msgstr "Nepavyko rasti disko '%s'."
+
+#: turcar/plugins/microbit/__init__.py:69
+msgid "Make sure you have micro:bit plugged in!"
+msgstr "Įsitikinkite, kad jūsų micro:bit prijungtas!"
+
+#: turcar/plugins/microbit/__init__.py:71
+msgid "Do you want to continue and locate the disk yourself?"
+msgstr "Ar norite tęsti ir surasti diską patys?"
+
+#: turcar/misc_utils.py:120
+msgid "Could not find disk '%s'. Do you want to locate it yourself?"
+msgstr "Nepavyko rasti disko '%s'. Ar norite surasti jį patys?"
+
+#: turcar/misc_utils.py:123
+msgid "Found several '%s' disks. Do you want to choose one yourself?"
+msgstr "Rasti keli '%s' diskai. Ar norite pasirinkti vieną jų?"
+
+#: turcar/misc_utils.py:137
+msgid "Can't find suitable disk"
+msgstr "Nepavyko rasti tinkamo disko"
+
+#: turcar/base_file_browser.py:259
+msgid "%d items"
+msgstr "%d įrašų"
+
+#: turcar/base_file_browser.py:581
+msgid "Move to Recycle Bin"
+msgstr "Perkelti į Šiukšlinę"
+
+#: turcar/base_file_browser.py:583
+msgid "Move to Trash"
+msgstr "Perkelti į Šiukšles"
+
+#: turcar/base_file_browser.py:586
+msgid "Delete"
+msgstr "Išrinti"
+
+#: turcar/base_file_browser.py:589
+msgid "New directory"
+msgstr "Naujas aplankas"
+
+#: turcar/base_file_browser.py:592
+msgid "Properties"
+msgstr "Nustatymai"
+
+#: turcar/base_file_browser.py:593
+msgid "Storage space"
+msgstr "Saugojimo vieta"
+
+#: turcar/base_file_browser.py:603
+msgid "Path"
+msgstr "Kelias"
+
+#: turcar/base_file_browser.py:605
+msgid "Directory properties"
+msgstr "Aplanko nustatymai"
+
+#: turcar/base_file_browser.py:607
+msgid "File properties"
+msgstr "Failo nustatymai"
+
+#: turcar/base_file_browser.py:609
+msgid "bytes"
+msgstr "baitų"
+
+#: turcar/base_file_browser.py:612
+msgid "Size"
+msgstr "Dydis"
+
+#: turcar/base_file_browser.py:623
+msgid "Modified"
+msgstr "Pakeista"
+
+#: turcar/base_file_browser.py:679
+msgid "Deleting %s"
+msgstr "Trinama %s"
+
+#: turcar/base_file_browser.py:701
+msgid "Moving %s to %s"
+msgstr "Perkeliama %s į %s"
+
+#: turcar/code.py:203
+msgid "Loading"
+msgstr "Kraunama"
+
+#: turcar/code.py:297
+msgid "Saving"
+msgstr "Saugojama"
+
+#: turcar/running.py:1408
+msgid "Working..."
+msgstr "Dirbama..."
+
+#: turcar/plugins/files.py:199
+msgid "Uploading %s to %s"
+msgstr "Įkeliama %s į %s"
+
+#: turcar/plugins/files.py:206
+msgid "Upload to %s"
+msgstr "Įkelti į %s"
+
+#: turcar/plugins/files.py:261
+msgid "Downloading %s to %s"
+msgstr "Atsisiunčiama %s į %s"
+
+#: turcar/plugins/files.py:267
+msgid "Download to %s"
+msgstr "Atsisiųsti į %s"
+
