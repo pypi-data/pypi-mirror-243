@@ -1,0 +1,6 @@
+datasette-enrichments>=0.2
+sqlite-utils
+
+[test]
+pytest
+pytest-asyncio
