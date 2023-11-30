@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+lazyins/__init__.py
+lazyins/lazyins.py
+lazyins.egg-info/PKG-INFO
+lazyins.egg-info/SOURCES.txt
+lazyins.egg-info/dependency_links.txt
+lazyins.egg-info/top_level.txt
+tests/test.py
