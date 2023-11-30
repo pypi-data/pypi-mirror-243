@@ -1,0 +1,15 @@
+hydrobot/__init__.py,sha256=0HPqPsvuqOYAJcoUnoyIaJQ7FNwlljcXbDEoX4c5hqo,153
+hydrobot/data_acquisition.py,sha256=FT3IWj5c9yUwttXhN1_rgRv1qOn30S1uqVYyNGpXFMo,2485
+hydrobot/data_sources.py,sha256=RJNdIJYO3OAgkXXb0JVha5BFsoIszOw_nYBrrcxme1I,7086
+hydrobot/evaluator.py,sha256=wKndk5NMRk5p2fHR_EvzS3baftThKLGSyWa94Mlv6i0,11561
+hydrobot/filters.py,sha256=cWlNQlMClPv_LI0D-epv--IXy5EYnk0pHA08pkT9hVA,4376
+hydrobot/plotter.py,sha256=s56bHSySSrtXjHL3OF0yddECh8uzlDTksBEWbcLcVd0,4568
+hydrobot/processor.py,sha256=VU31hTLCnkwQVUubZWa9BG6r92JWwjdCDCxyT1-s_x0,14744
+hydrobot/config/TwoLevelMeasurement_QC_config.csv,sha256=5TEaI7bHM41zHWUb2VeR8FVJXrbwtHMRiZCcX9lnCJs,55
+hydrobot/config/measurement_QC_config.csv,sha256=EQtTTVG3o__ARrKSqYXJ_MCKXxCXgmE12k_QH_TT0ko,79
+hydrobot-0.2.3.dist-info/AUTHORS.rst,sha256=3bB4gVgb8_vPFeXE9WvAf1qzSWse1U4IO3V0I3mxSRk,212
+hydrobot-0.2.3.dist-info/LICENSE,sha256=0A3SWRNs9taWecIoGR6EK8aVSarmp7k8z6RvpC3tZKc,1610
+hydrobot-0.2.3.dist-info/METADATA,sha256=uLEBt33TnjlfvodvxaUC-K12EDgJUkyHQZWpUjywx10,2655
+hydrobot-0.2.3.dist-info/WHEEL,sha256=-G_t0oGuE7UD0DrSpVZnq1hHMBV9DD2XkS5v7XpmTnk,110
+hydrobot-0.2.3.dist-info/top_level.txt,sha256=6iFlkAwKmFXlzlmfNJ7wBeLtTE76Nf8vDCH8pBymjZI,9
+hydrobot-0.2.3.dist-info/RECORD,,

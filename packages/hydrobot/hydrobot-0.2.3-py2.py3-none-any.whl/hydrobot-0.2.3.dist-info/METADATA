@@ -1,0 +1,90 @@
+Metadata-Version: 2.1
+Name: hydrobot
+Version: 0.2.3
+Summary: Python Package providing a suite of processing tools        and utilities for Hilltop hydrological data.
+Home-page: https://github.com/nicmostert/hydrobot
+Author: Nic Mostert
+Author-email: nicolas.mostert@horizons.govt.nz
+License: GNU General Public License v3
+Keywords: hydrobot
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: ==3.11.6
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: hilltop-py >=2.3.1
+Requires-Dist: data-annalist >=0.3.6
+Requires-Dist: matplotlib >=3.8.0
+
+======================
+Hydrobot
+======================
+
+
+.. image:: https://img.shields.io/pypi/v/hydrobot.svg
+        :target: https://pypi.python.org/pypi/hydrobot
+
+.. image:: https://readthedocs.org/projects/hydrobot/badge/?version=latest
+        :target: https://hydrobot.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
+Python Package providing a suite of processing tools and utilities for Hilltop hydrological data.
+
+
+* Free software: GNU General Public License v3
+* Documentation: https://hydrobot.readthedocs.io.
+
+
+Features
+--------
+
+* Processes data downloaded from Hilltop Server
+* Uses annalist to record all changes to data
+* Capable of clipping data, removing spikes based on FBEWMA smoothing, closing gaps of a given size, QCing data based on NEMS standards
+* Plotting stuff (lots of it)
+* Probably more things I cannot think of right now
+* This is a professional document
+* Work in progress
+* TODO - actual feature list
+
+
+Credits
+-------
+
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+
+
+=======
+History
+=======
+
+0.1.0 (2023-09-27)
+------------------
+
+* First release on PyPI.
+
+0.2.0 (2023-09-27)
+------------------
+
+* Hydrobot now annals the "Processor" class, which has capabilities to process data within the single object. Class_script gives an example of this method of processing.
+
+0.2.1 (2023-09-27)
+------------------
+
+* Including the config files, + getting wheeled boi
+
+0.2.2 (2023-09-27)
+------------------
+
+* Ok, actually including the config files (promise, but my fingers are crossed behind my back)
+
+0.2.3 (2023-11-30)
+------------------
+
+* Fixed some tests and hopefully fixed the config file issue this time.
