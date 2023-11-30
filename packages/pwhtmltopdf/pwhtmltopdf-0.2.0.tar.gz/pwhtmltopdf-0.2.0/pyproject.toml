@@ -1,0 +1,67 @@
+[project]
+authors = [
+    { name = "vvanglro", email = "vvanglro@gmail.com" },
+]
+requires-python = ">=3.8,<4.0"
+dependencies = [
+    "playwright",
+    "jinja2<4.0.0,>=3.1.2",
+]
+name = "pwhtmltopdf"
+version = "0.2.0"
+description = "playwright render html to pdf"
+readme = "README.md"
+keywords = [
+    "playwright",
+    "html",
+    "pdf",
+]
+classifiers = [
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.license]
+text = "Apache-2.0"
+
+[project.urls]
+homepage = "https://github.com/vvanglro/pwhtmltopdf"
+repository = "https://github.com/vvanglro/pwhtmltopdf.git"
+documentation = "https://github.com/vvanglro/pwhtmltopdf"
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "pre-commit<3.0.0,>=2.20.0",
+    "pytest<8.0.0,>=7.1.3",
+    "pytest-asyncio<1.0.0,>=0.19.0",
+    "mypy<1.0,>=0.971",
+]
+
+[tool.pdm.build]
+includes = []
+excludes = [
+    "tests/effect",
+]
+
+[tool.ruff]
+ignore = [
+    "E402",
+]
+select = [
+    "I",
+    "E",
+    "F",
+]
+line-length = 130
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"

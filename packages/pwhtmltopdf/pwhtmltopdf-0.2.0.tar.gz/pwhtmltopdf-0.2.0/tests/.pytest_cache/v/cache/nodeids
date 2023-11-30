@@ -1,0 +1,8 @@
+[
+  "test_async_context.py::test_async_enter_exit",
+  "test_async_context.py::test_async_enter_exit_from_file",
+  "test_from_file.py::test_from_file",
+  "test_from_file.py::test_from_file_render_file_var",
+  "test_from_string.py::test_from_string_render",
+  "test_from_url.py::test_from_url_not_output_path"
+]
