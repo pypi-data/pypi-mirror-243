@@ -1,0 +1,51 @@
+[tool.poetry]
+name = "cgse-common"
+version = "2023.1.4"
+description = "Software framework to support testing hardware"
+authors = [
+    "Rik Huygen <rik.huygen@kuleuven.be>",
+    "Sara Regibo <sara.regibo@kuleuven.be>",
+]
+readme = "README.md"
+packages = [
+    { include = "egse", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^8.1.7"
+deepdiff = "^6.6.1"
+distro = "^1.8.0"
+GitPython = "^3.1.40"
+numpy = "*"
+pandas = "*"
+prometheus-client = "^0.17.1"
+psutil = "^5.9.6"
+PyYAML = "^6.0.1"
+pyzmq = "^25.1.1"
+rich = "^13.6.0"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.2"
+pytest-mock = "^3.11.1"
+pytest-cov = "^4.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pipdeptree = "^2.13.0"
+ruff = "^0.1.6"
+
+[tool.poetry.plugins."cgse.version"]
+cgse-common = 'egse'
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+# Add the `line-too-long` rule to the enforced rule set. By default, Ruff omits rules that
+# overlap with the use of a formatter, like Black, but we can override this behavior by
+# explicitly adding the rule.
+extend-select = ["E501"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
