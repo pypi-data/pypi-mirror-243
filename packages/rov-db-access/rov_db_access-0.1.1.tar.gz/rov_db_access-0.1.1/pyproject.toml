@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "rov-db-access"
+version = "0.1.1"
+description = ""
+authors = ["Pablo Cano <pablo.cano@rovisen.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+geoalchemy2 = "^0.14.2"
+sqlalchemy = "^2.0.23"
+psycopg2-binary = "^2.9.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
