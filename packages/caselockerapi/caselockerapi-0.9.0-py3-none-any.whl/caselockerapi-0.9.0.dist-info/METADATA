@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: caselockerapi
+Version: 0.9.0
+Summary: Python API to interact with CaseLocker installation
+Home-page: https://caselocker.com/
+Author: Litigation Locker
+Author-email: help@litigationlocker.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: COPYING
+License-File: COPYING.LESSER
+Requires-Dist: requests
+
