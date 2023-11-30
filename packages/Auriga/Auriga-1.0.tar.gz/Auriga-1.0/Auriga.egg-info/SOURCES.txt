@@ -1,0 +1,14 @@
+LICENSE
+README.md
+setup.py
+Auriga.egg-info/PKG-INFO
+Auriga.egg-info/SOURCES.txt
+Auriga.egg-info/dependency_links.txt
+Auriga.egg-info/entry_points.txt
+Auriga.egg-info/requires.txt
+Auriga.egg-info/top_level.txt
+auriga/__init__.py
+auriga/auriga.pt
+auriga/auriga.py
+auriga/test/test.csv
+auriga/test/test.fits
