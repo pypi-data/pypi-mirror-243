@@ -1,0 +1,13 @@
+setup.py
+afrinet_cloud_automator.egg-info/PKG-INFO
+afrinet_cloud_automator.egg-info/SOURCES.txt
+afrinet_cloud_automator.egg-info/dependency_links.txt
+afrinet_cloud_automator.egg-info/entry_points.txt
+afrinet_cloud_automator.egg-info/requires.txt
+afrinet_cloud_automator.egg-info/top_level.txt
+frameworks/__init__.py
+frameworks/platforms/__init__.py
+frameworks/settings/__init__.py
+module/__init__.py
+tests/__init__.py
+tests/module_test.py

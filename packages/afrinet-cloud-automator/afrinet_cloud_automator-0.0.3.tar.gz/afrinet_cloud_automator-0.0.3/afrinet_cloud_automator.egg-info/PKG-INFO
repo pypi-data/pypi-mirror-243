@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: afrinet-cloud-automator
+Version: 0.0.3
+Summary: Cloud Automation for All Platforms - Streamline and optimize your cloud operations with our comprehensive cloud automation solutions. Whether on AWS, Azure, Google Cloud, or other platforms, our tools empower you to automate tasks, enhance efficiency, and ensure seamless management of your cloud infrastructure.
+Home-page: https://github.com/yourusername/yourproject
+Author: Afrinet Devs
+Author-email: support_admin@afrinet.com
+License: MIT
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: requests
+Requires-Dist: numpy
+Requires-Dist: pandas
+
+In the rapidly evolving landscape of cloud computing, effective management and orchestration of resources across diverse cloud platforms are imperative. Our Cloud Automation solution is designed to provide a unified and comprehensive approach to automate processes, workflows, and tasks across various cloud environments, including but not limited to AWS, Azure, Google Cloud, and more.
