@@ -1,0 +1,13 @@
+setup.py
+autoassistant/README.md
+autoassistant/autoassistant.py
+autoassistant/config.py
+autoassistant/config.py_bk
+autoassistant/health_check.py
+autoassistant/requirements.txt
+autoassistant.egg-info/PKG-INFO
+autoassistant.egg-info/SOURCES.txt
+autoassistant.egg-info/dependency_links.txt
+autoassistant.egg-info/entry_points.txt
+autoassistant.egg-info/requires.txt
+autoassistant.egg-info/top_level.txt
