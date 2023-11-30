@@ -1,0 +1,28 @@
+import os
+import sys
+
+from dotenv import dotenv_values
+
+root_path = os.getcwd()
+
+Env = dotenv_values(f"{root_path}/.env")
+sys.path.append(root_path)
+
+VK_ACCESS_TOKEN = Env.get("VK_ACCESS_TOKEN")
+VK_GROUP_OWNER_ID = Env.get("VK_GROUP_OWNER_ID")
+VK_GROUP_DONORS = ["-76914461", "-108516935", "-113071474", "-48319873"]
+VK_FRIEND_GROUP = Env.get("VK_FRIEND_GROUP")
+OWNER_ID = Env.get("OWNER_ID")
+POST_ON_BEHALF_OF_GROUP = Env.get("POST_ON_BEHALF_OF_GROUP")
+TIMER = Env.get("TIMER")
+CURRENCY = Env.get("CURRENCY")
+COMMENT_REGEX = Env.get("COMMENT_REGEX")
+VK_METHOD_ENDPOINT = Env.get("VK_METHOD_ENDPOINT")
+VK_WALL_GET_COMMENTS_METHOD = Env.get("VK_WALL_GET_COMMENTS_METHOD")
+VK_WALL_GET = Env.get("VK_WALL_GET")
+VK_VIDEO_GET = Env.get("VK_VIDEO_GET")
+VK_MESSAGE_SEND = Env.get("VK_MESSAGE_SEND")
+VK_USER_GET = Env.get("VK_USER_GET")
+VK_WALL_POST_METHOD = Env.get("VK_WALL_POST_METHOD")
+VK_API_VERSION = Env.get("VK_API_VERSION")
+VK_GROUPS_GET_METHOD = Env.get("VK_GROUPS_GET_METHOD")
