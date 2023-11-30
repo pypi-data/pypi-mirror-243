@@ -1,0 +1,17 @@
+attrs
+beautifulsoup4
+bibsane
+jinja2
+markdown
+markdown_katex
+ninja
+numpy
+parse
+pymupdf<1.22.0
+pyyaml
+requests
+scipy
+setuptools
+tqdm
+watchdog
+weasyprint
