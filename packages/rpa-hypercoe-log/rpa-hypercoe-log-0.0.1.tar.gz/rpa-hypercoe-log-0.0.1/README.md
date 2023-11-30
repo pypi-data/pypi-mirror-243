@@ -1,0 +1,1 @@
+# Um repositorio para a utilização da API de Log do HyperCoe
