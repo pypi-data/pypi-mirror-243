@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: batch-pdf
+Version: 0.1.1
+Summary: When creating a PDF with a large number of pages using reportlab, it is slow and consumes a lot of resources. This was resolved by using batch processing.
+Home-page: https://github.com/parkilwoo/pdf_wrapper
+Author: Parkilwoo
+Author-email: bagilu3@gmail.com
+Keywords: pdf,reportlab
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Requires-Dist: reportlab
+Requires-Dist: overrides
+
+When creating a PDF with a large number of pages using reportlab, it is slow and consumes a lot of resources. This was resolved by using batch processing.

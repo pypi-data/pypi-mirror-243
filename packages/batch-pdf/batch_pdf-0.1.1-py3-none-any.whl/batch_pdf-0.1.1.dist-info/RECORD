@@ -1,0 +1,13 @@
+batch_pdf/__init__.py,sha256=JLEeGnmIhnih7HOOzhUk6s9VkBdib_CoAr38oTSXtyQ,19
+batch_pdf/pdfbase/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+batch_pdf/pdfbase/batch_list.py,sha256=WFFyiP9iSA1tjLGiyoRAyQHzxYMFUFj6v9KoJzG4a6k,550
+batch_pdf/pdfbase/pdf_doc.py,sha256=c2NuIKv30iFZmDum_kWrb0KF015jc1FqKnglpuE9LyA,6441
+batch_pdf/pdfgen/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+batch_pdf/pdfgen/pdf_generator.py,sha256=hoALEP_bddKxflk2JXKYP3SEsDz1ERwH-mcKvgxkFgw,4392
+test/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+test/origin.py,sha256=dpJiKt0qrUExWQ3b_HIqdpu8w9xJ-3VNgLRkYF-baTw,1309
+test/pdf_wrapper.py,sha256=1wyQgyHepBnINQ89TF3o_DQWxwRZHDVgzhngM09lv1o,1350
+batch_pdf-0.1.1.dist-info/METADATA,sha256=Rs3aD6wE6lFab3HUxZzLbZVl9FU3GexdmPo69QKnMVs,770
+batch_pdf-0.1.1.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+batch_pdf-0.1.1.dist-info/top_level.txt,sha256=WhgjGVWjIhok9dnKn002AhcmUYXe2GSTNivTSm8isko,15
+batch_pdf-0.1.1.dist-info/RECORD,,
