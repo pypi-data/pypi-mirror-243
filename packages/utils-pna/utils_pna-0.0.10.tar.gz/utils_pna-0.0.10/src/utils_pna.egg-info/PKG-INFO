@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: utils-pna
+Version: 0.0.10
+Summary: Utilidades para PNA-ASA
+Home-page: https://example.com
+Author: gsabatino
+Author-email: gsabatino@example.com
+Project-URL: Docs, https://docs.example.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
