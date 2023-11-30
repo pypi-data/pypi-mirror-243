@@ -1,0 +1,198 @@
+encoding = "utf-8"
+
+
+# Prologues
+# ---------
+
+[prologues.hashbang]
+pattern = "^#!.+$"
+
+[prologues.html_doctype]
+pattern = "(?i)^<\\!doctype(.|\\n)+>$"
+
+[prologues.xhtml_declaration_and_doctype]
+pattern = "^(<\\?xml(.|\\n)+\\?>)?\\s*(?i)(^<\\!doctype(.|\\n)+>)?$"
+
+[prologues.xml_declaration]
+pattern = "^<\\?xml(.|\\n)+\\?>$"
+
+
+
+# Styles
+# ------
+
+[styles.apostrophe]
+line_prefix = "' "
+
+[styles.batch]
+line_prefix = "rem "
+
+[styles.dash-dash]
+line_prefix = "-- "
+
+[styles.hash]
+line_prefix = "# "
+
+[styles.html]
+block_prefix = "<!--\n"
+line_prefix = "    "
+block_suffix = "\n-->"
+
+[styles.jinja]
+block_prefix = "{#\n"
+block_suffix = "\n#}"
+
+[styles.mustache]
+block_prefix = "{{!\n"
+block_suffix = "\n}}"
+
+[styles.percent]
+line_prefix = "% "
+
+[styles.percent-percent]
+line_prefix = "%% "
+
+[styles.restructured-text]
+block_prefix = "..\n"
+line_prefix = "    "
+
+[styles.semicolon]
+line_prefix = "; "
+
+[styles.slash-slash]
+line_prefix = "// "
+
+[styles.slash-star]
+block_prefix = "/*\n"
+line_prefix = " * "
+block_suffix = "\n */"
+
+[styles.xml]
+block_prefix = "<!--\n"
+line_prefix = "    "
+block_suffix = "\n-->"
+
+
+# Extensions
+# ----------
+
+[extension.adoc]
+style = "slash-slash"
+
+[extension.ahk]
+style = "semicolon"
+
+[extension.bat]
+style = "batch"
+
+[extension.c]
+style = "slash-star"
+
+[extension.cmd]
+style = "batch"
+
+[extension.cpp]
+style = "slash-slash"
+
+[extension.cs]
+style = "slash-slash"
+
+[extension.css]
+style = "slash-star"
+
+[extension.go]
+style = "slash-slash"
+
+[extension.groovy]
+style = "slash-slash"
+
+[extension.h]
+style = "slash-slash"
+
+[extension.htm]
+style = "html"
+prologue = "html_doctype"
+
+[extension.html]
+style = "html"
+prologue = "html_doctype"
+
+[extension.java]
+style = "slash-slash"
+
+[extension.jinja]
+style = "jinja"
+
+[extension.js]
+prologue = "hashbang"
+style = "slash-slash"
+
+[extension.kt]
+style = "slash-slash"
+
+[extension.kts]
+style = "slash-slash"
+
+[extension.markdown]
+style = "xml"
+
+[extension.md]
+style = "xml"
+
+[extension.mermaid]
+style = "percent-percent"
+
+[extension.ps1]
+style = "hash"
+prologue = "hashbang"
+
+[extension.py]
+style = "hash"
+prologue = "hashbang"
+
+[extension.r]
+style = "hash"
+prologue = "hashbang"
+
+[extension.rb]
+style = "hash"
+prologue = "hashbang"
+
+[extension.rs]
+style = "slash-slash"
+
+[extension.rst]
+style = "restructured-text"
+
+[extension.sc]
+style = "slash-slash"
+
+[extension.scala]
+style = "slash-slash"
+
+[extension.sh]
+style = "hash"
+prologue = "hashbang"
+
+[extension.sql]
+style = "dash-dash"
+
+[extension.swift]
+style = "slash-slash"
+
+[extension.ts]
+style = "slash-slash"
+
+[extension.ttl]
+style = "semicolon"
+
+[extension.vbs]
+style = "apostrophe"
+
+[extension.xhtml]
+style = "xml"
+prologue = "xhtml_declaration_and_doctype"
+
+[extension.xml]
+style = "xml"
+prologue = "xml_declaration"
