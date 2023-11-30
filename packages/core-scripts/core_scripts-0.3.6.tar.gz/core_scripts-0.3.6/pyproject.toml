@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "core-scripts"
+version = "0.3.6"
+description = ""
+authors = ["Ricardo Torrellas <ricardo.torrejas@gmail.com>"]
+readme = "README.md"
+packages = [
+{include = "core_scripts"},
+{include = "core_scripts/**/*.py"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+natsort = "^8.4.0"
+jellyfish = "^1.0.1"
+toml = "^0.10.2"
+pyyaml = "^6.0.1"
+core-commands = "^0.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
