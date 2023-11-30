@@ -1,0 +1,97 @@
+xdata:
+    dimensions            : ['x', 'y', 'z', 'time']
+#
+    zstore_path           : test-xdata.zarr
+    field_name            : 'theta'
+    subsampling:
+        time:
+            training        : [ null,  100, null]
+            macro_training  : [  100,  150, null]
+            testing         : [  150, null, null]
+
+    normalization:
+        bias            : 0.
+        scale           : 2.
+
+lazyesn:
+    boundary            : periodic
+    n_reservoir         : 500
+    leak_rate           : 0.5
+    tikhonov_parameter  : 1.e-6
+    persist             : True
+#
+    esn_chunks:
+        x               : 5
+        y               : 5
+        z               : 5
+        time            : -1
+    overlap:
+        x               : 1
+        y               : 1
+        z               : 0
+        time            : 0
+#
+    input_kwargs:
+        factor          : 1.0
+        distribution    : uniform
+        normalization   : svd
+        is_sparse       : False
+        random_seed     : 0
+#
+    adjacency_kwargs:
+        factor          : 1.0
+        distribution    : uniform
+        normalization   : svd
+        is_sparse       : True
+        connectedness   : 5
+        random_seed     : 1
+#
+    bias_kwargs:
+        factor          : 0.5
+        distribution    : uniform
+        random_seed     : 2
+
+training:
+    n_spinup            : 0
+    batch_size          : null
+
+esn_weights:
+    store               : test-lazy-driver/lazyesn-weights.zarr
+
+testing:
+    n_spinup            : 10
+    n_samples           : 2
+    n_steps             : 5
+    random_seed         : 0
+
+macro_training:
+    parameters:
+        input_factor    : [1.e-2, 1e2]
+        adjacency_factor: [1.e-2, 2.]
+        bias_factor     : [0.   , 2.]
+        tikhonov_parameter : [1.e-8, 1.]
+
+    transformations:
+        input_factor    : log10
+        adjacency_factor: log
+        tikhonov_parameter : log10
+
+    forecast:
+        n_spinup        : 10
+        n_samples       : 2
+        n_steps         : 5
+        random_seed     : 1
+
+    ego:
+        n_iter          : 1
+        n_max_optim     : 1
+        n_start         : 3
+        n_parallel      : 2
+        n_doe           : 3
+        random_state    : 0
+
+    cost_upper_bound    : 1e9
+    cost_terms:
+        nrmse           : 1.
+        psd_nrmse       : 1.
+
