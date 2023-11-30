@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+mix_n_match/__init__.py
+mix_n_match/correlations.py
+mix_n_match/main.py
+mix_n_match/utils.py
+mix_n_match.egg-info/PKG-INFO
+mix_n_match.egg-info/SOURCES.txt
+mix_n_match.egg-info/dependency_links.txt
+mix_n_match.egg-info/requires.txt
+mix_n_match.egg-info/top_level.txt
+requirements/extra.json
+requirements/private.txt
+requirements/public.txt

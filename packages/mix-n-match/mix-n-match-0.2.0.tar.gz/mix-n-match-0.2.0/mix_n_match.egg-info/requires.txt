@@ -1,0 +1,7 @@
+polars
+scikit-learn
+
+[test]
+pytest
+pre-commit
+coverage
