@@ -1,0 +1,14 @@
+fragment/__init__.py,sha256=X_BkI7JBhs8IPwXZRUUe1CDFPRIz6K9E7foWfXt7paE,79
+fragment/api.py,sha256=ZbTAig5N6KIiApc_xSFBrZCK9mvO0lBd4FQ5Xr8G8A4,2468
+fragment/errors.py,sha256=6atyyRDfWYW4rR_VhfQU09JIhkuAbnlccZg4_WZKFCs,622
+fragment/helper.py,sha256=QiYPVvwxp247_zo8BZhMaZDB4_uEf3d9k9dxfxePVbk,381
+fragment/parser.py,sha256=1HHqaw2NoJGmQ2RIB_-ou-AXXc6j8bOx-6hjPK6_3Bs,4308
+fragment/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+fragment/resources/__init__.py,sha256=sCK8MgZ9YJBRL4m2sYByJUnCMw7Ew_1Jy1MAco9ZJrY,59
+fragment/resources/base.py,sha256=9tkhiBU54GEv7i0K0IAfMiE-gwZoa3uew0M9S24GRXg,221
+fragment/resources/usernames.py,sha256=NrCMH8IYNbXxSu0RwFb3HQFapT285UFrqeceeXKLvKo,1085
+fragment/type_hints.py,sha256=pMNvyOw-cJfFaqk3uDiMbdEvcnYK9_TIE-gHsDwTsPc,976
+python_fragment-0.2.1.dist-info/LICENSE,sha256=8Ruz7WdjUolqJ_ZqsYYemjSsGLgAm6icq5KNyedKazo,1064
+python_fragment-0.2.1.dist-info/WHEEL,sha256=y3eDiaFVSNTPbgzfNn0nYn5tEn1cX6WrdetDlQM4xWw,83
+python_fragment-0.2.1.dist-info/METADATA,sha256=Ejis-hX-YmNl1OXk8gS-S1DxAo-OEMEIayfJ7bntxvY,2279
+python_fragment-0.2.1.dist-info/RECORD,,
