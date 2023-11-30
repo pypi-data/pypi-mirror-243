@@ -1,0 +1,7 @@
+PyYAML>=5.1.0
+
+[:python_version <= "3.9"]
+typing-extensions
+
+[:python_version == "3.6"]
+dataclasses
