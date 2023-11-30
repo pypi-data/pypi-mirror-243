@@ -1,0 +1,13 @@
+fastcore
+pandas
+numpy
+scipy
+matplotlib
+torch
+jax
+jaxlib
+lineax
+optimistix
+
+[dev]
+nbdev
