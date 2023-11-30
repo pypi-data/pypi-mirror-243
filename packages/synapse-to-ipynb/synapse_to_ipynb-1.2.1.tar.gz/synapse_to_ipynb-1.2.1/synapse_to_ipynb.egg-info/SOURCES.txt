@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+synapse_to_ipynb.py
+synapse_to_ipynb.egg-info/PKG-INFO
+synapse_to_ipynb.egg-info/SOURCES.txt
+synapse_to_ipynb.egg-info/dependency_links.txt
+synapse_to_ipynb.egg-info/entry_points.txt
+synapse_to_ipynb.egg-info/top_level.txt
+tests/test_synapse_to_ipynb.py
