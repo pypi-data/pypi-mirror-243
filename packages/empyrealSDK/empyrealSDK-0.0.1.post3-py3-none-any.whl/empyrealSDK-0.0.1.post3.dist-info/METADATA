@@ -1,0 +1,42 @@
+Metadata-Version: 2.1
+Name: empyrealSDK
+Version: 0.0.1.post3
+Summary: Empyreal SDK for web3 development
+Home-page: https://github.com/empyrealapp/empyrealSDK
+Author: Empyreal
+Author-email: dev@empyreal.app
+License: MIT
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Natural Language :: English
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.7.2
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: eth-typing >=3.0.0
+Requires-Dist: eth-utils >=2.1.0
+Requires-Dist: hexbytes >=0.1.0
+Requires-Dist: httpx >=0.23.3
+Requires-Dist: pydantic >=2.3.0
+Provides-Extra: dev
+Requires-Dist: pytest >=7.0.0 ; extra == 'dev'
+Requires-Dist: pytest-asyncio >=0.18.1 ; extra == 'dev'
+Requires-Dist: pytest-mock >=1.10 ; extra == 'dev'
+Requires-Dist: pytest-watch >=4.2 ; extra == 'dev'
+Requires-Dist: pytest-xdist >=1.29 ; extra == 'dev'
+Requires-Dist: setuptools >=38.6.0 ; extra == 'dev'
+Provides-Extra: linter
+Requires-Dist: black >=22.1.0 ; extra == 'linter'
+Requires-Dist: flake8 ==3.8.3 ; extra == 'linter'
+Requires-Dist: isort >=5.11.0 ; extra == 'linter'
+Requires-Dist: mypy >=1.0.0 ; extra == 'linter'
+Requires-Dist: types-setuptools >=57.4.4 ; extra == 'linter'
+
+# empyrealSDK
+
+Tooling for Building Web3 applications with integrated wallet management.
