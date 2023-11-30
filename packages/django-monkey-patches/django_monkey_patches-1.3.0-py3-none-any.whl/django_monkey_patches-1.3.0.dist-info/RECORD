@@ -1,0 +1,11 @@
+django_monkey_patches/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+django_monkey_patches/django__base_cache__make_cache_key.py,sha256=J88LFN3POYDgaNWwE1TvAtTpPh-4lTl0AAE4s_1KCd8,2106
+django_monkey_patches/django__query_set__get.py,sha256=VszOJ1YG86163QXT5cZt14bx7fWlNkkmEs7TzaxQQKg,1709
+django_monkey_patches/django__query_set__get_or_create.py,sha256=9-w6E2P_NREYCRmaMkYDniVJSGdFIjb5D5_FMreSpXw,1887
+django_monkey_patches/django__test_case__tear_down.py,sha256=Mpv3JptQKrnCTjRvZFI-krGRIro52wLXSDGWZrVvhpE,2132
+django_monkey_patches/django_rest_framework__field__get_request.py,sha256=BjT4UQazgOOwpFjftghO3tSfC0PEMt3RzDnSprtByp4,2850
+django_monkey_patches-1.3.0.dist-info/METADATA,sha256=bjm8cmkdZFqVLgE4VGGyUxvbWl7pRTMRGGV4ALLLRjE,11266
+django_monkey_patches-1.3.0.dist-info/WHEEL,sha256=9QBuHhg6FNW7lppboF2vKVbCGTVzsFykgRQjjlajrhA,87
+django_monkey_patches-1.3.0.dist-info/licenses/COPYING,sha256=OXLcl0T2SZ8Pmy2_dmlvKuetivmyPd5m1q-Gyd-zaYY,35149
+django_monkey_patches-1.3.0.dist-info/licenses/COPYING.LESSER,sha256=46mU2C5kSwOnkqkw9XQAJlhBL2JAf1_uCD8lVcXyMRg,7652
+django_monkey_patches-1.3.0.dist-info/RECORD,,
