@@ -1,0 +1,4 @@
+matplotlib
+numpy
+chardet>=4.0.0
+networkx>=2.0.0
