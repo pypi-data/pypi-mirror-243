@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: JBioSeqTools
+Version: 2.0.2
+Summary: JBioSeqTools
+Author: Jakub Kubis
+Author-email: jbiosystem@gmail.com
+License: MIT
+Keywords: sequence,optimization,vectors,AAV,GC,restriction enzyme
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.8
+License-File: LICENSE
+
+JBioSeqTools is the Python library for biological sequence optimization (GC % content & codon frequency), restriction places removal, DNA/RNA structure prediction, and RNAi selection. It also allows the building of many plasmid vectors with the possibility of choosing sequences such as transcript, promoter, enhancer, molecular fluorescent tag, etc. Finally, the user obtains a ready-for-order construct with a whole sequence and visualization. Package description  on https://github.com/jkubis96/JBioSeqTools
