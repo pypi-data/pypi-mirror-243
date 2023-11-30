@@ -1,0 +1,22 @@
+parallelism = 2
+
+[graph]
+verbose = true
+
+[algorithm]
+type = "a*"
+
+[traversal]
+type = "distance"
+
+[frontier]
+type = "no_restriction"
+
+[termination]
+type = "query_runtime"
+limit = "00:02:00"
+frequency = 100_000
+
+[plugin]
+input_plugins = []
+output_plugins = []
