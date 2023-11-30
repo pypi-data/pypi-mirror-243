@@ -1,0 +1,551 @@
+{% extends 'stela_control/inventory/index.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block title %}
+            <h1 class="oxanium mx-4 text-dark pt-4">{% trans "Products" %} <i class="fa-solid fa-tags"></i></h1> 
+{% endblock  %}
+{% block side_title %}
+            <h3 class="oxanium mx-4 d-flex justify-content-end"><b>STELA {% trans "CONTROL DYNAMIC" %} | {% trans "Inventory" %}</b></h3>
+{% endblock  %}
+
+{% block topButtons %}
+    <div class="col-lg-2 col-md-6 variant-btn">
+        {% if stock %}
+            <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" onclick="variantList()">{% trans "Variants List" %} <i class="fa-solid fa-clipboard-list"></i></button>
+        {% else %}
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall disabled" onclick="variantList()">{% trans "Variants List" %} <i class="fa-solid fa-clipboard-list"></i></button>
+        {% endif %}   
+    </div>
+    <div class="col-lg-2 col-md-6 category-list-btn">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" onclick="categoryList()">{% trans "Categories" %} <i class="fa-solid fa-tag"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 color-list-btn">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" onclick="colorsList()">{% trans "Colors" %} <i class="fa-solid fa-palette"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 catalog-list">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" onclick="catalogList()">{% trans "Catalogue" %} <i class="fa-solid fa-images"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 product-btn d-none">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" onclick="productList()">{% trans "Products" %} <i class="fa-solid fa-clipboard-list"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 sizes-list">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" onclick="sizeList()">{% trans "Sizes" %} <i class="fa-solid fa-arrows-left-right-to-line"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 variant-switch d-none">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" data-bs-toggle="modal" data-bs-target="#new-form" onclick="checkVariant()">{% trans "New Variant" %} <i class="fas fa-plus"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 size-btn d-none">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" data-bs-toggle="modal" data-bs-target="#new-form" onclick="checkSize()">{% trans "New Size" %} <i class="fas fa-plus"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 category-btn d-none">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" data-bs-toggle="modal" data-bs-target="#new-form" onclick="checkCategory() ">{% trans "New category" %} <i class="fas fa-plus"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 color-btn d-none">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" data-bs-toggle="modal" data-bs-target="#new-form" onclick="checkColor()">{% trans "New color" %} <i class="fas fa-plus"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 catalog-btn d-none">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" data-bs-toggle="modal" data-bs-target="#new-form" onclick="checkCatalog()">{% trans "New Catalogue" %} <i class="fas fa-plus"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6 product-set">
+        <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2 text-xmall" data-bs-toggle="modal" data-bs-target="#new-form" onclick="checkProduct()">{% trans "New Product" %} <i class="fas fa-plus"></i></button>
+    </div>
+    <div class="col-lg-2 col-md-6">
+        <button type="submit" data-bs-toggle="modal" data-bs-target="#removeObj" onclick="removeObjRequest()" class="btn btn-danger btn-danger px-3 mb-3 mx-2 delete-product hide" id="delete_btn">{% trans "Remove" %} <i class="fas fa-trash"></i></button>
+        <button type="submit" data-bs-toggle="modal" data-bs-target="#removeObj2" onclick="removeObjRequest()" class="btn btn-danger btn-danger px-3 mb-3 mx-2 delete-product hide" id="delete_btn2">{% trans "Remove" %} <i class="fas fa-trash"></i></button>
+        <button type="submit" data-bs-toggle="modal" data-bs-target="#removeObj3" onclick="removeObjRequest()" class="btn btn-danger btn-danger px-3 mb-3 mx-2 delete-product hide" id="delete_btn3">{% trans "Remove" %} <i class="fas fa-trash"></i></button>
+        <button type="submit" data-bs-toggle="modal" data-bs-target="#removeObj4" onclick="removeObjRequest()" class="btn btn-danger btn-danger px-3 mb-3 mx-2 delete-product hide" id="delete_btn4">{% trans "Remove" %} <i class="fas fa-trash"></i></button>
+        <button type="submit" data-bs-toggle="modal" data-bs-target="#removeObj5" onclick="removeObjRequest()" class="btn btn-danger btn-danger px-3 mb-3 mx-2 delete-product hide" id="delete_btn5">{% trans "Remove" %} <i class="fas fa-trash"></i></button>
+        <button type="submit" data-bs-toggle="modal" data-bs-target="#removeObj6" onclick="removeObjRequest()" class="btn btn-danger btn-danger px-3 mb-3 mx-2 delete-product hide" id="delete_btn6">{% trans "Remove" %} <i class="fas fa-trash"></i></button>
+    </div>
+{% endblock  %}
+{% block listTitle %}
+        <div class="d-flex justify-content-center">
+            <h3 class="text-center fw-bold oxanium fs-4 my-2">{% trans "Products List" %}</h3>
+            <button class="btn btn-sm btn-shappire mx-2">{% trans "SKU Print Page" %}</button>
+        </div>
+{% endblock  %}
+{% block thead %}
+    <th style="width: 5%;">Id</th>
+    <th style="width: 20%;">{% trans "SKU" %}</th>
+    <th style="width: 25%;">{% trans "Title" %}</th>
+    <th style="width: 20%;" class="text-center">{% trans "Status" %}</th>
+    <th style="width: 5%;">{% trans "Image" %}</th>
+    <th style="width: 15%;">{% trans "Stock" %}</th>
+    <th style="width: 5%;">{% trans "View" %}</th>
+    <th style="width: 10%;" class="text-center"> <input type="checkbox"  name="" id="parent"></th>          
+{% endblock  %} 
+{% block tbody %}
+    {% for item in stock %}
+        <tr>
+            <td>{{item.id}}</td>
+            <td class=text-link>{{item.sku}}</td>
+            <td class=text-link>{{item.title}}</td>
+            {% if item.status == 'Active' %}
+                <td class="text-center">{% trans "Active" %} <i class="fa-solid fa-circle-check color-green"></i></td>
+            {% else %}
+                <td class="text-center">{% trans "Inactive" %} <i class="fa-solid fa-exclamation color-red"></i></td>
+            {% endif %}
+            <td>{{item.image_tag}}</td>
+            {% if item.qty is None %}
+                <td class="oxanium fw-bold text-danger">{% trans "No Stock" %}</td>
+            {% elif item.qty == 0 %}
+                <td class="oxanium fw-bold text-danger">{% trans "No Stock" %}</td>
+            {% elif item.qty < 5 %}
+                <td>{{item.qty}} <small class="text-danger fw-bold small">{% trans "Low Stock" %}</small></td>
+            {% else %}
+                <td>{{item.qty}}</td>
+            {% endif %}
+            <input type="hidden" id="product-{{item.id}}" value="{{item.id}}">
+            <td class="my-1"><a href="/inventory-control/update-product/{{item.id}}" class="btn btn-shappire" target="_blank"><i class="fa-solid fa-right-to-bracket"></i></a></td>
+            <td class="text-center check-product"><input type="checkbox" class="child" name="product_id[]" value="{{item.id}}" id="delete_product"></td>
+        </tr>
+    {% endfor %}
+{% endblock  %}
+{% block errors %}
+    {% if errors %}
+        <h3 class="fs-5 oxanium text-center my-3">{% trans "Errors" %} {% trans "Sizes" %}</h3>
+        <ul class="text-center">
+            {% for item in errors %}
+                <li class="oxanium fw-bold text-danger">{{item}}</li>
+            {% endfor %}
+        </ul>
+    {% elif errors2 %}
+        <h3 class="fs-5 oxanium text-center my-3">{% trans "Errors" %} {% trans "Gallery" %}</h3>
+        <ul class="text-center">
+           {% for item in errors2 %}
+                <li class="oxanium fw-bold text-danger">{{item}}</li>
+            {% endfor %}
+        </ul>
+
+    {% elif errors3 %}
+        <h3 class="fs-5 oxanium text-center my-3">{% trans "Errors" %} {% trans "Bulletpoints" %}</h3>
+        <ul class="text-center">
+            {% for item in errors3 %}
+                <li class="oxanium fw-bold text-danger">{{item}}</li>
+            {% endfor %}
+        </ul>
+    {% elif errors4 %}
+        <h3 class="fs-5 oxanium text-center my-3">{% trans "Errors" %} {% trans "Variants" %}</h3>
+        <ul class="text-center">
+            {% for item in errors4 %}
+                <li class="oxanium fw-bold text-danger">{{item}}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock  %}
+{% block extratable %}
+    <div class="wow fadeInLeft variant-list d-none" data-wow-duration=".5s" data-wow-delay="0.5s">    
+        <div class="row justify-content-center">
+            <div class="col-lg-12 rounded bg-stela-table vh-40 p-4">
+                <h3 class="text-center fw-bold oxanium fs-4 my-2">{% trans "Variants List" %}</h3>
+                <table id="variant-table" class="mt-2 compact table table-borderless table-hover billing-table">
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 5vw;">Id</th>
+                            <th style="width: 15vw;">{% trans "Parent" %}</th>
+                            <th style="width: 15vw;">{% trans "Title" %}</th>
+                            <th style="width: 5vw;" class="text-center">{% trans "Status" %}</th>
+                            <th style="width: 10vw;" class="text-center">{% trans "Stock" %}</th>
+                            <th>{% trans "Image" %}</th>
+                            <th>{% trans "Price" %}</th>
+                            <th>{% trans "View" %}</th>
+                            <th class="text-center"> <input type="checkbox"  name="" id="parent2"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in stock %}
+                            {% for raw in item.variants.all %}
+                                    <tr>
+                                        <td>{{raw.id}}</td>
+                                        <td class=text-link>{{raw.product.title}}</td>
+                                        <td class=text-link>{{raw.title}}</td>
+                                        {% if item.status == 'Active' %}
+                                            <td class="text-center">{% trans "Active" %} <i class="fa-solid fa-circle-check color-green"></i></td>
+                                        {% else %}
+                                            <td class="text-center">{% trans "Inactive" %} <i class="fa-solid fa-exclamation color-red"></i></td>
+                                        {% endif %}
+                                        {% if raw.quantity  == 0 %}
+                                            <td class="oxanium fw-bold text-danger text-center">{% trans "No Stock" %}</td>
+                                        {% elif raw.quantity  < 5 %}
+                                            <td>{{raw.quantity}} <small class="text-danger fw-bold small">{% trans "Low Stock" %}</small></td>
+                                        {% else %}
+                                            <td class="text-center">{{raw.quantity}}</td>
+                                        {% endif %}
+                                        {% if raw.image %}
+                                            <td>{{raw.image_tag}}</td>
+                                        {% else %}
+                                            <td>{{raw.product.image_tag}}</td>
+                                        {% endif %}
+                                        <td>${{raw.price}}</td>
+                                        <input type="hidden" id="variant-{{raw.id}}" value="{{raw.id}}">
+                                        <td class="my-1"><button class="btn btn-shappire" onclick="variant({{raw.id}})" data-bs-toggle="modal" data-bs-target="#update-variant"><i class="fa-solid fa-right-to-bracket"></i></button></td>
+                                        <td class="text-center check-product"><input type="checkbox" class="child2" name="product_id[]" value="{{raw.id}}" id="delete_product2"></td>
+                                    </tr>
+                            {% endfor %}
+                        {% endfor %}
+                    </tbody>
+                        <tfoot>
+                            
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="wow fadeInLeft size d-none" data-wow-duration=".5s" data-wow-delay="0.5s">    
+        <div class="row justify-content-center">
+            <div class="col-lg-12 rounded bg-stela-table vh-40 p-4">
+                <h3 class="text-center fw-bold oxanium fs-4 my-2">{% trans "Size List" %}</h3>
+                <table id="size-table" class="mt-2 compact table table-borderless table-hover billing-table">
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 5vw;">Id</th>
+                            <th style="width: 30vw;">{% trans "Size" %}</th>
+                            <th>{% trans "View" %}</th>
+                            <th class="text-center"> <input type="checkbox"  name="" id="parent3"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in sizes %}
+                                <tr>
+                                    <td>{{item.id}}</td>
+                                    <td class=text-link>{{item.size}}</td>
+                                    <input type="hidden" id="size-{{item.id}}" value="{{item.id}}">
+                                    <td class="my-1"><button class="btn btn-shappire" onclick="size({{item.id}})" data-bs-toggle="modal" data-bs-target="#update-size"><i class="fa-solid fa-right-to-bracket"></i></button></td>
+                                    <td class="text-center check-product"><input type="checkbox" class="child3" name="product_id[]" value="{{item.id}}" id="delete_product3"></td>
+                                </tr>
+                        {% endfor %}
+                    </tbody>
+                        <tfoot>        
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="wow fadeInLeft catalog d-none" data-wow-duration=".5s" data-wow-delay="0.5s">    
+        <div class="row justify-content-center">
+            <div class="col-lg-12 rounded bg-stela-table vh-40 p-4">
+                <h3 class="text-center fw-bold oxanium fs-4 my-2">{% trans "Catalog List" %}</h3>
+                <table id="catalog-table" class="mt-2 compact table table-borderless table-hover billing-table">
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 5vw;">Id</th>
+                            <th style="width: 20vw;">{% trans "Variant" %}</th>
+                            <th style="width: 30vw;">{% trans "Catalogue" %}</th>
+                            <th>{% trans "View" %}</th>
+                            <th class="text-center"> <input type="checkbox"  name="" id="parent4"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in stock %}
+                            {% for raw in item.variants.all %}
+                                {% for get in raw.catalog.all %}
+                                    <tr>
+                                        <td>{{get.id}}</td>
+                                        <td class=text-link>{{get.product.title}}</td>
+                                        <td class=text-link>{{get.title}}</td>
+                                        <input type="hidden" id="catalog-{{get.id}}" value="{{get.id}}">
+                                        <td class="my-1"><button class="btn btn-shappire" onclick="catalog({{get.id}})" data-bs-toggle="modal" data-bs-target="#update-catalog"><i class="fa-solid fa-right-to-bracket"></i></button></td>
+                                        <td class="text-center check-product"><input type="checkbox" class="child4" name="product_id[]" value="{{get.id}}" id="delete_product4"></td>
+                                    </tr>
+                                {% endfor %}
+                            {% endfor %}
+                        {% endfor %}
+                    </tbody>
+                        <tfoot>
+                            
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="wow fadeInLeft category-list d-none" data-wow-duration=".5s" data-wow-delay="0.5s">    
+        <div class="row justify-content-center">
+            <div class="col-lg-12 rounded bg-stela-table vh-40 p-4">
+                <h3 class="text-center fw-bold oxanium fs-4 my-2">{% trans "Category List" %}</h3>
+                <table id="category-table" class="mt-2 compact table table-borderless table-hover billing-table">
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 20%;">{% trans "Type" %}</th>
+                            <th style="width: 20%;">{% trans "Title" %}</th>
+                            <th style="width: 15%;">{% trans "View" %}</th>
+                            <th style="width: 5%;" class="text-center"> <input type="checkbox"  name="" id="parent5"></th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in categ %}
+                            <tr>
+                                <td scope="row">{{item.type}}</td>
+                                <td class="my-1">{{item.title}}</td>
+                                <td class="my-1"> <button class="btn btn-shappire" onclick="dataCateg({{item.id}})" data-bs-toggle="modal" data-bs-target="#new-category"><i class="fa-solid fa-right-to-bracket"></i></button></td>
+                                <input type="hidden" name="" id="tempSection-{{item.id}}" value="{{item.id}}">
+                                <td class="text-center check-product my-1"><input type="checkbox" class="child5" name="product_id[]" value="{{item.id}}" id="delete_btn5"></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                        <tfoot>
+                            
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+    <div class="wow fadeInLeft colors-list d-none" data-wow-duration=".5s" data-wow-delay="0.5s">    
+        <div class="row justify-content-center">
+            <div class="col-lg-12 rounded bg-stela-table vh-40 p-4">
+                <h3 class="text-center fw-bold oxanium fs-4 my-2">{% trans "Colors Presets" %}</h3>
+                <table id="color-table" class="mt-2 compact table table-borderless table-hover billing-table">
+                    <thead>
+                        <tr class="text-center">
+                            <th style="width: 5%;">{% trans "ID" %}</th>
+                            <th style="width: 30%;">{% trans "Color Name" %}</th>
+                            <th style="width: 30%;">{% trans "Code" %} N°</th>
+                            <th style="width: 20%;">{% trans "Preset" %}</th>
+                            <th style="width: 10%;">{% trans "View" %}</th>
+                            <th style="width: 5%;" class="text-center"> <input type="checkbox"  name="" id="parent6"></th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in colors %}
+                                <tr>
+                                    <td scope="row">{{item.id}}</td>
+                                    <td class="my-1">{{item.name}}</td>
+                                    <td class="my-1">{{item.code}}</td>
+                                    {% if item.code1 and item.code2 and item.code3 %}
+                                        <td class="my-1" style="background: linear-gradient(to right, {{item.code1}}, {{item.code2}}, {{item.code3}});"></td>
+                                    {% elif item.code1 and item.code2 %}
+                                        <td class="my-1" style="background: linear-gradient(to right, {{item.code1}}, {{item.code2}});"></td>
+                                    {% else %}
+                                        <td class="my-1" style="background: {{item.code1}};"></td>
+                                    {% endif %}
+                                    <td class="my-1"> <button class="btn btn-shappire" onclick="dataColor{{item.id}}()" data-bs-toggle="modal" data-bs-target="#new-color"><i class="fa-solid fa-right-to-bracket"></i></button></td>
+                                    <input type="hidden" name="" id="color-{{item.id}}" value="{{item.id}}">
+                                    <td class="text-center check-product my-1"><input type="checkbox" class="child6" name="product_id[]" value="{{item.id}}" id="delete_btn6"></td>
+                                </tr>
+                        {% endfor %} 
+                    </tbody>
+                        <tfoot>                      
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock  %}
+{% block modals %}
+<div class="modal fade" id="new-form" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "Fill all fields" %}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="" method="post" enctype="multipart/form-data" id="newProduct">
+            {% csrf_token %} 
+            <div class="container vh-70">
+                <div id="update" class="content-data">
+                
+                </div>
+                <div class="preload-cage-sendgrid fade-in vh-70 d-none preload1">
+                    <h3 class="text-preload-sendgrid fs-6">{% trans "Proccess data, please wait" %}...</h3>
+                </div>
+                <div class="row justify-content-end p-3">
+                    <div class="col-lg-4">
+                        <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block btn-form d-flex">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal fade" id="removeObj" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="mb-3">
+          <div class="container">
+            <div class="row p-2">
+                <div class="col-12"> 
+                    <h3 class="text-center alert-title">{% trans "Are you sure?" %}</h3>
+                    <div class="iconhigh">
+                        <div id="anicon">
+
+                        </div> 
+                    </div>
+                    <div id="contentAlert">
+                        <p class="text-center text-dark">{% trans "This option cannot be reversed" %}.</p>   
+                        <div class="d-flex justify-content-center">
+                            <input type="hidden" id="removeData">
+                            <button onclick="removeObjComplete()" class="btn btn-danger remove-btn">{% trans "Remove" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>                   
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="removeObj2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="mb-3">
+          <div class="container">
+            <div class="row p-2">
+                <div class="col-12"> 
+                    <h3 class="text-center alert-title">{% trans "Are you sure?" %}</h3>
+                    <div class="iconhigh">
+                        <div id="anicon">
+
+                        </div> 
+                    </div>
+                    <div id="contentAlert">
+                        <p class="text-center text-dark">{% trans "This option cannot be reversed" %}.</p>   
+                        <div class="d-flex justify-content-center">
+                            <input type="hidden" id="removeData">
+                            <button onclick="removeObjComplete2()" class="btn btn-danger remove-btn">{% trans "Remove" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>                   
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="removeObj3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="mb-3">
+          <div class="container">
+            <div class="row p-2">
+                <div class="col-12"> 
+                    <h3 class="text-center alert-title">{% trans "Are you sure?" %}</h3>
+                    <div class="iconhigh">
+                        <div id="anicon">
+
+                        </div> 
+                    </div>
+                    <div id="contentAlert">
+                        <p class="text-center text-dark">{% trans "This option cannot be reversed" %}.</p>   
+                        <div class="d-flex justify-content-center">
+                            <input type="hidden" id="removeData">
+                            <button onclick="removeObjComplete3()" class="btn btn-danger remove-btn">{% trans "Remove" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>                   
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="removeObj4" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="mb-3">
+          <div class="container">
+            <div class="row p-2">
+                <div class="col-12"> 
+                    <h3 class="text-center alert-title">{% trans "Are you sure?" %}</h3>
+                    <div class="iconhigh">
+                        <div id="anicon">
+
+                        </div> 
+                    </div>
+                    <div id="contentAlert">
+                        <p class="text-center text-dark">{% trans "This option cannot be reversed" %}.</p>   
+                        <div class="d-flex justify-content-center">
+                            <input type="hidden" id="removeData">
+                            <button onclick="removeObjComplete4()" class="btn btn-danger remove-btn">{% trans "Remove" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>                   
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="removeObj5" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="mb-3">
+          <div class="container">
+            <div class="row p-2">
+                <div class="col-12"> 
+                    <h3 class="text-center alert-title">{% trans "Are you sure?" %}</h3>
+                    <div class="iconhigh">
+                        <div id="anicon">
+
+                        </div> 
+                    </div>
+                    <div id="contentAlert">
+                        <p class="text-center text-dark">{% trans "This option cannot be reversed" %}.</p>   
+                        <div class="d-flex justify-content-center">
+                            <input type="hidden" id="removeData">
+                            <button onclick="removeObjComplete5()" class="btn btn-danger remove-btn">{% trans "Remove" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>                   
+      </div>
+    </div>
+</div>
+<div class="modal fade" id="removeObj6" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="mb-3">
+          <div class="container">
+            <div class="row p-2">
+                <div class="col-12"> 
+                    <h3 class="text-center alert-title">{% trans "Are you sure?" %}</h3>
+                    <div class="iconhigh">
+                        <div id="anicon">
+
+                        </div> 
+                    </div>
+                    <div id="contentAlert">
+                        <p class="text-center text-dark">{% trans "This option cannot be reversed" %}.</p>   
+                        <div class="d-flex justify-content-center">
+                            <input type="hidden" id="removeData">
+                            <button onclick="removeObjComplete6()" class="btn btn-danger remove-btn">{% trans "Remove" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>                   
+      </div>
+    </div>
+</div>
+{% endblock  %}
+
+{% block addScript %}
+<script>
+    const url = "/inventory-control/products"
+</script>
+<script src="{% static 'js/stela/inventory/functions.js' %}"></script>
+<script src="{% static 'js/stela/inventory/product/functions.js' %}"></script>
+{% endblock  %}
