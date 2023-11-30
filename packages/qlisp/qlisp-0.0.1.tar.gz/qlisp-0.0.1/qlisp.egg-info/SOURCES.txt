@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+qlisp/__init__.py
+qlisp/version.py
+qlisp.egg-info/PKG-INFO
+qlisp.egg-info/SOURCES.txt
+qlisp.egg-info/dependency_links.txt
+qlisp.egg-info/requires.txt
+qlisp.egg-info/top_level.txt

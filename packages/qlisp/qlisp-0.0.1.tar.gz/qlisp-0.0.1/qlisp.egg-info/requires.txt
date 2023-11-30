@@ -1,0 +1,5 @@
+dill>=0.3.6
+numpy>=1.13.3
+ply>=3.11
+scipy>=1.0.0
+waveforms>=1.8.9
