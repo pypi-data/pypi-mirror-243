@@ -1,0 +1,112 @@
+[tool.poetry]
+name = "compute_distance"
+version = "0.0.1"
+description = "Compute distances and create TIF files"
+authors = [
+    "Marcon <mfikingas@gmail.com>",
+]
+license = "MIT"
+readme = "README.md"
+
+documentation = "https://MFStark.github.io/compute_distance"
+homepage = "https://MFStark.github.io/compute_distance"
+repository = "https://github.com/MFStark/compute_distance"
+
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Typing :: Typed",
+]
+
+packages = [
+    { include = "compute_distance", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10, <4.0"
+click = "*"
+
+[tool.poetry.dev-dependencies]
+autoflake = "*"
+black = "*"
+flake8 = "*"
+flake8-bugbear = "*"
+flake8-builtins = "*"
+flake8-comprehensions = "*"
+flake8-debugger = "*"
+flake8-eradicate = "*"
+flake8-logging-format = "*"
+isort = "*"
+mkdocstrings = {version = ">=0.18", extras = ["python"]}
+mkdocs-material = "*"
+mkdocs-table-reader-plugin = "*"
+mypy = "*"
+pep8-naming = "*"
+pre-commit = "*"
+pymdown-extensions = "*"
+pytest = "*"
+pytest-github-actions-annotate-failures = "*"
+pytest-cov = "*"
+python-kacl = "*"
+pyupgrade = "*"
+tryceratops = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project.scripts]
+my-cli = "compute_distance.cli:main"
+
+[tool.isort]
+profile = "black"
+src_paths = ["src", "tests"]
+
+[tool.black]
+target-version = ["py310", "py311", "py312"]
+include = '\.pyi?$'
+
+[tool.pytest.ini_options]
+addopts = """\
+    --cov compute_distance \
+    --cov tests \
+    --cov-report term-missing \
+    --no-cov-on-fail \
+"""
+
+[tool.coverage.report]
+fail_under = 100
+exclude_lines = [
+    'if TYPE_CHECKING:',
+    'pragma: no cover'
+]
+
+[tool.mypy]
+disallow_any_unimported = false
+disallow_untyped_defs = true
+no_implicit_optional = true
+strict_equality = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_return_any = false
+check_untyped_defs = true
+show_error_codes = true
+
+# Uncomment the following lines and add packages to the "module" list to
+# handle mypy errors when 3rd party packages are not typed.
+[[tool.mypy.overrides]]
+module = ["setuptools", "distance_computation.functions", "pandas", "geopandas", "scipy.ndimage", "matplotlib", "matplotlib.pyplot", "rasterio", "rasterio.mask", "rasterio.plot", "rasterio.crs", "affine"]
+ignore_missing_imports = true
+
+[tool.tryceratops]
+ignore=["TRY003"]
+
+[tool.autoflake]
+ignore-init-module-imports = true
