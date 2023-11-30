@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: darli
+Version: 0.1.1
+Summary: The DARLi is a Python 3 library that supports both numerical and symbolical computations of open loop articulated robots provided urdf file.
+Home-page: https://github.com/simeon-ned/darli
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: cmeel-casadi-kin-dyn ==1.6.4
+Provides-Extra: dev
+Requires-Dist: pre-commit ; extra == 'dev'
+
