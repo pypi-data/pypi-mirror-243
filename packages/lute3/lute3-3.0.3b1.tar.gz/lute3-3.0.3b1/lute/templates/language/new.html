@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}New Language{% endblock %}
+
+{% block body %}
+<h2>Create new Language</h2>
+
+<p><i>Load from predefined:</i>
+  <select id="predefined">
+    <option value="-">-</option>
+    {% for p in predefined %}
+    <option value="{{ p.name }}">{{ p.name }}</option>
+    {% endfor %}
+  </select>
+  <button onclick="location.href='/language/new/' + document.getElementById('predefined').value;">go</button>
+</p>
+
+{% include "language/_form.html" %}
+
+{% endblock %}
