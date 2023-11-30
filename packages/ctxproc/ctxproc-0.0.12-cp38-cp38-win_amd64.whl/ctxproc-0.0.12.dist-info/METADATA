@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: ctxproc
+Version: 0.0.12
+Summary: context changeable process
+Home-page: UNKNOWN
+Author: OrkeshNurbolat
+Author-email: MG1922077@smail.nju.edu.cn
+License: MIT
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+Requires-Dist: pytest >=7.0 ; extra == 'dev'
+Requires-Dist: twine >=4.0.2 ; extra == 'dev'
+
+An Processmanager With interchangeable context
+
+
