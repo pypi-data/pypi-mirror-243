@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.py
+eventhubs/__init__.py
+eventhubs/__main__.py
+eventhubs/cli.py
+eventhubs.egg-info/PKG-INFO
+eventhubs.egg-info/SOURCES.txt
+eventhubs.egg-info/dependency_links.txt
+eventhubs.egg-info/entry_points.txt
+eventhubs.egg-info/requires.txt
+eventhubs.egg-info/top_level.txt
+tests/test_eventhubs.py
