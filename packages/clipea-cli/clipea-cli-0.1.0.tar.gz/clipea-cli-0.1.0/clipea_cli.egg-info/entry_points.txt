@@ -1,0 +1,2 @@
+[console_scripts]
+clipea = clipea.__main__:clipea_main
