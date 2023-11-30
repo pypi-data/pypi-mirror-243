@@ -1,0 +1,9 @@
+openai
+torch
+torchvision
+torchaudio
+transformers
+peft
+chardet
+sentence-transformers
+pynvml
