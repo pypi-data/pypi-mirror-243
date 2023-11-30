@@ -1,0 +1,16 @@
+MarkupSafe<2.1.0
+m9s-trytond<6.1,>=6.0
+m9s_gift_card<6.1,>=6.0
+m9s_nereid<6.1,>=6.0
+m9s_nereid_cart_b2c<6.1,>=6.0
+m9s_nereid_catalog<6.1,>=6.0
+m9s_nereid_catalog_tree<6.1,>=6.0
+m9s_nereid_checkout<6.1,>=6.0
+m9s_nereid_cms<6.1,>=6.0
+m9s_nereid_image_transformation<6.1,>=6.0
+m9s_nereid_wishlist<6.1,>=6.0
+m9s_stock_package_rate<6.1,>=6.0
+trytond_party<6.1,>=6.0
+
+[pygeoip]
+pygeoip
