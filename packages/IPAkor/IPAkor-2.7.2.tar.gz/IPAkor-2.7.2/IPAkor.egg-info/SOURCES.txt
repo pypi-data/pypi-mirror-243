@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+IPAkor/__init__.py
+IPAkor/border_maker.py
+IPAkor/transcription.py
+IPAkor.egg-info/PKG-INFO
+IPAkor.egg-info/SOURCES.txt
+IPAkor.egg-info/dependency_links.txt
+IPAkor.egg-info/requires.txt
+IPAkor.egg-info/top_level.txt
+IPAkor/static/final_trans.csv
