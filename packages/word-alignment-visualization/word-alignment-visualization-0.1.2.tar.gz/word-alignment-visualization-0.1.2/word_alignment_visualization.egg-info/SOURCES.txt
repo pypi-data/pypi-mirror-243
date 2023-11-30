@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+word_alignment_visualization/__init__.py
+word_alignment_visualization/show_alignment.py
+word_alignment_visualization.egg-info/PKG-INFO
+word_alignment_visualization.egg-info/SOURCES.txt
+word_alignment_visualization.egg-info/dependency_links.txt
+word_alignment_visualization.egg-info/requires.txt
+word_alignment_visualization.egg-info/top_level.txt
+word_alignment_visualization/static/word_alignment_viz.css
+word_alignment_visualization/static/word_alignment_viz.js
