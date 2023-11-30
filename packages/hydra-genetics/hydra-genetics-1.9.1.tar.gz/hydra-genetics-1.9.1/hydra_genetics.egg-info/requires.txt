@@ -1,0 +1,8 @@
+click<9,>=8
+gitpython
+jinja2==3.0.1
+pandas>=1.3.1
+pyaml
+pysam
+rich==10.9.0
+snakemake
