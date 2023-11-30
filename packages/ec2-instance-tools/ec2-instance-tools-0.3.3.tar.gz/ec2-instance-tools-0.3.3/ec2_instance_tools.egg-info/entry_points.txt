@@ -1,0 +1,4 @@
+[console_scripts]
+ec2autonamer = ec2_instance_tools.namer:main
+ec2whoami = ec2_instance_tools.whoami:main
+sshec2 = ec2_instance_tools.sshec2:main
