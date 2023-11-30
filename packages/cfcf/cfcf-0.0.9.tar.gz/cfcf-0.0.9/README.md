@@ -1,0 +1,72 @@
+# cfcf
+collision-free cache folder
+
+This library creates a cache file for a remote resource or a file need additional processing.
+The cache will be duplicated, if an another process is creating the files.
+If the cache file already created, an interface will return the file path.
+This excluding concurrent writing feature makes to avoid the collision.
+
+
+# Installation
+```
+pip install cfcf
+```
+
+# Usage
+Following example running on '/tmp'
+##  handle multiple files (directory mode)
+```
+import cfcf
+
+def your_cache_getting_impl(arg1, arg2):
+    print(arg1)
+    import os
+    print(os.getcwd())
+    print(arg2)
+
+print('#1# ', cfcf.get_dir('cache_name', your_cache_getting_impl, 'arg1', 'arg2'))
+print('#2# ', cfcf.get_dir('cache_name', your_cache_getting_impl, 'arg1', 'arg2'))
+```
+```
+arg1
+/tmp/cache_name/01HGAJ22W2DZDCSC23V1A8RT20
+arg2
+#1#  /tmp/cache_name/01HGAJ22W2DZDCSC23V1A8RT20
+#2#  /tmp/cache_name/01HGAJ22W2DZDCSC23V1A8RT20
+```
+
+## handle a single file (file mode)
+```
+import cfcf
+
+def your_cache_getting_impl(filename):
+    import os
+    print('Put a file in this dir. and return the path', os.getcwd())
+    import pathlib
+    path = pathlib.Path(filename)
+    path.touch()
+    return path
+
+print('#1# ', cfcf.get_file('cache_name2', your_cache_getting_impl, 'filename.txt'))
+print('#2# ', cfcf.get_file('cache_name2', your_cache_getting_impl, 'filename.txt'))
+```
+```
+Put a file in this dir. and return the path /tmp/cache_name2/01HGAK6QQ516P2536QM38PFZ8M
+#1#  /tmp/cache_name2/01HGAK6QQ516P2536QM38PFZ8M/cache_name2
+#2#  /tmp/cache_name2/01HGAK6QQ516P2536QM38PFZ8M/cache_name2
+```
+
+## handle a dict (object mode)
+```
+import cfcf
+
+def your_cache_getting_impl(arg1, arg2):
+    return {'arg1':arg1, 'arg2':arg2}
+
+print('#1# ', cfcf.get_object('cache_name3', your_cache_getting_impl, 'arg1.1', 'arg2.1'))
+print('#2# ', cfcf.get_object('cache_name3', your_cache_getting_impl, 'arg1.2', 'arg2.2'))
+```
+```
+#1#  {'arg1': 'arg1.1', 'arg2': 'arg2.1'}
+#2#  {'arg1': 'arg1.1', 'arg2': 'arg2.1'}
+```
