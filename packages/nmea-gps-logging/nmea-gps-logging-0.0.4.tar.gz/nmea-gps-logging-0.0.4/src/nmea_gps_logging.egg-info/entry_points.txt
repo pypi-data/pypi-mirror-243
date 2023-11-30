@@ -1,0 +1,2 @@
+[console_scripts]
+nmea-gps-gui = nmea_gps_logging.gui:main

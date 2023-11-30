@@ -1,0 +1,12 @@
+LICENSE
+README.MD
+pyproject.toml
+src/nmea_gps_logging/__init__.py
+src/nmea_gps_logging/gui.py
+src/nmea_gps_logging/logger.py
+src/nmea_gps_logging.egg-info/PKG-INFO
+src/nmea_gps_logging.egg-info/SOURCES.txt
+src/nmea_gps_logging.egg-info/dependency_links.txt
+src/nmea_gps_logging.egg-info/entry_points.txt
+src/nmea_gps_logging.egg-info/requires.txt
+src/nmea_gps_logging.egg-info/top_level.txt
