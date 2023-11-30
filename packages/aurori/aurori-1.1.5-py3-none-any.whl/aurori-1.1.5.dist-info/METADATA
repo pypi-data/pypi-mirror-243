@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: aurori
+Version: 1.1.5
+Summary: A flexible web framework based on FastApi.
+License: AGPLv3+
+Project-URL: Homepage, https://gitlab.com/aurori/aurori
+Project-URL: Bug Tracker, https://gitlab.com/aurori/aurori/-/issues
+Keywords: aurori
+Classifier: Framework :: FastAPI
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: fastapi >=0.100.0
+Requires-Dist: uvicorn[standard]
+Requires-Dist: alembic
+Requires-Dist: bcrypt
+Requires-Dist: Click
+Requires-Dist: pyjwt
+Requires-Dist: python-multipart
+Requires-Dist: APScheduler <=4.0.0
+Requires-Dist: cron-descriptor
+Requires-Dist: sqlalchemy-utils >=0.41.0
+Requires-Dist: sqlalchemy >=2.0.18
+
+# aurori
+
+A flexible web framework based on FastApi.
+
+pip install -e . --config-settings editable_mode=compat
