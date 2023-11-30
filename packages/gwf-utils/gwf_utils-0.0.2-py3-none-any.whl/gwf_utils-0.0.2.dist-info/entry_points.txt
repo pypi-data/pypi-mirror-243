@@ -1,0 +1,2 @@
+[console_scripts]
+gwf-subset = gwf_utils.cli.gf_subset:main

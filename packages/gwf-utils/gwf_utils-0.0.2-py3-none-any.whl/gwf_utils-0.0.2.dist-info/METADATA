@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: gwf-utils
+Version: 0.0.2
+Summary: A collection of programs and classes to work with gw frame filesw files
+Author-email: Joseph Areeda <joe@areeda.com>
+Maintainer-email: Joseph Areeda <joe@areeda.com>
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Console
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Flask
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Natural Language :: English
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Multimedia
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+
+# Classes and utilities for working with gw frame files
