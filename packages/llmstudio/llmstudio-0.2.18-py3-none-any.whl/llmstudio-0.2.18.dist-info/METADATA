@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: llmstudio
+Version: 0.2.18
+Summary: Prompt Perfection at Your Fingertips
+Home-page: https://llmstudio.ai/
+Author: TensorOps
+Author-email: contact@tensorops.ai
+Project-URL: Source Code, https://github.com/tensoropsai/llmstudio
+Project-URL: Bug Tracker, https://github.com/tensoropsai/llmstudio/issues
+Project-URL: Documentation, https://docs.llmstudio.ai
+Keywords: ml ai llm llmops openai langchain chatgpt llmstudio tensorops
+Requires-Python: ~=3.9
+License-File: LICENSE
+Requires-Dist: pydantic
+Requires-Dist: requests
+Requires-Dist: numpy
+Requires-Dist: torch
+Requires-Dist: sentence-transformers
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: PyYaml
+Requires-Dist: openai >=1.0
+Requires-Dist: tiktoken
+Requires-Dist: google-auth
+Requires-Dist: google-cloud-aiplatform
+Requires-Dist: langchain
+Requires-Dist: anthropic >=0.3.0
+Requires-Dist: python-dotenv
+Requires-Dist: cohere
+Requires-Dist: tokenizer
+
