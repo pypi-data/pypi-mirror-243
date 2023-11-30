@@ -1,0 +1,10 @@
+jupyterlab<4 # this will install jlpm
+build
+twine
+hatch
+pytest
+duckdb-engine
+jupysql
+
+# optional dependency, only needed for the connector widget
+ipywidgets
