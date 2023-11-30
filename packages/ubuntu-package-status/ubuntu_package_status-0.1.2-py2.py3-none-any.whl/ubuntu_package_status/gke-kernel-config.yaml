@@ -1,0 +1,10 @@
+ubuntu-versions:
+  focal:
+    packages:
+      - linux-gke-5.4
+  jammy:
+    packages:
+      - linux-gke-5.15
+  lunar:
+    packages:
+      - linux-gcp

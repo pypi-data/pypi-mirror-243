@@ -1,0 +1,2 @@
+[console_scripts]
+ubuntu-package-status = ubuntu_package_status.ubuntu_package_status:ubuntu_package_status
