@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+requirements-dev.txt
+requirements.txt
+setup.py
+ibm_dpx_services/__init__.py
+ibm_dpx_services/common.py
+ibm_dpx_services/data_product_exchange_api_service_v1.py
+ibm_dpx_services/version.py
+ibm_dpx_services.egg-info/PKG-INFO
+ibm_dpx_services.egg-info/SOURCES.txt
+ibm_dpx_services.egg-info/dependency_links.txt
+ibm_dpx_services.egg-info/requires.txt
+ibm_dpx_services.egg-info/top_level.txt
+ibm_dpx_services.egg-info/zip-safe
