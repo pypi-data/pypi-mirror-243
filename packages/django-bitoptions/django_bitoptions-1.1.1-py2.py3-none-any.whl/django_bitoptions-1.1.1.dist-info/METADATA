@@ -1,0 +1,122 @@
+Metadata-Version: 2.1
+Name: django-bitoptions
+Version: 1.1.1
+Summary: This project replaces several related BooleanFields with a single field and a few eye candy features.
+Author-email: Andrzej Mateja <mateja.and@gmail.com>
+Maintainer-email: Andrzej Mateja <mateja.and@gmail.com>
+License: This is free and unencumbered software released into the public domain.
+        
+        Anyone is free to copy, modify, publish, use, compile, sell, or
+        distribute this software, either in source code form or as a compiled
+        binary, for any purpose, commercial or non-commercial, and by any
+        means.
+        
+        In jurisdictions that recognize copyright laws, the author or authors
+        of this software dedicate any and all copyright interest in the
+        software to the public domain. We make this dedication for the benefit
+        of the public at large and to the detriment of our heirs and
+        successors. We intend this dedication to be an overt act of
+        relinquishment in perpetuity of all present and future rights to this
+        software under copyright law.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+        IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+        OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+        ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+        OTHER DEALINGS IN THE SOFTWARE.
+        
+        For more information, please refer to <http://unlicense.org>
+        
+Project-URL: homepage, https://github.com/amateja/django-bitoptions
+Keywords: django,bit options,bitoptions
+Classifier: Development Status :: 4 - Beta
+Classifier: Framework :: Django :: 1.8
+Classifier: Framework :: Django :: 1.9
+Classifier: Framework :: Django :: 1.10
+Classifier: Framework :: Django :: 1.11
+Classifier: Framework :: Django :: 2.0
+Classifier: Framework :: Django :: 2.1
+Classifier: Framework :: Django :: 2.2
+Classifier: Framework :: Django :: 3.0
+Classifier: Framework :: Django :: 3.1
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.0
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Intended Audience :: Developers
+Classifier: License :: Public Domain
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Software Development
+Requires-Python: >=2.7
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: django >=1.8
+
+.. image:: https://img.shields.io/github/actions/workflow/status/amateja/django-bitoptions/python-test.yml
+    :target: https://github.com/amateja/django-bitoptions/actions/workflows/python-test.yml
+.. image:: https://img.shields.io/coveralls/amateja/django-bitoptions.svg
+    :target: https://coveralls.io/github/amateja/django-bitoptions
+.. image:: https://img.shields.io/pypi/v/django-bitoptions.svg
+    :target: https://pypi.python.org/pypi/django-bitoptions
+.. image:: https://img.shields.io/pypi/format/django-bitoptions.svg
+    :target: https://pypi.python.org/pypi/django-bitoptions
+.. image:: https://img.shields.io/pypi/pyversions/django-bitoptions.svg
+    :target: https://pypi.python.org/pypi/django-bitoptions
+.. image:: https://img.shields.io/pypi/status/django-bitoptions.svg
+    :target: https://pypi.python.org/pypi/django-bitoptions
+.. image:: https://img.shields.io/pypi/l/django-bitoptions.svg
+    :target: https://pypi.python.org/pypi/django-bitoptions
+
+=================
+django-bitoptions
+=================
+
+This project replaces several related BooleanFields with a single field and
+a few eye candy features.
+
+installation
+============
+
+::
+
+    pip install django-bitoptions
+
+usage
+=====
+
+.. code-block:: python
+
+    from django.db import models
+    from bitoptions import BitOptions, BitOptionsField
+
+    TOPPINGS = BitOptions(
+        ('pepperoni', 'mushrooms', 'onions', 'sausage', 'bacon',
+         'black olives', 'green olives', 'green peppers', 'pineapple',
+         'spinach', 'tomatoes', 'broccoli', 'jalapeno peppers', 'anchovies',
+         'chicken', 'beef', 'ham', 'salami')
+    )
+    CHEESES = BitOptions(('feta', 'parmesan', 'provolone', 'goat',
+                          'mozzarella'))
+
+
+    class Pizza(models.Model):
+        toppings = BitOptionsField(options=TOPPINGS)
+        cheeses = BitOptionsField(options=CHEESES)
