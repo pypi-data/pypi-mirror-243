@@ -1,0 +1,84 @@
+Metadata-Version: 2.1
+Name: libresvip
+Version: 0.9.8
+Summary: Universal Converter for Singing Voice Projects
+Author-Email: SoulMelody <yjxrtzyx@gmail.com>
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Environment :: Console
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: Operating System :: Microsoft :: Windows :: Windows 11
+Classifier: Framework :: Pydantic :: 2
+Classifier: Topic :: File Formats
+Classifier: Topic :: Multimedia :: Sound/Audio :: Sound Synthesis
+Classifier: Typing :: Typed
+Project-URL: Repository, https://github.com/SoulMelody/LibreSVIP
+Requires-Python: <3.13,>=3.9
+Requires-Dist: charset-normalizer<4.0.0,>=3.3.2
+Requires-Dist: construct-typing<1.0.0,>=0.6.2
+Requires-Dist: drawsvg<3.0.0,>=2.3.0
+Requires-Dist: importlib-resources<7.0.0,>=6.1.1; python_version < "3.10"
+Requires-Dist: jinja2<4.0.0,>=3.1.2
+Requires-Dist: loguru<1.0.0,>=0.7.2
+Requires-Dist: mido-fix<2.0.0,>=1.2.12
+Requires-Dist: more-itertools<11.0.0,>=10.1.0
+Requires-Dist: omegaconf<3.0.0,>=2.3.0
+Requires-Dist: packaging<24.0,>=23.2
+Requires-Dist: parsimonious<0.11.0,>=0.10.0
+Requires-Dist: platformdirs<5.0.0,>=4.0.0
+Requires-Dist: portion<3.0.0,>=2.4.1
+Requires-Dist: proto-plus<2.0.0,>=1.22.3
+Requires-Dist: pydantic<3.0.0,>=2.5.2
+Requires-Dist: pydantic-extra-types<3.0.0,>=2.1.0
+Requires-Dist: pymediainfo<7.0.0,>=6.1.0; sys_platform != "linux"
+Requires-Dist: pymediainfo-lambda<1.0.0,>=0.0.13; sys_platform == "linux"
+Requires-Dist: pypinyin<1.0.0,>=0.49.0
+Requires-Dist: rich<14.0.0,>=13.7.0
+Requires-Dist: srt<4.0.0,>=3.5.3
+Requires-Dist: typer<1.0.0,>=0.9.0
+Requires-Dist: wanakana-python<2.0.0,>=1.2.2
+Requires-Dist: xsdata<24.0,>=23.8
+Requires-Dist: zhon<3.0.0,>=2.0.2
+Requires-Dist: zstandard<0.23.0,>=0.22.0; platform_python_implementation == "CPython"
+Requires-Dist: zstd<2.0.0,>=1.5.5.1; platform_python_implementation == "PyPy"
+Requires-Dist: ujson>=5.8.0; extra == "ujson"
+Requires-Dist: universal-pathlib<1.0.0,>=0.1.4; extra == "upath"
+Requires-Dist: nicegui[native]>=1.4.3; extra == "webui"
+Requires-Dist: libresvip[upath]; extra == "webui"
+Requires-Dist: pyside6<6.7.0,>=6.6.0; extra == "desktop"
+Requires-Dist: fonticon-materialdesignicons7>=7.2.96; extra == "desktop"
+Requires-Dist: qtinter>=0.11.0; extra == "desktop"
+Requires-Dist: httpx>=0.25.2; extra == "desktop"
+Requires-Dist: desktop-notifier>=3.5.6; platform_python_implementation == "CPython" and extra == "desktop"
+Requires-Dist: libresvip[upath]; extra == "desktop"
+Provides-Extra: ujson
+Provides-Extra: upath
+Provides-Extra: webui
+Provides-Extra: desktop
+Description-Content-Type: text/markdown
+
+# LibreSVIP
+
+LibreSVIP is a cross-platform and universal converter for many Singing Voice Synthesis (SVS) project formats,
+which is highly inspired by following projects:
+
+- [OpenSVIP] (link: https://github.com/yqzhishen/opensvip)
+- [Utaformatix3] (link: https://github.com/sdercolin/utaformatix3)
+
+Other projects that are related to this project:
+
+- [QNrbf] (link: https://github.com/SineStriker/QNrbf)
