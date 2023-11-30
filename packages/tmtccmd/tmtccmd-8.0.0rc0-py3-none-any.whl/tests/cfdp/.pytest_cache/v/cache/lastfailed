@@ -1,0 +1,13 @@
+{
+  "test_src_handler_nak_closure.py::TestCfdpSourceHandlerWithClosure::test_empty_file_pdu_generation": true,
+  "test_dest_handler.py::TestCfdpDestHandler::test_check_timer_mechanism": true,
+  "test_dest_handler.py::TestCfdpDestHandler::test_empty_file_reception": true,
+  "test_dest_handler.py::TestCfdpDestHandler::test_empty_file_reception_with_closure": true,
+  "test_dest_handler.py::TestCfdpDestHandler::test_file_data_pdu_before_metadata_is_discarded": true,
+  "test_dest_handler.py::TestCfdpDestHandler::test_file_is_overwritten": true,
+  "test_dest_handler.py::TestCfdpDestHandler::test_remote_cfg_does_not_exist": true,
+  "test_dest_handler.py::TestCfdpDestHandler::test_small_file_reception": true,
+  "test_dest_handler.py::TestCfdpDestHandler::test_small_file_reception_with_closure": true,
+  "test_dest_handler_naked.py::TestCfdpDestHandler::test_file_data_pdu_before_metadata_is_discarded": true,
+  "test_checksum.py": true
+}
