@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: transfernet
+Version: 0.0.1
+Summary: Deep learning transfer learning.
+Home-page: https://github.com/leschultz/transfernet.git
+Author: Lane E. Schultz
+Author-email: laneenriqueschultz@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: scikit-learn
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: pytest
+Requires-Dist: torch
+
+# transfer_learning
+Use pytorch to transfer learn data
