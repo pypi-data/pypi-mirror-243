@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: autoboot
+Version: 0.6.0
+Summary: IoC with auto config framework
+Home-page: https://github.com/yizzuide/autoboot
+Author: yizzuide
+Author-email: fu837014586@163.com
+Keywords: IoC,event,auto config
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+
+# autoboot
+一个轻量的支持IoC的快速开发框架，支持依赖注入，AOP，注解，事件，插件等。
