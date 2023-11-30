@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pynimcodec
+Version: 0.1.0
+Summary: Codecs for Satellite IoT messaging implemented in Python.
+Home-page: https://github.com/inmarsat-enterprise/pynimomodem
+License: Apache2.0
+Keywords: viasat,inmarsat,satellite,iot,idp,ogx,orbcomm
+Author: geoffbrucepayne
+Author-email: geoff.bruce-payne@inmarsat.com
+Requires-Python: >=3.10,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Project-URL: Repository, https://github.com/inmarsat-enterprise/pynimomodem
+Description-Content-Type: text/markdown
+
+# pynimcodec
+
+A set of message codecs for use with satellite IoT products implemented
+in Python.
