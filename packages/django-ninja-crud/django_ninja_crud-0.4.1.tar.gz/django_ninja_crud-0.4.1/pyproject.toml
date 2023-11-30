@@ -1,0 +1,65 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "django-ninja-crud"
+version = "0.4.1"
+description = "Declarative CRUD Views & Tests with Django Ninja."
+authors = ["Hicham Bakri <hicham.bakri76@gmail.com>"]
+maintainers = ["Hicham Bakri <hicham.bakri76@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/hbakri/django-ninja-crud"
+license = "MIT"
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 4 - Beta",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.1",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django",
+    "Typing :: Typed",
+]
+packages = [{ include = "ninja_crud" },]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+Django = ">=3.2"
+django-ninja = ">=0.21"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^6.5.0"
+pre-commit = "^2.20.0"
+pydoc-markdown = "^4.8.2"
+pyyaml = "^6.0.1"
+python-frontmatter = "^1.0.1"
+
+[tool.ruff]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "C",  # flake8-comprehensions
+    "B",  # flake8-bugbear
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "B008",  # do not perform function calls in argument defaults
+]
+
+[tool.ruff.isort]
+known-local-folder = ["ninja_crud", "tests", "examples"]
