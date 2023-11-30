@@ -1,0 +1,134 @@
+[build-system]
+build-backend = "maturin"
+requires = [
+  "maturin<2,>=1.2.1",
+]
+
+[project]
+name = "functime"
+version = "0.9.2"
+description = "Time-series machine learning at scale."
+readme = "README.md"
+authors = [
+    { name = "functime Team", email = "team@functime.ai" },
+    { name = "Chris Lo", email = "chris@functime.ai" },
+    { name = "Daryl Lim", email = "daryl@functime.ai" },
+]
+requires-python = ">=3.8"
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+  "bottleneck",
+  "dask",
+  "flaml<3,>=2.0.2",
+  "holidays",
+  "numpy",
+  "polars>=0.19.15",
+  "scikit-learn<2,>=1.2.2",
+  "scipy",
+  "tqdm",
+  "typing-extensions",
+  "zarr",
+]
+[project.optional-dependencies]
+ann = [
+  "pyarrow",
+  "pylance",
+]
+cat = [
+  "catboost",
+]
+dev = [
+  "pre-commit",
+]
+doc = [
+  "jupyterlab",
+  "mkdocs",
+  "mkdocs-jupyter",
+  "mkdocs-material",
+  "mkdocstrings-python",
+]
+lgb = [
+  "lightgbm",
+]
+llm = [
+  "openai",
+  "tabulate",
+  "tenacity",
+  "tiktoken",
+]
+plot = [
+  "kaleido==0.2.1",
+  "pandas",
+  "plotly",
+]
+test = [
+  "aeon",
+  "coverage[toml]",
+  "fastapi",
+  "joblib",
+  "mlforecast==0.8.1",
+  "pandas",
+  "pytest",
+  "pytest-benchmark",
+  "pytest-memray",
+  "pytest-timeout",
+  "statsmodels",
+  "tsfresh",
+]
+xgb = [
+  "pyarrow",
+  "xgboost",
+]
+
+[tool.ruff]
+include = ["*.py", "*.pyi", "**/pyproject.toml", "*.ipynb"]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "UP", # pyupgrade
+    "I",  # isort
+]
+ignore = [
+    "E501", # line too long, handled by black
+    "B008", # do not perform function calls in argument defaults
+    "B905", # `zip()` without an explicit `strict=` parameter
+    "B018", # Found useless expression.
+    "F821", # Undefined name
+]
+
+[tool.ruff.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
+
+[tool.pytest.ini_options]
+addopts = ["--strict-config", "--strict-markers"]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "benchmark: marks tests as part of benchmarking",
+    "multivariate: marks multivariate forecast test",
+]
+xfail_strict = true
+
+[tool.coverage.run]
+parallel = true
+source = ["tests", "functime"]
+context = '${CONTEXT}'
+
+[tool.maturin]
+module-name = "functime._functime_rust"
+features = ["pyo3/extension-module"]
