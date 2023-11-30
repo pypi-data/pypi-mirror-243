@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2023 Karlsruher Institut für Technologie
+#
+# SPDX-License-Identifier: CC0-1.0
+
+include versioneer.py
+include insupdel4stac/_version.py

@@ -1,0 +1,154 @@
+Metadata-Version: 2.1
+Name: insupdel4stac
+Version: 2.0.1
+Summary: A python-based module to ingest STAC metadata catalogs into STAC-databases like pgSTAC
+Author-email: Mostafa Hadizadeh <mostafa.hadizadeh@kit.edu>
+Maintainer-email: Mostafa Hadizadeh <mostafa.hadizadeh@kit.edu>
+License: EUPL-1.2
+Project-URL: Homepage, https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac
+Project-URL: Documentation, https://insupdel4stac.readthedocs.io/en/latest/
+Project-URL: Source, https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac
+Project-URL: Tracker, https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac/issues/
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Typing :: Typed
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSES/CC-BY-4.0.txt
+License-File: LICENSES/CC0-1.0.txt
+License-File: LICENSES/EUPL-1.2.txt
+Requires-Dist: pypgstac==0.7.10
+Requires-Dist: psycopg==3.1.10
+Requires-Dist: psycopg_pool==3.1.7
+Requires-Dist: pystac==1.8.3
+Requires-Dist: requests==2.26.0
+Requires-Dist: versioneer
+Provides-Extra: testsite
+Requires-Dist: tox; extra == "testsite"
+Requires-Dist: isort==5.12.0; extra == "testsite"
+Requires-Dist: black==23.1.0; extra == "testsite"
+Requires-Dist: blackdoc==0.3.8; extra == "testsite"
+Requires-Dist: flake8==6.0.0; extra == "testsite"
+Requires-Dist: pre-commit; extra == "testsite"
+Requires-Dist: mypy; extra == "testsite"
+Requires-Dist: pytest-cov; extra == "testsite"
+Requires-Dist: reuse; extra == "testsite"
+Requires-Dist: cffconvert; extra == "testsite"
+Requires-Dist: types-requests; extra == "testsite"
+Requires-Dist: asyncpg; extra == "testsite"
+Requires-Dist: stac-fastapi.pgstac==2.4.9; extra == "testsite"
+Requires-Dist: pypgstac==0.7.10; extra == "testsite"
+Requires-Dist: psycopg==3.1.10; extra == "testsite"
+Requires-Dist: psycopg_pool==3.1.7; extra == "testsite"
+Requires-Dist: pystac==1.8.3; extra == "testsite"
+Requires-Dist: requests==2.26.0; extra == "testsite"
+Requires-Dist: httpx; extra == "testsite"
+Provides-Extra: docs
+Requires-Dist: autodocsumm; extra == "docs"
+Requires-Dist: sphinx-rtd-theme; extra == "docs"
+Requires-Dist: hereon-netcdf-sphinxext; extra == "docs"
+Requires-Dist: sphinx-design; extra == "docs"
+Requires-Dist: myst_parser; extra == "docs"
+Provides-Extra: dev
+Requires-Dist: insupdel4stac[testsite]; extra == "dev"
+Requires-Dist: insupdel4stac[docs]; extra == "dev"
+Requires-Dist: PyYAML; extra == "dev"
+Requires-Dist: types-PyYAML; extra == "dev"
+Requires-Dist: types-requests; extra == "dev"
+
+<!--
+SPDX-FileCopyrightText: 2023 Karlsruher Institut für Technologie
+
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+# INSUPDEL4STAC
+
+[![CI](https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac/badges/development/pipeline.svg)](https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac/-/pipelines?page=1&scope=all&ref=development)
+[![Code coverage](https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac/badges/development/coverage.svg)](https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac/-/graphs/development/charts)
+<!-- TODO: uncomment the following line when the package is registered at https://readthedocs.org -->
+[![Docs](https://readthedocs.org/projects/insupdel4stac/badge/?version=latest)](https://insupdel4stac.readthedocs.io/en/latest/)
+[![Latest Release](https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac/-/badges/release.svg)](https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac)
+<!-- TODO: uncomment the following line when the package is published at https://pypi.org -->
+[![PyPI version](https://img.shields.io/pypi/v/insupdel4stac.svg)](https://pypi.python.org/pypi/insupdel4stac/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
+[![Checked with mypy](http://www.mypy-lang.org/static/mypy_badge.svg)](http://mypy-lang.org/)
+<!-- TODO: uncomment the following line when the package is registered at https://api.reuse.software -->
+[![REUSE status](https://api.reuse.software/badge/codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac)](https://api.reuse.software/info/codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac)
+
+
+A Python package to provide seamless functionality for INSerting, UPDating, and DELeting STAC-Metadata toward either pgSTAC or STAC-API.
+
+## Installation
+
+Install this package in a dedicated python environment via
+
+```bash
+python -m venv venv
+source venv/bin/activate
+pip install insupdel4stac
+```
+
+To use this in a development setup, clone the [source code][source code] from
+gitlab, start the development server and make your changes::
+
+```bash
+git clone https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac
+cd insupdel4stac
+python -m venv venv
+source venv/bin/activate
+make dev-install
+```
+
+More detailed installation instructions my be found in the [docs][docs].
+
+
+[source code]: https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac
+[docs]: https://insupdel4stac.readthedocs.io/en/latest/installation.html
+
+## Technical note
+
+This package has been generated from the template
+https://codebase.helmholtz.cloud/hcdc/software-templates/python-package-template.git.
+
+See the template repository for instructions on how to update the skeleton for
+this package.
+
+
+## License information
+
+Copyright © 2023 Karlsruher Institut für Technologie
+
+
+
+Code files in this repository are licensed under the
+EUPL-1.2, if not stated otherwise
+in the file.
+
+Documentation files in this repository are licensed under CC-BY-4.0, if not stated otherwise in the file.
+
+Supplementary and configuration files in this repository are licensed
+under CC0-1.0, if not stated otherwise
+in the file.
+
+Please check the header of the individual files for more detailed
+information.
+
+
+
+### License management
+
+License management is handled with [``reuse``](https://reuse.readthedocs.io/).
+If you have any questions on this, please have a look into the
+[contributing guide][contributing] or contact the maintainers of
+`insupdel4stac`.
+
+[contributing]: https://insupdel4stac.readthedocs.io/en/latest/contributing.html
