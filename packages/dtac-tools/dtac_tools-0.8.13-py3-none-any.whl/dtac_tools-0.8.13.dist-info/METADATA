@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: dtac-tools
+Version: 0.8.13
+Summary: UNKNOWN
+Home-page: UNKNOWN
+License: UNKNOWN
+Platform: UNKNOWN
+Requires-Dist: cryptography (>=3.4.8)
+Requires-Dist: grpcio (>=1.59.2)
+Requires-Dist: protobuf (>=4.25.0)
+Requires-Dist: pydantic (>=1.10.0)
+Requires-Dist: setuptools (>=59.6.0)
+
+UNKNOWN
+
