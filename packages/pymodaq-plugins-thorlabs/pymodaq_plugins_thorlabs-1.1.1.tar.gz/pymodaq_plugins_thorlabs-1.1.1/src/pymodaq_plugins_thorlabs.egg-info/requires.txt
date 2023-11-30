@@ -1,0 +1,9 @@
+toml
+pythonnet
+pywin32
+nicelib
+instrumental-lib
+pylablib==1.4.1
+pymodaq>=4.0
+opencv-python
+elliptec
