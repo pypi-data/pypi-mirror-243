@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: onm
+Version: 0.0.1
+Summary: A Python package for money management.
+Home-page: https://github.com/henryrobbins/onm.git
+Author: Henry Robbins
+Author-email: hw.robbins@gmail.com
+License: MIT License
+Requires-Python: >=3.5
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# ONM's Not Mint
+
+A Python package for money management.
+
