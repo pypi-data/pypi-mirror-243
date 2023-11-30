@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: leap-model-rebuilder
+Version: 0.1.7.dev4
+Summary: 
+Home-page: https://github.com/tensorleap/leap-model-rebuilder
+License: MIT
+Author: dorhar
+Author-email: doron.harnoy@tensorleap.ai
+Requires-Python: >=3.10,<=3.11.5
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: tensorflow (==2.14.0) ; platform_machine == "x86_64"
+Requires-Dist: tensorflow-macos (==2.14.0) ; platform_machine == "arm64"
+Project-URL: Repository, https://github.com/tensorleap/leap-model-rebuilder
+Description-Content-Type: text/markdown
+
+# leap-model-rebuilder
+Keras model rebuilder tool for model rebuilding with alterations
+
