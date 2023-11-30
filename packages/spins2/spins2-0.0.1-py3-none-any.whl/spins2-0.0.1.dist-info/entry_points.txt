@@ -1,0 +1,2 @@
+[console_scripts]
+spins2 = spins2.wrapper:main
