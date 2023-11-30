@@ -1,0 +1,113 @@
+Metadata-Version: 2.1
+Name: predocs
+Version: 1.0.2
+Summary: PreDoCS (Preliminary Design of Composite Structures) is Python tool for a fast evaluation of wing structure concepts i.e. for a multi-disciplinary design optimization.
+Author-email: Edgar Werthen <edgar.werthen@dlr.de>, Daniel Hardt <daniel@daniel-hardt.de>
+License: MIT License
+        
+        Copyright (c) 2023 Edgar Werthen
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+        
+Project-URL: Homepage, https://gitlab.dlr.de/vcp/predocs/
+Project-URL: Documentation, https://vcp.pages.gitlab.dlr.de/predocs/
+Project-URL: Homepage standalone, https://gitlab.com/DLR-SY/predocs
+Project-URL: Documentation standalone, https://dlr-sy.gitlab.io/predocs
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: numpy
+Requires-Dist: scipy
+Requires-Dist: pandas
+Requires-Dist: matplotlib <3.6
+Requires-Dist: networkx
+Requires-Dist: cloudpickle
+Provides-Extra: build_docs
+Requires-Dist: sphinx ; extra == 'build_docs'
+Requires-Dist: sphinx-rtd-theme ; extra == 'build_docs'
+Requires-Dist: myst-parser ; extra == 'build_docs'
+Requires-Dist: pandoc ; extra == 'build_docs'
+Requires-Dist: jupyter ; extra == 'build_docs'
+Requires-Dist: sympy ; extra == 'build_docs'
+Requires-Dist: pillow ; extra == 'build_docs'
+Requires-Dist: nbsphinx ; extra == 'build_docs'
+Requires-Dist: h5py ; extra == 'build_docs'
+Provides-Extra: full
+Requires-Dist: openpyxl ; extra == 'full'
+Requires-Dist: PySide2 ; extra == 'full'
+Requires-Dist: pillow ; extra == 'full'
+Requires-Dist: sympy ; extra == 'full'
+Requires-Dist: jupyter ; extra == 'full'
+Requires-Dist: mathjax ; extra == 'full'
+Provides-Extra: tests
+Requires-Dist: pytest ; extra == 'tests'
+Requires-Dist: pytest-env ; extra == 'tests'
+Requires-Dist: pytest-cov ; extra == 'tests'
+Requires-Dist: pytest-xdist ; extra == 'tests'
+Requires-Dist: pytest-durations ; extra == 'tests'
+Requires-Dist: coverage ; extra == 'tests'
+Requires-Dist: nbval ; extra == 'tests'
+Requires-Dist: h5py ; extra == 'tests'
+Requires-Dist: deepdiff ; extra == 'tests'
+
+# PreDoCS: Preliminary Design of Composite Structures
+
+PreDoCS (Preliminary Design of Composite Structures) is Python tool for a fast evaluation of
+wing structure concepts i.e. for a multi-disciplinary design optimization.
+
+
+## Install PreDoCS
+
+Create an [Anaconda](https://anaconda.org/) environment:
+
+    conda create -n predocs python=3.9
+    conda activate predocs
+
+
+Install the OpenCASCADE dependency (only available with conda)
+
+    conda install -c dlr-sc pythonocc-core
+
+
+To install PreDoCS, use pip:
+
+    pip install predocs
+
+
+### Additional dependencies
+
+For the export of the cross sections for [BECAS](https://becas.dtu.dk/)
+(`PreDoCS.CrossSectionAnalysis.Export.generate_BECAS_input`), the
+[BECAS shellexpander](https://becas.dtu.dk/software/pre-and-post-processors/shellexpander)
+must be installed.
+
+
+## Quickstart
+
+For a quickstart example, take a look at the [PreDoCS examples](https://gitlab.com/dlr-sy/predocs/-/jobs/artifacts/master/browse/examples?job=examples_standalone).
+
+
+## License
+
+[MIT](LICENSE.txt)
+
+
+## Documentation
+
+The documentation is available at https://dlr-sy.gitlab.io/predocs/ .
