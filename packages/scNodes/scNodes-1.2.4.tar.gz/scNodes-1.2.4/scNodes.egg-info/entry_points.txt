@@ -1,0 +1,4 @@
+[console_scripts]
+scNodes = scNodes.__main__:main
+scNodes_install = scNodes.__main__:install
+
