@@ -1,0 +1,6 @@
+
+[test]
+pytest
+hypothesis
+flake8
+black
