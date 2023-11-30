@@ -1,0 +1,15 @@
+anglerfish/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+anglerfish/__main__.py,sha256=xoGrUBMlz1qC-anIZ1vY5AluEzo8gt9OhW47C_LPpPM,69
+anglerfish/anglerfish.py,sha256=egLkYm-GM9PT9gk9gHf96wsw7bfQJZjLgnCRJKun2YU,9753
+anglerfish/config/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+anglerfish/config/adaptors.yaml,sha256=xM5y2d23QJ1TWBD5mVwrALhx0gWmDqrTs38rupiET7Y,1094
+anglerfish/demux/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+anglerfish/demux/demux.py,sha256=RCOCCAgWTlnxN2Ryu1yRBgjRitwzd3KrjXFpNGr3SGg,7960
+anglerfish/demux/report.py,sha256=A3ggpbYUwj3QR05RG_KeA4x0Y0t9_aDOUZgavlZ02MI,6051
+anglerfish/demux/samplesheet.py,sha256=9-tA2xptecoS0rV_wl9agXSak0Ixr9CPTMw7yWwD-wM,6094
+bio_anglerfish-0.6.0.dist-info/LICENSE,sha256=K9Z2xL6gE424cHdjjTJMmwtO9xYBVNQjqL9CaWBBhJw,1073
+bio_anglerfish-0.6.0.dist-info/METADATA,sha256=B9zCyI9SBB2eiUo66NRGezjobvNnhBf030197GAPaLc,6662
+bio_anglerfish-0.6.0.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+bio_anglerfish-0.6.0.dist-info/entry_points.txt,sha256=aCAZc0dWFjbQkB-QPBO8284qNoAJAp2i4U6F7rcwBlo,64
+bio_anglerfish-0.6.0.dist-info/top_level.txt,sha256=qbYSfUMLtphgrKDJexv4oPfzz7A9HubNItIrH9G9hG4,11
+bio_anglerfish-0.6.0.dist-info/RECORD,,
