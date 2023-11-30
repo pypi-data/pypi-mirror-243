@@ -1,0 +1,92 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools", "pip", "build", "wheel"]
+
+[project]
+name = "sax"
+version = "0.10.4"
+requires-python = ">=3.9.0"
+authors = [
+{ name = "Floris Laporte", email = "floris.laporte@rockleyphotonics.com" },
+]
+description = "Autograd and XLA for S-parameters"
+readme = "README.md"
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+
+dependencies = [
+  "black",
+  "fastcore",
+  "flax",
+  "jax",
+  "jaxlib",
+  "jaxtyping",
+  "klujax>=0.2.3",
+  "matplotlib",
+  "natsort",
+  "networkx",
+  "numpy",
+  "orjson",
+  "pydantic",
+  "pyyaml",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+dev = [
+  "autodoc-pydantic",
+  "autograd",
+  "autoimport",
+  "black[jupyter]",
+  "bump2version",
+  "flake8",
+  "gdsfactory>=0.7.4",
+  "gplugins",
+  "ipyevents",
+  "ipykernel",
+  "ipympl",
+  "ipywidgets",
+  "isort",
+  "jedi",
+  "myst-nb",
+  "nbstripout",
+  "nlopt",
+  "papermill",
+  "pre-commit",
+  "pytest",
+  "sphinx-book-theme==1.0.1",
+  "sphinx-copybutton==0.5.2",
+  "sphinx==5.3.0",
+  "tmm",
+# "meep",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sax", "sax.nn", "sax.backends"]
+exclude = []
+namespaces = true
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+
+[tool.pyright]
+reportPrivateImportUsage = false
+
+[tool.flake8]
+ignore = ['F722']
+
+[tool.coverage.run]
+omit = "sax/nn/*"
