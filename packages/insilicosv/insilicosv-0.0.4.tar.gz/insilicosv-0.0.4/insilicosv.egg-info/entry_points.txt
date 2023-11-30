@@ -1,0 +1,2 @@
+[console_scripts]
+insilicosv = insilicosv.simulate:run_insilicosv
