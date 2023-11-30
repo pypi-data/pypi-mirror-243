@@ -1,0 +1,21 @@
+{
+  "language": "lt",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "(<what_is>|<how_many_is>) [laipsnių] <temp> [<area>]"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state_attr(state.entity_id, 'current_temperature') }}"
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "language": "de",
+  "intents": {
+    "HassListAddItem": {
+      "data": [
+        {
+          "sentences": [
+            "füge <item> [zu] <meine_liste> hinzu",
+            "füge [zu] <meine_liste> <item> hinzu",
+            "(setze|schreibe|nehme) <item> (auf|in) <meine_liste>",
+            "<item> (auf|in) <meine_liste> [setzen|schreiben|nehmen]",
+            "<item> [auf|in|zu] <meine_liste> hinzufügen"
+          ],
+          "response": "item_added",
+          "requires_context": {
+            "domain": "todo"
+          },
+          "expansion_rules": {
+            "meine_liste": "[meine[r]|die|der] ({name} [Liste]|[Liste] {name})",
+            "item": "{shopping_list_item:item}"
+          }
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassListAddItem": {
+        "item_added": "{{ slots.item }} hinzugefügt"
+      }
+    }
+  }
+}

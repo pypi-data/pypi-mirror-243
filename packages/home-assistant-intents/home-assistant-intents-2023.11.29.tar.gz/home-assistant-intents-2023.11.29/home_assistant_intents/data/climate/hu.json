@@ -1,0 +1,24 @@
+{
+  "language": "hu",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "<what_is> a hőmérséklet",
+            "<what_is> a hőmérséklet <area>",
+            "hány fok van",
+            "hány fok van <area>"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state }} fok van"
+      }
+    }
+  }
+}

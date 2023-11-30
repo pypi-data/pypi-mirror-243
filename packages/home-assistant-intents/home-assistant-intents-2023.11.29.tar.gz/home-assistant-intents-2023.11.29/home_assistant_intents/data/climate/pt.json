@@ -1,0 +1,23 @@
+{
+  "language": "pt",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "<qual> [a] temperatura",
+            "<qual> a temperatura <na_zona>",
+            "a que temperatura está <zona>"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state_attr(state.entity_id, 'current_temperature') }}"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "language": "ro",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "<ce_class_indica_name_in_zona>"
+          ],
+          "expansion_rules": {
+            "class_singular": "<temperatura>"
+          }
+        },
+        {
+          "sentences": [
+            "ce <temperatura> <este> <in> <area>",
+            "(care | <cat>) <este> <temperatura> <din_zona>",
+            "<cate> grade sunt <in> <area>",
+            "<cat_quant> (de <cald_frig>;<este>) <in> <area>",
+            "<este> <cald_frig> <in> <area>"
+          ]
+        },
+        {
+          "sentences": [
+            "ce <temperatura> <este>",
+            "(care | <cat>) <este> <temperatura>",
+            "<cate> grade sunt",
+            "<cat_quant> (de <cald_frig>;<este>)"
+          ],
+          "requires_context": {
+            "area": null
+          }
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{% set temperature = state_attr(state.entity_id, 'current_temperature') %}\n{% if temperature | float | abs == 1 %}\n{{ temperature }} grad\n{% elif temperature == 0 or temperature | float % 1 != 0 or temperature | float % 100 | abs < 20 %}\n{{ temperature }} grade\n{% else %}\n{{ temperature }} de grade\n{% endif %}\n"
+      }
+    }
+  }
+}

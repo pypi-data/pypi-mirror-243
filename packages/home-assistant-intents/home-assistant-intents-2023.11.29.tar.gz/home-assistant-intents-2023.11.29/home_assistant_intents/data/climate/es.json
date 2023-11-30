@@ -1,0 +1,24 @@
+{
+  "language": "es",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "cuál es <temp>",
+            "[a] (cuánta|cuánto|cuántos|qué) <temp> (hace|hay|estamos)",
+            "cuál es <temp> <area>",
+            "[a] (cuánta|cuánto|cuántos|qué) <temp> (hace|hacen|hay|está|están|estamos) <area>"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state | float | abs | round(2) }} {{ 'grado' if state.state | float | abs == 1 else 'grados' }} {{ 'bajo cero' if state.state | float < 0 else '' }}"
+      }
+    }
+  }
+}

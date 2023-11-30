@@ -1,0 +1,24 @@
+{
+  "language": "hr",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "<koja_je> <temp> [[u|na] <area>]",
+            "je li (toplo|hladno|vruće) [[u|na] <area>]",
+            "<koja_je> <area> <temp>",
+            "koliko je stupnjeva [[u|na] <area>]"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state_attr(state.entity_id, 'current_temperature') }}"
+      }
+    }
+  }
+}

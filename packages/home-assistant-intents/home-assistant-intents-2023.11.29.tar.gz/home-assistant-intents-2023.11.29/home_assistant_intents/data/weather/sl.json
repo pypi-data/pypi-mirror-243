@@ -1,0 +1,24 @@
+{
+  "language": "sl",
+  "intents": {
+    "HassGetWeather": {
+      "data": [
+        {
+          "sentences": [
+            "<kakšno_je> vreme [[ v| na] <name>]"
+          ],
+          "requires_context": {
+            "domain": "weather"
+          }
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassGetWeather": {
+        "default": "{% set weather_condition = {\n  'jasno': 'in jasno',\n  'jasno': 'in jasno',\n  'oblačno': 'in oblačno',\n  'izjemno': 'in izjemno',\n  'megla': 'z meglo',\n  'toča': 's točo',\n  'strela': 'bliskovito',\n  'bliskovito deževno': 'bliskovito in deževno',\n  'delno oblačno': 'in delno oblačno',\n  'nalivi': 'in nalivi',\n  'deževno': 'in deževno',\n  'sneženje': 'in sneženje',\n  'snežno deževno': 's snegom in dežjem',\n  'sončno': 'in sončno',\n  'vetrovno': 'in vetrovno',\n  'vetrovna varianata': 'z vetrom in oblaki'\n} %} {{ state.attributes.get('temperature') }} {{ state.attributes.get('temperature_unit') }} {{ weather_condition.get((state.state | string).lower(), \"\") }}\n"
+      }
+    }
+  }
+}

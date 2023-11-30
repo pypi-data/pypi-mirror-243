@@ -1,0 +1,22 @@
+{
+  "language": "fr",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "Quelle est la température [<dans> <area>]",
+            "Combien fait-il [<dans> <area>]"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state_attr(state.entity_id, 'current_temperature') }}"
+      }
+    }
+  }
+}

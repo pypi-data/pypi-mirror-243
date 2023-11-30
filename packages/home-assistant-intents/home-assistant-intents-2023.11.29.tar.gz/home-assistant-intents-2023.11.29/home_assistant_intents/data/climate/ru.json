@@ -1,0 +1,23 @@
+{
+  "language": "ru",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "[Какая|сколько] <temp>",
+            "[Какая|сколько] <temp> <area> [[на] <name>[е|ы|а]]",
+            "[Какая|сколько] <temp> [на] <name>[е|ы|а] [<area>]"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state }} {% set temp = state.state | float %} {% set last_digit = temp|abs|int % 10 %} {% set last_two_digits = temp|abs|int % 100 %} {% if last_digit == 1 and last_two_digits != 11 %}\n  градус\n{% elif last_digit in [2, 3, 4] and (last_two_digits < 10 or last_two_digits > 20) %}\n  градуса\n{% else %}\n  градусов\n{% endif %}"
+      }
+    }
+  }
+}

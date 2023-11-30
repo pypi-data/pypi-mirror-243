@@ -1,0 +1,25 @@
+{
+  "language": "da",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "hvad er temperatur[en] [<i_på> <område>]",
+            "hvor <koldt_varmt> er <område>",
+            "hvor <koldt_varmt> er (der | det) [<i_på> <område>]",
+            "er (der | det) <koldt_varmt> [<i_på> <område>]",
+            "hvad er <område>[s] temperatur"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state }} grader"
+      }
+    }
+  }
+}

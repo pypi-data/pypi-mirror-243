@@ -1,0 +1,10 @@
+{
+  "language": "ka",
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state }} გრადუსია"
+      }
+    }
+  }
+}

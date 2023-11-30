@@ -1,0 +1,24 @@
+{
+  "language": "ca",
+  "intents": {
+    "HassClimateGetTemperature": {
+      "data": [
+        {
+          "sentences": [
+            "quina <temp> fa",
+            "quina és la <temp>",
+            "quina és la <temp> <area>",
+            "quanta calor fa <area>"
+          ]
+        }
+      ]
+    }
+  },
+  "responses": {
+    "intents": {
+      "HassClimateGetTemperature": {
+        "default": "{{ state.state | float | abs | round(2) }} {{ 'grau' if state.state | float | abs == 1 else 'graus' }} {{ 'sota zero' if state.state | float < 0 else '' }}"
+      }
+    }
+  }
+}
