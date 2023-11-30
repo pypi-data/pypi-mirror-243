@@ -1,0 +1,11 @@
+prefix=${pcfiledir}/../..
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: omnithread3
+Description: Threading library for omniORB4
+Version: 4.3.1
+Requires:
+Libs: -L${libdir} -lomnithread
+Cflags: -D__OSVERSION__=2 -I${includedir}
