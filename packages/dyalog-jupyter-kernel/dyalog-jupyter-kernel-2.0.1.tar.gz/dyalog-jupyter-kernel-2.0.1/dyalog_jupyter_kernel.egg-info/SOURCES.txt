@@ -1,0 +1,15 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+dyalog_jupyter_kernel.egg-info/PKG-INFO
+dyalog_jupyter_kernel.egg-info/SOURCES.txt
+dyalog_jupyter_kernel.egg-info/dependency_links.txt
+dyalog_jupyter_kernel.egg-info/requires.txt
+dyalog_jupyter_kernel.egg-info/top_level.txt
+dyalog_kernel/__init__.py
+dyalog_kernel/__main__.py
+dyalog_kernel/install.py
+dyalog_kernel/kernel.py
+dyalog_kernel/dyalog_apl/kernel.js
+dyalog_kernel/dyalog_apl/kernel.json
