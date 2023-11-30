@@ -1,0 +1,93 @@
+Metadata-Version: 2.1
+Name: flatten_complex_json
+Version: 0.0.1
+Summary: Python Package to flatten the complex json data
+Author: abhishek
+Author-email: abhishekaggarwal1211@gmail.com
+Keywords: flatten json,flatten api data,flat json data,python flatten dataframe,abhishek aggarwal
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Description-Content-Type: text/markdown
+License-File: LICENCE
+
+# Flatten Nested Complex Json Data with flatten_complex_json Package
+
+The flatten_complex_json package simplifies the process of converting complex JSON data into a structured and easy-to-analyze flat pandas dataframe. It offers a user-friendly function that transforms the complex JSON data into a tabular format, where each row represents a record and each column contains a specific attribute or value. This package is designed to make data analysis and processing tasks more accessible, even for users with limited programming experience. It allows you to extract relevant information from deep within the nested structure, enabling efficient data analysis and visualization. 
+
+#  Flatten very complex json data using flatten_complex_json function:
+
+## Example
+Consider a list of nested dictionaries containing details about batters and toppings. We can use the flatten_complex_json function to flatten this JSON data structure into a flat table as shown:
+
+# Function arguments must be same as specified below.
+
+| Parameters| Type| 
+| :-------- | :------- | 
+| Json Data | Json data in json format |
+
+# Example Json Data 
+ 
+    json_data=[{
+    "id": "0001",
+    "type": "donut",
+    "name": "Cake",
+    "ppu": 0.55,
+    "batters":
+        {
+            "batter":
+                [
+                    { "id": "1001", "type": "Regular" },
+                    { "id": "1002", "type": "Chocolate" },
+                    { "id": "1003", "type": "Blueberry" },
+                    { "id": "1004", "type": "Devil's Choclate" }
+                ]
+        },
+    "topping":
+        [
+            { "id": "5001", "type": "None" },
+            { "id": "5002", "type": "Glazed" },
+            { "id": "5005", "type": "Sugar" },
+            { "id": "5007", "type": "Powdered Sugar" },
+            { "id": "5006", "type": "Chocolate" },
+            { "id": "5003", "type": "Chocolate" },
+            { "id": "5004", "type": "Maple" }
+        ]}]
+
+# Flatten the Complex Json Data Into Flat Dataframe
+## Usage
+To use the flatten_complex_json function, import the function and pass in your complex json data as a parameter:
+
+or you can read from your json file as shown below
+
+## Specify the file path
+
+file_path = 'testing_json.json'#Path of json file
+ 
+
+    with open(file_path, encoding="utf8") as file:
+
+        json_data = json.load(file)
+
+```python
+
+from flatten_complex_json import *
+
+flatdf= flatten_complex_json(json_data)
+
+print(flatdf) 
+```
+
+## Flattened Dataframe
+| id| name| ppu | type | topping_id | topping_type               | batters_batter_id | batters_batter_type               |
+| :-------- | :------- | :------------------------- |:-------- | :------- | :------------------------- |:-------- | :------- |
+|0001|Cake|0.55|donut| 5001| None| 1001| Regular|
+|0001|Cake|0.55|donut| 5001| None| 1002| Chocolate|
+|0001|Cake|0.55|donut| 5001| None| 1003| Blueberry|
+|0001|Cake|0.55|donut| 5001| None| 1004| Devil's Food|
+|0001|Cake|0.55|donut| 5002| Glazed| 1001| Regular|
+|0001|Cake|0.55|donut| 5002| Glazed| 1002| Chocolate|
+|0001|Cake|0.55|donut| 5002| Glazed| 1003| Blueberry|
