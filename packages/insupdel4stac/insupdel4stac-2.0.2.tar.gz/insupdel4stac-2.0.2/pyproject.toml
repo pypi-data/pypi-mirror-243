@@ -1,0 +1,133 @@
+# SPDX-FileCopyrightText: 2023 Karlsruher Institut für Technologie
+#
+# SPDX-License-Identifier: CC0-1.0
+
+[build-system]
+build-backend = 'setuptools.build_meta'
+requires = ['setuptools >= 61.0', 'versioneer[toml]']
+
+[project]
+name = "insupdel4stac"
+dynamic = ["version"]
+description = "A python-based module to ingest STAC metadata catalogs into STAC-databases like pgSTAC"
+
+readme = "README.md"
+authors = [
+    { name = 'Mostafa Hadizadeh', email = 'mostafa.hadizadeh@kit.edu' },
+]
+maintainers = [
+    { name = 'Mostafa Hadizadeh', email = 'mostafa.hadizadeh@kit.edu' },
+]
+license = { text = 'EUPL-1.2' }
+
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Typing :: Typed",
+]
+
+requires-python = '>= 3.8'
+dependencies = [
+    "pypgstac==0.7.10",
+    "psycopg==3.1.10",
+    "psycopg_pool==3.1.7",
+    "pystac==1.8.3",
+    "requests==2.26.0",
+    "versioneer",
+]
+
+[project.urls]
+Homepage = 'https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac'
+Documentation = "https://insupdel4stac.readthedocs.io/en/latest/"
+Source = "https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac"
+Tracker = "https://codebase.helmholtz.cloud/cat4kit/ds2stac/insupdel4stac/issues/"
+
+
+[project.optional-dependencies]
+testsite = [
+    "tox",
+    "isort==5.12.0",
+    "black==23.1.0",
+    "blackdoc==0.3.8",
+    "flake8==6.0.0",
+    "pre-commit",
+    "mypy",
+    "pytest-cov",
+    "reuse",
+    "cffconvert",
+    "types-requests",
+    "asyncpg",
+    "stac-fastapi.pgstac==2.4.9",
+    "pypgstac==0.7.10",
+    "psycopg==3.1.10",
+    "psycopg_pool==3.1.7",
+    "pystac==1.8.3",
+    "requests==2.26.0",
+    "httpx",
+
+]
+docs = [
+    "autodocsumm",
+    "sphinx-rtd-theme",
+    "hereon-netcdf-sphinxext",
+    "sphinx-design",
+    "myst_parser",
+]
+dev = [
+    "insupdel4stac[testsite]",
+    "insupdel4stac[docs]",
+    "PyYAML",
+    "types-PyYAML",
+    "types-requests",
+]
+
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.setuptools]
+zip-safe = false
+license-files = ["LICENSES/*"]
+
+[tool.setuptools.package-data]
+insupdel4stac = ["py.typed"]
+
+[tool.setuptools.packages.find]
+namespaces = false
+exclude = [
+    'docs',
+    'tests*',
+    'examples'
+]
+
+[tool.pytest.ini_options]
+addopts = '-v'
+
+[tool.versioneer]
+VCS = 'git'
+style = 'pep440'
+versionfile_source = 'insupdel4stac/_version.py'
+versionfile_build = 'insupdel4stac/_version.py'
+tag_prefix = ''
+parentdir_prefix = ''
+
+
+[tool.isort]
+profile = "black"
+line_length = 79
+src_paths = ["insupdel4stac"]
+float_to_top = true
+known_first_party = "insupdel4stac"
+
+[tool.black]
+line-length = 79
+target-version = ['py39']
+
+[tool.coverage.run]
+omit = ["insupdel4stac/_version.py"]
