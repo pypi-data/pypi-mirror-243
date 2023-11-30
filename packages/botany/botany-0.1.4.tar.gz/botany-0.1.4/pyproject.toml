@@ -1,0 +1,29 @@
+
+#
+#	publishing
+#
+#		(rm -rf dist && python3 -m build --sdist && twine upload dist/*)
+#		(git add --all && git commit -m "com" && git push --set-upstream git@gitlab.com:reptilian_climates/BOTANY.git CLIMATE)
+#
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "botany"
+version = "0.1.4"
+description = "Various calculator tools"
+readme = "botany.txt"
+dependencies = [
+	'psutil'
+]
+
+[tool.setuptools.packages.find]
+where = [ "fields/gardens" ]
+
+#
+#	https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+#
+[tool.setuptools.package-data]
+"*" = [ "*.HTML" ]
