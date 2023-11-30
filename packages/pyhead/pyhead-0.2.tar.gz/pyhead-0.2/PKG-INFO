@@ -1,0 +1,9 @@
+Metadata-Version: 2.1
+Name: pyhead
+Version: 0.2
+Summary: A simple python package to generate HTML head tags.
+Author-email: David Carmichael <david@uilix.com>
+Requires-Python: >=3.5
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: MarkupSafe >= 2.1.3
+Project-URL: Home, https://github.com/CheeseCake87/pyhead
