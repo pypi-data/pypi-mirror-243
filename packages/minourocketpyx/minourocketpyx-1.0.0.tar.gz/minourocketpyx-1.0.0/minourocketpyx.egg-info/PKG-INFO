@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: minourocketpyx
+Version: 1.0.0
+Summary: An awesome package that does something
+Home-page: http://pypi.python.org/pypi/minourocketpyx/
+Author: Minou
+Author-email: a.deghbouche@esi-sba.dz
+License: LICENSE.txt
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: minourocketpyx
