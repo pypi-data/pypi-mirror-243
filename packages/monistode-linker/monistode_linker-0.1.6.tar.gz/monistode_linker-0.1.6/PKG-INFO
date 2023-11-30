@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: monistode-linker
+Version: 0.1.6
+Summary: A linker for the Monistode set of ISA's
+Author: rizerphe
+Author-email: 44440399+rizerphe@users.noreply.github.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: monistode-binutils-shared (>=0.1.15,<0.2.0)
+Description-Content-Type: text/markdown
+
+

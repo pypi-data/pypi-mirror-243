@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "monistode-linker"
+version = "0.1.6"
+description = "A linker for the Monistode set of ISA's"
+authors = ["rizerphe <44440399+rizerphe@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "monistode_linker"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+monistode-binutils-shared = "^0.1.15"
+click = "^8.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+mstlinker = 'monistode_linker.cli:main'
+mstl = 'monistode_linker.cli:link'
