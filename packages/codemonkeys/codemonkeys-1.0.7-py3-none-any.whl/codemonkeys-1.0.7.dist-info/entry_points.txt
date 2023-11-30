@@ -1,0 +1,4 @@
+[console_scripts]
+codemonkeys = codemonkeys.__main__:main
+monk = codemonkeys.scripts.monk
+monk-new = codemonkeys.scripts.monk_new:main
