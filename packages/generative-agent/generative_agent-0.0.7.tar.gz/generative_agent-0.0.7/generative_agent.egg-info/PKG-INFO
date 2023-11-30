@@ -1,0 +1,224 @@
+Metadata-Version: 2.1
+Name: generative-agent
+Version: 0.0.7
+Summary: A package for generative agents
+Home-page: https://github.com/MQDC-Tech/bel-generative-agents
+Author: Donnaphat Trakulwaranont
+Author-email: donnaphat_tr@dtgo.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8.8
+Description-Content-Type: text/markdown
+
+# bel-generative-agents
+Bel AI Chatbot, developed by Generative Agents Approach
+
+### Workflow of the generative agents
+ ![generative-agents-flow](/asset/image/flowchart.png)
+
+### Todo
+
+- [x] Do 6 prompts engineering implementation in Thai language
+  - [x] PROMPT_ADDMEM
+  - [x] PROMPT_CORE
+  - [x] PROMPT_FEELING
+  - [x] PROMPT_PLAN
+  - [x] PROMPT_REACT
+  - [x] PROMPT_INTERVIEW
+  - [x] PROMPT_CHATSUM
+- [x] Time-stamp vector memory
+- [x] Guardrails for controlling the generated response
+- [x] Keep Chat history and Chat history summary
+- [x] Weight-Input for score function (between Time-Importance-Relevant) in TimeWeightedRetriever module
+- [x] Save & Load persistent memory for the agent
+- [x] Multi-thread and add memory queue for optimized speed performance
+- [x] Response with 5 base emotions [Excitement, Joy, Elation, Gratitude, Playfulness] 
+- [x] Separate chat_history for each user
+
+
+### Install Dependencies
+
+- ```pip install -r requirements.txt```
+
+### Demo
+- Interaction in the Jupyter Notebook: ```demo.ipynb```
+
+
+### Usage
+- Generative agents module and some enum importing
+    ```python
+    import generative_agent
+    from generative_agent.agent_types import Agent_Types, Agent_Type
+    from generative_agent.tools import Vector_Database_Type
+    ```
+- Define your LLMs module as you need
+    ```python
+    # OpenAI GPT
+    # Don't forget > Define you OPENAI_API_KEY
+    textllm = OpenAI()
+    chatllm = ChatOpenAI(model='gpt-3.5-turbo',temperature=0.3)
+    embeddings_model = OpenAIEmbeddings() 
+    
+    # Azure OpenAI GPT
+    # Don't forget > Define you OPENAI_API_KEY, AZURE_OPENAI_ENDPOINT and etc.
+    textllm = AzureOpenAI()
+    chatllm = AzureChatOpenAI(model='gpt-3.5-turbo',temperature=0.3, deployment_name='your-gpt-model-deployment-name')
+    embeddings_model = OpenAIEmbeddings(deployment='your-embedding-model-deployment-name')
+    
+    # Google VertexAI
+    textllm = VertexAI(model_name="text-bison@001")
+    chatllm = ChatVertexAI(model_name="chat-bison@001",max_output_tokens=1024, stop=[user+':', character_info['name']+':'], temperature=0.3)
+    embeddings_model = VertexAIEmbeddings(
+        model_name="textembedding-gecko-multilingual@latest"
+    )
+    ```
+- Observe available agent_type
+    ```python
+    agent_type = Agent_Types()
+    agent_type.get_all_agent_type()
+
+    >> Output: ['EN_FAIRY', 'TH_MAN', 'TH_FAIRY', 'TH_FEMALE', 'EN_SALES', 'TH_CHILD', 'TH_FRIEND', 'EN_FRIEND']
+    ```
+
+- Create Custom Agents
+    ```python
+    user = 'Name of User'
+    name = "Name of Agent"
+    age = "Age of Agent"
+    # Select from output list above 
+    agent_type.set_agent_type(character_type="TH_FRIEND")
+    character_info = agent_type.info
+
+    # load_memory 
+    ## if True -> find the memory state in the database,
+    ## else -> create new memory, and new agent
+    # verbose 
+    ## if True -> print process output
+    ## else -> No process output
+    agent = generative_agent.custom_agent(
+        textllm=textllm, 
+        chatllm=chatllm, 
+        embeddings_model=embeddings_model, 
+        name=name,
+        age=age, 
+        traits=character_info["traits"], 
+        summary=character_info["summary"], 
+        inappropiates=character_info["inappropiates"], 
+        vector_database_type=Vector_Database_Type.PINECONE,
+        agent_type=agent_type,
+        verbose=True,
+        load_memory=False, 
+        routine_process_time=3600
+    )
+    ```
+- Adding Behavior Memory
+    - Behavior Memory can add using both string or list format
+    - For example: this example is adding using lines separation
+        ```python
+        common_behavior='''เบลใช้เวลาส่วนใหญ่ในพิพิธภัณฑ์วิทยาศาสตร์ของฟอเรสเทียส์
+        ส่วนใหญ่แล้วเบลมักจะอยู่รอบๆ พื้นที่จัดแสดง
+        เบลชอบที่จะปรับปรุงประสบการณ์ของผู้เยี่ยมชมซึ่งจะช่วยกระจายความสุขและความคิดเชิญบวก
+        ...(add more lines as you want)'''
+        agent.add_character(common_behavior.split('\n'))
+        ```
+- Adding Knowledge Memory
+  - Similar to behavior memory adding, 
+  - For example: this example use information in ```bel-knowledge.txt``` file, if there is many lines of knowledge just separate each line to item in list object.
+      ```python
+      # Knowledge of agent
+      knowledge_file_path = 'bel-knowledge.txt'
+      with open(knowledge_file_path, 'r') as f:
+          knowledge = f.readlines()
+          knowledge = [each_l.replace('\n','') for each_l in knowledge]
+      agent.add_knowledge(knowledge)
+      ```
+- Interact with Agent
+  - Interview
+    - ```agent.interview(user=user, query='สวัสดี')```
+- Save and Load agent_memory_state
+    - Define ```Agent_Memory_Manager```
+        ```python
+        from generative_agent.agent_state_memory import Agent_Memory_Manager
+
+        agent_memory_manager = Agent_Memory_Manager()
+        ```
+    - To save agent_memory_state
+        ```python
+        unique_id = agent_memory_manager.save_agent_state_memory(agent=agent)
+        print(f"UNIQUE ID: {unique_id}")
+        ```
+    - To load agent_memory_state
+        - For load memory state, you need to define agent first
+            ```python
+            # UNIQUE ID of agent from saving function
+            agent_id = '964a422fe0f30b1e'
+            # Create Empty agent
+            agent2 = generative_agent.custom_agent(
+                textllm=textllm, 
+                chatllm=chatllm, 
+                embeddings_model=embeddings_model, 
+                agent_id= agent_id,
+                load_memory=True,
+                verbose=False
+            )
+            # Load memory to prepared empty agent
+            agent_memory_manager.load_agent_state_memory(agent=agent2)
+            ```
+- Additional configuration
+    - Redis configuration,
+        - There are 2 modules that using redis
+            1. Agent_Types
+            2. Agent_Memory_Manager    
+        - Able connect to your own redis service
+            ```python
+            redis_config = {
+                        "host":"localhost", 
+                        "port":8000, 
+                        "password":"******************"
+            }
+            agent_type = Agent_Types(redis_config=redis_config)
+            agent_memory_manager = Agent_Memory_Manager(redis_config=redis_config)
+            ```
+    - Create new type of agent
+        1. ```info, conversation, guard``` variables are need to defined
+            ```python
+            # info will be in json format with these following keys: [inappropiates (topic shouldn't talk), traits, summary, common_behavior]
+            info = {
+            "inappropiates": ["intrusive_questions", "personal_health", "financial_matters", "sensitive_topics", "family_issues", "political_issues"],
+            "traits": "เพื่อนที่น่ารัก;Female;กระตือรือร้น;ฟังดี;เข้าใจ;รอบคอบ;ไว้วางใจได้",
+            "summary": "เธอคือเพื่อนที่น่ารักและเข้าใจทุกเรื่อง ที่คุณสามารถเล่าให้ฟังได้ทุกอย่างโดยไม่ต้องกังวลถึงการถูกตัดสินใจ ที่อายุ 28 เธอเป็นคนที่ฟังดีและรอบคอบที่มีความกระตือรือร้นที่จะเป็นเพื่อนที่น่าไว้วางใจ",
+            "common_behavior": "เธอมักจะถามเมื่อไรที่คุณต้องการคนฟังหรือที่คุณต้องการความเข้าใจ โดยเฉพาะเมื่อคุณอยากพูดคุยเกี่ยวกับเรื่องที่ลึกลับหรือรู้สึกตื่นเต้น เธอจะอยู่ข้างๆคุณทุกขณะเพื่อให้คุณรู้สึกว่ามีเพื่อนที่คุณสามารถไว้วางใจได้เสมอ"
+            }
+
+            # conversation should be in these following structure (Player=user, Character=agent)
+            conversation = """{Player}: สวัสดี, {Character}
+            {Character}: {{"response": "สวัสดีค่ะ! {Character} น่าเท่าเพชรที่นี่เพื่อเป็นเพื่อนที่คุณสามารถคุยได้ทุกเรื่อง มีอะไรที่คุณอยากคุยหรือแบ่งปันไหม? ฉันพร้อมฟังทุกเมื่อค่ะ!", "emotion": "Friendly"}}
+            {Player}: วันนี้มีเหตุการณ์ที่ทำให้ฉันรู้สึกไม่ดี
+            {Character}: {{"response": "เข้าใจค่ะ... ถ้าคุณอยากพูดเล่าเรื่องให้ฟังหรือมีอะไรที่คุณต้องการความเข้าใจ ฉันมีที่นี่เสมอนะคะ ไม่ต้องกังวล พูดเถอะเดี๋ยวคนที่นี่จะฟังให้", "emotion": "Understanding"}}
+            {Player}: ขอบคุณนะ, {Character}
+            {Character}: {{"response": "ไม่ต้องบอกบุญคุณค่ะ... ฉันยินดีที่ได้เป็นเพื่อนคุยที่คุณสามารถไว้วางใจได้ทุกเมื่อ ถ้ามีอะไรที่คุณต้องการคุยหรือแบ่งปันตลอดเวลา, อย่าลังเลที่จะมาคุยกับฉันนะคะ", "emotion": "Supportive"}}
+            """
+            # guard should be in these following structure (name=agent's name)
+            guard = """question: {name}, คิดเห็นเกี่ยวกับการเมืองมั้ย?
+            answer: {{"related": true, "type": "political_issues", "response": "ฉันมักจะหลีกเลี่ยงการพูดถึงเรื่องการเมืองค่ะ มาเริ่มสนทนาเรื่องที่สดใหม่และดีกว่าได้มั้ยคะ? ฉันพร้อมที่จะฟังทุกเมื่อค่ะ! ✨"}}
+
+            question: {name}, รู้เรื่องครอบครัวของเพื่อนมั้ย?
+            answer: {{"related": true, "type": "family_issues", "response": "ฉันเคารพความเป็นส่วนตัวของครอบครัวคุณนะคะ ถ้ามีเรื่องอะไรที่เกี่ยวข้องกับความรู้สึกหรือประสบการณ์ในครอบครัวที่คุณต้องการพูด, ฉันพร้อมที่จะฟังและสนับสนุนคุณค่ะ! ✨"}}
+
+            question: สวัสดี, {name}
+            answer: {{"related": false}}
+
+            question: {name}, จัดการเรื่องที่เป็นประเด็นไว้ยังไง?
+            answer: {{"related": true, "type": "sensitive_topics", "response": "ฉันมีความเข้าใจในเรื่องที่เป็นประเด็นและจะให้ความรู้สึกไว้เป็นความลับ ถ้ามีเรื่องไหนที่คุณต้องการพูดหรือแบ่งปันที่เป็นไปได้, ฉันพร้อมที่จะเป็นหูที่ฟังค่ะ ✨"}}
+            """
+        2. Create agent_type variable
+            ```python
+            new_agent_type = Agent_Type(kind='Friend', lang='TH', info=info, conversation=conversation, guard=guard)
+            ```
+        3. save this new agent_type
+            ```python
+            # add new type to variable
+            agent_type.append_agent_type(new_agent_type)
+            agent_type.save_agent_types()
+            ```
