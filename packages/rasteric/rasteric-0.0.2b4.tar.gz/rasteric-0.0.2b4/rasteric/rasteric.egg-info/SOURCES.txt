@@ -1,0 +1,14 @@
+LICENSE.txt
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+rasteric/rasteric/__init__.py
+rasteric/rasteric/os.py
+rasteric/rasteric/raster.py
+rasteric/rasteric.egg-info/PKG-INFO
+rasteric/rasteric.egg-info/SOURCES.txt
+rasteric/rasteric.egg-info/dependency_links.txt
+rasteric/rasteric.egg-info/top_level.txt
+tests/test_geofuncs.py
+tests/test_geoplot.py
