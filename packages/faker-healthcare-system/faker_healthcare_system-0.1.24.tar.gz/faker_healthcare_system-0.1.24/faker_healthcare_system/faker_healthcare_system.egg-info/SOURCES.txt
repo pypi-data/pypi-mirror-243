@@ -1,0 +1,17 @@
+README.md
+setup.py
+assets/nucc_taxonomy_231.csv
+faker_healthcare_system/__init__.py
+faker_healthcare_system/constants.py
+faker_healthcare_system/dea.py
+faker_healthcare_system/person_name.py
+faker_healthcare_system/provider_individual.py
+faker_healthcare_system/taxonomy_generator.py
+faker_healthcare_system/faker_healthcare_system.egg-info/PKG-INFO
+faker_healthcare_system/faker_healthcare_system.egg-info/SOURCES.txt
+faker_healthcare_system/faker_healthcare_system.egg-info/dependency_links.txt
+faker_healthcare_system/faker_healthcare_system.egg-info/not-zip-safe
+faker_healthcare_system/faker_healthcare_system.egg-info/requires.txt
+faker_healthcare_system/faker_healthcare_system.egg-info/top_level.txt
+tests/test_person_name.py
+tests/test_provider_individual.py
