@@ -1,0 +1,26 @@
+Metadata-Version: 2.1
+Name: ad-freiburg-qgram-utils
+Version: 0.2.0
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development :: Libraries
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Utilities
+License-File: LICENSE
+Summary: Rust utilities for q-gram index
+Keywords: utilities,index,q-gram
+Author-email: Sebastian Walter <swalter@cs.uni-freiburg.de>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: Github, https://github.com/ad-freiburg/qgram-utils
+
+## Utilty functions for implementing a q-gram index
+
+Install with
+
+```
+pip install ad-freiburg-qgram-utils
+```
+
+Works on Linux, Windows (64bit) and MacOS
+
