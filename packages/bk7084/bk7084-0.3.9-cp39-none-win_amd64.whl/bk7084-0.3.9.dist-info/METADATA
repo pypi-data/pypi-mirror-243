@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: bk7084
+Version: 0.3.9
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Rust
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Requires-Dist: numpy
+License-File: LICENSE
+Summary: Python framework for BK7084 Computational Simulations
+Keywords: bk7084,computational,simulations,python,graphics
+Author: Yang Chen <y.chen-14@tudelft.nl>
+Author-email: Yang Chen <matthiasychen@gmail.com>, Ruben Wiersma <rubenwiersma@gmail.com>, Ricardo Marroquim <R.Marroquim@tudelft.nl>
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown; charset=UTF-8; variant=GFM
+Project-URL: homepage, https://github.com/bk7084/framework
+Project-URL: repository, https://github.com/bk7084/framework
+Project-URL: bugtracker, https://github.com/bk7084/framework/issues
+Project-URL: changelog, https://github.com/bk7084/framework/blob/master/CHANGELOG.md
+
+# BK7084 Computational Simulations Framework
+
