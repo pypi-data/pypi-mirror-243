@@ -1,0 +1,16 @@
+zibai/__init__.py,sha256=krbOgOadPdleLzwPq17QP_nZb05N2siPjWV3A5YZAC8,114
+zibai/__main__.py,sha256=VVwILsIqbgbztljbkER3sDrYeMK44HN9RL3cJLYDZx4,78
+zibai/cli.py,sha256=t_MSPfd-uArwYQVJpdg2BP06_syZXXEws7U9ix6Q52g,8863
+zibai/core.py,sha256=l9LF-3Aq8Zyd-PmziMUAlWZa2MANQTbSZ3McafgyGW8,2345
+zibai/h11.py,sha256=9lfrOD7_IqQWAwC9gpMcQbCORwSyC8yO6NJ4PSC7bcI,8304
+zibai/logger.py,sha256=hjSGRltgdp2QD4INKM_HjrvsZBbyXtf20cUeJqCkTj8,737
+zibai/middlewares/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+zibai/middlewares/limit_request_count.py,sha256=AD2mr1bK7TLxCBvGiSK2wjgKK_MUH7mFFPsRBojoo6o,752
+zibai/multiprocess.py,sha256=WTpChKWfkR_ncfjx0Q4gHQvt_IFh9Jg-NrMtPzWZu54,4758
+zibai/reloader.py,sha256=Eqf7L8Iv50IA44OAzw3ebOyTV0kl4kRt_EaQN0ijwZU,1403
+zibai/utils.py,sha256=NDrGIWrHDpWu5zJonM_tuUjVIFreai5vW_PKkKvGOS4,2410
+zibai/wsgi_typing.py,sha256=fhfd1FA1kk4htVzaoKgg0drkN943WM--HxfziklEaoA,7818
+zibai_server-0.1.0.dist-info/METADATA,sha256=e9Q8NEZlhHJJyhTmpvf4ObIVUldb5zzdOuHOtFsxARc,6812
+zibai_server-0.1.0.dist-info/WHEEL,sha256=C8f_gqhOWmHrh81n3Ukx5iURrqMhsHla81fuY1yuwvs,90
+zibai_server-0.1.0.dist-info/licenses/LICENCE,sha256=XpOd0twUrz63iu_1hgTUfaxaVJx8t4i6n9v0xFPr6DE,11340
+zibai_server-0.1.0.dist-info/RECORD,,
