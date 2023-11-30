@@ -1,0 +1,53 @@
+Metadata-Version: 2.1
+Name: referencing-loaders
+Version: 0.2.1
+Summary: Loading resources from various locations into referencing registries
+Project-URL: Homepage, https://github.com/python-jsonschema/referencing-loaders
+Project-URL: Issues, https://github.com/python-jsonschema/referencing-loaders/issues/
+Project-URL: Funding, https://github.com/sponsors/Julian
+Project-URL: Source, https://github.com/python-jsonschema/referencing-loaders
+Author: Julian Berman
+Author-email: Julian+referencing-loaders@GrayVines.com
+License: MIT
+License-File: COPYING
+Keywords: asyncapi,json,jsonschema,openapi,referencing
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: File Formats :: JSON
+Classifier: Topic :: File Formats :: JSON :: JSON Schema
+Requires-Python: >=3.8
+Requires-Dist: referencing>=0.31.1
+Description-Content-Type: text/x-rst
+
+=======================
+``referencing-loaders``
+=======================
+
+|PyPI| |Pythons| |CI|
+
+.. |PyPI| image:: https://img.shields.io/pypi/v/referencing-loaders.svg
+  :alt: PyPI version
+  :target: https://pypi.org/project/referencing-loaders/
+
+.. |Pythons| image:: https://img.shields.io/pypi/pyversions/referencing-loaders.svg
+  :alt: Supported Python versions
+  :target: https://pypi.org/project/referencing-loaders/
+
+.. |CI| image:: https://github.com/python-jsonschema/referencing-loaders/workflows/CI/badge.svg
+  :alt: Build status
+  :target: https://github.com/python-jsonschema/referencing-loaders/actions?query=workflow%3ACI
+
+Experimental additional loaders for helping to build ``referencing.Registry`` objects out of various places.
+
+Will likely merge into the ``referencing`` package when it's clear that what's here is "right".
