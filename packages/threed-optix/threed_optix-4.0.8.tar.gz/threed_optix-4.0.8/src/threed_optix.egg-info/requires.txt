@@ -1,0 +1,9 @@
+requests
+pandas
+matplotlib
+plotly==5.17.0
+colorama
+nbformat
+numpy
+scikit-image
+dill
