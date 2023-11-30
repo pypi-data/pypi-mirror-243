@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: caikit-tgis-backend
+Version: 0.1.27
+Summary: Caikit module backend for models run in TGIS
+License: Apache-2.0
+Project-URL: Source, https://github.com/caikit/caikit-tgis-backend
+Classifier: License :: OSI Approved :: Apache Software License
+Requires-Python: ~=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: caikit<0.26.0,>=0.16.0
+Requires-Dist: grpcio<2.0,>=1.35.0
+Requires-Dist: requests<3,>=2.28.2
+
+# Caikit Text Generation Inference Service (TGIS) Backend
+
+This project provides a Caikit module backend that manages models run in TGIS
+
+## Configuration
+
+Sample configuration using the `MULTI` finder and a remote `TGIS` backend):
+
+```yaml
+runtime:
+  library: caikit_nlp
+  local_models_dir: /path/to/models
+  lazy_load_local_models: true
+
+model_management:
+  finders:
+    default:
+      type: MULTI
+      config:
+        finder_priority:
+          - local
+          - tgis-auto
+  initializers:
+    default:
+      type: LOCAL
+      config:
+        backend_priority:
+          - type: TGIS
+            config:
+              connection:
+                hostname: "localhost:8033"
+                test_connections: true
+                connect_timeout: 30
+
+log:
+  formatter: pretty
+```

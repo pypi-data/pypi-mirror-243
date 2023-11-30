@@ -1,0 +1,29 @@
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools>=60", "setuptools-scm>=8.0"]
+
+[project]
+name = "caikit-tgis-backend"
+dynamic = ["version"]
+description = "Caikit module backend for models run in TGIS"
+license = {text = "Apache-2.0"}
+readme = "README.md"
+requires-python = "~=3.8"
+classifiers=[
+    "License :: OSI Approved :: Apache Software License"
+]
+dependencies = [
+    "caikit>=0.16.0,<0.26.0", # Core abstractions
+    "grpcio>=1.35.0,<2.0", # Client calls to TGIS
+    "requests>=2.28.2,<3", # Health check calls to TGIS
+]
+
+[project.urls]
+Source = "https://github.com/caikit/caikit-tgis-backend"
+
+[tool.setuptools.packages.find]
+exclude = ["tests", "tests.*"]
+namespaces = false
+
+[tool.setuptools_scm]
+version_file = "caikit_tgis_backend/_version.py"
