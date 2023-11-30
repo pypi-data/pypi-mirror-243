@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+
+
+from pybest import context
+from pybest.gbasis import (
+    compute_eri,
+    compute_kinetic,
+    compute_nuclear,
+    compute_nuclear_repulsion,
+    compute_overlap,
+    get_gobasis,
+)
+from pybest.linalg import DenseLinalgFactory
+from pybest.occ_model import AufbauOccModel
+from pybest.pt import RMP2
+from pybest.wrappers import RHF
+
+###############################################################################
+## Set up molecule, define basis set ##########################################
+###############################################################################
+# get the XYZ file from PyBEST's test data directory
+fn_xyz = context.get_fn("test/water.xyz")
+obasis = get_gobasis("cc-pvdz", fn_xyz)
+###############################################################################
+## Define Occupation model, expansion coefficients and overlap ################
+###############################################################################
+lf = DenseLinalgFactory(obasis.nbasis)
+occ_model = AufbauOccModel(obasis)
+orb_a = lf.create_orbital(obasis.nbasis)
+olp = compute_overlap(obasis)
+###############################################################################
+## Construct Hamiltonian ######################################################
+###############################################################################
+kin = compute_kinetic(obasis)
+ne = compute_nuclear(obasis)
+eri = compute_eri(obasis)
+external = compute_nuclear_repulsion(obasis)
+
+###############################################################################
+## Do a Hartree-Fock calculation ##############################################
+###############################################################################
+hf = RHF(lf, occ_model)
+hf_output = hf(kin, ne, eri, external, olp, orb_a)
+
+###############################################################################
+## Do SCS RMP2 calculation with fos=0.3 and fss=1.2 ###########################
+###############################################################################
+mp2 = RMP2(lf, occ_model)
+mp2_output = mp2(kin, ne, eri, hf_output, fos=0.3, fss=1.2)
+
+###############################################################################
+## Do SCS RMP2 calculation with fos=0.3 and fss=1.2 ###########################
+## AND determine natural orbitals INCLUDING orbital relaxation contributions ##
+###############################################################################
+mp2 = RMP2(lf, occ_model)
+mp2_output = mp2(
+    kin, ne, eri, hf_output, natorb=True, relaxation=True, fos=0.3, fss=1.2
+)
