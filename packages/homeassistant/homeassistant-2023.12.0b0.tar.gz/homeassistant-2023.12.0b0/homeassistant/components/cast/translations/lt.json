@@ -1,0 +1,27 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Jau sukonfig\u016bruota. Galima tik viena konfig\u016bracija."
+        }
+    },
+    "services": {
+        "show_lovelace_view": {
+            "description": "Rodomas prietais\u0173 skydelio vaizdas \u201eChromecast\u201c \u012frenginyje.",
+            "fields": {
+                "dashboard_path": {
+                    "description": "Rodomos informacijos suvestin\u0117s URL kelias.",
+                    "name": "Prietais\u0173 skydelio kelias"
+                },
+                "entity_id": {
+                    "description": "Medijos grotuvo objektas, kuriame rodomas prietais\u0173 skydelio vaizdas.",
+                    "name": "Subjektas"
+                },
+                "view_path": {
+                    "description": "Rodomo prietais\u0173 skydelio rodinio kelias.",
+                    "name": "\u017di\u016br\u0117ti keli\u0105"
+                }
+            },
+            "name": "Rodyti prietais\u0173 skydelio vaizd\u0105"
+        }
+    }
+}

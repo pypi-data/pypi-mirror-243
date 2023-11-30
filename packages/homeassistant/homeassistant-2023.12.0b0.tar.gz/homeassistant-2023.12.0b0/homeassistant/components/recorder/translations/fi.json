@@ -1,0 +1,24 @@
+{
+    "issues": {
+        "maria_db_range_index_regression": {
+            "description": "MariaDB:n vanhemmat versiot k\u00e4rsiv\u00e4t merkitt\u00e4v\u00e4st\u00e4 suorituskyvyn heikkenemisest\u00e4, kun historiatietoja haetaan tai tietokanta tyhjennet\u00e4\u00e4n. P\u00e4ivit\u00e4 MariaDB -versioon {min_version} tai uudempaan ja k\u00e4ynnist\u00e4 Home Assistant uudelleen. Jos k\u00e4yt\u00e4t MariaDB -ydinlis\u00e4osaa, varmista, ett\u00e4 p\u00e4ivit\u00e4t sen uusimpaan versioon.",
+            "title": "P\u00e4ivit\u00e4 MariaDB versioon {min_version} tai ratkaise my\u00f6hemmin merkitt\u00e4v\u00e4 suorituskykyongelma"
+        }
+    },
+    "services": {
+        "disable": {
+            "name": "Poista k\u00e4yt\u00f6st\u00e4"
+        },
+        "enable": {
+            "name": "Ota k\u00e4ytt\u00f6\u00f6n"
+        },
+        "purge": {
+            "fields": {
+                "apply_filter": {
+                    "description": "K\u00e4ytt\u00e4\u00e4 'entity_id'- ja 'event_type' -suodattimia aikaperusteisen tyhjennyksen lis\u00e4ksi.",
+                    "name": "K\u00e4yt\u00e4 suodatinta"
+                }
+            }
+        }
+    }
+}

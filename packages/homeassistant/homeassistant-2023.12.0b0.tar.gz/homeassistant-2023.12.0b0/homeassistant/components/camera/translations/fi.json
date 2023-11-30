@@ -1,0 +1,55 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kamera",
+            "state": {
+                "idle": "Toimeton"
+            },
+            "state_attributes": {
+                "frontend_stream_type": {
+                    "name": "Striimin tyyppi",
+                    "state": {
+                        "hls": "HLS",
+                        "webrtc": "WebRTC"
+                    }
+                },
+                "model_name": {
+                    "name": "Malli"
+                },
+                "motion_detection": {
+                    "state": {
+                        "false": "Ei k\u00e4yt\u00f6ss\u00e4",
+                        "true": "K\u00e4yt\u00f6ss\u00e4"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "{platform}-integraation {domain}-alusta ei tue alustan asetuksia.\n\nPoista se asetuksista ja k\u00e4ynnist\u00e4 Home Assistant uudelleen ongelman korjaamiseksi.",
+            "title": "Alustan tukea ei tueta"
+        }
+    },
+    "services": {
+        "play_stream": {
+            "description": "Toistaa kameravirran tuetulla mediasoittimella.",
+            "fields": {
+                "format": {
+                    "description": "Mediasoittimen tukema suoratoistomuoto."
+                },
+                "media_player": {
+                    "description": "Mediasoittimet suoratoistoon.",
+                    "name": "Mediasoitin"
+                }
+            }
+        },
+        "turn_off": {
+            "name": "Sammuta"
+        },
+        "turn_on": {
+            "name": "Laita p\u00e4\u00e4lle"
+        }
+    },
+    "title": "Kamera"
+}

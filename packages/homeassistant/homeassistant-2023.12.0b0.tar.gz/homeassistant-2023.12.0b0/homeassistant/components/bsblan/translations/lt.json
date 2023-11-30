@@ -1,0 +1,14 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "passkey": "Leidimo rakto eilut\u0117",
+                    "username": "Prisijungimos vardas"
+                },
+                "description": "Nustatykite savo BSB-Lan \u012frengin\u012f, kad jis b\u016bt\u0173 integruotas su nam\u0173 asistentu.",
+                "title": "Prisijunkite prie BSB-Lan \u012frenginio"
+            }
+        }
+    }
+}

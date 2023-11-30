@@ -1,0 +1,18 @@
+{
+    "config": {
+        "error": {
+            "timeout_connect": "Baig\u0117si ry\u0161io u\u017emezgimo laikas"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API raktas",
+                    "base": "Bazin\u0117 valiuta"
+                },
+                "data_description": {
+                    "base": "Norint naudoti kit\u0105 bazin\u0119 valiut\u0105 nei USD, reikalingas [mokamas planas] ( {signup} )."
+                }
+            }
+        }
+    }
+}

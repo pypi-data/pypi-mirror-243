@@ -1,0 +1,73 @@
+{
+    "config": {
+        "abort": {
+            "no_hardware_available": "Prie deCONZ neprijungta jokia radijo aparat\u016bra"
+        },
+        "error": {
+            "linking_not_possible": "Nepavyko susieti su \u0161liuzu"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Pasirinkite atrast\u0105 deCONZ \u0161liuz\u0105"
+                }
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "remote_button_rotated_fast": "Greitai pasuktas mygtukas \"{subtype}\""
+        }
+    },
+    "options": {
+        "step": {
+            "deconz_devices": {
+                "title": "deCONZ parinktys"
+            }
+        }
+    },
+    "services": {
+        "configure": {
+            "description": "Konfig\u016bruoja \u012frenginio galinio ta\u0161ko atributus deCONZ arba pa\u010dios deCONZ paslaugos.",
+            "fields": {
+                "bridgeid": {
+                    "description": "Unikali eilut\u0117 kiekvienai deCONZ aparat\u016brai. J\u012f galima rasti kaip integravimo pavadinimo dal\u012f. Naudinga, jei naudojate kelias deCONZ integracijas.",
+                    "name": "Tilto identifikatorius"
+                },
+                "data": {
+                    "description": "JSON objektas su kokius duomenis norite pakeisti.",
+                    "name": "Konfig\u016bracijos naudingoji apkrova"
+                },
+                "entity": {
+                    "description": "Nurodo konkret\u0173 \u012frenginio galin\u012f ta\u0161k\u0105 deCONZ.",
+                    "name": "Subjektas"
+                },
+                "field": {
+                    "description": "Eilut\u0117, nurodanti vis\u0105 keli\u0105 \u012f deCONZ galutin\u012f ta\u0161k\u0105 (kai subjektas nenurodytas) arba objekto \u012frenginio kelio antrin\u012f keli\u0105 (kai nurodytas objektas).",
+                    "name": "Kelias"
+                }
+            },
+            "name": "Konfig\u016bruoti"
+        },
+        "device_refresh": {
+            "description": "Atnaujina turimus deCONZ \u012frenginius.",
+            "fields": {
+                "bridgeid": {
+                    "description": "Unikali eilut\u0117 kiekvienai deCONZ aparat\u016brai. J\u012f galima rasti kaip integravimo pavadinimo dal\u012f. Naudinga, jei naudojate kelias deCONZ integracijas.",
+                    "name": "Tilto identifikatorius"
+                }
+            },
+            "name": "\u012erenginio atnaujinimas"
+        },
+        "remove_orphaned_entries": {
+            "description": "I\u0161valo \u012frenginio ir objekto registro \u012fra\u0161us, kuriuos paliko deCONZ.",
+            "fields": {
+                "bridgeid": {
+                    "description": "Unikali eilut\u0117 kiekvienai deCONZ aparat\u016brai. J\u012f galima rasti kaip integravimo pavadinimo dal\u012f. Naudinga, jei naudojate kelias deCONZ integracijas.",
+                    "name": "Tilto identifikatorius"
+                }
+            },
+            "name": "Pa\u0161alinti na\u0161lai\u010di\u0173 \u012fra\u0161us"
+        }
+    }
+}

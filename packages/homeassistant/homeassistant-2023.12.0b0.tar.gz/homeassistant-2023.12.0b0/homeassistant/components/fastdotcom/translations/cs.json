@@ -1,0 +1,18 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Ji\u017e nastaveno. Je mo\u017en\u00e9 jen jedin\u00e9 nastaven\u00ed."
+        },
+        "step": {
+            "user": {
+                "description": "Chcete zah\u00e1jit nastavov\u00e1n\u00ed? Po\u010d\u00e1te\u010dn\u00ed nastaven\u00ed bude trvat asi 30-40 sekund."
+            }
+        }
+    },
+    "services": {
+        "speedtest": {
+            "description": "Okam\u017eit\u011b provede test rychlosti s Fast.com.",
+            "name": "Test rychlosti"
+        }
+    }
+}

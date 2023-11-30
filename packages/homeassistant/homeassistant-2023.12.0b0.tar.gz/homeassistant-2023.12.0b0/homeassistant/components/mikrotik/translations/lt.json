@@ -1,0 +1,19 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                },
+                "description": "Neteisingas {username} slapta\u017eodis.",
+                "title": "I\u0161 naujo autentifikuokite integracij\u0105"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    }
+}

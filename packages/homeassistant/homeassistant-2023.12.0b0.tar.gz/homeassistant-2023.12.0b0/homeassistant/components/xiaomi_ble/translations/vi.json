@@ -1,0 +1,16 @@
+{
+    "config": {
+        "error": {
+            "expected_24_characters": "C\u1ea7n m\u1ed9t kh\u00f3a g\u1eafn k\u1ebft th\u1eadp l\u1ee5c ph\u00e2n 24 k\u00fd t\u1ef1.",
+            "expected_32_characters": "C\u1ea7n m\u1ed9t kh\u00f3a g\u1eafn k\u1ebft th\u1eadp l\u1ee5c ph\u00e2n 32 k\u00fd t\u1ef1."
+        },
+        "step": {
+            "get_encryption_key_4_5": {
+                "description": "D\u1eef li\u1ec7u \u0111\u01b0\u1ee3c c\u1ea3m bi\u1ebfn ph\u00e1t \u0111i s\u1ebd \u0111\u01b0\u1ee3c m\u00e3 h\u00f3a. \u0110\u1ec3 gi\u1ea3i m\u00e3 n\u00f3, ta c\u1ea7n m\u1ed9t kh\u00f3a g\u1eafn k\u1ebft th\u1eadp l\u1ee5c ph\u00e2n 32 k\u00fd t\u1ef1."
+            },
+            "get_encryption_key_legacy": {
+                "description": "D\u1eef li\u1ec7u \u0111\u01b0\u1ee3c c\u1ea3m bi\u1ebfn ph\u00e1t \u0111i s\u1ebd \u0111\u01b0\u1ee3c m\u00e3 h\u00f3a. \u0110\u1ec3 gi\u1ea3i m\u00e3 n\u00f3, ta c\u1ea7n m\u1ed9t kh\u00f3a g\u1eafn k\u1ebft th\u1eadp l\u1ee5c ph\u00e2n 24 k\u00fd t\u1ef1."
+            }
+        }
+    }
+}

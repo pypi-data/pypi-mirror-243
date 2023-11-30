@@ -1,0 +1,44 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Tili on jo m\u00e4\u00e4ritetty",
+            "reauth_successful": "Uudelleentodennus onnistui"
+        },
+        "error": {
+            "invalid_auth": "Virheellinen todennus",
+            "send_verification_code": "Vahvistuskoodin l\u00e4hett\u00e4minen ep\u00e4onnistui",
+            "validate_verification_code": "Vahvistuskoodin vahvistaminen ep\u00e4onnistui, yrit\u00e4 uudelleen"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salasana"
+                },
+                "description": "Aiemmin antamasi salasana {username} ei en\u00e4\u00e4 toimi. P\u00e4ivit\u00e4 salasanasi jatkaaksesi t\u00e4m\u00e4n integraation k\u00e4ytt\u00f6\u00e4.",
+                "title": "Todenna integraatio uudelleen"
+            },
+            "trusted_device": {
+                "data": {
+                    "trusted_device": "Luotettu laite"
+                },
+                "description": "Valitse luotettu laitteesi",
+                "title": "iCloudi luotettu laite"
+            },
+            "user": {
+                "data": {
+                    "password": "Salasana",
+                    "username": "S\u00e4hk\u00f6posti"
+                },
+                "description": "Anna kirjautumistietosi",
+                "title": "iCloud-kirjautumistiedot"
+            },
+            "verification_code": {
+                "data": {
+                    "verification_code": "Vahvistuskoodi"
+                },
+                "description": "Kirjoita vahvistuskoodi, jonka juuri sait iCloudista.",
+                "title": "iCloud-vahvistuskoodi"
+            }
+        }
+    }
+}

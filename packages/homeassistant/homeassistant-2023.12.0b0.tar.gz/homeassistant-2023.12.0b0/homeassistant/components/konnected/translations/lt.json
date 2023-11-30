@@ -1,0 +1,29 @@
+{
+    "config": {
+        "abort": {
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "step": {
+            "import_confirm": {
+                "title": "Importuokite \"Konnected\" \u012frengin\u012f"
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "bad_host": "Neteisingas API nepaisymo prieglobos URL"
+        },
+        "step": {
+            "options_misc": {
+                "data": {
+                    "override_api_host": "Nepaisyti numatytojo Home Assistant API prieglobos skydelio URL"
+                }
+            },
+            "options_switch": {
+                "data": {
+                    "more_states": "Konfig\u016bruokite papildomas \u0161ios zonos b\u016bsenas"
+                }
+            }
+        }
+    }
+}

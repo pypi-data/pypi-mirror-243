@@ -1,0 +1,51 @@
+{
+    "config": {
+        "abort": {
+            "backoff": "\u012erenginys \u0161iuo metu nepriima susiejimo u\u017eklaus\u0173 (gali b\u016bti, kad per daug kart\u0173 \u012fved\u0117te neteising\u0105 PIN kod\u0105), bandykite dar kart\u0105 v\u0117liau.",
+            "device_did_not_pair": "I\u0161 \u012frenginio nebuvo bandoma u\u017ebaigti susiejimo proces\u0105."
+        },
+        "flow_title": "{name} ( {type} )",
+        "step": {
+            "confirm": {
+                "description": "Prie nam\u0173 asistento ketinate prid\u0117ti ` {name} ` tipo ` {type} `. \n\n **Kad u\u017ebaigtum\u0117te proces\u0105, gali tekti \u012fvesti kelis PIN kodus.** \n\n Atminkite, kad naudodami \u0161i\u0105 integracij\u0105 *negal\u0117site* i\u0161jungti \u201eApple TV\u201c. I\u0161sijungs tik \u201eHome Assistant\u201c medijos grotuvas!",
+                "title": "Patvirtinkite Apple TV prid\u0117jim\u0105"
+            },
+            "pair_no_pin": {
+                "description": "Susieti reikia \"{protocol}\" paslaugai. Nor\u0117dami t\u0119sti, \u012frenginyje \u012fveskite PIN kod\u0105 {pin}.",
+                "title": "Poravimas"
+            },
+            "pair_with_pin": {
+                "description": "Susieti reikia \"{protocol}\" protokolui. \u012eveskite ekrane rodom\u0105 PIN kod\u0105. Priekiniai nuliai praleid\u017eiami, t. y. \u012fra\u0161oma 123, jei rodomas kodas yra 0123.",
+                "title": "Poravimas"
+            },
+            "password": {
+                "title": "Reikalingas slapta\u017eodis"
+            },
+            "reconfigure": {
+                "description": "I\u0161 naujo sukonfig\u016bruokite \u0161\u012f \u012frengin\u012f, kad atkurtum\u0117te jo funkcionalum\u0105.",
+                "title": "\u012erenginio perkonfig\u016bravimas"
+            },
+            "service_problem": {
+                "description": "Susiejant protokol\u0105 \u201e {protocol} \u201c kilo problema. Tai bus ignoruojama.",
+                "title": "Nepavyko prid\u0117ti paslaugos"
+            },
+            "user": {
+                "data": {
+                    "device_input": "\u012erenginys"
+                },
+                "description": "Prad\u0117kite \u012fvesdami \u012frenginio pavadinim\u0105 (pvz., virtuv\u0117 arba miegamasis) arba Apple TV, kur\u012f norite prid\u0117ti, IP adres\u0105. \n\n Jei nematote savo \u012frenginio arba kyla problem\u0173, pabandykite nurodyti \u012frenginio IP adres\u0105.",
+                "title": "Nustatykite nauj\u0105 Apple TV"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "start_off": "Ne\u012fjunkite \u012frenginio, kai paleisite \u201eHome Assistant\u201c."
+                },
+                "description": "Konfig\u016bruokite bendruosius \u012frenginio nustatymus"
+            }
+        }
+    }
+}

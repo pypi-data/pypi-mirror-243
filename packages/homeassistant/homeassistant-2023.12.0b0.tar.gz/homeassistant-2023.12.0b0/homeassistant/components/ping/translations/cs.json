@@ -1,0 +1,37 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Za\u0159\u00edzen\u00ed je ji\u017e nastaveno",
+            "invalid_ip_address": "Neplatn\u00e1 IP adresa."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "count": "Po\u010det ping\u016f",
+                    "host": "Hostitel"
+                },
+                "description": "Ping umo\u017e\u0148uje zkontrolovat dostupnost hostitele.",
+                "title": "P\u0159idat ping"
+            }
+        }
+    },
+    "options": {
+        "abort": {
+            "invalid_ip_address": "Neplatn\u00e1 IP adresa."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "count": "Po\u010det ping\u016f",
+                    "host": "Hostitel"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "description": "Znovu na\u010dte ping senzory z nastaven\u00ed YAML.",
+            "name": "Znovu na\u010d\u00edst"
+        }
+    }
+}

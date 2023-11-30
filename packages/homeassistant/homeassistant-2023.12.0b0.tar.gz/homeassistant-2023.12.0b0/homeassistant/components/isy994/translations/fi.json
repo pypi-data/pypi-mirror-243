@@ -1,0 +1,69 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "invalid_host": "Palvelimen osoite ei ollut t\u00e4ydess\u00e4 URL-muodossa, esim. http://192.168.10.100:80",
+            "reauth_successful": "Uudelleentodennus onnistui",
+            "unknown": "Odottamaton virhe"
+        },
+        "flow_title": "{name} ({host})",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salasana",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                },
+                "description": "K\u00e4ytt\u00e4j\u00e4n {host} kirjautumistiedot eiv\u00e4t ole en\u00e4\u00e4 voimassa."
+            },
+            "user": {
+                "data": {
+                    "host": "URL-osoite",
+                    "password": "Salasana",
+                    "tls": "ISY-ohjaimen TLS-versio.",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_service": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "P\u00e4ivit\u00e4 kaikki t\u00e4t\u00e4 palvelua k\u00e4ytt\u00e4v\u00e4t automaatiot tai skriptit k\u00e4ytt\u00e4m\u00e4\u00e4n sen sijaan `{alternate_service}` -palvelua, jonka kohdeyksik\u00f6n tunnus on `{alternate_target}`.",
+                        "title": "Palvelu {deprecated_service} poistetaan"
+                    }
+                }
+            },
+            "title": "Palvelu {deprecated_service} poistetaan"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "ignore_string": "Ohita merkkijono",
+                    "restore_light_state": "Valon kirkkauden palauttaminen",
+                    "variable_sensor_string": "Muuttuva sensorin merkkijono"
+                },
+                "title": "ISY-asetukset"
+            }
+        }
+    },
+    "services": {
+        "rename_node": {
+            "description": "Nime\u00e4\u00e4 ISY:n solmun tai ryhm\u00e4n (tilanteen) uudelleen. Huomautus: t\u00e4m\u00e4 ei automaattisesti muuta Home Assistant kohdenime\u00e4 tai kohdetunnusta vastaavaksi. Kohteen nimi ja tunnus p\u00e4ivittyv\u00e4t vasta, kun kutsut `isy994.reload` tai k\u00e4ynnist\u00e4t Home Assistantin uudelleen, ja VAIN JOS et ole jo mukauttanut nime\u00e4 Home Assistantissa."
+        },
+        "send_program_command": {
+            "fields": {
+                "name": {
+                    "name": "Nimi"
+                }
+            }
+        }
+    }
+}

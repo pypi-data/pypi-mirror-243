@@ -1,0 +1,19 @@
+{
+    "services": {
+        "unjoin": {
+            "name": "Separar"
+        },
+        "volume_set": {
+            "fields": {
+                "volume_level": {
+                    "name": "Nivel"
+                }
+            },
+            "name": "Establecer volume"
+        },
+        "volume_up": {
+            "description": "Sube o volume.",
+            "name": "Subir o volume"
+        }
+    }
+}

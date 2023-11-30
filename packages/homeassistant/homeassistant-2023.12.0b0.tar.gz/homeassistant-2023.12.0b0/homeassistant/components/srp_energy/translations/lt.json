@@ -1,0 +1,22 @@
+{
+    "config": {
+        "error": {
+            "invalid_account": "Paskyros ID turi b\u016bti 9 skaitmen\u0173 numeris"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "energy_usage": {
+                "name": "Energijos naudojimas"
+            }
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "issues": {
+        "deprecated_legacy_api_password": {
+            "description": "Pasen\u0119s API slapta\u017eod\u017eio autentifikavimo teik\u0117jas nebenaudojamas ir bus pa\u0161alintas. Pa\u0161alinkite j\u012f i\u0161 YAML konfig\u016bracijos ir naudokite numatyt\u0105j\u012f nam\u0173 asistento autentifikavimo teik\u0117j\u0105.",
+            "title": "Pasen\u0119s API slapta\u017eodis nebenaudojamas"
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "config": {
+        "step": {
+            "pairing": {
+                "title": "Parita HomeKit"
+            },
+            "user": {
+                "description": "Valitse mukaan otettavat verkkotunnukset. Kaikki toimialueen tuetut yksik\u00f6t sis\u00e4llytet\u00e4\u00e4n lukuun ottamatta luokiteltuja yksik\u00f6it\u00e4. Jokaiselle tv/vastaanottimelle, mediasoittimelle, toimintopohjaiselle kaukos\u00e4\u00e4timelle, lukolle ja kameralle luodaan erillinen HomeKit-instanssi lis\u00e4varustetilassa."
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "accessory": {
+                "data": {
+                    "entities": "Kohde"
+                }
+            },
+            "advanced": {
+                "data": {
+                    "devices": "Laitteet (Laukaisee)"
+                },
+                "description": "Kullekin valitulle laitteelle luodaan ohjelmoitavat kytkimet. Kun laitteen laukaisu laukeaa, HomeKit voidaan m\u00e4\u00e4ritt\u00e4\u00e4 suorittamaan automaatio tai tilanne.",
+                "title": "Lis\u00e4asetukset"
+            },
+            "exclude": {
+                "description": "Kaikki \"{domains}\" -kohteet sis\u00e4llytet\u00e4\u00e4n, lukuun ottamatta poissuljettuja ja luokiteltuja kohteita."
+            },
+            "include": {
+                "description": "Valitse kohteet jokaisesta \"{domains}\" -alueesta. Sis\u00e4llytt\u00e4minen kattaa koko verkkotunnuksen, jos et valitse yht\u00e4\u00e4n kokonaisuutta tietyst\u00e4 verkkotunnuksesta."
+            },
+            "init": {
+                "description": "HomeKit voidaan konfiguroida paljastaa silta tai yksitt\u00e4inen lis\u00e4laite. Lis\u00e4varustetilassa voidaan k\u00e4ytt\u00e4\u00e4 vain yht\u00e4 kokonaisuutta. Lis\u00e4varustetila vaaditaan, jotta mediasoittimet, joissa on TV- tai RECEIVER-laiteluokka, toimisivat oikein. \"Sis\u00e4llytett\u00e4v\u00e4t toimialueet\" -kent\u00e4ss\u00e4 olevat entiteetit sis\u00e4llytet\u00e4\u00e4n HomeKitiin. Voit valita, mitk\u00e4 entiteetit sis\u00e4llytet\u00e4\u00e4n tai j\u00e4tet\u00e4\u00e4n pois t\u00e4st\u00e4 luettelosta seuraavassa n\u00e4yt\u00f6ss\u00e4."
+            },
+            "yaml": {
+                "title": "S\u00e4\u00e4d\u00e4 HomeKit-asetuksia"
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Uudelleenlataa"
+        }
+    }
+}

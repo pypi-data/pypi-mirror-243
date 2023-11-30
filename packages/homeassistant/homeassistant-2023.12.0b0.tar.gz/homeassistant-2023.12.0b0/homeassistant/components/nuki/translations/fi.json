@@ -1,0 +1,61 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "reauth_successful": "Uudelleentodennus onnistui"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "token": "K\u00e4ytt\u00f6oikeustunnus"
+                },
+                "title": "Todenna integraatio uudelleen"
+            },
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "port": "Portti",
+                    "token": "K\u00e4ytt\u00f6oikeustunnus"
+                }
+            }
+        }
+    },
+    "entity": {
+        "lock": {
+            "nuki_lock": {
+                "state_attributes": {
+                    "battery_critical": {
+                        "state": {
+                            "off": "Normaali",
+                            "on": "Alhainen"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "battery": {
+                "name": "Akku"
+            }
+        }
+    },
+    "issues": {
+        "https_webhook": {
+            "description": "Nuki-silta ei voi l\u00e4hett\u00e4\u00e4 tapahtumia HTTPS -osoitteeseen (SSL), m\u00e4\u00e4rit\u00e4 (paikallinen) HTTP-osoite kohdassa \"Home Assistant URL\" [verkkoasetuksissa]({network_link}). Nykyinen (paikallinen) osoite on: `{base_url}`, kelvollinen osoite voisi olla esimerkiksi `http://192.168.1.10:8123`, jossa `192.168.1.10` on Home Assistant -laitteen IP-osoite."
+        }
+    },
+    "services": {
+        "set_continuous_mode": {
+            "fields": {
+                "enable": {
+                    "name": "Ota k\u00e4ytt\u00f6\u00f6n"
+                }
+            }
+        }
+    }
+}

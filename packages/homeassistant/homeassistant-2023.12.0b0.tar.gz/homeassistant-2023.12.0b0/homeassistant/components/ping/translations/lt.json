@@ -1,0 +1,35 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas",
+            "invalid_ip_address": "Neteisingas IP adresas."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "count": "Ping skai\u010dius"
+                },
+                "description": "Ping leid\u017eia patikrinti pagrindinio kompiuterio prieinamum\u0105.",
+                "title": "Prid\u0117ti Ping"
+            }
+        }
+    },
+    "options": {
+        "abort": {
+            "invalid_ip_address": "Neteisingas IP adresas."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "count": "Ping skai\u010dius"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "description": "I\u0161 naujo \u012fkelia ping jutiklius i\u0161 YAML konfig\u016bracijos.",
+            "name": "\u012ekelti i\u0161 naujo"
+        }
+    }
+}

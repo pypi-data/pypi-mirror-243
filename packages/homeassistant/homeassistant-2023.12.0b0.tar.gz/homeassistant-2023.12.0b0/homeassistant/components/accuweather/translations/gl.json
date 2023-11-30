@@ -1,0 +1,96 @@
+{
+    "entity": {
+        "sensor": {
+            "air_quality": {
+                "state": {
+                    "good": "Bo"
+                }
+            },
+            "grass_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "Nivel",
+                        "state": {
+                            "good": "Bo"
+                        }
+                    }
+                }
+            },
+            "hours_of_sun_0d": {
+                "name": "Horas de sol hoxe"
+            },
+            "hours_of_sun_1d": {
+                "name": "Horas de sol d\u00eda 1"
+            },
+            "hours_of_sun_2d": {
+                "name": "Horas de sol d\u00eda 2"
+            },
+            "hours_of_sun_3d": {
+                "name": "Horas de sol d\u00eda 3"
+            },
+            "hours_of_sun_4d": {
+                "name": "Horas de sol d\u00eda 4"
+            },
+            "mold_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "Nivel",
+                        "state": {
+                            "good": "Bo"
+                        }
+                    }
+                }
+            },
+            "ragweed_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "Nivel",
+                        "state": {
+                            "good": "Bo"
+                        }
+                    }
+                }
+            },
+            "tree_pollen": {
+                "state_attributes": {
+                    "level": {
+                        "name": "Nivel"
+                    }
+                }
+            },
+            "wind_speed": {
+                "name": "Velocidade do vento"
+            },
+            "wind_speed_day_0d": {
+                "name": "Velocidade do vento hoxe"
+            },
+            "wind_speed_day_1d": {
+                "name": "Velocidade do vento d\u00eda 1"
+            },
+            "wind_speed_day_2d": {
+                "name": "Velocidade do vento d\u00eda 2"
+            },
+            "wind_speed_day_3d": {
+                "name": "Velocidade do vento d\u00eda 3"
+            },
+            "wind_speed_day_4d": {
+                "name": "Velocidade do vento d\u00eda 4"
+            },
+            "wind_speed_night_0d": {
+                "name": "Velocidade do vento esta noite"
+            },
+            "wind_speed_night_1d": {
+                "name": "Velocidade do vento noite 1"
+            },
+            "wind_speed_night_2d": {
+                "name": "Velocidade do vento noite 2"
+            },
+            "wind_speed_night_3d": {
+                "name": "Velocidade do vento noite 3"
+            },
+            "wind_speed_night_4d": {
+                "name": "Velocidade do vento noite 4"
+            }
+        }
+    }
+}

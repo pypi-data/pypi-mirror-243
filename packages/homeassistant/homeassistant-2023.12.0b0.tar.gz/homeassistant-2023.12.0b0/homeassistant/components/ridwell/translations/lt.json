@@ -1,0 +1,27 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "description": "I\u0161 naujo \u012fveskite {username} slapta\u017eod\u012f:"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                },
+                "description": "\u012eveskite savo vartotojo vard\u0105 ir slapta\u017eod\u012f:"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "next_pickup": {
+                "name": "Kitas pa\u0117mimas"
+            }
+        },
+        "switch": {
+            "opt_in": {
+                "name": "Pasirinkite kit\u0105 pa\u0117mim\u0105"
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Jau sukonfig\u016bruota. Galima tik viena konfig\u016bracija."
+        },
+        "step": {
+            "user": {
+                "description": "Ar norite prad\u0117ti s\u0105rank\u0105?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "phase": {
+                "name": "Faz\u0117",
+                "state": {
+                    "first_quarter": "Pirmasis ketvirtis",
+                    "full_moon": "Pilnatis",
+                    "last_quarter": "Paskutinis ketvirtis",
+                    "new_moon": "Naujas m\u0117nulis",
+                    "waning_crescent": "Ma\u017e\u0117jantis pusm\u0117nulis",
+                    "waning_gibbous": "Ma\u017e\u0117jantis tu\u0161\u010diaviduris",
+                    "waxing_crescent": "Dylantis pusm\u0117nulis",
+                    "waxing_gibbous": "Depiliacija va\u0161ku"
+                }
+            }
+        }
+    },
+    "title": "M\u0117nulis"
+}

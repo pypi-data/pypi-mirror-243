@@ -1,0 +1,24 @@
+{
+    "entity": {
+        "sensor": {
+            "humidity": {
+                "name": "\u0110\u1ed9 \u1ea9m"
+            },
+            "illuminance": {
+                "name": "\u0110\u1ed9 s\u00e1ng"
+            },
+            "pressure": {
+                "name": "\u00c1p su\u1ea5t"
+            },
+            "temperature": {
+                "name": "Nhi\u1ec7t \u0111\u1ed9"
+            },
+            "thermocouple_temperature_k": {
+                "name": "Nhi\u1ec7t \u0111\u1ed9 c\u1eb7p nhi\u1ec7t \u0111i\u1ec7n K"
+            },
+            "voltage": {
+                "name": "\u0110i\u1ec7n \u00e1p"
+            }
+        }
+    }
+}

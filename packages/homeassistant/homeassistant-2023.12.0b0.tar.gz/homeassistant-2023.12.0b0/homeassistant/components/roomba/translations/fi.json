@@ -1,0 +1,33 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui"
+        },
+        "flow_title": "{name} ({host})",
+        "step": {
+            "link": {
+                "description": "Varmista, ett\u00e4 iRobot-sovellus ei ole k\u00e4ynniss\u00e4 mill\u00e4\u00e4n laitteella. Pid\u00e4 {name}:n Koti -painiketta (tai sek\u00e4 Koti -painiketta ett\u00e4 Spot -painiketta) painettuna, kunnes laite antaa \u00e4\u00e4nen (noin kaksi sekuntia), ja paina L\u00e4het\u00e4 30 sekunnin kuluessa."
+            },
+            "link_manual": {
+                "data": {
+                    "password": "Salasana"
+                },
+                "description": "Salasanaa ei voitu hakea laitteesta automaattisesti. Varmista, ett\u00e4 iRobot -sovellus ei ole avoinna mill\u00e4\u00e4n laitteella, kun yrit\u00e4t hakea salasanaa. Noudata dokumentaatiossa kuvattuja vaiheita osoitteessa: {auth_help_url}"
+            },
+            "manual": {
+                "data": {
+                    "host": "Palvelin"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Palvelin"
+                }
+            }
+        }
+    }
+}

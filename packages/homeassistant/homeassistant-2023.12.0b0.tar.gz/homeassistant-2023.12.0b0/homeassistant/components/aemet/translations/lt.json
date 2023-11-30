@@ -1,0 +1,12 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "name": "Integracijos pavadinimas"
+                },
+                "description": "Nor\u0117dami sugeneruoti API rakt\u0105, eikite \u012f https://opendata.aemet.es/centrodedescargas/altaUsuario"
+            }
+        }
+    }
+}

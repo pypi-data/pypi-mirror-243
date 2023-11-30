@@ -1,0 +1,113 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Palvelu on jo m\u00e4\u00e4ritetty",
+            "single_instance_allowed": "Jo m\u00e4\u00e4ritetty. Vain yksi konfiguraatio mahdollinen."
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "keyfile_no_tunnel_for_host": ".knxkeys-tiedosto ei sis\u00e4ll\u00e4 palvelimen {host} tunnistetietoja."
+        },
+        "step": {
+            "manual_tunnel": {
+                "data": {
+                    "host": "Palvelin",
+                    "port": "Portti"
+                }
+            },
+            "secure_key_source_menu_routing": {
+                "description": "Valitse, miten haluat m\u00e4\u00e4ritt\u00e4\u00e4 KNX/IP Securen.",
+                "menu_options": {
+                    "secure_knxkeys": "K\u00e4yt\u00e4 suojattuja IP-avaimia sis\u00e4lt\u00e4v\u00e4\u00e4 '.knxkeys' -tiedostoa",
+                    "secure_routing_manual": "IP-suojatun runkoverkon avaimen m\u00e4\u00e4ritt\u00e4minen manuaalisesti"
+                },
+                "title": "KNX IP-suojattu"
+            },
+            "secure_key_source_menu_tunnel": {
+                "description": "Valitse, miten haluat m\u00e4\u00e4ritt\u00e4\u00e4 KNX/IP Securen.",
+                "menu_options": {
+                    "secure_knxkeys": "K\u00e4yt\u00e4 suojattuja IP-avaimia sis\u00e4lt\u00e4v\u00e4\u00e4 '.knxkeys' -tiedostoa",
+                    "secure_tunnel_manual": "M\u00e4\u00e4rit\u00e4 IP-suojatut tunnistetiedot manuaalisesti"
+                },
+                "title": "KNX IP-suojattu"
+            },
+            "secure_routing_manual": {
+                "data_description": {
+                    "backbone_key": "Voidaan n\u00e4hd\u00e4 ETS-hankkeen turvallisuusraportista. Esim. '00112233445566778899AABBCCDDEEFF'"
+                }
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "telegram": "Telegram-viesti l\u00e4hetetty tai vastaanotettu"
+        }
+    },
+    "options": {
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "keyfile_no_tunnel_for_host": ".knxkeys-tiedosto ei sis\u00e4ll\u00e4 palvelimen {host} tunnistetietoja."
+        },
+        "step": {
+            "communication_settings": {
+                "data_description": {
+                    "telegram_log_size": "KNX -paneeliryhm\u00e4monitorin muistissa pidett\u00e4v\u00e4t s\u00e4hkeet. Enimm\u00e4ism\u00e4\u00e4r\u00e4: {telegram_log_size_max}"
+                },
+                "title": "Kommunikaatioasetukset"
+            },
+            "init": {
+                "menu_options": {
+                    "communication_settings": "Kommunikaatioasetukset",
+                    "connection_type": "M\u00e4\u00e4rit\u00e4 KNX -liittym\u00e4",
+                    "secure_knxkeys": "Tuo '.knxkeys' -tiedosto"
+                }
+            },
+            "manual_tunnel": {
+                "data": {
+                    "host": "Palvelin",
+                    "port": "Portti"
+                }
+            },
+            "secure_key_source_menu_routing": {
+                "description": "Valitse, miten haluat m\u00e4\u00e4ritt\u00e4\u00e4 KNX/IP Securen.",
+                "menu_options": {
+                    "secure_knxkeys": "K\u00e4yt\u00e4 suojattuja IP-avaimia sis\u00e4lt\u00e4v\u00e4\u00e4 '.knxkeys' -tiedostoa",
+                    "secure_routing_manual": "IP-suojatun runkoverkon avaimen m\u00e4\u00e4ritt\u00e4minen manuaalisesti"
+                },
+                "title": "KNX IP-suojattu"
+            },
+            "secure_key_source_menu_tunnel": {
+                "description": "Valitse, miten haluat m\u00e4\u00e4ritt\u00e4\u00e4 KNX/IP Securen.",
+                "menu_options": {
+                    "secure_knxkeys": "K\u00e4yt\u00e4 suojattuja IP-avaimia sis\u00e4lt\u00e4v\u00e4\u00e4 '.knxkeys' -tiedostoa",
+                    "secure_tunnel_manual": "M\u00e4\u00e4rit\u00e4 IP-suojatut tunnistetiedot manuaalisesti"
+                },
+                "title": "KNX IP-suojattu"
+            },
+            "secure_routing_manual": {
+                "data_description": {
+                    "backbone_key": "Voidaan n\u00e4hd\u00e4 ETS-hankkeen turvallisuusraportista. Esim. '00112233445566778899AABBCCDDEEFF'"
+                }
+            }
+        }
+    },
+    "services": {
+        "event_register": {
+            "description": "Lis\u00e4\u00e4 tai poista ryhm\u00e4osoitteita knx_event-suodattimeen knx_eventin k\u00e4ynnist\u00e4mist\u00e4 varten. Vain t\u00e4ll\u00e4 palvelulla lis\u00e4tyt osoitteet voidaan poistaa."
+        },
+        "exposure_register": {
+            "fields": {
+                "attribute": {
+                    "name": "Kohde attribuutti"
+                },
+                "entity_id": {
+                    "description": "Kohteen tunnus, jonka tila tai attribuutti paljastetaan.",
+                    "name": "Kohde"
+                }
+            }
+        },
+        "reload": {
+            "name": "Uudelleenlataa"
+        }
+    }
+}

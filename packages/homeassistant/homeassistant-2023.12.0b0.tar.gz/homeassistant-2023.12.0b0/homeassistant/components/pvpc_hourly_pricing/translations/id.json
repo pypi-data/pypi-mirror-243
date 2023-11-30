@@ -1,0 +1,46 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Layanan sudah dikonfigurasi",
+            "reauth_successful": "Autentikasi ulang berhasil"
+        },
+        "error": {
+            "invalid_auth": "Autentikasi tidak valid"
+        },
+        "step": {
+            "api_token": {
+                "data": {
+                    "api_token": "Token API"
+                }
+            },
+            "reauth_confirm": {
+                "data": {
+                    "api_token": "Token API"
+                }
+            },
+            "user": {
+                "data": {
+                    "name": "Nama Sensor",
+                    "power": "Daya terkontrak (kW)",
+                    "power_p3": "Daya terkontrak untuk periode lembah P3 (kW)",
+                    "tariff": "Tarif yang berlaku menurut zona geografis"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "api_token": {
+                "data": {
+                    "api_token": "Token API"
+                }
+            },
+            "init": {
+                "data": {
+                    "power": "Daya terkontrak (kW)",
+                    "power_p3": "Daya terkontrak untuk periode lembah P3 (kW)"
+                }
+            }
+        }
+    }
+}

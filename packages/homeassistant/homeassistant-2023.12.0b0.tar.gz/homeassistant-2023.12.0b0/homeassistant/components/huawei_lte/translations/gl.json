@@ -1,0 +1,48 @@
+{
+    "entity": {
+        "sensor": {
+            "pci": {
+                "name": "PCI"
+            },
+            "plmn": {
+                "name": "PLMN"
+            },
+            "preferred_mode": {
+                "name": "Modo preferido"
+            },
+            "primary_dns_server": {
+                "name": "Servidor DNS primario"
+            },
+            "primary_ipv6_dns_server": {
+                "name": "Servidor DNS primario IPv6"
+            },
+            "rac": {
+                "name": "RAC"
+            },
+            "rrc_status": {
+                "name": "Estado RRC"
+            },
+            "rscp": {
+                "name": "RSCP"
+            },
+            "rsrp": {
+                "name": "RSRP"
+            },
+            "rsrq": {
+                "name": "RSRQ"
+            },
+            "rssi": {
+                "name": "RSSI"
+            },
+            "secondary_dns_server": {
+                "name": "Servidor DNS secundario"
+            },
+            "secondary_ipv6_dns_server": {
+                "name": "Servidor DNS secundario IPv6"
+            },
+            "sinr": {
+                "name": "SINR"
+            }
+        }
+    }
+}

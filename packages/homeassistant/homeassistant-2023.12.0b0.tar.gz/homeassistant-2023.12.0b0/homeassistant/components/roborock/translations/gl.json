@@ -1,0 +1,30 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "in_cleaning": {
+                "name": "Limpando"
+            }
+        },
+        "button": {
+            "reset_air_filter_consumable": {
+                "name": "Restablecer contador de filtro de aire"
+            },
+            "reset_main_brush_consumable": {
+                "name": "Restablecer contador do cepillo principal"
+            },
+            "reset_sensor_consumable": {
+                "name": "Restablecer contador de limpeza dos sensores"
+            },
+            "reset_side_brush_consumable": {
+                "name": "Restablecer contador do cepillo lateral"
+            }
+        },
+        "sensor": {
+            "dock_error": {
+                "state": {
+                    "cleaning_tank_full_or_blocked": "Dep\u00f3sito de limpeza cheo ou bloqueado"
+                }
+            }
+        }
+    }
+}

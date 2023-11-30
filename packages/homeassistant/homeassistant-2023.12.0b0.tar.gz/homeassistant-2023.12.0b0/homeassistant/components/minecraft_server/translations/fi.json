@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Palvelu on jo m\u00e4\u00e4ritetty"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "name": "Nimi"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "players_max": {
+                "name": "Soittimet max"
+            },
+            "players_online": {
+                "name": "Soitinta verkossa"
+            }
+        }
+    }
+}

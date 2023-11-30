@@ -1,0 +1,40 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "name": "Vardas",
+                    "round": "Tikslumas",
+                    "source": "\u012evesties jutiklis",
+                    "time_window": "Laiko langas",
+                    "unit_prefix": "Metrin\u0117 sistema",
+                    "unit_time": "Laiko vienetas"
+                },
+                "description": "Sukurkite jutikl\u012f, kuris \u012fvertina jutiklio i\u0161vestin\u0119 vert\u0119.",
+                "title": "Prid\u0117ti i\u0161vestin\u012f jutikl\u012f"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "name": "Vardas",
+                    "round": "Tikslumas",
+                    "source": "\u012evesties jutiklis"
+                }
+            }
+        }
+    },
+    "selector": {
+        "time_unit": {
+            "options": {
+                "d": "Dienos",
+                "h": "Valandos",
+                "min": "Minut\u0117s",
+                "s": "Sekund\u0117s"
+            }
+        }
+    },
+    "title": "I\u0161vestinis jutiklis"
+}

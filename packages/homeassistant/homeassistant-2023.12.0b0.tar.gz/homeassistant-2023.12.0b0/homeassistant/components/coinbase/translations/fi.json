@@ -1,0 +1,31 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "invalid_auth_key": "Coinbase hylk\u00e4si API-kirjautumistiedot virheellisen API-avaimen vuoksi.",
+            "invalid_auth_secret": "Coinbase hylk\u00e4si API-kirjautumistiedot virheellisen API-salaisuuden vuoksi.",
+            "unknown": "Odottamaton virhe"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API-avain"
+                }
+            }
+        }
+    },
+    "options": {
+        "error": {
+            "unknown": "Odottamaton virhe"
+        },
+        "step": {
+            "init": {
+                "description": "S\u00e4\u00e4d\u00e4 Coinbase-asetuksia"
+            }
+        }
+    }
+}

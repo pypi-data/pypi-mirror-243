@@ -1,0 +1,89 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Ty\u00f6p\u00e4iv\u00e4 on jo asetettu valitulla kokoonpanolla"
+        },
+        "error": {
+            "already_configured": "Palvelu on jo m\u00e4\u00e4ritetty"
+        },
+        "step": {
+            "options": {
+                "data": {
+                    "add_holidays": "Lis\u00e4\u00e4 lomat"
+                },
+                "data_description": {
+                    "workdays": "Lista ty\u00f6p\u00e4ivist\u00e4"
+                },
+                "description": "Aseta lis\u00e4asetukset {name}:lle, joka on m\u00e4\u00e4ritetty maalle {country}."
+            },
+            "user": {
+                "data": {
+                    "country": "Maa",
+                    "name": "Nimi"
+                }
+            }
+        }
+    },
+    "issues": {
+        "bad_country": {
+            "fix_flow": {
+                "step": {
+                    "country": {
+                        "data": {
+                            "country": "Maa"
+                        },
+                        "title": "Valitse maa kohteelle {title}"
+                    },
+                    "province": {
+                        "description": "Valitse maan {country} maakunta, jota haluat k\u00e4ytt\u00e4\u00e4 Workday -sensoria varten.",
+                        "title": "Valitse maakunta {title}"
+                    }
+                }
+            },
+            "title": "M\u00e4\u00e4ritetty\u00e4 maata {title} ei ole olemassa"
+        },
+        "bad_province": {
+            "fix_flow": {
+                "step": {
+                    "province": {
+                        "description": "Valitse maan {country} maakunta, jota haluat k\u00e4ytt\u00e4\u00e4 Workday -sensoria varten.",
+                        "title": "Valitse maakunta {title}"
+                    }
+                }
+            },
+            "title": "Maassa {country} m\u00e4\u00e4ritetty\u00e4 maakuntaa {title}:lle ei ole olemassa"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "add_holidays": "Lis\u00e4\u00e4 lomat"
+                },
+                "data_description": {
+                    "workdays": "Lista ty\u00f6p\u00e4ivist\u00e4"
+                },
+                "description": "Muuta lis\u00e4asetuksia maalle {name} m\u00e4\u00e4ritettyn\u00e4 maalle {country}"
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "fri": "Perjantai",
+                "holiday": "Lomat",
+                "mon": "Maanantai",
+                "sat": "Lauantai",
+                "sun": "Sunnuntai",
+                "thu": "Torstai",
+                "tue": "Tiistai",
+                "wed": "Keskiviikko"
+            }
+        }
+    },
+    "services": {
+        "check_date": {
+            "name": "Tarkista p\u00e4iv\u00e4m\u00e4\u00e4r\u00e4"
+        }
+    }
+}

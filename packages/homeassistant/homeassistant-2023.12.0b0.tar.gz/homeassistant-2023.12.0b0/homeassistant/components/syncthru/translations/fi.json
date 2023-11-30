@@ -1,0 +1,20 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "confirm": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "user": {
+                "data": {
+                    "name": "Nimi"
+                }
+            }
+        }
+    }
+}

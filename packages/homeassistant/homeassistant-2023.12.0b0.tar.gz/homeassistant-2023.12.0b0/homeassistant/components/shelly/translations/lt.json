@@ -1,0 +1,136 @@
+{
+    "config": {
+        "abort": {
+            "reauth_unsuccessful": "Pakartotinis autentifikavimas nepavyko, pa\u0161alinkite integravim\u0105 ir nustatykite j\u012f i\u0161 naujo."
+        },
+        "error": {
+            "firmware_not_fully_provisioned": "\u012erenginys n\u0117ra visi\u0161kai apr\u016bpintas. Susisiekite su \u201eShelly\u201c palaikymo komanda"
+        },
+        "step": {
+            "credentials": {
+                "data": {
+                    "username": "Prisijungimos vardas"
+                }
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                }
+            },
+            "user": {
+                "data_description": {
+                    "host": "Valdomo \u201eShelly\u201c \u012frenginio pagrindinio kompiuterio pavadinimas arba IP adresas."
+                }
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "triple": "{subtype} trigubas paspaudimas",
+            "triple_push": "{subtype} trigubas paspaudimas"
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "gas": {
+                "state_attributes": {
+                    "detected": {
+                        "state": {
+                            "heavy": "Sunkus",
+                            "mild": "\u0160velnus",
+                            "none": "Joks",
+                            "test": "Testas",
+                            "unknown": "Ne\u017einomas"
+                        }
+                    }
+                }
+            }
+        },
+        "event": {
+            "input": {
+                "state_attributes": {
+                    "event_type": {
+                        "state": {
+                            "btn_down": "Mygtukas \u017eemyn",
+                            "btn_up": "Mygtukas auk\u0161tyn",
+                            "double": "Dvigubas paspaudimas",
+                            "double_push": "Dvigubas paspaudimas",
+                            "long": "Ilgas spaudimas",
+                            "long_push": "Ilgas paspaudimas",
+                            "long_single": "Ilgas paspaudimas ir tada trumpas paspaudimas",
+                            "single": "Vienkartinis paspaudimas",
+                            "single_long": "Trumpas paspaudimas ir tada ilgas paspaudimas",
+                            "single_push": "Vienkartinis paspaudimas",
+                            "triple": "Trigubas paspaudimas",
+                            "triple_push": "Trigubas paspaudimas"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "operation": {
+                "state": {
+                    "fault": "Gedimas",
+                    "normal": "Normalus",
+                    "unknown": "Ne\u017einomas",
+                    "warmup": "Ap\u0161ilimas"
+                },
+                "state_attributes": {
+                    "self_test": {
+                        "state": {
+                            "completed": "U\u017ebaigta",
+                            "not_completed": "Ne\u012fvykdyta",
+                            "pending": "Laukiama",
+                            "running": "Veikia"
+                        }
+                    }
+                }
+            },
+            "valve_status": {
+                "state": {
+                    "checking": "Tikrinama",
+                    "closed": "U\u017edaryta",
+                    "closing": "U\u017edaroma",
+                    "failure": "Nes\u0117km\u0117",
+                    "opened": "Atidaryta",
+                    "opening": "Atidaroma",
+                    "unknown": "Ne\u017einomas"
+                }
+            }
+        }
+    },
+    "issues": {
+        "device_not_calibrated": {
+            "description": "\u201eShelly\u201c \u012frengin\u012f {device_name} su IP adresu {ip_address} reikia kalibruoti. Norint kalibruoti \u012frengin\u012f, j\u012f reikia paleisti i\u0161 naujo tinkamai sumontavus ant vo\u017etuvo. Galite i\u0161 naujo paleisti \u012frengin\u012f jo \u017einiatinklio skydelyje, eikite \u012f \u201eNustatymai\u201c > \u201e\u012erenginio paleidimas i\u0161 naujo\u201c.",
+            "title": "\u201eShelly\u201c \u012frenginys {device_name} nesukalibruotas"
+        },
+        "push_update_failure": {
+            "description": "\u201eHome Assistant\u201c negauna tiesiogini\u0173 naujini\u0173 i\u0161 \u201eShelly\u201c \u012frenginio {device_name} , kurio IP adresas {ip_address} . Patikrinkite CoIoT konfig\u016bracij\u0105 \u012frenginio \u017einiatinklio skydelyje ir tinklo konfig\u016bracij\u0105.",
+            "title": "\u201eShelly\u201c \u012frenginio {device_name} tiesioginio naujinimo klaida"
+        }
+    },
+    "options": {
+        "abort": {
+            "ble_unsupported": "\u201eBluetooth\u201c palaikymui reikalinga {ble_min_version} arba naujesn\u0117 programin\u0117s aparatin\u0117s \u012frangos versija."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "ble_scanner_mode": "Bluetooth skaitytuvo re\u017eimas"
+                },
+                "description": "\u201eBluetooth\u201c nuskaitymas gali b\u016bti aktyvus arba pasyvus. Esant aktyviam, Shelly pra\u0161o duomen\u0173 i\u0161 netoliese esan\u010di\u0173 \u012frengini\u0173; su pasyviu, Shelly gauna nepageidaujamus duomenis i\u0161 netoliese esan\u010di\u0173 \u012frengini\u0173."
+            }
+        }
+    },
+    "selector": {
+        "ble_scanner_mode": {
+            "options": {
+                "active": "aktyvus",
+                "disabled": "I\u0161jungtas",
+                "passive": "Pasyvus"
+            }
+        }
+    }
+}

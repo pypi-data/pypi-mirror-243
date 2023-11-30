@@ -1,0 +1,18 @@
+{
+    "entity": {
+        "sensor": {
+            "meter_price": {
+                "name": "Skaitiklio kaina"
+            },
+            "power_demand": {
+                "name": "Skaitiklio galios poreikis"
+            },
+            "total_energy_delivered": {
+                "name": "Visa patiekta skaitiklio energija"
+            },
+            "total_energy_received": {
+                "name": "Visa gauta skaitiklio energija"
+            }
+        }
+    }
+}

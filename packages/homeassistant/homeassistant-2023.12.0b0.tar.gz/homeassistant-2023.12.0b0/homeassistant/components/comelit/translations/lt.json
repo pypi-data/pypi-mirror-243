@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Paslauga jau sukonfig\u016bruota",
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "flow_title": "{host}",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "pin": "PIN kodas"
+                },
+                "description": "\u012eveskite teising\u0105 VEDO sistemos PIN kod\u0105: {host}"
+            },
+            "user": {
+                "data": {
+                    "pin": "PIN kodas"
+                }
+            }
+        }
+    }
+}

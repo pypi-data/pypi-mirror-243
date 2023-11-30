@@ -1,0 +1,15 @@
+{
+    "config": {
+        "step": {
+            "bluetooth_confirm": {
+                "description": "Ar norite nustatyti {name} ?"
+            },
+            "user": {
+                "data": {
+                    "address": "\u012erenginys"
+                },
+                "description": "Pasirinkite \u012frengin\u012f, kur\u012f norite nustatyti"
+            }
+        }
+    }
+}

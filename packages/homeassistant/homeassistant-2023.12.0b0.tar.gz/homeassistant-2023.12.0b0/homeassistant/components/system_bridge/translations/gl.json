@@ -1,0 +1,14 @@
+{
+    "entity": {
+        "media_player": {
+            "media": {
+                "name": "Medio"
+            }
+        },
+        "sensor": {
+            "processes": {
+                "name": "Procesos"
+            }
+        }
+    }
+}
