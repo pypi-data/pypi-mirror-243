@@ -1,0 +1,15 @@
+LICENSE
+README.md
+pyproject.toml
+f/__init__.py
+f/chain_unit.py
+f/lazy_string.py
+f/proxy_module.py
+fazy.egg-info/PKG-INFO
+fazy.egg-info/SOURCES.txt
+fazy.egg-info/dependency_links.txt
+fazy.egg-info/top_level.txt
+tests/test_dunders.py
+tests/test_init.py
+tests/test_methods.py
+tests/test_skipped.py
