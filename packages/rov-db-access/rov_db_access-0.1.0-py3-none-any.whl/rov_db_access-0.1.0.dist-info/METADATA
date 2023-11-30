@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: rov-db-access
+Version: 0.1.0
+Summary: 
+Author: Pablo Cano
+Author-email: pablo.cano@rovisen.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: geoalchemy2 (>=0.14.2,<0.15.0)
+Requires-Dist: psycopg2-binary (>=2.9.9,<3.0.0)
+Requires-Dist: sqlalchemy (>=2.0.23,<3.0.0)
+Description-Content-Type: text/markdown
+
+
