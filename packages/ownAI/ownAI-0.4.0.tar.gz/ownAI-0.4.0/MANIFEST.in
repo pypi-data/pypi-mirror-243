@@ -1,0 +1,3 @@
+graft backaind/static
+graft backaind/templates
+global-exclude *.pyc

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% from '_macros/assets.html' import css, js %}
+
+{% block title %}
+  Hello
+{% endblock %}
+
+{% block stylesheets %}
+  {{ css('ainteraction') }}
+{% endblock %}
+
+{% block scripts %}
+  {{ js('ainteraction') }}
+{% endblock %}
+
+{% block main %}
+  <div
+    id="ainteraction"
+    data-ais="{{ ais }}"
+    data-knowledges="{{ knowledges }}"
+  ></div>
+{% endblock %}
