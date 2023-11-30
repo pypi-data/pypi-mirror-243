@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: fhdw-modelling
+Version: 1.0.1
+Summary: A collection of modelling tools. Intended for generic usage in FHDW projects.
+License: MPL-2.0
+Author: Pascal Niggemeier
+Author-email: pascal.niggemeier@fhdw.de
+Requires-Python: >=3.11,<3.12
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: kaleido (==0.2.1)
+Requires-Dist: pycaret (>=3.2.0)
+Description-Content-Type: text/markdown
+
+# Modelling Tools
+
+This is a collection of modelling tools. It is intended as a project-independent package.
+
+# Contribution
+
+[![Open in Dev Containers](https://img.shields.io/static/v1?label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/fhdw-forschung/modelling-tools)
+
+[![Upload Python Package](https://github.com/fhdw-forschung/modelling-tools/actions/workflows/publish.yml/badge.svg)](https://github.com/fhdw-forschung/modelling-tools/actions/workflows/publish.yml)
+[![.github/workflows/pytest.yml](https://github.com/fhdw-forschung/modelling-tools/actions/workflows/pytest.yml/badge.svg?branch=main)](https://github.com/fhdw-forschung/modelling-tools/actions/workflows/pytest.yml)
+[![.github/workflows/lint.yml](https://github.com/fhdw-forschung/modelling-tools/actions/workflows/lint.yml/badge.svg)](https://github.com/fhdw-forschung/modelling-tools/actions/workflows/lint.yml)
+
+
+- Use the devcontainer.
+- Development utilities can be installed via `pipx`
+- `poetry` is used for packaging. See [`poetry publish`](https://python-poetry.org/docs/cli/#publish).
+
