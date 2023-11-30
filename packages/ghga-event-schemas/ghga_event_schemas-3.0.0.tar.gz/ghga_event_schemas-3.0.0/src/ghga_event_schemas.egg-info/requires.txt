@@ -1,0 +1,2 @@
+jsonschema<5.0.0,>=4.17.3
+pydantic[email]<3,>=2
