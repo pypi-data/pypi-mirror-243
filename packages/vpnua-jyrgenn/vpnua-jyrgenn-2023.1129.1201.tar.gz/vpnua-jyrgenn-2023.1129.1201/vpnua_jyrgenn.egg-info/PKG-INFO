@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: vpnua-jyrgenn
+Version: 2023.1129.1201
+Summary: VPN user administration library
+Home-page: https://netz-git.charite.de/ni/vpnuseradm/
+Author: Juergen Nickelsen
+Author-email: ni@w21.org
+Project-URL: Documentation, https://netz-git.charite.de/ni/vpnuseradm//-/blob/v2023.1129.1201/doc/vpnua.md
+Project-URL: Source, https://netz-git.charite.de/ni/vpnuseradm/
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+VPN user administration library
+

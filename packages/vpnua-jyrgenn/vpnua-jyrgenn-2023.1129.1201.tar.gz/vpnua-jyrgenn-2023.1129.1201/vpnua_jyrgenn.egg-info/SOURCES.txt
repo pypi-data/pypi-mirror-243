@@ -1,0 +1,14 @@
+README.md
+setup.py
+vpnua/__init__.py
+vpnua/basedefs.py
+vpnua/config.py
+vpnua/ldapdata.py
+vpnua/limesdata.py
+vpnua/redisdata.py
+vpnua/special_rules.py
+vpnua/utils.py
+vpnua_jyrgenn.egg-info/PKG-INFO
+vpnua_jyrgenn.egg-info/SOURCES.txt
+vpnua_jyrgenn.egg-info/dependency_links.txt
+vpnua_jyrgenn.egg-info/top_level.txt
