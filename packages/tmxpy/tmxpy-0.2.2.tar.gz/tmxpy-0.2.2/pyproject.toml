@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tmxpy"
+version = "0.2.2"
+authors = [
+  { name="AnotherPillow", email="redacted@email.xyz" }
+]
+description = "A Python library for reading and writing TMX files."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "BeautifulSoup4",
+    "lxml",
+    "Pillow"
+
+]
+
+[project.urls]
+"Homepage" = "https://github.com/AnotherPillow/tmxpy"
+"Bug Tracker" = "https://github.com/AnotherPillow/tmxpy/issues"
