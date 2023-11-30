@@ -1,0 +1,34 @@
+Metadata-Version: 2.1
+Name: django-wspay
+Version: 0.3.7
+Summary: a payments Django app for WSPay
+Home-page: https://github.com/portant-shop/django-wspay
+Author: Vedran Vojvoda
+Author-email: vedran@pinkdroids.com
+License: MIT
+Classifier: Development Status :: 4 - Beta 
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Framework :: Django
+Description-Content-Type: text/x-rst
+License-File: LICENSE.txt
+Requires-Dist: django (>=3.0)
+Requires-Dist: pytz
+Requires-Dist: requests
+Requires-Dist: django-appconf
+Provides-Extra: testing
+Requires-Dist: mock ; extra == 'testing'
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-django ; extra == 'testing'
+Requires-Dist: responses ; extra == 'testing'
+
+
+============
+Django WSPay
+============
+
+This django app provides simple support for payments using WSPay gateway.
