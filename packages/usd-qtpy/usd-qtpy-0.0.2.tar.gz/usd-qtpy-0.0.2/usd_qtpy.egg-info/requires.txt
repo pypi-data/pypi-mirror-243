@@ -1,0 +1,10 @@
+qtpy
+
+[:python_version < "3.7"]
+importlib-metadata
+
+[usd]
+usd-core
+
+[usdview]
+PyOpenGL
