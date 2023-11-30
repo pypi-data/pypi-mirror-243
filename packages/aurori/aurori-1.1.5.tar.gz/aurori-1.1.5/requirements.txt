@@ -1,0 +1,11 @@
+uvicorn[standard]
+fastapi>=0.100.0
+pydantic[email]
+alembic
+bcrypt
+APScheduler<=4.0.0
+cron-descriptor
+sqlalchemy_utils>=0.41.0
+sqlalchemy>=2.0.18
+python-multipart
+pyjwt==2.8.0

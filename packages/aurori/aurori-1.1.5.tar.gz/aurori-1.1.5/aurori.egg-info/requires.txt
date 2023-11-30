@@ -1,0 +1,11 @@
+fastapi>=0.100.0
+uvicorn[standard]
+alembic
+bcrypt
+Click
+pyjwt
+python-multipart
+APScheduler<=4.0.0
+cron-descriptor
+sqlalchemy_utils>=0.41.0
+sqlalchemy>=2.0.18

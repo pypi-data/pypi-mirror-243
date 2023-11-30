@@ -1,0 +1,25 @@
+[SYSTEM]
+file_storage_path = '..'
+log_level = "INFO"
+
+[SECURITY]
+secret_key = "changemechangemechangemechangemechangemechangemechangemechangeme"
+jwt_algorithm = "HS256"
+jwt_expires_in_minutes = 30
+
+[LDAP]
+enable=True
+server="ldap://IP"
+bind_dn="CN=Administrator,CN=Users,DC=?,DC=tld"
+bind_pw="BIND_PASSWORD"
+user_dn="CN=Users,DC=?,DC=tld"
+default_organization="LDAP-User"
+
+[MAIL]
+sender = ''
+server = ''
+port = '587'
+username = 'MAIL_USERNAME'
+password = 'MAIL_PASSWORD'
+
+# Put specific Workspace config here
