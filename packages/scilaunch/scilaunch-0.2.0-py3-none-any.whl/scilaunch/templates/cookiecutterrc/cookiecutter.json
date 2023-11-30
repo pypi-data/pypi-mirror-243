@@ -1,0 +1,30 @@
+{
+    "full_name": "NAME LASTNAME",
+    "email": "NAME@EXAMPLE.com",
+    "github_username": "YOUR_USERNAME",
+    "create_conda_env": true,
+    "init_git": true,
+    "use_pytest": true,
+    "use_black": true,
+    "linting": [
+        "ruff",
+        "flake8",
+        "none"
+    ],
+    "_cache_dir": "scilaunch",
+    "__prompts__": {
+        "full_name": "Provide a default author name for projects:",
+        "email": "Provide a default author's email address:",
+        "github_username": "Provide a default GitHub username or organization:",
+        "create_conda_env": "Set the default option for creating a conda environment with new projects:",
+        "init_git": "Set the default option for initialing a git repository in a new project folder:",
+        "use_pytest": "Set default for using pytest for testing (else unittest):",
+        "use_black": "Set default option to enable black formatting:",
+        "linting": {
+            "__prompt__": "Set default linting tool that you want to use:",
+            "ruff": "Ruff",
+            "flake8": "Flake8",
+            "none": "No linting tool"
+        }
+    }
+}
