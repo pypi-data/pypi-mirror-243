@@ -1,0 +1,79 @@
+setup.py
+cybertask/README.md
+cybertask/__init__.py
+cybertask/autoassist.py
+cybertask/automath.py
+cybertask/autoretriever.py
+cybertask/autoteachable.py
+cybertask/config.py
+cybertask/eTextEdit.py
+cybertask/health_check.py
+cybertask/main.py
+cybertask/package_name.txt
+cybertask/requirements.txt
+cybertask.egg-info/PKG-INFO
+cybertask.egg-info/SOURCES.txt
+cybertask.egg-info/dependency_links.txt
+cybertask.egg-info/entry_points.txt
+cybertask.egg-info/requires.txt
+cybertask.egg-info/top_level.txt
+cybertask/files/Readme.md
+cybertask/history/Readme.md
+cybertask/icons/CyberTask.ico
+cybertask/icons/CyberTask.png
+cybertask/icons/LetMeDoIt.ico
+cybertask/icons/LetMeDoIt.png
+cybertask/icons/MyHand.ico
+cybertask/icons/MyHand.png
+cybertask/icons/TaskWiz.ico
+cybertask/icons/TaskWiz.png
+cybertask/plugins/Readme.md
+cybertask/plugins/add calendar event.py
+cybertask/plugins/aliases.py
+cybertask/plugins/analyze files.py
+cybertask/plugins/analyze images.py
+cybertask/plugins/auto heal python code.py
+cybertask/plugins/awesome prompts.py
+cybertask/plugins/bible studies.py
+cybertask/plugins/bible.py
+cybertask/plugins/biblical counselling.py
+cybertask/plugins/character analysis.py
+cybertask/plugins/counselling.py
+cybertask/plugins/create images.py
+cybertask/plugins/create maps.py
+cybertask/plugins/create statistical graphics.py
+cybertask/plugins/dates and times.py
+cybertask/plugins/download youtube media.py
+cybertask/plugins/edit text.py
+cybertask/plugins/global finance.py
+cybertask/plugins/improve British English.py
+cybertask/plugins/input suggestions.py
+cybertask/plugins/instructions.py
+cybertask/plugins/integrate google searches.py
+cybertask/plugins/memory.py
+cybertask/plugins/pastoral care.py
+cybertask/plugins/pronunce words.py
+cybertask/plugins/send email.py
+cybertask/plugins/simplified Chinese to traditional Chinese.py
+cybertask/plugins/bibleTools/bibleData/Readme.md
+cybertask/plugins/bibleTools/bibleData/bibles/KJV.bible
+cybertask/plugins/bibleTools/bibleData/bibles/NET.bible
+cybertask/plugins/bibleTools/utils/BibleBooks.py
+cybertask/plugins/bibleTools/utils/TextUtil.py
+cybertask/temp/Readme.md
+cybertask/utils/assistant.py
+cybertask/utils/configDefault.py
+cybertask/utils/file_utils.py
+cybertask/utils/get_path_prompt.py
+cybertask/utils/install.py
+cybertask/utils/promptValidator.py
+cybertask/utils/prompt_multiline_shared_key_bindings.py
+cybertask/utils/prompt_shared_key_bindings.py
+cybertask/utils/prompts.py
+cybertask/utils/shared_utils.py
+cybertask/utils/shortcuts.py
+cybertask/utils/terminal_mode_dialogs.py
+cybertask/utils/terminal_system_command_prompt.py
+cybertask/utils/ttsLanguages.py
+cybertask/utils/tts_utils.py
+cybertask/utils/vlc_utils.py
