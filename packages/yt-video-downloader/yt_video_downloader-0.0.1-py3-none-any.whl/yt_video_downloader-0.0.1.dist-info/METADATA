@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: yt-video-downloader
+Version: 0.0.1
+Summary: Download youtube videos by just paste the link
+Author: sahaya valan
+Author-email: sahayavalanj1@gmail.com
+Description-Content-Type: markdown
+
+# This is an Youtube video downloader tool
+
+````installation
+$ pip install yt_vdo
+
