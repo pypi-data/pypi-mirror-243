@@ -1,0 +1,143 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcfonts"
+description = "A module for exporting, manipulating, and working with Minecraft fonts"
+readme = "README.md"
+requires-python = ">=3.11"
+version = "0.7"
+license = {text = "MIT"}
+authors = [{name = "WhoAteMyButter"}]
+keywords = [
+    "minecraft",
+    "fonts",
+    "minecraft fonts",
+    "font exporting",
+    "minecraft opentype",
+    "minecraft font",
+    "minecraft export font",
+    "mc font",
+    "mc fonts",
+    "mcfonts"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+    "Topic :: Games/Entertainment",
+    "Topic :: Text Processing :: Fonts",
+    "Topic :: Utilities",
+    "Typing :: Typed",
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "Intended Audience :: Other Audience",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English"
+]
+dependencies = [
+    "fontTools >= 4.35.0",
+    "Pillow >= 9.3.0",
+    "lxml >= 4.9.0",
+    "tinyunicodeblock >= 1.1.0",
+    "jsonschema >= 4.17.3",
+    "unirange >= 1.0"
+]
+
+[project.optional-dependencies]
+docs = [
+    "Sphinx >= 5.3.0",
+    "sphinx-autoapi >= 2.0.0",
+    "sphinxext-opengraph >= 0.8.2",
+    "sphinx-immaterial >= 0.11.3"
+]
+
+[project.urls]
+Documentation = "https://mcfonts.readthedocs.io"
+Source = "https://gitlab.com/whoatemybutter/mcfonts"
+Changelog = "https://gitlab.com/whoatemybutter/mcfonts/-/blob/master/CHANGELOG.md"
+Issues = "https://gitlab.com/whoatemybutter/mcfonts/-/issues"
+
+[tool.black]
+line-length = 120
+target-version = ["py311"]
+
+[tool.pylint."MASTER"]
+jobs = 0
+py-version = "3.11"
+suggestion-mode = true
+max-line-length = 120
+# Needed for lxml not playing nice with pylint
+extension-pkg-allow-list = ["lxml.etree"]
+fail-on = "I"
+# Enable many optional extensions:
+load-plugins = [
+   "pylint.extensions.bad_builtin",
+   "pylint.extensions.code_style",
+   "pylint.extensions.comparison_placement",
+   "pylint.extensions.consider_refactoring_into_while_condition",
+   "pylint.extensions.docparams",
+   "pylint.extensions.dunder",
+   "pylint.extensions.eq_without_hash",
+   "pylint.extensions.for_any_all",
+   "pylint.extensions.magic_value",
+   "pylint.extensions.mccabe",
+   "pylint.extensions.no_self_use",
+   "pylint.extensions.overlapping_exceptions",
+   "pylint.extensions.private_import",
+   "pylint.extensions.redefined_loop_name",
+   "pylint.extensions.redefined_variable_type",
+   "pylint.extensions.set_membership",
+   "pylint.extensions.typing",
+   "pylint.extensions.while_used"
+]
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "logging-fstring-interpolation", # F-strings needed for formatting.
+    "magic-value-comparison" # Used for ExportSettings, useless.
+]
+enable = [
+    "bad-inline-option",
+    "deprecated-pragma",
+    "file-ignored",
+    "use-symbolic-message-instead",
+    "useless-suppression"
+]
+include-naming-hint = true
+[tool.pylint."STRING CONSTANT"]
+check-quote-consistency = true
+[tool.pylint."VARIABLES"]
+allow-global-unused-variables = true
+
+[tool.pydocstyle]
+# D102 is accidentally triggered with overridden implementation-dependent methods
+# D212 is ignored, preference is that multi-line summaries start on second line
+# D202 is ignored, black uses 1 line after and 0 lines before
+ignore = ["D102", "D212", "D202", "D203"]
+
+[tool.setuptools.package-data]
+mcfonts = ["py.typed", "LICENSE.txt"]
+
+[tool.mypy]
+python_version = "3.11"
+disable_error_code = ["import-untyped"]
+show_error_codes = true
+strict = true
+
+[tool.pyright]
+pythonVersion = "3.11"
+pythonPlatform = "Linux"
+typeCheckingMode = "strict"
+deprecateTypingAliases = true
+venv = "venv"
+useLibraryCodeForTypes = false
+# Pyright often gets these wrong because imported modules have incorrectly inferred types
+reportUnknownVariableType = "none"
+reportUnknownMemberType = "none"
+# Too broad
+reportGeneralTypeIssues = "none"
+reportOptionalMemberAccess = "none"
+reportPrivateUsage = "none"
