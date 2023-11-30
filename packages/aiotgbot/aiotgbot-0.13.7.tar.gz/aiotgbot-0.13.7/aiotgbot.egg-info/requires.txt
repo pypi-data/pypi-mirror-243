@@ -1,0 +1,16 @@
+aiofreqlimit>=0.0.12
+aiohttp>=3.9
+aiojobs>=1.2.1
+backoff>=2
+frozenlist
+msgspec
+yarl
+
+[passport]
+cryptography<=38
+
+[sqlalchemy]
+sqlalchemy
+
+[sqlite]
+aiosqlite
