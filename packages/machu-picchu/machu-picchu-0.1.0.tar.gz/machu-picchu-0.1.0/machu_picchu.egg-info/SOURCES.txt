@@ -1,0 +1,13 @@
+README.md
+setup.py
+setup_machu_picchu.py
+machu_picchu.egg-info/PKG-INFO
+machu_picchu.egg-info/SOURCES.txt
+machu_picchu.egg-info/dependency_links.txt
+machu_picchu.egg-info/requires.txt
+machu_picchu.egg-info/top_level.txt
+vedro_screenshot_matcher/__init__.py
+vedro_screenshot_matcher/_scheduler.py
+vedro_screenshot_matcher/_screenshot_asserts.py
+vedro_screenshot_matcher/_screenshot_matcher.py
+vedro_screenshot_matcher/_screenshot_matcher_plugin.py
