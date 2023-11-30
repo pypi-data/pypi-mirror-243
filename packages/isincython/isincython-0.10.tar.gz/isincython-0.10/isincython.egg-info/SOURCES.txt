@@ -1,0 +1,14 @@
+LICENSE.rst
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+isincython/README.MD
+isincython/__init__.py
+isincython/requirements.txt
+isincython/thirdparty.json
+isincython.egg-info/PKG-INFO
+isincython.egg-info/SOURCES.txt
+isincython.egg-info/dependency_links.txt
+isincython.egg-info/requires.txt
+isincython.egg-info/top_level.txt

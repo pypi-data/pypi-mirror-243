@@ -1,0 +1,3 @@
+include isincython/requirements.txt
+include isincython/thirdparty.json
+include isincython/README.MD
