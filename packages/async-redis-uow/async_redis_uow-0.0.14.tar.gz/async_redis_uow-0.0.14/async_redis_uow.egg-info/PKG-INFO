@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: async-redis-uow
+Version: 0.0.14
+Summary: Implementation of async axabc.uow pattern using pyredis
+Author: axdjuraev
+Author-email: <axdjuraev@gmail.com>
+Requires-Dist: axabc
+Requires-Dist: redis
