@@ -1,0 +1,4 @@
+tensorflow>=2.12.0
+transformers>=4.27.3
+pandas>=1.5.3
+numpy>=1.23.5
