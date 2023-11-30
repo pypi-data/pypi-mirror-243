@@ -1,0 +1,97 @@
+Metadata-Version: 2.1
+Name: inskrib
+Version: 0.0.1.4
+Summary: Inskrib - simple library for getting signature from docs
+Home-page: https://github.com/ElishaFlacon/inskrib
+Download-URL: https://github.com/ElishaFlacon/inskrib/archive/main.zip
+Author: Elisha Flacon
+License: BSD 3-Clause
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+<h1> 
+    ✒️ Inskrib
+</h1>
+
+<h3>
+    Inskrib - маленькая библиотека для получения подписей из документов с печатью. Для документов без печати она также сработает, но не всегда корректно))
+</h3>
+
+
+</br>
+
+
+
+<h2>
+    🛠️ Инструменты:
+</h2>
+
+- Python
+- OpenCV
+
+
+
+</br>
+
+
+
+<h2>
+  🚀 Установка:
+</h2>
+    
+- `pip install inskrib`
+
+<h3>
+    Запускаем, не работет, ура! 🗿🚬
+</h3>
+
+
+
+</br>
+
+
+
+<h2>
+ 📺 Демо:
+</h2>
+
+- Пример использования - <a href="https://github.com/ElishaFlacon/inskrib/tree/main/example/">example</a>
+
+
+
+</br>
+
+
+
+<h2>
+⚡ Немного дополнительной информации:
+</h2>
+
+- У библиотеки есть ограничения:
+    - библиотека не может автоматически переворачивать документы, но для этого есть отдельный метод в Autographs
+    - бибилиотека плохо работает с документами, в которых есть несколько подписей в разных частях документа, или если есть текст такого же цвета что и подпись
+    - если печать имеет много зазоров или она обрезана, то метод удаления печати может не сработать или сработать плохо
+    
+- P.S. Все баги и недочеты - это фичи
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=d179b8&height=64&section=footer"/>
+</p>

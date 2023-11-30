@@ -1,0 +1,13 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+inskrib/__init__.py
+inskrib/autograph.py
+inskrib/documents.py
+inskrib/utils.py
+inskrib.egg-info/PKG-INFO
+inskrib.egg-info/SOURCES.txt
+inskrib.egg-info/dependency_links.txt
+inskrib.egg-info/requires.txt
+inskrib.egg-info/top_level.txt
