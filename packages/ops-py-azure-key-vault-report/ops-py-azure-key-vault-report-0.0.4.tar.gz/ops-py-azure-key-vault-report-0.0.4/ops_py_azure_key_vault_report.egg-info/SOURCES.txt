@@ -1,0 +1,10 @@
+license.txt
+pyproject.toml
+readme.md
+setup.py
+azure_key_vault_report/__init__.py
+azure_key_vault_report/azure_key_vault_report.py
+ops_py_azure_key_vault_report.egg-info/PKG-INFO
+ops_py_azure_key_vault_report.egg-info/SOURCES.txt
+ops_py_azure_key_vault_report.egg-info/dependency_links.txt
+ops_py_azure_key_vault_report.egg-info/top_level.txt
