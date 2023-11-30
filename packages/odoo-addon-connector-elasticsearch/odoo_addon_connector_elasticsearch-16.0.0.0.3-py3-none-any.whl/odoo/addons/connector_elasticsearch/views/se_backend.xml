@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="se_backend_form_view">
+        <field name="model">se.backend</field>
+        <field name="inherit_id" ref="connector_search_engine.se_backend_form_view" />
+        <field name="arch" type="xml">
+            <group name="se-main" position="after">
+                <group name="elasticsearch" position="after">
+                    <field
+                        name="es_server_host"
+                        string="Host"
+                        placeholder="http://elastic:9200"
+                        attrs="{'required': [('backend_type', '=', 'elasticsearch')]}"
+                    />
+                    <field name="auth_type" />
+                    <field
+                        name="es_user"
+                        attrs="{'invisible': [('auth_type', '!=', 'http')]}"
+                    />
+                    <field
+                        name="es_password"
+                        attrs="{'invisible': [('auth_type', '!=', 'http')]}"
+                    />
+                    <field
+                        name="ssl"
+                        attrs="{'invisible': [('auth_type', '!=', 'http')]}"
+                    />
+                    <field
+                        name="api_key_id"
+                        attrs="{'invisible': [('auth_type', '!=', 'api_key')]}"
+                    />
+                    <field
+                        name="api_key"
+                        attrs="{'invisible': [('auth_type', '!=', 'api_key')]}"
+                    />
+                </group>
+            </group>
+        </field>
+    </record>
+</odoo>
