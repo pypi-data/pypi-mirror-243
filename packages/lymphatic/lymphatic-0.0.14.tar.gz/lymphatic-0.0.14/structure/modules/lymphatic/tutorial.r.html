@@ -1,0 +1,26 @@
+
+
+
+import lymphatic.system.climate as ly_system_climate
+ly_system_climate.change ("ports", {
+	"driver": 18871,
+	"cluster": 0,
+	"http": 0	
+})
+
+
+import pathlib
+import lymphatic.system.start as ly_system_start
+ly = ly_system_start.now (
+	process = {
+		"cwd": pathlib.Path (__file__).parent.resolve ()
+	},
+	rethinkdb = [
+		f"--pid-file {}"
+	],
+	wait = True
+)
+
+# ly.process.wait ()
+
+ly.stop ()

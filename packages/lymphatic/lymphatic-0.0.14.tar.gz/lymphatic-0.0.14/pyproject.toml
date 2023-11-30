@@ -1,0 +1,41 @@
+
+
+#
+#	(rm -rf dist && python3 -m build --sdist && twine upload dist/*)
+#
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lymphatic"
+version = "0.0.14"
+dependencies = [
+    'rethinkdb',
+	'looseversion',
+	'botany'
+]
+
+license = { file = "license.HTML" }
+
+description = "The cybernetic immune system hyper drive of the inter-ellipitic jumper."
+readme = "module.rst"
+keywords = [	 
+	"rethinkdb",
+	"databases"
+]
+
+
+[project.scripts]
+lymphatic = "lymphatic:clique"
+
+
+[tool.setuptools.packages.find]
+where = [ "structure/modules" ]
+
+#
+#	https://setuptools.pypa.io/en/latest/userguide/datafiles.html
+#
+[tool.setuptools.package-data]
+"*" = [ "*.html" ]
