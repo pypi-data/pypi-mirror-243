@@ -1,0 +1,8 @@
+tensorflow<2.15,>=2.14
+screed
+pandas
+scikit-learn
+pyyaml
+
+[test]
+pytest
