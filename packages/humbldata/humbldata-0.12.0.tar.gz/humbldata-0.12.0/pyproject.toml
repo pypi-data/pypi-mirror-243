@@ -1,0 +1,130 @@
+[tool.poetry]
+name = "humbldata"
+version = "0.12.0"
+description = "Migrating humbldata to Python. A private package to connect humblFinance to all of its data, perform analysis and graphing."
+authors = ["Jennings Fantini <jennings@humblfinance.io>"]
+readme = "README.md"
+license = "Propietary"
+keywords = ["openbb", "humblfinance", "humbldata", "financial analysis"]
+packages = [
+    { include = "humbldata", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9.10,<3.12.0"
+requests = "^2.31.0"
+polars = "^0.19.3"
+QuantStats = "^0.0.62"
+rich = "^12.6.0"
+pandas-market-calendars = "^4.3.1"
+pyarrow = "^14.0.0"
+pandera = {extras = ["io"], version = "^0.17.2"}
+toml = "^0.10.2"
+nest-asyncio = "^1.5.8"
+openbb = {version = "4.0.0b2", extras = ["all"]}
+plotly = "^5.18.0"
+
+[tool.poetry.group.dev.dependencies]
+commitizen = "^3.12.0"
+pytest = "^7.4.2"
+pytest-cov = "^4.1.0"
+black = "^23.9.1"
+pytest-mock = "^3.12.0"
+ipython = "^8.17.2"
+comm = "^0.2.0"
+nox = "^2023.4.22"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.commitizen]
+name = "cz_customize"
+version = "0.12.0"
+tag_format = "v$version"
+update_changelog_on_bump = true
+annoted_tag = true
+major_version_zero = true
+version_files = [
+    "pyproject.toml:^version",
+    #"./src/humbldata/__version__.py"
+]
+path = ".cz-config.js"
+
+[tool.commitizen.customize]
+# message_template = "{{change_type}}:{% if show_message %} {{message}}{% endif %}"
+example = "feat: this feature enables customizing through pyproject.toml file"
+schema = """
+<type>(<scope>): <subject> \n 
+<BLANK LINE> \n 
+<body> \n
+<BLANK LINE> \n
+(BREAKING CHANGE: )<breaking> \n
+<BLANK LINE> \n
+(ISSUES: )<footer>
+"""
+schema_pattern = "(?s)(📦️ build|🎡 ci|📝 docs|feat|🐛 fix|🚑 hotfix|⚡ perf|♻️ refactor|🎨 style|✅ test|🔨 chore|⏪️ revert|bump|🚧 WIP|➕ dep|➖ dep|🗑️ deprecate)(\\(\\S+\\))?!?:( [^\\n\\r]+)((\\n\\n.*)|(\\s*))?$"
+bump_pattern = "^(feat|🐛 fix|🚑 hotfix|⚡ perf|🔧 refactor|bump|🗑️ deprecate)"
+bump_map = {"BREAKING CHANGE" = "MAJOR", "feat" = "MINOR", "🐛 fix" = "PATCH", "🚑 hotfix" = "PATCH", "⚡ perf" = "PATCH", "♻️ refactor" = "PATCH", "🗑️ deprecate" = "PATCH"}
+change_type_order = ["BREAKING CHANGE", "feat", "🐛 fix", "🚑 hotfix", "♻️ refactor", "⚡ perf", "📦️ build", "🎨 style", "📝 docs", "➕ dep", "➖ dep", "🗑️ deprecate"]
+info_path = "cz_customize_info.txt"
+info = """
+This is customized commitizen info
+"""
+commit_parser = "^(?P<change_type>📦️ build|🎡 ci|📝 docs|feat|🐛 fix|🚑 hotfix|⚡ perf|♻️ refactor|🎨 style|✅ test|🔨 chore|⏪️ revert|bump|🚧 WIP|➕ dep|➖ dep|🗑️ deprecate):\\s(?P<message>.*)?"
+changelog_pattern = "^(📦️ build|🎡 ci|📝 docs|feat|🐛 fix|🚑 hotfix|⚡ perf|♻️ refactor|🎨 style|✅ test|🔨 chore|⏪️ revert|bump|🚧 WIP|➕ dep|➖ dep|🗑️ deprecate)?(!)?"
+change_type_map = {"📦️ build" = "📦️ Build", "🎡 ci" = "🎡 CI", "📝 docs" = "📝 Docs", "feat" = "✨ Feat", "🐛 fix" = "🐛 Fix", "🚑 hotfix" = "🚑 Hotfix", "⚡ perf" = "⚡ Perf", "♻️ refactor" = "♻️ Refactor", "🎨 style" = "🎨 Style", "✅ test" = "✅ Test", "🔨 chore" = "🔨 Chore", "⏪️ revert" = "⏪️ Revert", "bump" = "🔼 Bump", "🚧 WIP" = "🚧 WIP", "➕ dep" = "➕ Added Dependency", "➖ dep" = "➖ Removed Dependency", "🗑️ deprecate" = "🗑️ Deprecate"}
+
+
+[tool.ruff]
+line-length = 80
+
+select = [
+"E",   # pycodestyle
+"F",   # pyflakes
+"UP",  # pyupgrade,
+"I",   # isort
+"B",   # bugbear
+]
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["A", "B", "C", "D", "E", "F", "G", "I", "N", "Q", "S", "T", "W", "ANN", "ARG", "BLE", "COM", "DJ", "DTZ", "EM", "ERA", "EXE", "FBT", "ICN", "INP", "ISC", "NPY", "PD", "PGH", "PIE", "PL", "PT", "PTH", "PYI", "RET", "RSE", "RUF", "SIM", "SLF", "TCH", "TID", "TRY", "UP", "YTT"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+per-file-ignores = {}
+
+[tool.ruff.mccabe]
+# Flag errors (`C901`) whenever the complexity level exceeds 10.
+max-complexity = 10
+
+[tool.pytest.ini_options]
+markers = [
+    "mc_helpers: marker for all helper functions used in calc_mc()",
+    "mc_main: marker for tests of the main function, calc_mc()",
+    "vap_helpers: marker for all helper functions used in vap()",
+    "vap_main: marker for tests of the main function, vap()",
+]
