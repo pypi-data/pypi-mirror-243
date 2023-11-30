@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: wagtail-donate
+Version: 1.8.1
+Author: Torchbox
+Author-email: info@torchbox.com
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 3.2
+Classifier: Framework :: Django :: 4.1
+Classifier: Framework :: Django :: 4.2
+Classifier: Framework :: Wagtail
+Classifier: Framework :: Wagtail :: 4
+Classifier: Framework :: Wagtail :: 5
+Requires-Python: >=3.8
+License-File: LICENSE.txt
+Requires-Dist: Wagtail <6,>=4.1
+Requires-Dist: Django <5,>=3.2
+Requires-Dist: djangorestframework <4,>=3
+Requires-Dist: braintree <5,>=4.17.1
+Requires-Dist: django-phonenumber-field[phonenumbers] <=6.1.0,>=5
+Requires-Dist: pycountry <20,>=19
+Requires-Dist: gocardless-pro <2,>=1.17.0
+Requires-Dist: premailer <3.8,>=3.7
+Requires-Dist: wagtail-modeladmin >=1.0.0
+Provides-Extra: docs
+Requires-Dist: mkdocs ==1.4.2 ; extra == 'docs'
+Requires-Dist: mkdocs-material ==9.0.12 ; extra == 'docs'
+Requires-Dist: pymdown-extensions ==9.9.2 ; extra == 'docs'
+Provides-Extra: testing
+Requires-Dist: coverage ==6.5.0 ; extra == 'testing'
+Requires-Dist: beautifulsoup4 ==4.11.1 ; extra == 'testing'
+Requires-Dist: black ==22.10.0 ; extra == 'testing'
+Requires-Dist: isort ==5.12.0 ; extra == 'testing'
+Requires-Dist: flake8 ==5.0.4 ; extra == 'testing'
+Requires-Dist: factory-boy ==3.2.1 ; extra == 'testing'
+Requires-Dist: freezegun ==1.2.2 ; extra == 'testing'
+
+Copyright (c) 2021 Torchbox
+
+This is not free software.
+
+You may not use, copy, modify, merge, publish, distribute, sublicense, and/or
+sell this software and associated documentation files without the express
+consent of Torchbox.
