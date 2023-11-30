@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Tili on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "invalid_credentials": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API-avain",
+                    "url": "URL-osoite"
+                }
+            }
+        }
+    },
+    "services": {
+        "api_call": {
+            "fields": {
+                "args": {
+                    "description": "Mahdolliset ylim\u00e4\u00e4r\u00e4iset JSON- tai URL-parametriargumentit. Katso mainittu apidoc polku. Esimerkki k\u00e4ytt\u00e4\u00e4 samaa API-p\u00e4\u00e4tepistett\u00e4."
+                },
+                "name": {
+                    "name": "Nimi"
+                },
+                "path": {
+                    "name": "Polku"
+                }
+            }
+        }
+    }
+}

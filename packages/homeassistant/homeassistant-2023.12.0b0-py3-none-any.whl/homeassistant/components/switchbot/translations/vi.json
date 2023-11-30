@@ -1,0 +1,95 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Thi\u1ebft b\u1ecb \u0111\u00e3 \u0111\u01b0\u1ee3c c\u1ea5u h\u00ecnh",
+            "cannot_connect": "K\u1ebft n\u1ed1i th\u1ea5t b\u1ea1i",
+            "switchbot_unsupported_type": "Lo\u1ea1i switchbot kh\u00f4ng \u0111\u01b0\u1ee3c h\u1ed7 tr\u1ee3.",
+            "unknown": "L\u1ed7i kh\u00f4ng mong \u0111\u1ee3i"
+        },
+        "flow_title": "{name} ({address})"
+    },
+    "entity": {
+        "binary_sensor": {
+            "door_open": {
+                "name": "C\u1eeda"
+            },
+            "light": {
+                "name": "\u0110\u00e8n"
+            },
+            "motion": {
+                "name": "C\u1eed \u0111\u1ed9ng"
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "S\u1ef1 c\u1ed1",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "S\u1ef1 c\u1ed1",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "S\u1ef1 c\u1ed1",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "sensor": {
+            "battery": {
+                "name": "Pin"
+            },
+            "humidity": {
+                "name": "\u0110\u1ed9 \u1ea9m"
+            },
+            "power": {
+                "name": "C\u00f4ng su\u1ea5t"
+            },
+            "temperature": {
+                "name": "Nhi\u1ec7t \u0111\u1ed9"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "S\u1ef1 c\u1ed1",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "retry_count": "S\u1ed1 l\u1ea7n th\u1eed l\u1ea1i"
+                }
+            }
+        }
+    }
+}

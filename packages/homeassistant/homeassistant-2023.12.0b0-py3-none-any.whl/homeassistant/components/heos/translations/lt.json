@@ -1,0 +1,22 @@
+{
+    "services": {
+        "sign_in": {
+            "description": "Prijungia valdikl\u012f prie HEOS paskyros.",
+            "fields": {
+                "password": {
+                    "description": "HEOS paskyros slapta\u017eodis.",
+                    "name": "Slapta\u017eodis"
+                },
+                "username": {
+                    "description": "HEOS paskyros vartotojo vardas arba el.",
+                    "name": "Prisijungimos vardas"
+                }
+            },
+            "name": "Prisijungti"
+        },
+        "sign_out": {
+            "description": "I\u0161jungia valdikl\u012f nuo HEOS paskyros.",
+            "name": "Atsijungti"
+        }
+    }
+}

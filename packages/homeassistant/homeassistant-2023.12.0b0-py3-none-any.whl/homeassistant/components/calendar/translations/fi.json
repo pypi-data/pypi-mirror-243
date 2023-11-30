@@ -1,0 +1,44 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Kalenteri",
+            "state": {
+                "off": "Pois",
+                "on": "P\u00e4\u00e4ll\u00e4"
+            },
+            "state_attributes": {
+                "all_day": {
+                    "state": {
+                        "false": "Ei",
+                        "true": "Kyll\u00e4"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_service_calendar_list_events": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "K\u00e4yt\u00e4 sen sijaan `calendar.get_events`, joka tukee useita kokonaisuuksia.\n\nVaihda t\u00e4m\u00e4 palvelu ja s\u00e4\u00e4d\u00e4 automaatiot ja skriptit ja valitse **L\u00e4het\u00e4** sulkeaksesi t\u00e4m\u00e4n ongelman."
+                    }
+                }
+            }
+        },
+        "platform_integration_no_support": {
+            "description": "{platform}-integraation {domain}-alusta ei tue alustan asetuksia.\n\nPoista se asetuksista ja k\u00e4ynnist\u00e4 Home Assistant uudelleen ongelman korjaamiseksi.",
+            "title": "Alustan tukea ei tueta"
+        }
+    },
+    "services": {
+        "create_event": {
+            "fields": {
+                "summary": {
+                    "description": "M\u00e4\u00e4ritt\u00e4\u00e4 tapahtuman lyhyen yhteenvedon tai aiheen."
+                }
+            }
+        }
+    },
+    "title": "Kalenteri"
+}

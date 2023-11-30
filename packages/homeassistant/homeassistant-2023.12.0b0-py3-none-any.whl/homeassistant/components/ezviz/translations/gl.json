@@ -1,0 +1,12 @@
+{
+    "entity": {
+        "switch": {
+            "motion_tracking": {
+                "name": "Seguimento do movemento"
+            },
+            "pir_motion_activated_light": {
+                "name": "Luz activada por movemento PIR"
+            }
+        }
+    }
+}

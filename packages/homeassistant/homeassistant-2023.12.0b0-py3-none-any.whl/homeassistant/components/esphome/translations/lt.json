@@ -1,0 +1,76 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas",
+            "mdns_missing_mac": "Tr\u016bksta MAC adreso MDNS ypatyb\u0117se.",
+            "service_received": "Paslauga gauta"
+        },
+        "step": {
+            "authenticate": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "assist_in_progress": {
+                "name": "Pagalba vykstant"
+            },
+            "call_active": {
+                "name": "Skambutis Aktyvus"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "fan_mode": {
+                        "state": {
+                            "quiet": "Tyliai"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "pipeline": {
+                "name": "Assist vamzdynas",
+                "state": {
+                    "preferred": "Pageidautina"
+                }
+            },
+            "vad_sensitivity": {
+                "name": "Baigtas kalb\u0117jimo aptikimas",
+                "state": {
+                    "aggressive": "Agresyvus",
+                    "default": "Numatytas",
+                    "relaxed": "Atsipalaidav\u0119s"
+                }
+            }
+        }
+    },
+    "issues": {
+        "api_password_deprecated": {
+            "description": "ESPHome API slapta\u017eodis nebenaudojamas, tod\u0117l rekomenduojama naudoti API \u0161ifravimo rakt\u0105. \n\n Pa\u0161alinkite API slapta\u017eod\u012f ir prid\u0117kite \u0161ifravimo rakt\u0105 prie savo ESPHome \u012frenginio, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105.",
+            "title": "API slapta\u017eodis nebenaudojamas {name}"
+        },
+        "ble_firmware_outdated": {
+            "description": "Norint pagerinti \u201eBluetooth\u201c patikimum\u0105 ir na\u0161um\u0105, primygtinai rekomenduojame atnaujinti {name} naudojant ESPHome {version} arba naujesn\u0119 versij\u0105. Atnaujinant \u012frengin\u012f i\u0161 ESPHome anks\u010diau nei 2022.12.0, rekomenduojama naudoti nuosekl\u0173j\u012f kabel\u012f, o ne naujinim\u0105 belaid\u017eiu b\u016bdu, kad b\u016bt\u0173 galima pasinaudoti naujos skaidinio schemos prana\u0161umais.",
+            "title": "Atnaujinkite {name} naudodami ESPHome {version} arba naujesn\u0119 versij\u0105"
+        },
+        "service_calls_not_allowed": {
+            "description": "\u201eESPHome\u201c \u012frenginys band\u0117 paskambinti \u201eHome Assistant\u201c paslaugai, ta\u010diau \u0161i funkcija ne\u012fjungta. \n\n Jei pasitikite \u0161iuo \u012frenginiu ir norite leisti jam skambinti \u201eHome Assistant\u201c paslauga, galite \u012fgalinti \u0161i\u0105 funkcij\u0105 parink\u010di\u0173 sraute.",
+            "title": "{name} negali skambinti \"Home Assistant\" paslaugoms"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "allow_service_calls": "Leiskite \u012frenginiui skambinti \"Home Assistant\" paslaugos skambu\u010diais."
+                }
+            }
+        }
+    }
+}

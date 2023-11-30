@@ -1,0 +1,62 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "UniFI Network on jo konfiguroitu",
+            "reauth_successful": "Uudelleentodennus onnistui"
+        },
+        "error": {
+            "faulty_credentials": "Virheellinen todennus",
+            "service_unavailable": "Yhteyden muodostaminen ep\u00e4onnistui"
+        },
+        "flow_title": "{site} ({host})",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "password": "Salasana",
+                    "port": "Portti",
+                    "site": "Sivuston ID",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus",
+                    "verify_ssl": "Tarkista SSL-varmenne"
+                },
+                "title": "M\u00e4\u00e4rit\u00e4 UniFi-verkko"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "configure_entity_sources": {
+                "title": "UniFi-verkon kohdel\u00e4hteet"
+            },
+            "device_tracker": {
+                "data": {
+                    "detection_time": "Aika sekunneissa viimeisest\u00e4 havainnosta, kunnes luokiteltu poissa",
+                    "ssid_filter": "Valitse SSID-tunnukset, joilla voit seurata langattomia asiakkaita",
+                    "track_clients": "Seuraa verkon asiakkaita",
+                    "track_devices": "Seuraa verkkolaitteita (Ubiquiti-laitteet)",
+                    "track_wired_clients": "Sis\u00e4llyt\u00e4 langallisen verkon asiakkaat"
+                }
+            },
+            "simple_options": {
+                "data": {
+                    "track_clients": "Seuraa verkon asiakkaita",
+                    "track_devices": "Seuraa verkkolaitteita (Ubiquiti-laitteet)"
+                }
+            },
+            "statistics_sensors": {
+                "data": {
+                    "allow_bandwidth_sensors": "Kaistanleveyden k\u00e4ytt\u00f6anturit verkkoasiakkaille"
+                }
+            }
+        }
+    },
+    "services": {
+        "reconnect_client": {
+            "fields": {
+                "device_id": {
+                    "name": "Laite"
+                }
+            }
+        }
+    }
+}

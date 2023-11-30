@@ -1,0 +1,36 @@
+{
+    "services": {
+        "add_item": {
+            "description": "Nieuw item toevoegen aan to-do-lijst.",
+            "fields": {
+                "item": {
+                    "description": "De naam die het to-do-item vertegenwoordigt.",
+                    "name": "Naam voor item"
+                }
+            },
+            "name": "Toevoegen to-do-lijst item"
+        },
+        "remove_item": {
+            "description": "Verwijder een bestaand to-do-lijst item op basis van zijn naam.",
+            "fields": {
+                "item": {
+                    "description": "De naam voor de to-do-lijst items.",
+                    "name": "Naam voor item"
+                }
+            },
+            "name": "Verwijder een to-do-lijst item"
+        },
+        "update_item": {
+            "fields": {
+                "item": {
+                    "description": "De naam voor het to-do-lijst item.",
+                    "name": "Naam voor item"
+                },
+                "rename": {
+                    "description": "De nieuwe naam van het to-do-item",
+                    "name": "Item hernoemen"
+                }
+            }
+        }
+    }
+}

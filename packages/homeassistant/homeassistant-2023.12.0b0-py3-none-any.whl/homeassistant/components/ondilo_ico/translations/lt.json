@@ -1,0 +1,29 @@
+{
+    "config": {
+        "abort": {
+            "oauth_error": "Gauti neteisingi prieigos rakto duomenys.",
+            "oauth_failed": "Klaida gaunant prieigos rakt\u0105.",
+            "oauth_timeout": "Baig\u0117si skirtasis OAuth prieigos raktas.",
+            "oauth_unauthorized": "OAuth prieigos teis\u0117s klaida gaunant prieigos rakt\u0105."
+        }
+    },
+    "entity": {
+        "sensor": {
+            "oxydo_reduction_potential": {
+                "name": "Oksido ma\u017einimo potencialas"
+            },
+            "ph": {
+                "name": "pH"
+            },
+            "rssi": {
+                "name": "RSSI"
+            },
+            "salt": {
+                "name": "Druska"
+            },
+            "tds": {
+                "name": "TDS"
+            }
+        }
+    }
+}

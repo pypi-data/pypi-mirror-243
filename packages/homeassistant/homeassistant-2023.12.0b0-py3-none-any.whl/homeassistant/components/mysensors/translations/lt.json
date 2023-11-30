@@ -1,0 +1,30 @@
+{
+    "config": {
+        "abort": {
+            "invalid_ip": "Neteisingas IP adresas",
+            "mqtt_required": "MQTT integracija nenustatyta"
+        },
+        "step": {
+            "gw_tcp": {
+                "data": {
+                    "device": "\u0160liuzo IP adresas",
+                    "persistence_file": "patvarumo failas (palikite tu\u0161\u010di\u0105, kad b\u016bt\u0173 sukurtas automati\u0161kai)",
+                    "version": "\u201eMySensors\u201c versija"
+                },
+                "description": "Ethernet \u0161liuzo s\u0105ranka"
+            },
+            "select_gateway_type": {
+                "description": "Pasirinkite, kur\u012f \u0161liuz\u0105 norite konfig\u016bruoti.",
+                "menu_options": {
+                    "gw_mqtt": "Konfig\u016bruokite MQTT \u0161liuz\u0105"
+                }
+            },
+            "user": {
+                "data": {
+                    "gateway_type": "\u0160liuzo tipas"
+                },
+                "description": "Pasirinkite prisijungimo prie \u0161liuzo b\u016bd\u0105"
+            }
+        }
+    }
+}

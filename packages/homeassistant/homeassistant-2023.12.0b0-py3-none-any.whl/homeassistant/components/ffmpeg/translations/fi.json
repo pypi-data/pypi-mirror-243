@@ -1,0 +1,28 @@
+{
+    "services": {
+        "restart": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohde"
+                }
+            },
+            "name": "Uudelleenk\u00e4ynnist\u00e4"
+        },
+        "start": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohde"
+                }
+            },
+            "name": "K\u00e4ynnist\u00e4"
+        },
+        "stop": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohde"
+                }
+            },
+            "name": "Pys\u00e4yt\u00e4"
+        }
+    }
+}

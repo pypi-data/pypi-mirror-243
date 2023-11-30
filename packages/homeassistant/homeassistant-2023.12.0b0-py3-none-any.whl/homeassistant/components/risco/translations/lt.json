@@ -1,0 +1,39 @@
+{
+    "config": {
+        "step": {
+            "cloud": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "pin": "PIN kodas",
+                    "username": "Prisijungimos vardas"
+                }
+            },
+            "local": {
+                "data": {
+                    "pin": "PIN kodas"
+                }
+            },
+            "user": {
+                "menu_options": {
+                    "cloud": "\u201eRisco Cloud\u201c (rekomenduojama)",
+                    "local": "Vietinis \"Risco\" skydelis (i\u0161pl\u0117stinis)"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "alarmed": {
+                "name": "Aliarmas"
+            },
+            "armed": {
+                "name": "U\u017erakinta"
+            }
+        },
+        "switch": {
+            "bypassed": {
+                "name": "Aplenktas"
+            }
+        }
+    }
+}

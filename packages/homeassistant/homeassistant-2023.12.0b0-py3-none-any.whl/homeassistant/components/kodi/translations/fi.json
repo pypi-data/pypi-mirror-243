@@ -1,0 +1,55 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "credentials": {
+                "data": {
+                    "password": "Salasana",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                }
+            },
+            "discovery_confirm": {
+                "description": "Haluatko lis\u00e4t\u00e4 Kodin (`{name}`) Home Assistantiin?"
+            },
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "port": "Portti",
+                    "ssl": "K\u00e4ytt\u00e4\u00e4 SSL-varmennetta"
+                }
+            },
+            "ws_port": {
+                "data": {
+                    "ws_port": "Portti"
+                }
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_type": {
+            "turn_off": "{entity_name} sammui",
+            "turn_on": "{entity_name} laitettiin p\u00e4\u00e4lle"
+        }
+    },
+    "services": {
+        "call_method": {
+            "description": "Kutsuu Kodin JSONRPC API -menetelm\u00e4\u00e4 valinnaisilla parametreilla. Kodin API-kutsun tulokset ohjataan uudelleen Home Assistant -tapahtumassa: `kodi_call_method_result`.",
+            "fields": {
+                "method": {
+                    "description": "Kutsuttavan Kodin JSONRPC API -menetelm\u00e4n nimi."
+                }
+            }
+        }
+    }
+}

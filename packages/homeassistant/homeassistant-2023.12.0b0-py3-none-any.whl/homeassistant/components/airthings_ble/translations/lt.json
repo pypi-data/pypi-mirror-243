@@ -1,0 +1,32 @@
+{
+    "config": {
+        "flow_title": "{name}",
+        "step": {
+            "bluetooth_confirm": {
+                "description": "Ar norite nustatyti {name} ?"
+            },
+            "user": {
+                "data": {
+                    "address": "\u012erenginys"
+                },
+                "description": "Pasirinkite \u012frengin\u012f, kur\u012f norite nustatyti"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "radon_1day_avg": {
+                "name": "Radono 1 dienos vidurkis"
+            },
+            "radon_1day_level": {
+                "name": "Radono 1 dienos lygis"
+            },
+            "radon_longterm_avg": {
+                "name": "Radono ilgalaikis vidurkis"
+            },
+            "radon_longterm_level": {
+                "name": "Ilgalaikis radono lygis"
+            }
+        }
+    }
+}

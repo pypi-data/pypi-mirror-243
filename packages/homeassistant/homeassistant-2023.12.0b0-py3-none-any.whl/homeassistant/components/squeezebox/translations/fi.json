@@ -1,0 +1,42 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "flow_title": "{host}",
+        "step": {
+            "edit": {
+                "data": {
+                    "host": "Palvelin",
+                    "password": "Salasana",
+                    "port": "Portti",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                }
+            },
+            "user": {
+                "data": {
+                    "host": "Palvelin"
+                }
+            }
+        }
+    },
+    "services": {
+        "sync": {
+            "description": "Lis\u00e4\u00e4 toisen soittimen t\u00e4m\u00e4n soittimen synkronointiryhm\u00e4\u00e4n. Jos toinen soitin on jo synkronointiryhm\u00e4ss\u00e4, se poistuu siit\u00e4.\n.",
+            "fields": {
+                "other_player": {
+                    "description": "Linkitett\u00e4v\u00e4n toisen Squeezebox-soittimen nimi.",
+                    "name": "Muu soitin"
+                }
+            }
+        },
+        "unsync": {
+            "description": "Poistaa t\u00e4m\u00e4n soittimen synkronointiryhm\u00e4st\u00e4."
+        }
+    }
+}

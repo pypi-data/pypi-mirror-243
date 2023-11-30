@@ -1,0 +1,14 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                },
+                "description": "Toliau pateikite reikiam\u0105 informacij\u0105.",
+                "title": "Nustatykite Gogogate2 arba ismartgate"
+            }
+        }
+    }
+}

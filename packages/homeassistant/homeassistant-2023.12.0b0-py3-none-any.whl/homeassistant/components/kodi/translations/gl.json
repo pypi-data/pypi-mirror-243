@@ -1,0 +1,17 @@
+{
+    "services": {
+        "add_to_playlist": {
+            "fields": {
+                "media_id": {
+                    "name": "ID do medio"
+                },
+                "media_name": {
+                    "name": "Nome do medio"
+                },
+                "media_type": {
+                    "name": "Tipo de medio"
+                }
+            }
+        }
+    }
+}

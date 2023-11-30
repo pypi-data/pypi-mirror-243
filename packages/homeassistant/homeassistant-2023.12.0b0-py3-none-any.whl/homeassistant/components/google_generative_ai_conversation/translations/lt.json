@@ -1,0 +1,27 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API raktas"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "model": "Modelis",
+                    "prompt": "Raginimo \u0161ablonas",
+                    "temperature": "Temperat\u016bra",
+                    "top_k": "Vir\u0161utin\u0117 K",
+                    "top_p": "Vir\u0161utin\u0117 P"
+                }
+            }
+        }
+    }
+}

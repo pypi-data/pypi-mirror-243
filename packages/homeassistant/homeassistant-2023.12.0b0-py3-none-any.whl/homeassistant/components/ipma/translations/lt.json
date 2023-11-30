@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Vieta jau sukonfig\u016bruota"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "fire_risk": {
+                "name": "Gaisro pavojus"
+            },
+            "uv_index": {
+                "name": "UV indeksas"
+            }
+        }
+    },
+    "system_health": {
+        "info": {
+            "api_endpoint_reachable": "Pasiekiamas IPMA API galutinis ta\u0161kas"
+        }
+    }
+}

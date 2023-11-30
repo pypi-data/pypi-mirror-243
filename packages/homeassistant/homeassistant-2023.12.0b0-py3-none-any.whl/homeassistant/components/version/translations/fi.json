@@ -1,0 +1,12 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "step": {
+            "version_source": {
+                "description": "M\u00e4\u00e4rit\u00e4 {version_source} -version seuranta"
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "entity": {
+        "sensor": {
+            "tracker_state": {
+                "state": {
+                    "system_startup": "Inicio do sistema"
+                }
+            }
+        }
+    }
+}

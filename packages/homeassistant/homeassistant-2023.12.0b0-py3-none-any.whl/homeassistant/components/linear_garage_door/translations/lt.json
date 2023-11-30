@@ -1,0 +1,15 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "email": "El. pa\u0161tas",
+                    "password": "Slapta\u017eodis"
+                }
+            }
+        }
+    }
+}

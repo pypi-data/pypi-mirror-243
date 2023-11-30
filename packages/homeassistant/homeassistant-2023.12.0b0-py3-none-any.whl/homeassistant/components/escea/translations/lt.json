@@ -1,0 +1,12 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Jau sukonfig\u016bruota. Galima tik viena konfig\u016bracija."
+        },
+        "step": {
+            "confirm": {
+                "description": "Ar norite \u012frengti Escea \u017eidin\u012f?"
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+{
+    "entity": {
+        "sensor": {
+            "aqi": {
+                "name": "Oro kokyb\u0117s indeksas",
+                "state": {
+                    "bad": "Blogas",
+                    "good": "Geras",
+                    "moderate": "Vidutinis",
+                    "sufficient": "Pakankamai",
+                    "very_bad": "Labai blogas",
+                    "very_good": "Labai geras"
+                }
+            },
+            "c6h6": {
+                "name": "Benzenas"
+            },
+            "co": {
+                "name": "Anglies monoksidas"
+            },
+            "no2": {
+                "name": "Azoto dioksidas"
+            },
+            "no2_index": {
+                "name": "Azoto dioksido indeksas",
+                "state": {
+                    "bad": "Blogas",
+                    "good": "Geras",
+                    "moderate": "Vidutinis",
+                    "sufficient": "Pakankamai",
+                    "very_bad": "Labai blogas",
+                    "very_good": "Labai geras"
+                }
+            },
+            "o3": {
+                "name": "Ozonas"
+            },
+            "o3_index": {
+                "name": "Ozono indeksas",
+                "state": {
+                    "bad": "Blogas",
+                    "good": "Geras",
+                    "moderate": "Vidutinis",
+                    "sufficient": "Pakankamai",
+                    "very_bad": "Labai blogas",
+                    "very_good": "Labai geras"
+                }
+            },
+            "pm10": {
+                "name": "PM10"
+            },
+            "pm10_index": {
+                "name": "PM10 indeksas",
+                "state": {
+                    "bad": "Blogas",
+                    "good": "Geras",
+                    "moderate": "Vidutinis",
+                    "sufficient": "Pakankamai",
+                    "very_bad": "Labai blogas",
+                    "very_good": "Labai geras"
+                }
+            },
+            "pm25": {
+                "name": "PM2.5"
+            },
+            "pm25_index": {
+                "name": "PM2.5 indeksas",
+                "state": {
+                    "bad": "Blogas",
+                    "good": "Geras",
+                    "moderate": "Vidutinis",
+                    "sufficient": "Pakankamai",
+                    "very_bad": "Labai blogas",
+                    "very_good": "Labai geras"
+                }
+            },
+            "so2": {
+                "name": "Sieros dioksidas"
+            },
+            "so2_index": {
+                "name": "Sieros dioksido indeksas",
+                "state": {
+                    "bad": "Blogas",
+                    "good": "Geras",
+                    "moderate": "Vidutinis",
+                    "sufficient": "Pakankamai",
+                    "very_bad": "Labai blogas",
+                    "very_good": "Labai geras"
+                }
+            }
+        }
+    },
+    "system_health": {
+        "info": {
+            "can_reach_server": "Pasiekite GIO\u015a server\u012f"
+        }
+    }
+}

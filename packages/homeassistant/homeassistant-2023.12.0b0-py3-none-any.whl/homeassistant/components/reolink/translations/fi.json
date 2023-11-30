@@ -1,0 +1,66 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "reauth_successful": "Uudelleentodennus onnistui"
+        },
+        "error": {
+            "invalid_auth": "Virheellinen todennus",
+            "not_admin": "K\u00e4ytt\u00e4j\u00e4n on oltava j\u00e4rjestelm\u00e4nvalvoja, k\u00e4ytt\u00e4j\u00e4ll\u00e4 ''{username}'' on valtuutustaso ''{userlevel}''",
+            "unknown": "Odottamaton virhe",
+            "webhook_exception": "Home Assistantin URL-osoite ei ole k\u00e4ytett\u00e4viss\u00e4, siirry kohtaan Asetukset > J\u00e4rjestelm\u00e4 > Verkko > Home Assistantin URL-osoite ja korjaa URL-osoitteet, katso {more_info}"
+        },
+        "flow_title": "{hostname} ({ip_address})",
+        "step": {
+            "reauth_confirm": {
+                "title": "Todenna integraatio uudelleen"
+            },
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "password": "Salasana",
+                    "port": "Portti",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                },
+                "description": "Katso [Vianm\u00e4\u00e4ritysvaiheet]({troubleshooting_link}), jos kohtaat ongelmia. {error}"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "auto_quick_reply_message": {
+                "state": {
+                    "off": "Pois"
+                }
+            },
+            "floodlight_mode": {
+                "state": {
+                    "auto": "Auto",
+                    "off": "Pois"
+                }
+            }
+        },
+        "sensor": {
+            "ptz_pan_position": {
+                "name": "PTZ:n panorointiasento"
+            }
+        }
+    },
+    "issues": {
+        "enable_port": {
+            "description": "{ports} portin automaattinen k\u00e4ytt\u00f6\u00f6notto ep\u00e4onnistui verkkotunnuksessa {name} . K\u00e4yt\u00e4 [Reolink client] ( {info_link} ) asettaaksesi sen manuaalisesti P\u00c4\u00c4LLE"
+        },
+        "firmware_update": {
+            "description": "\"{name}\", jonka malli on \"{model}\" ja laitteistoversio \"{hw_version}\", k\u00e4ytt\u00e4\u00e4 vanhaa laiteohjelmistoversiota \"{current_firmware}\", kun taas Reolink-integraation asianmukainen toiminta edellytt\u00e4\u00e4 v\u00e4hint\u00e4\u00e4n laiteohjelmistoversiota \"{required_firmware}\". Uusimman laiteohjelmiston voi ladata [Reolink-latauskeskuksesta]({download_link})."
+        },
+        "https_webhook": {
+            "description": "Reolink-tuotteet eiv\u00e4t voi l\u00e4hett\u00e4\u00e4 liiketapahtumia HTTPS-osoitteeseen (SSL), m\u00e4\u00e4rit\u00e4 (paikallinen) HTTP-osoite kohdassa \"Home Assistant URL\" [verkkoasetuksissa]({network_link}). Nykyinen (paikallinen) osoite on: `{base_url}`, kelvollinen osoite voisi olla esimerkiksi `http://192.168.1.10:8123`, jossa `192.168.1.10` on Home Assistant -laitteen IP-osoite."
+        },
+        "ssl": {
+            "description": "Maailmanlaajuinen SSL-sertifikaatti on m\u00e4\u00e4ritetty [configuration.yaml:ss\u00e4 kohdassa http]({ssl_link}), kun taas paikallinen HTTP-osoite `{base_url}` on m\u00e4\u00e4ritetty kohdassa \"Home Assistant URL\" kohdassa [verkkoasetukset]({network_link}). T\u00e4m\u00e4n vuoksi Reolink-laite ei voi tavoittaa Home Assistantia l\u00e4hett\u00e4\u00e4kseen liike/AI-tapahtumia. Varmista, ett\u00e4 paikallinen HTTP-osoite ei ole SSL-varmenteen peitossa, esimerkiksi k\u00e4ytt\u00e4m\u00e4ll\u00e4 [NGINX-lis\u00e4osaa]({nginx_link}) globaalisti pakotetun SSL-varmenteen sijaan."
+        },
+        "webhook_url": {
+            "description": "Ei saanut ONVIF -tilaa {name}:lt\u00e4. Todenn\u00e4k\u00f6isesti Reolink-kamera ei tavoita nykyist\u00e4 (paikallista) Home Assistantin URL-osoitetta `{base_url}`, m\u00e4\u00e4rit\u00e4 [verkkoasetukset] ({network_link}) kohdassa \"Home Assistant URL\" (Home Assistant URL) (paikallinen) HTTP-osoite, joka osoittaa Home Assistantiin. Esimerkiksi `http://192.168.1.10:8123`, jossa `192.168.1.10` on Home Assistant -laitteen IP-osoite. Varmista my\u00f6s, ett\u00e4 Reolink-kamera voi tavoittaa kyseisen URL-osoitteen. Aktivoitu nopea liike/AI -tilan kysely, kunnes ensimm\u00e4inen ONVIF-viesti vastaanotetaan."
+        }
+    }
+}

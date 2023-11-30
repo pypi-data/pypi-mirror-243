@@ -1,0 +1,144 @@
+{
+    "device_automation": {
+        "action_type": {
+            "arm_away": "U\u017erakinti {entity_name}",
+            "arm_home": "U\u017erakinti {entity_name} - Namie",
+            "arm_night": "U\u017erakinti {entity_name} - Naktin\u0117 apsauga",
+            "arm_vacation": "U\u017erakinti {entity_name} atostog\u0173 re\u017eime",
+            "disarm": "I\u0161jungti {entity_name}",
+            "trigger": "Suaktyvinti {entity_name}"
+        },
+        "condition_type": {
+            "is_armed_away": "{entity_name} yra u\u017erakinta",
+            "is_armed_home": "{entity_name} yra u\u017erakinta nam\u0173 re\u017eime",
+            "is_armed_night": "{entity_name} u\u017erakinta naktin\u0117 apsauga",
+            "is_armed_vacation": "{entity_name} u\u017erakinta atostog\u0173 re\u017eime",
+            "is_disarmed": "{entity_name} i\u0161jungta",
+            "is_triggered": "{entity_name} suveik\u0117"
+        },
+        "trigger_type": {
+            "armed_away": "{entity_name} u\u017erakinta",
+            "armed_home": "{entity_name} u\u017erakinta - Namie",
+            "armed_night": "{entity_name} u\u017erakinta - Naktin\u0117 apsauga",
+            "armed_vacation": "{entity_name} u\u017erakinta - atostog\u0173 re\u017eime",
+            "disarmed": "{entity_name} i\u0161jungta",
+            "triggered": "{entity_name} suveik\u0117"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Signalizacijos valdymo pultas",
+            "state": {
+                "armed": "U\u017erakinta",
+                "armed_away": "U\u017erakinta",
+                "armed_custom_bypass": "U\u017erakinta su ap\u0117jimu",
+                "armed_home": "\u012ejungti namai",
+                "armed_night": "\u012ejungta naktis",
+                "armed_vacation": "\u012ejungtos atostogos",
+                "arming": "\u012ejungtas",
+                "disarmed": "I\u0161jungtas",
+                "disarming": "Nuginklavimas",
+                "pending": "Laukiama",
+                "triggered": "Suaktyvintas"
+            },
+            "state_attributes": {
+                "changed_by": {
+                    "name": "Pakeit\u0117"
+                },
+                "code_arm_required": {
+                    "name": "Apsaugos kodas",
+                    "state": {
+                        "false": "Nereikalaujama",
+                        "true": "Privaloma"
+                    }
+                },
+                "code_format": {
+                    "name": "Kodo formatas",
+                    "state": {
+                        "number": "Skai\u010dius",
+                        "text": "Tekstas"
+                    }
+                }
+            }
+        }
+    },
+    "issues": {
+        "platform_integration_no_support": {
+            "description": "{platform} platforma, skirta {domain} integravimui, nepalaiko platformos s\u0105rankos. \n\n Pa\u0161alinkite j\u012f i\u0161 konfig\u016bracijos ir i\u0161 naujo paleiskite \u201eHome Assistant\u201c, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105.",
+            "title": "Platformos palaikymas nepalaikomas"
+        }
+    },
+    "services": {
+        "alarm_arm_away": {
+            "description": "Nustato \u017eadintuv\u0105 \u012f: _ginkluotas, niekas n\u0117ra namuose_.",
+            "fields": {
+                "code": {
+                    "description": "Kodas signalizacijai \u012fjungti.",
+                    "name": "Kodas"
+                }
+            },
+            "name": "I\u0161vyk\u0119s"
+        },
+        "alarm_arm_custom_bypass": {
+            "description": "\u012ejungia signalizacij\u0105, leid\u017eiant apeiti pasirinkt\u0105 srit\u012f.",
+            "fields": {
+                "code": {
+                    "description": "Kodas signalizacijai \u012fjungti.",
+                    "name": "Kodas"
+                }
+            },
+            "name": "Apsauga su pasirinktiniu aplinkkeliu"
+        },
+        "alarm_arm_home": {
+            "description": "Nustato \u017eadintuv\u0105 \u012f: _ginkluotas, bet ka\u017ekas yra namuose_.",
+            "fields": {
+                "code": {
+                    "description": "Kodas signalizacijai \u012fjungti.",
+                    "name": "Kodas"
+                }
+            },
+            "name": "Nam\u0173 apsauga \"Esant Namie\""
+        },
+        "alarm_arm_night": {
+            "description": "Nustato \u017eadintuv\u0105 \u012f: _nak\u010diai ginkluotas_.",
+            "fields": {
+                "code": {
+                    "description": "Kodas signalizacijai \u012fjungti.",
+                    "name": "Kodas"
+                }
+            },
+            "name": "Naktin\u0117 apsauga"
+        },
+        "alarm_arm_vacation": {
+            "description": "Nustato \u017eadintuv\u0105 \u012f: _apsiginkluot\u0105 atostogoms_.",
+            "fields": {
+                "code": {
+                    "description": "Kodas signalizacijai \u012fjungti.",
+                    "name": "Kodas"
+                }
+            },
+            "name": "U\u017erakinti - atostog\u0173 re\u017eime"
+        },
+        "alarm_disarm": {
+            "description": "I\u0161jungia signalizacij\u0105.",
+            "fields": {
+                "code": {
+                    "description": "Kodas signalizacijai i\u0161jungti.",
+                    "name": "Kodas"
+                }
+            },
+            "name": "Atrakinti"
+        },
+        "alarm_trigger": {
+            "description": "\u012ejungia i\u0161orin\u012f aliarmo paleidikl\u012f.",
+            "fields": {
+                "code": {
+                    "description": "Kodas signalizacijai \u012fjungti.",
+                    "name": "Kodas"
+                }
+            },
+            "name": "Trigeris"
+        }
+    },
+    "title": "Signalizacijos valdymo pultas"
+}

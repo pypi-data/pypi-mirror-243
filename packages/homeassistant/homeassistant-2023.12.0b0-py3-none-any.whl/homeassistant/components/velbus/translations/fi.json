@@ -1,0 +1,20 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "name": "T\u00e4m\u00e4n velbus-yhteyden nimi",
+                    "port": "Yhteysmerkkijono"
+                },
+                "title": "M\u00e4\u00e4rit\u00e4 velbus-yhteystyyppi"
+            }
+        }
+    }
+}

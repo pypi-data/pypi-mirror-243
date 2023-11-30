@@ -1,0 +1,37 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "unknown": "Odottamaton virhe"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "link": {
+                "description": "Haluatko m\u00e4\u00e4ritt\u00e4\u00e4 {name} ({host})?"
+            },
+            "user": {
+                "data": {
+                    "host": "Palvelin"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_switches": {
+            "description": "Vaihtoalustan k\u00e4ytt\u00e4minen nykyisen toiminnan muuttamiseen on nyt vanhentunut, ja se poistetaan Home Assistantin tulevasta versiosta. \n\nS\u00e4\u00e4d\u00e4 automaatioita tai komentosarjoja, jotka k\u00e4ytt\u00e4v\u00e4t kytkinkokohteita k\u00e4ytt\u00e4m\u00e4\u00e4n sen sijaan valittua kohdetta."
+        },
+        "deprecated_switches_entity": {
+            "description": "Harmony-kohdetta `{entity}` k\u00e4ytet\u00e4\u00e4n kohteessa `{info}`. Valitse-kohde on saatavilla, ja sit\u00e4 tulisi k\u00e4ytt\u00e4\u00e4 jatkossa. \n\n Korjaa t\u00e4m\u00e4 ongelma s\u00e4\u00e4t\u00e4m\u00e4ll\u00e4 `{info}`."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "description": "S\u00e4\u00e4d\u00e4 Harmony Hubin asetuksia"
+            }
+        }
+    }
+}

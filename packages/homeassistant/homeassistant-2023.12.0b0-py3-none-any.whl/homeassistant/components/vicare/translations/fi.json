@@ -1,0 +1,28 @@
+{
+    "config": {
+        "abort": {
+            "reauth_successful": "Uudelleentodennus onnistui",
+            "single_instance_allowed": "Jo m\u00e4\u00e4ritetty. Vain yksi konfiguraatio mahdollinen.",
+            "unknown": "Odottamaton virhe"
+        },
+        "error": {
+            "invalid_auth": "Virheellinen todennus"
+        },
+        "flow_title": "{name} ({host})",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "client_id": "API-avain",
+                    "password": "Salasana"
+                }
+            },
+            "user": {
+                "data": {
+                    "client_id": "API-avain",
+                    "password": "Salasana",
+                    "username": "S\u00e4hk\u00f6posti"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "description": "SleepIQ integracija turi i\u0161 naujo autentifikuoti paskyr\u0105 {username} ."
+            },
+            "user": {
+                "data": {
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    }
+}

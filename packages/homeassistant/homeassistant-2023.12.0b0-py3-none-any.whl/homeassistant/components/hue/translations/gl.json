@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "all_configured": "Todos os pontes Philips Hue xa est\u00e1n configurados",
+            "discover_timeout": "Incapaz de descubrir pontes Hue",
+            "no_bridges": "Non se descubriron pontes Philips Hue"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "zigbee_connectivity": {
+                "name": "Conectividade Zigbee"
+            }
+        },
+        "switch": {
+            "motion_sensor_enabled": {
+                "name": "Sensor de movemento activado"
+            }
+        }
+    }
+}

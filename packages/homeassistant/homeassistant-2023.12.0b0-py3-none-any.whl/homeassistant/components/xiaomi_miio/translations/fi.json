@@ -1,0 +1,144 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "already_in_progress": "M\u00e4\u00e4ritysprosessi on jo k\u00e4ynniss\u00e4",
+            "reauth_successful": "Uudelleentodennus onnistui",
+            "unknown": "Odottamaton virhe"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "manual": {
+                "data": {
+                    "host": "IP-osoite",
+                    "token": "API-tunnus"
+                }
+            },
+            "reauth_confirm": {
+                "title": "Todenna integraatio uudelleen"
+            }
+        }
+    },
+    "entity": {
+        "select": {
+            "led_brightness": {
+                "state": {
+                    "off": "Pois"
+                }
+            }
+        }
+    },
+    "services": {
+        "fan_reset_filter": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "fan_set_extra_features": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "light_eyecare_mode_off": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "light_eyecare_mode_on": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "light_night_light_mode_off": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "light_night_light_mode_on": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "light_reminder_off": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "light_reminder_on": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "light_set_delayed_turn_off": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "light_set_scene": {
+            "description": "Asettaa kiinte\u00e4n tilanteen.",
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                },
+                "scene": {
+                    "description": "Kiinte\u00e4n tilanteen numero."
+                }
+            }
+        },
+        "switch_set_power_mode": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                },
+                "mode": {
+                    "name": "Tila"
+                }
+            }
+        },
+        "switch_set_power_price": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                },
+                "mode": {
+                    "name": "Tila"
+                }
+            }
+        },
+        "switch_set_wifi_led_off": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        },
+        "switch_set_wifi_led_on": {
+            "fields": {
+                "entity_id": {
+                    "name": "Kohteen tunnus"
+                }
+            }
+        }
+    }
+}

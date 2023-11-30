@@ -1,0 +1,20 @@
+{
+    "services": {
+        "backup_full": {
+            "fields": {
+                "homeassistant_exclude_database": {
+                    "description": "Excl\u00fae o ficheiro de base de datos do Home Assistant da copia de seguridade",
+                    "name": "Exclu\u00edr a base de datos de Home Assistant"
+                }
+            }
+        },
+        "backup_partial": {
+            "fields": {
+                "homeassistant_exclude_database": {
+                    "description": "Excl\u00fae o ficheiro de base de datos do Home Assistant da copia de seguridade",
+                    "name": "Exclu\u00edr a base de datos de Home Assistant"
+                }
+            }
+        }
+    }
+}

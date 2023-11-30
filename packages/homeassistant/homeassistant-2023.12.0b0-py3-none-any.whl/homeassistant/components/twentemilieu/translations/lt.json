@@ -1,0 +1,21 @@
+{
+    "entity": {
+        "sensor": {
+            "christmas_tree_pickup": {
+                "name": "Kal\u0117d\u0173 eglut\u0117s pa\u0117mimas"
+            },
+            "non_recyclable_waste_pickup": {
+                "name": "Neperdirbam\u0173 atliek\u0173 surinkimas"
+            },
+            "organic_waste_pickup": {
+                "name": "Organini\u0173 atliek\u0173 surinkimas"
+            },
+            "packages_waste_pickup": {
+                "name": "Pakuo\u010di\u0173 atliek\u0173 i\u0161ve\u017eimas"
+            },
+            "paper_waste_pickup": {
+                "name": "Popieriaus atliek\u0173 surinkimas"
+            }
+        }
+    }
+}

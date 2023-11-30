@@ -1,0 +1,32 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti",
+            "single_instance_allowed": "Jau sukonfig\u016bruota. Galima tik viena konfig\u016bracija."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "duotecno": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "half_moon": "Del\u010dia",
+                            "half_sun": "Pus\u0117 saul\u0117s",
+                            "moon": "M\u0117nulis",
+                            "sun": "Saul\u0117"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

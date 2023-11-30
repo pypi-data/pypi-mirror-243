@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "oauth_failed": "Erro ao obter o token de acceso.",
+            "oauth_unauthorized": "Erro de autorizaci\u00f3n OAuth ao obter o token de acceso."
+        }
+    },
+    "services": {
+        "set_preset_mode_with_end_datetime": {
+            "fields": {
+                "end_datetime": {
+                    "description": "Data e hora ata cando estar\u00e1 activo o preset",
+                    "name": "Data e hora de finalizaci\u00f3n"
+                },
+                "preset_mode": {
+                    "name": "Modo preset"
+                }
+            },
+            "name": "Establecer o modo predefinido con data e hora de finalizaci\u00f3n"
+        }
+    }
+}

@@ -1,0 +1,297 @@
+{
+    "config": {
+        "abort": {
+            "single_instance_allowed": "Jo m\u00e4\u00e4ritetty. Vain yksi konfiguraatio mahdollinen.",
+            "wrong_firmware_installed": "Laitteessasi on v\u00e4\u00e4r\u00e4 laiteohjelmisto, eik\u00e4 sit\u00e4 voi k\u00e4ytt\u00e4\u00e4 ZHA:n kanssa ennen kuin oikea laiteohjelmisto on asennettu. [Korjaus on luotu]({repair_url}), jossa on lis\u00e4tietoja ja ohjeita t\u00e4m\u00e4n korjaamiseksi."
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "confirm": {
+                "description": "Haluatko m\u00e4\u00e4ritt\u00e4\u00e4 {name}?"
+            },
+            "confirm_hardware": {
+                "description": "Haluatko m\u00e4\u00e4ritt\u00e4\u00e4 {name}?"
+            },
+            "verify_radio": {
+                "description": "K\u00e4ytt\u00e4m\u00e4\u00e4si radiota ({name}) ei suositella, ja sen tuki saatetaan poistaa tulevaisuudessa. Katso Zigbee Home Automation -integraation dokumentaatiosta [luettelo suositelluista sovittimista]({docs_recommended_adapters_url})."
+            }
+        }
+    },
+    "device_automation": {
+        "action_type": {
+            "issue_all_led_effect": "Aseta efekti kaikilleLEDeille",
+            "issue_individual_led_effect": "Aseta efekti yksitt\u00e4iselle LEDille",
+            "squawk": "Squawk",
+            "warn": "Varoita"
+        },
+        "trigger_subtype": {
+            "both_buttons": "Molemmat painikkeet",
+            "button": "Painike",
+            "button_1": "Ensimm\u00e4inen painike",
+            "button_2": "Toinen painike",
+            "button_3": "Kolmas painike",
+            "button_4": "Nelj\u00e4s painike",
+            "button_5": "Viides painike",
+            "button_6": "Kuudes painike",
+            "close": "Sulje",
+            "dim_down": "Himmenn\u00e4",
+            "dim_up": "Kirkasta",
+            "face_1": "Kasvot 1 aktivoituna",
+            "face_2": "Kasvot 2 aktivoituna",
+            "face_3": "Kasvot 3 aktivoituna",
+            "face_4": "Kasvot 4 aktivoituna",
+            "face_5": "Kasvot 5 aktivoituna",
+            "face_6": "Kasvot 6 aktivoituna",
+            "face_any": "Kun mitk\u00e4 tahansa/m\u00e4\u00e4rityt kasvot on aktivoituna",
+            "left": "Vasen",
+            "open": "Avaa",
+            "right": "Oikea",
+            "turn_off": "Sammuta",
+            "turn_on": "Laita p\u00e4\u00e4lle"
+        },
+        "trigger_type": {
+            "device_dropped": "Laite pudotettu",
+            "device_flipped": "Laitetta k\u00e4\u00e4nnetty \" {subtype} \"",
+            "device_knocked": "Laitetta koputettu \" {subtype} \"",
+            "device_offline": "Laite offline",
+            "device_rotated": "Laite k\u00e4\u00e4ntyi \"{subtype}\"",
+            "device_shaken": "Laitetta ravisteltiin",
+            "device_slid": "Laite liukui \"{subtype}\"",
+            "device_tilted": "Laite kallistui",
+            "remote_button_alt_double_press": "\"{subtype}\" kaksoisnapsautettu (vaihtoehtoinen tila)",
+            "remote_button_alt_long_press": "\"{subtype}\" jatkuvasti painettuna (vaihtoehtoinen tila)",
+            "remote_button_alt_long_release": "\"{subtype}\" vapautettu pitk\u00e4n painalluksen j\u00e4lkeen (vaihtoehtoinen tila)",
+            "remote_button_alt_quadruple_press": "\"{subtype}\" nelinkertaisesti napsautettu (vaihtoehtoinen tila)",
+            "remote_button_alt_quintuple_press": "\"{subtype}\" viisinkertaisesti napsautettu (vaihtoehtoinen tila)",
+            "remote_button_alt_short_press": "\"{subtype}\" painettu (vaihtoehtoinen tila)",
+            "remote_button_alt_short_release": "\"{subtype}\" vapautettu (vaihtoehtoinen tila)",
+            "remote_button_alt_triple_press": "\"{subtype}\" kolminkertaisesti napautettu (vaihtoehtoinen tila)",
+            "remote_button_double_press": "\"{subtype}\" kaksoisnapsautettu",
+            "remote_button_long_press": "\" {subtype} \" jatkuvasti painettuna",
+            "remote_button_long_release": "\"{subtype}\" vapautettu pitk\u00e4n painalluksen j\u00e4lkeen",
+            "remote_button_quadruple_press": "\"{subtype}\" nelinkertaisesti napsautettu",
+            "remote_button_quintuple_press": "\"{subtype}\" viisinkertaisesti napsautettu",
+            "remote_button_short_press": "\"{subtype}\" painettu",
+            "remote_button_short_release": "\"{subtype}\" vapautettu",
+            "remote_button_triple_press": "\"{subtype}\" kolminkertaisesti napsautettu"
+        }
+    },
+    "entity": {
+        "alarm_control_panel": {
+            "alarm_control_panel": {
+                "name": "H\u00e4lytysasetukset"
+            }
+        },
+        "climate": {
+            "thermostat": {
+                "name": "Termostaatti"
+            }
+        },
+        "cover": {
+            "cover": {
+                "name": "Kaihtimet"
+            },
+            "shade": {
+                "name": "Rullaverho"
+            }
+        },
+        "fan": {
+            "fan": {
+                "name": "Tuuletin"
+            }
+        },
+        "light": {
+            "light": {
+                "name": "Valo"
+            }
+        },
+        "number": {
+            "timer_duration": {
+                "name": "Ajastimen kesto"
+            },
+            "transmit_power": {
+                "name": "L\u00e4hetysteho"
+            }
+        },
+        "select": {
+            "approach_distance": {
+                "name": "L\u00e4hestymiset\u00e4isyys"
+            },
+            "backlight_mode": {
+                "name": "Taustavalotila"
+            },
+            "default_siren_level": {
+                "name": "Sireenin oletustaso"
+            },
+            "default_siren_tone": {
+                "name": "Sireenin oletus\u00e4\u00e4ni"
+            },
+            "feeding_mode": {
+                "name": "Tila"
+            },
+            "increased_non_neutral_output": {
+                "name": "Ei-neutraali ulostulo"
+            },
+            "led_scaling_mode": {
+                "name": "Led -skaalaustila"
+            },
+            "monitoring_mode": {
+                "name": "Valvontatila"
+            },
+            "motion_sensitivity": {
+                "name": "Liikkeen herkkyys"
+            },
+            "output_mode": {
+                "name": "L\u00e4ht\u00f6tila"
+            },
+            "power_on_state": {
+                "name": "Virta p\u00e4\u00e4lle -tila"
+            },
+            "preset": {
+                "name": "Esiasetus"
+            },
+            "start_up_on_off": {
+                "name": "Virta p\u00e4\u00e4lle -k\u00e4ytt\u00e4ytyminen"
+            },
+            "switch_type": {
+                "name": "Kytkimen tyyppi"
+            },
+            "window_covering_mode": {
+                "name": "Verhotila"
+            }
+        },
+        "sensor": {
+            "ac_frequency": {
+                "name": "AC -taajuus"
+            },
+            "analog_input": {
+                "name": "Analoginen tulo"
+            },
+            "weight_dispensed_today": {
+                "name": "Painoa h\u00e4vinnyt t\u00e4n\u00e4\u00e4n"
+            }
+        },
+        "switch": {
+            "aux_switch_scenes": {
+                "name": "Aux-kytkintilanteet"
+            },
+            "buzzer_manual_alarm": {
+                "name": "Summerin manuaalinen h\u00e4lytys"
+            },
+            "buzzer_manual_mute": {
+                "name": "Summerin manuaalinen mykistys"
+            },
+            "child_lock": {
+                "name": "Lapsilukko"
+            },
+            "disable_clear_notifications_double_tap": {
+                "name": "Poista asetukset k\u00e4yt\u00f6st\u00e4 2x napauttamalla ilmoitukset"
+            },
+            "disable_led": {
+                "name": "Poista LED k\u00e4yt\u00f6st\u00e4"
+            },
+            "double_tap_down_enabled": {
+                "name": "Kaksoisnapautus alasp\u00e4in k\u00e4yt\u00f6ss\u00e4"
+            },
+            "double_tap_up_enabled": {
+                "name": "Kaksoisnapautus yl\u00f6sp\u00e4in k\u00e4yt\u00f6ss\u00e4"
+            },
+            "firmware_progress_led": {
+                "name": "Laiteohjelmiston edistymisen merkkivalo"
+            },
+            "heartbeat_indicator": {
+                "name": "Sykkeen ilmaisin"
+            },
+            "invert_switch": {
+                "name": "K\u00e4\u00e4nteinen kytkin"
+            },
+            "led_indicator": {
+                "name": "LED -merkkivalo"
+            },
+            "linkage_alarm": {
+                "name": "Linkitysh\u00e4lytys"
+            },
+            "local_protection": {
+                "name": "Paikallinen suojaus"
+            },
+            "one_led_mode": {
+                "name": "Vain 1 LED -tila"
+            },
+            "power_outage_memory": {
+                "name": "S\u00e4hk\u00f6katkosmuisti"
+            },
+            "relay_click_in_on_off_mode": {
+                "name": "Poista releen napsautus k\u00e4yt\u00f6st\u00e4 on off -tilassa"
+            },
+            "smart_bulb_mode": {
+                "name": "\u00c4lyk\u00e4s lampputila"
+            },
+            "switch": {
+                "name": "Kytkin"
+            },
+            "trigger_indicator": {
+                "name": "LED-laukaisimen merkkivalo"
+            },
+            "valve_detection": {
+                "name": "Venttiilin tunnistus"
+            },
+            "window_detection": {
+                "name": "Ikkunan tunnistus"
+            },
+            "window_detection_function": {
+                "name": "K\u00e4\u00e4nteinen ikkunan tunnistus"
+            }
+        }
+    },
+    "issues": {
+        "inconsistent_network_settings": {
+            "fix_flow": {
+                "step": {
+                    "init": {
+                        "description": "Zigbee-radiosi verkkoasetukset eiv\u00e4t vastaa viimeisint\u00e4 verkon varmuuskopiota. N\u00e4in tapahtuu yleens\u00e4, jos jokin toinen Zigbee-integraatio (esim. Zigbee2MQTT tai deCONZ) on korvannut ne.\n\n{diff}\n\nJos et ole itse muuttanut verkkoasetuksia, palauta ne viimeisimm\u00e4st\u00e4 varmuuskopiosta: muuten laitteesi eiv\u00e4t toimi."
+                    }
+                }
+            }
+        },
+        "wrong_silabs_firmware_installed_nabucasa": {
+            "description": "Zigbee -radiotasi k\u00e4ytettiin aiemmin moniprotokollan (Zigbee ja Thread) kanssa ja siihen on edelleen asennettu moniprotokollainen laiteohjelmisto: ({firmware_type}). \n Vaihtoehto 1: Jos haluat k\u00e4ytt\u00e4\u00e4 radiota yksinomaan ZHA: lla, sinun on asennettava Zigbee-laiteohjelmisto:\n - Avaa dokumentaatio valitsemalla linkki kohdasta \"Lis\u00e4tietoja\".\n - Noudata vaiheessa 2 (ja vain vaiheessa 2) kuvattuja ohjeita 'Flash the Silicon Labs radio Zigbee firmware'.\n Vaihtoehto 2: Jos haluat k\u00e4ytt\u00e4\u00e4 radiota moniprotokollalla, toimi seuraavasti: \n - Siirry kohtaan Settings > System > Hardware, valitse laite ja valitse Configure (M\u00e4\u00e4rit\u00e4). \n - Valitse M\u00e4\u00e4rit\u00e4 IEEE 802.15.4 -radion moniprotokollatuki -vaihtoehto. \n - Valitse valintaruutu ja valitse L\u00e4het\u00e4. \n - Kun olet asentanut, m\u00e4\u00e4rit\u00e4 \u00e4skett\u00e4in l\u00f6ydetty ZHA-integraatio."
+        },
+        "wrong_silabs_firmware_installed_other": {
+            "description": "Zigbee -radioasi k\u00e4ytettiin aiemmin moniprotokollaa (Zigbee ja Thread), ja siihen on edelleen asennettu moniprotokollaa k\u00e4ytt\u00e4v\u00e4 laiteohjelmisto: ({firmware_type}). Jos haluat k\u00e4ytt\u00e4\u00e4 radiota yksinomaan ZHA:n kanssa, sinun on asennettava Zigbee -firmware. Noudata Zigbee -radiosi valmistajan ohjeita t\u00e4m\u00e4n tekemiseen."
+        }
+    },
+    "options": {
+        "abort": {
+            "single_instance_allowed": "Jo m\u00e4\u00e4ritetty. Vain yksi konfiguraatio mahdollinen.",
+            "wrong_firmware_installed": "Laitteessasi on v\u00e4\u00e4r\u00e4 laiteohjelmisto, eik\u00e4 sit\u00e4 voi k\u00e4ytt\u00e4\u00e4 ZHA:n kanssa ennen kuin oikea laiteohjelmisto on asennettu. [Korjaus on luotu]({repair_url}), jossa on lis\u00e4tietoja ja ohjeita t\u00e4m\u00e4n korjaamiseksi."
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "verify_radio": {
+                "description": "K\u00e4ytt\u00e4m\u00e4\u00e4si radiota ({name}) ei suositella, ja sen tuki saatetaan poistaa tulevaisuudessa. Katso Zigbee Home Automation -integraation dokumentaatiosta [luettelo suositelluista sovittimista]({docs_recommended_adapters_url})."
+            }
+        }
+    },
+    "services": {
+        "warning_device_squawk": {
+            "fields": {
+                "mode": {
+                    "name": "Tila"
+                }
+            }
+        },
+        "warning_device_warn": {
+            "fields": {
+                "mode": {
+                    "name": "Tila"
+                }
+            }
+        }
+    }
+}

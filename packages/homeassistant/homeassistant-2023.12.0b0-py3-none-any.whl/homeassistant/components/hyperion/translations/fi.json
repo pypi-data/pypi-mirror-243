@@ -1,0 +1,28 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Palvelu on jo m\u00e4\u00e4ritetty",
+            "already_in_progress": "M\u00e4\u00e4ritysprosessi on jo k\u00e4ynniss\u00e4",
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "reauth_successful": "Uudelleentodennus onnistui"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_access_token": "Virheellinen k\u00e4ytt\u00f6oikeustunnus"
+        },
+        "step": {
+            "confirm": {
+                "description": "Haluatko lis\u00e4t\u00e4 t\u00e4m\u00e4n Hyperion Ambilightin Home Assistantiin?\n\n**Is\u00e4nt\u00e4.:** {host}\n**Portti:** {port}\n**Tunniste**: {id}"
+            },
+            "create_token": {
+                "description": "Valitse alta **L\u00e4het\u00e4** pyyt\u00e4\u00e4ksesi uutta todennustunnusta. Sinut ohjataan Hyperion -k\u00e4ytt\u00f6liittym\u00e4\u00e4n hyv\u00e4ksym\u00e4\u00e4n pyynt\u00f6. Varmista, ett\u00e4 n\u00e4ytetty tunnus on \" {auth_id} \""
+            },
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "port": "Portti"
+                }
+            }
+        }
+    }
+}

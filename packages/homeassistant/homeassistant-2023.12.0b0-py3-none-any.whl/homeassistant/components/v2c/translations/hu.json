@@ -1,0 +1,58 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Az eszk\u00f6z m\u00e1r konfigur\u00e1lva van"
+        },
+        "error": {
+            "cannot_connect": "Sikertelen csatlakoz\u00e1s",
+            "unknown": "V\u00e1ratlan hiba"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Hoszt"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "charging": {
+                "name": "T\u00f6lt\u00e9s"
+            },
+            "connected": {
+                "name": "Csatlakoztatva"
+            },
+            "ready": {
+                "name": "K\u00e9sz"
+            }
+        },
+        "number": {
+            "intensity": {
+                "name": "Intenzit\u00e1s"
+            }
+        },
+        "sensor": {
+            "charge_energy": {
+                "name": "T\u00f6lt\u00e9si energia"
+            },
+            "charge_power": {
+                "name": "T\u00f6lt\u0151 teljes\u00edtm\u00e9ny"
+            },
+            "charge_time": {
+                "name": "T\u00f6lt\u00e9si id\u0151"
+            },
+            "fv_power": {
+                "name": "Fotovoltaikus teljes\u00edtm\u00e9ny"
+            },
+            "house_power": {
+                "name": "H\u00e1z teljes\u00edtm\u00e9nye"
+            }
+        },
+        "switch": {
+            "paused": {
+                "name": "Munkamenet sz\u00fcneteltet\u00e9se"
+            }
+        }
+    }
+}

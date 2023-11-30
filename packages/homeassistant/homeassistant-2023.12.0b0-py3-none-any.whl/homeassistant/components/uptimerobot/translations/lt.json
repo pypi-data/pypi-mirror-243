@@ -1,0 +1,20 @@
+{
+    "config": {
+        "error": {
+            "not_main_key": "Aptiktas netinkamas API rakto tipas, naudokite \u201epagrindin\u012f\u201c API rakt\u0105"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "monitor_status": {
+                "state": {
+                    "down": "\u017demyn",
+                    "not_checked_yet": "Dar nepatikrinta",
+                    "pause": "Pauz\u0117",
+                    "seems_down": "Atrodo \u017eemyn",
+                    "up": "Auk\u0161tyn"
+                }
+            }
+        }
+    }
+}

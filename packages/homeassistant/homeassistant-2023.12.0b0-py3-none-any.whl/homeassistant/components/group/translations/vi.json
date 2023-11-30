@@ -1,0 +1,29 @@
+{
+    "config": {
+        "step": {
+            "sensor": {
+                "data": {
+                    "round_digits": "L\u00e0m tr\u00f2n gi\u00e1 tr\u1ecb th\u00e0nh s\u1ed1 th\u1eadp ph\u00e2n"
+                }
+            }
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Nh\u00f3m",
+            "state": {
+                "closed": "\u0110\u00f3ng",
+                "home": "\u1ede nh\u00e0",
+                "locked": "\u0110\u00e3 kh\u00f3a",
+                "not_home": "\u0110i v\u1eafng",
+                "off": "T\u1eaft",
+                "ok": "OK",
+                "on": "B\u1eadt",
+                "open": "M\u1edf",
+                "problem": "S\u1ef1 c\u1ed1",
+                "unlocked": "\u0110\u00e3 m\u1edf kh\u00f3a"
+            }
+        }
+    },
+    "title": "Nh\u00f3m"
+}

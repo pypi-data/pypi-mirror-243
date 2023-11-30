@@ -1,0 +1,20 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "resolver": "IPV4 paie\u0161kos sprendimas",
+                    "resolver_ipv6": "IPV6 paie\u0161kos sprendimas"
+                }
+            }
+        }
+    },
+    "options": {
+        "abort": {
+            "already_configured": "Paslauga jau sukonfig\u016bruota"
+        },
+        "error": {
+            "invalid_resolver": "Netinkamas sprendiklio IP adresas"
+        }
+    }
+}

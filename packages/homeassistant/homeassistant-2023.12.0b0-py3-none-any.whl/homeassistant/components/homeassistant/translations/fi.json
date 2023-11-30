@@ -1,0 +1,78 @@
+{
+    "exceptions": {
+        "service_not_found": {
+            "message": "Palvelua {domain}.{service} ei l\u00f6ydy."
+        }
+    },
+    "issues": {
+        "config_entry_only": {
+            "description": "{domain} -integraatio ei tue m\u00e4\u00e4rityst\u00e4 YAML-tiedoston kautta. Et ehk\u00e4 huomaa mit\u00e4\u00e4n ilmeisi\u00e4 ongelmia integraatiossa, mutta YAML-tiedostossa m\u00e4\u00e4riteltyj\u00e4 konfiguraatioasetuksia ei todellisuudessa k\u00e4ytet\u00e4.\n\nVoit ratkaista t\u00e4m\u00e4n:\n\n1. Jos et ole viel\u00e4 tehnyt sit\u00e4, [lis\u00e4\u00e4 integraatio]({add_integration}).\n\n2. Poista `{domain}:` YAML-konfiguraatiotiedostosta.\n\n3. K\u00e4ynnist\u00e4 Home Assistant uudelleen.",
+            "title": "{domain} -integraatio ei tue YAML-konfigurointia."
+        },
+        "deprecated_yaml": {
+            "description": "Konfigurointi {integration_title} YAML:n avulla poistetaan.\n\nOlemassa oleva YAML-konfiguraatiosi on tuotu k\u00e4ytt\u00f6liittym\u00e4\u00e4n automaattisesti.\n\nPoista `{domain}`-konfiguraatio configuration.yaml-tiedostosta ja k\u00e4ynnist\u00e4 Home Assistant uudelleen ongelman korjaamiseksi.",
+            "title": "{integration_title} YAML-konfigurointi poistetaan"
+        },
+        "historic_currency": {
+            "description": "Valuutta {currency} ei ole en\u00e4\u00e4 k\u00e4yt\u00f6ss\u00e4, m\u00e4\u00e4rit\u00e4 valuuttam\u00e4\u00e4ritykset uudelleen."
+        },
+        "integration_key_no_support": {
+            "description": "{domain} -integraatio ei tue m\u00e4\u00e4rityst\u00e4 YAML-tiedoston kautta. Et ehk\u00e4 huomaa mit\u00e4\u00e4n ilmeisi\u00e4 ongelmia integraatiossa, mutta YAML-tiedostossa m\u00e4\u00e4riteltyj\u00e4 konfiguraatioasetuksia ei todellisuudessa k\u00e4ytet\u00e4.\n\nVoit ratkaista t\u00e4m\u00e4n:\n\n1. Jos et ole viel\u00e4 tehnyt sit\u00e4, [lis\u00e4\u00e4 integraatio]({add_integration}).\n\n2. Poista `{domain}:` YAML-konfiguraatiotiedostosta.\n\n3. K\u00e4ynnist\u00e4 Home Assistant uudelleen.",
+            "title": "{domain} -integraatio ei tue YAML-konfigurointia."
+        },
+        "no_platform_setup": {
+            "description": "Ei ole mahdollista m\u00e4\u00e4ritt\u00e4\u00e4 {platform} {domain} lis\u00e4\u00e4m\u00e4ll\u00e4 `{platform_key}` {domain} -konfiguraatioon. Katso dokumentaatiosta lis\u00e4tietoja t\u00e4m\u00e4n integraation m\u00e4\u00e4ritt\u00e4misest\u00e4.\n\nT\u00e4m\u00e4n ratkaisemiseksi:\n1. Poista `{platform_key}`-esiintym\u00e4t `{domain}:`-konfiguraatiosta YAML-konfiguraatiotiedostossa.\n2. K\u00e4ynnist\u00e4 Home Assistant uudelleen.\n\nEsimerkki, joka tulisi poistaa:\n{yaml_example}\n",
+            "title": "K\u00e4ytt\u00e4m\u00e4t\u00f6n YAML-konfiguraatio {platform} -integraatiolle"
+        },
+        "platform_only": {
+            "description": "{domain} -integraatio ei tue konfigurointia omassa avaimessaan, vaan se on konfiguroitava sen tukemilla alustoilla.\n\nT\u00e4m\u00e4n ratkaisemiseksi:\n\n1. Poista `{domain}:` YAML-konfiguraatiotiedostosta.\n\n2. K\u00e4ynnist\u00e4 Home Assistant uudelleen.",
+            "title": "{domain} -integraatio ei tue YAML-konfiguraatiota omalla avaimellaan."
+        },
+        "python_version": {
+            "description": "Tuki Home Assistantin k\u00e4ytt\u00e4miselle nykyisell\u00e4 Python-versiolla {current_python_version} on vanhentunut, ja se poistetaan Home Assistantista {breaks_in_ha_version}. P\u00e4ivit\u00e4 Python {required_python_version} -versioon, jotta Home Assistant -instanssisi ei rikkoudu.",
+            "title": "Tuki Pythonille {current_python_version} poistetaan."
+        },
+        "storage_corruption": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Tallennustilaa `{storage_key}` ei voitu analysoida, ja se on nimetty uudelleen muotoon `{corrupt_path}`, jotta Home Assistant voi jatkaa.\n\nOletusarvoinen `{storage_key}` on ehk\u00e4 luotu automaattisesti.\n\nJos olet muokannut tallennustiedostoa manuaalisesti, korjaa `{corrupt_path}`:n mahdolliset syntaksivirheet, palauta tiedosto alkuper\u00e4iseen polkuun `{original_path}` ja k\u00e4ynnist\u00e4 Home Assistant uudelleen. Muussa tapauksessa palauta j\u00e4rjestelm\u00e4 varmuuskopiosta.\n\nVahvista, ett\u00e4 olet korjannut tiedoston tai palauttanut sen varmuuskopiosta, napsauttamalla L\u00e4het\u00e4 alla.\n\nTarkka virhe oli: {error}",
+                        "title": "S\u00e4ilytystilan korruptoituminen havaittu `{storage_key}' :ssa."
+                    }
+                }
+            },
+            "title": "S\u00e4ilytystilan korruptoituminen havaittu `{storage_key}' :ssa."
+        }
+    },
+    "services": {
+        "reload_custom_templates": {
+            "description": "Lataa uudelleen Jinja2-mallit, jotka l\u00f6ytyv\u00e4t konfiguraatiosi `custom_templates`-kansiosta. Uusia arvoja k\u00e4ytet\u00e4\u00e4n mallin seuraavassa render\u00f6inniss\u00e4.",
+            "name": "Lataa mukautetut Jinja2-mallit uudelleen"
+        },
+        "restart": {
+            "fields": {
+                "safe_mode": {
+                    "description": "Poista mukautetut integraatiot ja mukautetut kortit k\u00e4yt\u00f6st\u00e4.",
+                    "name": "Vikasietotila"
+                }
+            },
+            "name": "Uudelleenk\u00e4ynnist\u00e4"
+        },
+        "set_location": {
+            "fields": {
+                "elevation": {
+                    "name": "Korkeus merenpinnasta"
+                },
+                "latitude": {
+                    "name": "Leveysaste"
+                },
+                "longitude": {
+                    "name": "Pituusaste"
+                }
+            }
+        },
+        "stop": {
+            "name": "Pys\u00e4yt\u00e4"
+        }
+    }
+}

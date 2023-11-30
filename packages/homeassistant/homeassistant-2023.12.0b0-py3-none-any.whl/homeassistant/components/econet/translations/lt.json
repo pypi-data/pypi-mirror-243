@@ -1,0 +1,13 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas",
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "step": {
+            "user": {
+                "title": "Nustatykite \u201eRheem EcoNet\u201c paskyr\u0105"
+            }
+        }
+    }
+}

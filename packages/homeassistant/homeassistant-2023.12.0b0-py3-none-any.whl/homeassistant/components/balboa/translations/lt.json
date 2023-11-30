@@ -1,0 +1,36 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys paruo\u0161tas naudojimui"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti"
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "circ_pump": {
+                "name": "Cirkuliacinis siurblys"
+            },
+            "filter_1": {
+                "name": "1 filtro ciklas"
+            },
+            "filter_2": {
+                "name": "2 filtro ciklas"
+            }
+        },
+        "climate": {
+            "balboa": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "ready": "Paruo\u0161ta",
+                            "ready_in_rest": "Paruo\u0161ta poilsiui",
+                            "rest": "Poilsis"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

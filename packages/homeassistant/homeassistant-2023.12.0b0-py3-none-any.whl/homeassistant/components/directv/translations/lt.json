@@ -1,0 +1,10 @@
+{
+    "config": {
+        "flow_title": "{name}",
+        "step": {
+            "ssdp_confirm": {
+                "description": "Ar norite nustatyti {name} ?"
+            }
+        }
+    }
+}

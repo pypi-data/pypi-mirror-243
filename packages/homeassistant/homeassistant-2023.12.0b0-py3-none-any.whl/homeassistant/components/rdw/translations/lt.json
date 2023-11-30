@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Paslauga jau sukonfig\u016bruota"
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "liability_insured": {
+                "name": "Apdrausta civiline atsakomybe"
+            },
+            "pending_recall": {
+                "name": "Laukiama at\u0161aukimo"
+            }
+        },
+        "sensor": {
+            "apk_expiration": {
+                "name": "APK galiojimo laikas"
+            },
+            "ascription_date": {
+                "name": "Pri\u0117mimo data"
+            }
+        }
+    }
+}

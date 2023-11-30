@@ -1,0 +1,12 @@
+{
+    "config": {
+        "error": {
+            "unauthorized": "Susiejimas atmestas, patikrinkite, ar \u012frenginyje yra autentifikavimo u\u017eklausa"
+        },
+        "step": {
+            "user": {
+                "title": "Prisijunkite prie \u012frenginio"
+            }
+        }
+    }
+}
