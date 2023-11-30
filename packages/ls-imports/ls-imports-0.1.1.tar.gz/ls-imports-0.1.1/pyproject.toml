@@ -1,0 +1,68 @@
+# ==============================================================================
+# Packaging
+# ==============================================================================
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ls-imports"
+authors = [
+    {name = "Peter Talley", email = "peterctalley@gmail.com"}
+]
+description = "Search Python source file(s) for imported modules."
+readme = "README.md"
+license.text = "MIT"
+classifiers = [
+    "Environment :: Console",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "click",
+]
+requires-python = ">=3.10"
+
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/otaithleigh/ls-imports"
+
+# Support "pipx run ls-imports" instead of injecting "ls-imports"
+# as a script into the user environment
+[project.entry-points."pipx.run"]
+ls-imports = "ls_imports:_cli"
+
+[tool.setuptools.dynamic]
+version = {attr = "ls_imports.__version__"}
+
+# ==============================================================================
+# Linting
+# ==============================================================================
+[tool.ruff]
+line-length = 88
+select = [
+    'B',
+    'C4',
+    'E',
+    'F',
+    'NPY',
+    'PIE',
+    'PL',
+    'RUF',
+    'TRY',
+    'W',
+]
+ignore = [
+    'E501',  # Line length
+    'E731',  # I don't like this rule, and I don't do it often
+    'PLR0911',  # annoying heuristic
+    'PLR0912',  # annoying heuristic
+    'PLR0913',  # annoying heuristic
+    'PLR0915',  # annoying heuristic
+    'RUF003',  # Overly broad ambiguous character rules, includes Greek letters
+    'TRY003',  # Messages in exception
+    'TRY200',  # Duplicate with B904
+]
