@@ -1,0 +1,11 @@
+numpy
+pandas
+nltk
+matplotlib
+seaborn
+gensim
+bs4
+torch>=2.0.0+cu117
+transformers>=4.28.1
+scikit-learn>=1.0.0
+imblearn>=0.0

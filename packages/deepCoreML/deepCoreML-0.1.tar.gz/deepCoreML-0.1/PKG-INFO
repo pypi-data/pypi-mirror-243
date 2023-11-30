@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: deepCoreML
+Version: 0.1
+Summary: A collection of Machine Learning techniques for data management and augmentation.
+Home-page: https://github.com/lakritidis/DeepCoreML
+Author: Leonidas Akritidis
+Author-email: lakritidis@ihu.gr
+Maintainer: Leonidas Akritidis
+Maintainer-email: lakritidis@ihu.gr
+License: Apache
+Keywords: data engineering,data management,text vectorization,text processing,dimensionality reduction,imbalanced data,machine learning,deep learning
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+DeepCoreML is a collection of Machine Learning techniques for data management and augmentation. More specifically, DeepCoreML includes modules for:  * Dataset handling * Text data preprocessing * Text vectorization * Dimensionality Reduction * Handling imbalanced datasetsDeepCoreML has dependencies with on scikit-learn, imbalanced-learn, pytorch, numpy, pandas.
+
+GitHub repository: [https://github.com/lakritidis/DeepCoreML](https://github.com/lakritidis/DeepCoreML)
+
+
+
