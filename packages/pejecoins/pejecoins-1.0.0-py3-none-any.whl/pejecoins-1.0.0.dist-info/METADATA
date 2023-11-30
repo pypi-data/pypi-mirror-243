@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: pejecoins
+Version: 1.0.0
+Summary: Proyecto enfocado en ayudar a resolver problemas de algebra
+Project-URL: Homepage, https://github.com/FMarin2401/Pejecoins
+Project-URL: Bug Tracker, https://github.com/FMarin2401/Pejecoins/issues
+Author-email: Fran <frankmarin2401@gmail.com>, Luis <luisirach54@mgmail.com>, Rodrigo <xaxer312@gmail.com>
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.7
+Requires-Dist: matplotlib==3.8.1
+Requires-Dist: numpy==1.26.0
+Requires-Dist: scipy==1.11.3
+Description-Content-Type: text/markdown
+
+# Pejecoins
