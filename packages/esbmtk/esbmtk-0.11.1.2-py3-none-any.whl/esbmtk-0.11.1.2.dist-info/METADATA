@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: esbmtk
+Version: 0.11.1.2
+Summary: The Earth Science Box Modeling Toolkit
+Home-page: https://github.com/uliw/esbmtk
+Author: Ulrich G. Wortmann
+Author-email: uli.wortmann@utoronto.ca
+License: GPL-3.0-or-later
+Project-URL: Documentation, https://github.com/uliw/esbmtk/blob/staging/Documentation/ESBMTK-Tutorial.pdf
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Chemistry
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown; charset=UTF-8
+Requires-Dist: importlib-metadata
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: numba
+Requires-Dist: pint
+Requires-Dist: psutil
+Requires-Dist: PyCO2SYS
+Provides-Extra: testing
+Requires-Dist: setuptools ; extra == 'testing'
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+
+<a href="https://pypi.org/project/esbmtk/">
+<img alt="Documentation Status" src="https://img.shields.io/pypi/v/esbmtk.svg"/>
+</a>
+
+<a href="https://pyscaffold.org">
+<img alt="Project generated with PyScaffold" src="https://img.shields.io/badge/-PyScaffold-005CA0?logo=pyscaffold"/>
+</a>
+
+<a href="https://esbmtk.readthedocs.io/en/latest/?badge=latest">
+<img alt="Documentation Status" src="https://readthedocs.org/projects/esbmtk/badge/?version=latest" />
+</a>
+
+
+# ESBMTK - The  Earth Sciences Box Modeling Toolkit
+
+ESBMTK is a python library that aims to simplify typical box modeling
+projects in the Earth-Sciences. The basic API is now stable, but the code to deploy complex models is still being improved. See the manual at <https://esbmtk.readthedocs.io/en/latest> for installation instructions and usage.
+
