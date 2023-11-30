@@ -1,0 +1,33 @@
+Metadata-Version: 2.1
+Name: cmeel-casadi-kin-dyn
+Version: 1.6.4
+Summary: Cmeel distribution of a package for generation of symbolic (casadi::SX) expressions of robot kinematics and dynamics. Based on URDF and Pinocchio.
+Requires-Python: >= 3.9
+License-Expression: MIT License
+Author-email: Lev Kozlov <kozlov.l.a10@gmail.com>
+Home-page: https://github.com/lvjonok/casadi_kin_dyn
+Project-URL: Repository, https://github.com/lvjonok/casadi_kin_dyn.git
+Project-URL: Changelog, https://github.com/lvjonok/casadi_kin_dyn/CHANGELOG.md
+Requires-Dist: cmeel
+Requires-Dist: cmeel_casadi==0.1.1
+Requires-Dist: pin==2.6.21
+Requires-Dist: eigenpy==3.1.4
+Requires-Dist: cmeel-tinyxml==2.6.2.2
+Requires-Dist: cmeel-eigen==3.4.0.2
+Requires-Dist: cmeel-urdfdom_headers==1.1.0
+Requires-Dist: cmeel-urdfdom==3.1.1
+Description-Content-Type: text/markdown
+
+# casadi_kin_dyn
+
+Package for generation of symbolic (SX) expressions of robot kinematics and dynamics. Based on URDF and Pinocchio.
+
+## What has changed?
+
+In comparison to the original [casadi_kin_dyn](https://github.com/ADVRHumanoids/casadi_kin_dyn) repository, such changes were made:
+
+- Migration to `cmeel`-based packaging
+- Use `pre-commit` to prettify repository
+- Added `torque`, `potentialEnergy`, `kineticEnergy` regressors
+- Added `jacobian time derivative` mapping
+- Added `jacobian of CoM` mapping
