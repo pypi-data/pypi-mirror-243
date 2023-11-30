@@ -1,0 +1,3 @@
+[console_scripts]
+calendar-cleanup=scripts.cli:app
+
