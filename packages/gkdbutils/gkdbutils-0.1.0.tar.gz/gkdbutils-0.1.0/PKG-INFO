@@ -1,0 +1,24 @@
+Metadata-Version: 2.1
+Name: gkdbutils
+Version: 0.1.0
+Summary: A collection useful utilities - mostly related to astronomy
+Home-page: https://github.com/genghisken/gkdbutils
+Author: genghisken
+Author-email: ken.w.smith@gmail.com
+License: MIT
+Description: # gkdbutils
+        Database ingest methods and command line utilities for MySQL and Cassandra
+        
+        This code does NOT install mysqlclient or cassandra-driver.  If you want to use either you MUST install whichever driver you need.
+        
+        The command line utilities are:
+        * cassandraIngest (ingest into a Cassandra table from a text file - requires cassandra-driver)
+        * mysqlIngest (ingest into a MySQL table from a text file - requires mysqlclient)
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Utilities
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
