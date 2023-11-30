@@ -1,0 +1,4 @@
+[qiskit.synthesis]
+clifford.ai = qiskit_transpiler_service.ai:CliffordAISynthesizer
+linear_function.ai = qiskit_transpiler_service.ai:LinearFunctionAISynthesizer
+permutation.ai = qiskit_transpiler_service.ai:PermutationAISynthesizer
