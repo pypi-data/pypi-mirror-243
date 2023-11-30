@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: eazyconfig
+Version: 1.2.8
+Summary: Easy configuration of input files for Air Quality department
+Home-page: 
+Author: Saeid Alizadeh
+Author-email: saeidalz96@gmail.com
+Keywords: python,package,eazyconfig,AQ
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.11
+Requires-Dist: configparser ==6.0.0
+Requires-Dist: colorama ==0.4.6
+
+A longer description of your package
