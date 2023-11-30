@@ -1,0 +1,192 @@
+baseline:
+  api-key: cc362e03e225e86476ac8d0a18460b40L05
+  best-params:
+    batch-size: 8
+    epochs: 1
+    head-size: 30
+    learning-rate: 1e-4
+  model-name: microsoft/deberta-base
+  model-path: /bigwork/nhwpajjy/pre-trained-models/microsoft/deberta-base
+  model-path-fine-tuned: /bigwork/nhwpajjy/pre-trained-models/deberta-base-fine-tuned
+  params:
+    batch-size:
+    - 16
+    epochs:
+    - 15
+    head-size:
+    - 30
+    learning-rate:
+    - 1e-5
+dataset:
+  path-ibmsc-root: data/claim_stance_dataset_v1.csv
+experiment:
+  ibmsc:
+    path-few-shots: experiment/ibmsc-few-shots.csv
+    path-logs: /bigwork/nhwpajjy/few-shot-priming/logs/ibmsc-run-time.logs
+    path-results: /bigwork/nhwpajjy/few-shot-priming/results/ibmsc-run-time.tsv
+    path-test: experiment/ibmsc-test.csv
+    path-training: experiment/ibmsc-train.csv
+    path-validation: experiment/ibmsc-validation.csv
+  vast:
+    path-few-shots: experiment/vast-few-shots.csv
+    path-logs: /bigwork/nhwpajjy/few-shot-priming/logs/vast-validation-time.logs
+    path-results: /bigwork/nhwpajjy/few-shot-priming/results/vast-validation-run-time.tsv
+    path-test: experiment/vast-test.csv
+    path-training: experiment/vast-train.csv
+    path-validation: experiment/vast-validation.csv
+openai:
+  key: ''
+pre-trained-models:
+  alpaca:
+    model-name: wxjiao/alpaca-7b
+    tokenizer-name: decapoda-research/llama-7b-hf
+  gpt-j:
+    model-name: EleutherAI/gpt-j-6B
+    model-path: /bigwork/nhwpajjy/pre-trained-models/gptj-16
+    learning-rate:
+      - 2e-5
+      - 5e-5
+      - 1e-3
+      - 1e-5
+      - 1e-6
+  models:
+  - t5-base
+  - bert-base-uncased
+  - gpt2
+  - opt
+  - gpt2-xl
+  path: /bigwork/nhwpajjy/pre-trained-models
+
+seeds: [488, 528, 350, 785, 934]
+ks: [ 16, 32 ,64]
+
+prompt:
+  batch-size: 16
+  few-shot-size: 16
+  logs: logs/prompt.log
+  model-input-limit: 2048
+  model-name: /bigwork/nhwpajjy/pre-trained-models/opt-30b
+  model-path: /bigwork/nhwpajjy/pre-trained-models/opt-30b
+  model-type: /bigwork/nhwpajjy/pre-trained-models/opt-30b
+  #model-input-limit: 1024
+  #model-name: facebook/opt-350m
+  #model-path: facebook/opt-350m
+  #model-type: facebook/opt-350m
+prompt-fine-tuning:
+  best-params-gpt2:
+    batch-size: 16
+    epochs: 1
+    learning-rate: 2e-5
+  best-params:
+    batch-size: 64
+    epochs: 60
+#    epochs: 1
+    learning-rate: 2e-5
+  few-shot-size: 16
+  model-name: /bigwork/nhwpajjy/pre-trained-models/wxjiao/alpaca-7b
+  model-path: /bigwork/nhwpajjy/pre-t rained-models/wxjiao/alpaca-7b
+  model-path-fine-tuned: /bigwork/nhwpajjy/pre-trained-models/alpaca-fine-tuned
+  model-type: /bigwork/nhwpajjy/pre-trained-models/wxjiao/alpaca-7b
+  tokenizer-name: /bigwork/nhwpajjy/pre-trained-models/llama-7b-hf
+  path-template: data/alpaca.json
+  params:
+    batch-size:
+    - 16
+    - 32
+    - 64
+    - 128
+    epochs:
+    - 30
+    - 40
+    - 50
+    - 60
+    - 70
+    - 80
+    - 90
+    learning-rate:
+    - 2e-5
+    - 3e-4
+    - 3e-6
+topic-similarity:
+  path-logs: /bigwork/nhwpajjy/few-shot-priming/logs/topic-similarity.log
+  count-of-samples-per-cluster: 10
+  bow:
+    ibmsc-test: null
+    ibmsc-validation: 10
+    vast-test: null
+    vast-validation: null
+  model-path:
+    ibmsc-test: /bigwork/nhwpajjy/pre-trained-models/topic-models/ibmsc-test
+    ibmsc-validation: /bigwork/nhwpajjy/pre-trained-models/topic-models/ibmsc-validation
+    vast-test: /bigwork/nhwpajjy/pre-trained-models/topic-models/vast-test
+    vast-validation: /bigwork/nhwpajjy/pre-trained-models/topic-models/vast-validation
+  params:
+    contextual_size: 768
+    n_components: 15
+    num_epochs: 200
+  ctm-similarity-path:
+    ibmsc-test: /bigwork/nhwpajjy/pre-trained-models/topic-models/similarities-ibmsc-test-ctm.json
+    ibmsc-validation: /bigwork/nhwpajjy/pre-trained-models/topic-models/similarities-ibmsc-validation-ctm.json
+    vast-test: null
+    vast-validation: null
+  sentence-transformer-similarity-path:
+    ibmsc-test: /bigwork/nhwpajjy/pre-trained-models/topic-models/similarities-ibmsc-test-sentence-transformer.json
+    ibmsc-validation: /bigwork/nhwpajjy/pre-trained-models/topic-models/similarities-ibmsc-validation-sentence-transformer.json
+    vast-test: null
+    vast-validation: null
+  parse-tree-kernel-similarity-path:
+    ibmsc-test: /bigwork/nhwpajjy/pre-trained-models/topic-models/similarities-ibmsc-test-parse-tree-kernel.json
+    ibmsc-validation: /bigwork/nhwpajjy/pre-trained-models/similarities-ibmsc-validation-parse-tree-kernel.json
+
+  diverse-examples:
+    ibmsc-test: /bigwork/nhwpajjy/pre-trained-models/topic-models/ibmsc-test-diverse-examples.tsv
+    ibmsc-validation: /bigwork/nhwpajjy/pre-trained-models/topic-models/ibmsc-validation-diverse-examples.tsv
+    vast-test: /bigwork/nhwpajjy/pre-trained-models/topic-models/vast-test-diverse-examples.tsv
+    vast-validation: /bigwork/nhwpajjy/pre-trained-models/topic-models/vast-validation-diverse-examples.tsv
+
+  diverse-examples-topics:
+    ibmsc-test: /bigwork/nhwpajjy/pre-trained-models/topic-models/ibmsc-test-diverse-examples-topics.tsv
+    ibmsc-validation: /bigwork/nhwpajjy/pre-trained-models/topic-models/ibmsc-validation-diverse-examples-topics.tsv
+    vast-test: /bigwork/nhwpajjy/pre-trained-models/topic-models/vast-test-diverse-examples-topics.tsv
+    vast-validation: /bigwork/nhwpajjy/pre-trained-models/topic-models/vast-validation-diverse-examples-topics.tsv
+
+analyze-k:
+
+  prompting:
+    figure-path: /bigwork/nhwpajjy/few-shot-priming/results/prompting-analyze-k.pdf
+    models:
+      opt-30:
+        random:
+        similar: /bigwork/nhwpajjy/few-shot-priming/results/ibmsc-prompt-ibmsc-test-opt-30b-analzye-k-similar-sentence-transformer-11-27-10:12.tsv
+        similar-syntax: /bigwork/nhwpajjy/few-shot-priming/results/ibmsc-prompt-ibmsc-test-opt-30b-analzye-k-similar-parse-tree-kernel-11-28-14:12.tsv
+        diverse: /bigwork/nhwpajjy/few-shot-priming/results/ibmsc-prompt-ibmsc-test-opt-30b-analzye-k-diverse-None-11-27-21:18.tsv
+
+  prompt-fine-tuning:
+    figure-path: /bigwork/nhwpajjy/few-shot-priming/results/prompt-fine-tuning-analyze-k.pdf
+    models:
+      alpaca:
+        random: /bigwork/nhwpajjy/few-shot-priming/results/ibm-sc-validation-prompt-fine-tuning-ibmsc-test-alpaca-7b-analzye-k-11-08-23:23.tsv
+        similar:
+        similar-syntax:
+        diverse: /bigwork/nhwpajjy/few-shot-priming/results/ibm-sc-validation-prompt-fine-tuning-ibmsc-test-alpaca-7b-analzye-k-diverse-None-11-15-11:24.tsv
+
+
+analyze-topic-count:
+  k: 16
+  prompting:
+    figure-path: /bigwork/nhwpajjy/few-shot-priming/results/prompting-analyze-topic-count.pdf
+    models:
+      opt-30:
+        random:
+        similar:
+        similar-syntax:
+        diverse:
+
+  prompt-fine-tuning:
+    figure-path: /bigwork/nhwpajjy/few-shot-priming/results/prompt-fine-tuning-analyze-topic-count.pdf
+    models:
+      alpaca:
+        random:
+        similar:
+        similar-syntax:
+        diverse:
