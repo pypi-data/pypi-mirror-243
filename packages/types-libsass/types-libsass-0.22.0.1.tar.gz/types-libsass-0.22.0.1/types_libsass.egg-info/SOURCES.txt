@@ -1,0 +1,15 @@
+CHANGELOG.md
+MANIFEST.in
+setup.py
+sass-stubs/METADATA.toml
+sass-stubs/__init__.pyi
+sassutils-stubs/METADATA.toml
+sassutils-stubs/__init__.pyi
+sassutils-stubs/builder.pyi
+sassutils-stubs/distutils.pyi
+sassutils-stubs/wsgi.pyi
+types_libsass.egg-info/PKG-INFO
+types_libsass.egg-info/SOURCES.txt
+types_libsass.egg-info/dependency_links.txt
+types_libsass.egg-info/requires.txt
+types_libsass.egg-info/top_level.txt
