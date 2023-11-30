@@ -1,0 +1,69 @@
+Metadata-Version: 2.1
+Name: honeydew
+Version: 0.1.11
+Summary: Collection of connectors for ETL
+Home-page: https://honeydew-lib.github.io/
+Author: Poltak Jefferson
+Author-email: poltak.jefferson@gmail.com
+License: MIT
+Project-URL: Repository, https://github.com/jeffis-ca/honeydew
+Project-URL: Documentation, https://honeydew-lib.github.io/
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: mysql-connector-python
+Requires-Dist: google-cloud
+Requires-Dist: google-auth
+Requires-Dist: google-cloud-bigquery
+Requires-Dist: google-cloud-bigquery-storage
+Requires-Dist: google-cloud-storage
+Requires-Dist: google-cloud-logging
+Requires-Dist: google-cloud-secret-manager
+Requires-Dist: google-cloud-translate
+Requires-Dist: pandas-gbq
+Requires-Dist: paramiko
+Requires-Dist: scp
+Requires-Dist: pytz
+Requires-Dist: pigz-python
+Requires-Dist: clickhouse-connect
+Requires-Dist: mkdocs
+Requires-Dist: mkdocs-material
+Requires-Dist: mkdocs-material-extensions
+Requires-Dist: mkdocstrings
+Requires-Dist: mkdocstrings-python
+Requires-Dist: mkdocs-pymdownx-material-extras
+Requires-Dist: pymdown-extensions
+Requires-Dist: build
+Requires-Dist: twine
+Requires-Dist: requests
+
+# Honeydew
+This library is a collection of database and GCP connector for ETL
+
+## Supported connectors and helper functions
+* MySQL
+* GCP
+* SSH
+* Utilities
+* Notification
+
+## Installation
+```
+pip install honeydew
+```
+<br />
+
+## Repository
+Source code: 
+You can find the documentation [here](https://honeydew-lib.github.io/)!
