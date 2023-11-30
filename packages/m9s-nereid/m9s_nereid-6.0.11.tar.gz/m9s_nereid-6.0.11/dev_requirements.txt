@@ -1,0 +1,16 @@
+# These are requirements for developing on nereid
+-r requirements.txt
+
+# Testing
+tox
+pycountry
+
+# Quality check
+flake8
+coverage
+
+# Documentation
+sphinx
+
+#git+https://gitlab.com/m9s/trytond@mbs-6.0-testing
+git+https://gitlab.com/m9s/company@mbs-6.0
