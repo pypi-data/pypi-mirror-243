@@ -1,0 +1,15 @@
+LICENCE
+README.md
+pyproject.toml
+gcp_cis/__init__.py
+gcp_cis/gcp_cis_checks_iam.py
+gcp_cis/gcp_cis_checks_logging_and_monitoring.py
+gcp_cis/gcp_cis_checks_networking.py
+gcp_cis/gcp_cis_checks_storage.py
+gcp_cis/gcp_cis_checks_vms.py
+gcp_cis.egg-info/PKG-INFO
+gcp_cis.egg-info/SOURCES.txt
+gcp_cis.egg-info/dependency_links.txt
+gcp_cis.egg-info/requires.txt
+gcp_cis.egg-info/top_level.txt
+tests/test1.py

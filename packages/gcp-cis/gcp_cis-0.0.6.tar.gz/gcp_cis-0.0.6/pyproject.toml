@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gcp_cis"
+version = "0.0.6"
+authors = [
+  { name="dheeraj.banodha", email="dheeraj.banodha@gathr.one" },
+  { name="ravish.sharma", email="ravish.sharma@gathr.one" }
+]
+description = "Provides CIS evaluations for GCP"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "google-auth",
+    "google-cloud-compute",
+    "google-cloud-kms",
+    "google-cloud-dataproc",
+    "google-cloud-essential-contacts",
+    "google-cloud-recommender",
+    "google-cloud-dns",
+    "google-cloud-storage",
+    "google-cloud-logging",
+    "google-cloud-iam",
+    "google-cloud-asset",
+    "google-cloud-service-usage",
+    "google-cloud-monitoring",
+    "google-cloud-access-approval",
+    "google-cloud-api-keys",
+    "google-cloud-service-usage",
+    "google-api-python-client",
+    "google-cloud-resource-manager"
+]
+
+#[project.urls]
+#"Homepage" = ""
+#"Bug Tracker" = ""

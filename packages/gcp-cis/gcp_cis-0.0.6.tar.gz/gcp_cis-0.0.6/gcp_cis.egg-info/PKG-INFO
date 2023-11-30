@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: gcp-cis
+Version: 0.0.6
+Summary: Provides CIS evaluations for GCP
+Author-email: "dheeraj.banodha" <dheeraj.banodha@gathr.one>, "ravish.sharma" <ravish.sharma@gathr.one>
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENCE
+Requires-Dist: google-auth
+Requires-Dist: google-cloud-compute
+Requires-Dist: google-cloud-kms
+Requires-Dist: google-cloud-dataproc
+Requires-Dist: google-cloud-essential-contacts
+Requires-Dist: google-cloud-recommender
+Requires-Dist: google-cloud-dns
+Requires-Dist: google-cloud-storage
+Requires-Dist: google-cloud-logging
+Requires-Dist: google-cloud-iam
+Requires-Dist: google-cloud-asset
+Requires-Dist: google-cloud-service-usage
+Requires-Dist: google-cloud-monitoring
+Requires-Dist: google-cloud-access-approval
+Requires-Dist: google-cloud-api-keys
+Requires-Dist: google-cloud-service-usage
+Requires-Dist: google-api-python-client
+Requires-Dist: google-cloud-resource-manager
