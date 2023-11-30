@@ -1,0 +1,3 @@
+[submodule "sample/libs/ss-simple-producer"]
+	path = sample/libs/sinetstream-cmd
+	url = ../misc/ss-simple-producer.git
