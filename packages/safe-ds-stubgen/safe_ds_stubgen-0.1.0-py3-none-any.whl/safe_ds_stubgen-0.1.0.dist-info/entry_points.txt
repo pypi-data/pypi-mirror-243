@@ -1,0 +1,3 @@
+[console_scripts]
+generate-safeds-stubs=safeds_stubgen.main:main
+

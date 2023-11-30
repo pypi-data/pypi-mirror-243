@@ -1,0 +1,43 @@
+Metadata-Version: 2.1
+Name: safe-ds-stubgen
+Version: 0.1.0
+Summary: Generation of Safe-DS stubs for Python libraries.
+Home-page: https://github.com/Safe-DS/Stub-Generator
+License: MIT
+Keywords: data-science,machine-learning,dsl
+Author: Lars Reimann
+Author-email: mail@larsreimann.com
+Requires-Python: >=3.11,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: docstring-parser (>=0.15,<0.16)
+Requires-Dist: mypy (>=1.6.1,<2.0.0)
+Project-URL: Documentation, https://stubgen.readthedocs.io
+Project-URL: Repository, https://github.com/Safe-DS/Stub-Generator
+Description-Content-Type: text/markdown
+
+# Stub Generator
+
+[![Main](https://github.com/Safe-DS/Stub-Generator/actions/workflows/main.yml/badge.svg)](https://github.com/Safe-DS/Stub-Generator/actions/workflows/main.yml)
+[![codecov](https://codecov.io/gh/Safe-DS/Stub-Generator/branch/main/graph/badge.svg?token=UyCUY59HKM)](https://codecov.io/gh/Safe-DS/Stub-Generator)
+[![Documentation Status](https://readthedocs.org/projects/safe-ds-stub-generator/badge/?version=stable)](https://stubgen.safeds.com)
+
+Generation of Safe-DS stubs for Python libraries.
+
+## Documentation
+
+You can find the full documentation [here](https://stubgen.safeds.com).
+
+## Contributing
+
+We welcome contributions from everyone. As a starting point, check the following resources:
+
+* [Setting up a development environment](https://stubgen.safeds.com/en/latest/development/environment/)
+* [Contributing page](https://github.com/Safe-DS/Stub-Generator/contribute)
+
+If you need further help, please [use our discussion forum][forum].
+
+[forum]: https://github.com/orgs/Safe-DS/discussions
+
