@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: robocorp-actions
+Version: 0.0.1
+Summary: Robocorp Actions
+Home-page: https://github.com/robocorp/robo/
+License: Apache-2.0
+Author: Fabio Zadrozny
+Author-email: fabiofz@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: robocorp-tasks (>=2.5.0,<3.0.0)
+Project-URL: Repository, https://github.com/robocorp/robo/
+Description-Content-Type: text/markdown
+
+docs/README.md
