@@ -1,0 +1,2 @@
+[console_scripts]
+pyrallelism = pyrallelism:_use_pyrallelism_cli
