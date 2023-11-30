@@ -1,0 +1,17 @@
+[project]
+name = "swanlab-demo"
+version = "0.0.2"
+authors = [
+  { name="CZR", email="1575079435@qq.com" },
+]
+description = "Swanlab Office"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://swanhub.co"
