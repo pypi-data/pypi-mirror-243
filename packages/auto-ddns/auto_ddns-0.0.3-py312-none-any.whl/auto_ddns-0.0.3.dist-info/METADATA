@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: auto-ddns
+Version: 0.0.3
+Summary: auto config dns
+Author-Email: Zhan Rongrui <2742392377@qq.com>
+License: MIT
+Requires-Python: >=3.8
+Requires-Dist: typer
+Requires-Dist: loguru
+Requires-Dist: rich
+Requires-Dist: tencentcloud-sdk-python-dnspod
+Description-Content-Type: text/markdown
+
+# auto-ddns

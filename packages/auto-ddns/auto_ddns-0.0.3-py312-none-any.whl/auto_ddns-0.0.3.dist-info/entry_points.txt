@@ -1,0 +1,3 @@
+[console_scripts]
+auto-ddns = auto_ddns.__main__:app
+
