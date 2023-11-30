@@ -1,0 +1,23 @@
+Metadata-Version: 2.1
+Name: algo-trading-utils
+Version: 0.0.13
+Summary: 
+Author: jamesbaber1
+Author-email: 31859220+jamesbaber1@users.noreply.github.com
+Requires-Python: >=3.9,<4.0.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: pandas (>=2.1.3,<3.0.0)
+Requires-Dist: psycopg2-binary (>=2.9.7)
+Requires-Dist: tickerdax (>=0.0.83)
+Description-Content-Type: text/markdown
+
+# Algo Trading Utils
+
+[![CI](https://github.com/Algo-Trading-Tools/algo-trading-utils/actions/workflows/ci.yaml/badge.svg)](https://github.com/Algo-Trading-Tools/algo-trading-utils/actions/workflows/ci.yaml)
+
+
+A library full of utilities for algorithmic trading and data analysis.
