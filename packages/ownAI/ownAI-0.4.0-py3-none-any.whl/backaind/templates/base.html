@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      {% block title %}{% endblock %} - {{ config.BRAND|default('ownAI') }}
+    </title>
+    {% block main_stylesheets %}
+      {% if g.vite_dev_server_enabled %}
+        <link
+          rel="stylesheet"
+          href="http://localhost:{{ g.vite_dev_server_port }}/main.scss"
+        />
+      {% else %}
+        <link
+          rel="stylesheet"
+          href="{{ url_for('static', filename='ownai-main.css') }}"
+        />
+      {% endif %}
+    {% endblock %}
+    {% block stylesheets %}
+    {% endblock %}
+  </head>
+  <body class="h-100 d-flex flex-column">
+    <nav class="navbar border-bottom">
+      <div class="container-fluid">
+        {% if g.user %}
+          {% include '_includes/main_menu.html' %}
+        {% else %}
+          <a
+            href="/"
+            class="navbar-brand fw-bold d-flex align-items-center col-lg-4 link-body-emphasis text-decoration-none"
+          >
+            {{ config.BRAND|default('ownAI') }}
+          </a>
+        {% endif %}
+        <div class="d-flex gap-3">
+          {% if g.user %}
+            {% include '_includes/user_menu.html' %}
+          {% else %}
+            <div class="navbar-nav">
+              <a
+                class="nav-link link-primary"
+                href="{{ url_for('auth.login') }}"
+                >Log In</a
+              >
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+    <div
+      class="{% block main_classes %}container py-4 px-3 mx-auto{% endblock %}"
+    >
+      {% for category, message in get_flashed_messages(with_categories=true) %}
+        <div class="alert alert-{{ category }}" role="alert">{{ message }}</div>
+      {% endfor %}
+      {% block main %}
+      {% endblock %}
+    </div>
+    {% block main_scripts %}
+      {% if g.vite_dev_server_enabled %}
+        <script
+          type="module"
+          src="http://localhost:{{ g.vite_dev_server_port }}/@vite/client"
+        ></script>
+        <script
+          type="module"
+          src="http://localhost:{{ g.vite_dev_server_port }}/main.ts"
+        ></script>
+      {% else %}
+        <script
+          type="module"
+          src="{{ url_for('static', filename='ownai-main.js') }}"
+        ></script>
+      {% endif %}
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}
+  </body>
+</html>
