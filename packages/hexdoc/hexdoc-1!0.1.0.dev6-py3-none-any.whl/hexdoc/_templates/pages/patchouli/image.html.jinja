@@ -1,0 +1,17 @@
+{% extends "pages/patchouli/text.html.jinja" %}
+{% import "macros/textures.html.jinja" as texture_macros with context %}
+
+{% block inner_body %}
+  <p class="img-wrapper">
+    {% for image in page.images %}
+      {{
+        texture_macros.render_texture(
+          name=page.title or image.file_id,
+          texture=image,
+          lazy=false,
+        )
+      }}
+    {% endfor %}
+  </p>
+  {{ super() }}
+{% endblock inner_body %}
