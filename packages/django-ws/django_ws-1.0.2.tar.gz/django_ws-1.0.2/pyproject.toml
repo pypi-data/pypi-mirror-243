@@ -1,0 +1,35 @@
+[project]
+name = "django-ws"
+dynamic = []
+description = "Helpers for using WebSockets in Django"
+authors = [
+    { name = "Paul Bailey", email = "paul@neutron.studio" },
+]
+dependencies = [
+    "websockets>=12.0",
+]
+requires-python = ">=3.10"
+readme = "README.md"
+version = "1.0.2"
+
+[project.license]
+text = "BSD 3-Clause"
+
+[project.urls]
+homepage = "https://github.com/pizzapanther/django-ws"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm.version]
+source = "file"
+path = "django_ws/version.py"
+
+[tool.pdm.scripts]
+publish = "pdm publish --username __token__ --password $PDM_PUBLISH_PASSWORD_DWS"
+
+[tool.pdm.scripts._]
+env_file = ".env"
