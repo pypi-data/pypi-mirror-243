@@ -1,0 +1,2 @@
+[console_scripts]
+cvedb = cvedb.cvedb:main
