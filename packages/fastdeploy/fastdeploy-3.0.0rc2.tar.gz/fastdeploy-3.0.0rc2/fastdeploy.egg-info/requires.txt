@@ -1,0 +1,4 @@
+falcon
+liteindex
+zstandard
+gunicorn[gevent]
