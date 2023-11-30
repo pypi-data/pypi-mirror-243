@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: tna-frontend-jinja
+Version: 0.1.4
+Summary: TNA Frontend Jinja templates
+Home-page: https://github.com/nationalarchives/tna-frontend-jinja
+Author: Andrew Hosgood
+Author-email: andrew.hosgood@nationalarchives.gov.uk
+Project-URL: Bug Tracker, https://github.com/nationalarchives/tna-frontend-jinja/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Code Generators
+Classifier: Topic :: Software Development :: User Interfaces
+Classifier: Topic :: Text Processing :: Markup :: HTML
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: flask>=2
+
+# TNA Frontend Jinja
+
+[![Main build status](https://img.shields.io/github/actions/workflow/status/nationalarchives/tna-frontend-jinja/ci.yml?style=flat-square&event=push&branch=main)](https://github.com/nationalarchives/tna-frontend-jinja/actions/workflows/ci.yml?query=branch%3Amain)
+[![Latest release](https://img.shields.io/github/v/release/nationalarchives/tna-frontend-jinja?style=flat-square&logo=github&logoColor=white&sort=semver)](https://github.com/nationalarchives/tna-frontend-jinja/releases)
+[![PyPi version](https://img.shields.io/pypi/v/tna-frontend-jinja?style=flat-square&logo=pypi&logoColor=white)](https://pypi.org/project/tna-frontend-jinja/)
+![Python version](https://img.shields.io/pypi/pyversions/tna-frontend-jinja?style=flat-square&logo=python&logoColor=white)
+[![Licence](https://img.shields.io/github/license/nationalarchives/tna-frontend-jinja?style=flat-square)](https://github.com/nationalarchives/tna-frontend-jinja/blob/main/LICENCE)
+
+## Quickstart
+
+```sh
+python -m venv venv
+python install -r test/requirements.txt
+flask --app test run --debug --port 5000
+node test/tasks/test-fixtures.mjs
+```
