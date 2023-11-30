@@ -1,0 +1,3 @@
+recursive-include codemonkeys *.txt
+recursive-include codemonkeys *.md
+recursive-include codemonkeys/stor/defaults *
