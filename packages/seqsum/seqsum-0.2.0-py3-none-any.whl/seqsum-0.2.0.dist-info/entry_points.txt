@@ -1,0 +1,3 @@
+[console_scripts]
+seqsum=seqsum.cli:main
+
