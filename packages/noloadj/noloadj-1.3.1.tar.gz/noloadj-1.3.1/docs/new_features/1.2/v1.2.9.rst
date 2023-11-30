@@ -1,0 +1,23 @@
+What’s new in version 1.2.9
+===========================
+Version available since October 27th 2023
+
+
+New Features
+------------
+
+- GUI can be opened also with iteration class after an optimization.
+- Method 'openGUI' in wrapper class to open GUI.
+- GUI can display vectors.
+- To print pareto, new method method 'sample' implemented in optim2dbasic function (discretization).
+- For ODE systems, time and frequency features can be extracted in outputs variables.
+- Runge Kutta 45 algorithm to compute gradients ODE for non-hybrid systems in odeint45 and odeint45_extract functions.
+
+Bug fixed
+---------
+- Some changements in wrapper to avoid errors for last versions of Jax and Numpy.
+
+Contributors
+------------
+Lucas Agobert
+

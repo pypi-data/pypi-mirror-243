@@ -1,0 +1,23 @@
+What's new in version 1.3.0
+===========================
+Version available since November 17th 2023
+
+
+New Features
+------------
+- A new stochastic optimization algorithm was added (differential_evolution from scipy) with f_penalty function in wrapper.
+
+Changes
+-------
+- ComputeJacobian function has the same input parameters as computeOnce.
+
+
+Bug fixed
+---------
+- Normalization of variables is better now in getXorYmid function, in order to plot Pareto correctly.
+- complex numbers can be added in an optimization loop as intermediate variables.
+
+Contributors
+------------
+Lucas Agobert
+Benoit Delinchant

@@ -1,0 +1,22 @@
+What’s new in version 1.2.8
+===========================
+Version available since September 5th 2023
+
+
+New Features
+------------
+
+- 'ExportToXML' function also writes bounds of specifications of the optimization problem in the XML file.
+- New file 'ode44' in ODE folder, to solve ODE using a Runge Kutta 44 scheme with fixed step.
+- New files 'gui1', 'gui2' and 'OpenGUI' in GUI folder, to create a Graphical User Interface to call after running optimization.
+- Runge Kutta 44 algorithm to compute gradients ODE for non-hybrid systems in odeint45 and odeint45_extract functions.
+- New function 'Print' in ode_tools file, to print values for JIT functions.
+- New test file 'testSLSQP'.
+
+Changes
+-------
+
+Contributors
+------------
+Lucas Agobert
+Manh Tung Phan
