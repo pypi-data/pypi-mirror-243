@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: cmeel-omniorb
+Version: 4.3.1.1
+Summary: cmeel distribution for omniORB
+Requires-Python: >= 3.8
+License-Expression: LGPL-2.0-or-later
+Home-page: https://github.com/cmake-wheel/cmeel-omniorb
+Project-URL: Repository, https://github.com/cmake-wheel/cmeel-omniorb.git
+Requires-Dist: cmeel
+Provides-Extra: build
+Requires-Dist: cmeel[build] >= 0.53 ; extra == "build"
+Description-Content-Type: text/markdown
+
+# CMeel omniORB
+
+[![PyPI version](https://badge.fury.io/py/cmeel-omniorb.svg)](https://pypi.org/project/cmeel-omniorb)
+[![Release](https://github.com/cmake-wheel/cmeel-omniorb/actions/workflows/release.yml/badge.svg)](https://github.com/cmake-wheel/cmeel-omniorb/actions/workflows/release.yml)
+
+[omniORB](https://omniorb.sourceforge.io/) distribution for cmeel packages.
