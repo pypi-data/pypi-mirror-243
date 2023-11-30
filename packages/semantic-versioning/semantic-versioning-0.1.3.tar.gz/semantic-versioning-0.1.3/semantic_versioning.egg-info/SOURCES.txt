@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+semantic_versioning/__init__.py
+semantic_versioning/_version.py
+semantic_versioning/flags.py
+semantic_versioning/patterns.py
+semantic_versioning/semantic_version.py
+semantic_versioning/specifier.py
+semantic_versioning/utils.py
+semantic_versioning.egg-info/PKG-INFO
+semantic_versioning.egg-info/SOURCES.txt
+semantic_versioning.egg-info/dependency_links.txt
+semantic_versioning.egg-info/requires.txt
+semantic_versioning.egg-info/top_level.txt
+tests/test_semantic_version.py
