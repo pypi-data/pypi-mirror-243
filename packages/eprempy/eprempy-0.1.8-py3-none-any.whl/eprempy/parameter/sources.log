@@ -1,0 +1,14 @@
+The following source files
+
+/home/matthew/emmrem/open/source/eprem/src/configuration.c
+/home/matthew/emmrem/open/source/eprem/src/baseTypes.h
+
+produced the current versions of
+
+/home/matthew/emmrem/open/source/eprempy/src/eprempy/parameter/default.py
+/home/matthew/emmrem/open/source/eprempy/src/eprempy/parameter/reference.json
+
+This file is unversioned because it contains user-specific paths.
+DO NOT commit this file to the repository.
+
+Updated: 2023-11-13 10:44:34
