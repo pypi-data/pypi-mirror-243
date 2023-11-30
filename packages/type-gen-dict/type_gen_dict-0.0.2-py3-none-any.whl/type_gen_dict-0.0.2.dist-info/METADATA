@@ -1,0 +1,8 @@
+Metadata-Version: 2.1
+Name: type-gen-dict
+Version: 0.0.2
+Summary: Python package to convert python dictionaries into other language types (Currently Typescript).
+Author: Ray Del Vecchio
+Author-email: ray@cerebralvalley.ai
+License-File: LICENSE
+
