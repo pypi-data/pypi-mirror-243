@@ -1,0 +1,13 @@
+LICENSE
+README.rst
+pyproject.toml
+setup.cfg
+setup.py
+bigquery_exporter/__init__.py
+bigquery_exporter/base.py
+django_bigquery_exporter.egg-info/PKG-INFO
+django_bigquery_exporter.egg-info/SOURCES.txt
+django_bigquery_exporter.egg-info/dependency_links.txt
+django_bigquery_exporter.egg-info/requires.txt
+django_bigquery_exporter.egg-info/top_level.txt
+tests/test_base.py
