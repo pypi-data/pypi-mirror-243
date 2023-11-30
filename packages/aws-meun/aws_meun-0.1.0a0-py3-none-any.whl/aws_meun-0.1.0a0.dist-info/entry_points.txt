@@ -1,0 +1,3 @@
+[console_scripts]
+aws-meun=aws_meun.cli:main
+
