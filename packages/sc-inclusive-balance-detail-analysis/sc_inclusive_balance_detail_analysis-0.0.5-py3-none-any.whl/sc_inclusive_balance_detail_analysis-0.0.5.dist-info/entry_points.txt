@@ -1,0 +1,2 @@
+[console_scripts]
+sc-inclusive-balance-detail-analysis = sc_inclusive_balance_detail_analysis.main:main

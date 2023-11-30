@@ -1,0 +1,157 @@
+# 说明：如下配置的索引均从0开始计数，第1列为0、第2列为1，依此类推
+# 环境
+environment: production
+
+# 花名册配置
+manifest:
+  # 花名册文件路径
+  source_file_path: 广州分行各团队、部室成员名单.xlsx
+  # Sheet名称
+  sheet_name: Sheet1
+  sheet_config:
+    # 表头行索引
+    header_row: 1
+    # 工号列索引
+    id_column: D
+    # 姓名列索引
+    name_column: C
+    # 所属机构列索引
+    branch_column: B
+
+# 机构相关配置
+branch:
+  # 公共户名关键字列表
+  common_account_keyword:
+    - 公共
+    - 虚拟
+  # 广州分行公共名称
+  gz_common_account: 广州分行公共
+  # 名称转换配置
+  name_mapping:
+    广州分行: 广州分行行领导
+    广州分行公共: 广州分行公共
+    广州分行粤能支行: 粤能支行
+    广州粤能支行: 粤能支行
+    广州分行财智支行: 财智支行
+    广州财智支行: 财智支行
+    广州分行江湾支行: 江湾支行
+    广州江湾支行: 江湾支行
+    广州分行黄埔支行: 黄埔支行
+    广州黄埔支行: 黄埔支行
+    广州分行美博城支行: 东风支行
+    广州美博城支行: 东风支行
+    美博城支行: 东风支行
+    广州东风支行: 东风支行
+    广东分行自贸试验区南沙支行: 南沙支行
+    广东自贸试验区南沙支行: 南沙支行
+    自贸试验区南沙支行: 南沙支行
+    广州分行营业部: 分行营业部
+    广州分行运营管理部: 运营管理部
+    广州运营管理部: 运营管理部
+    广州分行公司业务管理部: 公司业务管理部
+    广州公司业务管理部: 公司业务管理部
+    广州分行中小企业管理部: 中小企业管理部
+    广州中小企业管理部: 中小企业管理部
+    中小企业部: 中小企业管理部
+    广州分行公司业务一部: 公司业务一部
+    广州公司业务一部: 公司业务一部
+    公司一部: 公司业务一部
+    广州分行公司业务三部: 公司业务三部
+    广州公司业务三部: 公司业务三部
+    公司三部: 公司业务三部
+    广州分行公司业务二部: 公司业务二部
+    广州公司业务二部: 公司业务二部
+    公司二部: 公司业务二部
+    广州分行授信审批部: 授信审批部
+    广州授信审批部: 授信审批部
+    广州分行人力财务部: 人力财务部
+    广州人力财务部: 人力财务部
+    广州分行计划财务部: 计划财务部
+    广州计划财务部: 计划财务部
+    广州分行零售业务管理部: 零售业务管理部
+    广州零售业务管理部: 零售业务管理部
+    广州分行风险管理部: 风险管理部
+    广州风险管理部: 风险管理部
+    广州分行综合保卫部: 综合保卫部
+    广州综合保卫部: 综合保卫部
+    广州分行法律合规部: 法律合规部
+    广州法律合规部: 法律合规部
+  # 业绩归属机构列名
+  sales_performance_attribution_column_name: 业绩归属机构
+  # 业绩归属机构配置
+  sales_performance_attribution_mapping:
+    广州分行: 广州分行行领导
+    广州分行公共: 广州分行公共
+
+
+# 普惠
+inclusive:
+  # 生成的目标Excel文件存放路径
+  target_directory: ./
+  # 目标文件名称
+  target_filename: 普惠相关数据余额明细分析.xlsx
+  # 生成的Excel中按客户经理汇总的Sheet的名称
+  target_manager_summary_sheet_name: 客户经理汇总
+  # 生成的Excel中按客户经理汇总的Sheet的名称
+  target_branch_summary_sheet_name: 机构汇总
+  # 普惠相关数据余额明细
+  balance_detail:
+    # 是否启用分析，True：分析，False：不分析
+    enabled: true
+    # 业务分类类型说明
+    business_type: 普惠相关数据余额明细(支行)_下载
+    # 普惠相关数据余额明细(支行)
+    source_file_path: 普惠相关数据余额明细(支行)_下载.csv
+    # 客户对应的客户经理调整配置
+    client_adjustments:
+      # 格式如下：- "客户号 : 客户经理A : 客户经理B"
+      # 用英文引号包起来，冒号请使用英文冒号，多个配置的话，请复制粘贴再修改即可
+      - "client_no1 : manager_A : manager_B"
+      - "client_no2 : manager_C : manager_D"
+    # Sheet名称
+    sheet_name: 普惠相关数据余额明细(支行)
+    sheet_config:
+      # 表头行索引
+      header_row: 0
+      # 客户编号列索引
+      client_no_column: C
+      # 客户经理列索引
+      name_column: AL
+      # 考核口径普惠贷款列索引
+      is_inclusive_column: BE
+      # 考核口径普惠贷款列过滤值（只要'是'的值）
+      is_inclusive_column_value: 是
+      # 是否过滤贷款业务品种
+      is_filter_loan_product: false
+      # 贷款业务品种列索引
+      loan_product_column: X
+      # 贷款业务品种列过滤值（列出需要保留的贷款业务品种）
+      loan_product_list:
+        - 出口快贷
+        - 房e快贷
+        - 个人经营贷款
+        - 个人经营贷款(新心助力贷)
+        - 呼啦快贷
+        - 快乐e贷-税e贷
+        - 快乐e贷-政采贷
+        - 流动资金贷款
+        - 一般经营性物业贷款
+        - 医疗行业贷款(固贷)
+      # 需要统计的列的索引与输出列名对
+      value_column_pairs:
+        # 列索引：输出的列名
+        V: 贷款余额
+      # 源数据导出，所有需要导出列的索引列表
+      export_column_list: [ all ]
+
+
+  # 按机构汇总分析
+  branch_summary:
+    # 是否启用分析，True：分析，False：不分析
+    enabled: true
+    # 业务分类类型说明
+    business_type: 机构汇总
+    # 大类汇总
+#    business_type_summary:
+#      贷款余额:
+#        - 贷款余额
