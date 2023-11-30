@@ -1,0 +1,7 @@
+CHANGES
+=======
+
+v0.20231129.0
+-------------
+
+* Set socket\_keepalive = True for all Redis connections (#705)
