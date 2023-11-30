@@ -1,0 +1,62 @@
+Metadata-Version: 2.1
+Name: geidiprime
+Version: 0.0.1
+Summary: Paper - Pytorch
+Home-page: https://github.com/kyegomez/GiediPrime
+License: MIT
+Keywords: artificial intelligence,deep learning,optimizers,Prompt Engineering
+Author: Kye Gomez
+Author-email: kye@apac.ai
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Dist: einops
+Requires-Dist: local-attention
+Requires-Dist: torch
+Requires-Dist: zetascale
+Project-URL: Documentation, https://github.com/kyegomez/GiediPrime
+Project-URL: Repository, https://github.com/kyegomez/GiediPrime
+Description-Content-Type: text/markdown
+
+[![Multi-Modality](agorabanner.png)](https://discord.gg/qUtxnK2NMf)
+
+# GeidiPrime
+This is an extremely experimental Transformer architecture with Macaron like FFNs with local attention. Perhap's we can add the visual expert from Zeta and make it multi-modal!
+
+
+# Install
+
+## Usage
+```python
+import torch
+from geidi_prime.model import GeidiPrimeTransformer
+
+model = GeidiPrimeTransformer(
+    dim=4096,
+    depth=6,
+    heads=8,
+    num_tokens=20000,
+)
+
+x = torch.randint(0, 20000, (1, 4096))
+
+out = model(x)
+print(out.shape)
+
+```
+
+
+
+# License
+MIT
+
+
+
+
