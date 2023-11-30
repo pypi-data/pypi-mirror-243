@@ -1,0 +1,200 @@
+#!/bin/bash
+
+os_level=`cat /etc/os-release |grep REDHAT_SUPPORT_PRODUCT_VERSION |awk -F= '{print $2}' |sed s/\"//g |awk -F. '{print $1}'`
+python38="/opt/rh/rh-python38"
+if [[ "$os_level" == 7 ]]
+then
+  if [[ -d  "$python38" ]]
+  then
+    ucampurestorage="/opt/rh/rh-python38/root/usr/local/bin/ucampurestorage"
+  else
+    echo "Python 3.8 is not installed as per the recommendatations"
+  fi
+else
+ucampurestorage="/usr/local/bin/ucampurestorage"
+fi
+
+echo "Invoked with: $0 $@"
+echo "My PID is $$"
+
+###################################################################
+# Purpose: usage information
+###################################################################
+function usage()
+{
+cat << EOF
+usage: $0 options
+
+This script delete the snapshots. List was created while creating the snapshot using "pure_c0reate_snapshot".
+NOTE:
+  /opt/pureutils/snapshot directory will be read for deletion snapshot since the file was created during the utilizing of "pure_create_snapshot".
+
+OPTIONS:
+  -h                                Show this message
+  -k /path/to/secrets.json          Secrets file containing URL and credentials to access the Pure storage
+  -f                                If specified, user will not be prompted to confirm the snapshot eradication
+
+E.g.
+   $0 -k /path/to/secrets.json
+
+NB.
+1. /path/to/secrets.json must be in the following format:
+{
+  "client_id": "pure_api_client_id",
+  "key_id": "pure_api_key_id",
+  "client_name": "pure_api_client_name",
+  "storage": "purestorage.cam.ac.uk",
+  "user": "pureuser",
+  "password": "purepassword",
+  "keyfile": "private.pem"
+}
+
+2. ucampurestorage must be installed and located under /usr/local/bin/
+EOF
+}
+
+###################################################################
+# Parse the args
+###################################################################
+
+force=0
+today=$(date '+%C%y%m%d')
+snapshot_dir=/opt/pureutils/snapshot
+
+while getopts "h:k:f" opt
+do
+  case $opt in
+    h)
+      usage
+      exit
+      ;;
+    k)
+      secrets=$OPTARG
+     ;;
+    f)
+      force=1
+    ;;
+    ?)
+      usage
+      exit
+      ;;
+  esac
+done
+
+# check required arguments
+if [ -z "$secrets" ]
+then
+    usage
+    exit
+fi
+
+if [[ -d $snapshot_dir ]]
+then
+  echo "Path "$snapshot_dir" not found."
+else
+    usage
+    exit
+fi
+
+
+function valid_candidate()
+{
+  snap_expire_date=`echo $1 | awk -F- '{print $NF}'`
+  if [[ $snap_expire_date < $today ]]
+  then
+    echo 1
+  else
+    echo 0
+  fi
+}
+
+function relevant_snapshot_to_be_deleted()
+{
+  valid_snapshot=()
+  for snapshotname in $@
+  do
+    result=$(valid_candidate $snapshotname)
+    if [[ $result -eq 1 ]]
+    then
+      valid_snapshot+=($snapshotname)
+    fi
+  done
+  echo ${valid_snapshot[@]}
+}
+
+bad=0
+data=()
+for snapshot_file in `ls $snapshot_dir |grep .puresnap`
+do
+  # remove the empty file
+  if [[ ! -s $snapshot_dir/$snapshot_file ]]
+  then
+    rm -f $snapshot_dir/$snapshot_file
+  fi
+  snapshots=`cat $snapshot_file |awk '{print $1}' |awk /./`
+  valid_snapshot_to_del=($(relevant_snapshot_to_be_deleted $snapshots))
+  data+=([$snapshot_file]=${valid_snapshot_to_del[@]})
+done
+
+all_snap_to_be_deleted=${data[@]}
+succeeded_deletion=()
+failed_deletion=()
+
+if [[ "$force" == 0 ]]
+then
+  read -p "Do you really want to delete the $all_snap_to_be_deleted snapshot  (Y or y for Yes)? " -n 1 -r
+  echo
+else
+  REPLY=Y
+fi
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  for snap_name in $all_snap_to_be_deleted
+  do
+  result=$($ucampurestorage --file $secrets snapshot delete --snapname $snap_name)
+  if [[ $result == *"[Command succeeded - Returns True]"* ]]
+    then
+    echo "$snap_name successfully deleted!"
+    succeeded_deletion+=($snap_name)
+  else
+    echo "$snap_name failed deleted!"
+    failed_deletion+=($snap_name)
+    bad = 1
+  fi
+  done
+else
+  exit
+fi
+
+# Update the snapshot files
+for snapshot_file in `ls $snapshot_dir |grep .puresnap`
+do
+  # read the snapdeleted and removed from the snapshot files
+  for deleted_snap in $succeeded_deletion
+  do
+    cat $snapshot_dir/$snapshot_file | sed -E s/$deleted_snap//g |awk /./ > /tmp/$snapshot_file
+    mv /tmp/$snapshot_file $snapshot_dir/$snapshot_file
+  done
+done
+
+# expiration crossed but cannot be deleted then probably the volume must be removed
+# therefore perform cleanup of stale entries from the file
+for snapshot_file in `ls $snapshot_dir |grep .puresnap`
+do
+  # read the snapdeleted and removed from the snapshot files
+  for notdiscoved_snap in $failed_deletion
+  do
+    cat $snapshot_dir/$snapshot_file | sed -E s/$notdiscoved_snap//g |awk /./ > /tmp/$snapshot_file
+    mv /tmp/$snapshot_file $snapshot_dir/$snapshot_file
+  done
+done
+
+
+if [[ $bad == 0 ]]
+then
+    echo "Command succeeded."
+    exit 0
+else
+    echo "Command failed. Please check the ucampurestorage log file in /var/log/ucampurestorage/."
+    exit 1
+fi
