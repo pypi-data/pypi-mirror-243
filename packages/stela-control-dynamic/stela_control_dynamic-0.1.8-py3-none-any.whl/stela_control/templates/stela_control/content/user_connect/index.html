@@ -1,0 +1,270 @@
+{% extends 'stela_control/content/main/index.html' %}
+{% load i18n %}
+{% load static %}
+{% block styles %}
+<style>
+    .btn-shappire {
+        background: #2f1875 !important;
+        color: #fff !important;
+        border: solid 1px #2f1875!important;
+        box-shadow: 2px 2px 8px #6562e96e;
+        transition: all .3s ease-in-out;
+      }
+      .btn-shappire:hover {
+        background: #fff !important;
+        border: solid 2px #2f1875;
+        box-shadow: 2px 2px 8px #6562e96e;
+        color: #2f1875 !important;
+      }
+      .btn-shappire-outline {
+        background: #fff !important;
+        color: #2f1875 !important;
+        border: solid 1px #2f1875!important;
+        box-shadow: 2px 2px 8px #6562e96e;
+        transition: all .3s ease-in-out;
+      }
+</style>
+{% endblock  %}
+{% block head_title %}{% trans "Club." %} | {% trans "Enjoy." %}{% endblock %}
+{% block logo %}{% static 'img/icons/logo-club.png' %}{% endblock  %}
+{% block link_logo %}{% endblock  %}
+{% block postbtn %}
+{% endblock %}
+{% block variables %}
+
+{% endblock  %}
+{% block content %}
+    <div class="background py-4">
+        <div class="container">
+            {% block title %}
+                <h1 class="ff-30 fredoka-thin">{% trans "Hello" %}, <span style="color:var(--primary);">{{user.username}}</span>, {% trans "welcome to the Mimopaws Club." %}</h3>
+                <hr>
+                <p>{% trans "In this section you can manage all your services to your pets." %}</p>
+            {% endblock  %}
+            {% block menu %}
+                <div class="row justify-content-between">
+                    <div class="col-3">
+                        <a href="">
+                            <div class="small-box b-25px bg-clear">
+                                <div class="row justify-content-center">
+                                    <div class="mimo-appointment"></div>
+                                </div>
+                                <div class="row">
+                                    <span class="nothing text-center ff-21 fw-bold color-secondary">{% trans "Appointments." %}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="">
+                            <div class="small-box b-25px bg-clear">
+                                <div class="row justify-content-center">
+                                    <div class="mimo-favorite"></div>
+                                </div>
+                                <div class="row">
+                                    <span class="nothing text-center ff-21 fw-bold color-secondary">{% trans "Club Points." %}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="">
+                            <div class="small-box b-25px bg-clear">
+                                <div class="row justify-content-center">
+                                    <div class="mimo-support"></div>
+                                </div>
+                                <div class="row">
+                                    <span class="nothing text-center ff-21 fw-bold color-secondary">{% trans "Support" %}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-3">
+                        <a href="">
+                            <div class="small-box b-25px bg-clear">
+                                <div class="row justify-content-center">
+                                    <div class="mimo-settings"></div>
+                                </div>
+                                <div class="row">
+                                    <span class="nothing text-center ff-21 fw-bold color-secondary">{% trans "Settings" %}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endblock  %}
+            {% block nexus-content %}
+                {% if cart_service.get_total_price > 0 %}
+                    <div class="row justify-content-center">
+                        <h3 class="fredoka-thin ff-22 text-center">{% trans "Pending Checkout" %}</h3>
+                        <div class="col-md-12 col-lg-8 my-3">
+                            <div class="b-25px bg-white p-3">
+                                {% for item in cart_service.get_select %}
+                                    {% with select=item.select %}
+                                        <table class="compact table table-borderless poppins" style="width:100%">
+                                            <thead class="fredoka-thin text-grey">
+                                                <tr>
+                                                    <th style="width: 30%;">{% trans "Service" %}</th>
+                                                    <th style="width: 20%;">{% trans "Pet" %}</th>
+                                                    <th style="width: 30%;">{% trans "Booking Date" %}</th>
+                                                    <th style="width: 20%;">{% trans "Action" %}</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>{{select.service.title}}</td>
+                                                    <td>{{select.pet.name}}</td>
+                                                    {% if cart_service.get_date.date %}
+                                                        <td>{{cart_service.get_date.date}}</td>
+                                                    {% else %}
+                                                        <td>{% trans "No date selected" %}</td> 
+                                                    {% endif %}
+                                                    <td><a href="" target="_blank" class="blue-link">{% trans "Finish" %}</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    {% endwith %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="row justify-content-between">
+                    <div class="col-md-12 col-lg-6">
+                        <div class="col-12">
+                            <h3 class="fredoka-thin ff-22 text-center">{% trans "Site News" %}</h3> 
+                            <div class="row justify-content-center my-3 z-max">
+                                <div class="col-lg-5">
+                                    {% if stelafooter %}
+                                        <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateFooter()">{% trans "Update Content" %}</button>  
+                                    {% else %}
+                                        <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#news">{% trans "Load Content" %}</button>
+                                    {% endif %}   
+                                </div>
+                            </div>  
+                            <div class="large-box b-25px bg-white">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-lg-6">
+                        <div class="col-12">
+                            <div class="row justify-content-between">
+                                <h3 class="fredoka-thin ff-22 text-center">{% trans "Sections of interest" %}</h3>
+                                <div class="col-6">
+                                    <div class="small-box b-25px bg-white">
+
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="small-box b-25px bg-white">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center my-3 z-max">
+                                <div class="col-lg-5">
+                                    {% if stelafooter %}
+                                        <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#updates" onclick="updateFooter()">{% trans "Update Content" %}</button>  
+                                    {% else %}
+                                        <button class="btn btn-block btn-shappire" data-bs-toggle="modal" data-bs-target="#sections">{% trans "Load Content" %}</button>
+                                    {% endif %}   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock  %}   
+        </div>
+    </div>
+
+        <div class="modal fade" id="news" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-body mid-modal-scroll modal1">    
+                    
+                    <p class="response-footer text-link fw-bold oxanium"></p>
+                    <input type="hidden" name="form-id" value="new-about1">
+                    <div class="row justify-content-end p-3">
+                        <div class="col-lg-4">
+                            <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                        </div>
+                    </div>
+                </div>    
+            </form>
+            </div>
+            </div>
+        </div>
+        <div class="modal fade" id="sections" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-body mid-modal-scroll modal1">    
+                    
+                    <p class="response-footer text-link fw-bold oxanium"></p>
+                    <input type="hidden" name="form-id" value="new-about1">
+                    <div class="row justify-content-end p-3">
+                        <div class="col-lg-4">
+                            <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                        </div>
+                    </div>
+                </div>    
+            </form>
+            </div>
+            </div>
+        </div>
+        <div class="modal fade" id="updates" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "New Content" %}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="vh-50" action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="modal-body mid-modal-scroll modal1">    
+                    
+                    <p class="response-footer text-link fw-bold oxanium"></p>
+                    <input type="hidden" name="form-id" value="new-about1">
+                    <div class="row justify-content-end p-3">
+                        <div class="col-lg-4">
+                            <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block form-btn1 d-flex mx-2">{% trans "Send" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                        </div>
+                    </div>
+                </div>    
+            </form>
+            </div>
+            </div>
+        </div>
+{% endblock  %}
+
+{% block footer_logo %}{% static 'img/icons/logo-club.png' %}{% endblock  %}
+{% block scripts %}
+    <script>
+        const textEmptyTable = '{% trans "No Data" %}'
+        const textLoadRecords = '{% trans "Loading" %}'
+        const textProcesingTable = '{% trans "Processing" %}'
+        const preloader = '<div class="preload vh-30 w-100"></div>'
+        const textbutton2 = '{% trans "Edit" %} <i class="fas fa-plus"></i>'
+        const urlProfile= ""
+        const titlePet = '{% trans "Update Pet" %}'
+        const titleProfile = '{% trans "Update Profile" %}'
+        const checkmark = "{% static 'js/animateicons/checkmark.json' %}"
+        const warning = "{% static 'js/animateicons/warningv1.json' %}"
+        const removeSuccessTitle = '{% trans "Remove completed successfully" %}'
+        const profileScript = "{% static 'js/nexus/listen.js' %}"
+    </script>
+    {% block childScritps %}
+    {% endblock  %}
+{% endblock  %}
