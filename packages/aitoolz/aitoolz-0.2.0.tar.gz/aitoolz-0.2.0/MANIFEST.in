@@ -1,0 +1,6 @@
+include src/aitoolz/resources/pkg_templates/*.py
+include src/aitoolz/resources/pkg_templates/*.toml
+include src/aitoolz/resources/pkg_templates/*.typed
+include src/aitoolz/resources/pkg_templates/*.yml
+include src/aitoolz/resources/pkg_templates/*.md
+include src/aitoolz/resources/pkg_templates/.gitignore

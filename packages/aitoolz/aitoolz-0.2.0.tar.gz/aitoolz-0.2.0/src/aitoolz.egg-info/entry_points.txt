@@ -1,0 +1,3 @@
+[console_scripts]
+find-imports = aitoolz.find_imports:_cli
+mep = aitoolz.make_project:_cli
