@@ -1,0 +1,4 @@
+requests>=2.31.0
+
+[dev]
+build>=1.0.3
