@@ -1,0 +1,46 @@
+Metadata-Version: 2.1
+Name: autoassistant
+Version: 0.4
+Summary: A simple data teachable chat, built on AutoGen framework. An integrated tool in LetMeDoIt AI project.
+Home-page: https://letmedoit.ai
+Author: Eliran Wong
+Author-email: support@letmedoit.ai
+License: GNU General Public License (GPL)
+Project-URL: Source, https://github.com/eliranwong/autoassistant
+Project-URL: Tracker, https://github.com/eliranwong/autoassistant/issues
+Project-URL: Documentation, https://github.com/eliranwong/autoassistant/wiki
+Project-URL: Funding, https://www.paypal.me/MarvelBible
+Keywords: ai autogen assistant gpt openai
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Utilities
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Requires-Dist: prompt-toolkit
+Requires-Dist: openai ==1.3.5
+Requires-Dist: pyautogen ==0.2.0
+Requires-Dist: chromadb
+Requires-Dist: geocoder
+Requires-Dist: datetime
+Requires-Dist: pendulum
+Requires-Dist: netifaces
+Requires-Dist: requests
+
+# autoassistant
+
+A simple teachable chat, built on [AutoGen framework](https://microsoft.github.io/autogen/docs/Getting-Started/).
+
+It is a simplified version of the "autoassistant" tool, integrated in our [LetMeDoIt AI project](https://github.com/eliranwong/letmedoit)
+
+# Install
+
+> pip install autoassistant
+
+# Usage
+
+> autoassistant
