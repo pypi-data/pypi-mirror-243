@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: sandeep-keyword-generator
+Version: 0.1
+Summary: Keyword extraction using LLMs
+Author: Your Name
+Author-email: your.email@example.com
+Requires-Dist: transformers
+Requires-Dist: langchain
+Requires-Dist: torch
+Requires-Dist: einops
+Requires-Dist: accelerate
+Requires-Dist: bitsandbytes
+
