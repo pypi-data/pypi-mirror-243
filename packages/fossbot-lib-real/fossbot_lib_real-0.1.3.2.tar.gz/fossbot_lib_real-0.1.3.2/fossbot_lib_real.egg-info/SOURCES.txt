@@ -1,0 +1,17 @@
+README.md
+setup.py
+fossbot_lib/common/data_structures/__init__.py
+fossbot_lib/common/data_structures/configuration.py
+fossbot_lib/common/interfaces/__init__.py
+fossbot_lib/common/interfaces/control_interfaces.py
+fossbot_lib/common/interfaces/robot_interface.py
+fossbot_lib/common/interfaces/sim_gym_interface.py
+fossbot_lib/parameters_parser/__init__.py
+fossbot_lib/parameters_parser/parser.py
+fossbot_lib/real_robot/__init__.py
+fossbot_lib/real_robot/control.py
+fossbot_lib/real_robot/fossbot.py
+fossbot_lib_real.egg-info/PKG-INFO
+fossbot_lib_real.egg-info/SOURCES.txt
+fossbot_lib_real.egg-info/dependency_links.txt
+fossbot_lib_real.egg-info/top_level.txt
