@@ -1,0 +1,11 @@
+LICENSE.md
+README.md
+pyproject.toml
+setup.cfg
+src/syncseed/__init__.py
+src/syncseed/syncseed.py
+src/syncseed.egg-info/PKG-INFO
+src/syncseed.egg-info/SOURCES.txt
+src/syncseed.egg-info/dependency_links.txt
+src/syncseed.egg-info/requires.txt
+src/syncseed.egg-info/top_level.txt
