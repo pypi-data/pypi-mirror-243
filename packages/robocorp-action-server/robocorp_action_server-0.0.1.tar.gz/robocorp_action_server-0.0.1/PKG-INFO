@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: robocorp-action-server
+Version: 0.0.1
+Summary: Robocorp local task server
+Home-page: https://github.com/robocorp/robo/
+License: Apache-2.0
+Author: Fabio Zadrozny
+Author-email: fabiofz@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: PyYAML (>=6,<7)
+Requires-Dist: fastapi (>=0.104.1,<0.105.0)
+Requires-Dist: jsonschema (>=4.19.2,<5.0.0)
+Requires-Dist: pydantic (>=2.4.2,<3.0.0)
+Requires-Dist: robocorp-actions (>=0.0.1,<0.0.2)
+Requires-Dist: uvicorn (>=0.23.2,<0.24.0)
+Project-URL: Repository, https://github.com/robocorp/robo/
+Description-Content-Type: text/markdown
+
+docs/README.md
