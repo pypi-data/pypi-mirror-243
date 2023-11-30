@@ -1,0 +1,1 @@
+SERVICE_LOGGING_NAME: str = "File Content Checking Service"
