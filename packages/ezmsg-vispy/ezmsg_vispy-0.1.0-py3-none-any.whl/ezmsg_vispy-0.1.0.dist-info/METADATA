@@ -1,0 +1,41 @@
+Metadata-Version: 2.1
+Name: ezmsg-vispy
+Version: 0.1.0
+Summary: Visualization tools for ezmsg using the vispy library.
+License: LICENSE.txt
+Author: Peranich, Preston
+Author-email: pperanich@gmail.com
+Requires-Python: >=3.9,<4.0
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: ezmsg (>=3.3.3,<4.0.0)
+Requires-Dist: numpy (>=1.26.2,<2.0.0)
+Requires-Dist: pyqt6 (>=6.6.0,<7.0.0)
+Requires-Dist: qdarkstyle (>=3.2.1,<4.0.0)
+Requires-Dist: vispy (>=0.14.1,<0.15.0)
+Description-Content-Type: text/markdown
+
+# ezmsg-vispy
+
+`ezmsg-vispy` is an extension to the [`ezmsg`](https://github.com/iscoe/ezmsg)
+framework, crafted to enhance and expedite the development
+of real-time data visualizations. By leveraging the power of PyQt6 and the Vispy plotting
+library, `ezmsg-vispy` offers a fluid interface for high-performance
+visualizations within systems developed with `ezmsg`.
+It's an ideal tool for researchers and developers who require rapid prototyping
+of graphical interfaces for complex datasets. With `ezmsg-vispy`, creating
+interactive visualizations that can integrate seamlessly into message-driven
+architectures is more intuitive than ever.
+
+## Installation
+
+To install `ezmsg-vispy`, simply run:
+
+```bash
+pip install ezmsg-vispy
+```
+
