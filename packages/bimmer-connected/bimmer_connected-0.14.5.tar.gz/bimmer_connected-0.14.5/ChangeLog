@@ -1,0 +1,7 @@
+CHANGES
+=======
+
+0.14.5
+------
+
+* Fix handling 401 after 429 status code (#585)
