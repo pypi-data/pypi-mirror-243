@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools", "build"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "s3torchconnector"
+version = "1.1.0"
+description = "S3 connector integration for PyTorch"
+requires-python = ">=3.8,<3.12"
+readme = "README.md"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Topic :: Utilities"
+]
+
+dependencies = [
+    "torch >= 2.0.1",
+    "s3torchconnectorclient >= 1.1.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest",
+    "hypothesis",
+    "flake8",
+    "black"
+]
+
+e2e = [
+    "torchdata",
+    "torchvision",
+    "Pillow",
+    "boto3",
+    "numpy",
+    "pytest-xdist"
+]
+
+[tool.setuptools.packages]
+# Pure Python packages/modules
+find = { where = ["src"] }
+
+[tool.setuptools]
+license-files = [ "LICENSE", "THIRD-PARTY-LICENSES", "NOTICE"]

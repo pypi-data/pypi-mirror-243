@@ -1,0 +1,16 @@
+torch>=2.0.1
+s3torchconnectorclient>=1.1.0
+
+[e2e]
+torchdata
+torchvision
+Pillow
+boto3
+numpy
+pytest-xdist
+
+[test]
+pytest
+hypothesis
+flake8
+black
