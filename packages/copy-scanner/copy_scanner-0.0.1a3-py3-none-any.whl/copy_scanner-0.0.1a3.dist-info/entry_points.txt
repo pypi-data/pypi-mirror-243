@@ -1,0 +1,3 @@
+[console_scripts]
+scanner-segment=scanner.cli:main
+
