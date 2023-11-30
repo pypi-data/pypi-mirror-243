@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/darbiadev_shipping/__init__.py
+src/darbiadev_shipping/py.typed
+src/darbiadev_shipping/shipping_services.py
+src/darbiadev_shipping.egg-info/PKG-INFO
+src/darbiadev_shipping.egg-info/SOURCES.txt
+src/darbiadev_shipping.egg-info/dependency_links.txt
+src/darbiadev_shipping.egg-info/requires.txt
+src/darbiadev_shipping.egg-info/top_level.txt
+tests/test_client.py

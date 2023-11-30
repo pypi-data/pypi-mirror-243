@@ -1,0 +1,76 @@
+[project]
+name = "darbiadev-shipping"
+version = "0.5.1"
+description = "darbiadev-shipping"
+readme = "README.md"
+authors = [
+    { name = "Bradley Reynolds", email = "bradley.reynolds@darbia.dev" },
+]
+license = { text = "MIT" }
+requires-python = ">=3.11,<3.13"
+dependencies = []
+
+[project.urls]
+repository = "https://github.com/darbiadev/darbiadev-shipping"
+documentation = "https://docs.darbia.dev/darbiadev-shipping/"
+
+[project.optional-dependencies]
+ups = [
+    "darbiadev-ups<1.0.0,>=0.5.0"
+]
+fedex = [
+    "darbiadev-fedex<1.0.0,>=0.3.0"
+]
+usps = [
+    "darbiadev-usps<1.0.0,>=0.5.0"
+]
+dev = [
+    "pip-tools",
+    "pre-commit",
+    "ruff",
+]
+tests = [
+    "pytest",
+    "pytest-randomly",
+]
+docs = [
+    "sphinx",
+    "furo",
+    "sphinx-autoapi",
+    "releases",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.package-data]
+darbiadev_shipping = ["py.typed"]
+
+[tool.ruff]
+preview = true
+unsafe-fixes = true
+target-version = "py312"
+select = ["ALL"]
+line-length = 120
+ignore = [
+    "CPY001", # (Missing copyright notice at top of file) - No license
+    "PLR0913" # (Too many arguments in function definition) - Lots of arguments, could refactor into address, but would lose clarity
+]
+
+[tool.ruff.extend-per-file-ignores]
+"docs/*" = [
+    "INP001", # (File `tests/*.py` is part of an implicit namespace package. Add an `__init__.py`.) - Docs are not modules
+]
+"tests/*" = [
+    "INP001", # (File `tests/*.py` is part of an implicit namespace package. Add an `__init__.py`.) - Tests are not modules
+    "S101", # (Use of `assert` detected) - Yes, that's the point
+]
+
+[tool.ruff.pydocstyle]
+convention = "numpy"
+
+[tool.coverage.run]
+source = [
+    "darbiadev_shipping",
+]
