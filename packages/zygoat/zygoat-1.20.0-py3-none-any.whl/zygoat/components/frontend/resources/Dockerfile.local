@@ -1,0 +1,9 @@
+FROM node:latest
+
+RUN mkdir /code
+WORKDIR /code
+
+COPY package.json package-lock.json /code/
+RUN npm install
+
+CMD npm run dev -p 3000
