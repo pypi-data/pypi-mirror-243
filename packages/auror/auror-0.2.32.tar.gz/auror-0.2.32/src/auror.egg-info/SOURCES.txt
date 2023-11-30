@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+src/auror/__init__.py
+src/auror/parameter.py
+src/auror/protego.py
+src/auror.egg-info/PKG-INFO
+src/auror.egg-info/SOURCES.txt
+src/auror.egg-info/dependency_links.txt
+src/auror.egg-info/requires.txt
+src/auror.egg-info/top_level.txt
+tests/test_base.py
