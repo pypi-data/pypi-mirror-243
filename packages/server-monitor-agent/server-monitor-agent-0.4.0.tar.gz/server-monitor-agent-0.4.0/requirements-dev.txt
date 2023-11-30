@@ -1,0 +1,35 @@
+# package management
+pip
+
+# build and upload package
+setuptools
+wheel
+build
+twine
+
+# testing
+pytest
+pytest-mock
+requests-mock
+tblib
+coverage
+tox
+
+# linters
+black
+flake8
+flake8-annotations-coverage
+flake8-black
+flake8-bugbear
+flake8-comprehensions
+flake8-unused-arguments
+mypy
+pylint
+pydocstyle
+pyright
+types-dateparser
+types-PyYAML
+types-requests
+types-backports
+types-urllib3
+openapi-python-client
