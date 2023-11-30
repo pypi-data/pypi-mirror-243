@@ -1,0 +1,47 @@
+ply
+
+[docs]
+Sphinx>4
+sphinx-copybutton
+sphinx_rtd_theme>0.5
+sphinxcontrib-jsmath
+sphinxcontrib-napoleon
+numpy
+scipy
+
+[optional]
+dill
+ipython
+matplotlib!=3.6.1
+numpy
+openpyxl
+pint
+plotly
+python-louvain
+pyyaml
+scipy
+sympy
+xlrd
+z3-solver
+
+[optional:implementation_name != "pypy"]
+casadi
+numdifftools
+pandas
+seaborn
+
+[optional:platform_system == "Windows"]
+pywin32
+
+[optional:python_version < "3.9"]
+networkx<3.2
+
+[optional:python_version >= "3.9"]
+networkx
+
+[tests]
+coverage
+pytest
+pytest-parallel
+parameterized
+pybind11
