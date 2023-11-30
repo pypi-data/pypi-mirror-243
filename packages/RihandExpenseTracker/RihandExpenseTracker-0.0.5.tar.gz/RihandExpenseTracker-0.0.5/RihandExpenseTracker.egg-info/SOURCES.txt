@@ -1,0 +1,12 @@
+CHANGELOG.txt
+LICENSE.txt
+MANIFEST.in
+README.txt
+pyproject.toml
+setup.py
+RihandExpenseTracker.egg-info/PKG-INFO
+RihandExpenseTracker.egg-info/SOURCES.txt
+RihandExpenseTracker.egg-info/dependency_links.txt
+RihandExpenseTracker.egg-info/top_level.txt
+src/RihandExpenseTracker/__init__.py
+src/RihandExpenseTracker/main.py

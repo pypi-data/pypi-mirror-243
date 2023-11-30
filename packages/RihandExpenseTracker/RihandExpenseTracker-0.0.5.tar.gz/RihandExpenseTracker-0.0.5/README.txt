@@ -1,0 +1,1 @@
+A basic python library that converts currency values
