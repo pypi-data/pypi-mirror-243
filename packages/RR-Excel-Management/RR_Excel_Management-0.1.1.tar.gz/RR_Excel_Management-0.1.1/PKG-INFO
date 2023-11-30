@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: RR_Excel_Management
+Version: 0.1.1
+Summary: Frequent excel and dataframe operations library.
+Author: Ronak Rathore
+Author-email: ronak.rathore05@gmail.com
+License: GNU GENERAL PUBLIC LICENSE
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: pandas
+Requires-Dist: RR-Date-Management
+Requires-Dist: openpyxl
+Requires-Dist: pathlib
+
+# Date Management Class
+
+Custom library for frequent date conversions.
+
+## Installation
+
+    pip install date-management-RR
+
