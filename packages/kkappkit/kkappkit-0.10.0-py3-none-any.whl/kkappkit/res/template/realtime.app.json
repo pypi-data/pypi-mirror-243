@@ -1,0 +1,36 @@
+{
+    "version": 1,
+    "name": "controller",
+    "description": "form-filler app",
+    "template": "realtime",
+    "tutorial": [
+        "# example 1: do this",
+        "run -p your_argument"
+    ],
+    "remarks": [
+        "- remarks will appear as the epilogue of the -h print-out of cli mode",
+        "- use remarks to further explain usage of the app, its preconditions, etc.",
+        "- controller app turns on the backend and changes its state by tweaking the form fields while the backend is running"
+    ],
+    "input": {
+        "traceable": {
+            "group": "page1",
+            "help": "set trace to true to bind callback to field change for realtime control",
+            "default": 10,
+            "range": [
+                0,
+                100
+            ],
+            "step": 1,
+            "trace": true
+        }
+    },
+    "output": {},
+    "appearance": {
+        "title": "Oscillator",
+        "size": [
+            800,
+            600
+        ]
+    }
+}
