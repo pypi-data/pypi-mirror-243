@@ -1,0 +1,17 @@
+scbig/__init__.py,sha256=SIZ5wE9LTjVxdrGbuH9oi90V6ridRTVlobQ2IgiDBH0,465
+scbig/run_scbig.py,sha256=HvYCSjNzf9mRqrNEmK3uBYJl57e2iusu50NYCnnIY1M,14051
+scbig/data/__init__.py,sha256=O3H6CCRbP4YLouiTdnrokW_Ms0tyHI4okutfZ4fre6o,89
+scbig/data/data_utils.py,sha256=7dVsosLOREqX_YfDE0xs-H-UNE98ErVZsipUTjTpRlg,2853
+scbig/data/graph.py,sha256=Bz0QGezkQyP_nwKerYnv3-tKV-giB_yrHlrZJjJxSt4,1928
+scbig/model/__init__.py,sha256=oTuC3GnHpNc1PezUXmK-ZlkByTkOFhZFlUvw2qDwPSk,84
+scbig/model/decoder.py,sha256=DzoPe4oQ9TivmI8TjriY_IcvlDvWgf_Inde-N-jVWhg,5525
+scbig/model/scbig.py,sha256=9LwKhvMYAyJDWsuJdGqSm9_qmSg3NC7hk6_GthsK7-A,8189
+scbig/utils/__init__.py,sha256=B9lzd4MZmmNjlLa3DfHg21Kvq4daDNwK4mBapQ2m7o4,151
+scbig/utils/metric.py,sha256=GWijBqHhvVcuASkJjJIHm9EHKlBTer17iKNGxYjUN78,1887
+scbig/utils/read.py,sha256=H2Cja2lOtC9qAjNKXLxRdg-sRJkWKS_dQh1e1xp5GOo,4053
+scbig/utils/utils.py,sha256=dzLHsUOKeRzb1Mb3kRHKMiuIn26ky-N06EGBT70qZjM,1829
+scbig-0.1.1.dist-info/LICENSE,sha256=3w6aVTAcI5l_v0sBrD7u0BS93daTiQbIiKk_BwKEm4g,1090
+scbig-0.1.1.dist-info/METADATA,sha256=ZZakdpABlvkJOMEdr8ZfY2oXW1CUN2gBHE6fz_46Ojc,2540
+scbig-0.1.1.dist-info/WHEEL,sha256=2wepM1nk4DS4eFpYrW1TTqPcoGNfHhhO_i5m4cOimbo,92
+scbig-0.1.1.dist-info/top_level.txt,sha256=HKWeS6IrsiRDAK8ZGeJTq5pOJuy7ybpQuKDlL6X-X-Y,6
+scbig-0.1.1.dist-info/RECORD,,
