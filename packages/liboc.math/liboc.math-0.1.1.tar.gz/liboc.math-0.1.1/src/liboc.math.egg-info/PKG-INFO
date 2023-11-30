@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: liboc.math
+Version: 0.1.1
+Author: jason
+Project-URL: Bug Tracker, https://github.com/OptConnect/liboc.math/issues
+Project-URL: Source, https://github.com/OptConnect/liboc.math
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: <3.13,>=3.9
+Provides-Extra: dev
+Requires-Dist: black; extra == "dev"
+Requires-Dist: flake8; extra == "dev"
+Requires-Dist: flake8-docstrings; extra == "dev"
+Requires-Dist: flake8-import-order; extra == "dev"
+Requires-Dist: mypy; extra == "dev"

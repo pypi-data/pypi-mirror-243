@@ -1,0 +1,11 @@
+[build-system]
+requires = [
+    "setuptools>=42",
+    "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.mypy]
+sqlite_cache = true
+cache_fine_grained = true
+mypy_path = "src/"
