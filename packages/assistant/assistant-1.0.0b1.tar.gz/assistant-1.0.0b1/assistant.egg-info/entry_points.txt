@@ -1,0 +1,2 @@
+[console_scripts]
+assistant = assistant.entry_points.run_assistant:run

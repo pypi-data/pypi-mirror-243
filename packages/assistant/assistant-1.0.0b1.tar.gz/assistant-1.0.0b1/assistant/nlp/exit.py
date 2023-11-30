@@ -1,0 +1,16 @@
+exit_please = [
+    "/exit",
+    "exit",
+    "exxit",
+    "quit",
+    ":q",
+    "Q",
+    "q",
+    "exit()",
+    "quit()",
+    "stop",
+    "stop()",
+    "terminate",
+    "bye",
+    "goodbye",
+]
