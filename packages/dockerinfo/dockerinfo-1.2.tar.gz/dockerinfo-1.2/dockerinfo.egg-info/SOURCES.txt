@@ -1,0 +1,11 @@
+LICENSE
+README.rst
+setup.py
+dockerinfo/__init__.py
+dockerinfo/dockerinfo.py
+dockerinfo.egg-info/PKG-INFO
+dockerinfo.egg-info/SOURCES.txt
+dockerinfo.egg-info/dependency_links.txt
+dockerinfo.egg-info/requires.txt
+dockerinfo.egg-info/top_level.txt
+test/test.py
