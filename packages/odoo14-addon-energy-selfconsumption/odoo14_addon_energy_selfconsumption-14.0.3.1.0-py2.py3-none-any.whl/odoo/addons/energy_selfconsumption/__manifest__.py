@@ -1,0 +1,48 @@
+{
+    "name": "Energy Self-consumption Project",
+    "summary": """
+        Module for energetic self-consumption projects.
+        """,
+    "description": """
+        Module for energetic self-consumption projects.
+    """,
+    "author": "Coopdevs Treball SCCL & Som Energia SCCL",
+    "website": "https://coopdevs.org",
+    "category": "Customizations",
+    "version": "14.0.3.1.0",
+    "depends": [
+        "base",
+        "mail",
+        "contract",
+        "contract_variable_quantity",
+        "contract_queue_job",
+        "energy_project",
+        "partner_firstname",
+        "web_m2x_options",
+        "l10n_es",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "security/ir_rule_data.xml",
+        "data/project_type_data.xml",
+        "data/ir_sequence_data.xml",
+        "data/ir_attactment_data.xml",
+        "data/custom_paper_format_views.xml",
+        "data/contract_line_qty_formula_data.xml",
+        "data/mail_template.xml",
+        "data/ir_cron.xml",
+        "views/contract_views.xml",
+        "views/selfconsumption_views.xml",
+        "views/supply_point_views.xml",
+        "views/res_partner_views.xml",
+        "views/distribution_table_views.xml",
+        "views/supply_point_assignation_views.xml",
+        "wizards/selfconsumption_import_wizard_views.xml",
+        "wizards/distribution_table_import_wizard_views.xml",
+        "wizards/contract_generation_wizard_views.xml",
+        "wizards/define_invoicing_mode_wizard_view.xml",
+        "wizards/invoicing_wizard_views.xml",
+        "reports/selfconsumption_reports.xml",
+        "reports/energy_delivered_invoice_template.xml",
+    ],
+}

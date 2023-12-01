@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: odoo14-addon-energy-selfconsumption
+Version: 14.0.3.1.0
+Summary: Module for energetic self-consumption projects.
+Home-page: https://coopdevs.org
+Author: Coopdevs Treball SCCL & Som Energia SCCL
+Classifier: Programming Language :: Python
+Classifier: Framework :: Odoo
+Classifier: Framework :: Odoo :: 14.0
+Requires-Python: >=3.6
+Requires-Dist: odoo14-addon-contract
+Requires-Dist: odoo14-addon-contract-queue-job (==14.0.1.0.1.dev3)
+Requires-Dist: odoo14-addon-contract-variable-quantity
+Requires-Dist: odoo14-addon-energy-project (==14.0.2.1.0)
+Requires-Dist: odoo14-addon-partner-firstname
+Requires-Dist: odoo14-addon-web-m2x-options (==14.0.1.1.1)
+Requires-Dist: odoo (<14.1dev,>=14.0a)
+
+
+        Module for energetic self-consumption projects.
+    
