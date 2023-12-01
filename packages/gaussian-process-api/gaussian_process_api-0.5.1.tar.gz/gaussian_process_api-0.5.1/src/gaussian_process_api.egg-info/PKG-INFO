@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: gaussian-process-api
+Version: 0.5.1
+Summary: gaussian-process-api for efficient regression.
+Home-page: https://gitlab.com/xevra/gaussian-process-api
+Author: Vera Delfavero, Daniel Wysocki, Richard O'Shaughnessy
+Author-email: xevra86@gmail.com
+Maintainer: Vera Delfavero
+Maintainer-email: xevra86@gmail.com
+License: MIT License
+Keywords: astronomy,information analysis,machine learning,physics
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Astronomy
+Classifier: Topic :: Scientific/Engineering :: Physics
+Classifier: Topic :: Scientific/Engineering :: Information Analysis
+Requires-Python: >=3.6
+Requires-Dist: h5py>=2.7.0
+Requires-Dist: numpy>=1.21.6
+Requires-Dist: matplotlib>=2.0.0
+Requires-Dist: scipy>=1.2.0
+Requires-Dist: six>=1.10.0
+Requires-Dist: scikit-sparse>=0.4.0
+Requires-Dist: fast_histogram>=0.10
+
+Long description goes here...
