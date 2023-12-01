@@ -1,0 +1,5 @@
+[udata.tasks]
+metrics = udata_metrics.tasks
+
+[udata.views]
+metrics = udata_metrics.views
