@@ -1,0 +1,57 @@
+snakebids/__init__.py,sha256=6cxp-vOgIOZ3ZtNH_CxG9sWvz2CVfZwSInfCpfW_teo,792
+snakebids/admin.py,sha256=fxyy5bxy1RdDtBnXVTQDxE_0asHdsQSHRRnx2cK2H-A,2799
+snakebids/app.py,sha256=IwsnvOrSBLD9Z3Z8cfEqxhQQbgYajjn9T5-H20LbSjk,11876
+snakebids/cli.py,sha256=Vj390YGYY3ArIO15XsDLBHGMW7XryHsjZ5gpKRr5Nv8,12279
+snakebids/core/__init__.py,sha256=gMvP_9Au45tzq4trSfCNo0Jk5Nqvp9uMoSEWyXe5dws,739
+snakebids/core/datasets.py,sha256=hDKmcf_zqvuNwLoaFx2ofr6MTvqOq62BIUggkIGNFog,31976
+snakebids/core/filtering.py,sha256=dduRA91r50wqQ43Z7vwZ_-qfEPTuiU0BXMpprDVOUkw,9279
+snakebids/core/input_generation.py,sha256=5leSMxqTXXyO1JyU7NV2_1YXhIsseKdg5OL0yA1kYik,30074
+snakebids/exceptions.py,sha256=JHwYQj39_R1ch4RxhVfEFHaD9nJjABV6f6v7ttgMb7o,1623
+snakebids/io/console.py,sha256=bUYr4frVGPD-S6ZhAcnn52l_3wmRnovuc9Lq0wZFcWo,4219
+snakebids/io/printing.py,sha256=Jssge-k8ksRCq3YqmlSCr4Z_Xw3o6MCnEGKLa4rfenA,3397
+snakebids/jinja2_ext/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+snakebids/jinja2_ext/colorama.py,sha256=z1_ljz_wO7mIw1-nJCTJn41S78fTY2hBXnOM-BFR5CI,284
+snakebids/jinja2_ext/snakebids_version.py,sha256=eus91KGY6gLGgTZuDqR2YHpW1vfsgemVUIHAs_FiGXk,980
+snakebids/jinja2_ext/toml_encode.py,sha256=5hSRuWhzPp25BMcSIJPsAZhffAVm8NRjZupSKWWXEXs,319
+snakebids/jinja2_ext/vcs.py,sha256=ILjHJ9ZR0jE_hg3_V_Ixax8iF5L-3uta80R_ZcJZW3U,2141
+snakebids/paths/__init__.py,sha256=md2V8hS5T2szFUdMiyGWsbwmy9eVh8nI5GL4-e-c6qs,127
+snakebids/paths/presets.py,sha256=1VIuW4J1MT6aQ_APPEumSsYPXcmkhtudOGAWVniJzFM,7585
+snakebids/paths/resources/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+snakebids/paths/resources/spec.0.0.0.yaml,sha256=urK8MoD0zVQer22yG3IagclBuq4P8wPlwl_JxCCD9-k,321
+snakebids/paths/specs.py,sha256=jZmtPMmMwuWH3dMUT6xWdgrggEbZ6azDwg1KSBoGvU0,1376
+snakebids/plugins/validator.py,sha256=8O4_MpQc099ILaJHuBQeIkx5UiYhToIC6fzKsEEXww8,2366
+snakebids/project_template/README.md.jinja,sha256=pHfgcyJbGjI4sa7NNWD3tjeUH_04SFwGAYBumfO8tgw,43
+snakebids/project_template/copier.yaml,sha256=qyZJ0n-OdtK92jRbtcCpM6PAsdpzHGQ3NFnXKlloYNU,4010
+snakebids/project_template/tests/data/dataset_description.json,sha256=BkeN6A136lpRhgzE1GqxaVUZa61j2nPzhu7Xih9Y7Mk,476
+snakebids/project_template/{% if build_system != 'poetry' %}pyproject.toml{% endif %}.jinja,sha256=6nlw8R_FInr0egPjxoqj5k5RUIDphcAe_bHPnaipvF0,1444
+snakebids/project_template/{% if build_system == 'poetry' %}pyproject.toml{% endif %}.jinja,sha256=eWlEyQzPFhRd_GeNE7pSADbW58NSZHCIOXvKDe7KWWA,825
+snakebids/project_template/{% if build_system == 'setuptools' %}MANIFEST.in{% endif %}.jinja,sha256=MOlnlwajjZu-lFOrqYPiH_9kHlEoI0lgxGpfbQwH_Ws,171
+snakebids/project_template/{% if create_doc_template %}docs{% endif %}/.gitignore,sha256=_ebkZUcwfvfnGEJ95rfj1lxoBNd6EE9ZvtOc7FsbfFE,7
+snakebids/project_template/{% if create_doc_template %}docs{% endif %}/Makefile,sha256=i2WHuFlgfyAPEW4ssEP8NY4cOibDJrVjvzSEU8_Ggwc,634
+snakebids/project_template/{% if create_doc_template %}docs{% endif %}/conf.py.jinja,sha256=JjEzI8FPtudZzXMlwPePdGJS1kiajGszJ2dzKmMOBeA,1957
+snakebids/project_template/{% if create_doc_template %}docs{% endif %}/getting_started/installation.md.jinja,sha256=5iHidbF2Lz_xdngNPEqeow0FzfS_UI_XvhqUm-5gaxo,2986
+snakebids/project_template/{% if create_doc_template %}docs{% endif %}/index.md,sha256=Gz0sjc8XHaMxzP0XlfDuXTIw-oZW115JHj2-r1bl5qM,305
+snakebids/project_template/{% if create_doc_template %}docs{% endif %}/requirements.txt.jinja,sha256=k8QHZJ3hbyClRs2qBD3va_pTDJTObJlZm5oDK2oEFtI,82
+snakebids/project_template/{% if create_doc_template %}docs{% endif %}/usage/app_cli.md.jinja,sha256=oujFHljV3821YGVYBwIhhCjrTULYxZkBJJL7NKbySkQ,123
+snakebids/project_template/{% if create_doc_template %}docs{% endif %}/usage/snakemake_cli.md,sha256=98oVgeT2kOYARHRNs8HfFLSlmQCHvGivD02cZUKPHMM,118
+snakebids/project_template/{{name_slug}}/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+snakebids/project_template/{{name_slug}}/config/snakebids.yml,sha256=qVi0l0r6HiwgKa7wwSlCU2OZnoeKaRMReOS7SWgkSlQ,3278
+snakebids/project_template/{{name_slug}}/pipeline_description.json.jinja,sha256=iLE4vTf8XpKuA8N1YTM4KgkHBIgXNB6Im2zaVMf9VBA,613
+snakebids/project_template/{{name_slug}}/run.py.jinja,sha256=llCDydm1bU4b1mE1VtFYnbKt2xTFHnVvIg2Xci_8qIM,511
+snakebids/project_template/{{name_slug}}/workflow/Snakefile,sha256=6PLngBtZHdO5xwazOHoAWq2XjUZHBmuerDRoGptqq2U,1086
+snakebids/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+snakebids/resources/__init__.py,sha256=da1PTClDMl-IBkrSvq6JC1lnS-K_BASzCvxVhNxN5Ls,13
+snakebids/resources/bids_tags.json,sha256=Ogtv87UYI07E_EPu0ubDq4oyobhwgeZBrkhZb3QAXjE,4339
+snakebids/types.py,sha256=2RqnsLHo9Ml9k62vHAYXxCdMWqN7Fy2XNPdfOm0kRVc,4907
+snakebids/utils/__init__.py,sha256=66GXBaFIVx20YbB_xcg_wO4MVAjL9uxy6laLPfwzy8M,70
+snakebids/utils/output.py,sha256=HZfvRpzEdHfkdjdbU0mkjQy-hhAtORVEydPksV27ceI,5810
+snakebids/utils/sb_itertools.py,sha256=fN0v82MAdybU0qYKPm7VlcEBu2Uc6Rr3GiH36767RC8,990
+snakebids/utils/snakemake_io.py,sha256=mX5M_7tiV-4URHElAQAHgH61UiwBNafV8_yKOEOkfJ8,4934
+snakebids/utils/user_property.py,sha256=O1-TEXClad_4CtFwmi-ln9D9xtRu60bM3keMQSSAowo,91
+snakebids/utils/user_property.pyi,sha256=yCCfUIpOvu0MFXYxGvVG36DjweL8NJJn30bhF4npjYU,237
+snakebids/utils/utils.py,sha256=CmK3HCUE5703wlb93kEZn0WASreXk-UVm_V1x4_-xGQ,16788
+snakebids-0.10.0.dist-info/LICENSE,sha256=gtZCYgKRpY6qRIyd5DLEPdcVfTQm-m0PnvCtOEr6d8Q,1065
+snakebids-0.10.0.dist-info/METADATA,sha256=2I_Ejp2Amv6JV0g6XswY4q5IdynfdY2J3d_f-4spXFc,6237
+snakebids-0.10.0.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+snakebids-0.10.0.dist-info/entry_points.txt,sha256=eTbGB9FVwVWRwekFwd_rNdT1PomYRLBzjvEThLPKcQA,50
+snakebids-0.10.0.dist-info/RECORD,,

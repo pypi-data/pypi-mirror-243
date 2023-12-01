@@ -1,0 +1,52 @@
+[project]
+name = {{ app_full_name | toml_string }}
+version = {{ app_version | toml_string }}
+description = {{ app_description | toml_string }}
+readme = "README.md"
+{% if license -%}
+license = {{ license | toml_string }}
+{%- endif %}
+{% if full_name or email -%}
+authors = [
+    { {{ '' }}
+        {%- if full_name -%}
+            name = {{ full_name | toml_string }}
+        {%- endif -%}
+        {%- if full_name and email -%}
+            ,{{ ' ' }}
+        {%- endif -%}
+        {%- if email -%}
+            email = {{ email | toml_string }}
+        {%- endif -%}
+    {{ ' ' }}}
+]
+{%- endif %}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+requires-python = "{{ python_version }}"
+dependencies = [
+    "snakemake >= {{ snakemake_version }}",
+    "snakebids >= {{ snakebids_version }}",
+    {# Explicitly specify numpy version for py38 until snakebids 0.10.x to
+       work around specification bug causing numpys too high for py38 to be
+       locked by pdm -#}
+    "numpy <=1.24.4; python_version < \"3.9\"",
+]
+
+[project.scripts]
+{{ name_slug }} = "{{ name_slug }}.run:main"
+
+[build-system]
+{% if build_system == "flit" -%}
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+{%- elif build_system == "hatch" -%}
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+{%- else -%}
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+{%- endif %}
