@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: jcx
+Version: 0.1.6
+Summary: 
+Author: dayn9t
+Author-email: dayn9t@gmail.com
+Requires-Python: >=3.10,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: arrow
+Requires-Dist: interval
+Requires-Dist: loguru
+Requires-Dist: mypy
+Requires-Dist: numpy
+Requires-Dist: paho-mqtt
+Requires-Dist: parse
+Requires-Dist: pre-commit
+Requires-Dist: pydantic
+Requires-Dist: pytest
+Requires-Dist: redis
+Requires-Dist: requests
+Requires-Dist: rustshed
+Requires-Dist: sh
+Requires-Dist: types-paho-mqtt
+Description-Content-Type: text/markdown
+
+# JCX
+
+一些基础功能库。
+

@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "jcx"
+version = "0.1.6"
+description = ""
+authors = ["dayn9t <dayn9t@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "*"
+rustshed = "*"
+
+arrow = "*"
+loguru = "*"
+
+paho-mqtt = "*"
+parse = "*"
+redis = "*"
+requests = "*"
+sh = "*"
+interval = "*"
+
+numpy = "*"
+
+pytest = "*"
+mypy = "*"
+pre-commit = "*"
+types-paho-mqtt = "*"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
