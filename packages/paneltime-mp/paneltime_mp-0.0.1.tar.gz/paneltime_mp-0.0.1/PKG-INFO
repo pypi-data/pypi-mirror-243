@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: paneltime_mp
+Version: 0.0.1
+Summary: Multiprocessing interface
+Home-page: https://github.com/espensirnes/paneltime_mp
+Author: Espen Sirnes
+Author-email: espen.sirnes@uit.no
+License: GPL-3.0
+Keywords: econometrics
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Programming Language :: Python :: 3.8
+Provides-Extra: linux
+License-File: LICENSE
+
+# paneltime_mp
+
+
+Author: Espen Sirnes
+Version: 0.0.0
+
+Multiprocessing interface
+
+
+
+
+
