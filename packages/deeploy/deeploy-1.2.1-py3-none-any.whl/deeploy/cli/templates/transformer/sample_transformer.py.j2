@@ -1,0 +1,24 @@
+import logging
+from typing import List
+
+import kserve # To enable logging
+
+from deeploy.cli.wrappers.transformer_wrapper import TransformerWrapper
+
+## To enable logging
+logging.basicConfig(level=kserve.constants.KSERVE_LOGLEVEL)
+
+class SampleTransformer(TransformerWrapper):
+    def __init__(
+        self
+    ):
+        pass
+
+    def _preprocess(self, inputs: List) -> List:
+        # Look up definitions in TransformerWrapper for more information on method.
+        # A simple transformation that multiplies the feature values by 2.
+        return [x * 2 for x in inputs]
+    def _postprocess(self, inputs: List) -> List:
+        # Look up definitions in TransformerWrapper for more information on method.
+        # NOTE: In case there is no transformation, return inputs
+        return inputs
