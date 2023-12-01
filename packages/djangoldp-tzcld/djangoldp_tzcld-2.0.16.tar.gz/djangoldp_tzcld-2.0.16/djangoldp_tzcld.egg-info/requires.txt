@@ -1,0 +1,14 @@
+djangoldp==3.0.12
+djangoldp_account==3.0.4
+djangoldp_circle==3.0.0
+djangoldp_community==3.0.0
+djangoldp_project==3.0.0
+djangoldp_conversation==3.0.1
+djangoldp_profile==3.0.0
+djangoldp_skill==3.0.0
+djangoldp_contact==3.0.0
+djangoldp_joboffer==3.0.0
+djangoldp_notification==3.0.0
+
+[include_package_data]
+True
