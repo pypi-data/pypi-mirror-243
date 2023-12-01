@@ -1,0 +1,17 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    package="plone.testing"
+    >
+
+  <include
+      package="zope.component"
+      file="meta.zcml"
+      />
+
+  <utility
+      factory=".tests.DummyUtility"
+      provides="zope.interface.Interface"
+      name="layer"
+      />
+
+</configure>
