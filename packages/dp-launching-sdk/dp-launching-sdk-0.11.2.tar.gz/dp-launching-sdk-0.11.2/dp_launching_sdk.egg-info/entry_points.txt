@@ -1,0 +1,2 @@
+[console_scripts]
+dp-launching = dp.launching.cli.commands.launching:main
