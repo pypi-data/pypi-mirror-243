@@ -1,0 +1,211 @@
+import os
+
+from pathlib import Path
+from typing import Dict
+
+import pytest
+
+import runhouse as rh
+
+import tests.test_resources.test_resource
+
+from tests.conftest import (
+    init_args,
+    ondemand_cpu_cluster,
+    password_cluster,
+    static_cpu_cluster,
+)
+
+from .conftest import (
+    base_conda_env,
+    base_env,
+    conda_env_from_dict,
+    conda_env_from_local,
+    conda_env_from_path,
+)
+
+
+def _get_env_var_value(env_var):
+    import os
+
+    return os.environ[env_var]
+
+
+def _uninstall_env(env, cluster):
+    for req in env.reqs:
+        if "/" not in req:
+            cluster.run([f"pip uninstall {req} -y"], env=env)
+
+
+def np_summer(a, b):
+    import numpy as np
+
+    return int(np.sum([a, b]))
+
+
+class TestEnv(tests.test_resources.test_resource.TestResource):
+    MAP_FIXTURES = {"resource": "env"}
+
+    UNIT = {
+        "env": [
+            base_env,
+            base_conda_env,
+            conda_env_from_dict,
+            conda_env_from_local,
+            conda_env_from_path,
+        ]
+    }
+    LOCAL = {
+        "env": [base_env, base_conda_env, conda_env_from_dict],
+        # TODO: add local clusters once conda docker container is set up
+    }
+    MINIMAL = {"env": [base_env, base_conda_env], "cluster": [ondemand_cpu_cluster]}
+    THOROUGH = {
+        "env": [base_env, base_conda_env, conda_env_from_dict],
+        "cluster": [ondemand_cpu_cluster, static_cpu_cluster, password_cluster],
+    }
+    MAXIMAL = {
+        "env": [
+            base_env,
+            base_conda_env,
+            conda_env_from_dict,
+            conda_env_from_local,
+            conda_env_from_path,
+        ],
+        "cluster": [ondemand_cpu_cluster, static_cpu_cluster, password_cluster],
+    }
+
+    @pytest.mark.level("unit")
+    def test_env_factory_and_properties(self, env):
+        assert isinstance(env, rh.Env)
+
+        args = init_args[id(env)]
+        if "reqs" in args:
+            assert set(args["reqs"]).issubset(env.reqs)
+
+        if isinstance(env, rh.CondaEnv):
+            assert env.conda_yaml
+            assert isinstance(env.conda_yaml, Dict)
+            assert set(["dependencies", "name"]).issubset(set(env.conda_yaml.keys()))
+
+        if "working_dir" not in args:
+            assert env.working_dir == "./"
+
+        if "name" not in args:
+            assert env.name == rh.Env.DEFAULT_NAME
+
+    @pytest.mark.level("minimal")
+    def test_env_to_cluster(self, env, cluster):
+        env.to(cluster, force_install=True)
+
+        for req in env.reqs:
+            if not req == "./":
+                res = cluster.run([f"pip freeze | grep {req}"], env=env)
+                assert res[0][0] == 0  # installed properly
+
+        _uninstall_env(env, cluster)
+
+    @pytest.mark.skip("Running into s3 folder issue")
+    @pytest.mark.level("minimal")
+    def test_env_to_fs_to_cluster(self, env, cluster):
+        s3_env = env.to("s3", force_install=True)
+        for req in s3_env.reqs:
+            if isinstance(req, rh.Package) and isinstance(
+                req.install_target, rh.Folder
+            ):
+                assert req.install_target.system == "s3"
+                assert req.install_target.exists_in_system()
+                count += 1
+        assert count >= 1
+
+        folder_name = "test_package"
+        count = 0
+        conda_env_cluster = s3_env.to(
+            system=cluster, path=folder_name, mount=True, force_install=True
+        )
+        for req in conda_env_cluster.reqs:
+            if isinstance(req, rh.Package) and isinstance(
+                req.install_target, rh.Folder
+            ):
+                assert req.install_target.system == cluster
+                count += 1
+        assert count >= 1
+
+        assert "sample_file_0.txt" in cluster.run([f"ls {folder_name}"])[0][1]
+        cluster.run([f"rm -r {folder_name}"])
+
+    @pytest.mark.level("minimal")
+    def test_addtl_env_reqs(self, env, cluster):
+        package = "jedi"
+        env.reqs = env.reqs + [package] if env.reqs else [package]
+        env.to(cluster, force_install=True)
+
+        res = cluster.run([f"pip freeze | grep {package}"], env=env)
+        assert res[0][0] == 0
+        assert package in env.reqs
+
+        _uninstall_env(env, cluster)
+
+    @pytest.mark.level("minimal")
+    def test_fn_to_env(self, env, cluster):
+        package = "numpy"
+        env.reqs = env.reqs + [package] or [package]
+        fn = rh.function(np_summer).to(system=cluster, env=env, force_install=True)
+        assert fn(1, 4) == 5
+
+    @pytest.mark.level("minimal")
+    def test_env_vars_dict(self, env, cluster):
+        test_env_var = "TEST_ENV_VAR"
+        test_value = "value"
+        env.env_vars = {test_env_var: test_value}
+
+        get_env_var_cpu = rh.function(_get_env_var_value).to(
+            system=cluster, env=env, force_install=True
+        )
+        res = get_env_var_cpu(test_env_var)
+
+        assert res == test_value
+
+        _uninstall_env(env, cluster)
+
+    @pytest.mark.level("minimal")
+    def test_env_vars_file(self, env, cluster):
+        env_file = ".env"
+        contents = [
+            "# comment",
+            "",
+            "ENV_VAR1=value",
+            "# comment with =",
+            "ENV_VAR2 =val2",
+        ]
+        with open(env_file, "w") as f:
+            for line in contents:
+                f.write(line + "\n")
+
+        env.env_vars = env_file
+
+        get_env_var_cpu = rh.function(_get_env_var_value).to(
+            system=cluster, env=env, force_install=True
+        )
+        assert get_env_var_cpu("ENV_VAR1") == "value"
+        assert get_env_var_cpu("ENV_VAR2") == "val2"
+
+        os.remove(env_file)
+        assert not Path(env_file).exists()
+
+        _uninstall_env(env, cluster)
+
+    @pytest.mark.level("minimal")
+    def test_working_dir_env(self, env, cluster, tmp_path):
+        working_dir = tmp_path / "test_working_dir"
+        working_dir.mkdir(exist_ok=True)
+        env.working_dir = str(working_dir)
+
+        assert str(working_dir) in env.reqs
+        env.to(cluster, force_install=True)
+        assert working_dir.name in cluster.run(["ls"])[0][1]
+
+        cluster.run([f"rm -r {working_dir.name}"])
+        assert working_dir.name not in cluster.run(["ls"])[0][1]
+
+        _uninstall_env(env, cluster)
