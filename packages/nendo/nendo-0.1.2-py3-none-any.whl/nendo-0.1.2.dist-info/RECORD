@@ -1,0 +1,16 @@
+nendo/__init__.py,sha256=cUBw-w0cdWU6kEgsui24ZKyVGhHOdD8o3ujqRPtcW68,1177
+nendo/config.py,sha256=qWydLK7fCXUf25x2VxqaGZ4zkdyhXgOOyI9Q3Inq6ts,1577
+nendo/library/__init__.py,sha256=ovWrBwnqrSkTa8wYBvOD_lhJkmt9dFAuXN8xAtgnOP8,211
+nendo/library/duckdb_library.py,sha256=L6a8I9rAY8OyFbr6qWKUzWXnW1d75vdr5isZlI0Awhg,2112
+nendo/library/model.py,sha256=2i1Zrfx0egwUEw6tY2hcop0dO7oYsmDatTVU_vSQjbY,8132
+nendo/library/sqlalchemy_library.py,sha256=bNHELmiU-PJkPGge1mxA9OX-g8SF8JbOunNRVBp0yXc,100138
+nendo/main.py,sha256=Pa8UkGrwptV8MOnhhDsVlYxkgAiF0xoGd59RGOf2kFs,6269
+nendo/schema/__init__.py,sha256=9MJcqm1CpUlg9mS-MT3v2o7mp0NCZbcS1-ebav0hbYU,1361
+nendo/schema/core.py,sha256=ziBxgLdvfHkXItlKBALRlpYV0_8cLYn575qfeDwri7g,63275
+nendo/schema/exception.py,sha256=Mmd_Ahd4DCGcD51jN0OeUOJ0bLWQ6wUKJgsSjsKlr-0,3822
+nendo/schema/plugin.py,sha256=PaN1HFn-G_E63iKoZ7Yb5S2GjNXVaNHPLJCb1nZ3CYc,52051
+nendo/utils.py,sha256=61cOYVyxSeh_Ct6BA3qUOKLG_opsihoVb_MLbmttfkc,2810
+nendo-0.1.2.dist-info/LICENSE,sha256=WFtPUEsCEmStk9TDnodbMyCpU205jkPFH1wxFD9LIKk,1066
+nendo-0.1.2.dist-info/METADATA,sha256=7O2jN5lGCKq6qQ00TzUkecxsnEeJtV8RKcTvib-lqqg,10356
+nendo-0.1.2.dist-info/WHEEL,sha256=7Z8_27uaHI_UZAc4Uox4PpBhQ9Y5_modZXWMxtUi4NU,88
+nendo-0.1.2.dist-info/RECORD,,
