@@ -1,0 +1,45 @@
+Metadata-Version: 2.1
+Name: sindri-labs
+Version: 0.1.0a2
+Summary: Sindri Python SDK
+Home-page: https://forge.sindri.app
+License: MIT
+Author: Sindri Labs
+Requires-Python: >=3.10,<4.0
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: requests (>=2.13.0,<3.0.0)
+Project-URL: Repository, https://github.com/Sindri-Labs/sindri-python
+Description-Content-Type: text/markdown
+
+# Sindri Python SDK
+
+## Build Status
+
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/sindri-labs/sindri-python/ci.yml?style=for-the-badge)
+
+## Description
+The Sindri Python SDK.
+Contains SDK code for Sindri APIs. Please see [Sindri.app](https://sindri.app) for more details.
+
+This SDK is an alpha (testing) release and may change at any time.
+
+## Usage
+
+### Prove An Existing Circuit
+```
+from sindri_labs.sindri import Sindri
+sindri = Sindri('api_key')
+with open('./anonklub-circom/input.json', 'r') as file:
+    sindri.prove_circuit('7c2c5e9d-235b-40ef-9c6a-694e6a2dc034', file.read())
+```
+
+## License
+[![](https://img.shields.io/github/license/sindri-labs/sindri-python?style=for-the-badge)](https://img.shields.io/github/license/sindri-labs/sindri-python?style=for-the-badge)
+
+sindri-python is licensed under a [MIT License](LICENSE) and is copyright [Sindri Labs, LLC](https://sindri.app).
+
