@@ -1,0 +1,17 @@
+LICENSE
+README.md
+pyproject.toml
+src/buscoplotpy/__init__.py
+src/buscoplotpy.egg-info/PKG-INFO
+src/buscoplotpy.egg-info/SOURCES.txt
+src/buscoplotpy.egg-info/dependency_links.txt
+src/buscoplotpy.egg-info/requires.txt
+src/buscoplotpy.egg-info/top_level.txt
+src/buscoplotpy/graphics/__init__.py
+src/buscoplotpy/graphics/chromosome.py
+src/buscoplotpy/graphics/karyoplot.py
+src/buscoplotpy/graphics/label.py
+src/buscoplotpy/graphics/organism_busco_barplot.py
+src/buscoplotpy/utils/__init__.py
+src/buscoplotpy/utils/load_busco_fulltable.py
+src/buscoplotpy/utils/load_json_summary.py
