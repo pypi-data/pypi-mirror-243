@@ -1,0 +1,83 @@
+[build-system]
+requires = [
+    "pdm-backend",
+    "requests>=2.31",
+    "packaging>=23.2",
+]
+build-backend = "pdm.backend"
+
+[project]
+name = "ribot-controller"
+dynamic = []
+description = "Ribot arm controller library"
+authors = [
+    { name = "alberto-abarzua" },
+]
+keywords = [
+    "robot",
+    "arm",
+    "controller",
+]
+readme = "README.md"
+dependencies = [
+    "toml>=0.10.2",
+    "websockets>=11.0.3",
+    "numpy>=1.25.0",
+    "asyncio>=3.4.3",
+    "rich>=13.4.2",
+]
+requires-python = ">=3.9"
+version = "0.3.10"
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+"Source Code" = "https://github.com/alberto-abarzua/ribot"
+
+[tool.pdm.version]
+source = "call"
+getter = "src.ribot.utils.version:get_version"
+
+[tool.pdm.files]
+"ribot/py.typed" = "src/ribot/py.typed"
+
+[tool.pdm.scripts]
+isort = "isort src"
+black = "black src"
+pure_lint = "flake8 src"
+type_check = "mypy src"
+test = "python -m unittest discover -s src/ribot/tests -p 'test_*.py'"
+main = "python src/ribot/sample_main.py"
+
+[tool.pdm.scripts.format]
+composite = [
+    "isort",
+    "black",
+]
+
+[tool.pdm.scripts.lint]
+composite = [
+    "pure_lint",
+    "type_check",
+]
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "black>=23.11.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "flake8-annotations>=3.0.1",
+    "mypy>=1.4.1",
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+line-length = 130
+
+[mypy]
+ignore_missing_imports = "True"
+disallow_untyped_defs = "True"
+mypy_path = "src"
