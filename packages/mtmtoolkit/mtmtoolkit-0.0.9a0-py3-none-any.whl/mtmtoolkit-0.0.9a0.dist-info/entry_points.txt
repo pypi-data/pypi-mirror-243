@@ -1,0 +1,3 @@
+[console_scripts]
+mtmtk = mtmtoolkit.__main__:main
+
