@@ -1,0 +1,10 @@
+f3dasm>=1.4.5
+
+[all]
+tensorflow
+nevergrad
+evosax
+optuna
+
+[all:platform_system == "Linux"]
+pygmo
