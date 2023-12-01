@@ -1,0 +1,11 @@
+magicgui>=0.6.1
+napari>=0.4.13
+numpy
+packaging
+pydantic
+qtpy
+unyt
+yt>=4.0.1
+
+[full]
+dask[array,distributed]
