@@ -1,0 +1,52 @@
+Metadata-Version: 2.1
+Name: robin-sd-download
+Version: 0.4.0
+Summary: Package to download files to the Robin Radar API
+Home-page: https://bitbucket.org/robin-radar-systems/sd-api-download-pip-package.git
+Author: Robin Radar Systems
+Author-email: devops@robinradar.com
+License: MIT
+Keywords: python,robin,radar,download,software,sd
+Description-Content-Type: text/markdown
+Requires-Dist: validators
+Requires-Dist: requests
+Requires-Dist: pyYAML
+Requires-Dist: zipfile36
+Requires-Dist: slack-sdk
+Requires-Dist: pypi-simple
+
+# Python package to download via SD API. (robin-sd-download)
+
+A package to download files to the Robin Radar API.
+
+## Installation
+
+Make sure you have Python 3.6 or higher, and pip installed.
+
+Install the package with:
+
+```bash
+pip install robin-sd-download
+```
+
+## Usage
+
+The package can be used as a command line tool, or as a Python package.
+
+```bash
+robin-sd-download --help
+```
+
+Use the documentation to find out how to use the package.
+
+## Development
+
+Use the Vagrantfile to create a development environment, and run the tests.
+
+Select the VM you want to use, and run the following commands:
+
+```bash
+vagrant up vm1/2/3
+vagrant ssh
+cd /vagrant
+```
