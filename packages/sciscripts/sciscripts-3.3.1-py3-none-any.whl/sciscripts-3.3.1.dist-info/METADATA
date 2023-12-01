@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: sciscripts
+Version: 3.3.1
+Summary: Scripts for controlling devices/running experiments/analyzing data
+Home-page: https://gitlab.com/malfatti/SciScripts
+Author: T Malfatti
+Author-email: malfatti@disroot.org
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Operating System :: POSIX :: Linux
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: numpy
+Requires-Dist: scipy
+Provides-Extra: asdf
+Requires-Dist: asdf ; extra == 'asdf'
+Provides-Extra: full
+Requires-Dist: asdf ; extra == 'full'
+Requires-Dist: h5py ; extra == 'full'
+Requires-Dist: opencv-python ; extra == 'full'
+Requires-Dist: pandas ; extra == 'full'
+Requires-Dist: pyserial ; extra == 'full'
+Requires-Dist: pytables ; extra == 'full'
+Requires-Dist: rpy2 ; extra == 'full'
+Requires-Dist: sounddevice ; extra == 'full'
+Requires-Dist: statsmodels ; extra == 'full'
+Requires-Dist: unidip ; extra == 'full'
+Provides-Extra: hdf5
+Requires-Dist: h5py ; extra == 'hdf5'
+Provides-Extra: serial
+Requires-Dist: pyserial ; extra == 'serial'
+Provides-Extra: sound
+Requires-Dist: sounddevice ; extra == 'sound'
+Requires-Dist: pandas ; extra == 'sound'
+Requires-Dist: pytables ; extra == 'sound'
+Provides-Extra: stats
+Requires-Dist: rpy2 ; extra == 'stats'
+Requires-Dist: pandas ; extra == 'stats'
+Requires-Dist: pytables ; extra == 'stats'
+Requires-Dist: statsmodels ; extra == 'stats'
+Requires-Dist: unidip ; extra == 'stats'
+Provides-Extra: video
+Requires-Dist: opencv-python ; extra == 'video'
+Requires-Dist: pandas ; extra == 'video'
+Requires-Dist: pytables ; extra == 'video'
+
+**SciScripts** is a Python library for controlling devices/running experiments/analyzing data.
