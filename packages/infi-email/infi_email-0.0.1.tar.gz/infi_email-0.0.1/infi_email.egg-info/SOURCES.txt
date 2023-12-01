@@ -1,0 +1,11 @@
+README.md
+setup.py
+infi_email/__init__.py
+infi_email.egg-info/PKG-INFO
+infi_email.egg-info/SOURCES.txt
+infi_email.egg-info/dependency_links.txt
+infi_email.egg-info/top_level.txt
+infi_email/config/__init__.py
+infi_email/config/config.py
+infi_email/service/__init__.py
+infi_email/service/email.py
