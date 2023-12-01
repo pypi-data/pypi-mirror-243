@@ -1,0 +1,8 @@
+ply==3.11
+schema==0.7.5
+toml==0.10.2
+
+[dev]
+black
+flake8
+pytest
