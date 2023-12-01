@@ -1,0 +1,54 @@
+Metadata-Version: 2.1
+Name: scuttlebuddy
+Version: 0.0.1
+Summary: External Scripting Framework for developers who play League of Legends.
+Home-page: https://discord.gg/huywRMDEmE
+Author: Business
+Author-email: 
+License: The Unlicense
+Project-URL: Discord, https://discord.gg/huywRMDEmE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.10,<3.12
+Description-Content-Type: text/markdown
+
+
+## Environment Setup
+- Create python environment
+- Download latest pyMeow.zip file and put into the root of the repo
+- Install Dependencies
+    - `pip install -r requirements.txt`
+    - `pip install pyMeow-<version_go_here>.zip`
+
+## Currently Used Offsets
+```
+LocalPlayer
+HeroList
+
+ViewProjMatrix
+
+ObjectName
+Level
+Team
+Targetable
+Health
+MaxHealth
+Mana
+MaxMana
+AbilityPower
+BaseAttackDamage
+BonusAttackDamage
+BonusAttackSpeed
+MagicResistance
+BonusMagicResistance
+Armor
+BonusArmor
+MagicPenetration
+Lethality
+AttackRange
+XPosition
+YPosition
+ZPosition
+IsVisible
+```
