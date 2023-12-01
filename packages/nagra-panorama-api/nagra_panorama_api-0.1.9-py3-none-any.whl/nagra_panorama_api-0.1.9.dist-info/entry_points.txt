@@ -1,0 +1,3 @@
+[console_scripts]
+panorama_api=nagra_panorama_api.__main__:cli
+
