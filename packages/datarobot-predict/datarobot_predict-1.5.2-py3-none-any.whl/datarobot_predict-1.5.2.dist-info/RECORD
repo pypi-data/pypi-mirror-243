@@ -1,0 +1,11 @@
+datarobot_predict/__init__.py,sha256=R0EHTRYwM2f2luakhcUGMrKUloQrDYgbihgoasQCbAc,154
+datarobot_predict/_base_scoring_code.py,sha256=tArIzZFbRBO4tbmmSXQzoYjwApG978OFIuAWUw3DXgY,11157
+datarobot_predict/deployment.py,sha256=w6WJdpc6WFzkNPfcYJKCfq2nPFDmN7OymHK4JtSWViM,10152
+datarobot_predict/lib/batch-processor.jar,sha256=KEcw0l2_a0UHqH16K3Szqbxt5Jug5M-oJQMJBYXe9X4,16798841
+datarobot_predict/lib/scoring-code-spark-api.jar,sha256=VyTDnLYt-WJHWioYhf7mWtaxi9bKHorkINWz7Xpk4M4,111564
+datarobot_predict/scoring_code.py,sha256=T-V6PJ_LMtr7y3laOzlDgH-Q03doJL8_spKR6L8fy7o,15430
+datarobot_predict/spark_scoring_code.py,sha256=7QFgGubOf0X7AH99ScZjtZOFgPJrtpbwtpu02L5oEeI,15839
+datarobot_predict-1.5.2.dist-info/LICENSE.txt,sha256=yIWKWnZEC7ykhOE0z330Y4XQkN0YssWOZQ-TkliALls,10141
+datarobot_predict-1.5.2.dist-info/METADATA,sha256=omC8WDHLbtJHqw0kQJNw0xBf4G1NhE7QUR2YSdNAxl4,1104
+datarobot_predict-1.5.2.dist-info/WHEEL,sha256=Zb28QaM1gQi8f4VCBhsUklF61CTlNYfs9YAZn-TOGFk,88
+datarobot_predict-1.5.2.dist-info/RECORD,,
