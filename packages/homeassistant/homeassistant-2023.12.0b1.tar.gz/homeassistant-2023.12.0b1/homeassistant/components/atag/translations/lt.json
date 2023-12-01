@@ -1,0 +1,16 @@
+{
+    "config": {
+        "error": {
+            "unauthorized": "Susiejimas atmestas, patikrinkite, ar \u012frenginyje yra autentifikavimo u\u017eklausa"
+        },
+        "step": {
+            "user": {
+                "data_description": {
+                    "host": "Atag \u012frenginio pagrindinio kompiuterio pavadinimas arba IP adresas."
+                },
+                "description": "Prisijunkite prie \u012frenginio",
+                "title": "Prisijunkite prie \u012frenginio"
+            }
+        }
+    }
+}

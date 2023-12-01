@@ -1,0 +1,37 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Perangkat sudah dikonfigurasi",
+            "invalid_ip_address": "Alamat IP tidak valid."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "count": "Jumlah ping",
+                    "host": "Host"
+                },
+                "description": "Ping memungkinkan Anda untuk memeriksa ketersediaan host.",
+                "title": "Tambahkan Ping"
+            }
+        }
+    },
+    "options": {
+        "abort": {
+            "invalid_ip_address": "Alamat IP tidak valid."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "count": "Jumlah ping",
+                    "host": "Host"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "description": "Memuat ulang sensor ping dari konfigurasi YAML.",
+            "name": "Muat Ulang"
+        }
+    }
+}

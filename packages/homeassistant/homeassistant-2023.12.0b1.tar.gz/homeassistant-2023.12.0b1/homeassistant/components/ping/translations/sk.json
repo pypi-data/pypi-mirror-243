@@ -1,0 +1,37 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "invalid_ip_address": "Neplatn\u00e1 IP adresa."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "count": "Po\u010det pingov",
+                    "host": "Hostite\u013e"
+                },
+                "description": "Ping umo\u017e\u0148uje skontrolova\u0165 dostupnos\u0165 hostite\u013ea.",
+                "title": "Prida\u0165 Ping"
+            }
+        }
+    },
+    "options": {
+        "abort": {
+            "invalid_ip_address": "Neplatn\u00e1 IP adresa."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "count": "Po\u010det pingov",
+                    "host": "Hostite\u013e"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "description": "Na\u010d\u00edta sn\u00edma\u010de ping z konfigur\u00e1cie YAML.",
+            "name": "Znovu na\u010d\u00edta\u0165"
+        }
+    }
+}

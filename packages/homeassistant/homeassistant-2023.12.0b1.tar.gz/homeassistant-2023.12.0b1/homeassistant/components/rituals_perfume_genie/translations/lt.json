@@ -1,0 +1,33 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "charging": {
+                "name": "\u012ekrovimas"
+            }
+        },
+        "number": {
+            "perfume_amount": {
+                "name": "Kvepal\u0173 kiekis"
+            }
+        },
+        "select": {
+            "room_size_square_meter": {
+                "name": "Kambario dydis"
+            }
+        },
+        "sensor": {
+            "battery_percentage": {
+                "name": "Baterija"
+            },
+            "fill": {
+                "name": "U\u017epildykite"
+            },
+            "perfume": {
+                "name": "Kvepalai"
+            },
+            "wifi_percentage": {
+                "name": "Wi-Fi signalas"
+            }
+        }
+    }
+}

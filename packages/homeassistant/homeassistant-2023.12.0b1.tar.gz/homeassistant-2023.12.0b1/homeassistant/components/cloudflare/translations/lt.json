@@ -1,0 +1,13 @@
+{
+    "config": {
+        "error": {
+            "invalid_zone": "Netinkama zona"
+        }
+    },
+    "services": {
+        "update_records": {
+            "description": "Rankiniu b\u016bdu suaktyvinkite \u201eCloudflare\u201c \u012fra\u0161\u0173 naujinim\u0105.",
+            "name": "Atnaujinti \u012fra\u0161us"
+        }
+    }
+}

@@ -1,0 +1,148 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "state": {
+                "name": "K\u00e4ynniss\u00e4"
+            }
+        },
+        "sensor": {
+            "agent_version": {
+                "name": "K\u00e4ytt\u00f6j\u00e4rjestelm\u00e4n agentin versio"
+            },
+            "apparmor_version": {
+                "name": "Apparmor-versio"
+            },
+            "cpu_percent": {
+                "name": "Suorittimen k\u00e4ytt\u00f6 prosentteina"
+            },
+            "disk_free": {
+                "name": "Tallennustilaa vapaana"
+            },
+            "disk_total": {
+                "name": "Tallennustilaa yhteens\u00e4"
+            },
+            "disk_used": {
+                "name": "Tallennustilaa k\u00e4yetty"
+            },
+            "memory_percent": {
+                "name": "Muistin k\u00e4ytt\u00f6 prosentteina"
+            },
+            "version": {
+                "name": "Versio"
+            },
+            "version_latest": {
+                "name": "Uusin versio"
+            }
+        }
+    },
+    "issues": {
+        "issue_mount_mount_failed": {
+            "fix_flow": {
+                "abort": {
+                    "apply_suggestion_fail": "Korjausta ei voitu k\u00e4ytt\u00e4\u00e4. Tarkista tarkemmat tiedot Supervisor-lokeista."
+                },
+                "step": {
+                    "fix_menu": {
+                        "description": "Yhteytt\u00e4 `{reference}` ei saatu muodostettua. Tarkista tarkempia tietoja is\u00e4nn\u00e4n lokitiedostoista mount-palvelun virheiden varalta.\n\nYrit\u00e4 muodostaa yhteys uudelleen k\u00e4ytt\u00e4m\u00e4ll\u00e4 reloadia. Jos sinun on p\u00e4ivitett\u00e4v\u00e4 `{reference}`, siirry osoitteeseen [storage]({storage_url}).",
+                        "menu_options": {
+                            "mount_execute_reload": "Uudelleenlataa"
+                        }
+                    }
+                }
+            }
+        },
+        "issue_system_docker_config": {
+            "fix_flow": {
+                "abort": {
+                    "apply_suggestion_fail": "Yksi tai useampi uudelleenk\u00e4ynnistys ep\u00e4onnistui. Tarkista tarkemmat tiedot Supervisorin lokitiedoista."
+                },
+                "step": {
+                    "system_execute_rebuild": {
+                        "description": "Lis\u00e4osien ja Home Assistantin oletusasetukset ovat muuttuneet. Jotta konfiguraatio voidaan p\u00e4ivitt\u00e4\u00e4 uusilla oletusasetuksilla, seuraavat on k\u00e4ynnistett\u00e4v\u00e4 uudelleen:\n\n- {components}"
+                    }
+                }
+            }
+        },
+        "issue_system_multiple_data_disks": {
+            "fix_flow": {
+                "abort": {
+                    "apply_suggestion_fail": "Tiedostoj\u00e4rjestelm\u00e4\u00e4 ei voitu nimet\u00e4 uudelleen. Tarkista tarkemmat tiedot Supervisorin lokitiedoista."
+                },
+                "step": {
+                    "system_rename_data_disk": {
+                        "description": "`{reference}` on tiedostoj\u00e4rjestelm\u00e4, jonka nimi on hassos-data, eik\u00e4 se ole aktiivinen datalevy. T\u00e4m\u00e4 voi aiheuttaa sen, ett\u00e4 Home Assistant valitsee v\u00e4\u00e4r\u00e4n datalevyn j\u00e4rjestelm\u00e4n uudelleenk\u00e4ynnistyksen yhteydess\u00e4.\n\nK\u00e4yt\u00e4 fix-vaihtoehtoa tiedostoj\u00e4rjestelm\u00e4n uudelleennime\u00e4miseen t\u00e4m\u00e4n est\u00e4miseksi. Vaihtoehtoisesti voit siirt\u00e4\u00e4 datalevyn asemalle (korvaten sen sis\u00e4ll\u00f6n) tai poistaa aseman j\u00e4rjestelm\u00e4st\u00e4."
+                    }
+                }
+            }
+        },
+        "issue_system_reboot_required": {
+            "fix_flow": {
+                "abort": {
+                    "apply_suggestion_fail": "J\u00e4rjestelm\u00e4\u00e4 ei voitu k\u00e4ynnist\u00e4\u00e4 uudelleen. Katso lis\u00e4tietoja Supervisorin lokeista."
+                }
+            },
+            "title": "Uudelleenk\u00e4ynnistys vaaditaan"
+        },
+        "unhealthy": {
+            "description": "J\u00e4rjestelm\u00e4 on t\u00e4ll\u00e4 hetkell\u00e4 ep\u00e4kunnossa {reason} vuoksi. K\u00e4yt\u00e4 linkki\u00e4 saadaksesi lis\u00e4tietoja ja saadaksesi selville, miten asia korjataan.",
+            "title": "Ep\u00e4terveellinen j\u00e4rjestelm\u00e4 - {reason}"
+        },
+        "unsupported": {
+            "description": "J\u00e4rjestelm\u00e4 ei ole tuettu syyn: {reason} vuoksi. K\u00e4yt\u00e4 linkki\u00e4 saadaksesi lis\u00e4tietoja ja saadaksesi tiet\u00e4\u00e4, miten t\u00e4m\u00e4 korjataan.",
+            "title": "J\u00e4rjestelm\u00e4\u00e4 ei tueta \u2013 {reason}"
+        },
+        "unsupported_job_conditions": {
+            "description": "J\u00e4rjestelm\u00e4 ei ole tuettu, koska yksi tai useampi ty\u00f6ehto, joka suojaa odottamattomilta vioilta ja rikkoutumisilta, on poistettu k\u00e4yt\u00f6st\u00e4. Linkin kautta saat lis\u00e4tietoja ja tietoa siit\u00e4, miten t\u00e4m\u00e4 korjataan.",
+            "title": "J\u00e4rjestelm\u00e4\u00e4 ei tueta - Suojaukset pois k\u00e4yt\u00f6st\u00e4"
+        },
+        "unsupported_systemd_journal": {
+            "description": "J\u00e4rjestelm\u00e4 ei ole tuettu, koska Systemd Journal ja/tai yhdysk\u00e4yt\u00e4v\u00e4palvelu puuttuu, ei ole aktiivinen tai on m\u00e4\u00e4ritetty v\u00e4\u00e4rin. Linkin kautta saat lis\u00e4tietoja ja voit korjata asian.",
+            "title": "J\u00e4rjestelm\u00e4\u00e4 ei tueta \u2013 Systemd Journal -ongelmat"
+        }
+    },
+    "services": {
+        "backup_full": {
+            "fields": {
+                "location": {
+                    "name": "Sijainti"
+                },
+                "name": {
+                    "name": "Nimi"
+                },
+                "password": {
+                    "name": "Salasana"
+                }
+            }
+        },
+        "backup_partial": {
+            "fields": {
+                "homeassistant_exclude_database": {
+                    "name": "Home Assistant j\u00e4tt\u00e4\u00e4 tietokannan ulkopuolelle"
+                },
+                "location": {
+                    "name": "Sijainti"
+                },
+                "name": {
+                    "name": "Nimi"
+                },
+                "password": {
+                    "name": "Salasana"
+                }
+            }
+        },
+        "restore_full": {
+            "fields": {
+                "password": {
+                    "name": "Salasana"
+                }
+            }
+        },
+        "restore_partial": {
+            "fields": {
+                "password": {
+                    "name": "Salasana"
+                }
+            }
+        }
+    }
+}

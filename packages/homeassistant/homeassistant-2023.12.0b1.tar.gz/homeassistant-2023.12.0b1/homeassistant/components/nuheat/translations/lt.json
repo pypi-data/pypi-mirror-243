@@ -1,0 +1,14 @@
+{
+    "config": {
+        "error": {
+            "invalid_thermostat": "Termostato serijinis numeris negalioja."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    }
+}

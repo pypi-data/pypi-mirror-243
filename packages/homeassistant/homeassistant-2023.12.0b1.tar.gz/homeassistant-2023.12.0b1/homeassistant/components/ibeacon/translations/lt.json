@@ -1,0 +1,36 @@
+{
+    "config": {
+        "abort": {
+            "bluetooth_not_available": "Bent vienas \u201eBluetooth\u201c adapteris arba nuotolinio valdymo pultas turi b\u016bti sukonfig\u016bruotas naudoti \u201eiBeacon Tracker\u201c.",
+            "single_instance_allowed": "Jau sukonfig\u016bruota. Galima tik viena konfig\u016bracija."
+        },
+        "step": {
+            "user": {
+                "description": "Ar norite nustatyti \u201eiBeacon Tracker\u201c?"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "estimated_distance": {
+                "name": "Numatomas atstumas"
+            },
+            "power": {
+                "name": "Galia"
+            },
+            "vendor": {
+                "name": "Pardav\u0117jas"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "min_rssi": "Minimalus RSSI"
+                },
+                "description": "iBeacons, kuri\u0173 RSSI reik\u0161m\u0117 ma\u017eesn\u0117 nei Minimali RSSI, bus nepaisoma. Jei integracija mato gretimus iBeacons, \u0161ios vert\u0117s padidinimas gali pad\u0117ti."
+            }
+        }
+    }
+}

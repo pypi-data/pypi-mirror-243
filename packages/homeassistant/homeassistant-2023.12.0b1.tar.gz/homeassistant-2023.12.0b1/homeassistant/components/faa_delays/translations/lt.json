@@ -1,0 +1,73 @@
+{
+    "entity": {
+        "binary_sensor": {
+            "arrive_delay": {
+                "name": "Atvykimo v\u0117lavimas",
+                "state_attributes": {
+                    "maximum": {
+                        "name": "Maksimalus"
+                    },
+                    "minimum": {
+                        "name": "Minimumas"
+                    },
+                    "reason": {
+                        "name": "Prie\u017eastis"
+                    },
+                    "trend": {
+                        "name": "Tendencija"
+                    }
+                }
+            },
+            "closure": {
+                "name": "U\u017edarymas",
+                "state_attributes": {
+                    "begin": {
+                        "name": "Prad\u0117kite"
+                    },
+                    "end": {
+                        "name": "Pabaiga"
+                    }
+                }
+            },
+            "depart_delay": {
+                "name": "I\u0161vykimo v\u0117lavimas",
+                "state_attributes": {
+                    "maximum": {
+                        "name": "Maksimalus"
+                    },
+                    "minimum": {
+                        "name": "Minimumas"
+                    },
+                    "reason": {
+                        "name": "Prie\u017eastis"
+                    },
+                    "trend": {
+                        "name": "Tendencija"
+                    }
+                }
+            },
+            "ground_delay": {
+                "name": "\u017dem\u0117s v\u0117lavimas",
+                "state_attributes": {
+                    "average": {
+                        "name": "Vidutinis"
+                    },
+                    "reason": {
+                        "name": "Prie\u017eastis"
+                    }
+                }
+            },
+            "ground_stop": {
+                "name": "Ant\u017eemin\u0117 stotel\u0117",
+                "state_attributes": {
+                    "endtime": {
+                        "name": "Pabaigos laikas"
+                    },
+                    "reason": {
+                        "name": "Prie\u017eastis"
+                    }
+                }
+            }
+        }
+    }
+}

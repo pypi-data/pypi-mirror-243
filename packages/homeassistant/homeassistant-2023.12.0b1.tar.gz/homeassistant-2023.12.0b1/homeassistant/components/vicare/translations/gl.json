@@ -1,0 +1,9 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "description": "Por favor, verifica as credenciais."
+            }
+        }
+    }
+}

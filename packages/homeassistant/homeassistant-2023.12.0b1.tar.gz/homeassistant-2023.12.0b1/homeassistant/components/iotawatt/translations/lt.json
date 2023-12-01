@@ -1,0 +1,12 @@
+{
+    "config": {
+        "step": {
+            "auth": {
+                "data": {
+                    "username": "Prisijungimos vardas"
+                },
+                "description": "\u201eIoTawatt\u201c \u012frenginiui reikalingas autentifikavimas. \u012eveskite vartotojo vard\u0105 ir slapta\u017eod\u012f ir spustel\u0117kite mygtuk\u0105 Pateikti."
+            }
+        }
+    }
+}

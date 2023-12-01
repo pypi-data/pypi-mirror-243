@@ -1,0 +1,12 @@
+{
+    "config": {
+        "error": {
+            "invalid_pin_code": "\u012evestas PIN neteisingas"
+        },
+        "step": {
+            "pairing": {
+                "description": "\u012eveskite televizoriaus ekrane rodom\u0105 PIN kod\u0105"
+            }
+        }
+    }
+}

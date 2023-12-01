@@ -1,0 +1,201 @@
+{
+    "config": {
+        "error": {
+            "bad_birth": "Netinkama gimimo tema",
+            "bad_certificate": "CA sertifikatas neteisingas",
+            "bad_client_cert": "Netinkamas kliento sertifikatas, \u012fsitikinkite, kad pateiktas PEM koduotas failas",
+            "bad_client_cert_key": "Kliento sertifikatas ir privatus raktas n\u0117ra tinkama pora",
+            "bad_client_key": "Neteisingas privatus raktas, \u012fsitikinkite, kad PEM koduotas failas pateikiamas be slapta\u017eod\u017eio",
+            "bad_discovery_prefix": "Netinkamas atradimo prie\u0161d\u0117lis",
+            "bad_will": "Neteisinga testamento tema",
+            "bad_ws_headers": "Pateikite galiojan\u010dias HTTP antra\u0161tes kaip JSON objekt\u0105",
+            "cannot_connect": "Nepavyko prisijungti",
+            "invalid_inclusion": "Kliento sertifikatas ir privatusis raktas turi b\u016bti sukonfig\u016bruoti kartu"
+        },
+        "step": {
+            "broker": {
+                "data": {
+                    "advanced_options": "I\u0161pl\u0117stiniai nustatymai",
+                    "certificate": "\u012ekelkite tinkint\u0105 CA sertifikato fail\u0105",
+                    "client_cert": "\u012ekelti kliento sertifikato fail\u0105",
+                    "client_id": "Kliento ID (palikite tu\u0161\u010di\u0105, jei norite atsitiktinai sugeneruoto)",
+                    "client_key": "\u012ekelti privataus rakto fail\u0105",
+                    "keepalive": "Laikas tarp prane\u0161im\u0173 \"keep alive\" siuntimo",
+                    "password": "Slapta\u017eodis",
+                    "port": "Portas",
+                    "protocol": "MQTT protokolas",
+                    "set_ca_cert": "Brokerio sertifikato patvirtinimas",
+                    "set_client_cert": "Naudokite kliento sertifikat\u0105",
+                    "tls_insecure": "Ignoruoti brokerio sertifikato patvirtinim\u0105",
+                    "transport": "MQTT transportas",
+                    "username": "Prisijungimo vardas",
+                    "ws_headers": "\u201eWebSocket\u201c antra\u0161t\u0117s JSON formatu",
+                    "ws_path": "WebSocket kelias"
+                }
+            }
+        }
+    },
+    "device_automation": {
+        "trigger_subtype": {
+            "button_1": "Pirmas mygtukas",
+            "button_2": "Antras mygtukas",
+            "button_3": "Tre\u010dias mygtukas",
+            "button_4": "Ketvirtas mygtukas",
+            "button_5": "Penktas mygtukas",
+            "button_6": "\u0160e\u0161tas mygtukas"
+        }
+    },
+    "exceptions": {
+        "invalid_platform_config": {
+            "message": "Nepavyko i\u0161 naujo \u012fkelti rankiniu b\u016bdu sukonfig\u016bruoto MQTT ` {domain} ` YAML konfig\u016bracijos. Daugiau informacijos rasite \u017eurnaluose."
+        },
+        "mqtt_not_setup_cannot_publish": {
+            "message": "Negalima paskelbti temoje '{topic}' , \u012fsitikinkite, kad MQTT nustatyta tinkamai."
+        },
+        "mqtt_not_setup_cannot_subscribe": {
+            "message": "Negaliu u\u017esiprenumeruoti temos '{topic}', \u012fsitikinkite, kad MQTT nustatyta tinkamai."
+        }
+    },
+    "issues": {
+        "deprecated_climate_aux_property": {
+            "description": "Objekte \u201e {entity_id} \u201c \u012fgalintas papildomas \u0161ilumos palaikymas, kuris nebenaudojamas MQTT klimato \u012frenginiams. Pakoreguokite konfig\u016bracij\u0105 ir pa\u0161alinkite netinkamas konfig\u016bracijos parinktis ir i\u0161 naujo paleiskite HA, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105.",
+            "title": "Rasti MQTT objektai su pagalbiniu \u0161ilumos palaikymu"
+        },
+        "deprecated_yaml": {
+            "description": "Rankiniu b\u016bdu sukonfig\u016bruota (-os) MQTT {platform} (-os) rasta po platformos raktu \u201e {platform} \u201c. \n\n Perkelkite konfig\u016bracij\u0105 \u012f \u201emqtt\u201c integravimo rakt\u0105 ir i\u0161 naujo paleiskite \u201eHome Assistant\u201c, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105. Daugiau informacijos rasite [dokumentacijoje]( {more_info_url} ).",
+            "title": "Reikia d\u0117mesio rankiniu b\u016bdu sukonfig\u016bruotai MQTT {platform} (-\u0117ms)."
+        },
+        "deprecated_yaml_broker_settings": {
+            "description": "\u0160ie parametrai, rasti \u201econfiguration.yaml\u201c, buvo perkelti \u012f MQTT konfig\u016bracijos \u012fra\u0161\u0105 ir dabar nepaisys \u201econfiguration.yaml\u201c nustatym\u0173:\n ` {deprecated_settings} ` \n\n Pa\u0161alinkite \u0161iuos nustatymus i\u0161 \u201econfiguration.yaml\u201c ir i\u0161 naujo paleiskite \u201eHome Assistant\u201c, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105. Daugiau informacijos rasite [dokumentacijoje]( {more_info_url} ).",
+            "title": "Pasen\u0119 MQTT nustatymai rasti \u201econfiguration.yaml\u201c."
+        },
+        "deprecation_mqtt_legacy_vacuum_discovery": {
+            "description": "MQTT vakuuminiai objektai, kurie naudoja sen\u0105 schem\u0105, yra pasen\u0119. Sureguliuokite \u012frenginius, kad jie naudot\u0173 tinkam\u0105 schem\u0105, ir i\u0161 naujo paleiskite nam\u0173 asistent\u0105, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105.",
+            "title": "MQTT vakuuminiai objektai su sena schema, prid\u0117ta per MQTT atradim\u0105"
+        },
+        "deprecation_mqtt_legacy_vacuum_yaml": {
+            "description": "MQTT vakuuminiai objektai, kurie naudoja sen\u0105 schem\u0105, nebenaudojami. Pakoreguokite configuration.yaml ir i\u0161 naujo paleiskite nam\u0173 asistent\u0105, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105.",
+            "title": "MQTT vakuuminiai objektai su sena schema, rasti j\u016bs\u0173 configuration.yaml"
+        },
+        "entity_name_is_device_name_discovery": {
+            "description": "Kai kuri\u0173 MQTT esybi\u0173 esyb\u0117s pavadinimas yra lygus \u012frenginio pavadinimui. To nesitikima. Siekiant i\u0161vengti pavadinimo dubliavimo, esyb\u0117s pavadinimas nustatomas kaip `null`. Pra\u0161ome informuoti programin\u0117s \u012frangos, kuri tiekia paveiktas esybes, pri\u017ei\u016br\u0117toj\u0105, kad \u0161is i\u0161taisyt\u0173 \u0161i\u0105 problem\u0105.\n\nPaveikt\u0173 esybi\u0173 s\u0105ra\u0161as:\n\n{config}.",
+            "title": "Aptikti MQTT objektai, kuri\u0173 pavadinimas yra lygus \u012frenginio pavadinimui"
+        },
+        "entity_name_is_device_name_yaml": {
+            "description": "Kai kuri\u0173 MQTT objekt\u0173 objekto pavadinimas yra lygus \u012frenginio pavadinimui. To nesitikima. Objekto pavadinimas nustatytas \u012f \u201enull\u201c, kad b\u016bt\u0173 i\u0161vengta pasikartojan\u010dio pavadinimo. Atnaujinkite konfig\u016bracij\u0105 ir i\u0161 naujo paleiskite \u201eHome Assistant\u201c, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105. \n\n Paveikt\u0173 subjekt\u0173 s\u0105ra\u0161as: \n\n {config}",
+            "title": "Rankiniu b\u016bdu sukonfig\u016bruoti MQTT objektai, kuri\u0173 pavadinimas yra lygus \u012frenginio pavadinimui"
+        },
+        "entity_name_startswith_device_name_discovery": {
+            "description": "Kai kuri\u0173 MQTT esybi\u0173 pavadinimas prasideda \u012frenginio pavadinimu. To nesitikima. Siekiant i\u0161vengti pavadinimo dubliavimo, i\u0161 esyb\u0117s pavadinimo pa\u0161alinamas \u012frenginio pavadinimo prie\u0161d\u0117lis. Pra\u0161ome informuoti programin\u0117s \u012frangos, kuri tiekia paveiktas esybes, pri\u017ei\u016br\u0117toj\u0105, kad \u0161is i\u0161taisyt\u0173 \u0161i\u0105 problem\u0105. \n\nPaveikt\u0173 esybi\u0173 s\u0105ra\u0161as:\n\n{config}.",
+            "title": "Aptikti objektai, kuri\u0173 pavadinimas prasideda \u012frenginio pavadinimu"
+        },
+        "entity_name_startswith_device_name_yaml": {
+            "description": "Kai kurie MQTT objektai turi objekto pavadinim\u0105, kuris prasideda \u012frenginio pavadinimu. To nesitikima. Kad b\u016bt\u0173 i\u0161vengta pavadinimo pasikartojimo, \u012frenginio pavadinimo prie\u0161d\u0117lis pa\u0161alinamas i\u0161 objekto pavadinimo. Atnaujinkite konfig\u016bracij\u0105 ir i\u0161 naujo paleiskite \u201eHome Assistant\u201c, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105. \n\n Paveikt\u0173 subjekt\u0173 s\u0105ra\u0161as: \n\n {config}",
+            "title": "Rankiniu b\u016bdu sukonfig\u016bruoti MQTT objektai, kuri\u0173 pavadinimas prasideda \u012frenginio pavadinimu"
+        },
+        "invalid_entity_category": {
+            "description": "\u201eHome Assistant\u201c aptiko rankiniu b\u016bdu sukonfig\u016bruot\u0105 MQTT {domain} objekt\u0105, kurio \u201eentity_category\u201c nustatyta kaip \u201econfig\u201c.\n Konfig\u016bracijos failas: ** {config_file} **\n Netoli linijos: ** {line} ** \n\n Konfig\u016bracija su netinkamu nustatymu: \n\n ``` yaml\n {config}\n ``` \n\n Kai nustatyta, \u012fsitikinkite, kad \u201e {domain} \u201c subjekto_kategorija yra nustatyta kaip \u201ediagnostin\u0117\u201c arba \u201eN\u0117ra\u201c. Atnaujinkite YAML konfig\u016bracij\u0105 ir i\u0161 naujo paleiskite \u201eHome Assistant\u201c, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105.",
+            "title": "Rastas MQTT {domain} su netinkama subjekto kategorija"
+        },
+        "invalid_platform_config": {
+            "description": "\u201eHome Assistant\u201c aptiko netinkam\u0105 rankiniu b\u016bdu sukonfig\u016bruoto elemento konfig\u016bracij\u0105. \n\n Platformos domenas: ** {domain} **\n Konfig\u016bracijos failas: ** {config_file} **\n Netoli linijos: ** {line} **\n Rasta konfig\u016bracija:\n ``` yaml\n {config}\n ```\n Klaida: ** {error} **. \n\n \u012esitikinkite, kad konfig\u016bracija tinkama, ir [i\u0161 naujo \u012fkelkite](/developer-tools/yaml) rankiniu b\u016bdu sukonfig\u016bruotus MQTT elementus arba i\u0161 naujo paleiskite nam\u0173 asistent\u0105, kad i\u0161spr\u0119stum\u0117te \u0161i\u0105 problem\u0105.",
+            "title": "Rasta netinkama mqtt {domain} elemento konfig\u016bracija"
+        }
+    },
+    "options": {
+        "error": {
+            "bad_certificate": "CA sertifikatas neteisingas",
+            "bad_client_cert": "Netinkamas kliento sertifikatas, \u012fsitikinkite, kad pateiktas PEM koduotas failas",
+            "bad_client_cert_key": "Kliento sertifikatas ir privatus raktas n\u0117ra tinkama pora",
+            "bad_client_key": "Neteisingas privatus raktas, \u012fsitikinkite, kad PEM koduotas failas pateikiamas be slapta\u017eod\u017eio",
+            "bad_discovery_prefix": "Netinkamas atradimo prie\u0161d\u0117lis",
+            "bad_ws_headers": "Pateikite galiojan\u010dias HTTP antra\u0161tes kaip JSON objekt\u0105",
+            "invalid_inclusion": "Kliento sertifikatas ir privatusis raktas turi b\u016bti sukonfig\u016bruoti kartu"
+        },
+        "step": {
+            "broker": {
+                "data": {
+                    "advanced_options": "I\u0161pl\u0117stiniai nustatymai",
+                    "certificate": "\u012ekelkite tinkint\u0105 CA sertifikato fail\u0105",
+                    "client_cert": "\u012ekelti kliento sertifikato fail\u0105",
+                    "client_id": "Kliento ID (palikite tu\u0161\u010di\u0105, jei norite atsitiktinai sugeneruoto)",
+                    "client_key": "\u012ekelti privataus rakto fail\u0105",
+                    "keepalive": "Laikas tarp prane\u0161im\u0173 \"keep alive\" siuntimo",
+                    "password": "Slapta\u017eodis",
+                    "protocol": "MQTT protokolas",
+                    "set_ca_cert": "Brokerio sertifikato patvirtinimas",
+                    "set_client_cert": "Naudokite kliento sertifikat\u0105",
+                    "tls_insecure": "Ignoruoti brokerio sertifikato patvirtinim\u0105",
+                    "transport": "MQTT transportas",
+                    "username": "Prisijungimos vardas",
+                    "ws_headers": "\u201eWebSocket\u201c antra\u0161t\u0117s JSON formatu",
+                    "ws_path": "WebSocket kelias"
+                }
+            },
+            "options": {
+                "data": {
+                    "birth_payload": "Gimimo \u017einut\u0117s naudingoji apkrova",
+                    "birth_qos": "Gimimo \u017einut\u0117 QoS",
+                    "birth_retain": "I\u0161saugokite gimimo prane\u0161im\u0105",
+                    "birth_topic": "Gimimo \u017einut\u0117s tema",
+                    "discovery_prefix": "Atradimo prie\u0161d\u0117lis"
+                }
+            }
+        }
+    },
+    "selector": {
+        "set_ca_cert": {
+            "options": {
+                "auto": "Automatinis",
+                "custom": "Pasirinktinis",
+                "off": "I\u0161jungta"
+            }
+        }
+    },
+    "services": {
+        "dump": {
+            "description": "Ra\u0161o visus prane\u0161imus konkre\u010dia tema \u012f `mqtt_dump.txt` fail\u0105 konfig\u016bracijos aplanke.",
+            "fields": {
+                "duration": {
+                    "description": "Kiek laiko tur\u0117tume klausytis prane\u0161im\u0173 per kelias sekundes.",
+                    "name": "Trukm\u0117"
+                },
+                "topic": {
+                    "description": "Tema, kurios reikia klausytis.",
+                    "name": "Tema"
+                }
+            },
+            "name": "Eksportuoti"
+        },
+        "publish": {
+            "description": "Paskelbia prane\u0161im\u0105 MQTT tema.",
+            "fields": {
+                "payload": {
+                    "description": "Naudinga apkrova, kuri\u0105 reikia paskelbti.",
+                    "name": "Naudinga apkrova"
+                },
+                "payload_template": {
+                    "description": "\u0160ablonas, kur\u012f reikia pateikti kaip naudingosios apkrovos vert\u0119. Jei pateikiama naudingoji apkrova, \u0161ablonas ignoruojamas.",
+                    "name": "Naudingos apkrovos \u0161ablonas"
+                },
+                "qos": {
+                    "description": "Paslaugos kokyb\u0117. 0: daugiausia vien\u0105 kart\u0105. 1: bent kart\u0105. 2: lygiai vien\u0105 kart\u0105.",
+                    "name": "QoS"
+                },
+                "retain": {
+                    "description": "Jei prane\u0161ime tur\u0117t\u0173 b\u016bti nustatyta i\u0161saugojimo v\u0117liav\u0117l\u0117. Jei nustatyta, tarpininkas i\u0161saugo naujausi\u0105 prane\u0161im\u0105 apie tem\u0105.",
+                    "name": "I\u0161laikyti"
+                },
+                "topic": {
+                    "description": "Tema, \u012f kuri\u0105 skelbti.",
+                    "name": "Tema"
+                }
+            },
+            "name": "Paskelbti"
+        },
+        "reload": {
+            "description": "I\u0161 naujo \u012fkelia MQTT objektus i\u0161 YAML konfig\u016bracijos.",
+            "name": "\u012ekelti i\u0161 naujo"
+        }
+    }
+}

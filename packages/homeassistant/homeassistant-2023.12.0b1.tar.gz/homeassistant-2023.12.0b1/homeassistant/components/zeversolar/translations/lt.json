@@ -1,0 +1,18 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti",
+            "timeout_connect": "Baig\u0117si ry\u0161io u\u017emezgimo laikas"
+        }
+    },
+    "entity": {
+        "sensor": {
+            "energy_today": {
+                "name": "Energija \u0161iandien"
+            }
+        }
+    }
+}

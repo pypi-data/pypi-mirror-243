@@ -1,0 +1,60 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Tili on jo m\u00e4\u00e4ritetty",
+            "reauth_successful": "Uudelleentodennus onnistui"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "email": "S\u00e4hk\u00f6posti",
+                    "password": "Salasana"
+                }
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "climate": {
+                "name": "Ilmasto"
+            }
+        },
+        "device_tracker": {
+            "device_tracker": {
+                "name": "Laiteseuranta"
+            }
+        },
+        "lock": {
+            "lock": {
+                "name": "Lukko"
+            }
+        },
+        "switch": {
+            "charging": {
+                "name": "Latautuu"
+            }
+        }
+    },
+    "issues": {
+        "integration_removed": {
+            "description": "Mazda -integraatio on poistettu Home Assistantista.\n\nKirjasto, jota Home Assistant k\u00e4ytt\u00e4\u00e4 yhteyden muodostamiseen palveluihinsa, [on poistettu k\u00e4yt\u00f6st\u00e4 Mazdan toimesta]({dmca}).\n\nVoit ratkaista t\u00e4m\u00e4n ongelman poistamalla (nyt poistuneet) integraatiomerkinn\u00e4t Home Assistant -asetuksistasi. [Klikkaa t\u00e4st\u00e4 n\u00e4hd\u00e4ksesi nykyiset Mazda-integraatiomerkinn\u00e4t]({entries})."
+        }
+    },
+    "services": {
+        "send_poi": {
+            "fields": {
+                "latitude": {
+                    "name": "Leveysaste"
+                },
+                "longitude": {
+                    "name": "Pituusaste"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "latitude": "Platuma",
+                    "longitude": "Ilguma",
+                    "name": "Vardas"
+                }
+            }
+        }
+    }
+}

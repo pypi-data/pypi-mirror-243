@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "flow_title": "{name} {model} ( {host} )",
+        "step": {
+            "confirm": {
+                "description": "Ar norite nustatyti {name} {model} ( {host} )?"
+            }
+        }
+    },
+    "entity": {
+        "switch": {
+            "hold": {
+                "name": "Laikyti"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "hold_temp": "Reguliuodami temperat\u016br\u0105 nustatykite nuolatin\u012f palaikym\u0105."
+                }
+            }
+        }
+    }
+}

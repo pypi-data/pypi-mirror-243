@@ -1,0 +1,12 @@
+{
+    "services": {
+        "push_weather_data": {
+            "fields": {
+                "temperature": {
+                    "description": "Temperatura actual (\u00b0C).",
+                    "name": "Temperatura"
+                }
+            }
+        }
+    }
+}

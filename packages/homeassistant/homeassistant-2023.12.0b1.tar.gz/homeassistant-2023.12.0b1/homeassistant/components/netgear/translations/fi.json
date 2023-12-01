@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "password": "Salasana",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                },
+                "description": "Oletusis\u00e4nt\u00e4: {host}\n Oletusk\u00e4ytt\u00e4j\u00e4nimi: {username}"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "signal_strength": {
+                "name": "Signaalin voimakkuus"
+            }
+        }
+    }
+}

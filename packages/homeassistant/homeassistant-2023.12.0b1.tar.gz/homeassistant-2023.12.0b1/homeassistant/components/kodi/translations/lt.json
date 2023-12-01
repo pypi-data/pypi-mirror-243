@@ -1,0 +1,48 @@
+{
+    "config": {
+        "abort": {
+            "no_uuid": "Kodi egzempliorius neturi unikalaus ID. Grei\u010diausiai taip yra d\u0117l senos \u201eKodi\u201c versijos (17.x arba senesn\u0117s). Integravim\u0105 galite konfig\u016bruoti rankiniu b\u016bdu arba atnaujinti \u012f naujesn\u0119 Kodi versij\u0105."
+        },
+        "step": {
+            "credentials": {
+                "data": {
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_to_playlist": {
+            "description": "Prideda muzik\u0105 \u012f numatyt\u0105j\u012f grojara\u0161t\u012f (t.y. playlistid=0).",
+            "fields": {
+                "artist_name": {
+                    "description": "Pasirenkamas atlik\u0117jo vardas, skirtas medijai filtruoti.",
+                    "name": "Menininko vardas"
+                },
+                "media_id": {
+                    "description": "Unikalus medijos \u012fra\u0161o, kur\u012f reikia prid\u0117ti, ID (\u201esongid\u201c arba albumid). Jei neapibr\u0117\u017eta, norint ie\u0161koti Kodi muzikos bibliotekoje, reikia \u201emedia_name\u201c ir \u201eatlik\u0117jo_vardas\u201c.",
+                    "name": "Medijos ID"
+                },
+                "media_name": {
+                    "description": "Neprivalomas medijos pavadinimas, skirtas medijai filtruoti. Gali b\u016bti \u201eALL\u201c, kai \u201emedia_type\u201c yra \u201eALBUM\u201c ir nurodytas \u201eatlik\u0117jo_vardas\u201c, kad b\u016bt\u0173 \u012ftrauktos visos vieno atlik\u0117jo dainos.",
+                    "name": "\u017diniasklaidos pavadinimas"
+                },
+                "media_type": {
+                    "description": "Medijos tipo identifikatorius. Tai turi b\u016bti viena i\u0161 DAINA arba ALBUMAS.",
+                    "name": "Medijos tipas"
+                }
+            },
+            "name": "Prid\u0117ti \u012f grojara\u0161t\u012f"
+        },
+        "call_method": {
+            "description": "I\u0161kvie\u010dia Kodi JSONRPC API metod\u0105 su pasirenkamais parametrais. \u201eKodi\u201c API skambu\u010dio rezultatai bus nukreipti \u012f \u201eHome Assistant\u201c \u012fvyk\u012f: \u201ekodi_call_method_result\u201c.",
+            "fields": {
+                "method": {
+                    "description": "I\u0161kvie\u010diamo Kodi JSONRPC API metodo pavadinimas.",
+                    "name": "Metodas"
+                }
+            },
+            "name": "Skambinimo metodas"
+        }
+    }
+}

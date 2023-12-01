@@ -1,0 +1,21 @@
+{
+    "config": {
+        "error": {
+            "invalid_auth_key": "API kredencialus atmet\u0117 Coinbase d\u0117l netinkamo API rakto.",
+            "invalid_auth_secret": "API kredencialus atmet\u0117 Coinbase d\u0117l netinkamos API paslapties."
+        }
+    },
+    "options": {
+        "error": {
+            "currency_unavailable": "Vieno ar daugiau pra\u0161om\u0173 valiutos liku\u010di\u0173 nepateikia j\u016bs\u0173 Coinbase API.",
+            "exchange_rate_unavailable": "Vieno ar keli\u0173 pra\u0161om\u0173 valiut\u0173 kurs\u0173 Coinbase nepateikia."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "exchnage_rate_precision": "Valiut\u0173 kurs\u0173 skaitmen\u0173 po kablelio skai\u010dius."
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "El dispositivo ya est\u00e1 configurado"
+        },
+        "error": {
+            "cannot_connect": "No se pudo conectar",
+            "unknown": "Error inesperado"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Host"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "charging": {
+                "name": "Cargando"
+            },
+            "connected": {
+                "name": "Conectado"
+            },
+            "ready": {
+                "name": "Listo"
+            }
+        },
+        "number": {
+            "intensity": {
+                "name": "Intensidad"
+            }
+        },
+        "sensor": {
+            "charge_energy": {
+                "name": "Energ\u00eda de carga"
+            },
+            "charge_power": {
+                "name": "Potencia de carga"
+            },
+            "charge_time": {
+                "name": "Tiempo de carga"
+            },
+            "fv_power": {
+                "name": "Energ\u00eda fotovoltaica"
+            },
+            "house_power": {
+                "name": "Energ\u00eda de la casa"
+            }
+        },
+        "switch": {
+            "paused": {
+                "name": "Pausar sesi\u00f3n"
+            }
+        }
+    }
+}

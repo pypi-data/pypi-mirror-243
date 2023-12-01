@@ -1,0 +1,115 @@
+{
+    "config": {
+        "abort": {
+            "authorize_url_timeout": "Valtuutus-URL-osoitteen luomisen aikakatkaisu.",
+            "missing_configuration": "Komponenttia ei ole m\u00e4\u00e4ritetty. Seuraa dokumentaatiota.",
+            "no_url_available": "URL-osoitetta ei ole saatavilla. Lis\u00e4tietoja t\u00e4st\u00e4 virheest\u00e4 saat [t\u00e4\u00e4lt\u00e4]({docs_url})",
+            "oauth_error": "Vastaanotettu virheelliset tunnustiedot.",
+            "oauth_failed": "Virhe haettaessa k\u00e4ytt\u00f6tunnusta.",
+            "oauth_timeout": "Aikakatkaisu ratkaistaessa OAuth tokenia.",
+            "oauth_unauthorized": "OAuth -valtuutusvirhe haettaessa k\u00e4ytt\u00f6tunnusta."
+        },
+        "create_entry": {
+            "default": "Onnistunut tunnistautuminen Withingsin kanssa."
+        },
+        "error": {
+            "already_configured": "Tili on jo m\u00e4\u00e4ritetty"
+        },
+        "step": {
+            "pick_implementation": {
+                "title": "Valitse todennusmenetelm\u00e4"
+            },
+            "profile": {
+                "data": {
+                    "profile": "Profiili nimi"
+                },
+                "description": "Anna n\u00e4ille tiedoille yksil\u00f6llinen profiilinimi. Yleens\u00e4 t\u00e4m\u00e4 on edellisess\u00e4 vaiheessa valitsemasi profiilin nimi.",
+                "title": "K\u00e4ytt\u00e4j\u00e4profiili."
+            },
+            "reauth_confirm": {
+                "title": "Todenna integraatio uudelleen"
+            }
+        }
+    },
+    "entity": {
+        "calendar": {
+            "workout": {
+                "name": "Harjoitukset"
+            }
+        },
+        "sensor": {
+            "activity_active_calories_burnt_today": {
+                "name": "T\u00e4n\u00e4\u00e4n poltetut aktiiviset kalorit"
+            },
+            "activity_active_duration_today": {
+                "name": "Aktiivista aikaa t\u00e4n\u00e4\u00e4n"
+            },
+            "activity_distance_today": {
+                "name": "T\u00e4n\u00e4\u00e4n kuljettu matka"
+            },
+            "activity_floors_climbed_today": {
+                "name": "Kerroksia kiivetty t\u00e4n\u00e4\u00e4n"
+            },
+            "activity_intense_duration_today": {
+                "name": "Intensiivist\u00e4 toimintaa t\u00e4n\u00e4\u00e4n"
+            },
+            "activity_moderate_duration_today": {
+                "name": "Kohtalaista toimintaa t\u00e4n\u00e4\u00e4n"
+            },
+            "activity_soft_duration_today": {
+                "name": "Kevytt\u00e4 toimintaa t\u00e4n\u00e4\u00e4n"
+            },
+            "activity_steps_today": {
+                "name": "Askeleita t\u00e4n\u00e4\u00e4n"
+            },
+            "activity_total_calories_burnt_today": {
+                "name": "T\u00e4n\u00e4\u00e4n poltetut kalorit yhteens\u00e4"
+            },
+            "workout_active_calories_burnt": {
+                "name": "Viime harjoituksessa poltetut kalorit"
+            },
+            "workout_distance": {
+                "name": "Viime harjoituksessa kuljettu matka"
+            },
+            "workout_duration": {
+                "name": "Viimeisimm\u00e4n harjoituksen kesto"
+            },
+            "workout_floors_climbed": {
+                "name": "Kerroksia kiivetty viime harjoituksessa"
+            },
+            "workout_intensity": {
+                "name": "Viimeisimm\u00e4n harjoituksen intensiteetti"
+            },
+            "workout_pause_duration": {
+                "name": "Tauko viimeisimm\u00e4n harjoituksen aikana"
+            },
+            "workout_type": {
+                "name": "Viimeisin harjoitustyyppi",
+                "state": {
+                    "badminton": "Sulkapallo",
+                    "baseball": "Pes\u00e4pallo",
+                    "basket_ball": "Koripallo",
+                    "bicycling": "Py\u00f6r\u00e4ily",
+                    "bmx": "BMX",
+                    "bodyboard": "Bodyboard",
+                    "boxing": "Nyrkkeily",
+                    "calisthenics": "Kehonpainoharjoittelu",
+                    "climbing": "Kiipeily",
+                    "dancing": "Tanssiminen",
+                    "elliptical": "Elliptinen",
+                    "fencing": "Miekkailu",
+                    "football": "Jalkapallo",
+                    "golf": "Golf",
+                    "handball": "K\u00e4sipallo",
+                    "hiking": "Vaellus",
+                    "walk": "K\u00e4vely",
+                    "waterpolo": "Vesipoolo",
+                    "windsurfing": "Purjelautailu",
+                    "wrestling": "Paini",
+                    "yoga": "Jooga",
+                    "zumba": "Zumba"
+                }
+            }
+        }
+    }
+}

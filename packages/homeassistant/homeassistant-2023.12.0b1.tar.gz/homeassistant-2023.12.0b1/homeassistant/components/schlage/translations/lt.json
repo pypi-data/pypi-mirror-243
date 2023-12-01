@@ -1,0 +1,38 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas",
+            "wrong_account": "Pateikti vartotojo kredencialai neatitinka \u0161ios \u201eSchlage\u201c paskyros."
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                },
+                "description": "\u201eSchlage\u201c integracija turi i\u0161 naujo autentifikuoti j\u016bs\u0173 paskyr\u0105",
+                "title": "I\u0161 naujo autentifikuokite integracij\u0105"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "keypad_disabled": {
+                "name": "Klaviat\u016bra i\u0161jungta"
+            }
+        },
+        "switch": {
+            "beeper": {
+                "name": "Mygtuko paspaudimas Pyptel\u0117jimas"
+            },
+            "lock_and_leave": {
+                "name": "1 \u2013 Palieskite U\u017erakinimas"
+            }
+        }
+    }
+}

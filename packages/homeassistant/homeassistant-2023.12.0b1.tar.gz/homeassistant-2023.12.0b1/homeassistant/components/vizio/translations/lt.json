@@ -1,0 +1,43 @@
+{
+    "config": {
+        "error": {
+            "complete_pairing_failed": "Nepavyko u\u017ebaigti susiejimo. Prie\u0161 pateikdami i\u0161 naujo \u012fsitikinkite, kad pateiktas PIN kodas yra teisingas, o televizorius vis dar maitinamas ir prijungtas prie tinklo."
+        },
+        "step": {
+            "pair_tv": {
+                "description": "J\u016bs\u0173 televizoriuje tur\u0117t\u0173 b\u016bti rodomas kodas. \u012eveskite \u0161\u012f kod\u0105 \u012f form\u0105 ir pereikite prie kito veiksmo, kad u\u017ebaigtum\u0117te susiejim\u0105.",
+                "title": "U\u017ebaikite susiejimo proces\u0105"
+            },
+            "pairing_complete": {
+                "description": "J\u016bs\u0173 VIZIO SmartCast \u012frenginys dabar prijungtas prie nam\u0173 asistento.",
+                "title": "Suporavimas baigtas"
+            },
+            "pairing_complete_import": {
+                "description": "J\u016bs\u0173 VIZIO SmartCast \u012frenginys dabar prijungtas prie nam\u0173 asistento. \n\n J\u016bs\u0173 prieigos raktas yra \u201e** {access_token} **\u201c."
+            },
+            "user": {
+                "description": "Prieigos prieigos raktas reikalingas tik televizoriams. Jei konfig\u016bruojate televizori\u0173 ir dar neturite prieigos prieigos rakto, palikite j\u012f tu\u0161\u010di\u0105, kad gal\u0117tum\u0117te atlikti susiejimo proces\u0105."
+            }
+        }
+    },
+    "services": {
+        "update_setting": {
+            "description": "Atnaujina Vizio medijos leistuvo \u012frenginio parametro reik\u0161m\u0119.",
+            "fields": {
+                "new_value": {
+                    "description": "Nauja nustatymo vert\u0117.",
+                    "name": "Nauja vert\u0117"
+                },
+                "setting_name": {
+                    "description": "Kei\u010diamo nustatymo pavadinimas. Galimi tam tikro nustatymo_tipo nustatymai pateikiami nuosavyb\u0117je [setting_type]_settings.",
+                    "name": "Vardo nustatymas"
+                },
+                "setting_type": {
+                    "description": "Kei\u010diamo nustatymo tipas. Galimi tipai pateikiami ypatyb\u0117je \u201esetting_types\u201c.",
+                    "name": "Nustatymo tipas"
+                }
+            },
+            "name": "Atnaujinti nustatym\u0105"
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti",
+            "not_supported": "Palaikoma tik PrusaLink API v2"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "api_key": "API raktas"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "cancel_job": {
+                "name": "At\u0161aukti darb\u0105"
+            },
+            "pause_job": {
+                "name": "Pristabdyti darb\u0105"
+            },
+            "resume_job": {
+                "name": "T\u0119sti darb\u0105"
+            }
+        },
+        "camera": {
+            "job_preview": {
+                "name": "Per\u017ei\u016bra"
+            }
+        },
+        "sensor": {
+            "filename": {
+                "name": "Failo pavadinimas"
+            },
+            "heatbed_target_temperature": {
+                "name": "\u0160ilumos sluoksnio tikslin\u0117 temperat\u016bra"
+            },
+            "heatbed_temperature": {
+                "name": "\u0160ilumos lovos temperat\u016bra"
+            },
+            "material": {
+                "name": "Med\u017eiaga"
+            },
+            "nozzle_target_temperature": {
+                "name": "Tikslin\u0117 purk\u0161tuko temperat\u016bra"
+            },
+            "nozzle_temperature": {
+                "name": "Purk\u0161tuko temperat\u016bra"
+            },
+            "print_finish": {
+                "name": "Spausdinimo apdaila"
+            },
+            "print_speed": {
+                "name": "Spausdinimo greitis"
+            },
+            "print_start": {
+                "name": "Spausdinimo prad\u017eia"
+            },
+            "printer_state": {
+                "state": {
+                    "cancelling": "At\u0161aukiamas",
+                    "idle": "Laukiama",
+                    "paused": "Pristabdyta",
+                    "pausing": "Pristabdoma",
+                    "printing": "Spausdinimas"
+                }
+            },
+            "progress": {
+                "name": "Progresas"
+            },
+            "z_height": {
+                "name": "Z auk\u0161tis"
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas",
+            "already_in_progress": "Konfig\u016bracijos procesas jau vyksta"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                },
+                "description": "Nepavyko autentifikuoti slapta\u017eod\u017eio",
+                "title": "I\u0161 naujo autentifikuokite integracij\u0105"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                },
+                "data_description": {
+                    "host": "Projektoriaus IP adresas arba pagrindinio kompiuterio pavadinimas",
+                    "password": "Neprivalomas slapta\u017eodis, jei projektorius sukonfig\u016bruotas",
+                    "port": "Projektoriaus IP prievadas (numatytasis yra 20554)"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "swing_support": "Valdymo svyravimo re\u017eimas"
+                },
+                "data_description": {
+                    "host": "\u201eCoolMasterNet\u201c \u012frenginio pagrindinio kompiuterio pavadinimas arba IP adresas."
+                },
+                "description": "Nustatykite savo CoolMasterNet ry\u0161io informacij\u0105."
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "clean_filter": {
+                "name": "I\u0161valykite filtr\u0105"
+            }
+        },
+        "button": {
+            "reset_filter": {
+                "name": "I\u0161 naujo nustatykite filtr\u0105"
+            }
+        },
+        "sensor": {
+            "error_code": {
+                "name": "Klaidos kodas"
+            }
+        }
+    }
+}

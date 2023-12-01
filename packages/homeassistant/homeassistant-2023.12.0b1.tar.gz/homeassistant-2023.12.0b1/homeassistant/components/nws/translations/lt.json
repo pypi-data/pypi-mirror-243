@@ -1,0 +1,13 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "station": "METAR stoties kodas"
+                },
+                "description": "Jei METAR stoties kodas nenurodytas, artimiausiai sto\u010diai surasti bus naudojama platuma ir ilguma. \u0160iuo metu API raktas gali b\u016bti bet koks. Rekomenduojama naudoti galiojant\u012f el. pa\u0161to adres\u0105.",
+                "title": "Prisijunkite prie Nacionalin\u0117s or\u0173 tarnybos"
+            }
+        }
+    }
+}

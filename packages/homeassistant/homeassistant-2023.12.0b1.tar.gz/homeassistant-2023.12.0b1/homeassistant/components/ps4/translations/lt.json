@@ -1,0 +1,32 @@
+{
+    "config": {
+        "step": {
+            "link": {
+                "data_description": {
+                    "code": "\u201ePlayStation 4\u201c konsol\u0117je eikite \u012f \u201eNustatymai\u201c. Tada eikite \u012f \u201eMobiliosios programos ry\u0161io nustatymai\u201c ir pasirinkite \u201ePrid\u0117ti \u012frengin\u012f\u201c, kad gautum\u0117te PIN kod\u0105."
+                }
+            },
+            "mode": {
+                "data_description": {
+                    "ip_address": "Palikite tu\u0161\u010di\u0105, jei pasirenkate automatin\u012f atradim\u0105."
+                }
+            }
+        }
+    },
+    "services": {
+        "send_command": {
+            "description": "Imituoja PlayStation 4 mygtuko paspaudim\u0105.",
+            "fields": {
+                "command": {
+                    "description": "Mygtukas paspausti.",
+                    "name": "Komanda"
+                },
+                "entity_id": {
+                    "description": "Objekto, kuriam reikia si\u0173sti komand\u0105, pavadinimas.",
+                    "name": "Subjektas"
+                }
+            },
+            "name": "Si\u0173sti komand\u0105"
+        }
+    }
+}

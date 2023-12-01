@@ -1,0 +1,7 @@
+{
+    "config": {
+        "abort": {
+            "cloud_not_connected": "Neprisijungta prie \u201eHome Assistant Cloud\u201c."
+        }
+    }
+}

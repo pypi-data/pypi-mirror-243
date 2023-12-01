@@ -1,0 +1,21 @@
+{
+    "entity": {
+        "sensor": {
+            "sunrise": {
+                "name": "Hora do amencer"
+            }
+        }
+    },
+    "selector": {
+        "calculation_method": {
+            "options": {
+                "moonsighting": "Comit\u00e9 Mundial de Observaci\u00f3n da L\u00faa"
+            }
+        },
+        "midnight_mode": {
+            "options": {
+                "standard": "Est\u00e1ndar (do medio solpor ao amencer)"
+            }
+        }
+    }
+}

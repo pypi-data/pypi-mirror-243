@@ -1,0 +1,37 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Seade on juba h\u00e4\u00e4lestatud",
+            "invalid_ip_address": "Sobimatu IP-aadress."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "count": "Pingide arv",
+                    "host": "Host"
+                },
+                "description": "Ping v\u00f5imaldab kontrollida hosti saadavust.",
+                "title": "Lisa ping"
+            }
+        }
+    },
+    "options": {
+        "abort": {
+            "invalid_ip_address": "Sobimatu IP-aadress."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "count": "Pingide arv",
+                    "host": "Host"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "description": "Taaslaeb ping-andurid YAML-i konfiguratsioonist.",
+            "name": "Taaslae"
+        }
+    }
+}

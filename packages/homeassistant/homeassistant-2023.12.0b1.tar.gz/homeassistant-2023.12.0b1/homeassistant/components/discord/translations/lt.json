@@ -1,0 +1,24 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Paslauga jau sukonfig\u016bruota"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "api_token": "API prieigos raktas"
+                },
+                "description": "Per\u017ei\u016br\u0117kite \u201eDiscord\u201c roboto rakto gavimo dokumentus. \n\n {url}"
+            },
+            "user": {
+                "data": {
+                    "api_token": "API prieigos raktas"
+                },
+                "description": "Per\u017ei\u016br\u0117kite \u201eDiscord\u201c roboto rakto gavimo dokumentus. \n\n {url}"
+            }
+        }
+    }
+}

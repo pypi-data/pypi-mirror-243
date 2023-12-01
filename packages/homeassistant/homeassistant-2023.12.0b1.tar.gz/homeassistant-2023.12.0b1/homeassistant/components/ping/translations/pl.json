@@ -1,0 +1,20 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Nazwa hosta lub adres IP"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "host": "Nazwa hosta lub adres IP"
+                }
+            }
+        }
+    }
+}

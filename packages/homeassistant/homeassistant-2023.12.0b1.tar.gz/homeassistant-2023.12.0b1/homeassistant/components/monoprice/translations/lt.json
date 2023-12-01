@@ -1,0 +1,19 @@
+{
+    "options": {
+        "step": {
+            "init": {
+                "title": "Konfig\u016bruoti \u0161altinius"
+            }
+        }
+    },
+    "services": {
+        "restore": {
+            "description": "Atkuria medijos grotuvo zonos momentin\u0119 nuotrauk\u0105.",
+            "name": "Atkurti"
+        },
+        "snapshot": {
+            "description": "Daro medijos leistuvo zonos momentin\u0119 nuotrauk\u0105.",
+            "name": "Momentin\u0117 nuotrauka"
+        }
+    }
+}

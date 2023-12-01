@@ -1,0 +1,18 @@
+{
+    "services": {
+        "set_fan_sleep_timer": {
+            "fields": {
+                "sleep_time": {
+                    "description": "N\u00famero de minutos para configurar o temporizador."
+                }
+            }
+        },
+        "set_light_sleep_timer": {
+            "fields": {
+                "sleep_time": {
+                    "description": "N\u00famero de minutos para configurar o temporizador."
+                }
+            }
+        }
+    }
+}

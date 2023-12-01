@@ -1,0 +1,16 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Paslauga jau sukonfig\u016bruota",
+            "no_services": "Galiniame ta\u0161ke paslaug\u0173 nerasta"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Ar norite konfig\u016bruoti \"Home Assistant\", kad jis prisijungt\u0173 prie papildinio teikiamos \"Wyoming\" paslaugos: {addon}?"
+            }
+        }
+    }
+}
