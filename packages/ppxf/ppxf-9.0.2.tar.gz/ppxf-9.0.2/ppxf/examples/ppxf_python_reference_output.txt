@@ -1,0 +1,300 @@
+# Reference expected output of the pPXF 9.0.0 examples (11 November 2023).
+# Python 3.11 using NumPy 1.26, SciPy 1.11, Matplotlib 3.8
+###############################################################################
+
+
+>>> runfile('ppxf_example_kinematics_sauron.py')
+
+ Best Fit:       Vel     sigma        h3        h4
+ comp.  0:        33       111     0.028     0.066
+chi2/DOF: 1.026; DOF: 337; degree = 4; mdegree = 0
+method = capfit; Jac calls: 4; Func calls: 22; Status: 2
+linear_method = lsq_box; Nonzero Templates (>0.1%): 7/150
+Formal errors:
+     dV    dsigma   dh3      dh4
+     2.5     5.6   0.019   0.034
+Elapsed time in pPXF: 0.56 s
+Best-fitting redshift z = 1.233248 +/- 0.000019
+
+
+###############################################################################
+
+
+>>> runfile('ppxf_example_kinematics_sdss.py')
+
+WARNING: the template's resolution dlam is larger than the galaxy's
+ Best Fit:       Vel     sigma        h3        h4
+ comp.  0:      1003       223    -0.023     0.084
+chi2/DOF: 0.8818; DOF: 3617; degree = 20; mdegree = 0
+method = capfit; Jac calls: 3; Func calls: 17; Status: 2
+linear_method = lsq_box; Nonzero Templates (>0.1%): 3/150
+Formal errors:
+     dV    dsigma   dh3      dh4
+     2.4     3.2  0.0086    0.01
+Elapsed time in pPXF: 1.38 s
+Best-fitting redshift z = 0.0064913 +/- 0.0000080
+
+
+###############################################################################
+
+
+>>> runfile('ppxf_example_population_gas_sdss.py')
+
+======================================================
+ Fit with free Balmer lines and [SII] doublet
+======================================================
+
+Emission lines included in gas templates:
+['H10' 'H9' 'H8' 'Heps' 'Hdelta' 'Hgamma' 'Hbeta' 'Halpha' '[SII]6716'
+ '[SII]6731' '[NeIII]3968' '[NeIII]3869' 'HeII4687' 'HeI5876'
+ '[OIII]5007_d' '[OI]6300_d' '[NII]6583_d']
+ Best Fit:       Vel     sigma        h3        h4
+ comp.  0:      1213       106    -0.017     0.036
+ comp.  1:      1206        94
+ comp.  2:      1194        71
+chi2/DOF: 1.003; DOF: 3829; degree = -1; mdegree = 10
+method = capfit; Jac calls: 6; Func calls: 120; Status: 2
+linear_method = lsq_box; Nonzero Templates (>0.1%): 39/167
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+gas_component           name        flux       err      V     sig
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Comp:  1                   H10     0.6694     0.043    1206    94
+Comp:  1                    H9      0.000     0.043    1206    94
+Comp:  1                    H8    0.03713     0.042    1206    94
+Comp:  1                  Heps     0.1981     0.048    1206    94
+Comp:  1                Hdelta     0.1718     0.042    1206    94
+Comp:  1                Hgamma     0.2544     0.041    1206    94
+Comp:  1                 Hbeta     0.4746     0.040    1206    94
+Comp:  1                Halpha      1.200     0.039    1206    94
+Comp:  1             [SII]6716     0.3206     0.039    1206    94
+Comp:  1             [SII]6731     0.2430     0.039    1206    94
+Comp:  2           [NeIII]3968    0.02577     0.045    1194    71
+Comp:  2           [NeIII]3869     0.2197     0.040    1194    71
+Comp:  2              HeII4687     0.1221     0.038    1194    71
+Comp:  2               HeI5876   0.006654     0.036    1194    71
+Comp:  2          [OIII]5007_d      1.255     0.047    1194    71
+Comp:  2            [OI]6300_d   0.009312     0.045    1194    71
+Comp:  2           [NII]6583_d     0.4349     0.045    1194    71
+-----------------------------------------------------------------
+Desired Delta Chi^2: 87.72
+Current Delta Chi^2: 12.22
+Elapsed time in pPXF: 6.43
+Weighted <lg_age> [yr]: 9.87
+Weighted <[M/H]>: 0.0266
+(M*/L)_r: 4.391 (only valid for E-MILES SPS)
+
+======================================================
+ Fit with tied Balmer lines and limited [SII] doublet
+======================================================
+
+Emission lines included in gas templates:
+['Balmer' '[SII]6731_d1' '[SII]6731_d2' '[NeIII]3968' '[NeIII]3869'
+ 'HeII4687' 'HeI5876' '[OIII]5007_d' '[OI]6300_d' '[NII]6583_d']
+ Best Fit:       Vel     sigma        h3        h4
+ comp.  0:      1213       106    -0.021     0.043
+ comp.  1:      1208        84
+ comp.  2:      1195        72
+  Gas Attenuation A_V: 0.278
+chi2/DOF: 1.055; DOF: 3828; degree = -1; mdegree = 10
+method = capfit; Jac calls: 6; Func calls: 126; Status: 3
+linear_method = lsq_box; Nonzero Templates (>0.1%): 32/160
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+gas_component           name        flux       err      V     sig
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Comp:  1                Balmer      2.262     0.066    1208    84
+Comp:  1          [SII]6731_d1    0.04589     0.094    1208    84
+Comp:  1          [SII]6731_d2     0.4931      0.10    1208    84
+Comp:  2           [NeIII]3968    0.07869     0.040    1195    72
+Comp:  2           [NeIII]3869     0.2172     0.040    1195    72
+Comp:  2              HeII4687     0.1260     0.038    1195    72
+Comp:  2               HeI5876   0.007840     0.036    1195    72
+Comp:  2          [OIII]5007_d      1.263     0.047    1195    72
+Comp:  2            [OI]6300_d   0.009728     0.045    1195    72
+Comp:  2           [NII]6583_d     0.4341     0.045    1195    72
+-----------------------------------------------------------------
+Desired Delta Chi^2: 87.72
+Current Delta Chi^2: 213.2
+Elapsed time in pPXF: 5.67
+Weighted <lg_age> [yr]: 9.88
+Weighted <[M/H]>: 0.0301
+(M*/L)_r: 4.417 (only valid for E-MILES SPS)
+
+
+###############################################################################
+
+
+>>> runfile('ppxf_example_population_photometry.py')
+
+['H10' 'H9' 'H8' 'Heps' 'Hdelta' 'Hgamma' 'Hbeta' 'Halpha' '[SII]6716'
+ '[SII]6731' '[NeIII]3968' '[NeIII]3869' 'HeII4687' 'HeI5876'
+ '[OIII]5007_d' '[OI]6300_d' '[NII]6583_d']
+
+Synthetic photometry on the observed galaxy spectrum
+  1 --- Outside template: galex1500
+  2 --- Outside template: galex2500
+  3 --- Outside template: SDSS/u
+  4: SDSS/g
+  5: SDSS/r
+  6 --- Outside template: SDSS/i
+  7 --- Outside template: SDSS/z
+  8 --- Outside template: 2MASS/J
+  9 --- Outside template: 2MASS/H
+ 10 --- Outside template: 2MASS/K
+
+Synthetic photometry on the SPS templates
+  1: galex1500
+  2: galex2500
+  3: SDSS/u
+  4: SDSS/g
+  5: SDSS/r
+  6: SDSS/i
+  7: SDSS/z
+  8: 2MASS/J
+  9: 2MASS/H
+ 10: 2MASS/K
+
+Starting pPXF fit
+ Best Fit:       Vel     sigma
+ comp.  0:      1144        19
+ comp.  1:      1152        48
+Stars Attenuation A_V: 0.002
+chi2/DOF: 0.7886; DOF: 2945; degree = -1; mdegree = 8
+Photometry chi2/n_bands: 0.1685; n_bands: 10
+method = capfit; Jac calls: 8; Func calls: 116; Status: 2
+linear_method = lsq_box; Nonzero Templates (>0.1%): 43/232
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+gas_component           name        flux       err      V     sig
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Comp:  1                   H10     0.1536     0.044    1152    48
+Comp:  1                    H9     0.1860     0.044    1152    48
+Comp:  1                    H8     0.3968     0.044    1152    48
+Comp:  1                  Heps     0.2260     0.048    1152    48
+Comp:  1                Hdelta     0.4732     0.043    1152    48
+Comp:  1                Hgamma     0.7273     0.042    1152    48
+Comp:  1                 Hbeta      1.319     0.041    1152    48
+Comp:  1                Halpha      3.916     0.037    1152    48
+Comp:  1             [SII]6716     0.8608     0.037    1152    48
+Comp:  1             [SII]6731     0.6007     0.037    1152    48
+Comp:  1           [NeIII]3968      0.000     0.048    1152    48
+Comp:  1           [NeIII]3869      0.000     0.044    1152    48
+Comp:  1              HeII4687    0.07751     0.041    1152    48
+Comp:  1               HeI5876     0.1040     0.038    1152    48
+Comp:  1          [OIII]5007_d      1.363     0.051    1152    48
+Comp:  1            [OI]6300_d    0.08694     0.048    1152    48
+Comp:  1           [NII]6583_d      1.527     0.047    1152    48
+-----------------------------------------------------------------
+Elapsed time in pPXF: 13.68
+Weighted <lg_age> [yr]: 8.57
+Weighted <[M/H]>: 0.0119
+
+###############################################################################
+
+
+>>> runfile('ppxf_example_sky_and_symmetric_losvd.py')
+
+The input values are: Vel=200, sigma=300, h3=0.1, h4=0.1
+
+ Best Fit:       Vel     sigma        h3        h4
+ comp.  0:       192       302     0.061     0.065
+chi2/DOF: 0.9764; DOF: 6316; degree = 4; mdegree = 4
+method = capfit; Jac calls: 3; Func calls: 41; Status: 2
+linear_method = lsq_box; Nonzero Templates (>0.1%): 7/154
+Elapsed time in pPXF: 2.48 s
+
+###############################################################################
+
+
+>>> runfile('ppxf_example_two_components.py')
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+           No constraints on the kinematics
+--------------------------------------------------------
+ Best Fit:       Vel     sigma
+ comp.  0:       -10       194
+ comp.  1:       300       102
+chi2/DOF: 0.9692; DOF: 5976; degree = 4; mdegree = 0
+method = capfit; Jac calls: 6; Func calls: 34; Status: 2
+linear_method = lsq_box; Nonzero Templates (>0.1%): 4/4
+Templates weights:
+     0.966   0.00299    0.0381     0.999
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  Constraint: sigma[0]/1.5 <= sigma[1] <= sigma[0]*1.5
+--------------------------------------------------------
+ Best Fit:       Vel     sigma
+ comp.  0:       -45       164
+ comp.  1:       293       110
+chi2/DOF: 0.9770; DOF: 5976; degree = 4; mdegree = 0
+method = capfit; Jac calls: 6; Func calls: 34; Status: 2
+linear_method = lsq_box; Nonzero Templates (>0.1%): 3/4
+Templates weights:
+     0.822         0     0.178         1
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+               Single component pPXF fit
+--------------------------------------------------------
+ Best Fit:       Vel     sigma
+ comp.  0:       198       219
+chi2/DOF: 2.088; DOF: 5978; degree = 4; mdegree = 0
+method = capfit; Jac calls: 4; Func calls: 14; Status: 2
+linear_method = lsq_box; Nonzero Templates (>0.1%): 4/4
+Templates weights:
+     0.485     0.512     0.485     0.512
+==============================================
+Total elapsed time 0.75 s
+
+###############################################################################
+
+
+>>> runfile('ppxf_example_gas_sdss_tied.py')
+
+Emission lines included in gas templates:
+['H10' 'H9' 'H8' 'Heps' 'Hdelta' 'Hgamma' 'Hbeta' 'Halpha' '[SII]6716'
+ '[SII]6731' '[NeIII]3968' '[NeIII]3869' 'HeII4687' 'HeI5876'
+ '[OIII]5007_d' '[OI]6300_d' '[NII]6583_d']
+ Best Fit:       Vel     sigma
+ comp.  0:      1147        28
+ comp.  1:      1151        51
+ comp.  2:      1155        48
+ comp.  3:      1155         1
+ comp.  4:      1155        57
+ comp.  5:      1155        57
+ comp.  6:      1155         1
+ comp.  7:      1155         1
+ comp.  8:      1155        56
+Attenuation Parameters 0: 0.000
+chi2/DOF: 0.8123; DOF: 2882; degree = -1; mdegree = 10
+method = capfit; Jac calls: 8; Func calls: 194; Status: 2
+linear_method = lsq_box; Nonzero Templates (>0.1%): 20/167
+Tied parameters:
+ p[6] = p[4]
+ p[8] = p[4]
+ p[10] = p[4]
+ p[12] = p[4]
+ p[14] = p[4]
+ p[16] = p[4]
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+gas_component           name        flux       err      V     sig
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Comp:  1                   H10     0.1958     0.038    1151    51
+Comp:  1                    H9     0.2137     0.038    1151    51
+Comp:  1                    H8     0.3928     0.038    1151    51
+Comp:  1                  Heps     0.2185     0.041    1151    51
+Comp:  1                Hdelta     0.4712     0.037    1151    51
+Comp:  1                Hgamma     0.7335     0.037    1151    51
+Comp:  1                 Hbeta      1.299     0.035    1151    51
+Comp:  1                Halpha      3.735     0.032    1151    51
+Comp:  2             [SII]6716     0.7975     0.032    1155    48
+Comp:  2             [SII]6731     0.5580     0.032    1155    48
+Comp:  3           [NeIII]3968      0.000     0.038    1155     1
+Comp:  3           [NeIII]3869      0.000     0.036    1155     1
+Comp:  4              HeII4687    0.03904     0.036    1155    57
+Comp:  5               HeI5876     0.1133     0.034    1155    57
+Comp:  6          [OIII]5007_d      1.224     0.040    1155     1
+Comp:  7            [OI]6300_d    0.08985     0.036    1155     1
+Comp:  8           [NII]6583_d      1.488     0.042    1155    56
+-----------------------------------------------------------------
+Elapsed time in pPXF: 9.52
+
+###############################################################################
+
