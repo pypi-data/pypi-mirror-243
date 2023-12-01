@@ -1,0 +1,25 @@
+Metadata-Version: 2.1
+Name: akida_models
+Version: 1.3.1
+Summary: Akida Models
+Home-page: https://doc.brainchipinc.com
+Author: Kevin Tsiknos
+Author-email: ktsiknos@brainchip.com
+License: Apache 2.0
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: LICENSE.3rdparty
+Requires-Dist: cnn2snn~=2.6.0
+Requires-Dist: quantizeml~=0.7.3
+Requires-Dist: scipy
+Requires-Dist: opencv-python
+Requires-Dist: mtcnn
+Requires-Dist: imgaug
+Requires-Dist: trimesh
+Requires-Dist: tensorflow-addons>=0.18.0
+
+# Akida models
+
+This package contains a zoo of TensorFlow/Keras defined models that can be
+quantized and that are compatible for Akida conversion.
