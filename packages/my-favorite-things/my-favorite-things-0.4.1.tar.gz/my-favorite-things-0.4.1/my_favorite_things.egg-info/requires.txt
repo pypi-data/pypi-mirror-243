@@ -1,0 +1,8 @@
+numpy
+matplotlib
+
+[dev]
+build
+twine
+black
+isort

@@ -1,0 +1,15 @@
+.gitattributes
+.gitignore
+LICENSE
+README.md
+pyproject.toml
+my_favorite_things/__init__.py
+my_favorite_things/colors.py
+my_favorite_things/ddicts.py
+my_favorite_things/plot.py
+my_favorite_things/save.py
+my_favorite_things.egg-info/PKG-INFO
+my_favorite_things.egg-info/SOURCES.txt
+my_favorite_things.egg-info/dependency_links.txt
+my_favorite_things.egg-info/requires.txt
+my_favorite_things.egg-info/top_level.txt
