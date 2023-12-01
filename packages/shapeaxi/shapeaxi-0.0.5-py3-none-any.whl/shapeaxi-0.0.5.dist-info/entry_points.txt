@@ -1,0 +1,2 @@
+[console_scripts]
+shapeaxi = src.saxi_folds:cml
