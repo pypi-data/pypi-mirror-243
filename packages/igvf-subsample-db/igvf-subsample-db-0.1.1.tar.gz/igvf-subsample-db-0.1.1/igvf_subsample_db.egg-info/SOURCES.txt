@@ -1,0 +1,17 @@
+LICENSE
+README.md
+setup.py
+bin/create_rule_template
+bin/get_subsampled_uuids
+bin/subsample_pg
+igvf_subsample_db/__init__.py
+igvf_subsample_db/create_rule_template.py
+igvf_subsample_db/db.py
+igvf_subsample_db/get_subsampled_uuids.py
+igvf_subsample_db/profiles.py
+igvf_subsample_db/subsample_pg.py
+igvf_subsample_db.egg-info/PKG-INFO
+igvf_subsample_db.egg-info/SOURCES.txt
+igvf_subsample_db.egg-info/dependency_links.txt
+igvf_subsample_db.egg-info/requires.txt
+igvf_subsample_db.egg-info/top_level.txt
