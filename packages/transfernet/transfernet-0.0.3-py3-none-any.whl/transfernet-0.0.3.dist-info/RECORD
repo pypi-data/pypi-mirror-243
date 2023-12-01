@@ -1,0 +1,13 @@
+transfernet/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+transfernet/datasets.py,sha256=qpFczbCURCRX0AmUqiefKAp5dGTPSj_JB7GmvQ26R2Y,524
+transfernet/models.py,sha256=PX1cL4ISeSzFHKrpr01mLcynAsivFJKQ5sYe2BL44N8,2189
+transfernet/train.py,sha256=qeH8Im-RUEpTEVpONQ21Y8ax8fuFnkc050MGbKs7Fb4,1807
+transfernet/utils.py,sha256=IVbta3LncdMllIzS5l6WXklutzxJCtCWLE8ZUn4Efvg,6760
+transfernet/validate.py,sha256=ZfXAVoqYzDAxAsGaVadbxMLjOE7ShadaVg4dI8D3l8g,2286
+transfernet/data/generate_data.py,sha256=gEZ_6GotDdIwftFN2qOLYY8bI-c_SOHqsebOOZuwvck,964
+transfernet/data/make_regression.csv,sha256=zk0vS7BBRk7ka43DbT-OF4BWcpXhDHZpqfxy88QWNkw,124182
+transfernet-0.0.3.dist-info/LICENSE,sha256=LfrZltpziQ5-jE1teJ0KHg4LVxoaK6Zy31rzeYiJ5Dc,1077
+transfernet-0.0.3.dist-info/METADATA,sha256=VhewELYKeXYfNplhsPHFhnx681QEcCDub62Jrd5nDDs,648
+transfernet-0.0.3.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+transfernet-0.0.3.dist-info/top_level.txt,sha256=Yi4RdGbozauWWH6RRlFcazjbxp1nGp37HTkcxrqOx4c,12
+transfernet-0.0.3.dist-info/RECORD,,
