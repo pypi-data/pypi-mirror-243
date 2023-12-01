@@ -1,0 +1,7 @@
+[console_scripts]
+autoassist = letmedoit.autoassist:main
+automath = letmedoit.automath:main
+autoretriever = letmedoit.autoretriever:main
+autoteachable = letmedoit.autoteachable:main
+etextedit = letmedoit.eTextEdit:main
+letmedoit = letmedoit.main:main
