@@ -1,0 +1,7 @@
+numpy
+scikit-learn
+matplotlib
+pandas
+numpy>=1.19.2
+ipywidgets
+interpret
