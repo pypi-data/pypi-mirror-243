@@ -1,0 +1,92 @@
+<!-- FILEPATH: /opt/odoo_modules/hr_attendance_mitxelena/reports/hr_attendance_validation_report_template.xml -->
+<odoo>
+    <data>
+        <template id="report_attendance_validation_template">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="web.external_layout">
+                        <div class="page">
+                            <h2>Attendance Validation Report</h2>
+                            <!-- Detalles del Empleado -->
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <strong>Employee:</strong>
+                                    <p><span t-field="doc.employee_id.name"/></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <strong>Date From:</strong>
+                                    <p><span t-field="doc.date_from"/></p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <strong>Date To:</strong>
+                                    <p><span t-field="doc.date_to"/></p>
+                                </div>
+                            </div>
+
+                            <!-- Asistencias -->
+                            <h3>Attendances</h3>
+                            <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Check In</th>
+                                        <th>Check Out</th>
+                                        <th>Duration</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="doc.attendance_ids" t-as="attendance">
+                                        <td>
+                                            <span t-field="attendance.date"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="attendance.check_in"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="attendance.check_out"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="attendance.worked_hours"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <!-- Ausencias -->
+                            <h3>Leaves</h3>
+                            <table class="table table-sm table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Duration</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="doc.leave_ids" t-as="leave">
+                                        <td>
+                                            <span t-field="leave.date"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="leave.start_date"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="leave.end_date"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="leave.duration"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+    </data>
+</odoo>
