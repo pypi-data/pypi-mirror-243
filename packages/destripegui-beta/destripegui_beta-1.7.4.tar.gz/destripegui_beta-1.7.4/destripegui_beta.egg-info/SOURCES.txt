@@ -1,0 +1,15 @@
+LICENSE.txt
+MANIFEST.in
+README.md
+setup.py
+destripegui/__init__.py
+destripegui/destripegui.py
+destripegui/data/DestripeGUI.exe
+destripegui/data/config.ini
+destripegui/data/lct.ico
+destripegui_beta.egg-info/PKG-INFO
+destripegui_beta.egg-info/SOURCES.txt
+destripegui_beta.egg-info/dependency_links.txt
+destripegui_beta.egg-info/entry_points.txt
+destripegui_beta.egg-info/requires.txt
+destripegui_beta.egg-info/top_level.txt
