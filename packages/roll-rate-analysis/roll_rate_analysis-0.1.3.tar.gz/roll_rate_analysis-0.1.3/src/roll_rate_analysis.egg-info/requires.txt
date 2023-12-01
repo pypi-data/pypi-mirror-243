@@ -1,0 +1,7 @@
+numpy
+polars==0.19.11
+pandas
+
+[dev]
+pytest
+pre-commit
