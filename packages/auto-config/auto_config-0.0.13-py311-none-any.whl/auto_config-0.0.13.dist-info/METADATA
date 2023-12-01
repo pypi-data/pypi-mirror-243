@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: auto-config
+Version: 0.0.13
+Summary: auto config for my personal devices
+Author-Email: Zhan Rongrui <2742392377@qq.com>
+License: MIT
+Project-URL: Homepage, https://pypi.org/project/auto-config
+Project-URL: Repository, https://github.com/zrr1999/auto-config.git
+Requires-Python: >=3.8
+Requires-Dist: pydantic
+Requires-Dist: typer
+Requires-Dist: loguru
+Requires-Dist: toml
+Description-Content-Type: text/markdown
+
+# auto-config
