@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: lkfit
+Version: 0.1.0
+Summary: A Python library for fitting.
+Home-page: UNKNOWN
+Author: Lukas Kontenis
+Author-email: dse.ssd@gmail.com
+License: UNKNOWN
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+
+lkfit is a Python library for fitting.
+
+lkfit comes from a refactoring of [lklib](https://test.pypi.org/project/lklib/)
+in order to make it more lightweight. lkfit currently includes just a a few fit
+funtions that were supported by lklib.
+
+
