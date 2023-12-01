@@ -1,0 +1,29 @@
+[tool.isort]
+profile = "black"
+src_paths = ["cloud_storage_clients"]
+
+[tool.poetry]
+name = "cloud-storage-clients"
+version = "0.1.0"
+description = "Storage clients for different cloud providers"
+authors = ["picsellia"]
+license = "MSI"
+readme = "README.md"
+packages = [{include = "cloud_storage_clients"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+hvac = "^1.2"
+azure-identity = "^1.15.0"
+azure-storage-blob = "^12.19.0"
+boto3 = "^1.33.1"
+google-cloud-storage = "^2.13.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+coverage = "^7.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
