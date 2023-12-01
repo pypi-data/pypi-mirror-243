@@ -1,0 +1,11 @@
+pandas>=1.0.0
+tensorboard!=2.1.0,>=1.15
+
+[blob]
+azure-storage-blob
+
+[gs]
+google-cloud-storage
+
+[s3]
+boto3
