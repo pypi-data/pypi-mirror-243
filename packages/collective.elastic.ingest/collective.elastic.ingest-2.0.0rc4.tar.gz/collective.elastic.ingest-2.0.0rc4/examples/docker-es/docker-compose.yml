@@ -1,0 +1,85 @@
+# opensearch needs sysctl -w vm.max_map_count=262144
+# see https://stackoverflow.com/questions/66444027/max-virtual-memory-areas-vm-max-map-count-65530-is-too-low-increase-to-at-lea
+version: "3"
+services:
+
+  ingest:
+    image: ghcr.io/collective/collective.elastic.ingest:latest
+    environment:
+      MAPPINGS_FILE: ${MAPPINGS_FILE}
+      ANALYIS_FILE: ${ANALYIS_FILE}
+      PREPROCESSING_FILE: ${PREPROCESSING_FILE}
+      INDEX_SERVER: ${INDEX_SERVER?unset}
+      INDEX_OPENSEARCH: ${INDEX_OPENSEARCH?unset}
+      INDEX_LOGIN: ${INDEX_LOGIN?unset}
+      INDEX_PASSWORD: ${INDEX_PASSWORD?unset}
+      CELERY_BROKER: ${CELERY_BROKER?unset}
+      CELERY_CONCURRENCY: ${CELERY_CONCURRENCY:-1}
+      CELEREY_LOG_LEVEL: ${CELERY_LOG_LEVEL:-info}
+      PLONE_SERVICE: ${PLONE_SERVICE?unset}
+      PLONE_PATH: ${PLONE_PATH?unset}
+      PLONE_USER: ${PLONE_USER?unset}
+      PLONE_PASSWORD: ${PLONE_PASSWORD?unset}
+      SENTRY_DSN: ${SENTRY_DSN}
+    volumes:
+      - ingest-configuration:/configuration
+    networks:
+      - elasticsearch-net
+    depends_on:
+      - elasticsearch
+      - redis
+
+  redis:
+    image: "redis:latest"
+    networks:
+      - elasticsearch-net
+    ports:
+      - 6379:6379
+
+  elasticsearch:
+    image: elasticsearch:8.11.1
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - http.port=9200
+      - http.cors.enabled=true
+      - http.cors.allow-origin=http://localhost:1358,http://127.0.0.1:1358,http://elasticsearch:1358
+      - http.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length,Authorization
+      - http.cors.allow-credentials=true
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+      nofile:
+        soft: 65536
+        hard: 65536
+    networks:
+      - elasticsearch-net
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+
+  dejavu:
+    image: appbaseio/dejavu:latest
+    container_name: dejavu
+    ports:
+      - "1358:1358"
+    networks:
+      - elasticsearch-net
+    links:
+      - elasticsearch
+
+volumes:
+  elasticsearch-data:
+  ingest-configuration:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./configuration
+      o: bind
+networks:
+  elasticsearch-net:
