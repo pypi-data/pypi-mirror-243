@@ -1,0 +1,5 @@
+scikit-learn>=1.2.1
+pandas>=1.4.2
+numpy>=1.23.5
+river>=0.15.0
+clusopt-core>=1.0.0
