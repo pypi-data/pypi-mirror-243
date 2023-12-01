@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "econnect"
+version = "0.1.0"
+description = "Paquete para uso de los desarrolladores cubanos que les facilita el uso de funciones del portal cautivo Nauta."
+authors = ["Alejandro Pérez <alejandroperezsantana55@gmail.com>"]
+readme = "README.md"
+packages = [{include = "enet"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.31.0"
+beautifulsoup4 = "^4.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
