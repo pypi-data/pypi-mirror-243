@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: whatsapp-message-vonage-local
+Version: 0.0.5
+Summary: PyPI Package for Circles <project-name> Local/Remote Python
+Home-page: https://github.com/circles-zone/whatsapp-message-vonage-local-python-package
+Author: Circles
+Author-email: info@circles.life
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Other/Proprietary License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: logzio-python-handler >=4.1.0
+Requires-Dist: phonenumbers >=8.13.25
+
+This is a package for sharing common XXX function used in different repositories
