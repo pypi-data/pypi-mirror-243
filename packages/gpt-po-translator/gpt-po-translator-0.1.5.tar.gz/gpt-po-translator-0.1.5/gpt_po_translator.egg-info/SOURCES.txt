@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+gpt_po_translator.egg-info/PKG-INFO
+gpt_po_translator.egg-info/SOURCES.txt
+gpt_po_translator.egg-info/dependency_links.txt
+gpt_po_translator.egg-info/entry_points.txt
+gpt_po_translator.egg-info/requires.txt
+gpt_po_translator.egg-info/top_level.txt
+python_gpt_po/__init__.py
+python_gpt_po/po_translator.py
+python_gpt_po/version.py
+python_gpt_po/__pycache__/__init__.cpython-312.pyc
+python_gpt_po/__pycache__/version.cpython-312.pyc
