@@ -1,0 +1,15 @@
+cdk_proxy_api_client/__init__.py,sha256=CTD2XhCppO8cuMicvcVSqyHJ3GvVraFBloCgPJMTHCU,181
+cdk_proxy_api_client/client_wrapper.py,sha256=o2j_Ftn6Zrq20_q0_sCBeJaAQtfWuC1iaT2vWhodZv0,5728
+cdk_proxy_api_client/common/__init__.py,sha256=pzeSMmm--DNizywJ_InbLrc362mmDd4RoZYa4umWXh0,93
+cdk_proxy_api_client/common/logging.py,sha256=4OIDeawC3UYNULaESprdQ_Mfn_4up8tfSj5vTA08B2g,1937
+cdk_proxy_api_client/errors.py,sha256=Zw3xSwqy4wlkqwGfB56qu4NzI4W_g0fS1uiJG4jRX_U,3012
+cdk_proxy_api_client/exceptions.py,sha256=joUxpdJXECQnXK2mWKmTCuLcTukRT6TiAZqJ4fUNpzk,426
+cdk_proxy_api_client/interceptors/__init__.py,sha256=EXAJc3xA399c7uwotnpHLpgE4bA-mDaGqMFnnUhBbUA,6012
+cdk_proxy_api_client/plugins/__init__.py,sha256=OSc8e7ZMs-ST0TTZk3E0SNTLv-N95dcJ9rSExuulZOM,1046
+cdk_proxy_api_client/proxy_api.py,sha256=0HhjtzRqkATHqXvit2AX0BJjL_vZ0udpDJRO5RI7G3A,890
+cdk_proxy_api_client/usermappings/__init__.py,sha256=aYRsW7zSlnq670c2fxvWqZP_rYq0YSV1MpZmHTdiiQI,1680
+cdk_proxy_api_client/vclusters/__init__.py,sha256=R2e7jvzA0xWz5DgxMTJl7vE8tznlOIUBphtUgW1sieE,5567
+cdk_proxy_api_client-0.7.0.dist-info/LICENSE,sha256=B05uMshqTA74s-0ltyHKI6yoPfJ3zYgQbvcXfDVGFf8,10280
+cdk_proxy_api_client-0.7.0.dist-info/METADATA,sha256=D4em08HoWo2vTPgB60XucJxlivKjQLjdcdU0f64INqE,1449
+cdk_proxy_api_client-0.7.0.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+cdk_proxy_api_client-0.7.0.dist-info/RECORD,,
