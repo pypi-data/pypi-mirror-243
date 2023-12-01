@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: wkl-nmi
+Version: 0.0.1
+Summary: A Nmi library for python
+Author-email: Gustavo <gustavo.gordillo.giron@gmail.com>
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# NMI Gateway
+
+This is a nmi handy package to interact with the nmi gateway endpoints, you can find the original documentation here:
+https://secure.networkmerchants.com/gw/merchants/resources/integration/integration_portal.php#cv_variables
+
+This package was build with the unique intention to make the integration with the gateway easy.
+
+## Examples
