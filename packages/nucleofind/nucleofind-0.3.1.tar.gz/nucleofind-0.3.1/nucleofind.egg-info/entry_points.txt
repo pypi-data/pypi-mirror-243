@@ -1,0 +1,4 @@
+[console_scripts]
+nucleofind = nucleofind.predict:run
+nucleofind-clean = nucleofind.clean:run
+nucleofind-install = nucleofind.install:run
