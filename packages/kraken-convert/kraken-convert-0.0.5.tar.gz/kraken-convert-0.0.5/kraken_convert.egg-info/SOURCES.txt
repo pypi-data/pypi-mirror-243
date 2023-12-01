@@ -1,0 +1,16 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+kraken_convert/__init__.py
+kraken_convert/json_helper.py
+kraken_convert/kraken_convert.py
+kraken_convert/mapping_engine.py
+kraken_convert/to_dot.py
+kraken_convert.egg-info/PKG-INFO
+kraken_convert.egg-info/SOURCES.txt
+kraken_convert.egg-info/dependency_links.txt
+kraken_convert.egg-info/requires.txt
+kraken_convert.egg-info/top_level.txt
+kraken_convert/maps/__init__.py
+kraken_convert/maps/office.py

@@ -1,0 +1,59 @@
+Metadata-Version: 2.1
+Name: kraken-convert
+Version: 0.0.5
+Summary: Kraken convert
+Home-page: https://github.com/tactik8/krakenconvert2
+Author: Tactik8
+Author-email: info@tactik8.com
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Requires-Dist: python-dateutil
+Requires-Dist: xmltodict
+Requires-Dist: requests
+
+# kraken convert
+
+## Overview
+Converts records using a mapping record
+
+
+## github
+https://github.com/tactik8/krakenconvert2
+
+## pypi
+
+
+## methods:
+- convert: converts records
+
+
+## How to use:
+
+### Basics
+```
+input_records = [
+        {
+        "record_id": "1234",
+        "firstName": "firstName1",
+        "lastName": "lastName1",
+        "email": "test1@test.com"
+        }
+    ]
+
+    map = {
+        "@type": "'test'",
+        "@id": "'/system/table/' + str(r.record_id)",
+        "givenName": "r.firstName",
+        "familyName": "r.lastName",
+        "email": "r.email"
+    }
+
+    results = convert(input_records, map)
+    print(results)
+
+```
+
