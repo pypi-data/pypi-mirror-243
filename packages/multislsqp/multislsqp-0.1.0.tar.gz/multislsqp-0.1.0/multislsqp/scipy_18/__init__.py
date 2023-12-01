@@ -1,0 +1,1 @@
+from multislsqp.scipy_18.slsqp import minimise_slsqp, minimise_slsqp_cmp
