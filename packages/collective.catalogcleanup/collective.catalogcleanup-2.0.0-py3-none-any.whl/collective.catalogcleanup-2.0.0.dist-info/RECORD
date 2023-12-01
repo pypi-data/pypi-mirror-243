@@ -1,0 +1,13 @@
+collective.catalogcleanup-2.0.0-py3.11-nspkg.pth,sha256=i6xUrA2XwWgxJ31EmKS8F0wCvv6o3Db_2POBVx1bZDM,559
+collective/catalogcleanup/__init__.py,sha256=xJrpc5ppw1bXwQRWJgxSIZHB-NJl4buQdMWoNFwo9lE,94
+collective/catalogcleanup/browser.py,sha256=sXWML7w6CaFDkbe_ZfsNS7mqte-TYsvQyOYTFadbLXk,12117
+collective/catalogcleanup/configure.zcml,sha256=rmKUcpWG-ArPyD7EWd0NUfdi0AIF-byb9I-kyFQEPXg,584
+collective/catalogcleanup/testing.py,sha256=gxw3Twbrkl6OL3BkGD5Pxfb7JDqnqzDLnQ0qqE0dGbc,1331
+collective/catalogcleanup/tests/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+collective/catalogcleanup/tests/test_functional.py,sha256=7tKqZfUTeMc2-_-XMd06d5gp_nS46-Uee9e2v02lS-o,3263
+collective.catalogcleanup-2.0.0.dist-info/METADATA,sha256=bPuZ-nORsaLF4mWj4laFxhxkSTJt1Y2zzTVZ0f4jXZ4,8049
+collective.catalogcleanup-2.0.0.dist-info/WHEEL,sha256=pkctZYzUS4AYVn6dJ-7367OJZivF2e8RA9b_ZBjif18,92
+collective.catalogcleanup-2.0.0.dist-info/entry_points.txt,sha256=b5cHz9FINNyhunUZ6BJOQMhgeAi2x9UcnAkA9l8KEC4,40
+collective.catalogcleanup-2.0.0.dist-info/namespace_packages.txt,sha256=FyC0xnd95fkjCaKazR3nfIgNqhWMpB0mYBlzALyXKTg,11
+collective.catalogcleanup-2.0.0.dist-info/top_level.txt,sha256=FyC0xnd95fkjCaKazR3nfIgNqhWMpB0mYBlzALyXKTg,11
+collective.catalogcleanup-2.0.0.dist-info/RECORD,,
