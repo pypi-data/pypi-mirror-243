@@ -1,0 +1,11 @@
+cltrier_promptClassify/__init__.py,sha256=V41ecQ2xN9FCtSKP83dM9Pjmagn0fRf01zz8tVcSnbU,3136
+cltrier_promptClassify/__main__.py,sha256=OCPXynyjRrUvGkbT9gk2lYwmEpZ8K5vDNAHqkO47D6E,136
+cltrier_promptClassify/dataset.py,sha256=RBQSCnBnxFRC22vaC2Lx3jTTBjULtit7BV6EK7_etX8,1009
+cltrier_promptClassify/util.py,sha256=Iq8WniDhr2pkAu-WC54NDqrlwM_WWoQppiiL4o_dswI,314
+cltrier_promptClassify/integrations/__init__.py,sha256=YHGjOTKNR4eqi5rbSE5D3sVV941dKgu68TgCDeezsUs,37
+cltrier_promptClassify/integrations/base.py,sha256=4_PIOqJ0GMnuX5T9vlRyjZ6WeQfv84I_g2x2o8pRHmY,660
+cltrier_promptClassify/integrations/huggingface.py,sha256=m2tMW1FzPgEe-WdQFY1IyIn_yCSdTzUOR7OYEn6d0_Q,906
+cltrier_promptclassify-0.0.1.dist-info/LICENSE,sha256=iDYl9HcuZdAjDutOvBxQJ6DC6IG_ZIR4ZygzGjSgXKc,1071
+cltrier_promptclassify-0.0.1.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+cltrier_promptclassify-0.0.1.dist-info/METADATA,sha256=HFQc00iccNcIZ3FbwYYAo8lyIlBK94dWRga6riNcwOw,2787
+cltrier_promptclassify-0.0.1.dist-info/RECORD,,
