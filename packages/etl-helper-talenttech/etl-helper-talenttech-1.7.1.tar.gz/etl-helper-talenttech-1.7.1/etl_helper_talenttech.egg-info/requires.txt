@@ -1,0 +1,6 @@
+sqlalchemy==1.4.42
+python-dateutil
+clickhouse-sqlalchemy
+sqlalchemy-vertica-python
+psycopg2-binary
+requests
