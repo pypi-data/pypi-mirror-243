@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: ebm-utils
+Version: 0.0.2
+Home-page: https://github.com/blengerich/ebm_utils
+Author: Ben Lengerich
+License-File: LICENSE
+Requires-Dist: scikit-learn
+Requires-Dist: matplotlib
+Requires-Dist: pandas
+Requires-Dist: interpret (>=0.2.0)
+Requires-Dist: numpy (>=1.19.2)
+Requires-Dist: ipywidgets
+Requires-Dist: scanpy
+Requires-Dist: ruptures
+
