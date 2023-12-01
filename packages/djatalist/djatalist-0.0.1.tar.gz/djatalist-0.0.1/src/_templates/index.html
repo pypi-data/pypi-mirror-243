@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widgets Demo</title>
+</head>
+<body>
+    <h1>Widgets Demo</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Result</h2>
+    <textarea cols="30" rows="10">
+        {{ result }}
+    </textarea>
+</body>
+</html>
