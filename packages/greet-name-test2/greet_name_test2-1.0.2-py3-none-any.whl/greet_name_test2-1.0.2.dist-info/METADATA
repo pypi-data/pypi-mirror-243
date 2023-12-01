@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: greet-name-test2
+Version: 1.0.2
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi ==0.99.1
+Requires-Dist: fief-client[fastapi] ==0.16.1
+Requires-Dist: pydantic ==1.10.12
+Requires-Dist: starlette ==0.27.0
+Requires-Dist: requests ==2.31.0
+Requires-Dist: python-multipart ==0.0.6
+Requires-Dist: openai ==0.27.9
+Requires-Dist: python-dotenv ==1.0.0
+Requires-Dist: uvicorn[standard] ==0.23.2
+Requires-Dist: opencc-python-reimplemented ==0.1.7
+Requires-Dist: langchain ==0.0.228
+Requires-Dist: knowledgebase-gsheet-gpt ==1.2.9
+Requires-Dist: PyJWT ==2.8.0
+Requires-Dist: to-pip ==3.11.37
+Requires-Dist: search-youtube-url ==1.0.3
+Requires-Dist: websockets ==11.0.3
+Requires-Dist: pypdf ==3.15.0
+Requires-Dist: access-github ==1.1.0
+Requires-Dist: call-openai-gpt ==1.0.0
+Requires-Dist: botrun-pdf-qa ==1.1.0
+Requires-Dist: cameo-youtube-transcript ==1.0.5
+Requires-Dist: passlib ==1.7.4
+Requires-Dist: bcrypt ==4.0.1
+Requires-Dist: matplotlib ==3.7.2
+Requires-Dist: plotly ==5.16.1
+Requires-Dist: chromadb ==0.4.9
+Requires-Dist: jsonlines ==4.0.0
+Requires-Dist: beautifulsoup4
+Requires-Dist: aiostream
+Requires-Dist: gdown
+Requires-Dist: google-auth
+Requires-Dist: google-auth-httplib2
+Requires-Dist: google-auth-oauthlib
+Requires-Dist: google-api-python-client
+Requires-Dist: oauthlib
+Requires-Dist: pydub
+Requires-Dist: moviepy
+Requires-Dist: argparse
+Requires-Dist: natsort
+Requires-Dist: aiofiles
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: polars
+
+botrun.ai backend
+
+### .env 檔案要先建立在botrun_back根目錄，填上正確的內容
+```
+GCP_SERVICE_ACCOUNT=
+GCP_PROJECT_ID=
+OPENAI_API_KEY=
+BOTRUN_JWT_SECRET_KEY=
+GITHUB_ACCESS_TOKEN=
+```
+
+### 安裝方法
+要建立 .env 檔案把相關的 key 都放進去
+chmod +x sh/install.sh
+sh/install.sh
+
+### local執行方法
+chmod +x sh/go.sh
+sh/go.sh
