@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+oaicli/__init__.py
+oaicli/cli.py
+oaicli/oai.py
+oaicli/oai_wrappers.py
+oaicli.egg-info/PKG-INFO
+oaicli.egg-info/SOURCES.txt
+oaicli.egg-info/dependency_links.txt
+oaicli.egg-info/entry_points.txt
+oaicli.egg-info/requires.txt
+oaicli.egg-info/top_level.txt
