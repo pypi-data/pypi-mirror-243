@@ -1,0 +1,22 @@
+*.egg-info
+*.pyc
+__pycache__
+.coverage
+.coverage.*
+dist
+htmlcov
+reports
+build
+test
+
+# IDEs
+.vscode/
+.idea/
+
+# Virtual Env
+venv/
+# Mac personalization files
+*.DS_Store
+# Tox envs
+.tox
+/caikit_tgis_backend/_version.py
