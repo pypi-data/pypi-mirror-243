@@ -1,0 +1,64 @@
+Metadata-Version: 2.1
+Name: mousechd-napari
+Version: 0.0.2a0
+Summary: A tool for heart segmentation and congenital heart defect detection in mice.
+Home-page: https://github.com/hnguyentt/mousechd-napari
+Author: Hoa Nguyen
+Author-email: ntthoa.uphcm@gmail.com
+License: MIT
+Project-URL: Bug Tracker, https://github.com/hnguyentt/mousechd-napari/issues
+Project-URL: Documentation, https://github.com/hnguyentt/mousechd-napari#README.md
+Project-URL: Source Code, https://github.com/hnguyentt/mousechd-napari
+Project-URL: User Support, https://github.com/hnguyentt/mousechd-napari/issues
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: Framework :: napari
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: setuptools
+Requires-Dist: packaging
+Requires-Dist: mousechd
+Provides-Extra: testing
+Requires-Dist: tox ; extra == 'testing'
+Requires-Dist: pytest ; extra == 'testing'
+Requires-Dist: pytest-cov ; extra == 'testing'
+Requires-Dist: pytest-qt ; extra == 'testing'
+Requires-Dist: napari ; extra == 'testing'
+
+# Napari plugin for MouseCHD project
+
+![](https://raw.githubusercontent.com/hnguyentt/mousechd-napari/master/assets/thumbnail.png)
+
+*Tool for heart segmentation and congenital heart defect detection in mice.*
+
+## Installation
+### From Bundle
+(1) Install Napari by following this instruction https://napari.org/stable/tutorials/fundamentals/installation.html#install-as-a-bundled-app
+
+(2) Install `mousechd-napari` plugin:
+    * Run Napari
+    * `Plugins` --> `Install/Uninstall Plugins ...` --> Search for `mousechd_napari` --> Click on `install`.
+
+(3) Restart Napari to run the plugin
+
+### From code
+```bash
+conda create -n mousechd_napari python=3.9
+conda activate mousechd_napari
+pip install "napari[all]"
+pip install mousechd_napari
+napari
+```
+
+## How to use
+
+Please find details instruction in folder [docs](https://github.com/hnguyentt/mousechd-napari/tree/master/docs)
