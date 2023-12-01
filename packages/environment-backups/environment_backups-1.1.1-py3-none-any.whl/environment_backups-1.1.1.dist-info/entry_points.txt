@@ -1,0 +1,4 @@
+[console_scripts]
+environment-backups=environment_backups.cli:main
+environment-backups-l=environment_backups._legacy.cli:main_arg_parser
+
