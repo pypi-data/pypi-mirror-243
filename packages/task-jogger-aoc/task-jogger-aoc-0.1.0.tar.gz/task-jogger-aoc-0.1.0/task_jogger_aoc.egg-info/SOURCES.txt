@@ -1,0 +1,15 @@
+LICENSE
+README.rst
+pyproject.toml
+setup.cfg
+aoc/__init__.py
+aoc/tasks/__init__.py
+aoc/tasks/aoc.py
+aoc/utils/__init__.py
+aoc/utils/parsing.py
+aoc/utils/setup.py
+task_jogger_aoc.egg-info/PKG-INFO
+task_jogger_aoc.egg-info/SOURCES.txt
+task_jogger_aoc.egg-info/dependency_links.txt
+task_jogger_aoc.egg-info/requires.txt
+task_jogger_aoc.egg-info/top_level.txt
