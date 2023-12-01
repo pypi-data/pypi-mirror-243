@@ -1,0 +1,117 @@
+Metadata-Version: 2.1
+Name: website-categorization
+Version: 1.1.2
+Summary: Python client library for Website Categorization API.
+Home-page: https://github.com/whois-api-llc/website-categorization-py
+Author: WHOIS API, Inc
+Author-email: support@whoisxmlapi.com
+License: MIT
+Keywords: website,categorization,categories,api,whoisxmlapi
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: Unix
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Topic :: Utilities
+Requires-Python: >=3.7
+License-File: LICENSE
+License-File: AUTHORS.rst
+Requires-Dist: requests
+Provides-Extra: dev
+Requires-Dist: tox ; extra == 'dev'
+Requires-Dist: flake8 ; extra == 'dev'
+
+.. image:: https://img.shields.io/badge/License-MIT-green.svg
+    :alt: website-categorization-py license
+    :target: https://opensource.org/licenses/MIT
+
+.. image:: https://img.shields.io/pypi/v/website-categorization.svg
+    :alt: website-categorizations-py release
+    :target: https://pypi.org/project/website-categorization
+
+.. image:: https://github.com/whois-api-llc/website-categorization-py/workflows/Build/badge.svg
+    :alt: website-categorization-py build
+    :target: https://github.com/whois-api-llc/website-categorization-py/actions
+
+========
+Overview
+========
+
+The client library for
+`Website Categorization API <https://website-categorization.whoisxmlapi.com/>`_
+in Python language.
+
+The minimum Python version is 3.7.
+
+Installation
+============
+
+.. code-block:: shell
+
+    pip install website-categorization
+
+Examples
+========
+
+Full API documentation available `here <https://website-categorization.whoisxmlapi.com/api/documentation/v3/making-requests>`_
+
+Create a new client
+-------------------
+
+.. code-block:: python
+
+    from websitecategorization import *
+
+    client = Client('Your API key')
+
+Make basic requests
+-------------------
+
+.. code-block:: python
+
+    # Get categories for a domain name.
+    response = client.data('whoisxmlapi.com')
+    print("Responded? " + "Yes" if response.website_responded else "No")
+    if response.website_responded:
+        for cat in response.categories:
+            print("Cat: " + str(cat.name))
+
+Advanced usage
+-------------------
+
+Extra request parameters
+
+.. code-block:: python
+
+    # Specifying minimal level of confidence
+    response = client.data('whoisxmlapi.com', 0.75)
+
+    # Getting raw API response in XML
+    xml = client.raw_data('whoisxmlapi.com', output_format=Client.XML_FORMAT)
+
+
+Changelog
+=========
+1.1.2 (2023-11-30)
+------------------
+
+* Add list categories method
+* Minimum Python version is now 3.7
+
+1.1.1 (2023-10-30)
+------------------
+
+* Migrate to Website Categorization API v3
+
+1.0.0 (2021-07-08)
+------------------
+
+* First release
