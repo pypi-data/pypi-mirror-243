@@ -1,0 +1,72 @@
+# Schema validator for the quality_control
+# author: Thomas Cokelaer
+
+type: map
+mapping:
+    "sequana_wrappers":
+        type: str
+
+    "general":
+        type: map
+        mapping:
+            "input_directory":
+                type: str
+                required: False
+            "samplesheet_file":
+                type: str
+            "mode":
+                type: str
+                enum: ["bcl2fastq", "cellranger_atac"]
+
+    "apptainers":
+        type: any
+
+
+    "bcl2fastq":
+        type: map
+        mapping:
+            "threads":
+                type: int
+            "barcode_mismatch": 
+                type: int
+            "ignore_missing_controls":
+                type: bool
+            "ignore_missing_bcls":
+                type: bool
+            "no_bgzf_compression":
+                type: bool
+            "options":
+                type: str 
+            "merge_all_lanes":
+                type: bool
+            "write_fastq_reverse_complement":
+                type: bool
+            "resources":
+                type: any
+                required: true
+
+    "cellranger_atac":
+        type: map
+        mapping:
+            "options":
+                type: str
+            "resources":
+                type: any
+                required: true
+    "multiqc":
+        type: map
+        mapping:
+            "options":
+                type: str
+            "modules":
+                type: str
+            "config_file":
+                type: str
+            "input_directory":
+                type: str
+            "resources":
+                 type: map
+                 mapping:
+                     "mem":
+                        type: str
+

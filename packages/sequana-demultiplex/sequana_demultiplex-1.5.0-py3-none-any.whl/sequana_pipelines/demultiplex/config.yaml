@@ -1,0 +1,83 @@
+# -*- coding: utf-8 -*-
+#
+#  This file is part of Sequana software
+#
+#  Copyright (c) 2016-2021 - Sequana Development Team
+#
+#  Distributed under the terms of the 3-clause BSD license.
+#  The full license is in the LICENSE file, distributed with this software.
+#
+#  website: https://github.com/sequana/sequana
+#  documentation: http://sequana.readthedocs.io
+#
+##############################################################################
+
+sequana_wrappers: "v23.11.18"
+
+#################################################################
+# general
+#
+# :Parameters:
+#
+#   intensities are expected to be found in input_directory/Data/Intensities
+#   Base call data are to be found in input_directory/Data/Intensities/BaseCalls
+#
+#   if merge_all_lanes is set to True, merged all lanes. This must be used with
+#   NextSeq sequencers for instance.
+#  - mode must be set to bcl2fastq or cellranger_atac
+general:
+  input_directory:
+  samplesheet_file:
+  mode: "bcl2fastq"
+
+
+apptainers:
+  graphviz: "https://zenodo.org/record/7928262/files/graphviz_7.0.5.img"
+  cellranger_atac: "https://zenodo.org/record/8423332/files/cellranger_atac_2.1.0.img"
+  multiqc: https://zenodo.org/record/10205070/files/multiqc_1.16.0.img
+
+###################################################################################
+# bcl2fastq
+#
+#
+#
+# --ignore_missing_bcls: interpret missing *.bcl files as no call (N)
+# --no-bgzf-compression: turn off BGZF compression for FASTQ files
+# --barcode-mismatches:  number of allowed mismatches per index
+# merge_all_lanes: if false, use the --no-lane-splitting option
+bcl2fastq:
+    threads: 4
+    barcode_mismatch: 0
+    ignore_missing_bcls: true
+    no_bgzf_compression: true
+    options: ''
+    merge_all_lanes: true
+    resources:
+        mem: 64G
+
+
+###################################################################################
+# cellranger_atac
+#
+cellranger_atac:
+    options: ''
+    resources:
+        mem: 64G
+
+#############################################################################
+##   MultiQC aggregates results from bioinformatics analyses across many
+##   samples into a single report.
+##
+## :Parameters:
+##
+## - options: any options recognised by multiqc
+## - config_file: by default, we use sequana RNA-seq multiqc_config file.
+##       If you want your own multiqc, fill this entry
+multiqc:
+    options: -p -f
+    modules: bcl2fastq
+    input_directory: .
+    config_file: multiqc_config.yaml
+    resources:
+        mem: 8G
+
