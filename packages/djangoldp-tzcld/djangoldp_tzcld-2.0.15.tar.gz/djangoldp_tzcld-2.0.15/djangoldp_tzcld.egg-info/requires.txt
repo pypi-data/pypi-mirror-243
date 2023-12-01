@@ -1,0 +1,7 @@
+djangoldp==3.0.12
+djangoldp_account==3.0.4
+djangoldp_circle~=3.0
+djangoldp_community~=3.0
+
+[include_package_data]
+True
