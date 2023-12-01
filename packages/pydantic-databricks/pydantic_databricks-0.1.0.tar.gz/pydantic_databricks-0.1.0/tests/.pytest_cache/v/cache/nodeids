@@ -1,0 +1,22 @@
+[
+  "sql.py::test_create_external_table_if_not_exists",
+  "sql.py::test_create_external_table_if_not_exists_with_location_prefix",
+  "sql.py::test_create_table_if_not_exists_with_location_prefix",
+  "sql.py::test_get_column_definition",
+  "test_models.py::test_create_or_replace_table",
+  "test_models.py::test_create_table",
+  "test_models.py::test_create_table_data_sources[DELTA]",
+  "test_models.py::test_create_table_data_sources[JDBC]",
+  "test_models.py::test_create_table_data_sources[JSON]",
+  "test_models.py::test_create_table_data_sources[PARQUET]",
+  "test_models.py::test_create_table_default",
+  "test_models.py::test_create_table_external",
+  "test_models.py::test_create_table_if_not_exists",
+  "test_models.py::test_create_table_if_not_exists_default",
+  "test_models.py::test_create_table_partition_columns",
+  "test_models.py::test_create_table_with_comment",
+  "test_models.py::test_create_table_with_options",
+  "test_models.py::test_create_table_with_table_properties",
+  "test_models.py::test_databricks_model_parquet",
+  "test_models.py::test_databricks_model_simple"
+]

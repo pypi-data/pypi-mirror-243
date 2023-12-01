@@ -1,0 +1,5 @@
+{
+  "sql.py::test_create_table_if_not_exists_with_location_prefix": true,
+  "sql.py::test_create_external_table_if_not_exists": true,
+  "test_models.py::test_create_table_if_not_exists_default": true
+}

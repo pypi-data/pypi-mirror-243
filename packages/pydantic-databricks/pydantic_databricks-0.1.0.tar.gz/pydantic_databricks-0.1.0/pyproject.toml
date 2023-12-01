@@ -1,0 +1,133 @@
+[project]
+name = "pydantic-databricks"
+version = "0.1.0"
+description = "Databricks helpers for Pydantic models"
+authors = [
+    { name = "Daniel Tom", email = "daniel.tom@xebia.com" },
+]
+dependencies = [
+    "pydantic>=2.5.2",
+    "pydantic-spark>=1.0.1",
+    "jinja2>=3.1.2",
+]
+requires-python = ">= 3.9"
+readme = "README.md"
+
+[project.license]
+text = "MIT"
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.4.3",
+    "pyspark>=3.5.0",
+    "delta-spark>=3.0.0",
+]
+linting = [
+    "ruff>=0.1.6",
+]
+misc = [
+    "setuptools>=69.0.2",
+]
+
+[tool.ruff]
+ignore = [
+    "FBT001",
+    "FBT002",
+    "FBT003",
+    "ANN101",
+    "N815",
+    "DTZ007",
+    "TRY003",
+    "A003",
+    "ANN002",
+    "ANN003",
+    "ANN102",
+    "D101",
+    "D102",
+    "D103",
+    "DTZ",
+    "RUF012",
+    "PLR0911",
+    "COM812",
+    "ISC001",
+]
+extend-select = [
+    "I",
+    "N",
+    "ASYNC",
+    "ANN",
+    "BLE",
+    "FBT",
+    "A",
+    "COM",
+    "C4",
+    "DTZ",
+    "ISC",
+    "ICN",
+    "T20",
+    "D101",
+    "D102",
+    "D103",
+    "D419",
+    "PT",
+    "Q",
+    "RSE",
+    "RET",
+    "SLF",
+    "SLOT",
+    "SIM",
+    "TID252",
+    "ARG",
+    "ERA001",
+    "PGH002",
+    "PGH005",
+    "PL",
+    "TRY",
+    "FLY",
+    "NPY",
+    "AIR",
+    "PERF101",
+    "PERF102",
+    "RUF",
+]
+line-length = 120
+target-version = "py310"
+exclude = [
+    "deploy",
+    ".venv",
+]
+
+[tool.ruff.per-file-ignores]
+"tests/*" = [
+    "ANN001",
+    "ARG001",
+    "D101",
+    "D102",
+    "D103",
+    "D419",
+    "DTZ005",
+    "DTZ011",
+    "PLR2004",
+    "SLF001",
+    "PLR0913",
+    "PGH005",
+]
+"**/alembic/*" = [
+    "D101",
+    "D102",
+    "D103",
+    "D419",
+    "I002",
+]
+
+[tool.ruff.pylint]
+max-args = 7
+
+[tool.ruff.flake8-annotations]
+suppress-none-returning = true
