@@ -1,0 +1,11 @@
+numpy>=1.21.5
+pandas>=1.4.4
+scipy>=1.7.3
+scikit-learn>=1.1.1
+cytoolz
+matplotlib
+joblib
+ultima
+epic-logging
+epic-common
+epic-pandas
