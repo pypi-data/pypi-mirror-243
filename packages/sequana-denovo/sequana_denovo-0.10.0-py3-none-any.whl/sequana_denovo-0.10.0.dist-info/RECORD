@@ -1,0 +1,13 @@
+sequana_pipelines/denovo/__init__.py,sha256=X5Nn4DjWni3bL58ByFDILsduRsL5s60yXhqGeTrH26w,124
+sequana_pipelines/denovo/config.yaml,sha256=XqM-qLPj9tPLkC1SI7-RwUkpWpyEqyarPiZPS1KJkjY,9508
+sequana_pipelines/denovo/dag.png,sha256=BI2CWt8oHTfcjrC0w-By51IpdrMLun5zkoM2Zb6O0gk,91750
+sequana_pipelines/denovo/denovo.rules,sha256=9IYA3VP4F-tPYfmMAFyR8y9ByTtrAcObGZSuc0WmIBk,20288
+sequana_pipelines/denovo/main.py,sha256=eR7nxUNkzHoHSpq1YUBX7OB4a6ju7WiskwCKYROcTZA,3505
+sequana_pipelines/denovo/multiqc_config.yaml,sha256=si5MwQel80yMsw1CwsCz09CaPPjokQqjdnusv_Vls74,4625
+sequana_pipelines/denovo/schema.yaml,sha256=sMlS6DBSR15jf5d4wEHerNL2wSijFbrckj5Fl_9_Xx4,6457
+sequana_pipelines/denovo/tools.txt,sha256=wshNGTPwMbtpDOf5UZuHRIjtmoQmXIcwF1725gI85VE,126
+sequana_denovo-0.10.0.dist-info/LICENSE,sha256=tifUGMwXA9uaq2g1wFz0ZgRRPOFCfqsOxRj8JneHZ3M,1530
+sequana_denovo-0.10.0.dist-info/METADATA,sha256=y3utVf-y1S5cmfZmnFwZjZL6C44jZ7vQLsdwV0W63Ks,6739
+sequana_denovo-0.10.0.dist-info/WHEEL,sha256=vVCvjcmxuUltf8cYhJ0sJMRDLr1XsPuxEId8YDzbyCY,88
+sequana_denovo-0.10.0.dist-info/entry_points.txt,sha256=lTM3l2puXDIIxBSr8uRgNpuyP63rtZbeArkz9aTJWGw,69
+sequana_denovo-0.10.0.dist-info/RECORD,,
