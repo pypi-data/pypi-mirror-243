@@ -1,0 +1,157 @@
+#!/usr/bin/env python3
+# Copyright 2019 Katteli Inc.
+# TestFlows.com Open-Source Software Testing Framework (http://testflows.com)
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+import os
+import re
+import sys
+import shutil
+import argparse
+import subprocess
+
+from urllib.parse import urlparse
+from datetime import datetime
+
+parser = argparse.ArgumentParser(description="TestFlows - Core build script")
+parser.add_argument(
+    "--debug", help="enable debugging", action="store_true", default=False
+)
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+package = os.path.join("testflows", "_core")
+init_path = os.path.join(current_dir, package, "__init__.py")
+setup_path = os.path.join(current_dir, "setup.py")
+
+
+def clean_url(url, rchop=None):
+    parsed = urlparse(url)
+    cleaned_url = parsed._replace(netloc="{}".format(parsed.hostname)).geturl()
+    if rchop and cleaned_url.endswith(rchop):
+        cleaned_url[: -len(rchop)]
+    return cleaned_url
+
+
+def call(*command):
+    return subprocess.run(command, check=True, capture_output=True, encoding="utf-8")
+
+
+repo_name = clean_url(call("git", "remote", "get-url", "origin").stdout.strip())
+repo_commit = call("git", "rev-parse", "HEAD").stdout.strip()
+repo_branch = call("git", "branch").stdout.lstrip("*").strip()
+
+
+def get_base_version():
+    """Return package base version."""
+    version = None
+    with open(init_path) as fd:
+        for line in fd.readlines():
+            if line.startswith("__version__ = "):
+                match = re.match('__version__\s=\s"(?P<version>.+).__VERSION__', line)
+                if match:
+                    version = match.groupdict().get("version")
+                    if version:
+                        break
+    if not version:
+        raise ValueError("failed to get base version number")
+    return version
+
+
+def get_revision():
+    """Return build revision."""
+    now = datetime.utcnow()
+    major_revision = now.strftime("%y%m%d")
+    minor_revision = now.strftime("%H%M%S")
+    return major_revision + ".1" + minor_revision
+
+
+def set_attributes(path, **attrs):
+    """Set attributes in the file.
+
+    :param path: path
+    :param version: version
+    """
+    with open(path, "a+") as fd:
+        fd.seek(0)
+        content = fd.read()
+        fd.seek(0)
+        fd.truncate()
+        new_content = content
+        for key, value in attrs.items():
+            new_content = new_content.replace(key, value)
+        fd.write(new_content)
+    return content
+
+
+def unset_attributes(path, content):
+    """Unset attributes in the file.
+
+    :param path: path
+    :param content: original file content
+    """
+    with open(path, "a+") as fd:
+        fd.seek(0)
+        fd.truncate()
+        fd.write(content)
+
+
+def build_package(args, options):
+    """Build package.
+
+    :param args: arguments
+    :param options: extra options
+    """
+    subprocess.run(
+        ["/usr/bin/env", "python3", "setup.py"]
+        + (["-q"] if not args.debug else [])
+        + ["sdist"]
+        + (options if options else [])
+    )
+
+
+def build(args, options=None):
+    """Build package.
+
+    :param args: arguments
+    :param options: build options, default: ``None``
+    """
+    if options is None:
+        options = []
+
+    if os.path.exists("dist"):
+        shutil.rmtree("dist")
+
+    base_version = get_base_version()
+    revision = get_revision()
+    version = ".".join([base_version, revision])
+    init_content, setup_content = None, None
+    attrs = {
+        "__REPOSITORY__": repo_name,
+        "__COMMIT__": repo_commit,
+        "__BRANCH__": repo_branch,
+    }
+
+    try:
+        init_content = set_attributes(init_path, **{"__VERSION__": revision}, **attrs)
+        setup_content = set_attributes(setup_path, **{"__VERSION__": version})
+        build_package(args, options)
+    finally:
+        if init_content:
+            unset_attributes(init_path, init_content)
+        if setup_content:
+            unset_attributes(setup_path, setup_content)
+
+
+if __name__ == "__main__":
+    args = parser.parse_args()
+    build(args)
