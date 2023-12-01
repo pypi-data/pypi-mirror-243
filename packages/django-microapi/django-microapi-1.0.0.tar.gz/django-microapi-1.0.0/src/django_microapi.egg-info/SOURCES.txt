@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+src/django_microapi.egg-info/PKG-INFO
+src/django_microapi.egg-info/SOURCES.txt
+src/django_microapi.egg-info/dependency_links.txt
+src/django_microapi.egg-info/requires.txt
+src/django_microapi.egg-info/top_level.txt
+src/microapi/__init__.py
+src/microapi/exceptions.py
+src/microapi/serializers.py
+src/microapi/views.py
