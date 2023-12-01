@@ -1,0 +1,87 @@
+Metadata-Version: 2.1
+Name: async-graph-data-flow
+Version: 1.4.0
+Summary: Asynchronous functions that pass data along a directed acyclic graph
+Author-email: Civis Analytics <opensource@civisanalytics.com>
+License: BSD 3-Clause
+Project-URL: Source, https://github.com/civisanalytics/async-graph-data-flow
+Keywords: async,asynchronous,asyncio,data flow,graph
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Information Technology
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Framework :: AsyncIO
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+License-File: LICENSE.txt
+Provides-Extra: dev
+Requires-Dist: black ==23.11.0 ; extra == 'dev'
+Requires-Dist: flake8 ==6.1.0 ; extra == 'dev'
+Requires-Dist: pytest ==7.4.3 ; extra == 'dev'
+Requires-Dist: build ==1.0.3 ; extra == 'dev'
+Requires-Dist: twine ==4.0.2 ; extra == 'dev'
+Requires-Dist: Sphinx ==7.2.6 ; extra == 'dev'
+Requires-Dist: furo ==2023.9.10 ; extra == 'dev'
+Requires-Dist: numpydoc ==1.6.0 ; extra == 'dev'
+Requires-Dist: sphinx-copybutton ==0.5.2 ; extra == 'dev'
+Requires-Dist: sphinxcontrib-mermaid ==0.9.2 ; extra == 'dev'
+
+# async-graph-data-flow
+
+[![PyPI version](https://badge.fury.io/py/async-graph-data-flow.svg)](https://pypi.org/project/async-graph-data-flow/)
+[![Supported Python versions](https://img.shields.io/pypi/pyversions/async-graph-data-flow.svg)](https://pypi.org/project/async-graph-data-flow/)
+[![CircleCI Builds](https://circleci.com/gh/civisanalytics/async-graph-data-flow.svg?style=shield)](https://circleci.com/gh/civisanalytics/async-graph-data-flow)
+
+## Full Documentation
+
+Please visit https://civisanalytics.github.io/async-graph-data-flow
+
+Please also check out this
+[blog post](https://www.civisanalytics.com/blog/open-source-software-release-introducing-async-graph-data-flow-a-python-library-for-efficient-data-pipelines/)
+introducing this package.
+
+## License
+
+BSD 3-Clause License. Please see `LICENSE.txt` in the GitHub source code for details.
+
+## Setting up a Development Environment
+
+The latest code under development is available on GitHub at
+https://github.com/civisanalytics/async-graph-data-flow.
+To obtain this version for experimental features or for development:
+
+```bash
+git clone https://github.com/civisanalytics/async-graph-data-flow.git
+cd async-graph-data-flow
+pip install -e ".[dev]"
+```
+
+To run tests and styling checks:
+
+```bash
+pytest
+flake8 src tests examples
+black --check src tests examples
+```
+
+## For Maintainers
+
+To update the Sphinx documentation,
+the source files that need editing are under `docs/source/`;
+everything else under `docs/` is auto-generated.
+After the manual updates under `docs/source/` are ready,
+the HTML pages are updated as follows:
+
+```bash
+rm -r docs/_sources docs/_static && rm docs/*.html
+
+# Run the following command *twice* -- certain HTML updates only show up after multiple `sphinx-build` runs.
+sphinx-build docs/source docs
+```
