@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: pycudwt-multitarget
+Version: 1.0.3
+Author: Pierre Paleo
+Author-email: pierre.paleo@esrf.fr
+Maintainer: Will Drevo
+Maintainer-email: will.drevo@gmail.com
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+
+    Python Wrapper for Cuda Discrete Wavelet Transform
+    
