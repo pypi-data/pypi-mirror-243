@@ -1,0 +1,47 @@
+[project]
+name = "adala"
+version = "0.0.4dev"
+description = "Adala: Autonomous Data Labeling Agent"
+authors = [
+    { name = "HumanSignal", email = "hello@humansignal.com" },
+]
+dependencies = [
+    "pandas",
+    "openai==0.28.1",
+    "guidance==0.0.64",
+    "pydantic>=2",
+    "rich>=13",
+    "redis-om",
+    "fastapi>=0.104.1",
+    "aiosqlite>=0.19.0",
+    "ipython>=8.12.3",
+    "chromadb>=0.4.18",
+    "tenacity>=8.2.3",
+]
+requires-python = ">=3.8.8,<3.12"
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+]
+build-backend = "pdm.backend"
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.4.3",
+    "pytest-cov>=4.1.0",
+    "black>=23.11.0",
+    "pytest-black>=0.3.12",
+]
+doc = [
+    "mkdocs>=1.5.3",
+    "mkdocs-jupyter>=0.24.3",
+    "mkdocs-material>=9.4.7",
+    "mkdocstrings-python>=1.7.3",
+]
