@@ -1,0 +1,15 @@
+haplo/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+haplo/data_column_name.py,sha256=MS_ZAP2HjXtn7FE-4yv59KHZuQHWWKyaUTgC7QsM2a8,3187
+haplo/data_paths.py,sha256=1IgmsX7oYmh-EiIwqVFlzDX6IyBhfFDplXl1mRnCtJo,1192
+haplo/data_preparation.py,sha256=td0tS-MprZ8MkduqpTxbSRm3xmwHWswm0DnOL0RFSIU,5201
+haplo/export_onnx.py,sha256=GXu8NGbTw28cd5w18ldEfN8uDr4FsN91ESsbBruGIU0,1566
+haplo/losses.py,sha256=497FvOQBACQVqnEZxGKBBcthWa7yrO3-q3FytTe3Dpo,1530
+haplo/models.py,sha256=42lbIAevqncvr-orelN3oQ-E5yzxamINXD09qfan4_c,8431
+haplo/nicer_dataset.py,sha256=6vS8pvoZaMIJQgy_kWa3_k37fPJ6DPHu_39vSJi61Js,4566
+haplo/nicer_parameters_to_phase_amplitudes_infer.py,sha256=R3SfvjBs5dQfs4_mBcespb-GQrg3HsUH2oiNSBfcWQ0,3041
+haplo/nicer_parameters_to_phase_amplitudes_train.py,sha256=hnq2UdYXOPdMFn7MDDjn21lfzl4TSNrt6gsPNdfQ7dI,12245
+haplo/nicer_transform.py,sha256=dlbap9YIH5GFXKK_zNsgVTvyvpTl2IU_ATJmgJQoPuY,1627
+haplo/wandb_liaison.py,sha256=q_gp0aTe15oMduShxozAEkIdZdAucCktgjTBrnYif6o,1046
+haplo-0.5.6.dist-info/METADATA,sha256=EtE11oG6T2Z9GNu3bxWvwEbq0MK5J_U5vZ4VLiVyg_s,895
+haplo-0.5.6.dist-info/WHEEL,sha256=FMvqSimYX_P7y0a7UY-_Mc83r5zkBZsCYPm7Lr0Bsq4,88
+haplo-0.5.6.dist-info/RECORD,,
