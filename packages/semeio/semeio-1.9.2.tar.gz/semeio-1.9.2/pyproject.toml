@@ -1,0 +1,104 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semeio"
+authors = [
+  {name = "Equinor ASA", email = "fg_sib-scout@equinor.com"},
+]
+description="Jobs and workflow jobs for Ert."
+requires-python = ">=3.8"
+readme = "README.md"
+license = {text = "GPL-3.0"}
+classifiers=[
+    "Environment :: Plugins",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Natural Language :: English",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dynamic = ["version"]
+dependencies=[
+    "resdata",
+    "ert>=8.0.2",
+    "configsuite>=0.6",
+    "numpy",
+    "pandas>1.3.0",
+    "pydantic",
+    "scikit-learn",
+    "scipy",
+    "xlrd",
+    "fmu-steaclient",
+    "pyscal>=0.4.0",
+    "fmu-ensemble",
+    "segyio",
+    "xtgeo>=2.15",
+]
+
+[project.urls]
+repository = "https://github.com/equinor/semeio"
+
+[project.entry-points."ert"]
+semeio_jobs = "semeio.hook_implementations.jobs"
+MisfitPreprocessor = "semeio.workflows.misfit_preprocessor.misfit_preprocessor"
+CsvExport2Job = "semeio.workflows.csv_export2.csv_export2"
+AhmAnalysisJob = "semeio.workflows.ahm_analysis.ahmanalysis"
+LocalisationConfigJob = "semeio.workflows.localisation.local_config_script"
+
+[project.entry-points."console_scripts"]
+csv_export2 = "semeio.workflows.csv_export2.csv_export2:cli"
+overburden_timeshift = "semeio.jobs.scripts.overburden_timeshift:main_entry_point"
+design2params = "semeio.jobs.scripts.design2params:main_entry_point"
+gendata_rft = "semeio.jobs.scripts.gendata_rft:main_entry_point"
+design_kw = "semeio.jobs.scripts.design_kw:main_entry_point"
+fm_pyscal = "semeio.jobs.scripts.fm_pyscal:main_entry_point"
+semeio_stea = "semeio.jobs.scripts.fm_stea:main_entry_point"
+replace_string = "semeio.jobs.scripts.replace_string:main_entry_point"
+
+[tool.setuptools_scm]
+write_to = "semeio/version.py"
+
+[project.optional-dependencies]
+test = [
+"hypothesis",
+"odfpy",
+"oil_reservoir_synthesizer",
+"openpyxl",
+"pytest",
+"pytest-console-scripts",
+"pytest-httpserver",
+"pytest-snapshot",
+"rstcheck-core<=1.0.3",
+"xlwt",
+]
+
+[tool.black]
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.tox
+    | \.venv
+    | _build
+    | build
+    | dist
+  )/
+
+)
+'''
+
+[tool.pytest.ini_options]
+markers = [
+  "ert_integration: Involves running the ert application explicitly",
+  "equinor_test: Requires presences of test data in specified location"
+]
