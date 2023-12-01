@@ -1,0 +1,6 @@
+[console_scripts]
+intake_nwp = intake_nwp.cli:main
+
+[intake.drivers]
+forecast = intake_nwp.source:ForecastSource
+nowcast = intake_nwp.source:NowcastSource
