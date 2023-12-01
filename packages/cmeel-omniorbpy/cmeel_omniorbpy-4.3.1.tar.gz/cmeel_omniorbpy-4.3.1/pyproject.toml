@@ -1,0 +1,27 @@
+[build-system]
+build-backend = "cmeel"
+requires = [
+  "cmeel[build]",
+  "cmeel-omniorb[build] ~= 4.3.1",
+]
+
+[project]
+dependencies = [
+  "cmeel-omniorb ~= 4.3.1",
+]
+description = "cmeel distribution for omniORB"
+license = "LGPL-2.0-or-later"
+name = "cmeel-omniorbpy"
+requires-python = ">= 3.8"
+version = "4.3.1"
+
+[project.urls]
+homepage = "https://github.com/cmake-wheel/cmeel-omniorbpy"
+repository = "https://github.com/cmake-wheel/cmeel-omniorbpy.git"
+
+[tool.cmeel]
+build-number = 0
+run-tests = false
+
+[tool.tomlsort]
+all = true
