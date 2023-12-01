@@ -1,0 +1,60 @@
+Metadata-Version: 2.1
+Name: avplib
+Version: 1.5.0.post1
+Summary: AVP - ASCII Video Player. Allows you to play any video as ASCII-art.
+Home-page: https://github.com/romanin-rf/avplib
+License: MIT
+Author: Romanin
+Author-email: semina054@gmail.com
+Requires-Python: >=3.9,<3.12
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: click (>=8)
+Requires-Dist: ffmpeg (>=1.4)
+Requires-Dist: fpstimer (==0.0.1)
+Requires-Dist: moviepy (>=1)
+Requires-Dist: numpy (>=1.25)
+Requires-Dist: opencv-python (>=4.8)
+Requires-Dist: pillow (>=10)
+Requires-Dist: pygame (>=2.5)
+Requires-Dist: rich (>=13.5)
+Requires-Dist: soundfile (>=0.12.1)
+Project-URL: Repository, https://github.com/romanin-rf/avplib
+Description-Content-Type: text/markdown
+
+# avplib
+## Description
+**AVP** - ASCII Video Player. Plays, converts any video to ASCII video that can be played in terminale.
+
+## Features
+- Can play any ASCII video in the terminal.
+- Can convert an ASCII video file and play it back.
+- Can select a black and white gradation palette (in ASCII).
+
+## Install
+```
+python -m pip install --upgrade avplib
+```
+
+## Usage
+```
+python -m avplib [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  cav      Play video files (*.mp4/*.avi/...)
+  convert  Convert Video Files to ASCII Video File.
+  play     Play ASCII Video.
+```
+
+## Examples
+<details>
+  <summary> 🎬 Bad Apple </summary>
+  ![EXAMPLE-1](https://user-images.githubusercontent.com/60302782/233639445-20c039e2-6ab7-48ac-8f5b-96e0317065c8.webm)
+</details>
+
