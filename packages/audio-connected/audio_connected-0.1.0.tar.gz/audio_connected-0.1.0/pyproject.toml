@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "audio-connected"
+version = "0.1.0"
+description = "Watches PulseAudio events for new sinks connected, and if the name matches the configured name, make that sink the default sink."
+authors = ["Morten Lied Johansen <mortenjo@ifi.uio.no>"]
+readme = "README.rst"
+packages = [{include = "audio_connected"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pulsectl = "^23.5.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+audio-connected = "audio_connected:main"
