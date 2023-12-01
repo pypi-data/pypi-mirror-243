@@ -1,0 +1,14 @@
+LICENCE.md
+README.md
+setup.py
+ChatGPTAutomation.egg-info/PKG-INFO
+ChatGPTAutomation.egg-info/SOURCES.txt
+ChatGPTAutomation.egg-info/dependency_links.txt
+ChatGPTAutomation.egg-info/requires.txt
+ChatGPTAutomation.egg-info/top_level.txt
+chatgpt_automation/__init__.py
+chatgpt_automation/chatgpt_automation.py
+mytest/__init__.py
+mytest/test.py
+tests/__init__.py
+tests/test_chatgpt_automation.py
