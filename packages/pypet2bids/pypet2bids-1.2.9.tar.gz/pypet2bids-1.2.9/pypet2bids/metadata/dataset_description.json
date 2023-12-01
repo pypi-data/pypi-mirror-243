@@ -1,0 +1,14 @@
+{
+  "Name": "PET Brain phantoms",
+  "BIDSVersion": "1.6.0",
+  "DatasetType": "raw",
+  "License": "CCBY",
+  "Authors": [
+    "Cyril Pernet",
+    "Sune Høgild Keller",
+    "Gabriel Gonzalez-Escamilla",
+    "Søren Baarsgaard Hansen",
+    "Maqsood Yaqub"
+  ],
+  "HowToAcknowledge": "Please cite the repository URL"
+}
