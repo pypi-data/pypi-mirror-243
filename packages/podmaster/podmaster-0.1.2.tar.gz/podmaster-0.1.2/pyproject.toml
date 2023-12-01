@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "podmaster"
+dynamic = ["version"]
+authors = [
+    { name="Andrea Benini", email="andreabenini@gmail.com" },
+]
+description = "Collection of utilities for dealing with containers and pods"
+readme = "podmaster/README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE.txt" }
+keywords = ["podmaster", "forklift", "containers", "utility", "curses"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Programming Language :: Python",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+]
+
+[project.urls]
+"Homepage" = "https://github.com/andreabenini/podmaster"
+"Bug Tracker" = "https://github.com/andreabenini/podmaster/issues"
+Documentation = "https://github.com/andreabenini/podmaster#readme"
+
+
+[console_scripts]
+#forklift = "forklift:main"
+
+
+[project.scripts]
+systempodctl = "systempodctl"
+
+#[tool.hatch.scripts]
+#forklift = "forkliftcontainer.forklift:main"
+
+[tool.hatch.build]
+exclude = [
+    "forklift",
+]
+include = [
+    "systempodctl",
+]
+
+[tool.hatch.version]
+path = "podmaster/systempodctl/systempodctl"
