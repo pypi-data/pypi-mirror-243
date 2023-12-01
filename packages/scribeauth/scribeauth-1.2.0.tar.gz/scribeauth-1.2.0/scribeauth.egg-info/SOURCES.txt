@@ -1,0 +1,12 @@
+LICENSE.md
+README.md
+setup.py
+scribeauth/__init__.py
+scribeauth/__main__.py
+scribeauth/scribeauth.py
+scribeauth.egg-info/PKG-INFO
+scribeauth.egg-info/SOURCES.txt
+scribeauth.egg-info/dependency_links.txt
+scribeauth.egg-info/requires.txt
+scribeauth.egg-info/top_level.txt
+tests/test_scribeauth.py
