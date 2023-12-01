@@ -1,0 +1,11 @@
+*.pyc
+/*.egg
+/build/*
+/dist/*
+/MANIFEST
+/taxi.egg-info
+/.eggs
+/.tox
+/.cache
+/doc/_build/
+/result
