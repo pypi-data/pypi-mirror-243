@@ -1,0 +1,90 @@
+[project]
+name = "auto-config"
+dynamic = []
+description = "auto config for my personal devices"
+authors = [
+    { name = "Zhan Rongrui", email = "2742392377@qq.com" },
+]
+dependencies = [
+    "pydantic",
+    "typer",
+    "loguru",
+    "toml",
+]
+requires-python = ">=3.8"
+readme = "README.md"
+version = "0.0.13"
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+Homepage = "https://pypi.org/project/auto-config"
+Repository = "https://github.com/zrr1999/auto-config.git"
+
+[project.optional-dependencies]
+
+[project.scripts]
+auto-config = "auto_config.__main__:app"
+
+[tool.pdm.version]
+source = "scm"
+write_to = "auto_config/__version__.py"
+write_template = "__version__ = '{}'"
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest",
+    "pytest-mock",
+    "coverage",
+]
+
+[tool.pdm.build]
+includes = [
+    "auto_config",
+]
+
+[tool.ruff]
+line-length = 120
+src = [
+    "auto_config",
+    "tests",
+]
+exclude = [
+    "tests/fixtures",
+]
+target-version = "py39"
+
+[tool.ruff.lint]
+select = [
+    "I",
+    "B",
+    "C4",
+    "PGH",
+    "RUF",
+    "W",
+    "YTT",
+]
+ignore = [
+    "F841",
+]
+
+[tool.ruff.lint.isort]
+known-first-party = [
+    "auto_config",
+]
+required-imports = [
+    "from __future__ import annotations",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = [
+    "F401",
+]
+
+[build-system]
+requires = [
+    "pdm-backend",
+    "pdm-pyfuture",
+]
+build-backend = "pdm.backend"
