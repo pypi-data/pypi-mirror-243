@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: rtdl_num_embeddings
+Version: 0.0.1.dev1
+Summary: On Embeddings for Numerical Features in Tabular Deep Learning.
+Keywords: artificial intelligence,deep learning,library,python,pytorch,research,torch,tabular,tabular data
+Author: Yury Gorishniy
+Requires-Python: >=3.8
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: torch >=1.8,<3
+Requires-Dist: rtdl_revisiting_models >=0.0.2
+Requires-Dist: scikit-learn >=1.0,<2 ; extra == "all"
+Project-URL: Code, https://github.com/yandex-research/tabular-dl-num-embeddings/tree/main/package/README.md
+Project-URL: Documentation, https://github.com/yandex-research/tabular-dl-num-embeddings/tree/main/package/README.md
+Provides-Extra: all
