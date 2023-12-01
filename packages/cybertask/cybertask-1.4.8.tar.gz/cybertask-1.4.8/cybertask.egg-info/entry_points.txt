@@ -1,0 +1,7 @@
+[console_scripts]
+autoassist = cybertask.autoassist:main
+automath = cybertask.automath:main
+autoretriever = cybertask.autoretriever:main
+autoteachable = cybertask.autoteachable:main
+cybertask = cybertask.main:main
+etextedit = cybertask.eTextEdit:main
