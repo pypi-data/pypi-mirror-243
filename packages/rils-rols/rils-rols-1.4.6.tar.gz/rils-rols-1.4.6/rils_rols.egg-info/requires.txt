@@ -1,0 +1,6 @@
+scikit-learn
+sympy
+pybind11
+
+[test]
+pytest
