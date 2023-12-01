@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: wnix
+Version: 0.0.12
+Summary: Unix coreutils for software 2.0
+Author-email: Jason Wilkes <notarealdeveloper@gmail.com>
+Project-URL: Homepage, https://github.com/notarealdeveloper/wnix
+Requires-Dist: pytest
+Requires-Dist: pandas
+Requires-Dist: is_instance
+Requires-Dist: assure
+Requires-Dist: mmry>=0.0.5
+Requires-Dist: drivers>=0.0.5
+Requires-Dist: embd>=0.1.2
