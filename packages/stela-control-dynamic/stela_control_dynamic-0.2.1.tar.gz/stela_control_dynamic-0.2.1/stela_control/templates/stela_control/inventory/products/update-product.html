@@ -1,0 +1,181 @@
+{% extends 'stela_control/inventory/index.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+{% block bsCall %}
+<div class="modal fade" id="update-product" data-bs-backdrop="static" data-bs-keyboard="false" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title oxanium" id="staticBackdropLabel">{% trans "Update Product Form" %}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div id="updateProduct">
+            
+        </div>
+    </div>
+    </div>
+</div>
+{% endblock  %}
+{% block title %}
+            <h1 class="oxanium mx-4 text-dark pt-4">{% trans "Products" %} <i class="fa-solid fa-tags"></i></h1> 
+{% endblock  %}
+{% block side_title %}
+            <h3 class="oxanium mx-4 d-flex justify-content-end"><b>STELA {% trans "CONTROL DYNAMIC" %} | {% trans "Inventory" %}</b></h3>
+{% endblock  %}
+    {% block topButtons %}
+        <div class="col-lg-2 col-md-6 variant-btn">
+            <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2">{% trans "Print SKU" %} <i class="fa-solid fa-file-pdf"></i></button>
+        </div>
+        <div class="col-lg-2 col-md-6 variant-btn">
+            <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2" data-bs-toggle="modal" data-bs-target="#update-product" onclick="updateProduct()">{% trans "Edit Product" %} <i class="fa-solid fa-pen-to-square"></i></button>
+        </div>
+        <div class="col-lg-2 col-md-6 variant-btn">
+            <button type="button" class="btn btn-shappire btn-block px-3 mb-3 mx-2" onclick="printDiv()">{% trans "Print Product" %} <i class="fa-solid fa-pager"></i></button>
+        </div>
+    {% endblock  %}
+    
+
+{% block listTitle %}
+    <div class="row justify-content-between">
+        <div class="col-lg-6 col-md-6">
+            <img class="w-100" src="{{product.image.url}}" alt="">
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <h2 class="fs-3 oxanium">{{product.title}}</h2>
+            <ul class="m-0 p-0">
+                <li>
+                    <b class="oxanium">{% trans "Available Colors" %}</b>
+                    <div class="row">
+                        {% for color in colors %}  
+                            <div class="col-lg-2 col-md-2">
+                                {% with color=color.color  %}
+                                    {% if color.code1 and color.code2 and color.code3 %}
+                                        <div class="w-100 br-100 my-3 border-stela" style="background: linear-gradient(to right, {{color.code1}}, {{color.code2}}, {{color.code3}});"></div>
+                                    {% elif color.code1 and color.code2 %}
+                                        <div class="w-100 br-100 my-3 border-stela" style="background: linear-gradient(to right, {{color.code1}}, {{color.code2}});"></div>
+                                    {% else %}
+                                        <div class="w-100 br-100 my-3 border-stela" style="background: {{color.code1}};"></div>
+                                    {% endif %}
+                                {% endwith %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </li>
+                 <li class="text-sm">
+                    {{product.description|safe}}
+                </li>
+            </ul>
+        </div>
+        {% for variant in product.variants.all %}
+            <div class="row justify-content-between align-items-center my-3">
+                <div class="col-lg-2 col-md-2">
+                    {% if variant.image %}
+                        <img class="w-100" src="{{variant.image.url}}" alt="">
+                    {% else %}
+                        <p class="text-center text-dark">No catalog</p>
+                    {% endif %}
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    {{variant.product.title}} {{variant.title}}
+                    {{variant.description|safe}}
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6">
+                            {% if variant.color.code1 and variant.color.code2 and variant.color.code3 %}
+                                    <div class="w-100 vh-10 br-100 my-3 border-stela" style="background: linear-gradient(to right, {{variant.color.code1}}, {{variant.color.code2}}, {{variant.color.code3}});"></div>
+                                {% elif variant.color.code1 and variant.color.code2 %}
+                                    <div class="w-100 vh-10 br-100 my-3 border-stela" style="background: linear-gradient(to right, {{variant.color.code1}}, {{variant.color.code2}});"></div>
+                                {% else %}
+                                    <div class="w-100 vh-10 br-100 my-3 border-stela" style="background: {{variant.color.code1}};"></div>
+                                {% endif %}
+                        </div>
+                        <div class="col-3 d-flex align-items-center justify-content-center">
+                            <h3 class="fs-4 mx-2 text-center"><small>{% trans "Size" %}</small> {{variant.size}}</h3>
+                        </div>
+                        <div class="col-3 d-flex align-items-center justify-content-center">
+                            <h3 class="fs-4 mx-2 text-center"><small>{% trans "Stock" %}</small> {{variant.quantity}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="oxanium fs-2">${{variant.price}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        {% empty %}
+            <div class="row justify-content-between align-items-center my-3">
+                <h1>{% trans "No Variants Loaded" %}</h1>
+            </div>
+            <hr>
+        {% endfor %}     
+    </div>
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+    <script>
+        const url = '/inventory-control/update-product/{{product.id}}'
+        function printDiv() {
+                var printContents = document.getElementById('print').innerHTML;
+                var originalContents = document.body.innerHTML;
+        
+                document.body.innerHTML = printContents;
+        
+                window.print();
+        
+                document.body.innerHTML = originalContents;
+        }
+        function disabledBtn() {
+            const btnform = document.querySelector(".update-btn-form")
+            btnform.innerHTML = "<div class='loader'></div>";
+            btnform.disabled = true;
+          } 
+        function updateProduct() {
+            document.getElementById('updateProduct').innerHTML = preloaderQuery
+            $.ajax({
+              url: url,
+              method:"POST",
+              data: {
+                  csrfmiddlewaretoken:CSRF_TOKEN,
+                  action: 'dataProduct'
+                },
+              success:function(json){
+                    document.getElementById('updateProduct').innerHTML = json.response
+                    document.getElementById('token2').value = CSRF_TOKEN
+                    ClassicEditor
+                    .create( document.querySelector( '#id_update-description' ) )
+                    .catch( error => {
+                        console.error( error );
+                    } );
+              }
+            })
+          }
+    </script>
+{% endblock  %}
+{% block thead %}    
+{% endblock  %} 
+{% block tbody %}
+{% endblock  %}
+{% block errors %}
+{% if errors %}
+    
+{% elif errors2 %}
+   
+{% elif errors3 %}
+    
+{% elif errors4 %}
+    
+{% endif %}
+{% endblock  %}
+{% block extratable %}
+
+{% endblock  %}
+{% block modals %}
+
+{% endblock  %}
+{% block addScript %}
+
+{% endblock  %}

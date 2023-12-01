@@ -1,0 +1,227 @@
+{% extends 'stela_control/base.html' %}
+{% load hosts %}
+{% load static %}
+{% load i18n %}
+{% load l10n %}
+{% load crispy_forms_tags %}
+{% block language %}
+  <!-- ***** Language Start ***** -->
+      <div class="select-overlay-stela">
+      <small class="mx-2" onclick="activeMenu()">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+          {% if language.code == site_data.lang %}
+              <img width="30" src="https://emmerutstatic.s3.amazonaws.com/static/img/flags/{{site_data.lang}}.png" alt="">
+          {% endif %}
+          {% endfor %}
+      </small>      
+      </div>
+      <div class="d-flex btn-overlay-stela">
+      <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+          <input name="next" type="hidden" value="{{ redirect_to }}">
+          {% get_current_language as LANGUAGE_CODE %}
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+              <button type="submit" name="language" class="btn transparent mx-1 p-1" value="{{language.code}}"><img width="30" 
+              {% if language.code == "es-ve" %}
+                  src="{% static 'img/flags/es-ve.png' %}"
+              {% elif language.code == "en" %}
+                  src="{% static 'img/flags/en.png' %}"
+              {% endif %}  alt=""> ({{ language.code }})
+              </button>
+          {% endfor %}
+      </form>
+      </div>
+      <script>
+      const btnLanguage = document.querySelector(".btn-overlay-stela");
+
+
+      function activeMenu() {
+          console.log(btnLanguage)
+          btnLanguage.classList.toggle('btn-hidden')
+      }
+      </script>
+  <!-- ***** Language End ***** -->
+{% endblock  %}
+{% block content %}  
+{% if site_data.company_public %}
+  <script>
+    window.location.replace('/console/home')
+  </script>
+{% else %}   
+  
+{% endif %}
+<div class="stela-content business">
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col-lg-6">
+      <div class="card vh-60 set-up wow fadeIn p-4" data-wow-duration="1s" data-wow-delay="0.5s">
+          <div class="row justify-content-center vh-20">
+            <div class="col-4">
+               <img class="w-100 mt-2" src="{% static 'img/stela/stela_icon.png' %}" alt="">
+            </div>
+          </div>
+          <h3 class="text-center oxanium fs-5">{% trans "Welcome to Stela Control Dynamic" %}</h3>
+          <div class="vh-30 content-welcome">
+            <div class="box-text-1 fade-in pl-2">
+              <p class="oxanium">{% trans "We're excited to have you here. As a new user, we invite you to explore and discover all the features and benefits our system has to offer." %}</p>
+              <p class="oxanium m-0 p-0">{% trans "Before you get started, we recommend that you read our terms and conditions. This will provide you with a clear understanding of how we operate and how we can work together." %}</p>
+            </div>
+            <div class="box-text-2 fade-in pl-2 d-none">
+                <p>
+                  {% lorem 6 p random %}
+                </p>
+            </div>
+            <div class="">
+            </div>
+          </div>
+          <div class="vh-10 mt-2">
+              <div class="row justify-content-end continue-box">
+                <div class="col-lg-3 col-6 fade-in">
+                  <button class="btn btn-shappire btn-block continue-btn">{% trans "Continue" %}</button>
+                </div>
+              </div>
+              <div class="row justify-content-end term-query d-none">
+                <div class="col-lg-3 col-6 fade-in">
+                  <button class="btn btn-danger btn-block decline-btn">{% trans "Decline" %}</button>
+                </div>
+                <div class="col-lg-3 col-6 fade-in">
+                  <button class="btn btn-success btn-block accept-btn">{% trans "Accept" %}</button>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="card vh-80 box-form fade-in d-none">
+        <div class="row justify-content-center vh-20">
+          <div class="col-4">
+             <img class="w-100 mt-2" src="{% static 'img/stela/stela_icon.png' %}" alt="">
+          </div>
+        </div>
+        <div class="container"> 
+          <h3 class="text-center oxanium fs-5">{% trans "Please tell us about your startup." %}</h3>
+          <div class="vh-50 newcomer-form-cage fade-in">
+            <form action="" method="post" id="companyForm" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-12">
+                  {{newcomerform.name|as_crispy_field}}
+                  <small></small>
+                </div>
+                <div class="col-12">
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">{% trans "Business Type" %}</label>
+                    <select class="form-select" id="inputGroupSelect01" name="select-business">
+                      <option selected disabled>{% trans "Choose..." %}</option>
+                      <option value='{% trans "E-commerce" %}'>{% trans "E-commerce" %}</option>
+                      <option value='{% trans "Restaurants and Food Services" %}'>{% trans "Restaurants and Food Services" %}</option>
+                      <option value='{% trans "Consulting" %}'>{% trans "Consulting" %}</option>
+                      <option value='{% trans "Health and Wellness" %}'>{% trans "Health and Wellness" %}</option>
+                      <option value='{% trans "IT Development Services" %}'>{% trans "IT Development Services" %}</option>
+                      <option value='{% trans "Education and Training" %}'>{% trans "Education and Training" %}</option>
+                      <option value='{% trans "Marketing and Advertising Services" %}'>{% trans "Marketing and Advertising Services" %}</option>
+                      <option value='{% trans "Beauty and Personal Care Services" %}'>{% trans "Beauty and Personal Care Services" %}</option>
+                      <option value='{% trans "Repair and Maintenance Services" %}'>{% trans "Repair and Maintenance Services" %}</option>
+                      <option value='{% trans "Logistics and Transportation Services" %}'>{% trans "Logistics and Transportation Services" %}</option>
+                      <option value='{% trans "Media Creators" %}'>{% trans "Media Creators" %}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">{% trans "Brand Logo" %}</span>
+                    </div>
+                    <div class="custom-file">
+                        {{newcomerform.logo}}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  {{newcomerform.description|as_crispy_field}}
+                </div>
+                <div class="col-12">
+                  {{newcomerform.web|as_crispy_field}}
+                </div>
+                <div class="col-12">
+                  {{newcomerform.email|as_crispy_field}}
+                </div>
+                <div class="col-12">
+                  {{newcomerform.phone|as_crispy_field}}
+                </div>
+                <div class="col-12">
+                  {{newcomerform.country_legal|as_crispy_field}}
+                </div>
+                <div class="col-12">
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">{% trans "City" %}</label>
+                    <select class="form-select" id="inputGroupSelect02" name="city_legal">
+                      <option selected disabled>{% trans "Choose..." %}</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-12">
+                  {{newcomerform.address|as_crispy_field}}
+                </div>
+              </div>
+              <p class="text-dark">{% trans "Add your social media links" %}</p>
+              <div id="formset">
+                {{ formsetmedia.management_form }}
+                    {% for form in formsetmedia %}
+                    <div id="form-0" class="formset pt-2">
+                        {{form|crispy}}
+                        {{form|as_crispy_errors}}
+                    </div>
+                    {% endfor %}
+                <div id="empty-form" class="d-none">
+                    {{formsetmedia.empty_form.media}}
+                    {{formsetmedia.empty_form|crispy}}
+                </div>
+              </div>
+              <div class="d-flex justify-content-between my-3">
+                  <button class="btn-clear" onclick="addFormset()" type="button"><i class="fa-solid fa-plus"></i>{% trans " Add" %}</button>
+                  <button class="btn-clear" onclick="clearFormset()" type="button"><i class="fa-solid fa-minus"></i> {% trans "Remove" %}</button>
+              </div> 
+              <input type="hidden" name="form-id" value="newcomerForm">
+            </form>
+          </div>
+          <div class="preload-cage-prostela fade-in d-none">
+            <h3 class="text-preload-prostela fs-6">{% trans "Proccess data, please wait" %}...</h3>
+          </div>
+          <div class="vh-10 mt-2">
+            <div class="row justify-content-end">
+              <div class="col-lg-3 col-6 fade-in submit mt-2">
+                <button class="btn btn-shappire btn-block submit-btn d-flex justify-content-center align-items-center">{% trans "Submit" %} <i class="ri-send-plane-2-fill ml-2 fs-6"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </div>
+</div>
+<div class="alert alert-success alert-dismissible fade-in show d-none" role="alert" id="IGAlert">
+  <div class="inner-message">
+      
+  </div>  
+  <button type="button" class="close" onclick="closeAlertSuccess()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="alert alert-danger alert-dismissible fade-in show d-none" role="alert" id="IGAlertDanger">
+  <div class="inner-message-danger">
+      
+  </div>  
+  <button type="button" class="close" onclick="closeAlertDanger()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<script>
+const address = '{% trans "Your address?" %}'
+const description = '{% trans "Business description" %}'
+const errorFile = '{% trans "Please Upload a valid mediafile (JPG or PNG)" %}'
+const messageIncomplete = '{% trans "Please Fill all inputs in this form, Thanks" %}'
+</script>
+<script src="{% static 'js/stela/newcomerComponent.js' %}?v3"></script>
+{% endblock  %}
