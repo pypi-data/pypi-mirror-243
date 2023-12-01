@@ -1,0 +1,17 @@
+## lightning.pytorch==2.0.8
+model:
+  feature_extractor:
+    class_path: cesped.network.featureExtractors.ResNetImageEncoder
+    init_args:
+        resnetName: resnet152
+        load_imagenetweights: true
+        sigma0: 1.
+        sigma1: 2.
+        in_channels: 1
+  lmax: 8
+  s2_fdim: 512
+  so3_fdim: 16
+  hp_order_projector: 3
+  hp_order_s2: 3
+  hp_order_so3: 4
+  rand_fraction_points_to_project: 0.5
