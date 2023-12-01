@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ypywidgets"
+dynamic = ["version"]
+description = "Y-based Jupyter widgets for Python"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.8"
+authors = [
+    { name = "David Brochart", email = "david.brochart@gmail.com" },
+]
+keywords = [
+    "widgets",
+    "jupyter",
+    "yjs",
+]
+dependencies = [
+    "comm >=0.1.4,<1",
+    "pycrdt >=0.5.0,<0.6.0",
+    "reacttrs >=0.1.4,<1",
+]
+
+[project.urls]
+Homepage = "https://github.com/davidbrochart/ypywidgets"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+]
+
+[tool.hatch.version]
+path = "ypywidgets/__init__.py"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/ypywidgets",
+]
