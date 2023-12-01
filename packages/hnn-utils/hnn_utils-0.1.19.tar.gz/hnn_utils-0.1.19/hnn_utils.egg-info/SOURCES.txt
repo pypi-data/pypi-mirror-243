@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+hnn_utils/__init__.py
+hnn_utils.egg-info/PKG-INFO
+hnn_utils.egg-info/SOURCES.txt
+hnn_utils.egg-info/dependency_links.txt
+hnn_utils.egg-info/requires.txt
+hnn_utils.egg-info/top_level.txt
+hnn_utils/callbacks/__init__.py
+hnn_utils/callbacks/ema.py
+hnn_utils/nn/RotaryEmbedding.py
+hnn_utils/nn/Transformer.py
+hnn_utils/nn/__init__.py
+hnn_utils/nn/funtional.py
