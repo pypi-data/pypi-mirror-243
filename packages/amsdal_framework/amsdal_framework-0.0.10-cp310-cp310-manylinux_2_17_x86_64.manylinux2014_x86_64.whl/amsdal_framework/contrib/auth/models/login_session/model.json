@@ -1,0 +1,23 @@
+{
+  "title": "LoginSession",
+  "type": "object",
+  "properties": {
+    "email": {
+      "title": "Email",
+      "type": "string"
+    },
+    "password": {
+      "title": "Password (hash)",
+      "type": "binary"
+    },
+    "token": {
+      "title": "Token",
+      "type": "binary",
+      "mark_as_read_only": true
+    }
+  },
+  "required": [
+    "email",
+    "password"
+  ]
+}
