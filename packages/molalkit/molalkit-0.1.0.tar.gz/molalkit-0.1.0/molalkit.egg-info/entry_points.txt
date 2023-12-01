@@ -1,0 +1,2 @@
+[console_scripts]
+molalkit_run = molalkit.al.run:molalkit_run
