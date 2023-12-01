@@ -1,0 +1,11 @@
+include VERSION
+include aiopki/package.json
+include requirements.txt
+include README.md
+include VERSION
+recursive-include aiopki VERSION
+recursive-include aiopki **.html
+recursive-include aiopki **.j2
+recursive-include aiopki **.json
+recursive-include aiopki **.yaml
+recursive-include aiopki **.xml
