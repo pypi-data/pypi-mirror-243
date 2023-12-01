@@ -1,0 +1,8 @@
+# ---- AUTO-GENERATED: lines beyond this point were added by quicklib.datafiles at Wed Mar  8 16:09:19 2023
+include dynamic_install_requires.txt
+include dynamic_extras_require.txt
+include quicklib_incorporated.v2.5.zip
+# from quicklib.setup(manifest_extra=...)
+recursive-include epic/lab/scripts *
+recursive-include epic/lab/vmsetup *
+# ---- AUTO-GENERATED: done
