@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/tmxpy/__init__.py
+src/tmxpy/tmxpy.py
+src/tmxpy.egg-info/PKG-INFO
+src/tmxpy.egg-info/SOURCES.txt
+src/tmxpy.egg-info/dependency_links.txt
+src/tmxpy.egg-info/requires.txt
+src/tmxpy.egg-info/top_level.txt
