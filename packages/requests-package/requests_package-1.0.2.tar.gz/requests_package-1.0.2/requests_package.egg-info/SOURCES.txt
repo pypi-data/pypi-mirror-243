@@ -1,0 +1,12 @@
+LICENSE
+README.md
+pyproject.toml
+setup.py
+requests_package/__init__.py
+requests_package/main.py
+requests_package/test_main.py
+requests_package.egg-info/PKG-INFO
+requests_package.egg-info/SOURCES.txt
+requests_package.egg-info/dependency_links.txt
+requests_package.egg-info/requires.txt
+requests_package.egg-info/top_level.txt
