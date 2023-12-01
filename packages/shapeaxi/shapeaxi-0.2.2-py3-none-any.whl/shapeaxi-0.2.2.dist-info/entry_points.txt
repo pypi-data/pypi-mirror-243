@@ -1,0 +1,3 @@
+[console_scripts]
+dentalmodelseg = src.eval_model:cml
+shapeaxi = src.saxi_folds:cml
