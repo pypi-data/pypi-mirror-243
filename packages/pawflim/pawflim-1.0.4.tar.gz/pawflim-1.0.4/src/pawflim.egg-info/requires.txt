@@ -1,0 +1,7 @@
+binlets>=1
+numpy
+scipy
+
+[test]
+hypothesis
+pytest
