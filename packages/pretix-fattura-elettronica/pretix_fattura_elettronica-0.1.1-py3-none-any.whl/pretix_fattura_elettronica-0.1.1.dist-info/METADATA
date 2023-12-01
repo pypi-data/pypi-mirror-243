@@ -1,0 +1,67 @@
+Metadata-Version: 2.1
+Name: pretix-fattura-elettronica
+Version: 0.1.1
+Summary: Plugin for Italian Electronic Invoices
+Keywords: pretix
+Home-page: https://github.com/pythonitalia/pretix-fattura-elettronica
+Author-Email: Python Italia <info@pycon.it>
+Maintainer-Email: Python Italia <info@pycon.it>
+License: Apache
+Project-URL: Homepage, https://github.com/pythonitalia/pretix-fattura-elettronica
+Project-URL: Repository, https://github.com/pythonitalia/pretix-fattura-elettronica
+Requires-Python: >=3.8
+Requires-Dist: pydantic>=2.5.1
+Requires-Dist: python-codicefiscale>=0.9.0
+Requires-Dist: pytest; extra == "dev"
+Requires-Dist: pytest-django; extra == "dev"
+Requires-Dist: django; extra == "dev"
+Requires-Dist: django-rest-framework; extra == "dev"
+Requires-Dist: pretix; extra == "dev"
+Provides-Extra: dev
+Description-Content-Type: text/x-rst
+
+Fattura Elettronica
+==========================
+
+This is a plugin for `pretix`_.
+
+Plugin for Italian Electronic Invoices
+
+Development setup
+-----------------
+
+1. Make sure that you have a working `pretix development setup`_.
+
+2. Clone this repository.
+
+3. Activate the virtual environment you use for pretix development.
+
+4. Execute ``python setup.py develop`` within this directory to register this application with pretix's plugin registry.
+
+5. Execute ``make`` within this directory to compile translations.
+
+6. Restart your local pretix server. You can now use the plugin from this repository for your events by enabling it in
+   the 'plugins' tab in the settings.
+
+To check your plugin for rule violations, run::
+
+    ruff .
+
+You can auto-fix some of these issues by running::
+
+    ruff --fix .
+
+To automatically check for these issues before you commit, you can run ``.install-hooks``.
+
+
+License
+-------
+
+
+Copyright 2023 Patrick Arminio & Ernesto Arbitrio
+
+Released under the terms of the Apache License 2.0
+
+
+.. _pretix: https://github.com/pretix/pretix
+.. _pretix development setup: https://docs.pretix.eu/en/latest/development/setup.html
