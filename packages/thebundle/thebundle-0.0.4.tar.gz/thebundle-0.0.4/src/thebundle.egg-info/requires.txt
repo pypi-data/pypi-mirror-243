@@ -1,0 +1,12 @@
+jsonschema
+colorama
+
+[dev]
+snakeviz
+
+[pypi]
+build
+twine
+
+[test]
+pytest
