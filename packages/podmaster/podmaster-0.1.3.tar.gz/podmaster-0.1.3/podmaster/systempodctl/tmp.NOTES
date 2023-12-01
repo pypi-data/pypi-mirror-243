@@ -1,0 +1,51 @@
+---
+#
+Some exposed path
+```sh
+systemd-path|grep etc
+# system-configuration-factory: /usr/share/factory/etc
+# system-configuration: /etc
+# search-configuration-factory: /usr/local/share/factory/etc:/usr/share/factory/etc
+# search-configuration: /home/ben/.config:/etc/xdg:/usr/local/etc/xdg:/usr/etc/xdg
+# systemd-system-conf: /etc/systemd/system
+# systemd-user-conf: /etc/systemd/user
+# systemd-search-system-unit: /etc/systemd/system.control:/run/systemd/system.control:/run/systemd/transient:/run/systemd/generator.early:/etc/systemd/system:/etc/systemd/system.attached:/run/systemd/system:/run/systemd/system.attached:/run/systemd/generator:/usr/local/lib/systemd/system:/usr/lib/systemd/system:/run/systemd/generator.late
+# systemd-search-user-unit: /home/ben/.config/systemd/user.control:/run/user/1000/systemd/user.control:/run/user/1000/systemd/transient:/run/user/1000/systemd/generator.early:/home/ben/.config/systemd/user:/etc/xdg/systemd/user:/usr/local/etc/xdg/systemd/user:/usr/etc/xdg/systemd/user:/etc/systemd/user:/run/user/1000/systemd/user:/run/systemd/user:/run/user/1000/systemd/generator:/home/ben/.local/share/systemd/user:/home/ben/.local/share/flatpak/exports/share/systemd/user:/var/lib/flatpak/exports/share/systemd/user:/usr/local/share/systemd/user:/usr/share/systemd/user:/usr/local/lib/systemd/user:/usr/lib/systemd/user:/run/user/1000/systemd/generator.late
+# systemd-search-system-generator: /run/systemd/system-generators:/etc/systemd/system-generators:/usr/local/lib/systemd/system-generators:/usr/lib/systemd/system-generators
+# systemd-search-user-generator: /run/systemd/user-generators:/etc/systemd/user-generators:/usr/local/lib/systemd/user-generators:/usr/lib/systemd/user-generators
+# systemd-search-network: /etc/systemd/network:/run/systemd/network:/usr/local/lib/systemd/network:/usr/lib/systemd/network
+# systemd-search-system-environment-generator: /run/systemd/system-environment-generators:/etc/systemd/system-environment-generators:/usr/local/lib/systemd/system-environment-generators:/usr/lib/systemd/system-environment-generators
+# systemd-search-user-environment-generator: /run/systemd/user-environment-generators:/etc/systemd/user-environment-generators:/usr/local/lib/systemd/user-environment-generators:/usr/lib/systemd/user-environment-generators
+```
+
+```txt
+# If you move SYSTEMD_EDITOR=tee after sudo you can remove env and -E.
+env SYSTEMD_EDITOR=tee  sudo -E systemctl edit --system [your_unit_name] < [your_content_file]
+```
+
+```txt
+$ sudo mkdir -p /etc/systemd/system/sddm.service.d/
+$ { echo "[Service]"; 
+    echo "ExecStartPre=/bin/sleep 5";
+  } | sudo tee /etc/systemd/system/sddm.service.d/10-startup-delay.conf
+$ sudo systemctl daemon-reload
+```
+
+```txt
+echo -e "[Service]\nGroup=media" | sudo SYSTEMD_EDITOR=tee systemctl edit sabnzbd sonarr couchpotato headphones transmission
+```
+
+
+```txt
+Successfully installed edited file '/etc/systemd/system/systempod.obiwan_helper.service'.
+@@@
+CompletedProcess(args="SYSTEMD_EDITOR=tee systemctl edit --full --force 'systempod.obiwan_helper' < '/tmp/tmpwb0079gh'", returncode=0)
+---
+ben@awing ~/Documents/obiwanhelper$ systemd-path |grep /etc/systemd/system
+systemd-system-conf: /etc/systemd/system
+systemd-search-system-unit: /etc/systemd/system.control:/run/systemd/system.control:/run/systemd/transient:/run/systemd/generator.early:/etc/systemd/system:/etc/systemd/system.attached:/run/systemd/system:/run/systemd/system.attached:/run/systemd/generator:/usr/local/lib/systemd/system:/usr/lib/systemd/system:/run/systemd/generator.late
+systemd-search-system-generator: /run/systemd/system-generators:/etc/systemd/system-generators:/usr/local/lib/systemd/system-generators:/usr/lib/systemd/system-generators
+systemd-search-system-environment-generator: /run/systemd/system-environment-generators:/etc/systemd/system-environment-generators:/usr/local/lib/systemd/system-environment-generators:/usr/lib/systemd/system-environment-generators
+ben@awing ~/Documents/obiwanhelper$ systemd-path systemd-system-conf
+/etc/systemd/system
+```
