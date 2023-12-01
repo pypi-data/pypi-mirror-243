@@ -1,0 +1,47 @@
+/build/
+/dist/
+
+/docs/build/
+/docs/dist/
+
+/.cache/
+/.temp/
+
+/.env
+/.env.*
+
+/.mypy_cache/
+/.ruff_cache/
+/.dmypy.json
+/dmypy.json
+
+/.hypothesis/
+/.pytest_cache/
+
+/htmlcov/
+/.coverage
+/.coverage.*
+
+/.hatch/
+/.tox/
+
+/.venv/
+/venv/
+
+# C/C++
+*.obj
+*.lib
+*.dll
+*.exe
+*.o
+*.a
+*.so
+*.out
+
+# Python
+__pycache__/
+*.egg-info/
+*.py[cod]
+
+# macOS
+.DS_Store
