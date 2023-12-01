@@ -1,0 +1,53 @@
+.gitignore
+.readthedocs.yaml
+LICENSE
+README.md
+mypy.ini
+requirements.txt
+requirements_dev.txt
+setup.py
+docs/Makefile
+docs/conf.py
+docs/index.rst
+docs/make.bat
+docs/generated/example_collection.rst
+docs/generated/examples.postprocessing.rst
+docs/generated/examples.rst
+docs/generated/modules.rst
+docs/generated/utspclient.helpers.rst
+docs/generated/utspclient.rst
+examples/__init__.py
+examples/example_hisim.py
+examples/example_hisim_sensitivity_analysis.py
+examples/example_lpg.py
+examples/example_mean_load_profiles.py
+examples/example_multiple_hisim_requests.py
+examples/example_shutdown.py
+examples/example_smelpg.py
+examples/example_upload_image.py
+examples/example_weather_provider.py
+examples/input data/ESM_system_conifg.json
+examples/input data/hisim_config.json
+examples/input data/smelpg_enterprise.json
+examples/input data/smelpg_input.csv
+examples/input data/tabula_buildings.csv
+examples/input data/tabula_codes.csv
+examples/postprocessing/ESM_database.py
+examples/postprocessing/__init__.py
+examples/postprocessing/sensitivity_plots.py
+logos/eulogo.png
+logos/whylogo.jpg
+utspclient/__init__.py
+utspclient/client.py
+utspclient/datastructures.py
+utspclient/py.typed
+utspclient/result_file_filters.py
+utspclient.egg-info/PKG-INFO
+utspclient.egg-info/SOURCES.txt
+utspclient.egg-info/dependency_links.txt
+utspclient.egg-info/requires.txt
+utspclient.egg-info/top_level.txt
+utspclient/helpers/__init__.py
+utspclient/helpers/lpg_helper.py
+utspclient/helpers/lpgdata.py
+utspclient/helpers/lpgpythonbindings.py
