@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "cannot_connect": "Nepavyko prisijungti",
+            "no_devices_found": "Tinkle nerasta joki\u0173 \u012frengini\u0173",
+            "not_steamist_device": "Ne garo prietaisas"
+        },
+        "flow_title": "{name} ( {ipaddress} )",
+        "step": {
+            "discovery_confirm": {
+                "description": "Ar norite nustatyti {name} ( {ipaddress} )?"
+            },
+            "pick_device": {
+                "data": {
+                    "device": "\u012erenginys"
+                }
+            },
+            "user": {
+                "description": "Jei paliksite pagrindin\u012f kompiuter\u012f tu\u0161\u010di\u0105, aptikimas bus naudojamas \u012frenginiams rasti."
+            }
+        }
+    }
+}

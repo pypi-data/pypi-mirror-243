@@ -1,0 +1,39 @@
+{
+    "services": {
+        "clear_zone_override": {
+            "description": "Asettaa alueen noudattamaan aikatauluaan.",
+            "fields": {
+                "entity_id": {
+                    "name": "Kohde"
+                }
+            }
+        },
+        "refresh_system": {
+            "description": "Hakee uusimmat tiedot v\u00e4litt\u00e4j\u00e4n palvelimilta nyt, eik\u00e4 odota seuraavaa aikataulun mukaista p\u00e4ivityst\u00e4."
+        },
+        "reset_system": {
+            "description": "Asettaa j\u00e4rjestelm\u00e4n Automaattitilaan ja palauttaa kaikki alueet noudattamaan aikataulujaan. Kaikki Evohome -j\u00e4rjestelm\u00e4t eiv\u00e4t tue t\u00e4t\u00e4 toimintoa (eli AutoWithReset-tilaa)."
+        },
+        "set_system_mode": {
+            "fields": {
+                "mode": {
+                    "name": "Tila"
+                }
+            }
+        },
+        "set_zone_override": {
+            "description": "Ohittaa alueen asetusarvon, joko toistaiseksi tai m\u00e4\u00e4r\u00e4tyksi ajaksi, jonka j\u00e4lkeen se palaa noudattamaan aikatauluaan.",
+            "fields": {
+                "duration": {
+                    "description": "Alue palaa aikatauluunsa t\u00e4m\u00e4n j\u00e4lkeen. Jos muutos on 0, se tapahtuu seuraavaan ajastettuun aikaan asti."
+                },
+                "entity_id": {
+                    "name": "Kohde"
+                },
+                "setpoint": {
+                    "description": "L\u00e4mp\u00f6tila, jota k\u00e4ytet\u00e4\u00e4n ajastetun ajan sijasta."
+                }
+            }
+        }
+    }
+}

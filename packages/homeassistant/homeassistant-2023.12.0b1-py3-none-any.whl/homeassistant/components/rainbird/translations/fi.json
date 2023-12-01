@@ -1,0 +1,30 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "timeout_connect": "Aikakatkaisu yhteytt\u00e4 luodessa"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "password": "Salasana"
+                }
+            }
+        }
+    },
+    "issues": {
+        "deprecated_raindelay": {
+            "fix_flow": {
+                "step": {
+                    "confirm": {
+                        "description": "Rain Bird -palvelu `rainbird.set_rain_delay` poistetaan ja korvataan sateen viiveen hallintaan tarkoitetulla Number -kohteella. Kaikki olemassa olevat automaatiot tai skriptit on p\u00e4ivitett\u00e4v\u00e4 k\u00e4ytt\u00e4m\u00e4\u00e4n `number.set_value`:a, jonka kohde on `{alternate_target}}."
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "MELCloud -integraatio on jo m\u00e4\u00e4ritetty t\u00e4t\u00e4 s\u00e4hk\u00f6postia varten. K\u00e4ytt\u00f6oikeustoken on p\u00e4ivitetty."
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Salasana",
+                    "username": "S\u00e4hk\u00f6posti"
+                },
+                "description": "Muodosta yhteys k\u00e4ytt\u00e4m\u00e4ll\u00e4 MELCloud -tili\u00e4si.",
+                "title": "Yhdist\u00e4 MELCloudiin"
+            }
+        }
+    }
+}

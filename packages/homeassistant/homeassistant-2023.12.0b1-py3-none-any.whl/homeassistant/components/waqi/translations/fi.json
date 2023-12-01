@@ -1,0 +1,54 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "step": {
+            "map": {
+                "data": {
+                    "location": "Sijainti"
+                }
+            },
+            "user": {
+                "data": {
+                    "api_key": "API-avain",
+                    "location": "Sijainti"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "carbon_monoxide": {
+                "name": "H\u00e4k\u00e4"
+            },
+            "dominant_pollutant": {
+                "state": {
+                    "co": "H\u00e4k\u00e4"
+                }
+            },
+            "neph": {
+                "name": "N\u00e4kyvyys nefelometriaa k\u00e4ytt\u00e4en"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_yaml_import_issue_already_configured": {
+            "description": "Maailman ilmanlaatuindeksin konfigurointi YAML:n avulla poistetaan, mutta mittausasema oli jo tuotu, kun YAML-konfiguraatiota yritettiin tuoda.\n\nVarmista, ett\u00e4 tuotu konfiguraatio on oikea, ja poista World Air Quality Index YAML -konfiguraatio configuration.yaml-tiedostosta ja jatka [integraation m\u00e4\u00e4ritt\u00e4minen]({url}) manuaalisesti."
+        },
+        "deprecated_yaml_import_issue_cannot_connect": {
+            "description": "Maailman ilmanlaatuindeksin m\u00e4\u00e4ritt\u00e4minen YAML:lla poistetaan, mutta YAML-konfiguraation tuonnissa tapahtui yhteysvirhe.\n\nVarmista, ett\u00e4 yhteys palveluun toimii, ja k\u00e4ynnist\u00e4 Home Assistant uudelleen yritt\u00e4\u00e4ksesi uudelleen tai poista World Air Quality Index YAML -konfiguraatio configuration.yaml-tiedostosta ja jatka [integraation m\u00e4\u00e4ritt\u00e4minen]({url}) manuaalisesti."
+        },
+        "deprecated_yaml_import_issue_invalid_auth": {
+            "description": "Maailman ilmanlaatuindeksin m\u00e4\u00e4ritt\u00e4minen YAML:n avulla poistetaan, mutta YAML-konfiguraation tuonnissa tapahtui todennusvirhe.\n\nKorjaa YAML-konfiguraatio ja k\u00e4ynnist\u00e4 Home Assistant uudelleen yritt\u00e4\u00e4ksesi uudelleen tai poista World Air Quality Index YAML-konfiguraatio configuration.yaml-tiedostosta ja jatka [integraation asettamista]({url}) manuaalisesti."
+        },
+        "deprecated_yaml_import_issue_none_found": {
+            "description": "Maailman ilmanlaatuindeksin konfigurointi YAML:n avulla poistetaan, mutta asemia ei tuotu, koska niit\u00e4 ei l\u00f6ytynyt.\n\nVarmista, ett\u00e4 tuotu konfiguraatio on oikea, ja poista World Air Quality Index YAML -konfiguraatio configuration.yaml-tiedostosta ja jatka [integraation asettamista]({url}) manuaalisesti."
+        }
+    }
+}

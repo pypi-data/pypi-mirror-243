@@ -1,0 +1,22 @@
+{
+    "config": {
+        "abort": {
+            "address_already_configured": "BleBox-laite on jo m\u00e4\u00e4ritetty osoitteeseen {address}.",
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "unknown": "Odottamaton virhe"
+        },
+        "flow_title": "{name} ({host})",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "IP-osoite",
+                    "port": "Portti"
+                },
+                "title": "M\u00e4\u00e4rit\u00e4 BleBox -laitteesi"
+            }
+        }
+    }
+}

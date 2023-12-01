@@ -1,0 +1,97 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "already_in_progress": "M\u00e4\u00e4ritysprosessi on jo k\u00e4ynniss\u00e4",
+            "reauth_successful": "Uudelleentodennus onnistui"
+        },
+        "error": {
+            "connection_timeout": "Yhteyden aikakatkaisu",
+            "incorrect_password": "Virheellinen salasana",
+            "incorrect_username": "V\u00e4\u00e4r\u00e4 k\u00e4ytt\u00e4j\u00e4tunnus",
+            "invalid_auth": "Virheellinen todennus",
+            "invalid_url": "Virheellinen URL",
+            "login_attempts_exceeded": "Kirjautumisyritysten enimm\u00e4ism\u00e4\u00e4r\u00e4 ylitetty, yrit\u00e4 my\u00f6hemmin uudelleen",
+            "response_error": "Tuntematon virhe laitteesta",
+            "unknown": "Odottamaton virhe"
+        },
+        "flow_title": "{name}",
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salasana",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                },
+                "title": "Todenna integraatio uudelleen"
+            },
+            "user": {
+                "data": {
+                    "password": "Salasana",
+                    "url": "URL-osoite",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                },
+                "description": "Sy\u00f6t\u00e4 laitteen k\u00e4ytt\u00f6oikeustiedot.",
+                "title": "M\u00e4\u00e4rit\u00e4 Huawei LTE"
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "mobile_connection": {
+                "name": "Mobiiliyhteys"
+            }
+        },
+        "switch": {
+            "mobile_data": {
+                "name": "Mobiilidata"
+            }
+        }
+    },
+    "issues": {
+        "service_changed_to_button": {
+            "description": "Palvelu {service} on vanhentunut. K\u00e4yt\u00e4 sen sijaan vastaavaa {button} -painiketta.",
+            "title": "Palvelu muutettu painikkeeksi"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "name": "Ilmoituspalvelun nimi (muutos edellytt\u00e4\u00e4 uudelleenk\u00e4ynnistyst\u00e4)",
+                    "recipient": "SMS-ilmoitusten vastaanottajat"
+                }
+            }
+        }
+    },
+    "services": {
+        "clear_traffic_statistics": {
+            "fields": {
+                "url": {
+                    "name": "URL-osoite"
+                }
+            }
+        },
+        "reboot": {
+            "fields": {
+                "url": {
+                    "name": "URL-osoite"
+                }
+            }
+        },
+        "resume_integration": {
+            "fields": {
+                "url": {
+                    "name": "URL-osoite"
+                }
+            }
+        },
+        "suspend_integration": {
+            "description": "Keskeytt\u00e4\u00e4 integraation. Keskeytt\u00e4minen kirjaa integraation ulos reitittimest\u00e4 ja lopettaa sen k\u00e4yt\u00f6n. K\u00e4ytt\u00f6kelpoinen esimerkiksi silloin, kun reitittimen verkkok\u00e4ytt\u00f6liittym\u00e4n k\u00e4ytt\u00e4minen toisesta l\u00e4hteest\u00e4, kuten selaimesta, on tilap\u00e4isesti tarpeen. Kutsu resume_integration-palvelua jatkaaksesi.\n.",
+            "fields": {
+                "url": {
+                    "name": "URL-osoite"
+                }
+            }
+        }
+    }
+}

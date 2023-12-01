@@ -1,0 +1,39 @@
+{
+    "config": {
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "unknown": "Odottamaton virhe"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "reset_filter": {
+                "name": "Suodattimen laskurin nollaus"
+            }
+        },
+        "sensor": {
+            "breeze_level": {
+                "state": {
+                    "off": "Pois"
+                }
+            },
+            "manual_level": {
+                "state": {
+                    "off": "Pois"
+                }
+            },
+            "ventilation_level": {
+                "state": {
+                    "off": "Pois"
+                }
+            }
+        }
+    }
+}

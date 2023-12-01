@@ -1,0 +1,8 @@
+{
+    "config": {
+        "abort": {
+            "oauth_failed": "B\u0142\u0105d podczas uzyskiwania tokena dost\u0119pu.",
+            "oauth_unauthorized": "B\u0142\u0105d autoryzacji OAuth podczas uzyskiwania tokena dost\u0119pu."
+        }
+    }
+}

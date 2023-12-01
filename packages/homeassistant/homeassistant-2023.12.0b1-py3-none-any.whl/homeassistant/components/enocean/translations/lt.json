@@ -1,0 +1,15 @@
+{
+    "config": {
+        "step": {
+            "detect": {
+                "data": {
+                    "path": "USB rakto kelias"
+                },
+                "title": "Pasirinkite keli\u0105 \u012f savo ENOcean rakt\u0105"
+            },
+            "manual": {
+                "title": "\u012eveskite keli\u0105 \u012f savo ENOcean rakt\u0105"
+            }
+        }
+    }
+}

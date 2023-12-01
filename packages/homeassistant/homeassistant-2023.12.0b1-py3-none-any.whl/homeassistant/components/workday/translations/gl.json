@@ -1,0 +1,45 @@
+{
+    "config": {
+        "step": {
+            "options": {
+                "data": {
+                    "language": "Idioma para os d\u00edas festivos"
+                },
+                "data_description": {
+                    "language": "Escolle o idioma no que queres basear a configuraci\u00f3n dos d\u00edas festivos"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "language": "Idioma para os d\u00edas festivos"
+                },
+                "data_description": {
+                    "language": "Escolle o idioma no que queres basear a configuraci\u00f3n dos d\u00edas festivos"
+                }
+            }
+        }
+    },
+    "selector": {
+        "days": {
+            "options": {
+                "sun": "Domingo"
+            }
+        }
+    },
+    "services": {
+        "check_date": {
+            "description": "Comproba se a data \u00e9 un d\u00eda laborable.",
+            "fields": {
+                "check_date": {
+                    "description": "Data para comprobar se \u00e9 d\u00eda laborable.",
+                    "name": "Data"
+                }
+            },
+            "name": "Comprobar data"
+        }
+    }
+}

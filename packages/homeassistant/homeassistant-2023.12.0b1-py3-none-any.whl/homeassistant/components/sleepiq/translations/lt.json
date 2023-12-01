@@ -1,0 +1,25 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Paskyra jau sukonfig\u016bruota"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                },
+                "description": "SleepIQ integracija turi i\u0161 naujo autentifikuoti paskyr\u0105 {username} .",
+                "title": "I\u0161 naujo autentifikuokite integracij\u0105"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    }
+}

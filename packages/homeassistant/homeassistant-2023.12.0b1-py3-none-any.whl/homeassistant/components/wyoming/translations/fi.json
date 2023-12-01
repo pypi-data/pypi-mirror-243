@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Palvelu on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui"
+        },
+        "step": {
+            "hassio_confirm": {
+                "description": "Haluatko m\u00e4\u00e4ritt\u00e4\u00e4 Home Assistantin muodostamaan yhteyden lis\u00e4osan tarjoamaan Wyoming -palveluun: {addon}?"
+            },
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "port": "Portti"
+                }
+            }
+        }
+    }
+}

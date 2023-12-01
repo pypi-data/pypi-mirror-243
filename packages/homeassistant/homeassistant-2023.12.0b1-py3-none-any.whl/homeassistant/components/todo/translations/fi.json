@@ -1,0 +1,79 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "Teht\u00e4v\u00e4lista"
+        }
+    },
+    "selector": {
+        "status": {
+            "options": {
+                "completed": "Valmis",
+                "needs_action": "Ei valmis"
+            }
+        }
+    },
+    "services": {
+        "create_item": {
+            "description": "Luo uusi teht\u00e4v\u00e4listan kohta.",
+            "fields": {
+                "status": {
+                    "description": "Teht\u00e4v\u00e4listan kohteen tila tai vahvistus.",
+                    "name": "Tila"
+                },
+                "summary": {
+                    "description": "Lyhyt yhteenveto, joka edustaa teht\u00e4v\u00e4lista -kohdetta.",
+                    "name": "Yhteenveto"
+                }
+            },
+            "name": "Luo teht\u00e4v\u00e4listan kohta"
+        },
+        "delete_item": {
+            "description": "Poista olemassa oleva teht\u00e4v\u00e4listan kohde joko sen yksil\u00f6llisen tunnuksen tai yhteenvedon perusteella.",
+            "fields": {
+                "summary": {
+                    "description": "Lyhyt yhteenveto, joka edustaa teht\u00e4v\u00e4lista -kohdetta.",
+                    "name": "Yhteenveto"
+                },
+                "uid": {
+                    "description": "Teht\u00e4v\u00e4listan kohteiden yksil\u00f6lliset tunnisteet.",
+                    "name": "Teht\u00e4v\u00e4listan kohteiden yksil\u00f6lliset tunnukset"
+                }
+            },
+            "name": "Teht\u00e4v\u00e4listan kohteen poistaminen"
+        },
+        "remove_item": {
+            "fields": {
+                "item": {
+                    "name": "Kohteen nimi"
+                }
+            },
+            "name": "Teht\u00e4v\u00e4listan kohteen poistaminen"
+        },
+        "update_item": {
+            "description": "P\u00e4ivit\u00e4 olemassa oleva teht\u00e4v\u00e4listan kohde sen nimen perusteella.",
+            "fields": {
+                "item": {
+                    "description": "Teht\u00e4v\u00e4listan kohteen nimi.",
+                    "name": "Kohteen nimi"
+                },
+                "rename": {
+                    "description": "Teht\u00e4v\u00e4n kohteen uusi nimi",
+                    "name": "Uudelleennime\u00e4 kohta"
+                },
+                "status": {
+                    "description": "Teht\u00e4v\u00e4listan kohteen tila tai vahvistus.",
+                    "name": "Aseta tila"
+                },
+                "summary": {
+                    "description": "Lyhyt yhteenveto, joka edustaa teht\u00e4v\u00e4lista -kohdetta.",
+                    "name": "Yhteenveto"
+                },
+                "uid": {
+                    "name": "Teht\u00e4v\u00e4listan yksil\u00f6llinen tunniste"
+                }
+            },
+            "name": "P\u00e4ivit\u00e4 teht\u00e4v\u00e4listan kohta"
+        }
+    },
+    "title": "Teht\u00e4v\u00e4lista"
+}

@@ -1,0 +1,99 @@
+{
+    "config": {
+        "step": {
+            "binary_sensor": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "cover": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "event": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "fan": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "light": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "lock": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "media_player": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "sensor": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "switch": {
+                "data": {
+                    "name": "Nimi"
+                }
+            },
+            "user": {
+                "menu_options": {
+                    "light": "Valoryhm\u00e4",
+                    "media_player": "Mediasoitinryhm\u00e4"
+                }
+            }
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Ryhm\u00e4",
+            "state": {
+                "closed": "Suljettu",
+                "home": "Kotona",
+                "locked": "Lukittu",
+                "not_home": "Poissa",
+                "off": "Pois",
+                "ok": "Ok",
+                "on": "P\u00e4\u00e4ll\u00e4",
+                "open": "Auki",
+                "problem": "Ongelma",
+                "unlocked": "Auki"
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Uudelleenlataa"
+        },
+        "remove": {
+            "fields": {
+                "object_id": {
+                    "description": "T\u00e4m\u00e4n ryhm\u00e4n objektitunnus. T\u00e4t\u00e4 objektitunnusta k\u00e4ytet\u00e4\u00e4n osana kohdetunnusta. Kohdetunnuksen muoto: [domain].[object_id].",
+                    "name": "Objektin tunnus"
+                }
+            }
+        },
+        "set": {
+            "fields": {
+                "name": {
+                    "name": "Nimi"
+                },
+                "object_id": {
+                    "description": "T\u00e4m\u00e4n ryhm\u00e4n objektitunnus. T\u00e4t\u00e4 objektitunnusta k\u00e4ytet\u00e4\u00e4n osana kohdetunnusta. Kohdetunnuksen muoto: [domain].[object_id].",
+                    "name": "Objektin tunnus"
+                }
+            }
+        }
+    },
+    "title": "Ryhm\u00e4"
+}

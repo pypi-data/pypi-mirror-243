@@ -1,0 +1,18 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Akun sudah dikonfigurasi",
+            "oauth_error": "Menerima respons token yang tidak valid.",
+            "oauth_failed": "Terjadi kesalahan saat mendapatkan token akses.",
+            "oauth_timeout": "Tenggang waktu penyelesaian token OAuth habis.",
+            "oauth_unauthorized": "Kesalahan otorisasi OAuth saat mendapatkan token akses.",
+            "reauth_successful": "Autentikasi ulang berhasil",
+            "unknown": "Kesalahan yang tidak diharapkan"
+        },
+        "step": {
+            "reauth_confirm": {
+                "title": "Autentikasi ulang integrasi"
+            }
+        }
+    }
+}

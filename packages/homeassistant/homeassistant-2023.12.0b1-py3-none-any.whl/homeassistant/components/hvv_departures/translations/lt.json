@@ -1,0 +1,31 @@
+{
+    "config": {
+        "error": {
+            "no_results": "Joki\u0173 rezultat\u0173. Bandykite naudodami kit\u0105 stot\u012f / adres\u0105"
+        },
+        "step": {
+            "station": {
+                "data": {
+                    "station": "Stotis/adresas"
+                },
+                "title": "\u012eveskite stot\u012f/adres\u0105"
+            },
+            "station_select": {
+                "title": "Pasirinkite Stotis/Adresas"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "departures": {
+                "name": "I\u0161vykimai"
+            }
+        }
+    }
+}

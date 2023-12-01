@@ -1,0 +1,44 @@
+{
+    "config": {
+        "error": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "id_exists": "Yhdysk\u00e4yt\u00e4v\u00e4n tunnus on jo olemassa",
+            "timeout_connect": "Aikakatkaisu yhteytt\u00e4 luodessa"
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "device": "Polku tai URL-osoite",
+                    "id": "Tunniste",
+                    "name": "Nimi"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "floor_temperature": "Lattian l\u00e4mp\u00f6tila"
+                }
+            }
+        }
+    },
+    "services": {
+        "set_gpio_mode": {
+            "fields": {
+                "mode": {
+                    "name": "Tila"
+                }
+            }
+        },
+        "set_led_mode": {
+            "fields": {
+                "mode": {
+                    "name": "Tila"
+                }
+            }
+        }
+    }
+}

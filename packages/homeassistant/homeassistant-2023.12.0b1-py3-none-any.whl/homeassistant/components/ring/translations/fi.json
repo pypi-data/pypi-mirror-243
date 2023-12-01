@@ -1,0 +1,41 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "reauth_successful": "Uudelleentodennus onnistui"
+        },
+        "error": {
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe"
+        },
+        "step": {
+            "2fa": {
+                "data": {
+                    "2fa": "Kaksivaiheinen koodi"
+                },
+                "title": "Kaksivaiheinen tunnistautuminen"
+            },
+            "reauth_confirm": {
+                "data": {
+                    "password": "Salasana"
+                },
+                "description": "Ring-integraation on todennettava tilisi {username} uudelleen.",
+                "title": "Todenna integraatio uudelleen"
+            },
+            "user": {
+                "data": {
+                    "password": "Salasana",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                },
+                "title": "Kirjaudu sis\u00e4\u00e4n Ring-tilill\u00e4"
+            }
+        }
+    },
+    "entity": {
+        "light": {
+            "light": {
+                "name": "Valo"
+            }
+        }
+    }
+}

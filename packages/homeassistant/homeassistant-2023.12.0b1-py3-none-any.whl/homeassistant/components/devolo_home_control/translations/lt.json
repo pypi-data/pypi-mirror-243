@@ -1,0 +1,18 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "mydevolo_url": "mydevolo URL",
+                    "password": "Slapta\u017eodis",
+                    "username": "El. pa\u0161to adresas / devolo ID"
+                }
+            },
+            "zeroconf_confirm": {
+                "data": {
+                    "username": "El. pa\u0161to adresas / devolo ID"
+                }
+            }
+        }
+    }
+}

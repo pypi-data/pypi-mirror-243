@@ -1,0 +1,138 @@
+{
+    "entity_component": {
+        "_": {
+            "name": "To-do-Liste"
+        }
+    },
+    "selector": {
+        "status": {
+            "options": {
+                "completed": "Abgeschlossen",
+                "needs_action": "Nicht abgeschlossen"
+            }
+        }
+    },
+    "services": {
+        "add_item": {
+            "description": "Einen neuen Eintrag der To-do-Liste hinzuf\u00fcgen.",
+            "fields": {
+                "description": {
+                    "description": "Eine ausf\u00fchrlichere Beschreibung des Aufgabenelements als durch den Elementnamen bereitgestellt.",
+                    "name": "Beschreibung"
+                },
+                "due_date": {
+                    "description": "Das Datum, an dem die Aufgabe voraussichtlich abgeschlossen sein wird.",
+                    "name": "F\u00e4lligkeitsdatum"
+                },
+                "due_date_time": {
+                    "description": "Das Datum und die Uhrzeit, zu der die Aufgabe voraussichtlich abgeschlossen sein wird.",
+                    "name": "Uhrzeit des F\u00e4lligkeitsdatums"
+                },
+                "due_datetime": {
+                    "description": "Das Datum und die Uhrzeit, zu der die Aufgabe voraussichtlich abgeschlossen sein wird.",
+                    "name": "F\u00e4lligkeitsdatum und -uhrzeit"
+                },
+                "item": {
+                    "description": "Der Name, der den To-do-Eintrag darstellt.",
+                    "name": "Name des Eintrags"
+                }
+            },
+            "name": "Eintrag der To-do-Liste hinzuf\u00fcgen"
+        },
+        "create_item": {
+            "description": "F\u00fcgt einen neuen To-do-Listeneintrag hinzu.",
+            "fields": {
+                "status": {
+                    "description": "Ein Status oder eine Best\u00e4tigung des To-do-Eintrags.",
+                    "name": "Status"
+                },
+                "summary": {
+                    "description": "Die kurze Zusammenfassung, die den To-do-Eintrag darstellt.",
+                    "name": "Zusammenfassung"
+                }
+            },
+            "name": "To-do-Listeneintrag erstellen"
+        },
+        "delete_item": {
+            "description": "L\u00f6sche einen vorhandenen To-do-Listeneintrag entweder anhand seiner eindeutigen ID oder seiner Zusammenfassung.",
+            "fields": {
+                "summary": {
+                    "description": "Die kurze Zusammenfassung, die den To-do-Eintrag darstellt.",
+                    "name": "Zusammenfassung"
+                },
+                "uid": {
+                    "description": "Eindeutige Bezeichner f\u00fcr die To-do-Listeneintr\u00e4ge.",
+                    "name": "Eindeutige IDs f\u00fcr To-do-Eintr\u00e4ge"
+                }
+            },
+            "name": "L\u00f6schen eines To-do-Listeneintrags"
+        },
+        "get_items": {
+            "description": "Abrufen von Elementen auf einer To-do-Liste.",
+            "fields": {
+                "status": {
+                    "description": "Gib nur To-do-Elemente mit dem angegebenen Status zur\u00fcck. Gibt standardm\u00e4\u00dfig nicht abgeschlossene Aktionen zur\u00fcck.",
+                    "name": "Status"
+                }
+            },
+            "name": "To-do-Liste abrufen"
+        },
+        "remove_completed_items": {
+            "description": "Entferne alle erledigten Aufgaben aus der To-do-Liste.",
+            "name": "Alle erledigten Aufgaben aus der To-do-Liste entfernen"
+        },
+        "remove_item": {
+            "description": "Entferne einen vorhandenen To-do-Listeneintrag anhand seines Namens.",
+            "fields": {
+                "item": {
+                    "description": "Der Name f\u00fcr die Eintr\u00e4ge in der To-do-Liste.",
+                    "name": "Name des Eintrags"
+                }
+            },
+            "name": "Einen Eintrag der To-do-Liste entfernen"
+        },
+        "update_item": {
+            "description": "Aktualisiere einen vorhandenen To-do-Listeneintrag basierend auf seinem Namen.",
+            "fields": {
+                "description": {
+                    "description": "Eine ausf\u00fchrlichere Beschreibung des Aufgabenelements als durch den Elementnamen bereitgestellt.",
+                    "name": "Beschreibung"
+                },
+                "due_date": {
+                    "description": "Das Datum, an dem die Aufgabe voraussichtlich abgeschlossen sein wird.",
+                    "name": "F\u00e4lligkeitsdatum"
+                },
+                "due_date_time": {
+                    "description": "Das Datum und die Uhrzeit, zu der die Aufgabe voraussichtlich abgeschlossen sein wird.",
+                    "name": "Uhrzeit des F\u00e4lligkeitsdatums"
+                },
+                "due_datetime": {
+                    "description": "Das Datum und die Uhrzeit, zu der die Aufgabe voraussichtlich abgeschlossen sein wird.",
+                    "name": "F\u00e4lligkeitsdatum und -uhrzeit"
+                },
+                "item": {
+                    "description": "Der Name f\u00fcr den Eintrag in der To-do-Liste.",
+                    "name": "Name des Eintrags"
+                },
+                "rename": {
+                    "description": "Der neue Name des To-do-Eintrags",
+                    "name": "Eintrag umbenennen"
+                },
+                "status": {
+                    "description": "Ein Status oder eine Best\u00e4tigung des To-do-Eintrags.",
+                    "name": "Status festlegen"
+                },
+                "summary": {
+                    "description": "Die kurze Zusammenfassung, die das To-do-Element darstellt.",
+                    "name": "Zusammenfassung"
+                },
+                "uid": {
+                    "description": "Eindeutiger Bezeichner f\u00fcr den To-do-Listeneintrag.",
+                    "name": "Eindeutige ID des To-do-Eintrags"
+                }
+            },
+            "name": "Aktualisieren des Eintrags in der To-do-Liste"
+        }
+    },
+    "title": "To-do-Liste"
+}

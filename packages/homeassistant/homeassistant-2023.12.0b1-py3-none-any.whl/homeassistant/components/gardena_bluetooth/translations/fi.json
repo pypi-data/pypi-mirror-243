@@ -1,0 +1,34 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Laite on jo m\u00e4\u00e4ritetty",
+            "no_devices_found": "Verkosta ei l\u00f6ytynyt laitteita"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui: {error}"
+        },
+        "step": {
+            "confirm": {
+                "description": "Haluatko m\u00e4\u00e4ritt\u00e4\u00e4 {name}?"
+            },
+            "user": {
+                "data": {
+                    "address": "Laite"
+                },
+                "description": "Valitse laite, jonka haluat m\u00e4\u00e4ritt\u00e4\u00e4"
+            }
+        }
+    },
+    "entity": {
+        "number": {
+            "seasonal_adjust": {
+                "name": "Kausis\u00e4\u00e4t\u00f6"
+            }
+        },
+        "switch": {
+            "state": {
+                "name": "Auki"
+            }
+        }
+    }
+}

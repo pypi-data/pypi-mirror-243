@@ -1,0 +1,23 @@
+{
+    "config": {
+        "abort": {
+            "addr_in_use": "Serverio prievadas jau naudojamas.",
+            "already_configured": "Serverio prievadas jau sukonfig\u016bruotas.",
+            "start_server_failed": "Nepavyko paleisti serverio."
+        },
+        "step": {
+            "user": {
+                "title": "Nustatykite TCP server\u012f WIFFI \u012frenginiams"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "timeout": "Skirtasis laikas (min.)"
+                }
+            }
+        }
+    }
+}

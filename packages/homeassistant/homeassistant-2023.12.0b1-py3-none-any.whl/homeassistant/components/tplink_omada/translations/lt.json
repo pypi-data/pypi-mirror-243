@@ -1,0 +1,37 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "\u012erenginys jau sukonfig\u016bruotas"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti",
+            "no_sites_found": "Nerasta svetaini\u0173, kurias vartotojas gal\u0117t\u0173 valdyti.",
+            "unsupported_controller": "Omada valdiklio versija nepalaikoma."
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                },
+                "description": "Pateikti kredencialai nustojo veikti. Pra\u0161ome juos atnaujinti.",
+                "title": "Atnaujinkite TP-Link Omada kredencialus"
+            },
+            "site": {
+                "data": {
+                    "site": "Svetain\u0117"
+                },
+                "title": "Pasirinkite, kuri\u0105 (-ias) svetain\u0119 (-es) tvarkyti"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas",
+                    "verify_ssl": "Patikrinkite SSL sertifikat\u0105"
+                },
+                "description": "\u012eveskite \u201eOmada\u201c valdiklio ry\u0161io duomenis. Debes\u0173 valdikliai nepalaikomi.",
+                "title": "TP-Link Omada valdiklis"
+            }
+        }
+    }
+}

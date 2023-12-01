@@ -1,0 +1,30 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "description": "Jums reik\u0117s API prieigos rakto i\u0161 https://home.juice.net/Manage.",
+                "title": "Prisijunkite prie JuiceNet"
+            }
+        }
+    },
+    "entity": {
+        "number": {
+            "amperage_limit": {
+                "name": "Ampero srov\u0117s riba"
+            }
+        },
+        "sensor": {
+            "charge_time": {
+                "name": "\u012ekrovimo laikas"
+            },
+            "energy_added": {
+                "name": "Prid\u0117ta energijos"
+            }
+        },
+        "switch": {
+            "charge_now": {
+                "name": "\u012ekraukite dabar"
+            }
+        }
+    }
+}

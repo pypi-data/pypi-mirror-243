@@ -1,0 +1,24 @@
+{
+    "device_automation": {
+        "action_type": {
+            "turn_off": "T\u1eaft {entity_name}",
+            "turn_on": "B\u1eadt {entity_name}"
+        },
+        "condition_type": {
+            "is_off": "{entity_name} \u0111ang t\u1eaft"
+        },
+        "trigger_type": {
+            "turned_off": "{entity_name} \u0111\u00e3 t\u1eaft"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "\u0110i\u1ec1u khi\u1ec3n t\u1eeb xa",
+            "state": {
+                "off": "T\u1eaft",
+                "on": "B\u1eadt"
+            }
+        }
+    },
+    "title": "\u0110i\u1ec1u khi\u1ec3n t\u1eeb xa"
+}

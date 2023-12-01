@@ -1,0 +1,17 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                },
+                "data_description": {
+                    "host": "\u201eAxis\u201c \u012frenginio pagrindinio kompiuterio pavadinimas arba IP adresas.",
+                    "username": "Vartotojo vardas, kur\u012f nustat\u0117te \u201eAxis\u201c \u012frenginyje. Rekomenduojama sukurti vartotoj\u0105 specialiai nam\u0173 asistentui."
+                },
+                "description": "Nustatykite Axis \u012frengin\u012f"
+            }
+        }
+    }
+}

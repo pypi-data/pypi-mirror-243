@@ -1,0 +1,29 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Palvelu on jo m\u00e4\u00e4ritetty"
+        },
+        "error": {
+            "unknown_error": "Odottamaton virhe"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "name": "Nimi",
+                    "port": "Portti"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "max_players": {
+                "name": "Soittimet max"
+            },
+            "online_players": {
+                "name": "Soitinta verkossa"
+            }
+        }
+    }
+}

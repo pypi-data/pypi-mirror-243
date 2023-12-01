@@ -1,0 +1,17 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "username": "Prisijungimos vardas"
+                }
+            },
+            "user": {
+                "data": {
+                    "username": "Prisijungimos vardas",
+                    "verify_ssl": "Patikrinkite SSL sertifikat\u0105"
+                }
+            }
+        }
+    }
+}

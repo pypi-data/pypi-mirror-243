@@ -1,0 +1,17 @@
+{
+    "exceptions": {
+        "service_not_found": {
+            "message": "Servizo {domain}.{service} non encontrado."
+        }
+    },
+    "services": {
+        "restart": {
+            "fields": {
+                "safe_mode": {
+                    "description": "Desactivar integraci\u00f3ns e tarxetas personalizadas.",
+                    "name": "Modo seguro"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "device_automation": {
+        "action_type": {
+            "clean": "Anna {entity_name} puhdistaa",
+            "dock": "Anna {entity_name} palata telakkaan"
+        },
+        "condition_type": {
+            "is_cleaning": "{entity_name} on siivoamassa",
+            "is_docked": "{entity_name} on telakoituna"
+        },
+        "trigger_type": {
+            "cleaning": "{entity_name} aloitti siivouksen",
+            "docked": "{entity_name} telakoitu"
+        }
+    },
+    "entity_component": {
+        "_": {
+            "name": "Imuri",
+            "state": {
+                "cleaning": "Siivoaa",
+                "docked": "Telakoituna",
+                "error": "Virhe",
+                "idle": "Toimeton",
+                "off": "Pois",
+                "on": "P\u00e4\u00e4ll\u00e4",
+                "paused": "Pys\u00e4ytetty",
+                "returning": "Palaamassa telakkaan"
+            }
+        }
+    },
+    "issues": {
+        "deprecated_vacuum_base_class": {
+            "description": "Mukautettu integraatio `{platform}` laajentaa vanhentunutta perusluokkaa `VacuumEntity` eik\u00e4 `StateVacuumEntity`.\n\nIlmoita siit\u00e4 `{platform}`-integraation tekij\u00e4lle.\n\nKun `{platform}`:n p\u00e4ivitetty versio on saatavilla, asenna se ja k\u00e4ynnist\u00e4 Home Assistant uudelleen ongelman korjaamiseksi.",
+            "title": "{platform}:n mukautettu integraatio k\u00e4ytt\u00e4\u00e4 vanhentunutta imurointiominaisuutta."
+        },
+        "deprecated_vacuum_base_class_url": {
+            "description": "Mukautettu integraatio `{platform}` laajentaa vanhentunutta perusluokkaa `VacuumEntity` eik\u00e4 `StateVacuumEntity`.\n\nLuo vikailmoitus osoitteessa {issue_tracker}.\n\nKun `{platform}`:n p\u00e4ivitetty versio on saatavilla, asenna se ja k\u00e4ynnist\u00e4 Home Assistant uudelleen ongelman korjaamiseksi.",
+            "title": "{platform}:n mukautettu integraatio k\u00e4ytt\u00e4\u00e4 vanhentunutta imurointiominaisuutta."
+        },
+        "platform_integration_no_support": {
+            "description": "{platform}-integraation {domain}-alusta ei tue alustan asetuksia.\n\nPoista se asetuksista ja k\u00e4ynnist\u00e4 Home Assistant uudelleen ongelman korjaamiseksi.",
+            "title": "Alustan tukea ei tueta"
+        }
+    },
+    "services": {
+        "pause": {
+            "name": "Keskeyt\u00e4"
+        },
+        "start": {
+            "name": "K\u00e4ynnist\u00e4"
+        },
+        "stop": {
+            "name": "Pys\u00e4yt\u00e4"
+        },
+        "turn_off": {
+            "name": "Sammuta"
+        },
+        "turn_on": {
+            "name": "Laita p\u00e4\u00e4lle"
+        }
+    },
+    "title": "Imuri"
+}

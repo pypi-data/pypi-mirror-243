@@ -1,0 +1,45 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Paskyra jau sukonfig\u016bruota"
+        },
+        "error": {
+            "cannot_connect": "Nepavyko prisijungti"
+        },
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                },
+                "title": "I\u0161 naujo autentifikuokite integracij\u0105"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Prisijungimos vardas"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "update_location": {
+                "name": "Atnaujinti viet\u0105"
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "driving": "Rodyti vairavim\u0105 kaip b\u016bsen\u0105",
+                    "driving_speed": "Va\u017eiavimo greitis",
+                    "limit_gps_acc": "Apriboti GPS tikslum\u0105",
+                    "max_gps_accuracy": "Maksimalus GPS tikslumas (metrais)",
+                    "set_drive_speed": "Nustatykite va\u017eiavimo grei\u010dio rib\u0105"
+                },
+                "title": "Paskyros parinktys"
+            }
+        }
+    }
+}

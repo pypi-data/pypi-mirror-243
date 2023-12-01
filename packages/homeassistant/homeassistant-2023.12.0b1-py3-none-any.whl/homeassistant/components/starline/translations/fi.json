@@ -1,0 +1,48 @@
+{
+    "config": {
+        "error": {
+            "error_auth_app": "Virheellinen sovellustunnus tai salaisuus",
+            "error_auth_mfa": "V\u00e4\u00e4r\u00e4 koodi",
+            "error_auth_user": "V\u00e4\u00e4r\u00e4 k\u00e4ytt\u00e4j\u00e4tunnus tai salasana"
+        },
+        "step": {
+            "auth_app": {
+                "data": {
+                    "app_id": "Sovelluksen tunnus",
+                    "app_secret": "Salaisuus"
+                },
+                "description": "Sovellustunnus ja salainen koodi [StarLine-kehitt\u00e4j\u00e4tililt\u00e4](https://my.starline.ru/developer)",
+                "title": "Sovelluksen tunnistetiedot"
+            },
+            "auth_captcha": {
+                "data": {
+                    "captcha_code": "Koodi kuvasta"
+                },
+                "description": "{captcha_img}",
+                "title": "Captcha"
+            },
+            "auth_mfa": {
+                "data": {
+                    "mfa_code": "SMS koodi"
+                },
+                "description": "Sy\u00f6t\u00e4 puhelimeen {phone_number} l\u00e4hetetty koodi",
+                "title": "Kaksivaiheinen todennus"
+            },
+            "auth_user": {
+                "data": {
+                    "password": "Salasana",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                },
+                "description": "StarLine -tilin s\u00e4hk\u00f6postiosoite ja salasana",
+                "title": "K\u00e4ytt\u00e4j\u00e4n tunnistetiedot"
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "battery": {
+                "name": "Akku"
+            }
+        }
+    }
+}

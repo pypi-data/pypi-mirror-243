@@ -1,0 +1,18 @@
+{
+    "config": {
+        "step": {
+            "reauth_confirm": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                },
+                "description": "I\u0161 naujo \u012fveskite slapta\u017eod\u012f: {username}"
+            },
+            "user": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Slapyvardis"
+                }
+            }
+        }
+    }
+}

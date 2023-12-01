@@ -1,0 +1,37 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Cihaz zaten yap\u0131land\u0131r\u0131lm\u0131\u015f",
+            "invalid_ip_address": "Ge\u00e7ersiz IP adresi."
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "count": "Ping say\u0131s\u0131",
+                    "host": "Sunucu"
+                },
+                "description": "Ping, bir ana bilgisayar\u0131n kullan\u0131labilirli\u011fini kontrol etmenize olanak tan\u0131r.",
+                "title": "Ping Ekle"
+            }
+        }
+    },
+    "options": {
+        "abort": {
+            "invalid_ip_address": "Ge\u00e7ersiz IP adresi."
+        },
+        "step": {
+            "init": {
+                "data": {
+                    "count": "Ping say\u0131s\u0131",
+                    "host": "Sunucu"
+                }
+            }
+        }
+    },
+    "services": {
+        "reload": {
+            "description": "YAML yap\u0131land\u0131rmas\u0131ndan ping sens\u00f6rlerini yeniden y\u00fckler.",
+            "name": "Tekrar y\u00fckle"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Kontoen er allerede konfigurert",
+            "reauth_successful": "Re-autentisering var vellykket",
+            "unknown": "Uventet feil"
+        },
+        "step": {
+            "reauth_confirm": {
+                "title": "Godkjenne integrering p\u00e5 nytt"
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "data": {
+                    "language": "Kalba"
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "language": "Kalba"
+                }
+            }
+        }
+    }
+}

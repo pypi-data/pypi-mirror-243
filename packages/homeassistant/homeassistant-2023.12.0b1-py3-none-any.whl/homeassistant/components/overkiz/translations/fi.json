@@ -1,0 +1,59 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Tili on jo m\u00e4\u00e4ritetty",
+            "reauth_successful": "Uudelleentodennus onnistui"
+        },
+        "error": {
+            "cannot_connect": "Yhteyden muodostaminen ep\u00e4onnistui",
+            "invalid_auth": "Virheellinen todennus",
+            "unknown": "Odottamaton virhe",
+            "unsupported_hardware": "T\u00e4m\u00e4 integraatio ei tue {unsupported_device} -laitteistoasi."
+        },
+        "flow_title": "Yhdysk\u00e4yt\u00e4v\u00e4: {gateway_id}",
+        "step": {
+            "user": {
+                "data": {
+                    "host": "Palvelin",
+                    "password": "Salasana",
+                    "username": "K\u00e4ytt\u00e4j\u00e4tunnus"
+                }
+            }
+        }
+    },
+    "entity": {
+        "climate": {
+            "overkiz": {
+                "state_attributes": {
+                    "fan_mode": {
+                        "state": {
+                            "away": "Poissa"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "open_closed_partial": {
+                "state": {
+                    "closed": "Suljettu",
+                    "open": "Auki"
+                }
+            },
+            "open_closed_pedestrian": {
+                "state": {
+                    "closed": "Suljettu",
+                    "open": "Auki"
+                }
+            }
+        },
+        "sensor": {
+            "three_way_handle_direction": {
+                "state": {
+                    "closed": "Suljettu",
+                    "open": "Auki"
+                }
+            }
+        }
+    }
+}

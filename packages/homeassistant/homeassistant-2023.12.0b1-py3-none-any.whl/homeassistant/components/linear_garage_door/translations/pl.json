@@ -1,0 +1,15 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Urz\u0105dzenie jest ju\u017c skonfigurowane",
+            "reauth_successful": "Ponowne uwierzytelnienie powiod\u0142o si\u0119"
+        },
+        "step": {
+            "user": {
+                "data": {
+                    "password": "Has\u0142o"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "services": {
+        "set_all_zones": {
+            "description": "Asettaa kaikki Blackbird -alueet yhdeksi l\u00e4hteeksi.",
+            "fields": {
+                "entity_id": {
+                    "description": "Mink\u00e4 tahansa Blackbird -alueen nimi.",
+                    "name": "Kohde"
+                }
+            }
+        }
+    }
+}

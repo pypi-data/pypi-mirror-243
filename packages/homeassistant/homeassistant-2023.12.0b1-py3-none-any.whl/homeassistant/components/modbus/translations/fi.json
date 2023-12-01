@@ -1,0 +1,23 @@
+{
+    "issues": {
+        "deprecated_close_comm_config": {
+            "description": "Poista `{config_key}`-avain {integration}-merkinn\u00e4st\u00e4 configuration.yaml-tiedostossa ja k\u00e4ynnist\u00e4 Home Assistant uudelleen ongelman korjaamiseksi.\n\nTiedonsiirto suljetaan automaattisesti virheiden yhteydess\u00e4, katso [dokumentaatio]({url}) muista virheenk\u00e4sittelyparametreista.",
+            "title": "`{config_key}` konfiguraatioavain poistetaan."
+        },
+        "deprecated_retry_on_empty": {
+            "description": "Poista `{config_key}`-avain {integration}-merkinn\u00e4st\u00e4 configuration.yaml-tiedostossa ja k\u00e4ynnist\u00e4 Home Assistant uudelleen ongelman korjaamiseksi.\n\nRetry on empty (yrit\u00e4 uudelleen tyhj\u00e4n\u00e4) on k\u00e4yt\u00f6ss\u00e4 automaattisesti, katso [dokumentaatio]({url}) muista virheenk\u00e4sittelyparametreista.",
+            "title": "`{config_key}` konfiguraatioavain poistetaan."
+        }
+    },
+    "services": {
+        "reload": {
+            "name": "Uudelleenlataa"
+        },
+        "restart": {
+            "name": "Uudelleenk\u00e4ynnist\u00e4"
+        },
+        "stop": {
+            "name": "Pys\u00e4yt\u00e4"
+        }
+    }
+}
