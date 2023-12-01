@@ -1,0 +1,20 @@
+Metadata-Version: 2.1
+Name: pyrkm
+Version: 0.0.2
+Summary: Train a RKM
+Home-page: https://github.com/SCiarella/circuit-rbm
+Author: Simone Ciarella
+Author-email: <simoneciarella@gmail.com>
+Keywords: python,statistical physics,machine learning,rbm
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Education
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: torch
+Requires-Dist: torchvision
+Requires-Dist: scipy
+
+A Python package to simulate and train a RKM model
