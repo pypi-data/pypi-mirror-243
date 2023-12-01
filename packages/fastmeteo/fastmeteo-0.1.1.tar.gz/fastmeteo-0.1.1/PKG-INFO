@@ -1,0 +1,116 @@
+Metadata-Version: 2.1
+Name: fastmeteo
+Version: 0.1.1
+Summary: Fast interpolation for ERA5 data with Zarr
+License: GNU Lesser General Public License v3 (LGPLv3)
+Author: Junzi Sun
+Author-email: j.sun-1@tudelft.nl
+Requires-Python: >=3.9,<4.0
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)
+Classifier: License :: Other/Proprietary License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Requires-Dist: dask (>=2023.11.0,<2024.0.0)
+Requires-Dist: fastapi (>=0.104.1,<0.105.0)
+Requires-Dist: fsspec (>=2023.10.0,<2024.0.0)
+Requires-Dist: gcsfs (>=2023.10.0,<2024.0.0)
+Requires-Dist: numpy (>=1.26.2,<2.0.0)
+Requires-Dist: pandas (>=2.1.3,<3.0.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Requires-Dist: uvicorn (>=0.24.0.post1,<0.25.0)
+Requires-Dist: xarray (>=2023.11.0,<2024.0.0)
+Requires-Dist: zarr (>=2.16.1,<3.0.0)
+Description-Content-Type: text/markdown
+
+# Fast Meteo
+
+A super-fast Python package to obtain meteorological parameters for your flight trajectories.
+
+## Install
+
+### stable version
+
+```
+pip install fastmeteo
+
+```
+
+### development version
+
+```
+pip install git+https://github.com/junzis/fastmeteo
+```
+
+or, if you prefer `poetry`:
+
+```
+git clone https://github.com/junzis/fastmeteo
+cd fastmeteo
+poetry install
+```
+
+## Usage
+
+### Local mode
+
+You can get the weather information for a given flight or position with the following code. Basic information on time, latitude, longitude, and altitude is needed.
+
+```python
+
+import pandas as pd
+from fastmeteo import Grid
+
+flight = pd.DataFrame(
+    {
+        "timestamp": ["2021-10-12T01:10:00", "2021-10-12T01:20:00"],
+        "latitude": [40.3, 42.5],
+        "longitude": [4.2, 6.6],
+        "altitude": [25_000, 30_000],
+    }
+)
+
+# define the location for local store
+fmg = Grid(local_store="/tmp/era5-zarr")
+
+# obtain weather information
+flight_new = fmg.interpolate(flight)
+
+```
+
+### Server-client mode
+
+When running the tool in a server-client mode. The following script can be used to start a FastAPI service on the server. It handles the flight date request and obtains Google ARCO data if the partition is not on the server. After that, it will perform the interpolation of weather data and return the final data to the client.
+
+```
+fastmeteo-serve --local-store /tmp/era5-zarr
+```
+
+At the client side, the following code can be used to submit and get the process flight with meteorology data.
+
+```python
+import pandas as pd
+from fastmeteo import Client
+
+flight = pd.DataFrame(
+    {
+        "timestamp": ["2021-10-12T01:10:00", "2021-10-12T01:20:00"],
+        "latitude": [40.3, 42.5],
+        "longitude": [4.2, 6.6],
+        "altitude": [25_000, 30_000],
+    }
+)
+
+# define the client object
+client = Client()
+
+# send the flight and receive the new DataFrame
+flight_new = client.submit_flight(flight)
+```
+
