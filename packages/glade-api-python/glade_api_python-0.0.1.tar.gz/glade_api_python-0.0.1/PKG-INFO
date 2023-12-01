@@ -1,0 +1,147 @@
+Metadata-Version: 2.1
+Name: glade_api_python
+Version: 0.0.1
+Summary: Glade API Python Package
+Author: Oluwatobi Adelabu
+Author-email: Oluwatobi <Oluwatobi@glade.ng>
+Project-URL: Homepage, https://gitlab.com/gladepay-apis/gladepython
+Project-URL: Issues, https://gitlab.com/gladepay-apis/gladepython/issues
+Project-URL: Documentation, https://developer.gladefinance.co/docs
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+## About
+
+To Learn more, visit https://developer.gladefinance.co/docs
+
+## Getting Started 
+You need a Merchant ID and Key to authenticate against the API, please contact support@gladefinance.co to setup a demo account.
+
+## Installation
+You can close this project and include the class in your project or you can add the repo in your composer.json file as in the example below:
+
+
+
+## Set environment
+
+```` 
+from src.glade_functions import Glade
+
+merchantId = "YOUR_MERCHANT_ID"
+merchantKey = "YOUR_MERCHANT_KEY"
+````
+
+For Production environment
+```` 
+api = Glade(merchantId, merchantKey, True)
+````
+
+For Sandbox environment
+```` 
+api = Glade(merchantId, merchantKey, False)
+````
+
+## Methods
+BVN Verification
+```` 
+api.bvnValidation(bvnNumber); 
+````
+
+
+Get Chargeable Banks
+```` 
+api.supportedChargeableBanks(); 
+````
+
+Get Bank List
+```` 
+api.bankList(); 
+````
+
+Verify Account Name
+```` 
+api.verifyAccountName(accountNumber, bankCode, bankName); 
+````
+
+Get Personalized Account Info
+```` 
+api.personalizedAccount( accountName, accountEmail, accountBvn, reference, channel = "providus"); 
+````
+
+Create Customer
+```` 
+api.createCustomer(name, email, phoneNumber, address); 
+````
+
+Get All Customers
+```` 
+api.getCustomers(); 
+````
+
+Get A Single Customer's Details
+```` 
+api.getCustomerDetail(customerId); 
+````
+
+Get All Bill Categories
+```` 
+api.getBillCategory(category = None); 
+````
+
+Get Bill ID
+```` 
+api.getBillById(billId); 
+````
+
+Resolve Bill
+```` 
+api.resolveBill(payCode, reference); 
+````
+
+Purchase Bill
+```` 
+api.purchaseBill(payCode, amount, reference, orderReference = None); 
+````
+
+Verify Bill Purchase
+```` 
+api.verifyBillPurchase(transactionReference); 
+````
+
+Make A Single Transfer
+```` 
+api.transfer(amount, receiverAccountNumber, receiverBankCode, senderName, reference, narration);
+````
+
+Verify Single Transfer
+```` 
+api.verifySingleTransfer(reference); 
+````
+
+Make Bulk Transfer
+```` 
+api.bulkTransfer(transferObjects); 
+````
+
+Create Payment Link
+````
+ api.createPaymentLink(title, description, amount, type, payerBearsFees, acceptNumber, notificationEmail, customLink = None, redirectUrl = None, customMessage = None, frequency = None); 
+ ````
+
+Create Ticket
+````  
+api.createTicket(title, description, amount, type, payerBearsFees, acceptNumber, notificationEmail, ticketData, customLink = None,  redirectUrl = None, customMessage = None, frequency = None); 
+````
+
+Create Invoice
+```` 
+api.invoice(customerId, chargeUser, shipping, vat, dueDate, allowedDiscount, invoiceItems, note, discountType = None, invoiceId = None); 
+````
+
+
+## Return Values
+All methods return an array.
