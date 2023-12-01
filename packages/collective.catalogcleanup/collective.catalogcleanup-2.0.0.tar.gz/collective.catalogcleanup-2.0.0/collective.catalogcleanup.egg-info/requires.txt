@@ -1,0 +1,9 @@
+plone.protect
+plone.uuid
+Products.CMFCore
+Products.CMFPlone
+setuptools
+
+[test]
+collective.noindexing
+plone.app.testing
