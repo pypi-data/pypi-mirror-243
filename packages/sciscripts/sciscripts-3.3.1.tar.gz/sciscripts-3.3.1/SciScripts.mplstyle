@@ -1,0 +1,34 @@
+## Sciscripts Matplotlib style
+axes.labelpad:      1.0
+axes.spines.right:  False
+axes.spines.top:    False
+axes.titlesize:     10
+
+boxplot.showmeans:   False
+
+figure.figsize:     6.3, 2.916
+figure.subplot.hspace: 0.2
+figure.subplot.wspace: 0.2
+
+font.size:    10.0
+
+image.cmap: inferno
+
+legend.fontsize:     8
+
+lines.linewidth: 1
+
+pdf.fonttype:       42
+
+pgf.preamble:
+pgf.rcfonts: False
+
+savefig.format: svg
+savefig.transparent: True
+
+svg.fonttype: none
+
+xtick.direction:     out
+xtick.labelsize:     8
+ytick.direction:     out
+ytick.labelsize:     8

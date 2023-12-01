@@ -1,0 +1,51 @@
+## Sciscripts Matplotlib style
+axes.labelpad:              1.0
+axes.labelsize:             7.5
+axes.spines.right:          False
+axes.spines.top:            False
+axes.titlesize:             7.5
+
+boxplot.showmeans:          False
+
+figure.figsize:             6.3, 2.916
+figure.subplot.hspace:      0.2
+figure.subplot.wspace:      0.2
+
+font.family:                sans-serif
+font.monospace:             DejaVu Sans Mono
+font.sans-serif:            DejaVu Sans
+font.serif:                 DejaVu Serif
+font.size:                  7
+mathtext.fontset:           custom
+mathtext.default:           sf
+mathtext.cal:               DejaVu Sans
+mathtext.rm:                DejaVu Sans
+mathtext.sf:                DejaVu Sans
+mathtext.it:                DejaVu Sans:italic
+mathtext.bf:                DejaVu Sans:bold
+mathtext.tt:                DejaVu Sans Mono
+mathtext.fallback:          None
+
+image.cmap:                 inferno
+
+legend.fontsize:            5.5
+
+lines.linewidth:            1
+
+pdf.fonttype:               42
+
+pgf.preamble:               
+pgf.rcfonts:                False
+
+savefig.format:             svg
+savefig.transparent:        True
+
+svg.fonttype:               none
+
+xtick.direction:            out
+xtick.labelsize:            7.0
+ytick.direction:            out
+ytick.labelsize:            7.0
+
+## Additional parameters that cannot be set in matplotlib directly:
+# subplot label size: 9.5

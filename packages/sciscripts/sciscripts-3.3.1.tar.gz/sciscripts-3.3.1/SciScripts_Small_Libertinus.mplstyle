@@ -1,0 +1,53 @@
+## Sciscripts Matplotlib style
+axes.labelpad:              1.0
+axes.labelsize:             9
+axes.spines.right:          False
+axes.spines.top:            False
+axes.titlesize:             9
+
+boxplot.showmeans:          False
+
+figure.figsize:             6.3, 2.916
+figure.subplot.hspace:      0.2
+figure.subplot.wspace:      0.2
+
+font.family:                sans-serif
+font.monospace:             Libertinus Mono
+font.sans-serif:            Libertinus Sans
+font.serif:                 Libertinus Serif
+font.size:                  8.5
+mathtext.fontset:           custom
+mathtext.default:           sf
+mathtext.cal:               Libertinus Math
+mathtext.rm:                Libertinus Math
+mathtext.sf:                Libertinus Math
+mathtext.it:                Libertinus Math:italic
+mathtext.bf:                Libertinus Math:bold
+mathtext.tt:                Libertinus Math:mono
+mathtext.fallback:          None
+text.usetex:                False
+text.latex.preamble:        \usepackage{libertinus}
+
+image.cmap:                 inferno
+
+legend.fontsize:            7
+
+lines.linewidth:            1
+
+pdf.fonttype:               42
+
+pgf.preamble:               
+pgf.rcfonts:                False
+
+savefig.format:             svg
+savefig.transparent:        True
+
+svg.fonttype:               none
+
+xtick.direction:            out
+xtick.labelsize:            8.5
+ytick.direction:            out
+ytick.labelsize:            8.5
+
+## Additional parameters that cannot be set in matplotlib directly:
+# subplot label size: 9.5
