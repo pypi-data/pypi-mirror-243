@@ -1,0 +1,14 @@
+LICENSE.rst
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+cythonfastsort/README.MD
+cythonfastsort/__init__.py
+cythonfastsort/requirements.txt
+cythonfastsort/thirdparty.json
+cythonfastsort.egg-info/PKG-INFO
+cythonfastsort.egg-info/SOURCES.txt
+cythonfastsort.egg-info/dependency_links.txt
+cythonfastsort.egg-info/requires.txt
+cythonfastsort.egg-info/top_level.txt

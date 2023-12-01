@@ -1,0 +1,3 @@
+include cythonfastsort/requirements.txt
+include cythonfastsort/thirdparty.json
+include cythonfastsort/README.MD
