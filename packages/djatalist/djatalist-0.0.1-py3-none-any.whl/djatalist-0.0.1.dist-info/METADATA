@@ -1,0 +1,56 @@
+Metadata-Version: 2.1
+Name: djatalist
+Version: 0.0.1
+Project-URL: Documentation, https://github.com/d-flood/djatalist#readme
+Project-URL: Issues, https://github.com/d-flood/djatalist/issues
+Project-URL: Source, https://github.com/d-flood/djatalist
+Author-email: David Flood <davidfloodii@gmail.com>
+License-Expression: MIT
+License-File: LICENSE.txt
+Classifier: Development Status :: 4 - Beta
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Python: >=3.7
+Requires-Dist: django==4.2.7
+Description-Content-Type: text/markdown
+
+# Djatalist
+
+[![PyPI - Version](https://img.shields.io/pypi/v/djatalist.svg)](https://pypi.org/project/djatalist)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/djatalist.svg)](https://pypi.org/project/djatalist)
+
+-----
+
+**Table of Contents**
+
+- [Installation](#installation)
+- [License](#license)
+
+## Installation
+
+```shell
+pip install djatalist
+```
+
+Add to installed apps
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    'djatalist',
+]
+```
+
+
+## License
+
+`djatalist` is distributed under the terms of the [MIT](https://spdx.org/licenses/MIT.html) license.
