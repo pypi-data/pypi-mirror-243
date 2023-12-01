@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "expyfp"
+version = "0.1.2"
+description = ""
+authors = ["lone_druid <enikita332@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+rich = "^13.7.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.27.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
