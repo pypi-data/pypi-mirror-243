@@ -1,0 +1,13 @@
+importlib-metadata
+pandas
+matplotlib
+numpy
+numba
+pint
+psutil
+PyCO2SYS
+
+[testing]
+setuptools
+pytest
+pytest-cov

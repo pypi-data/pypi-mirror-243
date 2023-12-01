@@ -1,0 +1,9 @@
+python >= 3.9
+matplotlib
+numpy
+pandas
+pint
+typing
+os
+psutil
+PyCO2SYS
