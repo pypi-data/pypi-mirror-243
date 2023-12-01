@@ -1,0 +1,103 @@
+{
+    "Parameters": {
+        "GithubOrg": {
+            "Type": "String",
+            "Description": "Name of GitHub organization/user (case sensitive)"
+        },
+        "GithubRepoName": {
+            "Type": "String",
+            "Description": "Name of GitHub repository (case sensitive)"
+        },
+        "OIDCProviderArn": {
+            "Type": "String",
+            "Default": "",
+            "Description": "Arn for the GitHub OIDC Provider. (optional)"
+        },
+        "OIDCAudience": {
+            "Type": "String",
+            "Default": "sts.amazonaws.com",
+            "Description": "Audience supplied to configure-aws-credentials"
+        },
+        "RoleName": {
+            "Type": "String",
+            "Description": "Name of the IAM role to be assumed by GitHub Actions"
+        }
+    },
+    "Conditions": {
+        "CreateOIDCProvider": {
+            "Fn::Equals": [
+                {
+                    "Ref": "OIDCProviderArn"
+                },
+                ""
+            ]
+        }
+    },
+    "Resources": {
+        "GitHubOIDCProvider": {
+            "Type": "AWS::IAM::OIDCProvider",
+            "Properties": {
+                "ClientIdList": [
+                    "sts.amazonaws.com"
+                ],
+                "ThumbprintList": [
+                    "ffffffffffffffffffffffffffffffffffffffff"
+                ],
+                "Url": "https://token.actions.githubusercontent.com"
+            },
+            "Condition": "CreateOIDCProvider"
+        },
+        "GitHubActionRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Version": "2008-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Federated": {
+                                    "Fn::If": [
+                                        "CreateOIDCProvider",
+                                        {
+                                            "Ref": "GitHubOIDCProvider"
+                                        },
+                                        {
+                                            "Ref": "OIDCProviderArn"
+                                        }
+                                    ]
+                                }
+                            },
+                            "Action": "sts:AssumeRoleWithWebIdentity",
+                            "Condition": {
+                                "StringEquals": {
+                                    "token.actions.githubusercontent.com:aud": {
+                                        "Ref": "OIDCAudience"
+                                    }
+                                },
+                                "StringLike": {
+                                    "token.actions.githubusercontent.com:sub": {
+                                        "Fn::Sub": [
+                                            "repo:${github_org}/${github_repo_name}:*",
+                                            {
+                                                "github_org": {
+                                                    "Ref": "GithubOrg"
+                                                },
+                                                "github_repo_name": {
+                                                    "Ref": "GithubRepoName"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "RoleName": {
+                    "Ref": "RoleName"
+                }
+            }
+        }
+    }
+}
