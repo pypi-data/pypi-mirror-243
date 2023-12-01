@@ -1,0 +1,16 @@
+protein_data_handler/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/fasta.py,sha256=OB4brc4YE0JYe1VDGw4ySgDDwlW7Ot6WXqL0WF3vp6o,2119
+protein_data_handler/helpers/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/helpers/config/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/helpers/config/yaml.py,sha256=x3ycTOIc3WgCft3Duux2mH4gXp29F7b9iGd29PrNCW8,317
+protein_data_handler/helpers/database/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/helpers/database/database.py,sha256=Xdl7Vj82dkgb-_QNeTOG8EraHLfWoo0cTNO6Co_tlnQ,393
+protein_data_handler/helpers/parser/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/helpers/parser/parser.py,sha256=NEGRVrPLiRSlsD_fhDJ2qcotLEb2paD03TnNRMl0pHE,2723
+protein_data_handler/models/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+protein_data_handler/models/uniprot.py,sha256=umTpQCaCDnctxdJpgXfaC9g10YlEGl0GgkSm0rSBsaU,8273
+protein_data_handler/pdb.py,sha256=nyrh6c0VbFJQTFHV7VJ8HPLIs61OOWjRFLY6kfVS2CI,541
+protein_data_handler/uniprot.py,sha256=4pPei9lCu7udYd7VK3PX9BtD33VCFWfuwM5BgwRXzJg,10585
+protein_data_handler-1.0.6.dist-info/METADATA,sha256=Enw-2qLYzFzITe6FWAeY9ARNq_xQY9z_Zh69T-xdsgI,3449
+protein_data_handler-1.0.6.dist-info/WHEEL,sha256=kLuE8m1WYU0Ig0_YEGrXyTtiJvKPpLpDEiChiNyei5Y,88
+protein_data_handler-1.0.6.dist-info/RECORD,,
