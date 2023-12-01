@@ -1,0 +1,14 @@
+buscoplotpy/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+buscoplotpy/graphics/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+buscoplotpy/graphics/chromosome.py,sha256=xyrsbpBJvGDP5RjDnvEEAmX4xRaDI-YEeUDCCvttwvw,5660
+buscoplotpy/graphics/karyoplot.py,sha256=ZY1dtehsx-wnOKIZxi08-dGhRpbp-BFktIPHZiA2avQ,5959
+buscoplotpy/graphics/label.py,sha256=AsuD20yW8Oyfqa4ZnkEcY2ULm0So8RMnU-OOZbPlil8,1162
+buscoplotpy/graphics/organism_busco_barplot.py,sha256=JANBNKRMisalwAEmkMCV6-IhG1oEhsKxsOQz8eqmbHs,5068
+buscoplotpy/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+buscoplotpy/utils/load_busco_fulltable.py,sha256=3yafrdAsrdtHaUh7G8P5VGCQXznW1G0r4_mBBnndbZ0,1914
+buscoplotpy/utils/load_json_summary.py,sha256=6IIPgd7L29vslMv5ATK-ilfShv8GFWxUSHbyNbAfW4o,2251
+buscoplotpy-0.0.2.dist-info/LICENSE,sha256=DN6sf6TvV1uHNlNbIgJ6KlDcsAsE1GqdK9qcxn-hzG8,1072
+buscoplotpy-0.0.2.dist-info/METADATA,sha256=ltoe6H_37aqgxGcUVdn0CgdZ10VZmUspXQFE7BzaARM,686
+buscoplotpy-0.0.2.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+buscoplotpy-0.0.2.dist-info/top_level.txt,sha256=B-O7Yqpw7b2Ny5hCAHvZv31YedzDUm4bwmQINSuEaFI,12
+buscoplotpy-0.0.2.dist-info/RECORD,,
