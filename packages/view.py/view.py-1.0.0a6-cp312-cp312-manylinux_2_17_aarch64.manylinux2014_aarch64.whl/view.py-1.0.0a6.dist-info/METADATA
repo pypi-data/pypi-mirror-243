@@ -1,0 +1,76 @@
+Metadata-Version: 2.1
+Name: view.py
+Version: 1.0.0a6
+Summary: Lightning fast, modern web framework.
+Author-email: ZeroIntensity <zintensitydev@gmail.com>
+License: MIT
+Project-URL: Documentation, https://view.zintensity.dev
+Project-URL: Issues, https://github.com/ZeroIntensity/view.py/issues
+Project-URL: Source, https://github.com/ZeroIntensity/view.py
+Project-URL: Funding, https://github.com/sponsors/ZeroIntensity
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: rich
+Requires-Dist: click
+Requires-Dist: typing-extensions
+Requires-Dist: ujson
+Requires-Dist: configzen
+Requires-Dist: psutil
+Requires-Dist: plotext
+Requires-Dist: psycopg2-binary
+Requires-Dist: mysql-connector-python
+Requires-Dist: pymongo
+Requires-Dist: uvicorn
+Requires-Dist: aiosqlite
+Provides-Extra: dev
+Requires-Dist: ruff ; extra == 'dev'
+Requires-Dist: mypy ; extra == 'dev'
+
+<div align="center"><img src="https://raw.githubusercontent.com/ZeroIntensity/view.py/master/html/logo.png" alt="view.py logo" width=300 height=auto /></div>
+
+## A new web framework for Python
+
+- [Docs](https://view.zintensity.dev)
+- [Source](https://github.com/ZeroIntensity/view.py)
+- [PyPI](https://pypi.org/project/view.py)
+- [Discord](https://discord.gg/tZAfuWAbm2)
+
+```py
+from view import new_app, h1
+
+app = new_app()
+
+@app.get("/")
+async def index():
+    return h1("Hello, view.py!")
+
+app.run()
+```
+
+### Development Help Wanted
+
+view.py is currently in a very high alpha stage of development, and always looking for new contributors. If you're interested, you can take a look at [the contributors file](https://github.com/Zerointensity/view.py/blob/master/CONTRIBUTING.md).
+
+### Installation
+
+**CPython 3.8+ is required.**
+
+#### Linux/macOS
+
+```
+python3 -m pip install -U view.py
+```
+
+#### Windows
+
+```
+> py -3 -m pip install -U view.py
+```
