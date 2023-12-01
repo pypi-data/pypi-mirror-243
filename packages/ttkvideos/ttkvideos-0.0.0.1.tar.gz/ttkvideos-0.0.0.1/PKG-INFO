@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: ttkvideos
+Version: 0.0.0.1
+Summary: playing video (with audio) in tkinter label
+Home-page: https://github.com/Vishal24102002/ttkvideos
+Author: Vishal Sharma
+Author-email: vishalsharma659615@gmail.com
+License: License
+Keywords: videos
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+License-File: Licence.txt
