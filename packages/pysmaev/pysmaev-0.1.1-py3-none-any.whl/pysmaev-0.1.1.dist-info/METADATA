@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: pysmaev
+Version: 0.1.1
+Summary: SMA EV Charger library
+Author-email: Andre Lengwenus <alengwenus@gmail.com>
+License: MIT
+Project-URL: Source Code, https://github.com/alengwenus/pysmaev
+Project-URL: Bug Reports, https://github.com/alengwenus/pysmaev/issues
+Keywords: sma,charger
+Platform: any
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: OS Independent
+Classifier: Topic :: Home Automation
+Requires-Python: >=3.11.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: aiohttp ==3.9.1
+
+# pysmaev - Asynchronous SMA EV Charger library written in Python
