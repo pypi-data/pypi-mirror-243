@@ -1,0 +1,106 @@
+#!/usr/bin/env python3
+# This file is placed in the Public Domain.
+#
+# pylint: disable=C,R,W0201,W0212,W0105,W0613,W0406,W0611,E0102
+
+
+"main"
+
+
+import os
+import readline
+import sys
+import termios
+import time
+
+
+sys.path.insert(0, os.getcwd())
+
+
+from rssbot.handle import Commands, command
+from rssbot.object import Default
+from rssbot.errors import Errors, debug
+from rssbot.events import Event
+from rssbot.parser import parse
+from rssbot.reacts import Reactor, forever, init
+from rssbot.locate import Storage
+
+
+Cfg = Default()
+Cfg.mod  = "cmd,err,irc,mod,rss,thr,ver"
+Cfg.name = "rssbot"
+Cfg.version = "505"
+Storage.wd = os.path.expanduser(f"~/.{Cfg.name}")
+
+
+from rssbot import modules
+
+
+class Console(Reactor):
+
+    def __init__(self):
+        Reactor.__init__(self)
+        self.register("command", Commands.handle)
+
+    def poll(self) -> Event:
+        evt = Event()
+        evt.orig = object.__repr__(self)
+        evt.txt = input("> ")
+        evt.type = "command"
+        return evt
+
+    def say(self, channel, txt):
+        txt = txt.encode('utf-8', 'replace').decode()
+        sys.stdout.write(txt)
+        sys.stdout.write("\n")
+        sys.stdout.flush()
+
+
+csl = Console()
+
+
+def wrap(func) -> None:
+    old = None
+    try:
+        old = termios.tcgetattr(sys.stdin.fileno())
+    except termios.error:
+        pass
+    try:
+        func()
+    except (EOFError, KeyboardInterrupt):
+        sys.stdout.write("\n")
+        sys.stdout.flush()
+    finally:
+        if old:
+            termios.tcsetattr(sys.stdin.fileno(), termios.TCSADRAIN, old)
+
+
+def ver(event):
+    event.reply(f"{Cfg.name.upper()} {Cfg.version}")
+
+
+def main():
+    Errors.output = print
+    Commands.add(ver)
+    parse(Cfg, " ".join(sys.argv[1:]))
+    if "mod" in Cfg.set:
+        Cfg.mod += "," + Cfg.set.mod 
+    if "v" in Cfg.opts:
+        dte = time.ctime(time.time()).replace("  ", " ")
+        debug(f"{Cfg.name.upper()} started {Cfg.opts.upper()} started {dte}")
+    if "c" in Cfg.opts:
+        thrs = init(modules, Cfg.mod)
+        if "w" in Cfg.opts:
+            for thr in thrs:
+                thr.join()
+        if "t" in Cfg.opts:
+            csl.threaded = True
+        csl.start()
+        forever()
+        return
+    command(Cfg.otxt)
+
+
+if __name__ == "__main__":
+    wrap(main)
+    Errors.show()
