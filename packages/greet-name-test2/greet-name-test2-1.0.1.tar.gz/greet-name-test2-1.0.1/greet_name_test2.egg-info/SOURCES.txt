@@ -1,0 +1,11 @@
+MANIFEST.in
+README.md
+greet_name.py
+requirements.txt
+setup.py
+greet_name_test2.egg-info/PKG-INFO
+greet_name_test2.egg-info/SOURCES.txt
+greet_name_test2.egg-info/dependency_links.txt
+greet_name_test2.egg-info/entry_points.txt
+greet_name_test2.egg-info/requires.txt
+greet_name_test2.egg-info/top_level.txt
