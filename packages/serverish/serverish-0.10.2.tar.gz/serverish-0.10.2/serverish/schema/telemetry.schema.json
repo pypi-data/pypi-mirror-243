@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "ts": {
+            "$ref": "#/definitions/timestamp"
+        },
+        "measurements": {
+            "type": "object"
+        },
+        "version": {
+            "type": "string"
+        }
+    },
+    "required": ["ts", "measurements"],
+    "definitions": {
+        "timestamp": {
+            "type": "array",
+            "description": "Serverish timestamp as an array (tuple): (Year, Month, Day, hour, minute, second, microsecond).",
+            "items": {
+                "type": "integer"
+            },
+            "minItems": 7,
+            "maxItems": 7
+        }
+    }
+}
