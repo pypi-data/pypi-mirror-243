@@ -1,0 +1,1 @@
+{'aws': ['boto3'], 'gcp': ['requests', 'google-auth', 'google-cloud-storage']}
