@@ -1,0 +1,7 @@
+include LICENSE
+include openj/schema.sql
+graft openj/api
+graft openj/static
+graft openj/templates
+graft tests
+global-exclude *.pyc

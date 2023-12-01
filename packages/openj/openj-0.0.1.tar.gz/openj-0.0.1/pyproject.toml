@@ -1,0 +1,29 @@
+[project]
+name = "openj"
+description = "Kanban for Lean manufacturing."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+keywords = ["kanban", "lean", "flask"]
+authors = [
+    {name = "Michael Czigler", email = "michaelczigler@icloud.com"},
+]
+dependencies = ["flask>=3.0.0"]
+dynamic = ["version"]
+
+[project.urls]
+repository = "https://github.com/mcpcpc/openj"
+
+[project.optional-dependencies]
+dev = ["coverage", "black"]
+prod = ["waitress"]
+
+[tool.setuptools.dynamic]
+version = {attr = "openj.__version__"}
+
+[tool.setuptools]
+packages = ["openj"]
+
+[tool.coverage.run]
+branch = true
+source = ["openj"]
