@@ -1,0 +1,1360 @@
+# Copyright (C) 2018-2022 The python-bitcoin-utils developers
+#
+# This file is part of python-bitcoin-utils
+#
+# It is subject to the license terms in the LICENSE file found in the top-level
+# directory of this distribution.
+#
+# No part of python-bitcoin-utils, including this file, may be copied, modified,
+# propagated, or distributed except according to the terms contained in the
+# LICENSE file.
+
+import re
+import struct
+import hashlib
+from abc import ABC, abstractmethod
+from base64 import b64encode, b64decode
+from binascii import unhexlify, hexlify
+from base58check import b58encode, b58decode
+from ecdsa import SigningKey, VerifyingKey, SECP256k1, numbertheory, ellipticcurve
+from ecdsa.util import sigencode_string, sigdecode_string, sigencode_der
+from sympy.ntheory import sqrt_mod
+
+from bitcoinutils.constants import NETWORK_WIF_PREFIXES, \
+        NETWORK_P2PKH_PREFIXES, NETWORK_P2SH_PREFIXES, SIGHASH_ALL, \
+        P2PKH_ADDRESS, P2SH_ADDRESS, P2WPKH_ADDRESS_V0, P2WSH_ADDRESS_V0, \
+        P2TR_ADDRESS_V1, NETWORK_SEGWIT_PREFIXES, TAPROOT_SIGHASH_ALL, \
+        LEAF_VERSION_TAPSCRIPT
+from bitcoinutils.setup import get_network
+from bitcoinutils.utils import bytes32_from_int, encode_varint, add_magic_prefix, \
+                               hex_str_to_int#, tweak_taproot_pubkey
+from bitcoinutils.ripemd160 import ripemd160
+from bitcoinutils.schnorr import schnorr_sign, point_add, point_mul, G, full_pubkey_gen
+from bitcoinutils.utils import EcdsaParams, prepend_varint, calculate_tweak, tagged_hash
+import bitcoinutils.script
+import bitcoinutils.bech32
+
+
+class PrivateKey:
+    """Represents an ECDSA private key.
+
+    Attributes
+    ----------
+    key : bytes
+        the raw key of 32 bytes
+
+    Methods
+    -------
+    from_wif(wif)
+        creates an object from a WIF of WIFC format (string)
+    to_wif(compressed=True)
+        returns as WIFC (compressed) or WIF format (string)
+    to_bytes()
+        returns the key's raw bytes
+    sign_message(message, compressed=True)
+        signs the message's digest and returns the signature
+    sign_input(tx, txin_index, script, sighash=SIGHASH_ALL)
+        creates the transaction's digest and signs it for a particular index
+        and returns the signature.
+    sign_segwit_input(tx, txin_index, script, amount, sighash=SIGHASH_ALL)
+        creates the transaction's digest and signs it for a particular index
+        and amount and returns the signature.
+    sign_taproot_input(tx, txin_index, utxo_scripts, amounts, script_path=False, script=None, sighash=TAPROOT_SIGHASH_ALL, tweak=True)
+        creates the transaction's digest and signs it for a particular index
+        input script_pub_keys and amounts and returns the signature. By default
+        it tweaks the keys but it can be disabled for tapleaf scripts.
+    get_negated_key()
+        returns the negated private key as a hexadecimal string
+    get_taproot_tweak()
+        returns the tweaked private key as a hexadecimal string (classmethod)
+    get_public_key()
+        returns the corresponding PublicKey object
+    """
+
+    def __init__(self, wif=None, secret_exponent=None):
+        """With no parameters a random key is created
+
+        Parameters
+        ----------
+        wif : str, optional
+            the key in WIF of WIFC format (default None)
+        secret_exponent : int, optional
+            used to create a specific key deterministically (default None)
+        """
+
+        if not secret_exponent and not wif:
+            self.key = SigningKey.generate(curve=SECP256k1)
+        else:
+            if wif:
+                self._from_wif(wif)
+            elif secret_exponent:
+                self.key = SigningKey.from_secret_exponent(secret_exponent,
+                                                           curve=SECP256k1)
+
+    def to_bytes(self):
+        """Returns key's bytes"""
+
+        return self.key.to_string()
+
+
+    @classmethod
+    def from_wif(cls, wif):
+        """Creates key from WIFC or WIF format key"""
+
+        return cls(wif=wif)
+
+
+    # expects wif in hex string
+    def _from_wif(self, wif):
+        """Creates key from WIFC or WIF format key
+
+        Check to_wif for the detailed process. From WIF is the reverse.
+
+        Raises
+        ------
+        ValueError
+            if the checksum is wrong or if the WIF/WIFC is not from the
+            configured network.
+        """
+
+        wif_utf = wif.encode('utf-8')
+
+        # decode base58check get key bytes plus checksum
+        data_bytes = b58decode( wif_utf )
+        key_bytes = data_bytes[:-4]
+        checksum = data_bytes[-4:]
+
+        # verify key with checksum
+        data_hash = hashlib.sha256(hashlib.sha256(key_bytes).digest()).digest()
+        if not checksum == data_hash[0:4]:
+            raise ValueError('Checksum is wrong. Possible mistype?')
+
+        # get network prefix and check with current setup
+        network_prefix = key_bytes[:1]
+        if NETWORK_WIF_PREFIXES[get_network()] != network_prefix:
+            raise ValueError('Using the wrong network!')
+
+        # remove network prefix
+        key_bytes = key_bytes[1:]
+
+        # check length of bytes and if > 32 then compressed
+        # use this to instantite an ecdsa key
+        if len(key_bytes) > 32:
+            self.key = SigningKey.from_string(key_bytes[:-1], curve=SECP256k1)
+        else:
+            self.key = SigningKey.from_string(key_bytes, curve=SECP256k1)
+
+
+    def to_wif(self, compressed=True):
+        """Returns key in WIFC or WIF string
+
+        |  Pseudocode:
+        |      network_prefix = (1 byte version number)
+        |      data = network_prefix + (32 bytes number/key) [ + 0x01 if compressed ]
+        |      data_hash = SHA-256( SHA-256( data ) )
+        |      checksum = (first 4 bytes of data_hash)
+        |      wif = Base58CheckEncode( data + checksum )
+        """
+
+        # add network prefix to the key
+        data = NETWORK_WIF_PREFIXES[get_network()] + self.to_bytes()
+
+        if compressed == True:
+            data += b'\x01'
+
+        # double hash and get the first 4 bytes for checksum
+        data_hash = hashlib.sha256(hashlib.sha256(data).digest()).digest()
+        checksum = data_hash[0:4]
+
+        # suffix the key bytes with the checksum and encode to base58check
+        wif = b58encode( data + checksum )
+
+        return wif.decode('utf-8')
+
+
+    def sign_message(self, message, compressed=True):
+        """Signs the message with the private key (deterministically)
+
+        Bitcoin uses a compact format for message signatures (for tx sigs it
+        uses normal DER format). The format has the normal r and s parameters
+        that ECDSA signatures have but also includes a prefix which encodes
+        extra information. Using the prefix the public key can be
+        reconstructed when verifying the signature.
+
+        |  Prefix values:
+        |      27 - 0x1B = first key with even y
+        |      28 - 0x1C = first key with odd y
+        |      29 - 0x1D = second key with even y
+        |      30 - 0x1E = second key with odd y
+
+        If key is compressed add 4 (31 - 0x1F, 32 - 0x20, 33 - 0x21, 34 - 0x22 respectively)
+
+        Returns a Bitcoin compact signature in Base64
+        """
+
+        # All bitcoin signatures include the magic prefix. It is just a string
+        # added to the message to distinguish Bitcoin-specific messages.
+        message_magic = add_magic_prefix(message)
+
+        # create message digest -- note double hashing
+        message_digest = hashlib.sha256( hashlib.sha256(message_magic).digest() ).digest()
+
+        #
+        # sign non-deterministically - no reason
+        #signature = self.key.sign_digest(message_digest,
+        #                                 sigencode=sigencode_string)
+
+        # deterministic signing
+        signature = self.key.sign_digest_deterministic(message_digest,
+                                                       sigencode=sigencode_string,
+                                                       hashfunc=hashlib.sha256)
+        prefix = 27
+        if compressed:
+            prefix += 4
+
+        address = self.get_public_key().get_address(compressed=compressed).to_string()
+        for i in range(prefix, prefix + 4):
+            recid = chr(i).encode('utf-8')
+            sig = b64encode( recid + signature ).decode('utf-8')
+            try:
+                if PublicKey.verify_message(address, sig, message):
+                    return sig
+            except:
+                continue
+
+
+    def sign_input(self, tx, txin_index, script, sighash=SIGHASH_ALL):
+        # get the digest from the transaction object and sign
+        tx_digest = tx.get_transaction_digest(txin_index, script, sighash)
+        return self._sign_input(tx_digest, sighash)
+
+
+    def sign_segwit_input(self, tx, txin_index, script, amount, sighash=SIGHASH_ALL):
+        # get the digest from the transaction object and sign
+        tx_digest = tx.get_transaction_segwit_digest(txin_index, script, amount, sighash)
+        return self._sign_input(tx_digest, sighash)
+
+
+    def sign_taproot_input(self, tx, txin_index, utxo_scripts, amounts, script_path=False, script=None, sighash=TAPROOT_SIGHASH_ALL, tweak=True):
+        # get the digest from the transaction object and sign
+        # note that when signing a tapleaf we typically won't use tweaked 
+        # keys - so tweak should be set to False
+        if script_path:
+            tx_digest = tx.get_transaction_taproot_digest(txin_index, utxo_scripts, 
+                    amounts, 1, script=script, sighash=sighash)
+        else:
+            tx_digest = tx.get_transaction_taproot_digest(txin_index, utxo_scripts, 
+                    amounts, 0, sighash=sighash)
+        return self._sign_taproot_input(tx_digest, sighash, script, tweak)
+
+
+    def _sign_input(self, tx_digest, sighash=SIGHASH_ALL):
+        """Signs a transaction input with the private key
+
+        Bitcoin uses the normal DER format for transactions. Each input is
+        signed separately (thus txin_index is required). The script of the
+        input we wish to spend is required and replaces the transaction's
+        script sig in order to calculate the correct transaction hash (which
+        is what is actually signed!)
+
+        Returns a signature for that input
+        """
+
+        # Both R ans S cannot start with 0x00 (be signed as negative) unless
+        # they are higher than 2^128 or start with 0x80.
+        #
+        # From Bitcoin core v0.17 a Low R value is required. This way
+        # signatures are always 71 bytes. Because R is not mutable in the same
+        # way that S is, a low R value can only be found by trying different
+        # nonces (RFC6979 - deterministic nonce generation).
+        #
+        # https://bitcoin.stackexchange.com/questions/88702/why-is-a-librarys-
+        # signature-of-a-segwit-tx-different-from-bitcoin-core-signatur
+        #
+        # For this reason we test if we get a Low R value (should be <0x80 and
+        # thus not have the 0x00 prefix that specifies a negative signed
+        # number) we need to change the entropy by using extra_entropy and re-sign
+        # until we get a Low R value.
+
+        # sign - note that deterministic signing is used
+        signature = self.key.sign_digest_deterministic(tx_digest,
+                                                       sigencode=sigencode_der,
+                                                       hashfunc=hashlib.sha256)
+
+        # if high R re-sign until we get a low R value
+        # if high R then its size will be 33 bytes to include the sign
+        attempt = 1
+        length_r = signature[3]
+        while(length_r == 33):
+            signature = self.key.sign_digest_deterministic(tx_digest,
+                                                           extra_entropy=bytes32_from_int(attempt),
+                                                           sigencode=sigencode_der,
+                                                           hashfunc=hashlib.sha256)
+            attempt += 1
+            length_r = signature[3]
+        
+        
+        # make sure that signature complies with Low S standardness rule of
+        # BIP62: https://github.com/bitcoin/bips/blob/master/bip-0062.mediawiki
+        #
+        # The S part of the signature is equivalent to (order-S). This allows
+        # for txid malleability attacks where S is modified with (order-S) and
+        # thus a valid signature... but the txid hash would be different!
+        #
+        # For this reason Low S standardness rule specifies that all S's need
+        # to be less than half of the curve order (SECP256k1). If it is not we
+        # ensure it is by substrituting it with (order-S).
+
+        # get DER values individually -- DER structure is:
+        #   1-byte   -- 0x30 to specify a DER compound object (R,S)
+        #   1-byte   -- length of the compound object
+        #   1-byte   -- 0x02 to specify integer type for R
+        #   1-byte   -- length of signature's R value
+        #   variable -- R value
+        #   1-byte   -- 0x02 to specify integer type for S
+        #   1-byte   -- length of signature's S value
+        #   variable -- S value
+
+        der_prefix = signature[0]
+        length_total = signature[1]
+        der_type_int = signature[2]
+        length_r = signature[3]
+        R = signature[4:4+length_r]
+        length_s = signature[5 + length_r]
+        S = signature[5 + length_r + 1:]
+        S_as_bigint = int( hexlify(S).decode('utf-8'), 16 )
+
+        # update S -- Low S standardness rule
+
+        # if length is 33 bytes then it contains a sign and thus is high S
+        if(length_s == 33):
+            new_S_as_bigint = EcdsaParams._order - S_as_bigint 
+            # convert bigint to bytes
+            # TODO maybe use f'{new_S_as_bigint:064x}' - make sure zfill pads the same
+            new_S = unhexlify( format(new_S_as_bigint, 'x').zfill(64) )
+            # new value should be 32 bytes
+            assert len(new_S) == 0x20
+            # reduce appropriate lengths
+            length_s -= 1
+            length_total -= 1
+        else:
+            new_S = S
+
+
+        # reconstruct signature
+        signature = struct.pack('BBBB', der_prefix, length_total, der_type_int, length_r) + R + \
+                        struct.pack('BB', der_type_int, length_s) + new_S
+
+        # add sighash in the signature -- as one byte!
+        signature += struct.pack('B', sighash)
+
+        # note that this is the final sig that needs to be added in the
+        # script_sig (i.e. the DER signature plus the sighash)
+        return hexlify(signature).decode('utf-8')
+
+
+
+    def _sign_taproot_input(self, tx_digest, sighash=SIGHASH_ALL, script=None, tweak=True):
+        """Signs a taproot transaction input with the private key
+
+        Taproot uses Schnorr signatures. The format is just R and S so only
+        64 bytes. If SIGHASH_ALL then nothing is included (i.e. default).
+        If another sighash then it is included in the end (65 bytes).
+
+        Note that when signing for script path (tapleafs) we typically won't 
+        use tweaking so tweak should be set to False
+
+        Returns a signature for that input
+        """
+
+        # script is required for script path tweaking
+        #if not script:
+        #    script = b''
+        #else:
+        #    script = script.to_bytes()
+
+        byte_key = None
+
+        if tweak:
+            # negate the private key if necessary and then tweak it before signing 
+            #negated_key = self.get_negated_key()
+            #tweaked_key = PrivateKey.get_taproot_tweak(negated_key, script, 'TapTweak')
+            # TODO IMPORTATNT
+            # Send to taproot from BITCOIN-CORE to taproot THEN spend from taproot with bitcoinutils
+            # to ensure that the key tweak is identical to core........
+            # pass non-negated ?!?!?
+            #print(hexlify(self.key.to_string()).decode('utf'))
+            tweaked_key = PrivateKey.get_taproot_tweak(self.key.to_string().hex(), script, 'TapTweak')
+            negated_key = PrivateKey.get_negated_key(tweaked_key)
+            byte_key = bytes.fromhex(tweaked_key)
+        else:
+            # negate the private key if necessary
+            # TODO NEGATE????
+            #negated_key = self.get_negated_key()
+            #byte_key = bytes.fromhex(negated_key)
+            negated_key = PrivateKey.get_negated_key(self.key.to_string().hex())
+            byte_key = bytes.fromhex(negated_key)
+
+        # deterministic signing nonce is random and RFC6979-like
+        # it is the hash of the tx_digest and private key
+        # TODO not identical to Bitcoin Core's signature, rand_aux
+        # needs to change if we want identical signatures!
+        rand_aux = hashlib.sha256(tx_digest + byte_key).digest()
+
+        # use BIP-340 python's reference implementation for signing
+        sig = schnorr_sign(tx_digest, byte_key, rand_aux)
+
+        # 65 bytes if sighash is not TAPROOT_SIGHASH_ALL
+        if sighash != TAPROOT_SIGHASH_ALL:
+            sig += sighash.to_bytes(1, 'big')
+
+        sig_hex = hexlify(sig)
+        
+        return sig_hex 
+
+
+    @classmethod
+    def get_negated_key(self, privkey: str) -> bool:
+        """Checks if corresponding public is has odd y and negates"""
+
+        key_secret_exponent = hex_str_to_int(privkey)
+
+        priv_key = PrivateKey(secret_exponent=key_secret_exponent)
+        pubkey = priv_key.get_public_key()
+
+        if not int(pubkey.to_hex()[-2:], 16) % 2 == 0:
+        #if not pubkey.is_y_even():
+            # negate private key
+            key_secret_exponent = EcdsaParams._order - key_secret_exponent
+
+        return hex(key_secret_exponent)[2:]
+
+
+    @classmethod
+    def get_taproot_tweak(self, privkey: str, script: object) -> str:
+        """Returns a tweaked private key as a hexadecimal string.
+
+        Assumes that the key is already negated, if necessary.
+        """
+
+        # could also use the PrivateKey object to get pubkey_x_bytes but we
+        # use the schnorr lib code instead
+        pubkey_bytes = full_pubkey_gen(bytes.fromhex(privkey))
+        pubkey = PublicKey( '04' + pubkey_bytes.hex() )
+        
+        tweak_int = calculate_tweak( pubkey, script )
+
+        priv_key_as_int = hex_str_to_int(privkey)
+
+        # apply the tweak
+        tweaked_privkey_int = (priv_key_as_int + tweak_int) % EcdsaParams._order
+
+        #print(f'Tweaked Private Key: {tweaked_privkey_int:064x}')
+        return f'{tweaked_privkey_int:064x}'
+
+ 
+
+    def get_public_key(self):
+        """Returns the corresponding PublicKey"""
+
+        verifying_key = hexlify(self.key.get_verifying_key().to_string())
+        return PublicKey( '04' + verifying_key.decode('utf-8') )
+
+
+
+class PublicKey:
+    """Represents an ECDSA public key.
+
+    Attributes
+    ----------
+    key : bytes
+        the raw public key of 64 bytes (x, y coordinates of the ECDSA curve)
+
+    Methods
+    -------
+    from_hex(hex_str)
+        creates an object from a hex string in SEC format (classmethod)
+    from_message_signature(signature)
+        NO-OP! (classmethod)
+    verify_message(address, signature, message) (classmethod)
+        constructs the public key, confirms the address and
+        verifies the signature (classmethod)
+    verify(signature, message)
+        returns true if the message was signed with this public key's
+        corresponding private key.
+    to_hex(compressed=True)
+        returns the key as hex string (in SEC format - compressed by default)
+    to_x_only_hex(script)
+        returns the x coordinate only as hex string before tweaking (needed for taproot)
+    to_taproot_hex(script)
+        returns the x coordinate only as hex string after tweaking (needed for taproot)
+    is_y_even()
+        returns true if y coordinate is even
+    get_negated_key()
+        returns the negated public key as a hexadecimal string
+    get_taproot_tweak()
+        returns the tweaked public key as a hexadecimal string (classmethod)
+    to_bytes()
+        returns the key's raw bytes
+    to_hash160()
+        returns the hash160 hex string of the public key
+    get_address(compressed=True))
+        returns the corresponding P2pkhAddress object
+    get_segwit_address()
+        returns the corresponding P2wpkhAddress object
+    get_taproot_address(script)
+        returns the corresponding P2trAddress object
+    """
+
+
+    def __init__(self, hex_str):
+        """
+        Parameters
+        ----------
+        hex_str : str
+            the public key in hex string
+
+        Raises
+        ------
+        TypeError
+            If first byte of public key (corresponding to SEC format) is
+            invalid.
+        """
+
+        # expects key as hex string - SEC format (is 65 or 33 bytes long)
+        # taproot is 32 bytes long
+        hex_bytes = unhexlify(hex_str)
+
+        taproot = False 
+
+        # check if compressed or not
+        if len(hex_bytes) > 64:
+            # uncompressed - SEC format: 0x04 + x + y coordinates (x,y are 32 byte numbers)
+            # remove first byte and instantiate ecdsa key
+            self.key = VerifyingKey.from_string(hex_bytes[1:], curve=SECP256k1)
+        elif len(hex_bytes) == 64:
+            # raw public key bytes
+            self.key = VerifyingKey.from_string(hex_bytes, curve=SECP256k1)
+        elif len(hex_bytes) > 31:
+            # key is either compressed in SEC or taproot
+
+            # taproot is 32 bytes and it should always be prefixed with 0x02
+            if len(hex_bytes) == 32:
+                taproot = True 
+
+            first_byte_in_hex = None
+
+            # compressed - SEC FORMAT: 0x02|0x03 + x coordinate (if 02 then y
+            # is even else y is odd. Calculate y and then instantiate the ecdsa key
+            # If taproot, 0x02 is implicit
+            if taproot:
+                x_coord = int( hex_str, 16 )
+            else:
+                first_byte_in_hex = hex_str[:2] # 2 since a byte is represented by 2 hex characters
+                x_coord = int( hex_str[2:], 16 )
+
+            # y = modulo_square_root( (x**3 + 7) mod p ) -- there will be 2 y values
+            y_values = sqrt_mod( (x_coord**3 + 7) % EcdsaParams._p, EcdsaParams._p, True )
+
+            # check SEC format's first byte to determine which of the 2 values to use
+            if first_byte_in_hex == '02' or taproot:
+                # y is the even value
+                if y_values[0] % 2 == 0:
+                    y_coord = y_values[0]
+                else:
+                    y_coord = y_values[1]
+            elif first_byte_in_hex == '03':
+                # y is the odd value
+                if y_values[0] % 2 == 0:
+                    y_coord = y_values[1]
+                else:
+                    y_coord = y_values[0]
+            else:
+                raise TypeError("Invalid SEC compressed format")
+
+            uncompressed_hex = f'{x_coord:064x}{y_coord:064x}'
+            uncompressed_hex_bytes = unhexlify(uncompressed_hex)
+            self.key = VerifyingKey.from_string(uncompressed_hex_bytes, curve=SECP256k1)
+
+
+    @classmethod
+    def from_hex(cls, hex_str):
+        """Creates a public key from a hex string (SEC format)"""
+
+        return cls(hex_str)
+
+
+    def to_bytes(self):
+        """Returns key's bytes"""
+
+        return self.key.to_string()
+
+
+    def to_hex(self, compressed=True):
+        """Returns public key as a hex string (SEC format - compressed by
+        default)"""
+
+        key_hex = hexlify(self.key.to_string())
+
+        if compressed:
+            # check if y is even or odd (02 even, 03 odd)
+            if int(key_hex[-2:], 16) % 2 == 0:
+                key_str = b'02' + key_hex[:64]
+            else:
+                key_str = b'03' + key_hex[:64]
+        else:
+            # uncompressed starts with 04
+            key_str = b'04' + key_hex
+
+        return key_str.decode('utf-8')
+
+
+    def to_x_only_hex(self):
+        """Returns the x coordinate of the public key as hex string."""
+
+        key_hex = self.key.to_string().hex()
+
+        # x does not change, thus only for displaying purposes we don't need
+        # to negate, even for taproot
+        #if not self.is_y_even():
+        #    key_hex = self.get_negated_key()
+
+        return key_hex[:64]
+
+
+
+    def to_taproot_hex(self, script=None):
+        """Returns the tweaked x coordinate of the public key as a hex string."""
+
+        key_hex = self.key.to_string().hex()
+        #if not self.is_y_even():
+        #    key_hex = self.get_negated_key()
+
+        # negated key is sent - y is required internally for ec arithmetics
+        tweaked_key = PublicKey.get_taproot_tweak(key_hex, script)
+
+        # negate key if needed
+        if not PublicKey.is_y_even(tweaked_key):
+            tweaked_key = PublicKey.get_negated_key(tweaked_key)
+
+        # public key in x form only
+        return tweaked_key[:64]
+
+        #pubkey = tweak_taproot_pubkey(self.key.to_string(), script.to_bytes(), 'TapTweak')[:64]
+        #return pubkey
+
+
+    @classmethod
+    def is_y_even(self, pubkey: str) -> bool:
+        """Returns True if the y coordinate of the public key is even and False otherwise."""
+        
+        y = hex_str_to_int( pubkey[64:] )
+
+        return y % 2 == 0
+
+    @classmethod
+    def get_negated_key(self, pubkey: str) -> str:
+        """Returns a negated hexadecimal string of the public key or just the key if already a key with even y (i.e. key that starts with 02 pre-taproot)."""
+        
+        x = hex_str_to_int( pubkey[:64] )
+        y = hex_str_to_int( pubkey[64:] )
+
+        # if y is odd then negate y (effectively P) to make it even and equivalent
+        # to a 02 compressed pk
+        if y % 2 != 0:
+            y = EcdsaParams._field - y
+
+        #print(f'{x:064x}{y:064x}')
+        return f'{x:064x}{y:064x}'
+
+
+    @classmethod
+    def get_taproot_tweak(self, pubkey: str, script: object) -> str:
+        """Returns a tweaked public key as a hexadecimal string.
+
+        Assumes that the key is already negated, if necessary.
+        """
+       
+        pub_key = PublicKey( '04' + pubkey )
+
+        # calculate tweak 
+        tweak_int = calculate_tweak( pub_key, script )
+
+        # convert public key bytes to tuple Point
+        P = (hex_str_to_int(pubkey[:64]), 
+             hex_str_to_int(pubkey[64:]))
+
+        # apply tweak to public key (Q = P + th*G)
+        Q = point_add(P, (point_mul(G, tweak_int)))
+
+        #print(f'Tweaked Public Key: {Q[0]:064x}{Q[1]:064x}')
+        return f'{Q[0]:064x}{Q[1]:064x}'
+
+
+    @classmethod
+    def from_message_signature(self, signature):
+        # TODO implement (add signature=None in __init__, etc.)
+        # TODO plus does this apply to DER signatures as well?
+        #return cls(signature=signature)
+        raise BaseException('NO-OP!')
+
+
+    @classmethod
+    def verify_message(self, address, signature, message):
+        """Creates a public key from a message signature and verifies message
+
+        Bitcoin uses a compact format for message signatures (for tx sigs it
+        uses normal DER format). The format has the normal r and s parameters
+        that ECDSA signatures have but also includes a prefix which encodes
+        extra information. Using the prefix the public key can be
+        reconstructed from the signature.
+
+        |  Prefix values:
+        |      27 - 0x1B = first key with even y
+        |      28 - 0x1C = first key with odd y
+        |      29 - 0x1D = second key with even y
+        |      30 - 0x1E = second key with odd y
+
+        If key is compressed add 4 (31 - 0x1F, 32 - 0x20, 33 - 0x21, 34 - 0x22 respectively)
+
+        Raises
+        ------
+        ValueError
+            If signature is invalid
+        """
+
+        sig = b64decode( signature.encode('utf-8') )
+        if len(sig) != 65:
+            raise ValueError('Invalid signature size')
+
+        # get signature prefix, compressed and recid (which key is odd/even)
+        prefix = sig[0]
+        if prefix < 27 or prefix > 35:
+            return False
+        if prefix >= 31:
+            compressed = True
+            recid = prefix - 31
+        else:
+            compressed = False
+            recid = prefix - 27
+
+        # create message digest -- note double hashing
+        message_magic = add_magic_prefix(message)
+        message_digest = hashlib.sha256( hashlib.sha256(message_magic).digest() ).digest()
+
+        #
+        # use recid, r and s to get the point in the curve
+        #
+
+        # get signature's r and s
+        r,s = sigdecode_string(sig[1:], EcdsaParams._order)
+
+        # ger R's x coordinate
+        x = r + (recid // 2) * EcdsaParams._order
+
+        # get R's y coordinate (y**2 = x**3 + 7)
+        y_values = sqrt_mod( (x**3 + 7) % EcdsaParams._p, EcdsaParams._p, True )
+        if (y_values[0] - recid) % 2 == 0:
+            y = y_values[0]
+        else:
+            y = y_values[1]
+
+        # get R (recovered ephemeral key) from x,y
+        R = ellipticcurve.Point(EcdsaParams._curve, x, y, EcdsaParams._order)
+
+        # get e (hash of message encoded as big integer)
+        e = int(hexlify(message_digest), 16)
+
+        # compute public key Q = r^-1 (sR - eG)
+        # because Point substraction is not defined we will instead use:
+        # Q = r^-1 (sR + (-eG) )
+        minus_e = -e % EcdsaParams._order
+        inv_r = numbertheory.inverse_mod(r, EcdsaParams._order)
+        Q = inv_r * ( s*R + minus_e*EcdsaParams._G )
+
+        # instantiate the public key and verify message
+        public_key = VerifyingKey.from_public_point( Q, curve = SECP256k1 )
+        key_hex = hexlify(public_key.to_string()).decode('utf-8')
+        pubkey = PublicKey.from_hex('04' + key_hex)
+        if not pubkey.verify(signature, message):
+            return False
+
+        # confirm that the address provided corresponds to that public key
+        if pubkey.get_address(compressed=compressed).to_string() != address:
+            return False
+
+        return True
+
+
+    def verify(self, signature, message):
+        """Verifies that the message was signed with this public key's
+        corresponding private key."""
+
+        # All bitcoin signatures include the magic prefix. It is just a string
+        # added to the message to distinguish Bitcoin-specific messages.
+        message_magic = add_magic_prefix(message)
+
+        # create message digest -- note double hashing
+        message_digest = hashlib.sha256( hashlib.sha256(message_magic).digest()).digest()
+
+        signature_bytes = b64decode( signature.encode('utf-8') )
+
+        # verify -- ignore first byte of compact signature
+        return self.key.verify_digest(signature_bytes[1:],
+                                      message_digest,
+                                      sigdecode=sigdecode_string)
+
+
+    def _to_hash160(self, compressed=True):
+        """Returns the RIPEMD( SHA256( ) ) of the public key in bytes"""
+
+        pubkey = unhexlify( self.to_hex(compressed) )
+        hashsha256 = hashlib.sha256(pubkey).digest()
+        hash160 = ripemd160(hashsha256)
+        return hash160
+
+    def to_hash160(self, compressed=True):
+        """Returns the RIPEMD( SHA256( ) ) of the public key in hex"""
+
+        return hexlify(self._to_hash160(compressed)).decode('utf-8')
+
+
+    def get_address(self, compressed=True):
+        """Returns the corresponding P2PKH Address (default compressed)"""
+
+        hash160 = self._to_hash160(compressed)
+        addr_string_hex = hexlify(hash160).decode('utf-8')
+        return P2pkhAddress(hash160=addr_string_hex)
+
+
+    def get_segwit_address(self):
+        """Returns the corresponding P2WPKH address
+
+        Only compressed is allowed. It is otherwise identical to normal P2PKH
+        address.
+        """
+        hash160 = self._to_hash160(True)
+        addr_string_hex = hexlify(hash160).decode('utf-8')
+        return P2wpkhAddress(witness_program=addr_string_hex)
+
+
+    def get_taproot_address(self, script=None):
+        """Returns the corresponding P2TR address
+
+        Only compressed is allowed. Taproot uses x-only public key with
+        even y (02 compressed keys). By default tagged_hashes are used.
+
+        script contains the hash of the script (or merkle root for
+        multiple scripts) for the script spending path
+        """
+
+        # Tweak public key (BIP340)
+        # https://bitcoin.stackexchange.com/a/116391/31844
+        # note that taproot's even y is checked/negated during tweaking
+        pubkey = self.to_taproot_hex(script) #tweak_taproot_pubkey(self.key.to_string(), script, 'TapTweak')[:64]
+
+        return P2trAddress(witness_program=pubkey)
+
+
+class Address(ABC):
+    """Represents a Bitcoin address
+
+    Attributes
+    ----------
+    hash160 : str
+        the hash160 string representation of the address; hash160 represents
+        two consequtive hashes of the public key or the redeam script, first
+        a SHA-256 and then an RIPEMD-160
+
+    Methods
+    -------
+    from_address(address)
+        instantiates an object from address string encoding
+    from_hash160(hash160_str)
+        instantiates an object from a hash160 hex string
+    from_script(redeem_script)
+        instantiates an object from a redeem_script
+    to_string()
+        returns the address's string encoding
+    to_hash160()
+        returns the address's hash160 hex string representation
+
+    Raises
+    ------
+    TypeError
+        No parameters passed
+    ValueError
+        If an invalid address or hash160 is provided.
+    """
+    @abstractmethod
+    def __init__(self, address=None, hash160=None, script=None):
+        """
+        Parameters
+        ----------
+        address : str
+            the address as a string
+        hash160 : str
+            the hash160 hex string representation
+        script : Script object
+            instantiates an Address object from a redeem script
+
+        Raises
+        ------
+        TypeError
+            No parameters passed
+        ValueError
+            If an invalid address or hash160 is provided.
+        """
+
+        if hash160:
+            if self._is_hash160_valid(hash160):
+                self.hash160 = hash160
+            else:
+                raise ValueError("Invalid value for parameter hash160.")
+        elif address:
+            if self._is_address_valid(address):
+                self.hash160 = self._address_to_hash160(address)
+            else:
+                raise ValueError("Invalid value for parameter address.")
+        elif script:
+            # TODO for now just check that is an instance of Script
+            if isinstance(script, bitcoinutils.script.Script):
+                self.hash160 = self._script_to_hash160(script)
+            else:
+                raise TypeError("A Script class is required.")
+        else:
+            raise TypeError("A valid address or hash160 is required.")
+
+
+    @classmethod
+    def from_address(cls, address):
+        """Creates an address object from an address string"""
+
+        return cls(address=address)
+
+
+    @classmethod
+    def from_hash160(cls, hash160):
+        """Creates an address object from a hash160 string"""
+
+        return cls(hash160=hash160)
+
+
+    @classmethod
+    def from_script(cls, script):
+        """Creates an address object from a Script object"""
+
+        return cls(script=script)
+
+
+    def _address_to_hash160(self, address):
+        """Converts an address to it's hash160 equivalent
+
+	Base58CheckDecode the address and remove network_prefix and checksum.
+	"""
+
+        addr_encoded = address.encode('utf-8')
+        data_checksum = b58decode( addr_encoded )
+        network_prefix = data_checksum[:1]
+        data = data_checksum[1:-4]
+        #checksum = data_checksum[-4:]
+        return hexlify(data).decode('utf-8')
+
+
+    def _script_to_hash160(self, script):
+        """Converts a script to it's hash160 equivalent
+
+        RIPEMD160( SHA256( script ) ) - required for P2SH addresses
+	"""
+
+        script_bytes = script.to_bytes()
+        hashsha256 = hashlib.sha256(script_bytes).digest()
+        hash160 = ripemd160(hashsha256)
+        return hexlify(hash160).decode('utf-8')
+
+
+    def _is_hash160_valid(self, hash160):
+        """Checks is a hash160 hex string is valid"""
+
+        # check the size -- should be 20 bytes, 40 characters in hexadecimal string
+        if len(hash160) != 40:
+            return False
+
+        # check all (string) digits are hex
+        try:
+            int(hash160, 16)
+            return True
+        except ValueError:
+            return False
+
+
+    def _is_address_valid(self, address):
+        """Checks is an address string is valid"""
+
+        digits_58_pattern = r'[^123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]'
+
+        # check for invalid characters
+        if re.search(digits_58_pattern, address):
+            return False
+
+        # check for length (26-35 characters)
+        # TODO: need to confirm the possible length!
+        if len(address) < 26 or len(address) > 35:
+            return False
+
+        # get data, network_prefix and checksum
+        data_checksum = b58decode( address.encode('utf-8') )
+        data = data_checksum[:-4]
+        network_prefix = data_checksum[:1]
+        checksum = data_checksum[-4:]
+
+        # check correct network (depending on address type)
+        if self.get_type() == P2PKH_ADDRESS:
+            if network_prefix != NETWORK_P2PKH_PREFIXES[get_network()]:
+                return False
+        elif self.get_type() == P2SH_ADDRESS:
+            if network_prefix != NETWORK_P2SH_PREFIXES[get_network()]:
+                return False
+
+        # check address' checksum
+        data_hash = hashlib.sha256(hashlib.sha256(data).digest()).digest()
+
+        if data_hash[0:4] != checksum:
+            return False
+
+        return True
+
+
+    def to_hash160(self):
+        """Returns as hash160 hex string"""
+
+        return self.hash160
+
+
+    def to_string(self):
+        """Returns as address string
+
+        |  Pseudocode:
+        |      network_prefix = (1 byte version number)
+        |      data = network_prefix + hash160_bytes
+        |      data_hash = SHA-256( SHA-256( hash160_bytes ) )
+        |      checksum = (first 4 bytes of data_hash)
+        |      address_bytes = Base58CheckEncode( data + checksum )
+        """
+        hash160_encoded = self.hash160.encode('utf-8')
+        hash160_bytes = unhexlify(hash160_encoded)
+
+        if self.get_type() == P2PKH_ADDRESS:
+            data = NETWORK_P2PKH_PREFIXES[get_network()] + hash160_bytes
+        elif self.get_type() == P2SH_ADDRESS:
+            data = NETWORK_P2SH_PREFIXES[get_network()] + hash160_bytes
+
+        data_hash = hashlib.sha256(hashlib.sha256(data).digest()).digest()
+        checksum = data_hash[0:4]
+        address_bytes = b58encode( data + checksum )
+
+        return address_bytes.decode('utf-8')
+
+
+class P2pkhAddress(Address):
+    """Encapsulates a P2PKH address.
+
+    Check Address class for details
+
+    Methods
+    -------
+    to_script_pub_key()
+        returns the scriptPubKey (P2PKH) that corresponds to this address
+    get_type()
+        returns the type of address
+    """
+
+    def __init__(self, address=None, hash160=None):
+        super().__init__(address=address, hash160=hash160)
+
+    def to_script_pub_key(self):
+        """Returns the scriptPubKey (P2PKH) that corresponds to this address"""
+        return bitcoinutils.script.Script(['OP_DUP', 'OP_HASH160',
+                                           self.to_hash160(), 'OP_EQUALVERIFY',
+                                           'OP_CHECKSIG'])
+
+    def get_type(self):
+        """Returns the type of address"""
+        return P2PKH_ADDRESS
+
+
+class P2shAddress(Address):
+    """Encapsulates a P2SH address.
+
+    Check Address class for details
+
+    Methods
+    -------
+    get_type()
+        returns the type of address
+    """
+
+    def __init__(self, address=None, hash160=None, script=None):
+        super().__init__(address=address, hash160=hash160, script=script)
+
+    def to_script_pub_key(self):
+        """Returns the scriptPubKey (P2SH) that corresponds to this address"""
+        return bitcoinutils.script.Script(['OP_HASH160',
+                                           self.to_hash160(), 'OP_EQUAL'])
+
+    def get_type(self):
+        """Returns the type of address"""
+        return P2SH_ADDRESS
+
+
+
+
+
+class SegwitAddress(ABC):
+    """Represents a Bitcoin segwit address
+
+    Note that currently the python bech32[m] reference implementation is used (by
+    Pieter Wuille).
+
+    Attributes
+    ----------
+    witness_program : str
+        for segwit v0 this is the hash string representation of either the address;
+        it can be either a public key hash (P2WPKH) or the hash of the script (P2WSH)
+
+        for segwit v1 (aka taproot) this is the public key
+
+    Methods
+    -------
+    from_address(address)
+        instantiates an object from address string encoding
+    from_program(hash_str)
+        instantiates an object from a witness program hex string
+    from_script(witness_script)
+        instantiates an object from a witness_script
+    to_string()
+        returns the address's string encoding (Bech32)
+    to_hash()
+        returns the address's hash hex string representation
+
+    Raises
+    ------
+    TypeError
+        No parameters passed
+    ValueError
+        If an invalid address or hash is provided.
+    """
+    @abstractmethod
+    def __init__(self, address=None, witness_program=None, script=None,
+                 version=P2WPKH_ADDRESS_V0):
+        """
+        Parameters
+        ----------
+        address : str
+            the address as a string
+        witness_program : str
+            the witness program hex string representation
+        script : Script object
+            instantiates an Address object from a witness script
+        version : str
+            specifies the default segwit version
+
+        Raises
+        ------
+        TypeError
+            No parameters passed
+        ValueError
+            If an invalid address or hash is provided.
+        """
+
+        self.version = version
+        if self.version == P2WPKH_ADDRESS_V0 or self.version == P2WSH_ADDRESS_V0:
+            self.segwit_num_version = 0
+        elif self.version == P2TR_ADDRESS_V1:
+            self.segwit_num_version = 1
+        else:
+            raise TypeError("A valid segwit version is required.")
+
+        # witness_program covers both v0 and v1
+        if witness_program:
+            self.witness_program = witness_program
+        elif address:
+            self.witness_program = self._address_to_hash(address)
+        elif script:
+            # TODO for now just check that is an instance of Script
+            if isinstance(script, bitcoinutils.script.Script):
+                self.witness_program = self._script_to_hash(script)
+            else:
+                raise TypeError("A Script class is required.")
+        else:
+            raise TypeError("A valid address or witness program is required.")
+
+
+    @classmethod
+    def from_address(cls, address):
+        """Creates an address object from an address string"""
+
+        return cls(address=address)
+
+
+    @classmethod
+    def from_witness_program(cls, witness_program):
+        """Creates an address object from a hash string"""
+
+        return cls(witness_program=witness_program)
+
+
+    @classmethod
+    def from_script(cls, script):
+        """Creates an address object from a Script object"""
+
+        return cls(script=script)
+
+
+    def _address_to_hash(self, address):
+        """Converts an address to it's hash equivalent
+
+	The size of the address determines between P2WPKH and P2WSH.
+        Then Bech32 decodes the address removing network prefix, checksum,
+        witness version.
+
+        Uses a segwit's python reference implementation for now. (TODO)
+	"""
+
+        witness_version, witness_int_array = bitcoinutils.bech32.decode(NETWORK_SEGWIT_PREFIXES[get_network()], address)
+        if witness_version == None:
+            raise ValueError("Invalid value for parameter address.")
+        if witness_version != self.segwit_num_version:
+            raise TypeError("Invalid segwit version.")
+
+        return hexlify( bytes(witness_int_array) ).decode('utf-8')
+
+
+    def _script_to_hash(self, script):
+        """Converts a script to it's hash equivalent"""
+
+        script_bytes = script.to_bytes()
+        hashsha256 = hashlib.sha256(script_bytes).digest()
+        return hexlify(hashsha256).decode('utf-8')
+
+
+    def to_witness_program(self):
+        """Returns witness program as hex string"""
+
+        return self.witness_program
+
+
+    def to_string(self):
+        """Returns as address string
+
+        Uses a segwit's python reference implementation for now. (TODO)
+        """
+
+        hash_bytes = unhexlify( self.witness_program.encode('utf-8') )
+        witness_int_array = memoryview(hash_bytes).tolist()
+
+        return bitcoinutils.bech32.encode(NETWORK_SEGWIT_PREFIXES[get_network()],
+                                          self.segwit_num_version, witness_int_array)
+
+
+
+class P2wpkhAddress(SegwitAddress):
+    """Encapsulates a P2WPKH address.
+
+    Check Address class for details
+
+    Methods
+    -------
+    to_script_pub_key()
+        returns the scriptPubKey of a P2WPKH witness script
+    get_type()
+        returns the type of address
+    """
+
+    # TODO allow creation directly from Bech32 address !!
+    def __init__(self, address=None, witness_program=None,                  # script=None, ?
+                 version=P2WPKH_ADDRESS_V0):
+        """Allow creation only from hash160 of public key"""
+
+        super().__init__(address=address, witness_program=witness_program,  # script=None, ?
+                         version=P2WPKH_ADDRESS_V0) # non-variable version
+
+
+    def to_script_pub_key(self):
+        """Returns the scriptPubKey of a P2WPKH witness script"""
+        return bitcoinutils.script.Script(['OP_0', self.to_witness_program()])
+
+
+    def get_type(self):
+        """Returns the type of address"""
+        return self.version
+
+
+class P2wshAddress(SegwitAddress):
+    """Encapsulates a P2WSH address.
+
+    Check Address class for details
+
+    Methods
+    -------
+    from_script(witness_script)
+        instantiates an object from a witness_script
+    get_type()
+        returns the type of address
+    """
+
+    def __init__(self, address=None, witness_program=None, script=None,
+                 version=P2WSH_ADDRESS_V0):
+        """Allow creation only from hash160 of public key"""
+
+        super().__init__(address=None, witness_program=None, script=script,
+                         version=P2WSH_ADDRESS_V0) # non-variable version
+
+
+    def to_script_pub_key(self):
+        """Returns the scriptPubKey of a P2WPKH witness script"""
+        return bitcoinutils.script.Script(['OP_0', self.to_witness_program()])
+
+
+    def get_type(self):
+        """Returns the type of address"""
+        return self.version
+
+
+class P2trAddress(SegwitAddress):
+    """Encapsulates a P2TR (Taproot) address.
+
+    Check Address class for details
+
+    Methods
+    -------
+    to_script_pub_key()
+        returns the scriptPubKey of a P2TR witness script
+    get_type()
+        returns the type of address
+    """
+
+    def __init__(self, address=None, witness_program=None,                  # script=None, ?
+                 version=P2TR_ADDRESS_V1):
+        """Allow creation only from witness program"""
+
+        super().__init__(address=address, witness_program=witness_program,  # script=None, ?
+                         version=P2TR_ADDRESS_V1)
+
+
+    def to_script_pub_key(self):
+        """Returns the scriptPubKey of a P2TR witness script"""
+        return bitcoinutils.script.Script(['OP_1', self.to_witness_program()])
+
+
+    def get_type(self):
+        """Returns the type of address"""
+        return self.version
+
+
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
