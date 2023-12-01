@@ -1,0 +1,9 @@
+pyproject.toml
+structure.txt
+structures/modules/soyplant.egg-info/PKG-INFO
+structures/modules/soyplant.egg-info/SOURCES.txt
+structures/modules/soyplant.egg-info/dependency_links.txt
+structures/modules/soyplant.egg-info/top_level.txt
+structures/modules/soyplant/node/start/__init__.py
+structures/modules/soyplant/node/start/assertions.py
+structures/modules/soyplant/node/stop/__init__.py
