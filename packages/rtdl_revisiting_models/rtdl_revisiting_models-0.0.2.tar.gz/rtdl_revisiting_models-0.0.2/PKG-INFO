@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: rtdl_revisiting_models
+Version: 0.0.2
+Summary: Revisiting Deep Learning Models for Tabular Data.
+Keywords: artificial intelligence,deep learning,library,python,pytorch,research,torch,tabular,tabular data
+Author: Yury Gorishniy
+Requires-Python: >=3.8
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Dist: torch >=1.8,<3
+Project-URL: Code, https://github.com/yandex-research/tabular-dl-revisiting-models/tree/main/package/README.md
+Project-URL: Documentation, https://github.com/yandex-research/tabular-dl-revisiting-models/tree/main/package/README.md
