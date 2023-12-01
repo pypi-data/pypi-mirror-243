@@ -1,0 +1,6 @@
+setuptools
+pydantic<2
+numpy
+requests
+python-dotenv
+click
