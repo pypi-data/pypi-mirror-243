@@ -1,0 +1,2 @@
+[console_scripts]
+greet_name = greet_name:main
