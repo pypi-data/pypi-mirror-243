@@ -1,0 +1,11 @@
+fedora-messaging>=3.4.1
+
+[dev]
+pytest
+pytest-cov
+black
+flake8
+coverage[toml]
+diff-cover
+pre-commit
+reuse

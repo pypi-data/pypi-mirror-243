@@ -1,0 +1,30 @@
+Metadata-Version: 2.1
+Name: fedora-messaging-git-hook-messages
+Version: 1.0.0
+Summary: A schema package for messages sent by Fedora Messaging Git Hook
+Home-page: http://github.com/fedora-infra/fedora-messaging-git-hook-messages
+Author: Fedora Infrastructure
+Author-email: admin@fedoraproject.org
+License: LGPL-3.0-or-later
+Keywords: fedora,fedora-messaging
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: dev
+
+# Fedora Messaging Git Hook messages
+
+A schema package for [Fedora Messaging Git Hook](http://github.com/fedora-infra/fedora-messaging-git-hook).
+
+See the [detailed documentation](https://fedora-messaging.readthedocs.io/en/latest/messages.html) on packaging your schemas.
+
+![PyPI](https://img.shields.io/pypi/v/fedora-messaging-git-hook-messages.svg)
+![Supported Python versions](https://img.shields.io/pypi/pyversions/fedora-messaging-git-hook-messages.svg)
+![Build status](http://github.com/fedora-infra/fedora-messaging-git-hook-messages/actions/workflows/main.yml/badge.svg?branch=main)
