@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "corpus-patterns"
+description = "Building blocks for spacy Matcher patterns"
+version = "0.0.2"
+authors = ["Marcelino G. Veloso III <contact@mv3.dev>"]
+readme = "README.md"
+homepage = "https://mv3.dev"
+repository = "https://github.com/justmars/corpus-patterns"
+documentation = "https://justmars.github.io/corpus-patterns"
+classifiers = [
+  "Programming Language :: Python :: 3.11",
+  "Typing :: Typed",
+  "Development Status :: 4 - Beta",
+  "Framework :: Pytest",
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+roman = "^4.1"
+inflect = "^7.0"
+spacy = {extras = ["apple"], version = "^3.7.2"}
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5"
+ipykernel = "^6.27.1"
+
+[tool.ruff]
+ignore = ["F401", "F403"]
+fixable = ["F", "E", "W", "I001"]
+select = ["F", "E", "W", "I001"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
