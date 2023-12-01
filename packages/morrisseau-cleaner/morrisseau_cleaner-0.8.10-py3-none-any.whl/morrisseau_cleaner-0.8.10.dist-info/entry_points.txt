@@ -1,0 +1,2 @@
+[console_scripts]
+morrisseau-cleaner = morrisseau_cleaner.morrisseau_cleaner:main
