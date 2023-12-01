@@ -1,0 +1,79 @@
+Metadata-Version: 2.1
+Name: mpl-speech-bubble
+Version: 0.1.0
+Home-page: https://github.com//mpl-speech-bubble
+Author: Jae-Joon Lee
+Author-email: lee.j.joon@gmail.com
+License: BSD 3-Clause
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: matplotlib
+Requires-Dist: mpl-skia-pathops
+Provides-Extra: dev
+Requires-Dist: black ; extra == 'dev'
+Requires-Dist: pytest ; extra == 'dev'
+Requires-Dist: pytest-mpl ; extra == 'dev'
+Requires-Dist: sphinx ; extra == 'dev'
+Requires-Dist: numpydoc ; extra == 'dev'
+Requires-Dist: sphinx-rtd-theme ; extra == 'dev'
+Requires-Dist: sphinx-copybutton ; extra == 'dev'
+Requires-Dist: sphinx-autobuild ; extra == 'dev'
+Requires-Dist: sphinx-gallery >=0.8.2 ; extra == 'dev'
+Requires-Dist: autoapi ; extra == 'dev'
+Provides-Extra: doc
+Requires-Dist: sphinx ; extra == 'doc'
+Requires-Dist: numpydoc ; extra == 'doc'
+Requires-Dist: sphinx-rtd-theme ; extra == 'doc'
+Requires-Dist: sphinx-copybutton ; extra == 'doc'
+Requires-Dist: sphinx-autobuild ; extra == 'doc'
+Requires-Dist: sphinx-gallery >=0.8.2 ; extra == 'doc'
+Requires-Dist: autoapi ; extra == 'doc'
+Provides-Extra: test
+Requires-Dist: black ; extra == 'test'
+Requires-Dist: pytest ; extra == 'test'
+Requires-Dist: pytest-mpl ; extra == 'test'
+
+# mpl-speech-bubble
+
+A proof-of-concept package to draw speech bubble. It is basically MPL's
+annotation and it merges the arrow patch and bbox patch using [skia-pathops](https://github.com/fonttools/skia-pathops). The
+package is far from complete and only recommended for an advanced MPL user who
+are well familiar with how annotation works.
+
+<img src="https://user-images.githubusercontent.com/95962/206708676-6e3cada0-9d37-447b-82cf-4c1c20425b9b.png">
+
+```python
+from mpl_speech_bubble import annotate_bubble
+
+ann = annotate_bubble(ax, 'speech\nbubble',
+                      xy=(4, 4), xycoords='data',
+                      xytext=(-10, -25), textcoords='offset points',
+                      size=20, color="w",
+                      ha="left", va="top",
+                      bbox=dict(boxstyle="round",
+                                fc="none", ec="w"),
+                      arrowprops=dict(arrowstyle="wedge,tail_width=2.",
+                                      patchA=None,
+                                      patchB=el,
+                                      relpos=(0.5, 0.5),
+                                      connectionstyle="arc3,rad=-0.1"))
+```
+
+Check out `examples/example.py` for full example.
+
+## Installation
+
+The package is not available at pip. You can clone the git repository and
+install from the source.:
+
+```bash
+pip install .
+```
+
+## Development Installation
+
+
+```bash
+pip install -e ".[dev]"
+```
+
