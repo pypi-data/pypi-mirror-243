@@ -1,0 +1,147 @@
+[build-system]
+requires = ["setuptools>=42", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thoughtspot_tml"
+dynamic = ["version"]
+description = "Library for manipulating ThoughtSpot Modeling Language (TML) files"
+readme = "README.md"
+requires-python = ">=3.7 , < 3.12"
+license = {file = "LICENSE"}
+authors = [
+    {name = "Bryant Howell", email = "bryant.howell@thoughtspot.com"},
+    {name = "Bill B", email = "bill.back@thoughtspot.com"},
+    {name = "boonhapus", email = "nicholas.cooper@thoughtspot.com"},
+]
+maintainers = [
+    {name = "Bryant Howell", email = "bryant.howell@thoughtspot.com"},
+    {name = "boonhapus", email = "nicholas.cooper@thoughtspot.com"},
+]
+classifiers = [
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "PyYAML >= 6.0",
+    "betterproto[compiler] >= 2.0.0b5",
+
+    # version specific
+    "typing_extensions >= 4.4.0; python_version < '3.8.0'",
+    "graphlib_backport; python_version < '3.9.0'",
+    "zipp >= 3.11.0; python_version < '3.10.0'"
+]
+
+[project.urls]
+repository = "https://github.com/thoughtspot/thoughtspot_tml"
+bug_tracker = "https://github.com/thoughtspot/thoughtspot_tml/issues"
+
+[project.optional-dependencies]
+# cli = [
+#     "typer[all]==0.7.0",
+#     "click==8.1.3",
+# ]
+dev = [
+    "rich",
+
+    # code quality
+    "pre-commit",
+    "ruff",
+    "black",
+    "mypy",
+
+    # tests
+    "nox",
+    "ward",
+    "coverage[toml]",
+]
+
+# eventual plans for a jq-like utility for TML
+# [project.scripts]
+# tml = "thoughtspot_tml.cli.main:run"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["_generate*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "thoughtspot_tml._version.__version__"}
+
+[tool.black]
+line-length = 120
+exclude = '''
+(
+      __pycache__   # ignore compiled bytecode
+    | \.venv*       # ignore virtual environments
+    | \.nox         # ignore virtual environments
+)
+'''
+
+[tool.mypy]
+exclude = '''
+(?x)(
+    ^_scriptability.py$  # ignore auto-generated files
+)
+'''
+
+[tool.ruff]
+line-length = 120
+select = [
+    "A",     # flake8-builtins: https://pypi.org/project/flake8-builtins/
+    "ARG",   # flake8-unused-arguments: https://pypi.org/project/flake8-unused-arguments/
+    "B",     # flake8-bugbear: https://pypi.org/project/flake8-bugbear/
+    "C4",    # flake8-comprehensions: https://pypi.org/project/flake8-comprehensions/
+    "C90",   # mccabe: https://pypi.org/project/mccabe/
+    "COM",   # flake8-commas: https://pypi.org/project/flake8-commas/
+    "E",     # pycodestyle: https://pypi.org/project/pycodestyle/
+    "F",     # pyflakes: https://pypi.org/project/pyflakes/
+    "Q",     # flake8-quotes: https://pypi.org/project/flake8-quotes/
+    "RUF",   # ruff-specific: https://beta.ruff.rs/docs/rules/#ruff-specific-rules-ruf
+    "TCH",   # flake8-type-checking: https://pypi.org/project/flake8-type-checking/
+]
+src = ["src/thoughtspot_tml"]
+exclude = [
+    "__pycache__",   # ignore compiled bytecode
+    ".venv*",        # ignore virtual environments
+    ".nox",          # ignore virtual environments
+
+    # project specific ignores
+    "*compat.py",         # ignore compatibles
+    "_scriptability.py",  # ignore auto-generated files
+]
+ignore-init-module-imports = true
+
+[tool.ruff.per-file-ignores]
+"types.py" = ["TCH001"]
+
+[tool.ward]
+path = "tests/"
+
+[tool.coverage.run]
+branch = true
+include = [
+    "src/**.py",
+]
+omit = [
+    "src/thoughtspot_tml/_scriptability.py",
+    "src/thoughtspot_tml/_compat.py",
+    "__init__.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "# pragma: no cover",
+    "# pragma: peephole optimzer",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "if typing.TYPE_CHECKING:",
+]
