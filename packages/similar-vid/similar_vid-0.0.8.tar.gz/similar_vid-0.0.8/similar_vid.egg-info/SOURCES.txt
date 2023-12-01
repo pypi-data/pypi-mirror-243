@@ -1,0 +1,16 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+similar_vid/__init__.py
+similar_vid/loaders.py
+similar_vid/matcher.py
+similar_vid/similar_cli.py
+similar_vid/similar_secs.py
+similar_vid.egg-info/PKG-INFO
+similar_vid.egg-info/SOURCES.txt
+similar_vid.egg-info/dependency_links.txt
+similar_vid.egg-info/requires.txt
+similar_vid.egg-info/top_level.txt
+similar_vid/tests/__init__.py
+similar_vid/tests/tests.py
