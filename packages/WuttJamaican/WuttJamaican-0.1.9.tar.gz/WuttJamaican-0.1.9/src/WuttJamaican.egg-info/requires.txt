@@ -1,0 +1,12 @@
+python-configuration
+
+[db]
+SQLAlchemy<2
+
+[docs]
+Sphinx
+sphinxcontrib-programoutput
+
+[tests]
+pytest-cov
+tox
