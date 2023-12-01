@@ -1,0 +1,8 @@
+xlrd>=2.0.1
+numpy>=1.22.0
+cobra>=0.22.1
+biopython>=1.78
+matplotlib>=3.3.4
+scipy>=1.9.0
+openpyxl>=3.0.9
+xlsxwriter>=3.0.1

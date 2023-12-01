@@ -1,0 +1,17 @@
+LICENSE
+setup.py
+src/iambcodes/Create_New_ConfFile.py
+src/iambcodes/__init__.py
+src/iambcodes/analytics.py
+src/iambcodes/biolog.py
+src/iambcodes/bsfun.py
+src/iambcodes/cobra.py
+src/iambcodes/fasta.py
+src/iambcodes/homeworks.py
+src/iambcodes/judas.py
+src/iambcodes/rates.py
+src/iambcodes.egg-info/PKG-INFO
+src/iambcodes.egg-info/SOURCES.txt
+src/iambcodes.egg-info/dependency_links.txt
+src/iambcodes.egg-info/requires.txt
+src/iambcodes.egg-info/top_level.txt
