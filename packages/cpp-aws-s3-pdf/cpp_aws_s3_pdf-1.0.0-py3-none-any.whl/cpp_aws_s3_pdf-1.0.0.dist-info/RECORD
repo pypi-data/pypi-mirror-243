@@ -1,0 +1,12 @@
+cpp_aws_s3_pdf/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cpp_aws_s3_pdf/exceptions.py,sha256=L23tiSu-d0AhGKVY1hbjPM4ntRoMZvfNlCXzxP9RpmY,979
+cpp_aws_s3_pdf/s3_pdf.py,sha256=8zwENcbc_FsJ7Iqvb-rzOX0mZi3-kvgdmfTB7Y5qfVo,4525
+cpp_aws_s3_pdf/fonts/Lato-Regular.ttf,sha256=6CVCrtgpP0n8g8Sq6lZrH2tPx6mrXaEeb7m8CXO1Mks,75152
+cpp_aws_s3_pdf/utils/__init__.py,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+cpp_aws_s3_pdf/utils/aws_s3.py,sha256=uatGW-jrRQPnw0VT6aqHUapCG5qGbIcXxIDUo7svrCU,2481
+cpp_aws_s3_pdf/utils/image.py,sha256=E6C3QmjSobmcXFzUOFauUdWJjrBbSLeIFV3F5Ef7RzU,2048
+cpp_aws_s3_pdf/utils/pdf.py,sha256=TjR4R_gCDPDP2hPzymF7uQ1HkFBSyFEqAxB2VYFL7N8,1745
+cpp_aws_s3_pdf-1.0.0.dist-info/METADATA,sha256=MnvB4vZq9SjTvLNpgxtWLMZRnX4zulTZ6ePCgY5KcIU,2739
+cpp_aws_s3_pdf-1.0.0.dist-info/WHEEL,sha256=9QBuHhg6FNW7lppboF2vKVbCGTVzsFykgRQjjlajrhA,87
+cpp_aws_s3_pdf-1.0.0.dist-info/licenses/LICENSE,sha256=2bm9uFabQZ3Ykb_SaSU_uUbAj2-htc6WJQmS_65qD00,1073
+cpp_aws_s3_pdf-1.0.0.dist-info/RECORD,,
