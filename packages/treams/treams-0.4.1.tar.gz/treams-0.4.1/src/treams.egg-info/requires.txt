@@ -1,0 +1,16 @@
+numpy
+scipy>=1.6
+
+[coverage]
+Cython
+pytest-cov
+
+[docs]
+matplotlib
+sphinx
+
+[io]
+h5py
+
+[test]
+pytest
