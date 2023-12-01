@@ -1,0 +1,27 @@
+coverage>=4.1
+pytest
+pyyaml
+requests
+# TODO(vytas): Check if testtools still brings anything to the table, and
+#   re-enable if/when unittest2 is adjusted to support CPython 3.10.
+testtools; python_version < '3.10'
+
+# ASGI Specific (daphne is installed on a its own tox env)
+pytest-asyncio
+aiofiles; python_version >= '3.6'
+httpx; python_version >= '3.6'
+uvicorn < 0.17.0; python_version == '3.6'
+uvicorn >= 0.17.0; python_version >= '3.7'
+websockets; python_version >= '3.6'
+
+# Handler Specific
+cbor2; python_version >= '3.6'
+msgpack
+mujson
+ujson
+
+# it's slow to compile on emulated architectures; wheels missing for some EoL interpreters
+python-rapidjson; platform_machine != 's390x' and platform_machine != 'aarch64'
+
+# wheels are missing some EoL interpreters and non-x86 platforms; build would fail unless rust is available
+orjson; python_version >= '3.7' and platform_python_implementation != 'PyPy' and platform_machine != 's390x' and platform_machine != 'aarch64'

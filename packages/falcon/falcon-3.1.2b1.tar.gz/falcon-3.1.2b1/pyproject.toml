@@ -1,0 +1,70 @@
+[build-system]
+    build-backend = "setuptools.build_meta"
+    requires = [
+        "setuptools>=47",
+        "wheel>=0.34",
+        "cython>=0.29.21; python_implementation == 'CPython'", # Skip cython when using pypy
+    ]
+
+[tool.towncrier]
+    package = "falcon"
+    package_dir = ""
+    filename = "docs/changes/3.1.2.rst"
+    directory = "docs/_newsfragments"
+    issue_format = "`#{issue} <https://github.com/falconry/falcon/issues/{issue}>`__"
+
+    # TODO(vytas): title_format = false seems to have no effect in towncrier==21.3.0.
+    #   For now, we just have to remember to check the rendered changelog, and,
+    #   if needed, remove the unwanted auto-generated title.
+    #   See also: https://github.com/twisted/towncrier/issues/345.
+    title_format = false
+
+    [[tool.towncrier.type]]
+        directory = "breakingchange"
+        name = "Breaking Changes"
+        showcontent = true
+
+    [[tool.towncrier.type]]
+        directory = "newandimproved"
+        name = "New & Improved"
+        showcontent = true
+
+    [[tool.towncrier.type]]
+        directory = "bugfix"
+        name = "Fixed"
+        showcontent = true
+
+    [[tool.towncrier.type]]
+        directory = "misc"
+        name = "Misc"
+        showcontent = true
+
+[tool.black]
+    # this is kept to avoid reformatting all the code if one were to
+    # inadvertently run black on the probject
+    target-version = ["py35"]
+    skip-string-normalization = true
+    line-length = 88
+    extend-exclude = "falcon/vendor"
+
+[tool.blue]
+    target-version = ["py35"]
+    line-length = 88
+    extend-exclude = "falcon/vendor"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+    "ignore:Unknown REQUEST_METHOD. '(CONNECT|DELETE|GET|HEAD|OPTIONS|PATCH|POST|PUT|TRACE|CHECKIN|CHECKOUT|COPY|LOCK|MKCOL|MOVE|PROPFIND|PROPPATCH|REPORT|UNCHECKIN|UNLOCK|UPDATE|VERSION-CONTROL)':wsgiref.validate.WSGIWarning",
+    "ignore:Unknown REQUEST_METHOD. '(FOO|BAR|BREW|SETECASTRONOMY)':wsgiref.validate.WSGIWarning",
+    "ignore:\"@coroutine\" decorator is deprecated:DeprecationWarning",
+    "ignore:Using or importing the ABCs:DeprecationWarning",
+    "ignore:cannot collect test class 'TestClient':pytest.PytestCollectionWarning",
+    "ignore:inspect.getargspec\\(\\) is deprecated:DeprecationWarning",
+    "ignore:.cgi. is deprecated and slated for removal:DeprecationWarning",
+    "ignore:path is deprecated\\. Use files\\(\\) instead:DeprecationWarning",
+    "ignore:This process \\(.+\\) is multi-threaded",
+    "ignore:There is no current event loop",
+]
+testpaths = [
+    "tests"
+]
