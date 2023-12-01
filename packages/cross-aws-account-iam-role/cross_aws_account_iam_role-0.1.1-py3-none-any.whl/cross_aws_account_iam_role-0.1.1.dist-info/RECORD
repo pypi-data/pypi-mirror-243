@@ -1,0 +1,16 @@
+cross_aws_account_iam_role/__init__.py,sha256=0mGdiYke2ATfnUI9vMdvth05IyugM2N1zLuQPtU5lic,383
+cross_aws_account_iam_role/_version.py,sha256=3ngZz3_QoERdhI7hz4p3JzJ6Msem0N5631SEIjary1M,93
+cross_aws_account_iam_role/api.py,sha256=WUVFEu0cwr3SFkedDkUO9oWOBT1iJiV5s2cXHc__8Y0,495
+cross_aws_account_iam_role/impl.py,sha256=irVfcQDNjVOrionswe-whrX01OqVX_UvDBiGRLRM0pI,16327
+cross_aws_account_iam_role/paths.py,sha256=97S8BLeL_V7rmEA-I0RmMZCJ8p1lZseMiorow53W4C8,642
+cross_aws_account_iam_role/docs/__init__.py,sha256=f-E2GGaAOnea7U51BKWcRtFHZ6p2iPnvGoXR6VvBtGg,43
+cross_aws_account_iam_role/tests/__init__.py,sha256=2nfXkz9TigdtVWm0YAeP8qD83i0KvM74AWag9WJMw4Q,58
+cross_aws_account_iam_role/tests/helper.py,sha256=p_oZhY0NE1HTQ50ftj1y4sJ6nVOLxQrPwseOlX0AD4s,447
+cross_aws_account_iam_role/vendor/__init__.py,sha256=O9CT1B2F-cVB8elT0EoCJbgkcffjvlmqteqavs4giDg,25
+cross_aws_account_iam_role/vendor/pytest_cov_helper.py,sha256=nR-I6d8j0P1JQy6dxIiZtG9Gz0DkfJFpk6EPCCpfnm8,3572
+cross_aws_account_iam_role-0.1.1.dist-info/AUTHORS.rst,sha256=nHTveFzFQh1uHjbLOIj6LbooSLAAByNffYkdIMKP-Pc,670
+cross_aws_account_iam_role-0.1.1.dist-info/LICENSE.txt,sha256=URKsDMmCIDAL0ZTrIlvrEe25FXekh-qG3MeooAq19cw,1137
+cross_aws_account_iam_role-0.1.1.dist-info/METADATA,sha256=c7cElrzpLnYz8oMmNnabND9P4e36XND8gC-Jh2lAd7w,5949
+cross_aws_account_iam_role-0.1.1.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+cross_aws_account_iam_role-0.1.1.dist-info/top_level.txt,sha256=GMk6ADCEmYJJJGnTTj8S7IHz6SwT52KGYc4DOId2O60,27
+cross_aws_account_iam_role-0.1.1.dist-info/RECORD,,
