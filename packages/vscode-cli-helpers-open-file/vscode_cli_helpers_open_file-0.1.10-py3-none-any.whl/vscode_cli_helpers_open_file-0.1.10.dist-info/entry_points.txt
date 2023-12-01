@@ -1,0 +1,3 @@
+[console_scripts]
+vscode-cli-helpers-open-file=vscode_cli_helpers.open_file.script:main
+
