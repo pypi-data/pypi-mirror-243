@@ -1,0 +1,12 @@
+LICENSE
+MANIFEST.in
+README.md
+VERSION.txt
+setup.cfg
+setup.py
+simopt.py
+simopt.egg-info/PKG-INFO
+simopt.egg-info/SOURCES.txt
+simopt.egg-info/dependency_links.txt
+simopt.egg-info/not-zip-safe
+simopt.egg-info/top_level.txt
