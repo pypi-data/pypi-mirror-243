@@ -1,0 +1,55 @@
+class {{contract_name}}Contract(Contract):
+    """A web3.py Contract class for the {{contract_name}} contract."""
+
+    abi: ABI = {{contract_name | lower}}_abi
+    {%- if has_bytecode %}
+    bytecode: bytes = HexBytes({{contract_name | lower}}_bytecode)
+    {%- endif %}
+
+    def __init__(self, address: ChecksumAddress | None = None) -> None:
+        try:
+            # Initialize parent Contract class
+            super().__init__(address=address)
+            self.functions = {{contract_name}}ContractFunctions({{contract_name | lower}}_abi, self.w3, address)
+            {% if has_events -%}
+            self.events = {{contract_name}}ContractEvents({{contract_name | lower}}_abi, self.w3, address)
+            {%- endif %}
+
+        except FallbackNotFound:
+            print("Fallback function not found. Continuing...")
+
+    {% if has_events -%}
+    events: {{contract_name}}ContractEvents
+    {%- endif %}
+
+    functions: {{contract_name}}ContractFunctions
+
+    @classmethod
+    def deploy(cls, w3: Web3, signer: ChecksumAddress) -> Self:
+        """Deploys and instance of the contract.
+
+        Parameters
+        ----------
+        w3 : Web3
+            A web3 instance.
+        signer : ChecksumAddress
+            The address to deploy the contract from.
+
+        Returns
+        -------
+        Self
+            A deployed instance of the contract.
+        """
+        deployer = cls.factory(w3=w3)
+        tx_hash = deployer.constructor().transact({"from": signer})
+        tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+        deployed_contract = deployer(address=tx_receipt.contractAddress) # type: ignore
+        return deployed_contract
+
+    @classmethod
+    def factory(cls, w3: Web3, class_name: str | None = None, **kwargs: Any) -> Type[Self]:
+        contract = super().factory(w3, class_name, **kwargs)
+        contract.functions = {{contract_name}}ContractFunctions({{contract_name | lower}}_abi, w3, None)
+
+        return contract
+
