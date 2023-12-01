@@ -1,0 +1,66 @@
+Metadata-Version: 2.1
+Name: morrisseau-cleaner
+Version: 0.8.11
+Summary: A Python library to clean data for Morrisseau Project
+Author: Ali Shajari
+Author-email: ali0shajari@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/x-rst
+License-File: LICENSE
+Requires-Dist: attr ==0.3.2
+Requires-Dist: brotli ==1.1.0
+Requires-Dist: brotlicffi ==1.1.0.0
+Requires-Dist: ConfigParser ==6.0.0
+Requires-Dist: contextlib2 ==21.6.0
+Requires-Dist: cryptography ==41.0.7
+Requires-Dist: Cython ==3.0.6
+Requires-Dist: cx-Freeze ==6.15.11
+Requires-Dist: docutils ==0.20.1
+Requires-Dist: HTMLParser ==0.0.2
+Requires-Dist: importlib-metadata ==6.8.0
+Requires-Dist: ipython ==8.18.1
+Requires-Dist: ipywidgets ==8.1.1
+Requires-Dist: Jinja2 ==3.1.2
+Requires-Dist: keyring ==24.3.0
+Requires-Dist: lockfile ==0.12.2
+Requires-Dist: mock ==5.1.0
+Requires-Dist: Pillow ==10.1.0
+Requires-Dist: protobuf ==4.21.12
+Requires-Dist: pyfiglet ==1.0.2
+Requires-Dist: pyOpenSSL ==23.3.0
+Requires-Dist: railroad ==0.5.0
+Requires-Dist: setuptools ==68.2.2
+Requires-Dist: simplejson ==3.19.2
+Requires-Dist: Sphinx ==7.2.6
+Requires-Dist: termcolor ==2.3.0
+Requires-Dist: thread ==0.1.2
+Requires-Dist: tk ==0.1
+Requires-Dist: tornado ==6.4
+Requires-Dist: truststore ==0.8.0
+Requires-Dist: urllib3-secure-extra ==0.1.0
+
+morrisseau-cleaner
+==================
+
+.. image:: https://img.shields.io/pypi/v/morrisseau-cleaner
+   :target: https://pypi.org/project/morrisseau-cleaner/
+   :alt: PyPI - Version
+
+A Python library to clean data for the Morrisseau Project
+
+Installation
+------------
+
+.. code-block:: bash
+
+   pip install morrisseau-cleaner
+
+Upgrade
+-------
+
+.. code-block:: bash
+
+   pip install --upgrade morrisseau-cleaner
