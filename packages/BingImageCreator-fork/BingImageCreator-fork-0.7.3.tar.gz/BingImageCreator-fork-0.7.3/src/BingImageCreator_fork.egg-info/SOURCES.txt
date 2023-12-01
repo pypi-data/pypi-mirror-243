@@ -1,0 +1,11 @@
+LICENSE
+README.md
+setup.cfg
+setup.py
+src/BingImageCreator.py
+src/BingImageCreator_fork.egg-info/PKG-INFO
+src/BingImageCreator_fork.egg-info/SOURCES.txt
+src/BingImageCreator_fork.egg-info/dependency_links.txt
+src/BingImageCreator_fork.egg-info/requires.txt
+src/BingImageCreator_fork.egg-info/top_level.txt
+test/test_example.py
