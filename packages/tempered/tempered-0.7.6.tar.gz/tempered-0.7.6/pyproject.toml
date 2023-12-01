@@ -1,0 +1,28 @@
+[project]
+name = "tempered"
+authors = [{name = "Ben Brady", email = "benbrady04.bb@gmail.com"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+dependencies = [
+    "bs4",
+    "minify-html",
+    "markupsafe",
+    "tinycss2",
+    "rcssmin",
+    "typing_extensions",
+]
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+sass = ["libsass"]
+test = [
+    "pytest",
+    "pytest-asyncio",
+    "mypy",
+]
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
