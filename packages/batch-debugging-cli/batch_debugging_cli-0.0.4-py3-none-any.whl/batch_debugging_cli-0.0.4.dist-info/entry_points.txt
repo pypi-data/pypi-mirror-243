@@ -1,0 +1,3 @@
+[console_scripts]
+batch-debugging=batch_debugging_cli.main:app
+
