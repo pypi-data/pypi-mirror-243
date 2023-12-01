@@ -1,0 +1,17 @@
+openj/__init__.py,sha256=qy-MuavtbJ5rITd67deyC_Ur4DVGM55KorMKCvEqRP4,1020
+openj/db.py,sha256=1V68EhyDd_AbH5RDw2IFFdnjohU5k5rm-euGpHTuNrA,1634
+openj/kanban.py,sha256=FW4q7LvcwizXT6I-Xu_Vo615x8eSAtrF-xKcuVo_fNM,1688
+openj/schema.sql,sha256=UOJozIqDSN4kLIndyfOzDQyU1HQOTiQZ140-rgIxYXc,877
+openj/api/card.py,sha256=y6x8NzJx5To7LmEi35ZmS8t7ivWIyP5ctxY7rkwM0Cg,2407
+openj/api/lane.py,sha256=L7ZLZDAkHra2ODsItiYKTEOV3DKeMWn37YNUKauXe5k,2249
+openj/static/material-symbols-outlined.woff2,sha256=npenVfJ_TDFRdJT8NBQiIIZTMt5lsA9N1iATuD-x5E0,3023820
+openj/static/site.css,sha256=bbUy41cg4fnnSD98_miBVdF3aHypoxAxl0QnqMIT2LY,2851
+openj/templates/base.htm,sha256=vnVy6c-rTvVezPPDFHw-Rktv8Ppc1DqQ3xZvonQqHtU,918
+openj/templates/card_create.html,sha256=U6lRxdNGUzoi8OcXqKBlIATv3y9rXzdQiVm9pqn-fHM,893
+openj/templates/card_update.html,sha256=SjG6e2BlUmgP15R5DR7iIlKyFPggThbSjgsjzu3GJ_8,1116
+openj/templates/kanban.html,sha256=1AAyEenem9go6pZdYLwMPSXHkqKn3xydppRHazwq5dY,1028
+openj-0.0.1.dist-info/LICENSE,sha256=Pj_-dsf8G45lLJrLkl8x2rJE7C9ySFSagAluVXZtx7E,1502
+openj-0.0.1.dist-info/METADATA,sha256=3E3geCALmvW4OLjvi3NA7giVBfHclYmEFyu-w3st9l4,3145
+openj-0.0.1.dist-info/WHEEL,sha256=oiQVh_5PnQM0E3gPdiz09WCNmwiHDMaGer_elqB3coM,92
+openj-0.0.1.dist-info/top_level.txt,sha256=U512aCXkR2zm6Dr6nLvv5QTG6lO4a-TMuOXKiK7OSrU,6
+openj-0.0.1.dist-info/RECORD,,
