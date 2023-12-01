@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# You should be using pyenv and have a valid version in ./.python-version
+
+if [[ ! -d "./venv/" ]]; then
+	python -m venv venv
+	source venv/bin/activate
+	pip install pyright black flit pytest tox mypy
+fi
+
+source ./venv/bin/activate
+flit install --symlink
+export BLACKJACK_ENABLE_LOGGING=yes
