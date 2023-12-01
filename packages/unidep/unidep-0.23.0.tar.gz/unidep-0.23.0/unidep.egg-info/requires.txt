@@ -1,0 +1,11 @@
+ruamel.yaml
+
+[:python_version < "3.8"]
+typing_extensions
+
+[test]
+pytest
+pre-commit
+coverage
+pytest-cov
+pytest-mock
