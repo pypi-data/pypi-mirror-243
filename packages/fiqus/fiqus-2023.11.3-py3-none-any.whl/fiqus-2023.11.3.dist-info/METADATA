@@ -1,0 +1,75 @@
+Metadata-Version: 2.1
+Name: fiqus
+Version: 2023.11.3
+Summary: Source code for STEAM FiQuS tool
+Home-page: https://gitlab.cern.ch/steam/fiqus
+Author: STEAM Team
+Author-email: steam-team@cern.ch
+Keywords: CERN,FiQuS,STEAM
+Classifier: Programming Language :: Python :: 3.8
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: coverage (==6.4.4)
+Requires-Dist: coverage-badge (==1.1.0)
+Requires-Dist: flake8 (==5.0.4)
+Requires-Dist: jinja2 (==3.1.2)
+Requires-Dist: gmsh (==4.11.1)
+Requires-Dist: matplotlib (==3.6.0)
+Requires-Dist: mypy (==0.971)
+Requires-Dist: griffe (==0.29.1)
+Requires-Dist: mkdocs (==1.3.1)
+Requires-Dist: mkdocs-material (==8.5.2)
+Requires-Dist: mkdocstrings-python (==0.7.1)
+Requires-Dist: mkdocs-include-markdown-plugin (==3.8.1)
+Requires-Dist: mkdocs-git-revision-date-localized-plugin (==1.1.0)
+Requires-Dist: markdown (==3.3.7)
+Requires-Dist: markdown-include (==0.7.0)
+Requires-Dist: numpy (==1.23.3)
+Requires-Dist: pandas (==1.5.0)
+Requires-Dist: pydantic (==1.10.8)
+Requires-Dist: pylint (==2.15.3)
+Requires-Dist: setuptools (==65.3.0)
+Requires-Dist: ruamel.yaml (==0.17.21)
+Requires-Dist: pytest (==7.1.3)
+Requires-Dist: pytest-cov (==3.0.0)
+Requires-Dist: scipy (==1.10.1)
+Requires-Dist: typing-extensions (==4.5.0)
+
+![FiQuS logo](docs/images/FiQuS_name_logo.svg)
+
+# Introduction
+Source code for STEAM **FiQuS** (**Fi**nite Element Method **Qu**ench **S**imulation) tool.
+
+# Publications
+
+- A. Vitrano et al, "An Open-Source Finite Element Quench Simulation Tool for Superconducting Magnets," in IEEE Transactions on Applied Superconductivity, vol. 33, no. 5, pp. 1-6, Aug. 2023, Art no. 4702006, doi: [10.1109/TASC.2023.3259332](https://ieeexplore.ieee.org/abstract/document/10077402).
+
+- M. Wozniak et al, "Fast Quench Propagation Conductor for Protecting Canted Cos-Theta Magnets," in IEEE Transactions on Applied Superconductivity, vol. 33, no. 5, pp. 1-5, Aug. 2023, Art no. 4701705, doi: [10.1109/TASC.2023.3247997](https://ieeexplore.ieee.org/document/10050158).
+
+- S. Atalay et al, "An Open-Source 3D FE Quench Simulation Tool for No-Insulation HTS Pancake Coils", in arXiv:2311.09177, doi: [10.48550/arXiv.2311.09177](https://doi.org/10.48550/arXiv.2311.09177)
+
+# Folder Structure
+![FiQuS folder structure](docs/images/FiQuS_folder_structure.svg)
+
+# Installation
+
+## Released version:
+```pip install fiqus```
+
+# Links
+STEAM website: https://espace.cern.ch/steam/
+
+STEAM-FiQuS website: https://espace.cern.ch/steam/SitePages/FiQuS.aspx
+
+STEAM-FiQuS documentation: https://steam-fiqus.docs.cern.ch/ 
+
+Coverage report: https://steam-fiqus.docs.cern.ch/htmlcov/ 
+
+# Contact
+steam-team@cern.ch
+
+# STEAM User Agreement
+By using any software of the STEAM framework, users agree with this document:
+https://edms.cern.ch/document/2024516
+
+(Copyright Â© 2022, CERN, Switzerland. All rights reserved.)
