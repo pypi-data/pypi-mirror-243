@@ -1,0 +1,128 @@
+Metadata-Version: 2.1
+Name: scuttlebuddy
+Version: 0.0.3
+Summary: External Scripting Framework for developers who play League of Legends.
+Home-page: https://discord.gg/huywRMDEmE
+Author: Business
+Author-email: 
+License: MIT License
+Project-URL: Discord, https://discord.gg/huywRMDEmE
+Classifier: Development Status :: 3 - Alpha
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.10,<3.12
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# ScuttleBuddy | External Scripting Framework (13.23)
+This framework provides developers a way to develop applications by reading the external memory of League of Legends. This is meant to be used as a training tool for developers and not intended nor created to be used in online play.
+
+Memory reading utilizes the pyMeow library.
+
+## ScuttleBuddy Setup
+- Create python environment with the tools of your choosing
+    - `conda`, `miniconda`, `venv`, etc.
+- Install the ScuttleBuddy Framework into your virtual environment
+    - `pip install scuttlebuddy`
+- Install [pyMeow](https://github.com/qb-0/pyMeow/releases/tag/1.53.36) (v1.53.36)
+    - Download the zip file from the link above and place into the root directory of your project / virtual environment.
+    - Run the following command to install pyMeow:
+        - `pip install pyMeow-1.53.36.zip`
+
+## Simple Usage
+This script prints all enemies who have a higher health value than the local player.
+```python
+from scuttlebuddy import LeagueReader
+from scuttlebuddy.Models import PlayerEntity
+from typing import List
+
+if __name__ == '__main__':
+    lr: LeagueReader = LeagueReader()
+
+    local_player: PlayerEntity = lr.local_player
+    enemy_players: List[PlayerEntity] = lr.enemy_players
+
+    lp_health: float = local_player.health
+    for enemy in enemy_players:
+        e_health: float = enemy.health
+        if e_health > lp_health:
+            print(f'THICCer Player found: {enemy.name} with {e_health} hp')
+```
+
+## Documentation
+The base class for the entire framework is the `LeagueReader` class. This class gives access to everything in real-time during a LoL Match.
+```python
+# Import the class
+from scuttlebuddy import LeagueReader
+
+# Initialize the class
+lr: LeagueReader = LeagueReader()
+```
+
+The `LeagueReader` class gives access to multiple properties relating to in-game entities.
+```python
+from typing import List
+from scuttlebuddy.Models import PlayerEntity
+
+local_player: PlayerEntity = lr.local_player
+team_players: List[PlayerEntity] = lr.team_players
+enemy_players: List[PlayerEntity] = lr.enemy_players
+```
+
+### Models
+The `PlayerEntity` class represents a player/champion in the game. This class holds numerous properties with real-time information about the player in-game.
+- name
+- level
+- team_id
+- is_targetable
+- health
+- max_health
+- mana
+- max_mana
+- ap
+- ad
+- bonus_attack_speed_percent
+- magic_resist
+- armor
+- magic_pen_flat
+- magic_pen_percent (NOT IMPLEMENTED)
+- armor_pen_percent (NOT IMPLEMENTED)
+- lethality
+- attack_range
+- game_pos
+- screen_pos (NOT IMPLEMENTED)
+- is_visible
+- on_screen (NOT IMPLEMENTED)
+
+## Currently Used Offsets
+This is here just as a small documentation for developers working on the library
+```
+LocalPlayer
+HeroList
+
+ViewProjMatrix
+
+ObjectName
+Level
+Team
+Targetable
+Health
+MaxHealth
+Mana
+MaxMana
+AbilityPower
+BaseAttackDamage
+BonusAttackDamage
+BonusAttackSpeed
+MagicResistance
+BonusMagicResistance
+Armor
+BonusArmor
+MagicPenetration
+Lethality
+AttackRange
+XPosition
+YPosition
+ZPosition
+IsVisible
+```
