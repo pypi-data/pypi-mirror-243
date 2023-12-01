@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "core-scripts-cli"
+version = "0.1.0"
+description = ""
+authors = ["ricardo <ricardo.torrejas@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+click = "^8.1.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

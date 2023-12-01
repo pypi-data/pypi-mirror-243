@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: core-scripts-cli
+Version: 0.1.0
+Summary: 
+Author: ricardo
+Author-email: ricardo.torrejas@gmail.com
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: click (>=8.1.7,<9.0.0)
+Description-Content-Type: text/markdown
+
+
