@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: djangoldp-tzcld
+Version: 2.0.15
+Summary: djangoldp package for TZCLD
+Home-page: https://git.startinblox.com/djangoldp-packages/djangoldp-tzcld
+Author: Startin'blox
+Author-email: jbaptiste@startinblox.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: djangoldp (==3.0.12)
+Requires-Dist: djangoldp-account (==3.0.4)
+Requires-Dist: djangoldp-circle (~=3.0)
+Requires-Dist: djangoldp-community (~=3.0)
+Provides-Extra: include_package_data
+Requires-Dist: True ; extra == 'include_package_data'
+
+UNKNOWN
+
