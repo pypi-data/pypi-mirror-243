@@ -1,0 +1,10 @@
+aiohttp
+pycryptodome
+aiofiles
+mutagen
+websocket-client
+requests
+pydantic==1.10.12
+
+[cv]
+opencv-python
