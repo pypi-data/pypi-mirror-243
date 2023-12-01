@@ -1,0 +1,3 @@
+[console_scripts]
+icekube=icekube.cli:app
+
