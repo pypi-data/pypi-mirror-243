@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/registeruniqeid123.egg-info/PKG-INFO
+src/registeruniqeid123.egg-info/SOURCES.txt
+src/registeruniqeid123.egg-info/dependency_links.txt
+src/registeruniqeid123.egg-info/top_level.txt
+src/user_register_pkg/__init__.py
+src/user_register_pkg/main.py
