@@ -1,0 +1,766 @@
+{
+    "SimulationParameters": {
+        "StartDate": "2016-01-01",
+        "EndDate": "2016-01-02",
+        "Resolution": "01:00:00",
+        "Internal resolution": "00:15:00",
+        "Buffer before": "48:00",
+        "Buffer after": "24:00",
+        "Use sum unit": false
+    },
+    "Enterprise": {
+        "TimeLimits": {
+            "Opening hours": {
+                "Type": "Any",
+                "TimeLimits": [
+                    "Weekdays",
+                    "Saturdays",
+                    "Sundays"
+                ]
+            },
+            "Weekdays": {
+                "Type": "Weekly",
+                "NumberOfWeeks": 1,
+                "Weekdays": [
+                    true,
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false
+                ],
+                "StartTime": "06:00",
+                "EndTime": "22:30"
+            },
+            "Saturdays": {
+                "Type": "Weekly",
+                "NumberOfWeeks": 1,
+                "Weekdays": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    true,
+                    false
+                ],
+                "StartTime": "06:55",
+                "EndTime": "22:30"
+            },
+            "Sundays": {
+                "Type": "Weekly",
+                "NumberOfWeeks": 1,
+                "Weekdays": [
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    false,
+                    true
+                ],
+                "StartTime": "07:55",
+                "EndTime": "22:30"
+            },
+            "Lighting": {
+                "Type": "ValueProfile",
+                "Operation": "<",
+                "Limit": 30,
+                "Default": false,
+                "Data file": "/input/input_data.csv",
+                "Date format": "%Y%m%d:%H%M"
+            },
+            "SpecialLoad": {
+                "Type": "All",
+                "TimeLimits": [
+                    "SummerMonths",
+                    "Breaks"
+                ]
+            },
+            "SummerMonths": {
+                "Type": "DateRange",
+                "StartDate": "2016-05-06",
+                "EndDate": "2016-10-01"
+            },
+            "Breaks": {
+                "Type": "None",
+                "TimeLimits": [
+                    "LunchBreak",
+                    "AfternoonBreak"
+                ]
+            },
+            "LunchBreak": {
+                "Type": "Daily",
+                "NumberOfDays": 1,
+                "StartTime": "11:30",
+                "EndTime": "13:00"
+            },
+            "AfternoonBreak": {
+                "Type": "Daily",
+                "NumberOfDays": 1,
+                "StartTime": "17:15",
+                "EndTime": "18:30"
+            }
+        },
+        "Employees": {
+            "Cashiers": {
+                "Number": 2,
+                "OuterTimeLimit": "Opening hours",
+                "ArrivalTimeOffset": {
+                    "Expected value": "00:10",
+                    "Standard deviation": "00:10",
+                    "Upper bound": "01:00"
+                },
+                "DepartureTimeOffset": {
+                    "Expected value": "00:10",
+                    "Standard deviation": "00:10",
+                    "Upper bound": "01:00"
+                }
+            }
+        },
+        "Customers": {
+            "Default customers": {
+                "Required employees": [
+                    "Cashiers"
+                ],
+                "ArrivalProfiles": [
+                    {
+                        "TimeLimit": "Weekdays",
+                        "ArrivalTimeFrames": [
+                            "00:00",
+                            "06:00",
+                            "09:00",
+                            "12:00",
+                            "15:00",
+                            "18:00",
+                            "21:00"
+                        ],
+                        "ExpectedArrivals": [
+                            0,
+                            150,
+                            140,
+                            140,
+                            150,
+                            100,
+                            50
+                        ],
+                        "ArrivalStdDev": 70,
+                        "DurationOfStay": {
+                            "Expected value": "00:15:00",
+                            "Standard deviation": "00:05:00"
+                        }
+                    },
+                    {
+                        "TimeLimit": "Saturdays",
+                        "ArrivalTimeFrames": [
+                            "00:00",
+                            "06:00",
+                            "09:00",
+                            "12:00",
+                            "15:00",
+                            "18:00",
+                            "21:00"
+                        ],
+                        "ExpectedArrivals": [
+                            0,
+                            160,
+                            200,
+                            240,
+                            230,
+                            200,
+                            70
+                        ],
+                        "ArrivalStdDev": 70,
+                        "DurationOfStay": {
+                            "Expected value": "00:15:00",
+                            "Standard deviation": "00:05:00"
+                        }
+                    },
+                    {
+                        "TimeLimit": "Sundays",
+                        "ArrivalTimeFrames": [
+                            "00:00",
+                            "06:00",
+                            "09:00",
+                            "12:00",
+                            "15:00",
+                            "18:00",
+                            "21:00"
+                        ],
+                        "ExpectedArrivals": [
+                            0,
+                            150,
+                            140,
+                            120,
+                            150,
+                            100,
+                            50
+                        ],
+                        "ArrivalStdDev": 70,
+                        "DurationOfStay": {
+                            "Expected value": "00:15:00",
+                            "Standard deviation": "00:05:00"
+                        }
+                    }
+                ]
+            }
+        },
+        "Devices": {
+            "Lighting": {
+                "TimeLimit": "Lighting",
+                "Activations": [
+                    {
+                        "Type": "Attendance",
+                        "Activator": "Cashiers",
+                        "StateOrder": [
+                            "Default"
+                        ]
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 4000,
+                                    "Duration": {
+                                        "Expected value": "01:00:00",
+                                        "Standard deviation": "00:00:00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Neon sign": {
+                "Activations": [
+                    {
+                        "Type": "Attendance",
+                        "Activator": "Cashiers",
+                        "StateOrder": [
+                            "Default"
+                        ]
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 200,
+                                    "Duration": {
+                                        "Expected value": "12:00:00",
+                                        "Standard deviation": "00:00:00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Price display": {
+                "Activations": [
+                    {
+                        "Type": "Attendance",
+                        "Activator": "Cashiers",
+                        "StateOrder": [
+                            "Default"
+                        ]
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 200,
+                                    "Duration": {
+                                        "Expected value": "12:00:00",
+                                        "Standard deviation": "00:00:00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Fridge": {
+                "LimitedTo": 3,
+                "Activations": [
+                    {
+                        "Type": "Continuously",
+                        "StateOrder": [
+                            "Active",
+                            "Inactive"
+                        ]
+                    }
+                ],
+                "States": {
+                    "Active": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 150,
+                                    "Duration": {
+                                        "Expected value": "00:10:00",
+                                        "Lower bound": "00:02:00",
+                                        "Upper bound": "00:50:00"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "Inactive": {
+                        "Loads": [
+                            {
+                                "LoadType": null,
+                                "Duration": {
+                                    "Expected value": "00:45:00",
+                                    "Standard deviation": "00:15:00",
+                                    "Lower bound": "00:30:00"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Coffee machine": {
+                "Standby": {
+                    "LoadType": "Electricity",
+                    "Load": 2
+                },
+                "Activations": [
+                    {
+                        "Type": "CustomerActivated",
+                        "Activator": "Default customers",
+                        "StateOrder": [
+                            "Default"
+                        ],
+                        "Usage": {
+                            "Expected value": 1,
+                            "Standard deviation": 0.5,
+                            "Upper bound": 2
+                        }
+                    },
+                    {
+                        "Type": "EmployeeActivated",
+                        "Activator": "Cashiers",
+                        "StateOrder": [
+                            "Default"
+                        ],
+                        "Usage": {
+                            "NumberOfUses": 2,
+                            "TimeSpan": "09:00:00"
+                        }
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 1500,
+                                    "Duration": {
+                                        "Expected value": "00:00:45",
+                                        "Standard deviation": "00:00:15"
+                                    }
+                                }
+                            },
+                            {
+                                "LoadType": "Cold Water",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 0.4,
+                                    "Duration": {
+                                        "Expected value": "00:00:45",
+                                        "Standard deviation": "00:00:15"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Fuel pump": {
+                "Standby": {
+                    "LoadType": "Electricity",
+                    "Load": 3
+                },
+                "LimitedTo": 4,
+                "Activations": [
+                    {
+                        "Type": "CustomerActivated",
+                        "Activator": "Default customers",
+                        "StateOrder": [
+                            "Default"
+                        ],
+                        "Usage": {
+                            "Expected value": 1,
+                            "Standard deviation": 0.05
+                        }
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 10,
+                                    "Duration": {
+                                        "Expected value": "00:01:30",
+                                        "Standard deviation": "00:00:30"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Vacuum cleaner (for cars)": {
+                "Standby": {
+                    "LoadType": "Electricity",
+                    "Load": 1
+                },
+                "LimitedTo": 1,
+                "Activations": [
+                    {
+                        "Type": "CustomerActivated",
+                        "Activator": "Default customers",
+                        "Usage": {
+                            "Expected value": 0.25,
+                            "Standard deviation": 0.2
+                        },
+                        "StateOrder": [
+                            "Default"
+                        ]
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "ActivatorBusy": true,
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 1600,
+                                    "Duration": {
+                                        "Upper bound": "00:20:00",
+                                        "Lower bound": "00:10:00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Air pump / compressor": {
+                "Standby": {
+                    "LoadType": "Electricity",
+                    "Load": 1
+                },
+                "LimitedTo": 1,
+                "Activations": [
+                    {
+                        "Type": "CustomerActivated",
+                        "Activator": "Default customers",
+                        "StateOrder": [
+                            "Default"
+                        ],
+                        "Usage": {
+                            "Expected value": 0.1,
+                            "Standard deviation": 0.01,
+                            "Upper bound": 1
+                        }
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 1500,
+                                    "Duration": {
+                                        "Expected value": "00:02:00",
+                                        "Standard deviation": "00:01:00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Unidentified devices (permanently running, constant load)": {
+                "LimitedTo": 1,
+                "Activations": [
+                    {
+                        "Type": "Continuously",
+                        "StateOrder": [
+                            "Default"
+                        ]
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 3000,
+                                    "Duration": {
+                                        "Expected value": "01:00:00",
+                                        "Standard deviation": "00:00:00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Unidentified devices (permanently running, irregular load)": {
+                "LimitedTo": 5,
+                "Activations": [
+                    {
+                        "Type": "Continuously",
+                        "StateOrder": [
+                            "Active",
+                            "Inactive"
+                        ]
+                    }
+                ],
+                "States": {
+                    "Active": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 800,
+                                    "Duration": {
+                                        "Expected value": "01:00:00",
+                                        "Standard deviation": "00:30:00"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "Inactive": {
+                        "Loads": [
+                            {
+                                "LoadType": null,
+                                "Duration": {
+                                    "Expected value": "00:45:00",
+                                    "Standard deviation": "00:15:00"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Unidentified devices (base load during opening times)": {
+                "Activations": [
+                    {
+                        "Type": "Attendance",
+                        "Activator": "Cashiers",
+                        "StateOrder": [
+                            "Default"
+                        ]
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 2000,
+                                    "Duration": {
+                                        "Expected value": "01:00:00",
+                                        "Standard deviation": "00:00:00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Unidentified devices (short peaks)": {
+                "LimitedTo": 4,
+                "Activations": [
+                    {
+                        "Type": "CustomerActivated",
+                        "Activator": "Default customers",
+                        "StateOrder": [
+                            "Default"
+                        ],
+                        "Usage": {
+                            "Expected value": 0.2,
+                            "Standard deviation": 0.1,
+                            "Upper bound": 1,
+                            "Lower bound": 0
+                        }
+                    }
+                ],
+                "States": {
+                    "Default": {
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 4800,
+                                    "Duration": {
+                                        "Expected value": "00:50:00",
+                                        "Standard deviation": "00:30:00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Unidentified devices (additional load in summer)": {
+                "TimeLimit": "SpecialLoad",
+                "LimitedTo": 4,
+                "Activations": [
+                    {
+                        "Type": "EmployeeActivated",
+                        "Activator": "Cashiers",
+                        "StateOrder": [
+                            "Active"
+                        ],
+                        "Usage": {
+                            "NumberOfUses": 1,
+                            "TimeSpan": "01:20:00"
+                        }
+                    }
+                ],
+                "States": {
+                    "Active": {
+                        "ActivatorBusy": true,
+                        "Loads": [
+                            {
+                                "LoadType": "Electricity",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 1800,
+                                    "Duration": {
+                                        "Expected value": "01:00:00",
+                                        "Standard deviation": "00:20:00"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "Inactive": {
+                        "Loads": [
+                            {
+                                "LoadType": null,
+                                "Duration": {
+                                    "Expected value": "01:20:00",
+                                    "Standard deviation": "01:00:00"
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "Toilet & sink": {
+                "LimitedTo": 1,
+                "Activations": [
+                    {
+                        "Type": "EmployeeActivated",
+                        "Activator": "Cashiers",
+                        "Usage": {
+                            "NumberOfUses": 2,
+                            "TimeSpan": "08:00:00"
+                        },
+                        "StateOrder": [
+                            "Flushing",
+                            "Washing hands"
+                        ]
+                    }
+                ],
+                "States": {
+                    "Flushing": {
+                        "ActivatorBusy": true,
+                        "Loads": [
+                            {
+                                "LoadType": "Cold Water",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 100,
+                                    "Duration": {
+                                        "Expected value": "00:00:05",
+                                        "Standard deviation": "00:00:00"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "Washing hands": {
+                        "Loads": [
+                            {
+                                "LoadType": "Cold Water",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 3,
+                                    "Duration": {
+                                        "Expected value": "00:00:20",
+                                        "Standard deviation": "00:00:10"
+                                    }
+                                }
+                            },
+                            {
+                                "LoadType": "Hot Water",
+                                "Profile": {
+                                    "ProfileType": "Rectangle",
+                                    "Load": 3,
+                                    "Duration": {
+                                        "Expected value": "00:00:00",
+                                        "Standard deviation": "00:00:00"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "LoadTypes": {
+            "Electricity": {
+                "Unit": "Watt",
+                "SumUnit": "kWh",
+                "ConversionTimeSpan": "1000:00:00"
+            },
+            "Cold Water": {
+                "Unit": "L/Min",
+                "SumUnit": "L",
+                "ConversionTimeSpan": "00:01:00"
+            },
+            "Hot Water": {
+                "Unit": "L/Min",
+                "SumUnit": "L",
+                "ConversionTimeSpan": "00:01:00"
+            }
+        }
+    }
+}
