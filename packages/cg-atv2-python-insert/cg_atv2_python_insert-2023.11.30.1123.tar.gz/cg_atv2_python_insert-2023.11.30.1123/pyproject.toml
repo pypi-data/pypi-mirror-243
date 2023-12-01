@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "cg-atv2-python-insert"
+version = "2023.11.30.1123"
+description = ""
+authors = ["CodeGrade <info@codegrade.com>"]
+packages = [{include = "cg_atv2_python_insert"}]
+readme = "README.md"
+
+[tool.poetry.scripts]
+cg_atv2_python_insert = 'cg_atv2_python_insert.substitution:main'
+
+[tool.poetry.dependencies]
+python = "^3.10"
+libcst = "^1.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.3"
+mypy = "^1.6.1"
+pylint = "^3.0.2"
+yapf = "^0.40.2"
+isort = "^5.12.0"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
