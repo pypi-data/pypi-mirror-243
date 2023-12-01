@@ -1,0 +1,374 @@
+{% extends 'stela_control/index.html' %}
+{% load i18n %}
+{% load static %}
+{% load humanize %}
+{% load crispy_forms_tags %}
+{% block side_title %}
+    {% if call == "subs" %}
+        <h3 class="oxanium mx-4 text-end"><b>STELA {% trans "CONTROL DYNAMIC" %} | {% trans "Subscribers" %}</b></h3>
+    {% else %}
+        <h3 class="oxanium mx-4 text-end"><b>STELA {% trans "CONTROL DYNAMIC" %} | {% trans "Users Control" %}</b></h3>
+    {% endif %}
+{% endblock  %}
+{% block title %}
+{% if userdata.is_superuser is True %}
+    <h1 class="h2 oxanium text-dark ml-3"><i class="fa-solid fa-user-shield color-stela"></i> {% trans "Superuser" %} # {{userdata.id}} {{userdata.username}} </h1>
+{% else %}
+    <h1 class="h2 oxanium text-dark ml-3"><i class="fa-solid fa-user color-stela"></i> {% trans "User" %} # {{userdata.id}} {{userdata.username}}</h1>
+{% endif %}
+{% endblock  %} 
+{% block section_content %}
+    {% if call == "subs" %}
+        <div class="row justify-content-center main-data wow fadeIn mt-5" ata-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="col-lg-6 mb-3">
+                <div class="card p-0 ml-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-end">
+                            <small>{% trans "Last Login" %}: {{userdata.last_login|naturaltime}}</small>
+                        </div>
+                        <h3 class="fs-5 mb-0">{% trans "Subscription Date" %}</h3>
+                        <small class="mb-3">{{userdata.created}}</small>
+                        <ul class="subs-hub">
+                            {% if userdata.is_basic %}
+                                <li>{% trans "Current Plan" %}: Stela Basic </li>
+                            {% elif userdata.is_business  %}
+                                <li>{% trans "Current Plan" %}: Stela Business </li>
+                            {% endif %}
+                            {% if userdata.is_suspended %}
+                                <li>{% trans "Status" %}: <b class="text-red">{% trans "Suspended" %}</b></li>
+                            {% else %}
+                                <li>{% trans "Status" %}: <b class="text-success">{% trans "Active" %}</b></li>
+                            {% endif %}
+                            {% if last_pay %}
+                                <li>{% trans "Last Payment" %}: <b>{{last_pay.created}}</b></li>
+                            {% else %}
+                                <li>{% trans "Last Payment" %}: <b>{% trans "No recorded payments" %}</b></li>
+                            {% endif %}
+                            {% if total.purchase > 0 %}
+                                <h3 class="fs-4">{% trans "Total Purchase" %}: <b class="text-success">${{total.purchase}}</b></h3>
+                            {% else %}
+                                <h3 class="fs-4">{% trans "Total Purchase" %}: <b class="text-red">{% trans "No Purchase Yet" %}</b></h3>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-3 mt-2">
+                <ul class="no-list mx-4">
+                    <li class="mb-3">
+                        <button class="btn-block btn btn-shappire" onclick="profileEdit()">{% trans "Edit Profile" %}</button>
+                    </li>
+                    <li class="mb-3">
+                        <button class="btn-block btn btn-shappire disabled" onclick="prizeForm()">{% trans "Send Message" %}</button>
+                    </li>
+                    <li class="mb-3">
+                        <button class="btn-block btn btn-danger" onclick="closeAccount()">{% trans "Suspend Subscription" %}</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-10">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h3 class="fs-5 oxanium pt-2 m-0">{% trans "Address" %}</h3>
+                                <p class="m-0 p-0 text-dark">{{userdata.address}}</p>
+                                <h3 class="fs-5 oxanium pt-2 m-0">{% trans "City" %}</h3>
+                                <p class="m-0 p-0 text-dark">{{userdata.city_profile}}</p>
+                                <h3 class="fs-5 oxanium pt-2 m-0">{% trans "Country" %}</h3>
+                                <p class="m-0 p-0 text-dark">{{userdata.country_profile}}</p>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <ul>
+                                    <li>{% trans "Full Name" %}: {{userdata.full_name}}</li>
+                                    <li>{% trans "Phone" %}: {{userdata.phone_number}}</li>
+                                    <li>{% trans "Email" %}: {{userdata.email}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center wow fadeIn p-0 profile-edit d-none" ata-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="col-lg-8">
+                <div class="card p-0 mt-3">
+                    <div class="card-body">
+                        <form enctype="multipart/form-data" id="updateUser" class="scroll-x-hide" method="post" onsubmit="btnDisabled()">
+                            {% csrf_token %}
+                            {{form|crispy}}
+                        <input type="hidden" name="form-id" value="updateUser">
+                        </form>
+                        <div class=" d-flex justify-content-end mt-3">
+                            <button type="text" class="btn btn-shappire mx-2" onclick="Back()">{% trans "Back" %}</button>
+                            <button type="submit" form="updateUser" class="btn btn-shappire center-btn btn-form d-flex"><i class="fa-solid fa-hard-drive fs-4 mx-2"></i> {% trans "Save" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="row justify-content-center wow fadeIn p-0 billing d-none" ata-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="col-lg-8">
+                <div class="card background b-25px p-4 mt-3">
+                    <div class="card-body">
+                        {% if orders %}
+                            <h2 class="fs-4">{% trans "All User Projects" %}</h2>
+                            <ul>
+                                {% for order in orders %}
+                                    {% for item in order.stela.all %}
+                                        <li class="my-3">
+                                            <div class="row align-items-center">
+                                                <div class="col-6 my-2">
+                                                    {{item.selection.domain}} (<b>{% trans "Order ID" %}: {{order.transaction_id}}</b>)
+                                                </div>
+                                                {% if order.status == "Completed" %}
+                                                    <div class="col-5 my-2">
+                                                        <a href="/billings/dynamic-create/{{item.selection.id}}/{{order.id}}" class="btn btn-block btn-shappire">{% trans "Create Billing" %}</a>
+                                                    </div>
+                                                {% else %}
+                                                    <div class="col-5 my-2">
+                                                        <a href="/billings/dynamic-create/{{item.selection.id}}/{{order.id}}" class="btn btn-block btn-shappire disabled">{% trans "Create Billing" %}</a>
+                                                    </div>
+                                                {% endif %} 
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul> 
+                        {% else %}
+                            <form action="" method="post" onsubmit="btnDisabled()">
+                                {% csrf_token %}
+                                <h3 class="text-center oxanium fs-4">{% trans "Suscription Cloud Billing" %}</h3>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        {{form2.media}}
+                                        {{form2|crispy}}
+                                        <h3 class="ff-21 oxanium fw-bold mt-4 text-center text-dark">{% trans "Recipt Charges" %}</h3>
+                                        <div id="formset">
+                                            {{ formset.management_form }}
+                                                {% for form in formset %}
+                                                <div id="form-0" class="formset input-flex justify-content-between pt-2">
+                                                    {{form}}
+                                                </div>
+                                                {% endfor %}
+                                            <div id="empty-form" class="d-none">
+                                                {{formset.empty_form}}
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between my-3 text-light">
+                                            <button class="btn-clear text-grey" id="add-formset" type="button"><i class="fa-solid fa-plus"></i> {% trans "Add" %}</button>
+                                            <button class="btn-clear text-grey" id="erase-formset" type="button"><i class="fa-solid fa-minus"></i> {% trans "Remove" %}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        <h3 class="ff-21 oxanium fw-bold mt-4 text-center text-dark">{% trans "Recipt Discounts" %}</h3>
+                                        <div id="formset2">
+                                            {{ formset2.management_form }}
+                                                {% for form in formset2 %}
+                                                <div id="form-0" class="formset2 input-flex justify-content-between pt-2">
+                                                    {{form}}
+                                                </div>
+                                                {% endfor %}
+                                            <div id="empty-form2" class="d-none">
+                                                {{formset2.empty_form}}
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between my-3 text-light">
+                                            <button class="btn-clear text-grey" id="add-formset2" type="button"><i class="fa-solid fa-plus"></i> {% trans "Add" %}</button>
+                                            <button class="btn-clear text-grey" id="erase-formset2" type="button"><i class="fa-solid fa-minus"></i> {% trans "Remove" %}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mt-4 mr-3">
+                                    <input type="hidden" name="form-id" value="NewSuscription">
+                                    <div class="col-lg-4">
+                                        <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block btn-form2 d-flex">{% trans "Get Preview" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                                    </div>
+                                </div> 
+                            </form>
+                        {% endif %}         
+                    </div>
+                </div>
+            </div>
+        </div>   
+    {% else %}
+        <div class="row justify-content-center main-data wow fadeIn mt-5" ata-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="col-lg-6 mb-3">
+                <div class="card p-0 ml-4">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-end">
+                            <small>{% trans "Last Login" %}: {{userdata.last_login|naturaltime}}</small>
+                        </div>
+                        <h3 class="fs-5">{% trans "Balance" %}</h3>
+                        <ul>
+                            {% if cloud.purchase > 0 %}
+                                <li class="my-3">{% trans "Cloud" %}: <b class="fw-bold text-success">${{cloud.purchase}}</b> </li>
+                            {% else %}
+                                <li class="my-3">{% trans "Cloud" %}: <small class="text-red">{% trans "No Purchase Yet" %}</small></li>
+                            {% endif %}
+                            {% if stela.purchase > 0 %}
+                                <li class="my-3">Stela: <b class="fw-bold text-success">${{stela.purchase}} </b></li>
+                            {% else %}
+                                <li class="my-3">Stela: <small class="text-red">{% trans "No Purchase Yet" %}</small> </li>
+                            {% endif %}
+                            {% if store.purchase > 0 %}
+                                <li class="my-3">Store: <b class="fw-bold text-success">${{store.purchase}}</b> </li>
+                            {% else %}
+                                <li class="my-3">Store: <small class="text-red">{% trans "No Purchase Yet" %}</small> </li>
+                            {% endif %}
+                            {% if total.purchase > 0 %}
+                                <h3 class="fs-4">{% trans "Total Purchase" %}: <b class="text-success">${{total.purchase}}</b></h3>
+                            {% else %}
+                            <h3 class="fs-4">{% trans "Total Purchase" %}: <b class="text-red">{% trans "No Purchase Yet" %}</b></h3>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-3 mt-2">
+                <ul class="no-list mx-4">
+                    <li class="mb-3">
+                        <button class="btn-block btn btn-shappire" onclick="profileEdit()">{% trans "Edit Profile" %}</button>
+                    </li>
+                    <li class="mb-3">
+                        <button class="btn-block btn btn-shappire disabled" onclick="prizeForm()">{% trans "Send Message" %}</button>
+                    </li>
+                    <li class="mb-3">
+                        <button class="btn-block btn btn-danger" onclick="closeAccount()">{% trans "Suspend Account" %}</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-10">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h3 class="fs-5 oxanium pt-2 m-0">{% trans "Address" %}</h3>
+                                <p class="m-0 p-0 text-dark">{{userdata.address}}</p>
+                                <h3 class="fs-5 oxanium pt-2 m-0">{% trans "City" %}</h3>
+                                <p class="m-0 p-0 text-dark">{{userdata.city_profile}}</p>
+                                <h3 class="fs-5 oxanium pt-2 m-0">{% trans "Country" %}</h3>
+                                <p class="m-0 p-0 text-dark">{{userdata.country_profile}}</p>
+                            </div>
+                            <div class="col-lg-6 text-right">
+                                <ul>
+                                    <li>{% trans "Full Name" %}: {{userdata.full_name}}</li>
+                                    <li>{% trans "Phone" %}: {{userdata.phone_number}}</li>
+                                    <li>{% trans "Email" %}: {{userdata.email}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center wow fadeIn p-0 profile-edit d-none" ata-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="col-lg-8">
+                <div class="card p-0 mt-3">
+                    <div class="card-body">
+                        <form enctype="multipart/form-data" id="updateUser" class="scroll-x-hide" method="post" onsubmit="btnDisabled()">
+                            {% csrf_token %}
+                            {{form|crispy}}
+                        <input type="hidden" name="form-id" value="updateUser">
+                        </form>
+                        <div class=" d-flex justify-content-end mt-3">
+                            <button type="text" class="btn btn-shappire mx-2" onclick="Back()">{% trans "Back" %}</button>
+                            <button type="submit" form="updateUser" class="btn btn-shappire center-btn btn-form d-flex"><i class="fa-solid fa-hard-drive fs-4 mx-2"></i> {% trans "Save" %}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+        <div class="row justify-content-center wow fadeIn p-0 billing d-none" ata-wow-duration="1s" data-wow-delay="0.5s">
+            <div class="col-lg-8">
+                <div class="card background b-25px p-4 mt-3">
+                    <div class="card-body">
+                        {% if orders %}
+                            <h2 class="fs-4">{% trans "All User Projects" %}</h2>
+                            <ul>
+                                {% for order in orders %}
+                                    {% for item in order.stela.all %}
+                                        <li class="my-3">
+                                            <div class="row align-items-center">
+                                                <div class="col-6 my-2">
+                                                    {{item.selection.domain}} (<b>{% trans "Order ID" %}: {{order.transaction_id}}</b>)
+                                                </div>
+                                                {% if order.status == "Completed" %}
+                                                    <div class="col-5 my-2">
+                                                        <a href="/billings/dynamic-create/{{item.selection.id}}/{{order.id}}" class="btn btn-block btn-shappire">{% trans "Create Billing" %}</a>
+                                                    </div>
+                                                {% else %}
+                                                    <div class="col-5 my-2">
+                                                        <a href="/billings/dynamic-create/{{item.selection.id}}/{{order.id}}" class="btn btn-block btn-shappire disabled">{% trans "Create Billing" %}</a>
+                                                    </div>
+                                                {% endif %} 
+                                            </div>
+                                        </li>
+                                    {% endfor %}
+                                {% endfor %}
+                            </ul> 
+                        {% else %}
+                            <form action="" method="post" onsubmit="btnDisabled()">
+                                {% csrf_token %}
+                                <h3 class="text-center oxanium fs-4">{% trans "Suscription Cloud Billing" %}</h3>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        {{form2.media}}
+                                        {{form2|crispy}}
+                                        <h3 class="ff-21 oxanium fw-bold mt-4 text-center text-dark">{% trans "Recipt Charges" %}</h3>
+                                        <div id="formset">
+                                            {{ formset.management_form }}
+                                                {% for form in formset %}
+                                                <div id="form-0" class="formset input-flex justify-content-between pt-2">
+                                                    {{form}}
+                                                </div>
+                                                {% endfor %}
+                                            <div id="empty-form" class="d-none">
+                                                {{formset.empty_form}}
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between my-3 text-light">
+                                            <button class="btn-clear text-grey" id="add-formset" type="button"><i class="fa-solid fa-plus"></i> {% trans "Add" %}</button>
+                                            <button class="btn-clear text-grey" id="erase-formset" type="button"><i class="fa-solid fa-minus"></i> {% trans "Remove" %}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        <h3 class="ff-21 oxanium fw-bold mt-4 text-center text-dark">{% trans "Recipt Discounts" %}</h3>
+                                        <div id="formset2">
+                                            {{ formset2.management_form }}
+                                                {% for form in formset2 %}
+                                                <div id="form-0" class="formset2 input-flex justify-content-between pt-2">
+                                                    {{form}}
+                                                </div>
+                                                {% endfor %}
+                                            <div id="empty-form2" class="d-none">
+                                                {{formset2.empty_form}}
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between my-3 text-light">
+                                            <button class="btn-clear text-grey" id="add-formset2" type="button"><i class="fa-solid fa-plus"></i> {% trans "Add" %}</button>
+                                            <button class="btn-clear text-grey" id="erase-formset2" type="button"><i class="fa-solid fa-minus"></i> {% trans "Remove" %}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end mt-4 mr-3">
+                                    <input type="hidden" name="form-id" value="NewSuscription">
+                                    <div class="col-lg-4">
+                                        <button type="submit" id="btn-footer" name="btn-footer" class="btn btn-shappire center-btn btn-block btn-form2 d-flex">{% trans "Get Preview" %} <i class="fa-solid fa-paper-plane mx-2"></i></button>      
+                                    </div>
+                                </div> 
+                            </form>
+                        {% endif %}         
+                    </div>
+                </div>
+            </div>
+        </div>  
+    {% endif %}
+{% endblock  %}
+{% block scripts %}
+    <script src="{% static 'js/stela/users/user-profile.js' %}"></script>
+{% endblock  %}

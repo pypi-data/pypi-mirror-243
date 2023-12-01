@@ -1,0 +1,43 @@
+{% load i18n %}
+{% load crispy_forms_tags %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 {% if form.media.errors %}has-danger{% endif %}">
+            {{form.media|as_crispy_field}}
+        </div>
+    </div>
+    <div id="formset">
+        {{ formset.management_form }}
+        {% for form in formset %}
+            <div id="form-0" class="formset pt-2">
+                {{form.id}}
+                <div class="row">
+                    <div class="col-12 {% if form.bullet_title.errors %}has-danger{% endif %}">
+                        {{form.bullet_title|as_crispy_field}}
+                    </div>
+                    <div class="col-12 {% if form.content_bullet.errors %}has-danger{% endif %}">
+                        {{form.content_bullet|as_crispy_field}}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-lg-3 col-6">
+            <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#removeObj" onclick="removeContentRequest({{pk}})"><i class="ri-delete-bin-7-fill"></i></button>
+        </div>
+    </div>
+    <div id="empty-form" class="d-none">
+        <div class="row">
+            <div class="col-12">
+                {{formset.empty_form.bullet_title|as_crispy_field}}
+            </div>
+            <div class="col-12">
+                {{formset.empty_form.content_bullet|as_crispy_field}}
+            </div>
+        </div>
+    </div>
+</div>
+<p class="response-footer text-link fw-bold oxanium"></p>
+<input type="hidden" name="form-id" value="imagebullet-form">
+<input type="hidden" name="form-update" value="{{pk}}">
