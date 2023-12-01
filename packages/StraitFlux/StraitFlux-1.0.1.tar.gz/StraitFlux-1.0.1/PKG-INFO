@@ -1,0 +1,15 @@
+Metadata-Version: 1.2
+Name: StraitFlux
+Version: 1.0.1
+Summary: StraitFlux
+Home-page: https://github.com/susannawinkelbauer/StraitFlux
+Author: Susanna Winkelbauer
+Author-email: susanna.winkelbauer@univie.ac.at
+License: UNKNOWN
+Download-URL: https://github.com/susannawinkelbauer/StraitFlux/archive/refs/tags/v1.0.1.tar.gz
+Description: StraitFlux - calculates oceanic transports and crosssections on different model grids.
+Keywords: python,oceanic transports,curvilinear grids
+Platform: UNKNOWN
+Classifier: Intended Audience :: Science/Research
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.10
