@@ -1,0 +1,2 @@
+[console_scripts]
+leapfrogai = leapfrogai.cli:cli
