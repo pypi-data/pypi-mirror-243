@@ -1,0 +1,9 @@
+openmpi
+torch
+numpy
+mpi4py
+scikit-learn
+prettyPlot>=0.0.10
+black
+isort
+codespell
