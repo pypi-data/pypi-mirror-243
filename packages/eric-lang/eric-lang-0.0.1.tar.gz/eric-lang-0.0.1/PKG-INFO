@@ -1,0 +1,36 @@
+Metadata-Version: 2.1
+Name: eric-lang
+Version: 0.0.1
+Summary: My own langugae
+Author-email: Eric Hurst <eric.hurst97@gmail.com>
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# Eric Lang
+
+This is my programming language. I like it because it's mine...
+
+
+## Quickstart
+
+```
+pip install eric-lang
+eric run example.eric
+```
+
+## Examples
+
+```
+stdin
+split("\n\n")
+    split("\n")
+        int
+    sum
+max
+print
+```
+
+## Developing
+```
+pip install -e .
+```
