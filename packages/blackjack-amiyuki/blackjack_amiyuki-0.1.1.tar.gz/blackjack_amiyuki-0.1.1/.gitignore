@@ -1,0 +1,10 @@
+.idea
+.vscode
+__pycache__/
+venv/
+build/
+dist/
+.DS_Store
+.pypirc
+log/
+.tox/

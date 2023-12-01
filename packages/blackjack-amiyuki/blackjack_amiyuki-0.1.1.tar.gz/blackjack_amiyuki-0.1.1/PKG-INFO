@@ -1,0 +1,44 @@
+Metadata-Version: 2.1
+Name: blackjack-amiyuki
+Version: 0.1.1
+Summary: Blackjack made with pygame
+Author-email: Alexander Xie <amiyuki788@gmail.com>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Classifier: License :: OSI Approved :: MIT License
+Requires-Dist: pygame>=2.5.1
+Requires-Dist: loguru>=0.7.2
+Project-URL: Home, https://github.com/amiyuki7/blackjack
+
+# blackjack
+
+Blackjack Simulator made with pygame
+
+### Dev Install & Setup
+
+```sh
+git clone https://github.com/amiyuki7/blackjack.git
+cd blackjack
+source setup
+```
+
+Dev entrypoint: `python main.py`
+
+### Alternatively...
+
+```sh
+pip install blackjack-amiyuki
+```
+
+and create a file like so and run it:
+
+```py
+# main.py
+
+from blackjack import *
+from blackjack.state.loading import Loading
+
+if __name__ == "__main__":
+    App(Loading).run()
+```
+
