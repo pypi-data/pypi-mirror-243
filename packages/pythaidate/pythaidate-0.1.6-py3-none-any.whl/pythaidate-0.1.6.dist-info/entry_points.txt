@@ -1,0 +1,3 @@
+[console_scripts]
+cstoday = pythaidate.cli:cstoday
+paktoday = pythaidate.cli:paktoday
