@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: rils-rols
+Version: 1.4.6
+Summary: RILS-ROLS: Robust Symbolic Regression via Iterated Local Search and Ordinary Least Squares
+Home-page: https://github.com/kartelj/rils-rols
+Author: Aleksandar Kartelj, Marko Đukanović
+Author-email: aleksandar.kartelj@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: scikit-learn
+Requires-Dist: sympy
+Requires-Dist: pybind11
+Provides-Extra: test
+Requires-Dist: pytest ; extra == 'test'
+
