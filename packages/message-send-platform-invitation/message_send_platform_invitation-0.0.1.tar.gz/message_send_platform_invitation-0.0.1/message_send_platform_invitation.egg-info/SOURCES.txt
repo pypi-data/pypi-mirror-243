@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+setup.py
+message_send_platform_invitation.egg-info/PKG-INFO
+message_send_platform_invitation.egg-info/SOURCES.txt
+message_send_platform_invitation.egg-info/dependency_links.txt
+message_send_platform_invitation.egg-info/requires.txt
+message_send_platform_invitation.egg-info/top_level.txt
+message_send_platform_invitation/src/__init__.py
+message_send_platform_invitation/src/country_constants.py
+message_send_platform_invitation/src/messagesendplatform.py
