@@ -1,0 +1,15 @@
+Metadata-Version: 2.1
+Name: requests_package
+Version: 1.0.1
+Summary: Request with retry configurated
+Home-page: https://github.com/edmachina/requests_package
+Author: Ezequiel Marcel
+Author-email: ezequiel.marcel@edmachina.com
+Keywords: pip,requests,retry
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: requests
+
+# requests_package
+Package for retry requests
