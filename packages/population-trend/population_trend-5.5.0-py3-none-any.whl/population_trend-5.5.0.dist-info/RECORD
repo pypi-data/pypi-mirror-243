@@ -1,0 +1,11 @@
+population_trend/__init__.py,sha256=pwbVyAbxFdkPI-c5VWMstYS16lyE-pkqbg0xHNNpCQc,291
+population_trend/calculate_growth_rates.py,sha256=uigfbNk_OhZoqE_dGj1RQS-TpXMrDDS5XJBhtioL3cw,8103
+population_trend/cli.py,sha256=09MC9rAYe7D5vEP0bZfJEhZfJnWe-_50mRszfEJun70,3245
+population_trend/filter_data.py,sha256=D0Y1vztcbbo98af9q7wRhlHfH__bNFI8tnVOdJY6hu0,403
+population_trend/population_growth_model.py,sha256=OH5GoFvDRN1dgUjtqr1vZP-yDWOE1yb10Cx5XH8LP8g,6069
+population_trend/regional_lambdas.py,sha256=YcAPzYf_rcp_W99mzHfpdL_VA7OGg8DSK302xV_QEgg,2733
+population_trend-5.5.0.dist-info/entry_points.txt,sha256=qVw9tnlMx7q2AnksVC2H4oK4ufQrdrbBzSODLH-bcac,61
+population_trend-5.5.0.dist-info/LICENSE,sha256=hIahDEOTzuHCU5J2nd07LWwkLW7Hko4UFO__ffsvB-8,34523
+population_trend-5.5.0.dist-info/WHEEL,sha256=EZbGkh7Ie4PoZfRQ8I0ZuP9VklN_TvcZ6DSE5Uar4z4,81
+population_trend-5.5.0.dist-info/METADATA,sha256=sW2gZ2nkDLyMQI8C34OK7BvmyE9_a66OGvV0OhtF2DE,1318
+population_trend-5.5.0.dist-info/RECORD,,
