@@ -1,0 +1,21 @@
+Orange3>=3.33.0
+statsmodels>=0.13.0
+python-dateutil
+pandas
+numpy
+scipy>=1.9.2
+more-itertools
+python-dateutil
+pyqtgraph>=0.13.1
+
+[:sys_platform != "darwin"]
+pandas_datareader
+yfinance
+
+[doc]
+sphinx
+recommonmark
+sphinx_rtd_theme
+
+[test]
+coverage
