@@ -1,0 +1,7 @@
+six
+
+[openpyxl-py2]
+openpyxl>=2.6.4
+
+[openpyxl-py3]
+openpyxl>=3.1.2
