@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: taisim2
+Version: 0.1.2
+Summary: Simulation Library for Multi-Robot Systems(this one works
+Home-page: https://github.com/Amporu/Taisim2
+Author: Tucudean Adrian-Ionut
+Author-email: Tucudean.Adrian.Ionut@outlook.com
+License: MIT
+Keywords: Simulator computer vision Advanced Driving
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+License-File: LICENSE
+Requires-Dist: opencv-python
+Requires-Dist: pygame
+Requires-Dist: pyOpenGL
+
+Simulation Library for Multi-Robot Systems
