@@ -1,0 +1,11 @@
+README.rst
+pyproject.toml
+setup.py
+catgpt/__init__.py
+catgpt/model.py
+catgpt.egg-info/PKG-INFO
+catgpt.egg-info/SOURCES.txt
+catgpt.egg-info/dependency_links.txt
+catgpt.egg-info/requires.txt
+catgpt.egg-info/top_level.txt
+tests/test_catgpt.py
