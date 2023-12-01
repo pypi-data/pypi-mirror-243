@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: torchmanager-diffusion
+Version: 0.2.1b0
+Summary: Torchmanager Implementation for Diffusion Model (v0.2.1 Beta)
+Author: Kison Ho
+Author-email: unfit-gothic.0q@icloud.com
+Requires-Python: >=3.9,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: einops
+Requires-Dist: torchmanager (>=1.2,<2.0)
