@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Run pre-commit
+        uses: nikaro/actions/pre-commit@3234e8e77308bd94a2545091dcd479bf0d0086ca # 1.2.2
+        with:
+          python-version: 3.12
+
+  test:
+    name: Test
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Setup Rye
+        uses: nikaro/actions/setup-rye@3234e8e77308bd94a2545091dcd479bf0d0086ca # 1.2.2
+
+      - name: Install dependencies
+        run: rye sync --all-features
+
+      - name: Test
+        run: rye run test
+
+  check:
+    name: Check
+    permissions: {}
+    runs-on: ubuntu-22.04
+    needs: [lint, test]
+    if: always()
+    steps:
+      - name: Ensure no jobs failed
+        uses: re-actors/alls-green@05ac9388f0aebcb5727afa17fcccfecd6f8ec5fe # v1.2.2
+        with:
+          jobs: ${{ toJSON(needs) }}
