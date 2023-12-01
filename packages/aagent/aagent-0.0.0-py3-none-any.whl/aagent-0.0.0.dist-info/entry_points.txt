@@ -1,0 +1,3 @@
+[console_scripts]
+aagent=aagent.cli:app
+
