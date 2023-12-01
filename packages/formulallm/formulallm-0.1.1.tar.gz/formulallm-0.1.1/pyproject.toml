@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "formulallm"
+version = "0.1.1"
+description = ""
+authors = ["Aadi Bajpai <aadi.bajpai@vanderbilt.edu>","Stephen Johnson <stephen.johnson@vanderbilt.edu>"]
+readme = "README.md"
+packages = [{include = "formulallm"}]
+
+[tool.poetry.dependencies]
+python = ">3.10,<3.11"
+openai = "0.28.1"
+langchain = "0.0.312"
+langchain-experimental = "0.0.31"
+pythonnet = "^3.0.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
