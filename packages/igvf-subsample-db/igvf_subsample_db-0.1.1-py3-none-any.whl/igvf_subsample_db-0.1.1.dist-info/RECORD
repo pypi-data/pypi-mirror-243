@@ -1,0 +1,14 @@
+igvf_subsample_db/__init__.py,sha256=_C4Ut7ROqTlynHKK5HQ3jck_BhB6118N7EntuJrQkdI,114
+igvf_subsample_db/create_rule_template.py,sha256=L-t1Bzond_b8-EODqjLwOr7g1hlXUP528kRwxUy6ii0,1994
+igvf_subsample_db/db.py,sha256=KUh21BE80TVbt7S49s-kG55-9RnKpcIYXiqhEBW-taU,1064
+igvf_subsample_db/get_subsampled_uuids.py,sha256=VM-d8pmPEqt9EypvwvOuILgcIoTayK9VyHHAmwVHtgI,1970
+igvf_subsample_db/profiles.py,sha256=kmvF5CtaiKZuIW70uzQyZqfyVvem17nTUQSZf4AQvj8,16348
+igvf_subsample_db/subsample_pg.py,sha256=1KEUoF1cPFBuAjrgHhFEOQyyHBAksShMnKOvw9bW3Ug,1509
+igvf_subsample_db-0.1.1.data/scripts/create_rule_template,sha256=yYtWaXCqp9WSEqNHOoaXOmkcrEesbZqKVIOGsCtMNm0,340
+igvf_subsample_db-0.1.1.data/scripts/get_subsampled_uuids,sha256=3egLdZRx6ern9dDFZ7XeWtks2EigkmPLJ1kU58Becjc,340
+igvf_subsample_db-0.1.1.data/scripts/subsample_pg,sha256=iYzbnAKQRA3h2Ya-ueG-D5ofJr6nhG5HnpTxlQxtFNw,324
+igvf_subsample_db-0.1.1.dist-info/LICENSE,sha256=jBUcvuBow9E00xz5KkcRqZYukIzI1F3tejrWNlq3bGo,1066
+igvf_subsample_db-0.1.1.dist-info/METADATA,sha256=iPSvZ4cy8Ryc9y-1cEQkhVyWgaJEzYz702chQO96XX0,759
+igvf_subsample_db-0.1.1.dist-info/WHEEL,sha256=G16H4A3IeoQmnOrYV4ueZGKSjhipXx8zc8nu9FGlvMA,92
+igvf_subsample_db-0.1.1.dist-info/top_level.txt,sha256=mNy2sVMWvrbgMqjAZxQs_KTIP0W08PboYccqndx-vYQ,18
+igvf_subsample_db-0.1.1.dist-info/RECORD,,
