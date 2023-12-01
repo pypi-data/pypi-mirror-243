@@ -1,0 +1,5 @@
+#!python
+
+from umzz.umzz2 import cli
+
+cli()
