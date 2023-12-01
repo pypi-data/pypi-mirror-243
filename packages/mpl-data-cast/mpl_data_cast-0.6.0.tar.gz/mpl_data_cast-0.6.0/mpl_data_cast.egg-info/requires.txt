@@ -1,0 +1,7 @@
+click>=8
+dclab>=0.55.7
+h5py>=3.8.0
+hdf5plugin
+numpy>=1.21
+pyqt6
+tifffile==2022.3.16
