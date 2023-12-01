@@ -1,0 +1,8 @@
+__pycache__
+__pycache__/
+orodha-keycloak/dist/*
+*.pyc
+.env
+.coverage
+.vscode
+postgres_data
