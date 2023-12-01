@@ -1,0 +1,99 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geo-rasterizer"
+dynamic = ["version", "readme"]
+description = "Package to rasterize shapes in a geodataframe to a reference geotif."
+keywords = ["geo-rasterizer"]
+authors = [
+    {name = "RWS Datalab", email = "datalab.codebase@rws.nl"},
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "logginginitializer",
+    "geopandas",
+    "rasterio",
+    "matplotlib",
+]
+requires-python = ">=3.10"
+
+[project.urls]
+homepage = "https://gitlab.com/rwsdatalab/public/codebase/image/geo-rasterizer"
+repository = "https://gitlab.com/rwsdatalab/public/codebase/image/geo-rasterizer"
+changelog = "https://gitlab.com/rwsdatalab/public/codebase/image/geo-rasterizer/blob/main/CHANGELOG.rst"
+
+[project.optional-dependencies]
+dev = [
+    "bandit",
+    "black",
+    "flake8",
+    "flake8-bugbear",
+    "flake8-comprehensions",
+    "flake8-docstrings",
+    "flake8-polyfill",
+    "isort",
+    "mypy",
+    "pre-commit",
+    "pylint",
+    "pytest",
+    "pytest-cov",
+    "rstcheck[sphinx]",
+    "radon",
+    "safety",
+]
+doc = [
+    "pydata-sphinx-theme",
+    "sphinx",
+    "sphinx-autodoc-typehints",
+]
+
+[tool.setuptools]
+include-package-data = false
+license-files = ["LICENSE"]
+packages = ["geo_rasterizer"]  # Note: add all namespace packages if applicable
+zip-safe = false
+
+[tool.setuptools.package-data]
+"geo_rasterizer" = ["py.typed"]
+
+[tool.setuptools.dynamic]
+version = {attr = "geo_rasterizer.__version__"}
+readme = {file = ["README.rst"]}
+
+[tool.isort]
+profile = "black"
+known_first_party = ["geo_rasterizer"]
+skip_glob = ".venv/**,tests/**,doc/**"
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+line_length = 88
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pylint]
+extension-pkg-whitelist = ""
+fail-under = 8.0
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov --cov-report xml --cov-report term --cov-report html"
+
+[tool.coverage.run]
+branch = true
+source = ["geo_rasterizer"]
+
+[tool.black]
+line-length = 88
+target-versions = ["py310", "py311"]

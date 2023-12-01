@@ -1,0 +1,175 @@
+##############
+geo rasterizer
+##############
+
+.. begin-inclusion-intro-marker-do-not-remove
+
+Rasterize shapes in a geodataframe to a reference geotif.
+
+.. end-inclusion-intro-marker-do-not-remove
+
+
+.. begin-inclusion-usage-marker-do-not-remove
+
+How to use
+----------
+
+geo-rasterizer can be used to create rasters based on a geodataframe that
+correspond to a given reference image. The shapes from the geodataframe will be
+projected to a raster of the same size as the reference image. geo-rasteriser
+supports a single class for each pixel, and will encode the rasterized shapes as
+one-hot vector, or as a densely encoded int with an index for each class.
+
+To use geo-rasterizer you need a geodataframe that holds shapes, and a corresponding
+geotif as reference.
+
+For example we're using the ``test_df.gpkg`` and ``test_geotif`` from the ``test_data``
+folder of the repository.
+
+The content of the test_df.gpkg looks like this:
+
+.. code::
+
+     label                                           geometry
+  0     r1  POLYGON ((126200.432 425991.321, 126200.901 42...
+  1      a  POLYGON ((185960.739 442590.177, 185962.729 44...
+  2     g1  POLYGON ((185853.845 442658.306, 185858.166 44...
+  ...
+  10    k4  POLYGON ((182581.756 441482.010, 182579.714 44...
+
+Importantly, it contains a "geometry" column with polygons, and a "label" column
+which contains the corresponding label for each polygon.
+
+The test_geotif.tif file contains a georeferenced geotif which is located in the same
+area as polygons in the geodataframe. It looks like this:
+
+.. image:: https://gitlab.com/rwsdatalab/public/codebase/image/geo-rasterizer/-/raw/main/doc/figs/img_satellite.png
+
+|
+
+To create a raster that corresponds to the classes in the geodataframe we can use
+geo_rasterizer.rasterize_multilabel
+
+.. code:: python3
+
+    import geo_rasterizer
+    import matplotlib.pyplot as plt
+
+    gpkg_path = "/path/to/repo/test_data/test_df.gpkg"
+    ref_path = "/path/to/repo/test_data/test_geotif.tif"
+
+    raster = geo_rasterizer.rasterize_multilabel(
+        gpkg_path=gpkg_path,
+        reference_image=ref_path,
+        class_column="label",
+        classes=["r1", "a", "g1", "g6", "k4"],
+        include_background_class=True,
+        dense=True,
+    )
+
+    plt.imshow(raster.squeeze())
+    plt.show()
+
+This results in the following image:
+
+.. image:: https://gitlab.com/rwsdatalab/public/codebase/image/geo-rasterizer/-/raw/main/doc/figs/img_rasterized_classes.png
+
+|
+
+Since the labels are encoded as integers from 0 ... n for n classes (with 0 as
+background), the colors that matplotlib will give to each class is not consistent or
+visually pleasing. geo_rasterizer provides a function to create an rgb image based on
+the densely encoded class indices, which takes into account the total number of
+classes, which keeps class colors consistent between different images, even if not
+all images contain all classes. Additionally, an alpha-channel is optionally added to
+make the background class transparent. To use this function on the previous output:
+
+.. code:: python3
+
+    rgb_raster = geo_rasterizer.dense_rasters_to_rgb(
+        raster=raster,
+        num_classes=5,
+        alpha=True,
+        cmap="tab10",
+    )
+    # transpose to channels last for plotting with matplotlib
+    plt.imshow(rgb_raster.transpose((1,2,0)))
+    plt.show()
+
+.. image:: https://gitlab.com/rwsdatalab/public/codebase/image/geo-rasterizer/-/raw/main/doc/figs/img_rgb_rasters.png
+
+|
+
+If you would like to save this raster as georeferenced geotif itself, for example: to
+compare the labels to different map layers in qgis, you can use geo_rasterizer to
+save the raster as a geotif with the same geo-meta-data as the reference image:
+
+.. code:: python3
+
+    rasters_to_geotif(
+        raster=rgb_raster,
+        reference=ref_path,
+        output="/path/to/labels_georeferenced.tif,
+    )
+
+The resulting file in ``/path/to/labels_georeferenced.tif`` can for example be
+compared to open street map in qgis.
+
+.. image:: https://gitlab.com/rwsdatalab/public/codebase/image/geo-rasterizer/-/raw/main/doc/figs/img_georef_labels.png
+
+|
+
+.. end-inclusion-usage-marker-do-not-remove
+
+
+.. begin-inclusion-installation-marker-do-not-remove
+
+Installation
+------------
+
+To install geo-rasterizer, do:
+
+.. code-block:: console
+
+  git clone https://gitlab.com/rwsdatalab/public/codebase/image/geo-rasterizer.git
+  cd geo-rasterizer
+  pip install .
+
+Run tests (including coverage) with:
+
+.. code-block:: console
+
+  pip install ".[dev]"
+  pytest
+
+.. end-inclusion-installation-marker-do-not-remove
+
+
+Documentation
+-------------
+
+Find the full documentation at https://rwsdatalab.gitlab.io/public/codebase/image/geo-rasterizer
+
+.. begin-inclusion-license-marker-do-not-remove
+
+License
+-------
+
+Copyright (c) 2023, Rijkswaterstaat
+
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
+
+.. end-inclusion-license-marker-do-not-remove
