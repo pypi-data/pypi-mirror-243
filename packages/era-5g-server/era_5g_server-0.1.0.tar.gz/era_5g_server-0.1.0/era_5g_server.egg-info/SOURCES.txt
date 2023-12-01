@@ -1,0 +1,12 @@
+MANIFEST.in
+backend_shim.py
+setup.py
+era_5g_server/__init__.py
+era_5g_server/py.typed
+era_5g_server/server.py
+era_5g_server.egg-info/PKG-INFO
+era_5g_server.egg-info/SOURCES.txt
+era_5g_server.egg-info/dependency_links.txt
+era_5g_server.egg-info/namespace_packages.txt
+era_5g_server.egg-info/requires.txt
+era_5g_server.egg-info/top_level.txt
