@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.py
+ai_management/__init__.py
+ai_management/constants.py
+ai_management/model_evaluation.py
+ai_management.egg-info/PKG-INFO
+ai_management.egg-info/SOURCES.txt
+ai_management.egg-info/dependency_links.txt
+ai_management.egg-info/requires.txt
+ai_management.egg-info/top_level.txt
+examples/usage_examples.ipynb
