@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "glade_api_python"
+version = "1.0.0"
+authors = [
+  { name="Oluwatobi", email="Oluwatobi@glade.ng" },
+]
+description = "Glade API Python Package"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://gitlab.com/gladepay-apis/gladepython"
+Issues = "https://gitlab.com/gladepay-apis/gladepython/issues"
+Documentation = "https://developer.gladefinance.co/docs"
