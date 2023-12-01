@@ -1,0 +1,3 @@
+[console_scripts]
+gptsql=gptsql.__main__:main
+
