@@ -1,0 +1,8 @@
+grpcio>=1.30.0
+protobuf!=4.24.0,>=3.19.0
+jproperties>=2.1.1
+requests
+tzlocal
+python-dateutil
+googleapis-common-protos>=1.57.0
+packaging
