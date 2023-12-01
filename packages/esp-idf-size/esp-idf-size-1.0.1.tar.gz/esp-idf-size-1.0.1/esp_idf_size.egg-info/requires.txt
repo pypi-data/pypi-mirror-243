@@ -1,0 +1,9 @@
+pyyaml
+rich
+pyelftools
+
+[dev]
+pre-commit
+coverage
+jsonschema
+pytest
