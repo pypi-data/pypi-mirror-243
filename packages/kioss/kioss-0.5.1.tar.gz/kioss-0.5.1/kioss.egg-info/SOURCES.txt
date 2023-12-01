@@ -1,0 +1,15 @@
+LICENSE
+README.md
+setup.py
+kioss/__init__.py
+kioss/_concurrent_exec.py
+kioss/_exec.py
+kioss/_plan.py
+kioss/_util.py
+kioss.egg-info/PKG-INFO
+kioss.egg-info/SOURCES.txt
+kioss.egg-info/dependency_links.txt
+kioss.egg-info/top_level.txt
+tests/test_legacy.py
+tests/test_pipe.py
+tests/test_util.py
