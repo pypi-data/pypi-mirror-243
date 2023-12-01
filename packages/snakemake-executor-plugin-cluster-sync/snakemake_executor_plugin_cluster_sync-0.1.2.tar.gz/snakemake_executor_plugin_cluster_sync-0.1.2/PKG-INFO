@@ -1,0 +1,17 @@
+Metadata-Version: 2.1
+Name: snakemake-executor-plugin-cluster-sync
+Version: 0.1.2
+Summary: A Snakemake executor plugin for cluster jobs that are executed synchronously.
+Author: Johannes Koester
+Author-email: johannes.koester@uni-due.de
+Requires-Python: >=3.11,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Dist: snakemake-interface-common (>=1.14.0,<2.0.0)
+Requires-Dist: snakemake-interface-executor-plugins (>=8.1.0,<9.0.0)
+Description-Content-Type: text/markdown
+
+# snakemake-executor-plugin-cluster-sync
+
+A Snakemake executor plugin for generic cluster jobs that are executed synchronously. 
