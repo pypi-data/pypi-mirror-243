@@ -1,0 +1,50 @@
+Metadata-Version: 2.1
+Name: subsetsio
+Version: 0.5.2
+Summary: 
+Home-page: https://github.com/subsetsio/subsets-python-client
+Author: Nathan Snellaert
+Author-email: nathan@subsets.io
+Requires-Python: >=3.8,<4.0
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Dist: pandas (>=2.0.3,<3.0.0)
+Requires-Dist: pyarrow (>=12.0.1,<13.0.0)
+Requires-Dist: requests (>=2.31.0,<3.0.0)
+Project-URL: Repository, https://github.com/subsetsio/subsets-python-client
+Description-Content-Type: text/markdown
+
+# Subsets Python Client
+
+Easily access the Subsets data warehouse using Python. For more details and features, visit [subsets.io](https://www.subsets.io)
+
+## Installation
+
+Run the following command to install the API:
+
+```pip install subsetsio```
+## Usage
+
+At the moment, you can only use the SDK for querying. To explore datasets, checking quotas, and viewing past queries, visit the [subsets.io](https://www.subsets.io) web interface.
+
+```python
+import subsetsio
+
+# Temp API Key. Sign up for a free permanent key.
+client = subsetsio.Client(api_key="YOUR_API_KEY")
+
+user_query = "apple stock price"
+# Semantically search for tables (matching on tables, columns and rows)
+table_response = client.search_tables(user_query)
+# Generate SQL with our text2sql utility, or use your own
+sql_query = client.text2sql(user_query, table_response.tables)
+# Execute the sql query to retrieve a pandas dataframe
+df = client.query(sql_query)
+```
+
+## License
+
+[MIT Licensed](LICENSE.md)
