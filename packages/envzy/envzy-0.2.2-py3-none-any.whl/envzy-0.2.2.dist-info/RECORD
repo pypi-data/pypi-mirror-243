@@ -1,0 +1,17 @@
+AUTHORS,sha256=XTtUcbPtd3G_Iyk9tzl6uf_RgRTR7hdGcI0_3gGRUIU,227
+CONTRIBUTING,sha256=knhcU4hiYcyYZJtXfv2XPK26TEXgqVOdTDd0B5RWk2A,1868
+envzy/__init__.py,sha256=6ZrvEtUQKI1Hrj-lnG81UB6_GgQycdaMxmt2iRxRlK4,375
+envzy/auto.py,sha256=U01fSJXPu_UlvPwVKRMlAMziemLfaJjl8P8xao1vCwQ,5487
+envzy/base.py,sha256=eMaWGHWdUcXkkTCHEYp5AVlWUEU5EDs4HENr2dSAVcA,541
+envzy/classify.py,sha256=-yaHdMP8N7J9dz70FN6BevZz-GwJPpXn4d-eI5a6Wio,17594
+envzy/exceptions.py,sha256=GrWIlY8ylEa7GlhyQ4N9qRzdVL7qfJrwLXH1mA7RgHo,118
+envzy/packages.py,sha256=T9a7ficmt28wIWcQeLU8GwR3NFrXnZQtIwX_qQ-2WUo,636
+envzy/py.typed,sha256=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU,0
+envzy/pypi.py,sha256=_SEAJLMnpr16-eSRkE9LI8W8WFSpOX4M0hrpNfidzjM,4896
+envzy/search.py,sha256=TWJzVP1W8m-9JFglI480nxAyCa9_0oxP_1_hTh-DpqI,6706
+envzy/utils.py,sha256=_-WJOTIZ5Hj3c1xho6j5deAJG0sB5xq8liHmagPUSP4,6795
+envzy/version.py,sha256=d9is9kC-mG8ERs30rhrm6jNGeCs0Z3ubcx7LprEV4Lk,234
+envzy-0.2.2.dist-info/LICENSE,sha256=uUaqiocjqjy7AsVf43XiFXej5ys5dh5o2DMweEsua0E,578
+envzy-0.2.2.dist-info/METADATA,sha256=eDq4J_EgyolX0GaLgulZGT_tC5pNnMC3k-A2GU3mQ3U,3098
+envzy-0.2.2.dist-info/WHEEL,sha256=d2fvjOD7sXsVzChCqf0Ty0JbHKBaLYwDbGQDwQTnJ50,88
+envzy-0.2.2.dist-info/RECORD,,
