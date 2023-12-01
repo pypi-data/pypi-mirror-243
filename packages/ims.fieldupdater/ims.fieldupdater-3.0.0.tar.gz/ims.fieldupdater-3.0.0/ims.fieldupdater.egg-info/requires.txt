@@ -1,0 +1,6 @@
+plone>=6.0.4
+
+[test]
+plone.app.testing
+plone.mocktestcase
+formencode
