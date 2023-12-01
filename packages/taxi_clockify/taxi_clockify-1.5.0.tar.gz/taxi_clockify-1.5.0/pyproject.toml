@@ -1,0 +1,43 @@
+[project]
+name = "taxi_clockify"
+description = "Taxi backend for Clockify"
+authors = [
+    {name = "Sylvain Fankhauser", email = "sephi@fhtagn.top"},
+]
+readme = "README.rst"
+requires-python = ">=3.7"
+dynamic = ["version"]
+dependencies = [
+    "requests>=2.3.0",
+    "taxi~=6.0",
+    "arrow>=0.15.8",
+]
+
+[project.urls]
+Source = "https://github.com/sephii/taxi-clockify"
+
+[project.entry-points."taxi.backends"]
+clockify = "taxi_clockify.backend:ClockifyBackend"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.black]
+target-version = ['py37']
+include = '\.pyi?$'
+exclude = '''
+(
+     /\..*
+    |/.direnv/
+)
+'''
+
+[tool.isort]
+profile = "black"
+known_first_party = "taxi_clockify"
+default_section = "THIRDPARTY"
+line_length = 88
+sections = ["FUTURE", "STDLIB", "THIRDPARTY", "FIRSTPARTY", "LOCALFOLDER"]
+multi_line_output = 3
+include_trailing_comma = true
