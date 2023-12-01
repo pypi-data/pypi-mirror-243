@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dmr.py"
+version = "1.1.2"
+authors = [
+  { name="Jasper", email="jasper@jazper.dk" },
+]
+description = "Pull data directly from the danish vehicle register with dmr.py"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.8"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "lxml == 4.9.3",
+    "requests == 2.31.0",
+    "aiohttp == 3.9.1",
+    "pydantic == 2.5.2"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest == 7.4.3",
+]
+speed = [
+    "aiodns >= 3.1.1",
+    "Brotli",
+    "cchardet",
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[project.urls]
+"Homepage" = "https://github.com/j4asper/dmr.py"
+"Bug Tracker" = "https://github.com/j4asper/dmr.py/issues"
