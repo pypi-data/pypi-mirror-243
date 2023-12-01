@@ -1,0 +1,3 @@
+[console_scripts]
+nocage=notion_calendar_generator.main:main
+
