@@ -1,0 +1,11 @@
+sql_test_kit/__init__.py,sha256=omQ2YCB3NC0RBSApB9vEkr4qRT2iTUf3W9YSRqMvd7g,209
+sql_test_kit/bigquery.py,sha256=VSWizuGKApBauJEozZSzhtK6MKiSSvngliJwi_svsqc,695
+sql_test_kit/column.py,sha256=yK04oO5M4LgOpo9SjB-J5iWAqCGeM1TW8FLN-JLYufo,115
+sql_test_kit/data_literals.py,sha256=xr5Xy2cp3iwuK3yZ_4YrT_hRKUx8ojBH4aBm0BNRNO4,893
+sql_test_kit/interpolation_data.py,sha256=X9hGeIiYu7kNt0vYqqfq_AMJdz6DSp5p3wiigD6nH5A,187
+sql_test_kit/query_interpolation.py,sha256=2Q0QJyqefuT6gXzGEvyGHkCYFeGU30WbNPuxhY8ZihI,1393
+sql_test_kit/table.py,sha256=UPaTOkKuiSqhPdSTfj6dbQm8UgpiQYhUh8osGO7Eqss,390
+sql_test_kit-0.4.0.dist-info/LICENSE,sha256=MSixPdHj-Fas8kToinX_4G3oTBlPNR6im6IXS-_JDHY,13595
+sql_test_kit-0.4.0.dist-info/WHEEL,sha256=vVCvjcmxuUltf8cYhJ0sJMRDLr1XsPuxEId8YDzbyCY,88
+sql_test_kit-0.4.0.dist-info/METADATA,sha256=IuczkWStD0KioyjLZsTlLUoQO2skppEN4_8Ln3tm1_g,3305
+sql_test_kit-0.4.0.dist-info/RECORD,,
