@@ -1,0 +1,14 @@
+{
+  "title": "gridwidth",
+  "description": "Settings for jupyterlab-gridwidth",
+  "properties": {
+    "show_toolbar_button": {
+      "type": "boolean",
+      "title": "display button in toolbar",
+      "description": "The <-> button in the notebook toolbar gives access to a dropdown that allows for quick access to all available cell sizes, in addition to the palette and keyboard shortcuts.",
+      "default": true
+    }
+  },
+  "additionalProperties": false,
+  "type": "object"
+}
