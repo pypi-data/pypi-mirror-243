@@ -1,0 +1,5 @@
+omegaconf
+openpyxl
+numpy
+rich[jupyter]
+importlib_resources
