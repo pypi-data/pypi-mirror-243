@@ -1,0 +1,2 @@
+[console_scripts]
+parse_cmake = stylish_cmake_parser.parse:main

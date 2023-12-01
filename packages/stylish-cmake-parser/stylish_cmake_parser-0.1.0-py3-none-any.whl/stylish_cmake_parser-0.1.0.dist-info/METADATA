@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: stylish_cmake_parser
+Version: 0.1.0
+Summary: Parser for CMake files with the ability to retain the whitespace 'style' after modifying.
+Project-URL: Homepage, https://github.com/DLu/stylish_cmake_parser
+Project-URL: Bug Tracker, https://github.com/DLu/stylish_cmake_parser/issues
+Author-email: "David V. Lu!!" <davidvlu@gmail.com>
+Maintainer-email: "David V. Lu!!" <davidvlu@gmail.com>
+License-File: LICENSE
+Classifier: Development Status :: 4 - Beta
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Build Tools
+Requires-Python: >=3.8
+Provides-Extra: test
+Requires-Dist: pytest; extra == 'test'
+Requires-Dist: pytest-cov; extra == 'test'
+Description-Content-Type: text/markdown
+
+# stylish_cmake_parser
+Parser for CMake files with the ability to retain the whitespace "style" after modifying
