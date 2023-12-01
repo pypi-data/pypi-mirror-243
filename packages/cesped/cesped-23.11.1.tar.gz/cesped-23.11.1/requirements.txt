@@ -1,0 +1,17 @@
+argParseFromDoc
+e3nn
+healpy
+joblib
+mrcfile
+numpy
+omegaconf
+pandas
+pdoc3
+lightning[pytorch-extra]
+requests
+scipy
+starfile
+starstack
+tensorboard
+torch
+torchvision

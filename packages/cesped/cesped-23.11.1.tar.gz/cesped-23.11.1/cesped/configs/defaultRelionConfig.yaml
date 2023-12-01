@@ -1,0 +1,6 @@
+## lightning.pytorch==2.0.8
+Relion:
+  relionBinDir: "~/app/scipion/software/em/relion/bin"
+  mpirun: "mpirun"
+  relionSingularity: null #if relionSingularity provided, relionBinDir and mpirun are not required
+
