@@ -1,0 +1,8 @@
+{
+    "script": "kart3d.py",
+    "url": {
+        "windows": "https://github.com/PAIA-Playful-AI-Arena/paiagym-kart3d/releases/download/v0.0.1/paiagym-kart3d-windows-0.0.1.zip",
+        "linux": "https://github.com/PAIA-Playful-AI-Arena/paiagym-kart3d/releases/download/v0.0.1/paiagym-kart3d-linux-0.0.1.zip",
+        "mac": "https://github.com/PAIA-Playful-AI-Arena/paiagym-kart3d/releases/download/v0.0.1/paiagym-kart3d-mac-0.0.1.zip"
+    }
+}
