@@ -1,0 +1,58 @@
+Metadata-Version: 2.1
+Name: ttkvideos
+Version: 0.0.2
+Summary: playing video (with audio) in tkinter label
+Home-page: https://github.com/Vishal24102002/ttkvideos
+Author: Vishal Sharma
+Author-email: vishalsharma659615@gmail.com
+License: MIT
+Keywords: videos
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Operating System :: Microsoft :: Windows :: Windows 10
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+License-File: Licence.txt
+
+ttkVideos: Python module for playing videos (with sound) inside tkinter Label widget using Pillow and imageio.
+It works best & fast on small size videos however takes few seconds of time for larger videos files.
+It also uses threading for playing sound of the file in background & takes time to load the sound early.
+Copyright Â© 2023 Vishal Sharma vishalsharma659615@gmail.com
+Released under the terms of the MIT license (https://opensource.org/licenses/MIT) as described.
+<br>
+<h3>Built With :</h3>
+<ul>
+<li>tkinter & CustomTkinter (Python built-in) </li>
+<li>imageio</li>
+<li>Pillow</li>
+</ul>
+<br>
+<h3>Installation: </h3>
+<p>The pip command to install ttkinter videos library for use </p>
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  
+<img width="278",height="60", alt="image" src="https://github.com/Vishal24102002/tttkvideos/assets/103731436/30bf53bd-22e3-49d2-b56f-de61927dc6ee"><br>
+This will create a shim between your code and the module binaries that gets updated every time you change your code.
+&nbsp<b><u><h3>Usage : </h3></u></b>
+<ul>
+<li>Import tkinter and tkvideo-moviepy<br></li>
+<li>Create Tk() parent and the label you'd like to use<br></li>
+<li>Get a moviepy video<br></li>
+<li>Create tkvideo object with its parameters(video_path, label_name,number of loops for the video if required and size of the video_screen)<br></li>
+<li>Start the player thread with <player_name>.play()<br></li>
+<li>Start the Tk mainloop<br></li>
+</ul>
+<h4>Official release :</h4>
+For the updtaed version <b><a href="https://pypi.org/project/ttkvideos/"><u> Latest </u></a></b> version.
+<h3>License</h3>
+Distributed under the MIT License. See <b><a href="https://github.com/Vishal24102002/ttkvideos/blob/main/Licence.txt"> LICENSE </a></b>for more information.
+
+
+Change Log
+===========
+
+0.0.2(30/11/2023)
+-----------------
+- First Release
+- will keep on updating
+- thanks for using 
