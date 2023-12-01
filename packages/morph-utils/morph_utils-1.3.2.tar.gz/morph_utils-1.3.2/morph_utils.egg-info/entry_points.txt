@@ -1,0 +1,4 @@
+[console_scripts]
+morph_utils_full_morph_soma_correction = morph_utils.executable_scripts.full_morphology_soma_correction:console_script
+morph_utils_sort_morphology_ids = morph_utils.executable_scripts.sort_morphology_ids:console_script
+
