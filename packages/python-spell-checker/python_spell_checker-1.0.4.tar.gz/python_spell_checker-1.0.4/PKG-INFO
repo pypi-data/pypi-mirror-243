@@ -1,0 +1,94 @@
+Metadata-Version: 2.1
+Name: python-spell-checker
+Version: 1.0.4
+Summary: Python 3+ spell checker, supports English, German, Italian, Spanish, and French!
+Project-URL: Homepage, https://github.com/dev0cloo/python-spell-checker
+Project-URL: Repository, https://github.com/dev0cloo/python-spell-checker
+Author-email: dev0cloo <etor.ocloo@gmail.com>
+Maintainer-email: dev0cloo <etor.ocloo@gmail.com>
+License: Copyright (c) 2021 Harvard90873
+        
+        Permission is hereby granted, free of charge, to any person obtaining a copy
+        of this software and associated documentation files (the "Software"), to deal
+        in the Software without restriction, including without limitation the rights
+        to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+        copies of the Software, and to permit persons to whom the Software is
+        furnished to do so, subject to the following conditions:
+        
+        The above copyright notice and this permission notice shall be included in all
+        copies or substantial portions of the Software.
+        
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+        IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+        FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+        AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+        LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+        OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+        SOFTWARE.
+License-File: LICENSE
+Keywords: spell-check,spellchecker,typos
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+
+# Python Spell Checker
+
+The **spell checker** is a python package that can check your spelling. It supports **_5_** languages!
+
+It contains the following languages:
+
+- English
+- German
+- Spanish
+- French
+- Italian
+
+All valid words of a language are stored in a text file in the `languages` folder. The words are sorted alphabetically and are in lowercase. You can add your own words to the text file.
+
+# Installation
+
+If not already [install pip](https://pip.pypa.io/en/stable/installing/)
+
+Install the package with `pip` or `pip3`:
+
+```bash
+pip install python-spell-checker
+```
+
+# Usage
+
+### Example:
+
+```Python
+from python-spell.checker import Checker
+text = "The... ! quick browmn fox jumps-over the lazi doug"
+checker = Checker(text, "english")
+
+# This returns a dictionary object
+check_text = checker.check()
+print(check_text)
+
+# This returns a list of misspelt words
+misspelt_words = checker.misspelt()
+print("Misspelt words are " , misspelt_words)
+```
+
+Output:
+
+```bash
+{
+"Total words": 9
+"Number of misspelled words": 2
+"Number of words in dictionary": 194433
+"Misspelled words": ['browmn', 'lazi']
+"Lookup time(s)": 0.0005731582641601562
+}
+
+Misspelt words are ['browmn', 'lazi']
+```
+
+# Credits
+
+Credits to [Harvard90873](https://github.com/Harvard90873/) for creating [spell-checker](https://pypi.org/project/spell-checker/) which is the base of this package.
