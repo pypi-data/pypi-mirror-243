@@ -1,0 +1,24 @@
+-e .
+
+boto3>=1.22                                   # https://github.com/boto/boto3
+requests>=2.22.0                              # https://github.com/psf/requests
+
+# Packaging
+# ------------------------------------------------------------------------------
+bumpversion==0.6.0                            # https://github.com/peritus/bumpversion
+twine                                         # https://github.com/pypa/twine/
+tox                                           # https://github.com/tox-dev/to
+wheel                                         # https://github.com/pypa/wheel
+
+# Development
+# ------------------------------------------------------------------------------
+autopep8                                      # https://github.com/hhatto/autopep8
+flake8                                        # https://github.com/PyCQA/flake8
+pycodestyle                                   # https://github.com/PyCQA/pycodestyle
+mypy                                          # https://github.com/python/mypy
+pylint                                        # https://github.com/PyCQA/pylint
+boto3-stubs
+
+# Other utils
+# ------------------------------------------------------------------------------
+ipython>-7.13.0                               # https://github.com/ipython/ipython
