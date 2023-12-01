@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: TabLabels
+Version: 1.0.4
+Summary: Package to create Hive
+Author: ThinhPT16
+Author-email: ThinhPT16@outlook.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# TabLabels Usage Guide
+
+This document provides a step-by-step guide on how to use TabLabels.
+
+## Installation
+
+Just call `pip install TabLabels`
+
+The full usage can be found here:
+
+```
+import TabLabels
+
+data_processor = DataProcessor()
+
+data_processor("input.txt", "output.txt")
+```
